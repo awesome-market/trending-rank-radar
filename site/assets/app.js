@@ -195,19 +195,69 @@ function renderList() {
   if (lb) lb.onclick = () => { state.shown += PAGE; renderList(); };
 }
 
-function setEmpty(msg, pct) {
+function setEmpty(msg, pct, opts = {}) {
   $('#emptyState').hidden = false;
   $('#podiumWrap').innerHTML = '';
   $('#listWrap').innerHTML = '';
   $('#monthDetail').hidden = true;
   $('#emptyText').textContent = msg || '暂无榜单数据';
+  const prog = $('#emptyState .progress');
+  if (prog) prog.style.display = pct != null ? '' : 'none';
   $('#progressBar').style.width = `${Math.min(100, pct || 0)}%`;
   $('#progressHint').textContent = pct != null ? `快照积累进度 ${Math.round(pct)}%（月榜完整口径需 31 个有效快照日）` : '';
+
+  const acts = opts.actions || [];
+  $('#emptyActions').innerHTML = acts.length
+    ? acts.map((a, i) => `<button class="empty-btn" data-act="${i}">${esc(a.label)}</button>`).join('')
+    : '';
+  $('#emptyActions').querySelectorAll('.empty-btn').forEach((b, i) => {
+    b.onclick = () => acts[i].run();
+  });
+
+  const pv = opts.preview;
+  const rows = pv && pv.items.length ? pv.items : [];
+  $('#emptyState').classList.toggle('has-preview', rows.length > 0);
+  $('#emptyPreview').innerHTML = rows.length
+    ? `<div class="empty-preview-title">${esc(pv.title)} · Top ${rows.length}</div>`
+      + rows.map(e => `<a class="preview-row" href="https://github.com/${esc(e.owner)}/${esc(e.name)}" target="_blank" rel="noopener">
+          <span class="preview-rank">${e.rank}</span>
+          <span class="preview-name">${esc(e.owner)}/${esc(e.name)}</span>
+          <span class="preview-stars">★ ${fmt(e.stars)}</span>
+        </a>`).join('')
+    : '';
 }
 
-function clearEmpty() { $('#emptyState').hidden = true; }
+function clearEmpty() {
+  $('#emptyState').hidden = true;
+  $('#emptyState').classList.remove('has-preview');
+  $('#emptyActions').innerHTML = '';
+  $('#emptyPreview').innerHTML = '';
+}
 
 /* ---------------- data loading ---------------- */
+function buildEmptyCtx(boards, period) {
+  const order = period === 'month'
+    ? ['new', 'total', CUM_BOARD]
+    : ['new', 'total', 'daily', 'weekly', 'monthly'];
+  const avail = order.filter(k => boards[k] && boards[k].items && boards[k].items.length);
+  const label = (k) => (k === CUM_BOARD ? '月累计' : BOARDS[k].name);
+  const actions = avail.slice(0, 2).map(k => ({
+    label: `查看${label(k)}`,
+    run: () => { state.board = k; state.shown = PAGE; syncURL(); renderAll(); },
+  }));
+  const first = avail[0];
+  const preview = first
+    ? { title: label(first), items: boards[first].items.slice(0, 8) }
+    : null;
+  return { actions, preview };
+}
+
+function resetFilter() {
+  state.minK = 1; state.maxK = 500; state.shown = PAGE;
+  $('#minK').value = 1; $('#maxK').value = 500;
+  syncURL(); loadView();
+}
+
 async function loadView() {
   clearEmpty();
   $('#monthDetail').hidden = true;
@@ -215,19 +265,29 @@ async function loadView() {
   state.items = [];
   state.boardMeta = {};
   $('#windowInfo').textContent = '';
+  let emptyCtx = {};
+  let rawCount = 0;
 
   const idx = state.index;
   if (state.period === 'day') {
     const data = await j(`data/days/${state.sel}.json`);
     const board = data.boards[state.board] || { items: [] };
     state.boardMeta = board;
+    rawCount = (board.items || []).length;
     state.items = filterItems(board.items || []);
+    if (!state.items.length) emptyCtx = buildEmptyCtx(data.boards || {}, 'day');
     document.title = `${BOARDS[state.board].name} · ${state.sel} · Trending Rank Radar`;
   } else if (state.period === 'month') {
     const data = await j(`data/months/${state.sel}.json`);
     const src = state.board === CUM_BOARD ? data.cumulative : (data.boards[state.board] || { items: [] });
     state.boardMeta = src;
+    rawCount = (src.items || []).length;
     state.items = filterItems(src.items || []);
+    if (!state.items.length) {
+      const all = { ...(data.boards || {}) };
+      if (data.cumulative) all.cumulative = data.cumulative;
+      emptyCtx = buildEmptyCtx(all, 'month');
+    }
     // month extras
     if (data.daily_top10 && data.daily_top10.length) {
       $('#monthDetail').hidden = false;
@@ -243,7 +303,14 @@ async function loadView() {
   } else { // year
     const data = await j(`data/years/${state.sel}.json`);
     state.boardMeta = data.growth;
+    rawCount = (data.growth.items || []).length;
     state.items = filterItems(data.growth.items || []);
+    if (!state.items.length && state.index.months && state.index.months.length) {
+      emptyCtx = { actions: [{
+        label: '查看月度榜单',
+        run: () => { state.period = 'month'; state.sel = state.index.months[state.index.months.length - 1]; state.board = 'daily'; state.shown = PAGE; syncURL(); renderAll(); },
+      }], preview: null };
+    }
     // months grid
     $('#yearWrap').hidden = false;
     $('#monthGrid').innerHTML = data.months.map(m => {
@@ -262,8 +329,14 @@ async function loadView() {
 
   $('#windowInfo').textContent = windowLabel();
   if (!state.items.length) {
+    if (rawCount > 0) {
+      setEmpty('Star 范围内暂无符合条件的数据', null, {
+        actions: [{ label: '重置筛选', run: resetFilter }],
+      });
+      return;
+    }
     const pct = state.index ? Math.min(100, state.index.snapshot_days / 31 * 100) : 0;
-    setEmpty('该榜单暂无符合条件的数据', pct);
+    setEmpty('该榜单暂无数据，快照仍在积累', pct, emptyCtx);
     return;
   }
   state.shown = PAGE;
@@ -370,6 +443,7 @@ async function renderAll() {
 }
 
 async function init() {
+  document.documentElement.classList.add('m-enter');
   readURL();
   try {
     state.index = await j('data/index.json');

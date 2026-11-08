@@ -8,11 +8,16 @@
 <meta property="og:title" content="Trending Rank Radar">
 <meta property="og:description" content="GitHub 开源项目趋势榜单 · 每日双快照 · 八榜单 · 历史回看">
 <meta property="og:type" content="website">
+<meta property="og:image" content="assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="assets/og.png">
 <meta name="theme-color" content="#0a0e14">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+
+<a class="skip-link" href="#content">跳到榜单</a>
 
 <!-- shared svg gradient defs for sparklines -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -28,17 +33,17 @@
   </defs>
 </svg>
 
-<header class="hero">
+<header class="hero" data-enter>
   <div class="hero-inner">
     <div class="hero-brand">
       <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
         <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
         <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
         <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
-        <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round">
-          <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="4s" repeatCount="indefinite"/>
-        </line>
-        <circle cx="38" cy="10" r="2.5" fill="#a371f7"/>
+        <g class="radar-sweep">
+          <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="38" cy="10" r="2.5" fill="#a371f7"/>
+        </g>
       </svg>
       <div>
         <h1>Trending Rank <span class="grad-text">Radar</span></h1>
@@ -75,12 +80,17 @@
         <button data-period="month" class="seg-btn">月</button>
         <button data-period="year" class="seg-btn">年</button>
       </div>
+      <label class="sf-label" for="selDate">榜单日期</label>
       <select id="selDate" class="sel" aria-label="日期"></select>
-      <div class="star-filter">
+      <div class="star-filter" role="group" aria-label="Star 范围筛选">
         <span class="sf-label">Star 范围</span>
-        <input id="minK" type="number" min="0" step="1" value="1" class="sf-input" aria-label="最小 Star 千数">
+        <label class="sf-field"><span class="sf-in-label">下限</span>
+          <input id="minK" type="number" min="0" step="1" value="1" class="sf-input" aria-label="最小 Star 千数">
+        </label>
         <span class="sf-sep">–</span>
-        <input id="maxK" type="number" min="0" step="1" value="500" class="sf-input" aria-label="最大 Star 千数">
+        <label class="sf-field"><span class="sf-in-label">上限</span>
+          <input id="maxK" type="number" min="0" step="1" value="500" class="sf-input" aria-label="最大 Star 千数">
+        </label>
         <span class="sf-unit">k</span>
         <button id="applyFilter" class="sf-btn">筛选</button>
       </div>
@@ -90,17 +100,21 @@
 
   <section id="content">
     <div class="empty-state" id="emptyState" hidden>
-      <svg class="radar-big" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-        <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.4"/>
-        <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.3"/>
-        <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round">
-          <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="3s" repeatCount="indefinite"/>
-        </line>
-      </svg>
-      <h2>榜单积累中</h2>
-      <p id="emptyText">快照数据正在积累，增长榜需要至少 2 个有效快照日。</p>
-      <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
-      <p class="progress-hint" id="progressHint"></p>
+      <div class="empty-main">
+        <svg class="radar-big" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.4"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.3"/>
+          <g class="radar-sweep radar-sweep-lg">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <h2>榜单积累中</h2>
+        <p id="emptyText">快照数据正在积累，增长榜需要至少 2 个有效快照日。</p>
+        <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+        <p class="progress-hint" id="progressHint"></p>
+        <div class="empty-actions" id="emptyActions"></div>
+      </div>
+      <div class="empty-preview" id="emptyPreview"></div>
     </div>
 
     <div id="podiumWrap"></div>
@@ -120,8 +134,10 @@
 </main>
 
 <footer class="footer">
-  <p>数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
-  <p class="footer-sub">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  <div class="footer-inner">
+    <p>数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
 </footer>
 
 <script src="assets/app.js"></script>
