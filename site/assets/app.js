@@ -201,6 +201,8 @@ function setEmpty(msg, pct, opts = {}) {
   $('#listWrap').innerHTML = '';
   $('#monthDetail').hidden = true;
   $('#emptyText').textContent = msg || '暂无榜单数据';
+  const h2 = $('#emptyState h2');
+  if (h2) h2.textContent = opts.title || '榜单积累中';
   const prog = $('#emptyState .progress');
   if (prog) prog.style.display = pct != null ? '' : 'none';
   $('#progressBar').style.width = `${Math.min(100, pct || 0)}%`;
@@ -331,6 +333,7 @@ async function loadView() {
   if (!state.items.length) {
     if (rawCount > 0) {
       setEmpty('Star 范围内暂无符合条件的数据', null, {
+        title: '筛选无结果',
         actions: [{ label: '重置筛选', run: resetFilter }],
       });
       return;
@@ -439,6 +442,8 @@ async function renderAll() {
   state.sel = validSel();
   renderTabs();
   renderSelOptions();
+  document.querySelectorAll('.seg-btn').forEach(b =>
+    b.classList.toggle('active', b.dataset.period === state.period));
   await loadView();
 }
 
@@ -460,7 +465,6 @@ async function init() {
   document.querySelectorAll('.seg-btn').forEach(btn => {
     btn.onclick = () => {
       state.period = btn.dataset.period;
-      document.querySelectorAll('.seg-btn').forEach(b => b.classList.toggle('active', b === btn));
       state.sel = null;
       state.board = 'daily';
       renderAll();
