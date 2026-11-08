@@ -2,8 +2,6 @@
 
 > GitHub 开源项目趋势榜单站：独立采集仓库 Star 数据，产出日 / 周 / 月增长榜、新榜、总榜，支持按日 / 月 / 年回看历史，纯静态站部署 GitHub Pages，由 GitHub Actions 定时更新。
 
-对标网站：[同类榜单站/trend/github/rank]([已移除])
-
 ## 文档目录
 
 | 文档 | 内容 |

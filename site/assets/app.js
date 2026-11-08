@@ -161,7 +161,7 @@ function rowHTML(e, dispRank = e.rank) {
         ${mItem('issue', e.issues, 'issues')}
         ${mItem('tag', e.releases, 'releases')}
       </div>
-      <div class="row-desc">${esc(e.description || '')}</div>
+      ${e.description ? `<div class="row-desc">${esc(e.description)}</div>` : ''}
     </div>
     <div class="row-side">
       ${e.series && e.series.length > 1 ? `<div class="row-spark">${sparkline(e.series)}</div>` : ''}

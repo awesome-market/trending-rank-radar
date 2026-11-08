@@ -105,7 +105,7 @@ site/                        # GitHub Pages 根目录（或 /docs）
 - 卡片内容：大号奖牌 emoji 或 SVG 奖章、头像（`github.com/{owner}.png`）、`owner/name`（链接新窗口）、简介（2 行截断）、主指标超大数字（增长量 `+12.3k` 或 Star 数）、增速 pill、30 天 sparkline
 - hover：卡片上浮 + 边框流光（`conic-gradient` 旋转边框，`@property` 注册或伪元素动画）
 
-**4 名及以后·宽版行**（参考 同类榜单站 行布局，大气易读）：
+**4 名及以后·宽版行**（参考主流榜单站的行布局，大气易读）：
 
 ```
 #4 │ [avatar 48px] │ owner/name ↗            │ ▁▂▅▇▅▃ │

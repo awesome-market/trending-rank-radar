@@ -2,9 +2,9 @@
 
 ## 目标
 
-做一个独立运行的 GitHub 项目趋势榜单站，复刻 同类榜单站 榜单页的核心能力：
+做一个独立运行的 GitHub 项目趋势榜单站，覆盖主流 GitHub 榜单站的核心能力：
 
-- **八种榜单**：新榜 + 日/周/月 × 飙升榜（增长绝对值）+ 增速榜（相对增长率）+ 总榜（累计 Star），口径对齐 同类榜单站 实测
+- **八种榜单**：新榜 + 日/周/月 × 飙升榜（增长绝对值）+ 增速榜（相对增长率）+ 总榜（累计 Star），口径经同类榜单站公开数据实测校准
 - **历史回看**：按日 / 月 / 年查看任意历史时点的榜单数据
 - **完全自托管**：数据自己爬，不依赖第三方榜单 API
 - **零运维**：GitHub Actions 定时跑，产物是纯静态文件，GitHub Pages 直接托管
@@ -18,7 +18,7 @@
 | larsbijl/trending_archive | 408 | Trending 每日归档 | 纯 markdown 数据，无网站 |
 | sivagao/github-serendipity.github.io | 534 | 唯一同类静态站（Pages 托管） | 无 Star 增长榜、无历史数据 |
 | EvanLi/Github-Ranking | 12.9k | 仓库按 Star 排名 | 只按总 Star 排，无增长榜、无历史 |
-| OpenGithubs/github-*-rank、同类站点归档组织/product-*-rank | ~4.6k 合计 | 同类榜单站 自己的榜单数据 | 仅 markdown 数据，无网站代码（同类榜单站 本体闭源） |
+| OpenGithubs/github-*-rank 等数据归档仓库 | ~4.6k 合计 | 榜单快照数据归档 | 仅 markdown 数据，无站点代码 |
 
 ## 差异化定位
 
@@ -46,7 +46,7 @@ GitHub Pages 只能托管静态文件，无服务端运行时，无法直连传�
 
 ## 非目标（v1 不做）
 
-- 用户系统、评论、登录（同类榜单站 的社区功能不做）
+- 用户系统、评论、登录（社区/互动功能不做）
 - 仓库详情独立页 / 完整 star-history 式增长曲线（v1 仅有行内 30 天 sparkline，见 04-frontend.md）
 - 商业推广/榜单投稿机制
 - 多语言 UI（v1 仅中文，结构上预留 i18n）
