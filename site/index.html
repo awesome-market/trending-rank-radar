@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trending Rank Radar — GitHub 开源项目趋势榜单</title>
+<meta name="description" content="独立采集 GitHub 仓库数据，按日/周/月计算 Star 增长榜、增速榜、新榜与总榜，支持按日/月/年回看历史。">
+<meta property="og:title" content="Trending Rank Radar">
+<meta property="og:description" content="GitHub 开源项目趋势榜单 · 每日双快照 · 八榜单 · 历史回看">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0a0e14">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- shared svg gradient defs for sparklines -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#a371f7"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+        <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+        <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+        <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="4s" repeatCount="indefinite"/>
+        </line>
+        <circle cx="38" cy="10" r="2.5" fill="#a371f7"/>
+      </svg>
+      <div>
+        <h1>Trending Rank <span class="grad-text">Radar</span></h1>
+        <p class="hero-sub">GitHub 开源项目趋势榜单 · 每日双快照 · 八种榜单 · 日 / 月 / 年历史回看</p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <span class="fresh-dot" id="freshDot"></span>
+      <span id="freshText">数据加载中…</span>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="stats-bar" id="statsBar">
+    <div class="stat-card"><div class="stat-num" id="statRepos">–</div><div class="stat-label">跟踪仓库</div></div>
+    <div class="stat-card"><div class="stat-num" id="statDays">–</div><div class="stat-label">累计快照天数</div></div>
+    <div class="stat-card"><div class="stat-num" id="statTop1">–</div><div class="stat-label">今日飙升 Top1 增量</div></div>
+    <div class="stat-card"><div class="stat-num" id="statSpan">–</div><div class="stat-label">数据覆盖跨度</div></div>
+  </section>
+
+  <div class="controls" id="controls">
+    <div class="ctrl-row">
+      <nav class="board-tabs" id="boardTabs" aria-label="榜单"></nav>
+    </div>
+    <div class="ctrl-row ctrl-sub">
+      <div class="seg" id="periodSeg" role="tablist" aria-label="时间维度">
+        <button data-period="day" class="seg-btn active">日</button>
+        <button data-period="month" class="seg-btn">月</button>
+        <button data-period="year" class="seg-btn">年</button>
+      </div>
+      <select id="selDate" class="sel" aria-label="日期"></select>
+      <div class="star-filter">
+        <span class="sf-label">Star 范围</span>
+        <input id="minK" type="number" min="0" step="1" value="1" class="sf-input" aria-label="最小 Star 千数">
+        <span class="sf-sep">–</span>
+        <input id="maxK" type="number" min="0" step="1" value="500" class="sf-input" aria-label="最大 Star 千数">
+        <span class="sf-unit">k</span>
+        <button id="applyFilter" class="sf-btn">筛选</button>
+      </div>
+      <span class="window-info" id="windowInfo"></span>
+    </div>
+  </div>
+
+  <section id="content">
+    <div class="empty-state" id="emptyState" hidden>
+      <svg class="radar-big" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.4"/>
+        <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.3"/>
+        <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round">
+          <animateTransform attributeName="transform" type="rotate" from="0 24 24" to="360 24 24" dur="3s" repeatCount="indefinite"/>
+        </line>
+      </svg>
+      <h2>榜单积累中</h2>
+      <p id="emptyText">快照数据正在积累，增长榜需要至少 2 个有效快照日。</p>
+      <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+      <p class="progress-hint" id="progressHint"></p>
+    </div>
+
+    <div id="podiumWrap"></div>
+    <div id="listWrap"></div>
+
+    <details class="month-detail" id="monthDetail" hidden>
+      <summary>当月每日飙升 Top10 摘要</summary>
+      <div id="monthTop10"></div>
+    </details>
+  </section>
+
+  <section id="yearWrap" hidden>
+    <h2 class="section-title">年度月度榜入口</h2>
+    <div class="month-grid" id="monthGrid"></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+  <p class="footer-sub">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
