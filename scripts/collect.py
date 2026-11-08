@@ -255,6 +255,27 @@ def fetch_metrics(client: gh.GitHubClient, names: list[str],
     return metrics, unresolved
 
 
+def carry_forward_extended(metrics: dict[str, dict], prev_snap: dict) -> int:
+    """Fill missing extended counters from a previous snapshot.
+
+    watchers/issues_total/prs_total/releases_total are cumulative counters, so
+    "latest known value" is honest on runs that skipped the expensive extended
+    pass — otherwise every non-extended run would erase them from site data.
+    """
+    prev = {r[0]: r for r in prev_snap.get("repos", []) if len(r) >= 7}
+    keymap = (("watchers", 3), ("issues_total", 4), ("prs_total", 5), ("releases_total", 6))
+    filled = 0
+    for name, m in metrics.items():
+        row = prev.get(name)
+        if not row:
+            continue
+        for k, i in keymap:
+            if m.get(k) is None and row[i] is not None:
+                m[k] = row[i]
+                filled += 1
+    return filled
+
+
 # -------------------------------------------------------------------- main ---
 def parse_snapshot_at(raw: str | None) -> datetime:
     if not raw:
@@ -321,6 +342,17 @@ def main() -> int:
     extended = at.hour == 14 or os.environ.get("TRR_EXTENDED") == "1"
     metrics, unresolved = fetch_metrics(client, names, extended=extended)
     log(f"metrics resolved: {len(metrics)}; unresolved: {len(unresolved)}")
+
+    if not extended:
+        try:
+            files = sorted(SNAP_DIR.glob("*.json"))
+            prev_file = next((f for f in reversed(files) if f.stem != stamp), None)
+            if prev_file:
+                prev = json.loads(prev_file.read_text(encoding="utf-8"))
+                n = carry_forward_extended(metrics, prev)
+                log(f"carried forward extended fields from {prev_file.name}: {n} values")
+        except Exception as e:
+            log(f"[warn] carry-forward skipped: {e}")
 
     repos_arr = []
     for n in sorted(metrics):
