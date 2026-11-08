@@ -111,4 +111,4 @@ site/data/
 
 ## 指标扩展
 
-快照已存 `stars / forks / watchers / issues_total / prs_total / releases_total`（对齐 同类榜单站 数据模型）。注意 GitHub 语义差异：**REST 的 `open_issues_count` 同时含 issue 和 PR**；GraphQL 中 `issues` 与 `pullRequests` 是两个独立 connection，分开计数（本项目用 GraphQL，故两列分开）。v1 前端展示 stars/forks；后续可加"按 Forks/Watchers 增长排"维度。
+快照已存 `stars / forks / watchers / issues_total / prs_total / releases_total`（对齐 同类榜单站 数据模型）。注意 GitHub 语义差异：**REST 的 `open_issues_count` 同时含 issue 和 PR**；GraphQL 中 `issues` 与 `pullRequests` 是两个独立 connection，分开计数（本项目用 GraphQL，故两列分开）。前端元信息行对非 null 字段展示图标计数；后续可加"按 Forks/Watchers 增长排"维度。

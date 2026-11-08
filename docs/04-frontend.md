@@ -105,15 +105,27 @@ site/                        # GitHub Pages 根目录（或 /docs）
 - 卡片内容：大号奖牌 emoji 或 SVG 奖章、头像（`github.com/{owner}.png`）、`owner/name`（链接新窗口）、简介（2 行截断）、主指标超大数字（增长量 `+12.3k` 或 Star 数）、增速 pill、30 天 sparkline
 - hover：卡片上浮 + 边框流光（`conic-gradient` 旋转边框，`@property` 注册或伪元素动画）
 
-**4 名及以后·紧凑行**：
+**4 名及以后·宽版行**（参考 同类榜单站 行布局，大气易读）：
 
 ```
-#4 │ avatar │ owner/repo · 简介截断          │ Py │ ★12.3k ⑂678 │ +523 │ 9% │ ▁▂▅▇▅▃ │
+#4 │ [avatar 48px] │ owner/name ↗            │ ▁▂▅▇▅▃ │
+   │               │ Py ★12.3k ⑂678 👁132 ⑃7 ◔9 🏷3 │ ▲ +523   │
+   │               │ 简介两行截断（-webkit-line-clamp:2） │ [+9%]    │
 ```
 
+- 行结构：`rank | avatar | (名称行 / 元信息行 / 两行简介) | (sparkline + 增长区)`
+- 元信息行：语言圆点 + star/fork（始终）+ watchers/PRs/issues/releases（扩展字段非 null 才渲染，移动端只留 star/fork）
+- 简介 `-webkit-line-clamp: 2` + `min-height: 2行`，保证行高一致
+- 右侧：sparkline（≥900px）+ 大号增长数 `▲ +N`（或总/新榜的大号 star 数）+ 增速 pill（`+N%`，≥100% 加 glow）
 - 行 hover：背景提亮 + 左侧 2px 渐变指示条滑入
 - sparkline：80×24px 内联 SVG，`polyline` 描边 + 渐变面积填充，窗口内每日 Star 序列归一化
-- 增长量正数绿色 `+N`，增速 ≥100% 时 pill 加 `glow` 动画；`approx`/`stale` 条目标 `≈`/`⧗` 角标并 tooltip 说明
+- `approx`/`stale` 条目标 `≈`/`⧗` 角标并 tooltip 说明；新榜条目附"创建于 N 天前"chip（月视图以月末近似日计算）
+
+### 深/浅色主题
+
+- 手动切换按钮在 hero 右侧（☀/☾ SVG 图标随主题显隐），选择存 `localStorage.theme` 并同步 `meta[name=theme-color]`
+- 初始值：`localStorage` → 否则 `prefers-color-scheme`；`<head>` 内联脚本在 CSS 加载前设置 `document.documentElement.dataset.theme`，无闪烁
+- 两套调色板均为 CSS 变量（`:root` 深色 + `[data-theme="light"]` 浅色 GitHub 风），`color-scheme` 同步切换使原生控件（select/input/滚动条）跟随主题
 
 **空状态**（冷启动）：居中雷达 SVG 动画 + "快照积累中" + 进度条（`snapshot_days / 31`，月榜完整口径需 31 个有效日；周榜需 8 日）+ 预计可用日期。窗口回退期榜单照常展示，统计时间处标注实际天数。
 

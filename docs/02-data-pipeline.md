@@ -64,7 +64,7 @@ data/
 字段顺序固定（11 列）：`full_name, stars, forks, watchers, issues_total, prs_total, releases_total, created_at, language, is_fork, is_archived`。
 `errors` 为可选字段，记录当次拉取失败的仓库及原因。
 
-（watchers/issues/prs/releases 对齐 同类榜单站 数据模型，v1 前端只展示 stars/forks；扩展字段仅 UTC 14:00 运行填充，其他时刻为 `null`——见下方"拉取方式"。GraphQL 中 issues/pullRequests 分列；REST `open_issues_count` 含两者。）
+（watchers/issues/prs/releases 对齐 同类榜单站 数据模型，前端元信息行对非 null 字段渲染对应图标计数；扩展字段仅 UTC 14:00 运行填充，其他时刻为 `null`——见下方"拉取方式"。GraphQL 中 issues/pullRequests 分列；REST `open_issues_count` 含两者。）
 
 仓库级低频元数据（description、topics、homepage、pushed_at、updated_at）不逐日重复存储，放 `data/repos/{owner}__{name}.json` 按需缓存，GraphQL 返回值变化时更新；`rank.py` 将 description/homepage 等**内联合并进 `site/data` 条目**，保证 site/ 自包含（Pages 只能访问 site/ 下的文件）。
 
