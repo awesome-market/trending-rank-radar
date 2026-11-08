@@ -344,13 +344,19 @@ def main() -> int:
     log(f"metrics resolved: {len(metrics)}; unresolved: {len(unresolved)}")
 
     if not extended:
+        # 向前找最近一份含扩展字段的快照（包括同 stamp 的上一版——本文件尚未写盘）
         try:
-            files = sorted(SNAP_DIR.glob("*.json"))
-            prev_file = next((f for f in reversed(files) if f.stem != stamp), None)
-            if prev_file:
-                prev = json.loads(prev_file.read_text(encoding="utf-8"))
-                n = carry_forward_extended(metrics, prev)
-                log(f"carried forward extended fields from {prev_file.name}: {n} values")
+            for f in reversed(sorted(SNAP_DIR.glob("*.json"))):
+                try:
+                    prev = json.loads(f.read_text(encoding="utf-8"))
+                except Exception:
+                    continue
+                if any(len(r) >= 7 and r[3] is not None for r in prev.get("repos", [])):
+                    n = carry_forward_extended(metrics, prev)
+                    log(f"carried forward extended fields from {f.name}: {n} values")
+                    break
+            else:
+                log("no prior snapshot with extended fields; skipping carry-forward")
         except Exception as e:
             log(f"[warn] carry-forward skipped: {e}")
 
