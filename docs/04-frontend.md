@@ -183,8 +183,12 @@ site/                        # GitHub Pages 根目录（或 /docs）
 
 `sitemap.xml` / OG `og:url` 需要站点绝对地址：`rank.py` 接受 `--site-base` 参数（默认 `https://zhuikan.com`，workflow 可用仓库变量 `SITE_BASE` 覆盖），生成时写入。
 
-## SEO / 分享
+## SEO / GEO / 分享
 
 - `history.pushState` 同步 query（`?board=weekly_rate&date=2026-10-15`），可直接分享
-- JS 动态更新 `document.title` / meta description
-- `robots.txt` 允许抓取；`sitemap.xml` 由 rank.py 顺带生成（首页 + 各榜单入口）
+- JS 动态更新 `document.title`；`<noscript>` 块保证无 JS 爬虫仍能取到双语站点描述与数据链接
+- `<head>`：canonical、robots、author、hreflang（zh/en/x-default）、OG/Twitter 全套、JSON-LD（WebSite + Dataset）、`manifest.webmanifest`
+- `robots.txt`（rank.py 生成）：允许全部爬虫，并显式放行 AI/LLM 爬虫（GPTBot、ClaudeBot、PerplexityBot、Google-Extended 等）——开放数据项目主动拥抱 GEO
+- `llms.txt`：LLM 友好的站点说明 + 全部 JSON 数据端点 + 字段字典 + 口径说明
+- `sitemap.xml`（rank.py 生成）：首页 + 各榜单入口（`?board=*`）
+- `site/CNAME` 随 artifact 发布维持自定义域名绑定

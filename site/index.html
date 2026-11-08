@@ -3,10 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trending Rank Radar — GitHub 开源项目趋势榜单</title>
+<title>GitHub Trending Rank Radar — 开源项目趋势榜单</title>
 <meta name="description" content="独立采集 GitHub 仓库数据的开源趋势榜单：日/周/月飙升榜、增速榜、新星榜与总榜，支持按日/月/年回看历史，中英双语。Independent open-source GitHub trend radar — daily/weekly/monthly star growth & rate boards, new & all-time charts, day/month/year history, bilingual UI.">
 <meta name="keywords" content="GitHub trending, GitHub ranking, GitHub 排行榜, 开源榜单, trending repos, star growth, star history, 星标增长, github stars, open data, github pages, github actions, 开源项目, open source rankings">
-<meta property="og:title" content="Trending Rank Radar">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/">
+<link rel="alternate" hreflang="zh" href="https://zhuikan.com/">
+<link rel="alternate" hreflang="en" href="https://zhuikan.com/">
+<link rel="alternate" hreflang="x-default" href="https://zhuikan.com/">
+<link rel="manifest" href="manifest.webmanifest">
+<meta property="og:title" content="GitHub Trending Rank Radar">
 <meta property="og:description" content="GitHub 开源项目趋势榜单 · 每日双快照 · 八榜单 · 历史回看 | Independent GitHub trend radar · twice-daily snapshots · 8 boards · bilingual">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:locale:alternate" content="en_US">
@@ -17,6 +24,45 @@
 <meta name="twitter:image" content="https://zhuikan.com/assets/og.png">
 <meta name="theme-color" content="#0a0e14" id="themeMeta">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "GitHub Trending Rank Radar",
+      "alternateName": "GitHub 开源项目趋势榜单",
+      "url": "https://zhuikan.com/",
+      "description": "Independent open-source GitHub trend radar: daily/weekly/monthly star growth & rate boards, new-repo and all-time charts, browsable by day, month and year. 独立采集 GitHub 仓库数据的开源趋势榜单。",
+      "inLanguage": ["zh-CN", "en"],
+      "isAccessibleForFree": true,
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "publisher": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "name": "GitHub Trending Rankings Dataset",
+      "description": "Twice-daily snapshots of tracked GitHub repositories with stars, forks, watchers, issues, PRs and releases; precomputed daily/weekly/monthly/new/all-time leaderboard JSON.",
+      "url": "https://zhuikan.com/data/index.json",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "isAccessibleForFree": true,
+      "temporalCoverage": "2026-11-09/..",
+      "creator": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      },
+      "distribution": [
+        {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://zhuikan.com/data/index.json"}
+      ]
+    }
+  ]
+}
+</script>
 <script>
 (() => {
   const t = localStorage.getItem('theme') ||
@@ -30,6 +76,21 @@
 <body>
 
 <a class="skip-link" href="#content" data-i18n="skip">跳到榜单</a>
+
+<noscript>
+  <div style="max-width:760px;margin:64px auto;padding:0 24px;font-family:system-ui,sans-serif;line-height:1.7;color:#333">
+    <h1>GitHub Trending Rank Radar</h1>
+    <p>独立采集 GitHub 仓库数据的开源趋势榜单：新星榜、日 / 周 / 月飙升榜与增速榜、总榜，支持按日 / 月 / 年回看历史。每日两次快照（UTC 02:00 / 14:00），榜单由快照差值计算。</p>
+    <p>An independent open-source GitHub trending radar: new repos, daily / weekly / monthly star-growth and rate boards, an all-time chart, and day / month / year history — snapshots taken twice daily (UTC 02:00 &amp; 14:00).</p>
+    <p>Machine-readable open data:
+      <a href="data/index.json">data/index.json</a> ·
+      <a href="llms.txt">llms.txt</a> ·
+      <a href="sitemap.xml">sitemap.xml</a> ·
+      <a href="https://github.com/awesome-market/trending-rank-radar">Source on GitHub</a>
+    </p>
+    <p><strong>榜单交互需要启用 JavaScript。This site requires JavaScript for the interactive boards.</strong></p>
+  </div>
+</noscript>
 
 <!-- shared svg gradient defs for sparklines -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -58,7 +119,7 @@
         </g>
       </svg>
       <div>
-        <h1>Trending Rank <span class="grad-text">Radar</span></h1>
+        <h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1>
         <p class="hero-sub" data-i18n="hero.sub">GitHub 开源项目趋势榜单 · 每日双快照 · 八种榜单 · 日 / 月 / 年历史回看</p>
       </div>
     </div>

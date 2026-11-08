@@ -1,0 +1,37 @@
+# GitHub Trending Rank Radar
+
+> Independent open-source GitHub trending radar. Tracks ~1,300 repositories with twice-daily snapshots (UTC 02:00 & 14:00) and computes eight leaderboards: new repos (<90 days), daily / weekly / monthly star growth, daily / weekly / monthly growth rate, and an all-time chart. Browsable by day, month and year. Bilingual UI (中文 / English). Live at https://zhuikan.com/
+
+## What this site is
+
+- Live leaderboard: https://zhuikan.com/
+- Source code & raw data: https://github.com/awesome-market/trending-rank-radar
+- License: Apache-2.0 (code and data)
+- No tracking, no accounts, no ads — pure static site, data served as JSON files
+
+## Machine-readable open data
+
+All ranking data is precomputed and served as static JSON — free to reuse (Apache-2.0):
+
+- `data/index.json` — index: repo count, snapshot_days, available `dates`, `months`, `years`, `latest_day`, `site_base`
+- `data/days/YYYY-MM-DD.json` — one file per calendar day (Beijing time), containing all boards
+- `data/months/YYYY-MM.json` — month view: month boards + cumulative + daily Top-10 grid
+- `data/years/YYYY.json` — year view: per-month growth cards
+- Full snapshots: `data/snapshots/YYYY-MM-DDTHH.json` in the GitHub repo (raw per-repo counters)
+
+## Boards (in each day/month file, under `boards.<name>.items`)
+
+- `new` — repos created within 90 days, ranked by current stars
+- `daily` / `weekly` / `monthly` — absolute star growth over the window (fallback: earliest available snapshot, actual range annotated)
+- `daily_rate` / `weekly_rate` / `monthly_rate` — growth ÷ base stars at window start (base ≥ 50 required)
+- `total` — all-time stars
+- `cumulative` — (month files only) this month's cumulative growth
+
+Per-item fields: `full_name`, `owner`, `stars`, `forks`, `watchers`, `issues`, `prs`, `releases`, `language`, `created_at`, `incr`, `rate`, `stars_begin`, `window`, `approx`, `series` (30-point star sparkline), `rank`/`prev_rank`.
+
+## Methodology
+
+- Collection: GitHub Trending + Search + GraphQL API, self-hosted watchlist (~1,300 repos, rolling)
+- Snapshots twice daily at UTC 02:00 / 14:00; days bucketed by Beijing date, last snapshot of a day is canonical
+- Rankings are computed from snapshot deltas within the tracked set — not a mirror of GitHub's own trending page
+- Extended metrics (watchers / issues / PRs / releases) refresh once daily and are carried forward between refreshes

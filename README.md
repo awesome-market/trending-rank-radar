@@ -1,4 +1,4 @@
-# 📡 Trending Rank Radar
+# 📡 GitHub Trending Rank Radar
 
 独立采集 GitHub 仓库数据的开源项目趋势榜单 —— **完全开源、数据自采**。
 

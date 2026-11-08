@@ -496,8 +496,16 @@ def main() -> int:
         sitemap.append(f"  <url><loc>{base}/?board={b}</loc></url>")
     sitemap.append("</urlset>")
     (SITE_DIR / "sitemap.xml").write_text("\n".join(sitemap) + "\n", encoding="utf-8")
-    (SITE_DIR / "robots.txt").write_text(
-        f"User-agent: *\nAllow: /\nSitemap: {base}/sitemap.xml\n", encoding="utf-8")
+    # robots.txt: open-data site — welcome all crawlers incl. AI/LLM ones (GEO)
+    ai_bots = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot",
+               "Claude-User", "Claude-SearchBot", "PerplexityBot",
+               "Perplexity-User", "Google-Extended", "Applebot-Extended",
+               "meta-externalagent", "Bytespider", "CCBot"]
+    robots = ["# GitHub Trending Rank Radar — open-data project, all crawlers welcome.",
+              "User-agent: *", "Allow: /", ""]
+    robots += [f"User-agent: {b}\nAllow: /\n" for b in ai_bots]
+    robots.append(f"Sitemap: {base}/sitemap.xml")
+    (SITE_DIR / "robots.txt").write_text("\n".join(robots) + "\n", encoding="utf-8")
 
     log(f"site/data written: {len(days)} days, {len(months_present)} months, "
         f"{len(years_present)} years")
