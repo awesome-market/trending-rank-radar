@@ -370,6 +370,7 @@ def main() -> int:
                     default=os.environ.get("SITE_BASE") or DEFAULT_SITE_BASE,
                     help="absolute site URL for sitemap/canonical (default: %(default)s)")
     args = ap.parse_args()
+    args.site_base = (args.site_base or "").strip() or DEFAULT_SITE_BASE
 
     day_close, run_at = load_day_closes()
     days = sorted(day_close)

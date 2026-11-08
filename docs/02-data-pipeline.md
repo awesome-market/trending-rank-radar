@@ -64,7 +64,7 @@ data/
 字段顺序固定（11 列）：`full_name, stars, forks, watchers, issues_total, prs_total, releases_total, created_at, language, is_fork, is_archived`。
 `errors` 为可选字段，记录当次拉取失败的仓库及原因。
 
-（watchers/issues/prs/releases 对齐 同类榜单站 数据模型，GraphQL 一次查询可取，成本几乎为零；v1 前端只展示 stars/forks。注意 GitHub 语义：`issues.totalCount` 包含 PR。）
+（watchers/issues/prs/releases 对齐 同类榜单站 数据模型，v1 前端只展示 stars/forks；扩展字段仅 UTC 14:00 运行填充，其他时刻为 `null`——见下方"拉取方式"。GraphQL 中 issues/pullRequests 分列；REST `open_issues_count` 含两者。）
 
 仓库级低频元数据（description、topics、homepage、pushed_at、updated_at）不逐日重复存储，放 `data/repos/{owner}__{name}.json` 按需缓存，GraphQL 返回值变化时更新；`rank.py` 将 description/homepage 等**内联合并进 `site/data` 条目**，保证 site/ 自包含（Pages 只能访问 site/ 下的文件）。
 
@@ -72,7 +72,9 @@ data/
 
 ### 拉取方式
 
-- **GraphQL 批量**（主力）：每个请求用 `repository(owner, name)` 别名查 30–50 个仓库的 `stargazerCount / forkCount / subscribersCount / issues.totalCount / pullRequests.totalCount / releases.totalCount / isFork / isArchived / createdAt / primaryLanguage / pushedAt / description / homepageUrl`。2000 个仓库约 40–60 个请求，约 100–300 points，远低于 5000 points/hr 限额（GITHUB_TOKEN 与 PAT 同额）。
+- **GraphQL 批量**（主力，**两档抓取**）：
+  - **核心字段**（每次运行）：`stargazerCount / forkCount / isFork / isArchived / createdAt / pushedAt / updatedAt / description / homepageUrl / primaryLanguage`——纯标量+小连接，batch=50 实测 ~2.5s/44 仓库，2000 仓库约 40 请求 ~100s。
+  - **扩展字段**（每日一次，UTC 14:00"收盘"运行）：`watchers / repositoryTopics / issues / pullRequests / releases` 的 `totalCount`——connection 字段使查询复杂度约增 20 倍（batch>25 会超时），batch=20、~10s/批，2000 仓库约 17 分钟，仅在日更第二次运行执行；早间运行这些字段为 `null`。榜单计算不依赖扩展字段，故对排名零影响。
 - **REST 兜底**：GraphQL 失败或个别仓库查不到时，用 `GET /repos/{owner}/{repo}` 补漏。注意限额差异：**GITHUB_TOKEN 为 1000 req/hr**，PAT/OAuth 为 5000 req/hr——兜底预算按 1000/hr 设计。
 - **重试**：403/429/5xx 指数退避重试，最多 3 次；当日失败仓库在 `snapshot.errors` 中记录，次日补齐。
 
