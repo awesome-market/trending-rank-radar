@@ -472,6 +472,71 @@ def main() -> int:
         (SITE_DATA / "years" / f"{year}.json").write_text(
             json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
+    # ---------------- per-repo detail files ----------------
+    latest_day = days[-1]
+    latest_boards = compute_boards(latest_day, days, ridx, meta, day_index)
+    placements: dict[str, dict] = {}
+    for b, blk in latest_boards.items():
+        for e in blk.get("items", []):
+            placements.setdefault(e["full_name"], {})[b] = e["rank"]
+
+    repos_out = SITE_DATA / "repos"
+    repos_out.mkdir(parents=True, exist_ok=True)
+    detail_count = 0
+    for name, cur in day_close[latest_day].items():
+        owner, _, repo = name.partition("/")
+        m = meta.get(name) or {}
+        det = m.get("detail") or {}
+        ds, vs = ridx.get(name, ([], []))
+
+        growth: dict = {}
+        for label, nominal in (("day", 1), ("week", 7), ("month", 30)):
+            target = (d(latest_day) - timedelta(days=nominal)).isoformat()
+            i = bisect_right(ds, target) - 1
+            if i >= 0:
+                growth[label] = {
+                    "stars": int(cur[I_STARS] or 0) - int(vs[i][I_STARS] or 0),
+                    "forks": int(cur[I_FORKS] or 0) - int(vs[i][I_FORKS] or 0),
+                    "base_day": ds[i],
+                }
+
+        payload = {
+            "full_name": name, "owner": owner, "name": repo,
+            "url": f"https://github.com/{name}",
+            "description": m.get("description"),
+            "homepage": m.get("homepage"),
+            "topics": m.get("topics") or [],
+            "language": cur[I_LANG],
+            "license": det.get("license"),
+            "avatar": det.get("avatar"),
+            "created_at": cur[I_CREATED],
+            "pushed_at": m.get("pushed_at"),
+            "metrics": {
+                "stars": cur[I_STARS], "forks": cur[I_FORKS],
+                "watchers": cur[I_WATCHERS], "issues": cur[I_ISSUES],
+                "prs": cur[I_PRS], "releases": cur[I_RELEASES],
+                "discussions": det.get("discussions_total"),
+            },
+            "growth": growth,
+            "history": {
+                "dates": ds,
+                "stars": [int(v[I_STARS] or 0) for v in vs],
+                "forks": [int(v[I_FORKS] or 0) for v in vs],
+                "watchers": [v[I_WATCHERS] for v in vs],
+            },
+            "boards": placements.get(name) or {},
+            "issues": det.get("hot_issues") or [],
+            "discussions": det.get("discussions") or [],
+            "latest_release": det.get("latest_release"),
+            "readme_excerpt": det.get("readme_excerpt"),
+            "snapshot_at": run_at[latest_day].astimezone(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "history_start": days[0],
+        }
+        (repos_out / f"{owner}__{repo}.json").write_text(
+            json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
+            encoding="utf-8")
+        detail_count += 1
+
     # ---------------- index / sitemap / robots ----------------
     index = {
         "generated_at": datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -494,6 +559,9 @@ def main() -> int:
     # board entry points (query params) — cheap SEO surface
     for b in ALL_BOARDS:
         sitemap.append(f"  <url><loc>{base}/?board={b}</loc></url>")
+    # repo detail pages — one per tracked repo
+    for name in sorted(day_close[latest_day]):
+        sitemap.append(f"  <url><loc>{base}/repo.html?r={name}</loc></url>")
     sitemap.append("</urlset>")
     (SITE_DIR / "sitemap.xml").write_text("\n".join(sitemap) + "\n", encoding="utf-8")
     # robots.txt: open-data site — welcome all crawlers incl. AI/LLM ones (GEO)
@@ -508,7 +576,7 @@ def main() -> int:
     (SITE_DIR / "robots.txt").write_text("\n".join(robots) + "\n", encoding="utf-8")
 
     log(f"site/data written: {len(days)} days, {len(months_present)} months, "
-        f"{len(years_present)} years")
+        f"{len(years_present)} years, {detail_count} repo details")
     return 0
 
 

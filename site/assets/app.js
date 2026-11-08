@@ -1,161 +1,10 @@
-/* Trending Rank Radar — vanilla JS frontend
- * Reads precomputed JSON from data/, renders 8 boards × day/month/year views.
- * Bilingual (zh/en) with a persisted language toggle.
- */
+/* GitHub Trending Rank Radar — main boards page (loads after common.js) */
 'use strict';
-
-/* ---------------- i18n ---------------- */
-const I18N = {
-  zh: {
-    'skip': '跳到榜单',
-    'loading': '数据加载中…',
-    'hero.sub': 'GitHub 开源项目趋势榜单 · 每日双快照 · 八种榜单 · 日 / 月 / 年历史回看',
-    'hv.kicker': '独立采集 · 开源数据',
-    'hv.title': '独立追踪 GitHub 星标的每一次脉动',
-    'hv.sub': '每日两次快照，用差值还原真实增长——不是又一份热榜镜像。',
-    'hv.cta': '浏览今日榜单 →',
-    'hv.cap': '近 {n} 日 Star 曲线',
-    'board.new': '新星榜', 'board.daily': '日飙升榜', 'board.daily_rate': '日增速榜',
-    'board.weekly': '周飙升榜', 'board.weekly_rate': '周增速榜',
-    'board.monthly': '月飙升榜', 'board.monthly_rate': '月增速榜',
-    'board.total': '总榜', 'board.cumulative': '月累计榜',
-    'boards.aria': '榜单',
-    'period.day': '日', 'period.month': '月', 'period.year': '年',
-    'period.aria': '时间维度',
-    'date.label': '榜单日期', 'date.aria': '日期',
-    'star.range': 'Star 范围', 'min': '下限', 'max': '上限', 'apply': '筛选',
-    'minK.aria': '最小 Star 千数', 'maxK.aria': '最大 Star 千数',
-    'empty.title': '榜单积累中',
-    'empty.text': '快照数据正在积累，增长榜需要至少 2 个有效快照日。',
-    'empty.filter.title': '筛选无结果',
-    'empty.filter.text': 'Star 范围内暂无符合条件的数据',
-    'empty.nodata': '暂无榜单数据',
-    'empty.acc': '该榜单暂无数据，快照仍在积累',
-    'empty.reset': '重置筛选',
-    'empty.view': '查看{b}',
-    'empty.viewmonth': '查看月度榜单',
-    'empty.init': '数据文件尚未生成，请稍后再来',
-    'progress.hint': '快照积累进度 {p}%（月榜完整口径需 31 个有效快照日）',
-    'preview.top': '{t} · Top {n}',
-    'load.more': '加载更多（还有 {n} 条）',
-    'window.new': '近 90 天内创建 · 按 Star 排序',
-    'window.range': '统计窗口 {s} ~ {e} · {d} 天',
-    'window.approx': '（近似）',
-    'badge.approx': '对比窗口短于标准周期，数值为近似',
-    'badge.stale': '数据来自最近一次成功快照，非当日',
-    'age': '创建于 {n} 天前',
-    'rank.prerank': '筛选前排名 {n}',
-    'open.gh': '在 GitHub 打开 {r}',
-    'fresh': '数据更新于 {t}',
-    'ago.m': '{n} 分钟前', 'ago.h': '{n} 小时前', 'ago.d': '{n} 天前',
-    'sel.ongoing': '（进行中）',
-    'month.name': '{y}年{m}月',
-    'month.partial': '进行中', 'month.full': '完整月',
-    'month.top10': '当月每日飙升 Top10 摘要',
-    'year.entry': '年度月度榜入口',
-    'foot.stats': '跟踪 {r} 个仓库 · {d} 个快照日 · 覆盖 {s} ~ {e} · 最近飙升 Top1 {g}',
-    'foot.line1': '数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议',
-    'foot.line2': '新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数',
-    'title.board': '{b} · {s} · GitHub Trending Rank Radar',
-    'title.cum': '月累计增长',
-    'title.year': '年度增长 · {s} · GitHub Trending Rank Radar',
-    'theme.aria': '切换深浅色主题',
-    'lang.aria': 'Switch to English',
-    'units.stars': 'stars', 'units.forks': 'forks', 'units.watchers': 'watchers',
-    'units.prs': 'PRs', 'units.issues': 'issues', 'units.releases': 'releases',
-  },
-  en: {
-    'skip': 'Skip to rankings',
-    'loading': 'Loading data…',
-    'hero.sub': 'Independent GitHub trend rankings · twice-daily snapshots · 8 boards · day / month / year history',
-    'hv.kicker': 'Independent · Open Data',
-    'hv.title': 'Tracking every pulse of GitHub stars, independently',
-    'hv.sub': 'Two snapshots a day; growth computed from real diffs — not another mirror of the hot list.',
-    'hv.cta': 'Browse today\u2019s boards →',
-    'hv.cap': '{n}-day star curve',
-    'board.new': 'New Repos', 'board.daily': 'Daily Growth', 'board.daily_rate': 'Daily Rate',
-    'board.weekly': 'Weekly Growth', 'board.weekly_rate': 'Weekly Rate',
-    'board.monthly': 'Monthly Growth', 'board.monthly_rate': 'Monthly Rate',
-    'board.total': 'All-Time', 'board.cumulative': 'Month Total',
-    'boards.aria': 'Boards',
-    'period.day': 'Day', 'period.month': 'Month', 'period.year': 'Year',
-    'period.aria': 'Time period',
-    'date.label': 'Board date', 'date.aria': 'Date',
-    'star.range': 'Star range', 'min': 'Min', 'max': 'Max', 'apply': 'Apply',
-    'minK.aria': 'Minimum stars (k)', 'maxK.aria': 'Maximum stars (k)',
-    'empty.title': 'Rankings warming up',
-    'empty.text': 'Snapshots are still accumulating; growth boards need at least 2 valid snapshot days.',
-    'empty.filter.title': 'No matches',
-    'empty.filter.text': 'No repositories match this star range',
-    'empty.nodata': 'No board data yet',
-    'empty.acc': 'No data on this board yet; snapshots still accumulating',
-    'empty.reset': 'Reset filter',
-    'empty.view': 'View {b}',
-    'empty.viewmonth': 'View monthly boards',
-    'empty.init': 'Data files are not generated yet — check back soon',
-    'progress.hint': 'Snapshot progress {p}% (31 valid snapshot days needed for the full monthly window)',
-    'preview.top': '{t} · Top {n}',
-    'load.more': 'Load more ({n} remaining)',
-    'window.new': 'Created within the last 90 days · sorted by stars',
-    'window.range': 'Window {s} ~ {e} · {d} days',
-    'window.approx': ' (approx)',
-    'badge.approx': 'Window shorter than the standard period; value is approximate',
-    'badge.stale': 'Value from the latest successful snapshot, not this date',
-    'age': 'created {n}d ago',
-    'rank.prerank': 'Rank {n} before filtering',
-    'open.gh': 'Open {r} on GitHub',
-    'fresh': 'Data updated {t}',
-    'ago.m': '{n}m ago', 'ago.h': '{n}h ago', 'ago.d': '{n}d ago',
-    'sel.ongoing': ' (ongoing)',
-    'month.name': '{m} {y}',
-    'month.partial': 'ongoing', 'month.full': 'full month',
-    'month.top10': 'Daily Top 10 summary this month',
-    'year.entry': 'Monthly boards',
-    'foot.stats': '{r} repos tracked · {d}d of snapshots · covering {s} ~ {e} · latest daily top {g}',
-    'foot.line1': 'Source: independently collected via the GitHub API · boards computed from snapshot diffs · for reference only',
-    'foot.line2': 'New / All-Time boards rank within our tracked set · rate = growth ÷ star base at window start',
-    'title.board': '{b} · {s} · GitHub Trending Rank Radar',
-    'title.cum': 'Monthly cumulative growth',
-    'title.year': 'Yearly growth · {s} · GitHub Trending Rank Radar',
-    'theme.aria': 'Toggle dark/light theme',
-    'lang.aria': '切换到中文',
-    'units.stars': 'stars', 'units.forks': 'forks', 'units.watchers': 'watchers',
-    'units.prs': 'PRs', 'units.issues': 'issues', 'units.releases': 'releases',
-  },
-};
-
-let LANG = (() => {
-  try {
-    const l = localStorage.getItem('lang');
-    if (l === 'zh' || l === 'en') return l;
-  } catch { /* private mode */ }
-  return (navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en';
-})();
-
-function t(k, p) {
-  let s = (I18N[LANG] && I18N[LANG][k]) ?? I18N.zh[k] ?? k;
-  if (p) for (const kk of Object.keys(p)) s = s.split('{' + kk + '}').join(p[kk]);
-  return s;
-}
 
 const BOARD_ORDER = ['new', 'daily', 'daily_rate', 'weekly', 'weekly_rate',
                      'monthly', 'monthly_rate', 'total'];
 const CUM_BOARD = 'cumulative';   // month-only pseudo board
 const PAGE = 50;
-const MONTHS_EN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                   'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
-const LANG_COLORS = {
-  Python: '#3572A5', JavaScript: '#f1e05a', TypeScript: '#3178c6',
-  Go: '#00ADD8', Rust: '#dea584', Java: '#b07219', 'C++': '#f34b7d',
-  C: '#555555', 'C#': '#178600', PHP: '#4F5D95', Ruby: '#701516',
-  Shell: '#89e051', HTML: '#e34c26', CSS: '#563d7c', Vue: '#41b883',
-  'Jupyter Notebook': '#DA5B0B', Dart: '#00B4AB', Kotlin: '#A97BFF',
-  Swift: '#F05138', Scala: '#c22d40', Lua: '#000080', Haskell: '#5e5086',
-  Elixir: '#6e4a7e', Clojure: '#db5855', Erlang: '#B83998', Julia: '#a270ba',
-  Perl: '#0298c3', R: '#198CE7', Dockerfile: '#384d54', Makefile: '#427819',
-  'Objective-C': '#438eff', Astro: '#ff5a03', Svelte: '#ff3e00',
-};
 
 const state = {
   board: 'daily',
@@ -170,74 +19,6 @@ const state = {
   hero: null,      // cached { top1 } for hero chart + footer stats
 };
 
-const $ = (s) => document.querySelector(s);
-const esc = (s) => String(s ?? '').replace(/[&<>"']/g,
-  c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-
-async function j(url) {
-  const r = await fetch(url);
-  if (!r.ok) throw new Error(`HTTP ${r.status}`);
-  return r.json();
-}
-
-function fmt(n) {
-  if (n == null) return '–';
-  const v = Number(n);
-  if (Math.abs(v) >= 1e6) return (v / 1e6).toFixed(1) + 'M';
-  if (Math.abs(v) >= 1e4) return (v / 1e3).toFixed(1) + 'k';
-  if (Math.abs(v) >= 1e3) return (v / 1e3).toFixed(1) + 'k';
-  return String(Math.round(v));
-}
-function fmtFull(n) { return (n ?? 0).toLocaleString('en-US'); }
-function fmtPct(n) { return n == null ? '' : '+' + Math.floor(n) + '%'; }
-
-function timeAgo(iso) {
-  const t0 = new Date(iso).getTime();
-  if (isNaN(t0)) return '';
-  const s = Math.max(0, (Date.now() - t0) / 1000);
-  if (s < 3600) return t('ago.m', { n: Math.max(1, Math.floor(s / 60)) });
-  if (s < 86400) return t('ago.h', { n: Math.floor(s / 3600) });
-  return t('ago.d', { n: Math.floor(s / 86400) });
-}
-
-/* ---------------- i18n application ---------------- */
-function applyStaticI18n() {
-  document.documentElement.lang = LANG === 'zh' ? 'zh-CN' : 'en';
-  document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
-  document.querySelectorAll('[data-i18n-aria]').forEach(el => el.setAttribute('aria-label', t(el.dataset.i18nAria)));
-  document.querySelectorAll('[data-i18n-title]').forEach(el => { el.title = t(el.dataset.i18nTitle); });
-  const lb = $('#langToggle');
-  if (lb) {
-    lb.textContent = LANG === 'zh' ? 'EN' : '中';
-    lb.setAttribute('aria-label', t('lang.aria'));
-    lb.title = t('lang.aria');
-  }
-}
-
-/* ---------------- sparkline ---------------- */
-function sparkline(series, w = 80, h = 24, pad = 2, areaId = 'sparkFill', strokeId = 'sparkStroke') {
-  if (!series || series.length === 0) return '';
-  const vals = series.map(Number);
-  const min = Math.min(...vals), max = Math.max(...vals);
-  const span = max - min || 1;
-  const pts = vals.map((v, i) => {
-    const x = pad + (vals.length === 1 ? (w - 2 * pad) / 2 : (w - 2 * pad) * i / (vals.length - 1));
-    const y = h - pad - (h - 2 * pad) * (v - min) / span;
-    return [x, y];
-  });
-  const line = pts.map(p => p[0].toFixed(1) + ',' + p[1].toFixed(1)).join(' ');
-  const area = `${pad},${h - pad} ` + line + ` ${w - pad},${h - pad}`;
-  const up = vals[vals.length - 1] >= vals[0];
-  const stroke = up ? `url(#${strokeId})` : '#f85149';
-  if (vals.length === 1) {
-    return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true">`
-      + `<circle cx="${pts[0][0]}" cy="${pts[0][1]}" r="2" fill="${stroke}"/></svg>`;
-  }
-  return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true" preserveAspectRatio="none">`
-    + `<polygon points="${area}" fill="url(#${areaId})"/>`
-    + `<polyline points="${line}" fill="none" stroke="${stroke}" stroke-width="1.5"`
-    + ` stroke-linejoin="round" stroke-linecap="round"/></svg>`;
-}
 
 /* ---------------- rendering ---------------- */
 const ICONS = {
@@ -280,9 +61,11 @@ function rowSideHTML(e) {
 }
 
 function nameLinkHTML(e) {
-  return `<a class="row-link" href="https://github.com/${esc(e.full_name)}" target="_blank" rel="noopener" title="${esc(t('open.gh', { r: e.full_name }))}">`
+  const fn = esc(e.full_name);
+  return `<a class="row-link" href="repo.html?r=${encodeURIComponent(e.full_name)}" title="${esc(t('open.detail', { r: e.full_name }))}">`
     + `<span class="row-owner">${esc(e.owner)}</span><span class="row-sep">/</span>`
-    + `<span class="row-repo">${esc(e.name)}</span>${icon('ext', 'ext-ico', 12)}</a>`;
+    + `<span class="row-repo">${esc(e.name)}</span></a>`
+    + `<a class="ext-link" href="https://github.com/${fn}" target="_blank" rel="noopener" title="${esc(t('open.gh', { r: e.full_name }))}">${icon('ext', 'ext-ico', 12)}</a>`;
 }
 
 function rowHTML(e, dispRank = e.rank) {
@@ -389,7 +172,7 @@ function setEmpty(msg, pct, opts = {}) {
   $('#emptyState').classList.toggle('has-preview', rows.length > 0);
   $('#emptyPreview').innerHTML = rows.length
     ? `<div class="empty-preview-title">${esc(t('preview.top', { t: pv.title, n: rows.length }))}</div>`
-      + rows.map(e => `<a class="preview-row" href="https://github.com/${esc(e.owner)}/${esc(e.name)}" target="_blank" rel="noopener">
+      + rows.map(e => `<a class="preview-row" href="repo.html?r=${encodeURIComponent(`${e.owner}/${e.name}`)}">
           <span class="preview-rank">${e.rank}</span>
           <span class="preview-name"><span class="row-owner">${esc(e.owner)}</span>/${esc(e.name)}</span>
           <span class="preview-stars">★ ${fmt(e.stars)}</span>
@@ -466,7 +249,7 @@ async function loadView() {
         <div class="top10-day">
           <div class="top10-date">${day.date}</div>
           <div class="top10-items">${day.items.map(e =>
-            `<span class="top10-chip"><a href="https://github.com/${esc(e.owner)}/${esc(e.name)}" target="_blank" rel="noopener"><span class="row-owner">${esc(e.owner)}</span>/${esc(e.name)}</a> <b>+${fmt(e.growth)}</b></span>`).join('')}
+            `<span class="top10-chip"><a href="repo.html?r=${encodeURIComponent(`${e.owner}/${e.name}`)}"><span class="row-owner">${esc(e.owner)}</span>/${esc(e.name)}</a> <b>+${fmt(e.growth)}</b></span>`).join('')}
           </div>
         </div>`).join('');
     }
@@ -606,7 +389,7 @@ function renderHero() {
   if (top1 && top1.series && top1.series.length > 1) {
     chart.innerHTML = sparkline(top1.series, 620, 150, 6, 'sparkFill', 'sparkStroke');
     const g = top1.growth != null ? `+${fmtFull(top1.growth)}` : fmtFull(top1.stars);
-    cap.innerHTML = `<a href="https://github.com/${esc(top1.full_name)}" target="_blank" rel="noopener">`
+    cap.innerHTML = `<a href="repo.html?r=${encodeURIComponent(top1.full_name)}">`
       + `<b>${esc(top1.full_name)}</b> ${g}</a>`
       + `<span class="hv-cap-sub">${t('hv.cap', { n: top1.series.length })}</span>`;
   } else {
@@ -661,21 +444,7 @@ async function init() {
   loadHeroData();   // fire and forget; renders hero chart + footer stats when done
 
   // events
-  $('#themeToggle').onclick = () => {
-    const th = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
-    document.documentElement.dataset.theme = th;
-    try { localStorage.setItem('theme', th); } catch { /* private mode */ }
-    const meta = document.getElementById('themeMeta');
-    if (meta) meta.content = th === 'light' ? '#f6f8fa' : '#0a0e14';
-  };
-  $('#langToggle').onclick = () => {
-    LANG = LANG === 'zh' ? 'en' : 'zh';
-    try { localStorage.setItem('lang', LANG); } catch { /* private mode */ }
-    applyStaticI18n();
-    renderHero();
-    renderFootStats();
-    renderAll();
-  };
+  bindChrome(() => { renderHero(); renderFootStats(); renderAll(); });
   $('#selDate').onchange = (e) => { state.sel = e.target.value; syncURL(); loadView(); };
   document.querySelectorAll('.seg-btn').forEach(btn => {
     btn.onclick = () => {

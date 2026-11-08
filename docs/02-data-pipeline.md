@@ -66,7 +66,7 @@ data/
 
 （watchers/issues/prs/releases 对齐同类榜单站的数据模型，前端元信息行对非 null 字段渲染对应图标计数；扩展字段仅 UTC 14:00 运行填充，其他时刻为 `null`——见下方"拉取方式"。GraphQL 中 issues/pullRequests 分列；REST `open_issues_count` 含两者。）
 
-仓库级低频元数据（description、topics、homepage、pushed_at、updated_at）不逐日重复存储，放 `data/repos/{owner}__{name}.json` 按需缓存，GraphQL 返回值变化时更新；`rank.py` 将 description/homepage 等**内联合并进 `site/data` 条目**，保证 site/ 自包含（Pages 只能访问 site/ 下的文件）。
+仓库级低频元数据（description、topics、homepage、pushed_at、updated_at）不逐日重复存储，放 `data/repos/{owner}__{name}.json` 按需缓存，GraphQL 返回值变化时更新；扩展 pass 另写 `detail` 键（avatar、license、discussions 计数、hot issues、最新 discussions、latestRelease、README 摘要），非扩展运行沿用文件内已有值。`rank.py` 将 description/homepage 等**内联合并进 `site/data` 条目**，并把 meta+detail+完整历史序列生成 `site/data/repos/{owner}__{name}.json` 供详情页使用，保证 site/ 自包含（Pages 只能访问 site/ 下的文件）。
 
 序列需保留 **≥35 天**以支持月榜窗口；`rank.py` 从全部快照重建每仓库的日序列。
 
@@ -74,7 +74,7 @@ data/
 
 - **GraphQL 批量**（主力，**两档抓取**）：
   - **核心字段**（每次运行）：`stargazerCount / forkCount / isFork / isArchived / createdAt / pushedAt / updatedAt / description / homepageUrl / primaryLanguage`——纯标量+小连接，batch=50 实测 ~2.5s/44 仓库，2000 仓库约 40 请求 ~100s。
-  - **扩展字段**（每日一次，UTC 14:00"收盘"运行）：`watchers / repositoryTopics / issues / pullRequests / releases` 的 `totalCount`——connection 字段使查询复杂度约增 20 倍（batch>25 会超时），batch=20、~10s/批，2000 仓库约 17 分钟，仅在日更第二次运行执行；早间运行这些字段为 `null`。榜单计算不依赖扩展字段，故对排名零影响。
+  - **扩展字段**（每日一次，UTC 14:00"收盘"运行）：`watchers / repositoryTopics / issues / pullRequests / releases` 的 `totalCount`，外加**详情对象**——`owner.avatarUrl`、`licenseInfo`、`discussions` 计数与最新 8 条、最热 open issues 8 条（按评论数）、`latestRelease`、`README.md` 摘要——随同一查询抓取，复杂度高故 batch=15。非扩展运行这些字段为 `null`，快照写入前用"最近一次含扩展值的快照"向前沿用补齐；详情对象则写入 `data/repos/*.json` 的 `detail` 键（同样向前沿用，见下）。榜单计算不依赖扩展字段，故对排名零影响。
 - **REST 兜底**：GraphQL 失败或个别仓库查不到时，用 `GET /repos/{owner}/{repo}` 补漏。注意限额差异：**GITHUB_TOKEN 为 1000 req/hr**，PAT/OAuth 为 5000 req/hr——兜底预算按 1000/hr 设计。
 - **重试**：403/429/5xx 指数退避重试，最多 3 次；当日失败仓库在 `snapshot.errors` 中记录，次日补齐。
 

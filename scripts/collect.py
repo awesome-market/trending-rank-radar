@@ -40,7 +40,7 @@ NEW_MIN_STARS = 20
 GROWTH_EVICT_DAYS = 14
 REST_FALLBACK_LIMIT = 150
 CORE_BATCH = 50
-EXTENDED_BATCH = 20
+EXTENDED_BATCH = 15
 EXTENDED_KEYS = ("watchers", "issues_total", "prs_total", "releases_total", "topics")
 
 BEIJING = timezone(timedelta(hours=8))
@@ -237,18 +237,25 @@ def fetch_metrics(client: gh.GitHubClient, names: list[str],
     if extended and metrics:
         log(f"extended metrics pass for {len(metrics)} repos (slow, ~15-20min)")
         t0 = time.time()
-        try:
-            ext = client.snapshot_metrics(list(metrics), batch_size=EXTENDED_BATCH,
-                                          extended=True)
-        except Exception as e:
-            log(f"[warn] extended pass failed: {e}")
-            ext = {}
+        ext: dict[str, dict | None] = {}
+        names = list(metrics)
+        # Chunked so one mid-pass network failure doesn't discard all prior batches.
+        for i in range(0, len(names), 200):
+            part = names[i:i + 200]
+            try:
+                ext.update(client.snapshot_metrics(part, batch_size=EXTENDED_BATCH,
+                                                   extended=True))
+            except Exception as e:
+                log(f"[warn] extended chunk {i}-{i + len(part)} failed: {e}")
+            log(f"extended progress: {min(i + 200, len(names))}/{len(names)}")
         merged = 0
         for n, m in ext.items():
             if m and n in metrics:
                 for k in EXTENDED_KEYS:
                     if m.get(k) is not None:
                         metrics[n][k] = m[k]
+                if m.get("detail"):
+                    metrics[n]["detail"] = m["detail"]
                 merged += 1
         log(f"extended pass done: {merged} repos in {round(time.time() - t0)}s")
 
@@ -293,6 +300,12 @@ def write_repo_meta(metrics: dict[str, dict]) -> int:
     for fn, m in metrics.items():
         owner, _, name = fn.partition("/")
         path = REPOS_DIR / f"{owner}__{name}.json"
+        existing = {}
+        try:
+            if path.exists():
+                existing = json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            pass
         meta = {
             "description": m.get("description"),
             "homepage": m.get("homepage"),
@@ -300,11 +313,13 @@ def write_repo_meta(metrics: dict[str, dict]) -> int:
             "pushed_at": m.get("pushed_at"),
             "updated_at": m.get("updated_at"),
         }
-        try:
-            if path.exists() and json.loads(path.read_text(encoding="utf-8")) == meta:
-                continue
-        except Exception:
-            pass
+        # detail objects come only from the once-daily extended pass — carry the
+        # previous file's detail forward so normal runs don't erase it
+        detail = m.get("detail") or existing.get("detail")
+        if detail:
+            meta["detail"] = detail
+        if existing == meta:
+            continue
         path.write_text(json.dumps(meta, ensure_ascii=False), encoding="utf-8")
         written += 1
     return written
@@ -343,22 +358,24 @@ def main() -> int:
     metrics, unresolved = fetch_metrics(client, names, extended=extended)
     log(f"metrics resolved: {len(metrics)}; unresolved: {len(unresolved)}")
 
-    if not extended:
-        # 向前找最近一份含扩展字段的快照（包括同 stamp 的上一版——本文件尚未写盘）
-        try:
-            for f in reversed(sorted(SNAP_DIR.glob("*.json"))):
-                try:
-                    prev = json.loads(f.read_text(encoding="utf-8"))
-                except Exception:
-                    continue
-                if any(len(r) >= 7 and r[3] is not None for r in prev.get("repos", [])):
-                    n = carry_forward_extended(metrics, prev)
-                    log(f"carried forward extended fields from {f.name}: {n} values")
-                    break
-            else:
-                log("no prior snapshot with extended fields; skipping carry-forward")
-        except Exception as e:
-            log(f"[warn] carry-forward skipped: {e}")
+    # Always run carry-forward: on non-extended runs it preserves the counters;
+    # on extended runs it backfills whatever the (possibly partially failed)
+    # extended pass left as None. Idempotent — a fully successful pass makes it
+    # a no-op. 向前找最近一份含扩展字段的快照（本文件尚未写盘，不会命中自己）。
+    try:
+        for f in reversed(sorted(SNAP_DIR.glob("*.json"))):
+            try:
+                prev = json.loads(f.read_text(encoding="utf-8"))
+            except Exception:
+                continue
+            if any(len(r) >= 7 and r[3] is not None for r in prev.get("repos", [])):
+                n = carry_forward_extended(metrics, prev)
+                log(f"carried forward extended fields from {f.name}: {n} values")
+                break
+        else:
+            log("no prior snapshot with extended fields; skipping carry-forward")
+    except Exception as e:
+        log(f"[warn] carry-forward skipped: {e}")
 
     repos_arr = []
     for n in sorted(metrics):

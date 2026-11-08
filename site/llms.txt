@@ -17,6 +17,8 @@ All ranking data is precomputed and served as static JSON — free to reuse (Apa
 - `data/days/YYYY-MM-DD.json` — one file per calendar day (Beijing time), containing all boards
 - `data/months/YYYY-MM.json` — month view: month boards + cumulative + daily Top-10 grid
 - `data/years/YYYY.json` — year view: per-month growth cards
+- `data/repos/<owner>__<name>.json` — per-repo detail: metrics, day/week/month growth, full star history (dates/stars/forks/watchers), board placements, top issues, latest discussions, latest release, README excerpt
+- Repo detail pages: `https://zhuikan.com/repo.html?r=<owner>/<name>`
 - Full snapshots: `data/snapshots/YYYY-MM-DDTHH.json` in the GitHub repo (raw per-repo counters)
 
 ## Boards (in each day/month file, under `boards.<name>.items`)

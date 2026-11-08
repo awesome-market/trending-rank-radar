@@ -11,6 +11,7 @@ Used by collect.py. All requests carry timeout + exponential-backoff retry.
 """
 from __future__ import annotations
 
+import http.client
 import json
 import os
 import re
@@ -46,13 +47,25 @@ homepageUrl
 primaryLanguage { name }
 """
 
-# Extended fields: connection counts — expensive, fetched once daily (see collect.py).
+# Extended fields: connection counts + repo detail objects — expensive,
+# fetched once daily (see collect.py). Detail objects feed the repo page.
 GRAPHQL_EXTENDED_FIELDS = """
 watchers(first: 1) { totalCount }
 repositoryTopics(first: 15) { nodes { topic { name } } }
 issues(first: 1) { totalCount }
 pullRequests(first: 1) { totalCount }
 releases(first: 1) { totalCount }
+owner { avatarUrl login }
+licenseInfo { spdxId name }
+discussions(first: 1) { totalCount }
+latestRelease { name tagName publishedAt description }
+hotIssues: issues(first: 8, states: OPEN, orderBy: {field: COMMENTS, direction: DESC}) {
+  nodes { number title createdAt comments { totalCount } }
+}
+latestDiscussions: discussions(first: 8, orderBy: {field: CREATED_AT, direction: DESC}) {
+  nodes { number title createdAt comments { totalCount } category { name } }
+}
+readme: object(expression: "HEAD:README.md") { ... on Blob { text } }
 """
 
 
@@ -95,7 +108,8 @@ def _request(url: str, *, method: str = "GET", payload: dict | None = None,
                 continue
             # 404 etc: not retryable
             raise HttpError(f"HTTP {e.code} for {url}: {e.read()[:300]!r}") from e
-        except (urllib.error.URLError, TimeoutError, ConnectionError, OSError) as e:
+        except (urllib.error.URLError, TimeoutError, ConnectionError, OSError,
+                http.client.HTTPException) as e:
             last_err = e
             time.sleep(delay)
             delay *= 2
@@ -327,6 +341,43 @@ class GitHubClient:
                 if topic.get("name"):
                     topics.append(topic["name"])
             out["topics"] = topics
+
+        # detail objects (repo page) — nested, kept out of snapshot rows
+        detail: dict = {}
+        if "owner" in node:
+            detail["avatar"] = ((node.get("owner") or {}).get("avatarUrl"))
+        if "licenseInfo" in node:
+            li = node.get("licenseInfo") or {}
+            detail["license"] = li.get("spdxId") or li.get("name")
+        if "discussions" in node:
+            detail["discussions_total"] = (node.get("discussions") or {}).get("totalCount")
+        if node.get("latestRelease"):
+            lr = node["latestRelease"]
+            detail["latest_release"] = {
+                "name": lr.get("name"), "tag": lr.get("tagName"),
+                "published_at": lr.get("publishedAt"),
+                "body": (lr.get("description") or "")[:4000],
+            }
+        if "hotIssues" in node:
+            detail["hot_issues"] = [
+                {"number": i.get("number"), "title": i.get("title"),
+                 "comments": (i.get("comments") or {}).get("totalCount"),
+                 "created_at": i.get("createdAt")}
+                for i in (node.get("hotIssues") or {}).get("nodes") or [] if i
+            ]
+        if "latestDiscussions" in node:
+            detail["discussions"] = [
+                {"number": d.get("number"), "title": d.get("title"),
+                 "comments": (d.get("comments") or {}).get("totalCount"),
+                 "category": ((d.get("category") or {}).get("name")),
+                 "created_at": d.get("createdAt")}
+                for d in (node.get("latestDiscussions") or {}).get("nodes") or [] if d
+            ]
+        if "readme" in node:
+            text = ((node.get("readme") or {}).get("text") or "")
+            detail["readme_excerpt"] = text[:3000] if text else None
+        if detail:
+            out["detail"] = detail
         return out
 
     def _snapshot_query(self, batch: list[str], fields: str) -> dict:

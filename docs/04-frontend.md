@@ -131,9 +131,17 @@ site/                        # GitHub Pages 根目录（或 /docs）
 
 - **主题**：hero 右侧 ☀/☾ 按钮（SVG 图标随主题显隐），选择存 `localStorage.theme` 并同步 `meta[name=theme-color]`；初始 `localStorage` → `prefers-color-scheme`；`<head>` 内联脚本在 CSS 加载前设置 `documentElement.dataset.theme`，无闪烁；两套调色板均为 CSS 变量，`color-scheme` 同步使原生控件跟随
 - **语言**：主题按钮旁的 `EN`/`中` 按钮（label 恒为目标语言），选择存 `localStorage.lang`；初始 `localStorage` → `navigator.language`（zh 前缀判中文，否则英文）；`documentElement.lang` 同步 `zh-CN`/`en`
-- **i18n 实现**：`app.js` 内置 `I18N` 字典（`{zh, en}` 两棵平行键树，`t(key, params)` 取词 + `{param}` 插值）；静态元素用 `data-i18n` / `data-i18n-aria` / `data-i18n-title` 标注，`applyStaticI18n()` 批量刷新；动态文案（tab、空状态、窗口口径、加载更多、badge tooltip、页脚统计、`document.title`、月份名 `2026年11月`/`Nov 2026`、timeAgo）全部走 `t()`；切换语言 = `applyStaticI18n()` + `renderAll()` + hero/页脚重绘
+- **i18n 实现**：`assets/common.js` 内置共享 `I18N` 字典（`{zh, en}` 两棵平行键树，`t(key, params)` 取词 + `{param}` 插值），`app.js`（榜单页）与 `repo.js`（详情页）均在 common.js 之后加载；静态元素用 `data-i18n` / `data-i18n-aria` / `data-i18n-title` 标注，`applyStaticI18n()` 批量刷新；动态文案全部走 `t()`；主题/语言切换由 `bindChrome()` 统一绑定，语言切换回调里重绘页面动态区
 
 **空状态**（冷启动）：居中雷达 SVG 动画 + "快照积累中" + 进度条（`snapshot_days / 31`，月榜完整口径需 31 个有效日；周榜需 8 日）+ 预计可用日期。窗口回退期榜单照常展示，统计时间处标注实际天数。
+
+## 详情页 `repo.html`
+
+每仓库一个详情页，URL `repo.html?r=<owner>/<name>`（全部进 sitemap）。数据源 `data/repos/<owner>__<name>.json`（rank.py 生成，meta+扩展详情+全历史序列）。
+
+区块顺序：头部卡（头像/owner/repo/GitHub 外链/简介/topics/语言·许可证·创建·主页）→ 榜单名次 chips（链回 `?board=*`）→ 指标总览卡（stars/forks/watchers/PRs/issues/releases/discussions + stars 日/周/月增量）→ 趋势卡（指标 tab：stars/forks/watchers；范围 tab：近7天/近30天/全部；SVG 折线+网格+悬停点；「生成分享图」Canvas 1200×630 PNG 下载/复制）→ 双列卡片区（热门 Issues / 最新 Discussions / 最新 Release / README 摘要，均无数据时整块不渲染）。
+
+行内仓库名一律进详情页（`repo.html?r=`），↗ 图标单独跳 GitHub；预览行、月榜 top10 chip、hero Top1 同规则。
 
 ### 响应式
 
