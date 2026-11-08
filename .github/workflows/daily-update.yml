@@ -43,7 +43,18 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/ site/
           git diff --cached --quiet || git commit -m "data: snapshot $(date -u +%FT%H:%MZ)"
-          git pull --rebase origin main && git push
+          if ! git pull --rebase origin main; then
+            # 冲突只可能出现在可再生成的文件（site/data、sitemap、robots）上：
+            # 取远端版本（rebase 中 --ours 指向 rebase 目标=上游），继续后再重建，
+            # 保证生成产物与合并后的 data/ 一致
+            git status --porcelain | awk '$1=="UU"||$1=="AA"{print $2}' | xargs -r git checkout --ours
+            git status --porcelain | awk '$1=="UU"||$1=="AA"{print $2}' | xargs -r git add
+            GIT_EDITOR=true git rebase --continue
+            python scripts/rank.py --site-base "${{ vars.SITE_BASE }}"
+            git add data/ site/
+            git diff --cached --quiet || git commit -m "data: rebuild after rebase"
+          fi
+          git push
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
