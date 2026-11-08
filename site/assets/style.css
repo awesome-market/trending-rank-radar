@@ -67,7 +67,7 @@
   --avatar-bg: #eef2f6;
   --text: #1f2328;
   --text-dim: #59636e;
-  --text-faint: #8b949e;
+  --text-faint: #6e7781;
   --blue: #0969da;
   --purple: #3380e0;
   --grad: linear-gradient(90deg, #0969da, #3380e0);
@@ -160,11 +160,11 @@ a:hover { text-decoration: underline; }
 
 #content { scroll-margin-top: 16px; }
 
-/* radar sweep — CSS-driven so prefers-reduced-motion can still it */
+/* radar sweep — 单次扫描定格为"已完成"画面，reduced-motion 直接静止 */
 .radar-sweep {
   transform-origin: 24px 24px;
   transform-box: view-box;
-  animation: radar-rot 3.6s linear infinite;
+  animation: radar-rot 3.6s linear 1;
 }
 @keyframes radar-rot { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) {
@@ -263,6 +263,10 @@ a:hover { text-decoration: underline; }
   font-variant-numeric: tabular-nums;
   color: var(--blue);
 }
+.stat-ico {
+  width: 16px; height: 16px; color: var(--text-faint);
+  margin-bottom: 8px; display: block;
+}
 .stat-label { color: var(--text-dim); font-size: 12px; margin-top: 2px; }
 
 /* ---------------- controls ---------------- */
@@ -342,7 +346,7 @@ a:hover { text-decoration: underline; }
 .sf-sep { color: var(--text-faint); }
 .sf-unit { color: var(--text-faint); }
 .sf-btn {
-  padding: 6px 16px; border-radius: 8px;
+  padding: 6px 16px; border-radius: 999px;
   border: 1px solid var(--accent-bd);
   background: var(--accent-bg); color: var(--accent-fg);
   font-size: 13px; font-weight: 600; cursor: pointer;
@@ -366,6 +370,7 @@ a:hover { text-decoration: underline; }
   align-items: center;
   text-align: center;
   padding: 44px 32px;
+  margin-bottom: 24px;
   color: var(--text-dim);
   background: var(--card);
   border: 1px solid var(--card-border);
@@ -395,7 +400,7 @@ a:hover { text-decoration: underline; }
 
 .empty-actions { display: flex; gap: 10px; justify-content: center; margin-top: 22px; flex-wrap: wrap; }
 .empty-btn {
-  padding: 8px 20px; border-radius: 8px;
+  padding: 8px 20px; border-radius: 999px;
   border: 1px solid var(--accent-bd);
   background: var(--accent-bg); color: var(--accent-fg);
   font-size: 13px; font-weight: 600; cursor: pointer; font-family: var(--font);
@@ -670,7 +675,7 @@ a:hover { text-decoration: underline; }
 /* ---------------- footer ---------------- */
 .footer {
   border-top: 1px solid var(--card-border);
-  padding: 28px 24px;
+  padding: 28px 0;
   color: var(--text-faint); font-size: 12px;
 }
 .footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
@@ -690,6 +695,8 @@ a:hover { text-decoration: underline; }
   .hero-inner { padding: 0 14px; }
   .footer-inner { padding: 0 14px; }
   .container { padding: 14px 14px 48px; }
+  /* 移动端榜单 tabs 折行全展示，不做横向半截滚动 */
+  .board-tabs { flex-wrap: wrap; overflow-x: visible; }
   /* 窄屏只保留 stars/forks 两项元信息 */
   .row-meta .m-aux { display: none; }
   .row-spark { display: none !important; }
@@ -697,6 +704,7 @@ a:hover { text-decoration: underline; }
   .window-info { display: none; }
   .stats-bar { grid-template-columns: repeat(2, 1fr); gap: 10px; }
   .stat-num { font-size: 20px; }
+  .empty-state h2 { font-size: 20px; }
 }
 @media (max-width: 768px) {
   .controls { position: static; } /* no sticky filter stack on phones */
