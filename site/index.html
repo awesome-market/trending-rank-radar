@@ -4,9 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trending Rank Radar — GitHub 开源项目趋势榜单</title>
-<meta name="description" content="独立采集 GitHub 仓库数据，按日/周/月计算 Star 增长榜、增速榜、新榜与总榜，支持按日/月/年回看历史。">
+<meta name="description" content="独立采集 GitHub 仓库数据的开源趋势榜单：日/周/月飙升榜、增速榜、新星榜与总榜，支持按日/月/年回看历史，中英双语。Independent open-source GitHub trend radar — daily/weekly/monthly star growth & rate boards, new & all-time charts, day/month/year history, bilingual UI.">
+<meta name="keywords" content="GitHub trending, GitHub ranking, GitHub 排行榜, 开源榜单, trending repos, star growth, star history, 星标增长, github stars, open data, github pages, github actions, 开源项目, open source rankings">
 <meta property="og:title" content="Trending Rank Radar">
-<meta property="og:description" content="GitHub 开源项目趋势榜单 · 每日双快照 · 八榜单 · 历史回看">
+<meta property="og:description" content="GitHub 开源项目趋势榜单 · 每日双快照 · 八榜单 · 历史回看 | Independent GitHub trend radar · twice-daily snapshots · 8 boards · bilingual">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://awesome-market.github.io/trending-rank-radar/">
 <meta property="og:image" content="https://awesome-market.github.io/trending-rank-radar/assets/og.png">
@@ -26,7 +29,7 @@
 </head>
 <body>
 
-<a class="skip-link" href="#content">跳到榜单</a>
+<a class="skip-link" href="#content" data-i18n="skip">跳到榜单</a>
 
 <!-- shared svg gradient defs for sparklines -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -56,14 +59,15 @@
       </svg>
       <div>
         <h1>Trending Rank <span class="grad-text">Radar</span></h1>
-        <p class="hero-sub">GitHub 开源项目趋势榜单 · 每日双快照 · 八种榜单 · 日 / 月 / 年历史回看</p>
+        <p class="hero-sub" data-i18n="hero.sub">GitHub 开源项目趋势榜单 · 每日双快照 · 八种榜单 · 日 / 月 / 年历史回看</p>
       </div>
     </div>
     <div class="hero-meta">
       <span class="fresh-dot" id="freshDot"></span>
-      <span id="freshText">数据加载中…</span>
-      <button id="themeToggle" class="theme-btn" type="button" aria-label="切换深浅色主题" title="切换主题">
-        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.06 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06-1.06a.75.75 0 0 1 1.061 1.06l-1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.06l1.06-1.061a.75.75 0 0 1 1.061 1.06l-1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+      <span id="freshText" data-i18n="loading">数据加载中…</span>
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06-1.06a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.06l1.06-1.061a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
         <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
       </button>
       <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
@@ -76,36 +80,42 @@
 
 <main class="container">
 
-  <section class="stats-bar" id="statsBar">
-    <div class="stat-card"><svg class="stat-ico" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h8.75a.75.75 0 0 1 .75.75v12.5a.75.75 0 0 1-.75.75h-2.5a.75.75 0 0 1 0-1.5h1.75v-2h-8a1 1 0 0 0-.714 1.7.75.75 0 1 1-1.072 1.05A2.495 2.495 0 0 1 2 11.5Zm10.5-1h-8a1 1 0 0 0-1 1v6.708A2.486 2.486 0 0 1 4.5 9h8ZM5 12.25v3.25a.25.25 0 0 0 .4.2l1.45-1.087a.249.249 0 0 1 .3 0L8.6 15.7a.25.25 0 0 0 .4-.2v-3.25a.25.25 0 0 0-.25-.25h-3.5a.25.25 0 0 0-.25.25Z"/></svg><div class="stat-num" id="statRepos">–</div><div class="stat-label">跟踪仓库</div></div>
-    <div class="stat-card"><svg class="stat-ico" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.75 0a.75.75 0 0 1 .75.75V2h5V.75a.75.75 0 0 1 1.5 0V2h1.25c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 12.25 16h-8.5A1.75 1.75 0 0 1 2 14.25V3.75C2 2.784 2.784 2 3.75 2H5V.75a.75.75 0 0 1 .75-.75ZM3.5 14.25c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V5.5h-9Z"/></svg><div class="stat-num" id="statDays">–</div><div class="stat-label">累计快照天数</div></div>
-    <div class="stat-card"><svg class="stat-ico" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="m11.28 3.22 4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.749.749 0 0 1-1.275-.326.749.749 0 0 1 .215-.734L13.19 8.75H2.75a.75.75 0 0 1 0-1.5h10.44l-2.97-2.97a.749.749 0 0 1 .326-1.275.749.749 0 0 1 .734.215Z" transform="rotate(-90 8 8)"/></svg><div class="stat-num" id="statTop1">–</div><div class="stat-label">今日飙升 Top1 增量</div></div>
-    <div class="stat-card"><svg class="stat-ico" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7-3.25v2.992l2.028.812a.75.75 0 0 1-.557 1.392l-2.5-1A.751.751 0 0 1 7 8.25v-3.5a.75.75 0 0 1 1.5 0Z"/></svg><div class="stat-num" id="statSpan">–</div><div class="stat-label">数据覆盖跨度</div></div>
+  <section class="hero-viz" id="heroViz" data-enter>
+    <div class="hv-copy">
+      <p class="hv-kicker" data-i18n="hv.kicker">独立采集 · 开源数据</p>
+      <h2 class="hv-title" data-i18n="hv.title">独立追踪 GitHub 星标的每一次脉动</h2>
+      <p class="hv-sub" data-i18n="hv.sub">每日两次快照，用差值还原真实增长——不是又一份热榜镜像。</p>
+      <a class="hv-cta" href="#boardTabs" data-i18n="hv.cta">浏览今日榜单 →</a>
+    </div>
+    <div class="hv-side">
+      <div class="hv-chart" id="hvChart" aria-hidden="true"></div>
+      <div class="hv-cap" id="hvCap"></div>
+    </div>
   </section>
 
   <div class="controls" id="controls">
     <div class="ctrl-row">
-      <nav class="board-tabs" id="boardTabs" aria-label="榜单"></nav>
+      <nav class="board-tabs" id="boardTabs" data-i18n-aria="boards.aria" aria-label="榜单"></nav>
     </div>
     <div class="ctrl-row ctrl-sub">
-      <div class="seg" id="periodSeg" role="tablist" aria-label="时间维度">
-        <button data-period="day" class="seg-btn active">日</button>
-        <button data-period="month" class="seg-btn">月</button>
-        <button data-period="year" class="seg-btn">年</button>
+      <div class="seg" id="periodSeg" role="tablist" data-i18n-aria="period.aria" aria-label="时间维度">
+        <button data-period="day" class="seg-btn active" data-i18n="period.day">日</button>
+        <button data-period="month" class="seg-btn" data-i18n="period.month">月</button>
+        <button data-period="year" class="seg-btn" data-i18n="period.year">年</button>
       </div>
-      <label class="sf-label" for="selDate">榜单日期</label>
-      <select id="selDate" class="sel" aria-label="日期"></select>
-      <div class="star-filter" role="group" aria-label="Star 范围筛选">
-        <span class="sf-label">Star 范围</span>
-        <label class="sf-field"><span class="sf-in-label">下限</span>
-          <input id="minK" type="number" min="0" step="1" value="1" class="sf-input" aria-label="最小 Star 千数">
+      <label class="sf-label" for="selDate" data-i18n="date.label">榜单日期</label>
+      <select id="selDate" class="sel" data-i18n-aria="date.aria" aria-label="日期"></select>
+      <div class="star-filter" role="group" data-i18n-aria="star.range" aria-label="Star 范围筛选">
+        <span class="sf-label" data-i18n="star.range">Star 范围</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="min">下限</span>
+          <input id="minK" type="number" min="0" step="1" value="1" class="sf-input" data-i18n-aria="minK.aria" aria-label="最小 Star 千数">
         </label>
         <span class="sf-sep">–</span>
-        <label class="sf-field"><span class="sf-in-label">上限</span>
-          <input id="maxK" type="number" min="0" step="1" value="500" class="sf-input" aria-label="最大 Star 千数">
+        <label class="sf-field"><span class="sf-in-label" data-i18n="max">上限</span>
+          <input id="maxK" type="number" min="0" step="1" value="500" class="sf-input" data-i18n-aria="maxK.aria" aria-label="最大 Star 千数">
         </label>
         <span class="sf-unit">k</span>
-        <button id="applyFilter" class="sf-btn">筛选</button>
+        <button id="applyFilter" class="sf-btn" data-i18n="apply">筛选</button>
       </div>
       <span class="window-info" id="windowInfo"></span>
     </div>
@@ -121,8 +131,8 @@
             <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
           </g>
         </svg>
-        <h2>榜单积累中</h2>
-        <p id="emptyText">快照数据正在积累，增长榜需要至少 2 个有效快照日。</p>
+        <h2 data-i18n="empty.title">榜单积累中</h2>
+        <p id="emptyText" data-i18n="empty.text">快照数据正在积累，增长榜需要至少 2 个有效快照日。</p>
         <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
         <p class="progress-hint" id="progressHint"></p>
         <div class="empty-actions" id="emptyActions"></div>
@@ -134,13 +144,13 @@
     <div id="listWrap"></div>
 
     <details class="month-detail" id="monthDetail" hidden>
-      <summary>当月每日飙升 Top10 摘要</summary>
+      <summary data-i18n="month.top10">当月每日飙升 Top10 摘要</summary>
       <div id="monthTop10"></div>
     </details>
   </section>
 
   <section id="yearWrap" hidden>
-    <h2 class="section-title">年度月度榜入口</h2>
+    <h2 class="section-title" data-i18n="year.entry">年度月度榜入口</h2>
     <div class="month-grid" id="monthGrid"></div>
   </section>
 
@@ -148,8 +158,9 @@
 
 <footer class="footer">
   <div class="footer-inner">
-    <p>数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
-    <p class="footer-sub">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
   </div>
 </footer>
 

@@ -21,7 +21,7 @@
 - [ ] `rank.py` 完整版：日/周/月飙升+增速六榜（含快照缺失回退、`≈` 标记）
 - [ ] 日/月/年三粒度聚合输出（`days/` `months/` `years/`）
 - [ ] 前端 `index.html` + `app.js` + `style.css`（按 04-frontend.md 视觉规范）
-  - [ ] Hero + 统计条 + sticky 控制区（八榜 tab / 日月年切换 / k 范围筛选）
+  - [ ] Hero + hero 视觉区（Top1 Star 曲线）+ sticky 控制区（八榜全名 tab / 日月年切换 / k 范围筛选）+ 中英双语 + 深浅主题切换
   - [ ] Top3 领奖台卡片 + 紧凑行列表 + 30 天 sparkline + 空状态
 - [ ] 本地起 `python -m http.server` 验证交互
 
@@ -43,7 +43,7 @@
 - [ ] 指标维度切换（按 Forks / Watchers 增长排，数据已在快照中）
 - [ ] 仓库详情页（全历史 Star 曲线 + 多指标面板，复用快照数据画 SVG）
 - [ ] RSS / JSON API 输出（供别的工具订阅）
-- [ ] 多语言 UI（en）
+- [x] 多语言 UI（en）—— 已完成：右上角 EN/中 切换，`localStorage.lang` 持久化
 
 ## 已知风险与对策
 
