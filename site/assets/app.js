@@ -579,7 +579,7 @@ function readURL() {
   const b = p.get('board');
   if (state.period === 'month' && b === CUM_BOARD) state.board = CUM_BOARD;
   else if (BOARD_ORDER.includes(b)) state.board = b;
-  else state.board = 'daily';
+  else state.board = 'new';
   $('#minK').value = state.minK; $('#maxK').value = state.maxK;
 }
 
