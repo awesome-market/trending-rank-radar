@@ -2,7 +2,7 @@
 
 独立采集 GitHub 仓库数据的开源项目趋势榜单 —— **完全开源、数据自采**。
 
-🌐 **在线榜单**: https://awesome-market.github.io/trending-rank-radar/
+🌐 **在线榜单**: https://zhuikan.com/ （镜像：https://awesome-market.github.io/trending-rank-radar/）
 
 ## 八种榜单
 

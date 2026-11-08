@@ -31,8 +31,8 @@
 
 - [ ] 推送到 GitHub 公开仓库
 - [ ] `.github/workflows/daily-update.yml`（cron ×2 + workflow_dispatch + deploy-pages，见 05-automation.md）
-- [ ] Pages 开启（Source = GitHub Actions），确认 `https://<user>.github.io/trending-rank-radar/` 可访问
-- [ ] 仓库变量 `SITE_BASE`（自定义域名时设置）
+- [x] Pages 开启（Source = GitHub Actions），自定义域名 `zhuikan.com`（`site/CNAME` 随 artifact 发布；www → apex 由 DNS 侧 301）
+- [x] 仓库变量 `SITE_BASE`（未设置时 `rank.py` 用内置默认 `https://zhuikan.com`）
 - [ ] README.md（项目首页：功能、榜单口径、数据说明、免责声明）
 
 **验收**：Actions 每日自动提交快照；Pages 站点数据与仓库 `data/` 一致；手动 dispatch 可补跑。

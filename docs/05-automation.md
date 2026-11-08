@@ -95,6 +95,16 @@ jobs:
 
 > **为什么不用分支目录部署（方案 B）**：GitHub Pages 的"从分支部署"只允许 `/`（根）或 `/docs` 两个目录，`/site` 无法选择；且 `/docs` 已被本文档占用。Actions 部署不受此限，且与数据提交解耦、有独立部署状态。故 v1 直接采用方案 A。
 
+### 自定义域名
+
+站点绑定 `zhuikan.com`（apex 为规范域），`www.zhuikan.com` 由 DNS 侧 301 到 apex：
+
+- **`site/CNAME`** 文件内容 `zhuikan.com`，随 `./site` artifact 一起发布——Actions 部署下 CNAME 必须存在于 artifact 根，否则部署后绑定丢失；文件入库也使配置可审计。
+- DNS：apex 指向 GitHub Pages（`185.199.108-111.153` A 记录或经 Cloudflare 代理），`www` CNAME 到 `awesome-market.github.io` 并在 CDN 层做 www→apex 跳转。
+- HTTPS：Pages 对自定义域名自动签发证书（Enforce HTTPS 开启）。
+- `sitemap.xml` / OG 绝对 URL 用 `rank.py --site-base`（默认 `https://zhuikan.com`，可用仓库变量 `SITE_BASE` 覆盖）。
+- `awesome-market.github.io/trending-rank-radar/` 子路径仍可用作镜像——前端全部相对路径，两种形态兼容。
+
 ## 定时策略
 
 **每日 2 次**（UTC 02:00 / 14:00 ≈ 北京 10:00 / 22:00），理由：

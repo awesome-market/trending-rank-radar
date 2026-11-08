@@ -179,9 +179,9 @@ site/                        # GitHub Pages 根目录（或 /docs）
 
 ### 关键约束：资源路径必须相对
 
-GitHub Pages 项目站部署在 `https://<user>.github.io/trending-rank-radar/` **子路径**下。所有资源与数据请求一律使用**相对路径**（`assets/app.js`、`data/index.json`），禁止以 `/` 开头的绝对路径；`history.pushState` 的 query 参数不受影响。
+站点绑定自定义域名 `zhuikan.com`（根路径服务，`site/CNAME` 随 artifact 发布保证绑定不丢），同时保留 `awesome-market.github.io/trending-rank-radar/` 项目子路径镜像。所有资源与数据请求一律使用**相对路径**（`assets/app.js`、`data/index.json`），禁止以 `/` 开头的绝对路径——相对路径在两种部署形态下都成立；`history.pushState` 的 query 参数不受影响。
 
-`sitemap.xml` / OG `og:url` 需要站点绝对地址：`rank.py` 接受 `--site-base` 参数（默认 `https://<user>.github.io/trending-rank-radar`，自定义域名时覆盖），生成时写入。
+`sitemap.xml` / OG `og:url` 需要站点绝对地址：`rank.py` 接受 `--site-base` 参数（默认 `https://zhuikan.com`，workflow 可用仓库变量 `SITE_BASE` 覆盖），生成时写入。
 
 ## SEO / 分享
 

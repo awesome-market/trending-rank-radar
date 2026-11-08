@@ -51,7 +51,7 @@ NEW_MIN_STARS = 20
 GROWTH_MIN_STARS = 100
 RATE_MIN_BASE = 50
 
-DEFAULT_SITE_BASE = "https://awesome-market.github.io/trending-rank-radar"
+DEFAULT_SITE_BASE = "https://zhuikan.com"
 
 
 def log(msg: str) -> None:
