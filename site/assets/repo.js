@@ -26,7 +26,7 @@ function deltaSpan(label) {
 function headHTML(d) {
   const av = d.avatar
     ? `<img class="rp-avatar" src="${esc(d.avatar)}&s=128" alt="" width="64" height="64" loading="lazy">`
-    : `<img class="rp-avatar" src="https://github.com/${esc(d.owner)}.png?size=128" alt="" width="64" height="64" loading="lazy">`;
+    : `<img class="rp-avatar" src="https://github.com/${esc(d.owner)}.png?size=128" alt="" width="64" height="64" loading="lazy" onerror="this.style.visibility='hidden'">`;
   const topics = (d.topics || []).slice(0, 8).map(x =>
     `<a class="rp-topic" href="https://github.com/topics/${encodeURIComponent(x)}" target="_blank" rel="noopener">${esc(x)}</a>`).join('');
   const metaBits = [

@@ -186,12 +186,14 @@ def make_entry(name: str, rank: int, cur, meta: dict, *,
                series=None) -> dict:
     owner, _, repo = name.partition("/")
     m = meta.get(name) or {}
+    det = m.get("detail") or {}
     return {
         "rank": rank,
         "owner": owner,
         "name": repo,
         "full_name": name,
         "description": m.get("description"),
+        "avatar": det.get("avatar"),
         "homepage": m.get("homepage"),
         "language": cur[I_LANG],
         "stars": cur[I_STARS],
