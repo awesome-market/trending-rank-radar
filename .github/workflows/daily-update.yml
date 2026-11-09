@@ -19,6 +19,7 @@ permissions:
   contents: write
   pages: write
   id-token: write
+  issues: write
 
 jobs:
   update:
@@ -39,6 +40,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SNAPSHOT_AT: ${{ inputs.at }}
+
+      - name: Report trending status via rescue issue
+        if: ${{ !inputs.deploy_only }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/ci_rescue.py
 
       - name: Rebuild rankings & site data
         if: ${{ !inputs.deploy_only }}

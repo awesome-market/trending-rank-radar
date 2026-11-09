@@ -43,6 +43,9 @@ CORE_BATCH = 50
 EXTENDED_BATCH = 15
 EXTENDED_KEYS = ("watchers", "issues_total", "prs_total", "releases_total", "topics")
 
+# Run-level stats consumed by scripts/ci_rescue.py via run_status.json
+STATS = {"trending_ok": 0, "trending_failed": 0, "trending_items": 0}
+
 BEIJING = timezone(timedelta(hours=8))
 TODAY_UTC = lambda: datetime.now(timezone.utc)  # noqa: E731
 
@@ -98,11 +101,14 @@ def discover(client: gh.GitHubClient, init_mode: bool) -> dict[str, dict]:
         try:
             items = client.trending(lang)
             trending_fails = 0
+            STATS["trending_ok"] += 1
             for it in items:
                 add(it["full_name"], "trending", stars=it.get("stars"), trending=True)
+            STATS["trending_items"] += len(items)
             log(f"trending {'all' if lang is None else lang}: {len(items)} repos")
         except Exception as e:
             trending_fails += 1
+            STATS["trending_failed"] += 1
             log(f"[warn] trending page failed ({lang or 'all'}): {e}")
         time.sleep(0.8)
 
@@ -417,6 +423,17 @@ def main() -> int:
     written = write_repo_meta(metrics)
     save_watchlist(wl)
     log(f"repo meta files written: {written}; watchlist saved")
+
+    status = {
+        "run_at": at.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "trending_pages_ok": STATS["trending_ok"],
+        "trending_pages_failed": STATS["trending_failed"],
+        "trending_items": STATS["trending_items"],
+        "repos_collected": len(repos_arr),
+        "metrics_unresolved": len(unresolved),
+    }
+    (ROOT / "run_status.json").write_text(
+        json.dumps(status, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     return 0
 
 

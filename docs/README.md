@@ -12,6 +12,7 @@
 | [04-frontend.md](04-frontend.md) | 前端技术选型、页面结构、交互设计、数据文件约定 |
 | [05-automation.md](05-automation.md) | 仓库目录结构、GitHub Actions 工作流、Pages 部署配置 |
 | [06-roadmap.md](06-roadmap.md) | 分阶段实施计划与验收标准 |
+| [07-rescue.md](07-rescue.md) | 离线救援通道：CI 抓 trending 失败时 issue 驱动的服务器补采 |
 
 ## 一句话架构
 
