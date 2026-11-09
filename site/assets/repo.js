@@ -452,10 +452,61 @@ function overviewPanel(d) {
       <div class="rp-metric-label">${t('units.' + k)}</div>${dl}</div>`;
   }).join('');
   const readme = d.readme_excerpt
-    ? `<h3 class="rp-ph">${t('rp.readme')}</h3><pre class="rp-pre rp-readme">${esc(
-        d.readme_excerpt.replace(/\[!\[[^\]]*\]\([^)]*\)\]\([^)]*\)/g, '')
-          .replace(/<[^>]+>/g, '').trim().slice(0, 1200))}</pre>` : '';
+    ? `<h3 class="rp-ph">${t('rp.readme')}</h3><div class="rp-pre rp-readme">${readmeHtml(
+        d.readme_excerpt, d.owner, d.name)}</div>` : '';
   return `<div class="rp-metric-grid">${grid}</div>${readme}`;
+}
+
+/* README excerpt: render a safe subset of markdown (images, links, bold,
+   code, headings). Relative image paths resolve against the repo's default
+   branch on raw.githubusercontent.com; relative links go to github.com. */
+function readmeHtml(src, owner, name) {
+  const RAW = `https://raw.githubusercontent.com/${owner}/${name}/HEAD/`;
+  const BLOB = `https://github.com/${owner}/${name}/blob/HEAD/`;
+  const REPO = `https://github.com/${owner}/${name}`;
+  const abs = (u, kind) => {
+    u = String(u || '').trim();
+    if (/^https?:/i.test(u)) return u;
+    if (u.startsWith('//')) return 'https:' + u;
+    if (kind === 'link' && u.startsWith('#')) return REPO + u;
+    const clean = u.replace(/^\.?\/+/, '');
+    return clean ? (kind === 'img' ? RAW : BLOB) + clean : '';
+  };
+  let s = src.trim();
+  const truncated = s.length > 1600;
+  if (truncated) {
+    s = s.slice(0, 1600);
+    const nl = s.lastIndexOf('\n');
+    if (nl > 1200) s = s.slice(0, nl);
+  }
+  // pull raw <img> tags out before escaping; all other html is dropped
+  const rawImgs = [];
+  s = s.replace(/<img\b[^>]*>/gi, tag => {
+    const sm = /src\s*=\s*["']([^"']+)["']/i.exec(tag);
+    const am = /alt\s*=\s*["']([^"']*)["']/i.exec(tag);
+    if (!sm) return '';
+    rawImgs.push({ src: esc(sm[1]), alt: esc(am ? am[1] : '') });
+    return `@@RIMG${rawImgs.length - 1}@@`;
+  });
+  s = s.replace(/<[^>]+>/g, '');
+  s = esc(s);
+  // everything matched from `s` below is already-escaped text: emit as-is
+  const imgTag = (u, a) =>
+    `<img class="rp-img" src="${u}" alt="${a}" loading="lazy" onerror="this.remove()">`;
+  s = s.replace(/\[!\[([^\]]*)\]\(([^)\s]+)[^)]*\)\]\(([^)\s]+)[^)]*\)/g,
+    (m, a, i, h) => `<a class="rp-a" href="${abs(h, 'link')}" target="_blank" rel="noopener">${imgTag(abs(i, 'img'), a)}</a>`);
+  s = s.replace(/!\[([^\]]*)\]\(([^)\s]+)[^)]*\)/g,
+    (m, a, i) => imgTag(abs(i, 'img'), a));
+  s = s.replace(/\[([^\]]+)\]\(([^)\s]+)[^)]*\)/g,
+    (m, tx, h) => `<a class="rp-a" href="${abs(h, 'link')}" target="_blank" rel="noopener">${tx}</a>`);
+  s = s.replace(/\*\*([^*\n]+)\*\*/g, '<b>$1</b>')
+       .replace(/`([^`\n]+)`/g, '<code>$1</code>')
+       .replace(/^#{1,4}\s*(.+)$/gm, '<b>$1</b>');
+  s = s.replace(/@@RIMG(\d+)@@/g, (m, i) => {
+    const im = rawImgs[+i];
+    return im ? imgTag(abs(im.src, 'img'), im.alt) : '';
+  });
+  return s + (truncated ? '…' : '');
 }
 
 function ctabsHTML(d) {
