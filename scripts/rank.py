@@ -295,7 +295,7 @@ def _ssr_repo(p: dict) -> str:
                     + (f'<pre class="rp-pre">{body}</pre>' if body else ""))
     readme = p.get("readme_excerpt")
     readme_html = (f'<h3 class="rp-ph">README</h3>'
-                   f'<pre class="rp-pre rp-readme">{_plain(readme, 1200)}</pre>'
+                   f'<pre class="rp-pre rp-readme">{_plain(readme, 3000)}</pre>'
                    if readme else "")
     sec_i = (f'<h3 class="rp-ph">Top issues</h3>'
              f'<div class="rp-list">{lst(p.get("issues"), p["url"] + "/issues")}</div>'

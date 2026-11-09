@@ -472,12 +472,14 @@ function readmeHtml(src, owner, name) {
     const clean = u.replace(/^\.?\/+/, '');
     return clean ? (kind === 'img' ? RAW : BLOB) + clean : '';
   };
+  // render the full stored excerpt (collector already bounds it to 3000
+  // chars); the .rp-readme panel itself scrolls past 520px
   let s = src.trim();
-  const truncated = s.length > 1600;
+  const truncated = s.length > 3200;
   if (truncated) {
-    s = s.slice(0, 1600);
+    s = s.slice(0, 3200);
     const nl = s.lastIndexOf('\n');
-    if (nl > 1200) s = s.slice(0, nl);
+    if (nl > 2400) s = s.slice(0, nl);
   }
   // pull raw <img> tags out before escaping; all other html is dropped
   const rawImgs = [];
