@@ -295,6 +295,12 @@ def _ssr_repo(p: dict) -> str:
     sec_d = (f'<h3 class="rp-ph">Discussions</h3>'
              f'<div class="rp-list">{lst(p.get("discussions"), p["url"] + "/discussions")}</div>'
              if p.get("discussions") else "")
+    same_links = "".join(
+        f'<a class="rp-same-link" href="{_esc(x["full_name"]).replace("/", "__")}.html">'
+        f'{_esc(x["name"])}</a>'
+        for x in (p.get("same_owner") or [])[:8])
+    if same_links:
+        same_links = f'<span class="rp-same-label">Same owner</span>{same_links}'
     av = (f'<img class="rp-side-av" src="{_esc(p["avatar"])}&s=300" width="300" '
           f'height="300" alt="{_esc(p["owner"])} avatar">' if p.get("avatar")
           else f'<img class="rp-side-av" src="https://github.com/{_esc(p["owner"])}.png?size=300" '
@@ -303,9 +309,9 @@ def _ssr_repo(p: dict) -> str:
 <nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
 <span class="rp-crumb-cur">{_esc(p['full_name'])}</span></nav>
 <div class="rp-top">
-  <aside class="rp-side card">
+  <aside class="rp-side">
     {av}
-    <div class="rp-side-body">
+    <div class="rp-side-body card">
       <div class="rp-side-name">{_esc(p['name'])}</div>
       <a class="rp-side-owner" href="https://github.com/{_esc(p['owner'])}">{_esc(p['owner'])}</a>
     </div>
@@ -316,12 +322,13 @@ def _ssr_repo(p: dict) -> str:
         <a class="rp-owner" href="https://github.com/{_esc(p['owner'])}">{_esc(p['owner'])}</a>
         <span class="rp-sep">/</span><span class="rp-name">{_esc(p['name'])}</span>
       </h1>
+      <div class="rp-head-chips">{chips}</div>
     </div>
     <p class="rp-desc">{_esc(p.get('description') or '')}</p>
     <div class="rp-statrow">{stats}</div>
     <div class="rp-topics">{topics}</div>
     <div class="rp-meta">{''.join(bits)}</div>
-    <div class="rp-foot-row"><div class="rp-board-line">{chips}</div>
+    <div class="rp-foot-row"><div class="rp-same">{same_links}</div>
       <div class="rp-actions"><a class="rp-btn" href="{_esc(p['url'])}">GitHub ↗</a></div></div>
   </div>
 </div>
@@ -635,6 +642,10 @@ def main() -> int:
         for e in blk.get("items", []):
             placements.setdefault(e["full_name"], {})[b] = e["rank"]
 
+    owner_map: dict[str, list[str]] = {}
+    for name in day_close[latest_day]:
+        owner_map.setdefault(name.split("/")[0], []).append(name)
+
     repos_out = SITE_DATA / "repos"
     repos_out.mkdir(parents=True, exist_ok=True)
     pages_out = SITE_DIR / "repos"
@@ -684,6 +695,11 @@ def main() -> int:
                 "watchers": [v[I_WATCHERS] for v in vs],
             },
             "boards": placements.get(name) or {},
+            "same_owner": sorted(
+                ({"full_name": n, "name": n.split("/")[1],
+                  "boards": placements.get(n) or {}}
+                 for n in owner_map.get(owner, []) if n != name),
+                key=lambda x: (x["boards"].get("total") or 9999, x["name"]))[:8],
             "issues": det.get("hot_issues") or [],
             "discussions": det.get("discussions") or [],
             "latest_release": det.get("latest_release"),

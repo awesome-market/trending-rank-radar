@@ -55,9 +55,16 @@ function statsRowHTML(d) {
 function boardsRowHTML(d) {
   const order = ['new', 'daily', 'daily_rate', 'weekly', 'weekly_rate',
                  'monthly', 'monthly_rate', 'total', 'cumulative'];
-  const chips = order.filter(k => (d.boards || {})[k] != null).map(k =>
+  return order.filter(k => (d.boards || {})[k] != null).map(k =>
     `<a class="rp-board-chip" href="${HOME}?board=${k}">${t('board.' + k)} <b>#${d.boards[k]}</b></a>`).join('');
-  return chips ? `<div class="rp-board-line">${chips}</div>` : '<div class="rp-board-line"></div>';
+}
+
+function sameOwnerHTML(d) {
+  const list = (d.same_owner || []).filter(x => x.full_name !== d.full_name);
+  if (!list.length) return '<div class="rp-same"></div>';
+  const links = list.slice(0, 8).map(x =>
+    `<a class="rp-same-link" href="${HOME}repos/${x.full_name.replace('/', '__')}.html">${esc(x.name)}</a>`).join('');
+  return `<div class="rp-same"><span class="rp-same-label">${t('rp.same')}</span>${links}</div>`;
 }
 
 function topHTML(d) {
@@ -72,9 +79,9 @@ function topHTML(d) {
     d.homepage ? `<a class="rp-meta-bit rp-home" href="${esc(d.homepage)}" target="_blank" rel="noopener">⌂ ${esc(d.homepage.replace(/^https?:\/\//, '').slice(0, 40))}</a>` : '',
   ].filter(Boolean).join('');
   return `<div class="rp-top">
-  <aside class="rp-side card">
+  <aside class="rp-side">
     <img class="rp-side-av" src="${esc(avBig)}" alt="${esc(d.owner)} avatar" width="300" height="300" onerror="this.style.visibility='hidden'">
-    <div class="rp-side-body">
+    <div class="rp-side-body card">
       <div class="rp-side-name">${esc(d.name)}</div>
       <a class="rp-side-owner" href="https://github.com/${esc(d.owner)}" target="_blank" rel="noopener">${esc(d.owner)}</a>
     </div>
@@ -86,13 +93,14 @@ function topHTML(d) {
         <span class="rp-sep">/</span><span class="rp-name">${esc(d.name)}</span>
         <a class="rp-title-ext" href="${esc(d.url)}" target="_blank" rel="noopener" title="${esc(t('rp.view.gh'))}">${gi('ext', 15)}</a>
       </h1>
+      <div class="rp-head-chips">${boardsRowHTML(d)}</div>
     </div>
     ${d.description ? `<p class="rp-desc">${esc(d.description)}</p>` : ''}
     ${statsRowHTML(d)}
     ${topics ? `<div class="rp-topics">${topics}</div>` : ''}
     <div class="rp-meta">${metaBits}</div>
     <div class="rp-foot-row">
-      ${boardsRowHTML(d)}
+      ${sameOwnerHTML(d)}
       <div class="rp-actions">
         <button class="rp-btn rp-btn-acc" id="shareBtn">${gi('ext', 12)} ${t('rp.share')}</button>
         <a class="rp-btn" href="${esc(d.url)}" target="_blank" rel="noopener">GitHub ↗</a>

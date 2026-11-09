@@ -761,14 +761,14 @@ a:hover { text-decoration: underline; }
 
 /* --- top: side card + info column --- */
 .rp-top { display: grid; grid-template-columns: 188px minmax(0, 1fr); gap: 22px; align-items: start; }
-.rp-side { overflow: hidden; padding: 0; }
+.rp-side { padding: 0; }
 .rp-side-av {
   width: 100%; height: 150px; display: block;
-  object-fit: contain; background: var(--bg);
+  object-fit: contain;
 }
-.rp-side-body { padding: 14px 16px 16px; display: flex; flex-direction: column; }
+.rp-side-body { padding: 14px 16px 16px; display: flex; flex-direction: column; margin-top: 12px; }
 .rp-side-name { font-size: 17px; font-weight: 700; color: var(--text); word-break: break-all; }
-.rp-side-owner { color: var(--text-dim); font-size: 13px; text-decoration: none; margin: 2px 0 12px; }
+.rp-side-owner { color: var(--text-dim); font-size: 13px; text-decoration: none; margin: 2px 0 0; }
 .rp-side-owner:hover { color: var(--accent); }
 .rp-main { min-width: 0; }
 .rp-main-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
@@ -804,8 +804,16 @@ a:hover { text-decoration: underline; }
 .rp-meta-bit { display: inline-flex; align-items: center; gap: 5px; color: var(--text-faint); text-decoration: none; }
 .rp-home { color: var(--accent); }
 .rp-home:hover { text-decoration: underline; }
+.rp-head-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-left: auto; justify-content: flex-end; align-items: center; flex-shrink: 0; }
 .rp-foot-row { display: flex; align-items: center; gap: 12px; margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--card-border); }
-.rp-foot-row .rp-actions { margin-left: auto; }
+.rp-foot-row .rp-actions { margin-left: auto; flex-shrink: 0; }
+.rp-same { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; min-width: 0; font-size: 12.5px; }
+.rp-same-label { color: var(--text-faint); flex-shrink: 0; }
+.rp-same-link {
+  padding: 3px 10px; border-radius: 999px; font-size: 12px; text-decoration: none;
+  color: var(--text-dim); border: 1px solid var(--card-border); transition: all .15s;
+}
+.rp-same-link:hover { color: var(--accent); border-color: var(--accent-bd); }
 .rp-board-line { display: flex; flex-wrap: wrap; gap: 8px; min-width: 0; }
 .rp-board-chip {
   font-size: 13px; padding: 6px 14px; border-radius: 999px; text-decoration: none;
