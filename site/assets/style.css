@@ -211,7 +211,6 @@ a:hover { text-decoration: underline; }
   width: 8px; height: 8px; border-radius: 50%;
   background: var(--green);
   box-shadow: 0 0 8px var(--green);
-  animation: pulse 2s ease-in-out infinite;
 }
 @keyframes pulse {
   0%, 100% { opacity: 1; }
@@ -574,14 +573,17 @@ a:hover { text-decoration: underline; }
 }
 
 .row-rank {
-  width: 30px; flex-shrink: 0; padding-top: 4px;
+  width: 0; margin-right: -14px; flex-shrink: 0; padding-top: 6px;
   font-family: var(--mono); font-size: 14px; font-weight: 700;
   color: var(--text-faint); text-align: right;
   font-variant-numeric: tabular-nums;
+  overflow: hidden; opacity: 0;
+  transition: width .18s ease, margin-right .18s ease, opacity .18s ease;
 }
+.rank-row:hover .row-rank { width: 30px; margin-right: 0; opacity: 1; }
 .row-rank.top { color: var(--gold); }
 .row-avatar {
-  width: 48px; height: 48px; border-radius: 10px; flex-shrink: 0;
+  width: 64px; height: 64px; border-radius: 12px; flex-shrink: 0;
   border: 1px solid var(--card-border);
   background: var(--avatar-bg);
   object-fit: cover;
@@ -649,10 +651,11 @@ a:hover { text-decoration: underline; }
 .row-growth .up-tri { font-size: 12px; margin-right: 2px; }
 .row-stars-big {
   font-family: var(--mono); font-size: 18px; font-weight: 800;
-  color: var(--text); white-space: nowrap;
+  color: var(--gold); white-space: nowrap;
   font-variant-numeric: tabular-nums;
+  display: inline-flex; align-items: center; gap: 5px;
 }
-.row-stars-cap { font-size: 11px; color: var(--text-faint); }
+.row-stars-big .m-ico { width: 14px; height: 14px; }
 
 .rate-pill {
   display: inline-block; padding: 2px 10px; border-radius: 999px;
@@ -848,7 +851,6 @@ a:hover { text-decoration: underline; }
 .rp-back:hover { text-decoration: underline; }
 .brand-home { text-decoration: none; color: inherit; }
 .brand-home:hover { text-decoration: none; }
-.fresh-dot.ok { background: var(--green); box-shadow: 0 0 8px var(--green); }
 
 /* ---------------- responsive ---------------- */
 @media (max-width: 1024px) {
@@ -891,8 +893,9 @@ a:hover { text-decoration: underline; }
   .preview-row { min-height: 44px; }
   .preview-stars { display: none; } /* keep the ellipsis name clear of siblings on phones */
   .rank-row { padding: 14px; gap: 10px; }
-  .row-avatar { width: 40px; height: 40px; }
-  .row-rank { width: 22px; font-size: 12px; padding-top: 5px; }
+  .row-avatar { width: 48px; height: 48px; }
+  .rank-row:hover .row-rank { width: 22px; font-size: 12px; padding-top: 5px; }
+  .row-rank { margin-right: -10px; padding-top: 5px; }
   .row-growth, .row-stars-big { font-size: 15px; }
   .row-desc { font-size: 12px; }
   .sf-field { min-height: 44px; }

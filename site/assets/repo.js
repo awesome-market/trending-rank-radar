@@ -311,15 +311,14 @@ function syncTabs() {
 }
 
 async function renderFoot(d) {
-  $('#freshText').textContent = t('fresh', { t: timeAgo(d.snapshot_at) });
-  $('#freshDot').classList.add('ok');
+  const fresh = ' · ' + t('fresh', { t: timeAgo(d.snapshot_at) });
   try {
     const idx = await j('data/index.json');
     $('#footStats').textContent = t('foot.stats', {
       r: fmtFull(idx.repo_count), d: idx.snapshot_days,
       s: (idx.first_day || '').slice(5), e: (idx.latest_day || '').slice(5), g: '—',
-    });
-  } catch { /* footer stays empty */ }
+    }) + fresh;
+  } catch { $('#footStats').textContent = fresh.trim(); }
 }
 
 async function initRepo() {
@@ -329,14 +328,12 @@ async function initRepo() {
   const fn = new URLSearchParams(location.search).get('r') || '';
   if (!/^[\w.-]+\/[\w.-]+$/.test(fn)) {
     $('#repoContent').innerHTML = `<div class="rp-err card"><h2>${t('rp.notfound')}</h2><p>${t('rp.notfound.hint')}</p><a class="rp-back" href="./">${t('rp.back')}</a></div>`;
-    $('#freshText').textContent = '—';
     return;
   }
   try {
     repo.data = await j(`data/repos/${fn.replace('/', '__')}.json`);
   } catch {
     $('#repoContent').innerHTML = `<div class="rp-err card"><h2>${t('rp.notfound')}</h2><p>${t('rp.notfound.hint')}</p><a class="rp-back" href="./">${t('rp.back')}</a></div>`;
-    $('#freshText').textContent = '—';
     return;
   }
   renderAllRepo();

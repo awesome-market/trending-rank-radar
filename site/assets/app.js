@@ -57,7 +57,7 @@ function rowSideHTML(e) {
     const r = e.rate != null ? `<span class="rate-pill${e.rate >= 100 ? ' hot' : ''}">${fmtPct(e.rate)}</span>` : '';
     return `<div class="row-growth"><span class="up-tri">▲</span>+${fmt(e.growth)}</div>${r}`;
   }
-  return `<div class="row-stars-big">${icon('star', 'm-ico', 14)} ${fmtFull(e.stars)}</div><div class="row-stars-cap">${t('units.stars')}</div>`;
+  return `<div class="row-stars-big">${icon('star', 'm-ico', 14)} ${fmtFull(e.stars)}</div>`;
 }
 
 function nameLinkHTML(e) {
@@ -401,21 +401,20 @@ function renderHero() {
     </svg>`;
     cap.textContent = '';
   }
-  const idx = state.index;
-  $('#freshText').textContent = idx && idx.generated_at ? t('fresh', { t: timeAgo(idx.generated_at) }) : '';
 }
 
 function renderFootStats() {
   const idx = state.index;
   const top1 = state.hero && state.hero.top1;
   const g = top1 && top1.growth != null ? '+' + fmtFull(top1.growth) : '–';
+  const fresh = idx && idx.generated_at ? ' · ' + t('fresh', { t: timeAgo(idx.generated_at) }) : '';
   $('#footStats').textContent = idx
     ? t('foot.stats', {
         r: fmtFull(idx.repo_count || 0),
         d: idx.snapshot_days || 0,
         s: (idx.first_day || '').slice(5) || '–',
         e: (idx.latest_day || '').slice(5) || '–',
-        g })
+        g }) + fresh
     : '';
 }
 
