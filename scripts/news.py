@@ -5,6 +5,10 @@ Sources per repo (all keyless, polite-paced):
   - Hacker News  Algolia search_by_date, URL-exact on github.com/owner/repo
   - Google News  RSS search, zh-CN and en-US locales (links are Google
                  redirect shells; <source> carries the media outlet name)
+  - Bing News    RSS search, zh-TW and en-US markets (zh-CN mkt is geo-
+                 blocked from non-CN IPs; zh-TW still returns CN media).
+                 apiclick links carry the real URL in their url= param,
+                 so Bing items resolve to direct article links.
 
 Output: data/news/{owner}__{repo}.json
   {"repo": "o/n", "fetched_at": "...", "items": [
@@ -42,16 +46,21 @@ PACE = 0.4          # seconds between HTTP requests
 MAX_PER_LANG = 10   # cap stored items per language
 GN_LOCALES = {"zh": ("zh-CN", "CN", "CN:zh-Hans"),
               "en": ("en-US", "US", "US:en")}
+BING_LOCALES = {"zh": ("zh-TW", "zh-hant"),
+                "en": ("en-US", "en-us")}
+# Bing rejects the bot UA with a homepage redirect; send a browser one.
+BROWSER_UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                            "AppleWebKit/537.36 Chrome/120.0 Safari/537.36"}
 
 
 def log(msg: str) -> None:
     print(f"[news {datetime.now():%H:%M:%S}] {msg}", flush=True)
 
 
-def _get(url: str, tries: int = 2) -> bytes:
+def _get(url: str, tries: int = 2, headers: dict | None = None) -> bytes:
     for i in range(tries):
         try:
-            req = urllib.request.Request(url, headers=UA)
+            req = urllib.request.Request(url, headers=headers or UA)
             return urllib.request.urlopen(req, timeout=20).read()
         except Exception:
             if i == tries - 1:
@@ -109,12 +118,51 @@ def fetch_gn(owner: str, name: str, lang: str) -> list[dict]:
     return out
 
 
+def fetch_bing(owner: str, name: str, lang: str) -> list[dict]:
+    mkt, setlang = BING_LOCALES[lang]
+    q = urllib.parse.quote(f'"{name}" github')
+    url = ("https://www.bing.com/news/search"
+           f"?q={q}&format=rss&mkt={mkt}&setlang={setlang}")
+    root = ET.fromstring(_get(url, headers=BROWSER_UA))
+    out = []
+    for it in root.iter("item"):
+        title = (it.findtext("title") or "").strip()
+        link = it.findtext("link") or ""
+        src = next((e for e in it.iter() if e.tag.rpartition("}")[2]
+                    == "Source"), None)
+        src_name = (src.text or "").strip() if src is not None else ""
+        pub = it.findtext("pubDate") or ""
+        try:
+            date = datetime.strptime(
+                pub, "%a, %d %b %Y %H:%M:%S %Z").strftime("%Y-%m-%d")
+        except ValueError:
+            date = pub[:10]
+        if not title or not link:
+            continue
+        # apiclick shells embed the article URL in url=; keep shell only
+        # as a fallback when the param is absent
+        real = urllib.parse.parse_qs(
+            urllib.parse.urlparse(link).query).get("url", [link])[0]
+        # a github.com hit is the repo indexing itself, not coverage
+        if "github.com" in urllib.parse.urlparse(real).netloc:
+            continue
+        out.append({"title": title, "url": real,
+                    "source": src_name or "Bing News",
+                    "lang": lang, "date": date, "_k": f"bing:{real}"})
+        if len(out) >= 5:
+            break
+    return out
+
+
 def _key(it: dict) -> str:
     if it.get("_k"):
         return it["_k"]
     if it.get("hn"):                       # stored HN item (no _k on disk)
         return f"hn:{it['hn'].rsplit('=', 1)[-1]}"
-    return f"gn:{it.get('url', '')}"
+    u = it.get("url", "")
+    # stored items keep the fetcher's key namespace so they dedup against
+    # the next fetch (GN shells → gn:, real/direct urls → bing:)
+    return ("gn:" if "news.google.com" in u else "bing:") + u
 
 
 def _norm_title(it: dict) -> str:
@@ -126,6 +174,9 @@ def _norm_title(it: dict) -> str:
         if m and m.start() >= 5:
             t = t[:m.start()].strip()
     it["title"] = t
+    # the fetch-locale lang label lies when an aggregator returns a
+    # foreign-language article; CJK presence is the reliable signal
+    it["lang"] = "zh" if re.search(r"[一-鿿]", t) else "en"
     return re.sub(r"\W+", "", t).lower()
 
 
@@ -141,7 +192,10 @@ def merge(old: list | None, new: list) -> list:
     for it in seen.values():
         by_lang.setdefault(it.get("lang") or "en", []).append(it)
     out = []
-    rank = lambda x: (x.get("points") or 0, x.get("date") or "")
+    # prefer direct links over Google redirect shells when the same story
+    # arrives from both aggregators, then notability (points, date)
+    rank = lambda x: ("news.google.com" not in (x.get("url") or ""),
+                      x.get("points") or 0, x.get("date") or "")
     for lst in by_lang.values():
         lst.sort(key=rank, reverse=True)
         titles = set()
@@ -189,7 +243,9 @@ def main() -> int:
 
     fetchers = (fetch_hn,
                 lambda o, n: fetch_gn(o, n, "zh"),
-                lambda o, n: fetch_gn(o, n, "en"))
+                lambda o, n: fetch_gn(o, n, "en"),
+                lambda o, n: fetch_bing(o, n, "zh"),
+                lambda o, n: fetch_bing(o, n, "en"))
     updated = kept = errs = 0
     for i, fn in enumerate(repos):
         if "/" not in fn:

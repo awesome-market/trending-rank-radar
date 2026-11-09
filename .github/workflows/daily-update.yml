@@ -42,7 +42,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SNAPSHOT_AT: ${{ inputs.at }}
 
-      - name: Fetch repo news (HN + Google News)
+      - name: Fetch repo news (HN + Google/Bing News)
         if: ${{ !inputs.deploy_only }}
         run: |
           if [ "${{ github.event.schedule }}" = "0 8 * * 0" ]; then

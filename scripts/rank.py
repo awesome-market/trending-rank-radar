@@ -376,7 +376,8 @@ def _ssr_news(items: list) -> str:
             extra = (f"▲ {i['points']:,}"
                      + (f" · {c:,} comments" if isinstance(c, int) else "")
                      + f" · {_esc(i.get('date') or '')}")
-        return (f'<a class="rp-item" href="{_esc(i.get("url") or "")}" '
+        return (f'<a class="rp-item" '
+                f'href="{_esc(i.get("hn") or i.get("url") or "")}" '
                 f'target="_blank" rel="noopener">'
                 f'<span class="rp-news-src">{_esc(i.get("source") or "")}</span>'
                 f'<span class="rp-item-title">{_esc(i.get("title") or "")}</span>'

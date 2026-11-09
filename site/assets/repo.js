@@ -541,7 +541,7 @@ function newsHTML(d) {
     const extra = (i.source === 'Hacker News' && i.points != null)
       ? `▲${fmtFull(i.points)}${i.comments != null ? ` · ${fmtFull(i.comments)} comments` : ''} · ${esc(i.date || '')}`
       : esc(i.date || '');
-    return `<a class="rp-item" href="${esc(i.url || '')}" target="_blank" rel="noopener">
+    return `<a class="rp-item" href="${esc(i.hn || i.url || '')}" target="_blank" rel="noopener">
       <span class="rp-news-src">${esc(i.source || '')}</span>
       <span class="rp-item-title">${esc(i.title || '')}</span>
       <span class="rp-item-extra">${extra}</span></a>`;
