@@ -42,6 +42,8 @@ REST_FALLBACK_LIMIT = 150
 CORE_BATCH = 50
 EXTENDED_BATCH = 15
 EXTENDED_KEYS = ("watchers", "issues_total", "prs_total", "releases_total", "topics")
+SURGE_PUSHED_DAYS = 7
+SURGE_BANDS = [(20, 300), (300, 1000), (1000, 5000)]
 
 # Run-level stats consumed by scripts/ci_rescue.py via run_status.json
 STATS = {"trending_ok": 0, "trending_failed": 0, "trending_items": 0}
@@ -125,7 +127,25 @@ def discover(client: gh.GitHubClient, init_mode: bool) -> dict[str, dict]:
     except Exception as e:
         log(f"[warn] new-repo search failed: {e}")
 
-    # 3) Cold start only: seed high-star repos so total board has coverage
+    # 3) Mid-band active repos — approximates "old repos suddenly surging",
+    #    the gap left when trending is unreachable: old enough to be outside
+    #    the new-repo window, still pushing commits, mid star band. Actual
+    #    surge measurement happens downstream in the daily snapshots.
+    active = (TODAY_UTC() - timedelta(days=SURGE_PUSHED_DAYS)).strftime("%Y-%m-%d")
+    for lo, hi in SURGE_BANDS:
+        try:
+            items = client.search_repositories(
+                f"created:<{since} stars:{lo}..{hi} pushed:>{active}",
+                pages=1, per_page=100)
+            for it in items:
+                add(it["full_name"], "search_surge",
+                    stars=it.get("stargazers_count"), fork=it.get("fork"))
+            log(f"search surge (stars:{lo}..{hi}): {len(items)}")
+        except Exception as e:
+            log(f"[warn] surge search failed ({lo}..{hi}): {e}")
+        time.sleep(0.8)
+
+    # 4) Cold start only: seed high-star repos so total board has coverage
     if init_mode:
         try:
             items = client.search_repositories("stars:>=2000", pages=10, per_page=100)

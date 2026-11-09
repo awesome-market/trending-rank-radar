@@ -16,7 +16,8 @@
 
 1. **Trending 页面**：抓 `https://github.com/trending`（必要时按 `?since=daily` 及几个主要语言页），取每仓库的 `owner/name`、简介、语言、今日 Star 增长。
 2. **新仓库搜索**：Search API 查询 `created:>{90天前} stars:>20 sort=stars`（对齐新榜口径），取前 1–2 页，补充新榜候选。
-3. **存量 watchlist**：上一轮快照中所有在榜/接近在榜的仓库继续跟踪。
+3. **老仓库活跃搜索**（`search_surge`）：Search API 按 star 分段查询 `created:<{90天前} stars:{lo}..{hi} pushed:>{7天前}`（20–300 / 300–1000 / 1000–5000 三段，各取 1 页 ≈ 300 候选/次）。近似"trending 缺位时的老仓库爆量"发现——召回靠 `pushed` 活跃度过滤，是否真在涨由每日快照 delta 判定，误报由 14 天零增长驱逐清理。
+4. **存量 watchlist**：上一轮快照中所有在榜/接近在榜的仓库继续跟踪。
 
 候选集与 watchlist 合并后，**按规则裁剪到上限 ~2000 个**。优先级：在榜仓库 > Trending 命中 > 高 Star > 近 7 天有增长。**淘汰规则**（超限时按此顺序剔除）：连续 14 天未上任何榜 且 非 Trending 命中 且 Star 增长为 0 的仓库优先出局；仍超限则剔除 Star 最低者。
 
