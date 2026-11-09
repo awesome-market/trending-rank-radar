@@ -89,6 +89,11 @@ const I18N = {
     'rp.nodata': '该数据暂未采集',
     'rp.view.gh': 'GitHub 详情',
     'rp.rank.at': '{b} #{n}',
+    'rp.crumb.home': '榜单',
+    'rp.subtitle': 'GitHub Trend · Star / Watch / Fork',
+    'rp.grain.d': '日趋势', 'rp.grain.w': '周趋势', 'rp.grain.m': '月趋势',
+    'rp.ctab.ov': '概览',
+    'rp.more': '查看全部',
     'title.repo': '{r} · GitHub Trending Rank Radar',
   },
   en: {
@@ -175,6 +180,11 @@ const I18N = {
     'rp.nodata': 'Not collected yet',
     'rp.view.gh': 'Open on GitHub',
     'rp.rank.at': '{b} #{n}',
+    'rp.crumb.home': 'Boards',
+    'rp.subtitle': 'GitHub Trend · Star / Watch / Fork',
+    'rp.grain.d': 'Daily', 'rp.grain.w': 'Weekly', 'rp.grain.m': 'Monthly',
+    'rp.ctab.ov': 'Overview',
+    'rp.more': 'View all',
     'title.repo': '{r} · GitHub Trending Rank Radar',
   },
 };

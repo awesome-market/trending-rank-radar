@@ -227,11 +227,16 @@ def _plain(text: str, limit: int) -> str:
 
 def _ssr_repo(p: dict) -> str:
     """Server-rendered repo detail HTML — readable by crawlers and no-JS
-    clients, mirroring the classes repo.js produces for visual parity."""
+    clients, mirroring the layout repo.js produces (side card + info column,
+    then all content sections; tabs aren't needed for crawlers)."""
     m = p.get("metrics") or {}
     def num(v): return f"{int(v):,}" if isinstance(v, (int, float)) else "–"
-    av = (f'<img class="rp-avatar" src="{_esc(p["avatar"])}&s=128" width="64" '
-          f'height="64" alt="">' if p.get("avatar") else "")
+    stat_icons = {"stars": "★", "forks": "⑂", "watchers": "👁", "prs": "⑃",
+                  "issues": "●", "releases": "▤", "discussions": "◈"}
+    stats = "".join(
+        f'<span class="rp-stat" title="{k}">{stat_icons[k]} <b>{num(m[k])}</b></span>'
+        for k in ("stars", "forks", "watchers", "prs", "issues", "releases", "discussions")
+        if m.get(k) is not None)
     topics = "".join(
         f'<a class="rp-topic" href="https://github.com/topics/{_esc(t)}">{_esc(t)}</a>'
         for t in (p.get("topics") or [])[:8])
@@ -249,13 +254,11 @@ def _ssr_repo(p: dict) -> str:
     chips = "".join(
         f'<a class="rp-board-chip" href="../?board={b}">{b} <b>#{(p["boards"] or {})[b]}</b></a>'
         for b in order if (p.get("boards") or {}).get(b) is not None)
-    boards_sec = (f'<section class="rp-boards card"><h2 class="rp-h">Boards</h2>'
-                  f'<div class="rp-board-chips">{chips}</div></section>' if chips else "")
-    met_keys = ["stars", "forks", "watchers", "prs", "issues", "releases", "discussions"]
     growth = p.get("growth") or {}
     def dlt(k):
         g = growth.get(k)
         return f'<span class="rp-delta up">+{num(g["stars"])}</span>' if g else ""
+    met_keys = ["stars", "forks", "watchers", "prs", "issues", "releases", "discussions"]
     mets = "".join(
         f'<div class="rp-metric"><div class="rp-metric-num">{num(m[k])}</div>'
         f'<div class="rp-metric-label">{k}</div>'
@@ -272,44 +275,61 @@ def _ssr_repo(p: dict) -> str:
             f'{_esc((i.get("created_at") or "")[:10])}</span></a>'
             for i in (items or [])[:8])
 
-    sec_i = (f'<section class="rp-card card"><h2 class="rp-h">Top issues</h2>'
-             f'<div class="rp-list">{lst(p.get("issues"), p["url"] + "/issues")}</div></section>'
-             if p.get("issues") else "")
-    sec_d = (f'<section class="rp-card card"><h2 class="rp-h">Discussions</h2>'
-             f'<div class="rp-list">{lst(p.get("discussions"), p["url"] + "/discussions")}</div></section>'
-             if p.get("discussions") else "")
     rel = p.get("latest_release")
     rel_html = ""
     if rel:
         body = _plain(rel.get("body") or "", 600)
-        rel_html = (f'<section class="rp-card card"><h2 class="rp-h">Latest release</h2>'
+        rel_html = (f'<h3 class="rp-ph">Latest release</h3>'
                     f'<a class="rp-rel" href="{_esc(p["url"])}/releases">'
                     f'<b>{_esc(rel.get("name") or rel.get("tag") or "")}</b> '
                     f'<span class="rp-rel-tag">{_esc(rel.get("tag") or "")}</span> '
                     f'<span class="rp-item-extra">{_esc((rel.get("published_at") or "")[:10])}</span></a>'
-                    + (f'<pre class="rp-pre">{body}</pre>' if body else "") + '</section>')
+                    + (f'<pre class="rp-pre">{body}</pre>' if body else ""))
     readme = p.get("readme_excerpt")
-    readme_html = (f'<section class="rp-card card"><h2 class="rp-h">README</h2>'
-                   f'<pre class="rp-pre rp-readme">{_plain(readme, 1200)}</pre></section>'
+    readme_html = (f'<h3 class="rp-ph">README</h3>'
+                   f'<pre class="rp-pre rp-readme">{_plain(readme, 1200)}</pre>'
                    if readme else "")
+    sec_i = (f'<h3 class="rp-ph">Top issues</h3>'
+             f'<div class="rp-list">{lst(p.get("issues"), p["url"] + "/issues")}</div>'
+             if p.get("issues") else "")
+    sec_d = (f'<h3 class="rp-ph">Discussions</h3>'
+             f'<div class="rp-list">{lst(p.get("discussions"), p["url"] + "/discussions")}</div>'
+             if p.get("discussions") else "")
+    av = (f'<img class="rp-side-av" src="{_esc(p["avatar"])}&s=300" width="300" '
+          f'height="300" alt="{_esc(p["owner"])} avatar">' if p.get("avatar")
+          else f'<img class="rp-side-av" src="https://github.com/{_esc(p["owner"])}.png?size=300" '
+               f'width="300" height="300" alt="">')
     return f"""
-<section class="rp-head card">
-  {av}
-  <div class="rp-head-main">
-    <div class="rp-name-row">
-      <a class="rp-owner" href="https://github.com/{_esc(p['owner'])}">{_esc(p['owner'])}</a>
-      <span class="rp-sep">/</span>
-      <h1 class="rp-name">{_esc(p['name'])}</h1>
-      <a class="rp-gh" href="{_esc(p['url'])}">GitHub ↗</a>
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">{_esc(p['full_name'])}</span></nav>
+<div class="rp-top">
+  <aside class="rp-side card">
+    {av}
+    <div class="rp-side-body">
+      <div class="rp-side-name">{_esc(p['name'])}</div>
+      <a class="rp-side-owner" href="https://github.com/{_esc(p['owner'])}">{_esc(p['owner'])}</a>
+      <a class="rp-side-btn" href="{_esc(p['url'])}">GitHub ↗</a>
+      <a class="rp-side-alt" href="../">← Back to boards</a>
+      <div class="rp-side-meta"><span>Snapshot {_esc(p.get('snapshot_at'))}</span></div>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/{_esc(p['owner'])}">{_esc(p['owner'])}</a>
+        <span class="rp-sep">/</span><span class="rp-name">{_esc(p['name'])}</span>
+      </h1>
+      <div class="rp-actions"><a class="rp-btn" href="{_esc(p['url'])}">GitHub ↗</a></div>
     </div>
     <p class="rp-desc">{_esc(p.get('description') or '')}</p>
+    <div class="rp-statrow">{stats}</div>
     <div class="rp-topics">{topics}</div>
     <div class="rp-meta">{''.join(bits)}</div>
+    <div class="rp-board-line">{chips}</div>
   </div>
-</section>
-{boards_sec}
-<section class="rp-metrics card"><h2 class="rp-h">Overview</h2><div class="rp-metric-grid">{mets}</div></section>
-<div class="rp-grid">{sec_i}{sec_d}{rel_html}{readme_html}</div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid">{mets}</div>
+{readme_html}{sec_i}{sec_d}{rel_html}</section>
 <p class="rp-meta">Snapshot: {_esc(p.get('snapshot_at'))} · Data license Apache-2.0 ·
 <a href="../data/repos/{_esc(p['owner'])}__{_esc(p['name'])}.json">JSON</a></p>"""
 
