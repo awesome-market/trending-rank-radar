@@ -762,7 +762,10 @@ a:hover { text-decoration: underline; }
 /* --- top: side card + info column --- */
 .rp-top { display: grid; grid-template-columns: 188px minmax(0, 1fr); gap: 22px; align-items: start; }
 .rp-side { overflow: hidden; padding: 0; }
-.rp-side-av { width: 100%; height: auto; display: block; }
+.rp-side-av {
+  width: 100%; aspect-ratio: 1; display: block;
+  object-fit: contain; background: var(--bg);
+}
 .rp-side-body { padding: 14px 16px 16px; display: flex; flex-direction: column; }
 .rp-side-name { font-size: 17px; font-weight: 700; color: var(--text); word-break: break-all; }
 .rp-side-owner { color: var(--text-dim); font-size: 13px; text-decoration: none; margin: 2px 0 12px; }
