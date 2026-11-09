@@ -85,6 +85,9 @@ jobs:
 要点：
 
 - `GITHUB_TOKEN` 在 Actions 内自动可用：**REST core 1000 req/hr、GraphQL 5000 points/hr、Search API 30 req/min**——日更 2 次够用，无需额外 secret（若将来加 PAT，限额提升至 REST 5000/hr）。
+- `workflow_dispatch` 输入：`at` 补录历史快照时间戳；`deploy_only` 跳过采集/重建/提交直接发布 `site/`（救援通道与纯 UI 改动用，~90 秒）。
+- Collect 后 `ci_rescue.py` 读 `run_status.json`：trending 全败则开 `rescue` issue 交给离线救援通道（[07-rescue.md](07-rescue.md)）；`rescue-report.yml` 是救援服务器回写 issue 的中继工作流（bot 身份）。
+- "Commit data updates" 的 `git pull --rebase` 带自愈：生成文件冲突时取远端版本重跑 `rank.py` 后继续。
 - `collect.py` **自行取运行时间戳**（或读 `SNAPSHOT_AT` 环境变量）生成 `YYYY-MM-DDTHH.json` 文件名，不传日期参数，避免同日两次运行撞名；`workflow_dispatch` 的 `at` 输入仅用于补录历史时间点。
 - 数据与站点产物**直接提交回 main**，仓库本身就是数据档案（可被 Clone / API 下载，天然开源）。
 - 幂等性：同一 CST 日第二次运行生成新时间戳文件，`rank.py` 按"当天最后一次"归日；重跑不覆盖已有文件，只会新增/覆盖**同一时间戳**的文件。

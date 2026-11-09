@@ -81,6 +81,7 @@ data/
 ### Trending 抓取注意
 
 - `github.com/trending` 是 HTML 页面，无官方 API。解析 `h2 a` 仓库链接 + `.f6.text-gray` Star 数等选择器；页面改版导致解析失败时，任务告警但不中断（快照可由 watchlist 独立完成）。
+- **Actions 数据中心 IP 对该页限流严重**（匿名 HTML 请求按 IP 信誉调度，实测全部语言页 504）。采集采用 fail-fast：单页 1 次尝试、连续 2 败跳过剩余页，榜单靠 watchlist + Search API 继续运转。全页失败时通过 issue 驱动的离线救援通道补采，见 [07-rescue.md](07-rescue.md)。
 - 每天 2 次运行各抓 1 次（共 2 次/日），配合 `GITHUB_TOKEN` 不需要（HTML 页面不需要认证），但加 `User-Agent` 头。
 - 语言维度：v1 只抓总榜 trending + `python`/`javascript`/`typescript`/`go`/`rust` 等 TOP10 语言页，控制规模。
 
