@@ -1,0 +1,46 @@
+name: rescue-report
+
+# Relay so that rescue-runner side effects (comments, labels, state updates,
+# issue close) appear under the github-actions bot identity instead of the
+# rescue server's personal token. rescue.py only dispatches this workflow.
+on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'rescue issue number'
+        required: true
+      outcome:
+        description: 'started | success | failed | exhausted'
+        required: true
+      attempt:
+        description: 'attempt number just tried'
+        required: false
+        default: '0'
+      max_attempts:
+        required: false
+        default: '3'
+      log_tail:
+        description: 'tail of the rescue run log'
+        required: false
+        default: ''
+
+permissions:
+  issues: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Update rescue issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ inputs.issue_number }}
+          OUTCOME: ${{ inputs.outcome }}
+          ATTEMPT: ${{ inputs.attempt }}
+          MAX_ATTEMPTS: ${{ inputs.max_attempts }}
+          LOG_TAIL: ${{ inputs.log_tail }}
+        run: python scripts/rescue_report.py

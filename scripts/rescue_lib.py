@@ -114,9 +114,14 @@ def create_issue(token: str, title: str, body: str,
                 {"title": title, "body": body, "labels": labels})
 
 
-def dispatch_deploy(token: str, workflow: str = "daily-update.yml") -> None:
+def dispatch(token: str, workflow: str, inputs: dict) -> None:
     _api("POST", f"/actions/workflows/{workflow}/dispatches", token,
-         {"ref": "main", "inputs": {"deploy_only": "true"}}, ok=(204,))
+         {"ref": "main", "inputs": {k: str(v) for k, v in inputs.items()}},
+         ok=(204,))
+
+
+def dispatch_deploy(token: str, workflow: str = "daily-update.yml") -> None:
+    dispatch(token, workflow, {"deploy_only": "true"})
 
 
 def utcnow() -> str:

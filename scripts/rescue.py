@@ -86,6 +86,16 @@ def attempt(issue: dict, token: str, log_tail: list[str]) -> None:
     log("deploy dispatched (deploy_only=true)")
 
 
+def report(token: str, n: int, outcome: str, attempt: int = 0,
+           max_a: int = rl.MAX_ATTEMPTS, tail: str = "") -> None:
+    """Route the issue mutation through rescue-report.yml so it appears as
+    github-actions[bot] rather than the rescue token's owner."""
+    rl.dispatch(token, "rescue-report.yml", {
+        "issue_number": n, "outcome": outcome, "attempt": attempt,
+        "max_attempts": max_a, "log_tail": tail[-3000:],
+    })
+
+
 def main() -> int:
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
     if not token:
@@ -123,13 +133,11 @@ def main() -> int:
         max_a = min(int(state.get("max_attempts") or rl.MAX_ATTEMPTS), rl.MAX_ATTEMPTS)
         if attempts >= max_a:
             log(f"issue #{n} exhausted ({attempts}/{max_a}); marking failed")
-            rl.comment(token, n, f"救援已失败 {attempts} 次，达到上限，标记为彻底失败。")
-            rl.set_labels(token, n, [rl.LABEL_FAILED])
-            rl.close_issue(token, n)
+            report(token, n, "exhausted", attempts, max_a)
             return 0
 
         log(f"rescuing issue #{n} (attempt {attempts + 1}/{max_a})")
-        rl.comment(token, n, f"救援服务器开始第 {attempts + 1} 次尝试…")
+        report(token, n, "started", attempts + 1, max_a)
         log_tail: list[str] = []
         try:
             attempt(issue, token, log_tail)
@@ -137,24 +145,13 @@ def main() -> int:
             tail = "\n".join(log_tail[-25:]) or "(no output)"
             log(f"FAILED: {e}")
             traceback.print_exc()
-            state["attempts"] = attempts + 1
-            human = (f"救援已失败 {state['attempts']}/{max_a} 次。"
-                     + ("已达上限，本 issue 标记 `rescue-failed`，不再重试。"
-                        if state["attempts"] >= max_a else "下一次 cron 运行会继续重试。"))
-            rl.update_state(token, n, state, human)
-            rl.comment(token, n,
-                       f"第 {state['attempts']} 次救援失败：`{e}`\n\n```\n{tail}\n```")
-            if state["attempts"] >= max_a:
-                rl.set_labels(token, n, [rl.LABEL_FAILED])
-                rl.close_issue(token, n)
+            outcome = "exhausted" if attempts + 1 >= max_a else "failed"
+            report(token, n, outcome, attempts + 1, max_a, f"{e}\n\n{tail}")
             return 1
 
-        rl.comment(token, n,
-                   "✅ 救援成功：已在离线网络完成采集并推送数据，Pages 部署已触发。\n\n"
-                   f"```\n{chr(10).join(log_tail[-10:])}\n```")
-        rl.set_labels(token, n, [rl.LABEL_DONE])
-        rl.close_issue(token, n)
-        log(f"issue #{n} rescued and closed")
+        report(token, n, "success", attempts + 1, max_a,
+               "\n".join(log_tail[-10:]))
+        log(f"issue #{n} rescued; report dispatched")
         return 0
 
 

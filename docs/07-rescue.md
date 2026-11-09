@@ -17,10 +17,16 @@ CI daily-update
   └─ rescue.py
         读 is:open label:rescue 最新 issue → 解析 TRR-STATE
         attempts < max  → git sync → collect → rank → commit+push
-                        → dispatch deploy_only → 评论成功 → rescue-done → close
-        每次失败        → 评论日志尾部 + attempts+1（更新 body 状态块）
+                        → dispatch deploy_only → dispatch rescue-report
+                        → github-actions bot 评论成功 → rescue-done → close
+        每次失败        → dispatch rescue-report（bot 评论日志尾 + attempts+1）
         attempts ≥ max  → rescue-failed 标签 + close（不再重试）
 ```
+
+> **bot 身份**：服务器 PAT 只做"读 issue + push + 发 dispatch"三件
+> 事；所有 issue 上的可见动作（评论/标签/改状态/关单）都转发给
+> `rescue-report.yml` 用内置 `GITHUB_TOKEN` 执行，作者显示
+> `github-actions`，无需注册独立 bot 账号。
 
 ## Issue 约定
 
@@ -42,9 +48,9 @@ CI daily-update
 
    | 权限 | 用途 |
    |---|---|
-   | Issues: Read and write | 读/评论/改状态/打标签/关闭 issue |
+   | Issues: Read | 轮询 open `rescue` issue（写操作走 rescue-report 中继） |
    | Contents: Read and write | `git push` 数据提交 |
-   | Actions: Read and write | 触发 `deploy_only` 部署 |
+   | Actions: Read and write | 触发 `deploy_only` 部署 + `rescue-report` 回写 |
 
 3. 配置 cron（每小时）：
 
