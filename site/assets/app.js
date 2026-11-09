@@ -362,7 +362,7 @@ function readURL() {
   const b = p.get('board');
   if (state.period === 'month' && b === CUM_BOARD) state.board = CUM_BOARD;
   else if (BOARD_ORDER.includes(b)) state.board = b;
-  else state.board = 'new';
+  else state.board = 'daily';   // landing default = 日飙升榜
   $('#minK').value = state.minK; $('#maxK').value = state.maxK;
 }
 
@@ -449,7 +449,11 @@ async function init() {
     btn.onclick = () => {
       state.period = btn.dataset.period;
       state.sel = null;
-      state.board = 'daily';
+      // keep the current board across period switches; only remap the
+      // month-only cumulative board when leaving month view
+      if (state.board === CUM_BOARD && state.period !== 'month') {
+        state.board = 'monthly';
+      }
       renderAll();
       syncURL();
     };

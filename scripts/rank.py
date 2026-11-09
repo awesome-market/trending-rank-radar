@@ -398,8 +398,8 @@ def _ssr_news(items: list) -> str:
 
 # ------------------------------------------------------------ index SSR --
 SSR_BEGIN, SSR_END = "<!--SSR-->", "<!--/SSR-->"
-# landing-order fallback mirrors app.js (default board = 'new')
-SSR_BOARDS = ("new", "total", "daily", "weekly", "monthly")
+# landing-order fallback mirrors app.js (default board = 'daily')
+SSR_BOARDS = ("daily", "new", "total", "weekly", "monthly")
 SSR_LABELS = {"new": "新星榜", "total": "总榜", "daily": "日飙升榜",
               "weekly": "周飙升榜", "monthly": "月飙升榜"}
 SSR_TOP = 50
