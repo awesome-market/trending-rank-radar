@@ -77,12 +77,6 @@ function topHTML(d) {
     <div class="rp-side-body">
       <div class="rp-side-name">${esc(d.name)}</div>
       <a class="rp-side-owner" href="https://github.com/${esc(d.owner)}" target="_blank" rel="noopener">${esc(d.owner)}</a>
-      <a class="rp-side-btn" href="${esc(d.url)}" target="_blank" rel="noopener">${gi('ext', 13)} GitHub</a>
-      <a class="rp-side-alt" href="${HOME}">${t('rp.back')}</a>
-      <div class="rp-side-meta">
-        <span>${t('rp.updated')} ${esc((d.snapshot_at || '').slice(0, 10))}</span>
-        ${d.created_at ? `<span>${t('rp.created')} ${esc(String(d.created_at).slice(0, 10))}</span>` : ''}
-      </div>
     </div>
   </aside>
   <div class="rp-main">

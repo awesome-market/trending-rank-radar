@@ -308,9 +308,6 @@ def _ssr_repo(p: dict) -> str:
     <div class="rp-side-body">
       <div class="rp-side-name">{_esc(p['name'])}</div>
       <a class="rp-side-owner" href="https://github.com/{_esc(p['owner'])}">{_esc(p['owner'])}</a>
-      <a class="rp-side-btn" href="{_esc(p['url'])}">GitHub ↗</a>
-      <a class="rp-side-alt" href="../">← Back to boards</a>
-      <div class="rp-side-meta"><span>Snapshot {_esc(p.get('snapshot_at'))}</span></div>
     </div>
   </aside>
   <div class="rp-main">
