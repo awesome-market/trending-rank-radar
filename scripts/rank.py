@@ -351,10 +351,42 @@ def render_repo_page(p: dict, template: str, base: str) -> str:
     desc = ((p.get("description") or "").replace("\n", " ")[:200]
             or f"{fn} — GitHub stars trend, board ranks, issues and releases")
     title = f"{fn} · GitHub Trending Rank Radar"
+    ld = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": fn,
+        "codeRepository": p["url"],
+        "url": canon,
+        "description": desc,
+        "author": {"@type": "Organization", "name": p["owner"],
+                   "url": f"https://github.com/{p['owner']}"},
+        "isAccessibleForFree": True,
+        "license": "https://www.apache.org/licenses/LICENSE-2.0",
+    }
+    if p.get("language"):
+        ld["programmingLanguage"] = p["language"]
+    if p.get("created_at"):
+        ld["dateCreated"] = str(p["created_at"])[:10]
+    if p.get("license") and re.match(r"^[A-Za-z0-9.\-+]+$", str(p["license"])):
+        ld["license"] = f"https://spdx.org/licenses/{p['license']}.html"
+    if p.get("topics"):
+        ld["keywords"] = ",".join(p["topics"][:10])
+    ld_block = ('<script type="application/ld+json">'
+                + json.dumps(ld, ensure_ascii=False) + "</script>")
+    keywords = ", ".join(
+        [p["name"], p["owner"], fn, "github stars", "github trending",
+         "star growth", "star history", "开源项目", "星标增长"]
+        + [t for t in (p.get("topics") or [])[:6]])
     out = template
     out = re.sub(r"<title>.*?</title>", f"<title>{_esc(title)}</title>", out, count=1)
     out = re.sub(r'<meta name="description" content="[^"]*">',
                  f'<meta name="description" content="{_esc(desc)}">', out, count=1)
+    out = out.replace('<meta name="robots" content="noindex,follow">',
+                      f'<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">\n'
+                      f'<meta name="keywords" content="{_esc(keywords)}">\n'
+                      f'<link rel="alternate" hreflang="zh" href="{_esc(canon)}">\n'
+                      f'<link rel="alternate" hreflang="en" href="{_esc(canon)}">\n'
+                      f'<link rel="alternate" hreflang="x-default" href="{_esc(canon)}">')
     out = re.sub(r'<link rel="canonical" href="[^"]*">',
                  f'<link rel="canonical" href="{_esc(canon)}">', out, count=1)
     out = re.sub(r'<meta property="og:title" content="[^"]*">',
@@ -363,8 +395,9 @@ def render_repo_page(p: dict, template: str, base: str) -> str:
                  f'<meta property="og:description" content="{_esc(desc)}">', out, count=1)
     out = re.sub(r'<meta property="og:url" content="[^"]*">',
                  f'<meta property="og:url" content="{_esc(canon)}">', out, count=1)
-    out = out.replace('<meta name="robots" content="noindex,follow">',
-                      '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">')
+    out = out.replace('<meta property="og:type" content="website">',
+                      '<meta property="og:type" content="article">', 1)
+    out = out.replace("</head>", f"{ld_block}\n</head>", 1)
     out = out.replace('href="assets/', 'href="../assets/')
     out = out.replace('src="assets/', 'src="../assets/')
     out = out.replace('href="manifest.webmanifest"', 'href="../manifest.webmanifest"')
@@ -736,13 +769,15 @@ def main() -> int:
     base = args.site_base.rstrip("/")
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-               f"  <url><loc>{base}/</loc></url>"]
+               f"  <url><loc>{base}/</loc><lastmod>{latest_day}</lastmod></url>"]
     # board entry points (query params) — cheap SEO surface
     for b in ALL_BOARDS:
-        sitemap.append(f"  <url><loc>{base}/?board={b}</loc></url>")
+        sitemap.append(f"  <url><loc>{base}/?board={b}</loc>"
+                       f"<lastmod>{latest_day}</lastmod></url>")
     # repo detail pages — one static HTML per tracked repo
     for name in sorted(day_close[latest_day]):
-        sitemap.append(f"  <url><loc>{base}/repos/{name.replace('/', '__')}.html</loc></url>")
+        sitemap.append(f"  <url><loc>{base}/repos/{name.replace('/', '__')}.html</loc>"
+                       f"<lastmod>{latest_day}</lastmod></url>")
     sitemap.append("</urlset>")
     (SITE_DIR / "sitemap.xml").write_text("\n".join(sitemap) + "\n", encoding="utf-8")
     # robots.txt: open-data site — welcome all crawlers incl. AI/LLM ones (GEO)
