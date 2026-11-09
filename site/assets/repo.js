@@ -57,7 +57,7 @@ function boardsRowHTML(d) {
                  'monthly', 'monthly_rate', 'total', 'cumulative'];
   const chips = order.filter(k => (d.boards || {})[k] != null).map(k =>
     `<a class="rp-board-chip" href="${HOME}?board=${k}">${t('board.' + k)} <b>#${d.boards[k]}</b></a>`).join('');
-  return chips ? `<div class="rp-board-line">${chips}</div>` : '';
+  return chips ? `<div class="rp-board-line">${chips}</div>` : '<div class="rp-board-line"></div>';
 }
 
 function topHTML(d) {
@@ -92,16 +92,18 @@ function topHTML(d) {
         <span class="rp-sep">/</span><span class="rp-name">${esc(d.name)}</span>
         <a class="rp-title-ext" href="${esc(d.url)}" target="_blank" rel="noopener" title="${esc(t('rp.view.gh'))}">${gi('ext', 15)}</a>
       </h1>
-      <div class="rp-actions">
-        <button class="rp-btn rp-btn-acc" id="shareBtn">${gi('ext', 12)} ${t('rp.share')}</button>
-        <a class="rp-btn" href="${esc(d.url)}" target="_blank" rel="noopener">GitHub ↗</a>
-      </div>
     </div>
     ${d.description ? `<p class="rp-desc">${esc(d.description)}</p>` : ''}
     ${statsRowHTML(d)}
     ${topics ? `<div class="rp-topics">${topics}</div>` : ''}
     <div class="rp-meta">${metaBits}</div>
-    ${boardsRowHTML(d)}
+    <div class="rp-foot-row">
+      ${boardsRowHTML(d)}
+      <div class="rp-actions">
+        <button class="rp-btn rp-btn-acc" id="shareBtn">${gi('ext', 12)} ${t('rp.share')}</button>
+        <a class="rp-btn" href="${esc(d.url)}" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
   </div>
 </div>`;
 }

@@ -319,13 +319,13 @@ def _ssr_repo(p: dict) -> str:
         <a class="rp-owner" href="https://github.com/{_esc(p['owner'])}">{_esc(p['owner'])}</a>
         <span class="rp-sep">/</span><span class="rp-name">{_esc(p['name'])}</span>
       </h1>
-      <div class="rp-actions"><a class="rp-btn" href="{_esc(p['url'])}">GitHub ↗</a></div>
     </div>
     <p class="rp-desc">{_esc(p.get('description') or '')}</p>
     <div class="rp-statrow">{stats}</div>
     <div class="rp-topics">{topics}</div>
     <div class="rp-meta">{''.join(bits)}</div>
-    <div class="rp-board-line">{chips}</div>
+    <div class="rp-foot-row"><div class="rp-board-line">{chips}</div>
+      <div class="rp-actions"><a class="rp-btn" href="{_esc(p['url'])}">GitHub ↗</a></div></div>
   </div>
 </div>
 <section class="rp-panel card"><div class="rp-metric-grid">{mets}</div>
