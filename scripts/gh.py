@@ -71,7 +71,18 @@ latestDiscussions: discussions(first: 8, orderBy: {field: CREATED_AT, direction:
   nodes { number title createdAt comments { totalCount } category { name } }
 }
 readme: object(expression: "HEAD:README.md") { ... on Blob { text } }
+readmeZh1: object(expression: "HEAD:README.zh-CN.md") { ... on Blob { text } }
+readmeZh2: object(expression: "HEAD:README_zh-CN.md") { ... on Blob { text } }
+readmeZh3: object(expression: "HEAD:README-zh_CN.md") { ... on Blob { text } }
+readmeZh4: object(expression: "HEAD:README.zh_CN.md") { ... on Blob { text } }
+readmeZh5: object(expression: "HEAD:README_zh.md") { ... on Blob { text } }
+readmeZh6: object(expression: "HEAD:README-zh.md") { ... on Blob { text } }
+readmeZh7: object(expression: "HEAD:README_CN.md") { ... on Blob { text } }
 """
+
+# Chinese-localized README conventions, most-preferred (simplified) first
+README_ZH_ALIASES = ("readmeZh1", "readmeZh2", "readmeZh3", "readmeZh4",
+                     "readmeZh5", "readmeZh6", "readmeZh7")
 
 
 class HttpError(RuntimeError):
@@ -397,7 +408,12 @@ class GitHubClient:
             ]
         if "readme" in node:
             text = ((node.get("readme") or {}).get("text") or "")
-            detail["readme_excerpt"] = text[:3000] if text else None
+            detail["readme"] = text[:200000] if text else None
+            for alias in README_ZH_ALIASES:
+                zh = ((node.get(alias) or {}) or {}).get("text") or ""
+                if zh:
+                    detail["readme_zh"] = zh[:200000]
+                    break
         if detail:
             out["detail"] = detail
         return out

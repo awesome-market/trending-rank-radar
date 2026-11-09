@@ -451,10 +451,67 @@ function overviewPanel(d) {
     return `<div class="rp-metric"><div class="rp-metric-num">${fmtFull(v)}</div>
       <div class="rp-metric-label">${t('units.' + k)}</div>${dl}</div>`;
   }).join('');
-  const readme = d.readme_excerpt
-    ? `<h3 class="rp-ph">${t('rp.readme')}</h3><div class="rp-pre rp-readme">${readmeHtml(
-        d.readme_excerpt, d.owner, d.name)}</div>` : '';
+  const readme = d.readme
+    ? `<h3 class="rp-ph">${t('rp.readme')}</h3><div class="rp-pre rp-readme"><div class="rp-readme-md" id="rpReadme"></div></div>` : '';
   return `<div class="rp-metric-grid">${grid}</div>${readme}`;
+}
+
+/* Full README: fetched from data/readme/<repo>.md (or .zh.md when the UI
+   language is Chinese and a Chinese README exists), rendered with marked +
+   sanitized with DOMPurify; relative image/link paths are rewritten to the
+   repo's raw.githubusercontent.com / github.com blob URLs. */
+const _readmeCache = {};
+async function loadReadme(d) {
+  const el = $('#rpReadme');
+  if (!el || !d.readme) return;
+  const wantZh = typeof LANG !== 'undefined' && LANG === 'zh' && d.readme_zh;
+  const lang = wantZh ? 'zh' : 'en';
+  if (el.dataset.lang === lang && el.childNodes.length) return;
+  const base = d.full_name.replace('/', '__');
+  const key = base + ':' + lang;
+  try {
+    if (!_readmeCache[key]) {
+      const fn = `${DB}data/readme/${base}${wantZh ? '.zh' : ''}.md`;
+      const r = await fetch(fn);
+      if (!r.ok) throw new Error(r.status);
+      _readmeCache[key] = await r.text();
+    }
+    el.innerHTML = renderMarkdown(_readmeCache[key], d.owner, d.name);
+    el.dataset.lang = lang;
+  } catch { el.innerHTML = ''; }
+}
+
+function renderMarkdown(md, owner, name) {
+  const RAW = `https://raw.githubusercontent.com/${owner}/${name}/HEAD/`;
+  const BLOB = `https://github.com/${owner}/${name}/blob/HEAD/`;
+  const REPO = `https://github.com/${owner}/${name}`;
+  if (!window.marked || !window.DOMPurify) return readmeHtml(md, owner, name);
+  const html = DOMPurify.sanitize(marked.parse(md), { USE_PROFILES: { html: true } });
+  const tpl = document.createElement('template');
+  tpl.innerHTML = html;
+  tpl.content.querySelectorAll('img').forEach(im => {
+    const u = im.getAttribute('src') || '';
+    if (!/^(https?:|data:|blob:)/i.test(u))
+      im.src = RAW + u.replace(/^\.?\/+/, '');
+    im.loading = 'lazy';
+    im.classList.add('rp-img');
+  });
+  tpl.content.querySelectorAll('source[srcset]').forEach(s => {
+    s.srcset = s.srcset.split(',').map(part => {
+      const seg = part.trim().split(/\s+/);
+      if (seg[0] && !/^(https?:|data:|blob:)/i.test(seg[0]))
+        seg[0] = RAW + seg[0].replace(/^\.?\/+/, '');
+      return seg.join(' ');
+    }).join(', ');
+  });
+  tpl.content.querySelectorAll('a').forEach(a => {
+    const h = a.getAttribute('href') || '';
+    if (h.startsWith('#')) a.href = REPO + h;
+    else if (!/^(https?:|mailto:)/i.test(h)) a.href = BLOB + h.replace(/^\.?\/+/, '');
+    a.target = '_blank';
+    a.rel = 'noopener';
+  });
+  return tpl.innerHTML;
 }
 
 /* README excerpt: render a safe subset of markdown (images, links, bold,
@@ -564,6 +621,7 @@ function renderAllRepo() {
     + ptabsHTML() + trendHTML(d)
     + ctabsHTML(d) + `<section class="rp-panel card" id="rpPanel">${panelHTML(d)}</section>`
     + newsHTML(d);
+  if (repo.ctab === 'ov') loadReadme(d);
   renderChart();
   wireShare(d);
   document.title = t('title.repo', { r: d.full_name });
@@ -580,7 +638,10 @@ function wireTabs() {
       repo.ctab = b.dataset.ctab;
       syncTabs();
       const p = $('#rpPanel');
-      if (p && repo.data) p.innerHTML = panelHTML(repo.data);
+      if (p && repo.data) {
+        p.innerHTML = panelHTML(repo.data);
+        if (repo.ctab === 'ov') loadReadme(repo.data);
+      }
     });
 }
 

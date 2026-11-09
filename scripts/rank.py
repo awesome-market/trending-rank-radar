@@ -858,7 +858,9 @@ def main() -> int:
         owner_map.setdefault(name.split("/")[0], []).append(name)
 
     repos_out = SITE_DATA / "repos"
+    readme_out = SITE_DATA / "readme"
     repos_out.mkdir(parents=True, exist_ok=True)
+    readme_out.mkdir(parents=True, exist_ok=True)
     pages_out = SITE_DIR / "repos"
     pages_out.mkdir(parents=True, exist_ok=True)
     repo_tpl = (SITE_DIR / "repo.html").read_text(encoding="utf-8")
@@ -871,6 +873,10 @@ def main() -> int:
         ds, vs = ridx.get(name, ([], []))
         cur_day = ds[-1] if ds else latest_day
         stale = cur_day < latest_day
+        # full README texts live in standalone .md files fetched on demand —
+        # keeps repo JSON small; fall back to the old 3000-char excerpt
+        readme_txt = det.get("readme") or det.get("readme_excerpt")
+        readme_zh_txt = det.get("readme_zh")
 
         growth: dict = {}
         for label, nominal in (("day", 1), ("week", 7), ("month", 30)):
@@ -923,7 +929,8 @@ def main() -> int:
             "issues": det.get("hot_issues") or [],
             "discussions": det.get("discussions") or [],
             "latest_release": det.get("latest_release"),
-            "readme_excerpt": det.get("readme_excerpt"),
+            "readme": bool(readme_txt),
+            "readme_zh": bool(readme_zh_txt),
             "news": _load_news(owner, repo),
             "stale": stale,
             "snapshot_at": run_at[cur_day].astimezone(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -933,7 +940,15 @@ def main() -> int:
             json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
             encoding="utf-8")
         detail_count += 1
-        page_html = render_repo_page(payload, repo_tpl, base)
+        if readme_txt:
+            (readme_out / f"{owner}__{repo}.md").write_text(
+                readme_txt, encoding="utf-8")
+        if readme_zh_txt:
+            (readme_out / f"{owner}__{repo}.zh.md").write_text(
+                readme_zh_txt, encoding="utf-8")
+        # SSR gets the raw text (Chinese preferred — site default lang is zh)
+        ssr_payload = dict(payload, readme_excerpt=readme_zh_txt or readme_txt)
+        page_html = render_repo_page(ssr_payload, repo_tpl, base)
         (pages_out / f"{owner}__{repo}.html").write_text(page_html, encoding="utf-8")
 
     # ---------------- index / sitemap / robots ----------------

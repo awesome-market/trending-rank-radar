@@ -959,6 +959,44 @@ a:hover { text-decoration: underline; }
   padding: 1px 5px; background: var(--card-border); border-radius: 4px;
   font-size: 11.5px;
 }
+/* rendered markdown inside the scroll box */
+.rp-readme-md { white-space: normal; color: var(--text); }
+.rp-readme-md h1, .rp-readme-md h2, .rp-readme-md h3,
+.rp-readme-md h4, .rp-readme-md h5, .rp-readme-md h6 {
+  margin: 16px 0 8px; line-height: 1.3; color: var(--text);
+}
+.rp-readme-md h1 { font-size: 20px; }
+.rp-readme-md h2 { font-size: 17px; }
+.rp-readme-md h3 { font-size: 15px; }
+.rp-readme-md h4, .rp-readme-md h5, .rp-readme-md h6 { font-size: 13px; }
+.rp-readme-md p { margin: 8px 0; }
+.rp-readme-md ul, .rp-readme-md ol { margin: 8px 0; padding-left: 22px; }
+.rp-readme-md li { margin: 3px 0; }
+.rp-readme-md a { color: var(--accent); text-decoration: none; }
+.rp-readme-md a:hover { text-decoration: underline; }
+.rp-readme-md img { max-width: 100%; height: auto; border-radius: 4px; }
+.rp-readme-md pre {
+  margin: 8px 0; padding: 10px 12px; overflow: auto;
+  background: var(--bg); border: 1px solid var(--card-border); border-radius: 6px;
+  font-size: 12px; line-height: 1.5;
+}
+.rp-readme-md pre code { padding: 0; background: none; }
+.rp-readme-md code {
+  padding: 1px 5px; background: var(--card-border); border-radius: 4px;
+  font-size: 11.5px;
+}
+.rp-readme-md blockquote {
+  margin: 8px 0; padding: 4px 12px; border-left: 3px solid var(--card-border);
+  color: var(--text-dim);
+}
+.rp-readme-md table { border-collapse: collapse; margin: 8px 0; font-size: 12px; }
+.rp-readme-md th, .rp-readme-md td {
+  padding: 4px 10px; border: 1px solid var(--card-border); text-align: left;
+}
+.rp-readme-md th { background: var(--bg); }
+.rp-readme-md hr { border: none; border-top: 1px solid var(--card-border); margin: 12px 0; }
+.rp-readme-md details { margin: 8px 0; }
+.rp-readme-md summary { cursor: pointer; font-weight: 600; }
 .rp-err { padding: 60px 24px; text-align: center; color: var(--text-dim); }
 .rp-err h2 { color: var(--text); }
 .rp-back { color: var(--accent); text-decoration: none; }
