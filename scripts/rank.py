@@ -9,6 +9,7 @@ and writes:
   site/data/days/YYYY-MM-DD.json
   site/data/months/YYYY-MM.json
   site/data/years/YYYY.json
+  site/index.html                — latest landing board SSR'd into #listWrap
   site/sitemap.xml, site/robots.txt
 
 Usage:
@@ -35,9 +36,16 @@ SITE_DATA = SITE_DIR / "data"
 BEIJING = timezone(timedelta(hours=8))
 UTC = timezone.utc
 
-# snapshot tuple indexes (data/snapshots format, 11 fields)
+# snapshot tuple indexes (data/snapshots format; 11-column rows predate the
+# 16-column format — use _col() for indexes >10)
 I_NAME, I_STARS, I_FORKS, I_WATCHERS, I_ISSUES, I_PRS, I_RELEASES = range(7)
 I_CREATED, I_LANG, I_IS_FORK, I_IS_ARCH = 7, 8, 9, 10
+I_ISSUES_OPEN, I_ISSUES_CLOSED, I_PRS_OPEN, I_PRS_CLOSED, I_PRS_MERGED = 11, 12, 13, 14, 15
+
+
+def _col(row, i: int):
+    """Safe column access for rows written before trailing fields existed."""
+    return row[i] if len(row) > i else None
 
 TOPN = 200          # precomputed per board; frontend filters then shows top 100
 SERIES_DAYS = 30    # sparkline points
@@ -340,6 +348,113 @@ def _ssr_repo(p: dict) -> str:
 {readme_html}{sec_i}{sec_d}{rel_html}</section>
 <p class="rp-meta">Snapshot: {_esc(p.get('snapshot_at'))} · Data license Apache-2.0 ·
 <a href="../data/repos/{_esc(p['owner'])}__{_esc(p['name'])}.json">JSON</a></p>"""
+
+
+# ------------------------------------------------------------ index SSR --
+SSR_BEGIN, SSR_END = "<!--SSR-->", "<!--/SSR-->"
+# landing-order fallback mirrors app.js (default board = 'new')
+SSR_BOARDS = ("new", "total", "daily", "weekly", "monthly")
+SSR_LABELS = {"new": "新星榜", "total": "总榜", "daily": "日飙升榜",
+              "weekly": "周飙升榜", "monthly": "月飙升榜"}
+SSR_TOP = 50
+
+
+def _ssr_row(e: dict) -> str:
+    """Crawler/first-paint row — mirrors app.js .rank-row markup."""
+    owner, name = e["owner"], e["name"]
+    href = f"repos/{owner}__{name}.html"
+    rank = e.get("rank") or 0
+    stars = e.get("stars")
+    meta = []
+    if e.get("language"):
+        meta.append(f'<span class="lang-tag">{_esc(e["language"])}</span>')
+    for glyph, val, key in (("★", stars, "stars"), ("⑂", e.get("forks"), "forks"),
+                            ("👁", e.get("watchers"), "watchers"), ("●", e.get("issues"), "issues"),
+                            ("⑃", e.get("prs"), "prs"), ("▤", e.get("releases"), "releases")):
+        if isinstance(val, int):
+            meta.append(f'<span class="m" title="{key}">{glyph} {val:,}</span>')
+    desc = (e.get("description") or "").strip()
+    if e.get("growth") is not None:
+        side = f'<div class="row-growth"><span class="up-tri">▲</span>+{e["growth"]:,}</div>'
+    else:
+        side = (f'<div class="row-stars-big">★ {stars:,}</div>'
+                if isinstance(stars, int) else "")
+    return (f'<div class="rank-row"><span class="row-rank{" top" if rank <= 3 else ""}">{rank}</span>'
+            f'<a class="row-avatar" href="{href}"><img src="{_esc(e.get("avatar") or f"https://github.com/{owner}.png?size=96")}" alt="" loading="lazy" width="48" height="48"></a>'
+            f'<div class="row-body"><div class="row-name"><a class="row-link" href="{href}">'
+            f'<span class="row-owner">{_esc(owner)}</span><span class="row-sep">/</span>'
+            f'<span class="row-repo">{_esc(name)}</span></a></div>'
+            f'<div class="row-meta">{"".join(meta)}</div>'
+            + (f'<div class="row-desc">{_esc(desc)}</div>' if desc else "")
+            + f'</div><div class="row-side">{side}</div></div>')
+
+
+def _inject(html: str, marker: str, block: str) -> tuple[str, int]:
+    """Replace the <!--MARK-->...<!--/MARK--> span with marker+block (idempotent)."""
+    begin, end = f"<!--{marker}-->", f"<!--/{marker}-->"
+    return re.subn(re.escape(begin) + ".*?" + re.escape(end),
+                   lambda _: begin + block + end, html, count=1, flags=re.S)
+
+
+def _ssr_month_top10(days_entries: list) -> str:
+    """Latest month's daily Top-10 chips — mirrors app.js .top10-day markup."""
+    out = []
+    for day in days_entries:
+        chips = []
+        for e in day.get("items") or []:
+            href = f"repos/{e['owner']}__{e['name']}.html"
+            g = e.get("growth")
+            num = f"+{g:,}" if isinstance(g, int) else (
+                f"★{e['stars']:,}" if isinstance(e.get("stars"), int) else "")
+            chips.append(f'<span class="top10-chip"><a href="{href}">'
+                         f'<span class="row-owner">{_esc(e["owner"])}</span>/{_esc(e["name"])}</a>'
+                         + (f" <b>{num}</b>" if num else "") + "</span>")
+        out.append(f'<div class="top10-day"><div class="top10-date">{_esc(day["date"])}</div>'
+                   f'<div class="top10-items">{"".join(chips)}</div></div>')
+    return "".join(out)
+
+
+def _ssr_month_cards(months: list) -> str:
+    """Month-index cards — mirrors app.js .month-card markup."""
+    out = []
+    for i, m in enumerate(months):
+        y, mo = m.split("-")
+        partial = (i == len(months) - 1)   # latest month is always in progress
+        sub = "本月进行中 / in progress" if partial else "完整月 / full month"
+        out.append(f'<div class="month-card{" partial" if partial else ""}">'
+                   f'<div class="m-name">{_esc(y)}年{int(mo)}月</div>'
+                   f'<div class="m-sub">{sub}</div></div>')
+    return "".join(out)
+
+
+def inject_index_ssr(board: str, items: list, day: str,
+                     months: list, daily_top10: dict) -> None:
+    """Bake current-data fallbacks into index.html so crawlers (Baidu doesn't
+    run JS) and first paint on slow links see real content; app.js overwrites
+    each block on hydrate."""
+    path = SITE_DIR / "index.html"
+    html = path.read_text(encoding="utf-8")
+
+    label = SSR_LABELS.get(board, board)
+    note = (f'<p style="color:var(--muted,#8b949e);font-size:13px;margin:0 4px 10px">'
+            f'{_esc(day)} · {_esc(label)} Top {len(items)} · 每日快照 / daily snapshot</p>')
+    rows = (note + '<div class="rank-list">'
+            + "".join(_ssr_row(e) for e in items) + "</div>")
+    html, n1 = _inject(html, "SSR", rows)
+
+    n2 = n3 = 0
+    if months and daily_top10.get(months[-1]):
+        html, n2 = _inject(html, "SSRMT",
+                           _ssr_month_top10(daily_top10[months[-1]]))
+    if months:
+        html, n3 = _inject(html, "SSRMG", _ssr_month_cards(months))
+
+    if n1 + n2 + n3:
+        path.write_text(html, encoding="utf-8")
+        log(f"index SSR: board={board} rows={len(items)} "
+            f"top10_days={bool(n2)} month_cards={bool(n3)}")
+    else:
+        log("[warn] index.html missing SSR markers; skipped")
 
 
 def render_repo_page(p: dict, template: str, base: str) -> str:
@@ -722,6 +837,11 @@ def main() -> int:
                 "stars": cur[I_STARS], "forks": cur[I_FORKS],
                 "watchers": cur[I_WATCHERS], "issues": cur[I_ISSUES],
                 "prs": cur[I_PRS], "releases": cur[I_RELEASES],
+                "issues_open": _col(cur, I_ISSUES_OPEN),
+                "issues_closed": _col(cur, I_ISSUES_CLOSED),
+                "prs_open": _col(cur, I_PRS_OPEN),
+                "prs_closed": _col(cur, I_PRS_CLOSED),
+                "prs_merged": _col(cur, I_PRS_MERGED),
                 "discussions": det.get("discussions_total"),
             },
             "growth": growth,
@@ -730,6 +850,8 @@ def main() -> int:
                 "stars": [int(v[I_STARS] or 0) for v in vs],
                 "forks": [int(v[I_FORKS] or 0) for v in vs],
                 "watchers": [v[I_WATCHERS] for v in vs],
+                "issues_open": [_col(v, I_ISSUES_OPEN) for v in vs],
+                "prs_open": [_col(v, I_PRS_OPEN) for v in vs],
             },
             "boards": placements.get(name) or {},
             "same_owner": sorted(
@@ -752,6 +874,18 @@ def main() -> int:
         (pages_out / f"{owner}__{repo}.html").write_text(page_html, encoding="utf-8")
 
     # ---------------- index / sitemap / robots ----------------
+    # SSR the landing board into index.html — crawlers (Baidu doesn't run JS)
+    # and first paint on slow links get real rows; app.js replaces on hydrate.
+    try:
+        for b in SSR_BOARDS:
+            items = (latest_boards.get(b) or {}).get("items") or []
+            if items:
+                inject_index_ssr(b, items[:SSR_TOP], latest_day,
+                                 months_present, daily_top10)
+                break
+    except Exception as e:
+        log(f"[warn] index SSR failed: {e}")
+
     index = {
         "generated_at": datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "site_base": args.site_base,
