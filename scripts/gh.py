@@ -249,9 +249,11 @@ class GitHubClient:
         self.last_graphql_errors: list | None = None
 
     # -- low level ---------------------------------------------------------
-    def _http(self, url: str, *, method: str = "GET", payload: dict | None = None) -> tuple[dict, bytes]:
+    def _http(self, url: str, *, method: str = "GET", payload: dict | None = None,
+              retries: int = 3) -> tuple[dict, bytes]:
         status, headers, body = _request(
-            url, method=method, payload=payload, token=self.token, timeout=self.timeout
+            url, method=method, payload=payload, token=self.token, timeout=self.timeout,
+            retries=retries,
         )
         return headers, body
 
@@ -268,7 +270,10 @@ class GitHubClient:
         if language:
             path += "/" + urllib.parse.quote(language, safe="")
         qs = f"?since={urllib.parse.quote(since)}" if since else ""
-        _, body = self._http(url + path + qs)
+        # Single attempt: trending is best-effort discovery, and a 5xx on
+        # github.com from a datacenter IP won't resolve inside one run —
+        # retrying just burns minutes per language page.
+        _, body = self._http(url + path + qs, retries=1)
         parser = TrendingParser()
         parser.feed(body.decode("utf-8", "replace"))
         return parser.items

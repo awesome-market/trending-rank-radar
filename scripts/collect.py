@@ -85,14 +85,24 @@ def discover(client: gh.GitHubClient, init_mode: bool) -> dict[str, dict]:
         if trending:
             e["trending"] = True
 
-    # 1) Trending pages: main + top languages
+    # 1) Trending pages: main + top languages. Fail fast — when github.com
+    # rate-limits datacenter IPs every language page 5xx's identically, so
+    # consecutive failures mean the source is down for this run; the watchlist
+    # carries discovery continuity instead.
+    trending_fails = 0
     for lang in [None] + gh.TRENDING_LANGUAGES:
+        if trending_fails >= 2:
+            log(f"[warn] trending unreachable ({trending_fails} consecutive failures); "
+                "skipping remaining language pages")
+            break
         try:
             items = client.trending(lang)
+            trending_fails = 0
             for it in items:
                 add(it["full_name"], "trending", stars=it.get("stars"), trending=True)
             log(f"trending {'all' if lang is None else lang}: {len(items)} repos")
         except Exception as e:
+            trending_fails += 1
             log(f"[warn] trending page failed ({lang or 'all'}): {e}")
         time.sleep(0.8)
 
