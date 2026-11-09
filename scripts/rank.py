@@ -19,6 +19,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 from bisect import bisect_left, bisect_right
 from datetime import date, datetime, timedelta, timezone
@@ -209,6 +210,141 @@ def make_entry(name: str, rank: int, cur, meta: dict, *,
         "stale": stale,
         "series": series if series is not None else [],
     }
+
+
+# ------------------------------------------------------------- repo pages --
+def _esc(s) -> str:
+    import html as _h
+    return _h.escape(str(s or ""), quote=True)
+
+
+def _plain(text: str, limit: int) -> str:
+    text = re.sub(r"\[!\[[^\]]*\]\([^)]*\)\]\([^)]*\)", "", text or "")
+    text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", text)
+    text = re.sub(r"<[^>]+>", "", text)
+    return _esc(re.sub(r"[#*`>]", "", text).strip()[:limit])
+
+
+def _ssr_repo(p: dict) -> str:
+    """Server-rendered repo detail HTML — readable by crawlers and no-JS
+    clients, mirroring the classes repo.js produces for visual parity."""
+    m = p.get("metrics") or {}
+    def num(v): return f"{int(v):,}" if isinstance(v, (int, float)) else "–"
+    av = (f'<img class="rp-avatar" src="{_esc(p["avatar"])}&s=128" width="64" '
+          f'height="64" alt="">' if p.get("avatar") else "")
+    topics = "".join(
+        f'<a class="rp-topic" href="https://github.com/topics/{_esc(t)}">{_esc(t)}</a>'
+        for t in (p.get("topics") or [])[:8])
+    bits = [x for x in [
+        f'<span class="rp-meta-bit">{_esc(p["language"])}</span>' if p.get("language") else "",
+        f'<span class="rp-meta-bit">{_esc(p["license"])}</span>' if p.get("license") else "",
+        f'<span class="rp-meta-bit">Created {_esc((p.get("created_at") or "")[:10])}</span>'
+        if p.get("created_at") else "",
+        (f'<a class="rp-meta-bit rp-home" href="{_esc(p["homepage"])}">'
+         f'{_esc(re.sub(r"^https?://", "", p["homepage"])[:60])}</a>'
+         if p.get("homepage") else ""),
+    ] if x]
+    order = ["new", "daily", "daily_rate", "weekly", "weekly_rate",
+             "monthly", "monthly_rate", "total", "cumulative"]
+    chips = "".join(
+        f'<a class="rp-board-chip" href="../?board={b}">{b} <b>#{(p["boards"] or {})[b]}</b></a>'
+        for b in order if (p.get("boards") or {}).get(b) is not None)
+    boards_sec = (f'<section class="rp-boards card"><h2 class="rp-h">Boards</h2>'
+                  f'<div class="rp-board-chips">{chips}</div></section>' if chips else "")
+    met_keys = ["stars", "forks", "watchers", "prs", "issues", "releases", "discussions"]
+    growth = p.get("growth") or {}
+    def dlt(k):
+        g = growth.get(k)
+        return f'<span class="rp-delta up">+{num(g["stars"])}</span>' if g else ""
+    mets = "".join(
+        f'<div class="rp-metric"><div class="rp-metric-num">{num(m[k])}</div>'
+        f'<div class="rp-metric-label">{k}</div>'
+        + (f'<div class="rp-metric-delta">{dlt("day")}{dlt("week")}{dlt("month")}</div>'
+           if k == "stars" else "")
+        + '</div>' for k in met_keys if k in m)
+
+    def lst(items, base):
+        return "".join(
+            f'<a class="rp-item" href="{base}/{i.get("number", "")}">'
+            f'<span class="rp-item-num">#{i.get("number", "")}</span>'
+            f'<span class="rp-item-title">{_esc(i.get("title"))}</span>'
+            f'<span class="rp-item-extra">{i.get("comments", 0)} comments · '
+            f'{_esc((i.get("created_at") or "")[:10])}</span></a>'
+            for i in (items or [])[:8])
+
+    sec_i = (f'<section class="rp-card card"><h2 class="rp-h">Top issues</h2>'
+             f'<div class="rp-list">{lst(p.get("issues"), p["url"] + "/issues")}</div></section>'
+             if p.get("issues") else "")
+    sec_d = (f'<section class="rp-card card"><h2 class="rp-h">Discussions</h2>'
+             f'<div class="rp-list">{lst(p.get("discussions"), p["url"] + "/discussions")}</div></section>'
+             if p.get("discussions") else "")
+    rel = p.get("latest_release")
+    rel_html = ""
+    if rel:
+        body = _plain(rel.get("body") or "", 600)
+        rel_html = (f'<section class="rp-card card"><h2 class="rp-h">Latest release</h2>'
+                    f'<a class="rp-rel" href="{_esc(p["url"])}/releases">'
+                    f'<b>{_esc(rel.get("name") or rel.get("tag") or "")}</b> '
+                    f'<span class="rp-rel-tag">{_esc(rel.get("tag") or "")}</span> '
+                    f'<span class="rp-item-extra">{_esc((rel.get("published_at") or "")[:10])}</span></a>'
+                    + (f'<pre class="rp-pre">{body}</pre>' if body else "") + '</section>')
+    readme = p.get("readme_excerpt")
+    readme_html = (f'<section class="rp-card card"><h2 class="rp-h">README</h2>'
+                   f'<pre class="rp-pre rp-readme">{_plain(readme, 1200)}</pre></section>'
+                   if readme else "")
+    return f"""
+<section class="rp-head card">
+  {av}
+  <div class="rp-head-main">
+    <div class="rp-name-row">
+      <a class="rp-owner" href="https://github.com/{_esc(p['owner'])}">{_esc(p['owner'])}</a>
+      <span class="rp-sep">/</span>
+      <h1 class="rp-name">{_esc(p['name'])}</h1>
+      <a class="rp-gh" href="{_esc(p['url'])}">GitHub ↗</a>
+    </div>
+    <p class="rp-desc">{_esc(p.get('description') or '')}</p>
+    <div class="rp-topics">{topics}</div>
+    <div class="rp-meta">{''.join(bits)}</div>
+  </div>
+</section>
+{boards_sec}
+<section class="rp-metrics card"><h2 class="rp-h">Overview</h2><div class="rp-metric-grid">{mets}</div></section>
+<div class="rp-grid">{sec_i}{sec_d}{rel_html}{readme_html}</div>
+<p class="rp-meta">Snapshot: {_esc(p.get('snapshot_at'))} · Data license Apache-2.0 ·
+<a href="../data/repos/{_esc(p['owner'])}__{_esc(p['name'])}.json">JSON</a></p>"""
+
+
+def render_repo_page(p: dict, template: str, base: str) -> str:
+    """Patch site/repo.html into a per-repo static page: unique title/meta/
+    canonical, SSR content, and data-base so repo.js fixes relative paths."""
+    fn = p["full_name"]
+    fname = f'{p["owner"]}__{p["name"]}'
+    canon = f"{base}/repos/{fname}.html"
+    desc = ((p.get("description") or "").replace("\n", " ")[:200]
+            or f"{fn} — GitHub stars trend, board ranks, issues and releases")
+    title = f"{fn} · GitHub Trending Rank Radar"
+    out = template
+    out = re.sub(r"<title>.*?</title>", f"<title>{_esc(title)}</title>", out, count=1)
+    out = re.sub(r'<meta name="description" content="[^"]*">',
+                 f'<meta name="description" content="{_esc(desc)}">', out, count=1)
+    out = re.sub(r'<link rel="canonical" href="[^"]*">',
+                 f'<link rel="canonical" href="{_esc(canon)}">', out, count=1)
+    out = re.sub(r'<meta property="og:title" content="[^"]*">',
+                 f'<meta property="og:title" content="{_esc(title)}">', out, count=1)
+    out = re.sub(r'<meta property="og:description" content="[^"]*">',
+                 f'<meta property="og:description" content="{_esc(desc)}">', out, count=1)
+    out = re.sub(r'<meta property="og:url" content="[^"]*">',
+                 f'<meta property="og:url" content="{_esc(canon)}">', out, count=1)
+    out = out.replace('<meta name="robots" content="noindex,follow">',
+                      '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">')
+    out = out.replace('href="assets/', 'href="../assets/')
+    out = out.replace('src="assets/', 'src="../assets/')
+    out = out.replace('href="manifest.webmanifest"', 'href="../manifest.webmanifest"')
+    out = out.replace('href="./"', 'href="../"')
+    out = out.replace("<body>", f'<body data-repo="{_esc(fn)}" data-base="../">', 1)
+    out = out.replace('<div id="repoContent" class="repo-page"></div>',
+                      f'<div id="repoContent" class="repo-page">{_ssr_repo(p)}</div>')
+    return out
 
 
 # ------------------------------------------------------------------ boards --
@@ -484,6 +620,10 @@ def main() -> int:
 
     repos_out = SITE_DATA / "repos"
     repos_out.mkdir(parents=True, exist_ok=True)
+    pages_out = SITE_DIR / "repos"
+    pages_out.mkdir(parents=True, exist_ok=True)
+    repo_tpl = (SITE_DIR / "repo.html").read_text(encoding="utf-8")
+    base = args.site_base.rstrip("/")
     detail_count = 0
     for name, cur in day_close[latest_day].items():
         owner, _, repo = name.partition("/")
@@ -538,6 +678,8 @@ def main() -> int:
             json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
             encoding="utf-8")
         detail_count += 1
+        page_html = render_repo_page(payload, repo_tpl, base)
+        (pages_out / f"{owner}__{repo}.html").write_text(page_html, encoding="utf-8")
 
     # ---------------- index / sitemap / robots ----------------
     index = {
@@ -561,9 +703,9 @@ def main() -> int:
     # board entry points (query params) — cheap SEO surface
     for b in ALL_BOARDS:
         sitemap.append(f"  <url><loc>{base}/?board={b}</loc></url>")
-    # repo detail pages — one per tracked repo
+    # repo detail pages — one static HTML per tracked repo
     for name in sorted(day_close[latest_day]):
-        sitemap.append(f"  <url><loc>{base}/repo.html?r={name}</loc></url>")
+        sitemap.append(f"  <url><loc>{base}/repos/{name.replace('/', '__')}.html</loc></url>")
     sitemap.append("</urlset>")
     (SITE_DIR / "sitemap.xml").write_text("\n".join(sitemap) + "\n", encoding="utf-8")
     # robots.txt: open-data site — welcome all crawlers incl. AI/LLM ones (GEO)

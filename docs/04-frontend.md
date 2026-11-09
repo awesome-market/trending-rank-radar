@@ -137,7 +137,7 @@ site/                        # GitHub Pages 根目录（或 /docs）
 
 ## 详情页 `repo.html`
 
-每仓库一个详情页，URL `repo.html?r=<owner>/<name>`（全部进 sitemap）。数据源 `data/repos/<owner>__<name>.json`（rank.py 生成，meta+扩展详情+全历史序列）。
+每仓库一个详情页，URL `repos/<owner>__<name>.html`（rank.py 以 `repo.html` 为模板预渲染的独立静态页，全部进 sitemap）：`<title>`/`description`/`canonical`/`og:url` 各自自指，正文 SSR 进 `#repoContent`——爬虫与无 JS 客户端直接读到完整内容；`<body data-repo data-base>` 让 `repo.js` 加载后接管交互（趋势图/分享图/主题语言）。`repo.html?r=` 壳页保留兼容旧链接并标记 `noindex`。数据源 `data/repos/<owner>__<name>.json`。
 
 区块顺序：头部卡（头像/owner/repo/GitHub 外链/简介/topics/语言·许可证·创建·主页）→ 榜单名次 chips（链回 `?board=*`）→ 指标总览卡（stars/forks/watchers/PRs/issues/releases/discussions + stars 日/周/月增量）→ 趋势卡（指标 tab：stars/forks/watchers；范围 tab：近7天/近30天/全部；SVG 折线+网格+悬停点；「生成分享图」Canvas 1200×630 PNG 下载/复制）→ 双列卡片区（热门 Issues / 最新 Discussions / 最新 Release / README 摘要，均无数据时整块不渲染）。
 

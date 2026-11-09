@@ -12,6 +12,10 @@ const GH_ICONS = {
 };
 
 const METRIC_KEYS = ['stars', 'forks', 'watchers', 'prs', 'issues', 'releases', 'discussions'];
+// Static pages under /repos/ set <body data-base="../"> so relative fetches
+// and home links still resolve; repo.html leaves it unset.
+const DB = document.body.dataset.base || '';
+const HOME = DB || './';
 
 function deltaSpan(label) {
   const g = repo.data.growth && repo.data.growth[label];
@@ -63,7 +67,7 @@ function boardsHTML(d) {
   const order = ['new', 'daily', 'daily_rate', 'weekly', 'weekly_rate',
                  'monthly', 'monthly_rate', 'total', 'cumulative'];
   const chips = order.filter(k => d.boards[k] != null).map(k =>
-    `<a class="rp-board-chip" href="./?board=${k}">${t('board.' + k)} <b>#${d.boards[k]}</b></a>`).join('');
+    `<a class="rp-board-chip" href="${HOME}?board=${k}">${t('board.' + k)} <b>#${d.boards[k]}</b></a>`).join('');
   return chips ? `<section class="rp-boards card"><h2 class="rp-h">${t('rp.boards')}</h2><div class="rp-board-chips">${chips}</div></section>` : '';
 }
 
@@ -313,7 +317,7 @@ function syncTabs() {
 async function renderFoot(d) {
   const fresh = ' · ' + t('fresh', { t: timeAgo(d.snapshot_at) });
   try {
-    const idx = await j('data/index.json');
+    const idx = await j(DB + 'data/index.json');
     $('#footStats').textContent = t('foot.stats', {
       r: fmtFull(idx.repo_count), d: idx.snapshot_days,
       s: (idx.first_day || '').slice(5), e: (idx.latest_day || '').slice(5), g: '—',
@@ -325,15 +329,15 @@ async function initRepo() {
   document.documentElement.classList.add('m-enter');
   applyStaticI18n();
   bindChrome(() => { if (repo.data) renderAllRepo(); });
-  const fn = new URLSearchParams(location.search).get('r') || '';
+  const fn = new URLSearchParams(location.search).get('r') || document.body.dataset.repo || '';
   if (!/^[\w.-]+\/[\w.-]+$/.test(fn)) {
-    $('#repoContent').innerHTML = `<div class="rp-err card"><h2>${t('rp.notfound')}</h2><p>${t('rp.notfound.hint')}</p><a class="rp-back" href="./">${t('rp.back')}</a></div>`;
+    $('#repoContent').innerHTML = `<div class="rp-err card"><h2>${t('rp.notfound')}</h2><p>${t('rp.notfound.hint')}</p><a class="rp-back" href="${HOME}">${t('rp.back')}</a></div>`;
     return;
   }
   try {
-    repo.data = await j(`data/repos/${fn.replace('/', '__')}.json`);
+    repo.data = await j(`${DB}data/repos/${fn.replace('/', '__')}.json`);
   } catch {
-    $('#repoContent').innerHTML = `<div class="rp-err card"><h2>${t('rp.notfound')}</h2><p>${t('rp.notfound.hint')}</p><a class="rp-back" href="./">${t('rp.back')}</a></div>`;
+    $('#repoContent').innerHTML = `<div class="rp-err card"><h2>${t('rp.notfound')}</h2><p>${t('rp.notfound.hint')}</p><a class="rp-back" href="${HOME}">${t('rp.back')}</a></div>`;
     return;
   }
   renderAllRepo();

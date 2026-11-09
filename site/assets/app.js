@@ -62,7 +62,7 @@ function rowSideHTML(e) {
 
 function nameLinkHTML(e) {
   const fn = esc(e.full_name);
-  return `<a class="row-link" href="repo.html?r=${encodeURIComponent(e.full_name)}" title="${esc(t('open.detail', { r: e.full_name }))}">`
+  return `<a class="row-link" href="repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}.html" title="${esc(t('open.detail', { r: e.full_name }))}">`
     + `<span class="row-owner">${esc(e.owner)}</span><span class="row-sep">/</span>`
     + `<span class="row-repo">${esc(e.name)}</span></a>`
     + `<a class="ext-link" href="https://github.com/${fn}" target="_blank" rel="noopener" title="${esc(t('open.gh', { r: e.full_name }))}">${icon('ext', 'ext-ico', 12)}</a>`;
@@ -172,7 +172,7 @@ function setEmpty(msg, pct, opts = {}) {
   $('#emptyState').classList.toggle('has-preview', rows.length > 0);
   $('#emptyPreview').innerHTML = rows.length
     ? `<div class="empty-preview-title">${esc(t('preview.top', { t: pv.title, n: rows.length }))}</div>`
-      + rows.map(e => `<a class="preview-row" href="repo.html?r=${encodeURIComponent(`${e.owner}/${e.name}`)}">
+      + rows.map(e => `<a class="preview-row" href="repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}.html">
           <span class="preview-rank">${e.rank}</span>
           <span class="preview-name"><span class="row-owner">${esc(e.owner)}</span>/${esc(e.name)}</span>
           <span class="preview-stars">★ ${fmt(e.stars)}</span>
@@ -249,7 +249,7 @@ async function loadView() {
         <div class="top10-day">
           <div class="top10-date">${day.date}</div>
           <div class="top10-items">${day.items.map(e =>
-            `<span class="top10-chip"><a href="repo.html?r=${encodeURIComponent(`${e.owner}/${e.name}`)}"><span class="row-owner">${esc(e.owner)}</span>/${esc(e.name)}</a> <b>+${fmt(e.growth)}</b></span>`).join('')}
+            `<span class="top10-chip"><a href="repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}.html"><span class="row-owner">${esc(e.owner)}</span>/${esc(e.name)}</a> <b>+${fmt(e.growth)}</b></span>`).join('')}
           </div>
         </div>`).join('');
     }
@@ -389,7 +389,7 @@ function renderHero() {
   if (top1 && top1.series && top1.series.length > 1) {
     chart.innerHTML = sparkline(top1.series, 620, 150, 6, 'sparkFill', 'sparkStroke');
     const g = top1.growth != null ? `+${fmtFull(top1.growth)}` : fmtFull(top1.stars);
-    cap.innerHTML = `<a href="repo.html?r=${encodeURIComponent(top1.full_name)}">`
+    cap.innerHTML = `<a href="repos/${encodeURIComponent(top1.owner)}__${encodeURIComponent(top1.name)}.html">`
       + `<b>${esc(top1.full_name)}</b> ${g}</a>`
       + `<span class="hv-cap-sub">${t('hv.cap', { n: top1.series.length })}</span>`;
   } else {
