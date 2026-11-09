@@ -301,7 +301,8 @@ def _ssr_repo(p: dict) -> str:
         f'<img class="rp-same-av" src="{av_url}" alt="" loading="lazy">{_esc(x["name"])}</a>'
         for x in (p.get("same_owner") or [])[:20])
     if same_links:
-        same_links = f'<span class="rp-same-label">TA的项目</span>{same_links}'
+        same_links = (f'<div class="rp-same-label">TA的项目</div>'
+                      f'<div class="rp-same-row">{same_links}</div>')
     page_fn = _esc(p["full_name"]).replace("/", "__") + ".html"
     av_img = (f'<img class="rp-side-av" src="{_esc(p["avatar"])}&s=300" width="300" '
               f'height="300" alt="{_esc(p["owner"])} avatar">' if p.get("avatar")

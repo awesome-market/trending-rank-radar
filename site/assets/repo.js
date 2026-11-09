@@ -65,7 +65,7 @@ function sameOwnerHTML(d) {
   const av = esc(d.avatar || '');
   const links = list.slice(0, 20).map(x =>
     `<a class="rp-same-link" href="${HOME}repos/${x.full_name.replace('/', '__')}.html"><img class="rp-same-av" src="${av}" alt="" loading="lazy" onerror="this.remove()">${esc(x.name)}</a>`).join('');
-  return `<div class="rp-same"><span class="rp-same-label">${t('rp.same')}</span>${links}</div>`;
+  return `<div class="rp-same"><div class="rp-same-label">${t('rp.same')}</div><div class="rp-same-row">${links}</div></div>`;
 }
 
 function topHTML(d) {
@@ -198,79 +198,206 @@ function renderChart() {
 }
 
 /* ---------------- share image ---------------- */
-function shareCanvas(d) {
+function loadImg(src) {
+  return new Promise(res => {
+    const i = new Image();
+    i.crossOrigin = 'anonymous';
+    i.onload = () => res(i);
+    i.onerror = () => res(null);
+    i.src = src;
+  });
+}
+
+function fitText(c, txt, maxW) {
+  if (c.measureText(txt).width <= maxW) return txt;
+  while (txt.length > 1 && c.measureText(txt + '…').width > maxW) txt = txt.slice(0, -1);
+  return txt + '…';
+}
+
+function fmtAx(v) {
+  if (v >= 1e6) return (v / 1e6).toFixed(1).replace(/\.0$/, '') + 'm';
+  if (v >= 1e3) return (v / 1e3).toFixed(1).replace(/\.0$/, '') + 'k';
+  return String(v);
+}
+
+async function shareCanvas(d) {
+  const W = 1080, H = 1440, ACC = '#0969da', ACC2 = '#3380e0';
   const cv = document.createElement('canvas');
-  cv.width = 1200; cv.height = 630;
+  cv.width = W; cv.height = H;
   const c = cv.getContext('2d');
-  const g = c.createLinearGradient(0, 0, 1200, 630);
-  g.addColorStop(0, '#0d1117'); g.addColorStop(1, '#161b26');
-  c.fillStyle = g; c.fillRect(0, 0, 1200, 630);
-  c.fillStyle = '#58a6ff'; c.font = '600 26px system-ui, sans-serif';
-  c.fillText('📡 GitHub Trending Rank Radar', 60, 74);
-  c.fillStyle = '#7d8590'; c.font = '20px system-ui, sans-serif';
-  c.fillText('zhuikan.com · ' + (d.snapshot_at || '').slice(0, 10), 60, 104);
-  c.fillStyle = '#e6edf3'; c.font = '700 56px system-ui, sans-serif';
-  c.fillText(d.full_name.length > 34 ? d.full_name.slice(0, 33) + '…' : d.full_name, 60, 190);
-  if (d.description) {
-    c.fillStyle = '#9da7b3'; c.font = '24px system-ui, sans-serif';
-    const txt = d.description.length > 62 ? d.description.slice(0, 61) + '…' : d.description;
-    c.fillText(txt, 60, 236);
+  const F = (w, s) => `${w} ${s}px system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif`;
+
+  c.fillStyle = '#ffffff'; c.fillRect(0, 0, W, H);
+  const bar = c.createLinearGradient(0, 0, W, 0);
+  bar.addColorStop(0, ACC); bar.addColorStop(1, ACC2);
+  c.fillStyle = bar; c.fillRect(0, 0, W, 12);
+
+  /* header: avatar + name + desc */
+  const avImg = await loadImg(d.avatar ? `${d.avatar}&s=240` : `https://github.com/${d.owner}.png?size=240`);
+  const ax = 72, ay = 92, asz = 120;
+  if (avImg) {
+    c.save();
+    c.beginPath(); c.roundRect(ax, ay, asz, asz, 24); c.clip();
+    c.drawImage(avImg, ax, ay, asz, asz);
+    c.restore();
+  } else {
+    c.fillStyle = ACC; c.beginPath(); c.roundRect(ax, ay, asz, asz, 24); c.fill();
+    c.fillStyle = '#fff'; c.font = F(700, 56); c.textAlign = 'center';
+    c.fillText(d.name.slice(0, 2).toUpperCase(), ax + asz / 2, ay + 78);
+    c.textAlign = 'left';
   }
-  const mets = [['stars', d.metrics.stars], ['forks', d.metrics.forks], ['watchers', d.metrics.watchers]];
-  mets.forEach(([k, v], i) => {
-    const x0 = 60 + i * 300;
-    c.fillStyle = '#e6edf3'; c.font = '700 44px system-ui, sans-serif';
-    c.fillText(v == null ? '–' : v.toLocaleString('en-US'), x0, 330);
-    c.fillStyle = '#7d8590'; c.font = '20px system-ui, sans-serif';
-    c.fillText(k, x0, 360);
-  });
-  const gmap = [['day', d.growth.day], ['week', d.growth.week], ['month', d.growth.month]];
-  let cx = 60;
-  c.font = '600 22px system-ui, sans-serif';
-  gmap.forEach(([k, gv]) => {
-    if (!gv) return;
-    const s = `${k} ${gv.stars >= 0 ? '+' : ''}${gv.stars.toLocaleString('en-US')}★`;
-    const wTxt = c.measureText(s).width + 36;
-    c.fillStyle = gv.stars >= 0 ? '#1f6f3f' : '#6e2b2b';
-    c.beginPath(); c.roundRect(cx, 390, wTxt, 42, 21); c.fill();
-    c.fillStyle = '#d8f3dc'; c.fillText(s, cx + 18, 419);
-    cx += wTxt + 14;
-  });
-  const s = (d.history.stars || []).slice(-30);
-  if (s.length > 1) {
-    const x0 = 60, y0 = 470, cw = 1080, ch = 120;
-    const mn = Math.min(...s), mx = Math.max(...s), sp = mx - mn || 1;
-    c.strokeStyle = '#58a6ff'; c.lineWidth = 3; c.lineJoin = 'round';
-    c.beginPath();
-    s.forEach((v, i) => {
-      const px = x0 + cw * i / (s.length - 1), py = y0 + ch * (1 - (v - mn) / sp);
-      i ? c.lineTo(px, py) : c.moveTo(px, py);
-    });
-    c.stroke();
+  c.fillStyle = '#1f2328'; c.font = F(700, 52);
+  c.fillText(fitText(c, `${d.owner} / ${d.name}`, W - 240 - 72), 216, 148);
+  c.fillStyle = '#59636e'; c.font = F(400, 28);
+  c.fillText(fitText(c, d.description || d.full_name, W - 240 - 72), 216, 196);
+
+  /* title row + current value */
+  c.fillStyle = '#1f2328'; c.font = F(600, 38);
+  c.fillText(t('rp.share.trend'), 72, 316);
+  const cur = d.metrics.stars;
+  if (cur != null) {
+    const val = fmtAx(cur);
+    c.textAlign = 'right';
+    c.fillStyle = ACC; c.font = F(800, 74);
+    c.fillText(val, W - 72, 316);
+    const vw = c.measureText(val).width;
+    c.fillStyle = '#6e7781'; c.font = F(500, 30);
+    c.fillText(t('rp.share.cur'), W - 72 - vw - 16, 310);
+    c.textAlign = 'left';
+  }
+
+  /* chart */
+  const dates = (d.history.dates || []).slice(-30);
+  const vals = (d.history.stars || []).slice(-30);
+  const cx0 = 120, cy0 = 380, cw = W - 120 - 72, ch = 620;
+  {
+    const v0 = vals.length ? Math.min(...vals) : 0;
+    const v1 = vals.length ? Math.max(...vals) : 100;
+    const pad = Math.max((v1 - v0) * 0.08, v1 * 0.02, 1);
+    const mn = v0 === v1 ? v0 * 0.9 : v0 - pad;
+    const mx = v0 === v1 ? v1 * 1.1 : v1 + pad;
+    const sp = mx - mn;
+    c.font = F(400, 24); c.strokeStyle = '#eaeef3'; c.lineWidth = 2;
+    for (let i = 0; i <= 5; i++) {
+      const gy = cy0 + ch * i / 5;
+      c.beginPath(); c.moveTo(cx0, gy); c.lineTo(cx0 + cw, gy); c.stroke();
+      c.fillStyle = '#9aa4b0'; c.textAlign = 'right';
+      c.fillText(fmtAx(Math.round(mx - sp * i / 5)), cx0 - 14, gy + 8);
+      c.textAlign = 'left';
+    }
+    const PX = i => cx0 + cw * i / Math.max(vals.length - 1, 1);
+    const PY = v => cy0 + ch * (1 - (v - mn) / sp);
+    if (vals.length > 1) {
+      const area = c.createLinearGradient(0, cy0, 0, cy0 + ch);
+      area.addColorStop(0, 'rgba(9,105,218,0.16)'); area.addColorStop(1, 'rgba(9,105,218,0.02)');
+      c.beginPath();
+      vals.forEach((v, i) => i ? c.lineTo(PX(i), PY(v)) : c.moveTo(PX(i), PY(v)));
+      c.lineTo(PX(vals.length - 1), cy0 + ch); c.lineTo(PX(0), cy0 + ch); c.closePath();
+      c.fillStyle = area; c.fill();
+      c.beginPath();
+      vals.forEach((v, i) => i ? c.lineTo(PX(i), PY(v)) : c.moveTo(PX(i), PY(v)));
+      c.strokeStyle = ACC; c.lineWidth = 5; c.lineJoin = 'round'; c.stroke();
+      const step = Math.max(1, Math.floor(vals.length / 8));
+      vals.forEach((v, i) => {
+        if (i % step && i !== vals.length - 1) return;
+        c.beginPath(); c.arc(PX(i), PY(v), 6, 0, 7);
+        c.fillStyle = '#fff'; c.fill(); c.strokeStyle = ACC; c.lineWidth = 3; c.stroke();
+      });
+    } else if (vals.length === 1) {
+      c.beginPath(); c.arc(cx0 + cw / 2, PY(vals[0]), 8, 0, 7);
+      c.fillStyle = '#fff'; c.fill(); c.strokeStyle = ACC; c.lineWidth = 4; c.stroke();
+      c.fillStyle = '#9aa4b0'; c.font = F(400, 26); c.textAlign = 'center';
+      c.fillText(t('rp.share.nodata'), cx0 + cw / 2, PY(vals[0]) + 70);
+      c.textAlign = 'left';
+    } else {
+      c.fillStyle = '#9aa4b0'; c.font = F(400, 30); c.textAlign = 'center';
+      c.fillText(t('rp.share.nodata'), cx0 + cw / 2, cy0 + ch / 2);
+      c.textAlign = 'left';
+    }
+    c.fillStyle = '#9aa4b0'; c.font = F(400, 22); c.textAlign = 'center';
+    const zh = document.documentElement.lang !== 'en';
+    if (dates.length > 1) {
+      for (let i = 0; i < 6; i++) {
+        const di = Math.round((dates.length - 1) * i / 5);
+        const ds = dates[di] || '';
+        const lbl = zh ? `${+ds.slice(5, 7)}月${+ds.slice(8, 10)}日` : ds.slice(5);
+        c.fillText(lbl, PX(di), cy0 + ch + 44);
+      }
+    } else if (dates.length === 1) {
+      const ds = dates[0];
+      c.fillText(zh ? `${+ds.slice(5, 7)}月${+ds.slice(8, 10)}日` : ds.slice(5), cx0 + cw / 2, cy0 + ch + 44);
+    }
+    c.textAlign = 'left';
+  }
+
+  /* footer: brand + QR */
+  const fy = 1150;
+  c.strokeStyle = '#eaeef3'; c.lineWidth = 2;
+  c.beginPath(); c.moveTo(72, fy); c.lineTo(W - 72, fy); c.stroke();
+  c.save();
+  const lg = c.createLinearGradient(72, fy + 60, 156, fy + 144);
+  lg.addColorStop(0, ACC); lg.addColorStop(1, ACC2);
+  c.fillStyle = lg; c.beginPath(); c.roundRect(72, fy + 60, 84, 84, 20); c.fill();
+  c.font = '44px system-ui'; c.textAlign = 'center'; c.textBaseline = 'middle';
+  c.fillStyle = '#fff'; c.fillText('📡', 114, fy + 106);
+  c.restore();
+  c.fillStyle = '#1f2328'; c.font = F(700, 34);
+  c.fillText(fitText(c, `GitHub Trending Rank Radar · ${t('rp.share.slogan')}`, W - 72 - 170 - 182 - 20), 182, fy + 108);
+  c.fillStyle = '#6e7781'; c.font = F(400, 26);
+  c.fillText(fitText(c, `zhuikan.com/repos/${d.full_name.replace('/', '__')}.html`, W - 72 - 170 - 182 - 20), 182, fy + 152);
+  const pageUrl = `https://zhuikan.com/repos/${d.full_name.replace('/', '__')}.html`;
+  const qr = await loadImg(`https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=${encodeURIComponent(pageUrl)}`);
+  if (qr) {
+    c.drawImage(qr, W - 72 - 150, fy + 40, 150, 150);
+    c.fillStyle = '#9aa4b0'; c.font = F(400, 20); c.textAlign = 'center';
+    c.fillText(t('rp.share.scan'), W - 72 - 75, fy + 216);
+    c.textAlign = 'left';
   }
   return cv;
+}
+
+async function openShareModal(d) {
+  const ov = document.createElement('div');
+  ov.className = 'sh-ov';
+  ov.innerHTML = `<div class="sh-card">
+    <div class="sh-head"><span>${t('rp.share.title')}</span><button class="sh-x" aria-label="close">✕</button></div>
+    <div class="sh-prev"></div>
+    <div class="sh-btns">
+      <button class="rp-btn rp-btn-acc" id="shDl">⤓ ${t('rp.share.dl')}</button>
+      <button class="rp-btn" id="shCp">${t('rp.share.cp')}</button>
+    </div>
+    <div class="sh-hint">${t('rp.share.hint')}</div>
+  </div>`;
+  document.body.appendChild(ov);
+  const close = () => ov.remove();
+  ov.addEventListener('click', e => { if (e.target === ov) close(); });
+  ov.querySelector('.sh-x').onclick = close;
+  const cv = await shareCanvas(d);
+  if (!document.body.contains(ov)) return;
+  cv.className = 'sh-img';
+  ov.querySelector('.sh-prev').appendChild(cv);
+  const blob = await new Promise(res => cv.toBlob(res, 'image/png'));
+  ov.querySelector('#shDl').onclick = () => {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `${d.owner}-${d.name}-trend.png`;
+    a.click();
+  };
+  ov.querySelector('#shCp').onclick = async e => {
+    try {
+      await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
+      e.target.textContent = t('rp.share.done');
+    } catch {
+      ov.querySelector('#shDl').click();
+    }
+    setTimeout(() => { e.target.textContent = t('rp.share.cp'); }, 1600);
+  };
 }
 
 function wireShare(d) {
   ['#shareBtn', '#shareBtn2'].forEach(sel => {
     const btn = $(sel);
-    if (!btn) return;
-    btn.onclick = async () => {
-      const cv = shareCanvas(d);
-      cv.toBlob(async blob => {
-        if (!blob) return;
-        try {
-          await navigator.clipboard.write([new ClipboardItem({ 'image/png': blob })]);
-          btn.textContent = t('rp.share.done');
-        } catch {
-          const a = document.createElement('a');
-          a.href = URL.createObjectURL(blob);
-          a.download = `${d.owner}-${d.name}-trend.png`;
-          a.click();
-        }
-        setTimeout(() => { btn.innerHTML = `${gi('ext', 12)} ${t('rp.share')}`; }, 1600);
-      }, 'image/png');
-    };
+    if (btn) btn.onclick = () => openShareModal(d);
   });
 }
 
