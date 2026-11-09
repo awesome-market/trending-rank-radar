@@ -46,7 +46,9 @@ def log(msg: str) -> None:
 
 
 def run(cmd: list[str], log_tail: list[str], **kw) -> None:
-    log("$ " + " ".join(cmd))
+    shown = " ".join("https://x-access-token:***@github.com/…"
+                     if "x-access-token:" in a else a for a in cmd)
+    log("$ " + shown)
     p = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, **kw)
     out = (p.stdout + p.stderr).strip()
     log_tail.extend(out.splitlines()[-30:])
