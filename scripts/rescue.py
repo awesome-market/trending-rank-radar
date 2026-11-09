@@ -27,6 +27,7 @@ from __future__ import annotations
 import fcntl
 import json
 import os
+import re
 import subprocess
 import sys
 import traceback
@@ -63,6 +64,7 @@ def git_push(token: str, log_tail: list[str]) -> None:
 
 def attempt(issue: dict, token: str, log_tail: list[str]) -> None:
     state = rl.parse_state(issue.get("body"))
+    safe_date = re.sub(r"[^0-9A-Za-z\-:.T]", "", str(state.get("date", "")))[:24]
     env = dict(os.environ, GITHUB_TOKEN=token)
     run(["git", "fetch", "origin", "main"], log_tail)
     run(["git", "checkout", "main"], log_tail)
@@ -77,7 +79,7 @@ def attempt(issue: dict, token: str, log_tail: list[str]) -> None:
         run(["git", "-c", "user.name=trr-rescue[bot]",
              "-c", "user.email=trr-rescue[bot]@users.noreply.github.com",
              "commit", "-m",
-             f"data: rescue snapshot {state.get('date', '')} "
+             f"data: rescue snapshot {safe_date} "
              f"(issue #{issue['number']})"], log_tail)
         git_push(token, log_tail)
     rl.dispatch_deploy(token)
@@ -103,11 +105,22 @@ def main() -> int:
             log("no open rescue issues; idle")
             return 0
 
-        issue = issues[0]
+        # Defense in depth: the `rescue` label already requires triage perms,
+        # but also require the issue to be authored by a trusted actor and to
+        # carry the convention type so a mislabeled issue can't trigger runs.
+        trusted = ("OWNER", "MEMBER", "COLLABORATOR", "BOT")
+        issue = next(
+            (i for i in issues
+             if i.get("author_association") in trusted
+             and rl.parse_state(i.get("body")).get("type") == "trending-rescue"),
+            None)
+        if not issue:
+            log("open rescue issues exist but none match convention/author; skipping")
+            return 0
         n = issue["number"]
         state = rl.parse_state(issue.get("body"))
         attempts = int(state.get("attempts") or 0)
-        max_a = int(state.get("max_attempts") or rl.MAX_ATTEMPTS)
+        max_a = min(int(state.get("max_attempts") or rl.MAX_ATTEMPTS), rl.MAX_ATTEMPTS)
         if attempts >= max_a:
             log(f"issue #{n} exhausted ({attempts}/{max_a}); marking failed")
             rl.comment(token, n, f"救援已失败 {attempts} 次，达到上限，标记为彻底失败。")
