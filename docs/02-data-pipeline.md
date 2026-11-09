@@ -62,7 +62,8 @@ data/
 }
 ```
 
-字段顺序固定（11 列）：`full_name, stars, forks, watchers, issues_total, prs_total, releases_total, created_at, language, is_fork, is_archived`。
+字段顺序固定（16 列）：`full_name, stars, forks, watchers, issues_total, prs_total, releases_total, created_at, language, is_fork, is_archived, issues_open, issues_closed, prs_open, prs_closed, prs_merged`。
+后 5 列（状态拆分）为追加列——11 列的旧快照按缺失处理（消费端读取时越界即 null）。
 `errors` 为可选字段，记录当次拉取失败的仓库及原因。
 
 （watchers/issues/prs/releases 对齐同类榜单站的数据模型，前端元信息行对非 null 字段渲染对应图标计数；扩展字段仅 UTC 14:00 运行填充，其他时刻为 `null`——见下方"拉取方式"。GraphQL 中 issues/pullRequests 分列；REST `open_issues_count` 含两者。）
@@ -75,7 +76,7 @@ data/
 
 - **GraphQL 批量**（主力，**两档抓取**）：
   - **核心字段**（每次运行）：`stargazerCount / forkCount / isFork / isArchived / createdAt / pushedAt / updatedAt / description / homepageUrl / primaryLanguage`——纯标量+小连接，batch=50 实测 ~2.5s/44 仓库，2000 仓库约 40 请求 ~100s。
-  - **扩展字段**（每日一次，UTC 14:00"收盘"运行）：`watchers / repositoryTopics / issues / pullRequests / releases` 的 `totalCount`，外加**详情对象**——`owner.avatarUrl`、`licenseInfo`、`discussions` 计数与最新 8 条、最热 open issues 8 条（按评论数）、`latestRelease`、`README.md` 摘要——随同一查询抓取，复杂度高故 batch=15。非扩展运行这些字段为 `null`，快照写入前用"最近一次含扩展值的快照"向前沿用补齐；详情对象则写入 `data/repos/*.json` 的 `detail` 键（同样向前沿用，见下）。榜单计算不依赖扩展字段，故对排名零影响。
+  - **扩展字段**（每日一次，UTC 14:00"收盘"运行）：`watchers / repositoryTopics / issues / pullRequests / releases` 的 `totalCount`，以及 issues/PR 的状态拆分计数（`issues OPEN/CLOSED`、`pullRequests OPEN/CLOSED/MERGED` 的 `totalCount`），外加**详情对象**——`owner.avatarUrl`、`licenseInfo`、`discussions` 计数与最新 8 条、最热 open issues 8 条（按评论数）、`latestRelease`、`README.md` 摘要——随同一查询抓取，复杂度高故 batch=15。非扩展运行这些字段为 `null`，快照写入前用"最近一次含扩展值的快照"向前沿用补齐；详情对象则写入 `data/repos/*.json` 的 `detail` 键（同样向前沿用，见下）。榜单计算不依赖扩展字段，故对排名零影响。
 - **REST 兜底**：GraphQL 失败或个别仓库查不到时，用 `GET /repos/{owner}/{repo}` 补漏。注意限额差异：**GITHUB_TOKEN 为 1000 req/hr**，PAT/OAuth 为 5000 req/hr——兜底预算按 1000/hr 设计。
 - **重试**：403/429/5xx 指数退避重试，最多 3 次；当日失败仓库在 `snapshot.errors` 中记录，次日补齐。
 

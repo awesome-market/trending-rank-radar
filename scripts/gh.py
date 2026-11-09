@@ -55,6 +55,11 @@ repositoryTopics(first: 15) { nodes { topic { name } } }
 issues(first: 1) { totalCount }
 pullRequests(first: 1) { totalCount }
 releases(first: 1) { totalCount }
+openIssues: issues(first: 1, states: OPEN) { totalCount }
+closedIssues: issues(first: 1, states: CLOSED) { totalCount }
+openPrs: pullRequests(first: 1, states: OPEN) { totalCount }
+closedPrs: pullRequests(first: 1, states: CLOSED) { totalCount }
+mergedPrs: pullRequests(first: 1, states: MERGED) { totalCount }
 owner { avatarUrl login }
 licenseInfo { spdxId name }
 discussions(first: 1) { totalCount }
@@ -320,6 +325,11 @@ class GitHubClient:
             "issues_total": None,
             "prs_total": None,
             "releases_total": None,
+            "issues_open": None,
+            "issues_closed": None,
+            "prs_open": None,
+            "prs_closed": None,
+            "prs_merged": None,
             "created_at": node.get("createdAt"),
             "pushed_at": node.get("pushedAt"),
             "updated_at": node.get("updatedAt"),
@@ -339,6 +349,13 @@ class GitHubClient:
             out["prs_total"] = ((node.get("pullRequests") or {}).get("totalCount"))
         if "releases" in node:
             out["releases_total"] = ((node.get("releases") or {}).get("totalCount"))
+        for alias, key in (("openIssues", "issues_open"),
+                           ("closedIssues", "issues_closed"),
+                           ("openPrs", "prs_open"),
+                           ("closedPrs", "prs_closed"),
+                           ("mergedPrs", "prs_merged")):
+            if alias in node:
+                out[key] = ((node.get(alias) or {}).get("totalCount"))
         if "repositoryTopics" in node:
             topics = []
             for t in (node.get("repositoryTopics") or {}).get("nodes") or []:
@@ -436,6 +453,11 @@ class GitHubClient:
             "issues_total": r.get("open_issues_count"),
             "prs_total": None,
             "releases_total": None,
+            "issues_open": None,
+            "issues_closed": None,
+            "prs_open": None,
+            "prs_closed": None,
+            "prs_merged": None,
             "created_at": r.get("created_at"),
             "pushed_at": r.get("pushed_at"),
             "updated_at": r.get("updated_at"),

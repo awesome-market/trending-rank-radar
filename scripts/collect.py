@@ -41,7 +41,8 @@ GROWTH_EVICT_DAYS = 14
 REST_FALLBACK_LIMIT = 150
 CORE_BATCH = 50
 EXTENDED_BATCH = 15
-EXTENDED_KEYS = ("watchers", "issues_total", "prs_total", "releases_total", "topics")
+EXTENDED_KEYS = ("watchers", "issues_total", "prs_total", "releases_total", "topics",
+                 "issues_open", "issues_closed", "prs_open", "prs_closed", "prs_merged")
 SURGE_PUSHED_DAYS = 7
 SURGE_BANDS = [(20, 300), (300, 1000), (1000, 5000)]
 
@@ -232,8 +233,9 @@ def fetch_metrics(client: gh.GitHubClient, names: list[str],
     """Return ({full_name: metrics}, [[full_name, reason], ...]).
 
     Two-tier fetch: core scalar fields every run (cheap, batch 50);
-    extended connection counts (watchers/issues/prs/releases/topics) only when
-    `extended` — they are ~20x more expensive, so collect runs them once daily.
+    extended connection counts (watchers/issues/prs/releases/topics plus
+    issue/PR open/closed/merged splits) only when `extended` — they are
+    ~20x more expensive, so collect runs them once daily.
     """
     metrics: dict[str, dict] = {}
     unresolved: list[list] = []
@@ -301,19 +303,23 @@ def fetch_metrics(client: gh.GitHubClient, names: list[str],
 def carry_forward_extended(metrics: dict[str, dict], prev_snap: dict) -> int:
     """Fill missing extended counters from a previous snapshot.
 
-    watchers/issues_total/prs_total/releases_total are cumulative counters, so
-    "latest known value" is honest on runs that skipped the expensive extended
-    pass — otherwise every non-extended run would erase them from site data.
+    watchers/issues_total/prs_total/releases_total and the issue/PR state
+    splits are cumulative counters, so "latest known value" is honest on
+    runs that skipped the expensive extended pass — otherwise every
+    non-extended run would erase them from site data.
     """
     prev = {r[0]: r for r in prev_snap.get("repos", []) if len(r) >= 7}
-    keymap = (("watchers", 3), ("issues_total", 4), ("prs_total", 5), ("releases_total", 6))
+    keymap = (("watchers", 3), ("issues_total", 4), ("prs_total", 5), ("releases_total", 6),
+              ("issues_open", 11), ("issues_closed", 12), ("prs_open", 13),
+              ("prs_closed", 14), ("prs_merged", 15))
     filled = 0
     for name, m in metrics.items():
         row = prev.get(name)
         if not row:
             continue
         for k, i in keymap:
-            if m.get(k) is None and row[i] is not None:
+            # rows predate the 16-column format may lack trailing indexes
+            if m.get(k) is None and len(row) > i and row[i] is not None:
                 m[k] = row[i]
                 filled += 1
     return filled
@@ -422,6 +428,8 @@ def main() -> int:
             m.get("issues_total"), m.get("prs_total"), m.get("releases_total"),
             m.get("created_at"), m.get("language"),
             bool(m.get("is_fork")), bool(m.get("is_archived")),
+            m.get("issues_open"), m.get("issues_closed"),
+            m.get("prs_open"), m.get("prs_closed"), m.get("prs_merged"),
         ])
 
     snap = {
