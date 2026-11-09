@@ -295,12 +295,13 @@ def _ssr_repo(p: dict) -> str:
     sec_d = (f'<h3 class="rp-ph">Discussions</h3>'
              f'<div class="rp-list">{lst(p.get("discussions"), p["url"] + "/discussions")}</div>'
              if p.get("discussions") else "")
+    av_url = _esc(p.get("avatar") or "")
     same_links = "".join(
         f'<a class="rp-same-link" href="{_esc(x["full_name"]).replace("/", "__")}.html">'
-        f'{_esc(x["name"])}</a>'
-        for x in (p.get("same_owner") or [])[:8])
+        f'<img class="rp-same-av" src="{av_url}" alt="" loading="lazy">{_esc(x["name"])}</a>'
+        for x in (p.get("same_owner") or [])[:20])
     if same_links:
-        same_links = f'<span class="rp-same-label">Same owner</span>{same_links}'
+        same_links = f'<span class="rp-same-label">TA的项目</span>{same_links}'
     av = (f'<img class="rp-side-av" src="{_esc(p["avatar"])}&s=300" width="300" '
           f'height="300" alt="{_esc(p["owner"])} avatar">' if p.get("avatar")
           else f'<img class="rp-side-av" src="https://github.com/{_esc(p["owner"])}.png?size=300" '
@@ -699,7 +700,7 @@ def main() -> int:
                 ({"full_name": n, "name": n.split("/")[1],
                   "boards": placements.get(n) or {}}
                  for n in owner_map.get(owner, []) if n != name),
-                key=lambda x: (x["boards"].get("total") or 9999, x["name"]))[:8],
+                key=lambda x: (x["boards"].get("total") or 9999, x["name"]))[:20],
             "issues": det.get("hot_issues") or [],
             "discussions": det.get("discussions") or [],
             "latest_release": det.get("latest_release"),

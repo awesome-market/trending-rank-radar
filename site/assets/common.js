@@ -94,7 +94,7 @@ const I18N = {
     'rp.grain.d': '日趋势', 'rp.grain.w': '周趋势', 'rp.grain.m': '月趋势',
     'rp.ctab.ov': '概览',
     'rp.more': '查看全部',
-    'rp.same': '同作者上榜',
+    'rp.same': 'TA的项目',
     'title.repo': '{r} · GitHub Trending Rank Radar',
   },
   en: {
@@ -186,7 +186,7 @@ const I18N = {
     'rp.grain.d': 'Daily', 'rp.grain.w': 'Weekly', 'rp.grain.m': 'Monthly',
     'rp.ctab.ov': 'Overview',
     'rp.more': 'View all',
-    'rp.same': 'Same owner',
+    'rp.same': 'Their projects',
     'title.repo': '{r} · GitHub Trending Rank Radar',
   },
 };

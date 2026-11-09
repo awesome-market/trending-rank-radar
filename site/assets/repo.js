@@ -62,8 +62,9 @@ function boardsRowHTML(d) {
 function sameOwnerHTML(d) {
   const list = (d.same_owner || []).filter(x => x.full_name !== d.full_name);
   if (!list.length) return '<div class="rp-same"></div>';
-  const links = list.slice(0, 8).map(x =>
-    `<a class="rp-same-link" href="${HOME}repos/${x.full_name.replace('/', '__')}.html">${esc(x.name)}</a>`).join('');
+  const av = esc(d.avatar || '');
+  const links = list.slice(0, 20).map(x =>
+    `<a class="rp-same-link" href="${HOME}repos/${x.full_name.replace('/', '__')}.html"><img class="rp-same-av" src="${av}" alt="" loading="lazy" onerror="this.remove()">${esc(x.name)}</a>`).join('');
   return `<div class="rp-same"><span class="rp-same-label">${t('rp.same')}</span>${links}</div>`;
 }
 
