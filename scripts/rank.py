@@ -840,8 +840,20 @@ def main() -> int:
         for e in blk.get("items", []):
             placements.setdefault(e["full_name"], {})[b] = e["rank"]
 
+    # Repo detail pages: every repo whose latest data is within the stale
+    # grace window gets a page — board entries link here, so a tracked repo
+    # that merely missed today's run shouldn't 404.
+    stale_cutoff = (d(latest_day) - timedelta(days=STALE_GRACE_DAYS)).isoformat()
+    detail_repos = dict(day_close[latest_day])
+    for name in ridx:
+        if name in detail_repos:
+            continue
+        ds0, vs0 = ridx[name]
+        if ds0 and ds0[-1] >= stale_cutoff:
+            detail_repos[name] = vs0[-1]
+
     owner_map: dict[str, list[str]] = {}
-    for name in day_close[latest_day]:
+    for name in detail_repos:
         owner_map.setdefault(name.split("/")[0], []).append(name)
 
     repos_out = SITE_DATA / "repos"
@@ -851,11 +863,13 @@ def main() -> int:
     repo_tpl = (SITE_DIR / "repo.html").read_text(encoding="utf-8")
     base = args.site_base.rstrip("/")
     detail_count = 0
-    for name, cur in day_close[latest_day].items():
+    for name, cur in detail_repos.items():
         owner, _, repo = name.partition("/")
         m = meta.get(name) or {}
         det = m.get("detail") or {}
         ds, vs = ridx.get(name, ([], []))
+        cur_day = ds[-1] if ds else latest_day
+        stale = cur_day < latest_day
 
         growth: dict = {}
         for label, nominal in (("day", 1), ("week", 7), ("month", 30)):
@@ -910,7 +924,8 @@ def main() -> int:
             "latest_release": det.get("latest_release"),
             "readme_excerpt": det.get("readme_excerpt"),
             "news": _load_news(owner, repo),
-            "snapshot_at": run_at[latest_day].astimezone(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "stale": stale,
+            "snapshot_at": run_at[cur_day].astimezone(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
             "history_start": days[0],
         }
         (repos_out / f"{owner}__{repo}.json").write_text(
@@ -956,7 +971,7 @@ def main() -> int:
         sitemap.append(f"  <url><loc>{base}/?board={b}</loc>"
                        f"<lastmod>{latest_day}</lastmod></url>")
     # repo detail pages — one static HTML per tracked repo
-    for name in sorted(day_close[latest_day]):
+    for name in sorted(detail_repos):
         sitemap.append(f"  <url><loc>{base}/repos/{name.replace('/', '__')}.html</loc>"
                        f"<lastmod>{latest_day}</lastmod></url>")
     sitemap.append("</urlset>")
