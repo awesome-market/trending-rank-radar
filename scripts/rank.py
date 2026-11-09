@@ -312,6 +312,7 @@ def _ssr_repo(p: dict) -> str:
         same_links = (f'<div class="rp-same-label">TA的项目</div>'
                       f'<div class="rp-same-row">{same_links}</div>')
     page_fn = _esc(p["full_name"]).replace("/", "__") + ".html"
+    news_html = _ssr_news(p.get("news") or [])
     av_img = (f'<img class="rp-side-av" src="{_esc(p["avatar"])}&s=300" width="300" '
               f'height="300" alt="{_esc(p["owner"])} avatar">' if p.get("avatar")
               else f'<img class="rp-side-av" src="https://github.com/{_esc(p["owner"])}.png?size=300" '
@@ -346,8 +347,53 @@ def _ssr_repo(p: dict) -> str:
 </div>
 <section class="rp-panel card"><div class="rp-metric-grid">{mets}</div>
 {readme_html}{sec_i}{sec_d}{rel_html}</section>
+{news_html}
 <p class="rp-meta">Snapshot: {_esc(p.get('snapshot_at'))} · Data license Apache-2.0 ·
 <a href="../data/repos/{_esc(p['owner'])}__{_esc(p['name'])}.json">JSON</a></p>"""
+
+
+def _load_news(owner: str, repo: str) -> list:
+    p = DATA_DIR / "news" / f"{owner}__{repo}.json"
+    try:
+        return json.loads(p.read_text(encoding="utf-8")).get("items") or []
+    except Exception:
+        return []
+
+
+def _ssr_news(items: list) -> str:
+    """Bilingual press block for repo pages. Both languages render into the
+    HTML (crawlable); the non-default one carries `hidden`, and repo.js
+    flips visibility on language switch / re-render."""
+    if not items:
+        return ""
+    zh = [i for i in items if i.get("lang") == "zh"]
+    en = [i for i in items if i.get("lang") != "zh"]
+
+    def row(i: dict) -> str:
+        extra = _esc(i.get("date") or "")
+        if i.get("source") == "Hacker News" and isinstance(i.get("points"), int):
+            c = i.get("comments")
+            extra = (f"▲ {i['points']:,}"
+                     + (f" · {c:,} comments" if isinstance(c, int) else "")
+                     + f" · {_esc(i.get('date') or '')}")
+        return (f'<a class="rp-item" href="{_esc(i.get("url") or "")}" '
+                f'target="_blank" rel="noopener">'
+                f'<span class="rp-news-src">{_esc(i.get("source") or "")}</span>'
+                f'<span class="rp-item-title">{_esc(i.get("title") or "")}</span>'
+                f'<span class="rp-item-extra">{extra}</span></a>')
+
+    def block(lst: list, lang: str, title: str, hidden: bool) -> str:
+        lattr = ' lang="zh-CN"' if lang == "zh" else ' lang="en"'
+        h = " hidden" if hidden else ""
+        return (f'<div class="rp-news-block"{lattr}{h}>'
+                f'<h3 class="rp-ph">{title}</h3>'
+                f'<div class="rp-list">{"".join(row(i) for i in lst[:10])}</div></div>')
+
+    visible = "zh" if zh else "en"   # SSR default: zh first (site default lang)
+    return ('<section class="rp-news card">'
+            + (block(zh, "zh", "相关报道", visible != "zh") if zh else "")
+            + (block(en, "en", "News &amp; coverage", visible != "en") if en else "")
+            + "</section>")
 
 
 # ------------------------------------------------------------ index SSR --
@@ -863,6 +909,7 @@ def main() -> int:
             "discussions": det.get("discussions") or [],
             "latest_release": det.get("latest_release"),
             "readme_excerpt": det.get("readme_excerpt"),
+            "news": _load_news(owner, repo),
             "snapshot_at": run_at[latest_day].astimezone(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
             "history_start": days[0],
         }

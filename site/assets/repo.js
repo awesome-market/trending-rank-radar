@@ -474,12 +474,43 @@ function panelHTML(d) {
   return { ov: overviewPanel, is: issuesPanel, di: discPanel, re: releasePanel }[repo.ctab](d);
 }
 
+/* ---------------- news (bilingual) ---------------- */
+function newsHTML(d) {
+  const items = d.news || [];
+  if (!items.length) return '';
+  const zh = items.filter(i => i.lang === 'zh');
+  const en = items.filter(i => i.lang !== 'zh');
+  // active-lang block wins; fall back to whichever language has items
+  const vis = (LANG === 'zh' && zh.length) ? 'zh'
+    : (LANG === 'en' && en.length) ? 'en'
+    : (zh.length ? 'zh' : 'en');
+  const row = i => {
+    const extra = (i.source === 'Hacker News' && i.points != null)
+      ? `▲${fmtFull(i.points)}${i.comments != null ? ` · ${fmtFull(i.comments)} comments` : ''} · ${esc(i.date || '')}`
+      : esc(i.date || '');
+    return `<a class="rp-item" href="${esc(i.url || '')}" target="_blank" rel="noopener">
+      <span class="rp-news-src">${esc(i.source || '')}</span>
+      <span class="rp-item-title">${esc(i.title || '')}</span>
+      <span class="rp-item-extra">${extra}</span></a>`;
+  };
+  const blk = (lst, lang, title) =>
+    `<div class="rp-news-block" lang="${lang === 'zh' ? 'zh-CN' : 'en'}"${lang === vis ? '' : ' hidden'}>
+      <h3 class="rp-ph">${title}</h3>
+      <div class="rp-list">${lst.slice(0, 10).map(row).join('')}</div>
+    </div>`;
+  return `<section class="rp-news card">`
+    + (zh.length ? blk(zh, 'zh', '相关报道') : '')
+    + (en.length ? blk(en, 'en', 'News &amp; coverage') : '')
+    + `</section>`;
+}
+
 /* ---------------- render ---------------- */
 function renderAllRepo() {
   const d = repo.data;
   $('#repoContent').innerHTML = crumbHTML(d) + topHTML(d)
     + ptabsHTML() + trendHTML(d)
-    + ctabsHTML(d) + `<section class="rp-panel card" id="rpPanel">${panelHTML(d)}</section>`;
+    + ctabsHTML(d) + `<section class="rp-panel card" id="rpPanel">${panelHTML(d)}</section>`
+    + newsHTML(d);
   renderChart();
   wireShare(d);
   document.title = t('title.repo', { r: d.full_name });

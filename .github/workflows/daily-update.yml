@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: '0 2 * * *'          # UTC 02:00 ≈ 北京 10:00
     - cron: '0 14 * * *'         # UTC 14:00 ≈ 北京 22:00（当日"收盘"快照）
+    - cron: '0 8 * * 0'          # UTC 周日 08:00：全量新闻回填班
   workflow_dispatch:
     inputs:
       at:
@@ -40,6 +41,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SNAPSHOT_AT: ${{ inputs.at }}
+
+      - name: Fetch repo news (HN + Google News)
+        if: ${{ !inputs.deploy_only }}
+        run: |
+          if [ "${{ github.event.schedule }}" = "0 8 * * 0" ]; then
+            python scripts/news.py --all
+          else
+            python scripts/news.py --board
+          fi
 
       - name: Report trending status via rescue issue
         if: ${{ !inputs.deploy_only }}
