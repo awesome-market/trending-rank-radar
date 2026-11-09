@@ -81,7 +81,7 @@ function topHTML(d) {
   ].filter(Boolean).join('');
   return `<div class="rp-top">
   <aside class="rp-side">
-    <img class="rp-side-av" src="${esc(avBig)}" alt="${esc(d.owner)} avatar" width="300" height="300" onerror="this.style.visibility='hidden'">
+    <a href="${HOME}repos/${d.full_name.replace('/', '__')}.html"><img class="rp-side-av" src="${esc(avBig)}" alt="${esc(d.owner)} avatar" width="300" height="300" onerror="this.style.visibility='hidden'"></a>
     <div class="rp-side-body card">
       <div class="rp-side-name">${esc(d.name)}</div>
       <a class="rp-side-owner" href="https://github.com/${esc(d.owner)}" target="_blank" rel="noopener">${esc(d.owner)}</a>
@@ -174,7 +174,7 @@ function trendHTML(d) {
     `<button class="rp-mtab${repo.metric === k ? ' active' : ''}" data-metric="${k}">${gi(ic, 13)} ${t('units.' + k)}</button>`).join('');
   return `<section class="rp-trend card">
     <div class="rp-trend-head">
-      <img class="rp-th-av" src="${esc(avSm)}" alt="" width="34" height="34" onerror="this.style.visibility='hidden'">
+      <a href="${HOME}repos/${d.full_name.replace('/', '__')}.html"><img class="rp-th-av" src="${esc(avSm)}" alt="" width="34" height="34" onerror="this.style.visibility='hidden'"></a>
       <div class="rp-th-txt">
         <div class="rp-th-name">${esc(d.full_name)}</div>
         <div class="rp-th-sub">${t('rp.subtitle')}</div>

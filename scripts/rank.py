@@ -302,10 +302,12 @@ def _ssr_repo(p: dict) -> str:
         for x in (p.get("same_owner") or [])[:20])
     if same_links:
         same_links = f'<span class="rp-same-label">TA的项目</span>{same_links}'
-    av = (f'<img class="rp-side-av" src="{_esc(p["avatar"])}&s=300" width="300" '
-          f'height="300" alt="{_esc(p["owner"])} avatar">' if p.get("avatar")
-          else f'<img class="rp-side-av" src="https://github.com/{_esc(p["owner"])}.png?size=300" '
-               f'width="300" height="300" alt="">')
+    page_fn = _esc(p["full_name"]).replace("/", "__") + ".html"
+    av_img = (f'<img class="rp-side-av" src="{_esc(p["avatar"])}&s=300" width="300" '
+              f'height="300" alt="{_esc(p["owner"])} avatar">' if p.get("avatar")
+              else f'<img class="rp-side-av" src="https://github.com/{_esc(p["owner"])}.png?size=300" '
+                   f'width="300" height="300" alt="">')
+    av = f'<a href="{page_fn}">{av_img}</a>'
     return f"""
 <nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
 <span class="rp-crumb-cur">{_esc(p['full_name'])}</span></nav>

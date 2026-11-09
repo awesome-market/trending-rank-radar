@@ -77,7 +77,7 @@ function rowHTML(e, dispRank = e.rank) {
     : '';
   return `<div class="rank-row" style="animation-delay:${Math.min(dispRank * 12, 400)}ms">
     <span class="row-rank${dispRank <= 3 ? ' top' : ''}"${dispRank !== e.rank ? ` title="${esc(t('rank.prerank', { n: e.rank }))}"` : ''}>${dispRank}</span>
-    <img class="row-avatar" src="${esc(e.avatar || `https://github.com/${e.owner}.png?size=96`)}" alt="" loading="lazy" width="48" height="48" onerror="this.style.visibility='hidden'">
+    <a class="row-avatar" href="repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}.html"><img src="${esc(e.avatar || `https://github.com/${e.owner}.png?size=96`)}" alt="" loading="lazy" width="48" height="48" onerror="this.style.visibility='hidden'"></a>
     <div class="row-body">
       <div class="row-name">
         ${nameLinkHTML(e)}${badges(e)}${ageChip}
@@ -107,7 +107,7 @@ function podiumHTML(e, idx) {
   const rate = e.rate != null ? `<span class="rate-pill${e.rate >= 100 ? ' hot' : ''}">${fmtPct(e.rate)}</span>` : '';
   return `<div class="podium-card p${idx + 1}">
     <div class="podium-rank">${medal}</div>
-    <img class="podium-avatar" src="${esc(e.avatar || `https://github.com/${e.owner}.png?size=128`)}" alt="" loading="lazy">
+    <a class="podium-avatar" href="repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}.html"><img src="${esc(e.avatar || `https://github.com/${e.owner}.png?size=128`)}" alt="" loading="lazy"></a>
     <div class="podium-name">${nameLinkHTML(e)}${badges(e)}</div>
     <div class="podium-desc">${esc(e.description || '—')}</div>
     <div class="podium-metric" style="color:${e.growth != null ? 'var(--green)' : 'var(--text)'}">${metric}${unit ? ` <span class="unit">${unit}</span>` : ''}</div>
