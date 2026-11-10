@@ -253,9 +253,9 @@ def _ssr_repo(p: dict) -> str:
         f'<span class="rp-meta-bit">{_esc(p["license"])}</span>' if p.get("license") else "",
         f'<span class="rp-meta-bit">Created {_esc((p.get("created_at") or "")[:10])}</span>'
         if p.get("created_at") else "",
-        (f'<a class="rp-meta-bit rp-home" href="{_esc(p["homepage"])}">'
+        (f'<a class="rp-meta-bit rp-home" href="{_esc(p["homepage"])}" rel="noopener">'
          f'{_esc(re.sub(r"^https?://", "", p["homepage"])[:60])}</a>'
-         if p.get("homepage") else ""),
+         if re.match(r"^https?://", str(p.get("homepage") or ""), re.I) else ""),
     ] if x]
     order = ["new", "daily", "daily_rate", "weekly", "weekly_rate",
              "monthly", "monthly_rate", "total", "cumulative"]
@@ -541,15 +541,16 @@ def render_repo_page(p: dict, template: str, base: str) -> str:
     if p.get("topics"):
         ld["keywords"] = ",".join(p["topics"][:10])
     ld_block = ('<script type="application/ld+json">'
-                + json.dumps(ld, ensure_ascii=False) + "</script>")
+                + json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")
+                + "</script>")
     keywords = ", ".join(
         [p["name"], p["owner"], fn, "github stars", "github trending",
          "star growth", "star history", "开源项目", "星标增长"]
         + [t for t in (p.get("topics") or [])[:6]])
     out = template
-    out = re.sub(r"<title>.*?</title>", f"<title>{_esc(title)}</title>", out, count=1)
+    out = re.sub(r"<title>.*?</title>", lambda m: f"<title>{_esc(title)}</title>", out, count=1)
     out = re.sub(r'<meta name="description" content="[^"]*">',
-                 f'<meta name="description" content="{_esc(desc)}">', out, count=1)
+                 lambda m: f'<meta name="description" content="{_esc(desc)}">', out, count=1)
     out = out.replace('<meta name="robots" content="noindex,follow">',
                       f'<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">\n'
                       f'<meta name="keywords" content="{_esc(keywords)}">\n'
@@ -557,13 +558,13 @@ def render_repo_page(p: dict, template: str, base: str) -> str:
                       f'<link rel="alternate" hreflang="en" href="{_esc(canon)}">\n'
                       f'<link rel="alternate" hreflang="x-default" href="{_esc(canon)}">')
     out = re.sub(r'<link rel="canonical" href="[^"]*">',
-                 f'<link rel="canonical" href="{_esc(canon)}">', out, count=1)
+                 lambda m: f'<link rel="canonical" href="{_esc(canon)}">', out, count=1)
     out = re.sub(r'<meta property="og:title" content="[^"]*">',
-                 f'<meta property="og:title" content="{_esc(title)}">', out, count=1)
+                 lambda m: f'<meta property="og:title" content="{_esc(title)}">', out, count=1)
     out = re.sub(r'<meta property="og:description" content="[^"]*">',
-                 f'<meta property="og:description" content="{_esc(desc)}">', out, count=1)
+                 lambda m: f'<meta property="og:description" content="{_esc(desc)}">', out, count=1)
     out = re.sub(r'<meta property="og:url" content="[^"]*">',
-                 f'<meta property="og:url" content="{_esc(canon)}">', out, count=1)
+                 lambda m: f'<meta property="og:url" content="{_esc(canon)}">', out, count=1)
     out = out.replace('<meta property="og:type" content="website">',
                       '<meta property="og:type" content="article">', 1)
     out = out.replace("</head>", f"{ld_block}\n</head>", 1)

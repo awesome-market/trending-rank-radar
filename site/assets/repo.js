@@ -64,24 +64,24 @@ function sameOwnerHTML(d) {
   if (!list.length) return '<div class="rp-same"></div>';
   const av = esc(d.avatar || '');
   const links = list.slice(0, 20).map(x =>
-    `<a class="rp-same-link" href="${HOME}repos/${x.full_name.replace('/', '__')}.html"><img class="rp-same-av" src="${av}" alt="" loading="lazy" onerror="this.remove()">${esc(x.name)}</a>`).join('');
+    `<a class="rp-same-link" href="${HOME}repos/${esc(x.full_name.replace('/', '__'))}.html"><img class="rp-same-av" src="${av}" alt="" loading="lazy" onerror="this.remove()">${esc(x.name)}</a>`).join('');
   return `<div class="rp-same"><div class="rp-same-label">${t('rp.same')}</div><div class="rp-same-row">${links}</div></div>`;
 }
 
 function topHTML(d) {
-  const avBig = d.avatar ? `${d.avatar}&s=300` : `https://github.com/${d.owner}.png?size=300`;
-  const avSm = d.avatar ? `${d.avatar}&s=68` : `https://github.com/${d.owner}.png?size=68`;
+  const avBig = d.avatar ? `${d.avatar}&s=300` : `https://github.com/${encodeURIComponent(d.owner)}.png?size=300`;
+  const avSm = d.avatar ? `${d.avatar}&s=68` : `https://github.com/${encodeURIComponent(d.owner)}.png?size=68`;
   const topics = (d.topics || []).slice(0, 8).map(x =>
     `<a class="rp-topic" href="https://github.com/topics/${encodeURIComponent(x)}" target="_blank" rel="noopener">${esc(x)}</a>`).join('');
   const metaBits = [
     d.language ? `<span class="rp-meta-bit">${langDotInline(d.language)} ${esc(d.language)}</span>` : '',
     d.license ? `<span class="rp-meta-bit">${esc(d.license)}</span>` : '',
     d.created_at ? `<span class="rp-meta-bit">${t('rp.created')} ${esc(String(d.created_at).slice(0, 10))}</span>` : '',
-    d.homepage ? `<a class="rp-meta-bit rp-home" href="${esc(d.homepage)}" target="_blank" rel="noopener">⌂ ${esc(d.homepage.replace(/^https?:\/\//, '').slice(0, 40))}</a>` : '',
+    /^https?:\/\//i.test(d.homepage || '') ? `<a class="rp-meta-bit rp-home" href="${esc(d.homepage)}" target="_blank" rel="noopener">⌂ ${esc(d.homepage.replace(/^https?:\/\//, '').slice(0, 40))}</a>` : '',
   ].filter(Boolean).join('');
   return `<div class="rp-top">
   <aside class="rp-side">
-    <a href="${HOME}repos/${d.full_name.replace('/', '__')}.html"><img class="rp-side-av" src="${esc(avBig)}" alt="${esc(d.owner)} avatar" width="300" height="300" onerror="this.style.visibility='hidden'"></a>
+    <a href="${HOME}repos/${esc(d.full_name.replace('/', '__'))}.html"><img class="rp-side-av" src="${esc(avBig)}" alt="${esc(d.owner)} avatar" width="300" height="300" onerror="this.style.visibility='hidden'"></a>
     <div class="rp-side-body card">
       <div class="rp-side-name">${esc(d.name)}</div>
       <a class="rp-side-owner" href="https://github.com/${esc(d.owner)}" target="_blank" rel="noopener">${esc(d.owner)}</a>
@@ -169,12 +169,12 @@ function bigChart(dates, vals) {
 }
 
 function trendHTML(d) {
-  const avSm = d.avatar ? `${d.avatar}&s=68` : `https://github.com/${d.owner}.png?size=68`;
+  const avSm = d.avatar ? `${d.avatar}&s=68` : `https://github.com/${encodeURIComponent(d.owner)}.png?size=68`;
   const mtabs = [['stars', 'star'], ['watchers', 'eye'], ['forks', 'fork']].map(([k, ic]) =>
     `<button class="rp-mtab${repo.metric === k ? ' active' : ''}" data-metric="${k}">${gi(ic, 13)} ${t('units.' + k)}</button>`).join('');
   return `<section class="rp-trend card">
     <div class="rp-trend-head">
-      <a href="${HOME}repos/${d.full_name.replace('/', '__')}.html"><img class="rp-th-av" src="${esc(avSm)}" alt="" width="34" height="34" onerror="this.style.visibility='hidden'"></a>
+      <a href="${HOME}repos/${esc(d.full_name.replace('/', '__'))}.html"><img class="rp-th-av" src="${esc(avSm)}" alt="" width="34" height="34" onerror="this.style.visibility='hidden'"></a>
       <div class="rp-th-txt">
         <div class="rp-th-name">${esc(d.full_name)}</div>
         <div class="rp-th-sub">${t('rp.subtitle')}</div>
@@ -188,7 +188,8 @@ function trendHTML(d) {
 
 function renderChart() {
   const d = repo.data;
-  const [dates, vals] = grainSeries(d.history.dates || [], d.history[repo.metric] || [], repo.grain);
+  const hist = d.history || {};
+  const [dates, vals] = grainSeries(hist.dates || [], hist[repo.metric] || [], repo.grain);
   const el = $('#rpChart');
   if (vals.filter(v => v != null).length < 2) {
     el.innerHTML = `<div class="rp-chart-empty">${t('rp.chart.need')} · ${t('rp.updated')} ${esc(d.snapshot_at || '')}</div>`;
@@ -233,7 +234,7 @@ async function shareCanvas(d) {
   c.fillStyle = bar; c.fillRect(0, 0, W, 12);
 
   /* header: avatar + name + desc */
-  const avImg = await loadImg(d.avatar ? `${d.avatar}&s=240` : `https://github.com/${d.owner}.png?size=240`);
+  const avImg = await loadImg(d.avatar ? `${d.avatar}&s=240` : `https://github.com/${encodeURIComponent(d.owner)}.png?size=240`);
   const ax = 72, ay = 92, asz = 120;
   if (avImg) {
     c.save();
@@ -254,7 +255,7 @@ async function shareCanvas(d) {
   /* title row + current value */
   c.fillStyle = '#1f2328'; c.font = F(600, 38);
   c.fillText(t('rp.share.trend'), 72, 316);
-  const cur = d.metrics.stars;
+  const cur = (d.metrics || {}).stars;
   if (cur != null) {
     const val = fmtAx(cur);
     c.textAlign = 'right';
@@ -267,8 +268,8 @@ async function shareCanvas(d) {
   }
 
   /* chart */
-  const dates = (d.history.dates || []).slice(-30);
-  const vals = (d.history.stars || []).slice(-30);
+  const dates = ((d.history || {}).dates || []).slice(-30);
+  const vals = ((d.history || {}).stars || []).slice(-30);
   const cx0 = 120, cy0 = 380, cw = W - 120 - 72, ch = 620;
   {
     const v0 = vals.length ? Math.min(...vals) : 0;
@@ -369,7 +370,9 @@ async function openShareModal(d) {
     <div class="sh-hint">${t('rp.share.hint')}</div>
   </div>`;
   document.body.appendChild(ov);
-  const close = () => ov.remove();
+  const onEsc = (e) => { if (e.key === 'Escape') close(); };
+  const close = () => { ov.remove(); document.removeEventListener('keydown', onEsc); };
+  document.addEventListener('keydown', onEsc);
   ov.addEventListener('click', e => { if (e.target === ov) close(); });
   ov.querySelector('.sh-x').onclick = close;
   const cv = await shareCanvas(d);
@@ -403,8 +406,8 @@ function wireShare(d) {
 
 /* ---------------- content tabs + panels ---------------- */
 function ghListItem(base, n, title, extra) {
-  return `<a class="rp-item" href="${base}/${n}" target="_blank" rel="noopener">
-    <span class="rp-item-num">#${n}</span>
+  return `<a class="rp-item" href="${esc(base)}/${esc(n)}" target="_blank" rel="noopener">
+    <span class="rp-item-num">#${esc(n)}</span>
     <span class="rp-item-title">${esc(title)}</span>
     <span class="rp-item-extra">${extra}</span>
   </a>`;
@@ -628,7 +631,7 @@ function renderAllRepo() {
     + ptabsHTML() + trendHTML(d)
     + `<section class="rp-social card" id="rpSocial"></section>`
     + ctabsHTML(d) + `<section class="rp-panel card" id="rpPanel">${panelHTML(d)}</section>`
-    + newsHTML(d);
+    + newsHTML(d) + `<section class="rp-cm card" id="rpCm"></section>`;
   if (repo.ctab === 'ov') loadReadme(d);
   renderChart();
   wireShare(d);
@@ -644,16 +647,16 @@ async function loadSocial(d) {
   const needLogin = () => openAuthModal('login');
   let s = { views: 0, likes: 0, favs: 0, comments: 0, viewer: {} };
   try { s = await api(`/items/github/${encodeURIComponent(d.full_name)}/social`); } catch { }
+  const sv = s.viewer || {};
   el.innerHTML = `<div class="rp-socbar">
-      <button class="soc-btn${s.viewer.liked ? ' on' : ''}" id="socLike" type="button">♥ <b>${fmt(s.likes)}</b> ${esc(t('soc.like'))}</button>
-      <button class="soc-btn${s.viewer.faved ? ' on' : ''}" id="socFav" type="button">★ <b>${fmt(s.favs)}</b> ${esc(t('soc.fav'))}</button>
+      <button class="soc-btn${sv.liked ? ' on' : ''}" id="socLike" type="button">♥ <b>${fmt(s.likes)}</b> ${esc(t('soc.like'))}</button>
+      <button class="soc-btn${sv.faved ? ' on' : ''}" id="socFav" type="button">★ <b>${fmt(s.favs)}</b> ${esc(t('soc.fav'))}</button>
       <span class="soc-stat">${esc(t('soc.views'))} <b>${fmt(s.views)}</b></span>
-    </div>
-    <div class="rp-cm">
-      <h3 class="rp-cm-title">${esc(t('cm.title'))} <b id="cmN">${fmt(s.comments)}</b></h3>
-      <div class="rp-cm-form" id="cmForm"></div>
-      <div class="rp-cm-list" id="cmList"></div>
     </div>`;
+  const cm = $('#rpCm');
+  if (cm) cm.innerHTML = `<h3 class="rp-cm-title">${esc(t('cm.title'))} <b id="cmN">${fmt(s.comments)}</b></h3>
+    <div class="rp-cm-form" id="cmForm"></div>
+    <div class="rp-cm-list" id="cmList"></div>`;
   const toggle = async (kind, btn) => {
     if (!zk.user) { needLogin(); return; }
     btn.disabled = true;
@@ -666,7 +669,7 @@ async function loadSocial(d) {
       btn.classList.toggle('on', !!on);
       const b = btn.querySelector('b');
       b.textContent = fmt(parseInt(b.textContent.replace(/\D/g, '') || '0') + (on ? 1 : -1));
-    } catch { needLogin(); }
+    } catch { if (!zk.user) needLogin(); }
     btn.disabled = false;
   };
   $('#socLike').onclick = (e) => toggle('likes', e.currentTarget);
@@ -710,7 +713,7 @@ function cmRow(c) {
       <button class="cm-act" data-act="report" type="button">${esc(t('cm.report'))}</button>
       ${own ? `<button class="cm-act" data-act="del" type="button">${esc(t('cm.del'))}</button>` : ''}
     </span>`;
-  return `<div class="cm-item" data-id="${c.id}">${av}
+  return `<div class="cm-item" data-id="${esc(c.id)}">${av}
     <div class="cm-main">
       <div class="cm-head"><b>${esc(c.display_name || c.username)}</b>
         <span class="cm-time">${timeAgo(new Date(c.created_at * 1000).toISOString())}</span>${pend}${acts}</div>
@@ -734,8 +737,8 @@ async function loadComments(d) {
     const id = b.closest('.cm-item').dataset.id;
     if (!zk.user) { openAuthModal('login'); return; }
     try {
-      if (b.dataset.act === 'del') await api(`/comments/${id}`, { method: 'DELETE' });
-      else await api(`/comments/${id}/report`, { method: 'POST', body: JSON.stringify({ reason: '' }) });
+      if (b.dataset.act === 'del') await api(`/comments/${encodeURIComponent(id)}`, { method: 'DELETE' });
+      else await api(`/comments/${encodeURIComponent(id)}/report`, { method: 'POST', body: JSON.stringify({ reason: '' }) });
       loadComments(d);
     } catch { }
   });

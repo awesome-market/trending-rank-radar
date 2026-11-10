@@ -71,8 +71,8 @@ function nameLinkHTML(e) {
 function rowHTML(e, dispRank = e.rank) {
   // state.sel 为 YYYY-MM 时用月末近似日，避免 Invalid Date → NaN 天
   const selEnd = state.sel && state.sel.length > 7 ? state.sel : `${state.sel}-28`;
-  const ageDays = Math.max(0, Math.floor((new Date(selEnd + 'T00:00:00') - new Date(e.created_at)) / 86400000));
-  const ageChip = state.board === 'new' && e.created_at
+  const ageDays = Math.floor((new Date(selEnd + 'T00:00:00') - new Date(e.created_at)) / 86400000);
+  const ageChip = state.board === 'new' && e.created_at && Number.isFinite(ageDays) && ageDays >= 0
     ? `<span class="row-age">${t('age', { n: ageDays })}</span>`
     : '';
   return `<div class="rank-row" data-fn="${esc(e.full_name)}" style="animation-delay:${Math.min(dispRank * 12, 400)}ms">
@@ -160,13 +160,14 @@ async function hydrateSocial() {
   els.forEach(el => {
     const s = soc[el.dataset.fn];
     if (!s || el.querySelector('.row-soc')) return;
+    const sv = s.viewer || {};
     const [o, n] = el.dataset.fn.split('/');
     const url = `repos/${encodeURIComponent(o)}__${encodeURIComponent(n)}.html`;
     const div = document.createElement('div');
     div.className = 'row-soc';
-    div.innerHTML = `<button class="soc-ic${s.viewer.liked ? ' on' : ''}" data-act="likes" type="button" title="${esc(t('soc.like'))}">♥ <b>${fmt(s.likes)}</b></button>
-      <button class="soc-ic${s.viewer.faved ? ' on' : ''}" data-act="favorites" type="button" title="${esc(t('soc.fav'))}">★ <b>${fmt(s.favs)}</b></button>
-      <a class="soc-ic" href="${url}#rpSocial" title="${esc(t('cm.title'))}">💬 <b>${fmt(s.comments)}</b></a>`;
+    div.innerHTML = `<button class="soc-ic${sv.liked ? ' on' : ''}" data-act="likes" type="button" title="${esc(t('soc.like'))}">♥ <b>${fmt(s.likes)}</b></button>
+      <button class="soc-ic${sv.faved ? ' on' : ''}" data-act="favorites" type="button" title="${esc(t('soc.fav'))}">★ <b>${fmt(s.favs)}</b></button>
+      <a class="soc-ic" href="${url}#rpCm" title="${esc(t('cm.title'))}">💬 <b>${fmt(s.comments)}</b></a>`;
     div.querySelectorAll('button.soc-ic').forEach(btn => {
       btn.onclick = async () => {
         if (!zk.user) { openAuthModal('login'); return; }
@@ -269,17 +270,25 @@ async function loadView() {
   let rawCount = 0;
 
   const idx = state.index;
+  let data;
+  try {
+    data = await j(state.period === 'day' ? `data/days/${state.sel}.json`
+      : state.period === 'month' ? `data/months/${state.sel}.json`
+      : `data/years/${state.sel}.json`);
+  } catch {
+    const pct = idx ? Math.min(100, idx.snapshot_days / 31 * 100) : 0;
+    setEmpty(t('empty.acc'), pct);
+    return;
+  }
   if (state.period === 'day') {
-    const data = await j(`data/days/${state.sel}.json`);
-    const board = data.boards[state.board] || { items: [] };
+    const board = (data.boards || {})[state.board] || { items: [] };
     state.boardMeta = board;
     rawCount = (board.items || []).length;
     state.items = filterItems(board.items || []);
     if (!state.items.length) emptyCtx = buildEmptyCtx(data.boards || {}, 'day');
     document.title = t('title.board', { b: boardLabel(state.board), s: state.sel });
   } else if (state.period === 'month') {
-    const data = await j(`data/months/${state.sel}.json`);
-    const src = state.board === CUM_BOARD ? data.cumulative : (data.boards[state.board] || { items: [] });
+    const src = state.board === CUM_BOARD ? data.cumulative : ((data.boards || {})[state.board] || { items: [] });
     state.boardMeta = src;
     rawCount = (src.items || []).length;
     state.items = filterItems(src.items || []);
@@ -302,10 +311,10 @@ async function loadView() {
     document.title = t('title.board', {
       b: state.board === CUM_BOARD ? t('title.cum') : boardLabel(state.board), s: state.sel });
   } else { // year
-    const data = await j(`data/years/${state.sel}.json`);
-    state.boardMeta = data.growth;
-    rawCount = (data.growth.items || []).length;
-    state.items = filterItems(data.growth.items || []);
+    const growth = data.growth || { items: [] };
+    state.boardMeta = growth;
+    rawCount = (growth.items || []).length;
+    state.items = filterItems(growth.items || []);
     if (!state.items.length && state.index.months && state.index.months.length) {
       emptyCtx = { actions: [{
         label: t('empty.viewmonth'),
@@ -314,11 +323,11 @@ async function loadView() {
     }
     // months grid
     $('#yearWrap').hidden = false;
-    $('#monthGrid').innerHTML = data.months.map(m => {
+    $('#monthGrid').innerHTML = (data.months || []).map(m => {
       const [y, mo] = m.split('-');
       const mName = LANG === 'zh' ? t('month.name', { y, m: Number(mo) })
         : t('month.name', { y, m: MONTHS_EN[Number(mo) - 1] });
-      const isPartial = m === data.months[data.months.length - 1] && data.partial;
+      const isPartial = m === (data.months || [])[data.months.length - 1] && data.partial;
       return `<div class="month-card${isPartial ? ' partial' : ''}" data-month="${m}">
         <div class="m-name">${mName}</div>
         <div class="m-sub">${isPartial ? t('month.partial') : t('month.full')}</div>
@@ -488,8 +497,8 @@ function mark(text, q) {
 
 function searchRow(e, q, i) {
   const sub = e.description ? `<span class="sr-sub">${esc(e.description)}</span>` : '';
-  return `<a class="sr-row${i === search.active ? ' on' : ''}" href="${repoUrl(e.item_id)}">
-    <img class="sr-av" src="https://github.com/${e.owner}.png?size=64" alt="" loading="lazy" width="30" height="30">
+  return `<a class="sr-row${i === search.active ? ' on' : ''}" href="${esc(repoUrl(e.item_id))}">
+    <img class="sr-av" src="https://github.com/${esc(e.owner)}.png?size=64" alt="" loading="lazy" width="30" height="30">
     <span class="sr-main">
       <span class="sr-name">${mark(e.item_id, q)}</span>
       ${sub}
@@ -567,7 +576,7 @@ function initSearch() {
       renderSearchDrop(input.value.trim().toLowerCase(), scope());
     } else if (e.key === 'Enter' && search.active >= 0) {
       const h = search.hits[search.active];
-      if (h) location.href = repoUrl(h.e.n);
+      if (h) location.href = repoUrl(h.item_id);
     } else if (e.key === 'Escape') {
       drop.hidden = true;
       input.blur();

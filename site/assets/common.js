@@ -255,7 +255,7 @@ let LANG = (() => {
 
 function t(k, p) {
   let s = (I18N[LANG] && I18N[LANG][k]) ?? I18N.zh[k] ?? k;
-  if (p) for (const kk of Object.keys(p)) s = s.split('{' + kk + '}').join(p[kk]);
+  if (p) for (const kk of Object.keys(p)) s = s.split('{' + kk + '}').join(p[kk] ?? '');
   return s;
 }
 
@@ -322,7 +322,8 @@ function applyStaticI18n() {
 /* ---------------- sparkline ---------------- */
 function sparkline(series, w = 80, h = 24, pad = 2, areaId = 'sparkFill', strokeId = 'sparkStroke') {
   if (!series || series.length === 0) return '';
-  const vals = series.map(Number);
+  const vals = series.map(Number).filter(v => Number.isFinite(v));
+  if (!vals.length) return '';
   const min = Math.min(...vals), max = Math.max(...vals);
   const span = max - min || 1;
   const pts = vals.map((v, i) => {
@@ -359,9 +360,16 @@ function bindChrome(onLangChange) {
     LANG = LANG === 'zh' ? 'en' : 'zh';
     try { localStorage.setItem('lang', LANG); } catch { /* private mode */ }
     applyStaticI18n();
+    if (typeof renderAuthChip === 'function') renderAuthChip();
     if (typeof onLangChange === 'function') onLangChange();
   };
 }
+
+/* auth 下拉（收藏/退出）点外部关闭；document 级委托监听，只注册一次 */
+document.addEventListener('click', (e) => {
+  const d = document.getElementById('authDrop');
+  if (d && !d.hidden && !e.target.closest('.auth-wrap')) d.hidden = true;
+});
 
 /* ---------------- zhuikan-api client + auth ---------------- */
 const API_BASE = 'https://api-site.zhuikan.com';
@@ -384,7 +392,10 @@ async function api(path, opts = {}) {
   if (r.status === 204) return null;
   const d = await r.json().catch(() => ({}));
   if (!r.ok) {
-    const e = new Error(typeof d.detail === 'string' ? d.detail : `HTTP ${r.status}`);
+    const msg = typeof d.detail === 'string' ? d.detail
+      : Array.isArray(d.detail) && d.detail.length ? String(d.detail[0].msg || d.detail[0])
+      : `HTTP ${r.status}`;
+    const e = new Error(msg);
     e.status = r.status; throw e;
   }
   return d;
@@ -470,6 +481,7 @@ function openAuthModal(mode) {
   q('#amSw').onclick = () => setMode(mode === 'register' ? 'login' : 'register');
 
   const submit = async () => {
+    if (q('#amGo').disabled) return;
     q('#amGo').disabled = true;
     try {
       const body = mode === 'register'
@@ -487,7 +499,9 @@ function openAuthModal(mode) {
     q('#amGo').disabled = false;
   };
   q('#amGo').onclick = submit;
-  ov.addEventListener('keydown', (e) => { if (e.key === 'Enter') submit(); });
+  ov.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && e.target.tagName === 'INPUT') submit();
+  });
 
   setMode(mode === 'register' ? 'register' : 'login');
   q('#amU').focus();
@@ -507,7 +521,9 @@ async function openFavs() {
         <span class="fav-meta">${f.lang ? esc(f.lang) + ' · ' : ''}${f.stars ? '★ ' + fmt(f.stars) : ''}</span></a>`;
     }).join('') : `<div class="fav-empty">${esc(t('fav.empty'))}</div>`}</div>
   </div>`;
-  ov.addEventListener('click', e => { if (e.target === ov) ov.remove(); });
-  ov.querySelector('.sh-x').onclick = () => ov.remove();
+  const onEsc = (e) => { if (e.key === 'Escape') { ov.remove(); document.removeEventListener('keydown', onEsc); } };
+  document.addEventListener('keydown', onEsc);
+  ov.addEventListener('click', e => { if (e.target === ov) { ov.remove(); document.removeEventListener('keydown', onEsc); } });
+  ov.querySelector('.sh-x').onclick = () => { ov.remove(); document.removeEventListener('keydown', onEsc); };
   document.body.appendChild(ov);
 }
