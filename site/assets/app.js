@@ -169,7 +169,7 @@ async function hydrateSocial() {
       <a class="soc-ic" href="${url}#rpSocial" title="${esc(t('cm.title'))}">💬 <b>${fmt(s.comments)}</b></a>`;
     div.querySelectorAll('button.soc-ic').forEach(btn => {
       btn.onclick = async () => {
-        if (!zk.user) { const b = $('#authBtn'); if (b) b.click(); return; }
+        if (!zk.user) { openAuthModal('login'); return; }
         btn.disabled = true;
         try {
           const r = await api(`/${btn.dataset.act}/toggle`, {

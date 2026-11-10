@@ -625,8 +625,8 @@ function newsHTML(d) {
 function renderAllRepo() {
   const d = repo.data;
   $('#repoContent').innerHTML = crumbHTML(d) + topHTML(d)
-    + `<section class="rp-social card" id="rpSocial"></section>`
     + ptabsHTML() + trendHTML(d)
+    + `<section class="rp-social card" id="rpSocial"></section>`
     + ctabsHTML(d) + `<section class="rp-panel card" id="rpPanel">${panelHTML(d)}</section>`
     + newsHTML(d);
   if (repo.ctab === 'ov') loadReadme(d);
@@ -641,11 +641,7 @@ function renderAllRepo() {
 async function loadSocial(d) {
   const el = $('#rpSocial');
   if (!el) return;
-  const needLogin = () => {
-    const b = $('#authBtn');
-    if (b) { b.click(); return; }
-    location.href = zkLoginUrl('github');
-  };
+  const needLogin = () => openAuthModal('login');
   let s = { views: 0, likes: 0, favs: 0, comments: 0, viewer: {} };
   try { s = await api(`/items/github/${encodeURIComponent(d.full_name)}/social`); } catch { }
   el.innerHTML = `<div class="rp-socbar">
@@ -684,7 +680,7 @@ function renderCommentForm(d) {
   if (!f) return;
   if (!zk.user) {
     f.innerHTML = `<button class="cm-login" id="cmLogin" type="button">${esc(t('cm.login'))}</button>`;
-    $('#cmLogin').onclick = () => { const b = $('#authBtn'); if (b) b.click(); else location.href = zkLoginUrl('github'); };
+    $('#cmLogin').onclick = () => openAuthModal('login');
     return;
   }
   f.innerHTML = `<textarea class="cm-in" id="cmText" maxlength="2000" rows="3" placeholder="${esc(t('cm.ph'))}"></textarea>
@@ -736,7 +732,7 @@ async function loadComments(d) {
     : `<div class="cm-empty">${esc(t('cm.empty'))}</div>`;
   el.querySelectorAll('.cm-act').forEach(b => b.onclick = async () => {
     const id = b.closest('.cm-item').dataset.id;
-    if (!zk.user) { const ab = $('#authBtn'); if (ab) ab.click(); return; }
+    if (!zk.user) { openAuthModal('login'); return; }
     try {
       if (b.dataset.act === 'del') await api(`/comments/${id}`, { method: 'DELETE' });
       else await api(`/comments/${id}/report`, { method: 'POST', body: JSON.stringify({ reason: '' }) });

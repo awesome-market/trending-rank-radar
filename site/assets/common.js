@@ -36,10 +36,11 @@ const I18N = {
     'search.none.news': '没有匹配的新闻',
     'search.count': '{n} 个结果',
     'search.err': '搜索服务暂不可用',
-    'auth.login': '登录', 'auth.logout': '退出登录',
+    'auth.login': '登陆', 'auth.logout': '退出登录',
     'auth.email': '或用邮箱', 'auth.user': '用户名或邮箱',
     'auth.pass': '密码（≥8位）', 'auth.register': '注册',
     'auth.emailonly': '邮箱', 'auth.err': '操作失败，请重试',
+    'auth.toReg': '没有账号？注册', 'auth.toLogin': '已有账号？登陆',
     'soc.like': '点赞', 'soc.fav': '收藏', 'soc.views': '浏览',
     'fav.mine': '我的收藏', 'fav.empty': '还没有收藏，去榜单里点 ★',
     'cm.title': '评论', 'cm.ph': '写下你的评论…',
@@ -158,6 +159,7 @@ const I18N = {
     'auth.email': 'or with email', 'auth.user': 'Username or email',
     'auth.pass': 'Password (8+ chars)', 'auth.register': 'Sign up',
     'auth.emailonly': 'Email', 'auth.err': 'Failed, try again',
+    'auth.toReg': 'No account? Sign up', 'auth.toLogin': 'Have an account? Sign in',
     'soc.like': 'Like', 'soc.fav': 'Favorite', 'soc.views': 'Views',
     'fav.mine': 'My favorites', 'fav.empty': 'Nothing saved yet — tap ★ on a row',
     'cm.title': 'Comments', 'cm.ph': 'Write a comment…',
@@ -426,44 +428,69 @@ function renderAuthChip() {
     $('#authFav').onclick = () => { $('#authDrop').hidden = true; openFavs(); };
     $('#authOut').onclick = zkLogout;
   } else {
-    el.innerHTML = `<button class="auth-chip" id="authBtn" type="button">${esc(t('auth.login'))}</button>
-      <div class="auth-drop" id="authDrop" hidden>
-        <a class="auth-item" href="${zkLoginUrl('github')}">GitHub</a>
-        <a class="auth-item" href="${zkLoginUrl('google')}">Google</a>
-        <div class="auth-sep">${esc(t('auth.email'))}</div>
-        <input class="auth-in" id="authU" type="text" autocomplete="username" placeholder="${esc(t('auth.user'))}">
-        <input class="auth-in" id="authP" type="password" autocomplete="current-password" placeholder="${esc(t('auth.pass'))}">
-        <input class="auth-in" id="authE" type="email" autocomplete="email" placeholder="${esc(t('auth.emailonly'))}" hidden>
-        <div class="auth-row">
-          <button class="auth-item auth-go" id="authIn" type="button">${esc(t('auth.login'))}</button>
-          <button class="auth-item" id="authReg" type="button">${esc(t('auth.register'))}</button>
-        </div>
-        <div class="auth-err" id="authErr" hidden></div>
-      </div>`;
-    const drop = $('#authDrop');
-    $('#authBtn').onclick = () => { drop.hidden = !drop.hidden; };
-    const emailMode = () => { $('#authE').hidden = false; };
-    const fail = (e) => { const el2 = $('#authErr'); el2.textContent = e.message || t('auth.err'); el2.hidden = false; };
-    $('#authIn').onclick = async () => {
-      try {
-        const d = await api('/auth/login', { method: 'POST', body: JSON.stringify({ identifier: $('#authU').value.trim(), password: $('#authP').value }) });
-        zk.token = d.token; localStorage.setItem('zk_token', d.token);
-        await zkLoadUser(); renderAuthChip(); document.dispatchEvent(new CustomEvent('zk:auth'));
-      } catch (e) { fail(e); }
-    };
-    $('#authReg').onclick = async () => {
-      emailMode();
-      if ($('#authE').hidden) return;
-      try {
-        const d = await api('/auth/register', { method: 'POST', body: JSON.stringify({ username: $('#authU').value.trim(), email: $('#authE').value.trim(), password: $('#authP').value }) });
-        zk.token = d.token; localStorage.setItem('zk_token', d.token);
-        await zkLoadUser(); renderAuthChip(); document.dispatchEvent(new CustomEvent('zk:auth'));
-      } catch (e) { fail(e); }
-    };
-    document.addEventListener('click', (e) => {
-      if (!el.contains(e.target)) drop.hidden = true;
-    });
+    el.innerHTML = `<button class="auth-chip" id="authBtn" type="button">${esc(t('auth.login'))}</button>`;
+    $('#authBtn').onclick = () => openAuthModal('login');
   }
+}
+
+/* 登陆/注册弹层: mode = 'login' | 'register'，成功后渲染 chip 并派发 zk:auth */
+function openAuthModal(mode) {
+  const ov = document.createElement('div');
+  ov.className = 'sh-ov';
+  ov.innerHTML = `<div class="sh-card am-card">
+    <div class="sh-head"><span id="amTitle"></span><button class="sh-x" aria-label="close">✕</button></div>
+    <a class="auth-item am-soc" href="${zkLoginUrl('github')}">GitHub</a>
+    <a class="auth-item am-soc" href="${zkLoginUrl('google')}">Google</a>
+    <div class="auth-sep am-sep">${esc(t('auth.email'))}</div>
+    <input class="auth-in am-in" id="amU" type="text" autocomplete="username" placeholder="${esc(t('auth.user'))}">
+    <input class="auth-in am-in" id="amE" type="email" autocomplete="email" placeholder="${esc(t('auth.emailonly'))}">
+    <input class="auth-in am-in" id="amP" type="password" placeholder="${esc(t('auth.pass'))}">
+    <button class="auth-item auth-go am-go" id="amGo" type="button"></button>
+    <div class="auth-err" id="amErr" hidden></div>
+    <div class="am-sw"><a href="javascript:void 0" id="amSw"></a></div>
+  </div>`;
+  document.body.appendChild(ov);
+  const q = (s) => ov.querySelector(s);
+  const onEsc = (e) => { if (e.key === 'Escape') close(); };
+  const close = () => { ov.remove(); document.removeEventListener('keydown', onEsc); };
+  q('.sh-x').onclick = close;
+  ov.addEventListener('click', (e) => { if (e.target === ov) close(); });
+  document.addEventListener('keydown', onEsc);
+
+  const setMode = (m) => {
+    mode = m;
+    const reg = m === 'register';
+    q('#amTitle').textContent = reg ? t('auth.register') : t('auth.login');
+    q('#amGo').textContent = reg ? t('auth.register') : t('auth.login');
+    q('#amE').hidden = !reg;
+    q('#amP').autocomplete = reg ? 'new-password' : 'current-password';
+    q('#amSw').textContent = reg ? t('auth.toLogin') : t('auth.toReg');
+    q('#amErr').hidden = true;
+  };
+  q('#amSw').onclick = () => setMode(mode === 'register' ? 'login' : 'register');
+
+  const submit = async () => {
+    q('#amGo').disabled = true;
+    try {
+      const body = mode === 'register'
+        ? { username: q('#amU').value.trim(), email: q('#amE').value.trim(), password: q('#amP').value }
+        : { identifier: q('#amU').value.trim(), password: q('#amP').value };
+      const d = await api(mode === 'register' ? '/auth/register' : '/auth/login',
+        { method: 'POST', body: JSON.stringify(body) });
+      zk.token = d.token; localStorage.setItem('zk_token', d.token);
+      await zkLoadUser(); renderAuthChip(); document.dispatchEvent(new CustomEvent('zk:auth'));
+      close();
+      return;
+    } catch (e) {
+      const el2 = q('#amErr'); el2.textContent = e.message || t('auth.err'); el2.hidden = false;
+    }
+    q('#amGo').disabled = false;
+  };
+  q('#amGo').onclick = submit;
+  ov.addEventListener('keydown', (e) => { if (e.key === 'Enter') submit(); });
+
+  setMode(mode === 'register' ? 'register' : 'login');
+  q('#amU').focus();
 }
 
 async function openFavs() {
