@@ -172,13 +172,11 @@ class TrendingParser(HTMLParser):
         if self._capture == "language":
             self._cur["language"] = text or None
         elif self._capture in ("stars", "forks"):
-            m = self.NUM_RE.search(text.replace(",", ""))
-            # numbers contain commas; NUM_RE on de-comma'd text still matches digits
-            m2 = re.search(r"[\d,]+", text)
+            m = re.search(r"[\d,]+", text)
             val = None
-            if m2:
+            if m:
                 try:
-                    val = int(m2.group(0).replace(",", ""))
+                    val = int(m.group(0).replace(",", ""))
                 except ValueError:
                     val = None
             self._cur[self._capture] = val

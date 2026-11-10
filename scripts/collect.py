@@ -111,6 +111,11 @@ def discover(client: gh.GitHubClient, init_mode: bool) -> dict[str, dict]:
             break
         try:
             items = client.trending(lang)
+            if not items:
+                # HTTP 200 + 0 解析结果 = GitHub 改了页面结构，解析器静默失效。
+                # 必须计为失败——否则 ci_rescue 看到 trending_pages_ok>0，
+                # 救援通道永远不会触发，trending 发现悄悄死亡。
+                raise RuntimeError("0 repos parsed — trending markup changed?")
             trending_fails = 0
             STATS["trending_ok"] += 1
             for it in items:
