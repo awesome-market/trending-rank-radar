@@ -93,8 +93,8 @@ jobs:
           # 的资产引用，HTML 本身 DYNAMIC 不缓存，发版即生效
           V="$(echo "${{ github.sha }}" | cut -c1-8)"
           find . -name "*.html" -exec sed -i -E \
-            -e "s|(assets/[a-zA-Z0-9_./-]+\.(css|js))\"|\1?v=${V}\"|g" \
-            -e "s|(assets/[a-zA-Z0-9_./-]+\.(css|js)\?v=)[0-9A-Za-z_-]+|\1${V}|g" \
+            -e "s#(assets/[a-zA-Z0-9_./-]+\.(css|js))\"#\1?v=${V}\"#g" \
+            -e "s#(assets/[a-zA-Z0-9_./-]+\.(css|js)\?v=)[0-9A-Za-z_-]+#\1${V}#g" \
             {} +
           git init -qb gh-pages
           git add -A
