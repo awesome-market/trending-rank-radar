@@ -34,13 +34,14 @@ SNAP_DIR = DATA_DIR / "snapshots"
 REPOS_DIR = DATA_DIR / "repos"
 WATCHLIST_PATH = DATA_DIR / "watchlist.json"
 
-MAX_WATCH = 2000
+MAX_WATCH = 5000
 NEW_WINDOW_DAYS = 90
 NEW_MIN_STARS = 20
 GROWTH_EVICT_DAYS = 14
 REST_FALLBACK_LIMIT = 150
 CORE_BATCH = 50
-EXTENDED_BATCH = 15
+EXTENDED_BATCH = 10   # 15-repo extended batches intermittently hit GitHub's
+                      # ~10s per-query server timeout (HTTP 502, still billed)
 EXTENDED_KEYS = ("watchers", "issues_total", "prs_total", "releases_total", "topics",
                  "issues_open", "issues_closed", "prs_open", "prs_closed", "prs_merged")
 SURGE_PUSHED_DAYS = 7

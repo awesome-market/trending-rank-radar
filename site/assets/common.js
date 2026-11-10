@@ -28,6 +28,13 @@ const I18N = {
     'empty.text': '快照数据正在积累，增长榜需要至少 2 个有效快照日。',
     'empty.filter.title': '筛选无结果',
     'empty.filter.text': 'Star 范围内暂无符合条件的数据',
+    'search.scope.repo': '仓库', 'search.scope.news': '新闻',
+    'search.scope.aria': '搜索范围',
+    'search.ph.repo': '搜索仓库 / 作者 / 语言…',
+    'search.ph.news': '搜索新闻标题…',
+    'search.none.repo': '没有匹配的仓库',
+    'search.none.news': '没有匹配的新闻',
+    'search.count': '{n} 个结果',
     'empty.nodata': '暂无榜单数据',
     'empty.acc': '该榜单暂无数据，快照仍在积累',
     'empty.reset': '重置筛选',
@@ -128,6 +135,13 @@ const I18N = {
     'empty.text': 'Snapshots are still accumulating; growth boards need at least 2 valid snapshot days.',
     'empty.filter.title': 'No matches',
     'empty.filter.text': 'No repositories match this star range',
+    'search.scope.repo': 'Repos', 'search.scope.news': 'News',
+    'search.scope.aria': 'Search scope',
+    'search.ph.repo': 'Search repos / authors / languages…',
+    'search.ph.news': 'Search news titles…',
+    'search.none.repo': 'No matching repositories',
+    'search.none.news': 'No matching news',
+    'search.count': '{n} results',
     'empty.nodata': 'No board data yet',
     'empty.acc': 'No data on this board yet; snapshots still accumulating',
     'empty.reset': 'Reset filter',
@@ -270,6 +284,7 @@ function timeAgo(iso) {
 function applyStaticI18n() {
   document.documentElement.lang = LANG === 'zh' ? 'zh-CN' : 'en';
   document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
   document.querySelectorAll('[data-i18n-aria]').forEach(el => el.setAttribute('aria-label', t(el.dataset.i18nAria)));
   document.querySelectorAll('[data-i18n-title]').forEach(el => { el.title = t(el.dataset.i18nTitle); });
   const lb = $('#langToggle');

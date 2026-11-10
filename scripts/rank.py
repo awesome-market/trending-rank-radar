@@ -873,6 +873,8 @@ def main() -> int:
     repo_tpl = (SITE_DIR / "repo.html").read_text(encoding="utf-8")
     base = args.site_base.rstrip("/")
     detail_count = 0
+    search_idx: list[dict] = []
+    news_idx: list[dict] = []
     for name, cur in detail_repos.items():
         owner, _, repo = name.partition("/")
         m = meta.get(name) or {}
@@ -947,6 +949,15 @@ def main() -> int:
             json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
             encoding="utf-8")
         detail_count += 1
+        search_idx.append({
+            "n": name,
+            "d": (m.get("description") or "")[:160],
+            "l": cur[I_LANG],
+            "s": int(cur[I_STARS] or 0),
+        })
+        nws = [i["title"] for i in (payload["news"] or [])[:8] if i.get("title")]
+        if nws:
+            news_idx.append({"n": name, "s": int(cur[I_STARS] or 0), "nw": nws})
         if readme_txt:
             (readme_out / f"{owner}__{repo}.md").write_text(
                 readme_txt, encoding="utf-8")
@@ -957,6 +968,16 @@ def main() -> int:
         ssr_payload = dict(payload, readme_excerpt=readme_zh_txt or readme_txt)
         page_html = render_repo_page(ssr_payload, repo_tpl, base)
         (pages_out / f"{owner}__{repo}.html").write_text(page_html, encoding="utf-8")
+
+    # search indexes — lazy-loaded by the header search box. Main index covers
+    # repo name / owner / language / description; news titles are split into a
+    # second file fetched only when the user switches to the news scope.
+    (SITE_DATA / "search-index.json").write_text(
+        json.dumps(search_idx, ensure_ascii=False, separators=(",", ":")),
+        encoding="utf-8")
+    (SITE_DATA / "search-news.json").write_text(
+        json.dumps(news_idx, ensure_ascii=False, separators=(",", ":")),
+        encoding="utf-8")
 
     # ---------------- index / sitemap / robots ----------------
     # SSR the landing board into index.html — crawlers (Baidu doesn't run JS)
