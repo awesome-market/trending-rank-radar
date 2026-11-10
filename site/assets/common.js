@@ -285,15 +285,21 @@ async function j(url) {
 }
 
 function fmt(n) {
-  if (n == null) return '–';
   const v = Number(n);
+  if (!Number.isFinite(v)) return '–';
   if (Math.abs(v) >= 1e6) return (v / 1e6).toFixed(1) + 'M';
   if (Math.abs(v) >= 1e4) return (v / 1e3).toFixed(1) + 'k';
   if (Math.abs(v) >= 1e3) return (v / 1e3).toFixed(1) + 'k';
   return String(Math.round(v));
 }
-function fmtFull(n) { return (n ?? 0).toLocaleString('en-US'); }
-function fmtPct(n) { return n == null ? '' : '+' + Math.floor(n) + '%'; }
+function fmtFull(n) {
+  const v = Number(n);
+  return Number.isFinite(v) ? v.toLocaleString('en-US') : '–';
+}
+function fmtPct(n) {
+  const v = Number(n);
+  return Number.isFinite(v) ? '+' + Math.floor(v) + '%' : '';
+}
 
 function timeAgo(iso) {
   const t0 = new Date(iso).getTime();
@@ -458,7 +464,7 @@ function openAuthModal(mode) {
     <input class="auth-in am-in" id="amP" type="password" placeholder="${esc(t('auth.pass'))}">
     <button class="auth-item auth-go am-go" id="amGo" type="button"></button>
     <div class="auth-err" id="amErr" hidden></div>
-    <div class="am-sw"><a href="javascript:void 0" id="amSw"></a></div>
+    <div class="am-sw"><a href="#" id="amSw"></a></div>
   </div>`;
   document.body.appendChild(ov);
   const q = (s) => ov.querySelector(s);
@@ -478,7 +484,10 @@ function openAuthModal(mode) {
     q('#amSw').textContent = reg ? t('auth.toLogin') : t('auth.toReg');
     q('#amErr').hidden = true;
   };
-  q('#amSw').onclick = () => setMode(mode === 'register' ? 'login' : 'register');
+  q('#amSw').onclick = (e) => {
+    e.preventDefault();
+    setMode(mode === 'register' ? 'login' : 'register');
+  };
 
   const submit = async () => {
     if (q('#amGo').disabled) return;
@@ -489,6 +498,7 @@ function openAuthModal(mode) {
         : { identifier: q('#amU').value.trim(), password: q('#amP').value };
       const d = await api(mode === 'register' ? '/auth/register' : '/auth/login',
         { method: 'POST', body: JSON.stringify(body) });
+      if (!d.token) throw new Error(t('auth.err'));
       zk.token = d.token; localStorage.setItem('zk_token', d.token);
       await zkLoadUser(); renderAuthChip(); document.dispatchEvent(new CustomEvent('zk:auth'));
       close();

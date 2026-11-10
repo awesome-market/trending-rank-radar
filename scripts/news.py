@@ -253,7 +253,8 @@ def merge(old: list | None, new: list, owner: str, name: str) -> list:
     # prefer direct links over Google redirect shells when the same story
     # arrives from both aggregators, then notability (points, date)
     rank = lambda x: ("news.google.com" not in (x.get("url") or ""),
-                      x.get("points") or 0, x.get("date") or "")
+                      x.get("points") if isinstance(x.get("points"), (int, float)) else 0,
+                      x.get("date") or "")
     for lst in by_lang.values():
         lst.sort(key=rank, reverse=True)
         titles = set()
@@ -281,7 +282,9 @@ def board_repos() -> list[str]:
 
 
 def all_repos() -> list[str]:
-    return sorted(p.stem.replace("__", "/")
+    # only the FIRST __ is the owner/name separator — repo names may legally
+    # contain "__" themselves (owner__a__b.json -> owner/a__b)
+    return sorted(p.stem.replace("__", "/", 1)
                   for p in (DATA_DIR / "repos").glob("*.json"))
 
 

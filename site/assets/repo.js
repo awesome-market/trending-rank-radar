@@ -56,7 +56,7 @@ function boardsRowHTML(d) {
   const order = ['new', 'daily', 'daily_rate', 'weekly', 'weekly_rate',
                  'monthly', 'monthly_rate', 'total', 'cumulative'];
   return order.filter(k => (d.boards || {})[k] != null).map(k =>
-    `<a class="rp-board-chip" href="${HOME}?board=${k}">${t('board.' + k)} <b>#${d.boards[k]}</b></a>`).join('');
+    `<a class="rp-board-chip" href="${HOME}?board=${k}">${t('board.' + k)} <b>#${esc(d.boards[k])}</b></a>`).join('');
 }
 
 function sameOwnerHTML(d) {
@@ -70,7 +70,6 @@ function sameOwnerHTML(d) {
 
 function topHTML(d) {
   const avBig = d.avatar ? `${d.avatar}&s=300` : `https://github.com/${encodeURIComponent(d.owner)}.png?size=300`;
-  const avSm = d.avatar ? `${d.avatar}&s=68` : `https://github.com/${encodeURIComponent(d.owner)}.png?size=68`;
   const topics = (d.topics || []).slice(0, 8).map(x =>
     `<a class="rp-topic" href="https://github.com/topics/${encodeURIComponent(x)}" target="_blank" rel="noopener">${esc(x)}</a>`).join('');
   const metaBits = [
@@ -134,7 +133,7 @@ function bigChart(dates, vals) {
   if (!vals || vals.length === 0) return '';
   const w = 1080, h = 320, padL = 56, padR = 18, padT = 18, padB = 34;
   const iw = w - padL - padR, ih = h - padT - padB;
-  const nums = vals.map(v => v == null ? null : Number(v));
+  const nums = vals.map(v => { const n = Number(v); return Number.isFinite(n) ? n : null; });
   const valid = nums.filter(v => v != null);
   if (!valid.length) return '';
   const min = Math.min(...valid), max = Math.max(...valid);
@@ -379,7 +378,15 @@ async function openShareModal(d) {
   if (!document.body.contains(ov)) return;
   cv.className = 'sh-img';
   ov.querySelector('.sh-prev').appendChild(cv);
-  const blob = await new Promise(res => cv.toBlob(res, 'image/png'));
+  // 外链图片若 CORS 失败会污染画布 → toBlob 直接抛 SecurityError；
+  // 那时预览还在，但下载/复制必须禁用，否则点击无声崩溃
+  let blob = null;
+  try { blob = await new Promise(res => cv.toBlob(res, 'image/png')); } catch { /* tainted */ }
+  if (!blob) {
+    ov.querySelector('#shDl').disabled = true;
+    ov.querySelector('#shCp').disabled = true;
+    return;
+  }
   ov.querySelector('#shDl').onclick = () => {
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
@@ -416,32 +423,32 @@ function ghListItem(base, n, title, extra) {
 function issuesPanel(d) {
   const items = (d.issues || []).slice(0, 8).map(i =>
     ghListItem(`${d.url}/issues`, i.number, i.title,
-      `${t('rp.comments', { n: i.comments ?? 0 })} · ${esc((i.created_at || '').slice(0, 10))}`)).join('');
+      `${t('rp.comments', { n: Number(i.comments) || 0 })} · ${esc((i.created_at || '').slice(0, 10))}`)).join('');
   if (!items) return `<div class="rp-panel-empty">${t('rp.nodata')}</div>`;
   return `<div class="rp-list">${items}</div>
-    <a class="rp-more" href="${d.url}/issues" target="_blank" rel="noopener">${t('rp.more')} ↗</a>`;
+    <a class="rp-more" href="${esc(d.url)}/issues" target="_blank" rel="noopener">${t('rp.more')} ↗</a>`;
 }
 
 function discPanel(d) {
   const items = (d.discussions || []).slice(0, 8).map(x =>
     ghListItem(`${d.url}/discussions`, x.number, x.title,
-      `${x.category ? esc(x.category) + ' · ' : ''}${t('rp.comments', { n: x.comments ?? 0 })} · ${esc((x.created_at || '').slice(0, 10))}`)).join('');
+      `${x.category ? esc(x.category) + ' · ' : ''}${t('rp.comments', { n: Number(x.comments) || 0 })} · ${esc((x.created_at || '').slice(0, 10))}`)).join('');
   if (!items) return `<div class="rp-panel-empty">${t('rp.nodata')}</div>`;
   return `<div class="rp-list">${items}</div>
-    <a class="rp-more" href="${d.url}/discussions" target="_blank" rel="noopener">${t('rp.more')} ↗</a>`;
+    <a class="rp-more" href="${esc(d.url)}/discussions" target="_blank" rel="noopener">${t('rp.more')} ↗</a>`;
 }
 
 function releasePanel(d) {
   const r = d.latest_release;
   if (!r) return `<div class="rp-panel-empty">${t('rp.nodata')}</div>`;
   const body = (r.body || '').replace(/\[([^\]]*)\]\([^)]*\)/g, '$1').replace(/[#*`>]/g, '').trim().slice(0, 600);
-  return `<a class="rp-rel" href="${d.url}/releases" target="_blank" rel="noopener">
+  return `<a class="rp-rel" href="${esc(d.url)}/releases" target="_blank" rel="noopener">
       <b>${esc(r.name || r.tag || '')}</b>
       <span class="rp-rel-tag">${esc(r.tag || '')}</span>
       <span class="rp-item-extra">${esc((r.published_at || '').slice(0, 10))}</span>
     </a>
     ${body ? `<pre class="rp-pre">${esc(body)}</pre>` : ''}
-    <a class="rp-more" href="${d.url}/releases" target="_blank" rel="noopener">${t('rp.more')} ↗</a>`;
+    <a class="rp-more" href="${esc(d.url)}/releases" target="_blank" rel="noopener">${t('rp.more')} ↗</a>`;
 }
 
 function overviewPanel(d) {
@@ -668,7 +675,7 @@ async function loadSocial(d) {
       const on = r.liked ?? r.faved;
       btn.classList.toggle('on', !!on);
       const b = btn.querySelector('b');
-      b.textContent = fmt(parseInt(b.textContent.replace(/\D/g, '') || '0') + (on ? 1 : -1));
+      b.textContent = fmt(Math.max(0, parseInt(b.textContent.replace(/\D/g, '') || '0') + (on ? 1 : -1)));
     } catch { if (!zk.user) needLogin(); }
     btn.disabled = false;
   };
@@ -713,10 +720,12 @@ function cmRow(c) {
       <button class="cm-act" data-act="report" type="button">${esc(t('cm.report'))}</button>
       ${own ? `<button class="cm-act" data-act="del" type="button">${esc(t('cm.del'))}</button>` : ''}
     </span>`;
+  // API 字段是 unix 秒；容忍 ISO 字符串，坏值交给 timeAgo 返回空串
+  const ts = typeof c.created_at === 'number' ? new Date(c.created_at * 1000) : new Date(c.created_at);
   return `<div class="cm-item" data-id="${esc(c.id)}">${av}
     <div class="cm-main">
       <div class="cm-head"><b>${esc(c.display_name || c.username)}</b>
-        <span class="cm-time">${timeAgo(new Date(c.created_at * 1000).toISOString())}</span>${pend}${acts}</div>
+        <span class="cm-time">${timeAgo(ts)}</span>${pend}${acts}</div>
       <div class="cm-body">${esc(c.body)}</div>
     </div></div>`;
 }

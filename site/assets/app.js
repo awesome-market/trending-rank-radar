@@ -528,7 +528,7 @@ async function runSearch(q, scope) {
   try {
     const d = await api(`/search?q=${encodeURIComponent(q)}&site=github&type=${scope}&limit=15`);
     if (seq !== searchSeq) return;                  // stale response
-    search.hits = d.items || [];
+    search.hits = (d.items || []).filter(h => h && h.item_id);
     search.err = false;
     search.active = search.hits.length ? 0 : -1;
   } catch {
