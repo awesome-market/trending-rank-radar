@@ -35,6 +35,16 @@ const I18N = {
     'search.none.repo': '没有匹配的仓库',
     'search.none.news': '没有匹配的新闻',
     'search.count': '{n} 个结果',
+    'search.err': '搜索服务暂不可用',
+    'auth.login': '登录', 'auth.logout': '退出登录',
+    'auth.email': '或用邮箱', 'auth.user': '用户名或邮箱',
+    'auth.pass': '密码（≥8位）', 'auth.register': '注册',
+    'auth.emailonly': '邮箱', 'auth.err': '操作失败，请重试',
+    'soc.like': '点赞', 'soc.fav': '收藏', 'soc.views': '浏览',
+    'cm.title': '评论', 'cm.ph': '写下你的评论…',
+    'cm.submit': '发布', 'cm.login': '登录后可评论',
+    'cm.pending': '审核中', 'cm.report': '举报', 'cm.del': '删除',
+    'cm.empty': '还没有评论，来抢沙发', 'cm.posted': '已提交，通过后显示',
     'empty.nodata': '暂无榜单数据',
     'empty.acc': '该榜单暂无数据，快照仍在积累',
     'empty.reset': '重置筛选',
@@ -142,6 +152,16 @@ const I18N = {
     'search.none.repo': 'No matching repositories',
     'search.none.news': 'No matching news',
     'search.count': '{n} results',
+    'search.err': 'Search unavailable',
+    'auth.login': 'Sign in', 'auth.logout': 'Sign out',
+    'auth.email': 'or with email', 'auth.user': 'Username or email',
+    'auth.pass': 'Password (8+ chars)', 'auth.register': 'Sign up',
+    'auth.emailonly': 'Email', 'auth.err': 'Failed, try again',
+    'soc.like': 'Like', 'soc.fav': 'Favorite', 'soc.views': 'Views',
+    'cm.title': 'Comments', 'cm.ph': 'Write a comment…',
+    'cm.submit': 'Post', 'cm.login': 'Sign in to comment',
+    'cm.pending': 'under review', 'cm.report': 'Report', 'cm.del': 'Delete',
+    'cm.empty': 'No comments yet', 'cm.posted': 'Submitted for review',
     'empty.nodata': 'No board data yet',
     'empty.acc': 'No data on this board yet; snapshots still accumulating',
     'empty.reset': 'Reset filter',
@@ -337,4 +357,107 @@ function bindChrome(onLangChange) {
     applyStaticI18n();
     if (typeof onLangChange === 'function') onLangChange();
   };
+}
+
+/* ---------------- zhuikan-api client + auth ---------------- */
+const API_BASE = 'https://api-site.zhuikan.com';
+const zk = { token: null, user: null };
+
+function zkInit() {
+  const m = location.hash.match(/[#&]token=([^&]+)/);
+  if (m) {
+    try { localStorage.setItem('zk_token', decodeURIComponent(m[1])); } catch { }
+    history.replaceState(null, '', location.pathname + location.search);
+  }
+  try { zk.token = localStorage.getItem('zk_token'); } catch { }
+}
+
+async function api(path, opts = {}) {
+  const h = { ...(opts.headers || {}) };
+  if (opts.body && !h['Content-Type']) h['Content-Type'] = 'application/json';
+  if (zk.token) h.Authorization = `Bearer ${zk.token}`;
+  const r = await fetch(API_BASE + path, { ...opts, headers: h });
+  if (r.status === 204) return null;
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) {
+    const e = new Error(typeof d.detail === 'string' ? d.detail : `HTTP ${r.status}`);
+    e.status = r.status; throw e;
+  }
+  return d;
+}
+
+async function zkLoadUser() {
+  if (!zk.token) return null;
+  try { zk.user = await api('/auth/me'); }
+  catch (e) { if (e.status === 401) try { localStorage.removeItem('zk_token'); zk.token = null; } catch { } zk.user = null; }
+  return zk.user;
+}
+
+function zkLogout() {
+  try { localStorage.removeItem('zk_token'); } catch { }
+  zk.token = null; zk.user = null; renderAuthChip();
+  document.dispatchEvent(new CustomEvent('zk:auth'));
+}
+
+function zkLoginUrl(provider) {
+  return `${API_BASE}/auth/${provider}?return_to=${encodeURIComponent(location.href)}`;
+}
+
+function renderAuthChip() {
+  const meta = document.querySelector('.hero-meta');
+  if (!meta) return;
+  let el = document.getElementById('authChip');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'authChip'; el.className = 'auth-wrap';
+    meta.insertBefore(el, meta.firstChild);
+  }
+  if (zk.user) {
+    const av = zk.user.avatar_url
+      ? `<img class="auth-av" src="${esc(zk.user.avatar_url)}" alt="" width="22" height="22">` : '';
+    el.innerHTML = `<button class="auth-chip" id="authBtn" type="button">${av}<span>${esc(zk.user.display_name || zk.user.username)}</span></button>
+      <div class="auth-drop" id="authDrop" hidden>
+        <button class="auth-item" id="authOut" type="button">${esc(t('auth.logout'))}</button>
+      </div>`;
+    $('#authBtn').onclick = () => { $('#authDrop').hidden = !$('#authDrop').hidden; };
+    $('#authOut').onclick = zkLogout;
+  } else {
+    el.innerHTML = `<button class="auth-chip" id="authBtn" type="button">${esc(t('auth.login'))}</button>
+      <div class="auth-drop" id="authDrop" hidden>
+        <a class="auth-item" href="${zkLoginUrl('github')}">GitHub</a>
+        <a class="auth-item" href="${zkLoginUrl('google')}">Google</a>
+        <div class="auth-sep">${esc(t('auth.email'))}</div>
+        <input class="auth-in" id="authU" type="text" autocomplete="username" placeholder="${esc(t('auth.user'))}">
+        <input class="auth-in" id="authP" type="password" autocomplete="current-password" placeholder="${esc(t('auth.pass'))}">
+        <input class="auth-in" id="authE" type="email" autocomplete="email" placeholder="${esc(t('auth.emailonly'))}" hidden>
+        <div class="auth-row">
+          <button class="auth-item auth-go" id="authIn" type="button">${esc(t('auth.login'))}</button>
+          <button class="auth-item" id="authReg" type="button">${esc(t('auth.register'))}</button>
+        </div>
+        <div class="auth-err" id="authErr" hidden></div>
+      </div>`;
+    const drop = $('#authDrop');
+    $('#authBtn').onclick = () => { drop.hidden = !drop.hidden; };
+    const emailMode = () => { $('#authE').hidden = false; };
+    const fail = (e) => { const el2 = $('#authErr'); el2.textContent = e.message || t('auth.err'); el2.hidden = false; };
+    $('#authIn').onclick = async () => {
+      try {
+        const d = await api('/auth/login', { method: 'POST', body: JSON.stringify({ identifier: $('#authU').value.trim(), password: $('#authP').value }) });
+        zk.token = d.token; localStorage.setItem('zk_token', d.token);
+        await zkLoadUser(); renderAuthChip(); document.dispatchEvent(new CustomEvent('zk:auth'));
+      } catch (e) { fail(e); }
+    };
+    $('#authReg').onclick = async () => {
+      emailMode();
+      if ($('#authE').hidden) return;
+      try {
+        const d = await api('/auth/register', { method: 'POST', body: JSON.stringify({ username: $('#authU').value.trim(), email: $('#authE').value.trim(), password: $('#authP').value }) });
+        zk.token = d.token; localStorage.setItem('zk_token', d.token);
+        await zkLoadUser(); renderAuthChip(); document.dispatchEvent(new CustomEvent('zk:auth'));
+      } catch (e) { fail(e); }
+    };
+    document.addEventListener('click', (e) => {
+      if (!el.contains(e.target)) drop.hidden = true;
+    });
+  }
 }

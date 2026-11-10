@@ -428,13 +428,8 @@ async function renderAll() {
   await loadView();
 }
 
-/* ------------- header search: repo (name/owner/lang/desc) or news -------- */
-const search = {
-  idx: { repo: null, news: null },   // lazy-loaded per-scope indexes
-  loading: {},                       // in-flight fetch promises per scope
-  hits: [],                          // current result set
-  active: -1,                        // keyboard-highlighted row
-};
+/* ------------- header search — remote: api-site.zhuikan.com/search ------- */
+const search = { hits: [], active: -1, err: false };
 
 function repoUrl(fn) { return `repos/${fn.replace('/', '__')}.html`; }
 
@@ -445,73 +440,47 @@ function mark(text, q) {
     + '</mark>' + esc(text.slice(i + q.length));
 }
 
-function searchScore(e, q, scope) {
-  // repo entry: {n:'owner/repo', d, l, s} — news entry: {n, s, nw:[titles]}
-  let score = 0, newsHit = null;
-  if (scope === 'news') {
-    for (const t of (e.nw || [])) {
-      if (t.toLowerCase().includes(q)) { score += 60; newsHit = t; break; }
-    }
-  } else {
-    const name = e.n.toLowerCase();
-    const [owner, repo] = name.split('/');
-    if (repo === q) score += 120;
-    else if (repo.startsWith(q)) score += 90;
-    else if (repo.includes(q)) score += 60;
-    if (owner === q) score += 80;
-    else if (owner.startsWith(q)) score += 55;
-    else if (owner.includes(q)) score += 30;
-    if (e.l && e.l.toLowerCase() === q) score += 45;        // 语言精确匹配
-    else if (e.l && e.l.toLowerCase().startsWith(q)) score += 20;
-    if ((e.d || '').toLowerCase().includes(q)) score += 25;
-  }
-  if (!score) return null;
-  return { e, newsHit, score: score + Math.log10((e.s || 1) + 1) };
-}
-
-function searchRow(h, q, i) {
-  const { e, newsHit } = h;
-  const owner = e.n.split('/')[0];
-  const sub = newsHit
-    ? `<span class="sr-sub sr-news">${esc(newsHit)}</span>`
-    : (e.d ? `<span class="sr-sub">${esc(e.d)}</span>` : '');
-  return `<a class="sr-row${i === search.active ? ' on' : ''}" href="${repoUrl(e.n)}">
-    <img class="sr-av" src="https://github.com/${owner}.png?size=64" alt="" loading="lazy" width="30" height="30">
+function searchRow(e, q, i) {
+  const sub = e.description ? `<span class="sr-sub">${esc(e.description)}</span>` : '';
+  return `<a class="sr-row${i === search.active ? ' on' : ''}" href="${repoUrl(e.item_id)}">
+    <img class="sr-av" src="https://github.com/${e.owner}.png?size=64" alt="" loading="lazy" width="30" height="30">
     <span class="sr-main">
-      <span class="sr-name">${mark(e.n, q)}</span>
+      <span class="sr-name">${mark(e.item_id, q)}</span>
       ${sub}
     </span>
-    <span class="sr-side">${langDot(e.l)}<span class="sr-stars">${icon('star', 'm-ico', 12)} ${fmt(e.s)}</span></span>
+    <span class="sr-side">${langDot(e.lang)}<span class="sr-stars">${icon('star', 'm-ico', 12)} ${fmt(e.stars)}</span></span>
   </a>`;
 }
 
 function renderSearchDrop(q, scope) {
   const drop = $('#searchDrop');
   if (!q || q.length < 2) { drop.hidden = true; return; }
-  const hits = search.hits;
-  if (!hits.length) {
+  if (search.err) {
+    drop.innerHTML = `<div class="sr-none">${esc(t('search.err'))}</div>`;
+  } else if (!search.hits.length) {
     drop.innerHTML = `<div class="sr-none">${esc(t(`search.none.${scope}`))}</div>`;
   } else {
-    drop.innerHTML = hits.slice(0, 12).map((h, i) => searchRow(h, q, i)).join('')
-      + `<div class="sr-foot">${esc(t('search.count', { n: hits.length }))}</div>`;
+    drop.innerHTML = search.hits.slice(0, 12).map((h, i) => searchRow(h, q, i)).join('')
+      + `<div class="sr-foot">${esc(t('search.count', { n: search.hits.length }))}</div>`;
   }
   drop.hidden = false;
 }
 
-function runSearch(q, scope) {
-  const idx = search.idx[scope];
-  if (!idx || !q || q.length < 2) { search.hits = []; return; }
-  const out = [];
-  for (const e of idx) {
-    const h = searchScore(e, q, scope);
-    if (h) out.push(h);
+let searchSeq = 0;
+async function runSearch(q, scope) {
+  if (!q || q.length < 2) { search.hits = []; return; }
+  const seq = ++searchSeq;
+  try {
+    const d = await api(`/search?q=${encodeURIComponent(q)}&site=github&type=${scope}&limit=15`);
+    if (seq !== searchSeq) return;                  // stale response
+    search.hits = d.items || [];
+    search.err = false;
+    search.active = search.hits.length ? 0 : -1;
+  } catch {
+    if (seq !== searchSeq) return;
+    search.hits = []; search.err = true;
   }
-  out.sort((a, b) => b.score - a.score);
-  search.hits = out;
-  search.active = out.length ? 0 : -1;
 }
-
-const SEARCH_IDX_URL = { repo: 'data/search-index.json', news: 'data/search-news.json' };
 
 function initSearch() {
   const wrap = $('#searchWrap'), input = $('#searchInput'),
@@ -519,30 +488,18 @@ function initSearch() {
   if (!wrap || !input) return;
 
   const scope = () => (scopeSel && scopeSel.value) || 'repo';
-  const ensureIdx = () => {
-    const s = scope();
-    if (!search.idx[s] && !search.loading[s]) {
-      search.loading[s] = j(SEARCH_IDX_URL[s])
-        .then(d => { search.idx[s] = d; })
-        .catch(() => { search.idx[s] = []; })
-        .finally(() => { search.loading[s] = null; });
-    }
-    return search.loading[s];
-  };
   const doSearch = async () => {
-    await ensureIdx();
     const q = input.value.trim().toLowerCase();
-    runSearch(q, scope());
+    await runSearch(q, scope());
     renderSearchDrop(q, scope());
   };
 
   let deb = null;
   input.addEventListener('input', () => {
     clearTimeout(deb);
-    deb = setTimeout(doSearch, 140);
+    deb = setTimeout(doSearch, 200);
   });
   input.addEventListener('focus', () => {
-    ensureIdx();
     if (input.value.trim().length >= 2) drop.hidden = false;
   });
   if (scopeSel) scopeSel.addEventListener('change', () => {
@@ -577,7 +534,11 @@ function initSearch() {
 
 async function init() {
   document.documentElement.classList.add('m-enter');
+  zkInit();
   initSearch();
+  zkLoadUser().then(renderAuthChip);
+  api('/stats/view', { method: 'POST', body: JSON.stringify({ site: 'github', path: '/' }) })
+    .catch(() => { });   /* fire-and-forget analytics */
   readURL();
   applyStaticI18n();
   try {

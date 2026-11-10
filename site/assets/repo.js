@@ -627,13 +627,127 @@ function renderAllRepo() {
   $('#repoContent').innerHTML = crumbHTML(d) + topHTML(d)
     + ptabsHTML() + trendHTML(d)
     + ctabsHTML(d) + `<section class="rp-panel card" id="rpPanel">${panelHTML(d)}</section>`
-    + newsHTML(d);
+    + newsHTML(d)
+    + `<section class="rp-social card" id="rpSocial"></section>`;
   if (repo.ctab === 'ov') loadReadme(d);
   renderChart();
   wireShare(d);
   document.title = t('title.repo', { r: d.full_name });
   wireTabs();
+  loadSocial(d);
 }
+
+/* ---------------- social: like / fav / views / comments ---------------- */
+async function loadSocial(d) {
+  const el = $('#rpSocial');
+  if (!el) return;
+  const needLogin = () => {
+    const b = $('#authBtn');
+    if (b) { b.click(); return; }
+    location.href = zkLoginUrl('github');
+  };
+  let s = { views: 0, likes: 0, favs: 0, comments: 0, viewer: {} };
+  try { s = await api(`/items/github/${encodeURIComponent(d.full_name)}/social`); } catch { }
+  el.innerHTML = `<div class="rp-socbar">
+      <button class="soc-btn${s.viewer.liked ? ' on' : ''}" id="socLike" type="button">♥ <b>${fmt(s.likes)}</b> ${esc(t('soc.like'))}</button>
+      <button class="soc-btn${s.viewer.faved ? ' on' : ''}" id="socFav" type="button">★ <b>${fmt(s.favs)}</b> ${esc(t('soc.fav'))}</button>
+      <span class="soc-stat">${esc(t('soc.views'))} <b>${fmt(s.views)}</b></span>
+    </div>
+    <div class="rp-cm">
+      <h3 class="rp-cm-title">${esc(t('cm.title'))} <b id="cmN">${fmt(s.comments)}</b></h3>
+      <div class="rp-cm-form" id="cmForm"></div>
+      <div class="rp-cm-list" id="cmList"></div>
+    </div>`;
+  const toggle = async (kind, btn) => {
+    if (!zk.user) { needLogin(); return; }
+    btn.disabled = true;
+    try {
+      const r = await api(`/${kind}/toggle`, {
+        method: 'POST',
+        body: JSON.stringify({ site: 'github', item_id: d.full_name })
+      });
+      const on = r.liked ?? r.faved;
+      btn.classList.toggle('on', !!on);
+      const b = btn.querySelector('b');
+      b.textContent = fmt(parseInt(b.textContent.replace(/\D/g, '') || '0') + (on ? 1 : -1));
+    } catch { needLogin(); }
+    btn.disabled = false;
+  };
+  $('#socLike').onclick = (e) => toggle('likes', e.currentTarget);
+  $('#socFav').onclick = (e) => toggle('favorites', e.currentTarget);
+  renderCommentForm(d);
+  loadComments(d);
+}
+
+function renderCommentForm(d) {
+  const f = $('#cmForm');
+  if (!f) return;
+  if (!zk.user) {
+    f.innerHTML = `<button class="cm-login" id="cmLogin" type="button">${esc(t('cm.login'))}</button>`;
+    $('#cmLogin').onclick = () => { const b = $('#authBtn'); if (b) b.click(); else location.href = zkLoginUrl('github'); };
+    return;
+  }
+  f.innerHTML = `<textarea class="cm-in" id="cmText" maxlength="2000" rows="3" placeholder="${esc(t('cm.ph'))}"></textarea>
+    <div class="cm-row"><button class="cm-post" id="cmPost" type="button">${esc(t('cm.submit'))}</button><span class="cm-note" id="cmNote"></span></div>`;
+  $('#cmPost').onclick = async () => {
+    const body = $('#cmText').value.trim();
+    if (!body) return;
+    $('#cmPost').disabled = true;
+    try {
+      await api('/comments', {
+        method: 'POST',
+        body: JSON.stringify({ site: 'github', item_id: d.full_name, body })
+      });
+      $('#cmText').value = '';
+      $('#cmNote').textContent = t('cm.posted');
+      loadComments(d);
+    } catch (e) { $('#cmNote').textContent = e.message || t('auth.err'); }
+    $('#cmPost').disabled = false;
+  };
+}
+
+function cmRow(c) {
+  const own = zk.user && (zk.user.username === c.username || zk.user.role === 'admin');
+  const av = c.avatar_url ? `<img class="cm-av" src="${esc(c.avatar_url)}" width="24" height="24" alt="">` : '<span class="cm-av cm-av-ph"></span>';
+  const pend = c.status === 'pending' ? `<i class="cm-pend">${esc(t('cm.pending'))}</i>` : '';
+  const acts = `<span class="cm-acts">
+      <button class="cm-act" data-act="report" type="button">${esc(t('cm.report'))}</button>
+      ${own ? `<button class="cm-act" data-act="del" type="button">${esc(t('cm.del'))}</button>` : ''}
+    </span>`;
+  return `<div class="cm-item" data-id="${c.id}">${av}
+    <div class="cm-main">
+      <div class="cm-head"><b>${esc(c.display_name || c.username)}</b>
+        <span class="cm-time">${timeAgo(new Date(c.created_at * 1000).toISOString())}</span>${pend}${acts}</div>
+      <div class="cm-body">${esc(c.body)}</div>
+    </div></div>`;
+}
+
+async function loadComments(d) {
+  const el = $('#cmList');
+  if (!el) return;
+  let items = [];
+  try {
+    items = (await api(`/comments?site=github&item_id=${encodeURIComponent(d.full_name)}`)).items || [];
+  } catch { }
+  const mine = zk.user ? zk.user.username : null;
+  const shown = items.filter(c => c.status === 'approved' || c.username === mine);
+  el.innerHTML = shown.length
+    ? shown.map(cmRow).join('')
+    : `<div class="cm-empty">${esc(t('cm.empty'))}</div>`;
+  el.querySelectorAll('.cm-act').forEach(b => b.onclick = async () => {
+    const id = b.closest('.cm-item').dataset.id;
+    if (!zk.user) { const ab = $('#authBtn'); if (ab) ab.click(); return; }
+    try {
+      if (b.dataset.act === 'del') await api(`/comments/${id}`, { method: 'DELETE' });
+      else await api(`/comments/${id}/report`, { method: 'POST', body: JSON.stringify({ reason: '' }) });
+      loadComments(d);
+    } catch { }
+  });
+}
+
+document.addEventListener('zk:auth', () => {
+  if (repo.data) loadSocial(repo.data);
+});
 
 function wireTabs() {
   document.querySelectorAll('.rp-ptab[data-grain]').forEach(b =>
@@ -674,8 +788,10 @@ async function renderFoot(d) {
 
 async function initRepo() {
   document.documentElement.classList.add('m-enter');
+  zkInit();
   applyStaticI18n();
   bindChrome(() => { if (repo.data) renderAllRepo(); });
+  zkLoadUser().then(renderAuthChip);
   const fn = new URLSearchParams(location.search).get('r') || document.body.dataset.repo || '';
   if (!/^[\w.-]+\/[\w.-]+$/.test(fn)) {
     $('#repoContent').innerHTML = `<div class="rp-err card"><h2>${t('rp.notfound')}</h2><p>${t('rp.notfound.hint')}</p><a class="rp-back" href="${HOME}">${t('rp.back')}</a></div>`;
@@ -689,6 +805,10 @@ async function initRepo() {
   }
   renderAllRepo();
   renderFoot(repo.data);
+  api('/stats/view', {
+    method: 'POST',
+    body: JSON.stringify({ site: 'github', item_id: fn, path: location.pathname })
+  }).catch(() => { });   /* fire-and-forget analytics */
 }
 
 initRepo();
