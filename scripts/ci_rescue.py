@@ -11,12 +11,18 @@ from __future__ import annotations
 import json
 import os
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import rescue_lib as rl  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
+
+# run_status.json is committed to the repo — if collect.py crashed before
+# rewriting it, checkout hands us a *previous* run's status. Acting on that
+# would open bogus issues or wrongly close live rescue issues as "healed".
+STALE_SECONDS = 3 * 3600
 
 
 def log(msg: str) -> None:
@@ -28,7 +34,21 @@ def main() -> int:
     if not status_path.exists():
         log("no run_status.json; nothing to report")
         return 0
-    status = json.loads(status_path.read_text(encoding="utf-8"))
+    try:
+        status = json.loads(status_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as e:
+        log(f"[warn] run_status.json unreadable ({e}); skipping")
+        return 0
+    try:
+        run_at = datetime.strptime(status["run_at"], "%Y-%m-%dT%H:%M:%SZ") \
+            .replace(tzinfo=timezone.utc)
+    except (KeyError, ValueError):
+        log("[warn] run_status.json missing/invalid run_at; skipping")
+        return 0
+    age = (datetime.now(timezone.utc) - run_at).total_seconds()
+    if age > STALE_SECONDS:
+        log(f"run_status.json is {age/3600:.1f}h old — stale, skipping issue sync")
+        return 0
     token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
     if not token:
         log("[warn] no token; skipping issue sync")

@@ -71,7 +71,14 @@ def load_watchlist() -> dict:
 def save_watchlist(wl: dict) -> None:
     wl["updated_at"] = TODAY_UTC().strftime("%Y-%m-%dT%H:%M:%SZ")
     WATCHLIST_PATH.parent.mkdir(parents=True, exist_ok=True)
-    WATCHLIST_PATH.write_text(json.dumps(wl, ensure_ascii=False, indent=1), encoding="utf-8")
+    _atomic_write(WATCHLIST_PATH, json.dumps(wl, ensure_ascii=False, indent=1))
+
+
+def _atomic_write(path: Path, text: str) -> None:
+    """tmp+rename — a killed run must never leave a truncated JSON behind."""
+    tmp = path.with_name(path.name + ".tmp")
+    tmp.write_text(text, encoding="utf-8")
+    os.replace(tmp, path)
 
 
 # ---------------------------------------------------------------- discovery --
@@ -446,7 +453,7 @@ def main() -> int:
 
     SNAP_DIR.mkdir(parents=True, exist_ok=True)
     out = SNAP_DIR / f"{stamp}.json"
-    out.write_text(json.dumps(snap, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    _atomic_write(out, json.dumps(snap, ensure_ascii=False, separators=(",", ":")))
     log(f"wrote {out} ({out.stat().st_size // 1024} KB)")
 
     written = write_repo_meta(metrics)
@@ -461,8 +468,8 @@ def main() -> int:
         "repos_collected": len(repos_arr),
         "metrics_unresolved": len(unresolved),
     }
-    (ROOT / "run_status.json").write_text(
-        json.dumps(status, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    _atomic_write(ROOT / "run_status.json",
+                  json.dumps(status, ensure_ascii=False, indent=1) + "\n")
     return 0
 
 

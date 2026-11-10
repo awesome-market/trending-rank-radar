@@ -46,12 +46,17 @@ def log(msg: str) -> None:
     print(f"[rescue {datetime.now(timezone.utc).strftime('%H:%M:%S')}] {msg}", flush=True)
 
 
-def run(cmd: list[str], log_tail: list[str], **kw) -> None:
+def run(cmd: list[str], log_tail: list[str], secret: str | None = None,
+        **kw) -> None:
     shown = " ".join("https://x-access-token:***@github.com/…"
                      if "x-access-token:" in a else a for a in cmd)
     log("$ " + shown)
     p = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, **kw)
     out = (p.stdout + p.stderr).strip()
+    if secret:
+        # git error messages echo the remote URL — scrub before the output
+        # can reach log_tail -> issue comments (PAT leak).
+        out = out.replace(secret, "***")
     log_tail.extend(out.splitlines()[-30:])
     if p.returncode != 0:
         raise RuntimeError(f"{cmd[0]} exited {p.returncode}: {out[-800:]}")
@@ -59,7 +64,7 @@ def run(cmd: list[str], log_tail: list[str], **kw) -> None:
 
 def git_push(token: str, log_tail: list[str]) -> None:
     url = f"https://x-access-token:{token}@github.com/{rl.REPO}.git"
-    run(["git", "push", url, "HEAD:main"], log_tail)
+    run(["git", "push", url, "HEAD:main"], log_tail, secret=token)
 
 
 def attempt(issue: dict, token: str, log_tail: list[str]) -> None:
@@ -72,7 +77,11 @@ def attempt(issue: dict, token: str, log_tail: list[str]) -> None:
     run([sys.executable, "scripts/collect.py"], log_tail, env=env)
     run([sys.executable, "scripts/rank.py", "--site-base", SITE_BASE], log_tail)
     run(["git", "add", "data/", "site/"], log_tail)
-    p = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT)
+    p = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT,
+                       capture_output=True, text=True)
+    if p.returncode not in (0, 1):
+        raise RuntimeError(f"git diff --cached exited {p.returncode}: "
+                           f"{(p.stdout + p.stderr).strip()[-400:]}")
     if p.returncode == 0:
         log("no data changes; nothing to commit")
     else:

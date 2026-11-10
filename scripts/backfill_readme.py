@@ -20,7 +20,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REPOS_DIR = ROOT / "data" / "repos"
-CKPT = Path("/tmp/readme_backfill_ckpt.json")
+CKPT = ROOT / ".readme_backfill_ckpt.json"  # 别放 /tmp——tmpfs 重启即丢，断点续跑失效
 API = "https://api.github.com"
 TOKEN = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
 DELAY = 1.1          # ~3000 calls/hr — well under REST 5000/hr
