@@ -603,11 +603,18 @@ function newsHTML(d) {
       <span class="rp-item-title">${esc(i.title || '')}</span>
       <span class="rp-item-extra">${extra}</span></a>`;
   };
-  const blk = (lst, lang, title) =>
-    `<div class="rp-news-block" lang="${lang === 'zh' ? 'zh-CN' : 'en'}"${lang === vis ? '' : ' hidden'}>
-      <h3 class="rp-ph">${title}</h3>
-      <div class="rp-list">${lst.slice(0, 10).map(row).join('')}</div>
+  const blk = (lst, lang, title) => {
+    const more = lst.length > 10
+      ? `<details class="rp-news-more"><summary>${
+          lang === 'zh' ? `展开其余 ${lst.length - 10} 条`
+                        : `${lst.length - 10} more`}</summary>${
+          lst.slice(10).map(row).join('')}</details>`
+      : '';
+    return `<div class="rp-news-block" lang="${lang === 'zh' ? 'zh-CN' : 'en'}"${lang === vis ? '' : ' hidden'}>
+      <h3 class="rp-ph">${title} (${lst.length})</h3>
+      <div class="rp-list">${lst.slice(0, 10).map(row).join('')}${more}</div>
     </div>`;
+  };
   return `<section class="rp-news card">`
     + (zh.length ? blk(zh, 'zh', '相关报道') : '')
     + (en.length ? blk(en, 'en', 'News &amp; coverage') : '')

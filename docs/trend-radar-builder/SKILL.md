@@ -198,6 +198,16 @@ archive repos on GitHub allow backfill. Everything else — pipeline
 skeleton, SSR, failure-preserving merge (hot-list APIs are flakier than
 most), workflow, SEO kit — carries over unchanged.
 
+Single-platform variant (e.g. **Douyin/抖音 hot list**): clustering
+disappears (one platform ⇒ stable item titles/ids) and Douyin items carry
+a real numeric 热度值, so boards like heat-velocity, hours-on-list and
+peak-rank come for free — the best of both models. The hard part moves to
+acquisition: no official API, the hot-list endpoint is signature+captcha
+protected — consume it through an aggregator layer (DailyHotApi `/douyin`,
+tophub.today which also keeps per-item history pages for backfill, RSSHub
+`/douyin/hot`). Douyin is hostile to non-CN IPs: run the scraper layer
+via CN-hosted public instances, never from an overseas VPS.
+
 Any domain: if an existing tracker exists for it (like DiscoverHub was for
 GitHub trending), check whether its archive pages can be scraped for
 backfill — that single trick turned a 1-day-old site into a 60-day archive.

@@ -386,9 +386,16 @@ def _ssr_news(items: list) -> str:
     def block(lst: list, lang: str, title: str, hidden: bool) -> str:
         lattr = ' lang="zh-CN"' if lang == "zh" else ' lang="en"'
         h = " hidden" if hidden else ""
+        more = ""
+        if len(lst) > 10:
+            label = f"展开其余 {len(lst) - 10} 条" if lang == "zh" \
+                else f"{len(lst) - 10} more"
+            more = (f'<details class="rp-news-more"><summary>{label}</summary>'
+                    f'{"".join(row(i) for i in lst[10:])}</details>')
         return (f'<div class="rp-news-block"{lattr}{h}>'
-                f'<h3 class="rp-ph">{title}</h3>'
-                f'<div class="rp-list">{"".join(row(i) for i in lst[:10])}</div></div>')
+                f'<h3 class="rp-ph">{title} ({len(lst)})</h3>'
+                f'<div class="rp-list">{"".join(row(i) for i in lst[:10])}'
+                f'{more}</div></div>')
 
     visible = "zh" if zh else "en"   # SSR default: zh first (site default lang)
     return ('<section class="rp-news card">'

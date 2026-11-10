@@ -45,7 +45,7 @@ SITE_DATA = ROOT / "site" / "data"
 NEWS_DIR = DATA_DIR / "news"
 UA = {"User-Agent": "trending-rank-radar news-bot (+https://zhuikan.com)"}
 PACE = 0.4          # seconds between HTTP requests
-MAX_PER_LANG = 10   # cap stored items per language
+MAX_PER_LANG = 25   # cap stored items per language (UI shows 10 + <details>)
 GN_LOCALES = {"zh": ("zh-CN", "CN", "CN:zh-Hans"),
               "en": ("en-US", "US", "US:en")}
 BING_LOCALES = {"zh": ("zh-TW", "zh-hant"),
@@ -292,8 +292,8 @@ def main() -> int:
     g.add_argument("--all", dest="all_", action="store_true",
                    help="every tracked repo")
     g.add_argument("--only", metavar="OWNER/REPO", help="single repo")
-    g.add_argument("--workers", type=int, default=6,
-                   help="parallel repo fetches (per-repo pacing preserved)")
+    ap.add_argument("--workers", type=int, default=6,
+                    help="parallel repo fetches (per-repo pacing preserved)")
     args = ap.parse_args()
 
     repos = ([args.only] if args.only
