@@ -625,10 +625,10 @@ function newsHTML(d) {
 function renderAllRepo() {
   const d = repo.data;
   $('#repoContent').innerHTML = crumbHTML(d) + topHTML(d)
+    + `<section class="rp-social card" id="rpSocial"></section>`
     + ptabsHTML() + trendHTML(d)
     + ctabsHTML(d) + `<section class="rp-panel card" id="rpPanel">${panelHTML(d)}</section>`
-    + newsHTML(d)
-    + `<section class="rp-social card" id="rpSocial"></section>`;
+    + newsHTML(d);
   if (repo.ctab === 'ov') loadReadme(d);
   renderChart();
   wireShare(d);

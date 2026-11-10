@@ -75,7 +75,7 @@ function rowHTML(e, dispRank = e.rank) {
   const ageChip = state.board === 'new' && e.created_at
     ? `<span class="row-age">${t('age', { n: ageDays })}</span>`
     : '';
-  return `<div class="rank-row" style="animation-delay:${Math.min(dispRank * 12, 400)}ms">
+  return `<div class="rank-row" data-fn="${esc(e.full_name)}" style="animation-delay:${Math.min(dispRank * 12, 400)}ms">
     <span class="row-rank${dispRank <= 3 ? ' top' : ''}"${dispRank !== e.rank ? ` title="${esc(t('rank.prerank', { n: e.rank }))}"` : ''}>${dispRank}</span>
     <a class="row-avatar" href="repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}.html"><img src="${esc(e.avatar || `https://github.com/${e.owner}.png?size=96`)}" alt="" loading="lazy" width="48" height="48" onerror="this.style.visibility='hidden'"></a>
     <div class="row-body">
@@ -105,7 +105,7 @@ function podiumHTML(e, idx) {
   const metric = e.growth != null ? `+${fmt(e.growth)}` : fmtFull(e.stars);
   const unit = e.growth != null ? 'stars' : '';
   const rate = e.rate != null ? `<span class="rate-pill${e.rate >= 100 ? ' hot' : ''}">${fmtPct(e.rate)}</span>` : '';
-  return `<div class="podium-card p${idx + 1}">
+  return `<div class="podium-card p${idx + 1}" data-fn="${esc(e.full_name)}">
     <div class="podium-rank">${medal}</div>
     <a class="podium-avatar" href="repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}.html"><img src="${esc(e.avatar || `https://github.com/${e.owner}.png?size=128`)}" alt="" loading="lazy"></a>
     <div class="podium-name">${nameLinkHTML(e)}${badges(e)}</div>
@@ -144,7 +144,53 @@ function renderList() {
     : '';
   const lb = $('#loadMore');
   if (lb) lb.onclick = () => { state.shown += PAGE; renderList(); };
+  hydrateSocial();
 }
+
+/* ---- social strip per row: one batched API call for all visible items ---- */
+async function hydrateSocial() {
+  const els = [...document.querySelectorAll('#podiumWrap [data-fn], #listWrap [data-fn]')]
+    .filter(el => !el.querySelector('.row-soc'));
+  if (!els.length || typeof api !== 'function') return;
+  const ids = [...new Set(els.map(el => el.dataset.fn))].slice(0, 60);
+  let soc;
+  try {
+    soc = (await api(`/social/batch?site=github&ids=${encodeURIComponent(ids.join(','))}`)).items || {};
+  } catch { return; }   /* API down → rows just stay clean */
+  els.forEach(el => {
+    const s = soc[el.dataset.fn];
+    if (!s || el.querySelector('.row-soc')) return;
+    const [o, n] = el.dataset.fn.split('/');
+    const url = `repos/${encodeURIComponent(o)}__${encodeURIComponent(n)}.html`;
+    const div = document.createElement('div');
+    div.className = 'row-soc';
+    div.innerHTML = `<button class="soc-ic${s.viewer.liked ? ' on' : ''}" data-act="likes" type="button" title="${esc(t('soc.like'))}">♥ <b>${fmt(s.likes)}</b></button>
+      <button class="soc-ic${s.viewer.faved ? ' on' : ''}" data-act="favorites" type="button" title="${esc(t('soc.fav'))}">★ <b>${fmt(s.favs)}</b></button>
+      <a class="soc-ic" href="${url}#rpSocial" title="${esc(t('cm.title'))}">💬 <b>${fmt(s.comments)}</b></a>`;
+    div.querySelectorAll('button.soc-ic').forEach(btn => {
+      btn.onclick = async () => {
+        if (!zk.user) { const b = $('#authBtn'); if (b) b.click(); return; }
+        btn.disabled = true;
+        try {
+          const r = await api(`/${btn.dataset.act}/toggle`, {
+            method: 'POST',
+            body: JSON.stringify({ site: 'github', item_id: el.dataset.fn })
+          });
+          const on = r.liked ?? r.faved;
+          btn.classList.toggle('on', !!on);
+          const bb = btn.querySelector('b');
+          bb.textContent = fmt(Math.max(0, (parseInt(bb.textContent.replace(/\D/g, '')) || 0) + (on ? 1 : -1)));
+        } catch { }
+        btn.disabled = false;
+      };
+    });
+    (el.classList.contains('podium-card') ? el : el.querySelector('.row-body') || el).appendChild(div);
+  });
+}
+document.addEventListener('zk:auth', () => {
+  document.querySelectorAll('.row-soc').forEach(e => e.remove());
+  hydrateSocial();
+});
 
 function setEmpty(msg, pct, opts = {}) {
   $('#emptyState').hidden = false;

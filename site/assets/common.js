@@ -41,6 +41,7 @@ const I18N = {
     'auth.pass': '密码（≥8位）', 'auth.register': '注册',
     'auth.emailonly': '邮箱', 'auth.err': '操作失败，请重试',
     'soc.like': '点赞', 'soc.fav': '收藏', 'soc.views': '浏览',
+    'fav.mine': '我的收藏', 'fav.empty': '还没有收藏，去榜单里点 ★',
     'cm.title': '评论', 'cm.ph': '写下你的评论…',
     'cm.submit': '发布', 'cm.login': '登录后可评论',
     'cm.pending': '审核中', 'cm.report': '举报', 'cm.del': '删除',
@@ -158,6 +159,7 @@ const I18N = {
     'auth.pass': 'Password (8+ chars)', 'auth.register': 'Sign up',
     'auth.emailonly': 'Email', 'auth.err': 'Failed, try again',
     'soc.like': 'Like', 'soc.fav': 'Favorite', 'soc.views': 'Views',
+    'fav.mine': 'My favorites', 'fav.empty': 'Nothing saved yet — tap ★ on a row',
     'cm.title': 'Comments', 'cm.ph': 'Write a comment…',
     'cm.submit': 'Post', 'cm.login': 'Sign in to comment',
     'cm.pending': 'under review', 'cm.report': 'Report', 'cm.del': 'Delete',
@@ -417,9 +419,11 @@ function renderAuthChip() {
       ? `<img class="auth-av" src="${esc(zk.user.avatar_url)}" alt="" width="22" height="22">` : '';
     el.innerHTML = `<button class="auth-chip" id="authBtn" type="button">${av}<span>${esc(zk.user.display_name || zk.user.username)}</span></button>
       <div class="auth-drop" id="authDrop" hidden>
+        <button class="auth-item" id="authFav" type="button">${esc(t('fav.mine'))}</button>
         <button class="auth-item" id="authOut" type="button">${esc(t('auth.logout'))}</button>
       </div>`;
     $('#authBtn').onclick = () => { $('#authDrop').hidden = !$('#authDrop').hidden; };
+    $('#authFav').onclick = () => { $('#authDrop').hidden = true; openFavs(); };
     $('#authOut').onclick = zkLogout;
   } else {
     el.innerHTML = `<button class="auth-chip" id="authBtn" type="button">${esc(t('auth.login'))}</button>
@@ -460,4 +464,23 @@ function renderAuthChip() {
       if (!el.contains(e.target)) drop.hidden = true;
     });
   }
+}
+
+async function openFavs() {
+  let items = [];
+  try { items = (await api('/me/favorites?site=github')).items || []; } catch { }
+  const ov = document.createElement('div');
+  ov.className = 'sh-ov';
+  ov.innerHTML = `<div class="sh-card">
+    <div class="sh-head"><span>${esc(t('fav.mine'))}</span><button class="sh-x" aria-label="close">✕</button></div>
+    <div class="fav-list">${items.length ? items.map(f => {
+      const o = f.item_id.split('/')[0], n = f.item_id.split('/').slice(1).join('/');
+      return `<a class="fav-item" href="${document.body.dataset.base || ''}repos/${encodeURIComponent(o)}__${encodeURIComponent(n)}.html">
+        <span class="fav-name">${esc(f.item_id)}</span>
+        <span class="fav-meta">${f.lang ? esc(f.lang) + ' · ' : ''}${f.stars ? '★ ' + fmt(f.stars) : ''}</span></a>`;
+    }).join('') : `<div class="fav-empty">${esc(t('fav.empty'))}</div>`}</div>
+  </div>`;
+  ov.addEventListener('click', e => { if (e.target === ov) ov.remove(); });
+  ov.querySelector('.sh-x').onclick = () => ov.remove();
+  document.body.appendChild(ov);
 }
