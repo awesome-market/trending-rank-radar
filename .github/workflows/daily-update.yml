@@ -44,6 +44,7 @@ jobs:
 
       - name: Fetch repo news (HN + Google/Bing News)
         if: ${{ !inputs.deploy_only }}
+        continue-on-error: true
         run: |
           if [ "${{ github.event.schedule }}" = "0 8 * * 0" ]; then
             python scripts/news.py --all
@@ -81,11 +82,16 @@ jobs:
           fi
           git push
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./site
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      # 站点 ~90MB/万级文件，超出 actions/deploy-pages 的 10 分钟文件同步预算；
+      # 改为推送到 gh-pages 分支由 Pages 服务端构建（无超时限制）。
+      - name: Publish site to gh-pages
+        run: |
+          rm -rf /tmp/ghp-site
+          cp -a site /tmp/ghp-site
+          cd /tmp/ghp-site
+          git init -qb gh-pages
+          git add -A
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -qm "deploy $(date -u +%FT%TZ)"
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:gh-pages
