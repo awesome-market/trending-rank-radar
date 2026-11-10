@@ -40,7 +40,7 @@ CI daily-update
 1. 准备专用克隆（脚本会 `git reset --hard origin/main`，**不能**用有未提交改动的目录）：
 
    ```bash
-   git clone https://github.com/awesome-market/trending-rank-radar /opt/trr-rescue
+   git clone https://github.com/awesome-market/trending-rank-radar /data1/service/trending-rank-radar
    ```
 
 2. 创建 fine-grained PAT（GitHub → Settings → Developer settings →
@@ -55,13 +55,13 @@ CI daily-update
 3. 配置 cron（每小时）：
 
    ```cron
-   0 * * * * GITHUB_TOKEN=github_pat_xxx /usr/bin/python3 /opt/trr-rescue/scripts/rescue.py >> /opt/trr-rescue/rescue.log 2>&1
+   0 * * * * GITHUB_TOKEN=github_pat_xxx /usr/bin/python3 /data1/service/trending-rank-radar/scripts/rescue.py >> /data1/log/trending-rank-radar.log 2>&1
    ```
 
    可选环境变量：`TRR_REPO`、`TRR_WORKDIR`（默认脚本所在仓库根）、
    `TRR_SITE_BASE`（默认 `https://zhuikan.com`）。
 
-4. 验证：手动跑一次 `GITHUB_TOKEN=... python3 /opt/trr-rescue/scripts/rescue.py`，
+4. 验证：手动跑一次 `GITHUB_TOKEN=... python3 /data1/service/trending-rank-radar/scripts/rescue.py`，
    无 open rescue issue 时输出 `idle` 即正常。
 
 ## 注意

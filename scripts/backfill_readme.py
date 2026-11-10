@@ -100,7 +100,7 @@ def main() -> int:
     files = sorted(REPOS_DIR.glob("*.json"))
     todo = [f for f in files if f.stem not in done]
     print(f"repos={len(files)} done={len(done)} todo={len(todo)}", flush=True)
-    ok = zh_found = errs = 0
+    ok = zh_found = 0
     for i, f in enumerate(todo):
         if limit and i >= limit:
             break
@@ -134,7 +134,7 @@ def main() -> int:
         done.add(f.stem)
         if (i + 1) % 25 == 0 or i == len(todo) - 1:
             CKPT.write_text(json.dumps(sorted(done)))
-            print(f"[{i + 1}/{len(todo)}] ok={ok} zh={zh_found} errs={errs} "
+            print(f"[{i + 1}/{len(todo)}] ok={ok} zh={zh_found} "
                   f"last={full}", flush=True)
         time.sleep(DELAY)
     CKPT.write_text(json.dumps(sorted(done)))

@@ -970,9 +970,10 @@ def main() -> int:
         page_html = render_repo_page(ssr_payload, repo_tpl, base)
         (pages_out / f"{owner}__{repo}.html").write_text(page_html, encoding="utf-8")
 
-    # search indexes — lazy-loaded by the header search box. Main index covers
-    # repo name / owner / language / description; news titles are split into a
-    # second file fetched only when the user switches to the news scope.
+    # search indexes — published as open data (the header search box itself
+    # queries api-site.zhuikan.com/search remotely). Compact {n,d,l,s} fields
+    # cover repo name / owner / language / description for every tracked repo;
+    # news titles live in a separate file. Documented in llms.txt.
     (SITE_DATA / "search-index.json").write_text(
         json.dumps(search_idx, ensure_ascii=False, separators=(",", ":")),
         encoding="utf-8")

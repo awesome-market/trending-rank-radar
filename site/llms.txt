@@ -21,6 +21,8 @@ All ranking data is precomputed and served as static JSON — free to reuse (Apa
 - Repo detail pages (server-rendered HTML, one per tracked repo): `https://zhuikan.com/repos/<owner>__<name>.html`
 - Homepage `index.html` also embeds the latest board Top 50, current-month daily Top 10 chips and the month index as server-rendered HTML (no JS needed to read them)
 - Full snapshots: `data/snapshots/YYYY-MM-DDTHH.json` in the GitHub repo — 16 positional columns per repo: full_name, stars, forks, watchers, issues_total, prs_total, releases_total, created_at, language, is_fork, is_archived, issues_open, issues_closed, prs_open, prs_closed, prs_merged (files written before 2026-11 have the first 11 columns only)
+- `data/search-index.json` — compact directory of every tracked repo: `{n: full_name, d: description, l: language, s: stars}`
+- `data/search-news.json` — news/press titles per repo: `{n: full_name, s: stars, nw: [titles]}`
 
 ## Boards (in each day/month file, under `boards.<name>.items`)
 
