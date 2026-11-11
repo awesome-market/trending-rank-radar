@@ -90,6 +90,18 @@ function nameLinkHTML(e) {
     + `<a class="ext-link" href="https://github.com/${fn}" target="_blank" rel="noopener" title="${esc(t('open.gh', { r: e.full_name }))}">${icon('ext', 'ext-ico', 12)}</a>`;
 }
 
+function tagPillsHTML(e) {
+  const tp = e.tag_pages || [];
+  const pills = (e.topics || []).slice(0, 4).map(t => {
+    const sl = String(t).toLowerCase();
+    const internal = tp.includes(sl);
+    const href = internal ? `${DB}tags/${encodeURIComponent(sl)}`
+                          : `https://github.com/topics/${encodeURIComponent(t)}`;
+    return `<a class="row-tag" href="${href}"${internal ? '' : ' target="_blank" rel="noopener"'}>${esc(t)}</a>`;
+  }).join('');
+  return pills ? `<div class="row-tags">${pills}</div>` : '';
+}
+
 function rowHTML(e, dispRank = e.rank) {
   // state.sel 为 YYYY-MM 时用月末近似日，避免 Invalid Date → NaN 天
   const selEnd = state.sel && state.sel.length > 7 ? state.sel : `${state.sel}-28`;
@@ -114,6 +126,7 @@ function rowHTML(e, dispRank = e.rank) {
         ${mItem('tag', e.releases, 'releases')}
       </div>
       ${e.description ? `<div class="row-desc">${esc(e.description)}</div>` : ''}
+      <div class="row-foot"><div class="row-soc"></div>${tagPillsHTML(e)}</div>
     </div>
     <div class="row-side">
       ${e.series && e.series.length > 1 ? `<div class="row-spark">${sparkline(e.series)}</div>` : ''}
@@ -135,6 +148,7 @@ function podiumHTML(e, idx) {
     <div class="podium-metric" style="color:${e.growth != null ? 'var(--green)' : 'var(--text)'}">${metric}${unit ? ` <span class="unit">${unit}</span>` : ''}</div>
     <div class="podium-sub">${langDot(e.language)}<span>★ ${fmtFull(e.stars)}</span>${rate}</div>
     ${e.series && e.series.length > 1 ? `<div class="podium-spark">${sparkline(e.series)}</div>` : ''}
+    <div class="row-foot"><div class="row-soc"></div>${tagPillsHTML(e)}</div>
   </div>`;
 }
 
@@ -174,7 +188,7 @@ function renderList() {
 /* ---- social strip per row: one batched API call for all visible items ---- */
 async function hydrateSocial() {
   const els = [...document.querySelectorAll('#podiumWrap [data-fn], #listWrap [data-fn]')]
-    .filter(el => !el.querySelector('.row-soc'));
+    .filter(el => el.querySelector('.row-soc') && !el.querySelector('.row-soc').dataset.done);
   if (!els.length || typeof api !== 'function') return;
   const ids = [...new Set(els.map(el => el.dataset.fn))].slice(0, 60);
   let soc;
@@ -183,16 +197,16 @@ async function hydrateSocial() {
   } catch { return; }   /* API down → rows just stay clean */
   els.forEach(el => {
     const s = soc[el.dataset.fn];
-    if (!s || el.querySelector('.row-soc')) return;
+    const mount = el.querySelector('.row-soc');
+    if (!s || mount.dataset.done) return;
+    mount.dataset.done = '1';
     const sv = s.viewer || {};
     const [o, n] = el.dataset.fn.split('/');
     const url = `${DB}repos/${encodeURIComponent(o)}__${encodeURIComponent(n)}`;
-    const div = document.createElement('div');
-    div.className = 'row-soc';
-    div.innerHTML = `<button class="soc-ic${sv.liked ? ' on' : ''}" data-act="likes" type="button" title="${esc(t('soc.like'))}">♥ <b>${fmt(s.likes)}</b></button>
+    mount.innerHTML = `<button class="soc-ic${sv.liked ? ' on' : ''}" data-act="likes" type="button" title="${esc(t('soc.like'))}">♥ <b>${fmt(s.likes)}</b></button>
       <button class="soc-ic${sv.faved ? ' on' : ''}" data-act="favorites" type="button" title="${esc(t('soc.fav'))}">★ <b>${fmt(s.favs)}</b></button>
       <a class="soc-ic" href="${url}#rpCm" title="${esc(t('cm.title'))}">💬 <b>${fmt(s.comments)}</b></a>`;
-    div.querySelectorAll('button.soc-ic').forEach(btn => {
+    mount.querySelectorAll('button.soc-ic').forEach(btn => {
       btn.onclick = async () => {
         if (!zk.user) { openAuthModal('login'); return; }
         btn.disabled = true;
@@ -211,11 +225,10 @@ async function hydrateSocial() {
         btn.disabled = false;
       };
     });
-    (el.classList.contains('podium-card') ? el : el.querySelector('.row-body') || el).appendChild(div);
   });
 }
 document.addEventListener('zk:auth', () => {
-  document.querySelectorAll('.row-soc').forEach(e => e.remove());
+  document.querySelectorAll('.row-soc').forEach(e => { e.innerHTML = ''; delete e.dataset.done; });
   hydrateSocial();
 });
 
@@ -415,11 +428,16 @@ function renderTabs() {
   const tabs = boardTabsForPeriod();
   $('#boardTabs').innerHTML = tabs.map(b => {
     const active = state.board === b ? ' active' : '';
-    return `<button class="tab-btn${active}" data-board="${b}">${boardLabel(b)}</button>`;
+    const href = b === CUM_BOARD ? `${DB}b/monthly` : `${DB}b/${b}`;
+    return `<a class="tab-btn${active}" data-board="${b}" href="${href}">${boardLabel(b)}</a>`;
   }).join('');
   $('#boardTabs').style.display = tabs.length ? 'flex' : 'none';
   document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.onclick = () => { state.board = btn.dataset.board; state.shown = PAGE; syncURL(); renderAll(); };
+    btn.onclick = ev => {
+      if (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey || ev.button) return;
+      ev.preventDefault();
+      state.board = btn.dataset.board; state.shown = PAGE; syncURL(); renderAll();
+    };
   });
 }
 

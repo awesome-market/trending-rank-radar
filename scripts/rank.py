@@ -200,10 +200,12 @@ def series_for(ridx: dict, name: str, day: str, n: int = SERIES_DAYS) -> list[in
 
 def make_entry(name: str, rank: int, cur, meta: dict, *,
                growth=None, rate=None, approx=False, stale=False,
-               series=None) -> dict:
+               series=None, tag_pages=None) -> dict:
     owner, _, repo = name.partition("/")
     m = meta.get(name) or {}
     det = m.get("detail") or {}
+    topics = (m.get("topics") or [])[:6]
+    tp = tag_pages or ()
     return {
         "rank": rank,
         "owner": owner,
@@ -212,6 +214,8 @@ def make_entry(name: str, rank: int, cur, meta: dict, *,
         "description": m.get("description"),
         "avatar": det.get("avatar"),
         "homepage": m.get("homepage"),
+        "topics": topics,
+        "tag_pages": [s for s in (tag_slug(t) for t in topics) if s and s in tp],
         "language": cur[I_LANG],
         "stars": cur[I_STARS],
         "forks": cur[I_FORKS],
@@ -536,13 +540,22 @@ def _ssr_row(e: dict) -> str:
     else:
         side = (f'<div class="row-stars-big">★ {stars:,}</div>'
                 if isinstance(stars, int) else "")
-    return (f'<div class="rank-row"><span class="row-rank{" top" if rank <= 3 else ""}">{rank}</span>'
+    tp = set(e.get("tag_pages") or [])
+    pills = "".join(
+        (f'<a class="row-tag" href="tags/{_esc(tag_slug(t))}">{_esc(t)}</a>'
+         if tag_slug(t) in tp else
+         f'<a class="row-tag" href="https://github.com/topics/{_esc(t)}">{_esc(t)}</a>')
+        for t in (e.get("topics") or [])[:4])
+    foot = ('<div class="row-foot"><div class="row-soc"></div>'
+            + (f'<div class="row-tags">{pills}</div>' if pills else "") + "</div>")
+    return (f'<div class="rank-row" data-fn="{_esc(e.get("full_name") or "")}"><span class="row-rank{" top" if rank <= 3 else ""}">{rank}</span>'
             f'<a class="row-avatar" href="{href}"><img src="{_esc(e.get("avatar") or f"https://github.com/{owner}.png?size=96")}" alt="" loading="lazy" width="48" height="48"></a>'
             f'<div class="row-body"><div class="row-name"><a class="row-link" href="{href}">'
             f'<span class="row-owner">{_esc(owner)}</span><span class="row-sep">/</span>'
             f'<span class="row-repo">{_esc(name)}</span></a></div>'
             f'<div class="row-meta">{"".join(meta)}</div>'
             + (f'<div class="row-desc">{_esc(desc)}</div>' if desc else "")
+            + foot
             + f'</div><div class="row-side">{side}</div></div>')
 
 
@@ -679,6 +692,7 @@ def render_tag_page(tag: str, slug: str, items: list, day: str,
     html, _ = _inject(html, "SSRMG", "")
     html = html.replace('"assets/', '"../assets/')
     html = html.replace('href="repos/', 'href="../repos/')
+    html = html.replace('href="tags/', 'href="../tags/')
     html = html.replace('href="data/', 'href="../data/')
     html = html.replace('href="manifest.webmanifest"',
                         'href="../manifest.webmanifest"')
@@ -724,6 +738,7 @@ def render_lang_page(lang: str, slug: str, boards: dict, day: str,
     # injected rows' repos/ links too since they were just injected)
     html = html.replace('"assets/', '"../assets/')
     html = html.replace('href="repos/', 'href="../repos/')
+    html = html.replace('href="tags/', 'href="../tags/')
     html = html.replace('href="data/', 'href="../data/')
     html = html.replace('href="manifest.webmanifest"',
                         'href="../manifest.webmanifest"')
@@ -792,6 +807,7 @@ def render_board_page(board: str, day: str, items: list, days: list,
     # injected rows' repos/ links too since they were just injected)
     html = html.replace('"assets/', f'"{rel}assets/')
     html = html.replace('href="repos/', f'href="{rel}repos/')
+    html = html.replace('href="tags/', f'href="{rel}tags/')
     html = html.replace('href="data/', f'href="{rel}data/')
     html = html.replace('href="manifest.webmanifest"',
                         f'href="{rel}manifest.webmanifest"')
@@ -905,7 +921,8 @@ def eligible(cur) -> bool:
 
 
 def compute_boards(day: str, days: list[str], ridx: dict, meta: dict,
-                   day_index: dict[str, int], lang: str | None = None) -> dict:
+                   day_index: dict[str, int], lang: str | None = None,
+                   tag_pages=None) -> dict:
     """Compute all boards for `day`. Returns {board: {window_start?, window_days?, items}}.
     `lang` restricts candidates to repos whose current language matches —
     powers the per-language static pages (full-fidelity re-rank, not a
@@ -973,7 +990,7 @@ def compute_boards(day: str, days: list[str], ridx: dict, meta: dict,
             items.append(make_entry(
                 name, rank, ctup, meta,
                 growth=growth, rate=rate, approx=approx, stale=False,
-                series=series_for(ridx, name, day),
+                series=series_for(ridx, name, day), tag_pages=tag_pages,
             ))
         boards[kind] = {
             "window_start": base_day,
@@ -1000,7 +1017,8 @@ def compute_boards(day: str, days: list[str], ridx: dict, meta: dict,
         boards[kind] = {
             "window_start": base_day, "window_days": window_days,
             "items": [make_entry(n, r, t, meta, growth=g,
-                                 approx=ap, series=series_for(ridx, n, day))
+                                 approx=ap, series=series_for(ridx, n, day),
+                                 tag_pages=tag_pages)
                       for r, (g, n, t, ap) in enumerate(m_cands[:TOPN], 1)]}
 
     # ---- new board ---------------------------------------------------------
@@ -1016,7 +1034,8 @@ def compute_boards(day: str, days: list[str], ridx: dict, meta: dict,
     new_cands.sort(key=lambda x: (-x[0], x[1]))
     boards["new"] = {"items": [
         make_entry(n, r, t, meta, growth=None, rate=None,
-                   approx=False, stale=st, series=series_for(ridx, n, day))
+                   approx=False, stale=st, series=series_for(ridx, n, day),
+                   tag_pages=tag_pages)
         for r, (_, n, t, st) in enumerate(new_cands[:TOPN], 1)
     ]}
 
@@ -1026,7 +1045,8 @@ def compute_boards(day: str, days: list[str], ridx: dict, meta: dict,
     total_cands.sort(key=lambda x: (-x[0], x[1]))
     boards["total"] = {"items": [
         make_entry(n, r, t, meta, growth=None, rate=None,
-                   approx=False, stale=st, series=series_for(ridx, n, day))
+                   approx=False, stale=st, series=series_for(ridx, n, day),
+                   tag_pages=tag_pages)
         for r, (_, n, t, st) in enumerate(total_cands[:TOPN], 1)
     ]}
 
@@ -1035,7 +1055,7 @@ def compute_boards(day: str, days: list[str], ridx: dict, meta: dict,
 
 # ------------------------------------------------------------- month / year ---
 def compute_span_board(day: str, days: list[str], ridx: dict, meta: dict,
-                       base_day: str, nominal_days: int) -> dict:
+                       base_day: str, nominal_days: int, tag_pages=None) -> dict:
     """Growth board over an arbitrary span (month cumulative / year growth)."""
     day_index = {x: i for i, x in enumerate(days)}
     i = day_index[day]
@@ -1072,12 +1092,14 @@ def compute_span_board(day: str, days: list[str], ridx: dict, meta: dict,
     for rank, (incr, rate, name, ctup, approx) in enumerate(cands[:TOPN], 1):
         items.append(make_entry(name, rank, ctup, meta, growth=incr, rate=rate,
                                 approx=approx, stale=False,
-                                series=series_for(ridx, name, day)))
+                                series=series_for(ridx, name, day),
+                                tag_pages=tag_pages))
     return {"window_start": base_day, "window_days": window_days, "items": items}
 
 
 def compute_debut_board(names: set, day: str, days: list[str], ridx: dict,
-                        meta: dict, day_index: dict[str, int]) -> dict:
+                        meta: dict, day_index: dict[str, int],
+                        tag_pages=None) -> dict:
     """'Debut' board — repos entering any board for the first time at `day`
     (their names weren't in any earlier day's board items). Ranked by
     daily-window star growth; repos without a usable base fall to the tail
@@ -1101,7 +1123,8 @@ def compute_debut_board(names: set, day: str, days: list[str], ridx: dict,
     return {"items": [
         make_entry(name, rank, ctup, meta,
                    growth=g or None, rate=None, approx=approx, stale=st,
-                   series=series_for(ridx, name, day))
+                   series=series_for(ridx, name, day),
+                   tag_pages=tag_pages)
         for rank, (g, ctup, approx, st, name) in enumerate(rows[:TOPN], 1)]}
 
 
@@ -1150,6 +1173,39 @@ def main() -> int:
             if stale_html.stem not in set(days) and stale_html.stem != "index":
                 stale_html.unlink()
 
+    # Repo detail pages: every repo whose latest data is within the stale
+    # grace window gets a page — board entries link here, so a tracked repo
+    # that merely missed today's run shouldn't 404. Computed before the day
+    # loop because board items carry tag pills resolved against tag_pages.
+    latest_day = days[-1]
+    stale_cutoff = (d(latest_day) - timedelta(days=STALE_GRACE_DAYS)).isoformat()
+    detail_repos = dict(day_close[latest_day])
+    for name in ridx:
+        if name in detail_repos:
+            continue
+        ds0, vs0 = ridx[name]
+        if ds0 and ds0[-1] >= stale_cutoff:
+            detail_repos[name] = vs0[-1]
+
+    owner_map: dict[str, list[str]] = {}
+    for name in detail_repos:
+        owner_map.setdefault(name.split("/")[0], []).append(name)
+
+    # Tag index — pre-pass counts repos per topic so repo pages know which
+    # tags earn a static page (link) and which stay plain pills.
+    tag_map: dict[str, dict] = {}
+    for name in detail_repos:
+        for t in ((meta.get(name) or {}).get("topics") or []):
+            s = tag_slug(t)
+            if s:
+                tag_map.setdefault(s, {"tag": t, "names": [],
+                                       "items": []})["names"].append(name)
+    tag_pages = {s for s, e in tag_map.items()
+                 if len(e["names"]) >= TAG_MIN_REPOS}
+    if len(tag_pages) > TAG_MAX_PAGES:
+        keep = sorted(tag_pages, key=lambda s: -len(tag_map[s]["names"]))
+        tag_pages = set(keep[:TAG_MAX_PAGES])
+
     # ---------------- per-day boards ----------------
     daily_top10: dict[str, list] = {}   # month -> [{date, items}]
     month_end_day: dict[str, str] = {}
@@ -1158,14 +1214,16 @@ def main() -> int:
 
     seen_boards: set[str] = set()
     for day in days:
-        boards = compute_boards(day, days, ridx, meta, day_index)
+        boards = compute_boards(day, days, ridx, meta, day_index,
+                                tag_pages=tag_pages)
         appearing = {e["full_name"] for blk in boards.values()
                      for e in blk.get("items", [])}
         # day-0 has no earlier boards to diff against — emit an empty debut
         # board rather than a copy of "total" (everything would "debut").
         boards["debut"] = ({"items": []} if day == days[0] else
                            compute_debut_board(appearing - seen_boards, day,
-                                               days, ridx, meta, day_index))
+                                               days, ridx, meta, day_index,
+                                               tag_pages=tag_pages))
         seen_boards |= appearing
         payload = {
             "date": day,
@@ -1209,7 +1267,7 @@ def main() -> int:
         # month-end boards = reuse the day file we just wrote
         day_payload = json.loads((SITE_DATA / "days" / f"{end_day}.json").read_text(encoding="utf-8"))
 
-        cumulative = compute_span_board(end_day, days, ridx, meta,
+        cumulative = compute_span_board(end_day, days, ridx, meta, tag_pages=tag_pages,
                                         base_day=first_data_day,
                                         nominal_days=nominal_days)
         payload = {
@@ -1234,7 +1292,7 @@ def main() -> int:
         nominal_days = (d(last_cal) - d(f"{year}-01-01")).days
         partial = end_day < last_cal
 
-        growth = compute_span_board(end_day, days, ridx, meta,
+        growth = compute_span_board(end_day, days, ridx, meta, tag_pages=tag_pages,
                                     base_day=first_data_day,
                                     nominal_days=nominal_days)
         payload = {
@@ -1266,37 +1324,6 @@ def main() -> int:
     for b, blk in latest_boards.items():
         for e in blk.get("items", []):
             placements.setdefault(e["full_name"], {})[b] = e["rank"]
-
-    # Repo detail pages: every repo whose latest data is within the stale
-    # grace window gets a page — board entries link here, so a tracked repo
-    # that merely missed today's run shouldn't 404.
-    stale_cutoff = (d(latest_day) - timedelta(days=STALE_GRACE_DAYS)).isoformat()
-    detail_repos = dict(day_close[latest_day])
-    for name in ridx:
-        if name in detail_repos:
-            continue
-        ds0, vs0 = ridx[name]
-        if ds0 and ds0[-1] >= stale_cutoff:
-            detail_repos[name] = vs0[-1]
-
-    owner_map: dict[str, list[str]] = {}
-    for name in detail_repos:
-        owner_map.setdefault(name.split("/")[0], []).append(name)
-
-    # Tag index — pre-pass counts repos per topic so repo pages know which
-    # tags earn a static page (link) and which stay plain pills.
-    tag_map: dict[str, dict] = {}
-    for name in detail_repos:
-        for t in ((meta.get(name) or {}).get("topics") or []):
-            s = tag_slug(t)
-            if s:
-                tag_map.setdefault(s, {"tag": t, "names": [],
-                                       "items": []})["names"].append(name)
-    tag_pages = {s for s, e in tag_map.items()
-                 if len(e["names"]) >= TAG_MIN_REPOS}
-    if len(tag_pages) > TAG_MAX_PAGES:
-        keep = sorted(tag_pages, key=lambda s: -len(tag_map[s]["names"]))
-        tag_pages = set(keep[:TAG_MAX_PAGES])
 
     repos_out = SITE_DATA / "repos"
     readme_out = SITE_DATA / "readme"
@@ -1480,7 +1507,7 @@ def main() -> int:
         slug = lang_slug(lang)
         try:
             lb = compute_boards(latest_day, days, ridx, meta, day_index,
-                                lang=lang)
+                                lang=lang, tag_pages=tag_pages)
             (SITE_DATA / "langs" / f"{slug}.json").write_text(
                 json.dumps({"lang": lang, "slug": slug, "date": latest_day,
                             "repo_count": lang_count[lang], "boards": lb},

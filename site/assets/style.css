@@ -386,6 +386,7 @@ a:hover { text-decoration: underline; }
   cursor: pointer; white-space: nowrap;
   transition: all .2s;
   font-family: var(--font);
+  display: inline-block; text-decoration: none;
 }
 .tab-btn:hover { color: var(--text); background: var(--card-hover); }
 .tab-btn.active {
@@ -1259,7 +1260,16 @@ html[lang="en"] .i18n-en { display: inline; }
 .cm-in:focus { border-color: var(--accent); }
 .cm-row { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
 /* list-row social strip + favorites modal */
-.row-soc { display: flex; align-items: center; gap: 4px; margin-top: 5px; }
+.row-foot { display: flex; align-items: center; gap: 8px; margin-top: 5px; flex-wrap: wrap; }
+.row-soc { display: flex; align-items: center; gap: 4px; }
+.row-tags { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; flex: 1; justify-content: flex-end; min-width: 0; }
+.row-tag {
+  font-size: 11px; padding: 1px 8px; border-radius: 999px;
+  background: rgba(88, 166, 255, 0.1); color: var(--accent); text-decoration: none;
+  border: 1px solid rgba(88, 166, 255, 0.22); transition: all .15s;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 130px;
+}
+.row-tag:hover { background: rgba(88, 166, 255, 0.2); }
 .soc-ic {
   display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px;
   font-size: 11.5px; font-weight: 600; color: var(--text-faint);
