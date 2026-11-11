@@ -901,6 +901,7 @@ async function loadComments(d) {
       loadComments(d);
     } catch (e) {
       if (e.code === 'unverified_email') openAuthModal('verify');
+      else if (e.code) alert(authErr(e));
     }
   });
 }
