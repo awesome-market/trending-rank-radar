@@ -712,6 +712,7 @@ function renderCommentForm(d) {
       loadComments(d);
     } catch (e) {
       if (e.code === 'unverified_email') openAuthModal('verify');
+      else if (e.code === 'username_rejected') openNameModal(e.message);
       else $('#cmNote').textContent = authErr(e);
     }
     $('#cmPost').disabled = false;

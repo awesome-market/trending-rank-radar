@@ -53,7 +53,12 @@ const I18N = {
     'auth.e.no_email': '账户未绑定邮箱',
     'auth.e.mail_failed': '邮件发送失败，请稍后重试',
     'auth.e.unverified_email': '请先验证邮箱',
+    'auth.e.username_rejected': '用户名未通过审核，请修改用户名',
     'auth.e.cooldown': '发送太频繁，请稍候',
+    'nm.title': '修改用户名',
+    'nm.why': '你的用户名未通过审核，请换一个新名字后再评论',
+    'nm.ph': '新的用户名',
+    'nm.go': '保存',
     'auth.verify.title': '验证邮箱',
     'auth.verify.hint': '验证码已发送至 {e}，请查收（含垃圾箱）',
     'auth.verify.ph': '6 位验证码',
@@ -196,7 +201,12 @@ const I18N = {
     'auth.e.no_email': 'No email bound to this account',
     'auth.e.mail_failed': 'Mail failed to send — try again later',
     'auth.e.unverified_email': 'Verify your email first',
+    'auth.e.username_rejected': 'Username rejected — pick a new one',
     'auth.e.cooldown': 'Sending too fast — wait a moment',
+    'nm.title': 'Change username',
+    'nm.why': 'Your username failed review — pick a new one to keep commenting',
+    'nm.ph': 'New username',
+    'nm.go': 'Save',
     'auth.verify.title': 'Verify email',
     'auth.verify.hint': 'Code sent to {e} — check spam too',
     'auth.verify.ph': '6-digit code',
@@ -627,6 +637,49 @@ function openAuthModal(mode) {
 
   setMode(['register', 'verify'].includes(mode) ? mode : 'login');
   (mode === 'verify' ? q('#amV') : q('#amU')).focus();
+}
+
+/* 用户名被 AI 判定违规（username_rejected）→ 改名弹层；
+   保存成功后名字回到 pending，下次评论时重新过审 */
+function openNameModal(reason) {
+  const ov = document.createElement('div');
+  ov.className = 'sh-ov';
+  ov.innerHTML = `<div class="sh-card am-card">
+    <div class="sh-head"><span>${esc(t('nm.title'))}</span><button class="sh-x" aria-label="close">✕</button></div>
+    <div class="am-hint">${esc(t('nm.why'))}${reason ? ' · ' + esc(reason) : ''}</div>
+    <input class="auth-in" id="nmU" type="text" maxlength="32" autocomplete="off" placeholder="${esc(t('nm.ph'))}">
+    <button class="auth-item auth-go" id="nmGo" type="button">${esc(t('nm.go'))}</button>
+    <div class="auth-err" id="nmErr" hidden></div>
+  </div>`;
+  document.body.appendChild(ov);
+  const q = (s) => ov.querySelector(s);
+  const onEsc = (e) => { if (e.key === 'Escape') close(); };
+  const close = () => { ov.remove(); document.removeEventListener('keydown', onEsc); };
+  q('.sh-x').onclick = close;
+  ov.addEventListener('click', (e) => { if (e.target === ov) close(); });
+  document.addEventListener('keydown', onEsc);
+  q('#nmU').value = (zk.user && zk.user.username) || '';
+  q('#nmU').focus();
+  const submit = async () => {
+    if (q('#nmGo').disabled) return;
+    q('#nmGo').disabled = true;
+    try {
+      await api('/auth/username', {
+        method: 'POST',
+        body: JSON.stringify({ username: q('#nmU').value.trim() })
+      });
+      await zkLoadUser(); renderAuthChip();
+      document.dispatchEvent(new CustomEvent('zk:auth'));
+      close(); return;
+    } catch (e) {
+      const el = q('#nmErr'); el.textContent = authErr(e); el.hidden = false;
+      q('#nmGo').disabled = false;
+    }
+  };
+  q('#nmGo').onclick = submit;
+  ov.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && e.target.tagName === 'INPUT') submit();
+  });
 }
 
 async function openFavs() {
