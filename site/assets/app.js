@@ -195,7 +195,9 @@ async function hydrateSocial() {
           btn.classList.toggle('on', !!on);
           const bb = btn.querySelector('b');
           bb.textContent = fmt(Math.max(0, (parseInt(bb.textContent.replace(/\D/g, '')) || 0) + (on ? 1 : -1)));
-        } catch { }
+        } catch (e) {
+          if (e.code === 'unverified_email') openAuthModal('verify');
+        }
         btn.disabled = false;
       };
     });

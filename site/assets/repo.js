@@ -676,7 +676,10 @@ async function loadSocial(d) {
       btn.classList.toggle('on', !!on);
       const b = btn.querySelector('b');
       b.textContent = fmt(Math.max(0, parseInt(b.textContent.replace(/\D/g, '') || '0') + (on ? 1 : -1)));
-    } catch { if (!zk.user) needLogin(); }
+    } catch (e) {
+      if (e.code === 'unverified_email') openAuthModal('verify');
+      else if (!zk.user) needLogin();
+    }
     btn.disabled = false;
   };
   $('#socLike').onclick = (e) => toggle('likes', e.currentTarget);
@@ -707,7 +710,10 @@ function renderCommentForm(d) {
       $('#cmText').value = '';
       $('#cmNote').textContent = t('cm.posted');
       loadComments(d);
-    } catch (e) { $('#cmNote').textContent = e.message || t('auth.err'); }
+    } catch (e) {
+      if (e.code === 'unverified_email') openAuthModal('verify');
+      else $('#cmNote').textContent = authErr(e);
+    }
     $('#cmPost').disabled = false;
   };
 }
@@ -749,7 +755,9 @@ async function loadComments(d) {
       if (b.dataset.act === 'del') await api(`/comments/${encodeURIComponent(id)}`, { method: 'DELETE' });
       else await api(`/comments/${encodeURIComponent(id)}/report`, { method: 'POST', body: JSON.stringify({ reason: '' }) });
       loadComments(d);
-    } catch { }
+    } catch (e) {
+      if (e.code === 'unverified_email') openAuthModal('verify');
+    }
   });
 }
 

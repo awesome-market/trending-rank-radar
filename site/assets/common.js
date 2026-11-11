@@ -43,6 +43,25 @@ const I18N = {
     'auth.pass': '密码（≥8位）', 'auth.register': '注册',
     'auth.emailonly': '邮箱', 'auth.err': '操作失败，请重试',
     'auth.toReg': '没有账号？注册', 'auth.toLogin': '已有账号？登陆',
+    'auth.e.username_taken': '用户名已被占用',
+    'auth.e.email_registered': '该邮箱已注册',
+    'auth.e.username_not_allowed': '用户名包含不允许的内容',
+    'auth.e.bad_credentials': '用户名或密码错误',
+    'auth.e.bad_code': '验证码不正确',
+    'auth.e.code_expired': '验证码已过期，请重新发送',
+    'auth.e.no_code': '请先获取验证码',
+    'auth.e.no_email': '账户未绑定邮箱',
+    'auth.e.mail_failed': '邮件发送失败，请稍后重试',
+    'auth.e.unverified_email': '请先验证邮箱',
+    'auth.e.cooldown': '发送太频繁，请稍候',
+    'auth.verify.title': '验证邮箱',
+    'auth.verify.hint': '验证码已发送至 {e}，请查收（含垃圾箱）',
+    'auth.verify.ph': '6 位验证码',
+    'auth.verify.go': '激活',
+    'auth.verify.ok': '邮箱已激活',
+    'auth.verify.resend': '重发邮件',
+    'auth.verify.wait': '{s} 秒后可重发',
+    'auth.verify.sent': '已重新发送',
     'soc.like': '点赞', 'soc.fav': '收藏', 'soc.views': '浏览',
     'fav.mine': '我的收藏', 'fav.empty': '还没有收藏，去榜单里点 ★',
     'cm.title': '评论', 'cm.ph': '写下你的评论…',
@@ -167,6 +186,25 @@ const I18N = {
     'auth.pass': 'Password (8+ chars)', 'auth.register': 'Sign up',
     'auth.emailonly': 'Email', 'auth.err': 'Failed, try again',
     'auth.toReg': 'No account? Sign up', 'auth.toLogin': 'Have an account? Sign in',
+    'auth.e.username_taken': 'Username already taken',
+    'auth.e.email_registered': 'Email already registered',
+    'auth.e.username_not_allowed': 'Username contains disallowed content',
+    'auth.e.bad_credentials': 'Wrong username or password',
+    'auth.e.bad_code': 'Incorrect code',
+    'auth.e.code_expired': 'Code expired — request a new one',
+    'auth.e.no_code': 'Request a code first',
+    'auth.e.no_email': 'No email bound to this account',
+    'auth.e.mail_failed': 'Mail failed to send — try again later',
+    'auth.e.unverified_email': 'Verify your email first',
+    'auth.e.cooldown': 'Sending too fast — wait a moment',
+    'auth.verify.title': 'Verify email',
+    'auth.verify.hint': 'Code sent to {e} — check spam too',
+    'auth.verify.ph': '6-digit code',
+    'auth.verify.go': 'Activate',
+    'auth.verify.ok': 'Email verified',
+    'auth.verify.resend': 'Resend email',
+    'auth.verify.wait': 'Resend in {s}s',
+    'auth.verify.sent': 'Sent again',
     'soc.like': 'Like', 'soc.fav': 'Favorite', 'soc.views': 'Views',
     'fav.mine': 'My favorites', 'fav.empty': 'Nothing saved yet — tap ★ on a row',
     'cm.title': 'Comments', 'cm.ph': 'Write a comment…',
@@ -408,11 +446,17 @@ async function api(path, opts = {}) {
   if (r.status === 204) return null;
   const d = await r.json().catch(() => ({}));
   if (!r.ok) {
-    const msg = typeof d.detail === 'string' ? d.detail
-      : Array.isArray(d.detail) && d.detail.length ? String(d.detail[0].msg || d.detail[0])
+    const det = d.detail;
+    const code = typeof det === 'string' && /^[a-z_]+$/.test(det) ? det
+      : det && typeof det === 'object' && det.code ? det.code : null;
+    const msg = typeof det === 'string' ? det
+      : det && typeof det === 'object' && det.msg ? String(det.msg)
+      : Array.isArray(det) && det.length ? String(det[0].msg || det[0])
       : `HTTP ${r.status}`;
     const e = new Error(msg);
-    e.status = r.status; throw e;
+    e.status = r.status; e.code = code;
+    if (det && det.retry_after) e.retryAfter = det.retry_after;
+    throw e;
   }
   return d;
 }
@@ -460,7 +504,16 @@ function renderAuthChip() {
   }
 }
 
-/* 登陆/注册弹层: mode = 'login' | 'register'，成功后渲染 chip 并派发 zk:auth */
+/* machine error code → localized string (falls back to raw message) */
+function authErr(e) {
+  const k = 'auth.e.' + (e && e.code ? e.code : '');
+  return (I18N[LANG] && I18N[LANG][k]) ?? I18N.zh[k]
+    ?? (e && e.message && !/^[a-z_]+$/.test(e.message) ? e.message : null)
+    ?? t('auth.err');
+}
+
+/* 登陆/注册/验证弹层: mode = 'login' | 'register' | 'verify'
+   register 成功 → 直接切 verify；未验证账户操作被 403 拦截时也开 verify */
 function openAuthModal(mode) {
   const ov = document.createElement('div');
   ov.className = 'sh-ov';
@@ -469,40 +522,88 @@ function openAuthModal(mode) {
     <a class="auth-item am-soc" href="${zkLoginUrl('github')}">GitHub</a>
     <a class="auth-item am-soc" href="${zkLoginUrl('google')}">Google</a>
     <div class="auth-sep am-sep">${esc(t('auth.email'))}</div>
+    <div class="am-hint" id="amHint" hidden></div>
     <input class="auth-in am-in" id="amU" type="text" autocomplete="username" placeholder="${esc(t('auth.user'))}">
     <input class="auth-in am-in" id="amE" type="email" autocomplete="email" placeholder="${esc(t('auth.emailonly'))}">
     <input class="auth-in am-in" id="amP" type="password" placeholder="${esc(t('auth.pass'))}">
+    <input class="auth-in am-in" id="amV" type="text" inputmode="numeric" maxlength="8"
+           autocomplete="one-time-code" placeholder="${esc(t('auth.verify.ph'))}" hidden>
     <button class="auth-item auth-go am-go" id="amGo" type="button"></button>
     <div class="auth-err" id="amErr" hidden></div>
+    <div class="am-sw"><a href="#" id="amRe" hidden></a></div>
     <div class="am-sw"><a href="#" id="amSw"></a></div>
   </div>`;
   document.body.appendChild(ov);
   const q = (s) => ov.querySelector(s);
+  let cdTimer = null;
   const onEsc = (e) => { if (e.key === 'Escape') close(); };
-  const close = () => { ov.remove(); document.removeEventListener('keydown', onEsc); };
+  const close = () => { ov.remove(); document.removeEventListener('keydown', onEsc); if (cdTimer) clearInterval(cdTimer); };
   q('.sh-x').onclick = close;
   ov.addEventListener('click', (e) => { if (e.target === ov) close(); });
   document.addEventListener('keydown', onEsc);
 
+  const startCd = (secs) => {
+    const a = q('#amRe'); let left = secs;
+    a.textContent = t('auth.verify.wait', { s: left }); a.style.pointerEvents = 'none';
+    if (cdTimer) clearInterval(cdTimer);
+    cdTimer = setInterval(() => {
+      left -= 1;
+      if (left <= 0) { clearInterval(cdTimer); cdTimer = null; a.textContent = t('auth.verify.resend'); a.style.pointerEvents = ''; }
+      else a.textContent = t('auth.verify.wait', { s: left });
+    }, 1000);
+  };
+
   const setMode = (m) => {
     mode = m;
-    const reg = m === 'register';
-    q('#amTitle').textContent = reg ? t('auth.register') : t('auth.login');
-    q('#amGo').textContent = reg ? t('auth.register') : t('auth.login');
+    const reg = m === 'register', ver = m === 'verify';
+    q('#amTitle').textContent = ver ? t('auth.verify.title')
+      : reg ? t('auth.register') : t('auth.login');
+    q('#amGo').textContent = ver ? t('auth.verify.go')
+      : reg ? t('auth.register') : t('auth.login');
+    ov.querySelectorAll('.am-soc').forEach(a => { a.hidden = ver; });
+    q('.am-sep').hidden = ver;
+    q('#amU').hidden = ver;
     q('#amE').hidden = !reg;
+    q('#amP').hidden = ver;
+    q('#amV').hidden = !ver;
+    q('#amHint').hidden = !ver;
+    q('#amRe').hidden = !ver;
+    q('#amSw').hidden = ver;
     q('#amP').autocomplete = reg ? 'new-password' : 'current-password';
-    q('#amSw').textContent = reg ? t('auth.toLogin') : t('auth.toReg');
+    if (ver) {
+      const em = (zk.user && zk.user.email) || '—';
+      q('#amHint').textContent = t('auth.verify.hint', { e: em });
+    }
     q('#amErr').hidden = true;
   };
   q('#amSw').onclick = (e) => {
     e.preventDefault();
     setMode(mode === 'register' ? 'login' : 'register');
   };
+  q('#amRe').onclick = async (e) => {
+    e.preventDefault();
+    const el2 = q('#amErr');
+    try {
+      const d = await api('/auth/resend', { method: 'POST', body: '{}' });
+      startCd(d.cooldown || 120);
+      el2.textContent = t('auth.verify.sent'); el2.hidden = false;
+    } catch (err) {
+      if (err.retryAfter) startCd(err.retryAfter);
+      el2.textContent = authErr(err); el2.hidden = false;
+    }
+  };
 
   const submit = async () => {
     if (q('#amGo').disabled) return;
     q('#amGo').disabled = true;
     try {
+      if (mode === 'verify') {
+        await api('/auth/verify', { method: 'POST', body: JSON.stringify({ code: q('#amV').value.trim() }) });
+        if (zk.user) { zk.user.email_verified = 1; }
+        document.dispatchEvent(new CustomEvent('zk:auth'));
+        close();
+        return;
+      }
       const body = mode === 'register'
         ? { username: q('#amU').value.trim(), email: q('#amE').value.trim(), password: q('#amP').value }
         : { identifier: q('#amU').value.trim(), password: q('#amP').value };
@@ -511,10 +612,11 @@ function openAuthModal(mode) {
       if (!d.token) throw new Error(t('auth.err'));
       zk.token = d.token; localStorage.setItem('zk_token', d.token);
       await zkLoadUser(); renderAuthChip(); document.dispatchEvent(new CustomEvent('zk:auth'));
+      if (mode === 'register' && d.verify) { setMode('verify'); q('#amGo').disabled = false; q('#amV').focus(); return; }
       close();
       return;
     } catch (e) {
-      const el2 = q('#amErr'); el2.textContent = e.message || t('auth.err'); el2.hidden = false;
+      const el2 = q('#amErr'); el2.textContent = authErr(e); el2.hidden = false;
     }
     q('#amGo').disabled = false;
   };
@@ -523,8 +625,8 @@ function openAuthModal(mode) {
     if (e.key === 'Enter' && e.target.tagName === 'INPUT') submit();
   });
 
-  setMode(mode === 'register' ? 'register' : 'login');
-  q('#amU').focus();
+  setMode(['register', 'verify'].includes(mode) ? mode : 'login');
+  (mode === 'verify' ? q('#amV') : q('#amU')).focus();
 }
 
 async function openFavs() {
