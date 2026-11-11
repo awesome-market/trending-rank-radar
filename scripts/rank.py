@@ -609,7 +609,13 @@ def inject_index_ssr(board: str, items: list, day: str,
     note = (f'<p style="color:var(--muted,#8b949e);font-size:13px;margin:0 4px 10px">'
             f'{_esc(day)} · {_bi(zh, en)} Top {len(items)} · '
             f'{_bi("每日快照", "daily snapshot")}</p>')
-    rows = (note + '<div class="rank-list">'
+    # same static board nav as the /b/* pages — the JS-rendered tab bar
+    # leaves #boardTabs empty for crawlers that don't execute scripts
+    nav = ('<p style="color:var(--muted,#8b949e);font-size:12px;margin:0 4px 8px">'
+           + " · ".join(f'<a href="b/{b}">{_esc(e2)}</a>'
+                        for b, (_, e2) in SSR_LABELS.items())
+           + "</p>")
+    rows = (note + nav + '<div class="rank-list">'
             + "".join(_ssr_row(e) for e in items) + "</div>")
     html, n1 = _inject(html, "SSR", rows)
 
