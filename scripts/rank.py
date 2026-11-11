@@ -415,9 +415,28 @@ def _ssr_news(items: list) -> str:
 SSR_BEGIN, SSR_END = "<!--SSR-->", "<!--/SSR-->"
 # landing-order fallback mirrors app.js (default board = 'daily')
 SSR_BOARDS = ("daily", "new", "total", "weekly", "monthly")
-SSR_LABELS = {"new": "新星榜", "debut": "首登榜", "total": "总榜",
-              "daily": "日飙升榜", "weekly": "周飙升榜", "monthly": "月飙升榜"}
+SSR_LABELS = {"new": ("新星榜", "New Repos"), "debut": ("首登榜", "Debut"),
+              "daily": ("日飙升榜", "Daily Growth"),
+              "daily_rate": ("日增速榜", "Daily Rate"),
+              "weekly": ("周飙升榜", "Weekly Growth"),
+              "weekly_rate": ("周增速榜", "Weekly Rate"),
+              "monthly": ("月飙升榜", "Monthly Growth"),
+              "monthly_rate": ("月增速榜", "Monthly Rate"),
+              "total": ("总榜", "All-Time"),
+              "daily_forks": ("日Fork榜", "Daily Forks"),
+              "daily_watchers": ("日Watch榜", "Daily Watchers")}
 SSR_TOP = 50
+
+
+def _bi(zh: str, en: str) -> str:
+    """Bilingual inline: both languages baked, CSS shows the active one
+    (html[lang] driven by common.js). Crawlers see and index both."""
+    return (f'<span class="i18n-zh">{_esc(zh)}</span>'
+            f'<span class="i18n-en">{_esc(en)}</span>')
+
+
+def _board_label(board: str) -> tuple[str, str]:
+    return SSR_LABELS.get(board, (board, board))
 
 
 def _ssr_row(e: dict) -> str:
@@ -496,9 +515,10 @@ def inject_index_ssr(board: str, items: list, day: str,
     path = SITE_DIR / "index.html"
     html = path.read_text(encoding="utf-8")
 
-    label = SSR_LABELS.get(board, board)
+    zh, en = _board_label(board)
     note = (f'<p style="color:var(--muted,#8b949e);font-size:13px;margin:0 4px 10px">'
-            f'{_esc(day)} · {_esc(label)} Top {len(items)} · 每日快照 / daily snapshot</p>')
+            f'{_esc(day)} · {_bi(zh, en)} Top {len(items)} · '
+            f'{_bi("每日快照", "daily snapshot")}</p>')
     rows = (note + '<div class="rank-list">'
             + "".join(_ssr_row(e) for e in items) + "</div>")
     html, n1 = _inject(html, "SSR", rows)
@@ -556,15 +576,12 @@ def render_lang_page(lang: str, slug: str, boards: dict, day: str,
     html = html.replace(
         '<meta property="og:url" content="https://zhuikan.com/">',
         f'<meta property="og:url" content="{_esc(url)}">')
-    for h in ("zh", "en", "x-default"):
-        html = html.replace(
-            f'<link rel="alternate" hreflang="{h}" href="https://zhuikan.com/">',
-            f'<link rel="alternate" hreflang="{h}" href="{_esc(url)}">')
     # SSR the language's daily board; month/year widgets don't apply here
     items = ((boards.get("daily") or {}).get("items") or [])[:SSR_TOP]
+    zh, en = _board_label("daily")
     note = (f'<p style="color:var(--muted,#8b949e);font-size:13px;margin:0 4px 10px">'
-            f'{_esc(day)} · {_esc(lang)} · {_esc(SSR_LABELS["daily"])} Top '
-            f'{len(items)} · daily snapshot</p>')
+            f'{_esc(day)} · {_esc(lang)} · {_bi(zh, en)} Top '
+            f'{len(items)} · {_bi("每日快照", "daily snapshot")}</p>')
     html, _ = _inject(html, "SSR",
                       note + '<div class="rank-list">'
                       + "".join(_ssr_row(e) for e in items) + "</div>")
@@ -579,6 +596,75 @@ def render_lang_page(lang: str, slug: str, boards: dict, day: str,
                         'href="../manifest.webmanifest"')
     for leaf in ("feed.xml", "llms.txt", "sitemap.xml"):
         html = html.replace(f'href="{leaf}"', f'href="../{leaf}"')
+    return html
+
+
+# ---------------- per-board static pages ----------------
+# /b/<board> (latest day) and /b/<board>/<date> — gives every board state a
+# real URL for search engines. Same index.html skeleton + SSR'd rows +
+# data-board/data-sel attrs so app.js hydrates into the exact same view.
+
+def render_board_page(board: str, day: str, items: list, days: list,
+                      template: str, base: str, rel: str,
+                      dated: bool = True) -> str:
+    """day = content date; dated=False → canonical /b/<board> (latest-day entry)."""
+    zh, en = _board_label(board)
+    url = f"{base}/b/{board}" + (f"/{day}" if dated else "")
+    html = template.replace(
+        "<body>",
+        f'<body data-base="{rel}" data-board="{_esc(board)}"'
+        f' data-sel="{_esc(day)}">', 1)
+    title = f"{zh} · {day} · GitHub 开源项目趋势榜单 · GitHub Trending Rank Radar"
+    html = re.sub(r"<title>.*?</title>",
+                  lambda _: f"<title>{_esc(title)}</title>",
+                  html, count=1, flags=re.S)
+    desc = (f"{day} {zh} GitHub 开源项目 Top {len(items)} · "
+            f"{en} top {len(items)} trending GitHub repos · "
+            "独立采集 GitHub 仓库数据的开源趋势榜单 · "
+            "Independent open-source GitHub trend radar.")
+    html = re.sub(r'<meta name="description" content="[^"]*">',
+                  f'<meta name="description" content="{_esc(desc)}">',
+                  html, count=1)
+    html = html.replace(
+        '<link rel="canonical" href="https://zhuikan.com/">',
+        f'<link rel="canonical" href="{_esc(url)}">')
+    html = html.replace(
+        '<meta property="og:url" content="https://zhuikan.com/">',
+        f'<meta property="og:url" content="{_esc(url)}">')
+
+    # static nav so crawlers can traverse the whole board/date graph;
+    # app.js replaces the block on hydrate anyway
+    nav_boards = " · ".join(
+        f'<a href="{rel}b/{b}">{_esc(e2)}</a>'
+        for b, (_, e2) in SSR_LABELS.items())
+    i = days.index(day) if day in days else -1
+    prev_next = []
+    if i > 0:
+        prev_next.append(f'<a href="{rel}b/{board}/{days[i - 1]}">← {days[i - 1]}</a>')
+    if 0 <= i < len(days) - 1:
+        prev_next.append(f'<a href="{rel}b/{board}/{days[i + 1]}">{days[i + 1]} →</a>')
+    nav = (f'<p style="color:var(--muted,#8b949e);font-size:12px;margin:0 4px 8px">'
+           + (" | ".join(prev_next) + " · " if prev_next else "")
+           + nav_boards + "</p>")
+
+    note = (f'<p style="color:var(--muted,#8b949e);font-size:13px;margin:0 4px 10px">'
+            f'{_esc(day)} · {_bi(zh, en)} Top {len(items)} · '
+            f'{_bi("每日快照", "daily snapshot")}</p>')
+    html, _ = _inject(html, "SSR",
+                      nav + note + '<div class="rank-list">'
+                      + "".join(_ssr_row(e) for e in items) + "</div>")
+    html, _ = _inject(html, "SSRMT", "")
+    html, _ = _inject(html, "SSRMG", "")
+    # prefix every root-relative ref for this page's depth (covers the
+    # injected rows' repos/ links too since they were just injected)
+    html = html.replace('"assets/', f'"{rel}assets/')
+    html = html.replace('href="repos/', f'href="{rel}repos/')
+    html = html.replace('href="data/', f'href="{rel}data/')
+    html = html.replace('href="manifest.webmanifest"',
+                        f'href="{rel}manifest.webmanifest"')
+    html = html.replace('href="b/', f'href="{rel}b/')
+    for leaf in ("feed.xml", "llms.txt", "sitemap.xml"):
+        html = html.replace(f'href="{leaf}"', f'href="{rel}{leaf}"')
     return html
 
 
@@ -658,10 +744,7 @@ def render_repo_page(p: dict, template: str, base: str) -> str:
                  lambda m: f'<meta name="description" content="{_esc(desc)}">', out, count=1)
     out = out.replace('<meta name="robots" content="noindex,follow">',
                       f'<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">\n'
-                      f'<meta name="keywords" content="{_esc(keywords)}">\n'
-                      f'<link rel="alternate" hreflang="zh" href="{_esc(canon)}">\n'
-                      f'<link rel="alternate" hreflang="en" href="{_esc(canon)}">\n'
-                      f'<link rel="alternate" hreflang="x-default" href="{_esc(canon)}">')
+                      f'<meta name="keywords" content="{_esc(keywords)}">')
     out = re.sub(r'<link rel="canonical" href="[^"]*">',
                  lambda m: f'<link rel="canonical" href="{_esc(canon)}">', out, count=1)
     out = re.sub(r'<meta property="og:title" content="[^"]*">',
@@ -922,6 +1005,15 @@ def main() -> int:
     months_present = sorted({x[:7] for x in days})
     years_present = sorted({x[:4] for x in days})
 
+    base_url = args.site_base.rstrip("/")
+    tpl_index = (SITE_DIR / "index.html").read_text(encoding="utf-8")
+    bdir = SITE_DIR / "b"
+    # drop stale /b pages beyond current history (e.g. after data pruning)
+    if bdir.is_dir():
+        for stale_html in bdir.glob("*/*.html"):
+            if stale_html.stem not in set(days) and stale_html.stem != "index":
+                stale_html.unlink()
+
     # ---------------- per-day boards ----------------
     daily_top10: dict[str, list] = {}   # month -> [{date, items}]
     month_end_day: dict[str, str] = {}
@@ -948,6 +1040,15 @@ def main() -> int:
         }
         (SITE_DATA / "days" / f"{day}.json").write_text(
             json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+        # per-board static page: /b/<board>/<date>
+        for b in ALL_BOARDS:
+            items = (boards.get(b) or {}).get("items") or []
+            if items:
+                (bdir / b).mkdir(parents=True, exist_ok=True)
+                (bdir / b / f"{day}.html").write_text(
+                    render_board_page(b, day, items, days, tpl_index,
+                                      base_url, "../../"), encoding="utf-8")
 
         # collect daily-board top10 for the month summary
         top10 = []
@@ -1014,6 +1115,16 @@ def main() -> int:
     # ---------------- per-repo detail files ----------------
     latest_day = days[-1]
     latest_boards = boards   # last day-loop payload already includes "debut"
+
+    # latest-day board entry pages: /b/<board> (canonical, undated)
+    for b in ALL_BOARDS:
+        items = (latest_boards.get(b) or {}).get("items") or []
+        if items:
+            (bdir / f"{b}.html").write_text(
+                render_board_page(b, latest_day, items, days, tpl_index,
+                                  base_url, "../", dated=False),
+                encoding="utf-8")
+
     placements: dict[str, dict] = {}
     for b, blk in latest_boards.items():
         for e in blk.get("items", []):
@@ -1164,8 +1275,6 @@ def main() -> int:
     except Exception as e:
         log(f"[warn] index SSR failed: {e}")
 
-    base_url = args.site_base.rstrip("/")
-
     # ---------------- per-language static pages ----------------
     lang_count: Counter = Counter()
     for t in detail_repos.values():
@@ -1226,10 +1335,14 @@ def main() -> int:
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
                f"  <url><loc>{base}/</loc><lastmod>{latest_day}</lastmod></url>"]
-    # board entry points (query params) — cheap SEO surface
+    # board entry points — latest-day page + every dated page (real URLs)
     for b in ALL_BOARDS:
-        sitemap.append(f"  <url><loc>{base}/?board={b}</loc>"
-                       f"<lastmod>{latest_day}</lastmod></url>")
+        if (bdir / f"{b}.html").exists():
+            sitemap.append(f"  <url><loc>{base}/b/{b}</loc>"
+                           f"<lastmod>{latest_day}</lastmod></url>")
+        for f in sorted((bdir / b).glob("*.html")) if (bdir / b).is_dir() else []:
+            sitemap.append(f"  <url><loc>{base}/b/{b}/{f.stem}</loc>"
+                           f"<lastmod>{f.stem}</lastmod></url>")
     # per-language static pages
     for lm in langs_meta:
         sitemap.append(f"  <url><loc>{base}/langs/{lm['slug']}</loc>"

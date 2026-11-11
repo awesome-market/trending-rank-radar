@@ -439,6 +439,10 @@ function readURL() {
   const p = new URLSearchParams(location.search);
   state.period = ['day', 'month', 'year'].includes(p.get('period')) ? p.get('period') : 'day';
   state.sel = p.get('sel');
+  // /b/<board>[/<date>] static pages carry their target in body data-attrs
+  const bb = document.body.dataset.board, bs = document.body.dataset.sel;
+  if (bb && BOARD_ORDER.includes(bb)) state.board = bb;
+  if (bs) state.sel = bs;
   state.minK = Math.max(0, parseInt(p.get('min') || '1', 10) || 0);
   state.maxK = Math.max(0, parseInt(p.get('max') || '500', 10) || 0);
   const b = p.get('board');
