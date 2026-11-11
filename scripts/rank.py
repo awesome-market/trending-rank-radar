@@ -25,6 +25,7 @@ import json
 import os
 import re
 import sys
+import urllib.request
 from bisect import bisect_left, bisect_right
 from collections import Counter
 from datetime import date, datetime, timedelta, timezone
@@ -355,8 +356,79 @@ def _ssr_repo(p: dict) -> str:
 <section class="rp-panel card"><div class="rp-metric-grid">{mets}</div>
 {readme_html}{sec_i}{sec_d}{rel_html}</section>
 {news_html}
+{_ssr_comments(p.get('cm_items'))}
 <p class="rp-meta">Snapshot: {_esc(p.get('snapshot_at'))} · Data license Apache-2.0 ·
 <a href="../data/repos/{_esc(p['owner'])}__{_esc(p['name'])}.json">JSON</a></p>"""
+
+
+def _fetch_comments() -> dict[str, list]:
+    """Approved-comment snapshot for SSR, one bulk call to zhuikan-api.
+    Crawlers/no-JS clients get the build-time snapshot; repo.js hydration
+    overwrites it with live API data on load. Failure → empty map (comments
+    are additive content, never worth failing the whole build over)."""
+    api = os.environ.get("ZK_API_BASE", "https://api-site.zhuikan.com")
+    try:
+        req = urllib.request.Request(
+            f"{api.rstrip('/')}/comments/all_approved?site=github",
+            headers={"User-Agent": "trending-rank-radar-build"})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return json.loads(resp.read()).get("items") or {}
+    except Exception as e:
+        log(f"comments fetch failed ({e}) — pages render without SSR comments")
+        return {}
+
+
+def _ssr_comments(items: list) -> str:
+    """Static comment tree mirroring repo.js loadComments(): newest top-level
+    first, replies nested under .cm-kids (indent capped at two levels).
+    Interactive bits (buttons, pending badges, translations) are omitted —
+    hydration replaces this whole block with the live rendering anyway."""
+    if not items:
+        return ""
+    by_id = {c["id"]: c for c in items}
+    kids: dict[int, list] = {}
+    tops = []
+    for c in items:
+        pid = c.get("parent_id")
+        if pid and pid in by_id:
+            kids.setdefault(pid, []).append(c)
+        else:
+            tops.append(c)
+    tops.sort(key=lambda c: c["id"], reverse=True)
+
+    def row(c: dict) -> str:
+        av = (f'<img class="cm-av" src="{_esc(c["avatar_url"])}" width="24" '
+              f'height="24" alt="" loading="lazy">'
+              if c.get("avatar_url") else '<span class="cm-av cm-av-ph"></span>')
+        pid = c.get("parent_id")
+        p = by_id.get(pid) if pid else None
+        rt = (f'<span class="cm-rt">↳ '
+              f'{_esc(p.get("display_name") or p.get("username") or "")}</span>'
+              if p else "")
+        ts = c.get("created_at")
+        try:
+            when = datetime.fromtimestamp(int(ts), UTC).strftime("%Y-%m-%d")
+        except (TypeError, ValueError):
+            when = ""
+        return (f'<div class="cm-item" data-id="{_esc(str(c["id"]))}">{av}'
+                f'<div class="cm-main"><div class="cm-head">'
+                f'<b>{_esc(c.get("display_name") or c.get("username") or "")}</b>'
+                f'<span class="cm-time">{when}</span>{rt}</div>'
+                f'<div class="cm-body">{_esc(c.get("body") or "")}</div>'
+                f'</div></div>')
+
+    def tree(c: dict, depth: int) -> str:
+        cs = sorted(kids.get(c["id"], []), key=lambda k: k["id"])
+        ind = min(depth + 1, 2)
+        inner = "".join(tree(k, ind) for k in cs)
+        return (row(c) + f'<div class="cm-kids"'
+                + (' data-flat' if ind >= 2 else '')
+                + f'>{inner}</div>' if inner else row(c))
+
+    body = "".join(tree(c, 0) for c in tops)
+    return (f'<section class="rp-panel card rp-cm-ssr">'
+            f'<h3 class="rp-ph">评论 ({len(items)})</h3>'
+            f'<div class="rp-cm-list">{body}</div></section>')
 
 
 def _load_news(owner: str, repo: str) -> list:
@@ -1154,6 +1226,7 @@ def main() -> int:
     pages_out.mkdir(parents=True, exist_ok=True)
     repo_tpl = (SITE_DIR / "repo.html").read_text(encoding="utf-8")
     base = args.site_base.rstrip("/")
+    cm_map = _fetch_comments()
     detail_count = 0
     search_idx: list[dict] = []
     news_idx: list[dict] = []
@@ -1247,7 +1320,8 @@ def main() -> int:
             (readme_out / f"{owner}__{repo}.zh.md").write_text(
                 readme_zh_txt, encoding="utf-8")
         # SSR gets the raw text (Chinese preferred — site default lang is zh)
-        ssr_payload = dict(payload, readme_excerpt=readme_zh_txt or readme_txt)
+        ssr_payload = dict(payload, readme_excerpt=readme_zh_txt or readme_txt,
+                           cm_items=cm_map.get(name) or [])
         page_html = render_repo_page(ssr_payload, repo_tpl, base)
         (pages_out / f"{owner}__{repo}.html").write_text(page_html, encoding="utf-8")
 
