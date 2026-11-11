@@ -18,8 +18,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
   issues: write
 
 jobs:
@@ -69,6 +67,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/ site/
           git diff --cached --quiet || git commit -m "data: snapshot $(date -u +%FT%H:%MZ)"
+          PRE=$(git rev-parse HEAD)
           if ! git pull --rebase origin main; then
             # 冲突只可能出现在可再生成的文件（site/data、sitemap、robots）上：
             # 取远端版本（rebase 中 --ours 指向 rebase 目标=上游），继续后再重建，
@@ -76,6 +75,12 @@ jobs:
             git status --porcelain | awk '$1=="UU"||$1=="AA"{print $2}' | xargs -r git checkout --ours
             git status --porcelain | awk '$1=="UU"||$1=="AA"{print $2}' | xargs -r git add
             GIT_EDITOR=true git rebase --continue
+            python scripts/rank.py --site-base "${{ vars.SITE_BASE }}"
+            git add data/ site/
+            git diff --cached --quiet || git commit -m "data: rebuild after rebase"
+          elif ! git diff --quiet "$PRE" HEAD -- data/; then
+            # 干净 rebase：远端（如救援机）推了新的采集数据进来，而本地
+            # site/data 是 rebase 前生成的——重建保证产物与合并后的 data/ 一致
             python scripts/rank.py --site-base "${{ vars.SITE_BASE }}"
             git add data/ site/
             git diff --cached --quiet || git commit -m "data: rebuild after rebase"

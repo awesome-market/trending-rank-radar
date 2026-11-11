@@ -107,6 +107,12 @@ def log(msg: str) -> None:
     print(f"[news {datetime.now():%H:%M:%S}] {msg}", flush=True)
 
 
+def _atomic_write(path: Path, text: str) -> None:
+    tmp = path.with_name(path.name + ".tmp")
+    tmp.write_text(text, encoding="utf-8")
+    tmp.replace(path)
+
+
 def _get(url: str, tries: int = 2, headers: dict | None = None) -> bytes:
     for i in range(tries):
         try:
@@ -341,8 +347,8 @@ def main() -> int:
             .strftime("%Y-%m-%dT%H:%M:%SZ"),
             "items": merged,
         }
-        path.write_text(json.dumps(payload, ensure_ascii=False, indent=1)
-                        + "\n", encoding="utf-8")
+        _atomic_write(path, json.dumps(payload, ensure_ascii=False, indent=1)
+                      + "\n")
         return 1, errs
 
     updated = kept = errs = done = 0
