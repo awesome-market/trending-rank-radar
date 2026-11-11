@@ -740,11 +740,15 @@ function cmRow(c) {
     </span>`;
   // API 字段是 unix 秒；容忍 ISO 字符串，坏值交给 timeAgo 返回空串
   const ts = typeof c.created_at === 'number' ? new Date(c.created_at * 1000) : new Date(c.created_at);
+  // 评论语言 ≠ 界面语言时附 AI 译文行（body_lang 为空/other 无译文）
+  const tr = (c.body_lang && c.body_lang !== 'other'
+    && c.body_lang !== LANG && c.body_t)
+    ? `<div class="cm-body cm-tr"><span class="cm-tr-tag">${esc(t('cm.ai'))}</span>${esc(c.body_t)}</div>` : '';
   return `<div class="cm-item" data-id="${esc(c.id)}">${av}
     <div class="cm-main">
       <div class="cm-head"><b>${esc(c.display_name || c.username)}</b>
         <span class="cm-time">${timeAgo(ts)}</span>${pend}${acts}</div>
-      <div class="cm-body">${esc(c.body)}</div>
+      <div class="cm-body">${esc(c.body)}</div>${tr}
     </div></div>`;
 }
 
