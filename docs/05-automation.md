@@ -8,12 +8,13 @@ trending-rank-radar/
 ├── scripts/               # Python 3 标准库，零第三方依赖
 │   ├── gh.py              # GitHub API 客户端（trending/search/graphql/rest + 重试）
 │   ├── collect.py         # Discovery + 快照主流程
-│   ├── rank.py            # 快照 → 八榜 + 日/月/年聚合 → site/data/*.json
+│   ├── rank.py            # 快照 → 11 榜 + 日/月/年聚合 → site/data/*.json
 │   └── build.py           # （可选）HTML 模板渲染；v1 可由 rank.py 直接产出
-├── site/                  # 生成的静态站（Pages 部署源，Actions artifact）
+├── site/                  # 静态站：源码模板+资产入库；data/repos/langs 等产物
+│                          #   不入库（.gitignore），rank.py 每轮现场重建再发布
 │   ├── index.html
 │   ├── assets/
-│   └── data/              # 生成物，不手改
+│   └── data/              # 生成物，不手改、不入库
 ├── data/                  # 采集数据（提交进 git，构成历史档案）
 │   ├── snapshots/YYYY-MM-DDTHH.json
 │   ├── watchlist.json
@@ -37,7 +38,7 @@ on:
     - cron: '0 8 * * 0'         # 周日：news.py --all 全量回填
   workflow_dispatch:            # inputs: at（补录时间戳）/ deploy_only（只发布 site/）
 
-permissions: { contents: write }   # 只需提交 data/ 与 site/；wrangler 用 token 不走 OIDC
+permissions: { contents: write }   # 只需提交 data/；wrangler 用 token 不走 OIDC
 
 jobs:
   update:
@@ -49,10 +50,12 @@ jobs:
       - Collect snapshot        # collect.py；GITHUB_TOKEN + SNAPSHOT_AT
       - Fetch repo news         # news.py --all（周日）/ --board；continue-on-error
       - Report trending status  # ci_rescue.py → rescue issue（deploy_only 跳过）
-      - Rebuild rankings        # rank.py --site-base $SITE_BASE
-      - Commit data updates     # add data/ site/ → commit → pull --rebase → push；
-                                #   rebase 冲突取远端版本重跑 rank；干净 rebase 但
-                                #   data/ 有上游变更时也重跑 rank 保证 site/ 一致
+      - Rebuild rankings        # rank.py --site-base $SITE_BASE（deploy_only 也跑：
+                                #   site/ 不入库，发布前必须现场重建）
+      - Commit data updates     # git add -A（site/ 产物被 .gitignore 排除，只落 data/）
+                                #   → commit → pull --rebase → push；rebase 冲突取远端
+                                #   版本重跑 rank；干净 rebase 但 data/ 有上游变更时
+                                #   也重跑 rank 保证发布产物与 data/ 一致
       - Push gh-pages backup    # site/ → gh-pages 分支（冷备镜像，非主部署）
       - Deploy Cloudflare Pages # wrangler pages deploy ./site --project-name=zhuikan；
                                 #   部署前校验 /tmp/ghp-site/index.html 存在
@@ -62,10 +65,10 @@ jobs:
 要点：
 
 - `GITHUB_TOKEN` 在 Actions 内自动可用：**REST core 1000 req/hr、GraphQL 5000 points/hr、Search API 30 req/min**——日更 2 次够用，无需额外 secret。
-- `workflow_dispatch` 输入：`at` 补录历史快照时间戳；`deploy_only` 跳过采集/重建/提交直接发布 `site/`（救援通道与纯 UI 改动用，~90 秒）。
+- `workflow_dispatch` 输入：`at` 补录历史快照时间戳；`deploy_only` 跳过采集/提交，重建 `site/` 后发布（救援通道与纯 UI 改动用）。
 - Collect 后 `ci_rescue.py` 读 `run_status.json`：trending 全败则开 `rescue` issue 交给离线救援通道（[07-rescue.md](07-rescue.md)）；`rescue-report.yml` 是救援服务器回写 issue 的中继工作流（bot 身份）。
 - "Commit data updates" 的 `git pull --rebase` 带自愈：生成文件冲突时取远端版本重跑 `rank.py`；干净 rebase 但 `data/` 有上游新快照时同样重建 `site/`。
-- 数据与站点产物**直接提交回 main**，仓库本身就是数据档案。
+- **只有 `data/` 提交回 main**（仓库即数据档案）；`site/` 产物由 rank.py 现场重建后走 gh-pages 推送 + CF 部署，不入版本控制——否则 ~5900 个页面每日全量重写会让 .git 无限膨胀。
 - 幂等性：同一 CST 日第二次运行生成新时间戳文件，`rank.py` 按"当天最后一次"归日。
 
 ### 部署：Cloudflare Pages 主 + gh-pages 冷备

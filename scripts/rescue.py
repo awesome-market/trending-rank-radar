@@ -82,7 +82,7 @@ def attempt(issue: dict, token: str, log_tail: list[str]) -> None:
     run(["git", "reset", "--hard", "origin/main"], log_tail)
     run([sys.executable, "scripts/collect.py"], log_tail, env=env)
     run([sys.executable, "scripts/rank.py", "--site-base", SITE_BASE], log_tail)
-    run(["git", "add", "data/", "site/"], log_tail)
+    run(["git", "add", "-A"], log_tail)  # site/ 产物已不入库，只提交 data/
     p = subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT,
                        capture_output=True, text=True)
     if p.returncode not in (0, 1):

@@ -19,5 +19,16 @@ rescue.log
 .readme_backfill_ckpt.json
 *.tmp
 
+# generated site artifacts — rebuilt by scripts/rank.py every run, served from
+# the deployed site; keeping them out of version control stops ~300M of daily
+# churn in git history. Sources that stay tracked: index.html, repo.html,
+# assets/, langs templates, CNAME, manifest.webmanifest, llms.txt
+site/data/
+site/repos/
+site/langs/
+site/sitemap.xml
+site/feed.xml
+site/robots.txt
+
 # one-off discoverhub.cn archive scrape — script + data, never committed
 docs/discoverhub/
