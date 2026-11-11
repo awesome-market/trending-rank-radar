@@ -186,11 +186,12 @@ jobs:
           DATA_UPLOAD_TOKEN: ${{ secrets.DATA_UPLOAD_TOKEN }}
         run: |
           python3 scripts/pack_data.py
-          SHA=$(sha256sum site-data.db | cut -d' ' -f1)
+          gzip -9 -c site-data.db > site-data.db.gz   # 188MB → ~57MB on the wire
+          SHA=$(sha256sum site-data.db.gz | cut -d' ' -f1)
           RESP=$(curl -fsS -X POST "https://api-site.zhuikan.com/data-upload" \
             -H "Authorization: Bearer $DATA_UPLOAD_TOKEN" \
             -H "Content-Type: application/octet-stream" \
-            --data-binary @site-data.db)
+            --data-binary @site-data.db.gz)
           echo "$RESP"
           echo "$RESP" | grep -q "$SHA" || \
             { echo "::error::sha256 mismatch — upload corrupted"; exit 1; }
