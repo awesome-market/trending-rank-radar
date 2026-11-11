@@ -66,7 +66,7 @@ const I18N = {
     'auth.verify.ph': '6 位验证码',
     'auth.verify.go': '激活',
     'auth.verify.ok': '邮箱已激活',
-    'auth.verify.resend': '重发邮件',
+    'auth.verify.resend': '重发激活邮件',
     'auth.verify.wait': '{s} 秒后可重发',
     'auth.verify.sent': '已重新发送',
     'soc.like': '点赞', 'soc.fav': '收藏', 'soc.views': '浏览',
@@ -216,7 +216,7 @@ const I18N = {
     'auth.verify.ph': '6-digit code',
     'auth.verify.go': 'Activate',
     'auth.verify.ok': 'Email verified',
-    'auth.verify.resend': 'Resend email',
+    'auth.verify.resend': 'Resend activation email',
     'auth.verify.wait': 'Resend in {s}s',
     'auth.verify.sent': 'Sent again',
     'soc.like': 'Like', 'soc.fav': 'Favorite', 'soc.views': 'Views',
@@ -544,7 +544,7 @@ function openAuthModal(mode) {
            autocomplete="one-time-code" placeholder="${esc(t('auth.verify.ph'))}" hidden>
     <button class="auth-item auth-go am-go" id="amGo" type="button"></button>
     <div class="auth-err" id="amErr" hidden></div>
-    <div class="am-sw"><a href="#" id="amRe" hidden></a></div>
+    <button class="am-re" id="amRe" type="button" hidden></button>
     <div class="am-sw"><a href="#" id="amSw"></a></div>
   </div>`;
   document.body.appendChild(ov);
@@ -558,11 +558,12 @@ function openAuthModal(mode) {
 
   const startCd = (secs) => {
     const a = q('#amRe'); let left = secs;
-    a.textContent = t('auth.verify.wait', { s: left }); a.style.pointerEvents = 'none';
+    a.disabled = true;
+    a.textContent = t('auth.verify.wait', { s: left });
     if (cdTimer) clearInterval(cdTimer);
     cdTimer = setInterval(() => {
       left -= 1;
-      if (left <= 0) { clearInterval(cdTimer); cdTimer = null; a.textContent = t('auth.verify.resend'); a.style.pointerEvents = ''; }
+      if (left <= 0) { clearInterval(cdTimer); cdTimer = null; a.disabled = false; a.textContent = t('auth.verify.resend'); }
       else a.textContent = t('auth.verify.wait', { s: left });
     }, 1000);
   };
@@ -588,6 +589,7 @@ function openAuthModal(mode) {
     if (ver) {
       const em = (zk.user && zk.user.email) || '—';
       q('#amHint').textContent = t('auth.verify.hint', { e: em });
+      if (!cdTimer) q('#amRe').textContent = t('auth.verify.resend');
     }
     q('#amErr').hidden = true;
   };
@@ -627,7 +629,7 @@ function openAuthModal(mode) {
       if (!d.token) throw new Error(t('auth.err'));
       zk.token = d.token; localStorage.setItem('zk_token', d.token);
       await zkLoadUser(); renderAuthChip(); document.dispatchEvent(new CustomEvent('zk:auth'));
-      if (mode === 'register' && d.verify) { setMode('verify'); q('#amGo').disabled = false; q('#amV').focus(); return; }
+      if (mode === 'register' && d.verify) { setMode('verify'); startCd(120); q('#amGo').disabled = false; q('#amV').focus(); return; }
       close();
       return;
     } catch (e) {

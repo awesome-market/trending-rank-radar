@@ -1176,6 +1176,14 @@ html[lang="en"] .i18n-en { display: inline; }
 .am-sep { margin-top: 8px; }
 .am-in { margin-bottom: 10px; }
 .am-go { display: block; width: fit-content; min-width: 110px; margin-left: auto; padding: 9px 22px; text-align: center; }
+.am-re {
+  width: 100%; margin-top: 10px; padding: 8px 10px; font-size: 13px;
+  color: var(--text-dim); background: var(--bg);
+  border: 1px solid var(--card-border); border-radius: 6px;
+  cursor: pointer; font-family: var(--font); box-sizing: border-box;
+}
+.am-re:hover:not(:disabled) { border-color: var(--card-border-hi); color: var(--text); }
+.am-re:disabled { opacity: .55; cursor: not-allowed; }
 .am-sw { margin-top: 12px; text-align: center; }
 .am-sw a { color: var(--accent); font-size: 12.5px; text-decoration: none; }
 .am-sw a:hover { text-decoration: underline; }
