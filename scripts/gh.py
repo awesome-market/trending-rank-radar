@@ -146,6 +146,11 @@ class TrendingParser(HTMLParser):
     REPO_HREF = re.compile(r"^/([A-Za-z0-9_.-]+)/([A-Za-z0-9_.-]+)/?$")
     TODAY_RE = re.compile(r"([\d,]+)\s+stars\s+today", re.I)
     NUM_RE = re.compile(r"[\d,]+")
+    # void elements never get end tags — counting them in capture depth
+    # would leak the capture past the closing tag and swallow the rest
+    # of the article's text into the field
+    VOID_TAGS = frozenset(
+        "area base br col embed hr img input link meta source track wbr".split())
 
     def __init__(self) -> None:
         super().__init__(convert_charrefs=True)
@@ -192,7 +197,8 @@ class TrendingParser(HTMLParser):
         cls = a.get("class", "") or ""
 
         if self._capture:
-            self._cap_depth += 1
+            if tag not in self.VOID_TAGS:
+                self._cap_depth += 1
             return
 
         if tag == "article" and "Box-row" in cls.split():

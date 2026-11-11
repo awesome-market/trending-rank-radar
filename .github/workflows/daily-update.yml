@@ -77,8 +77,8 @@ jobs:
             # 冲突只可能出现在可再生成的文件（site/data、sitemap、robots）上：
             # 取远端版本（rebase 中 --ours 指向 rebase 目标=上游），继续后再重建，
             # 保证生成产物与合并后的 data/ 一致
-            git status --porcelain | awk '$1=="UU"||$1=="AA"{print $2}' | xargs -r git checkout --ours
-            git status --porcelain | awk '$1=="UU"||$1=="AA"{print $2}' | xargs -r git add
+            git status --porcelain | awk '$1 ~ /^(UU|AA|DD|AU|UA|DU|UD)$/{print $2}' | xargs -r git checkout --ours
+            git status --porcelain | awk '$1 ~ /^(UU|AA|DD|AU|UA|DU|UD)$/{print $2}' | xargs -r git add
             GIT_EDITOR=true git rebase --continue
             python scripts/rank.py --site-base "${{ vars.SITE_BASE }}"
             git add -A

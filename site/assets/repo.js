@@ -662,7 +662,7 @@ async function loadSocial(d) {
   if (!el) return;
   const needLogin = () => openAuthModal('login');
   let s = { views: 0, likes: 0, favs: 0, comments: 0, viewer: {} };
-  try { s = await api(`/items/github/${encodeURIComponent(d.full_name)}/social`); } catch { }
+  try { s = await api(`/items/github/social/${encodeURIComponent(d.full_name)}`); } catch { }
   const sv = s.viewer || {};
   const m = d.metrics || {};
   const views = Math.round((m.watchers || 0) * 2 + (m.forks || 0) * 0.5 + (s.views || 0));

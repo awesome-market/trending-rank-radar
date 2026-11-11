@@ -204,7 +204,10 @@ def _growth_over_days(days: int) -> dict[str, int]:
         diff = abs((dt - target).total_seconds())
         if best_dt is None or diff < best_dt:
             best, best_dt = f, diff
-    if best is None:
+    # reject a file that's wildly off the window — with sparse data the
+    # "closest" file could be months old and its growth numbers would then
+    # masquerade as e.g. 14-day growth in the eviction check below
+    if best is None or best_dt > days * 86400 * 1.5:
         return {}
     old = _snapshot_stars(best)
     return {n: latest.get(n, 0) - old.get(n, 0) for n in latest}
@@ -433,7 +436,7 @@ def write_repo_meta(metrics: dict[str, dict]) -> int:
             meta["detail"] = detail
         if existing == meta:
             continue
-        path.write_text(json.dumps(meta, ensure_ascii=False), encoding="utf-8")
+        _atomic_write(path, json.dumps(meta, ensure_ascii=False))
         written += 1
     return written
 
