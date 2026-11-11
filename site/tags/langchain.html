@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#langchain · GitHub Trending Rank Radar</title>
+<meta name="description" content="GitHub 标签 langchain 下的开源项目趋势榜 · 25 repos tagged langchain on GitHub · 独立采集 GitHub 仓库数据的开源趋势榜单">
+<meta name="keywords" content="GitHub trending, GitHub ranking, GitHub 排行榜, 开源榜单, trending repos, star growth, star history, 星标增长, github stars, open data, github pages, github actions, 开源项目, open source rankings">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/tags/langchain">
+<!-- bilingual content lives on ONE url — no per-lang alternates to declare -->
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="GitHub Trending Rank Radar" href="../feed.xml">
+<meta property="og:title" content="GitHub Trending Rank Radar">
+<meta property="og:description" content="GitHub 开源项目趋势榜单 · 每日双快照 · 十一榜单 · 历史回看 | Independent GitHub trend radar · twice-daily snapshots · 11 boards · bilingual">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zhuikan.com/tags/langchain">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zhuikan.com/assets/og.png">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "GitHub Trending Rank Radar",
+      "alternateName": "GitHub 开源项目趋势榜单",
+      "url": "https://zhuikan.com/",
+      "description": "Independent open-source GitHub trend radar: daily/weekly/monthly star growth & rate boards, new-repo and all-time charts, browsable by day, month and year. 独立采集 GitHub 仓库数据的开源趋势榜单。",
+      "inLanguage": ["zh-CN", "en"],
+      "isAccessibleForFree": true,
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "publisher": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "name": "GitHub Trending Rankings Dataset",
+      "description": "Twice-daily snapshots of tracked GitHub repositories with stars, forks, watchers, issues, PRs and releases; precomputed daily/weekly/monthly/new/all-time leaderboard JSON.",
+      "url": "https://zhuikan.com/data/index.json",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "isAccessibleForFree": true,
+      "temporalCoverage": "2026-11-09/..",
+      "creator": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      },
+      "distribution": [
+        {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://zhuikan.com/data/index.json"}
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=20">
+</head>
+<body data-base="../" data-tag="langchain" data-tag-name="langchain">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到榜单</a>
+
+<noscript>
+  <div style="max-width:760px;margin:64px auto;padding:0 24px;font-family:system-ui,sans-serif;line-height:1.7;color:#333">
+    <h1>GitHub Trending Rank Radar</h1>
+    <p>独立采集 GitHub 仓库数据的开源趋势榜单：新星榜、日 / 周 / 月飙升榜与增速榜、总榜，支持按日 / 月 / 年回看历史。每日两次快照（UTC 02:00 / 14:00），榜单由快照差值计算。</p>
+    <p>An independent open-source GitHub trending radar: new repos, daily / weekly / monthly star-growth and rate boards, an all-time chart, and day / month / year history — snapshots taken twice daily (UTC 02:00 &amp; 14:00).</p>
+    <p>Machine-readable open data:
+      <a href="../data/index.json">data/index.json</a> ·
+      <a href="../llms.txt">llms.txt</a> ·
+      <a href="../sitemap.xml">sitemap.xml</a> ·
+      <a href="https://github.com/awesome-market/trending-rank-radar">Source on GitHub</a>
+    </p>
+    <p><strong>榜单交互需要启用 JavaScript。This site requires JavaScript for the interactive boards.</strong></p>
+  </div>
+</noscript>
+
+<!-- shared svg gradient defs for sparklines -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+        <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+        <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+        <g class="radar-sweep">
+          <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+        </g>
+      </svg>
+      <div>
+        <h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1>
+        <p class="hero-sub" data-i18n="hero.sub">GitHub 开源项目趋势榜单 · 每日双快照 · 八种榜单 · 日 / 月 / 年历史回看</p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <div class="search-wrap" id="searchWrap">
+        <select id="searchScope" class="search-scope" data-i18n-aria="search.scope.aria" aria-label="搜索范围">
+          <option value="repo" data-i18n="search.scope.repo">仓库</option>
+          <option value="news" data-i18n="search.scope.news">新闻</option>
+        </select>
+        <div class="search-box">
+          <svg class="search-ico" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"/></svg>
+          <input id="searchInput" class="search-input" type="search" autocomplete="off" spellcheck="false" data-i18n-ph="search.ph.repo" data-i18n-aria="search.ph.repo" aria-label="搜索" enterkeyhint="search">
+        </div>
+        <div class="search-drop" id="searchDrop" hidden></div>
+      </div>
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06-1.06a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.06l1.06-1.061a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero-viz" id="heroViz" data-enter>
+    <div class="hv-copy">
+      <p class="hv-kicker" data-i18n="hv.kicker">独立采集 · 开源数据</p>
+      <h2 class="hv-title" data-i18n="hv.title">独立追踪 GitHub 星标的每一次脉动</h2>
+      <p class="hv-sub" data-i18n="hv.sub">每日两次快照，用差值还原真实增长——不是又一份热榜镜像。</p>
+      <a class="hv-cta" href="#boardTabs" data-i18n="hv.cta">浏览今日榜单 →</a>
+    </div>
+    <div class="hv-side">
+      <div class="hv-chart" id="hvChart" aria-hidden="true"></div>
+      <div class="hv-cap" id="hvCap"></div>
+    </div>
+  </section>
+
+  <div class="controls" id="controls">
+    <div class="ctrl-row">
+      <nav class="board-tabs" id="boardTabs" data-i18n-aria="boards.aria" aria-label="榜单"></nav>
+    </div>
+    <div class="ctrl-row ctrl-sub">
+      <div class="seg" id="periodSeg" role="tablist" data-i18n-aria="period.aria" aria-label="时间维度">
+        <button data-period="day" class="seg-btn active" data-i18n="period.day">日</button>
+        <button data-period="month" class="seg-btn" data-i18n="period.month">月</button>
+        <button data-period="year" class="seg-btn" data-i18n="period.year">年</button>
+      </div>
+      <label class="sf-label" for="selDate" data-i18n="date.label">榜单日期</label>
+      <select id="selDate" class="sel" data-i18n-aria="date.aria" aria-label="日期"></select>
+      <div class="star-filter" role="group" data-i18n-aria="star.range" aria-label="Star 范围筛选">
+        <span class="sf-label" data-i18n="star.range">Star 范围</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="min">下限</span>
+          <input id="minK" type="number" min="0" step="1" value="1" class="sf-input" data-i18n-aria="minK.aria" aria-label="最小 Star 千数">
+        </label>
+        <span class="sf-sep">–</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="max">上限</span>
+          <input id="maxK" type="number" min="0" step="1" value="500" class="sf-input" data-i18n-aria="maxK.aria" aria-label="最大 Star 千数">
+        </label>
+        <span class="sf-unit">k</span>
+        <button id="applyFilter" class="sf-btn" data-i18n="apply">筛选</button>
+      </div>
+      <span class="window-info" id="windowInfo"></span>
+    </div>
+  </div>
+
+  <section id="content">
+    <div class="empty-state" id="emptyState" hidden>
+      <div class="empty-main">
+        <svg class="radar-big" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.4"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.3"/>
+          <g class="radar-sweep radar-sweep-lg">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <h2 data-i18n="empty.title">榜单积累中</h2>
+        <p id="emptyText" data-i18n="empty.text">快照数据正在积累，增长榜需要至少 2 个有效快照日。</p>
+        <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+        <p class="progress-hint" id="progressHint"></p>
+        <div class="empty-actions" id="emptyActions"></div>
+      </div>
+      <div class="empty-preview" id="emptyPreview"></div>
+    </div>
+
+    <div id="podiumWrap"></div>
+    <div id="listWrap"><!--SSR--><p style="color:var(--muted,#8b949e);font-size:13px;margin:0 4px 10px">2026-11-11 · #langchain · 25 <span class="i18n-zh">个仓库 · 按 star 排序</span><span class="i18n-en">repos · by stars</span></p><div class="rank-list"><div class="rank-row"><span class="row-rank top">1</span><a class="row-avatar" href="../repos/microsoft__markitdown"><img src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/microsoft__markitdown"><span class="row-owner">microsoft</span><span class="row-sep">/</span><span class="row-repo">markitdown</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 194,907</span><span class="m" title="forks">⑂ 14,696</span><span class="m" title="watchers">👁 592</span><span class="m" title="issues">● 698</span><span class="m" title="prs">⑃ 1,290</span><span class="m" title="releases">▤ 24</span></div><div class="row-desc">Python tool for converting files and office documents to Markdown.</div></div><div class="row-side"><div class="row-stars-big">★ 194,907</div></div></div><div class="rank-row"><span class="row-rank top">2</span><a class="row-avatar" href="../repos/langchain-ai__langchain"><img src="https://avatars.githubusercontent.com/u/126733545?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/langchain-ai__langchain"><span class="row-owner">langchain-ai</span><span class="row-sep">/</span><span class="row-repo">langchain</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 149,353</span><span class="m" title="forks">⑂ 25,107</span><span class="m" title="watchers">👁 924</span><span class="m" title="issues">● 10,628</span><span class="m" title="prs">⑃ 25,272</span><span class="m" title="releases">▤ 1,000</span></div><div class="row-desc">The agent engineering platform.</div></div><div class="row-side"><div class="row-stars-big">★ 149,353</div></div></div><div class="rank-row"><span class="row-rank top">3</span><a class="row-avatar" href="../repos/chopratejas__headroom"><img src="https://avatars.githubusercontent.com/u/294291659?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/chopratejas__headroom"><span class="row-owner">chopratejas</span><span class="row-sep">/</span><span class="row-repo">headroom</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 79,348</span><span class="m" title="forks">⑂ 6,206</span><span class="m" title="watchers">👁 212</span><span class="m" title="issues">● 1,349</span><span class="m" title="prs">⑃ 3,279</span><span class="m" title="releases">▤ 178</span></div><div class="row-desc">Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.</div></div><div class="row-side"><div class="row-stars-big">★ 79,348</div></div></div><div class="rank-row"><span class="row-rank">4</span><a class="row-avatar" href="../repos/headroomlabs-ai__headroom"><img src="https://avatars.githubusercontent.com/u/294291659?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/headroomlabs-ai__headroom"><span class="row-owner">headroomlabs-ai</span><span class="row-sep">/</span><span class="row-repo">headroom</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 79,348</span><span class="m" title="forks">⑂ 6,206</span><span class="m" title="watchers">👁 212</span><span class="m" title="issues">● 1,349</span><span class="m" title="prs">⑃ 3,279</span><span class="m" title="releases">▤ 178</span></div><div class="row-desc">Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.</div></div><div class="row-side"><div class="row-stars-big">★ 79,348</div></div></div><div class="rank-row"><span class="row-rank">5</span><a class="row-avatar" href="../repos/BerriAI__litellm"><img src="https://avatars.githubusercontent.com/u/121462774?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/BerriAI__litellm"><span class="row-owner">BerriAI</span><span class="row-sep">/</span><span class="row-repo">litellm</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 63,103</span><span class="m" title="forks">⑂ 13,197</span><span class="m" title="watchers">👁 237</span><span class="m" title="issues">● 14,087</span><span class="m" title="prs">⑃ 35,757</span><span class="m" title="releases">▤ 1,000</span></div><div class="row-desc">The fastest, litest AI Gateway. Rust core with Python SDK. Call 100+ LLM APIs in OpenAI (or native) format with cost tracking, guardrails, load balancing, and logging [Bedrock, Azure, OpenAI, Anthropic, OpenAI, VertexAI, vLLM, Nvidia NIM]</div></div><div class="row-side"><div class="row-stars-big">★ 63,103</div></div></div><div class="rank-row"><span class="row-rank">6</span><a class="row-avatar" href="../repos/FlowiseAI__Flowise"><img src="https://avatars.githubusercontent.com/u/128289781?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/FlowiseAI__Flowise"><span class="row-owner">FlowiseAI</span><span class="row-sep">/</span><span class="row-repo">Flowise</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 55,566</span><span class="m" title="forks">⑂ 25,095</span><span class="m" title="watchers">👁 387</span><span class="m" title="issues">● 2,672</span><span class="m" title="prs">⑃ 2,770</span><span class="m" title="releases">▤ 85</span></div><div class="row-desc">Build AI Agents, Visually</div></div><div class="row-side"><div class="row-stars-big">★ 55,566</div></div></div><div class="rank-row"><span class="row-rank">7</span><a class="row-avatar" href="../repos/langchain-ai__langgraph"><img src="https://avatars.githubusercontent.com/u/126733545?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/langchain-ai__langgraph"><span class="row-owner">langchain-ai</span><span class="row-sep">/</span><span class="row-repo">langgraph</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 44,793</span><span class="m" title="forks">⑂ 7,715</span><span class="m" title="watchers">👁 188</span><span class="m" title="issues">● 1,770</span><span class="m" title="prs">⑃ 6,270</span><span class="m" title="releases">▤ 599</span></div><div class="row-desc">Build resilient agents.</div></div><div class="row-side"><div class="row-stars-big">★ 44,793</div></div></div><div class="rank-row"><span class="row-rank">8</span><a class="row-avatar" href="../repos/chatchat-space__Langchain-Chatchat"><img src="https://avatars.githubusercontent.com/u/139558948?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/chatchat-space__Langchain-Chatchat"><span class="row-owner">chatchat-space</span><span class="row-sep">/</span><span class="row-repo">Langchain-Chatchat</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 38,712</span><span class="m" title="forks">⑂ 6,255</span><span class="m" title="watchers">👁 286</span><span class="m" title="issues">● 4,261</span><span class="m" title="prs">⑃ 885</span><span class="m" title="releases">▤ 31</span></div><div class="row-desc">Langchain-Chatchat（原Langchain-ChatGLM）基于 Langchain 与 ChatGLM, Qwen 与 Llama 等语言模型的 RAG 与 Agent 应用 | Langchain-Chatchat (formerly langchain-ChatGLM), local knowledge based LLM (like ChatGLM, Qwen and Llama) RAG and Agent app with langchain</div></div><div class="row-side"><div class="row-stars-big">★ 38,712</div></div></div><div class="rank-row"><span class="row-rank">9</span><a class="row-avatar" href="../repos/langfuse__langfuse"><img src="https://avatars.githubusercontent.com/u/134601687?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/langfuse__langfuse"><span class="row-owner">langfuse</span><span class="row-sep">/</span><span class="row-repo">langfuse</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 37,303</span><span class="m" title="forks">⑂ 4,196</span><span class="m" title="watchers">👁 111</span><span class="m" title="issues">● 3,265</span><span class="m" title="prs">⑃ 12,980</span><span class="m" title="releases">▤ 740</span></div><div class="row-desc">🪢 Open source AI engineering platform: AI Gateway, agent observability, evals, and prompt/skill management, built on OpenTelemetry. One open platform for every AI call and every agent. Self-host or use Langfuse Cloud.</div></div><div class="row-side"><div class="row-stars-big">★ 37,303</div></div></div><div class="rank-row"><span class="row-rank">10</span><a class="row-avatar" href="../repos/reworkd__AgentGPT"><img src="https://avatars.githubusercontent.com/u/120154269?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/reworkd__AgentGPT"><span class="row-owner">reworkd</span><span class="row-sep">/</span><span class="row-repo">AgentGPT</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 36,261</span><span class="m" title="forks">⑂ 9,177</span><span class="m" title="watchers">👁 3</span><span class="m" title="issues">● 469</span><span class="m" title="prs">⑃ 1,082</span><span class="m" title="releases">▤ 12</span></div><div class="row-desc">🤖 Assemble, configure, and deploy autonomous AI Agents in your browser.</div></div><div class="row-side"><div class="row-stars-big">★ 36,261</div></div></div><div class="rank-row"><span class="row-rank">11</span><a class="row-avatar" href="../repos/huggingface__agents-course"><img src="https://avatars.githubusercontent.com/u/25720743?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/huggingface__agents-course"><span class="row-owner">huggingface</span><span class="row-sep">/</span><span class="row-repo">agents-course</span></a></div><div class="row-meta"><span class="lang-tag">MDX</span><span class="m" title="stars">★ 34,753</span><span class="m" title="forks">⑂ 2,492</span><span class="m" title="watchers">👁 226</span><span class="m" title="issues">● 229</span><span class="m" title="prs">⑃ 540</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">This repository contains the Hugging Face Agents Course.</div></div><div class="row-side"><div class="row-stars-big">★ 34,753</div></div></div><div class="rank-row"><span class="row-rank">12</span><a class="row-avatar" href="../repos/langchain-ai__deepagents"><img src="https://avatars.githubusercontent.com/u/126733545?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/langchain-ai__deepagents"><span class="row-owner">langchain-ai</span><span class="row-sep">/</span><span class="row-repo">deepagents</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 31,202</span><span class="m" title="forks">⑂ 4,408</span><span class="m" title="watchers">👁 140</span><span class="m" title="issues">● 1,429</span><span class="m" title="prs">⑃ 6,113</span><span class="m" title="releases">▤ 341</span></div><div class="row-desc">The batteries-included agent harness.</div></div><div class="row-side"><div class="row-stars-big">★ 31,202</div></div></div><div class="rank-row"><span class="row-rank">13</span><a class="row-avatar" href="../repos/NirDiamant__RAG_Techniques"><img src="https://avatars.githubusercontent.com/u/28316913?u=3d82b50356b9928eab0680470b568a10faaf605f&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/NirDiamant__RAG_Techniques"><span class="row-owner">NirDiamant</span><span class="row-sep">/</span><span class="row-repo">RAG_Techniques</span></a></div><div class="row-meta"><span class="lang-tag">Jupyter Notebook</span><span class="m" title="stars">★ 30,317</span><span class="m" title="forks">⑂ 3,704</span><span class="m" title="watchers">👁 253</span><span class="m" title="issues">● 72</span><span class="m" title="prs">⑃ 137</span><span class="m" title="releases">▤ 2</span></div><div class="row-desc">This repository showcases various advanced techniques for Retrieval-Augmented Generation (RAG) systems. Each technique has a detailed notebook tutorial.</div></div><div class="row-side"><div class="row-stars-big">★ 30,317</div></div></div><div class="rank-row"><span class="row-rank">14</span><a class="row-avatar" href="../repos/meta-llama__llama-cookbook"><img src="https://avatars.githubusercontent.com/u/153379578?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/meta-llama__llama-cookbook"><span class="row-owner">meta-llama</span><span class="row-sep">/</span><span class="row-repo">llama-cookbook</span></a></div><div class="row-meta"><span class="lang-tag">Jupyter Notebook</span><span class="m" title="stars">★ 18,588</span><span class="m" title="forks">⑂ 2,756</span><span class="m" title="watchers">👁 195</span><span class="m" title="issues">● 452</span><span class="m" title="prs">⑃ 612</span><span class="m" title="releases">▤ 4</span></div><div class="row-desc">Welcome to the Llama Cookbook! This is your go to guide for Building with Llama: Getting started with Inference, Fine-Tuning, RAG. We also show you how to solve end to end problems using Llama model family and using them on various provider services</div></div><div class="row-side"><div class="row-stars-big">★ 18,588</div></div></div><div class="rank-row"><span class="row-rank">15</span><a class="row-avatar" href="../repos/GoogleCloudPlatform__generative-ai"><img src="https://avatars.githubusercontent.com/u/2810941?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/GoogleCloudPlatform__generative-ai"><span class="row-owner">GoogleCloudPlatform</span><span class="row-sep">/</span><span class="row-repo">generative-ai</span></a></div><div class="row-meta"><span class="lang-tag">Jupyter Notebook</span><span class="m" title="stars">★ 17,866</span><span class="m" title="forks">⑂ 4,507</span><span class="m" title="watchers">👁 274</span><span class="m" title="issues">● 399</span><span class="m" title="prs">⑃ 2,724</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">Sample code and notebooks for Generative AI on Google Cloud, with Gemini platform</div></div><div class="row-side"><div class="row-stars-big">★ 17,866</div></div></div><div class="rank-row"><span class="row-rank">16</span><a class="row-avatar" href="../repos/mayooear__ai-pdf-chatbot-langchain"><img src="https://avatars.githubusercontent.com/u/107035552?u=708ca9b002559f6175803a80a1e47f3e84ba91e2&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/mayooear__ai-pdf-chatbot-langchain"><span class="row-owner">mayooear</span><span class="row-sep">/</span><span class="row-repo">ai-pdf-chatbot-langchain</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 16,584</span><span class="m" title="forks">⑂ 3,228</span><span class="m" title="watchers">👁 160</span><span class="m" title="issues">● 301</span><span class="m" title="prs">⑃ 105</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">AI PDF chatbot agent built with LangChain &amp; LangGraph</div></div><div class="row-side"><div class="row-stars-big">★ 16,584</div></div></div><div class="rank-row"><span class="row-rank">17</span><a class="row-avatar" href="../repos/datawhalechina__llm-universe"><img src="https://avatars.githubusercontent.com/u/46047812?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/datawhalechina__llm-universe"><span class="row-owner">datawhalechina</span><span class="row-sep">/</span><span class="row-repo">llm-universe</span></a></div><div class="row-meta"><span class="lang-tag">Jupyter Notebook</span><span class="m" title="stars">★ 14,290</span><span class="m" title="forks">⑂ 1,446</span><span class="m" title="watchers">👁 74</span><span class="m" title="issues">● 86</span><span class="m" title="prs">⑃ 149</span><span class="m" title="releases">▤ 1</span></div><div class="row-desc">本项目是一个面向小白开发者的大模型应用开发教程，在线阅读地址：https://datawhalechina.github.io/llm-universe/</div></div><div class="row-side"><div class="row-stars-big">★ 14,290</div></div></div><div class="rank-row"><span class="row-rank">18</span><a class="row-avatar" href="../repos/tmc__langchaingo"><img src="https://avatars.githubusercontent.com/u/3977?u=ba15c36cd7e0fd2d5fd1a4eb4df77420618a6d9e&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/tmc__langchaingo"><span class="row-owner">tmc</span><span class="row-sep">/</span><span class="row-repo">langchaingo</span></a></div><div class="row-meta"><span class="lang-tag">Go</span><span class="m" title="stars">★ 9,773</span><span class="m" title="forks">⑂ 1,165</span><span class="m" title="watchers">👁 77</span><span class="m" title="issues">● 457</span><span class="m" title="prs">⑃ 1,067</span><span class="m" title="releases">▤ 22</span></div><div class="row-desc">LangChain for Go, the easiest way to write LLM-based programs in Go</div></div><div class="row-side"><div class="row-stars-big">★ 9,773</div></div></div><div class="rank-row"><span class="row-rank">19</span><a class="row-avatar" href="../repos/kyrolabs__awesome-langchain"><img src="https://avatars.githubusercontent.com/u/126075767?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/kyrolabs__awesome-langchain"><span class="row-owner">kyrolabs</span><span class="row-sep">/</span><span class="row-repo">awesome-langchain</span></a></div><div class="row-meta"><span class="m" title="stars">★ 9,594</span><span class="m" title="forks">⑂ 990</span><span class="m" title="watchers">👁 131</span><span class="m" title="issues">● 40</span><span class="m" title="prs">⑃ 451</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">😎 Awesome list of tools and projects with the awesome LangChain framework</div></div><div class="row-side"><div class="row-stars-big">★ 9,594</div></div></div><div class="rank-row"><span class="row-rank">20</span><a class="row-avatar" href="../repos/liaokongVFX__LangChain-Chinese-Getting-Started-Guide"><img src="https://avatars.githubusercontent.com/u/13622183?u=c23256501191447d645cc03c1f6bc83282ef1498&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/liaokongVFX__LangChain-Chinese-Getting-Started-Guide"><span class="row-owner">liaokongVFX</span><span class="row-sep">/</span><span class="row-repo">LangChain-Chinese-Getting-Started-Guide</span></a></div><div class="row-meta"><span class="m" title="stars">★ 9,149</span><span class="m" title="forks">⑂ 705</span><span class="m" title="watchers">👁 46</span><span class="m" title="issues">● 58</span><span class="m" title="prs">⑃ 13</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">LangChain 的中文入门教程</div></div><div class="row-side"><div class="row-stars-big">★ 9,149</div></div></div><div class="rank-row"><span class="row-rank">21</span><a class="row-avatar" href="../repos/AgentOps-AI__agentops"><img src="https://avatars.githubusercontent.com/u/140554352?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/AgentOps-AI__agentops"><span class="row-owner">AgentOps-AI</span><span class="row-sep">/</span><span class="row-repo">agentops</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 5,954</span><span class="m" title="forks">⑂ 663</span><span class="m" title="watchers">👁 52</span><span class="m" title="issues">● 453</span><span class="m" title="prs">⑃ 938</span><span class="m" title="releases">▤ 108</span></div><div class="row-desc">Python SDK for AI agent monitoring, LLM cost tracking, benchmarking, and more. Integrates with most LLMs and agent frameworks including CrewAI, Agno, OpenAI Agents SDK, Langchain, Autogen, AG2, and CamelAI</div></div><div class="row-side"><div class="row-stars-big">★ 5,954</div></div></div><div class="rank-row"><span class="row-rank">22</span><a class="row-avatar" href="../repos/didilili__ai-agents-from-zero"><img src="https://avatars.githubusercontent.com/u/49889928?u=ac1974f0bc9119d41db0ebbe3fb1a506e45a5c41&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/didilili__ai-agents-from-zero"><span class="row-owner">didilili</span><span class="row-sep">/</span><span class="row-repo">ai-agents-from-zero</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 5,947</span><span class="m" title="forks">⑂ 821</span><span class="m" title="watchers">👁 31</span><span class="m" title="issues">● 82</span><span class="m" title="prs">⑃ 13</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">🚀 2026 最系统的 AI Agent 速成指南｜智能体实战教程 · 完整学习路径  + 实战项目 + 面试题库 · 对标大模型应用开发工程师岗位 · 覆盖LangChain / LangGraph / Coze / Dify / MCP / skills / LLM / RAG / 提示词 · 企业级部署与微调 · 从0到企业级落地 + 从学习到上线项目 + 面试准备一体化</div></div><div class="row-side"><div class="row-stars-big">★ 5,947</div></div></div><div class="rank-row"><span class="row-rank">23</span><a class="row-avatar" href="../repos/coze-dev__coze-loop"><img src="https://avatars.githubusercontent.com/u/157483752?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/coze-dev__coze-loop"><span class="row-owner">coze-dev</span><span class="row-sep">/</span><span class="row-repo">coze-loop</span></a></div><div class="row-meta"><span class="lang-tag">Go</span><span class="m" title="stars">★ 5,803</span><span class="m" title="forks">⑂ 803</span><span class="m" title="watchers">👁 33</span><span class="m" title="issues">● 109</span><span class="m" title="prs">⑃ 585</span><span class="m" title="releases">▤ 8</span></div><div class="row-desc">Next-generation AI Agent Optimization Platform: Cozeloop addresses challenges in AI agent development by providing full-lifecycle management capabilities from development, debugging, and evaluation to monitoring.</div></div><div class="row-side"><div class="row-stars-big">★ 5,803</div></div></div><div class="rank-row"><span class="row-rank">24</span><a class="row-avatar" href="../repos/the-open-agent__openagent"><img src="https://avatars.githubusercontent.com/u/277180808?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/the-open-agent__openagent"><span class="row-owner">the-open-agent</span><span class="row-sep">/</span><span class="row-repo">openagent</span></a></div><div class="row-meta"><span class="lang-tag">Go</span><span class="m" title="stars">★ 5,744</span><span class="m" title="forks">⑂ 671</span><span class="m" title="watchers">👁 47</span><span class="m" title="issues">● 761</span><span class="m" title="prs">⑃ 1,654</span><span class="m" title="releases">▤ 1,000</span></div><div class="row-desc">⚡️next-generation personal AI assistant powered by LLM, RAG and agent loops, supporting computer-use, browser-use and coding agent, demo: https://demo.openagentai.org</div></div><div class="row-side"><div class="row-stars-big">★ 5,744</div></div></div><div class="rank-row"><span class="row-rank">25</span><a class="row-avatar" href="../repos/strelov1__freehire"><img src="https://avatars.githubusercontent.com/u/10761735?u=552efb61e9ff91e59ad7238cb21d1c51485771b3&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/strelov1__freehire"><span class="row-owner">strelov1</span><span class="row-sep">/</span><span class="row-repo">freehire</span></a></div><div class="row-meta"><span class="lang-tag">Go</span><span class="m" title="stars">★ 3,480</span><span class="m" title="forks">⑂ 379</span><span class="m" title="watchers">👁 12</span><span class="m" title="issues">● 232</span><span class="m" title="prs">⑃ 4,190</span><span class="m" title="releases">▤ 45</span></div><div class="row-desc">freehire — the open-source search engine for job seekers</div></div><div class="row-side"><div class="row-stars-big">★ 3,480</div></div></div></div><!--/SSR--></div>
+
+    <details class="month-detail" id="monthDetail">
+      <summary data-i18n="month.top10">当月每日飙升 Top10 摘要</summary>
+      <div id="monthTop10"><!--SSRMT--><!--/SSRMT--></div>
+    </details>
+  </section>
+
+  <section id="yearWrap">
+    <h2 class="section-title" data-i18n="year.entry">年度月度榜入口</h2>
+    <div class="month-grid" id="monthGrid"><!--SSRMG--><!--/SSRMG--></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/common.js?v=20"></script>
+<script src="../assets/app.js?v=20"></script>
+</body>
+</html>

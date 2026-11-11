@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#windows-11 · GitHub Trending Rank Radar</title>
+<meta name="description" content="GitHub 标签 windows-11 下的开源项目趋势榜 · 21 repos tagged windows-11 on GitHub · 独立采集 GitHub 仓库数据的开源趋势榜单">
+<meta name="keywords" content="GitHub trending, GitHub ranking, GitHub 排行榜, 开源榜单, trending repos, star growth, star history, 星标增长, github stars, open data, github pages, github actions, 开源项目, open source rankings">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/tags/windows-11">
+<!-- bilingual content lives on ONE url — no per-lang alternates to declare -->
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="GitHub Trending Rank Radar" href="../feed.xml">
+<meta property="og:title" content="GitHub Trending Rank Radar">
+<meta property="og:description" content="GitHub 开源项目趋势榜单 · 每日双快照 · 十一榜单 · 历史回看 | Independent GitHub trend radar · twice-daily snapshots · 11 boards · bilingual">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zhuikan.com/tags/windows-11">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zhuikan.com/assets/og.png">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "GitHub Trending Rank Radar",
+      "alternateName": "GitHub 开源项目趋势榜单",
+      "url": "https://zhuikan.com/",
+      "description": "Independent open-source GitHub trend radar: daily/weekly/monthly star growth & rate boards, new-repo and all-time charts, browsable by day, month and year. 独立采集 GitHub 仓库数据的开源趋势榜单。",
+      "inLanguage": ["zh-CN", "en"],
+      "isAccessibleForFree": true,
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "publisher": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "name": "GitHub Trending Rankings Dataset",
+      "description": "Twice-daily snapshots of tracked GitHub repositories with stars, forks, watchers, issues, PRs and releases; precomputed daily/weekly/monthly/new/all-time leaderboard JSON.",
+      "url": "https://zhuikan.com/data/index.json",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "isAccessibleForFree": true,
+      "temporalCoverage": "2026-11-09/..",
+      "creator": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      },
+      "distribution": [
+        {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://zhuikan.com/data/index.json"}
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=20">
+</head>
+<body data-base="../" data-tag="windows-11" data-tag-name="windows-11">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到榜单</a>
+
+<noscript>
+  <div style="max-width:760px;margin:64px auto;padding:0 24px;font-family:system-ui,sans-serif;line-height:1.7;color:#333">
+    <h1>GitHub Trending Rank Radar</h1>
+    <p>独立采集 GitHub 仓库数据的开源趋势榜单：新星榜、日 / 周 / 月飙升榜与增速榜、总榜，支持按日 / 月 / 年回看历史。每日两次快照（UTC 02:00 / 14:00），榜单由快照差值计算。</p>
+    <p>An independent open-source GitHub trending radar: new repos, daily / weekly / monthly star-growth and rate boards, an all-time chart, and day / month / year history — snapshots taken twice daily (UTC 02:00 &amp; 14:00).</p>
+    <p>Machine-readable open data:
+      <a href="../data/index.json">data/index.json</a> ·
+      <a href="../llms.txt">llms.txt</a> ·
+      <a href="../sitemap.xml">sitemap.xml</a> ·
+      <a href="https://github.com/awesome-market/trending-rank-radar">Source on GitHub</a>
+    </p>
+    <p><strong>榜单交互需要启用 JavaScript。This site requires JavaScript for the interactive boards.</strong></p>
+  </div>
+</noscript>
+
+<!-- shared svg gradient defs for sparklines -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+        <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+        <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+        <g class="radar-sweep">
+          <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+        </g>
+      </svg>
+      <div>
+        <h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1>
+        <p class="hero-sub" data-i18n="hero.sub">GitHub 开源项目趋势榜单 · 每日双快照 · 八种榜单 · 日 / 月 / 年历史回看</p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <div class="search-wrap" id="searchWrap">
+        <select id="searchScope" class="search-scope" data-i18n-aria="search.scope.aria" aria-label="搜索范围">
+          <option value="repo" data-i18n="search.scope.repo">仓库</option>
+          <option value="news" data-i18n="search.scope.news">新闻</option>
+        </select>
+        <div class="search-box">
+          <svg class="search-ico" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"/></svg>
+          <input id="searchInput" class="search-input" type="search" autocomplete="off" spellcheck="false" data-i18n-ph="search.ph.repo" data-i18n-aria="search.ph.repo" aria-label="搜索" enterkeyhint="search">
+        </div>
+        <div class="search-drop" id="searchDrop" hidden></div>
+      </div>
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06-1.06a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.06l1.06-1.061a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero-viz" id="heroViz" data-enter>
+    <div class="hv-copy">
+      <p class="hv-kicker" data-i18n="hv.kicker">独立采集 · 开源数据</p>
+      <h2 class="hv-title" data-i18n="hv.title">独立追踪 GitHub 星标的每一次脉动</h2>
+      <p class="hv-sub" data-i18n="hv.sub">每日两次快照，用差值还原真实增长——不是又一份热榜镜像。</p>
+      <a class="hv-cta" href="#boardTabs" data-i18n="hv.cta">浏览今日榜单 →</a>
+    </div>
+    <div class="hv-side">
+      <div class="hv-chart" id="hvChart" aria-hidden="true"></div>
+      <div class="hv-cap" id="hvCap"></div>
+    </div>
+  </section>
+
+  <div class="controls" id="controls">
+    <div class="ctrl-row">
+      <nav class="board-tabs" id="boardTabs" data-i18n-aria="boards.aria" aria-label="榜单"></nav>
+    </div>
+    <div class="ctrl-row ctrl-sub">
+      <div class="seg" id="periodSeg" role="tablist" data-i18n-aria="period.aria" aria-label="时间维度">
+        <button data-period="day" class="seg-btn active" data-i18n="period.day">日</button>
+        <button data-period="month" class="seg-btn" data-i18n="period.month">月</button>
+        <button data-period="year" class="seg-btn" data-i18n="period.year">年</button>
+      </div>
+      <label class="sf-label" for="selDate" data-i18n="date.label">榜单日期</label>
+      <select id="selDate" class="sel" data-i18n-aria="date.aria" aria-label="日期"></select>
+      <div class="star-filter" role="group" data-i18n-aria="star.range" aria-label="Star 范围筛选">
+        <span class="sf-label" data-i18n="star.range">Star 范围</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="min">下限</span>
+          <input id="minK" type="number" min="0" step="1" value="1" class="sf-input" data-i18n-aria="minK.aria" aria-label="最小 Star 千数">
+        </label>
+        <span class="sf-sep">–</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="max">上限</span>
+          <input id="maxK" type="number" min="0" step="1" value="500" class="sf-input" data-i18n-aria="maxK.aria" aria-label="最大 Star 千数">
+        </label>
+        <span class="sf-unit">k</span>
+        <button id="applyFilter" class="sf-btn" data-i18n="apply">筛选</button>
+      </div>
+      <span class="window-info" id="windowInfo"></span>
+    </div>
+  </div>
+
+  <section id="content">
+    <div class="empty-state" id="emptyState" hidden>
+      <div class="empty-main">
+        <svg class="radar-big" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.4"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.3"/>
+          <g class="radar-sweep radar-sweep-lg">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <h2 data-i18n="empty.title">榜单积累中</h2>
+        <p id="emptyText" data-i18n="empty.text">快照数据正在积累，增长榜需要至少 2 个有效快照日。</p>
+        <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+        <p class="progress-hint" id="progressHint"></p>
+        <div class="empty-actions" id="emptyActions"></div>
+      </div>
+      <div class="empty-preview" id="emptyPreview"></div>
+    </div>
+
+    <div id="podiumWrap"></div>
+    <div id="listWrap"><!--SSR--><p style="color:var(--muted,#8b949e);font-size:13px;margin:0 4px 10px">2026-11-11 · #windows-11 · 21 <span class="i18n-zh">个仓库 · 按 star 排序</span><span class="i18n-en">repos · by stars</span></p><div class="rank-list"><div class="rank-row"><span class="row-rank top">1</span><a class="row-avatar" href="../repos/massgravel__Microsoft-Activation-Scripts"><img src="https://avatars.githubusercontent.com/u/59795046?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/massgravel__Microsoft-Activation-Scripts"><span class="row-owner">massgravel</span><span class="row-sep">/</span><span class="row-repo">Microsoft-Activation-Scripts</span></a></div><div class="row-meta"><span class="lang-tag">Batchfile</span><span class="m" title="stars">★ 198,542</span><span class="m" title="forks">⑂ 18,789</span><span class="m" title="watchers">👁 1,567</span><span class="m" title="issues">● 1,172</span><span class="m" title="prs">⑃ 65</span><span class="m" title="releases">▤ 33</span></div><div class="row-desc">Open-source Windows and Office activator featuring HWID, Ohook, TSforge, and Online KMS activation methods, along with advanced troubleshooting.</div></div><div class="row-side"><div class="row-stars-big">★ 198,542</div></div></div><div class="rank-row"><span class="row-rank top">2</span><a class="row-avatar" href="../repos/microsoft__PowerToys"><img src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/microsoft__PowerToys"><span class="row-owner">microsoft</span><span class="row-sep">/</span><span class="row-repo">PowerToys</span></a></div><div class="row-meta"><span class="lang-tag">C</span><span class="m" title="stars">★ 140,863</span><span class="m" title="forks">⑂ 8,728</span><span class="m" title="watchers">👁 1,220</span><span class="m" title="issues">● 42,497</span><span class="m" title="prs">⑃ 9,178</span><span class="m" title="releases">▤ 140</span></div><div class="row-desc">Microsoft PowerToys is a collection of utilities that supercharge productivity and customization on Windows</div></div><div class="row-side"><div class="row-stars-big">★ 140,863</div></div></div><div class="rank-row"><span class="row-rank top">3</span><a class="row-avatar" href="../repos/Raphire__Win11Debloat"><img src="https://avatars.githubusercontent.com/u/9938813?u=36a2d1fc354e7314f167dee34ff90e9f2add52dc&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/Raphire__Win11Debloat"><span class="row-owner">Raphire</span><span class="row-sep">/</span><span class="row-repo">Win11Debloat</span></a></div><div class="row-meta"><span class="lang-tag">PowerShell</span><span class="m" title="stars">★ 62,354</span><span class="m" title="forks">⑂ 2,778</span><span class="m" title="watchers">👁 254</span><span class="m" title="issues">● 431</span><span class="m" title="prs">⑃ 283</span><span class="m" title="releases">▤ 39</span></div><div class="row-desc">A simple, lightweight PowerShell script that allows you to remove pre-installed apps, disable telemetry, as well as perform various other changes to declutter and customize your Windows experience. Win11Debloat works for both Windows 10 and Windows 11.</div></div><div class="row-side"><div class="row-stars-big">★ 62,354</div></div></div><div class="rank-row"><span class="row-rank">4</span><a class="row-avatar" href="../repos/files-community__Files"><img src="https://avatars.githubusercontent.com/u/65931357?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/files-community__Files"><span class="row-owner">files-community</span><span class="row-sep">/</span><span class="row-repo">Files</span></a></div><div class="row-meta"><span class="lang-tag">C#</span><span class="m" title="stars">★ 46,587</span><span class="m" title="forks">⑂ 3,024</span><span class="m" title="watchers">👁 407</span><span class="m" title="issues">● 11,439</span><span class="m" title="prs">⑃ 7,071</span><span class="m" title="releases">▤ 142</span></div><div class="row-desc">A modern file manager that helps users organize their files and folders.</div></div><div class="row-side"><div class="row-stars-big">★ 46,587</div></div></div><div class="rank-row"><span class="row-rank">5</span><a class="row-avatar" href="../repos/veler__DevToys"><img src="https://avatars.githubusercontent.com/u/161959666?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/veler__DevToys"><span class="row-owner">veler</span><span class="row-sep">/</span><span class="row-repo">DevToys</span></a></div><div class="row-meta"><span class="lang-tag">C#</span><span class="m" title="stars">★ 32,251</span><span class="m" title="forks">⑂ 1,793</span><span class="m" title="watchers">👁 156</span><span class="m" title="issues">● 1,000</span><span class="m" title="prs">⑃ 575</span><span class="m" title="releases">▤ 39</span></div><div class="row-desc">A Swiss Army knife for developers.</div></div><div class="row-side"><div class="row-stars-big">★ 32,251</div></div></div><div class="rank-row"><span class="row-rank">6</span><a class="row-avatar" href="../repos/TGSAN__CMWTAT_Digital_Edition"><img src="https://avatars.githubusercontent.com/u/7440847?u=9a04b599cc7d75db6aa271e76d4a7d5ac722661b&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/TGSAN__CMWTAT_Digital_Edition"><span class="row-owner">TGSAN</span><span class="row-sep">/</span><span class="row-repo">CMWTAT_Digital_Edition</span></a></div><div class="row-meta"><span class="lang-tag">C#</span><span class="m" title="stars">★ 19,716</span><span class="m" title="forks">⑂ 2,188</span><span class="m" title="watchers">👁 172</span><span class="m" title="issues">● 85</span><span class="m" title="prs">⑃ 9</span><span class="m" title="releases">▤ 14</span></div><div class="row-desc">CloudMoe Windows 10/11 Activation Toolkit get digital license, the best open source Win 10/11 activator in GitHub. GitHub 上最棒的开源 Win10/Win11 数字权利（数字许可证）激活工具！</div></div><div class="row-side"><div class="row-stars-big">★ 19,716</div></div></div><div class="rank-row"><span class="row-rank">7</span><a class="row-avatar" href="../repos/MustardChef__WSABuilds"><img src="https://avatars.githubusercontent.com/u/68516357?u=6271b0085b6bd10266f9789365553bb20cb0d4a1&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/MustardChef__WSABuilds"><span class="row-owner">MustardChef</span><span class="row-sep">/</span><span class="row-repo">WSABuilds</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 18,978</span><span class="m" title="forks">⑂ 2,494</span><span class="m" title="watchers">👁 159</span><span class="m" title="issues">● 549</span><span class="m" title="prs">⑃ 155</span><span class="m" title="releases">▤ 138</span></div><div class="row-desc">Run Windows Subsystem For Android on your Windows 10 and Windows 11 PC using prebuilt binaries with Google Play Store (MindTheGapps) and/or Magisk or KernelSU (root solutions) built in.</div></div><div class="row-side"><div class="row-stars-big">★ 18,978</div></div></div><div class="rank-row"><span class="row-rank">8</span><a class="row-avatar" href="../repos/eythaann__Seelen-UI"><img src="https://avatars.githubusercontent.com/u/76607907?u=c80172e33bfcb6de43c0551482cf15d07c31e395&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/eythaann__Seelen-UI"><span class="row-owner">eythaann</span><span class="row-sep">/</span><span class="row-repo">Seelen-UI</span></a></div><div class="row-meta"><span class="lang-tag">Rust</span><span class="m" title="stars">★ 18,449</span><span class="m" title="forks">⑂ 671</span><span class="m" title="watchers">👁 77</span><span class="m" title="issues">● 1,031</span><span class="m" title="prs">⑃ 810</span><span class="m" title="releases">▤ 200</span></div><div class="row-desc">The Fully Customizable Desktop Environment for Windows 10/11.</div></div><div class="row-side"><div class="row-stars-big">★ 18,449</div></div></div><div class="rank-row"><span class="row-rank">9</span><a class="row-avatar" href="../repos/M2Team__NanaZip"><img src="https://avatars.githubusercontent.com/u/19967653?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/M2Team__NanaZip"><span class="row-owner">M2Team</span><span class="row-sep">/</span><span class="row-repo">NanaZip</span></a></div><div class="row-meta"><span class="lang-tag">C++</span><span class="m" title="stars">★ 16,209</span><span class="m" title="forks">⑂ 422</span><span class="m" title="watchers">👁 80</span><span class="m" title="issues">● 763</span><span class="m" title="prs">⑃ 245</span><span class="m" title="releases">▤ 57</span></div><div class="row-desc">The 7-Zip derivative intended for the modern Windows experience</div></div><div class="row-side"><div class="row-stars-big">★ 16,209</div></div></div><div class="rank-row"><span class="row-rank">10</span><a class="row-avatar" href="../repos/farag2__Sophia-Script-for-Windows"><img src="https://avatars.githubusercontent.com/u/10544660?u=aee82233beb3e74b2d04a9eb79b416f68b8e7034&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/farag2__Sophia-Script-for-Windows"><span class="row-owner">farag2</span><span class="row-sep">/</span><span class="row-repo">Sophia-Script-for-Windows</span></a></div><div class="row-meta"><span class="lang-tag">PowerShell</span><span class="m" title="stars">★ 9,924</span><span class="m" title="forks">⑂ 646</span><span class="m" title="watchers">👁 158</span><span class="m" title="issues">● 268</span><span class="m" title="prs">⑃ 138</span><span class="m" title="releases">▤ 170</span></div><div class="row-desc">:zap: The most advanced PowerShell module on GitHub for fine-tuning Windows 11 &amp; Windows 10</div></div><div class="row-side"><div class="row-stars-big">★ 9,924</div></div></div><div class="rank-row"><span class="row-rank">11</span><a class="row-avatar" href="../repos/AutoDarkMode__Windows-Auto-Night-Mode"><img src="https://avatars.githubusercontent.com/u/89929298?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/AutoDarkMode__Windows-Auto-Night-Mode"><span class="row-owner">AutoDarkMode</span><span class="row-sep">/</span><span class="row-repo">Windows-Auto-Night-Mode</span></a></div><div class="row-meta"><span class="lang-tag">C#</span><span class="m" title="stars">★ 9,827</span><span class="m" title="forks">⑂ 309</span><span class="m" title="watchers">👁 47</span><span class="m" title="issues">● 706</span><span class="m" title="prs">⑃ 453</span><span class="m" title="releases">▤ 18</span></div><div class="row-desc">Automatically switches between the dark and light theme of Windows 10 and Windows 11</div></div><div class="row-side"><div class="row-stars-big">★ 9,827</div></div></div><div class="rank-row"><span class="row-rank">12</span><a class="row-avatar" href="../repos/lepoco__wpfui"><img src="https://avatars.githubusercontent.com/u/87412094?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/lepoco__wpfui"><span class="row-owner">lepoco</span><span class="row-sep">/</span><span class="row-repo">wpfui</span></a></div><div class="row-meta"><span class="lang-tag">C#</span><span class="m" title="stars">★ 9,751</span><span class="m" title="forks">⑂ 1,008</span><span class="m" title="watchers">👁 91</span><span class="m" title="issues">● 904</span><span class="m" title="prs">⑃ 634</span><span class="m" title="releases">▤ 23</span></div><div class="row-desc">WPF UI provides the Fluent experience in your known and loved WPF framework. Intuitive design, themes, navigation and new immersive controls. All natively and effortlessly.</div></div><div class="row-side"><div class="row-stars-big">★ 9,751</div></div></div><div class="rank-row"><span class="row-rank">13</span><a class="row-avatar" href="../repos/blueedgetechno__win11React"><img src="https://avatars.githubusercontent.com/u/54899800?u=395d3e09778a65a978865f799055659d576defc9&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/blueedgetechno__win11React"><span class="row-owner">blueedgetechno</span><span class="row-sep">/</span><span class="row-repo">win11React</span></a></div><div class="row-meta"><span class="lang-tag">JavaScript</span><span class="m" title="stars">★ 9,663</span><span class="m" title="forks">⑂ 1,272</span><span class="m" title="watchers">👁 7</span><span class="m" title="issues">● 320</span><span class="m" title="prs">⑃ 475</span><span class="m" title="releases">▤ 19</span></div><div class="row-desc">Windows 11 in React 💻🌈⚡</div></div><div class="row-side"><div class="row-stars-big">★ 9,663</div></div></div><div class="rank-row"><span class="row-rank">14</span><a class="row-avatar" href="../repos/Tianyu199509__DeskBox"><img src="https://avatars.githubusercontent.com/u/122434621?u=ba2827581ad3b23a44dc45efbabbf8ea5e9d4eb5&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/Tianyu199509__DeskBox"><span class="row-owner">Tianyu199509</span><span class="row-sep">/</span><span class="row-repo">DeskBox</span></a></div><div class="row-meta"><span class="lang-tag">C#</span><span class="m" title="stars">★ 8,856</span><span class="m" title="forks">⑂ 477</span><span class="m" title="watchers">👁 16</span><span class="m" title="issues">● 421</span><span class="m" title="prs">⑃ 180</span><span class="m" title="releases">▤ 58</span></div><div class="row-desc">A free, open-source Windows desktop organizer with native-feeling WinUI 3 widgets.</div></div><div class="row-side"><div class="row-stars-big">★ 8,856</div></div></div><div class="rank-row"><span class="row-rank">15</span><a class="row-avatar" href="../repos/HuLaSpark__HuLa"><img src="https://avatars.githubusercontent.com/u/182812476?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/HuLaSpark__HuLa"><span class="row-owner">HuLaSpark</span><span class="row-sep">/</span><span class="row-repo">HuLa</span></a></div><div class="row-meta"><span class="lang-tag">Vue</span><span class="m" title="stars">★ 7,836</span><span class="m" title="forks">⑂ 1,065</span><span class="m" title="watchers">👁 44</span><span class="m" title="issues">● 140</span><span class="m" title="prs">⑃ 386</span><span class="m" title="releases">▤ 46</span></div><div class="row-desc">🍀 A cross-platform instant messaging desktop application with exceptional performance built on Rust + Vue3, compatible with Windows, macOS, Linux, Android, and iOS（一款基于Rust+Vue3极致性能的跨平台即时通讯桌面应用，兼容Windows、MacOS、Linux、Android、IOS）</div></div><div class="row-side"><div class="row-stars-big">★ 7,836</div></div></div><div class="rank-row"><span class="row-rank">16</span><a class="row-avatar" href="../repos/microsoft__sudo"><img src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/microsoft__sudo"><span class="row-owner">microsoft</span><span class="row-sep">/</span><span class="row-repo">sudo</span></a></div><div class="row-meta"><span class="lang-tag">Rust</span><span class="m" title="stars">★ 5,863</span><span class="m" title="forks">⑂ 181</span><span class="m" title="watchers">👁 41</span><span class="m" title="issues">● 82</span><span class="m" title="prs">⑃ 35</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">It&#x27;s sudo, for Windows</div></div><div class="row-side"><div class="row-stars-big">★ 5,863</div></div></div><div class="rank-row"><span class="row-rank">17</span><a class="row-avatar" href="../repos/builtbybel__Bloatynosy"><img src="https://avatars.githubusercontent.com/u/48735732?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/builtbybel__Bloatynosy"><span class="row-owner">builtbybel</span><span class="row-sep">/</span><span class="row-repo">Bloatynosy</span></a></div><div class="row-meta"><span class="lang-tag">C#</span><span class="m" title="stars">★ 5,850</span><span class="m" title="forks">⑂ 187</span><span class="m" title="watchers">👁 81</span><span class="m" title="issues">● 150</span><span class="m" title="prs">⑃ 34</span><span class="m" title="releases">▤ 69</span></div><div class="row-desc">The Windows debloater.</div></div><div class="row-side"><div class="row-stars-big">★ 5,850</div></div></div><div class="rank-row"><span class="row-rank">18</span><a class="row-avatar" href="../repos/amnweb__yasb"><img src="https://avatars.githubusercontent.com/u/16545063?u=3b748bb5a6cd836ab80491f2649c75e9b8fbb060&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/amnweb__yasb"><span class="row-owner">amnweb</span><span class="row-sep">/</span><span class="row-repo">yasb</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 5,776</span><span class="m" title="forks">⑂ 241</span><span class="m" title="watchers">👁 35</span><span class="m" title="issues">● 493</span><span class="m" title="prs">⑃ 551</span><span class="m" title="releases">▤ 90</span></div><div class="row-desc">A highly configurable Windows status bar written in Python.</div></div><div class="row-side"><div class="row-stars-big">★ 5,776</div></div></div><div class="rank-row"><span class="row-rank">19</span><a class="row-avatar" href="../repos/t1m0thyj__WinDynamicDesktop"><img src="https://avatars.githubusercontent.com/u/22344007?u=0e9cc382ab8834fbc41004973949c41c86eded85&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/t1m0thyj__WinDynamicDesktop"><span class="row-owner">t1m0thyj</span><span class="row-sep">/</span><span class="row-repo">WinDynamicDesktop</span></a></div><div class="row-meta"><span class="lang-tag">C#</span><span class="m" title="stars">★ 5,063</span><span class="m" title="forks">⑂ 303</span><span class="m" title="watchers">👁 82</span><span class="m" title="issues">● 456</span><span class="m" title="prs">⑃ 144</span><span class="m" title="releases">▤ 50</span></div><div class="row-desc">Port of macOS Mojave Dynamic Desktop feature to Windows</div></div><div class="row-side"><div class="row-stars-big">★ 5,063</div></div></div><div class="rank-row"><span class="row-rank">20</span><a class="row-avatar" href="../repos/unchihugo__FluentFlyout"><img src="https://avatars.githubusercontent.com/u/43926158?u=090aaae675afc9aacf4a65481f5c1575dfa0de66&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/unchihugo__FluentFlyout"><span class="row-owner">unchihugo</span><span class="row-sep">/</span><span class="row-repo">FluentFlyout</span></a></div><div class="row-meta"><span class="lang-tag">C#</span><span class="m" title="stars">★ 4,890</span><span class="m" title="forks">⑂ 250</span><span class="m" title="watchers">👁 15</span><span class="m" title="issues">● 819</span><span class="m" title="prs">⑃ 385</span><span class="m" title="releases">▤ 45</span></div><div class="row-desc">The modern Flyout app for Windows 11, built with Fluent 2 Design principles. Media Flyouts, Taskbar Widgets and more.</div></div><div class="row-side"><div class="row-stars-big">★ 4,890</div></div></div><div class="rank-row"><span class="row-rank">21</span><a class="row-avatar" href="../repos/kiwix__kiwix-js-pwa"><img src="https://avatars.githubusercontent.com/u/826219?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/kiwix__kiwix-js-pwa"><span class="row-owner">kiwix</span><span class="row-sep">/</span><span class="row-repo">kiwix-js-pwa</span></a></div><div class="row-meta"><span class="lang-tag">JavaScript</span><span class="m" title="stars">★ 299</span><span class="m" title="forks">⑂ 57</span><span class="m" title="watchers">👁 7</span><span class="m" title="issues">● 710</span><span class="m" title="prs">⑃ 331</span><span class="m" title="releases">▤ 58</span></div><div class="row-desc">Kiwix JS Offline Browser implemented as a Progressive Web App (PWA), and packaged as Electron, NWJS and UWP apps for Windows, Linux and macOS..</div></div><div class="row-side"><div class="row-stars-big">★ 299</div></div></div></div><!--/SSR--></div>
+
+    <details class="month-detail" id="monthDetail">
+      <summary data-i18n="month.top10">当月每日飙升 Top10 摘要</summary>
+      <div id="monthTop10"><!--SSRMT--><!--/SSRMT--></div>
+    </details>
+  </section>
+
+  <section id="yearWrap">
+    <h2 class="section-title" data-i18n="year.entry">年度月度榜入口</h2>
+    <div class="month-grid" id="monthGrid"><!--SSRMG--><!--/SSRMG--></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/common.js?v=20"></script>
+<script src="../assets/app.js?v=20"></script>
+</body>
+</html>

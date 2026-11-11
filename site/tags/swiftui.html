@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#swiftui · GitHub Trending Rank Radar</title>
+<meta name="description" content="GitHub 标签 swiftui 下的开源项目趋势榜 · 15 repos tagged swiftui on GitHub · 独立采集 GitHub 仓库数据的开源趋势榜单">
+<meta name="keywords" content="GitHub trending, GitHub ranking, GitHub 排行榜, 开源榜单, trending repos, star growth, star history, 星标增长, github stars, open data, github pages, github actions, 开源项目, open source rankings">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/tags/swiftui">
+<!-- bilingual content lives on ONE url — no per-lang alternates to declare -->
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="GitHub Trending Rank Radar" href="../feed.xml">
+<meta property="og:title" content="GitHub Trending Rank Radar">
+<meta property="og:description" content="GitHub 开源项目趋势榜单 · 每日双快照 · 十一榜单 · 历史回看 | Independent GitHub trend radar · twice-daily snapshots · 11 boards · bilingual">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zhuikan.com/tags/swiftui">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zhuikan.com/assets/og.png">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "GitHub Trending Rank Radar",
+      "alternateName": "GitHub 开源项目趋势榜单",
+      "url": "https://zhuikan.com/",
+      "description": "Independent open-source GitHub trend radar: daily/weekly/monthly star growth & rate boards, new-repo and all-time charts, browsable by day, month and year. 独立采集 GitHub 仓库数据的开源趋势榜单。",
+      "inLanguage": ["zh-CN", "en"],
+      "isAccessibleForFree": true,
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "publisher": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "name": "GitHub Trending Rankings Dataset",
+      "description": "Twice-daily snapshots of tracked GitHub repositories with stars, forks, watchers, issues, PRs and releases; precomputed daily/weekly/monthly/new/all-time leaderboard JSON.",
+      "url": "https://zhuikan.com/data/index.json",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "isAccessibleForFree": true,
+      "temporalCoverage": "2026-11-09/..",
+      "creator": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      },
+      "distribution": [
+        {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://zhuikan.com/data/index.json"}
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=20">
+</head>
+<body data-base="../" data-tag="swiftui" data-tag-name="swiftui">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到榜单</a>
+
+<noscript>
+  <div style="max-width:760px;margin:64px auto;padding:0 24px;font-family:system-ui,sans-serif;line-height:1.7;color:#333">
+    <h1>GitHub Trending Rank Radar</h1>
+    <p>独立采集 GitHub 仓库数据的开源趋势榜单：新星榜、日 / 周 / 月飙升榜与增速榜、总榜，支持按日 / 月 / 年回看历史。每日两次快照（UTC 02:00 / 14:00），榜单由快照差值计算。</p>
+    <p>An independent open-source GitHub trending radar: new repos, daily / weekly / monthly star-growth and rate boards, an all-time chart, and day / month / year history — snapshots taken twice daily (UTC 02:00 &amp; 14:00).</p>
+    <p>Machine-readable open data:
+      <a href="../data/index.json">data/index.json</a> ·
+      <a href="../llms.txt">llms.txt</a> ·
+      <a href="../sitemap.xml">sitemap.xml</a> ·
+      <a href="https://github.com/awesome-market/trending-rank-radar">Source on GitHub</a>
+    </p>
+    <p><strong>榜单交互需要启用 JavaScript。This site requires JavaScript for the interactive boards.</strong></p>
+  </div>
+</noscript>
+
+<!-- shared svg gradient defs for sparklines -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+        <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+        <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+        <g class="radar-sweep">
+          <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+        </g>
+      </svg>
+      <div>
+        <h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1>
+        <p class="hero-sub" data-i18n="hero.sub">GitHub 开源项目趋势榜单 · 每日双快照 · 八种榜单 · 日 / 月 / 年历史回看</p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <div class="search-wrap" id="searchWrap">
+        <select id="searchScope" class="search-scope" data-i18n-aria="search.scope.aria" aria-label="搜索范围">
+          <option value="repo" data-i18n="search.scope.repo">仓库</option>
+          <option value="news" data-i18n="search.scope.news">新闻</option>
+        </select>
+        <div class="search-box">
+          <svg class="search-ico" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"/></svg>
+          <input id="searchInput" class="search-input" type="search" autocomplete="off" spellcheck="false" data-i18n-ph="search.ph.repo" data-i18n-aria="search.ph.repo" aria-label="搜索" enterkeyhint="search">
+        </div>
+        <div class="search-drop" id="searchDrop" hidden></div>
+      </div>
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06-1.06a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.06l1.06-1.061a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero-viz" id="heroViz" data-enter>
+    <div class="hv-copy">
+      <p class="hv-kicker" data-i18n="hv.kicker">独立采集 · 开源数据</p>
+      <h2 class="hv-title" data-i18n="hv.title">独立追踪 GitHub 星标的每一次脉动</h2>
+      <p class="hv-sub" data-i18n="hv.sub">每日两次快照，用差值还原真实增长——不是又一份热榜镜像。</p>
+      <a class="hv-cta" href="#boardTabs" data-i18n="hv.cta">浏览今日榜单 →</a>
+    </div>
+    <div class="hv-side">
+      <div class="hv-chart" id="hvChart" aria-hidden="true"></div>
+      <div class="hv-cap" id="hvCap"></div>
+    </div>
+  </section>
+
+  <div class="controls" id="controls">
+    <div class="ctrl-row">
+      <nav class="board-tabs" id="boardTabs" data-i18n-aria="boards.aria" aria-label="榜单"></nav>
+    </div>
+    <div class="ctrl-row ctrl-sub">
+      <div class="seg" id="periodSeg" role="tablist" data-i18n-aria="period.aria" aria-label="时间维度">
+        <button data-period="day" class="seg-btn active" data-i18n="period.day">日</button>
+        <button data-period="month" class="seg-btn" data-i18n="period.month">月</button>
+        <button data-period="year" class="seg-btn" data-i18n="period.year">年</button>
+      </div>
+      <label class="sf-label" for="selDate" data-i18n="date.label">榜单日期</label>
+      <select id="selDate" class="sel" data-i18n-aria="date.aria" aria-label="日期"></select>
+      <div class="star-filter" role="group" data-i18n-aria="star.range" aria-label="Star 范围筛选">
+        <span class="sf-label" data-i18n="star.range">Star 范围</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="min">下限</span>
+          <input id="minK" type="number" min="0" step="1" value="1" class="sf-input" data-i18n-aria="minK.aria" aria-label="最小 Star 千数">
+        </label>
+        <span class="sf-sep">–</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="max">上限</span>
+          <input id="maxK" type="number" min="0" step="1" value="500" class="sf-input" data-i18n-aria="maxK.aria" aria-label="最大 Star 千数">
+        </label>
+        <span class="sf-unit">k</span>
+        <button id="applyFilter" class="sf-btn" data-i18n="apply">筛选</button>
+      </div>
+      <span class="window-info" id="windowInfo"></span>
+    </div>
+  </div>
+
+  <section id="content">
+    <div class="empty-state" id="emptyState" hidden>
+      <div class="empty-main">
+        <svg class="radar-big" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.4"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.3"/>
+          <g class="radar-sweep radar-sweep-lg">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <h2 data-i18n="empty.title">榜单积累中</h2>
+        <p id="emptyText" data-i18n="empty.text">快照数据正在积累，增长榜需要至少 2 个有效快照日。</p>
+        <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+        <p class="progress-hint" id="progressHint"></p>
+        <div class="empty-actions" id="emptyActions"></div>
+      </div>
+      <div class="empty-preview" id="emptyPreview"></div>
+    </div>
+
+    <div id="podiumWrap"></div>
+    <div id="listWrap"><!--SSR--><p style="color:var(--muted,#8b949e);font-size:13px;margin:0 4px 10px">2026-11-11 · #swiftui · 15 <span class="i18n-zh">个仓库 · 按 star 排序</span><span class="i18n-en">repos · by stars</span></p><div class="rank-list"><div class="rank-row"><span class="row-rank top">1</span><a class="row-avatar" href="../repos/dkhamsing__open-source-ios-apps"><img src="https://avatars.githubusercontent.com/u/4723115?u=600a73929478654e0586051bffcacbfee3d4c063&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/dkhamsing__open-source-ios-apps"><span class="row-owner">dkhamsing</span><span class="row-sep">/</span><span class="row-repo">open-source-ios-apps</span></a></div><div class="row-meta"><span class="m" title="stars">★ 53,188</span><span class="m" title="forks">⑂ 6,176</span><span class="m" title="watchers">👁 1,403</span><span class="m" title="issues">● 358</span><span class="m" title="prs">⑃ 2,072</span><span class="m" title="releases">▤ 39</span></div><div class="row-desc">:iphone: Collaborative List of Open-Source iOS Apps</div></div><div class="row-side"><div class="row-stars-big">★ 53,188</div></div></div><div class="rank-row"><span class="row-rank top">2</span><a class="row-avatar" href="../repos/CodeEditApp__CodeEdit"><img src="https://avatars.githubusercontent.com/u/101493338?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/CodeEditApp__CodeEdit"><span class="row-owner">CodeEditApp</span><span class="row-sep">/</span><span class="row-repo">CodeEdit</span></a></div><div class="row-meta"><span class="lang-tag">Swift</span><span class="m" title="stars">★ 23,110</span><span class="m" title="forks">⑂ 1,195</span><span class="m" title="watchers">👁 228</span><span class="m" title="issues">● 854</span><span class="m" title="prs">⑃ 1,160</span><span class="m" title="releases">▤ 38</span></div><div class="row-desc">📝 CodeEdit App for macOS – Elevate your code editing experience. Open source, free forever.</div></div><div class="row-side"><div class="row-stars-big">★ 23,110</div></div></div><div class="rank-row"><span class="row-rank top">3</span><a class="row-avatar" href="../repos/a2ui-project__a2ui"><img src="https://avatars.githubusercontent.com/u/265316950?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/a2ui-project__a2ui"><span class="row-owner">a2ui-project</span><span class="row-sep">/</span><span class="row-repo">a2ui</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 17,059</span><span class="m" title="forks">⑂ 1,378</span><span class="m" title="watchers">👁 93</span><span class="m" title="issues">● 1,288</span><span class="m" title="prs">⑃ 2,630</span><span class="m" title="releases">▤ 19</span></div><div class="row-desc">Open-source generative UI framework: agents stream layout data, and apps render it with native components in React, Angular, Lit, Flutter, SwiftUI and Jetpack Compose.</div></div><div class="row-side"><div class="row-stars-big">★ 17,059</div></div></div><div class="rank-row"><span class="row-rank">4</span><a class="row-avatar" href="../repos/darrylmorley__whatcable"><img src="https://avatars.githubusercontent.com/u/20406137?u=ce81c09d8ca05e4c0ea9b21d73abbab304d046e8&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/darrylmorley__whatcable"><span class="row-owner">darrylmorley</span><span class="row-sep">/</span><span class="row-repo">whatcable</span></a></div><div class="row-meta"><span class="lang-tag">Swift</span><span class="m" title="stars">★ 9,109</span><span class="m" title="forks">⑂ 278</span><span class="m" title="watchers">👁 16</span><span class="m" title="issues">● 447</span><span class="m" title="prs">⑃ 174</span><span class="m" title="releases">▤ 138</span></div><div class="row-desc">macOS menu bar app that tells you, in plain English, what each USB-C cable plugged into your Mac can actually do</div></div><div class="row-side"><div class="row-stars-big">★ 9,109</div></div></div><div class="rank-row"><span class="row-rank">5</span><a class="row-avatar" href="../repos/Louis-CFM__coucou"><img src="https://avatars.githubusercontent.com/u/72659375?u=ae7949ea186bcc5a9c3c553356fadbbf7ec6cdc2&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/Louis-CFM__coucou"><span class="row-owner">Louis-CFM</span><span class="row-sep">/</span><span class="row-repo">coucou</span></a></div><div class="row-meta"><span class="lang-tag">Swift</span><span class="m" title="stars">★ 7,128</span><span class="m" title="forks">⑂ 1,172</span><span class="m" title="watchers">👁 60</span><span class="m" title="issues">● 229</span><span class="m" title="prs">⑃ 854</span><span class="m" title="releases">▤ 57</span></div><div class="row-desc">A tiny friend in your Mac&#x27;s notch and on your iPhone that keeps an eye on your AI coding agents: Claude Code, Codex, Cursor, Gemini CLI, Antigravity and more. Approve from the notch or your Lock Screen.</div></div><div class="row-side"><div class="row-stars-big">★ 7,128</div></div></div><div class="rank-row"><span class="row-rank">6</span><a class="row-avatar" href="../repos/github__CopilotForXcode"><img src="https://avatars.githubusercontent.com/u/9919?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/github__CopilotForXcode"><span class="row-owner">github</span><span class="row-sep">/</span><span class="row-repo">CopilotForXcode</span></a></div><div class="row-meta"><span class="lang-tag">Swift</span><span class="m" title="stars">★ 6,384</span><span class="m" title="forks">⑂ 2,097</span><span class="m" title="watchers">👁 482</span><span class="m" title="issues">● 476</span><span class="m" title="prs">⑃ 178</span><span class="m" title="releases">▤ 96</span></div><div class="row-desc">AI coding assistant for Xcode</div></div><div class="row-side"><div class="row-stars-big">★ 6,384</div></div></div><div class="rank-row"><span class="row-rank">7</span><a class="row-avatar" href="../repos/alin23__Lunar"><img src="https://avatars.githubusercontent.com/u/3819725?u=f4bd82a1f4ad407d15562f8e0887e678e18bd215&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/alin23__Lunar"><span class="row-owner">alin23</span><span class="row-sep">/</span><span class="row-repo">Lunar</span></a></div><div class="row-meta"><span class="lang-tag">Swift</span><span class="m" title="stars">★ 5,734</span><span class="m" title="forks">⑂ 150</span><span class="m" title="watchers">👁 32</span><span class="m" title="issues">● 0</span><span class="m" title="prs">⑃ 8</span><span class="m" title="releases">▤ 182</span></div><div class="row-desc">Intelligent adaptive brightness for your external monitors</div></div><div class="row-side"><div class="row-stars-big">★ 5,734</div></div></div><div class="rank-row"><span class="row-rank">8</span><a class="row-avatar" href="../repos/amosgyamfi__open-swiftui-animations"><img src="https://avatars.githubusercontent.com/u/9307959?u=35d7a56dfb5de9cf6b087da7971b3e80645de1bf&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/amosgyamfi__open-swiftui-animations"><span class="row-owner">amosgyamfi</span><span class="row-sep">/</span><span class="row-repo">open-swiftui-animations</span></a></div><div class="row-meta"><span class="lang-tag">Swift</span><span class="m" title="stars">★ 5,689</span><span class="m" title="forks">⑂ 296</span><span class="m" title="watchers">👁 109</span><span class="m" title="issues">● 20</span><span class="m" title="prs">⑃ 3</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">You don&#x27;t need an animation library to add a simple effect to your SwiftUI app. Create it yourself with SwiftUI. This repo inspires you to add helpful and expressive SwiftUI animations like loading/progress, looping, on-off, enter, exit, fade, spin, and background animations to your next project. The repo also contains tremendous spring animations.</div></div><div class="row-side"><div class="row-stars-big">★ 5,689</div></div></div><div class="rank-row"><span class="row-rank">9</span><a class="row-avatar" href="../repos/AppPear__ChartView"><img src="https://avatars.githubusercontent.com/u/2826764?u=3d31c7be65d35c9df00e544a86dcca8c57612323&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/AppPear__ChartView"><span class="row-owner">AppPear</span><span class="row-sep">/</span><span class="row-repo">ChartView</span></a></div><div class="row-meta"><span class="lang-tag">Swift</span><span class="m" title="stars">★ 5,648</span><span class="m" title="forks">⑂ 634</span><span class="m" title="watchers">👁 94</span><span class="m" title="issues">● 158</span><span class="m" title="prs">⑃ 104</span><span class="m" title="releases">▤ 23</span></div><div class="row-desc">ChartView made in SwiftUI</div></div><div class="row-side"><div class="row-stars-big">★ 5,648</div></div></div><div class="rank-row"><span class="row-rank">10</span><a class="row-avatar" href="../repos/ivanvorobei__SwiftUI"><img src="https://avatars.githubusercontent.com/u/10995774?u=cc3563422bdc314b2ed7e88227cef16615de2868&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/ivanvorobei__SwiftUI"><span class="row-owner">ivanvorobei</span><span class="row-sep">/</span><span class="row-repo">SwiftUI</span></a></div><div class="row-meta"><span class="lang-tag">Swift</span><span class="m" title="stars">★ 5,629</span><span class="m" title="forks">⑂ 566</span><span class="m" title="watchers">👁 136</span><span class="m" title="issues">● 13</span><span class="m" title="prs">⑃ 40</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">Examples projects using SwiftUI released by WWDC2019. Include Layout, UI, Animations, Gestures, Draw and Data.</div></div><div class="row-side"><div class="row-stars-big">★ 5,629</div></div></div><div class="rank-row"><span class="row-rank">11</span><a class="row-avatar" href="../repos/Saffsanity__sill"><img src="https://avatars.githubusercontent.com/u/19507835?u=847af62695949c65aeb760f879f048f34c0b9309&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/Saffsanity__sill"><span class="row-owner">Saffsanity</span><span class="row-sep">/</span><span class="row-repo">sill</span></a></div><div class="row-meta"><span class="lang-tag">Swift</span><span class="m" title="stars">★ 4,822</span><span class="m" title="forks">⑂ 295</span><span class="m" title="watchers">👁 12</span><span class="m" title="issues">● 124</span><span class="m" title="prs">⑃ 224</span><span class="m" title="releases">▤ 6</span></div><div class="row-desc">Any window from your Mac, live on your iPhone or iPad. Touch, Apple Pencil, trackpad and keys. Free, open source, no servers.</div></div><div class="row-side"><div class="row-stars-big">★ 4,822</div></div></div><div class="rank-row"><span class="row-rank">12</span><a class="row-avatar" href="../repos/jithin-sabu__purge-app"><img src="https://avatars.githubusercontent.com/u/110096782?u=a4f4a50ce0428c01aaf6427c66e4d7f8ae81f140&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/jithin-sabu__purge-app"><span class="row-owner">jithin-sabu</span><span class="row-sep">/</span><span class="row-repo">purge-app</span></a></div><div class="row-meta"><span class="lang-tag">Swift</span><span class="m" title="stars">★ 1,858</span><span class="m" title="forks">⑂ 101</span><span class="m" title="watchers">👁 6</span><span class="m" title="issues">● 144</span><span class="m" title="prs">⑃ 197</span><span class="m" title="releases">▤ 42</span></div><div class="row-desc">Free up your Mac. Safely. A free, open-source native Mac app that clears the cache and junk your Mac piles up on its own. Files go to the Trash by default, so you can put them back.</div></div><div class="row-side"><div class="row-stars-big">★ 1,858</div></div></div><div class="rank-row"><span class="row-rank">13</span><a class="row-avatar" href="../repos/pauljoda__Crest"><img src="https://avatars.githubusercontent.com/u/3199533?u=36341f07e666928401ff8ac11c3db74dd15da7df&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/pauljoda__Crest"><span class="row-owner">pauljoda</span><span class="row-sep">/</span><span class="row-repo">Crest</span></a></div><div class="row-meta"><span class="lang-tag">Swift</span><span class="m" title="stars">★ 1,237</span><span class="m" title="forks">⑂ 119</span><span class="m" title="watchers">👁 1</span><span class="m" title="issues">● 647</span><span class="m" title="prs">⑃ 442</span><span class="m" title="releases">▤ 306</span></div><div class="row-desc">An open source browser for Mac, iPhone, and iPad.</div></div><div class="row-side"><div class="row-stars-big">★ 1,237</div></div></div><div class="rank-row"><span class="row-rank">14</span><a class="row-avatar" href="../repos/YangJiiii__3105"><img src="https://avatars.githubusercontent.com/u/66435047?u=557893dab91a4142e9ea3b538389814f9a61c4ca&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/YangJiiii__3105"><span class="row-owner">YangJiiii</span><span class="row-sep">/</span><span class="row-repo">3105</span></a></div><div class="row-meta"><span class="lang-tag">Swift</span><span class="m" title="stars">★ 985</span><span class="m" title="forks">⑂ 191</span><span class="m" title="watchers">👁 20</span><span class="m" title="issues">● 86</span><span class="m" title="prs">⑃ 9</span><span class="m" title="releases">▤ 6</span></div><div class="row-desc">Native iOS app-data browser, portable patch manager, limited cleaner, and PosterBoard wallpaper lab.</div></div><div class="row-side"><div class="row-stars-big">★ 985</div></div></div><div class="rank-row"><span class="row-rank">15</span><a class="row-avatar" href="../repos/kaishi00__hermes-conduit"><img src="https://avatars.githubusercontent.com/u/6590895?u=9508570babca587d987c7ac42c601fd9b16e212b&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/kaishi00__hermes-conduit"><span class="row-owner">kaishi00</span><span class="row-sep">/</span><span class="row-repo">hermes-conduit</span></a></div><div class="row-meta"><span class="lang-tag">Swift</span><span class="m" title="stars">★ 577</span><span class="m" title="forks">⑂ 82</span><span class="m" title="watchers">👁 5</span><span class="m" title="issues">● 481</span><span class="m" title="prs">⑃ 1,728</span><span class="m" title="releases">▤ 120</span></div><div class="row-desc">Conduit — native SwiftUI iOS client for Hermes Agent</div></div><div class="row-side"><div class="row-stars-big">★ 577</div></div></div></div><!--/SSR--></div>
+
+    <details class="month-detail" id="monthDetail">
+      <summary data-i18n="month.top10">当月每日飙升 Top10 摘要</summary>
+      <div id="monthTop10"><!--SSRMT--><!--/SSRMT--></div>
+    </details>
+  </section>
+
+  <section id="yearWrap">
+    <h2 class="section-title" data-i18n="year.entry">年度月度榜入口</h2>
+    <div class="month-grid" id="monthGrid"><!--SSRMG--><!--/SSRMG--></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/common.js?v=20"></script>
+<script src="../assets/app.js?v=20"></script>
+</body>
+</html>

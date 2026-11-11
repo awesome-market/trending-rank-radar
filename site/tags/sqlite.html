@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#sqlite · GitHub Trending Rank Radar</title>
+<meta name="description" content="GitHub 标签 sqlite 下的开源项目趋势榜 · 29 repos tagged sqlite on GitHub · 独立采集 GitHub 仓库数据的开源趋势榜单">
+<meta name="keywords" content="GitHub trending, GitHub ranking, GitHub 排行榜, 开源榜单, trending repos, star growth, star history, 星标增长, github stars, open data, github pages, github actions, 开源项目, open source rankings">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/tags/sqlite">
+<!-- bilingual content lives on ONE url — no per-lang alternates to declare -->
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="GitHub Trending Rank Radar" href="../feed.xml">
+<meta property="og:title" content="GitHub Trending Rank Radar">
+<meta property="og:description" content="GitHub 开源项目趋势榜单 · 每日双快照 · 十一榜单 · 历史回看 | Independent GitHub trend radar · twice-daily snapshots · 11 boards · bilingual">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zhuikan.com/tags/sqlite">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zhuikan.com/assets/og.png">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "GitHub Trending Rank Radar",
+      "alternateName": "GitHub 开源项目趋势榜单",
+      "url": "https://zhuikan.com/",
+      "description": "Independent open-source GitHub trend radar: daily/weekly/monthly star growth & rate boards, new-repo and all-time charts, browsable by day, month and year. 独立采集 GitHub 仓库数据的开源趋势榜单。",
+      "inLanguage": ["zh-CN", "en"],
+      "isAccessibleForFree": true,
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "publisher": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "name": "GitHub Trending Rankings Dataset",
+      "description": "Twice-daily snapshots of tracked GitHub repositories with stars, forks, watchers, issues, PRs and releases; precomputed daily/weekly/monthly/new/all-time leaderboard JSON.",
+      "url": "https://zhuikan.com/data/index.json",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "isAccessibleForFree": true,
+      "temporalCoverage": "2026-11-09/..",
+      "creator": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      },
+      "distribution": [
+        {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://zhuikan.com/data/index.json"}
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=20">
+</head>
+<body data-base="../" data-tag="sqlite" data-tag-name="sqlite">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到榜单</a>
+
+<noscript>
+  <div style="max-width:760px;margin:64px auto;padding:0 24px;font-family:system-ui,sans-serif;line-height:1.7;color:#333">
+    <h1>GitHub Trending Rank Radar</h1>
+    <p>独立采集 GitHub 仓库数据的开源趋势榜单：新星榜、日 / 周 / 月飙升榜与增速榜、总榜，支持按日 / 月 / 年回看历史。每日两次快照（UTC 02:00 / 14:00），榜单由快照差值计算。</p>
+    <p>An independent open-source GitHub trending radar: new repos, daily / weekly / monthly star-growth and rate boards, an all-time chart, and day / month / year history — snapshots taken twice daily (UTC 02:00 &amp; 14:00).</p>
+    <p>Machine-readable open data:
+      <a href="../data/index.json">data/index.json</a> ·
+      <a href="../llms.txt">llms.txt</a> ·
+      <a href="../sitemap.xml">sitemap.xml</a> ·
+      <a href="https://github.com/awesome-market/trending-rank-radar">Source on GitHub</a>
+    </p>
+    <p><strong>榜单交互需要启用 JavaScript。This site requires JavaScript for the interactive boards.</strong></p>
+  </div>
+</noscript>
+
+<!-- shared svg gradient defs for sparklines -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+        <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+        <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+        <g class="radar-sweep">
+          <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+        </g>
+      </svg>
+      <div>
+        <h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1>
+        <p class="hero-sub" data-i18n="hero.sub">GitHub 开源项目趋势榜单 · 每日双快照 · 八种榜单 · 日 / 月 / 年历史回看</p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <div class="search-wrap" id="searchWrap">
+        <select id="searchScope" class="search-scope" data-i18n-aria="search.scope.aria" aria-label="搜索范围">
+          <option value="repo" data-i18n="search.scope.repo">仓库</option>
+          <option value="news" data-i18n="search.scope.news">新闻</option>
+        </select>
+        <div class="search-box">
+          <svg class="search-ico" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"/></svg>
+          <input id="searchInput" class="search-input" type="search" autocomplete="off" spellcheck="false" data-i18n-ph="search.ph.repo" data-i18n-aria="search.ph.repo" aria-label="搜索" enterkeyhint="search">
+        </div>
+        <div class="search-drop" id="searchDrop" hidden></div>
+      </div>
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06-1.06a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.06l1.06-1.061a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero-viz" id="heroViz" data-enter>
+    <div class="hv-copy">
+      <p class="hv-kicker" data-i18n="hv.kicker">独立采集 · 开源数据</p>
+      <h2 class="hv-title" data-i18n="hv.title">独立追踪 GitHub 星标的每一次脉动</h2>
+      <p class="hv-sub" data-i18n="hv.sub">每日两次快照，用差值还原真实增长——不是又一份热榜镜像。</p>
+      <a class="hv-cta" href="#boardTabs" data-i18n="hv.cta">浏览今日榜单 →</a>
+    </div>
+    <div class="hv-side">
+      <div class="hv-chart" id="hvChart" aria-hidden="true"></div>
+      <div class="hv-cap" id="hvCap"></div>
+    </div>
+  </section>
+
+  <div class="controls" id="controls">
+    <div class="ctrl-row">
+      <nav class="board-tabs" id="boardTabs" data-i18n-aria="boards.aria" aria-label="榜单"></nav>
+    </div>
+    <div class="ctrl-row ctrl-sub">
+      <div class="seg" id="periodSeg" role="tablist" data-i18n-aria="period.aria" aria-label="时间维度">
+        <button data-period="day" class="seg-btn active" data-i18n="period.day">日</button>
+        <button data-period="month" class="seg-btn" data-i18n="period.month">月</button>
+        <button data-period="year" class="seg-btn" data-i18n="period.year">年</button>
+      </div>
+      <label class="sf-label" for="selDate" data-i18n="date.label">榜单日期</label>
+      <select id="selDate" class="sel" data-i18n-aria="date.aria" aria-label="日期"></select>
+      <div class="star-filter" role="group" data-i18n-aria="star.range" aria-label="Star 范围筛选">
+        <span class="sf-label" data-i18n="star.range">Star 范围</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="min">下限</span>
+          <input id="minK" type="number" min="0" step="1" value="1" class="sf-input" data-i18n-aria="minK.aria" aria-label="最小 Star 千数">
+        </label>
+        <span class="sf-sep">–</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="max">上限</span>
+          <input id="maxK" type="number" min="0" step="1" value="500" class="sf-input" data-i18n-aria="maxK.aria" aria-label="最大 Star 千数">
+        </label>
+        <span class="sf-unit">k</span>
+        <button id="applyFilter" class="sf-btn" data-i18n="apply">筛选</button>
+      </div>
+      <span class="window-info" id="windowInfo"></span>
+    </div>
+  </div>
+
+  <section id="content">
+    <div class="empty-state" id="emptyState" hidden>
+      <div class="empty-main">
+        <svg class="radar-big" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.4"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.3"/>
+          <g class="radar-sweep radar-sweep-lg">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <h2 data-i18n="empty.title">榜单积累中</h2>
+        <p id="emptyText" data-i18n="empty.text">快照数据正在积累，增长榜需要至少 2 个有效快照日。</p>
+        <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+        <p class="progress-hint" id="progressHint"></p>
+        <div class="empty-actions" id="emptyActions"></div>
+      </div>
+      <div class="empty-preview" id="emptyPreview"></div>
+    </div>
+
+    <div id="podiumWrap"></div>
+    <div id="listWrap"><!--SSR--><p style="color:var(--muted,#8b949e);font-size:13px;margin:0 4px 10px">2026-11-11 · #sqlite · 29 <span class="i18n-zh">个仓库 · 按 star 排序</span><span class="i18n-en">repos · by stars</span></p><div class="rank-list"><div class="rank-row"><span class="row-rank top">1</span><a class="row-avatar" href="../repos/nocodb__nocodb"><img src="https://avatars.githubusercontent.com/u/50206778?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/nocodb__nocodb"><span class="row-owner">nocodb</span><span class="row-sep">/</span><span class="row-repo">nocodb</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 65,504</span><span class="m" title="forks">⑂ 5,132</span><span class="m" title="watchers">👁 383</span><span class="m" title="issues">● 4,832</span><span class="m" title="prs">⑃ 8,117</span><span class="m" title="releases">▤ 204</span></div><div class="row-desc">🔥 🔥 🔥 A Free &amp; Self-hostable Airtable Alternative</div></div><div class="row-side"><div class="row-stars-big">★ 65,504</div></div></div><div class="rank-row"><span class="row-rank top">2</span><a class="row-avatar" href="../repos/usememos__memos"><img src="https://avatars.githubusercontent.com/u/95764151?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/usememos__memos"><span class="row-owner">usememos</span><span class="row-sep">/</span><span class="row-repo">memos</span></a></div><div class="row-meta"><span class="lang-tag">Go</span><span class="m" title="stars">★ 64,400</span><span class="m" title="forks">⑂ 4,950</span><span class="m" title="watchers">👁 184</span><span class="m" title="issues">● 3,081</span><span class="m" title="prs">⑃ 2,699</span><span class="m" title="releases">▤ 103</span></div><div class="row-desc">Memos is an open-source, self-hosted note-taking app that brings your everyday thoughts together in a personal timeline. Your data stays yours, and you choose what to keep private or share.</div></div><div class="row-side"><div class="row-stars-big">★ 64,400</div></div></div><div class="rank-row"><span class="row-rank top">3</span><a class="row-avatar" href="../repos/dbeaver__dbeaver"><img src="https://avatars.githubusercontent.com/u/34743864?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/dbeaver__dbeaver"><span class="row-owner">dbeaver</span><span class="row-sep">/</span><span class="row-repo">dbeaver</span></a></div><div class="row-meta"><span class="lang-tag">Java</span><span class="m" title="stars">★ 52,397</span><span class="m" title="forks">⑂ 4,455</span><span class="m" title="watchers">👁 548</span><span class="m" title="issues">● 20,760</span><span class="m" title="prs">⑃ 9,230</span><span class="m" title="releases">▤ 259</span></div><div class="row-desc">Free universal database tool and SQL client</div></div><div class="row-side"><div class="row-stars-big">★ 52,397</div></div></div><div class="rank-row"><span class="row-rank">4</span><a class="row-avatar" href="../repos/prisma__orm"><img src="https://avatars.githubusercontent.com/u/17219288?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/prisma__orm"><span class="row-owner">prisma</span><span class="row-sep">/</span><span class="row-repo">orm</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 47,664</span><span class="m" title="forks">⑂ 2,609</span><span class="m" title="watchers">👁 295</span><span class="m" title="issues">● 12,245</span><span class="m" title="prs">⑃ 10,980</span><span class="m" title="releases">▤ 275</span></div><div class="row-desc">The Prisma ORM: write your application in TypeScript with human-readable queries instead of SQL. Host your database on Prisma Postgres and your app on Prisma Compute.</div></div><div class="row-side"><div class="row-stars-big">★ 47,664</div></div></div><div class="rank-row"><span class="row-rank">5</span><a class="row-avatar" href="../repos/prisma__prisma"><img src="https://avatars.githubusercontent.com/u/17219288?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/prisma__prisma"><span class="row-owner">prisma</span><span class="row-sep">/</span><span class="row-repo">prisma</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 47,664</span><span class="m" title="forks">⑂ 2,609</span><span class="m" title="watchers">👁 295</span><span class="m" title="issues">● 12,245</span><span class="m" title="prs">⑃ 10,980</span><span class="m" title="releases">▤ 275</span></div><div class="row-desc">The Prisma ORM: write your application in TypeScript with human-readable queries instead of SQL. Host your database on Prisma Postgres and your app on Prisma Compute.</div></div><div class="row-side"><div class="row-stars-big">★ 47,664</div></div></div><div class="rank-row"><span class="row-rank">6</span><a class="row-avatar" href="../repos/drawdb-io__drawdb"><img src="https://avatars.githubusercontent.com/u/139706923?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/drawdb-io__drawdb"><span class="row-owner">drawdb-io</span><span class="row-sep">/</span><span class="row-repo">drawdb</span></a></div><div class="row-meta"><span class="lang-tag">JavaScript</span><span class="m" title="stars">★ 40,305</span><span class="m" title="forks">⑂ 3,362</span><span class="m" title="watchers">👁 147</span><span class="m" title="issues">● 382</span><span class="m" title="prs">⑃ 784</span><span class="m" title="releases">▤ 1</span></div><div class="row-desc">Free, simple, and intuitive online database diagram editor and SQL generator.</div></div><div class="row-side"><div class="row-stars-big">★ 40,305</div></div></div><div class="rank-row"><span class="row-rank">7</span><a class="row-avatar" href="../repos/typeorm__typeorm"><img src="https://avatars.githubusercontent.com/u/20165699?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/typeorm__typeorm"><span class="row-owner">typeorm</span><span class="row-sep">/</span><span class="row-repo">typeorm</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 36,675</span><span class="m" title="forks">⑂ 6,686</span><span class="m" title="watchers">👁 334</span><span class="m" title="issues">● 8,705</span><span class="m" title="prs">⑃ 4,275</span><span class="m" title="releases">▤ 47</span></div><div class="row-desc">TypeScript &amp; JavaScript ORM for Node.js — supports PostgreSQL, MySQL, MariaDB, SQLite, SQL Server, Oracle, and more.</div></div><div class="row-side"><div class="row-stars-big">★ 36,675</div></div></div><div class="rank-row"><span class="row-rank">8</span><a class="row-avatar" href="../repos/drizzle-team__drizzle-orm"><img src="https://avatars.githubusercontent.com/u/108468352?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/drizzle-team__drizzle-orm"><span class="row-owner">drizzle-team</span><span class="row-sep">/</span><span class="row-repo">drizzle-orm</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 36,269</span><span class="m" title="forks">⑂ 1,769</span><span class="m" title="watchers">👁 86</span><span class="m" title="issues">● 3,879</span><span class="m" title="prs">⑃ 1,986</span><span class="m" title="releases">▤ 186</span></div><div class="row-desc">ORM</div></div><div class="row-side"><div class="row-stars-big">★ 36,269</div></div></div><div class="rank-row"><span class="row-rank">9</span><a class="row-avatar" href="../repos/t8y2__dbx"><img src="https://avatars.githubusercontent.com/u/77960507?u=8d7722cf86341f838611cfe5a3f6c65a48893035&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/t8y2__dbx"><span class="row-owner">t8y2</span><span class="row-sep">/</span><span class="row-repo">dbx</span></a></div><div class="row-meta"><span class="lang-tag">Rust</span><span class="m" title="stars">★ 30,032</span><span class="m" title="forks">⑂ 2,741</span><span class="m" title="watchers">👁 97</span><span class="m" title="issues">● 8,946</span><span class="m" title="prs">⑃ 5,598</span><span class="m" title="releases">▤ 433</span></div><div class="row-desc">25 MB lightweight cross-platform database client for 100+ databases, including MySQL, PostgreSQL, SQLite, Redis, MongoDB, DuckDB, SQL Server, and Dameng. Built-in AI, MCP Server, CLI, desktop and Docker. | 轻量级跨平台数据库管理工具，支持 MySQL、PostgreSQL、SQLite、Redis、MongoDB、达梦等 100+ 数据库，提供桌面端、Docker、CLI、内置 AI 助手和 MCP。</div></div><div class="row-side"><div class="row-stars-big">★ 30,032</div></div></div><div class="rank-row"><span class="row-rank">10</span><a class="row-avatar" href="../repos/golang-migrate__migrate"><img src="https://avatars.githubusercontent.com/u/35595841?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/golang-migrate__migrate"><span class="row-owner">golang-migrate</span><span class="row-sep">/</span><span class="row-repo">migrate</span></a></div><div class="row-meta"><span class="lang-tag">Go</span><span class="m" title="stars">★ 19,027</span><span class="m" title="forks">⑂ 1,626</span><span class="m" title="watchers">👁 83</span><span class="m" title="issues">● 696</span><span class="m" title="prs">⑃ 720</span><span class="m" title="releases">▤ 57</span></div><div class="row-desc">Database migrations. CLI and Golang library.</div></div><div class="row-side"><div class="row-stars-big">★ 19,027</div></div></div><div class="rank-row"><span class="row-rank">11</span><a class="row-avatar" href="../repos/sqlc-dev__sqlc"><img src="https://avatars.githubusercontent.com/u/136738596?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/sqlc-dev__sqlc"><span class="row-owner">sqlc-dev</span><span class="row-sep">/</span><span class="row-repo">sqlc</span></a></div><div class="row-meta"><span class="lang-tag">Go</span><span class="m" title="stars">★ 18,451</span><span class="m" title="forks">⑂ 1,105</span><span class="m" title="watchers">👁 82</span><span class="m" title="issues">● 1,914</span><span class="m" title="prs">⑃ 2,456</span><span class="m" title="releases">▤ 38</span></div><div class="row-desc">Generate type-safe code from SQL</div></div><div class="row-side"><div class="row-stars-big">★ 18,451</div></div></div><div class="rank-row"><span class="row-rank">12</span><a class="row-avatar" href="../repos/rqlite__rqlite"><img src="https://avatars.githubusercontent.com/u/18683023?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/rqlite__rqlite"><span class="row-owner">rqlite</span><span class="row-sep">/</span><span class="row-repo">rqlite</span></a></div><div class="row-meta"><span class="lang-tag">Go</span><span class="m" title="stars">★ 17,940</span><span class="m" title="forks">⑂ 826</span><span class="m" title="watchers">👁 217</span><span class="m" title="issues">● 685</span><span class="m" title="prs">⑃ 2,288</span><span class="m" title="releases">▤ 371</span></div><div class="row-desc">The lightweight, fault-tolerant database built on SQLite. Designed to keep your data highly available with minimal effort.</div></div><div class="row-side"><div class="row-stars-big">★ 17,940</div></div></div><div class="rank-row"><span class="row-rank">13</span><a class="row-avatar" href="../repos/transact-rs__sqlx"><img src="https://avatars.githubusercontent.com/u/181541757?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/transact-rs__sqlx"><span class="row-owner">transact-rs</span><span class="row-sep">/</span><span class="row-repo">sqlx</span></a></div><div class="row-meta"><span class="lang-tag">Rust</span><span class="m" title="stars">★ 17,652</span><span class="m" title="forks">⑂ 1,785</span><span class="m" title="watchers">👁 62</span><span class="m" title="issues">● 2,205</span><span class="m" title="prs">⑃ 1,710</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">🧰 The Rust SQL Toolkit. An async, pure Rust SQL crate featuring compile-time checked queries without a DSL. Supports PostgreSQL, MySQL, and SQLite.</div></div><div class="row-side"><div class="row-stars-big">★ 17,652</div></div></div><div class="rank-row"><span class="row-rank">14</span><a class="row-avatar" href="../repos/JoeanAmier__TikTokDownloader"><img src="https://avatars.githubusercontent.com/u/49263334?u=42a02c220c618b58a61c1f9e4a39b506cee241de&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/JoeanAmier__TikTokDownloader"><span class="row-owner">JoeanAmier</span><span class="row-sep">/</span><span class="row-repo">TikTokDownloader</span></a></div><div class="row-meta"><span class="lang-tag">JavaScript</span><span class="m" title="stars">★ 17,452</span><span class="m" title="forks">⑂ 2,873</span><span class="m" title="watchers">👁 93</span><span class="m" title="issues">● 672</span><span class="m" title="prs">⑃ 83</span><span class="m" title="releases">▤ 27</span></div><div class="row-desc">抖音 / TikTok 平台作品下载/数据采集工具</div></div><div class="row-side"><div class="row-stars-big">★ 17,452</div></div></div><div class="rank-row"><span class="row-rank">15</span><a class="row-avatar" href="../repos/tursodatabase__libsql"><img src="https://avatars.githubusercontent.com/u/139391156?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/tursodatabase__libsql"><span class="row-owner">tursodatabase</span><span class="row-sep">/</span><span class="row-repo">libsql</span></a></div><div class="row-meta"><span class="lang-tag">C</span><span class="m" title="stars">★ 17,327</span><span class="m" title="forks">⑂ 559</span><span class="m" title="watchers">👁 83</span><span class="m" title="issues">● 648</span><span class="m" title="prs">⑃ 1,591</span><span class="m" title="releases">▤ 55</span></div><div class="row-desc">libSQL is a fork of SQLite that is both Open Source, and Open Contributions.</div></div><div class="row-side"><div class="row-stars-big">★ 17,327</div></div></div><div class="rank-row"><span class="row-rank">16</span><a class="row-avatar" href="../repos/SeaQL__sea-orm"><img src="https://avatars.githubusercontent.com/u/73226408?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/SeaQL__sea-orm"><span class="row-owner">SeaQL</span><span class="row-sep">/</span><span class="row-repo">sea-orm</span></a></div><div class="row-meta"><span class="lang-tag">Rust</span><span class="m" title="stars">★ 9,958</span><span class="m" title="forks">⑂ 749</span><span class="m" title="watchers">👁 38</span><span class="m" title="issues">● 1,090</span><span class="m" title="prs">⑃ 1,206</span><span class="m" title="releases">▤ 106</span></div><div class="row-desc">🐚 A powerful relational ORM for Rust</div></div><div class="row-side"><div class="row-stars-big">★ 9,958</div></div></div><div class="rank-row"><span class="row-rank">17</span><a class="row-avatar" href="../repos/tobymao__sqlglot"><img src="https://avatars.githubusercontent.com/u/8205034?u=f2f96370822b3b5c9aa7dd028b7a4961a3747f14&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/tobymao__sqlglot"><span class="row-owner">tobymao</span><span class="row-sep">/</span><span class="row-repo">sqlglot</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 9,778</span><span class="m" title="forks">⑂ 1,395</span><span class="m" title="watchers">👁 49</span><span class="m" title="issues">● 3,109</span><span class="m" title="prs">⑃ 5,662</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">Python SQL Parser and Transpiler</div></div><div class="row-side"><div class="row-stars-big">★ 9,778</div></div></div><div class="rank-row"><span class="row-rank">18</span><a class="row-avatar" href="../repos/doctrine__dbal"><img src="https://avatars.githubusercontent.com/u/209254?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/doctrine__dbal"><span class="row-owner">doctrine</span><span class="row-sep">/</span><span class="row-repo">dbal</span></a></div><div class="row-meta"><span class="lang-tag">PHP</span><span class="m" title="stars">★ 9,701</span><span class="m" title="forks">⑂ 1,376</span><span class="m" title="watchers">👁 106</span><span class="m" title="issues">● 2,739</span><span class="m" title="prs">⑃ 4,823</span><span class="m" title="releases">▤ 149</span></div><div class="row-desc">Doctrine Database Abstraction Layer</div></div><div class="row-side"><div class="row-stars-big">★ 9,701</div></div></div><div class="rank-row"><span class="row-rank">19</span><a class="row-avatar" href="../repos/cooderl__wewe-rss"><img src="https://avatars.githubusercontent.com/u/152949883?u=83912b8027642e9ccea6991ef34eb1314a86a57b&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/cooderl__wewe-rss"><span class="row-owner">cooderl</span><span class="row-sep">/</span><span class="row-repo">wewe-rss</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 9,621</span><span class="m" title="forks">⑂ 1,794</span><span class="m" title="watchers">👁 37</span><span class="m" title="issues">● 428</span><span class="m" title="prs">⑃ 30</span><span class="m" title="releases">▤ 21</span></div><div class="row-desc">🤗更优雅的微信公众号订阅方式，支持私有化部署、微信公众号RSS生成（基于微信读书）</div></div><div class="row-side"><div class="row-stars-big">★ 9,621</div></div></div><div class="rank-row"><span class="row-rank">20</span><a class="row-avatar" href="../repos/saulpw__visidata"><img src="https://avatars.githubusercontent.com/u/236498?u=bf7747b7f2c4f99e1ef85c93d65db609b0a38d9b&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/saulpw__visidata"><span class="row-owner">saulpw</span><span class="row-sep">/</span><span class="row-repo">visidata</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 9,459</span><span class="m" title="forks">⑂ 377</span><span class="m" title="watchers">👁 65</span><span class="m" title="issues">● 1,726</span><span class="m" title="prs">⑃ 1,053</span><span class="m" title="releases">▤ 49</span></div><div class="row-desc">A terminal spreadsheet multitool for discovering and arranging data</div></div><div class="row-side"><div class="row-stars-big">★ 9,459</div></div></div><div class="rank-row"><span class="row-rank">21</span><a class="row-avatar" href="../repos/mattn__go-sqlite3"><img src="https://avatars.githubusercontent.com/u/10111?u=4fb5caa72429300200740387758d9905611ab377&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/mattn__go-sqlite3"><span class="row-owner">mattn</span><span class="row-sep">/</span><span class="row-repo">go-sqlite3</span></a></div><div class="row-meta"><span class="lang-tag">C</span><span class="m" title="stars">★ 9,274</span><span class="m" title="forks">⑂ 1,189</span><span class="m" title="watchers">👁 139</span><span class="m" title="issues">● 850</span><span class="m" title="prs">⑃ 618</span><span class="m" title="releases">▤ 10</span></div><div class="row-desc">sqlite3 driver for go using database/sql</div></div><div class="row-side"><div class="row-stars-big">★ 9,274</div></div></div><div class="rank-row"><span class="row-rank">22</span><a class="row-avatar" href="../repos/mikro-orm__mikro-orm"><img src="https://avatars.githubusercontent.com/u/54766168?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/mikro-orm__mikro-orm"><span class="row-owner">mikro-orm</span><span class="row-sep">/</span><span class="row-repo">mikro-orm</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 9,273</span><span class="m" title="forks">⑂ 704</span><span class="m" title="watchers">👁 47</span><span class="m" title="issues">● 3,374</span><span class="m" title="prs">⑃ 3,410</span><span class="m" title="releases">▤ 253</span></div><div class="row-desc">TypeScript ORM for Node.js based on Data Mapper, Unit of Work and Identity Map patterns. Supports MongoDB, MySQL, MariaDB, MS SQL Server, PostgreSQL and SQLite/libSQL databases.</div></div><div class="row-side"><div class="row-stars-big">★ 9,273</div></div></div><div class="rank-row"><span class="row-rank">23</span><a class="row-avatar" href="../repos/riverqueue__river"><img src="https://avatars.githubusercontent.com/u/136755925?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/riverqueue__river"><span class="row-owner">riverqueue</span><span class="row-sep">/</span><span class="row-repo">river</span></a></div><div class="row-meta"><span class="lang-tag">Go</span><span class="m" title="stars">★ 5,885</span><span class="m" title="forks">⑂ 200</span><span class="m" title="watchers">👁 21</span><span class="m" title="issues">● 314</span><span class="m" title="prs">⑃ 1,140</span><span class="m" title="releases">▤ 106</span></div><div class="row-desc">The polyglot queue: Fast and reliable background jobs in Go, Java, JS, Ruby, and Rust on Postgres/SQLite.</div></div><div class="row-side"><div class="row-stars-big">★ 5,885</div></div></div><div class="rank-row"><span class="row-rank">24</span><a class="row-avatar" href="../repos/sqlchat__sqlchat"><img src="https://avatars.githubusercontent.com/u/128299021?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/sqlchat__sqlchat"><span class="row-owner">sqlchat</span><span class="row-sep">/</span><span class="row-repo">sqlchat</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 5,856</span><span class="m" title="forks">⑂ 505</span><span class="m" title="watchers">👁 35</span><span class="m" title="issues">● 85</span><span class="m" title="prs">⑃ 107</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">Chat-based SQL Client and Editor for the next decade</div></div><div class="row-side"><div class="row-stars-big">★ 5,856</div></div></div><div class="rank-row"><span class="row-rank">25</span><a class="row-avatar" href="../repos/DotNetNext__SqlSugar"><img src="https://avatars.githubusercontent.com/u/12455385?u=547ee64a05e9e3887ba877bd5132625b17ea59c7&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/DotNetNext__SqlSugar"><span class="row-owner">DotNetNext</span><span class="row-sep">/</span><span class="row-repo">SqlSugar</span></a></div><div class="row-meta"><span class="lang-tag">C#</span><span class="m" title="stars">★ 5,844</span><span class="m" title="forks">⑂ 1,392</span><span class="m" title="watchers">👁 258</span><span class="m" title="issues">● 1,236</span><span class="m" title="prs">⑃ 219</span><span class="m" title="releases">▤ 97</span></div><div class="row-desc">.Net aot ORM   SqlServer ORM Mongodb ORM MySql  瀚高 Postgresql ORM  DB2 Hana 高斯 Duckdb C# VB.NET Sqlite  ORM Oracle ORM Mysql Orm 虚谷数据库 达梦 ORM 人大金仓 ORM 神通ORM  C# ORM , C# ORM .NET ORM NET9 ORM .NET8 ORM ClickHouse ORM QuestDb ,TDengine ORM,OceanBase ORM,GaussDB ORM,Tidb ORM Object/Relational Mapping</div></div><div class="row-side"><div class="row-stars-big">★ 5,844</div></div></div><div class="rank-row"><span class="row-rank">26</span><a class="row-avatar" href="../repos/tortoise__tortoise-orm"><img src="https://avatars.githubusercontent.com/u/42678965?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/tortoise__tortoise-orm"><span class="row-owner">tortoise</span><span class="row-sep">/</span><span class="row-repo">tortoise-orm</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 5,647</span><span class="m" title="forks">⑂ 544</span><span class="m" title="watchers">👁 42</span><span class="m" title="issues">● 1,307</span><span class="m" title="prs">⑃ 989</span><span class="m" title="releases">▤ 133</span></div><div class="row-desc">Familiar asyncio ORM for python, built with relations in mind</div></div><div class="row-side"><div class="row-stars-big">★ 5,647</div></div></div><div class="rank-row"><span class="row-rank">27</span><a class="row-avatar" href="../repos/tigerless-labs__agent-memory"><img src="https://avatars.githubusercontent.com/u/285825190?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/tigerless-labs__agent-memory"><span class="row-owner">tigerless-labs</span><span class="row-sep">/</span><span class="row-repo">agent-memory</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 4,311</span><span class="m" title="forks">⑂ 206</span><span class="m" title="watchers">👁 95</span><span class="m" title="issues">● 11</span><span class="m" title="prs">⑃ 115</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">Long-term memory runtime for AI agents — plain Markdown as the source of truth, local ranked retrieval, and an independent sleep-time Manage layer. Claude Code and Codex share one store. No API key.</div></div><div class="row-side"><div class="row-stars-big">★ 4,311</div></div></div><div class="rank-row"><span class="row-rank">28</span><a class="row-avatar" href="../repos/geekgeekrun__geekgeekrun"><img src="https://avatars.githubusercontent.com/u/159268671?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/geekgeekrun__geekgeekrun"><span class="row-owner">geekgeekrun</span><span class="row-sep">/</span><span class="row-repo">geekgeekrun</span></a></div><div class="row-meta"><span class="lang-tag">Vue</span><span class="m" title="stars">★ 3,151</span><span class="m" title="forks">⑂ 232</span><span class="m" title="watchers">👁 7</span><span class="m" title="issues">● 113</span><span class="m" title="prs">⑃ 16</span><span class="m" title="releases">▤ 27</span></div><div class="row-desc">牛人快跑 - GeekGeekRun，求职找工作自动化工具，基于 Puppeteer、Electron。界面友好，简单易用！开源，免费！快速海投、自动开聊、已读不回提醒、职位信息抓取、不合适职位标记、僵尸职位清理；让你即刻变身成为一台冇得感情的求职机器🤖，找工作不内耗。宝宝不用动，妈妈全自动~祝你收获好Offer！</div></div><div class="row-side"><div class="row-stars-big">★ 3,151</div></div></div><div class="rank-row"><span class="row-rank">29</span><a class="row-avatar" href="../repos/ShayanAbbas1__dbdelve"><img src="https://avatars.githubusercontent.com/u/74356580?u=cec0a70664dad2f4df4a52935966a25d20bf6d1e&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/ShayanAbbas1__dbdelve"><span class="row-owner">ShayanAbbas1</span><span class="row-sep">/</span><span class="row-repo">dbdelve</span></a></div><div class="row-meta"><span class="lang-tag">Rust</span><span class="m" title="stars">★ 1,065</span><span class="m" title="forks">⑂ 57</span><span class="m" title="watchers">👁 3</span><span class="m" title="issues">● 59</span><span class="m" title="prs">⑃ 175</span><span class="m" title="releases">▤ 33</span></div><div class="row-desc">Fast and lightweight DB Client made in Rust and GPUI.</div></div><div class="row-side"><div class="row-stars-big">★ 1,065</div></div></div></div><!--/SSR--></div>
+
+    <details class="month-detail" id="monthDetail">
+      <summary data-i18n="month.top10">当月每日飙升 Top10 摘要</summary>
+      <div id="monthTop10"><!--SSRMT--><!--/SSRMT--></div>
+    </details>
+  </section>
+
+  <section id="yearWrap">
+    <h2 class="section-title" data-i18n="year.entry">年度月度榜入口</h2>
+    <div class="month-grid" id="monthGrid"><!--SSRMG--><!--/SSRMG--></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/common.js?v=20"></script>
+<script src="../assets/app.js?v=20"></script>
+</body>
+</html>

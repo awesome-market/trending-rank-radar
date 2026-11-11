@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#chatbot · GitHub Trending Rank Radar</title>
+<meta name="description" content="GitHub 标签 chatbot 下的开源项目趋势榜 · 28 repos tagged chatbot on GitHub · 独立采集 GitHub 仓库数据的开源趋势榜单">
+<meta name="keywords" content="GitHub trending, GitHub ranking, GitHub 排行榜, 开源榜单, trending repos, star growth, star history, 星标增长, github stars, open data, github pages, github actions, 开源项目, open source rankings">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/tags/chatbot">
+<!-- bilingual content lives on ONE url — no per-lang alternates to declare -->
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="GitHub Trending Rank Radar" href="../feed.xml">
+<meta property="og:title" content="GitHub Trending Rank Radar">
+<meta property="og:description" content="GitHub 开源项目趋势榜单 · 每日双快照 · 十一榜单 · 历史回看 | Independent GitHub trend radar · twice-daily snapshots · 11 boards · bilingual">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zhuikan.com/tags/chatbot">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zhuikan.com/assets/og.png">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "GitHub Trending Rank Radar",
+      "alternateName": "GitHub 开源项目趋势榜单",
+      "url": "https://zhuikan.com/",
+      "description": "Independent open-source GitHub trend radar: daily/weekly/monthly star growth & rate boards, new-repo and all-time charts, browsable by day, month and year. 独立采集 GitHub 仓库数据的开源趋势榜单。",
+      "inLanguage": ["zh-CN", "en"],
+      "isAccessibleForFree": true,
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "publisher": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "name": "GitHub Trending Rankings Dataset",
+      "description": "Twice-daily snapshots of tracked GitHub repositories with stars, forks, watchers, issues, PRs and releases; precomputed daily/weekly/monthly/new/all-time leaderboard JSON.",
+      "url": "https://zhuikan.com/data/index.json",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "isAccessibleForFree": true,
+      "temporalCoverage": "2026-11-09/..",
+      "creator": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      },
+      "distribution": [
+        {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://zhuikan.com/data/index.json"}
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=20">
+</head>
+<body data-base="../" data-tag="chatbot" data-tag-name="chatbot">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到榜单</a>
+
+<noscript>
+  <div style="max-width:760px;margin:64px auto;padding:0 24px;font-family:system-ui,sans-serif;line-height:1.7;color:#333">
+    <h1>GitHub Trending Rank Radar</h1>
+    <p>独立采集 GitHub 仓库数据的开源趋势榜单：新星榜、日 / 周 / 月飙升榜与增速榜、总榜，支持按日 / 月 / 年回看历史。每日两次快照（UTC 02:00 / 14:00），榜单由快照差值计算。</p>
+    <p>An independent open-source GitHub trending radar: new repos, daily / weekly / monthly star-growth and rate boards, an all-time chart, and day / month / year history — snapshots taken twice daily (UTC 02:00 &amp; 14:00).</p>
+    <p>Machine-readable open data:
+      <a href="../data/index.json">data/index.json</a> ·
+      <a href="../llms.txt">llms.txt</a> ·
+      <a href="../sitemap.xml">sitemap.xml</a> ·
+      <a href="https://github.com/awesome-market/trending-rank-radar">Source on GitHub</a>
+    </p>
+    <p><strong>榜单交互需要启用 JavaScript。This site requires JavaScript for the interactive boards.</strong></p>
+  </div>
+</noscript>
+
+<!-- shared svg gradient defs for sparklines -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+        <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+        <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+        <g class="radar-sweep">
+          <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+        </g>
+      </svg>
+      <div>
+        <h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1>
+        <p class="hero-sub" data-i18n="hero.sub">GitHub 开源项目趋势榜单 · 每日双快照 · 八种榜单 · 日 / 月 / 年历史回看</p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <div class="search-wrap" id="searchWrap">
+        <select id="searchScope" class="search-scope" data-i18n-aria="search.scope.aria" aria-label="搜索范围">
+          <option value="repo" data-i18n="search.scope.repo">仓库</option>
+          <option value="news" data-i18n="search.scope.news">新闻</option>
+        </select>
+        <div class="search-box">
+          <svg class="search-ico" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"/></svg>
+          <input id="searchInput" class="search-input" type="search" autocomplete="off" spellcheck="false" data-i18n-ph="search.ph.repo" data-i18n-aria="search.ph.repo" aria-label="搜索" enterkeyhint="search">
+        </div>
+        <div class="search-drop" id="searchDrop" hidden></div>
+      </div>
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06-1.06a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.06l1.06-1.061a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero-viz" id="heroViz" data-enter>
+    <div class="hv-copy">
+      <p class="hv-kicker" data-i18n="hv.kicker">独立采集 · 开源数据</p>
+      <h2 class="hv-title" data-i18n="hv.title">独立追踪 GitHub 星标的每一次脉动</h2>
+      <p class="hv-sub" data-i18n="hv.sub">每日两次快照，用差值还原真实增长——不是又一份热榜镜像。</p>
+      <a class="hv-cta" href="#boardTabs" data-i18n="hv.cta">浏览今日榜单 →</a>
+    </div>
+    <div class="hv-side">
+      <div class="hv-chart" id="hvChart" aria-hidden="true"></div>
+      <div class="hv-cap" id="hvCap"></div>
+    </div>
+  </section>
+
+  <div class="controls" id="controls">
+    <div class="ctrl-row">
+      <nav class="board-tabs" id="boardTabs" data-i18n-aria="boards.aria" aria-label="榜单"></nav>
+    </div>
+    <div class="ctrl-row ctrl-sub">
+      <div class="seg" id="periodSeg" role="tablist" data-i18n-aria="period.aria" aria-label="时间维度">
+        <button data-period="day" class="seg-btn active" data-i18n="period.day">日</button>
+        <button data-period="month" class="seg-btn" data-i18n="period.month">月</button>
+        <button data-period="year" class="seg-btn" data-i18n="period.year">年</button>
+      </div>
+      <label class="sf-label" for="selDate" data-i18n="date.label">榜单日期</label>
+      <select id="selDate" class="sel" data-i18n-aria="date.aria" aria-label="日期"></select>
+      <div class="star-filter" role="group" data-i18n-aria="star.range" aria-label="Star 范围筛选">
+        <span class="sf-label" data-i18n="star.range">Star 范围</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="min">下限</span>
+          <input id="minK" type="number" min="0" step="1" value="1" class="sf-input" data-i18n-aria="minK.aria" aria-label="最小 Star 千数">
+        </label>
+        <span class="sf-sep">–</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="max">上限</span>
+          <input id="maxK" type="number" min="0" step="1" value="500" class="sf-input" data-i18n-aria="maxK.aria" aria-label="最大 Star 千数">
+        </label>
+        <span class="sf-unit">k</span>
+        <button id="applyFilter" class="sf-btn" data-i18n="apply">筛选</button>
+      </div>
+      <span class="window-info" id="windowInfo"></span>
+    </div>
+  </div>
+
+  <section id="content">
+    <div class="empty-state" id="emptyState" hidden>
+      <div class="empty-main">
+        <svg class="radar-big" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.4"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.3"/>
+          <g class="radar-sweep radar-sweep-lg">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <h2 data-i18n="empty.title">榜单积累中</h2>
+        <p id="emptyText" data-i18n="empty.text">快照数据正在积累，增长榜需要至少 2 个有效快照日。</p>
+        <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+        <p class="progress-hint" id="progressHint"></p>
+        <div class="empty-actions" id="emptyActions"></div>
+      </div>
+      <div class="empty-preview" id="emptyPreview"></div>
+    </div>
+
+    <div id="podiumWrap"></div>
+    <div id="listWrap"><!--SSR--><p style="color:var(--muted,#8b949e);font-size:13px;margin:0 4px 10px">2026-11-11 · #chatbot · 28 <span class="i18n-zh">个仓库 · 按 star 排序</span><span class="i18n-en">repos · by stars</span></p><div class="rank-list"><div class="rank-row"><span class="row-rank top">1</span><a class="row-avatar" href="../repos/asgeirtj__system_prompts_leaks"><img src="https://avatars.githubusercontent.com/u/27446620?u=20c47f9370db1b90f005df9b806c44140427e022&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/asgeirtj__system_prompts_leaks"><span class="row-owner">asgeirtj</span><span class="row-sep">/</span><span class="row-repo">system_prompts_leaks</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 71,179</span><span class="m" title="forks">⑂ 11,468</span><span class="m" title="watchers">👁 757</span><span class="m" title="issues">● 77</span><span class="m" title="prs">⑃ 127</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">Leaked system prompts of ChatGPT, Claude, Gemini and more. The hidden system prompt of every popular chatbot, in full, every version since May 2025. Also Anthropic Claude Code, OpenAI Codex, Google Antigravity, xAI Grok, Meta Muse, Moonshot Kimi, Alibaba Qwen, Z.ai GLM ZCode, MiniMax, Cursor, Perplexity, DeepSeek and 30+ others. Updated daily.</div></div><div class="row-side"><div class="row-stars-big">★ 71,179</div></div></div><div class="rank-row"><span class="row-rank top">2</span><a class="row-avatar" href="../repos/xtekky__gpt4free"><img src="https://avatars.githubusercontent.com/u/98614666?u=73ffc35c4da01924e4c0636186fa1328b717fbb1&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/xtekky__gpt4free"><span class="row-owner">xtekky</span><span class="row-sep">/</span><span class="row-repo">gpt4free</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 67,031</span><span class="m" title="forks">⑂ 13,459</span><span class="m" title="watchers">👁 484</span><span class="m" title="issues">● 2,063</span><span class="m" title="prs">⑃ 1,156</span><span class="m" title="releases">▤ 582</span></div><div class="row-desc">The official gpt4free repository | various collection of powerful language models | opus 4.6 gpt 5.3 kimi 2.5 deepseek v3.2 gemini 3</div></div><div class="row-side"><div class="row-stars-big">★ 67,031</div></div></div><div class="rank-row"><span class="row-rank top">3</span><a class="row-avatar" href="../repos/FlowiseAI__Flowise"><img src="https://avatars.githubusercontent.com/u/128289781?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/FlowiseAI__Flowise"><span class="row-owner">FlowiseAI</span><span class="row-sep">/</span><span class="row-repo">Flowise</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 55,566</span><span class="m" title="forks">⑂ 25,095</span><span class="m" title="watchers">👁 387</span><span class="m" title="issues">● 2,672</span><span class="m" title="prs">⑃ 2,770</span><span class="m" title="releases">▤ 85</span></div><div class="row-desc">Build AI Agents, Visually</div></div><div class="row-side"><div class="row-stars-big">★ 55,566</div></div></div><div class="rank-row"><span class="row-rank">4</span><a class="row-avatar" href="../repos/HKUDS__nanobot"><img src="https://avatars.githubusercontent.com/u/118165258?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/HKUDS__nanobot"><span class="row-owner">HKUDS</span><span class="row-sep">/</span><span class="row-repo">nanobot</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 50,010</span><span class="m" title="forks">⑂ 8,729</span><span class="m" title="watchers">👁 210</span><span class="m" title="issues">● 1,599</span><span class="m" title="prs">⑃ 4,665</span><span class="m" title="releases">▤ 22</span></div><div class="row-desc">Your lightweight open-source personal agent.</div></div><div class="row-side"><div class="row-stars-big">★ 50,010</div></div></div><div class="rank-row"><span class="row-rank">5</span><a class="row-avatar" href="../repos/AstrBotDevs__AstrBot"><img src="https://avatars.githubusercontent.com/u/197911947?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/AstrBotDevs__AstrBot"><span class="row-owner">AstrBotDevs</span><span class="row-sep">/</span><span class="row-repo">AstrBot</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 46,691</span><span class="m" title="forks">⑂ 3,506</span><span class="m" title="watchers">👁 98</span><span class="m" title="issues">● 6,805</span><span class="m" title="prs">⑃ 3,634</span><span class="m" title="releases">▤ 262</span></div><div class="row-desc">AI Agent Assistant &amp; development framework that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨</div></div><div class="row-side"><div class="row-stars-big">★ 46,691</div></div></div><div class="rank-row"><span class="row-rank">6</span><a class="row-avatar" href="../repos/chatboxai__chatbox"><img src="https://avatars.githubusercontent.com/u/199570308?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/chatboxai__chatbox"><span class="row-owner">chatboxai</span><span class="row-sep">/</span><span class="row-repo">chatbox</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 42,299</span><span class="m" title="forks">⑂ 4,327</span><span class="m" title="watchers">👁 216</span><span class="m" title="issues">● 2,812</span><span class="m" title="prs">⑃ 327</span><span class="m" title="releases">▤ 67</span></div><div class="row-desc">Powerful AI Client</div></div><div class="row-side"><div class="row-stars-big">★ 42,299</div></div></div><div class="rank-row"><span class="row-rank">7</span><a class="row-avatar" href="../repos/The-Vibe-Company__quivr"><img src="https://avatars.githubusercontent.com/u/252322352?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/The-Vibe-Company__quivr"><span class="row-owner">The-Vibe-Company</span><span class="row-sep">/</span><span class="row-repo">quivr</span></a></div><div class="row-meta"><span class="lang-tag">Go</span><span class="m" title="stars">★ 39,646</span><span class="m" title="forks">⑂ 3,730</span><span class="m" title="watchers">👁 276</span><span class="m" title="issues">● 1,550</span><span class="m" title="prs">⑃ 2,348</span><span class="m" title="releases">▤ 364</span></div><div class="row-desc">An open-source engine that turns continuous content streams into search and monitoring. Durable ingestion, hybrid search, alerts, and plugins for formats, models and business rules.</div></div><div class="row-side"><div class="row-stars-big">★ 39,646</div></div></div><div class="rank-row"><span class="row-rank">8</span><a class="row-avatar" href="../repos/chatchat-space__Langchain-Chatchat"><img src="https://avatars.githubusercontent.com/u/139558948?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/chatchat-space__Langchain-Chatchat"><span class="row-owner">chatchat-space</span><span class="row-sep">/</span><span class="row-repo">Langchain-Chatchat</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 38,712</span><span class="m" title="forks">⑂ 6,255</span><span class="m" title="watchers">👁 286</span><span class="m" title="issues">● 4,261</span><span class="m" title="prs">⑃ 885</span><span class="m" title="releases">▤ 31</span></div><div class="row-desc">Langchain-Chatchat（原Langchain-ChatGLM）基于 Langchain 与 ChatGLM, Qwen 与 Llama 等语言模型的 RAG 与 Agent 应用 | Langchain-Chatchat (formerly langchain-ChatGLM), local knowledge based LLM (like ChatGLM, Qwen and Llama) RAG and Agent app with langchain</div></div><div class="row-side"><div class="row-stars-big">★ 38,712</div></div></div><div class="rank-row"><span class="row-rank">9</span><a class="row-avatar" href="../repos/agentscope-ai__QwenPaw"><img src="https://avatars.githubusercontent.com/u/211762292?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/agentscope-ai__QwenPaw"><span class="row-owner">agentscope-ai</span><span class="row-sep">/</span><span class="row-repo">QwenPaw</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 37,615</span><span class="m" title="forks">⑂ 3,275</span><span class="m" title="watchers">👁 113</span><span class="m" title="issues">● 4,151</span><span class="m" title="prs">⑃ 4,312</span><span class="m" title="releases">▤ 133</span></div><div class="row-desc">Your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.</div></div><div class="row-side"><div class="row-stars-big">★ 37,615</div></div></div><div class="rank-row"><span class="row-rank">10</span><a class="row-avatar" href="../repos/Tencent__WeKnora"><img src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/Tencent__WeKnora"><span class="row-owner">Tencent</span><span class="row-sep">/</span><span class="row-repo">WeKnora</span></a></div><div class="row-meta"><span class="lang-tag">Go</span><span class="m" title="stars">★ 37,185</span><span class="m" title="forks">⑂ 5,145</span><span class="m" title="watchers">👁 150</span><span class="m" title="issues">● 1,738</span><span class="m" title="prs">⑃ 3,611</span><span class="m" title="releases">▤ 42</span></div><div class="row-desc">Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.</div></div><div class="row-side"><div class="row-stars-big">★ 37,185</div></div></div><div class="rank-row"><span class="row-rank">11</span><a class="row-avatar" href="../repos/agentscope-ai__agentscope"><img src="https://avatars.githubusercontent.com/u/211762292?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/agentscope-ai__agentscope"><span class="row-owner">agentscope-ai</span><span class="row-sep">/</span><span class="row-repo">agentscope</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 35,800</span><span class="m" title="forks">⑂ 3,842</span><span class="m" title="watchers">👁 160</span><span class="m" title="issues">● 1,570</span><span class="m" title="prs">⑃ 2,212</span><span class="m" title="releases">▤ 51</span></div><div class="row-desc">Build and run agents you can see, understand and trust.</div></div><div class="row-side"><div class="row-stars-big">★ 35,800</div></div></div><div class="rank-row"><span class="row-rank">12</span><a class="row-avatar" href="../repos/RasaHQ__rasa"><img src="https://avatars.githubusercontent.com/u/21214473?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/RasaHQ__rasa"><span class="row-owner">RasaHQ</span><span class="row-sep">/</span><span class="row-repo">rasa</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 21,384</span><span class="m" title="forks">⑂ 4,907</span><span class="m" title="watchers">👁 348</span><span class="m" title="issues">● 6,660</span><span class="m" title="prs">⑃ 6,487</span><span class="m" title="releases">▤ 254</span></div><div class="row-desc">💬   Open source machine learning framework to automate text- and voice-based conversations: NLU, dialogue management, connect to Slack, Facebook, and more - Create chatbots and voice assistants</div></div><div class="row-side"><div class="row-stars-big">★ 21,384</div></div></div><div class="rank-row"><span class="row-rank">13</span><a class="row-avatar" href="../repos/elizaOS__eliza"><img src="https://avatars.githubusercontent.com/u/186240462?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/elizaOS__eliza"><span class="row-owner">elizaOS</span><span class="row-sep">/</span><span class="row-repo">eliza</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 19,846</span><span class="m" title="forks">⑂ 5,897</span><span class="m" title="watchers">👁 143</span><span class="m" title="issues">● 8,516</span><span class="m" title="prs">⑃ 28,124</span><span class="m" title="releases">▤ 17</span></div><div class="row-desc">Open source agentic operating system</div></div><div class="row-side"><div class="row-stars-big">★ 19,846</div></div></div><div class="rank-row"><span class="row-rank">14</span><a class="row-avatar" href="../repos/leon-ai__leon"><img src="https://avatars.githubusercontent.com/u/35167224?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/leon-ai__leon"><span class="row-owner">leon-ai</span><span class="row-sep">/</span><span class="row-repo">leon</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 17,663</span><span class="m" title="forks">⑂ 1,481</span><span class="m" title="watchers">👁 267</span><span class="m" title="issues">● 331</span><span class="m" title="prs">⑃ 248</span><span class="m" title="releases">▤ 23</span></div><div class="row-desc">🧠 Leon is your open-source personal assistant.</div></div><div class="row-side"><div class="row-stars-big">★ 17,663</div></div></div><div class="rank-row"><span class="row-rank">15</span><a class="row-avatar" href="../repos/stackblitz__bolt.new"><img src="https://avatars.githubusercontent.com/u/28635252?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/stackblitz__bolt.new"><span class="row-owner">stackblitz</span><span class="row-sep">/</span><span class="row-repo">bolt.new</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 16,595</span><span class="m" title="forks">⑂ 14,841</span><span class="m" title="watchers">👁 169</span><span class="m" title="issues">● 0</span><span class="m" title="prs">⑃ 137</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">Prompt, run, edit, and deploy full-stack web applications. -- bolt.new -- Help Center: https://support.bolt.new/ -- Community Support: https://discord.com/invite/stackblitz</div></div><div class="row-side"><div class="row-stars-big">★ 16,595</div></div></div><div class="rank-row"><span class="row-rank">16</span><a class="row-avatar" href="../repos/mayooear__ai-pdf-chatbot-langchain"><img src="https://avatars.githubusercontent.com/u/107035552?u=708ca9b002559f6175803a80a1e47f3e84ba91e2&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/mayooear__ai-pdf-chatbot-langchain"><span class="row-owner">mayooear</span><span class="row-sep">/</span><span class="row-repo">ai-pdf-chatbot-langchain</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 16,584</span><span class="m" title="forks">⑂ 3,228</span><span class="m" title="watchers">👁 160</span><span class="m" title="issues">● 301</span><span class="m" title="prs">⑃ 105</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">AI PDF chatbot agent built with LangChain &amp; LangGraph</div></div><div class="row-side"><div class="row-stars-big">★ 16,584</div></div></div><div class="rank-row"><span class="row-rank">17</span><a class="row-avatar" href="../repos/ai-shifu__ChatALL"><img src="https://avatars.githubusercontent.com/u/174666116?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/ai-shifu__ChatALL"><span class="row-owner">ai-shifu</span><span class="row-sep">/</span><span class="row-repo">ChatALL</span></a></div><div class="row-meta"><span class="lang-tag">JavaScript</span><span class="m" title="stars">★ 16,509</span><span class="m" title="forks">⑂ 1,725</span><span class="m" title="watchers">👁 123</span><span class="m" title="issues">● 596</span><span class="m" title="prs">⑃ 487</span><span class="m" title="releases">▤ 119</span></div><div class="row-desc">Concurrently chat with ChatGPT, Bing Chat, Bard, Alpaca, Vicuna, Claude, ChatGLM, MOSS, 讯飞星火, 文心一言 and more, discover the best answers</div></div><div class="row-side"><div class="row-stars-big">★ 16,509</div></div></div><div class="rank-row"><span class="row-rank">18</span><a class="row-avatar" href="../repos/mamoe__mirai"><img src="https://avatars.githubusercontent.com/u/52516275?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/mamoe__mirai"><span class="row-owner">mamoe</span><span class="row-sep">/</span><span class="row-repo">mirai</span></a></div><div class="row-meta"><span class="lang-tag">Kotlin</span><span class="m" title="stars">★ 14,763</span><span class="m" title="forks">⑂ 2,462</span><span class="m" title="watchers">👁 135</span><span class="m" title="issues">● 1,986</span><span class="m" title="prs">⑃ 600</span><span class="m" title="releases">▤ 185</span></div><div class="row-desc">高效率 QQ 机器人支持库</div></div><div class="row-side"><div class="row-stars-big">★ 14,763</div></div></div><div class="rank-row"><span class="row-rank">19</span><a class="row-avatar" href="../repos/friuns2__BlackFriday-GPTs-Prompts"><img src="https://avatars.githubusercontent.com/u/16543239?u=477b4266242abe1bb50ee045fb4e1a488e688fc6&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/friuns2__BlackFriday-GPTs-Prompts"><span class="row-owner">friuns2</span><span class="row-sep">/</span><span class="row-repo">BlackFriday-GPTs-Prompts</span></a></div><div class="row-meta"><span class="m" title="stars">★ 9,882</span><span class="m" title="forks">⑂ 1,390</span><span class="m" title="watchers">👁 145</span><span class="m" title="issues">● 0</span><span class="m" title="prs">⑃ 0</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">List of free GPTs that doesn&#x27;t require plus subscription</div></div><div class="row-side"><div class="row-stars-big">★ 9,882</div></div></div><div class="rank-row"><span class="row-rank">20</span><a class="row-avatar" href="../repos/shaxiu__XianyuAutoAgent"><img src="https://avatars.githubusercontent.com/u/57855264?u=1d588d3f1793744fa7b35062946a74c612c09fff&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/shaxiu__XianyuAutoAgent"><span class="row-owner">shaxiu</span><span class="row-sep">/</span><span class="row-repo">XianyuAutoAgent</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 9,660</span><span class="m" title="forks">⑂ 1,691</span><span class="m" title="watchers">👁 50</span><span class="m" title="issues">● 78</span><span class="m" title="prs">⑃ 28</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">智能闲鱼客服机器人系统：专为闲鱼平台打造的AI值守解决方案，实现闲鱼平台7×24小时自动化值守，支持多专家协同决策、智能议价和上下文感知对话。</div></div><div class="row-side"><div class="row-stars-big">★ 9,660</div></div></div><div class="rank-row"><span class="row-rank">21</span><a class="row-avatar" href="../repos/BlinkDL__ChatRWKV"><img src="https://avatars.githubusercontent.com/u/33809201?u=430f11d99770a999b7b2461156c6eb02454b9869&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/BlinkDL__ChatRWKV"><span class="row-owner">BlinkDL</span><span class="row-sep">/</span><span class="row-repo">ChatRWKV</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 9,487</span><span class="m" title="forks">⑂ 685</span><span class="m" title="watchers">👁 91</span><span class="m" title="issues">● 125</span><span class="m" title="prs">⑃ 90</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">ChatRWKV is like ChatGPT but powered by RWKV (100% RNN) language model, and open source.</div></div><div class="row-side"><div class="row-stars-big">★ 9,487</div></div></div><div class="rank-row"><span class="row-rank">22</span><a class="row-avatar" href="../repos/yagop__node-telegram-bot-api"><img src="https://avatars.githubusercontent.com/u/5002453?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/yagop__node-telegram-bot-api"><span class="row-owner">yagop</span><span class="row-sep">/</span><span class="row-repo">node-telegram-bot-api</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 9,215</span><span class="m" title="forks">⑂ 1,650</span><span class="m" title="watchers">👁 154</span><span class="m" title="issues">● 1,004</span><span class="m" title="prs">⑃ 339</span><span class="m" title="releases">▤ 27</span></div><div class="row-desc">Telegram Bot API for NodeJS</div></div><div class="row-side"><div class="row-stars-big">★ 9,215</div></div></div><div class="rank-row"><span class="row-rank">23</span><a class="row-avatar" href="../repos/HuLaSpark__HuLa"><img src="https://avatars.githubusercontent.com/u/182812476?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/HuLaSpark__HuLa"><span class="row-owner">HuLaSpark</span><span class="row-sep">/</span><span class="row-repo">HuLa</span></a></div><div class="row-meta"><span class="lang-tag">Vue</span><span class="m" title="stars">★ 7,836</span><span class="m" title="forks">⑂ 1,065</span><span class="m" title="watchers">👁 44</span><span class="m" title="issues">● 140</span><span class="m" title="prs">⑃ 386</span><span class="m" title="releases">▤ 46</span></div><div class="row-desc">🍀 A cross-platform instant messaging desktop application with exceptional performance built on Rust + Vue3, compatible with Windows, macOS, Linux, Android, and iOS（一款基于Rust+Vue3极致性能的跨平台即时通讯桌面应用，兼容Windows、MacOS、Linux、Android、IOS）</div></div><div class="row-side"><div class="row-stars-big">★ 7,836</div></div></div><div class="rank-row"><span class="row-rank">24</span><a class="row-avatar" href="../repos/Cog-Creators__Red-DiscordBot"><img src="https://avatars.githubusercontent.com/u/23690422?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/Cog-Creators__Red-DiscordBot"><span class="row-owner">Cog-Creators</span><span class="row-sep">/</span><span class="row-repo">Red-DiscordBot</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 5,759</span><span class="m" title="forks">⑂ 2,542</span><span class="m" title="watchers">👁 201</span><span class="m" title="issues">● 2,173</span><span class="m" title="prs">⑃ 4,396</span><span class="m" title="releases">▤ 94</span></div><div class="row-desc">A multi-function Discord bot</div></div><div class="row-side"><div class="row-stars-big">★ 5,759</div></div></div><div class="rank-row"><span class="row-rank">25</span><a class="row-avatar" href="../repos/the-open-agent__openagent"><img src="https://avatars.githubusercontent.com/u/277180808?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/the-open-agent__openagent"><span class="row-owner">the-open-agent</span><span class="row-sep">/</span><span class="row-repo">openagent</span></a></div><div class="row-meta"><span class="lang-tag">Go</span><span class="m" title="stars">★ 5,744</span><span class="m" title="forks">⑂ 671</span><span class="m" title="watchers">👁 47</span><span class="m" title="issues">● 761</span><span class="m" title="prs">⑃ 1,654</span><span class="m" title="releases">▤ 1,000</span></div><div class="row-desc">⚡️next-generation personal AI assistant powered by LLM, RAG and agent loops, supporting computer-use, browser-use and coding agent, demo: https://demo.openagentai.org</div></div><div class="row-side"><div class="row-stars-big">★ 5,744</div></div></div><div class="rank-row"><span class="row-rank">26</span><a class="row-avatar" href="../repos/father-bot__chatgpt_telegram_bot"><img src="https://avatars.githubusercontent.com/u/153053814?u=6c3a77ff8050b6130f20eea87bd1a84b8c37051c&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/father-bot__chatgpt_telegram_bot"><span class="row-owner">father-bot</span><span class="row-sep">/</span><span class="row-repo">chatgpt_telegram_bot</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 5,557</span><span class="m" title="forks">⑂ 1,903</span><span class="m" title="watchers">👁 68</span><span class="m" title="issues">● 326</span><span class="m" title="prs">⑃ 189</span><span class="m" title="releases">▤ 6</span></div><div class="row-desc">💬 Telegram bot with ChatGPT &amp; Claude Python-based, using OpenAI&#x27;s API.</div></div><div class="row-side"><div class="row-stars-big">★ 5,557</div></div></div><div class="rank-row"><span class="row-rank">27</span><a class="row-avatar" href="../repos/Derpyu520__qq-bridge"><img src="https://avatars.githubusercontent.com/u/299827845?u=26b362916ecce1bbf8dfa340fc0d379a34457158&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/Derpyu520__qq-bridge"><span class="row-owner">Derpyu520</span><span class="row-sep">/</span><span class="row-repo">qq-bridge</span></a></div><div class="row-meta"><span class="lang-tag">JavaScript</span><span class="m" title="stars">★ 3,646</span><span class="m" title="forks">⑂ 276</span><span class="m" title="watchers">👁 6</span><span class="m" title="issues">● 84</span><span class="m" title="prs">⑃ 95</span><span class="m" title="releases">▤ 10</span></div><div class="row-desc">Bridge between QQ (SnowLuma OneBot v11) and DeepSeek Harness agents: social simulation, safe MCP tools, slang learning and more.</div></div><div class="row-side"><div class="row-stars-big">★ 3,646</div></div></div><div class="rank-row"><span class="row-rank">28</span><a class="row-avatar" href="../repos/xmanrui__dsh-im"><img src="https://avatars.githubusercontent.com/u/4094054?u=f68ad970a1a41b5e23d415717fe8056c2be6f5a6&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/xmanrui__dsh-im"><span class="row-owner">xmanrui</span><span class="row-sep">/</span><span class="row-repo">dsh-im</span></a></div><div class="row-meta"><span class="lang-tag">JavaScript</span><span class="m" title="stars">★ 3,493</span><span class="m" title="forks">⑂ 365</span><span class="m" title="watchers">👁 7</span><span class="m" title="issues">● 331</span><span class="m" title="prs">⑃ 235</span><span class="m" title="releases">▤ 116</span></div><div class="row-desc">通过扫码或机器人凭据把IM机器人接入DeepSeek Harness（支持飞书、微信、钉钉、企业微信、QQ、Slack、Telegram、Discord和WhatsApp）。 Connect IM bots to DeepSeek Harness via QR code or credentials (9 channels).</div></div><div class="row-side"><div class="row-stars-big">★ 3,493</div></div></div></div><!--/SSR--></div>
+
+    <details class="month-detail" id="monthDetail">
+      <summary data-i18n="month.top10">当月每日飙升 Top10 摘要</summary>
+      <div id="monthTop10"><!--SSRMT--><!--/SSRMT--></div>
+    </details>
+  </section>
+
+  <section id="yearWrap">
+    <h2 class="section-title" data-i18n="year.entry">年度月度榜入口</h2>
+    <div class="month-grid" id="monthGrid"><!--SSRMG--><!--/SSRMG--></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/common.js?v=20"></script>
+<script src="../assets/app.js?v=20"></script>
+</body>
+</html>
