@@ -11,14 +11,20 @@ set -uo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT" || exit 1
 
-if git fetch --quiet origin main 2>/dev/null; then
-    if ! git merge --ff-only FETCH_HEAD >/dev/null 2>&1; then
+# 以 root cron 在用户属主的 worktree 里跑 git：-c safe.directory 绕过
+# dubious-ownership 检查；合并后把 .git 属主改回目录属主，避免污染。
+GIT=(git -c "safe.directory=$ROOT")
+
+if "${GIT[@]}" fetch --quiet origin main 2>/dev/null; then
+    if ! "${GIT[@]}" merge --ff-only FETCH_HEAD >/dev/null 2>&1; then
         # 本地有未推送提交/分歧 → rebase；冲突则回滚，带病运行
-        if ! git rebase --quiet FETCH_HEAD >/dev/null 2>&1; then
-            git rebase --abort >/dev/null 2>&1
+        if ! "${GIT[@]}" rebase --quiet FETCH_HEAD >/dev/null 2>&1; then
+            "${GIT[@]}" rebase --abort >/dev/null 2>&1
             echo "[cron_wrap] update skipped (diverged), run anyway" >&2
         fi
     fi
+    [ "$(id -u)" -eq 0 ] && \
+        chown -R "$(stat -c %U:%G "$ROOT")" "$ROOT/.git" 2>/dev/null
 else
     echo "[cron_wrap] git fetch failed, run anyway" >&2
 fi

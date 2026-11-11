@@ -41,6 +41,12 @@ ROOT = Path(os.environ.get("TRR_WORKDIR") or Path(__file__).resolve().parent.par
 SITE_BASE = os.environ.get("TRR_SITE_BASE", "https://zhuikan.com")
 LOCK_PATH = ROOT / ".rescue.lock"
 
+# root cron 在用户属主的 worktree 里跑会撞 git "dubious ownership"——
+# 用 GIT_CONFIG_* 环境变量给本进程及所有 git 子进程统一注入 safe.directory。
+os.environ.setdefault("GIT_CONFIG_COUNT", "1")
+os.environ.setdefault("GIT_CONFIG_KEY_0", "safe.directory")
+os.environ.setdefault("GIT_CONFIG_VALUE_0", str(ROOT))
+
 
 def log(msg: str) -> None:
     print(f"[rescue {datetime.now(timezone.utc).strftime('%H:%M:%S')}] {msg}", flush=True)
