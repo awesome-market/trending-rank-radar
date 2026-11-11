@@ -16,13 +16,14 @@ daily_metrics[repo] = {
 
 所有榜单都从序列差分得出，不依赖 GitHub 的 Trending 排名。
 
-## 八种榜单
+## 九种榜单
 
 记号：`S(repo, D)` = 仓库在**北京时间自然日 D 的收盘快照**（当天最后一次运行）的 Star 数。所有窗口以 CST 日界为准，与 UTC 快照时间戳无关。
 
 | type | 榜单 | 口径 | 数据前提 |
 |---|---|---|---|
 | 1 | 新榜 new | `created_at` 在最近 **90 天**内，按当前 Star 降序 | 需 created_at |
+| 1b | 首登榜 debut | **首次进入任一榜单**的仓库（该日之前从未在任何榜的 items 中出现），按日窗口增长降序；无可用基点的按 Star 排尾 | ≥2 个有效日 |
 | 2 | 日飙升榜 daily | `S(D) − S(D−1)` 降序 | ≥2 个有效日 |
 | 3 | 日增速榜 daily_rate | `日增量 / (S(D) − 日增量) × 100` 降序（百分比，向下取整） | ≥2 个有效日 |
 | 4 | 周飙升榜 weekly | `S(D) − S(D−7)` 降序 | 窗口按可用历史回退（见下） |
@@ -74,13 +75,13 @@ daily_metrics[repo] = {
 
 ### 按日查看
 
-选日期 `D` → 展示 `D` 当天八榜（以 `D` 为"today"重算窗口，窗口按当时可用历史回退）。数据：`site/data/days/YYYY-MM-DD.json`。
+选日期 `D` → 展示 `D` 当天九榜（以 `D` 为"today"重算窗口，窗口按当时可用历史回退）。数据：`site/data/days/YYYY-MM-DD.json`。
 
 ### 按月查看
 
 选 `YYYY-MM` → 展示：
 
-1. **月末八榜快照**：该月最后一个有效快照日的榜单
+1. **月末九榜快照**：该月最后一个有效快照日的榜单
 2. **当月累计增长榜**：`S(月末) − S(月初首个快照日)` 降序（进行中的月份标注"截至今日"）
 3. **当月每日 Top10 摘要**
 
@@ -102,7 +103,7 @@ daily_metrics[repo] = {
 ```
 site/data/
   index.json                    # 可用日期/月份/年份、有效快照天数、generated_at
-  days/YYYY-MM-DD.json          # 每日八榜（Top200/榜）
+  days/YYYY-MM-DD.json          # 每日九榜（Top200/榜）
   months/YYYY-MM.json           # 月视图聚合
   years/YYYY.json               # 年视图聚合
 ```

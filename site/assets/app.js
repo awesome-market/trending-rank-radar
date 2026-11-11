@@ -1,7 +1,7 @@
 /* GitHub Trending Rank Radar — main boards page (loads after common.js) */
 'use strict';
 
-const BOARD_ORDER = ['new', 'daily', 'daily_rate', 'weekly', 'weekly_rate',
+const BOARD_ORDER = ['new', 'debut', 'daily', 'daily_rate', 'weekly', 'weekly_rate',
                      'monthly', 'monthly_rate', 'total'];
 const CUM_BOARD = 'cumulative';   // month-only pseudo board
 const PAGE = 50;
@@ -119,6 +119,7 @@ function podiumHTML(e, idx) {
 function windowLabel() {
   const b = state.boardMeta;
   if (state.board === 'new') return t('window.new');
+  if (state.board === 'debut') return t('window.debut');
   if (state.board === 'total' || state.board === CUM_BOARD || state.board === 'year_growth') {
     if (b.window_start && b.window_days != null)
       return t('window.range', { s: b.window_start, e: state.sel, d: b.window_days });

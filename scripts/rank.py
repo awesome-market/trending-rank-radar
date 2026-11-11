@@ -53,7 +53,7 @@ STALE_GRACE_DAYS = 14
 NOMINAL = {"daily": 1, "weekly": 7, "monthly": 30}
 GROWTH_BOARDS = ["daily", "weekly", "monthly"]
 RATE_BOARDS = ["daily_rate", "weekly_rate", "monthly_rate"]
-ALL_BOARDS = ["new", "daily", "daily_rate", "weekly", "weekly_rate",
+ALL_BOARDS = ["new", "debut", "daily", "daily_rate", "weekly", "weekly_rate",
               "monthly", "monthly_rate", "total"]
 NEW_WINDOW_DAYS = 90
 NEW_MIN_STARS = 20
@@ -408,8 +408,8 @@ def _ssr_news(items: list) -> str:
 SSR_BEGIN, SSR_END = "<!--SSR-->", "<!--/SSR-->"
 # landing-order fallback mirrors app.js (default board = 'daily')
 SSR_BOARDS = ("daily", "new", "total", "weekly", "monthly")
-SSR_LABELS = {"new": "新星榜", "total": "总榜", "daily": "日飙升榜",
-              "weekly": "周飙升榜", "monthly": "月飙升榜"}
+SSR_LABELS = {"new": "新星榜", "debut": "首登榜", "total": "总榜",
+              "daily": "日飙升榜", "weekly": "周飙升榜", "monthly": "月飙升榜"}
 SSR_TOP = 50
 
 
@@ -728,6 +728,35 @@ def compute_span_board(day: str, days: list[str], ridx: dict, meta: dict,
     return {"window_start": base_day, "window_days": window_days, "items": items}
 
 
+def compute_debut_board(names: set, day: str, days: list[str], ridx: dict,
+                        meta: dict, day_index: dict[str, int]) -> dict:
+    """'Debut' board — repos entering any board for the first time at `day`
+    (their names weren't in any earlier day's board items). Ranked by
+    daily-window star growth; repos without a usable base fall to the tail
+    sorted by stars and display their star total instead of a delta."""
+    i = day_index[day]
+    base_day, _, _ = board_base_day(days[: i + 1], day, NOMINAL["daily"])
+    rows = []
+    for name in names:
+        got = repo_value_at(ridx, name, day)
+        if not got:
+            continue
+        cday, ctup = got
+        growth, approx = 0, False
+        gb = repo_base_near(ridx, name, base_day, day)
+        if gb is not None:
+            delta = (ctup[I_STARS] or 0) - (gb[1][I_STARS] or 0)
+            if delta > 0:
+                growth, approx = delta, gb[0] != base_day
+        rows.append((growth, ctup, approx, cday != day, name))
+    rows.sort(key=lambda r: (-r[0], -(r[1][I_STARS] or 0), r[4]))
+    return {"items": [
+        make_entry(name, rank, ctup, meta,
+                   growth=g or None, rate=None, approx=approx, stale=st,
+                   series=series_for(ridx, name, day))
+        for rank, (g, ctup, approx, st, name) in enumerate(rows[:TOPN], 1)]}
+
+
 def month_bounds(month: str) -> tuple[str, str]:
     y, m = int(month[:4]), int(month[5:7])
     first = date(y, m, 1)
@@ -767,8 +796,17 @@ def main() -> int:
     for day in days:
         month_end_day[day[:7]] = day  # last write wins → month end
 
+    seen_boards: set[str] = set()
     for day in days:
         boards = compute_boards(day, days, ridx, meta, day_index)
+        appearing = {e["full_name"] for blk in boards.values()
+                     for e in blk.get("items", [])}
+        # day-0 has no earlier boards to diff against — emit an empty debut
+        # board rather than a copy of "total" (everything would "debut").
+        boards["debut"] = ({"items": []} if day == days[0] else
+                           compute_debut_board(appearing - seen_boards, day,
+                                               days, ridx, meta, day_index))
+        seen_boards |= appearing
         payload = {
             "date": day,
             "snapshot_at": run_at[day].astimezone(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),

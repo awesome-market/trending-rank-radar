@@ -27,6 +27,7 @@ All ranking data is precomputed and served as static JSON — free to reuse (Apa
 ## Boards (in each day/month file, under `boards.<name>.items`)
 
 - `new` — repos created within 90 days, ranked by current stars
+- `debut` — repos appearing on any board for the first time that day, ranked by daily-window star growth
 - `daily` / `weekly` / `monthly` — absolute star growth over the window (fallback: earliest available snapshot, actual range annotated)
 - `daily_rate` / `weekly_rate` / `monthly_rate` — growth ÷ base stars at window start (base ≥ 50 required)
 - `total` — all-time stars
