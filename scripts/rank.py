@@ -273,7 +273,9 @@ def _ssr_repo(p: dict) -> str:
     growth = p.get("growth") or {}
     def dlt(k):
         g = growth.get(k)
-        return f'<span class="rp-delta up">+{num(g["stars"])}</span>' if g else ""
+        p = {"day": "日", "week": "周", "month": "月"}[k]
+        return (f'<span class="rp-delta up"><i class="rp-delta-p">{p}</i>'
+                f'+{num(g["stars"])}</span>' if g else "")
     met_keys = ["stars", "forks", "watchers", "prs", "issues", "releases", "discussions"]
     mets = "".join(
         f'<div class="rp-metric"><div class="rp-metric-num">{num(m[k])}</div>'

@@ -989,11 +989,18 @@ html[lang="en"] .i18n-en { display: inline; }
 .rp-panel-empty { padding: 36px 0; text-align: center; color: var(--text-faint); font-size: 13.5px; }
 .rp-ph { font-size: 14px; font-weight: 650; color: var(--text); margin: 20px 0 0; }
 .rp-metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
-.rp-metric { padding: 12px 14px; background: var(--card-hover); border: 1px solid var(--card-border); border-radius: 10px; }
+.rp-metric { position: relative; padding: 14px 14px 12px; background: var(--card-hover); border: 1px solid var(--card-border); border-radius: 10px; }
 .rp-metric-num { font-size: 22px; font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
-.rp-metric-label { font-size: 12px; color: var(--text-faint); margin-top: 2px; }
-.rp-metric-delta { display: flex; gap: 8px; margin-top: 6px; }
+/* label rides the top border like a fieldset legend — half outside the cell */
+.rp-metric-label {
+  position: absolute; top: 0; right: 10px; transform: translateY(-50%);
+  font-size: 10.5px; font-weight: 600; color: var(--text-faint);
+  padding: 1px 8px; border-radius: 999px;
+  background: var(--card-hover); border: 1px solid var(--card-border);
+}
+.rp-metric-delta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; }
 .rp-delta { font-size: 11.5px; font-weight: 600; }
+.rp-delta-p { font-style: normal; font-size: 10px; font-weight: 500; color: var(--text-faint); margin-right: 2px; }
 .rp-delta.up { color: var(--green); }
 .rp-delta.down { color: #f85149; }
 .rp-list { display: grid; gap: 2px; grid-template-columns: minmax(0, 1fr); }

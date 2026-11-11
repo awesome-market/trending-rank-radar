@@ -32,7 +32,8 @@ function deltaSpan(label) {
   if (!g) return '';
   const cls = g.stars >= 0 ? 'up' : 'down', sign = g.stars >= 0 ? '+' : '';
   const key = { day: 'rp.growth.d', week: 'rp.growth.w', month: 'rp.growth.m' }[label];
-  return `<span class="rp-delta ${cls}" title="${t(key)}">${sign}${fmtFull(g.stars)}</span>`;
+  const short = { day: t('rp.growth.ds'), week: t('rp.growth.ws'), month: t('rp.growth.ms') }[label];
+  return `<span class="rp-delta ${cls}" title="${t(key)}"><i class="rp-delta-p">${short}</i>${sign}${fmtFull(g.stars)}</span>`;
 }
 
 /* ---------------- breadcrumb + top block ---------------- */
