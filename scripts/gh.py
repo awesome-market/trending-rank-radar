@@ -347,7 +347,9 @@ class GitHubClient:
             "is_archived": node.get("isArchived"),
             "description": node.get("description"),
             "homepage": node.get("homepageUrl"),
-            "topics": [],
+            # no "topics" key on the core pass — absent means "not fetched",
+            # so collect.py can carry the stored list forward; only the
+            # daily extended pass reports the real (possibly empty) list
         }
         # extended connection fields (present only when fetched)
         if "watchers" in node:
@@ -480,5 +482,5 @@ class GitHubClient:
             "is_archived": r.get("archived"),
             "description": r.get("description"),
             "homepage": r.get("homepage"),
-            "topics": [],
+            "topics": r.get("topics") or [],
         }

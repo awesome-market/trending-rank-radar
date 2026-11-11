@@ -69,10 +69,18 @@ function sameOwnerHTML(d) {
   return `<div class="rp-same"><div class="rp-same-label">${t('rp.same')}</div><div class="rp-same-row">${links}</div></div>`;
 }
 
+// tag → /tags/<slug> static page when the build generated one for it
+const tagSlug = t => t.toLowerCase().replace(/[^a-z0-9-]+/g, '-').replace(/^-+|-+$/g, '');
+let TAG_IDX = null;   // data/tags-index.json — which slugs got a static page
+
 function topHTML(d) {
   const avBig = d.avatar ? `${d.avatar}&s=300` : `https://github.com/${encodeURIComponent(d.owner)}.png?size=300`;
-  const topics = (d.topics || []).slice(0, 8).map(x =>
-    `<a class="rp-topic" href="https://github.com/topics/${encodeURIComponent(x)}" target="_blank" rel="noopener">${esc(x)}</a>`).join('');
+  const topics = (d.topics || []).slice(0, 8).map(x => {
+    const s = tagSlug(x);
+    return TAG_IDX && TAG_IDX[s]
+      ? `<a class="rp-topic" href="${HOME}tags/${encodeURIComponent(s)}">${esc(x)}</a>`
+      : `<a class="rp-topic" href="https://github.com/topics/${encodeURIComponent(x)}" target="_blank" rel="noopener">${esc(x)}</a>`;
+  }).join('');
   const metaBits = [
     d.language ? `<span class="rp-meta-bit">${langDotInline(d.language)} ${esc(d.language)}</span>` : '',
     d.license ? `<span class="rp-meta-bit">${esc(d.license)}</span>` : '',
@@ -960,7 +968,9 @@ async function initRepo() {
     return;
   }
   try {
+    const tagIdxP = j(`${DB}data/tags-index.json`).catch(() => ({}));
     repo.data = await j(`${DB}data/repos/${fn.replace('/', '__')}.json`);
+    TAG_IDX = await tagIdxP;
   } catch {
     $('#repoContent').innerHTML = `<div class="rp-err card"><h2>${t('rp.notfound')}</h2><p>${t('rp.notfound.hint')}</p><a class="rp-back" href="${HOME}">${t('rp.back')}</a></div>`;
     return;

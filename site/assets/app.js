@@ -12,6 +12,9 @@ const PAGE = 50;
 const DB = document.body.dataset.base || '';
 const LANG_PAGE = document.body.dataset.lang || '';
 const LANG_NAME = document.body.dataset.langName || '';
+const TAG_PAGE = document.body.dataset.tag || '';
+const TAG_NAME = document.body.dataset.tagName || '';
+const SUBPAGE = TAG_PAGE ? `tags/${TAG_PAGE}` : LANG_PAGE ? `langs/${LANG_PAGE}` : '';
 
 const state = {
   board: 'daily',
@@ -288,7 +291,7 @@ async function loadView() {
   const idx = state.index;
   let data;
   try {
-    data = LANG_PAGE ? await j(`${DB}data/langs/${LANG_PAGE}.json`)
+    data = SUBPAGE ? await j(`${DB}data/${SUBPAGE}.json`)
       : await j(state.period === 'day' ? `${DB}data/days/${state.sel}.json`
         : state.period === 'month' ? `${DB}data/months/${state.sel}.json`
         : `${DB}data/years/${state.sel}.json`);
@@ -297,7 +300,7 @@ async function loadView() {
     setEmpty(t('empty.acc'), pct);
     return;
   }
-  if (LANG_PAGE) {
+  if (SUBPAGE) {
     state.sel = data.date || state.sel;
     // a board can be absent per-language (e.g. debut is global-history only)
     if (!(data.boards || {})[state.board]) state.board = 'daily';
@@ -306,8 +309,9 @@ async function loadView() {
     rawCount = (board.items || []).length;
     state.items = filterItems(board.items || []);
     if (!state.items.length) emptyCtx = buildEmptyCtx(data.boards || {}, 'day');
-    document.title = t('title.langboard',
-      { l: LANG_NAME, b: boardLabel(state.board), s: state.sel });
+    document.title = TAG_PAGE ? t('title.tag', { g: TAG_NAME })
+      : t('title.langboard',
+        { l: LANG_NAME, b: boardLabel(state.board), s: state.sel });
   } else if (state.period === 'day') {
     const board = (data.boards || {})[state.board] || { items: [] };
     state.boardMeta = board;
@@ -396,6 +400,7 @@ function boardTabsForPeriod() {
   const tabs = [...BOARD_ORDER];
   if (state.period === 'month') tabs.push(CUM_BOARD);
   // language pages have no debut board (it needs cross-day board history)
+  if (TAG_PAGE) return [];   // tag pages carry a single star-sorted list
   return LANG_PAGE ? tabs.filter(b => b !== 'debut') : tabs;
 }
 
@@ -460,8 +465,8 @@ async function loadHeroData() {
   if (!state.hero) {
     state.hero = { top1: null };
     try {
-      const latest = await j(LANG_PAGE
-        ? `${DB}data/langs/${LANG_PAGE}.json`
+      const latest = await j(SUBPAGE
+        ? `${DB}data/${SUBPAGE}.json`
         : `${DB}data/days/${idx.latest_day}.json`);
       const top1 = latest.boards?.daily?.items?.[0]
         || latest.boards?.new?.items?.[0]
@@ -639,13 +644,14 @@ async function init() {
   }
   state.langSlugs = Object.fromEntries(
     (state.index.langs || []).map(x => [x.lang, x.slug]));
-  if (LANG_PAGE) {
+  if (SUBPAGE) {
     // day-view only: hide period picker, date select and month/year sections
     state.period = 'day';
     document.querySelectorAll(
       '#periodSeg, #selDate, label[for="selDate"], #monthDetail, #yearWrap')
       .forEach(el => { el.hidden = true; });
-    document.title = t('title.lang', { l: LANG_NAME });
+    document.title = TAG_PAGE ? t('title.tag', { g: TAG_NAME })
+      : t('title.lang', { l: LANG_NAME });
   }
   if (!state.sel) state.sel = state.index.latest_day;
   await renderAll();

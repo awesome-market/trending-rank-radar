@@ -414,10 +414,15 @@ def write_repo_meta(metrics: dict[str, dict]) -> int:
                 existing = json.loads(path.read_text(encoding="utf-8"))
         except Exception:
             pass
+        # topics come only from the once-daily extended pass — a missing key
+        # means "not fetched", carry the stored list; a fetched [] is real
+        topics = m.get("topics")
+        if topics is None:
+            topics = existing.get("topics") or []
         meta = {
             "description": m.get("description"),
             "homepage": m.get("homepage"),
-            "topics": m.get("topics") or [],
+            "topics": topics,
             "pushed_at": m.get("pushed_at"),
             "updated_at": m.get("updated_at"),
         }

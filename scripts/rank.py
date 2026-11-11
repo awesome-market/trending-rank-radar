@@ -253,8 +253,11 @@ def _ssr_repo(p: dict) -> str:
         f'<span class="rp-stat" title="{k}">{stat_icons[k]} <b>{num(m[k])}</b></span>'
         for k in ("stars", "forks", "watchers", "prs", "issues", "releases", "discussions")
         if m.get(k) is not None)
+    _tag_pages = p.get("tag_pages") or frozenset()
     topics = "".join(
-        f'<a class="rp-topic" href="https://github.com/topics/{_esc(t)}">{_esc(t)}</a>'
+        (f'<a class="rp-topic" href="../tags/{_esc(tag_slug(t))}">{_esc(t)}</a>'
+         if tag_slug(t) in _tag_pages
+         else f'<a class="rp-topic" href="https://github.com/topics/{_esc(t)}">{_esc(t)}</a>')
         for t in (p.get("topics") or [])[:8])
     bits = [x for x in [
         f'<span class="rp-meta-bit">{_esc(p["language"])}</span>' if p.get("language") else "",
@@ -626,6 +629,60 @@ LANG_SLUGS = {"C++": "cpp", "C#": "csharp", "F#": "fsharp",
 def lang_slug(lang: str) -> str:
     return LANG_SLUGS.get(lang) or re.sub(
         r"[^a-z0-9]+", "-", lang.lower()).strip("-")
+
+
+# ---------------- per-tag static pages ----------------
+# /tags/<slug> — repos grouped by GitHub topic. Same skeleton trick as langs:
+# index.html + data-tag attrs, app.js hydrates a single star-sorted list.
+TAG_MIN_REPOS = 2         # a tag page needs at least this many tracked repos
+TAG_TOP = 100             # list cap per tag page
+
+
+def tag_slug(tag: str) -> str:
+    """GitHub topics are already lowercase-slug format; sanitize anyway so a
+    stray 'C++'/'Machine Learning' topic still maps to a stable page name."""
+    return re.sub(r"[^a-z0-9-]+", "-", tag.lower()).strip("-")
+
+
+def render_tag_page(tag: str, slug: str, items: list, day: str,
+                    template: str, base: str) -> str:
+    """Static /tags/<slug>.html — single star-sorted repo list for the tag."""
+    url = f"{base}/tags/{slug}"
+    html = template.replace(
+        "<body>",
+        f'<body data-base="../" data-tag="{_esc(slug)}" '
+        f'data-tag-name="{_esc(tag)}">', 1)
+    html = re.sub(r"<title>.*?</title>",
+                  lambda _: f"<title>#{_esc(tag)} · GitHub Trending Rank Radar</title>",
+                  html, count=1, flags=re.S)
+    desc = (f"GitHub 标签 {tag} 下的开源项目趋势榜 · "
+            f"{len(items)} repos tagged {tag} on GitHub · "
+            "独立采集 GitHub 仓库数据的开源趋势榜单")
+    html = re.sub(r'<meta name="description" content="[^"]*">',
+                  f'<meta name="description" content="{_esc(desc)}">',
+                  html, count=1)
+    html = html.replace(
+        '<link rel="canonical" href="https://zhuikan.com/">',
+        f'<link rel="canonical" href="{_esc(url)}">')
+    html = html.replace(
+        '<meta property="og:url" content="https://zhuikan.com/">',
+        f'<meta property="og:url" content="{_esc(url)}">')
+    note = (f'<p style="color:var(--muted,#8b949e);font-size:13px;margin:0 4px 10px">'
+            f'{_esc(day)} · #{_esc(tag)} · {len(items)} '
+            f'{_bi("个仓库 · 按 star 排序", "repos · by stars")}</p>')
+    html, _ = _inject(html, "SSR",
+                      note + '<div class="rank-list">'
+                      + "".join(_ssr_row(e) for e in items[:SSR_TOP]) + "</div>")
+    html, _ = _inject(html, "SSRMT", "")
+    html, _ = _inject(html, "SSRMG", "")
+    html = html.replace('"assets/', '"../assets/')
+    html = html.replace('href="repos/', 'href="../repos/')
+    html = html.replace('href="data/', 'href="../data/')
+    html = html.replace('href="manifest.webmanifest"',
+                        'href="../manifest.webmanifest"')
+    for leaf in ("feed.xml", "llms.txt", "sitemap.xml"):
+        html = html.replace(f'href="{leaf}"', f'href="../{leaf}"')
+    return html
 
 
 def render_lang_page(lang: str, slug: str, boards: dict, day: str,
@@ -1220,6 +1277,18 @@ def main() -> int:
     for name in detail_repos:
         owner_map.setdefault(name.split("/")[0], []).append(name)
 
+    # Tag index — pre-pass counts repos per topic so repo pages know which
+    # tags earn a static page (link) and which stay plain pills.
+    tag_map: dict[str, dict] = {}
+    for name in detail_repos:
+        for t in ((meta.get(name) or {}).get("topics") or []):
+            s = tag_slug(t)
+            if s:
+                tag_map.setdefault(s, {"tag": t, "names": [],
+                                       "items": []})["names"].append(name)
+    tag_pages = {s for s, e in tag_map.items()
+                 if len(e["names"]) >= TAG_MIN_REPOS}
+
     repos_out = SITE_DATA / "repos"
     readme_out = SITE_DATA / "readme"
     repos_out.mkdir(parents=True, exist_ok=True)
@@ -1306,6 +1375,21 @@ def main() -> int:
             json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
             encoding="utf-8")
         detail_count += 1
+        for t in (m.get("topics") or []):
+            s = tag_slug(t)
+            if s in tag_pages:
+                tag_map[s]["items"].append({
+                    "full_name": name, "owner": owner, "name": repo,
+                    "description": m.get("description"),
+                    "homepage": m.get("homepage"),
+                    "language": cur[I_LANG],
+                    "avatar": det.get("avatar"),
+                    "created_at": cur[I_CREATED],
+                    "stars": cur[I_STARS], "forks": cur[I_FORKS],
+                    "watchers": cur[I_WATCHERS], "issues": cur[I_ISSUES],
+                    "prs": cur[I_PRS], "releases": cur[I_RELEASES],
+                    "stale": stale,
+                })
         search_idx.append({
             "n": name,
             "d": (m.get("description") or "")[:160],
@@ -1323,7 +1407,8 @@ def main() -> int:
                 readme_zh_txt, encoding="utf-8")
         # SSR gets the raw text (Chinese preferred — site default lang is zh)
         ssr_payload = dict(payload, readme_excerpt=readme_zh_txt or readme_txt,
-                           cm_items=cm_map.get(name) or [])
+                           cm_items=cm_map.get(name) or [],
+                           tag_pages=tag_pages)
         page_html = render_repo_page(ssr_payload, repo_tpl, base)
         (pages_out / f"{owner}__{repo}.html").write_text(page_html, encoding="utf-8")
 
@@ -1384,6 +1469,53 @@ def main() -> int:
         log(f"langs: {len(langs_meta)} pages — "
             + ", ".join(l["lang"] for l in langs_meta))
 
+    # ---------------- per-tag static pages ----------------
+    # /tags/<slug> for every GitHub topic shared by ≥TAG_MIN_REPOS tracked
+    # repos — repo-page topic pills link here.
+    tags_dir = SITE_DIR / "tags"
+    tags_data_dir = SITE_DATA / "tags"
+    tags_data_dir.mkdir(exist_ok=True)
+    tags_meta = []
+    for slug in sorted(tag_pages):
+        e = tag_map[slug]
+        items = sorted(e["items"],
+                       key=lambda x: -(x.get("stars") or 0))[:TAG_TOP]
+        for i, it in enumerate(items, 1):
+            it["rank"] = i
+        try:
+            tags_data_dir.mkdir(exist_ok=True)
+            (tags_data_dir / f"{slug}.json").write_text(
+                json.dumps({"tag": e["tag"], "slug": slug,
+                            "date": latest_day,
+                            "repo_count": len(e["names"]),
+                            "boards": {"daily": {"items": items}}},
+                           ensure_ascii=False, separators=(",", ":")),
+                encoding="utf-8")
+            tags_dir.mkdir(exist_ok=True)
+            tpl = (SITE_DIR / "index.html").read_text(encoding="utf-8")
+            (tags_dir / f"{slug}.html").write_text(
+                render_tag_page(e["tag"], slug, items, latest_day, tpl, base),
+                encoding="utf-8")
+            tags_meta.append({"tag": e["tag"], "slug": slug,
+                              "repos": len(e["names"])})
+        except Exception as exc:
+            log(f"[warn] tag page {slug} failed: {exc}")
+    # prune pages whose tag dropped below the threshold since last build
+    for f in (tags_dir.glob("*.html") if tags_dir.is_dir() else []):
+        if f.stem not in tag_pages:
+            f.unlink()
+    for f in tags_data_dir.glob("*.json"):
+        if f.stem not in tag_pages:
+            f.unlink()
+    # lookup for repo.js — which topic slugs got a static page this build
+    (SITE_DATA / "tags-index.json").write_text(
+        json.dumps({m["slug"]: {"tag": m["tag"], "repos": m["repos"]}
+                    for m in tags_meta},
+                   ensure_ascii=False, separators=(",", ":")),
+        encoding="utf-8")
+    if tags_meta:
+        log(f"tags: {len(tags_meta)} pages")
+
     # Atom feed — debut + daily top of the latest day
     try:
         write_feed(latest_day, latest_boards,
@@ -1403,6 +1535,7 @@ def main() -> int:
         "months": months_present,
         "years": years_present,
         "langs": langs_meta,
+        "tags": tags_meta,
     }
     (SITE_DATA / "index.json").write_text(
         json.dumps(index, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -1422,6 +1555,10 @@ def main() -> int:
     # per-language static pages
     for lm in langs_meta:
         sitemap.append(f"  <url><loc>{base}/langs/{lm['slug']}</loc>"
+                       f"<lastmod>{latest_day}</lastmod></url>")
+    # per-tag static pages
+    for tm in tags_meta:
+        sitemap.append(f"  <url><loc>{base}/tags/{tm['slug']}</loc>"
                        f"<lastmod>{latest_day}</lastmod></url>")
     # repo detail pages — one static HTML per tracked repo
     for name in sorted(detail_repos):

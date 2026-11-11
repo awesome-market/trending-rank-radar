@@ -19,6 +19,8 @@ All ranking data is precomputed and served as static JSON — free to reuse (Apa
 - `data/years/YYYY.json` — year view: per-month growth cards
 - `data/langs/<slug>.json` — latest-day boards re-ranked within one language (candidates filtered before ranking, not a clipped global top-200); `index.json.langs` lists `{lang, slug, repos}`
 - `langs/<slug>` — static per-language board pages (same UI, day view)
+- `data/tags/<slug>.json` — repos sharing one GitHub topic, sorted by stars; `index.json.tags` and `data/tags-index.json` list `{tag, slug, repos}`
+- `tags/<slug>` — static per-topic pages (same UI, single star-sorted list)
 - `feed.xml` — Atom feed: debut + daily board top of the latest day
 - `b/<board>` and `b/<board>/<YYYY-MM-DD>` — per-board static pages (latest + every snapshot day), SSR'd bilingual 中文/English
 - `data/repos/<owner>__<name>.json` — per-repo detail: `metrics` (stars/forks/watchers/issues/prs/releases totals plus open/closed/merged splits: issues_open, issues_closed, prs_open, prs_closed, prs_merged), day/week/month growth, `history` (dates with stars/forks/watchers/issues_open/prs_open series), board placements, top issues, latest discussions, latest release, README excerpt, `news` (press coverage: title/url/source/lang/date; HN items carry points/comments)
