@@ -18,6 +18,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import sys
@@ -33,6 +34,26 @@ DATA_DIR = ROOT / "data"
 SNAP_DIR = DATA_DIR / "snapshots"
 REPOS_DIR = DATA_DIR / "repos"
 WATCHLIST_PATH = DATA_DIR / "watchlist.json"
+
+# Sharded pipeline: --role=plan produces this dir's plan/watchlist artifacts;
+# --role=shard drops metrics-K.json here; --role=reduce merges them and does
+# all git-visible writes. Artifacts are passed between workflow jobs via
+# upload/download-artifact, never through git itself.
+PLAN_DIR = DATA_DIR / "collect-plan"
+N_SHARDS = int(os.environ.get("TRR_SHARDS", "16"))
+
+
+def shard_of(full_name: str, n: int) -> int:
+    """Deterministic cross-process bucket. md5, not hash() — PYTHONHASHSEED
+    randomizes hash() per process, which would break shard assignment."""
+    return int(hashlib.md5(full_name.encode()).hexdigest(), 16) % n
+
+
+def _client() -> gh.GitHubClient:
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    if not token:
+        log("[warn] no GITHUB_TOKEN/GH_TOKEN — API calls will be unauthenticated/rate-limited")
+    return gh.GitHubClient(token=token)
 
 MAX_WATCH = 10000
 # Tiered refresh: candidates (trending/search hits) always refetch; repos
@@ -441,44 +462,12 @@ def write_repo_meta(metrics: dict[str, dict]) -> int:
     return written
 
 
-def main() -> int:
-    ap = argparse.ArgumentParser(description="Collect GitHub repo snapshot")
-    ap.add_argument("--max-repos", type=int, default=MAX_WATCH)
-    ap.add_argument("--dry-run", action="store_true", help="discover+fetch but don't write")
-    args = ap.parse_args()
-
-    at = parse_snapshot_at(os.environ.get("SNAPSHOT_AT"))
-    stamp = at.strftime("%Y-%m-%dT%H")
-    today = at.astimezone(BEIJING).date().isoformat()
-    log(f"snapshot stamp={stamp} (beijing day={today})")
-
-    wl = load_watchlist()
-    init_mode = not wl.get("repos")
-    if init_mode:
-        log("watchlist empty → init mode (seed high-star repos)")
-
-    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
-    if not token and not args.dry_run:
-        log("[warn] no GITHUB_TOKEN/GH_TOKEN — API calls will be unauthenticated/rate-limited")
-    client = gh.GitHubClient(token=token)
-
-    cand = discover(client, init_mode)
-    log(f"discovery candidates: {len(cand)}")
-
-    repos = merge_watchlist(wl, cand, args.max_repos, today)
-    names = sorted(repos)
-    log(f"watchlist size: {len(names)}")
-
-    # tiered fetch: hot = candidates this run + never/stale-fetched
-    day = at.date()
-    to_fetch = pick_fetches(repos, cand, day)
-    log(f"tiered fetch: {len(to_fetch)}/{len(names)} live "
-        f"(candidates={len(cand)}, cold_days={COLD_DAYS})")
-
-    # extended metrics once daily: the UTC-14:00 "close" run (or TRR_EXTENDED=1)
-    extended = at.hour == 14 or os.environ.get("TRR_EXTENDED") == "1"
-    metrics, unresolved = fetch_metrics(client, to_fetch, extended=extended)
-    log(f"metrics resolved: {len(metrics)}; unresolved: {len(unresolved)}")
+def _finalize(metrics: dict, unresolved: list, names: list, repos: dict,
+              wl: dict, stamp: str, run_at: str, today: str,
+              live_fetch: int, stats: dict) -> int:
+    """Shared tail: stamp last_fetch → carry-forwards → snapshot/meta/
+    watchlist/status writes. Used by both standalone runs and the sharded
+    reduce role, so git-visible output is identical either way."""
     for n in metrics:
         repos[n]["last_fetch"] = today
 
@@ -522,14 +511,10 @@ def main() -> int:
 
     snap = {
         "date": stamp,
-        "run_at": at.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "run_at": run_at,
         "repos": repos_arr,
         "errors": unresolved,
     }
-
-    if args.dry_run:
-        log(f"dry-run: would write {len(repos_arr)} repos, {len(unresolved)} errors")
-        return 0
 
     SNAP_DIR.mkdir(parents=True, exist_ok=True)
     out = SNAP_DIR / f"{stamp}.json"
@@ -541,17 +526,168 @@ def main() -> int:
     log(f"repo meta files written: {written}; watchlist saved")
 
     status = {
-        "run_at": at.strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "trending_pages_ok": STATS["trending_ok"],
-        "trending_pages_failed": STATS["trending_failed"],
-        "trending_items": STATS["trending_items"],
+        "run_at": run_at,
+        "trending_pages_ok": stats["trending_ok"],
+        "trending_pages_failed": stats["trending_failed"],
+        "trending_items": stats["trending_items"],
         "repos_collected": len(repos_arr),
-        "repos_live_fetch": len(to_fetch),
+        "repos_live_fetch": live_fetch,
         "metrics_unresolved": len(unresolved),
     }
     _atomic_write(ROOT / "run_status.json",
                   json.dumps(status, ensure_ascii=False, indent=1) + "\n")
     return 0
+
+
+def role_plan(args) -> int:
+    """Global decisions only: discovery → watchlist merge → fetch plan.
+    Emits data/collect-plan/{plan.json,watchlist.json} as workflow artifacts —
+    shards and the reduce job consume these; nothing here touches git state
+    (the staged watchlist is committed by reduce after last_fetch stamps)."""
+    at = parse_snapshot_at(os.environ.get("SNAPSHOT_AT"))
+    stamp = at.strftime("%Y-%m-%dT%H")
+    today = at.astimezone(BEIJING).date().isoformat()
+    day = at.date()
+    log(f"[plan] snapshot stamp={stamp} (beijing day={today}) shards={N_SHARDS}")
+
+    wl = load_watchlist()
+    init_mode = not wl.get("repos")
+    if init_mode:
+        log("watchlist empty → init mode (seed high-star repos)")
+    client = _client()
+
+    cand = discover(client, init_mode)
+    log(f"[plan] discovery candidates: {len(cand)}")
+
+    repos = merge_watchlist(wl, cand, args.max_repos, today)
+    names = sorted(repos)
+    to_fetch = pick_fetches(repos, cand, day)
+    log(f"[plan] watchlist={len(names)} tiered_fetch={len(to_fetch)} "
+        f"(extended shards fetch all {len(names)})")
+
+    PLAN_DIR.mkdir(parents=True, exist_ok=True)
+    _atomic_write(PLAN_DIR / "plan.json", json.dumps({
+        "stamp": stamp,
+        "run_at": at.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "today": today,
+        "n_shards": N_SHARDS,
+        "names": names,
+        "fetches": to_fetch,
+        "stats": dict(STATS),
+    }, ensure_ascii=False))
+    _atomic_write(PLAN_DIR / "watchlist.json",
+                  json.dumps(wl, ensure_ascii=False))
+    log("[plan] wrote plan + staged watchlist")
+    return 0
+
+
+def role_shard(args) -> int:
+    """Fetch worker — reads plan.json, fetches only md5%N==K names, emits
+    metrics-K.json. No git writes; the reduce job merges all shards."""
+    plan = json.loads((PLAN_DIR / "plan.json").read_text(encoding="utf-8"))
+    n, k = int(plan["n_shards"]), args.shard
+    if not (0 <= k < n):
+        log(f"[shard] invalid shard {k}/{n}")
+        return 2
+    extended = os.environ.get("TRR_EXTENDED") == "1"
+    # extended runs refresh EVERYTHING — sharding makes full coverage cheap;
+    # core-only runs keep the tiered hot+cold-rotation fetch list
+    pool = plan["names"] if extended else plan["fetches"]
+    mine = [nm for nm in pool if shard_of(nm, n) == k]
+    log(f"[shard] k={k}/{n} extended={extended} pool={len(pool)} mine={len(mine)}")
+
+    metrics, unresolved = fetch_metrics(_client(), mine, extended=extended)
+    PLAN_DIR.mkdir(parents=True, exist_ok=True)
+    _atomic_write(PLAN_DIR / f"metrics-{k}.json", json.dumps(
+        {"shard": k, "metrics": metrics, "unresolved": unresolved},
+        ensure_ascii=False))
+    log(f"[shard] wrote metrics-{k}.json: {len(metrics)} repos, "
+        f"{len(unresolved)} unresolved")
+    return 0
+
+
+def role_reduce(args) -> int:
+    """Merge shard artifacts → shared finalize tail. All git-visible writes
+    happen here, so the pipeline keeps a single writer on data/."""
+    plan = json.loads((PLAN_DIR / "plan.json").read_text(encoding="utf-8"))
+    wl = json.loads((PLAN_DIR / "watchlist.json").read_text(encoding="utf-8"))
+    repos = wl.get("repos") or {}
+
+    metrics: dict[str, dict] = {}
+    unresolved: list[list] = []
+    got: set[int] = set()
+    for f in PLAN_DIR.glob("metrics-*.json"):
+        try:
+            d = json.loads(f.read_text(encoding="utf-8"))
+            got.add(int(d.get("shard", f.stem.rsplit("-", 1)[-1])))
+            metrics.update(d.get("metrics") or {})
+            unresolved += d.get("unresolved") or []
+        except Exception as e:
+            log(f"[warn] unreadable {f.name}: {e}")
+    missing = sorted(set(range(int(plan["n_shards"]))) - got)
+    for k in missing:
+        unresolved.append([f"shard:{k}", "shard_failed"])
+    log(f"[reduce] shards {len(got)}/{plan['n_shards']} "
+        f"missing={missing or 'none'} metrics={len(metrics)}")
+
+    return _finalize(metrics, unresolved, plan["names"], repos, wl,
+                     plan["stamp"], plan["run_at"], plan["today"],
+                     len(plan["fetches"]), plan["stats"])
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description="Collect GitHub repo snapshot")
+    ap.add_argument("--max-repos", type=int, default=MAX_WATCH)
+    ap.add_argument("--dry-run", action="store_true", help="discover+fetch but don't write")
+    ap.add_argument("--role", choices=["standalone", "plan", "shard", "reduce"],
+                    default="standalone",
+                    help="sharded pipeline role; standalone = classic one-shot")
+    ap.add_argument("--shard", type=int, default=-1,
+                    help="shard index K (role=shard only)")
+    args = ap.parse_args()
+
+    if args.role == "plan":
+        return role_plan(args)
+    if args.role == "shard":
+        return role_shard(args)
+    if args.role == "reduce":
+        return role_reduce(args)
+
+    at = parse_snapshot_at(os.environ.get("SNAPSHOT_AT"))
+    stamp = at.strftime("%Y-%m-%dT%H")
+    today = at.astimezone(BEIJING).date().isoformat()
+    log(f"snapshot stamp={stamp} (beijing day={today})")
+
+    wl = load_watchlist()
+    init_mode = not wl.get("repos")
+    if init_mode:
+        log("watchlist empty → init mode (seed high-star repos)")
+    client = _client()
+
+    cand = discover(client, init_mode)
+    log(f"discovery candidates: {len(cand)}")
+
+    repos = merge_watchlist(wl, cand, args.max_repos, today)
+    names = sorted(repos)
+    log(f"watchlist size: {len(names)}")
+
+    # tiered fetch: hot = candidates this run + never/stale-fetched
+    day = at.date()
+    to_fetch = pick_fetches(repos, cand, day)
+    log(f"tiered fetch: {len(to_fetch)}/{len(names)} live "
+        f"(candidates={len(cand)}, cold_days={COLD_DAYS})")
+
+    # extended metrics once daily: the UTC-14:00 "close" run (or TRR_EXTENDED=1)
+    extended = at.hour == 14 or os.environ.get("TRR_EXTENDED") == "1"
+    metrics, unresolved = fetch_metrics(client, to_fetch, extended=extended)
+    log(f"metrics resolved: {len(metrics)}; unresolved: {len(unresolved)}")
+
+    if args.dry_run:
+        log(f"dry-run: would write {len(metrics)} repos, {len(unresolved)} errors")
+        return 0
+    return _finalize(metrics, unresolved, names, repos, wl, stamp,
+                     at.strftime("%Y-%m-%dT%H:%M:%SZ"), today,
+                     len(to_fetch), STATS)
 
 
 if __name__ == "__main__":
