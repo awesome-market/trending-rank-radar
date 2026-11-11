@@ -68,7 +68,7 @@ data/
 
 （watchers/issues/prs/releases 对齐同类榜单站的数据模型，前端元信息行对非 null 字段渲染对应图标计数；扩展字段仅 UTC 14:00 运行填充，其他时刻为 `null`——见下方"拉取方式"。GraphQL 中 issues/pullRequests 分列；REST `open_issues_count` 含两者。）
 
-仓库级低频元数据（description、topics、homepage、pushed_at、updated_at）不逐日重复存储，放 `data/repos/{owner}__{name}.json` 按需缓存，GraphQL 返回值变化时更新；扩展 pass 另写 `detail` 键（avatar、license、discussions 计数、hot issues、最新 discussions、latestRelease、完整 README），非扩展运行沿用文件内已有值。`rank.py` 将 description/homepage 等**内联合并进 `site/data` 条目**，并把 meta+detail+完整历史序列生成 `site/data/repos/{owner}__{name}.json` 供详情页使用，保证 site/ 自包含（Pages 只能访问 site/ 下的文件）。
+仓库级低频元数据（description、topics、homepage、pushed_at、updated_at）不逐日重复存储，放 `data/repos/{owner}__{name}.json` 按需缓存，GraphQL 返回值变化时更新；扩展 pass 另写 `detail` 键（avatar、license、discussions 计数、hot issues、最新 discussions、latestRelease、完整 README），非扩展运行沿用文件内已有值。`rank.py` 将 description/homepage 等**内联合并进 `site/data` 条目**，并把 meta+detail+完整历史序列生成 `site/data/repos/{owner}__{name}.json` 供详情页使用。`site/data/**` 整棵树随后由 `pack_data.py` 打成单个 `site-data.db`（KV blob 表）推给 api-site——前端水合改从 `api-site.zhuikan.com/data/<path>` 取，Pages 部署包不再携带 data/（文件数上限约束，见 05-automation）。
 
 序列需保留 **≥35 天**以支持月榜窗口；`rank.py` 从全部快照重建每仓库的日序列。
 
@@ -110,9 +110,10 @@ data/
 ```
 scripts/
   gh.py           # GitHub API 客户端：trending 抓取 / search / graphql 批量 / REST 兜底 / 重试
-  collect.py      # Discovery + 快照主流程（调用 gh.py）
+  collect.py      # Discovery + 快照主流程（调用 gh.py）；--role=plan/shard/reduce 三角色分片
   news.py         # 仓库新闻报道抓取：HN Algolia + Google/Bing News RSS（zh/en）→ data/news/
-  rank.py         # 读快照 → 计算八榜 + 日/月/年聚合 → site/data/*.json
+  rank.py         # 读快照 → 计算八榜 + 日/月/年聚合 → site/data/*.json + 静态页
+  pack_data.py    # site/data/** → site-data.db（KV blob），CI 推给 api-site
   build.py        # （可选）HTML 模板渲染；v1 可由 rank.py 直接产出
 ```
 
