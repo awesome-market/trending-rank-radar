@@ -811,6 +811,22 @@ function startTicker(items) {
   }
 }
 
+/* 免疫评论的本机隐藏名单：{id: 过期ts}，localStorage 存 24h */
+function cmHiddenIds() {
+  let m = {};
+  try { m = JSON.parse(localStorage.getItem('zk_cm_hide') || '{}'); } catch { }
+  const out = new Set(), now = Date.now();
+  for (const [id, ts] of Object.entries(m)) if (ts > now) out.add(+id);
+  return out;
+}
+
+function hideCommentLocal(id) {
+  let m = {};
+  try { m = JSON.parse(localStorage.getItem('zk_cm_hide') || '{}'); } catch { }
+  m[id] = Date.now() + 86400e3;
+  try { localStorage.setItem('zk_cm_hide', JSON.stringify(m)); } catch { }
+}
+
 async function loadComments(d) {
   const el = $('#cmList');
   if (!el) return;
@@ -830,16 +846,25 @@ async function loadComments(d) {
       kids.get(c.parent_id).push(c);
     } else tops.push(c);
   }
+  // 免疫评论（服务端 3 轮举报重审存活）→ 本机隐藏 24h，含其子树
+  const dead = cmHiddenIds();
+  if (dead.size) {
+    const mark = (id) => (kids.get(id) || [])
+      .forEach(k => { dead.add(k.id); mark(k.id); });
+    [...dead].forEach(mark);
+  }
   const tree = (c, depth) => {
-    const cs = (kids.get(c.id) || []).sort((a, b) => a.id - b.id);
+    const cs = (kids.get(c.id) || []).filter(k => !dead.has(k.id))
+      .sort((a, b) => a.id - b.id);
     const ind = Math.min(depth + 1, 2);          // 缩进最多两级，更深平铺
     return cmRow(c, c.parent_id ? byId.get(c.parent_id) : null)
       + (cs.length
         ? `<div class="cm-kids"${ind >= 2 ? ' data-flat' : ''}>${cs.map(k => tree(k, ind)).join('')}</div>`
         : '');
   };
-  el.innerHTML = tops.length
-    ? tops.map(c => tree(c, 0)).join('')
+  const topsShown = tops.filter(c => !dead.has(c.id));
+  el.innerHTML = topsShown.length
+    ? topsShown.map(c => tree(c, 0)).join('')
     : `<div class="cm-empty">${esc(t('cm.empty'))}</div>`;
   // ↳ 标签点击 → 滚动定位父评论并短暂高亮
   el.querySelectorAll('.cm-rt').forEach(b => b.onclick = () => {
@@ -862,7 +887,10 @@ async function loadComments(d) {
     }
     try {
       if (b.dataset.act === 'del') await api(`/comments/${encodeURIComponent(id)}`, { method: 'DELETE' });
-      else await api(`/comments/${encodeURIComponent(id)}/report`, { method: 'POST', body: JSON.stringify({ reason: '' }) });
+      else {
+        const r = await api(`/comments/${encodeURIComponent(id)}/report`, { method: 'POST', body: JSON.stringify({ reason: '' }) });
+        if (r.immune) hideCommentLocal(id);   // 服务端不再真隐藏 → 本机 24h
+      }
       loadComments(d);
     } catch (e) {
       if (e.code === 'unverified_email') openAuthModal('verify');
