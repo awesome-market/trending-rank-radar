@@ -730,11 +730,13 @@ function renderCommentForm(d) {
   };
 }
 
-function cmRow(c) {
+function cmRow(c, parent) {
   const own = zk.user && (zk.user.username === c.username || zk.user.role === 'admin');
   const av = c.avatar_url ? `<img class="cm-av" src="${esc(c.avatar_url)}" width="24" height="24" alt="">` : '<span class="cm-av cm-av-ph"></span>';
   const pend = c.status === 'pending' ? `<i class="cm-pend">${esc(t('cm.pending'))}</i>` : '';
+  const rt = parent ? `<span class="cm-rt">↳ ${esc(t('cm.replyto', { n: parent.display_name || parent.username }))}</span>` : '';
   const acts = `<span class="cm-acts">
+      ${zk.user ? `<button class="cm-act" data-act="reply" type="button">${esc(t('cm.reply'))}</button>` : ''}
       <button class="cm-act" data-act="report" type="button">${esc(t('cm.report'))}</button>
       ${own ? `<button class="cm-act" data-act="del" type="button">${esc(t('cm.del'))}</button>` : ''}
     </span>`;
@@ -747,9 +749,46 @@ function cmRow(c) {
   return `<div class="cm-item" data-id="${esc(c.id)}">${av}
     <div class="cm-main">
       <div class="cm-head"><b>${esc(c.display_name || c.username)}</b>
-        <span class="cm-time">${timeAgo(ts)}</span>${pend}${acts}</div>
+        <span class="cm-time">${timeAgo(ts)}</span>${pend}${rt}${acts}</div>
       <div class="cm-body">${esc(c.body)}</div>${tr}
     </div></div>`;
+}
+
+/* 在目标评论 .cm-main 里插一个内联回复表单；再次点回复=收起 */
+function openReplyForm(item, parent, d) {
+  const host = item.querySelector('.cm-main');
+  const old = host.querySelector('.cm-rform');
+  if (old) { old.remove(); return; }
+  const rf = document.createElement('div');
+  rf.className = 'cm-rform';
+  rf.innerHTML = `<textarea class="cm-in" rows="2" maxlength="2000"
+      placeholder="${esc(t('cm.replyto', { n: parent.display_name || parent.username }))}"></textarea>
+    <div class="cm-row"><button class="cm-post" type="button">${esc(t('cm.submit'))}</button>
+      <button class="cm-cancel" type="button">${esc(t('cm.cancel'))}</button>
+      <span class="cm-note"></span></div>`;
+  host.appendChild(rf);
+  const [ta, post, cancel, note] = [rf.querySelector('.cm-in'),
+    rf.querySelector('.cm-post'), rf.querySelector('.cm-cancel'),
+    rf.querySelector('.cm-note')];
+  ta.focus();
+  cancel.onclick = () => rf.remove();
+  post.onclick = async () => {
+    const body = ta.value.trim();
+    if (!body) return;
+    post.disabled = true;
+    try {
+      await api('/comments', {
+        method: 'POST',
+        body: JSON.stringify({ site: 'github', item_id: d.full_name, body, parent_id: parent.id })
+      });
+      loadComments(d);
+    } catch (e) {
+      if (e.code === 'unverified_email') openAuthModal('verify');
+      else if (e.code === 'username_rejected') openNameModal(e.message);
+      else note.textContent = authErr(e);
+    }
+    post.disabled = false;
+  };
 }
 
 /* 轮播最新评论 —— socbar 里的一行走马灯，点击展开评论区 */
@@ -782,12 +821,35 @@ async function loadComments(d) {
   startTicker(items);
   const mine = zk.user ? zk.user.username : null;
   const shown = items.filter(c => c.status === 'approved' || c.username === mine);
-  el.innerHTML = shown.length
-    ? shown.map(cmRow).join('')
+  // 组装树：parent_id 挂到父评论下（父不在可见集里的孤儿提升为顶层）
+  const byId = new Map(shown.map(c => [c.id, c]));
+  const kids = new Map(), tops = [];
+  for (const c of shown) {
+    if (c.parent_id && byId.has(c.parent_id)) {
+      if (!kids.has(c.parent_id)) kids.set(c.parent_id, []);
+      kids.get(c.parent_id).push(c);
+    } else tops.push(c);
+  }
+  const tree = (c, depth) => {
+    const cs = (kids.get(c.id) || []).sort((a, b) => a.id - b.id);
+    const ind = Math.min(depth + 1, 2);          // 缩进最多两级，更深平铺
+    return cmRow(c, c.parent_id ? byId.get(c.parent_id) : null)
+      + (cs.length
+        ? `<div class="cm-kids"${ind >= 2 ? ' data-flat' : ''}>${cs.map(k => tree(k, ind)).join('')}</div>`
+        : '');
+  };
+  el.innerHTML = tops.length
+    ? tops.map(c => tree(c, 0)).join('')
     : `<div class="cm-empty">${esc(t('cm.empty'))}</div>`;
   el.querySelectorAll('.cm-act').forEach(b => b.onclick = async () => {
-    const id = b.closest('.cm-item').dataset.id;
+    const item = b.closest('.cm-item');
+    const id = +item.dataset.id;
     if (!zk.user) { openAuthModal('login'); return; }
+    if (b.dataset.act === 'reply') {
+      const parent = byId.get(id);
+      if (parent) openReplyForm(item, parent, d);
+      return;
+    }
     try {
       if (b.dataset.act === 'del') await api(`/comments/${encodeURIComponent(id)}`, { method: 'DELETE' });
       else await api(`/comments/${encodeURIComponent(id)}/report`, { method: 'POST', body: JSON.stringify({ reason: '' }) });

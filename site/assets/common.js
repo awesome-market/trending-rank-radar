@@ -61,6 +61,14 @@ const I18N = {
     'nm.go': '保存',
     'auth.sw.register': '没有账号？注册',
     'auth.sw.login': '已有账号？登录',
+    'auth.forgot': '忘记密码？',
+    'auth.back.login': '返回登录',
+    'auth.reset.title': '重置密码',
+    'auth.reset.ask': '输入注册邮箱，我们发送重置码',
+    'auth.reset.send': '发送重置码',
+    'auth.reset.go': '重置密码',
+    'auth.reset.hint': '重置码已发送至 {e}，请查收（含垃圾箱）',
+    'auth.reset.sent': '重置码已重新发送',
     'auth.verify.title': '验证邮箱',
     'auth.verify.hint': '验证码已发送至 {e}，请查收（含垃圾箱）',
     'auth.verify.ph': '6 位验证码',
@@ -76,6 +84,7 @@ const I18N = {
     'cm.pending': '审核中', 'cm.report': '举报', 'cm.del': '删除',
     'cm.empty': '还没有评论，来抢沙发', 'cm.posted': '已提交，通过后显示',
     'cm.ai': 'AI 翻译',
+    'cm.reply': '回复', 'cm.replyto': '回复 @{n}', 'cm.cancel': '取消',
     'empty.nodata': '暂无榜单数据',
     'empty.acc': '该榜单暂无数据，快照仍在积累',
     'empty.reset': '重置筛选',
@@ -212,6 +221,14 @@ const I18N = {
     'nm.go': 'Save',
     'auth.sw.register': 'No account? Sign up',
     'auth.sw.login': 'Have an account? Sign in',
+    'auth.forgot': 'Forgot password?',
+    'auth.back.login': 'Back to sign in',
+    'auth.reset.title': 'Reset password',
+    'auth.reset.ask': 'Enter your account email — we will send a reset code',
+    'auth.reset.send': 'Send reset code',
+    'auth.reset.go': 'Reset password',
+    'auth.reset.hint': 'Reset code sent to {e} — check spam too',
+    'auth.reset.sent': 'Reset code sent again',
     'auth.verify.title': 'Verify email',
     'auth.verify.hint': 'Code sent to {e} — check spam too',
     'auth.verify.ph': '6-digit code',
@@ -227,6 +244,7 @@ const I18N = {
     'cm.pending': 'under review', 'cm.report': 'Report', 'cm.del': 'Delete',
     'cm.empty': 'No comments yet', 'cm.posted': 'Submitted for review',
     'cm.ai': 'AI translation',
+    'cm.reply': 'Reply', 'cm.replyto': 'Reply to @{n}', 'cm.cancel': 'Cancel',
     'empty.nodata': 'No board data yet',
     'empty.acc': 'No data on this board yet; snapshots still accumulating',
     'empty.reset': 'Reset filter',
@@ -547,7 +565,7 @@ function openAuthModal(mode) {
     <button class="auth-item auth-go am-go" id="amGo" type="button"></button>
     <div class="auth-err" id="amErr" hidden></div>
     <button class="am-re" id="amRe" type="button" hidden></button>
-    <div class="am-sw"><a href="#" id="amSw"></a></div>
+    <div class="am-sw"><a href="#" id="amFg" hidden></a><a href="#" id="amSw"></a></div>
   </div>`;
   document.body.appendChild(ov);
   const q = (s) => ov.querySelector(s);
@@ -572,22 +590,35 @@ function openAuthModal(mode) {
 
   const setMode = (m) => {
     mode = m;
-    const reg = m === 'register', ver = m === 'verify';
+    const reg = m === 'register', ver = m === 'verify',
+      fg = m === 'forgot', rs = m === 'reset';
     q('#amTitle').textContent = ver ? t('auth.verify.title')
+      : (fg || rs) ? t('auth.reset.title')
       : reg ? t('auth.register') : t('auth.login');
     q('#amGo').textContent = ver ? t('auth.verify.go')
+      : fg ? t('auth.reset.send') : rs ? t('auth.reset.go')
       : reg ? t('auth.register') : t('auth.login');
-    ov.querySelectorAll('.am-soc').forEach(a => { a.hidden = ver; });
-    q('.am-sep').hidden = ver;
-    q('#amU').hidden = ver;
-    q('#amE').hidden = !reg;
-    q('#amP').hidden = ver;
-    q('#amV').hidden = !ver;
-    q('#amHint').hidden = !ver;
-    q('#amRe').hidden = !ver;
+    const soc = m === 'login' || reg;            // oauth 只在登录/注册出现
+    ov.querySelectorAll('.am-soc').forEach(a => { a.hidden = !soc; });
+    q('.am-sep').hidden = !soc;
+    q('#amU').hidden = !(m === 'login' || reg);
+    q('#amE').hidden = !(reg || fg);
+    q('#amP').hidden = !(m === 'login' || reg || rs);
+    q('#amV').hidden = !(ver || rs);
+    q('#amHint').hidden = !(ver || fg || rs);
+    q('#amRe').hidden = !(ver || rs);
     q('#amSw').hidden = ver;
-    q('#amSw').textContent = reg ? t('auth.sw.login') : t('auth.sw.register');
-    q('#amP').autocomplete = reg ? 'new-password' : 'current-password';
+    q('#amSw').textContent = (fg || rs) ? t('auth.back.login')
+      : reg ? t('auth.sw.login') : t('auth.sw.register');
+    q('#amFg').hidden = m !== 'login';
+    q('#amFg').textContent = t('auth.forgot');
+    q('#amP').autocomplete = reg || rs ? 'new-password' : 'current-password';
+    if (fg) q('#amHint').textContent = t('auth.reset.ask');
+    if (rs) {
+      q('#amHint').textContent = t('auth.reset.hint',
+        { e: q('#amE').value.trim() || '—' });
+      if (!cdTimer) q('#amRe').textContent = t('auth.verify.resend');
+    }
     if (ver) {
       const em = (zk.user && zk.user.email) || '—';
       q('#amHint').textContent = t('auth.verify.hint', { e: em });
@@ -603,15 +634,23 @@ function openAuthModal(mode) {
   };
   q('#amSw').onclick = (e) => {
     e.preventDefault();
-    setMode(mode === 'register' ? 'login' : 'register');
+    if (mode === 'forgot' || mode === 'reset') setMode('login');
+    else setMode(mode === 'register' ? 'login' : 'register');
+  };
+  q('#amFg').onclick = (e) => {
+    e.preventDefault();
+    setMode('forgot');
   };
   q('#amRe').onclick = async (e) => {
     e.preventDefault();
     const el2 = q('#amErr');
     try {
-      const d = await api(`/auth/resend?lang=${encodeURIComponent(LANG)}`, { method: 'POST', body: '{}' });
+      const d = mode === 'reset'
+        ? await api('/auth/forgot', { method: 'POST', body: JSON.stringify({ email: q('#amE').value.trim(), lang: LANG }) })
+        : await api(`/auth/resend?lang=${encodeURIComponent(LANG)}`, { method: 'POST', body: '{}' });
       startCd(d.cooldown || 120);
-      el2.textContent = t('auth.verify.sent'); el2.hidden = false;
+      el2.textContent = mode === 'reset' ? t('auth.reset.sent') : t('auth.verify.sent');
+      el2.hidden = false;
     } catch (err) {
       if (err.retryAfter) startCd(err.retryAfter);
       el2.textContent = authErr(err); el2.hidden = false;
@@ -626,6 +665,23 @@ function openAuthModal(mode) {
         await api('/auth/verify', { method: 'POST', body: JSON.stringify({ code: q('#amV').value.trim() }) });
         if (zk.user) { zk.user.email_verified = 1; }
         document.dispatchEvent(new CustomEvent('zk:auth'));
+        close();
+        return;
+      }
+      if (mode === 'forgot') {
+        const d = await api('/auth/forgot', { method: 'POST', body: JSON.stringify({ email: q('#amE').value.trim(), lang: LANG }) });
+        startCd(d.cooldown || 120);
+        setMode('reset');
+        q('#amGo').disabled = false; q('#amV').focus();
+        return;
+      }
+      if (mode === 'reset') {
+        const d = await api('/auth/reset', { method: 'POST', body: JSON.stringify({
+          email: q('#amE').value.trim(), code: q('#amV').value.trim(),
+          password: q('#amP').value }) });
+        if (!d.token) throw new Error(t('auth.err'));
+        zk.token = d.token; localStorage.setItem('zk_token', d.token);
+        await zkLoadUser(); renderAuthChip(); document.dispatchEvent(new CustomEvent('zk:auth'));
         close();
         return;
       }
@@ -650,8 +706,8 @@ function openAuthModal(mode) {
     if (e.key === 'Enter' && e.target.tagName === 'INPUT') submit();
   });
 
-  setMode(['register', 'verify'].includes(mode) ? mode : 'login');
-  (mode === 'verify' ? q('#amV') : q('#amU')).focus();
+  setMode(['register', 'verify', 'forgot', 'reset'].includes(mode) ? mode : 'login');
+  ({ verify: q('#amV'), forgot: q('#amE'), reset: q('#amV') }[mode] || q('#amU')).focus();
 }
 
 /* 用户名被 AI 判定违规（username_rejected）→ 改名弹层；

@@ -1184,8 +1184,9 @@ html[lang="en"] .i18n-en { display: inline; }
 }
 .am-re:hover:not(:disabled) { border-color: var(--card-border-hi); color: var(--text); }
 .am-re:disabled { opacity: .55; cursor: not-allowed; }
-.am-sw { margin-top: 12px; text-align: center; }
+.am-sw { margin-top: 12px; display: flex; justify-content: space-between; }
 .am-sw a { color: var(--accent); font-size: 12.5px; text-decoration: none; }
+.am-sw #amSw { margin-left: auto; }
 .am-sw a:hover { text-decoration: underline; }
 .am-hint { padding: 4px 2px 8px; font-size: 12px; color: var(--text-dim); line-height: 1.5; }
 
@@ -1212,6 +1213,12 @@ html[lang="en"] .i18n-en { display: inline; }
 .rp-cm-body { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--card-border); }
 .cm-tr { margin-top: 4px; padding-top: 6px; border-top: 1px dashed var(--card-border); font-size: 12.5px; color: var(--text-dim); }
 .cm-tr-tag { display: inline-block; margin-right: 6px; padding: 0 5px; font-size: 10.5px; line-height: 16px; color: var(--text-faint); border: 1px solid var(--card-border); border-radius: 4px; vertical-align: 1px; }
+.cm-kids { margin: 6px 0 0 14px; padding-left: 10px; border-left: 1px solid var(--card-border); }
+.cm-kids[data-flat] { margin-left: 0; padding-left: 0; border-left: none; }
+.cm-rt { margin-left: 6px; font-size: 11px; color: var(--text-faint); }
+.cm-rform { margin-top: 8px; }
+.cm-cancel { background: none; border: none; color: var(--text-dim); font-size: 12px; cursor: pointer; padding: 6px 10px; font-family: var(--font); }
+.cm-cancel:hover { color: var(--text); }
 
 /* comments */
 .rp-cm { padding: 18px 20px; margin-top: 14px; }
