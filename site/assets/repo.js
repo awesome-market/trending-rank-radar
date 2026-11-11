@@ -736,6 +736,7 @@ function cmRow(c, parent) {
   const pend = c.status === 'pending' ? `<i class="cm-pend">${esc(t('cm.pending'))}</i>` : '';
   const rt = parent ? `<button class="cm-rt" data-pid="${esc(parent.id)}" type="button">↳ ${esc(t('cm.replyto', { n: parent.display_name || parent.username }))}</button>` : '';
   const acts = `<span class="cm-acts">
+      <button class="cm-act cm-like${c.liked ? ' liked' : ''}" data-act="like" type="button">${esc(t('cm.like'))}${c.likes ? ` ${c.likes}` : ''}</button>
       ${zk.user ? `<button class="cm-act" data-act="reply" type="button">${esc(t('cm.reply'))}</button>` : ''}
       <button class="cm-act" data-act="report" type="button">${esc(t('cm.report'))}</button>
       ${own ? `<button class="cm-act" data-act="del" type="button">${esc(t('cm.del'))}</button>` : ''}
@@ -886,6 +887,12 @@ async function loadComments(d) {
       return;
     }
     try {
+      if (b.dataset.act === 'like') {
+        const r = await api(`/comments/${encodeURIComponent(id)}/like`, { method: 'POST', body: '{}' });
+        b.classList.toggle('liked', r.liked);
+        b.textContent = `${t('cm.like')}${r.likes ? ' ' + r.likes : ''}`;
+        return;                             // 就地更新，不重拉整串
+      }
       if (b.dataset.act === 'del') await api(`/comments/${encodeURIComponent(id)}`, { method: 'DELETE' });
       else {
         const r = await api(`/comments/${encodeURIComponent(id)}/report`, { method: 'POST', body: JSON.stringify({ reason: '' }) });
