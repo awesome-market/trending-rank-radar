@@ -6,7 +6,7 @@ const BOARD_ORDER = ['new', 'debut', 'daily', 'daily_rate', 'weekly', 'weekly_ra
 const CUM_BOARD = 'cumulative';   // month-only pseudo board
 const PAGE = 50;
 
-// Language pages (/langs/<slug>.html) reuse this file in "lang mode":
+// Language pages (/langs/<slug>) reuse this file in "lang mode":
 // <body data-base="../" data-lang="python" data-lang-name="Python"> — day-view
 // only, boards come from data/langs/<slug>.json instead of the day files.
 const DB = document.body.dataset.base || '';
@@ -53,7 +53,7 @@ function langDot(lang) {
   const slug = state.langSlugs && state.langSlugs[lang];
   // link to the language's static page when one exists (index.json "langs")
   return slug
-    ? `<a class="lang-tag" href="${DB}langs/${slug}.html">${inner}</a>`
+    ? `<a class="lang-tag" href="${DB}langs/${slug}">${inner}</a>`
     : `<span class="lang-tag">${inner}</span>`;
 }
 
@@ -74,7 +74,7 @@ function rowSideHTML(e) {
 
 function nameLinkHTML(e) {
   const fn = esc(e.full_name);
-  return `<a class="row-link" href="${DB}repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}.html" title="${esc(t('open.detail', { r: e.full_name }))}">`
+  return `<a class="row-link" href="${DB}repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}" title="${esc(t('open.detail', { r: e.full_name }))}">`
     + `<span class="row-owner">${esc(e.owner)}</span><span class="row-sep">/</span>`
     + `<span class="row-repo">${esc(e.name)}</span></a>`
     + `<a class="ext-link" href="https://github.com/${fn}" target="_blank" rel="noopener" title="${esc(t('open.gh', { r: e.full_name }))}">${icon('ext', 'ext-ico', 12)}</a>`;
@@ -89,7 +89,7 @@ function rowHTML(e, dispRank = e.rank) {
     : '';
   return `<div class="rank-row" data-fn="${esc(e.full_name)}" style="animation-delay:${Math.min(dispRank * 12, 400)}ms">
     <span class="row-rank${dispRank <= 3 ? ' top' : ''}"${dispRank !== e.rank ? ` title="${esc(t('rank.prerank', { n: e.rank }))}"` : ''}>${dispRank}</span>
-    <a class="row-avatar" href="${DB}repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}.html"><img src="${esc(e.avatar || `https://github.com/${e.owner}.png?size=96`)}" alt="" loading="lazy" width="48" height="48" onerror="this.style.visibility='hidden'"></a>
+    <a class="row-avatar" href="${DB}repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}"><img src="${esc(e.avatar || `https://github.com/${e.owner}.png?size=96`)}" alt="" loading="lazy" width="48" height="48" onerror="this.style.visibility='hidden'"></a>
     <div class="row-body">
       <div class="row-name">
         ${nameLinkHTML(e)}${badges(e)}${ageChip}
@@ -119,7 +119,7 @@ function podiumHTML(e, idx) {
   const rate = e.rate != null ? `<span class="rate-pill${e.rate >= 100 ? ' hot' : ''}">${fmtPct(e.rate)}</span>` : '';
   return `<div class="podium-card p${idx + 1}" data-fn="${esc(e.full_name)}">
     <div class="podium-rank">${medal}</div>
-    <a class="podium-avatar" href="${DB}repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}.html"><img src="${esc(e.avatar || `https://github.com/${e.owner}.png?size=128`)}" alt="" loading="lazy"></a>
+    <a class="podium-avatar" href="${DB}repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}"><img src="${esc(e.avatar || `https://github.com/${e.owner}.png?size=128`)}" alt="" loading="lazy"></a>
     <div class="podium-name">${nameLinkHTML(e)}${badges(e)}</div>
     <div class="podium-desc">${esc(e.description || '—')}</div>
     <div class="podium-metric" style="color:${e.growth != null ? 'var(--green)' : 'var(--text)'}">${metric}${unit ? ` <span class="unit">${unit}</span>` : ''}</div>
@@ -176,7 +176,7 @@ async function hydrateSocial() {
     if (!s || el.querySelector('.row-soc')) return;
     const sv = s.viewer || {};
     const [o, n] = el.dataset.fn.split('/');
-    const url = `repos/${encodeURIComponent(o)}__${encodeURIComponent(n)}.html`;
+    const url = `${DB}repos/${encodeURIComponent(o)}__${encodeURIComponent(n)}`;
     const div = document.createElement('div');
     div.className = 'row-soc';
     div.innerHTML = `<button class="soc-ic${sv.liked ? ' on' : ''}" data-act="likes" type="button" title="${esc(t('soc.like'))}">♥ <b>${fmt(s.likes)}</b></button>
@@ -233,7 +233,7 @@ function setEmpty(msg, pct, opts = {}) {
   $('#emptyState').classList.toggle('has-preview', rows.length > 0);
   $('#emptyPreview').innerHTML = rows.length
     ? `<div class="empty-preview-title">${esc(t('preview.top', { t: pv.title, n: rows.length }))}</div>`
-      + rows.map(e => `<a class="preview-row" href="repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}.html">
+      + rows.map(e => `<a class="preview-row" href="${DB}repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}">
           <span class="preview-rank">${e.rank}</span>
           <span class="preview-name"><span class="row-owner">${esc(e.owner)}</span>/${esc(e.name)}</span>
           <span class="preview-stars">★ ${fmt(e.stars)}</span>
@@ -330,7 +330,7 @@ async function loadView() {
         <div class="top10-day">
           <div class="top10-date">${day.date}</div>
           <div class="top10-items">${day.items.map(e =>
-            `<span class="top10-chip"><a href="${DB}repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}.html"><span class="row-owner">${esc(e.owner)}</span>/${esc(e.name)}</a> <b>+${fmt(e.growth)}</b></span>`).join('')}
+            `<span class="top10-chip"><a href="${DB}repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}"><span class="row-owner">${esc(e.owner)}</span>/${esc(e.name)}</a> <b>+${fmt(e.growth)}</b></span>`).join('')}
           </div>
         </div>`).join('');
     }
@@ -473,7 +473,7 @@ function renderHero() {
   if (top1 && top1.series && top1.series.length > 1) {
     chart.innerHTML = sparkline(top1.series, 620, 150, 6, 'sparkFill', 'sparkStroke');
     const g = top1.growth != null ? `+${fmtFull(top1.growth)}` : fmtFull(top1.stars);
-    cap.innerHTML = `<a href="${DB}repos/${encodeURIComponent(top1.owner)}__${encodeURIComponent(top1.name)}.html">`
+    cap.innerHTML = `<a href="${DB}repos/${encodeURIComponent(top1.owner)}__${encodeURIComponent(top1.name)}">`
       + `<b>${esc(top1.full_name)}</b> ${g}</a>`
       + `<span class="hv-cap-sub">${t('hv.cap', { n: top1.series.length })}</span>`;
   } else {
@@ -515,7 +515,7 @@ async function renderAll() {
 /* ------------- header search — remote: api-site.zhuikan.com/search ------- */
 const search = { hits: [], active: -1, err: false };
 
-function repoUrl(fn) { return `${DB}repos/${fn.replace('/', '__')}.html`; }
+function repoUrl(fn) { return `${DB}repos/${fn.replace('/', '__')}`; }
 
 function mark(text, q) {
   const i = text.toLowerCase().indexOf(q);

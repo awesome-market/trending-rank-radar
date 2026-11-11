@@ -18,10 +18,10 @@ All ranking data is precomputed and served as static JSON — free to reuse (Apa
 - `data/months/YYYY-MM.json` — month view: month boards + cumulative + daily Top-10 grid
 - `data/years/YYYY.json` — year view: per-month growth cards
 - `data/langs/<slug>.json` — latest-day boards re-ranked within one language (candidates filtered before ranking, not a clipped global top-200); `index.json.langs` lists `{lang, slug, repos}`
-- `langs/<slug>.html` — static per-language board pages (same UI, day view)
+- `langs/<slug>` — static per-language board pages (same UI, day view)
 - `feed.xml` — Atom feed: debut + daily board top of the latest day
 - `data/repos/<owner>__<name>.json` — per-repo detail: `metrics` (stars/forks/watchers/issues/prs/releases totals plus open/closed/merged splits: issues_open, issues_closed, prs_open, prs_closed, prs_merged), day/week/month growth, `history` (dates with stars/forks/watchers/issues_open/prs_open series), board placements, top issues, latest discussions, latest release, README excerpt, `news` (press coverage: title/url/source/lang/date; HN items carry points/comments)
-- Repo detail pages (server-rendered HTML, one per tracked repo): `https://zhuikan.com/repos/<owner>__<name>.html`
+- Repo detail pages (server-rendered HTML, one per tracked repo): `https://zhuikan.com/repos/<owner>__<name>`
 - Homepage `index.html` also embeds the latest board Top 50, current-month daily Top 10 chips and the month index as server-rendered HTML (no JS needed to read them)
 - Full snapshots: `data/snapshots/YYYY-MM-DDTHH.json` in the GitHub repo — 16 positional columns per repo: full_name, stars, forks, watchers, issues_total, prs_total, releases_total, created_at, language, is_fork, is_archived, issues_open, issues_closed, prs_open, prs_closed, prs_merged (files written before 2026-11 have the first 11 columns only)
 - `data/search-index.json` — compact directory of every tracked repo: `{n: full_name, d: description, l: language, s: stars}`

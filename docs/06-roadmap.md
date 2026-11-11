@@ -24,7 +24,7 @@
   - [x] Hero 视觉区（Top1 Star 曲线）+ sticky 控制区（榜单 tab / 日月年切换 / k 范围筛选）+ 中英双语 + 深浅主题
   - [x] Top3 领奖台卡片 + 紧凑行列表 + 30 天 sparkline + 空状态
   - [x] 首页/仓库页 SSR 注入（Baidu/无 JS 可读）
-- [x] 仓库详情页 `repos/<owner>__<name>.html`（SSR + 全历史曲线 + 多指标面板 + README + 新闻 + 社交/评论）
+- [x] 仓库详情页 `repos/<owner>__<name>`（SSR + 全历史曲线 + 多指标面板 + README + 新闻 + 社交/评论）
 
 ## Phase 3：自动化上线 ✅
 

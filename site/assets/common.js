@@ -536,7 +536,7 @@ async function openFavs() {
     <div class="sh-head"><span>${esc(t('fav.mine'))}</span><button class="sh-x" aria-label="close">✕</button></div>
     <div class="fav-list">${items.length ? items.map(f => {
       const o = f.item_id.split('/')[0], n = f.item_id.split('/').slice(1).join('/');
-      return `<a class="fav-item" href="${document.body.dataset.base || ''}repos/${encodeURIComponent(o)}__${encodeURIComponent(n)}.html">
+      return `<a class="fav-item" href="${document.body.dataset.base || ''}repos/${encodeURIComponent(o)}__${encodeURIComponent(n)}">
         <span class="fav-name">${esc(f.item_id)}</span>
         <span class="fav-meta">${f.lang ? esc(f.lang) + ' · ' : ''}${f.stars ? '★ ' + fmt(f.stars) : ''}</span></a>`;
     }).join('') : `<div class="fav-empty">${esc(t('fav.empty'))}</div>`}</div>
