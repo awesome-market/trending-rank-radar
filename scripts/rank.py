@@ -697,6 +697,7 @@ def render_tag_page(tag: str, slug: str, items: list, day: str,
     html, _ = _inject(html, "SSRMT", "")
     html, _ = _inject(html, "SSRMG", "")
     html = html.replace('"assets/', '"../assets/')
+    html = html.replace('href="./"', 'href="../"')
     html = html.replace('href="repos/', 'href="../repos/')
     html = html.replace('href="tags/', 'href="../tags/')
     html = html.replace('href="data/', 'href="../data/')
@@ -743,6 +744,7 @@ def render_lang_page(lang: str, slug: str, boards: dict, day: str,
     # subdirectory page — every root-relative ref needs ../ (covers the
     # injected rows' repos/ links too since they were just injected)
     html = html.replace('"assets/', '"../assets/')
+    html = html.replace('href="./"', 'href="../"')
     html = html.replace('href="repos/', 'href="../repos/')
     html = html.replace('href="tags/', 'href="../tags/')
     html = html.replace('href="data/', 'href="../data/')
@@ -812,6 +814,7 @@ def render_board_page(board: str, day: str, items: list, days: list,
     # prefix every root-relative ref for this page's depth (covers the
     # injected rows' repos/ links too since they were just injected)
     html = html.replace('"assets/', f'"{rel}assets/')
+    html = html.replace('href="./"', f'href="{rel}"')
     html = html.replace('href="repos/', f'href="{rel}repos/')
     html = html.replace('href="tags/', f'href="{rel}tags/')
     html = html.replace('href="data/', f'href="{rel}data/')
@@ -1372,6 +1375,8 @@ def main() -> int:
             "description": m.get("description"),
             "homepage": m.get("homepage"),
             "topics": m.get("topics") or [],
+            "tag_pages": sorted({sl for t in (m.get("topics") or [])
+                                 if (sl := tag_slug(t)) and sl in tag_pages}),
             "language": cur[I_LANG],
             "license": det.get("license"),
             "avatar": det.get("avatar"),
@@ -1424,6 +1429,9 @@ def main() -> int:
                     "full_name": name, "owner": owner, "name": repo,
                     "description": m.get("description"),
                     "homepage": m.get("homepage"),
+                    "topics": (m.get("topics") or [])[:6],
+                    "tag_pages": sorted({s2 for t in (m.get("topics") or [])
+                                         if (s2 := tag_slug(t)) and s2 in tag_pages}),
                     "language": cur[I_LANG],
                     "avatar": det.get("avatar"),
                     "created_at": cur[I_CREATED],
