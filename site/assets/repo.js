@@ -734,7 +734,7 @@ function cmRow(c, parent) {
   const own = zk.user && (zk.user.username === c.username || zk.user.role === 'admin');
   const av = c.avatar_url ? `<img class="cm-av" src="${esc(c.avatar_url)}" width="24" height="24" alt="">` : '<span class="cm-av cm-av-ph"></span>';
   const pend = c.status === 'pending' ? `<i class="cm-pend">${esc(t('cm.pending'))}</i>` : '';
-  const rt = parent ? `<span class="cm-rt">↳ ${esc(t('cm.replyto', { n: parent.display_name || parent.username }))}</span>` : '';
+  const rt = parent ? `<button class="cm-rt" data-pid="${esc(parent.id)}" type="button">↳ ${esc(t('cm.replyto', { n: parent.display_name || parent.username }))}</button>` : '';
   const acts = `<span class="cm-acts">
       ${zk.user ? `<button class="cm-act" data-act="reply" type="button">${esc(t('cm.reply'))}</button>` : ''}
       <button class="cm-act" data-act="report" type="button">${esc(t('cm.report'))}</button>
@@ -841,6 +841,16 @@ async function loadComments(d) {
   el.innerHTML = tops.length
     ? tops.map(c => tree(c, 0)).join('')
     : `<div class="cm-empty">${esc(t('cm.empty'))}</div>`;
+  // ↳ 标签点击 → 滚动定位父评论并短暂高亮
+  el.querySelectorAll('.cm-rt').forEach(b => b.onclick = () => {
+    const target = el.querySelector(`.cm-item[data-id="${+b.dataset.pid}"]`);
+    if (!target) return;
+    target.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    target.classList.remove('cm-flash');
+    void target.offsetWidth;                 // 重触发动画
+    target.classList.add('cm-flash');
+    setTimeout(() => target.classList.remove('cm-flash'), 1400);
+  });
   el.querySelectorAll('.cm-act').forEach(b => b.onclick = async () => {
     const item = b.closest('.cm-item');
     const id = +item.dataset.id;
