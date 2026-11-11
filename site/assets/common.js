@@ -590,6 +590,12 @@ function openAuthModal(mode) {
       const em = (zk.user && zk.user.email) || '—';
       q('#amHint').textContent = t('auth.verify.hint', { e: em });
       if (!cdTimer) q('#amRe').textContent = t('auth.verify.resend');
+      // fresh window? sync the real cooldown from the server
+      api('/auth/me').then(u => {
+        if (!ov.isConnected || mode !== 'verify' || cdTimer) return;
+        zk.user = u;
+        if (u && u.resend_wait > 0) startCd(u.resend_wait);
+      }).catch(() => {});
     }
     q('#amErr').hidden = true;
   };
@@ -601,7 +607,7 @@ function openAuthModal(mode) {
     e.preventDefault();
     const el2 = q('#amErr');
     try {
-      const d = await api('/auth/resend', { method: 'POST', body: '{}' });
+      const d = await api(`/auth/resend?lang=${encodeURIComponent(LANG)}`, { method: 'POST', body: '{}' });
       startCd(d.cooldown || 120);
       el2.textContent = t('auth.verify.sent'); el2.hidden = false;
     } catch (err) {
@@ -622,7 +628,7 @@ function openAuthModal(mode) {
         return;
       }
       const body = mode === 'register'
-        ? { username: q('#amU').value.trim(), email: q('#amE').value.trim(), password: q('#amP').value }
+        ? { username: q('#amU').value.trim(), email: q('#amE').value.trim(), password: q('#amP').value, lang: LANG }
         : { identifier: q('#amU').value.trim(), password: q('#amP').value };
       const d = await api(mode === 'register' ? '/auth/register' : '/auth/login',
         { method: 'POST', body: JSON.stringify(body) });
