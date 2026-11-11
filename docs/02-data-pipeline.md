@@ -19,7 +19,7 @@
 3. **老仓库活跃搜索**（`search_surge`）：Search API 按 star 分段查询 `created:<{90天前} stars:{lo}..{hi} pushed:>{7天前}`（20–300 / 300–1000 / 1000–5000 三段，各取 1 页 ≈ 300 候选/次）。近似"trending 缺位时的老仓库爆量"发现——召回靠 `pushed` 活跃度过滤，是否真在涨由每日快照 delta 判定，误报由 14 天零增长驱逐清理。
 4. **存量 watchlist**：上一轮快照中所有在榜/接近在榜的仓库继续跟踪。
 
-候选集与 watchlist 合并后，**按规则裁剪到上限 ~2000 个**。优先级：在榜仓库 > Trending 命中 > 高 Star > 近 7 天有增长。**淘汰规则**（超限时按此顺序剔除）：连续 14 天未上任何榜 且 非 Trending 命中 且 Star 增长为 0 的仓库优先出局；仍超限则剔除 Star 最低者。
+候选集与 watchlist 合并后，**按规则裁剪到上限 10000 个**（`MAX_WATCH`，`--max-repos` 可调）。**淘汰规则**（超限时按此顺序剔除）：本轮非 Trending 命中且近 14 天 Star 零/负增长的仓库按 Star 升序优先出局；仍超限则剔除 Star 最低者。
 
 ### Watchlist 冷启动（首次运行）
 
@@ -29,11 +29,11 @@
 - Search API `created:>{90天前} stars:>20 sort=stars` 拉取新仓库候选（对齐新榜口径）；
 - Trending 页面全量候选。
 
-初始化后 watchlist 一次性填充至 ~2000（按 Star 降序截断），此后走常规增量更新。注意 **Search API 单查询最多返回 1000 条**（10 页 × 100），故"90 天新仓库"候选实际只能覆盖其中 Star 最高的 ~1000 个——新榜口径是"跟踪集内"排名，README 需注明。
+初始化后 watchlist 一次性填充至上限（按 Star 降序截断），此后走常规增量更新。注意 **Search API 单查询最多返回 1000 条**（10 页 × 100），故"90 天新仓库"候选实际只能覆盖其中 Star 最高的 ~1000 个——新榜口径是"跟踪集内"排名，README 需注明。
 
 ## 快照（Snapshot）
 
-每次运行对 watchlist 全量拉取一次指标，生成一个带 UTC 时间戳的快照文件。
+**分级刷新**：每 run 只对"热集"调 API——本轮候选（trending/search 命中）+ 从未拉取 + `last_fetch` 距今 ≥ `TRR_COLD_DAYS`（默认 3 天，env 可调）的长尾仓。其余冷仓**整行复用上份快照**（stars..prs_merged 全部 15 字段带回），快照行数保持全集稳定。GraphQL ~1pt/仓 → 10k 跟踪 ≈ ~3k pts/run，单 token 预算放得下；冷仓元数据文件不被带回行覆写（`pushed_at`/`description` 缺失则跳过）。每次运行生成一个带 UTC 时间戳的快照文件。
 
 ### 存储格式
 

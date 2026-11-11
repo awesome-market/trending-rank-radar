@@ -34,7 +34,13 @@ SNAP_DIR = DATA_DIR / "snapshots"
 REPOS_DIR = DATA_DIR / "repos"
 WATCHLIST_PATH = DATA_DIR / "watchlist.json"
 
-MAX_WATCH = 5000
+MAX_WATCH = 10000
+# Tiered refresh: candidates (trending/search hits) always refetch; repos
+# that merely sit in the watchlist only refetch once last_fetch is
+# TRR_COLD_DAYS old — the rest of the time their previous snapshot row is
+# carried forward. ~1 GraphQL pt per live repo per run, so 10k tracked ≈
+# ~3k pts/run, well inside the 5k/hr token budget.
+COLD_DAYS = int(os.environ.get("TRR_COLD_DAYS", "3"))
 NEW_WINDOW_DAYS = 90
 NEW_MIN_STARS = 20
 GROWTH_EVICT_DAYS = 14
@@ -313,6 +319,51 @@ def fetch_metrics(client: gh.GitHubClient, names: list[str],
     return metrics, unresolved
 
 
+SNAP_FIELDS = ("stars", "forks", "watchers", "issues_total", "prs_total",
+               "releases_total", "created_at", "language", "is_fork",
+               "is_archived", "issues_open", "issues_closed", "prs_open",
+               "prs_closed", "prs_merged")
+
+
+def load_latest_snapshot() -> dict | None:
+    """Most recent parseable snapshot file, or None."""
+    for f in reversed(sorted(SNAP_DIR.glob("*.json"))):
+        try:
+            return json.loads(f.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+    return None
+
+
+def pick_fetches(repos: dict[str, dict], cand: dict[str, dict],
+                 day) -> list[str]:
+    """Hot set: candidates this run + repos never/stale-fetched."""
+    out = []
+    for n, meta in repos.items():
+        lf = meta.get("last_fetch")
+        stale = (lf is None
+                 or (day - datetime.fromisoformat(lf).date()).days
+                 >= COLD_DAYS)
+        if n in cand or stale:
+            out.append(n)
+    return out
+
+
+def carry_forward_stale(metrics: dict[str, dict], wanted: list[str],
+                        prev_snap: dict) -> int:
+    """Fill metrics for skipped cold repos from the previous snapshot row."""
+    rows = {r[0]: r for r in prev_snap.get("repos", []) if len(r) >= 3}
+    filled = 0
+    for n in wanted:
+        if n in metrics or n not in rows:
+            continue
+        r = rows[n]
+        metrics[n] = {k: (r[i + 1] if len(r) > i + 1 else None)
+                      for i, k in enumerate(SNAP_FIELDS)}
+        filled += 1
+    return filled
+
+
 def carry_forward_extended(metrics: dict[str, dict], prev_snap: dict) -> int:
     """Fill missing extended counters from a previous snapshot.
 
@@ -353,6 +404,8 @@ def write_repo_meta(metrics: dict[str, dict]) -> int:
     written = 0
     REPOS_DIR.mkdir(parents=True, exist_ok=True)
     for fn, m in metrics.items():
+        if "pushed_at" not in m and "description" not in m:
+            continue            # carried-forward cold row — keep the file as-is
         owner, _, name = fn.partition("/")
         path = REPOS_DIR / f"{owner}__{name}.json"
         existing = {}
@@ -408,10 +461,24 @@ def main() -> int:
     names = sorted(repos)
     log(f"watchlist size: {len(names)}")
 
+    # tiered fetch: hot = candidates this run + never/stale-fetched
+    day = at.date()
+    to_fetch = pick_fetches(repos, cand, day)
+    log(f"tiered fetch: {len(to_fetch)}/{len(names)} live "
+        f"(candidates={len(cand)}, cold_days={COLD_DAYS})")
+
     # extended metrics once daily: the UTC-14:00 "close" run (or TRR_EXTENDED=1)
     extended = at.hour == 14 or os.environ.get("TRR_EXTENDED") == "1"
-    metrics, unresolved = fetch_metrics(client, names, extended=extended)
+    metrics, unresolved = fetch_metrics(client, to_fetch, extended=extended)
     log(f"metrics resolved: {len(metrics)}; unresolved: {len(unresolved)}")
+    for n in metrics:
+        repos[n]["last_fetch"] = today
+
+    # cold repos keep yesterday's numbers — carry their previous row forward
+    prev = load_latest_snapshot()
+    if prev:
+        filled = carry_forward_stale(metrics, names, prev)
+        log(f"carried forward stale repos from {prev.get('date')}: {filled}")
 
     # Always run carry-forward: on non-extended runs it preserves the counters;
     # on extended runs it backfills whatever the (possibly partially failed)
@@ -471,6 +538,7 @@ def main() -> int:
         "trending_pages_failed": STATS["trending_failed"],
         "trending_items": STATS["trending_items"],
         "repos_collected": len(repos_arr),
+        "repos_live_fetch": len(to_fetch),
         "metrics_unresolved": len(unresolved),
     }
     _atomic_write(ROOT / "run_status.json",
