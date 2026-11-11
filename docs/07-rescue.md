@@ -55,8 +55,12 @@ CI daily-update
 3. 配置 cron（每小时）：
 
    ```cron
-   0 * * * * GITHUB_TOKEN=github_pat_xxx /usr/bin/python3 /data1/service/trending-rank-radar/scripts/rescue.py >> /data1/log/trending-rank-radar.log 2>&1
+   0 * * * * GITHUB_TOKEN=github_pat_xxx /data1/service/trending-rank-radar/scripts/cron_wrap.sh /usr/bin/python3 scripts/rescue.py >> /data1/log/trending-rank-radar.log 2>&1
    ```
+
+   `cron_wrap.sh` 会先 `git fetch` 把 worktree 同步到 origin/main 最新，
+   再执行真实任务——推送到 main 的修复下一小时自动生效，无需手动 pull。
+   （rescue.py 内部本来也会 fetch+reset，包装器让 rescue.py 自身也能用到新代码。）
 
    可选环境变量：`TRR_REPO`、`TRR_WORKDIR`（默认脚本所在仓库根）、
    `TRR_SITE_BASE`（默认 `https://zhuikan.com`）。
