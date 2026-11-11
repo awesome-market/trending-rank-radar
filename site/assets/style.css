@@ -813,7 +813,13 @@ html[lang="en"] .i18n-en { display: inline; }
   border-radius: var(--radius);
   box-shadow: var(--shadow, none);
 }
-.repo-page { display: grid; gap: 16px; margin: 8px 0 28px; }
+.repo-page {
+  display: grid; gap: 16px; margin: 8px 0 28px;
+  /* implicit auto column would take the widest section's min-content
+     (readme tables/code, scroll rows) and stretch the whole page —
+     explicit minmax(0,1fr) caps every section at container width */
+  grid-template-columns: minmax(0, 1fr);
+}
 .rp-h { font-size: 15px; font-weight: 650; color: var(--text); margin: 0; }
 .rp-crumb {
   display: flex; gap: 9px; align-items: center; flex-wrap: wrap;
@@ -879,6 +885,9 @@ html[lang="en"] .i18n-en { display: inline; }
 .rp-same-row {
   display: flex; align-items: center; gap: 8px; flex-wrap: nowrap;
   overflow-x: auto; padding-bottom: 4px;
+  /* scroll containers still report content min-content to ancestor auto
+     tracks — containment stops a long chips row widening the whole page */
+  contain: inline-size;
   scrollbar-width: thin; scrollbar-color: var(--card-border) transparent;
 }
 .rp-same-row::-webkit-scrollbar { height: 5px; }
@@ -964,6 +973,7 @@ html[lang="en"] .i18n-en { display: inline; }
   display: flex; gap: 26px; margin: 28px 0 0;
   border-bottom: 1px solid var(--card-border);
   overflow-x: auto; scrollbar-width: none;
+  contain: inline-size;
 }
 .rp-ctabs::-webkit-scrollbar { display: none; }
 .rp-ctab {
@@ -986,7 +996,7 @@ html[lang="en"] .i18n-en { display: inline; }
 .rp-delta { font-size: 11.5px; font-weight: 600; }
 .rp-delta.up { color: var(--green); }
 .rp-delta.down { color: #f85149; }
-.rp-list { display: grid; gap: 2px; }
+.rp-list { display: grid; gap: 2px; grid-template-columns: minmax(0, 1fr); }
 .rp-item {
   display: flex; gap: 10px; align-items: baseline; padding: 9px 10px; border-radius: 7px;
   text-decoration: none; color: var(--text); font-size: 13.5px; transition: background .12s;
@@ -1128,8 +1138,11 @@ html[lang="en"] .i18n-en { display: inline; }
   .rp-statrow { gap: 14px; }
 }
 @media (max-width: 900px) {
-  .rp-top { grid-template-columns: 1fr; }
-  .rp-side { display: grid; grid-template-columns: 96px 1fr; }
+  /* minmax(0,1fr) not 1fr — a bare 1fr resolves to minmax(auto,1fr) whose
+     auto floor inherits descendant min-content (e.g. the same-owner chips
+     scroll row), letting one wide child push the whole page off-screen */
+  .rp-top { grid-template-columns: minmax(0, 1fr); }
+  .rp-side { display: grid; grid-template-columns: 96px minmax(0, 1fr); }
   .rp-side-av { width: 96px; height: 96px; }
   .rp-side-body { padding: 10px 14px; }
   .rp-main-head { flex-direction: column; }
@@ -1272,7 +1285,7 @@ a.soc-ic { cursor: pointer; }
   background: var(--bg); border: 1px dashed var(--card-border);
   border-radius: 8px; cursor: pointer;
 }
-.cm-list { margin-top: 14px; display: grid; gap: 14px; }
+.cm-list { margin-top: 14px; display: grid; gap: 14px; grid-template-columns: minmax(0, 1fr); }
 .cm-item { display: flex; gap: 10px; }
 .cm-av { width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0; }
 .cm-av-ph { background: var(--card-border); display: inline-block; }
