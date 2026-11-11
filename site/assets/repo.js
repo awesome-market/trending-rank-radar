@@ -28,7 +28,10 @@ const DB = document.body.dataset.base || '';
 const HOME = DB || './';
 // Generated data payloads live behind the API blob store (Cloudflare Pages
 // caps deployments at 20k files); page links keep the relative DB base.
-const DATA = ['localhost', '127.0.0.1'].includes(location.hostname)
+// The gh-pages mirror keeps its own full data/ tree — fetch it relatively
+// there (CORS would block api-site from *.github.io origins anyway).
+const DATA = (['localhost', '127.0.0.1'].includes(location.hostname)
+  || location.hostname.endsWith('.github.io'))
   ? `${DB}data/` : 'https://api-site.zhuikan.com/data/';
 
 function deltaSpan(label) {
