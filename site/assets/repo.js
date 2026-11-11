@@ -521,6 +521,11 @@ function renderMarkdown(md, owner, name) {
       im.src = RAW + u.replace(/^\.?\/+/, '');
     im.loading = 'lazy';
     im.classList.add('rp-img');
+    // CSS height:auto beats the HTML attribute — inline it so explicit
+    // pixel dims (badges/icon rows: <img height="26">) are honored
+    const ih = im.getAttribute('height'), iw = im.getAttribute('width');
+    if (/^\d+$/.test(ih || '')) im.style.height = ih + 'px';
+    if (/^\d+$/.test(iw || '')) im.style.width = iw + 'px';
   });
   tpl.content.querySelectorAll('source[srcset]').forEach(s => {
     s.srcset = s.srcset.split(',').map(part => {
@@ -569,15 +574,18 @@ function readmeHtml(src, owner, name) {
   s = s.replace(/<img\b[^>]*>/gi, tag => {
     const sm = /src\s*=\s*["']([^"']+)["']/i.exec(tag);
     const am = /alt\s*=\s*["']([^"']*)["']/i.exec(tag);
+    const dm = a => { const m = new RegExp(a + String.raw`\s*=\s*["'](\d+)["']`, 'i').exec(tag); return m ? m[1] : ''; };
     if (!sm) return '';
-    rawImgs.push({ src: esc(sm[1]), alt: esc(am ? am[1] : '') });
+    rawImgs.push({ src: esc(sm[1]), alt: esc(am ? am[1] : ''), h: dm('height'), w: dm('width') });
     return `@@RIMG${rawImgs.length - 1}@@`;
   });
   s = s.replace(/<[^>]+>/g, '');
   s = esc(s);
   // everything matched from `s` below is already-escaped text: emit as-is
-  const imgTag = (u, a) =>
-    `<img class="rp-img" src="${u}" alt="${a}" loading="lazy" onerror="this.remove()">`;
+  const imgTag = (u, a, h, w) => {
+    const st = (h ? `height:${h}px;` : '') + (w ? `width:${w}px;` : '');
+    return `<img class="rp-img" src="${u}" alt="${a}" loading="lazy" onerror="this.remove()"${st ? ` style="${st}"` : ''}>`;
+  };
   s = s.replace(/\[!\[([^\]]*)\]\(([^)\s]+)[^)]*\)\]\(([^)\s]+)[^)]*\)/g,
     (m, a, i, h) => `<a class="rp-a" href="${abs(h, 'link')}" target="_blank" rel="noopener">${imgTag(abs(i, 'img'), a)}</a>`);
   s = s.replace(/!\[([^\]]*)\]\(([^)\s]+)[^)]*\)/g,
@@ -589,7 +597,7 @@ function readmeHtml(src, owner, name) {
        .replace(/^#{1,4}\s*(.+)$/gm, '<b>$1</b>');
   s = s.replace(/@@RIMG(\d+)@@/g, (m, i) => {
     const im = rawImgs[+i];
-    return im ? imgTag(abs(im.src, 'img'), im.alt) : '';
+    return im ? imgTag(abs(im.src, 'img'), im.alt, im.h, im.w) : '';
   });
   return s + (truncated ? '…' : '');
 }
