@@ -16,7 +16,7 @@ daily_metrics[repo] = {
 
 所有榜单都从序列差分得出，不依赖 GitHub 的 Trending 排名。
 
-## 九种榜单
+## 十一种榜单
 
 记号：`S(repo, D)` = 仓库在**北京时间自然日 D 的收盘快照**（当天最后一次运行）的 Star 数。所有窗口以 CST 日界为准，与 UTC 快照时间戳无关。
 
@@ -31,6 +31,8 @@ daily_metrics[repo] = {
 | 6 | 月飙升榜 monthly | `S(D) − S(D−30)` 降序 | 同上 |
 | 7 | 月增速榜 monthly_rate | `月增量 / (S(D) − 月增量) × 100` 降序 | 同上 |
 | 8 | 总榜 total | 当前 Star 总数降序 | 仅需最新快照 |
+| 9 | Fork 日增榜 daily_forks | `F(D) − F(基点)` 降序（Fork 计数） | 同日榜窗口规则 |
+| 10 | Watch 日增榜 daily_watchers | `W(D) − W(基点)` 降序（Watchers 计数） | 同上；watchers 为扩展字段，榜单较稀 |
 
 ### 窗口回退规则
 
@@ -62,6 +64,7 @@ daily_metrics[repo] = {
 
 - 排除 `is_fork`、`is_archived` 仓库
 - 增长榜（type 2–7）：窗口增量 > 0 且当前 Star ≥ 100
+- 指标榜（type 9–10）：对应计数窗口增量 > 0；当前 Star 下限沿用 100（指标榜展示的是这些仓库的非 Star 增长）
 - 增速榜额外要求：基数 ≥ 50（避免小基数产生 9999% 的荒谬值）
 - **预计算每榜 Top 200**（而非 Top 100）：前端 Star 范围筛选（k 为单位，`currentStarNum ∈ [min×1000, max×1000]`，默认 1–500）在 Top 200 内过滤后取 Top 100 展示，给筛选留出余量
 - 仓库级数据缺失（窗口起点无快照）：用最早可用快照作基数，条目标记 `approx: true`，UI 显示 `≈`
@@ -102,11 +105,14 @@ daily_metrics[repo] = {
 
 ```
 site/data/
-  index.json                    # 可用日期/月份/年份、有效快照天数、generated_at
-  days/YYYY-MM-DD.json          # 每日九榜（Top200/榜）
+  index.json                    # 可用日期/月份/年份、有效快照天数、generated_at、langs
+  days/YYYY-MM-DD.json          # 每日十一榜（Top200/榜）
   months/YYYY-MM.json           # 月视图聚合
   years/YYYY.json               # 年视图聚合
+  langs/<slug>.json             # 最新日按语言重排的榜（候选池先按语言过滤再排名）
 ```
+
+另有按语言静态页 `langs/<slug>.html`（日视图，复用主页 UI 的 `data-lang` 模式）与 `feed.xml`（Atom：最新日首登榜 + 日飙升榜 Top）。语言页生成条件：该语言跟踪仓库 ≥ 50 个，最多取前 15 种语言。
 
 前端只读 JSON，不做计算。**体积估算**：每条目含 `series`（≤30 个数字）约 250B，Top200×8 榜去重后约 300–400 个唯一仓库 → 单日文件 ~100KB，年增 ~36MB，Pages 1GB 限额内可支撑 10+ 年。
 

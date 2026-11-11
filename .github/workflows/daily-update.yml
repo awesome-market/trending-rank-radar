@@ -33,6 +33,10 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Unit tests (rank math)
+        if: ${{ !inputs.deploy_only }}
+        run: python -m unittest discover -s tests
+
       - name: Collect snapshot
         if: ${{ !inputs.deploy_only }}
         run: python scripts/collect.py

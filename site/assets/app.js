@@ -2,9 +2,16 @@
 'use strict';
 
 const BOARD_ORDER = ['new', 'debut', 'daily', 'daily_rate', 'weekly', 'weekly_rate',
-                     'monthly', 'monthly_rate', 'total'];
+                     'monthly', 'monthly_rate', 'total', 'daily_forks', 'daily_watchers'];
 const CUM_BOARD = 'cumulative';   // month-only pseudo board
 const PAGE = 50;
+
+// Language pages (/langs/<slug>.html) reuse this file in "lang mode":
+// <body data-base="../" data-lang="python" data-lang-name="Python"> — day-view
+// only, boards come from data/langs/<slug>.json instead of the day files.
+const DB = document.body.dataset.base || '';
+const LANG_PAGE = document.body.dataset.lang || '';
+const LANG_NAME = document.body.dataset.langName || '';
 
 const state = {
   board: 'daily',
@@ -42,7 +49,12 @@ function mItem(iconName, val, unitKey, aux = true) {
 function langDot(lang) {
   if (!lang) return '';
   const c = LANG_COLORS[lang] || '#8b949e';
-  return `<span class="lang-tag"><span class="lang-dot" style="background:${c}"></span>${esc(lang)}</span>`;
+  const inner = `<span class="lang-dot" style="background:${c}"></span>${esc(lang)}`;
+  const slug = state.langSlugs && state.langSlugs[lang];
+  // link to the language's static page when one exists (index.json "langs")
+  return slug
+    ? `<a class="lang-tag" href="${DB}langs/${slug}.html">${inner}</a>`
+    : `<span class="lang-tag">${inner}</span>`;
 }
 
 function badges(e) {
@@ -62,7 +74,7 @@ function rowSideHTML(e) {
 
 function nameLinkHTML(e) {
   const fn = esc(e.full_name);
-  return `<a class="row-link" href="repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}.html" title="${esc(t('open.detail', { r: e.full_name }))}">`
+  return `<a class="row-link" href="${DB}repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}.html" title="${esc(t('open.detail', { r: e.full_name }))}">`
     + `<span class="row-owner">${esc(e.owner)}</span><span class="row-sep">/</span>`
     + `<span class="row-repo">${esc(e.name)}</span></a>`
     + `<a class="ext-link" href="https://github.com/${fn}" target="_blank" rel="noopener" title="${esc(t('open.gh', { r: e.full_name }))}">${icon('ext', 'ext-ico', 12)}</a>`;
@@ -77,7 +89,7 @@ function rowHTML(e, dispRank = e.rank) {
     : '';
   return `<div class="rank-row" data-fn="${esc(e.full_name)}" style="animation-delay:${Math.min(dispRank * 12, 400)}ms">
     <span class="row-rank${dispRank <= 3 ? ' top' : ''}"${dispRank !== e.rank ? ` title="${esc(t('rank.prerank', { n: e.rank }))}"` : ''}>${dispRank}</span>
-    <a class="row-avatar" href="repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}.html"><img src="${esc(e.avatar || `https://github.com/${e.owner}.png?size=96`)}" alt="" loading="lazy" width="48" height="48" onerror="this.style.visibility='hidden'"></a>
+    <a class="row-avatar" href="${DB}repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}.html"><img src="${esc(e.avatar || `https://github.com/${e.owner}.png?size=96`)}" alt="" loading="lazy" width="48" height="48" onerror="this.style.visibility='hidden'"></a>
     <div class="row-body">
       <div class="row-name">
         ${nameLinkHTML(e)}${badges(e)}${ageChip}
@@ -107,7 +119,7 @@ function podiumHTML(e, idx) {
   const rate = e.rate != null ? `<span class="rate-pill${e.rate >= 100 ? ' hot' : ''}">${fmtPct(e.rate)}</span>` : '';
   return `<div class="podium-card p${idx + 1}" data-fn="${esc(e.full_name)}">
     <div class="podium-rank">${medal}</div>
-    <a class="podium-avatar" href="repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}.html"><img src="${esc(e.avatar || `https://github.com/${e.owner}.png?size=128`)}" alt="" loading="lazy"></a>
+    <a class="podium-avatar" href="${DB}repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}.html"><img src="${esc(e.avatar || `https://github.com/${e.owner}.png?size=128`)}" alt="" loading="lazy"></a>
     <div class="podium-name">${nameLinkHTML(e)}${badges(e)}</div>
     <div class="podium-desc">${esc(e.description || '—')}</div>
     <div class="podium-metric" style="color:${e.growth != null ? 'var(--green)' : 'var(--text)'}">${metric}${unit ? ` <span class="unit">${unit}</span>` : ''}</div>
@@ -126,7 +138,8 @@ function windowLabel() {
     return '';
   }
   if (b.window_start && b.window_days != null) {
-    const approx = b.window_days < ({ daily: 1, weekly: 7, monthly: 30 }[state.board.replace('_rate', '')] || 0);
+    const approx = b.window_days < ({ daily: 1, weekly: 7, monthly: 30,
+      daily_forks: 1, daily_watchers: 1 }[state.board.replace('_rate', '')] || 0);
     return t('window.range', { s: b.window_start, e: state.sel, d: b.window_days }) + (approx ? t('window.approx') : '');
   }
   return '';
@@ -273,15 +286,27 @@ async function loadView() {
   const idx = state.index;
   let data;
   try {
-    data = await j(state.period === 'day' ? `data/days/${state.sel}.json`
-      : state.period === 'month' ? `data/months/${state.sel}.json`
-      : `data/years/${state.sel}.json`);
+    data = LANG_PAGE ? await j(`${DB}data/langs/${LANG_PAGE}.json`)
+      : await j(state.period === 'day' ? `${DB}data/days/${state.sel}.json`
+        : state.period === 'month' ? `${DB}data/months/${state.sel}.json`
+        : `${DB}data/years/${state.sel}.json`);
   } catch {
     const pct = idx ? Math.min(100, idx.snapshot_days / 31 * 100) : 0;
     setEmpty(t('empty.acc'), pct);
     return;
   }
-  if (state.period === 'day') {
+  if (LANG_PAGE) {
+    state.sel = data.date || state.sel;
+    // a board can be absent per-language (e.g. debut is global-history only)
+    if (!(data.boards || {})[state.board]) state.board = 'daily';
+    const board = (data.boards || {})[state.board] || { items: [] };
+    state.boardMeta = board;
+    rawCount = (board.items || []).length;
+    state.items = filterItems(board.items || []);
+    if (!state.items.length) emptyCtx = buildEmptyCtx(data.boards || {}, 'day');
+    document.title = t('title.langboard',
+      { l: LANG_NAME, b: boardLabel(state.board), s: state.sel });
+  } else if (state.period === 'day') {
     const board = (data.boards || {})[state.board] || { items: [] };
     state.boardMeta = board;
     rawCount = (board.items || []).length;
@@ -305,7 +330,7 @@ async function loadView() {
         <div class="top10-day">
           <div class="top10-date">${day.date}</div>
           <div class="top10-items">${day.items.map(e =>
-            `<span class="top10-chip"><a href="repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}.html"><span class="row-owner">${esc(e.owner)}</span>/${esc(e.name)}</a> <b>+${fmt(e.growth)}</b></span>`).join('')}
+            `<span class="top10-chip"><a href="${DB}repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}.html"><span class="row-owner">${esc(e.owner)}</span>/${esc(e.name)}</a> <b>+${fmt(e.growth)}</b></span>`).join('')}
           </div>
         </div>`).join('');
     }
@@ -368,7 +393,8 @@ function boardTabsForPeriod() {
   if (state.period === 'year') return [];           // year view is single-board
   const tabs = [...BOARD_ORDER];
   if (state.period === 'month') tabs.push(CUM_BOARD);
-  return tabs;
+  // language pages have no debut board (it needs cross-day board history)
+  return LANG_PAGE ? tabs.filter(b => b !== 'debut') : tabs;
 }
 
 function renderTabs() {
@@ -428,7 +454,9 @@ async function loadHeroData() {
   if (!state.hero) {
     state.hero = { top1: null };
     try {
-      const latest = await j(`data/days/${idx.latest_day}.json`);
+      const latest = await j(LANG_PAGE
+        ? `${DB}data/langs/${LANG_PAGE}.json`
+        : `${DB}data/days/${idx.latest_day}.json`);
       const top1 = latest.boards?.daily?.items?.[0]
         || latest.boards?.new?.items?.[0]
         || latest.boards?.total?.items?.[0];
@@ -445,7 +473,7 @@ function renderHero() {
   if (top1 && top1.series && top1.series.length > 1) {
     chart.innerHTML = sparkline(top1.series, 620, 150, 6, 'sparkFill', 'sparkStroke');
     const g = top1.growth != null ? `+${fmtFull(top1.growth)}` : fmtFull(top1.stars);
-    cap.innerHTML = `<a href="repos/${encodeURIComponent(top1.owner)}__${encodeURIComponent(top1.name)}.html">`
+    cap.innerHTML = `<a href="${DB}repos/${encodeURIComponent(top1.owner)}__${encodeURIComponent(top1.name)}.html">`
       + `<b>${esc(top1.full_name)}</b> ${g}</a>`
       + `<span class="hv-cap-sub">${t('hv.cap', { n: top1.series.length })}</span>`;
   } else {
@@ -487,7 +515,7 @@ async function renderAll() {
 /* ------------- header search — remote: api-site.zhuikan.com/search ------- */
 const search = { hits: [], active: -1, err: false };
 
-function repoUrl(fn) { return `repos/${fn.replace('/', '__')}.html`; }
+function repoUrl(fn) { return `${DB}repos/${fn.replace('/', '__')}.html`; }
 
 function mark(text, q) {
   const i = text.toLowerCase().indexOf(q);
@@ -598,10 +626,20 @@ async function init() {
   readURL();
   applyStaticI18n();
   try {
-    state.index = await j('data/index.json');
+    state.index = await j(`${DB}data/index.json`);
   } catch (e) {
     setEmpty(t('empty.init'), 0);
     return;
+  }
+  state.langSlugs = Object.fromEntries(
+    (state.index.langs || []).map(x => [x.lang, x.slug]));
+  if (LANG_PAGE) {
+    // day-view only: hide period picker, date select and month/year sections
+    state.period = 'day';
+    document.querySelectorAll(
+      '#periodSeg, #selDate, label[for="selDate"], #monthDetail, #yearWrap')
+      .forEach(el => { el.hidden = true; });
+    document.title = t('title.lang', { l: LANG_NAME });
   }
   if (!state.sel) state.sel = state.index.latest_day;
   await renderAll();

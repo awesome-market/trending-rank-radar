@@ -2,14 +2,17 @@
 """Rebuild rankings and site/data JSON from collected snapshots.
 
 Reads data/snapshots/*.json, groups by Beijing (Asia/Shanghai) calendar day
-(last run of the day = "close"), computes the 8 boards per docs/03-ranking.md,
+(last run of the day = "close"), computes the 11 boards per docs/03-ranking.md,
 and writes:
 
   site/data/index.json
   site/data/days/YYYY-MM-DD.json
   site/data/months/YYYY-MM.json
   site/data/years/YYYY.json
+  site/data/langs/<slug>.json    — latest-day boards re-ranked per language
+  site/langs/<slug>.html         — static per-language board pages (day view)
   site/index.html                — latest landing board SSR'd into #listWrap
+  site/feed.xml                  — Atom: latest day's debut + daily tops
   site/sitemap.xml, site/robots.txt
 
 Usage:
@@ -23,6 +26,7 @@ import os
 import re
 import sys
 from bisect import bisect_left, bisect_right
+from collections import Counter
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
@@ -53,8 +57,11 @@ STALE_GRACE_DAYS = 14
 NOMINAL = {"daily": 1, "weekly": 7, "monthly": 30}
 GROWTH_BOARDS = ["daily", "weekly", "monthly"]
 RATE_BOARDS = ["daily_rate", "weekly_rate", "monthly_rate"]
+# metric dimension boards: daily growth on non-star counters (data since day 1)
+METRIC_BOARDS = {"daily_forks": I_FORKS, "daily_watchers": I_WATCHERS}
 ALL_BOARDS = ["new", "debut", "daily", "daily_rate", "weekly", "weekly_rate",
-              "monthly", "monthly_rate", "total"]
+              "monthly", "monthly_rate", "total",
+              "daily_forks", "daily_watchers"]
 NEW_WINDOW_DAYS = 90
 NEW_MIN_STARS = 20
 GROWTH_MIN_STARS = 100
@@ -511,6 +518,104 @@ def inject_index_ssr(board: str, items: list, day: str,
         log("[warn] index.html missing SSR markers; skipped")
 
 
+# ---------------- per-language static pages ----------------
+# docs/06 phase-4 `?lang=python`, realized as static pages: the candidate pool
+# is filtered by language BEFORE ranking (full-fidelity per-language rank, not
+# a clipped view of the global top-200). Latest-day boards only — day view.
+LANG_TOP = 15             # static pages for at most this many languages
+LANG_MIN_REPOS = 50       # a language page needs this many tracked repos
+LANG_SLUGS = {"C++": "cpp", "C#": "csharp", "F#": "fsharp",
+              "Objective-C": "objc", "Jupyter Notebook": "jupyter-notebook",
+              "Vim Script": "vimscript", "Common Lisp": "common-lisp"}
+
+
+def lang_slug(lang: str) -> str:
+    return LANG_SLUGS.get(lang) or re.sub(
+        r"[^a-z0-9]+", "-", lang.lower()).strip("-")
+
+
+def render_lang_page(lang: str, slug: str, boards: dict, day: str,
+                     template: str, base: str) -> str:
+    """Static /langs/<slug>.html — reuses the index.html skeleton so tabs,
+    podium, rows, theme and i18n all work via app.js `data-lang` mode."""
+    url = f"{base}/langs/{slug}.html"
+    html = template.replace(
+        "<body>",
+        f'<body data-base="../" data-lang="{_esc(slug)}" '
+        f'data-lang-name="{_esc(lang)}">', 1)
+    html = re.sub(r"<title>.*?</title>",
+                  lambda _: f"<title>{_esc(lang)} · GitHub Trending Rank Radar</title>",
+                  html, count=1, flags=re.S)
+    html = html.replace(
+        '<meta name="description" content="',
+        f'<meta name="description" content="{_esc(lang)} GitHub 开源项目趋势榜单 · '
+        f'{_esc(lang)} trending GitHub repos · ', 1)
+    html = html.replace(
+        '<link rel="canonical" href="https://zhuikan.com/">',
+        f'<link rel="canonical" href="{_esc(url)}">')
+    html = html.replace(
+        '<meta property="og:url" content="https://zhuikan.com/">',
+        f'<meta property="og:url" content="{_esc(url)}">')
+    for h in ("zh", "en", "x-default"):
+        html = html.replace(
+            f'<link rel="alternate" hreflang="{h}" href="https://zhuikan.com/">',
+            f'<link rel="alternate" hreflang="{h}" href="{_esc(url)}">')
+    # SSR the language's daily board; month/year widgets don't apply here
+    items = ((boards.get("daily") or {}).get("items") or [])[:SSR_TOP]
+    note = (f'<p style="color:var(--muted,#8b949e);font-size:13px;margin:0 4px 10px">'
+            f'{_esc(day)} · {_esc(lang)} · {_esc(SSR_LABELS["daily"])} Top '
+            f'{len(items)} · daily snapshot</p>')
+    html, _ = _inject(html, "SSR",
+                      note + '<div class="rank-list">'
+                      + "".join(_ssr_row(e) for e in items) + "</div>")
+    html, _ = _inject(html, "SSRMT", "")
+    html, _ = _inject(html, "SSRMG", "")
+    # subdirectory page — every root-relative ref needs ../ (covers the
+    # injected rows' repos/ links too since they were just injected)
+    html = html.replace('"assets/', '"../assets/')
+    html = html.replace('href="repos/', 'href="../repos/')
+    html = html.replace('href="data/', 'href="../data/')
+    html = html.replace('href="manifest.webmanifest"',
+                        'href="../manifest.webmanifest"')
+    for leaf in ("feed.xml", "llms.txt", "sitemap.xml"):
+        html = html.replace(f'href="{leaf}"', f'href="../{leaf}"')
+    return html
+
+
+def write_feed(latest_day: str, boards: dict, stamp: str, base: str) -> None:
+    """Atom feed — debut board first ('what just appeared'), then daily top.
+    One entry per repo, deduped."""
+    entries = []
+    seen = set()
+    for kind, zh in (("debut", "首登"), ("daily", "日增")):
+        for e in (boards.get(kind) or {}).get("items", [])[:15]:
+            fn = e["full_name"]
+            if fn in seen:
+                continue
+            seen.add(fn)
+            g = e.get("growth")
+            title = f"[{zh}] {fn}" + (f" +{g:,}★" if isinstance(g, int) else "")
+            link = f"{base}/repos/{fn.replace('/', '__')}.html"
+            entries.append(
+                "  <entry>\n"
+                f"    <title>{_esc(title)}</title>\n"
+                f'    <link href="{_esc(link)}"/>\n'
+                f"    <id>{_esc(link)}</id>\n"
+                f"    <updated>{stamp}</updated>\n"
+                + (f"    <summary>{_esc((e.get('description') or '')[:300])}</summary>\n"
+                   if e.get("description") else "")
+                + "  </entry>")
+    feed = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">\n'
+            "  <title>GitHub Trending Rank Radar</title>\n"
+            f'  <link href="{_esc(base)}/feed.xml" rel="self"/>\n'
+            f'  <link href="{_esc(base)}/"/>\n'
+            f"  <id>{_esc(base)}/feed.xml</id>\n"
+            f"  <updated>{stamp}</updated>\n"
+            + "\n".join(entries) + "\n</feed>\n")
+    (SITE_DIR / "feed.xml").write_text(feed, encoding="utf-8")
+
+
 def render_repo_page(p: dict, template: str, base: str) -> str:
     """Patch site/repo.html into a per-repo static page: unique title/meta/
     canonical, SSR content, and data-base so repo.js fixes relative paths."""
@@ -584,8 +689,11 @@ def eligible(cur) -> bool:
 
 
 def compute_boards(day: str, days: list[str], ridx: dict, meta: dict,
-                   day_index: dict[str, int]) -> dict:
-    """Compute all 8 boards for `day`. Returns {board: {window_start?, window_days?, items}}."""
+                   day_index: dict[str, int], lang: str | None = None) -> dict:
+    """Compute all boards for `day`. Returns {board: {window_start?, window_days?, items}}.
+    `lang` restricts candidates to repos whose current language matches —
+    powers the per-language static pages (full-fidelity re-rank, not a
+    filtered view of the global top-200)."""
     i = day_index[day]
     prefix = days[: i + 1]
     cutoff_stale = (d(day) - timedelta(days=STALE_GRACE_DAYS)).isoformat()
@@ -605,6 +713,8 @@ def compute_boards(day: str, days: list[str], ridx: dict, meta: dict,
         cday, ctup = got
         if cday < cutoff_stale:
             continue  # dead repo — not tracked anymore at this point in time
+        if lang is not None and (ctup[I_LANG] or "") != lang:
+            continue
         cur_map[name] = (cday, ctup)
 
     boards: dict[str, dict] = {}
@@ -654,6 +764,28 @@ def compute_boards(day: str, days: list[str], ridx: dict, meta: dict,
             "window_days": window_days,
             "items": items,
         }
+
+    # ---- metric boards (daily forks / watchers growth) --------------------
+    for kind, col in METRIC_BOARDS.items():
+        base_day, window_days, approx_board = board_base_day(prefix, day, 1)
+        m_cands = []
+        for name, (cday, ctup) in cur_map.items():
+            if cday != day or not eligible(ctup):
+                continue
+            gb = repo_base_near(ridx, name, base_day, day)
+            if gb is None:
+                continue
+            bd, btup = gb
+            incr = (ctup[col] or 0) - (btup[col] or 0)
+            if incr <= 0:
+                continue
+            m_cands.append((incr, name, ctup, approx_board or bd != base_day))
+        m_cands.sort(key=lambda x: (-x[0], -(x[2][I_STARS] or 0), x[1]))
+        boards[kind] = {
+            "window_start": base_day, "window_days": window_days,
+            "items": [make_entry(n, r, t, meta, growth=g,
+                                 approx=ap, series=series_for(ridx, n, day))
+                      for r, (g, n, t, ap) in enumerate(m_cands[:TOPN], 1)]}
 
     # ---- new board ---------------------------------------------------------
     new_cutoff = (d(day) - timedelta(days=NEW_WINDOW_DAYS)).isoformat()
@@ -881,7 +1013,7 @@ def main() -> int:
 
     # ---------------- per-repo detail files ----------------
     latest_day = days[-1]
-    latest_boards = compute_boards(latest_day, days, ridx, meta, day_index)
+    latest_boards = boards   # last day-loop payload already includes "debut"
     placements: dict[str, dict] = {}
     for b, blk in latest_boards.items():
         for e in blk.get("items", []):
@@ -1032,6 +1164,49 @@ def main() -> int:
     except Exception as e:
         log(f"[warn] index SSR failed: {e}")
 
+    base_url = args.site_base.rstrip("/")
+
+    # ---------------- per-language static pages ----------------
+    lang_count: Counter = Counter()
+    for t in detail_repos.values():
+        if t[I_LANG]:
+            lang_count[t[I_LANG]] += 1
+    top_langs = [l for l, n in lang_count.most_common()
+                 if n >= LANG_MIN_REPOS][:LANG_TOP]
+    langs_meta = []
+    langs_dir = SITE_DIR / "langs"
+    (SITE_DATA / "langs").mkdir(exist_ok=True)
+    for lang in top_langs:
+        slug = lang_slug(lang)
+        try:
+            lb = compute_boards(latest_day, days, ridx, meta, day_index,
+                                lang=lang)
+            (SITE_DATA / "langs" / f"{slug}.json").write_text(
+                json.dumps({"lang": lang, "slug": slug, "date": latest_day,
+                            "repo_count": lang_count[lang], "boards": lb},
+                           ensure_ascii=False, separators=(",", ":")),
+                encoding="utf-8")
+            tpl = (SITE_DIR / "index.html").read_text(encoding="utf-8")
+            langs_dir.mkdir(exist_ok=True)
+            (langs_dir / f"{slug}.html").write_text(
+                render_lang_page(lang, slug, lb, latest_day, tpl, base_url),
+                encoding="utf-8")
+            langs_meta.append({"lang": lang, "slug": slug,
+                               "repos": lang_count[lang]})
+        except Exception as e:
+            log(f"[warn] lang page {lang} failed: {e}")
+    if langs_meta:
+        log(f"langs: {len(langs_meta)} pages — "
+            + ", ".join(l["lang"] for l in langs_meta))
+
+    # Atom feed — debut + daily top of the latest day
+    try:
+        write_feed(latest_day, latest_boards,
+                   run_at[latest_day].astimezone(UTC)
+                   .strftime("%Y-%m-%dT%H:%M:%SZ"), base_url)
+    except Exception as e:
+        log(f"[warn] feed.xml failed: {e}")
+
     index = {
         "generated_at": datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "site_base": args.site_base,
@@ -1042,6 +1217,7 @@ def main() -> int:
         "dates": days,
         "months": months_present,
         "years": years_present,
+        "langs": langs_meta,
     }
     (SITE_DATA / "index.json").write_text(
         json.dumps(index, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -1053,6 +1229,10 @@ def main() -> int:
     # board entry points (query params) — cheap SEO surface
     for b in ALL_BOARDS:
         sitemap.append(f"  <url><loc>{base}/?board={b}</loc>"
+                       f"<lastmod>{latest_day}</lastmod></url>")
+    # per-language static pages
+    for lm in langs_meta:
+        sitemap.append(f"  <url><loc>{base}/langs/{lm['slug']}.html</loc>"
                        f"<lastmod>{latest_day}</lastmod></url>")
     # repo detail pages — one static HTML per tracked repo
     for name in sorted(detail_repos):

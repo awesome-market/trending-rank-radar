@@ -1,6 +1,6 @@
 # GitHub Trending Rank Radar
 
-> Independent open-source GitHub trending radar. Tracks ~1,300 repositories with twice-daily snapshots (UTC 02:00 & 14:00) and computes eight leaderboards: new repos (<90 days), daily / weekly / monthly star growth, daily / weekly / monthly growth rate, and an all-time chart. Browsable by day, month and year. Bilingual UI (中文 / English). Live at https://zhuikan.com/
+> Independent open-source GitHub trending radar. Tracks ~6,000 repositories with twice-daily snapshots (UTC 02:00 & 14:00) and computes eleven leaderboards: new repos (<90 days), first-appearance debuts, daily / weekly / monthly star growth, daily / weekly / monthly growth rate, daily forks & watchers growth, and an all-time chart. Browsable by day, month and year, plus per-language static pages. Bilingual UI (中文 / English). Live at https://zhuikan.com/
 
 ## What this site is
 
@@ -17,6 +17,9 @@ All ranking data is precomputed and served as static JSON — free to reuse (Apa
 - `data/days/YYYY-MM-DD.json` — one file per calendar day (Beijing time), containing all boards
 - `data/months/YYYY-MM.json` — month view: month boards + cumulative + daily Top-10 grid
 - `data/years/YYYY.json` — year view: per-month growth cards
+- `data/langs/<slug>.json` — latest-day boards re-ranked within one language (candidates filtered before ranking, not a clipped global top-200); `index.json.langs` lists `{lang, slug, repos}`
+- `langs/<slug>.html` — static per-language board pages (same UI, day view)
+- `feed.xml` — Atom feed: debut + daily board top of the latest day
 - `data/repos/<owner>__<name>.json` — per-repo detail: `metrics` (stars/forks/watchers/issues/prs/releases totals plus open/closed/merged splits: issues_open, issues_closed, prs_open, prs_closed, prs_merged), day/week/month growth, `history` (dates with stars/forks/watchers/issues_open/prs_open series), board placements, top issues, latest discussions, latest release, README excerpt, `news` (press coverage: title/url/source/lang/date; HN items carry points/comments)
 - Repo detail pages (server-rendered HTML, one per tracked repo): `https://zhuikan.com/repos/<owner>__<name>.html`
 - Homepage `index.html` also embeds the latest board Top 50, current-month daily Top 10 chips and the month index as server-rendered HTML (no JS needed to read them)
@@ -30,6 +33,7 @@ All ranking data is precomputed and served as static JSON — free to reuse (Apa
 - `debut` — repos appearing on any board for the first time that day, ranked by daily-window star growth
 - `daily` / `weekly` / `monthly` — absolute star growth over the window (fallback: earliest available snapshot, actual range annotated)
 - `daily_rate` / `weekly_rate` / `monthly_rate` — growth ÷ base stars at window start (base ≥ 50 required)
+- `daily_forks` / `daily_watchers` — absolute daily growth on the forks / watchers counters (same 1-day window rules as `daily`; watchers is an extended field so the board is sparser)
 - `total` — all-time stars
 - `cumulative` — (month files only) this month's cumulative growth
 
@@ -37,7 +41,7 @@ Per-item fields: `full_name`, `owner`, `name`, `stars`, `forks`, `watchers`, `is
 
 ## Methodology
 
-- Collection: GitHub Trending + Search + GraphQL API, self-hosted watchlist (~1,300 repos, rolling)
+- Collection: GitHub Trending + Search + GraphQL API, self-hosted watchlist (~6,000 repos, rolling)
 - Snapshots twice daily at UTC 02:00 / 14:00; days bucketed by Beijing date, last snapshot of a day is canonical
 - Rankings are computed from snapshot deltas within the tracked set — not a mirror of GitHub's own trending page
 - Extended metrics (watchers / issues / PRs / releases) refresh once daily and are carried forward between refreshes

@@ -25,86 +25,60 @@ trending-rank-radar/
 
 ## GitHub Actions 工作流
 
-### `daily-update.yml`（每日两次，含 Pages 部署）
+### `daily-update.yml`（每日两次 + 周日回填，含部署）
+
+实际 workflow 的关键步骤（以仓库 `.github/workflows/daily-update.yml` 为准，此处为结构摘录）：
 
 ```yaml
-name: daily-update
 on:
   schedule:
     - cron: '0 2 * * *'         # UTC 02:00 ≈ 北京 10:00
     - cron: '0 14 * * *'        # UTC 14:00 ≈ 北京 22:00（当日"收盘"快照）
-  workflow_dispatch:            # 支持手动触发补跑
-    inputs:
-      at:
-        description: '快照时间戳（补跑历史时用，ISO8601 UTC）'
-        required: false
+    - cron: '0 8 * * 0'         # 周日：news.py --all 全量回填
+  workflow_dispatch:            # inputs: at（补录时间戳）/ deploy_only（只发布 site/）
 
-permissions:
-  contents: write               # 需要提交 data/ 与 site/ 变更
-  pages: write                  # deploy-pages 需要
-  id-token: write               # deploy-pages OIDC 需要
+permissions: { contents: write }   # 只需提交 data/ 与 site/；wrangler 用 token 不走 OIDC
 
 jobs:
   update:
-    runs-on: ubuntu-latest
-    # 防止 cron 与手动 dispatch 并发 push 冲突：同组任务排队执行
-    concurrency:
-      group: daily-update
-      cancel-in-progress: false
+    concurrency: { group: daily-update, cancel-in-progress: false }
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with: { python-version: '3.12' }
-
-      - name: Collect snapshot
-        run: python scripts/collect.py
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # 自动提供
-          SNAPSHOT_AT: ${{ inputs.at }}               # 可选：补录历史时间点（ISO8601 UTC）
-        # collect.py 默认取当前 UTC 时间生成文件名；SNAPSHOT_AT 非空时覆盖
-
-      - name: Rebuild rankings & site data
-        run: python scripts/rank.py --site-base "${{ vars.SITE_BASE }}"
-        # vars.SITE_BASE 未设置时为空串，rank.py 使用内置默认值
-
-      - name: Commit data updates
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ site/
-          git diff --cached --quiet || git commit -m "data: snapshot $(date -u +%FT%H:%MZ)"
-          # 远端可能有新提交（手动 push / 上一次运行），先 rebase 再推
-          git pull --rebase origin main && git push
-
-      - uses: actions/upload-pages-artifact@v3
-        with: { path: './site' }
-
-      - uses: actions/deploy-pages@v4
+      - checkout
+      - setup-python (3.12)
+      - Unit tests              # python -m unittest discover -s tests（deploy_only 跳过）
+      - Collect snapshot        # collect.py；GITHUB_TOKEN + SNAPSHOT_AT
+      - Fetch repo news         # news.py --all（周日）/ --board；continue-on-error
+      - Report trending status  # ci_rescue.py → rescue issue（deploy_only 跳过）
+      - Rebuild rankings        # rank.py --site-base $SITE_BASE
+      - Commit data updates     # add data/ site/ → commit → pull --rebase → push；
+                                #   rebase 冲突取远端版本重跑 rank；干净 rebase 但
+                                #   data/ 有上游变更时也重跑 rank 保证 site/ 一致
+      - Push gh-pages backup    # site/ → gh-pages 分支（冷备镜像，非主部署）
+      - Deploy Cloudflare Pages # wrangler pages deploy ./site --project-name=zhuikan；
+                                #   部署前校验 /tmp/ghp-site/index.html 存在
+      - Cache-bust              # 产物内 ?v=<sha> 由提交时 sed 写入
 ```
 
 要点：
 
-- `GITHUB_TOKEN` 在 Actions 内自动可用：**REST core 1000 req/hr、GraphQL 5000 points/hr、Search API 30 req/min**——日更 2 次够用，无需额外 secret（若将来加 PAT，限额提升至 REST 5000/hr）。
+- `GITHUB_TOKEN` 在 Actions 内自动可用：**REST core 1000 req/hr、GraphQL 5000 points/hr、Search API 30 req/min**——日更 2 次够用，无需额外 secret。
 - `workflow_dispatch` 输入：`at` 补录历史快照时间戳；`deploy_only` 跳过采集/重建/提交直接发布 `site/`（救援通道与纯 UI 改动用，~90 秒）。
 - Collect 后 `ci_rescue.py` 读 `run_status.json`：trending 全败则开 `rescue` issue 交给离线救援通道（[07-rescue.md](07-rescue.md)）；`rescue-report.yml` 是救援服务器回写 issue 的中继工作流（bot 身份）。
-- "Commit data updates" 的 `git pull --rebase` 带自愈：生成文件冲突时取远端版本重跑 `rank.py` 后继续。
-- `collect.py` **自行取运行时间戳**（或读 `SNAPSHOT_AT` 环境变量）生成 `YYYY-MM-DDTHH.json` 文件名，不传日期参数，避免同日两次运行撞名；`workflow_dispatch` 的 `at` 输入仅用于补录历史时间点。
-- 数据与站点产物**直接提交回 main**，仓库本身就是数据档案（可被 Clone / API 下载，天然开源）。
-- 幂等性：同一 CST 日第二次运行生成新时间戳文件，`rank.py` 按"当天最后一次"归日；重跑不覆盖已有文件，只会新增/覆盖**同一时间戳**的文件。
+- "Commit data updates" 的 `git pull --rebase` 带自愈：生成文件冲突时取远端版本重跑 `rank.py`；干净 rebase 但 `data/` 有上游新快照时同样重建 `site/`。
+- 数据与站点产物**直接提交回 main**，仓库本身就是数据档案。
+- 幂等性：同一 CST 日第二次运行生成新时间戳文件，`rank.py` 按"当天最后一次"归日。
 
-### Pages 部署：方案 A（Actions，唯一推荐）
+### 部署：Cloudflare Pages 主 + gh-pages 冷备
 
-仓库 Settings → Pages → Source 选 **GitHub Actions**。`daily-update.yml` 末尾已包含 `upload-pages-artifact` + `deploy-pages` 两步，构建产物即 `./site` 目录。
-
-> **为什么不用分支目录部署（方案 B）**：GitHub Pages 的"从分支部署"只允许 `/`（根）或 `/docs` 两个目录，`/site` 无法选择；且 `/docs` 已被本文档占用。Actions 部署不受此限，且与数据提交解耦、有独立部署状态。故 v1 直接采用方案 A。
+- **主部署**：`wrangler pages deploy ./site --project-name=zhuikan`，`zhuikan.com` 走 Cloudflare。
+- **冷备**：`site/` 每轮推 `gh-pages` 分支 → `awesome-market.github.io/trending-rank-radar/` 镜像。`deploy-pages` 自带构建有 **10 分钟文件同步上限**，本站 ~万级 repo 页会间歇超时——不影响主站，仅镜像可能滞后。
 
 ### 自定义域名
 
 站点绑定 `zhuikan.com`（apex 为规范域），`www.zhuikan.com` 由 DNS 侧 301 到 apex：
 
-- **`site/CNAME`** 文件内容 `zhuikan.com`，随 `./site` artifact 一起发布——Actions 部署下 CNAME 必须存在于 artifact 根，否则部署后绑定丢失；文件入库也使配置可审计。
-- DNS：apex 指向 GitHub Pages（`185.199.108-111.153` A 记录或经 Cloudflare 代理），`www` CNAME 到 `awesome-market.github.io` 并在 CDN 层做 www→apex 跳转。
-- HTTPS：Pages 对自定义域名自动签发证书（Enforce HTTPS 开启）。
+- Cloudflare Pages 项目 `zhuikan` 绑定 apex 域；证书由 CF 自动签发。
+- **`site/CNAME`** 仍保留 `zhuikan.com`——gh-pages 冷备镜像的 GitHub Pages 绑定需要它（从分支部署时 CNAME 必须存在于发布目录）。
 - `sitemap.xml` / OG 绝对 URL 用 `rank.py --site-base`（默认 `https://zhuikan.com`，可用仓库变量 `SITE_BASE` 覆盖）。
 - `awesome-market.github.io/trending-rank-radar/` 子路径仍可用作镜像——前端全部相对路径，两种形态兼容。
 
@@ -120,7 +94,9 @@ jobs:
 | 任务 | 频率 | 说明 |
 |---|---|---|
 | 快照 + 榜单重算 | 每日 2 次 | 每次运行都全量重算（幂等，同一天第二次运行会覆盖/补充当日数据） |
-| 全量重建（历史回填校验） | 每周 1 次（可选） | 校验历史快照完整性 |
+| 新闻采集 | 每日 2 次（`--board`） | 榜上仓库相关新闻；失败不阻塞（continue-on-error） |
+| 新闻全量回填 | 每周日 1 次（`--all`） | UTC 08:00，补齐长尾仓库新闻 |
+| 全量重建 | 每次运行 | rank.py 本就逐日全量重算——无需单独校验任务 |
 
 若日后想降为 1 次/日，删掉一条 cron 即可，数据模型无需改动。
 
