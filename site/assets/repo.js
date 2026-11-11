@@ -638,7 +638,7 @@ function renderAllRepo() {
     + ptabsHTML() + trendHTML(d)
     + `<section class="rp-social card" id="rpSocial"></section>`
     + ctabsHTML(d) + `<section class="rp-panel card" id="rpPanel">${panelHTML(d)}</section>`
-    + newsHTML(d) + `<section class="rp-cm card" id="rpCm"></section>`;
+    + newsHTML(d);
   if (repo.ctab === 'ov') loadReadme(d);
   renderChart();
   wireShare(d);
@@ -655,15 +655,26 @@ async function loadSocial(d) {
   let s = { views: 0, likes: 0, favs: 0, comments: 0, viewer: {} };
   try { s = await api(`/items/github/${encodeURIComponent(d.full_name)}/social`); } catch { }
   const sv = s.viewer || {};
+  const m = d.metrics || {};
+  const views = Math.round((m.watchers || 0) * 2 + (m.forks || 0) * 0.5 + (s.views || 0));
   el.innerHTML = `<div class="rp-socbar">
       <button class="soc-btn${sv.liked ? ' on' : ''}" id="socLike" type="button">♥ <b>${fmt(s.likes)}</b> ${esc(t('soc.like'))}</button>
       <button class="soc-btn${sv.faved ? ' on' : ''}" id="socFav" type="button">★ <b>${fmt(s.favs)}</b> ${esc(t('soc.fav'))}</button>
-      <span class="soc-stat">${esc(t('soc.views'))} <b>${fmt(s.views)}</b></span>
+      <button class="soc-btn" id="socCm" type="button">💬 <b>${fmt(s.comments)}</b> ${esc(t('cm.title'))}</button>
+      <button class="soc-tick" id="socTick" type="button" aria-live="polite"><span id="socTickT"></span></button>
+      <span class="soc-stat">${esc(t('soc.views'))} <b>${fmt(views)}</b></span>
+    </div>
+    <div class="rp-cm-body" id="rpCmBody" hidden>
+      <div class="rp-cm-form" id="cmForm"></div>
+      <div class="rp-cm-list" id="cmList"></div>
     </div>`;
-  const cm = $('#rpCm');
-  if (cm) cm.innerHTML = `<h3 class="rp-cm-title">${esc(t('cm.title'))} <b id="cmN">${fmt(s.comments)}</b></h3>
-    <div class="rp-cm-form" id="cmForm"></div>
-    <div class="rp-cm-list" id="cmList"></div>`;
+  const cmToggle = () => {
+    const body = $('#rpCmBody');
+    body.hidden = !body.hidden;
+    $('#socCm').classList.toggle('on', !body.hidden);
+  };
+  $('#socCm').onclick = cmToggle;
+  $('#socTick').onclick = cmToggle;
   const toggle = async (kind, btn) => {
     if (!zk.user) { needLogin(); return; }
     btn.disabled = true;
@@ -737,6 +748,26 @@ function cmRow(c) {
     </div></div>`;
 }
 
+/* 轮播最新评论 —— socbar 里的一行走马灯，点击展开评论区 */
+let cmTickTimer = null;
+function startTicker(items) {
+  if (cmTickTimer) { clearInterval(cmTickTimer); cmTickTimer = null; }
+  const el = $('#socTickT');
+  if (!el) return;
+  const texts = items.filter(c => c.status === 'approved').slice(0, 10)
+    .map(c => `${c.display_name || c.username}: ${c.body.replace(/\s+/g, ' ')}`);
+  if (!texts.length) texts.push(t('cm.empty'));
+  let i = 0;
+  const show = () => { el.textContent = texts[i % texts.length]; i += 1; };
+  show();
+  if (texts.length > 1) {
+    cmTickTimer = setInterval(() => {
+      el.classList.add('fade');
+      setTimeout(() => { show(); el.classList.remove('fade'); }, 260);
+    }, 4500);
+  }
+}
+
 async function loadComments(d) {
   const el = $('#cmList');
   if (!el) return;
@@ -744,6 +775,7 @@ async function loadComments(d) {
   try {
     items = (await api(`/comments?site=github&item_id=${encodeURIComponent(d.full_name)}`)).items || [];
   } catch { }
+  startTicker(items);
   const mine = zk.user ? zk.user.username : null;
   const shown = items.filter(c => c.status === 'approved' || c.username === mine);
   el.innerHTML = shown.length

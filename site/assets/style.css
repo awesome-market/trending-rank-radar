@@ -1193,6 +1193,15 @@ html[lang="en"] .i18n-en { display: inline; }
 .soc-btn:hover { border-color: var(--card-border-hi); color: var(--text); }
 .soc-btn.on { color: var(--accent); border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, var(--bg)); }
 .soc-stat { margin-left: auto; font-size: 12.5px; color: var(--text-faint); display: inline-flex; align-items: center; gap: 5px; }
+.soc-tick {
+  flex: 1; min-width: 0; padding: 4px 8px; border: 0; background: none;
+  font: inherit; font-size: 12.5px; color: var(--text-faint);
+  text-align: left; cursor: pointer;
+}
+.soc-tick:hover { color: var(--text-dim); }
+.soc-tick span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; transition: opacity .25s; }
+.soc-tick span.fade { opacity: 0; }
+.rp-cm-body { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--card-border); }
 
 /* comments */
 .rp-cm { padding: 18px 20px; margin-top: 14px; }
