@@ -26,6 +26,10 @@ const STAT_ICONS = { stars: 'star', forks: 'fork', watchers: 'eye', prs: 'pr', i
 // and home links still resolve; repo.html leaves it unset.
 const DB = document.body.dataset.base || '';
 const HOME = DB || './';
+// Generated data payloads live behind the API blob store (Cloudflare Pages
+// caps deployments at 20k files); page links keep the relative DB base.
+const DATA = ['localhost', '127.0.0.1'].includes(location.hostname)
+  ? `${DB}data/` : 'https://api-site.zhuikan.com/data/';
 
 function deltaSpan(label) {
   const g = repo.data.growth && repo.data.growth[label];
@@ -490,7 +494,7 @@ async function loadReadme(d) {
   const key = base + ':' + lang;
   try {
     if (!_readmeCache[key]) {
-      const fn = `${DB}data/readme/${base}${wantZh ? '.zh' : ''}.md`;
+      const fn = `${DATA}readme/${base}${wantZh ? '.zh' : ''}.md`;
       const r = await fetch(fn);
       if (!r.ok) throw new Error(r.status);
       _readmeCache[key] = await r.text();
@@ -968,8 +972,8 @@ async function initRepo() {
     return;
   }
   try {
-    const tagIdxP = j(`${DB}data/tags-index.json`).catch(() => ({}));
-    repo.data = await j(`${DB}data/repos/${fn.replace('/', '__')}.json`);
+    const tagIdxP = j(`${DATA}tags-index.json`).catch(() => ({}));
+    repo.data = await j(`${DATA}repos/${fn.replace('/', '__')}.json`);
     TAG_IDX = await tagIdxP;
   } catch {
     $('#repoContent').innerHTML = `<div class="rp-err card"><h2>${t('rp.notfound')}</h2><p>${t('rp.notfound.hint')}</p><a class="rp-back" href="${HOME}">${t('rp.back')}</a></div>`;

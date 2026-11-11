@@ -10,6 +10,10 @@ const PAGE = 50;
 // <body data-base="../" data-lang="python" data-lang-name="Python"> — day-view
 // only, boards come from data/langs/<slug>.json instead of the day files.
 const DB = document.body.dataset.base || '';
+// Generated data payloads live behind the API blob store (Cloudflare Pages
+// caps deployments at 20k files); page links keep the relative DB base.
+const DATA = ['localhost', '127.0.0.1'].includes(location.hostname)
+  ? `${DB}data/` : 'https://api-site.zhuikan.com/data/';
 const LANG_PAGE = document.body.dataset.lang || '';
 const LANG_NAME = document.body.dataset.langName || '';
 const TAG_PAGE = document.body.dataset.tag || '';
@@ -291,10 +295,10 @@ async function loadView() {
   const idx = state.index;
   let data;
   try {
-    data = SUBPAGE ? await j(`${DB}data/${SUBPAGE}.json`)
-      : await j(state.period === 'day' ? `${DB}data/days/${state.sel}.json`
-        : state.period === 'month' ? `${DB}data/months/${state.sel}.json`
-        : `${DB}data/years/${state.sel}.json`);
+    data = SUBPAGE ? await j(`${DATA}${SUBPAGE}.json`)
+      : await j(state.period === 'day' ? `${DATA}days/${state.sel}.json`
+        : state.period === 'month' ? `${DATA}months/${state.sel}.json`
+        : `${DATA}years/${state.sel}.json`);
   } catch {
     const pct = idx ? Math.min(100, idx.snapshot_days / 31 * 100) : 0;
     setEmpty(t('empty.acc'), pct);
@@ -466,8 +470,8 @@ async function loadHeroData() {
     state.hero = { top1: null };
     try {
       const latest = await j(SUBPAGE
-        ? `${DB}data/${SUBPAGE}.json`
-        : `${DB}data/days/${idx.latest_day}.json`);
+        ? `${DATA}${SUBPAGE}.json`
+        : `${DATA}days/${idx.latest_day}.json`);
       const top1 = latest.boards?.daily?.items?.[0]
         || latest.boards?.new?.items?.[0]
         || latest.boards?.total?.items?.[0];
@@ -637,7 +641,7 @@ async function init() {
   readURL();
   applyStaticI18n();
   try {
-    state.index = await j(`${DB}data/index.json`);
+    state.index = await j(`${DATA}index.json`);
   } catch (e) {
     setEmpty(t('empty.init'), 0);
     return;

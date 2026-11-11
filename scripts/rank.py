@@ -634,8 +634,10 @@ def lang_slug(lang: str) -> str:
 # ---------------- per-tag static pages ----------------
 # /tags/<slug> — repos grouped by GitHub topic. Same skeleton trick as langs:
 # index.html + data-tag attrs, app.js hydrates a single star-sorted list.
-TAG_MIN_REPOS = 2         # a tag page needs at least this many tracked repos
+TAG_MIN_REPOS = 3         # a tag page needs at least this many tracked repos
 TAG_TOP = 100             # list cap per tag page
+TAG_MAX_PAGES = 200       # cap total tag pages — the 2-3-repo topic tail is
+                          # thin SEO junk and file count is a hard deploy limit
 
 
 def tag_slug(tag: str) -> str:
@@ -1139,6 +1141,9 @@ def main() -> int:
     base_url = args.site_base.rstrip("/")
     tpl_index = (SITE_DIR / "index.html").read_text(encoding="utf-8")
     bdir = SITE_DIR / "b"
+    # dated board pages only cover recent history — file count is a hard
+    # Cloudflare Pages deploy limit and they grow ~11/day otherwise
+    bcut = (d(days[-1]) - timedelta(days=45)).isoformat()
     # drop stale /b pages beyond current history (e.g. after data pruning)
     if bdir.is_dir():
         for stale_html in bdir.glob("*/*.html"):
@@ -1172,10 +1177,11 @@ def main() -> int:
         (SITE_DATA / "days" / f"{day}.json").write_text(
             json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
-        # per-board static page: /b/<board>/<date>
+        # per-board static page: /b/<board>/<date> — recent history only;
+        # older dates stay reachable via the day-picker + data/days/*.json
         for b in ALL_BOARDS:
             items = (boards.get(b) or {}).get("items") or []
-            if items:
+            if items and day >= bcut:
                 (bdir / b).mkdir(parents=True, exist_ok=True)
                 (bdir / b / f"{day}.html").write_text(
                     render_board_page(b, day, items, days, tpl_index,
@@ -1288,6 +1294,9 @@ def main() -> int:
                                        "items": []})["names"].append(name)
     tag_pages = {s for s, e in tag_map.items()
                  if len(e["names"]) >= TAG_MIN_REPOS}
+    if len(tag_pages) > TAG_MAX_PAGES:
+        keep = sorted(tag_pages, key=lambda s: -len(tag_map[s]["names"]))
+        tag_pages = set(keep[:TAG_MAX_PAGES])
 
     repos_out = SITE_DATA / "repos"
     readme_out = SITE_DATA / "readme"
@@ -1411,6 +1420,27 @@ def main() -> int:
                            tag_pages=tag_pages)
         page_html = render_repo_page(ssr_payload, repo_tpl, base)
         (pages_out / f"{owner}__{repo}.html").write_text(page_html, encoding="utf-8")
+
+    # Prune artifacts of repos that fell out of detail_repos (dropped from the
+    # watchlist long enough ago that snapshots stopped). rank no longer writes
+    # these files, so what remains on disk is stale — and file count is a hard
+    # Cloudflare Pages deploy limit.
+    live = {n.replace("/", "__") for n in detail_repos}
+    pruned = 0
+    for d_, pat in ((pages_out, "*.html"), (repos_out, "*.json"),
+                    (readme_out, "*.md")):
+        for f in d_.glob(pat):
+            stem = f.stem[:-3] if f.stem.endswith(".zh") else f.stem
+            if stem not in live:
+                f.unlink(); pruned += 1
+    if pruned:
+        log(f"pruned {pruned} stale repo artifacts")
+
+    # Drop dated board pages written by earlier builds beyond the 45-day
+    # window (generation is gated on `bcut` above; this prunes the backlog).
+    for f in bdir.glob("*/*.html"):
+        if f.stem < bcut:
+            f.unlink()
 
     # search indexes — published as open data (the header search box itself
     # queries api-site.zhuikan.com/search remotely). Compact {n,d,l,s} fields

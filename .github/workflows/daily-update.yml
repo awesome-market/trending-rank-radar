@@ -178,6 +178,23 @@ jobs:
           fi
           git push
 
+      # site/data/* 以单文件 sqlite blob 形式推给 api-site（Cloudflare Pages
+      # 部署上限 2 万文件，data/ 一棵树就占 ~1.6 万）。上传必须先于站点
+      # 发布——失败则中止，宁可不发也不让页面上线后水合不到数据。
+      - name: Pack + upload data store to api-site
+        env:
+          DATA_UPLOAD_TOKEN: ${{ secrets.DATA_UPLOAD_TOKEN }}
+        run: |
+          python3 scripts/pack_data.py
+          SHA=$(sha256sum site-data.db | cut -d' ' -f1)
+          RESP=$(curl -fsS -X POST "https://api-site.zhuikan.com/data-upload" \
+            -H "Authorization: Bearer $DATA_UPLOAD_TOKEN" \
+            -H "Content-Type: application/octet-stream" \
+            --data-binary @site-data.db)
+          echo "$RESP"
+          echo "$RESP" | grep -q "$SHA" || \
+            { echo "::error::sha256 mismatch — upload corrupted"; exit 1; }
+
       # 站点 ~90MB/万级文件，超出 actions/deploy-pages 的 10 分钟文件同步预算；
       # 改为推送到 gh-pages 分支由 Pages 服务端构建（无超时限制）。
       - name: Publish site to gh-pages
@@ -200,7 +217,9 @@ jobs:
           git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:gh-pages
 
       # 主发布目标：Cloudflare Pages。wrangler 按内容 hash 增量上传，
-      # 无 per-file 发布瓶颈；gh-pages 分支留作冷备。
+      # 无 per-file 发布瓶颈；gh-pages 分支留作冷备（含完整 data/）。
+      # CF 载荷剔除 site/data/——那棵树改由 api-site 的 blob store 服务，
+      # 部署文件数从 ~2.7 万压到 ~7 千，留足 2 万上限余量。
       - name: Deploy to Cloudflare Pages
         if: always()
         env:
@@ -209,4 +228,7 @@ jobs:
         run: |
           # 上一步失败时 /tmp/ghp-site 可能是半成品——宁可跳过也不发布残缺站点
           test -f /tmp/ghp-site/index.html || { echo "site payload missing; skipping deploy"; exit 1; }
-          npx -y wrangler@3 pages deploy /tmp/ghp-site --project-name=zhuikan --branch=main
+          rm -rf /tmp/cfp-site && mkdir -p /tmp/cfp-site
+          rsync -a --exclude 'data/' /tmp/ghp-site/ /tmp/cfp-site/
+          echo "deploy payload: $(find /tmp/cfp-site -type f | wc -l) files"
+          npx -y wrangler@3 pages deploy /tmp/cfp-site --project-name=zhuikan --branch=main
