@@ -59,6 +59,8 @@ const I18N = {
     'nm.why': '你的用户名未通过审核，请换一个新名字后再评论',
     'nm.ph': '新的用户名',
     'nm.go': '保存',
+    'auth.sw.register': '没有账号？注册',
+    'auth.sw.login': '已有账号？登录',
     'auth.verify.title': '验证邮箱',
     'auth.verify.hint': '验证码已发送至 {e}，请查收（含垃圾箱）',
     'auth.verify.ph': '6 位验证码',
@@ -207,6 +209,8 @@ const I18N = {
     'nm.why': 'Your username failed review — pick a new one to keep commenting',
     'nm.ph': 'New username',
     'nm.go': 'Save',
+    'auth.sw.register': 'No account? Sign up',
+    'auth.sw.login': 'Have an account? Sign in',
     'auth.verify.title': 'Verify email',
     'auth.verify.hint': 'Code sent to {e} — check spam too',
     'auth.verify.ph': '6-digit code',
@@ -579,6 +583,7 @@ function openAuthModal(mode) {
     q('#amHint').hidden = !ver;
     q('#amRe').hidden = !ver;
     q('#amSw').hidden = ver;
+    q('#amSw').textContent = reg ? t('auth.sw.login') : t('auth.sw.register');
     q('#amP').autocomplete = reg ? 'new-password' : 'current-password';
     if (ver) {
       const em = (zk.user && zk.user.email) || '—';
