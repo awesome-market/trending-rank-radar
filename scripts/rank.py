@@ -25,6 +25,7 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.request
 from bisect import bisect_left, bisect_right
 from collections import Counter
@@ -604,6 +605,7 @@ def inject_index_ssr(board: str, items: list, day: str,
     each block on hydrate."""
     path = SITE_DIR / "index.html"
     html = path.read_text(encoding="utf-8")
+    html = re.sub(r'\.(js|css)\?v=\d+', rf'.\1?v={int(time.time())}', html)
 
     zh, en = _board_label(board)
     note = (f'<p style="color:var(--muted,#8b949e);font-size:13px;margin:0 4px 10px">'
@@ -1172,6 +1174,10 @@ def main() -> int:
 
     base_url = args.site_base.rstrip("/")
     tpl_index = (SITE_DIR / "index.html").read_text(encoding="utf-8")
+    # bust the browser/CDN cache for versioned assets on every build —
+    # browsers otherwise keep stale app.js/repo.js for max-age=4h
+    asset_v = str(int(time.time()))
+    tpl_index = re.sub(r'\.(js|css)\?v=\d+', rf'.\1?v={asset_v}', tpl_index)
     bdir = SITE_DIR / "b"
     # dated board pages only cover recent history — file count is a hard
     # Cloudflare Pages deploy limit and they grow ~11/day otherwise
@@ -1341,6 +1347,7 @@ def main() -> int:
     pages_out = SITE_DIR / "repos"
     pages_out.mkdir(parents=True, exist_ok=True)
     repo_tpl = (SITE_DIR / "repo.html").read_text(encoding="utf-8")
+    repo_tpl = re.sub(r'\.(js|css)\?v=\d+', rf'.\1?v={asset_v}', repo_tpl)
     base = args.site_base.rstrip("/")
     cm_map = _fetch_comments()
     detail_count = 0
