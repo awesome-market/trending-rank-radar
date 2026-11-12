@@ -198,6 +198,7 @@ function trendHTML(d) {
     </div>
     <div class="rp-mtabs">${mtabs}</div>
     <div class="rp-chart" id="rpChart"></div>
+    <div class="rp-social" id="rpSocial"></div>
   </section>`;
 }
 
@@ -724,7 +725,6 @@ function renderAllRepo() {
   const d = repo.data;
   $('#repoContent').innerHTML = crumbHTML(d) + topHTML(d)
     + ptabsHTML() + trendHTML(d)
-    + `<section class="rp-social card" id="rpSocial"></section>`
     + ctabsHTML(d)
     + `<section class="rp-panel card" id="rpPanel">${panelHTML(d)}</section>`
     + newsHTML(d);
