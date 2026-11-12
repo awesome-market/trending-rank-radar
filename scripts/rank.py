@@ -321,14 +321,17 @@ def _ssr_repo(p: dict) -> str:
     dl_html = ""
     if rel and rel.get("tag"):
         tag = str(rel["tag"])
-        ver = re.sub(r"^v", "", tag, flags=re.I)
+        vm = re.search(r"(\d[\d.]*)$", tag)
+        ver = vm.group(1) if vm else tag
         base = (re.split(r"[:：\s]+", str(rel.get("name") or p["name"]))[0]
                 or p["name"])
         file = f"{base}-{ver}" if re.match(r"^v?\d[\d.]*$", tag, re.I) else tag
         dl_html = (f'<div class="rp-dl">'
+                   f'<span class="rp-dl-label">下载：</span>'
                    f'<span class="rp-dl-t">{_esc(rel.get("name") or tag)}</span>'
                    f'<a class="rp-dl-a" href="{_esc(p["url"])}/releases/tag/'
                    f'{urllib.parse.quote(tag, safe="")}">{_esc(file)} ↓</a>'
+                   f'<span class="rp-dl-ver">{_esc(ver)}</span>'
                    f'<span class="rp-dl-date">'
                    f'{_esc((rel.get("published_at") or "")[:10])}</span></div>')
     readme = p.get("readme_excerpt")
@@ -380,8 +383,8 @@ def _ssr_repo(p: dict) -> str:
       <div class="rp-actions"><a class="rp-btn" href="{_esc(p['url'])}">GitHub ↗</a></div></div>
   </div>
 </div>
-<section class="rp-panel card"><div class="rp-metric-grid">{growth_mets}{mets}</div>
-{dl_html}{readme_html}{sec_i}{rel_html}</section>
+<section class="rp-panel card">{dl_html}<div class="rp-metric-grid">{growth_mets}{mets}</div>
+{readme_html}{sec_i}{rel_html}</section>
 {news_html}
 {_ssr_comments(p.get('cm_items'))}
 <p class="rp-meta">Snapshot: {_esc(p.get('snapshot_at'))} · Data license Apache-2.0 ·

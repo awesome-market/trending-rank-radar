@@ -499,21 +499,24 @@ function growthCell(d, k) {
     <div class="rp-metric-label">${t(key)}</div></div>`;
 }
 
-/* One-line release download bar under the metric grid: title · tag·file link · date.
+/* Standalone download line ABOVE the metric grid: 下载： file ↓ · ver · date.
    latest_release carries {name, tag, published_at} only — the link targets the
    tag's GitHub release page where the actual artifacts live. */
 function downloadRowHTML(d) {
   const r = d.latest_release;
   if (!r || !r.tag) return '';
   const tag = String(r.tag);
-  const ver = tag.replace(/^v/i, '');
+  const verM = tag.match(/(\d[\d.]*)$/);
+  const ver = verM ? verM[1] : tag;
   const base = String(r.name || d.name).split(/[:：\s]+/)[0] || d.name;
   // tag like "rea-agents-6.9.0" already IS the artifact name — show it;
   // bare "v1.4.2"/"1.4.2" tags get composed into "name-1.4.2".
   const file = /^v?\d[\d.]*$/i.test(tag) ? `${base}-${ver}` : tag;
   const href = `${d.url}/releases/tag/${encodeURIComponent(r.tag)}`;
-  return `<div class="rp-dl"><span class="rp-dl-t">${esc(r.name || r.tag)}</span>
+  return `<div class="rp-dl"><span class="rp-dl-label">${esc(t('rp.dl'))}</span>
+    <span class="rp-dl-t">${esc(r.name || r.tag)}</span>
     <a class="rp-dl-a" href="${esc(href)}" target="_blank" rel="noopener">${esc(file)} ↓</a>
+    <span class="rp-dl-ver">${esc(ver)}</span>
     <span class="rp-dl-date">${esc((r.published_at || '').slice(0, 10))}</span></div>`;
 }
 
@@ -529,7 +532,7 @@ function overviewPanel(d) {
   const dl = downloadRowHTML(d);
   const readme = d.readme
     ? `<h3 class="rp-ph">${t('rp.readme')}</h3><div class="rp-pre rp-readme"><div class="rp-readme-md" id="rpReadme"></div></div>` : '';
-  return `<div class="rp-metric-grid">${growth}${grid}</div>${dl}${readme}`;
+  return `${dl}<div class="rp-metric-grid">${growth}${grid}</div>${readme}`;
 }
 
 /* Full README: fetched from data/readme/<repo>.md (or .zh.md when the UI
