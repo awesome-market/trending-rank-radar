@@ -148,9 +148,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/ci_rescue.py
 
-      - name: Stamp asset versions
-        run: sed -i -E "s/\?v=[0-9]+/?v=$(date -u +%s)/g" site/*.html
-
       - name: Rebuild rankings & site data
         run: python scripts/rank.py --site-base "${{ vars.SITE_BASE }}"  # site/ 不入库，deploy_only 也要重建才能发布
 
