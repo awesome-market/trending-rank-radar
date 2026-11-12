@@ -465,6 +465,8 @@ function syncURL() {
   if (state.period !== 'year') p.set('board', state.board);
   p.set('min', state.minK); p.set('max', state.maxK);
   history.pushState(null, '', '?' + p.toString());
+  /* SPA 切换不产生新页面加载——手动给百度统计补一条 pageview */
+  if (typeof _hmt !== 'undefined') _hmt.push(['_trackPageview', location.pathname + location.search]);
 }
 
 function readURL() {
@@ -657,7 +659,7 @@ async function init() {
   zkInit();
   initSearch();
   zkLoadUser().then(renderAuthChip);
-  api('/stats/view', { method: 'POST', body: JSON.stringify({ site: 'github', path: '/' }) })
+  api('/stats/view', { method: 'POST', body: JSON.stringify({ site: 'github', path: location.pathname }) })
     .catch(() => { });   /* fire-and-forget analytics */
   readURL();
   applyStaticI18n();

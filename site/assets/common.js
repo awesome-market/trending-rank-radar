@@ -473,6 +473,27 @@ document.addEventListener('click', (e) => {
   if (d && !d.hidden && !e.target.closest('.auth-wrap')) d.hidden = true;
 });
 
+/* 出站点击 → 百度统计事件。外链多为 target=_blank，本页存活可保证送达；
+   _hmt 未定义（hm.js 被拦截器挡掉）时推入空数组，无副作用 */
+function outboundKind(u) {
+  if (u.hostname === 'github.com') {
+    if (u.pathname.startsWith('/topics/')) return 'topic';
+    const n = u.pathname.split('/').filter(Boolean).length;
+    return n <= 2 ? 'repo' : 'repo-sub';
+  }
+  if (u.hostname.endsWith('.github.io')) return 'homepage';
+  return 'other';
+}
+document.addEventListener('click', (e) => {
+  const a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+  if (!a) return;
+  let u;
+  try { u = new URL(a.href); } catch { return; }
+  if (u.protocol !== 'https:' && u.protocol !== 'http:') return;
+  if (u.hostname === location.hostname || u.hostname.endsWith('.zhuikan.com')) return;
+  if (typeof _hmt !== 'undefined') _hmt.push(['_trackEvent', 'outbound', outboundKind(u), u.href]);
+}, true);
+
 /* ---------------- zhuikan-api client + auth ---------------- */
 const API_BASE = 'https://api-site.zhuikan.com';
 const zk = { token: null, user: null };
