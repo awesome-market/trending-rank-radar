@@ -31,9 +31,9 @@ function ucErr(el, e) {
 /* ---------- tabs ---------- */
 
 function ucNav() {
-  return `<nav class="uc-side">${UC_TABS.map(k =>
+  return `<nav class="uc-side"><div class="uc-side-in">${UC_TABS.map(k =>
     `<a class="uc-tab${k === uc.tab ? ' on' : ''}" href="user?tab=${k}" data-tab="${k}">${esc(t('uc.tab.' + k))}</a>`
-  ).join('')}</nav>`;
+  ).join('')}</div></nav>`;
 }
 
 function render() {
