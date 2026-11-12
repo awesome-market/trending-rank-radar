@@ -26,6 +26,7 @@ import os
 import re
 import sys
 import time
+import urllib.parse
 import urllib.request
 from bisect import bisect_left, bisect_right
 from collections import Counter
@@ -256,7 +257,7 @@ def _ssr_repo(p: dict) -> str:
                   "issues": "●", "releases": "▤", "discussions": "◈"}
     stats = "".join(
         f'<span class="rp-stat" title="{k}">{stat_icons[k]} <b>{num(m[k])}</b></span>'
-        for k in ("stars", "forks", "watchers", "prs", "issues", "releases", "discussions")
+        for k in ("stars", "forks", "watchers", "prs", "issues", "releases")
         if m.get(k) is not None)
     _tag_pages = p.get("tag_pages") or frozenset()
     topics = "".join(
@@ -279,17 +280,20 @@ def _ssr_repo(p: dict) -> str:
         f'<a class="rp-board-chip" href="../?board={b}">{b} <b>#{(p["boards"] or {})[b]}</b></a>'
         for b in order if (p.get("boards") or {}).get(b) is not None)
     growth = p.get("growth") or {}
-    def dlt(k):
+    def gcell(k):
         g = growth.get(k)
-        p = {"day": "日", "week": "周", "month": "月"}[k]
-        return (f'<span class="rp-delta up"><i class="rp-delta-p">{p}</i>'
-                f'+{num(g["stars"])}</span>' if g else "")
-    met_keys = ["stars", "forks", "watchers", "prs", "issues", "releases", "discussions"]
+        if not g or g.get("stars") is None:
+            return ""
+        up = g["stars"] >= 0
+        lbl = {"day": "日增长", "week": "周增长", "month": "月增长"}[k]
+        return (f'<div class="rp-metric"><div class="rp-metric-num '
+                f'{"up" if up else "down"}">{"+" if up else ""}{num(g["stars"])}</div>'
+                f'<div class="rp-metric-label">{lbl}</div></div>')
+    growth_mets = gcell("day") + gcell("week") + gcell("month")
+    met_keys = ["stars", "forks", "watchers", "prs", "issues", "releases"]
     mets = "".join(
         f'<div class="rp-metric"><div class="rp-metric-num">{num(m[k])}</div>'
         f'<div class="rp-metric-label">{k}</div>'
-        + (f'<div class="rp-metric-delta">{dlt("day")}{dlt("week")}{dlt("month")}</div>'
-           if k == "stars" else "")
         + '</div>' for k in met_keys if k in m)
 
     def lst(items, base):
@@ -314,6 +318,19 @@ def _ssr_repo(p: dict) -> str:
                     f'{pre}'
                     f'<span class="rp-item-extra">{_esc((rel.get("published_at") or "")[:10])}</span></a>'
                     + (f'<pre class="rp-pre">{body}</pre>' if body else ""))
+    dl_html = ""
+    if rel and rel.get("tag"):
+        tag = str(rel["tag"])
+        ver = re.sub(r"^v", "", tag, flags=re.I)
+        base = (re.split(r"[:：\s]+", str(rel.get("name") or p["name"]))[0]
+                or p["name"])
+        file = f"{base}-{ver}" if re.match(r"^v?\d[\d.]*$", tag, re.I) else tag
+        dl_html = (f'<div class="rp-dl">'
+                   f'<span class="rp-dl-t">{_esc(rel.get("name") or tag)}</span>'
+                   f'<a class="rp-dl-a" href="{_esc(p["url"])}/releases/tag/'
+                   f'{urllib.parse.quote(tag, safe="")}">{_esc(file)} ↓</a>'
+                   f'<span class="rp-dl-date">'
+                   f'{_esc((rel.get("published_at") or "")[:10])}</span></div>')
     readme = p.get("readme_excerpt")
     readme_html = (f'<h3 class="rp-ph">README</h3>'
                    f'<pre class="rp-pre rp-readme">{_plain(readme, 3000)}</pre>'
@@ -366,8 +383,8 @@ def _ssr_repo(p: dict) -> str:
       <div class="rp-actions"><a class="rp-btn" href="{_esc(p['url'])}">GitHub ↗</a></div></div>
   </div>
 </div>
-<section class="rp-panel card"><div class="rp-metric-grid">{mets}</div>
-{readme_html}{sec_i}{sec_d}{rel_html}</section>
+<section class="rp-panel card"><div class="rp-metric-grid">{growth_mets}{mets}</div>
+{dl_html}{readme_html}{sec_i}{sec_d}{rel_html}</section>
 {news_html}
 {_ssr_comments(p.get('cm_items'))}
 <p class="rp-meta">Snapshot: {_esc(p.get('snapshot_at'))} · Data license Apache-2.0 ·
