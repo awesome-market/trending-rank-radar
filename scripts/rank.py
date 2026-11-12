@@ -325,7 +325,8 @@ def _ssr_repo(p: dict) -> str:
         ver = vm.group(1) if vm else tag
         base = (re.split(r"[:：\s]+", str(rel.get("name") or p["name"]))[0]
                 or p["name"])
-        file = f"{base}-{ver}" if re.match(r"^v?\d[\d.]*$", tag, re.I) else tag
+        file = (tag if not re.match(r"^v?\d[\d.]*$", tag, re.I)
+                else (base if ver.lower() in base.lower() else f"{base}-{ver}"))
         dl_html = (f'<div class="rp-dl">'
                    f'<span class="rp-dl-label">下载：</span>'
                    f'<span class="rp-dl-t">{_esc(rel.get("name") or tag)}</span>'

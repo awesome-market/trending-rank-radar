@@ -510,8 +510,10 @@ function downloadRowHTML(d) {
   const ver = verM ? verM[1] : tag;
   const base = String(r.name || d.name).split(/[:：\s]+/)[0] || d.name;
   // tag like "rea-agents-6.9.0" already IS the artifact name — show it;
-  // bare "v1.4.2"/"1.4.2" tags get composed into "name-1.4.2".
-  const file = /^v?\d[\d.]*$/i.test(tag) ? `${base}-${ver}` : tag;
+  // bare "v1.4.2"/"1.4.2" tags get composed into "name-1.4.2" — unless
+  // the base already carries the version ("v0.7.14" → not "v0.7.14-0.7.14").
+  const file = !/^v?\d[\d.]*$/i.test(tag) ? tag
+    : (base.toLowerCase().includes(ver.toLowerCase()) ? base : `${base}-${ver}`);
   const href = `${d.url}/releases/tag/${encodeURIComponent(r.tag)}`;
   return `<div class="rp-dl" id="rpDl"${repo.ctab === 'ov' ? '' : ' hidden'}><span class="rp-dl-label">${esc(t('rp.dl'))}</span>
     <span class="rp-dl-t">${esc(r.name || r.tag)}</span>
