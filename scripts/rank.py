@@ -387,8 +387,8 @@ def _ssr_repo(p: dict) -> str:
       <div class="rp-actions"><a class="rp-btn" href="{_esc(p['url'])}">GitHub ↗</a></div></div>
   </div>
 </div>
-<section class="rp-panel card"><div class="rp-metric-grid">{growth_mets}{mets}</div>
-{dl_html}{readme_html}{sec_i}{sec_d}{rel_html}</section>
+<section class="rp-panel card">{dl_html}<div class="rp-metric-grid">{growth_mets}{mets}</div>
+{readme_html}{sec_i}{sec_d}{rel_html}</section>
 {news_html}
 {_ssr_comments(p.get('cm_items'))}
 <p class="rp-meta">Snapshot: {_esc(p.get('snapshot_at'))} · Data license Apache-2.0 ·

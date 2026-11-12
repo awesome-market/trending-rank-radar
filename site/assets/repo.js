@@ -533,7 +533,7 @@ function overviewPanel(d) {
   }).join('');
   const readme = d.readme
     ? `<h3 class="rp-ph">${t('rp.readme')}</h3><div class="rp-pre rp-readme"><div class="rp-readme-md" id="rpReadme"></div></div>` : '';
-  return `<div class="rp-metric-grid">${growth}${grid}</div>${downloadRowHTML(d)}${readme}`;
+  return `${downloadRowHTML(d)}<div class="rp-metric-grid">${growth}${grid}</div>${readme}`;
 }
 
 /* Full README: fetched from data/readme/<repo>.md (or .zh.md when the UI
