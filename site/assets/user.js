@@ -4,7 +4,7 @@
    token; logged-out visitors get a sign-in prompt instead of a bounce. */
 
 const UC_TABS = ['fav', 'likes', 'comments', 'settings'];
-const uc = { tab: 'fav' };
+const uc = { tab: 'fav', editing: false };
 
 function ucTabFromURL() {
   const tb = new URLSearchParams(location.search).get('tab');
@@ -163,20 +163,26 @@ async function ucLoadSettings(el) {
   const mailChip = u.email_verified
     ? `<span class="uc-st approved">${esc(t('uc.verified'))}</span>`
     : `<span class="uc-st pending">${esc(t('uc.unverified'))}</span>`;
+  const former = (u.former_names && u.former_names.length)
+    ? u.former_names.join('、') : t('uc.former.none');
+  const noRenames = (u.renames_left ?? 1) <= 0;
+  const nickHtml = uc.editing
+    ? `<input class="auth-in uc-nick-in" id="ucNickIn" type="text" maxlength="64"
+         value="${esc(u.display_name || '')}" placeholder="${esc(t('uc.set.name.ph'))}">
+       <button class="uc-btn" id="ucNickGo" type="button">${esc(t('uc.save'))}</button>
+       <button class="uc-btn uc-ghost" id="ucNickCancel" type="button">${esc(t('uc.cancel'))}</button>`
+    : `<b>${esc(u.display_name || u.username)}</b>${nameSub}
+       <button class="uc-btn uc-ghost" id="ucNickEdit" type="button"${noRenames ? ' disabled' : ''}>${esc(t('uc.edit'))}</button>`;
 
   el.innerHTML =
-    ucCard('ucDnIn', t('uc.set.name'), nameSub, `
-      <div class="uc-field">
-        <input class="auth-in" id="ucDnIn" type="text" maxlength="64" value="${esc(u.display_name || '')}" placeholder="${esc(t('uc.set.name.ph'))}">
-        <button class="uc-btn" id="ucDnGo" type="button">${esc(t('uc.save'))}</button>
+    ucCard(null, t('uc.set.account'), '', `
+      <div class="uc-acct">
+        <span class="uc-f"><em>${esc(t('uc.f.username'))}</em><b>${esc(u.username)}</b></span>
+        <span class="uc-f"><em>${esc(t('uc.f.nickname'))}</em>${nickHtml}</span>
       </div>
-      <p class="uc-err" id="ucDnErr" hidden></p>`)
-    + ucCard('ucUnIn', t('uc.set.user'), '', `
-      <div class="uc-field">
-        <input class="auth-in" id="ucUnIn" type="text" maxlength="32" value="${esc(u.username)}" placeholder="${esc(t('uc.set.user.ph'))}" autocomplete="off">
-        <button class="uc-btn" id="ucUnGo" type="button">${esc(t('uc.save'))}</button>
-      </div>
-      <p class="uc-err" id="ucUnErr" hidden></p>`)
+      <p class="uc-former">${esc(t('uc.former'))}：${esc(former)}</p>
+      <p class="uc-warn">${esc(t('uc.rename.warn', { n: u.renames_left ?? 0 }))}</p>
+      <p class="uc-err" id="ucNickErr" hidden></p>`)
     + ucCard(null, t('uc.set.email'), mailChip, `
       <p class="uc-meta">${esc(u.email || '—')}</p>
       <div id="ucMailBox"><button class="uc-btn" id="ucMailBtn" type="button">${esc(t('uc.email.change'))}</button></div>`)
@@ -216,17 +222,19 @@ async function ucLoadSettings(el) {
     }
   };
 
-  $('#ucDnGo').onclick = () => saveGo($('#ucDnGo'), () =>
+  const editBtn = $('#ucNickEdit'), cancelBtn = $('#ucNickCancel');
+  if (editBtn) editBtn.onclick = () => { uc.editing = true; ucLoadSettings(el); };
+  if (cancelBtn) cancelBtn.onclick = () => { uc.editing = false; ucLoadSettings(el); };
+  const nickGo = $('#ucNickGo');
+  if (nickGo) nickGo.onclick = () => saveGo(nickGo, () =>
     api('/auth/display_name', {
       method: 'POST',
-      body: JSON.stringify({ display_name: $('#ucDnIn').value.trim() })
-    }).then(r => { zk.user.display_name = r.display_name; }), $('#ucDnErr'));
-
-  $('#ucUnGo').onclick = () => saveGo($('#ucUnGo'), () =>
-    api('/auth/username', {
-      method: 'POST',
-      body: JSON.stringify({ username: $('#ucUnIn').value.trim() })
-    }), $('#ucUnErr'));
+      body: JSON.stringify({ display_name: $('#ucNickIn').value.trim() })
+    }).then(r => {
+      zk.user.display_name = r.display_name;
+      uc.editing = false;
+      ucLoadSettings(el);            // back to display state with fresh former_names
+    }), $('#ucNickErr'));
 
   $('#ucPwGo') && ($('#ucPwGo').onclick = () => saveGo($('#ucPwGo'), async () => {
     await api('/auth/password', {
