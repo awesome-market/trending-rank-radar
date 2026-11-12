@@ -82,6 +82,36 @@ const I18N = {
     'auth.verify.sent': '已重新发送',
     'soc.like': '点赞', 'soc.fav': '收藏', 'soc.views': '浏览',
     'fav.mine': '我的收藏', 'fav.empty': '还没有收藏，去榜单里点 ★',
+    'uc.title': '用户中心', 'uc.back': '← 返回榜单',
+    'uc.login.need': '登录后查看用户中心', 'uc.login.go': '登录',
+    'uc.tab.fav': '收藏', 'uc.tab.likes': '点赞',
+    'uc.tab.comments': '评论', 'uc.tab.settings': '设置',
+    'uc.empty.fav': '还没有收藏，去榜单里点 ★',
+    'uc.empty.likes': '还没有点赞，去仓库页点 👍',
+    'uc.empty.comments': '还没有发过评论',
+    'uc.unfav': '取消收藏', 'uc.unlike': '取消点赞',
+    'uc.del': '删除', 'uc.del.confirm': '删除这条评论？不可恢复',
+    'uc.st.pending': '审核中', 'uc.st.approved': '已显示',
+    'uc.st.rejected': '已拒绝', 'uc.reply': '回复',
+    'uc.set.name': '昵称', 'uc.set.name.ph': '公开展示的名字',
+    'uc.set.user': '用户名', 'uc.set.user.ph': '登录名（字母数字 _ . -）',
+    'uc.set.email': '邮箱', 'uc.set.pass': '密码', 'uc.set.bind': '绑定账号',
+    'uc.save': '保存', 'uc.saved': '已保存', 'uc.saving': '保存中…',
+    'uc.verified': '已验证', 'uc.unverified': '未验证',
+    'uc.name.pending': '名字审核中', 'uc.name.reason': '审核备注：{r}',
+    'uc.email.change': '换绑邮箱', 'uc.email.new': '新邮箱',
+    'uc.email.send': '发送验证码', 'uc.email.code': '验证码',
+    'uc.email.confirm': '确认换绑', 'uc.email.sent': '验证码已发送至 {e}',
+    'uc.pass.old': '当前密码', 'uc.pass.new': '新密码（≥8 位）',
+    'uc.pass.oauth': '第三方登录账号未设置密码，可先在登录弹层走「忘记密码」流程设置',
+    'uc.logout': '退出登录',
+    'uc.fav.when': '收藏于 {t}', 'uc.like.when': '点赞于 {t}',
+    'uc.likes.count': '👍 {n}',
+    'auth.e.email_taken': '该邮箱已被其他账号绑定',
+    'auth.e.same_email': '新旧邮箱相同',
+    'auth.e.oauth_only': '第三方登录账号没有密码，请通过忘记密码流程设置',
+    'auth.e.display_name_empty': '昵称不能为空',
+    'auth.e.display_name_not_allowed': '昵称包含不允许的内容',
     'cm.title': '评论', 'cm.ph': '写下你的评论…',
     'cm.submit': '发布', 'cm.login': '登录后可评论',
     'cm.pending': '审核中', 'cm.report': '举报', 'cm.del': '删除',
@@ -250,6 +280,36 @@ const I18N = {
     'auth.verify.sent': 'Sent again',
     'soc.like': 'Like', 'soc.fav': 'Favorite', 'soc.views': 'Views',
     'fav.mine': 'My favorites', 'fav.empty': 'Nothing saved yet — tap ★ on a row',
+    'uc.title': 'Account', 'uc.back': '← Back to boards',
+    'uc.login.need': 'Sign in to view your account', 'uc.login.go': 'Sign in',
+    'uc.tab.fav': 'Favorites', 'uc.tab.likes': 'Likes',
+    'uc.tab.comments': 'Comments', 'uc.tab.settings': 'Settings',
+    'uc.empty.fav': 'Nothing saved yet — tap ★ on a row',
+    'uc.empty.likes': 'No likes yet — tap 👍 on a repo page',
+    'uc.empty.comments': 'No comments yet',
+    'uc.unfav': 'Unfavorite', 'uc.unlike': 'Unlike',
+    'uc.del': 'Delete', 'uc.del.confirm': 'Delete this comment? It cannot be undone',
+    'uc.st.pending': 'under review', 'uc.st.approved': 'visible',
+    'uc.st.rejected': 'rejected', 'uc.reply': 'reply',
+    'uc.set.name': 'Nickname', 'uc.set.name.ph': 'Public display name',
+    'uc.set.user': 'Username', 'uc.set.user.ph': 'Login name (a-z 0-9 _ . -)',
+    'uc.set.email': 'Email', 'uc.set.pass': 'Password', 'uc.set.bind': 'Linked accounts',
+    'uc.save': 'Save', 'uc.saved': 'Saved', 'uc.saving': 'Saving…',
+    'uc.verified': 'verified', 'uc.unverified': 'unverified',
+    'uc.name.pending': 'name under review', 'uc.name.reason': 'Review note: {r}',
+    'uc.email.change': 'Change email', 'uc.email.new': 'New email',
+    'uc.email.send': 'Send code', 'uc.email.code': 'Code',
+    'uc.email.confirm': 'Confirm switch', 'uc.email.sent': 'Code sent to {e}',
+    'uc.pass.old': 'Current password', 'uc.pass.new': 'New password (8+ chars)',
+    'uc.pass.oauth': 'OAuth-only account has no password — set one via "Forgot password" in the sign-in dialog',
+    'uc.logout': 'Sign out',
+    'uc.fav.when': 'saved {t}', 'uc.like.when': 'liked {t}',
+    'uc.likes.count': '👍 {n}',
+    'auth.e.email_taken': 'Email already bound to another account',
+    'auth.e.same_email': 'New email is the same as the current one',
+    'auth.e.oauth_only': 'OAuth account has no password — set one via forgot-password',
+    'auth.e.display_name_empty': 'Nickname cannot be empty',
+    'auth.e.display_name_not_allowed': 'Nickname contains disallowed content',
     'cm.title': 'Comments', 'cm.ph': 'Write a comment…',
     'cm.submit': 'Post', 'cm.login': 'Sign in to comment',
     'cm.pending': 'under review', 'cm.report': 'Report', 'cm.del': 'Delete',
@@ -561,13 +621,16 @@ function renderAuthChip() {
   if (zk.user) {
     const av = zk.user.avatar_url
       ? `<img class="auth-av" src="${esc(zk.user.avatar_url)}" alt="" width="22" height="22">` : '';
+    const base = document.body.dataset.base || '';
     el.innerHTML = `<button class="auth-chip" id="authBtn" type="button">${av}<span>${esc(zk.user.display_name || zk.user.username)}</span></button>
       <div class="auth-drop" id="authDrop" hidden>
-        <button class="auth-item" id="authFav" type="button">${esc(t('fav.mine'))}</button>
+        <a class="auth-item" href="${base}user?tab=fav">${esc(t('fav.mine'))}</a>
+        <a class="auth-item" href="${base}user?tab=likes">${esc(t('uc.tab.likes'))}</a>
+        <a class="auth-item" href="${base}user?tab=comments">${esc(t('uc.tab.comments'))}</a>
+        <a class="auth-item" href="${base}user?tab=settings">${esc(t('uc.tab.settings'))}</a>
         <button class="auth-item" id="authOut" type="button">${esc(t('auth.logout'))}</button>
       </div>`;
     $('#authBtn').onclick = () => { $('#authDrop').hidden = !$('#authDrop').hidden; };
-    $('#authFav').onclick = () => { $('#authDrop').hidden = true; openFavs(); };
     $('#authOut').onclick = zkLogout;
   } else {
     el.innerHTML = `<button class="auth-chip" id="authBtn" type="button">${esc(t('auth.login'))}</button>`;
@@ -790,23 +853,5 @@ function openNameModal(reason) {
   });
 }
 
-async function openFavs() {
-  let items = [];
-  try { items = (await api('/me/favorites?site=github')).items || []; } catch { }
-  const ov = document.createElement('div');
-  ov.className = 'sh-ov';
-  ov.innerHTML = `<div class="sh-card">
-    <div class="sh-head"><span>${esc(t('fav.mine'))}</span><button class="sh-x" aria-label="close">✕</button></div>
-    <div class="fav-list">${items.length ? items.map(f => {
-      const o = f.item_id.split('/')[0], n = f.item_id.split('/').slice(1).join('/');
-      return `<a class="fav-item" href="${document.body.dataset.base || ''}repos/${encodeURIComponent(o)}__${encodeURIComponent(n)}">
-        <span class="fav-name">${esc(f.item_id)}</span>
-        <span class="fav-meta">${f.lang ? esc(f.lang) + ' · ' : ''}${f.stars ? '★ ' + fmt(f.stars) : ''}</span></a>`;
-    }).join('') : `<div class="fav-empty">${esc(t('fav.empty'))}</div>`}</div>
-  </div>`;
-  const onEsc = (e) => { if (e.key === 'Escape') { ov.remove(); document.removeEventListener('keydown', onEsc); } };
-  document.addEventListener('keydown', onEsc);
-  ov.addEventListener('click', e => { if (e.target === ov) { ov.remove(); document.removeEventListener('keydown', onEsc); } });
-  ov.querySelector('.sh-x').onclick = () => { ov.remove(); document.removeEventListener('keydown', onEsc); };
-  document.body.appendChild(ov);
-}
+/* favorites/likes/comments lists live on the /user page now — the auth
+   dropdown links straight there with ?tab=... */

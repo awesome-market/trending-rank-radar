@@ -151,6 +151,10 @@ site/                        # GitHub Pages 根目录（或 /docs）
 - 768–1024px：领奖台纵向堆叠，hero 视觉区单列
 - <768px：领奖台卡片全宽、榜单 tabs 折行、行元信息只留 star/fork、sparkline 隐藏
 
+## 用户中心 `user.html`
+
+独立静态页 `/user`（`noindex,nofollow`，不进 sitemap，`?tab=` 深链），右上角 auth 下拉即各 tab 的入口链接。四 tab：收藏/点赞（行列表 + 取消按钮，数据源 `GET /me/favorites|likes`）、我的评论（`GET /me/comments`，含审核状态 tag + 自删）、设置（昵称 `POST /auth/display_name`、用户名 `POST /auth/username`、换绑邮箱两步 `POST /auth/email`→`verify`、改密码 `POST /auth/password` 仅 `has_password` 时显示、绑定方只读、退出登录）。未登录态显示登录引导卡而非跳转。所有数据经 api-site + JWT，`user.js` 按 tab 懒加载。
+
 ## 数据消费约定
 
 前端只读 JSON，不做任何计算。榜单条目需含 sparkline 数据：
@@ -205,6 +209,6 @@ site/                        # GitHub Pages 根目录（或 /docs）
 
 三套统计并行，互不干扰、各自定位不同：
 
-- **自建 `/stats/view`**（api-site）：`app.js`/`repo.js` 加载时 fire-and-forget，`path=location.pathname` 归属真实页面（曾硬编码 `/` 导致板/tag/语言页全记成首页）；IP+UA 日盐哈希去重不存原始 IP，数据用于行内"浏览数"展示与 admin 统计面板。
+- **自建 `/stats/view`**（api-site）：`app.js`/`repo.js`/`user.js` 加载时 fire-and-forget，`path=location.pathname` 归属真实页面（曾硬编码 `/` 导致板/tag/语言页全记成首页）；IP+UA 日盐哈希去重不存原始 IP，数据用于行内"浏览数"展示与 admin 统计面板。带登录态的请求另落 `user_views` 浏览历史，仅管理后台用户行「历史」按钮可见。
 - **Cloudflare Web Analytics**：CF 边缘对浏览器 UA **自动注入** beacon（curl/探测请求拿不到注入属预期，非故障），免代码免 cookie；面板提供 PV/UV/来源/设备 + Core Web Vitals。
 - **百度统计 hm.js**：注入 `index.html`/`repo.html`/`404.html` 模板，构建传播到全部生成页。`common.js` 捕获阶段委托监听把出站点击发 `_trackEvent`（category=`outbound`，action 分 `repo/repo-sub/topic/homepage/other`，label=目标 URL——外链多为 `target=_blank` 本页存活，送达可靠）；`app.js` 在 `pushState` 后补 `_trackPageview`，SPA tab/筛选切换也计 PV。事件在百度后台「事件跟踪」报表查看。
