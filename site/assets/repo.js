@@ -515,7 +515,7 @@ function downloadRowHTML(d) {
   const file = !/^v?\d[\d.]*$/i.test(tag) ? tag
     : (base.toLowerCase().includes(ver.toLowerCase()) ? base : `${base}-${ver}`);
   const href = `${d.url}/releases/tag/${encodeURIComponent(r.tag)}`;
-  return `<div class="rp-dl" id="rpDl"${repo.ctab === 'ov' ? '' : ' hidden'}><span class="rp-dl-label">${esc(t('rp.dl'))}</span>
+  return `<div class="rp-dl"><span class="rp-dl-label">${esc(t('rp.dl'))}</span>
     <span class="rp-dl-t">${esc(r.name || r.tag)}</span>
     <a class="rp-dl-a" href="${esc(href)}" target="_blank" rel="noopener">${esc(file)} ↓</a>
     <span class="rp-dl-ver">${esc(ver)}</span>
@@ -533,7 +533,7 @@ function overviewPanel(d) {
   }).join('');
   const readme = d.readme
     ? `<h3 class="rp-ph">${t('rp.readme')}</h3><div class="rp-pre rp-readme"><div class="rp-readme-md" id="rpReadme"></div></div>` : '';
-  return `<div class="rp-metric-grid">${growth}${grid}</div>${readme}`;
+  return `<div class="rp-metric-grid">${growth}${grid}</div>${downloadRowHTML(d)}${readme}`;
 }
 
 /* Full README: fetched from data/readme/<repo>.md (or .zh.md when the UI
@@ -715,7 +715,7 @@ function renderAllRepo() {
   $('#repoContent').innerHTML = crumbHTML(d) + topHTML(d)
     + ptabsHTML() + trendHTML(d)
     + `<section class="rp-social card" id="rpSocial"></section>`
-    + ctabsHTML(d) + downloadRowHTML(d)
+    + ctabsHTML(d)
     + `<section class="rp-panel card" id="rpPanel">${panelHTML(d)}</section>`
     + newsHTML(d);
   if (repo.ctab === 'ov') loadReadme(d);
@@ -1033,8 +1033,6 @@ function syncTabs() {
     b.classList.toggle('active', b.dataset.metric === repo.metric));
   document.querySelectorAll('.rp-ctab[data-ctab]').forEach(b =>
     b.classList.toggle('active', b.dataset.ctab === repo.ctab));
-  const dl = $('#rpDl');
-  if (dl) dl.hidden = repo.ctab !== 'ov';
 }
 
 async function renderFoot(d) {
