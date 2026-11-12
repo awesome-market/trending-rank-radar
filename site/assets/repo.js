@@ -529,10 +529,9 @@ function overviewPanel(d) {
     return `<div class="rp-metric"><div class="rp-metric-num">${fmtFull(v)}</div>
       <div class="rp-metric-label">${t('units.' + k)}</div></div>`;
   }).join('');
-  const dl = downloadRowHTML(d);
   const readme = d.readme
     ? `<h3 class="rp-ph">${t('rp.readme')}</h3><div class="rp-pre rp-readme"><div class="rp-readme-md" id="rpReadme"></div></div>` : '';
-  return `${dl}<div class="rp-metric-grid">${growth}${grid}</div>${readme}`;
+  return `<div class="rp-metric-grid">${growth}${grid}</div>${readme}`;
 }
 
 /* Full README: fetched from data/readme/<repo>.md (or .zh.md when the UI
@@ -660,6 +659,7 @@ function ctabsHTML(d) {
   const defs = [
     ['ov', t('rp.ctab.ov'), null],
     ['is', 'Issue', m.issues],
+    ['di', 'Discussions', m.discussions],
     ['re', 'Releases', m.releases],
   ];
   return `<div class="rp-ctabs" role="tablist">${defs.map(([k, label, n]) =>
@@ -713,7 +713,8 @@ function renderAllRepo() {
   $('#repoContent').innerHTML = crumbHTML(d) + topHTML(d)
     + ptabsHTML() + trendHTML(d)
     + `<section class="rp-social card" id="rpSocial"></section>`
-    + ctabsHTML(d) + `<section class="rp-panel card" id="rpPanel">${panelHTML(d)}</section>`
+    + ctabsHTML(d) + downloadRowHTML(d)
+    + `<section class="rp-panel card" id="rpPanel">${panelHTML(d)}</section>`
     + newsHTML(d);
   if (repo.ctab === 'ov') loadReadme(d);
   renderChart();
