@@ -513,7 +513,7 @@ function downloadRowHTML(d) {
   // bare "v1.4.2"/"1.4.2" tags get composed into "name-1.4.2".
   const file = /^v?\d[\d.]*$/i.test(tag) ? `${base}-${ver}` : tag;
   const href = `${d.url}/releases/tag/${encodeURIComponent(r.tag)}`;
-  return `<div class="rp-dl"><span class="rp-dl-label">${esc(t('rp.dl'))}</span>
+  return `<div class="rp-dl" id="rpDl"${repo.ctab === 'ov' ? '' : ' hidden'}><span class="rp-dl-label">${esc(t('rp.dl'))}</span>
     <span class="rp-dl-t">${esc(r.name || r.tag)}</span>
     <a class="rp-dl-a" href="${esc(href)}" target="_blank" rel="noopener">${esc(file)} ↓</a>
     <span class="rp-dl-ver">${esc(ver)}</span>
@@ -1031,6 +1031,8 @@ function syncTabs() {
     b.classList.toggle('active', b.dataset.metric === repo.metric));
   document.querySelectorAll('.rp-ctab[data-ctab]').forEach(b =>
     b.classList.toggle('active', b.dataset.ctab === repo.ctab));
+  const dl = $('#rpDl');
+  if (dl) dl.hidden = repo.ctab !== 'ov';
 }
 
 async function renderFoot(d) {
