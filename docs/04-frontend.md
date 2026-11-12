@@ -200,3 +200,11 @@ site/                        # GitHub Pages 根目录（或 /docs）
 - `llms.txt`：LLM 友好的站点说明 + 全部 JSON 数据端点 + 字段字典 + 口径说明
 - `sitemap.xml`（rank.py 生成）：首页 + 各榜单入口（`?board=*`）
 - `site/CNAME` 随 artifact 发布维持自定义域名绑定
+
+## 统计埋点
+
+三套统计并行，互不干扰、各自定位不同：
+
+- **自建 `/stats/view`**（api-site）：`app.js`/`repo.js` 加载时 fire-and-forget，`path=location.pathname` 归属真实页面（曾硬编码 `/` 导致板/tag/语言页全记成首页）；IP+UA 日盐哈希去重不存原始 IP，数据用于行内"浏览数"展示与 admin 统计面板。
+- **Cloudflare Web Analytics**：CF 边缘对浏览器 UA **自动注入** beacon（curl/探测请求拿不到注入属预期，非故障），免代码免 cookie；面板提供 PV/UV/来源/设备 + Core Web Vitals。
+- **百度统计 hm.js**：注入 `index.html`/`repo.html`/`404.html` 模板，构建传播到全部生成页。`common.js` 捕获阶段委托监听把出站点击发 `_trackEvent`（category=`outbound`，action 分 `repo/repo-sub/topic/homepage/other`，label=目标 URL——外链多为 `target=_blank` 本页存活，送达可靠）；`app.js` 在 `pushState` 后补 `_trackPageview`，SPA tab/筛选切换也计 PV。事件在百度后台「事件跟踪」报表查看。

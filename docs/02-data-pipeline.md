@@ -76,7 +76,7 @@ data/
 
 - **GraphQL 批量**（主力，**两档抓取**）：
   - **核心字段**（每次运行）：`stargazerCount / forkCount / isFork / isArchived / createdAt / pushedAt / updatedAt / description / homepageUrl / primaryLanguage`——纯标量+小连接，batch=50 实测 ~2.5s/44 仓库，2000 仓库约 40 请求 ~100s。
-  - **扩展字段**（每日一次，UTC 14:00"收盘"运行）：`watchers / repositoryTopics / issues / pullRequests / releases` 的 `totalCount`，以及 issues/PR 的状态拆分计数（`issues OPEN/CLOSED`、`pullRequests OPEN/CLOSED/MERGED` 的 `totalCount`），外加**详情对象**——`owner.avatarUrl`、`licenseInfo`、`discussions` 计数与最新 8 条、最热 open issues 8 条（按评论数）、`latestRelease`、完整 `README.md`（及常见命名的中文版 `README.*zh*|*CN*.md`）——随同一查询抓取，复杂度高故 batch=15。非扩展运行这些字段为 `null`，快照写入前用"最近一次含扩展值的快照"向前沿用补齐；详情对象则写入 `data/repos/*.json` 的 `detail` 键（同样向前沿用，见下）。榜单计算不依赖扩展字段，故对排名零影响。
+  - **扩展字段**（每日一次，UTC 14:00"收盘"运行）：`watchers / repositoryTopics / issues / pullRequests / releases` 的 `totalCount`，以及 issues/PR 的状态拆分计数（`issues OPEN/CLOSED`、`pullRequests OPEN/CLOSED/MERGED` 的 `totalCount`），外加**详情对象**——`owner.avatarUrl`、`licenseInfo`、`discussions` 计数与最新 8 条、最热 open issues 8 条（按评论数）、`latestRelease`、完整 `README.md`（及常见命名的中文版 `README.*zh*|*CN*.md`）——随同一查询抓取，复杂度高故 batch=15。注意 `latestRelease` **跳过 draft 和 pre-release**——全部预发布的仓（如 DiPlay）返回 null，采集时回退取 `releases(first:1, CREATED_AT DESC)` 最新节点并在详情里标 `is_prerelease`（前端显示"预发布"徽标）。非扩展运行这些字段为 `null`，快照写入前用"最近一次含扩展值的快照"向前沿用补齐；详情对象则写入 `data/repos/*.json` 的 `detail` 键（同样向前沿用，见下）。榜单计算不依赖扩展字段，故对排名零影响。
 - **REST 兜底**：GraphQL 失败或个别仓库查不到时，用 `GET /repos/{owner}/{repo}` 补漏。注意限额差异：**GITHUB_TOKEN 为 1000 req/hr**，PAT/OAuth 为 5000 req/hr——兜底预算按 1000/hr 设计。
 - **重试**：403/429/5xx 指数退避重试，最多 3 次；当日失败仓库在 `snapshot.errors` 中记录，次日补齐。
 

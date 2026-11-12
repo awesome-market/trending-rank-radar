@@ -83,6 +83,7 @@ jobs:
 - **数据面 → api-site blob store**：`site/data/**` 由 `scripts/pack_data.py` 打成单个 `site-data.db`（`data(path PK, blob)` KV 表）→ gzip 后 `POST https://api-site.zhuikan.com/data-upload`（Bearer `DATA_UPLOAD_TOKEN` secret，integrity_check + 原子替换 + sha256 回执）。前端水合统一从 `https://api-site.zhuikan.com/data/<path>` 取（`localhost` 开发时回退相对路径）。
 - **冷备**：`site/` 全量（含 `data/`）每轮推 `gh-pages` 分支 → `awesome-market.github.io/trending-rank-radar/` 镜像；该站水合同样指向 api-site，自身 data/ 文件仅作档案。
 - 数据不上线不发站：upload 失败→job 失败→CF 不部署；API 不可达时页面仍显示 SSR 快照（水合静默失败），属降级非宕机。
+- **Pages 路由层文件**：`site/404.html` 让未匹配路径返回真实 404（此前 SPA fallback 使任意乱拼路径回 200 + 首页 HTML——无限软 404 空间，GSC"已抓取未收录"的主要饲料）；`site/_redirects` 两条规则——`/data/*` → `api-site.zhuikan.com/data/:splat`（301，阴影覆盖 blob 化之前遗留的过期 data 文件：Pages 不回收已删文件，它们仍在服务旧数据）与 `/repo` → `/`（裸 `repo.html` noindex 模板不再直达）。
 
 ### 自定义域名
 
