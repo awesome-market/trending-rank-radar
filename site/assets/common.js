@@ -640,7 +640,7 @@ function renderAuthChip() {
   if (!el) {
     el = document.createElement('div');
     el.id = 'authChip'; el.className = 'auth-wrap';
-    meta.insertBefore(el, meta.firstChild);
+    meta.append(el);
   }
   if (zk.user) {
     const av = zk.user.avatar_url
