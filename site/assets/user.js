@@ -31,7 +31,7 @@ function ucErr(el, e) {
 /* ---------- tabs ---------- */
 
 function ucNav() {
-  return `<nav class="uc-tabs">${UC_TABS.map(k =>
+  return `<nav class="uc-side">${UC_TABS.map(k =>
     `<a class="uc-tab${k === uc.tab ? ' on' : ''}" href="user?tab=${k}" data-tab="${k}">${esc(t('uc.tab.' + k))}</a>`
   ).join('')}</nav>`;
 }
@@ -46,7 +46,8 @@ function render() {
     $('#ucLogin').onclick = () => openAuthModal('login');
     return;
   }
-  page.innerHTML = ucNav() + `<div class="uc-body" id="ucBody"><div class="uc-loading">${esc(t('loading'))}</div></div>`;
+  page.innerHTML = `<div class="uc-wrap">${ucNav()}`
+    + `<div class="uc-body" id="ucBody"><div class="uc-loading">${esc(t('loading'))}</div></div></div>`;
   page.querySelectorAll('.uc-tab').forEach(a => {
     a.onclick = (e) => {
       e.preventDefault();
@@ -142,48 +143,54 @@ async function ucLoadComments(el) {
 
 /* ---------- settings ---------- */
 
-function ucField(label, inner, hint = '') {
-  return `<section class="uc-sec"><h3 class="uc-h">${esc(label)}</h3>${inner}${hint ? `<p class="uc-hint">${hint}</p>` : ''}</section>`;
+function ucCard(forId, label, sub, inner, hint = '') {
+  const head = forId
+    ? `<label class="uc-card-t" for="${forId}">${esc(label)}</label>`
+    : `<span class="uc-card-t">${esc(label)}</span>`;
+  return `<section class="uc-card">
+    <div class="uc-card-h">${head}${sub || ''}</div>
+    ${inner}${hint ? `<p class="uc-hint">${hint}</p>` : ''}
+  </section>`;
 }
 
 async function ucLoadSettings(el) {
   const u = zk.user;
-  const nameHint = (u.name_status === 'pending' ? `<span class="uc-st pending">${esc(t('uc.name.pending'))}</span> ` : '')
-    + (u.name_reason ? esc(t('uc.name.reason', { r: u.name_reason })) : '');
+  const nameSub = (u.name_status === 'pending' ? `<span class="uc-st pending">${esc(t('uc.name.pending'))}</span>` : '')
+    + (u.name_reason ? `<span class="uc-hint-inline">${esc(t('uc.name.reason', { r: u.name_reason }))}</span>` : '');
   const mailChip = u.email_verified
     ? `<span class="uc-st approved">${esc(t('uc.verified'))}</span>`
     : `<span class="uc-st pending">${esc(t('uc.unverified'))}</span>`;
 
   el.innerHTML =
-    ucField(t('uc.set.name'), `
+    ucCard('ucDnIn', t('uc.set.name'), nameSub, `
       <div class="uc-field">
-        <input class="auth-in" id="ucDn" type="text" maxlength="64" value="${esc(u.display_name || '')}" placeholder="${esc(t('uc.set.name.ph'))}">
+        <input class="auth-in" id="ucDnIn" type="text" maxlength="64" value="${esc(u.display_name || '')}" placeholder="${esc(t('uc.set.name.ph'))}">
         <button class="uc-btn" id="ucDnGo" type="button">${esc(t('uc.save'))}</button>
       </div>
-      <p class="uc-err" id="ucDnErr" hidden></p>`, nameHint)
-    + ucField(t('uc.set.user'), `
+      <p class="uc-err" id="ucDnErr" hidden></p>`)
+    + ucCard('ucUnIn', t('uc.set.user'), '', `
       <div class="uc-field">
-        <input class="auth-in" id="ucUn" type="text" maxlength="32" value="${esc(u.username)}" placeholder="${esc(t('uc.set.user.ph'))}" autocomplete="off">
+        <input class="auth-in" id="ucUnIn" type="text" maxlength="32" value="${esc(u.username)}" placeholder="${esc(t('uc.set.user.ph'))}" autocomplete="off">
         <button class="uc-btn" id="ucUnGo" type="button">${esc(t('uc.save'))}</button>
       </div>
       <p class="uc-err" id="ucUnErr" hidden></p>`)
-    + ucField(t('uc.set.email'), `
-      <p class="uc-meta">${esc(u.email || '—')} ${mailChip}</p>
+    + ucCard(null, t('uc.set.email'), mailChip, `
+      <p class="uc-meta">${esc(u.email || '—')}</p>
       <div id="ucMailBox"><button class="uc-btn" id="ucMailBtn" type="button">${esc(t('uc.email.change'))}</button></div>`)
     + (u.has_password
-      ? ucField(t('uc.set.pass'), `
+      ? ucCard('ucPwO', t('uc.set.pass'), '', `
         <div class="uc-field"><input class="auth-in" id="ucPwO" type="password" placeholder="${esc(t('uc.pass.old'))}" autocomplete="current-password"></div>
         <div class="uc-field">
           <input class="auth-in" id="ucPwN" type="password" placeholder="${esc(t('uc.pass.new'))}" autocomplete="new-password">
           <button class="uc-btn" id="ucPwGo" type="button">${esc(t('uc.save'))}</button>
         </div>
         <p class="uc-err" id="ucPwErr" hidden></p>`)
-      : ucField(t('uc.set.pass'), '', esc(t('uc.pass.oauth'))))
-    + ucField(t('uc.set.bind'), `
+      : ucCard(null, t('uc.set.pass'), '', '', esc(t('uc.pass.oauth'))))
+    + ucCard(null, t('uc.set.bind'), '', `
       <p class="uc-meta">${(u.providers && u.providers.length)
         ? u.providers.map(p => `<span class="uc-tag">${esc(p)}</span>`).join(' ')
         : '—'}</p>`)
-    + `<section class="uc-sec"><button class="uc-btn uc-danger" id="ucOut" type="button">${esc(t('uc.logout'))}</button></section>`;
+    + `<section class="uc-card"><button class="uc-btn uc-danger" id="ucOut" type="button">${esc(t('uc.logout'))}</button></section>`;
 
   const refresh = async () => { await zkLoadUser(); renderAuthChip(); };
   const saveGo = async (btn, run, errEl) => {
@@ -205,13 +212,13 @@ async function ucLoadSettings(el) {
   $('#ucDnGo').onclick = () => saveGo($('#ucDnGo'), () =>
     api('/auth/display_name', {
       method: 'POST',
-      body: JSON.stringify({ display_name: $('#ucDn').value.trim() })
+      body: JSON.stringify({ display_name: $('#ucDnIn').value.trim() })
     }).then(r => { zk.user.display_name = r.display_name; }), $('#ucDnErr'));
 
   $('#ucUnGo').onclick = () => saveGo($('#ucUnGo'), () =>
     api('/auth/username', {
       method: 'POST',
-      body: JSON.stringify({ username: $('#ucUn').value.trim() })
+      body: JSON.stringify({ username: $('#ucUnIn').value.trim() })
     }), $('#ucUnErr'));
 
   $('#ucPwGo') && ($('#ucPwGo').onclick = () => saveGo($('#ucPwGo'), async () => {
@@ -228,7 +235,7 @@ async function ucLoadSettings(el) {
   $('#ucMailBtn').onclick = () => {
     $('#ucMailBox').innerHTML = `
       <div class="uc-field">
-        <input class="auth-in" id="ucEm" type="email" maxlength="200" placeholder="${esc(t('uc.email.new'))}" autocomplete="off">
+        <input class="auth-in" id="ucEmIn" type="email" maxlength="200" placeholder="${esc(t('uc.email.new'))}" autocomplete="off">
         <button class="uc-btn" id="ucEmGo" type="button">${esc(t('uc.email.send'))}</button>
       </div>
       <div class="uc-field" id="ucEmCodeWrap" hidden>
@@ -237,9 +244,9 @@ async function ucLoadSettings(el) {
       </div>
       <p class="uc-hint" id="ucEmHint" hidden></p>
       <p class="uc-err" id="ucEmErr" hidden></p>`;
-    $('#ucEm').focus();
+    $('#ucEmIn').focus();
     $('#ucEmGo').onclick = () => saveGo($('#ucEmGo'), async () => {
-      const email = $('#ucEm').value.trim();
+      const email = $('#ucEmIn').value.trim();
       await api('/auth/email', {
         method: 'POST',
         body: JSON.stringify({ email, lang: LANG })
