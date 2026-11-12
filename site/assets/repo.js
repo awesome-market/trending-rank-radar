@@ -657,7 +657,6 @@ function ctabsHTML(d) {
   const defs = [
     ['ov', t('rp.ctab.ov'), null],
     ['is', 'Issue', m.issues],
-    ['di', 'Discussions', m.discussions],
     ['re', 'Releases', m.releases],
   ];
   return `<div class="rp-ctabs" role="tablist">${defs.map(([k, label, n]) =>

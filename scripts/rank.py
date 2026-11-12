@@ -338,9 +338,6 @@ def _ssr_repo(p: dict) -> str:
     sec_i = (f'<h3 class="rp-ph">Top issues</h3>'
              f'<div class="rp-list">{lst(p.get("issues"), p["url"] + "/issues")}</div>'
              if p.get("issues") else "")
-    sec_d = (f'<h3 class="rp-ph">Discussions</h3>'
-             f'<div class="rp-list">{lst(p.get("discussions"), p["url"] + "/discussions")}</div>'
-             if p.get("discussions") else "")
     av_url = _esc(p.get("avatar") or "")
     same_links = "".join(
         f'<a class="rp-same-link" href="{_esc(x["full_name"]).replace("/", "__")}">'
@@ -384,7 +381,7 @@ def _ssr_repo(p: dict) -> str:
   </div>
 </div>
 <section class="rp-panel card"><div class="rp-metric-grid">{growth_mets}{mets}</div>
-{dl_html}{readme_html}{sec_i}{sec_d}{rel_html}</section>
+{dl_html}{readme_html}{sec_i}{rel_html}</section>
 {news_html}
 {_ssr_comments(p.get('cm_items'))}
 <p class="rp-meta">Snapshot: {_esc(p.get('snapshot_at'))} · Data license Apache-2.0 ·
