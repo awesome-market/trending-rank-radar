@@ -214,14 +214,30 @@ function renderChart() {
 }
 
 /* ---------------- share image ---------------- */
-function loadImg(src) {
+function loadImg(src, timeout = 4000) {
   return new Promise(res => {
     const i = new Image();
+    const to = setTimeout(() => {
+      i.onload = i.onerror = null; i.src = 'about:blank'; res(null);
+    }, timeout);
     i.crossOrigin = 'anonymous';
-    i.onload = () => res(i);
-    i.onerror = () => res(null);
+    i.onload = () => { clearTimeout(to); res(i); };
+    i.onerror = () => { clearTimeout(to); res(null); };
     i.src = src;
   });
+}
+
+/* QR 本地绘——qrcode-generator（vendor）算模块矩阵，零网络请求 */
+function drawQr(c, url, x, y, size) {
+  const q = qrcode(0, 'M'); q.addData(url); q.make();
+  const n = q.getModuleCount(), quiet = 2, px = size / (n + quiet * 2);
+  c.fillStyle = '#1f2328';
+  for (let r = 0; r < n; r++)
+    for (let col = 0; col < n; col++)
+      if (q.isDark(r, col))
+        c.fillRect(Math.round(x + (col + quiet) * px),
+                   Math.round(y + (r + quiet) * px),
+                   Math.ceil(px), Math.ceil(px));
 }
 
 function fitText(c, txt, maxW) {
@@ -362,13 +378,12 @@ async function shareCanvas(d) {
   c.fillStyle = '#6e7781'; c.font = F(400, 26);
   c.fillText(fitText(c, `zhuikan.com/repos/${d.full_name.replace('/', '__')}`, W - 72 - 170 - 182 - 20), 182, fy + 152);
   const pageUrl = `https://zhuikan.com/repos/${d.full_name.replace('/', '__')}`;
-  const qr = await loadImg(`https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=6&data=${encodeURIComponent(pageUrl)}`);
-  if (qr) {
-    c.drawImage(qr, W - 72 - 150, fy + 40, 150, 150);
+  try {
+    drawQr(c, pageUrl, W - 72 - 150, fy + 40, 150);
     c.fillStyle = '#9aa4b0'; c.font = F(400, 20); c.textAlign = 'center';
     c.fillText(t('rp.share.scan'), W - 72 - 75, fy + 216);
     c.textAlign = 'left';
-  }
+  } catch { /* qrcode lib 缺失时跳过，不阻塞成图 */ }
   return cv;
 }
 
@@ -377,7 +392,7 @@ async function openShareModal(d) {
   ov.className = 'sh-ov';
   ov.innerHTML = `<div class="sh-card">
     <div class="sh-head"><span>${t('rp.share.title')}</span><button class="sh-x" aria-label="close">✕</button></div>
-    <div class="sh-prev"></div>
+    <div class="sh-prev"><div class="sh-load">${esc(t('rp.share.gen'))}</div></div>
     <div class="sh-btns">
       <button class="rp-btn rp-btn-acc" id="shDl">⤓ ${t('rp.share.dl')}</button>
       <button class="rp-btn" id="shCp">${t('rp.share.cp')}</button>
@@ -393,7 +408,9 @@ async function openShareModal(d) {
   const cv = await shareCanvas(d);
   if (!document.body.contains(ov)) return;
   cv.className = 'sh-img';
-  ov.querySelector('.sh-prev').appendChild(cv);
+  const prev = ov.querySelector('.sh-prev');
+  prev.innerHTML = '';
+  prev.appendChild(cv);
   // 外链图片若 CORS 失败会污染画布 → toBlob 直接抛 SecurityError；
   // 那时预览还在，但下载/复制必须禁用，否则点击无声崩溃
   let blob = null;

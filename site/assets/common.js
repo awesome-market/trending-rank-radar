@@ -147,6 +147,7 @@ const I18N = {
     'rp.share.scan': '扫码查看详情',
     'rp.share.hint': '手机端可长按图片保存，分享到朋友圈 / 社群',
     'rp.share.nodata': '数据收集中…',
+    'rp.share.gen': '生成中…',
 
     'rp.share.dl': '下载 PNG',
     'rp.share.cp': '复制图片',
@@ -314,6 +315,7 @@ const I18N = {
     'rp.share.scan': 'Scan for details',
     'rp.share.hint': 'Long-press the image to save & share on mobile',
     'rp.share.nodata': 'Collecting data…',
+    'rp.share.gen': 'Rendering…',
 
     'rp.share.dl': 'Download PNG',
     'rp.share.cp': 'Copy image',
