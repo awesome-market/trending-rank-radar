@@ -1455,6 +1455,8 @@ def main() -> int:
             "d": (m.get("description") or "")[:160],
             "l": cur[I_LANG],
             "s": int(cur[I_STARS] or 0),
+            "f": int(cur[I_FORKS] or 0),
+            "w": int(cur[I_WATCHERS] or 0),
         })
         nws = [i["title"] for i in (payload["news"] or [])[:8] if i.get("title")]
         if nws:

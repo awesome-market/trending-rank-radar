@@ -951,6 +951,26 @@ async function loadComments(d) {
       else if (e.code) alert(authErr(e));
     }
   });
+  // ?c=<id> 深链（用户中心"我的评论"跳转）：展开评论区 → 锚到目标评论，
+  // scroll-margin-top 留顶部空隙；消费一次即从 URL 抹掉，后续重载不再触发
+  const cq = new URLSearchParams(location.search);
+  if (cq.get('c')) {
+    const target = el.querySelector(`.cm-item[data-id="${CSS.escape(cq.get('c'))}"]`);
+    cq.delete('c');
+    const s = cq.toString();
+    history.replaceState(null, '', location.pathname + (s ? '?' + s : ''));
+    if (target) {
+      const body = $('#rpCmBody');
+      if (body && body.hidden) {
+        body.hidden = false;
+        const cmBtn = $('#socCm');
+        if (cmBtn) cmBtn.classList.add('on');
+      }
+      target.scrollIntoView({ block: 'start', behavior: 'smooth' });
+      target.classList.add('cm-flash');
+      setTimeout(() => target.classList.remove('cm-flash'), 1600);
+    }
+  }
 }
 
 document.addEventListener('zk:auth', () => {

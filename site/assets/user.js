@@ -79,7 +79,8 @@ async function ucLoadItems(el, kind) {
     return `<div class="uc-row" data-id="${esc(f.item_id)}">
       <div class="uc-main">
         ${href ? `<a class="uc-name" href="${href}">${esc(f.item_id)}</a>` : `<span class="uc-name">${esc(f.item_id)}</span>`}
-        <span class="uc-meta">${f.lang ? esc(f.lang) + ' · ' : ''}${f.stars ? '★ ' + fmt(f.stars) + ' · ' : ''}${esc(t(whenKey, { t: ucDate(f.created_at) }))}</span>
+        ${f.description ? `<div class="uc-desc">${esc(f.description)}</div>` : ''}
+        <span class="uc-meta">${f.lang ? esc(f.lang) : ''}${f.stars ? ' · ★ ' + fmt(f.stars) : ''}${f.forks ? ' · ⑂ ' + fmt(f.forks) : ''}${f.watchers ? ' · 👁 ' + fmt(f.watchers) : ''}${f.lang || f.stars || f.forks || f.watchers ? ' · ' : ''}${esc(t(whenKey, { t: ucDate(f.created_at) }))}</span>
       </div>
       <button class="uc-rm" type="button">${esc(t(rmKey))}</button>
     </div>`;
@@ -119,7 +120,7 @@ async function ucLoadComments(el) {
           ${c.parent_id ? `<span class="uc-tag">${esc(t('uc.reply'))}</span>` : ''}
           <span class="uc-st ${c.status}">${esc(t('uc.st.' + c.status))}</span>
           ${c.likes ? `<span>${esc(t('uc.likes.count', { n: c.likes }))}</span>` : ''}
-          ${href ? `<a class="uc-link" href="${href}">${esc(c.item_id)}</a>` : `<span>${esc(c.item_id)}</span>`}
+          ${href ? `<a class="uc-link" href="${href}?c=${c.id}">${esc(c.item_id)}</a>` : `<span>${esc(c.item_id)}</span>`}
           <span>${ucDate(c.created_at)}</span>
         </div>
         ${c.status === 'rejected' && c.mod_reason ? `<div class="uc-reason">${esc(c.mod_reason)}</div>` : ''}
@@ -155,8 +156,10 @@ function ucCard(forId, label, sub, inner, hint = '') {
 
 async function ucLoadSettings(el) {
   const u = zk.user;
-  const nameSub = (u.name_status === 'pending' ? `<span class="uc-st pending">${esc(t('uc.name.pending'))}</span>` : '')
-    + (u.name_reason ? `<span class="uc-hint-inline">${esc(t('uc.name.reason', { r: u.name_reason }))}</span>` : '');
+  const nameSub = u.name_status === 'pending'
+    ? `<span class="uc-st pending">${esc(t('uc.name.pending'))}</span>`
+    : u.name_status === 'rejected' && u.name_reason
+      ? `<span class="uc-hint-inline">${esc(t('uc.name.reason', { r: u.name_reason }))}</span>` : '';
   const mailChip = u.email_verified
     ? `<span class="uc-st approved">${esc(t('uc.verified'))}</span>`
     : `<span class="uc-st pending">${esc(t('uc.unverified'))}</span>`;
@@ -187,9 +190,13 @@ async function ucLoadSettings(el) {
         <p class="uc-err" id="ucPwErr" hidden></p>`)
       : ucCard(null, t('uc.set.pass'), '', '', esc(t('uc.pass.oauth'))))
     + ucCard(null, t('uc.set.bind'), '', `
-      <p class="uc-meta">${(u.providers && u.providers.length)
-        ? u.providers.map(p => `<span class="uc-tag">${esc(p)}</span>`).join(' ')
-        : '—'}</p>`)
+      <div class="uc-binds">${['github', 'google'].map(p =>
+        (u.providers || []).includes(p)
+          ? `<span class="uc-bind-row"><span class="uc-tag">${esc(p)}</span><span class="uc-st approved">${esc(t('uc.bound'))}</span></span>`
+          : `<span class="uc-bind-row"><span class="uc-tag">${esc(p)}</span><button class="uc-btn" data-bind="${p}" type="button">${esc(t('uc.bind.do', { p }))}</button></span>`
+      ).join('')}</div>
+      <p class="uc-hint" id="ucBindHint" hidden></p>
+      <p class="uc-err" id="ucBindErr" hidden></p>`)
     + `<section class="uc-card"><button class="uc-btn uc-danger" id="ucOut" type="button">${esc(t('uc.logout'))}</button></section>`;
 
   const refresh = async () => { await zkLoadUser(); renderAuthChip(); };
@@ -267,6 +274,32 @@ async function ucLoadSettings(el) {
     }, $('#ucEmErr'));
   };
 
+  el.querySelectorAll('[data-bind]').forEach(b => {
+    b.onclick = async () => {
+      b.disabled = true;
+      try {
+        const r = await api(`/auth/link/${b.dataset.bind}`, { method: 'POST', body: '{}' });
+        location.href = API_BASE + r.url;
+      } catch (e) {
+        ucErr($('#ucBindErr') || null, e);
+        b.disabled = false;
+      }
+    };
+  });
+
+  if (ucLinkMsg) {                    // OAuth bind redirect landed here
+    const h = $('#ucBindHint'), e = $('#ucBindErr');
+    if (ucLinkMsg.ok) {
+      h.textContent = t('uc.linked', { p: ucLinkMsg.val });
+      h.hidden = false;
+    } else {
+      const fake = { code: ucLinkMsg.val, message: ucLinkMsg.val };
+      e.textContent = authErr(fake);
+      e.hidden = false;
+    }
+    ucLinkMsg = null;
+  }
+
   $('#ucOut').onclick = zkLogout;
 }
 
@@ -280,7 +313,13 @@ const UC_LOAD = {
 };
 
 uc.tab = ucTabFromURL();
-zkInit();
+let ucLinkMsg = null;
+{                                     // OAuth bind callback flag — parse
+  const m = location.hash.match(/[#&](linked|link_error)=([^&]*)/);
+  if (m) ucLinkMsg = { ok: m[1] === 'linked', val: decodeURIComponent(m[2]) };
+}
+zkInit();                             // consumes #token + cleans the hash
+if (ucLinkMsg) history.replaceState(null, '', location.pathname + location.search);
 applyStaticI18n();
 bindChrome(render);
 document.addEventListener('zk:auth', render);
