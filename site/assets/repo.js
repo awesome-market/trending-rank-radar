@@ -660,6 +660,7 @@ function ctabsHTML(d) {
   const m = d.metrics || {};
   const defs = [
     ['ov', t('rp.ctab.ov'), null],
+    ['nw', t('rp.ctab.nw'), (d.news || []).length || null],
     ['is', 'Issue', m.issues],
     ['di', 'Discussions', m.discussions],
     ['re', 'Releases', m.releases],
@@ -669,11 +670,11 @@ function ctabsHTML(d) {
 }
 
 function panelHTML(d) {
-  return { ov: overviewPanel, is: issuesPanel, di: discPanel, re: releasePanel }[repo.ctab](d);
+  return { ov: overviewPanel, nw: newsPanel, is: issuesPanel, di: discPanel, re: releasePanel }[repo.ctab](d);
 }
 
 /* ---------------- news (bilingual) ---------------- */
-function newsHTML(d) {
+function newsBlocks(d) {
   const items = d.news || [];
   if (!items.length) return '';
   const zh = items.filter(i => i.lang === 'zh');
@@ -703,10 +704,19 @@ function newsHTML(d) {
       <div class="rp-list">${lst.slice(0, 10).map(row).join('')}${more}</div>
     </div>`;
   };
-  return `<section class="rp-news card">`
-    + (zh.length ? blk(zh, 'zh', '相关报道') : '')
-    + (en.length ? blk(en, 'en', 'News &amp; coverage') : '')
-    + `</section>`;
+  return (zh.length ? blk(zh, 'zh', '相关报道') : '')
+    + (en.length ? blk(en, 'en', 'News &amp; coverage') : '');
+}
+
+function newsPanel(d) {
+  return newsBlocks(d) || `<div class="rp-panel-empty">${t('rp.nodata')}</div>`;
+}
+
+function newsHTML(d) {
+  const inner = newsBlocks(d);
+  if (!inner) return '';
+  // hidden while the News tab renders the same content in the panel
+  return `<section class="rp-news card" id="rpNewsSec"${repo.ctab === 'nw' ? ' hidden' : ''}>${inner}</section>`;
 }
 
 /* ---------------- render ---------------- */
@@ -1033,6 +1043,8 @@ function syncTabs() {
     b.classList.toggle('active', b.dataset.metric === repo.metric));
   document.querySelectorAll('.rp-ctab[data-ctab]').forEach(b =>
     b.classList.toggle('active', b.dataset.ctab === repo.ctab));
+  const ns = $('#rpNewsSec');
+  if (ns) ns.hidden = repo.ctab === 'nw';
 }
 
 async function renderFoot(d) {
