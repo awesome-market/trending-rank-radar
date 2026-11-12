@@ -461,6 +461,7 @@ function releasePanel(d) {
   return `<a class="rp-rel" href="${esc(d.url)}/releases" target="_blank" rel="noopener">
       <b>${esc(r.name || r.tag || '')}</b>
       <span class="rp-rel-tag">${esc(r.tag || '')}</span>
+      ${r.is_prerelease ? `<span class="rp-rel-pre">${t('rp.pre')}</span>` : ''}
       <span class="rp-item-extra">${esc((r.published_at || '').slice(0, 10))}</span>
     </a>
     ${body ? `<pre class="rp-pre">${esc(body)}</pre>` : ''}

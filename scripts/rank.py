@@ -305,10 +305,13 @@ def _ssr_repo(p: dict) -> str:
     rel_html = ""
     if rel:
         body = _plain(rel.get("body") or "", 600)
+        pre = ('<span class="rp-rel-pre">Pre-release</span> '
+               if rel.get("is_prerelease") else "")
         rel_html = (f'<h3 class="rp-ph">Latest release</h3>'
                     f'<a class="rp-rel" href="{_esc(p["url"])}/releases">'
                     f'<b>{_esc(rel.get("name") or rel.get("tag") or "")}</b> '
                     f'<span class="rp-rel-tag">{_esc(rel.get("tag") or "")}</span> '
+                    f'{pre}'
                     f'<span class="rp-item-extra">{_esc((rel.get("published_at") or "")[:10])}</span></a>'
                     + (f'<pre class="rp-pre">{body}</pre>' if body else ""))
     readme = p.get("readme_excerpt")

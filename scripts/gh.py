@@ -54,7 +54,9 @@ watchers(first: 1) { totalCount }
 repositoryTopics(first: 15) { nodes { topic { name } } }
 issues(first: 1) { totalCount }
 pullRequests(first: 1) { totalCount }
-releases(first: 1) { totalCount }
+releases(first: 1, orderBy: {field: CREATED_AT, direction: DESC}) {
+  totalCount nodes { name tagName publishedAt description isPrerelease }
+}
 openIssues: issues(first: 1, states: OPEN) { totalCount }
 closedIssues: issues(first: 1, states: CLOSED) { totalCount }
 openPrs: pullRequests(first: 1, states: OPEN) { totalCount }
@@ -63,7 +65,7 @@ mergedPrs: pullRequests(first: 1, states: MERGED) { totalCount }
 owner { avatarUrl login }
 licenseInfo { spdxId name }
 discussions(first: 1) { totalCount }
-latestRelease { name tagName publishedAt description }
+latestRelease { name tagName publishedAt description isPrerelease }
 hotIssues: issues(first: 8, states: OPEN, orderBy: {field: COMMENTS, direction: DESC}) {
   nodes { number title createdAt comments { totalCount } }
 }
@@ -390,12 +392,16 @@ class GitHubClient:
             detail["license"] = li.get("spdxId") or li.get("name")
         if "discussions" in node:
             detail["discussions_total"] = (node.get("discussions") or {}).get("totalCount")
-        if node.get("latestRelease"):
-            lr = node["latestRelease"]
+        # latestRelease 跳过 draft/pre-release——全预发布的仓（如 DiPlay）
+        # 会拿到 null，用 releases(first:1, CREATED_AT DESC) 的节点兜底
+        rel_nodes = (node.get("releases") or {}).get("nodes") or []
+        lr = node.get("latestRelease") or (rel_nodes[0] if rel_nodes else None)
+        if lr:
             detail["latest_release"] = {
                 "name": lr.get("name"), "tag": lr.get("tagName"),
                 "published_at": lr.get("publishedAt"),
                 "body": (lr.get("description") or "")[:4000],
+                "is_prerelease": bool(lr.get("isPrerelease")),
             }
         if "hotIssues" in node:
             detail["hot_issues"] = [
