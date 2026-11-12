@@ -264,8 +264,13 @@ async function shareCanvas(d) {
   bar.addColorStop(0, ACC); bar.addColorStop(1, ACC2);
   c.fillStyle = bar; c.fillRect(0, 0, W, 12);
 
-  /* header: avatar + name + desc */
-  const avImg = await loadImg(d.avatar ? `${d.avatar}&s=240` : `https://github.com/${encodeURIComponent(d.owner)}.png?size=240`);
+  /* header: avatar + name + desc —— 复用侧栏已加载的头像 URL：
+     非 CORS 的 DOM img 直接画会污染画布（toBlob 抛错），所以仍走
+     crossOrigin 模式重取；同 URL 命中 HTTP 缓存，成本≈本地读 */
+  const domSrc = document.querySelector('.rp-side-av')?.getAttribute('src');
+  const avSrc = domSrc ||
+    (d.avatar ? `${d.avatar}&s=240` : `https://github.com/${encodeURIComponent(d.owner)}.png?size=240`);
+  const avImg = await loadImg(avSrc);
   const ax = 72, ay = 92, asz = 120;
   if (avImg) {
     c.save();
