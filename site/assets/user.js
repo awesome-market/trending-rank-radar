@@ -167,7 +167,7 @@ async function ucLoadSettings(el) {
     ? u.former_names.join('、') : t('uc.former.none');
   const noRenames = (u.renames_left ?? 1) <= 0;
   const nickHtml = uc.editing
-    ? `<input class="auth-in uc-nick-in" id="ucNickIn" type="text" maxlength="64"
+    ? `<input class="auth-in uc-sm-in" id="ucNickIn" type="text" maxlength="64"
          value="${esc(u.display_name || '')}" placeholder="${esc(t('uc.set.name.ph'))}">
        <button class="uc-btn" id="ucNickGo" type="button">${esc(t('uc.save'))}</button>
        <button class="uc-btn uc-ghost" id="ucNickCancel" type="button">${esc(t('uc.cancel'))}</button>`
@@ -179,27 +179,30 @@ async function ucLoadSettings(el) {
       <div class="uc-acct">
         <span class="uc-f"><em>${esc(t('uc.f.username'))}</em><b>${esc(u.username)}</b></span>
         <span class="uc-f"><em>${esc(t('uc.f.nickname'))}</em>${nickHtml}</span>
+        <span class="uc-f"><em>${esc(t('uc.former'))}</em><span>${esc(former)}</span></span>
       </div>
-      <p class="uc-former">${esc(t('uc.former'))}：${esc(former)}</p>
       <p class="uc-warn">${esc(t('uc.rename.warn', { n: u.renames_left ?? 0 }))}</p>
       <p class="uc-err" id="ucNickErr" hidden></p>`)
     + ucCard(null, t('uc.set.email'), mailChip, `
-      <p class="uc-meta">${esc(u.email || '—')}</p>
-      <div id="ucMailBox"><button class="uc-btn" id="ucMailBtn" type="button">${esc(t('uc.email.change'))}</button></div>`)
+      <div class="uc-acct"><b>${esc(u.email || '—')}</b>
+        <button class="uc-btn uc-ghost" id="ucMailBtn" type="button">${esc(t('uc.edit'))}</button></div>
+      <div id="ucMailBox"></div>`)
     + (u.has_password
       ? ucCard('ucPwO', t('uc.set.pass'), '', `
-        <div class="uc-field"><input class="auth-in" id="ucPwO" type="password" placeholder="${esc(t('uc.pass.old'))}" autocomplete="current-password"></div>
-        <div class="uc-field">
-          <input class="auth-in" id="ucPwN" type="password" placeholder="${esc(t('uc.pass.new'))}" autocomplete="new-password">
+        <div class="uc-acct">
+          <input class="auth-in uc-sm-in" id="ucPwO" type="password" placeholder="${esc(t('uc.pass.old'))}" autocomplete="current-password">
+          <input class="auth-in uc-sm-in" id="ucPwN" type="password" placeholder="${esc(t('uc.pass.new'))}" autocomplete="new-password">
           <button class="uc-btn" id="ucPwGo" type="button">${esc(t('uc.save'))}</button>
         </div>
         <p class="uc-err" id="ucPwErr" hidden></p>`)
       : ucCard(null, t('uc.set.pass'), '', '', esc(t('uc.pass.oauth'))))
     + ucCard(null, t('uc.set.bind'), '', `
       <div class="uc-binds">${['github', 'google'].map(p =>
-        (u.providers || []).includes(p)
-          ? `<span class="uc-bind-row"><span class="uc-tag">${esc(p)}</span><span class="uc-st approved">${esc(t('uc.bound'))}</span></span>`
-          : `<span class="uc-bind-row"><span class="uc-tag">${esc(p)}</span><button class="uc-btn" data-bind="${p}" type="button">${esc(t('uc.bind.do', { p }))}</button></span>`
+        `<span class="uc-f"><em>${esc(p)}</em>` +
+        ((u.providers || []).includes(p)
+          ? `<span class="uc-st approved">${esc(t('uc.bound'))}</span>`
+          : `<button class="uc-btn" data-bind="${p}" type="button">${esc(t('uc.bind.do', { p }))}</button>`) +
+        `</span>`
       ).join('')}</div>
       <p class="uc-hint" id="ucBindHint" hidden></p>
       <p class="uc-err" id="ucBindErr" hidden></p>`)

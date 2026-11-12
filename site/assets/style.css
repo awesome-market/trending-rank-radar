@@ -23,6 +23,7 @@
   --blue: #58a6ff;
   --grad: linear-gradient(90deg, #58a6ff, #79c0ff);
   --green: #3fb950;
+  --warn: #e8968f;
   --gold: #f0c040;
   --silver: #c0c0c0;
   --bronze: #cd7f32;
@@ -72,6 +73,7 @@
   --blue: #0969da;
   --grad: linear-gradient(90deg, #0969da, #3380e0);
   --green: #1a7f37;
+  --warn: #b8564e;
   --gold: #9a6700;
   --silver: #6e7781;
   --bronze: #a2591f;
@@ -1409,9 +1411,9 @@ a.uc-name:hover { color: var(--accent); }
 .uc-acct { display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: center; font-size: 14px; }
 .uc-f { display: inline-flex; align-items: center; gap: 8px; }
 .uc-f em { font-style: normal; font-size: 12.5px; color: var(--text-faint); }
-.uc-nick-in { max-width: 220px; min-height: 34px; }
-.uc-former { margin: 10px 0 0; font-size: 12.5px; color: var(--text-faint); }
-.uc-warn { margin: 8px 0 0; font-size: 12px; color: #f85149; }
+.uc-sm-in { max-width: 200px; min-height: 34px; }
+.uc-binds { display: flex; flex-direction: column; gap: 10px; }
+.uc-warn { margin: 8px 0 0; font-size: 12px; color: var(--warn); }
 .uc-ghost { background: none; color: var(--accent-fg); border-color: var(--card-border); }
 @media (max-width: 768px) {
   .uc-wrap { grid-template-columns: 1fr; min-height: 0; }
