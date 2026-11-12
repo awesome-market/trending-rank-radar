@@ -20,7 +20,7 @@ function gi(n, s = 14) {
   return `<svg viewBox="0 0 16 16" width="${s}" height="${s}" fill="currentColor" aria-hidden="true"><path d="${GH_ICONS[n]}"/></svg>`;
 }
 
-const METRIC_KEYS = ['stars', 'forks', 'watchers', 'prs', 'issues', 'releases', 'discussions'];
+const METRIC_KEYS = ['stars', 'forks', 'watchers', 'prs', 'issues', 'releases'];
 const STAT_ICONS = { stars: 'star', forks: 'fork', watchers: 'eye', prs: 'pr', issues: 'issue', releases: 'tag', discussions: 'issue' };
 // Static pages under /repos/ set <body data-base="../"> so relative fetches
 // and home links still resolve; repo.html leaves it unset.
@@ -490,19 +490,43 @@ function releasePanel(d) {
     <a class="rp-more" href="${esc(d.url)}/releases" target="_blank" rel="noopener">${t('rp.more')} ↗</a>`;
 }
 
+function growthCell(d, k) {
+  const g = (d.growth || {})[k];
+  if (!g || g.stars == null) return '';
+  const up = g.stars >= 0;
+  const key = { day: 'rp.growth.d', week: 'rp.growth.w', month: 'rp.growth.m' }[k];
+  return `<div class="rp-metric"><div class="rp-metric-num ${up ? 'up' : 'down'}">${up ? '+' : ''}${fmtFull(g.stars)}</div>
+    <div class="rp-metric-label">${t(key)}</div></div>`;
+}
+
+/* One-line release download bar under the metric grid: title · tag·file link · date.
+   latest_release carries {name, tag, published_at} only — the link targets the
+   tag's GitHub release page where the actual artifacts live. */
+function downloadRowHTML(d) {
+  const r = d.latest_release;
+  if (!r || !r.tag) return '';
+  const ver = String(r.tag).replace(/^v/i, '');
+  const base = String(r.name || d.name).split(/[:：\s]+/)[0] || d.name;
+  const file = `${base}-${ver}`;
+  const href = `${d.url}/releases/tag/${encodeURIComponent(r.tag)}`;
+  return `<div class="rp-dl"><span class="rp-dl-t">${esc(r.name || r.tag)}</span>
+    <a class="rp-dl-a" href="${esc(href)}" target="_blank" rel="noopener">${esc(file)} ↓</a>
+    <span class="rp-dl-date">${esc((r.published_at || '').slice(0, 10))}</span></div>`;
+}
+
 function overviewPanel(d) {
   const m = d.metrics || {};
+  const growth = ['day', 'week', 'month'].map(k => growthCell(d, k)).join('');
   const grid = METRIC_KEYS.map(k => {
     const v = m[k];
     if (v == null) return '';
-    const dl = k === 'stars'
-      ? `<div class="rp-metric-delta">${deltaSpan('day')}${deltaSpan('week')}${deltaSpan('month')}</div>` : '';
     return `<div class="rp-metric"><div class="rp-metric-num">${fmtFull(v)}</div>
-      <div class="rp-metric-label">${t('units.' + k)}</div>${dl}</div>`;
+      <div class="rp-metric-label">${t('units.' + k)}</div></div>`;
   }).join('');
+  const dl = downloadRowHTML(d);
   const readme = d.readme
     ? `<h3 class="rp-ph">${t('rp.readme')}</h3><div class="rp-pre rp-readme"><div class="rp-readme-md" id="rpReadme"></div></div>` : '';
-  return `<div class="rp-metric-grid">${grid}</div>${readme}`;
+  return `<div class="rp-metric-grid">${growth}${grid}</div>${dl}${readme}`;
 }
 
 /* Full README: fetched from data/readme/<repo>.md (or .zh.md when the UI
