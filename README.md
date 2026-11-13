@@ -1,78 +1,80 @@
 # 📡 GitHub Trending Rank Radar
 
-独立采集 GitHub 仓库数据的开源项目趋势榜单 —— **完全开源、数据自采**。
+**English** | [中文](README.zh.md)
 
-🌐 **在线榜单**: https://zhuikan.com/ （镜像：https://awesome-market.github.io/trending-rank-radar/）
+Independently collected trend rankings of open-source GitHub projects — **fully open source, self-collected data**.
 
-## 八种榜单
+🌐 **Live**: https://zhuikan.com/ (mirror: https://awesome-market.github.io/trending-rank-radar/)
 
-| 榜单 | 口径 |
+## Eight boards
+
+| Board | Criteria |
 |---|---|
-| 新榜 | 近 90 天内创建，按当前 Star 排序（≥20★） |
-| 日 / 周 / 月飙升榜 | 窗口 Star **绝对增长量**降序（增量 > 0，当前 ≥100★） |
-| 日 / 周 / 月增速榜 | **相对增长率** = 增量 ÷ 窗口起点 Star 基数 × 100（基数 ≥50） |
-| 总榜 | 当前累计 Star 降序 |
+| New | Created within the last 90 days, sorted by current stars (≥20★) |
+| Daily / Weekly / Monthly Growth | **Absolute star growth** over the window, desc (growth > 0, current ≥100★) |
+| Daily / Weekly / Monthly Rate | **Relative rate** = growth ÷ star base at window start × 100 (base ≥50) |
+| All-Time | Current total stars, desc |
 
-- 增长量由**每日 Star 快照差分**得出，每天北京时间 10:00 / 22:00 各采集一次
-- 增速榜与飙升榜分列（八榜结构）
-- 历史窗口不足时用最早可用快照兜底，界面标注实际区间（如 `10-15 ~ 11-08 · 24天`）
+- Growth is computed from **daily star snapshot diffs**, collected twice a day at 10:00 / 22:00 Beijing time
+- Rate boards and growth boards are listed separately (the eight-board layout)
+- When history is too short, the earliest available snapshot is used as the base and the UI marks the actual window (e.g. `10-15 ~ 11-08 · 24d`)
 
-## 按日 / 月 / 年回看
+## Replay by day / month / year
 
-- **日**：任意历史日期的八榜快照
-- **月**：月末八榜 + 当月累计增长榜 + 每日 Top10 摘要
-- **年**：年度增长榜 + 月度榜入口
+- **Day**: the eight-board snapshot for any historical date
+- **Month**: month-end boards + cumulative monthly growth + daily Top10 digest
+- **Year**: annual growth board + monthly board entries
 
-## 界面特性
+## UI features
 
-- **中英双语**：右上角 `EN`/`中` 一键切换，选择本地持久化
-- **深/浅主题**：☀/☾ 手动切换，跟随系统偏好兜底，无闪烁加载
-- **宽版行**：作者 + 仓库名 + 头像 + 语言/Star/Fork/Watch/PR/Issue/Release 元信息 + 自适应简介 + 内嵌 30 日 Sparkline
-- **领奖台**：前三名金银铜错位卡片；空状态给出积累进度与备用榜预览
-- **桌面优先**：按 ≥1440px 宽屏设计，小屏保有可用降级
+- **Chinese / English**: one-click `EN`/`中` toggle in the top-right corner, persisted locally
+- **Dark / light theme**: manual ☀/☾ toggle, falls back to system preference, flash-free loading
+- **Wide rows**: owner + repo name + avatar + language/star/fork/watch/PR/issue/release meta + adaptive description + inline 30-day sparkline
+- **Podium**: staggered gold/silver/bronze cards for the top three; empty states show accumulation progress and a fallback board preview
+- **Desktop-first**: designed for ≥1440px screens, usable degradation on smaller ones
 
-## 技术架构
+## Architecture
 
 ```
 GitHub Trending / Search API / GraphQL API
-        │  GitHub Actions 每日 2 次
+        │  GitHub Actions, twice a day
         ▼
 data/snapshots/*.json  ──►  scripts/rank.py  ──►  site/data/*.json
-   (git 仓库即数据库)         (八榜预计算)          (纯静态，Pages 托管)
+   (the git repo is the DB)   (boards precomputed)   (pure static, Pages-hosted)
 ```
 
-- **零依赖 Python 3**：采集/计算只用标准库（`urllib` + `html.parser` + `json`）
-- **纯静态前端**：原生 HTML/CSS/JS，无构建工具，GitHub Pages 直接托管
-- **数据即档案**：所有快照提交进 git，仓库本身就是可下载的历史数据库
+- **Zero-dependency Python 3**: collection and ranking use only the standard library (`urllib` + `html.parser` + `json`)
+- **Pure static frontend**: vanilla HTML/CSS/JS, no build tooling, served directly by GitHub Pages
+- **Data as archive**: every snapshot is committed to git — the repo itself is a downloadable historical database
 
-## 口径说明
+## Methodology notes
 
-- 新榜 / 总榜为**本站跟踪仓库范围**（约 2000 个，由 Trending + Search API + 增长信号维护）内的排名，非全站点排名
-- 增速 = 增长量 ÷ 窗口起点 Star 基数，向下取整为整数百分比
-- `issues` 计数来自 GitHub API（REST 口径含 PR；GraphQL 中 issues / pullRequests 分列）
-- 数据仅供参考，不构成任何建议
+- The New / All-Time boards rank **within the tracked set** (~5,000 repos, maintained via Trending + Search API + growth signals), not all of GitHub
+- Rate = growth ÷ star base at window start, floored to an integer percentage
+- `issues` counts come from the GitHub API (REST semantics include PRs; GraphQL reports issues / pullRequests separately)
+- Data is for reference only — not advice of any kind
 
-## 本地运行
+## Run locally
 
 ```bash
-# 采集快照（需要 GITHUB_TOKEN）
+# collect a snapshot (needs GITHUB_TOKEN)
 GITHUB_TOKEN=xxx python3 scripts/collect.py
 
-# 重建榜单与站点数据
+# rebuild boards & site data
 python3 scripts/rank.py --site-base http://localhost:8000
 
-# 预览
+# preview
 cd site && python3 -m http.server 8000
 ```
 
-## 仓库结构
+## Repo layout
 
 ```
-├── docs/                  # 设计文档（数据管道/榜单算法/前端/自动化）
-├── scripts/               # collect.py · rank.py · gh.py（零依赖）
-├── data/                  # 快照与元数据（git 即历史档案）
-├── site/                  # 生成的静态站（Pages 部署源）
-└── .github/workflows/     # 每日定时采集 + Pages 部署
+├── docs/                  # design docs (data pipeline / ranking / frontend / automation)
+├── scripts/               # collect.py · rank.py · gh.py (zero-dependency)
+├── data/                  # snapshots & metadata (git is the archive)
+├── site/                  # generated static site (Pages deploy source)
+└── .github/workflows/     # scheduled collection + Pages deploy
 ```
 
 ## License
