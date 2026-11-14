@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Christ9038/Ydisks-Xianyu-Helper · GitHub Trending Rank Radar</title>
+<meta name="description" content="闲鱼多账号自动发货、消息回复系统——基于 Go 与 React 构建">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Ydisks-Xianyu-Helper, Christ9038, Christ9038/Ydisks-Xianyu-Helper, github stars, github trending, star growth, star history, 开源项目, 星标增长, xianyu, xianyu-assistant, xianyu-auto-reply, xianyu-bot, xianyu-tool">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Christ9038__Ydisks-Xianyu-Helper">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Christ9038/Ydisks-Xianyu-Helper · GitHub Trending Rank Radar">
+<meta property="og:description" content="闲鱼多账号自动发货、消息回复系统——基于 Go 与 React 构建">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Christ9038__Ydisks-Xianyu-Helper">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Christ9038/Ydisks-Xianyu-Helper", "codeRepository": "https://github.com/Christ9038/Ydisks-Xianyu-Helper", "url": "https://zhuikan.com/repos/Christ9038__Ydisks-Xianyu-Helper", "description": "闲鱼多账号自动发货、消息回复系统——基于 Go 与 React 构建", "author": {"@type": "Organization", "name": "Christ9038", "url": "https://github.com/Christ9038"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Go", "dateCreated": "2026-07-10", "keywords": "xianyu,xianyu-assistant,xianyu-auto-reply,xianyu-bot,xianyu-tool"}</script>
+</head>
+<body data-repo="Christ9038/Ydisks-Xianyu-Helper" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Christ9038/Ydisks-Xianyu-Helper</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Christ9038__Ydisks-Xianyu-Helper"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/3616298?u=7b191f312ae3be4545c76e74ae79ef9381365660&amp;v=4&s=300" width="300" height="300" alt="Christ9038 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Ydisks-Xianyu-Helper</div>
+      <a class="rp-side-owner" href="https://github.com/Christ9038">Christ9038</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Christ9038">Christ9038</a>
+        <span class="rp-sep">/</span><span class="rp-name">Ydisks-Xianyu-Helper</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">闲鱼多账号自动发货、消息回复系统——基于 Go 与 React 构建</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>2,406</b></span><span class="rp-stat" title="forks">⑂ <b>644</b></span><span class="rp-stat" title="watchers">👁 <b>1</b></span><span class="rp-stat" title="prs">⑃ <b>26</b></span><span class="rp-stat" title="issues">● <b>86</b></span><span class="rp-stat" title="releases">▤ <b>16</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/xianyu">xianyu</a><a class="rp-topic" href="https://github.com/topics/xianyu-assistant">xianyu-assistant</a><a class="rp-topic" href="https://github.com/topics/xianyu-auto-reply">xianyu-auto-reply</a><a class="rp-topic" href="https://github.com/topics/xianyu-bot">xianyu-bot</a><a class="rp-topic" href="https://github.com/topics/xianyu-tool">xianyu-tool</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Go</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2026-07-10</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Christ9038/Ydisks-Xianyu-Helper">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Ydisks 闲鱼助手 1.0.15</span><a class="rp-dl-a" href="https://github.com/Christ9038/Ydisks-Xianyu-Helper/releases/tag/v1.0.15">Ydisks-1.0.15 ↓</a><span class="rp-dl-ver">1.0.15</span><span class="rp-dl-date">2026-10-29</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+18</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">2,406</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">644</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">1</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">26</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">86</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">16</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Ydisks闲鱼助手（中文）
+
+基于 Go 与 React 构建的闲鱼多账号管理、消息回复与自动发货系统
+
+
+
+
+
+
+English README · 中文文档 · 中文 Wiki · English Wiki
+
+功能特性 · 快速开始 · 配置说明 ·
+Docker 部署 · 开发指南 · 贡献指南 ·
+安全策略 · 行为准则 · 开源协议
+
+操作手册见 在线使用手册（源文件为仓库内的 Wiki 文档）：包含数据库选择、账号接入、
+在线聊天、账号自动任务、批量铺货、自动化发货、AI、通知和运维流程。
+
+ [!IMPORTANT]
+ 本项目仅用于个人技术学习研究，未获得闲鱼/阿里巴巴任何官方授权。
+
+ 本项目调用闲鱼网页端非公开接口，使用本软件将违反闲鱼用户协议，可能造成闲鱼账号封禁。
+
+ 本项目是社区维护的非官方工具，与闲鱼、阿里巴巴集团及其关联公司无隶属、合作或授权关系。
+
+ 请仅在遵守当地法律法规的前提下使用，所有使用该代码造成的一切后果，全部由使用者自行承担，项目作者不承担任何责任。
+
+ 收到平台下架通知时，本项目会随时删除归档。
+
+ 有账号登录时，不要频繁重启本程序!
+
+ 每次重启都会向闲鱼申请登录凭证，达到某个频率，即会触发风控。
+
+ 项目简介
+
+Ydisks闲鱼助手是一个面向闲鱼卖家的自托管管理系统。它将账号运行、即时消息、订单、
+商品、卡密库存、自动化规则、AI 回复和异常通知整合到同一个 Web 管理后台，适合需要
+同时维护多个闲鱼账号或交付虚拟商品的个人与小型团队。
+
+项目采用 Go 语言实现闲鱼登录、Cookie 续期、MTOP 请求和 WebSocket 消息链路。
+扫码登录、人脸验证流程、消息连接、凭证更新和绝大部分业务逻辑均由 Go 客户端完成。
+使用 Chromium 处理必须依赖浏览器环境的相关功能。
+
+ 与 Ydisks 网盘拉新助手协同使用
+
+如果你通过网盘资料、教程包或数字资源做闲鱼推广，推荐搭配
+Ydisks 网盘拉新助手 使用：先为不同商品、渠道或推广账号
+创建独立短链，再在 Ydisks 控制台查看短链与目标页面的 PV、UV、趋势、排行及渠道/账号报表。
+这样，Ydisks 负责识别“链接从哪里带来访问与转化线索”，Ydisks闲鱼助手负责承接账号消息、
+订单和自动发货，帮助你把投放复盘与日常交付放进一套更清晰的运营流程。
+
+Ydisks 支持管理渠道、推广账号、原始链接、推广短链与域名，适用于网盘拉新和推广投放场景；
+可从 Ydisks 网盘拉新助手使用文档 开始创建推广链接并查看数据。
+
+
+ 适用场景
+
+- 多个闲鱼账号的统一在线状态与消息管理
+- 数字商品、兑换码、链接或图片内容的自动交付
+- 付款后发货、分阶段砍价免拼、评价赠品、超时求评价等自动化流程
+- 商品与订单同步、单商品单规格/多规格发布、规格图片与主图排序，以及支持逐行/默认类目、自动识别和最终兜底的表格批量铺货
+- 接入 OpenAI 兼容接口实现可控的 AI 客服回复，并可在后台测试完整连接链路
+
+ 交流群
+
+!Ydisks闲鱼助TG
+
+ 功能特性
+
+| 模块 | 能力 |
+| --- | --- |
+| 账号管理 | 多账号启停、扫码登录、资料刷新、在线状态、登录审计与备注管理 |
+| 凭证续期 | Cookie/token 定时续期、WebSocket 凭证更新、失效恢复、冷却与失败停用 |
+| 即时消息 | 按账号隔离的在线聊天、会话列表与历史消息、闲鱼表情、文本/图片收发、官方系统消息识别、关键词回复（多表达式、包含/正则匹配、多商品范围）、默认回复及仅回复一次 |
+| 自动化中心 | 拍下未付款自动改价、付款后自动发货、分阶段砍价免拼、评价后赠品、超时未评价提醒、失败任务恢复、人工处理通知与幂等检查点 |
+| 账号自动任务 | 基于本地记录的买家确认收货事实执行自动评价、按北京时间每日擦亮、手动立即执行、执行记录与幂等保护 |
+| 卡密库存 | 文本、批量卡密、图片和 API 四种交付类型，库存追加、批量导入、规格与延迟发送 |
+| 商品管理 | 商品同步、手工关联、单商品单规格/多规格发布、规格图片与商品图片排序、CSV/XLSX/TSV 与可选 ZIP 批量铺货、关键词获取默认类目、逐行类目优先、自动识别与“电子资料”最终兜底、任务恢复与结果导出；列表同步依据 detailParams.isSKU 判断多规格，字段缺失或为 false 均按非多规格处理，不再访问详情页 |
+| 发货模板 | 多条顺序消息、订单/买家/卡密/自定义变量和可复用的自动化发货内容 |
+| 订单管理 | 订单同步、编辑、平台发货、补发卡密、仅确认发货及异常状态处理 |
+| AI 回复 | OpenAI 兼容 API、模型发现、完整连接链路测试、“仅砍价”与“全场景客服”模式、商品级启停与专属资料、自定义提示词、议价轮次和让价范围控制 |
+| 数据看板 | 活跃账号、订单、营收、库存、商品销量与金额统计 |
+| 通知告警 | Bark、钉钉、飞书、企业微信、Telegram、邮件和自定义 Webhook |
+| 数据存储 | SQLite、MySQL、PostgreSQL，内置按方言执行的 Goose 数据库迁移 |
+| 安全能力 | 管理端会话、敏感字段 AES-256-GCM 加密、日志脱敏和出站地址校验 |
+| 容器部署 | PostgreSQL 17、健康检查、持久化卷、GHCR amd64/arm64 多架构镜像 |
+
+ 系统架构
+
+mermaid
+flowchart LR
+    UI[&quot;React 管理后台&quot;] -- API[&quot;Go / chi HTTP API&quot;]
+    API -- Store[&quot;SQLite / MySQL / PostgreSQL&quot;]
+    API -- Manager[&quot;账号管理器&quot;]
+    Manager -- Engine[&quot;单账号运行时&quot;]
+    Engine -- WS[&quot;闲鱼 WebSocket&quot;]
+    Engine -- MTOP[&quot;闲鱼 MTOP&quot;]
+    Engine -- Automation[&quot;自动化中心&quot;]
+    Automation -- Notify[&quot;通知渠道&quot;]
+    Engine -. &quot;浏览器能力&quot; .- Chromium[&quot;Playwright / Chromium&quot;]
+
+
+核心职责划分：
+
+- internal/composition：唯一生产组合根，装配应用服务与生命周期组件
+- internal/application：用例编排、所有权校验、事务边界与补偿
+- internal/xianyu：登录协议、Cookie、MTOP、WebSocket 和消息协议
+- internal/engine：单账号生命周期、消息处理、回复与交付行为
+- internal/automation：发货、评价赠品、求评价和任务调度
+- internal/browser：Chromium 自动化、浏览器指纹读取与 token 滑块等浏览器相关能力
+- internal/db：多数据库访问、敏感字段加密和嵌入式</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Christ9038/Ydisks-Xianyu-Helper/issues/92"><span class="rp-item-num">#92</span><span class="rp-item-title">[问题] 接口续期已更新登录凭证，正在重新连接，怎么解决 。</span><span class="rp-item-extra">15 comments · 2026-10-19</span></a><a class="rp-item" href="https://github.com/Christ9038/Ydisks-Xianyu-Helper/issues/23"><span class="rp-item-num">#23</span><span class="rp-item-title">java 版本的用的进哈</span><span class="rp-item-extra">6 comments · 2026-08-31</span></a><a class="rp-item" href="https://github.com/Christ9038/Ydisks-Xianyu-Helper/issues/113"><span class="rp-item-num">#113</span><span class="rp-item-title">[问题] 虚拟商品自动发货，目前可以实现通过发货模板实现自动发消息，接但是订单还是待发货状态</span><span class="rp-item-extra">5 comments · 2026-11-10</span></a><a class="rp-item" href="https://github.com/Christ9038/Ydisks-Xianyu-Helper/issues/112"><span class="rp-item-num">#112</span><span class="rp-item-title">[建议] 能不能加入非鱼小铺的支持</span><span class="rp-item-extra">5 comments · 2026-11-10</span></a><a class="rp-item" href="https://github.com/Christ9038/Ydisks-Xianyu-Helper/issues/109"><span class="rp-item-num">#109</span><span class="rp-item-title">[建议] 人工介入后ai客服暂停回复功能</span><span class="rp-item-extra">2 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/Christ9038/Ydisks-Xianyu-Helper/issues/106"><span class="rp-item-num">#106</span><span class="rp-item-title">[问题] 免拼成功后响应 Cookie 并发冲突被误判为结果未知，needs_review 无界面入口且会阻断待发货兜底</span><span class="rp-item-extra">1 comments · 2026-10-29</span></a><a class="rp-item" href="https://github.com/Christ9038/Ydisks-Xianyu-Helper/issues/103"><span class="rp-item-num">#103</span><span class="rp-item-title">订单列表问题</span><span class="rp-item-extra">1 comments · 2026-10-28</span></a><a class="rp-item" href="https://github.com/Christ9038/Ydisks-Xianyu-Helper/issues/115"><span class="rp-item-num">#115</span><span class="rp-item-title">[建议] ai客服 支持获取当前用户的订单状态,这样ai可以根据订单状态来回复内容</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/Christ9038/Ydisks-Xianyu-Helper/releases"><b>Ydisks 闲鱼助手 1.0.15</b> <span class="rp-rel-tag">v1.0.15</span> <span class="rp-item-extra">2026-10-29</span></a><pre class="rp-pre">提交：070705d
+
+ Ydisks 闲鱼助手 v1.0.15 Release Note
+
+ 新增
+
+- 新增销售统计页面，管理员可按自定义日期范围查看销售数据。
+- 新增运行日志页面，管理员可查询运行日志。
+- 新增自动化规则日志，记录自动化行为，可在前端“规则日志”页签审计。
+- 新增本地资源库，包含图片库和商品模板。模板支持多规格和发货模板，可做模板×账号预检，并复用批量铺货发布。
+- 资源库支持搜索、筛选、排序、全选和批量操作，图片库支持大图预览和文件名搜索。
+- 商品模板与批量铺货补充“按距离计费”和“无需邮寄”两种邮费模式，与单品发布保持一致。
+- 新增商品首次回复：买家首次咨询指定商品时，自动发送一次预设内容 (97)。
+- 新增卡密售出台账，可区分已售和未售，导出售出记录，并在订单中查看已发卡密 (99)。
+- 求评价规则新增发货时间回溯窗口，避免重新启用时补发历史订单。
+- 商品页新增列表视图和规则筛选，规则卡密选择支持搜索。
+- 浏览器通知新增默认提示音，开关在系统设置的基础设置中 (95)。
+- 日志系统增强：记录调用位置、关联字段和接口摘要，并减少无用日志。
+- 风控状态提示改为引导粘贴无风控 Cookie，并提供 issue 92 教程入口。
+- 统一内页标题区与页边距，新增 PageHeader 共享组件。
+- 补全 Wiki 与官网文档，新增配置参考</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Christ9038__Ydisks-Xianyu-Helper.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

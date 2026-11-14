@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oldcircle/geo-sleuth · GitHub Trending Rank Radar</title>
+<meta name="description" content="An agent skill that finds where a photo was taken — OpenStreetMap geometry, elevation skylines, satellite imagery and street view — and shows its work. Works with Claude Code, Codex, Cursor, Gemini CL">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="geo-sleuth, Oldcircle, Oldcircle/geo-sleuth, github stars, github trending, star growth, star history, 开源项目, 星标增长, claude-code, geoguessr, geolocation, osint, agent-skills, geoint">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Oldcircle__geo-sleuth">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Oldcircle/geo-sleuth · GitHub Trending Rank Radar">
+<meta property="og:description" content="An agent skill that finds where a photo was taken — OpenStreetMap geometry, elevation skylines, satellite imagery and street view — and shows its work. Works with Claude Code, Codex, Cursor, Gemini CL">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Oldcircle__geo-sleuth">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Oldcircle/geo-sleuth", "codeRepository": "https://github.com/Oldcircle/geo-sleuth", "url": "https://zhuikan.com/repos/Oldcircle__geo-sleuth", "description": "An agent skill that finds where a photo was taken — OpenStreetMap geometry, elevation skylines, satellite imagery and street view — and shows its work. Works with Claude Code, Codex, Cursor, Gemini CL", "author": {"@type": "Organization", "name": "Oldcircle", "url": "https://github.com/Oldcircle"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Python", "dateCreated": "2026-09-18", "keywords": "claude-code,geoguessr,geolocation,osint,agent-skills,geoint,openstreetmap,photo-geolocation,computer-vision,image-geolocation"}</script>
+</head>
+<body data-repo="Oldcircle/geo-sleuth" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Oldcircle/geo-sleuth</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Oldcircle__geo-sleuth"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/72587513?u=242e1635d520f01bf983788c7b044fab00a8c1c7&amp;v=4&s=300" width="300" height="300" alt="Oldcircle avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">geo-sleuth</div>
+      <a class="rp-side-owner" href="https://github.com/Oldcircle">Oldcircle</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Oldcircle">Oldcircle</a>
+        <span class="rp-sep">/</span><span class="rp-name">geo-sleuth</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=new">new <b>#89</b></a><a class="rp-board-chip" href="../?board=weekly_rate">weekly_rate <b>#161</b></a></div>
+    </div>
+    <p class="rp-desc">An agent skill that finds where a photo was taken — OpenStreetMap geometry, elevation skylines, satellite imagery and street view — and shows its work. Works with Claude Code, Codex, Cursor, Gemini CLI, OpenCode and GitHub Copilot.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>6,991</b></span><span class="rp-stat" title="forks">⑂ <b>867</b></span><span class="rp-stat" title="watchers">👁 <b>18</b></span><span class="rp-stat" title="prs">⑃ <b>51</b></span><span class="rp-stat" title="issues">● <b>29</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/claude-code">claude-code</a><a class="rp-topic" href="https://github.com/topics/geoguessr">geoguessr</a><a class="rp-topic" href="https://github.com/topics/geolocation">geolocation</a><a class="rp-topic" href="../tags/osint">osint</a><a class="rp-topic" href="../tags/agent-skills">agent-skills</a><a class="rp-topic" href="https://github.com/topics/geoint">geoint</a><a class="rp-topic" href="https://github.com/topics/openstreetmap">openstreetmap</a><a class="rp-topic" href="https://github.com/topics/photo-geolocation">photo-geolocation</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-09-18</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Oldcircle/geo-sleuth">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+47</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">6,991</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">867</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">18</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">51</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">29</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">🧭 geo-sleuth
+
+一个 agent skill，能找到照片的拍摄地点——并展示它的推理过程。
+
+
+  
+  
+  
+
+
+
+  
+  
+  
+  
+  
+
+
+
+  适用于
+  
+  
+  
+  
+  
+  
+  ……以及其他任何能读取 SKILL.md 并运行 shell 命令的 agent。
+
+
+
+
+没有文字，没有车牌，没有地标。一座桥，一座山。定位误差在 2 米以内。
+
+
+
+---
+
+ 快速开始
+
+bash
+npx skills add Oldcircle/geo-sleuth
+
+
+按提示勾选你用的 agent。然后把一张照片交给你的 agent，说：
+
+ 找出这张照片是在哪拍的
+
+这就是全部的交互方式。你的 agent 会读取 SKILL.md、运行脚本，然后给出机位、镜头朝向和一张卫星证据图。想自己复制文件夹？见安装。
+
+ 为什么是 geo-sleuth
+
+- 一张照片，一句话。 把照片交给你的 agent，说一句这张照片是在哪拍的。你会得到机位、镜头朝向和一张卫星证据图。
+- 没有文字线索也能查。 没有招牌、没有车牌、没有地标：OpenStreetMap 的几何数据、高程数据、卫星图和街景自己就能把搜索推进下去。
+- 靠几何，不靠猜。 桥墩间距变成距离尺，阴影变成方位角，山脊线变成能和高程数据比对的指纹。
+- 每个说法都指向一个文件。 结论必须说出本次会话里跑过的命令、以及它产出的文件。人口和名气都不算证据。
+- 脚本排序，模型判断。 二十个各司一职的脚本负责搜索、打分和排序；模型只在排名靠前的几个里挑。
+- 一个 skill，所有 agent 通用。 这是一个标准的 Agent Skill——SKILL.md 加上普通的 Python 脚本——所以同一个文件夹在 Claude Code、Codex、Cursor、Gemini CLI、OpenCode 和 GitHub Copilot 里都能运行。
+- 答案自带误差半径。 坐标 ± 半径、镜头朝向、一张证据图和分档的置信度。
+
+ 案例
+
+这几张照片都没有 GPS 信息。每个案例写了 skill 从照片里读到什么、怎么一步步缩小范围、结果离确认的机位有多远。
+
+这些是某个模型某一次运行的记录。skill 告诉 agent 怎么做，每一步查什么、怎么筛、看前几名由模型自己决定，换模型或换决策不保证走到同一个结果。每个案例下面的「复现条件与检查点」列出了输入、提示、关键参数和各阶段应该覆盖到什么，可以用来逐段对照自己的运行在哪一步分开。
+
+
+
+
+
+
+
+
+1 · 稻田与高架铁路桥 × 天际线 × 数桥墩。
+2 · 沙漠天际线高压线 × 天际线 × 手机歪了 1°。
+3 · 樱花街行道树开放数据 × 影子 × 街景。
+
+
+±2 m广东清远
+100 m 以内青海大柴旦
+3 m加拿大温哥华
+
+
+
+ 1. 稻田与高架
+
+一张手机照片，EXIF 信息已被抹除：收割完的稻田边一个白色烤炉，远处一条长长的高架，右边一座陡峭的山。画面里没有一个字。给装了这个 skill 的 agent 发一条消息，它就给出了机位和镜头朝向。
+
+照片 → 27,335 → 171 → 14,372 → 22 → 3 → 1 → ±2 m
+
+| 步骤 | 它做了什么 | 剩余候选 |
+|---|---|---|
+| 读图 | 高架上的杆子是接触网支柱，说明是电气化铁路。把桥墩间距当尺子用（跨距 32 米，假设）：左段距拍摄点约 0.5 公里，右段超过 1 公里。陡峭的山约 3 公里外。稻子已经收割，但草还是绿的，说明还没下霜。 | 华南，是判断，不是证明 |
+| 区域扫描 | 从 OpenStreetMap 取出该区域内所有铁路桥：27,335 段。每 400 米采样一个点，用高程数据计算每个点 360° 的地平线。保留附近地势平坦、几公里内有明显山峰、且旁边地平线平坦的点。 | 171 处 |
+| 天际线拟合 | 在每个候选点周围布置候选机位，渲染每个机位看到的山脊线：14,372 个机位。前 20 名彼此相差不到 0.1°，于是加了一条约束：桥必须左近右远。 | 22 |
+| 叠图检查 | 把前三名的山脊线画回照片核对。第一名（福州）有一处凸起正好藏在烤炉后面，所以得分高；第三名（惠州）在照片平坦的地方却有坡度；第二名（清远）从山脚到画面边缘都贴合。 | 1 |
+| 数桥墩 | 照片里的 17 根桥墩变成从机位出发的 17 条方位线。它们打在铁路线上的交点必须间距均匀。结合天际线结果：先收窄到约 300 米长的一段，再收窄到一个点。 | ±2 m |
+
+
+
+桥墩当尺子：左边间距宽表示近，右边间距密表示远。
+ 
+左：前三名的山脊线画回照片。右：skill 生成的证据图。
+
+
+
+本次实战的更多图
+
+
+区域扫描：区域内所有铁路桥（灰色），通过地平线检验的候选点（橙色）。
+
+数桥墩：17 根桥墩的方位线与铁路线相交；只有一个机位能让间距均匀。
+整次运行耗时约 72 分钟，其中大约一半时间在等计算。
+
+
+
+复现条件与检查点
+
+
+- 这是什么记录：上表是这套方法第一次解出这张照片的过程（Claude Opus 5.0），不是盲测复跑；其中的步骤后来写进了 skill。
+- 输入：手机照片 1280×1707，EXIF 已抹除。README 里的图是展示用的版本，不适合当输入。
+- 候选生成：区域内 OSM 的全部铁路桥 27,335 段，只排除标了 electrified=no 的（当时的 rail_mtn_scan.py 这样做，现在 terrain.py scan 默认也一样），没有按 highspeed 筛。接触网只能说明是电气化铁路；正确的线路是广清城际，它在 OSM 里的 55 段桥都没有 highspeed=yes。
+- 检查点：通过地平线检验的 171 处里应包含答案附近的广清城际桥段；天际线拟合 14,372 个机位，前 20 名相差不到 0.1°，靠&quot;桥左近右远&quot;筛到 22；叠图看前三名；最后用 17 根桥墩的方位线定点。
+- 案例脚本：examples/rail-skyline-session/ 是当时按这张照片调好参数的脚本。OSM 会把一条线拆成很多段同名的 way，joint.py 会把候选中心附近的同名线路逐条试一遍，结果不受查询返回顺序影响。
+
+
+
+ 2. 沙漠天际线差了一度
+
+前景是一道沙丘，后面一排深色裸山，山脚有几座电塔。画面里没有字、路和房子，以图搜图只搜到一些泛泛的西北沙漠照片。
+
+
+
+照片 → 1,537 处 → 卡在 10 px 上下 → 解出 1° 歪斜 → 1 处 → 一道沙脊
+
+| 步骤 | 它做了什么 | 剩余 |
+|---|---|---|
+| 读图 | 电塔是画面里唯一的人造物，所以机位离某条高压线不过几公里。沙、戈壁和裸岩指向中国西北。 | 4 省 |
+| 高压线 × 地形 | osm.py geom 拉出新疆、甘肃、宁夏、青海的全部高压线，terrain.py scan 沿线用高程数据算，留下山能占满视野的地方。 | 1,537 处 |
+| 天际线拟合 | terrain.py ridge 描出照片里的山脊，t</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Oldcircle/geo-sleuth/issues/32"><span class="rp-item-num">#32</span><span class="rp-item-title">[run] 酒店窗景细定位：楼层首猜偏高，房号候选遗漏真实答案3225</span><span class="rp-item-extra">2 comments · 2026-10-15</span></a><a class="rp-item" href="https://github.com/Oldcircle/geo-sleuth/issues/23"><span class="rp-item-num">#23</span><span class="rp-item-title">[regions] Asia: region packs for the remaining countries</span><span class="rp-item-extra">2 comments · 2026-10-13</span></a><a class="rp-item" href="https://github.com/Oldcircle/geo-sleuth/issues/26"><span class="rp-item-num">#26</span><span class="rp-item-title">[regions] Oceania: region packs for the remaining countries</span><span class="rp-item-extra">1 comments · 2026-10-13</span></a><a class="rp-item" href="https://github.com/Oldcircle/geo-sleuth/issues/81"><span class="rp-item-num">#81</span><span class="rp-item-title">[bug] Admin lookup misses case/accent variants and same-name places; country children include a neighbour&#x27;s divisions; format misses are silent</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/Oldcircle/geo-sleuth/issues/69"><span class="rp-item-num">#69</span><span class="rp-item-title">城市错误</span><span class="rp-item-extra">0 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/Oldcircle/geo-sleuth/issues/25"><span class="rp-item-num">#25</span><span class="rp-item-title">[regions] Americas: region packs for the remaining countries</span><span class="rp-item-extra">0 comments · 2026-10-13</span></a><a class="rp-item" href="https://github.com/Oldcircle/geo-sleuth/issues/24"><span class="rp-item-num">#24</span><span class="rp-item-title">[regions] Africa: region packs for the remaining countries</span><span class="rp-item-extra">0 comments · 2026-10-13</span></a><a class="rp-item" href="https://github.com/Oldcircle/geo-sleuth/issues/22"><span class="rp-item-num">#22</span><span class="rp-item-title">[regions] Europe: region packs for the remaining countries</span><span class="rp-item-extra">0 comments · 2026-10-13</span></a></div></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (4)</h3><div class="rp-list"><a class="rp-item" href="https://www.bilibili.com/zh-Hant/video/BV1PoJX6CEvw/" target="_blank" rel="noopener"><span class="rp-news-src">bilibili</span><span class="rp-item-title">照片可精准定位地址 github项目误差2米</span><span class="rp-item-extra">2026-10-16</span></a><a class="rp-item" href="https://note.com/uminami24/n/nbf81085d64f4" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">GPSなしの写真から撮影地点を割り出すAIスキル。Oldcircle/geo-sleuth の観察メモ</span><span class="rp-item-extra">2026-10-14</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00826/article/details/167566995" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">如何快速安装geo-sleuth：面向6大AI智能体的照片地理定位部署教程</span><span class="rp-item-extra">2026-10-11</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00188/article/details/167566645" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">geo-sleuth完整指南：一句话让AI智能体锁定任意照片的拍摄位置</span><span class="rp-item-extra">2026-10-11</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (1)</h3><div class="rp-list"><a class="rp-item" href="https://www.bilibili.com/es/video/BV1PoJX6CEvw/" target="_blank" rel="noopener"><span class="rp-news-src">bilibili</span><span class="rp-item-title">Las fotos pueden geolocalizarse con precisión: un proyecto de GitHub con un margen de error de 2 metros</span><span class="rp-item-extra">2026-10-16</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Oldcircle__geo-sleuth.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

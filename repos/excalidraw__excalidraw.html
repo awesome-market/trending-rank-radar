@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>excalidraw/excalidraw · GitHub Trending Rank Radar</title>
+<meta name="description" content="Virtual whiteboard for sketching hand-drawn like diagrams">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="excalidraw, excalidraw, excalidraw/excalidraw, github stars, github trending, star growth, star history, 开源项目, 星标增长, productivity, collaboration, diagrams, drawing, whiteboard, canvas">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/excalidraw__excalidraw">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="excalidraw/excalidraw · GitHub Trending Rank Radar">
+<meta property="og:description" content="Virtual whiteboard for sketching hand-drawn like diagrams">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/excalidraw__excalidraw">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "excalidraw/excalidraw", "codeRepository": "https://github.com/excalidraw/excalidraw", "url": "https://zhuikan.com/repos/excalidraw__excalidraw", "description": "Virtual whiteboard for sketching hand-drawn like diagrams", "author": {"@type": "Organization", "name": "excalidraw", "url": "https://github.com/excalidraw"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2020-01-02", "keywords": "productivity,collaboration,diagrams,drawing,whiteboard,canvas,hacktoberfest"}</script>
+</head>
+<body data-repo="excalidraw/excalidraw" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">excalidraw/excalidraw</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="excalidraw__excalidraw"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/59452120?v=4&s=300" width="300" height="300" alt="excalidraw avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">excalidraw</div>
+      <a class="rp-side-owner" href="https://github.com/excalidraw">excalidraw</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/excalidraw">excalidraw</a>
+        <span class="rp-sep">/</span><span class="rp-name">excalidraw</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=total">total <b>#84</b></a></div>
+    </div>
+    <p class="rp-desc">Virtual whiteboard for sketching hand-drawn like diagrams</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>135,639</b></span><span class="rp-stat" title="forks">⑂ <b>16,150</b></span><span class="rp-stat" title="watchers">👁 <b>512</b></span><span class="rp-stat" title="prs">⑃ <b>6,922</b></span><span class="rp-stat" title="issues">● <b>5,060</b></span><span class="rp-stat" title="releases">▤ <b>15</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/productivity">productivity</a><a class="rp-topic" href="https://github.com/topics/collaboration">collaboration</a><a class="rp-topic" href="https://github.com/topics/diagrams">diagrams</a><a class="rp-topic" href="https://github.com/topics/drawing">drawing</a><a class="rp-topic" href="https://github.com/topics/whiteboard">whiteboard</a><a class="rp-topic" href="https://github.com/topics/canvas">canvas</a><a class="rp-topic" href="../tags/hacktoberfest">hacktoberfest</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2020-01-02</span><a class="rp-meta-bit rp-home" href="https://excalidraw.com" rel="noopener">excalidraw.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="excalidraw__excalidraw-mcp"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/59452120?v=4" alt="" loading="lazy">excalidraw-mcp</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/excalidraw/excalidraw">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.18.1</span><a class="rp-dl-a" href="https://github.com/excalidraw/excalidraw/releases/tag/v0.18.1">v0.18.1 ↓</a><span class="rp-dl-ver">0.18.1</span><span class="rp-dl-date">2026-04-21</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+56</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">135,639</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">16,150</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">512</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">6,922</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">5,060</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">15</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Excalidraw Editor |
+  Blog |
+  Documentation |
+  Excalidraw+
+
+
+
+  
+    An open source virtual hand-drawn style whiteboard. 
+    Collaborative and end-to-end encrypted. 
+  
+  
+
+
+
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+
+
+
+  
+    
+      
+    
+    
+      
+        Create beautiful hand-drawn like diagrams, wireframes, or whatever you like.
+      
+    
+  
+
+
+ Features
+
+The Excalidraw editor (npm package) supports:
+
+- 💯&amp;nbsp;Free &amp; open-source.
+- 🎨&amp;nbsp;Infinite, canvas-based whiteboard.
+- ✍️&amp;nbsp;Hand-drawn like style.
+- 🌓&amp;nbsp;Dark mode.
+- 🏗️&amp;nbsp;Customizable.
+- 📷&amp;nbsp;Image support.
+- 😀&amp;nbsp;Shape libraries support.
+- 🌐&amp;nbsp;Localization (i18n) support.
+- 🖼️&amp;nbsp;Export to PNG, SVG &amp; clipboard.
+- 💾&amp;nbsp;Open format - export drawings as an .excalidraw json file.
+- ⚒️&amp;nbsp;Wide range of tools - rectangle, circle, diamond, arrow, line, free-draw, eraser...
+- ➡️&amp;nbsp;Arrow-binding &amp; labeled arrows.
+- 🔙&amp;nbsp;Undo / Redo.
+- 🔍&amp;nbsp;Zoom and panning support.
+
+ Excalidraw.com
+
+The app hosted at excalidraw.com is a minimal showcase of what you can build with Excalidraw. Its source code is part of this repository as well, and the app features:
+
+- 📡&amp;nbsp;PWA support (works offline).
+- 🤼&amp;nbsp;Real-time collaboration.
+- 🔒&amp;nbsp;End-to-end encryption.
+- 💾&amp;nbsp;Local-first support (autosaves to the browser).
+- 🔗&amp;nbsp;Shareable links (export to a readonly link you can share with others).
+
+We&#x27;ll be adding these features as drop-in plugins for the npm package in the future.
+
+ Quick start
+
+Note: following instructions are for installing the Excalidraw npm package when integrating Excalidraw into your own app. To run the repository locally for development, please refer to our Development Guide.
+
+Use npm or yarn to install the package.
+
+bash
+npm install react react-dom @excalidraw/excalidraw
+ or
+yarn add react react-dom @excalidraw/excalidraw
+
+
+Check out our documentation for more details!
+
+ Contributing
+
+- Missing something or found a bug? Report here.
+- Want to contribute? Check out our contribution guide or let us know on Discord.
+- Want to help with translations? See the translation guide.
+
+ Integrations
+
+- VScode extension
+- npm package
+
+ Who&#x27;s integrating Excalidraw
+
+Google Cloud • Meta • CodeSandbox • Obsidian Excalidraw • Replit • Slite • Notion • HackerRank • and many others
+
+ Sponsors &amp; support
+
+If you like the project, you can become a sponsor at Open Collective or use Excalidraw+.
+
+ Thank you for supporting Excalidraw
+
+          
+
+
+
+Last but not least, we&#x27;re thankful to these companies for offering their services for free:</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/excalidraw/excalidraw/issues/1772"><span class="rp-item-num">#1772</span><span class="rp-item-title">Self hosting Excalidraw - Umbrella issue</span><span class="rp-item-extra">149 comments · 2020-06-15</span></a><a class="rp-item" href="https://github.com/excalidraw/excalidraw/issues/4847"><span class="rp-item-num">#4847</span><span class="rp-item-title">Please add a &quot;table&quot; template so can be easily added to the drawings</span><span class="rp-item-extra">146 comments · 2022-02-26</span></a><a class="rp-item" href="https://github.com/excalidraw/excalidraw/issues/1126"><span class="rp-item-num">#1126</span><span class="rp-item-title">Support colors for ranges in text</span><span class="rp-item-extra">66 comments · 2020-03-29</span></a><a class="rp-item" href="https://github.com/excalidraw/excalidraw/issues/5138"><span class="rp-item-num">#5138</span><span class="rp-item-title">Highlight words in a paragraph</span><span class="rp-item-extra">50 comments · 2022-05-03</span></a><a class="rp-item" href="https://github.com/excalidraw/excalidraw/issues/5265"><span class="rp-item-num">#5265</span><span class="rp-item-title">Add LaTeX rendering support</span><span class="rp-item-extra">42 comments · 2022-06-02</span></a><a class="rp-item" href="https://github.com/excalidraw/excalidraw/issues/5166"><span class="rp-item-num">#5166</span><span class="rp-item-title">Pen / Stylus Eraser support (on button hold)</span><span class="rp-item-extra">39 comments · 2022-05-09</span></a><a class="rp-item" href="https://github.com/excalidraw/excalidraw/issues/6688"><span class="rp-item-num">#6688</span><span class="rp-item-title">pan canvas using keyboard in view mode</span><span class="rp-item-extra">34 comments · 2023-06-16</span></a><a class="rp-item" href="https://github.com/excalidraw/excalidraw/issues/1404"><span class="rp-item-num">#1404</span><span class="rp-item-title">Allow to use excalidraw as vue component in other apps</span><span class="rp-item-extra">32 comments · 2020-04-12</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/excalidraw/excalidraw/discussions/12614"><span class="rp-item-num">#12614</span><span class="rp-item-title">How to draw elbow arrows inside shapes or through shapes (= allow the magnetism from inside / through shapes ) ?</span><span class="rp-item-extra">1 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/excalidraw/excalidraw/discussions/12595"><span class="rp-item-num">#12595</span><span class="rp-item-title">Shortcut Query</span><span class="rp-item-extra">1 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/excalidraw/excalidraw/discussions/12512"><span class="rp-item-num">#12512</span><span class="rp-item-title">Support characters</span><span class="rp-item-extra">1 comments · 2026-10-31</span></a><a class="rp-item" href="https://github.com/excalidraw/excalidraw/discussions/12483"><span class="rp-item-num">#12483</span><span class="rp-item-title">Excaliself: a self-hosted app around the Excalidraw canvas (accounts, folders, live collab)</span><span class="rp-item-extra">0 comments · 2026-10-28</span></a><a class="rp-item" href="https://github.com/excalidraw/excalidraw/discussions/12470"><span class="rp-item-num">#12470</span><span class="rp-item-title">Please finally deploy grid options from #9893</span><span class="rp-item-extra">0 comments · 2026-10-27</span></a><a class="rp-item" href="https://github.com/excalidraw/excalidraw/discussions/12461"><span class="rp-item-num">#12461</span><span class="rp-item-title">External element restore replay example</span><span class="rp-item-extra">0 comments · 2026-10-26</span></a><a class="rp-item" href="https://github.com/excalidraw/excalidraw/discussions/12457"><span class="rp-item-num">#12457</span><span class="rp-item-title">Usage of E2E UI tests for Automation</span><span class="rp-item-extra">0 comments · 2026-10-25</span></a><a class="rp-item" href="https://github.com/excalidraw/excalidraw/discussions/12441"><span class="rp-item-num">#12441</span><span class="rp-item-title">Where&#x27;s the web embed whitelist ?</span><span class="rp-item-extra">1 comments · 2026-10-23</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/excalidraw/excalidraw/releases"><b>v0.18.1</b> <span class="rp-rel-tag">v0.18.1</span> <span class="rp-item-extra">2026-04-21</span></a><pre class="rp-pre">Security patch release for @excalidraw/excalidraw@0.18.x, addressing upstream Mermaid XSS vulnerability CVE-2025-54881 / GHSA-7rqq-prvp-x9jh.
+
+- Backports Mermaid XSS mitigation by updating @excalidraw/mermaid-to-excalidraw to 2.2.2
+- Pins @types/d3-dispatch for compatibility with the 0.18.x TypeScript version</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (5)</h3><div class="rp-list"><a class="rp-item" href="https://note.com/fond_egret3316/n/n9cf1b410db7e" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">Claude Codeの一般提供開始——IDE連携、SDK、GitHub連携をデモで見る</span><span class="rp-item-extra">2026-10-20</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMia0FVX3lxTE55aDZ1Z2ZXU25Bek1MS0doZFd1Y0FzREtBdmFUb0JTNS1IS2Y1YlVvOGIteW9weHVGWEV3UDVVcDJBbU1WbVN1aDV0WXNLeWlpalhyRGtueHBFNG5WYmVVNUN6bnZrTTg3OWZr?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">www.80aj.com</span><span class="rp-item-title">AgentDraw 结合 Codex：一键生成可编辑的 Excalidraw 可视化总结图</span><span class="rp-item-extra">2026-07-12</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE5RUnR5TnNEUFJwamc1aTJDVnlrT3Z5N2JURXpoa0JYZUJFNl9iTHpXRkNSMUxVQzIwX09aQk81Tlo2bnRMSFF3ZURzMk9jb0lXWDhj?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">51CTO</span><span class="rp-item-title">手搓了一个 Skill，让 AI 画出我心目中的流程图</span><span class="rp-item-extra">2026-03-27</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE9FUkRhYVJnTUxKYS1kbVdDcE9vTEFoV0drbERsMzdQamhVTi04aXJZb1o2Si1uT1pyNU9XTnpkelc1b1ZYMHZSVExnU2pEaFJyT3JN?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">51CTO</span><span class="rp-item-title">安利五款超赞的开源 AI 前端组件库</span><span class="rp-item-extra">2025-05-06</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE9PTGxIdkQ3YWY3WjdPRldMMVFxcno5QVowcVlYVXhFUEpxQ0pfZzkzeERMVW5TMk43bnh3R2Vmak1oeERYdHM1ck92THIwMUtfRkxZ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">51CTO</span><span class="rp-item-title">盘点！HelloGitHub 年度热门开源项目</span><span class="rp-item-extra">2025-01-21</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (17)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=38499375" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Open-source drawing tool – Excalidraw</span><span class="rp-item-extra">▲ 184 · 37 comments · 2023-12-02</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=22146973" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: Excalidraw – Sketch Hand-Drawn Like Diagrams</span><span class="rp-item-extra">▲ 30 · 6 comments · 2020-01-25</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=35264204" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: Unscribbler – Simple Handwriting Reader</span><span class="rp-item-extra">▲ 17 · 7 comments · 2023-03-22</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=48606560" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Virtual whiteboard for sketching hand-drawn like diagrams</span><span class="rp-item-extra">▲ 3 · 0 comments · 2026-06-20</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=44043664" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Excalidraw</span><span class="rp-item-extra">▲ 3 · 0 comments · 2025-05-20</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=37502172" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Excalidraw/excalidraw: Virtual whiteboard for sketching hand-drawn like diagrams</span><span class="rp-item-extra">▲ 2 · 0 comments · 2023-09-13</span></a><a class="rp-item" href="https://vc.ru/ai/3238074-animirovannye-shemy-arhitektury-s-live-panel-skill-dlya-claude" target="_blank" rel="noopener"><span class="rp-news-src">vc.ru</span><span class="rp-item-title">Анимированные схемы архитектуры из одного JSON: установка и разбор скилла live-panel-skill для Claude</span><span class="rp-item-extra">2026-11-05</span></a><a class="rp-item" href="https://community.openai.com/t/codex-skill-for-editable-excalidraw-diagrams/1382592" target="_blank" rel="noopener"><span class="rp-news-src">community.openai</span><span class="rp-item-title">Codex skill for editable Excalidraw diagrams</span><span class="rp-item-extra">2026-06-03</span></a><a class="rp-item" href="https://news.lavx.hu/article/how-i-automated-image-exports-for-my-technical-blog-using-excalidraw" target="_blank" rel="noopener"><span class="rp-news-src">news.lavx.hu</span><span class="rp-item-title">How I Automated Image Exports for My Technical Blog Using Excalidraw</span><span class="rp-item-extra">2026-03-30</span></a><a class="rp-item" href="https://www.geeky-gadgets.com/visual-note-taking-in-obsidian-with-excalidraw/" target="_blank" rel="noopener"><span class="rp-news-src">Geeky Gadgets</span><span class="rp-item-title">How to Visualize Your Ideas in Obsidian with Excalidraw</span><span class="rp-item-extra">2025-01-02</span></a><details class="rp-news-more"><summary>7 more</summary><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXEFVX3lxTFAwYVc4M00taEd1d0RfUmFNeDB0dHBlNEUwU1FjM0NsWU15OVVoSm9Hem1wYllXallXSUpmdW83dVdmaWRRbklWRDE0THVpdHJXZUVuc1VIUmlNMXdU?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">YouTube</span><span class="rp-item-title">My database flushed to disk 500,015 times. It needed 9</span><span class="rp-item-extra">2026-10-24</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMilwFBVV95cUxOTUlSMzVtSjBpODd6OWZuS2FETkpqS3lnd2F1MzhIRlBYT2YxeU1EdWFIT05NWC0zV1hxWXc5bGdhT3piUE1fTE1jU095WHVCMkx1dnFLN3M4X0dBOVBuMEZsWnVfbkljSlA0MGtjejJkbnVrTEZhYVBmMTdsSmZhWjNHVzJ4VTlxdE01WFlMd09HNGtUT184?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">MakeUseOf</span><span class="rp-item-title">6 Obsidian plugins that made me never look at another note-taking app again</span><span class="rp-item-extra">2026-05-06</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMid0FVX3lxTE9uVHd2SzZTOTljYjRwRWMxTjR3RFo3VExEb19mT2JiOW9ReEprbHZ3WDFqVE5XcDBzZU5SUFd3YWdVd3B4cE9CY1A1eGdhQWdaMUMwS1VIYThGQkpzUmFuUmhYZW5sTzNXbUowaTFrUzdrMEVjX29N?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">KDnuggets</span><span class="rp-item-title">7 Must-Have Tools for Your Coding Workflow</span><span class="rp-item-extra">2026-01-12</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMikAFBVV95cUxNOHpjUUhVTEpOUVJaYVpqS0lpWWZaQWlQUnNJTzl6OHpGZVNDbEczWDAxck8ya1RYRmRqU1B2RDBOdmx4SHc0NXZHZ2tVMUNoUmNMc3VtMl85ejRvdjhNMzk4RVpiTFFOUnpiZnRLUEFGU0F0bjZaNDlTY2Z0dEdqN2ZUS1B3YThJaFE1c3dHS1c?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">PortSwigger</span><span class="rp-item-title">Top 10 web hacking techniques of 2024: nominations open</span><span class="rp-item-extra">2025-01-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiS0FVX3lxTFBOWWEwTXNZQmptVnhBRnRsWDQ1TW4xWmpOQXprWlIydFdEM0tocDdRcWw3ZUVUVEUyaTBmSlA3QVVZRWQ3NnFydS13RQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">YouTube</span><span class="rp-item-title">My first steps implementing Zettalkasten using Obsidian.md, Data View, Excalidraw and ExcaliBrain</span><span class="rp-item-extra">2022-08-13</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiSEFVX3lxTFBfaW42eWdGOUM5ZUwzODBtM2NTQ3dUa1YwNV9WczQ3OFlCUVV2d05ZOUNjN3pDY1dtNkxCYmRLbWxrMUp5QThJLQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">YouTube</span><span class="rp-item-title">Obsidian Fantasy-Maps of Content with the Map View &amp; Leaflet plugins + Azgaar&#x27;s Map Generator &amp; QGIS</span><span class="rp-item-extra">2022-01-18</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiSkFVX3lxTFBGNC16enljTnE3dWUwT05EdzBhYklGTTk5Y0o4VUhpT1RQd091MW1Pc3BtcTltTC10TlgzZU5JVHNUQnBycFNoaUpR?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">YouTube</span><span class="rp-item-title">Obsidian-Excalidraw 1.2.0 Walkthrough Part 2/10: Basic shapes and features</span><span class="rp-item-extra">2021-07-10</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/excalidraw__excalidraw.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

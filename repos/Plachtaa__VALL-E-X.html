@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plachtaa/VALL-E-X · GitHub Trending Rank Radar</title>
+<meta name="description" content="An open source implementation of Microsoft&#x27;s VALL-E X zero-shot TTS model. Demo is available in https://plachtaa.github.io/vallex/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="VALL-E-X, Plachtaa, Plachtaa/VALL-E-X, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Plachtaa__VALL-E-X">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Plachtaa/VALL-E-X · GitHub Trending Rank Radar">
+<meta property="og:description" content="An open source implementation of Microsoft&#x27;s VALL-E X zero-shot TTS model. Demo is available in https://plachtaa.github.io/vallex/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Plachtaa__VALL-E-X">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Plachtaa/VALL-E-X", "codeRepository": "https://github.com/Plachtaa/VALL-E-X", "url": "https://zhuikan.com/repos/Plachtaa__VALL-E-X", "description": "An open source implementation of Microsoft's VALL-E X zero-shot TTS model. Demo is available in https://plachtaa.github.io/vallex/", "author": {"@type": "Organization", "name": "Plachtaa", "url": "https://github.com/Plachtaa"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Python", "dateCreated": "2023-07-29"}</script>
+</head>
+<body data-repo="Plachtaa/VALL-E-X" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Plachtaa/VALL-E-X</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Plachtaa__VALL-E-X"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/112609742?u=6fdb2377bd8f770cc39e7611f6e7e06c7a0f216b&amp;v=4&s=300" width="300" height="300" alt="Plachtaa avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">VALL-E-X</div>
+      <a class="rp-side-owner" href="https://github.com/Plachtaa">Plachtaa</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Plachtaa">Plachtaa</a>
+        <span class="rp-sep">/</span><span class="rp-name">VALL-E-X</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">An open source implementation of Microsoft&#x27;s VALL-E X zero-shot TTS model. Demo is available in https://plachtaa.github.io/vallex/</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>7,907</b></span><span class="rp-stat" title="forks">⑂ <b>772</b></span><span class="rp-stat" title="watchers">👁 <b>1</b></span><span class="rp-stat" title="prs">⑃ <b>18</b></span><span class="rp-stat" title="issues">● <b>158</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Created 2023-07-29</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Plachtaa/VALL-E-X">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-8</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">7,907</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">772</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">1</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">18</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">158</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">VALL-E X: 多语言文本到语音合成与语音克隆 🔊
+
+
+English | 中文
+
+微软VALL-E X 零样本语音合成模型的开源实现.
+预训练模型现已向公众开放，供研究或应用使用。
+!vallex-framework
+
+VALL-E X 是一个强大而创新的多语言文本转语音（TTS）模型，最初由微软发布。虽然微软最初在他们的研究论文中提出了该概念，但并未发布任何代码或预训练模型。我们认识到了这项技术的潜力和价值，复现并训练了一个开源可用的VALL-E X模型。我们很乐意与社区分享我们的预训练模型，让每个人都能体验到次世代TTS的威力。 🎧
+
+更多细节请查看 model card.
+
+ 📖 目录
+ 🚀 更新日志
+ 📢 功能特点
+ 💻 本地安装
+ 🎧 在线Demo
+ 🐍 使用方法
+ ❓ FAQ
+ 🧠 TODO
+
+ 🚀 Updates
+2023.09.10
+- 支持AR decoder的batch decoding以实现更稳定的生成结果
+
+2023.08.30
+- 将EnCodec解码器替换成了Vocos解码器，提升了音质。 (感谢@v0xie)
+
+2023.08.23
+- 加入了长文本生成功能
+
+2023.08.20
+- 加入了中文版README
+
+2023.08.14
+- 预训练模型权重已发布，从这里下载。
+
+ 💻 本地安装
+ 使用pip安装，必须使用Python 3.10，CUDA 11.7 ~ 12.0，PyTorch 2.0+
+commandline
+git clone https://github.com/Plachtaa/VALL-E-X.git
+cd VALL-E-X
+pip install -r requirements.txt
+
+
+ 注意：如果需要制作prompt，需要安装 ffmpeg 并将其所在文件夹加入到环境变量PATH中
+
+第一次运行程序时，会自动下载相应的模型。如果下载失败并报错，请按照以下步骤手动下载模型。
+
+（请注意目录和文件夹的大小写）
+
+1.检查安装目录下是否存在checkpoints文件夹，如果没有，在安装目录下手动创建checkpoints文件夹（./checkpoints/）。
+
+2.检查checkpoints文件夹中是否有vallex-checkpoint.pt文件。如果没有，请从这里
+手动下载vallex-checkpoint.pt文件并放到checkpoints文件夹里。
+
+3.检查安装目录下是否存在whisper文件夹，如果没有，在安装目录下手动创建whisper文件夹（./whisper/）。
+
+4.检查whisper文件夹中是否有medium.pt文件。如果没有，请从这里
+手动下载medium.pt文件并放到whisper文件夹里。
+
+  🎧 在线Demo
+如果你不想在本地安装，你可以在线体验VALL-E X的功能，点击下面的任意一个链接即可开始体验。
+
+
+
+
+
+ 📢 功能特点
+
+VALL-E X 配备有一系列尖端功能：
+
+1. 多语言 TTS: 可使用三种语言 - 英语、中文和日语 - 进行自然、富有表现力的语音合成。
+
+2. 零样本语音克隆: 仅需录制任意说话人的短短的 3~10 秒录音，VALL-E X 就能生成个性化、高质量的语音，完美还原他们的声音。
+
+
+  查看示例
+
+prompt.webm
+
+
+output.webm
+
+
+
+3. 语音情感控制: VALL-E X 可以合成与给定说话人录音相同情感的语音，为音频增添更多表现力。
+
+
+  查看示例
+
+https://github.com/Plachtaa/VALL-E-X/assets/112609742/56fa9988-925e-4757-82c5-83ecb0df6266
+
+
+https://github.com/Plachtaa/VALL-E-X/assets/112609742/699c47a3-d502-4801-8364-bd89bcc0b8f1
+
+
+
+4. 零样本跨语言语音合成: VALL-E X 可以合成与给定说话人母语不同的另一种语言，在不影响口音和流利度的同时，保留该说话人的音色与情感。以下是一个使用日语母语者进行英文与中文合成的样例： 🇯🇵 🗣
+
+
+  查看示例
+
+jp-prompt.webm
+
+
+en-output.webm
+
+
+zh-output.webm
+
+
+
+5. 口音控制: VALL-E X 允许您控制所合成音频的口音，比如说中文带英语口音或反之。 🇨🇳 💬
+
+
+  查看示例
+
+en-prompt.webm
+
+
+zh-accent-output.webm
+
+
+en-accent-output.webm
+
+
+
+6. 声学环境保留: 当给定说话人的录音在不同的声学环境下录制时，VALL-E X 可以保留该声学环境，使合成语音听起来更加自然。
+
+
+  查看示例
+
+noise-prompt.webm
+
+
+noise-output.webm
+
+
+
+
+你可以访问我们的demo页面 来浏览更多示例!
+
+ 💻 Python中的使用方法
+
+
+  🪑 基本使用
+
+python
+from utils.generation import SAMPLE_RATE, generate_audio, preload_models
+from scipy.io.wavfile import write as write_wav
+from IPython.display import Audio
+
+ download and load all models
+preload_models()
+
+ generate audio from text
+text_prompt = &quot;&quot;&quot;
+Hello, my name is Nose. And uh, and I like hamburger. Hahaha... But I also have other interests such as playing tactic toast.
+&quot;&quot;&quot;
+audio_array = generate_audio(text_prompt)
+
+ save audio to disk
+write_wav(&quot;vallex_generation.wav&quot;, SAMPLE_RATE, audio_array)
+
+ play text in notebook
+Audio(audio_array, rate=SAMPLE_RATE)
+
+
+hamburger.webm
+
+
+
+
+  🌎 多语言
+
+该VALL-E X实现支持三种语言：英语、中文和日语。您可以通过设置language参数来指定语言。默认情况下，该模型将自动检测语言。
+
+
+python
+
+text_prompt = &quot;&quot;&quot;
+    チュソクは私のお気に入りの祭りです。 私は数日間休んで、友人や家族との時間を過ごすことができます。
+&quot;&quot;&quot;
+audio_array = generate_audio(text_prompt)
+
+
+vallex_japanese.webm
+
+注意：即使在一句话中混合多种语言的情况下，VALL-E X也能完美地控制口音，但是您需要手动</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/Plachtaa__VALL-E-X.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

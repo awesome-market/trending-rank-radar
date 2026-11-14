@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlagAlpha/Llama2-Chinese · GitHub Trending Rank Radar</title>
+<meta name="description" content="Llama中文社区，实时汇总最新Llama学习资料，构建最好的中文Llama大模型开源生态，完全开源可商用">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Llama2-Chinese, FlagAlpha, FlagAlpha/Llama2-Chinese, github stars, github trending, star growth, star history, 开源项目, 星标增长, llama, llm, pretraining, agent, llama4, rl">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/FlagAlpha__Llama2-Chinese">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="FlagAlpha/Llama2-Chinese · GitHub Trending Rank Radar">
+<meta property="og:description" content="Llama中文社区，实时汇总最新Llama学习资料，构建最好的中文Llama大模型开源生态，完全开源可商用">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/FlagAlpha__Llama2-Chinese">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "FlagAlpha/Llama2-Chinese", "codeRepository": "https://github.com/FlagAlpha/Llama2-Chinese", "url": "https://zhuikan.com/repos/FlagAlpha__Llama2-Chinese", "description": "Llama中文社区，实时汇总最新Llama学习资料，构建最好的中文Llama大模型开源生态，完全开源可商用", "author": {"@type": "Organization", "name": "FlagAlpha", "url": "https://github.com/FlagAlpha"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Python", "dateCreated": "2023-07-19", "keywords": "llama,llm,pretraining,agent,llama4,rl"}</script>
+</head>
+<body data-repo="FlagAlpha/Llama2-Chinese" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">FlagAlpha/Llama2-Chinese</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="FlagAlpha__Llama2-Chinese"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/271679632?v=4&s=300" width="300" height="300" alt="FlagAlpha avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Llama2-Chinese</div>
+      <a class="rp-side-owner" href="https://github.com/FlagAlpha">FlagAlpha</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/FlagAlpha">FlagAlpha</a>
+        <span class="rp-sep">/</span><span class="rp-name">Llama2-Chinese</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Llama中文社区，实时汇总最新Llama学习资料，构建最好的中文Llama大模型开源生态，完全开源可商用</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>14,755</b></span><span class="rp-stat" title="forks">⑂ <b>1,282</b></span><span class="rp-stat" title="watchers">👁 <b>142</b></span><span class="rp-stat" title="prs">⑃ <b>23</b></span><span class="rp-stat" title="issues">● <b>340</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/llama">llama</a><a class="rp-topic" href="../tags/llm">llm</a><a class="rp-topic" href="https://github.com/topics/pretraining">pretraining</a><a class="rp-topic" href="../tags/agent">agent</a><a class="rp-topic" href="https://github.com/topics/llama4">llama4</a><a class="rp-topic" href="https://github.com/topics/rl">rl</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Created 2023-07-19</span><a class="rp-meta-bit rp-home" href="https://llama.family" rel="noopener">llama.family</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/FlagAlpha/Llama2-Chinese">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-3</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-6</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">14,755</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,282</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">142</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">23</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">340</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">English ｜ 中文
+
+
+
+  Llama中文社区
+
+
+  
+
+
+   最好的Llama大模型开源社区 
+
+
+
+🤗 Hugging Face • 🤖 ModelScope • ✡️ WiseModel
+ 
+
+
+  Llama4原生多模态MoE模型发布！
+
+
+  基于Llama的开源中文预训练大模型Atom
+
+
+
+
+
+ 🗂️ 目录
+- 🗂️ 目录
+- 📌 Llama中文社区
+  - 🔥 社区介绍
+    - 为什么选择Llama中文社区？
+    - 社区活动
+    - 立即加入我们！
+  - 🪵 社区资源
+    - 💻 算力
+    - 📊 数据
+    - 💬 论坛
+    - 📱 应用
+  - 📢 最新动态
+  - 🤗 模型发布
+    - 中文预训练模型Atom
+    - Llama4官方模型
+    - Llama3官方模型
+    - Llama3中文微调模型
+    - Llama2官方模型
+    - Llama2中文微调模型
+- 📌 如何使用Llama模型
+  - 快速上手-使用Anaconda
+  - 快速上手-使用Docker
+  - 快速上手-使用llama.cpp
+  - 快速上手-使用gradio
+  - 快速上手-构建API服务
+  - 快速上手-使用ollama运行
+- 🤖 模型预训练
+- 💡 模型微调
+  - Step1: 环境准备
+  - Step2: 数据准备
+  - Step3: 微调脚本
+    - LoRA微调
+    - 全量参数微调
+  - Step4: 加载微调模型
+    - LoRA微调
+    - 全量参数微调
+- 🍄 模型量化
+- 🚀 部署加速
+  - TensorRT-LLM
+  - vLLM
+  - JittorLLMs
+  - lmdeploy
+- 💪 外延能力
+  - LangChain
+- 🥇 模型评测
+  - Llama4模型评测
+  - Llama2和Llama3对比评测
+  - Llama3模型评测
+  - Llama2模型评测
+- 📖 学习中心
+  - 官方文档
+  - 社区文档
+  - Llama相关论文
+- 📌 其它
+  - 🎉 致谢
+  - 🤔 问题反馈
+
+
+ 📌 Llama中文社区
+
+ 🔥 社区介绍
+
+欢迎来到Llama中文社区！Llama模型的开源无疑极大促进了大模型技术的发展，我们致力于构建一个开放平台，能够让所有的开发者与技术爱好者一起共创Llama开源生态。从大模型到小模型，从文本到多模态，从软件到硬件算法优化，我们期望开源能够带给全人类以AI普惠。在一个科技爆发的时代，加入Llama Family，与技术一同进步，与社区一同前行，一起迈向AGI！
+
+
+
+ 为什么选择Llama中文社区？
+🚀 高级工程师团队支持：社区有一批专注为大家服务的NLP高级工程师，我们有着强大的技术支持和丰富的经验，为您提供专业的指导和帮助。
+
+🎯 中文优化：我们致力于在Llama模型的中文处理方面进行优化，探索适用于中文的最佳实践，以提升其性能和适应性【支持Llama2、Llama3、Llama4】。
+
+💡 创新交流：我们拥有一支富有创造力和经验的社区成员团队，定期组织线上活动、技术研讨和经验分享，促进成员间的创新交流。
+
+🌐 全球联结：我们欢迎来自世界各地的开发者加入社区，构建一个开放、多元化的学习和交流平台。
+
+🤝 开放共享：我们鼓励社区成员开源分享代码和模型，推动合作共赢，共同促进中文NLP技术的发展。
+
+ 社区活动
+🗓️ 线上讲座：邀请行业内专家进行线上讲座，分享Llama在中文NLP领域的最新技术和应用，探讨前沿研究成果。
+
+💻 项目展示：成员可展示自己在Llama中文优化方面的项目成果，获得反馈和建议，促进项目协作。
+
+📚 学习资源：社区维护丰富的学习资料库，包括教程、文档和论文解读，为成员提供全面的学习支持。
+
+📝 论文解读：社区成员共同解读与Llama相关的最新研究论文，深入理解前沿算法和方法。
+
+🎉 主题活动：定期举办各类主题活动，包括挑战赛、黑客马拉松和技术沙龙，让社区成员在轻松愉快的氛围中交流和学习。
+
+🌟 奖励计划：我们设立奖励计划，对社区中积极参与、贡献优秀的成员给予荣誉和奖励，激励更多优秀人才的加入。
+
+📈 技术咨询：我们提供技术咨询服务，解答您在Llama开发和优化过程中遇到的问题，助您快速攻克难关。
+
+🚀 项目合作：鼓励成员间的项目合作，共同探索Llama在实际应用中的潜力，打造创新解决方案。
+
+
+ 立即加入我们！
+📚 愿景：无论您是对Llama已有研究和应用经验的专业开发者，还是对Llama中文优化感兴趣并希望深入探索的新手，我们都热切期待您的加入。在Llama中文社区，您将有机会与行业内顶尖人才共同交流，携手推动中文NLP技术的进步，开创更加美好的技术未来！
+
+🔗 温馨提示：本社区为专业技术交流平台，我们热切期望志同道合的开发者和研究者加入。请遵守社区准则，共同维护积极向上的学习氛围。感谢您的理解和支持！
+
+
+
+
+ 🪵 社区资源
+社区资源的丰富性是社区发展的重要保障，它涵盖了各种方面，其中包括但不限于以下四个方面：算力、数据、论坛和应用。在这些方面的积极发展与充分利用，将为社区成员提供更多的机会和支持，推动整个社区向着更加繁荣的方向发展。更多的内容请看llama.family
+
+
+
+ 💻 算力
+- 提供低于市场价格的算力资源，可用于各类计算任务，如深度学习模型的训练、推理等。
+- 为社区成员提供专属的在线推理服务，让用户可以快速有效地对模型进行推理操作。
+- 提供一键在线微调服务，使用户可以方便地对模型进行微调，以适应不同的任务和数据。
+
+ 📊 数据
+- 开放丰富的训练数据资源，覆盖多个领域和行业，为模型训练提供充足的数据支持。
+- 提供高质量、多样化的数据集，以满足不同用户的需求，并支持数据共享和交流，促进数据资源的充分利用。
+
+ 💬 论坛
+- 社区论坛为社区成员提供了一个在线交流和讨论技术问题的平台。
+- 在论坛上，用户可以分享经验、提出问题、解答疑惑，促进技术交流和合作。
+- 论坛还可以定期举办线上活动、研讨会等，增进社区成员之间的联系和了解。
+
+ 📱 应用
+- 免费提供应用推广展示位，让开发者可以将他们的应用充分展示给社区成员。
+- 提供推广的帮助，包括但不限于宣传推广、用户引导等服务，帮助应用获得更多的曝光和用户。
+- 通过社区平台，为优秀的应用提供合作机会，促进应用开发者之间的合作和交流，共同推动应用的发展和壮大。
+
+
+
+
+ 📢 最新动态
+
+【最新】2025年04月05日：原生多模态MoE架构的Llama 4开源！最高达2T参数的Behemoth模型，以及Maverick、Scout。
+
+【最新】2024年12月06日：Llama 3.3模型发布，更新70B Instruct模型。
+
+【最新】2024年09月25日：Llama 3.2模型发布，核心主打1B、3B端侧小模型，以及11B、90B多模态输入模型！
+
+【最新】2024年07月24日：开源最强Llama 3.1模型发布，包含8B、70B和405B！
+
+【最新】2024年07月16日：社区论坛上线，有大模型问题</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/FlagAlpha/Llama2-Chinese/issues/141"><span class="rp-item-num">#141</span><span class="rp-item-title">Docker部署有成功的吗？</span><span class="rp-item-extra">14 comments · 2023-08-24</span></a><a class="rp-item" href="https://github.com/FlagAlpha/Llama2-Chinese/issues/330"><span class="rp-item-num">#330</span><span class="rp-item-title">llama3 8B中文微调模型Llama3-Chinese-8B-Instruct 存在对生成的答案一直重复的问题</span><span class="rp-item-extra">10 comments · 2024-04-28</span></a><a class="rp-item" href="https://github.com/FlagAlpha/Llama2-Chinese/issues/249"><span class="rp-item-num">#249</span><span class="rp-item-title">pretrain脚本运行时，卡在训练读条</span><span class="rp-item-extra">9 comments · 2023-10-25</span></a><a class="rp-item" href="https://github.com/FlagAlpha/Llama2-Chinese/issues/106"><span class="rp-item-num">#106</span><span class="rp-item-title">在单卡A100上推理Llama2-Chinese-13b-Chat需要35s以上吗？</span><span class="rp-item-extra">9 comments · 2023-08-12</span></a><a class="rp-item" href="https://github.com/FlagAlpha/Llama2-Chinese/issues/342"><span class="rp-item-num">#342</span><span class="rp-item-title">Ollama 运行 Llama3-Chinese-8B-Instruct 回答乱生成</span><span class="rp-item-extra">8 comments · 2024-05-16</span></a><a class="rp-item" href="https://github.com/FlagAlpha/Llama2-Chinese/issues/338"><span class="rp-item-num">#338</span><span class="rp-item-title">本地部署llama 3 70B，微调与推理，需要的硬件配置</span><span class="rp-item-extra">7 comments · 2024-05-10</span></a><a class="rp-item" href="https://github.com/FlagAlpha/Llama2-Chinese/issues/299"><span class="rp-item-num">#299</span><span class="rp-item-title">llama-2-13b多卡推理报错 RuntimeError: CUDA error: device-side assert triggered Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.</span><span class="rp-item-extra">6 comments · 2024-03-05</span></a><a class="rp-item" href="https://github.com/FlagAlpha/Llama2-Chinese/issues/119"><span class="rp-item-num">#119</span><span class="rp-item-title">请问模型支持stream流式输出吗？</span><span class="rp-item-extra">6 comments · 2023-08-16</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/FlagAlpha__Llama2-Chinese.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>karpathy/autoresearch · GitHub Trending Rank Radar</title>
+<meta name="description" content="AI agents running research on single-GPU nanochat training automatically">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="autoresearch, karpathy, karpathy/autoresearch, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/karpathy__autoresearch">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="karpathy/autoresearch · GitHub Trending Rank Radar">
+<meta property="og:description" content="AI agents running research on single-GPU nanochat training automatically">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/karpathy__autoresearch">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "karpathy/autoresearch", "codeRepository": "https://github.com/karpathy/autoresearch", "url": "https://zhuikan.com/repos/karpathy__autoresearch", "description": "AI agents running research on single-GPU nanochat training automatically", "author": {"@type": "Organization", "name": "karpathy", "url": "https://github.com/karpathy"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Python", "dateCreated": "2026-03-06"}</script>
+</head>
+<body data-repo="karpathy/autoresearch" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">karpathy/autoresearch</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="karpathy__autoresearch"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/241138?u=05376db54475c3d23b3a409f4c47d14c4855dc28&amp;v=4&s=300" width="300" height="300" alt="karpathy avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">autoresearch</div>
+      <a class="rp-side-owner" href="https://github.com/karpathy">karpathy</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/karpathy">karpathy</a>
+        <span class="rp-sep">/</span><span class="rp-name">autoresearch</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=total">total <b>#145</b></a></div>
+    </div>
+    <p class="rp-desc">AI agents running research on single-GPU nanochat training automatically</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>100,004</b></span><span class="rp-stat" title="forks">⑂ <b>13,768</b></span><span class="rp-stat" title="watchers">👁 <b>733</b></span><span class="rp-stat" title="prs">⑃ <b>408</b></span><span class="rp-stat" title="issues">● <b>116</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Created 2026-03-06</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="karpathy__LLM101n"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/241138?u=05376db54475c3d23b3a409f4c47d14c4855dc28&amp;v=4" alt="" loading="lazy">LLM101n</a><a class="rp-same-link" href="karpathy__arxiv-sanity-preserver"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/241138?u=05376db54475c3d23b3a409f4c47d14c4855dc28&amp;v=4" alt="" loading="lazy">arxiv-sanity-preserver</a><a class="rp-same-link" href="karpathy__build-nanogpt"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/241138?u=05376db54475c3d23b3a409f4c47d14c4855dc28&amp;v=4" alt="" loading="lazy">build-nanogpt</a><a class="rp-same-link" href="karpathy__llama2.c"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/241138?u=05376db54475c3d23b3a409f4c47d14c4855dc28&amp;v=4" alt="" loading="lazy">llama2.c</a><a class="rp-same-link" href="karpathy__micrograd"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/241138?u=05376db54475c3d23b3a409f4c47d14c4855dc28&amp;v=4" alt="" loading="lazy">micrograd</a><a class="rp-same-link" href="karpathy__nanoGPT"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/241138?u=05376db54475c3d23b3a409f4c47d14c4855dc28&amp;v=4" alt="" loading="lazy">nanoGPT</a><a class="rp-same-link" href="karpathy__nanochat"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/241138?u=05376db54475c3d23b3a409f4c47d14c4855dc28&amp;v=4" alt="" loading="lazy">nanochat</a><a class="rp-same-link" href="karpathy__neuraltalk2"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/241138?u=05376db54475c3d23b3a409f4c47d14c4855dc28&amp;v=4" alt="" loading="lazy">neuraltalk2</a><a class="rp-same-link" href="karpathy__nn-zero-to-hero"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/241138?u=05376db54475c3d23b3a409f4c47d14c4855dc28&amp;v=4" alt="" loading="lazy">nn-zero-to-hero</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/karpathy/autoresearch">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+65</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">100,004</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">13,768</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">733</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">408</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">116</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">autoresearch
+
+!teaser
+
+One day, frontier AI research used to be done by meat computers in between eating, sleeping, having other fun, and synchronizing once in a while using sound wave interconnect in the ritual of &quot;group meeting&quot;. That era is long gone. Research is now entirely the domain of autonomous swarms of AI agents running across compute cluster megastructures in the skies. The agents claim that we are now in the 10,205th generation of the code base, in any case no one could tell if that&#x27;s right or wrong as the &quot;code&quot; is now a self-modifying binary that has grown beyond human comprehension. This repo is the story of how it all began. -@karpathy, March 2026.
+
+The idea: give an AI agent a small but real LLM training setup and let it experiment autonomously overnight. It modifies the code, trains for 5 minutes, checks if the result improved, keeps or discards, and repeats. You wake up in the morning to a log of experiments and (hopefully) a better model. The training code here is a simplified single-GPU implementation of nanochat. The core idea is that you&#x27;re not touching any of the Python files like you normally would as a researcher. Instead, you are programming the program.md Markdown files that provide context to the AI agents and set up your autonomous research org. The default program.md in this repo is intentionally kept as a bare bones baseline, though it&#x27;s obvious how one would iterate on it over time to find the &quot;research org code&quot; that achieves the fastest research progress, how you&#x27;d add more agents to the mix, etc. A bit more context on this project is here in this tweet and this tweet.
+
+ How it works
+
+The repo is deliberately kept small and only really has three files that matter:
+
+- prepare.py — fixed constants, one-time data prep (downloads training data, trains a BPE tokenizer), and runtime utilities (dataloader, evaluation). Not modified.
+- train.py — the single file the agent edits. Contains the full GPT model, optimizer (Muon + AdamW), and training loop. Everything is fair game: architecture, hyperparameters, optimizer, batch size, etc. This file is edited and iterated on by the agent.
+- program.md — baseline instructions for one agent. Point your agent here and let it go. This file is edited and iterated on by the human.
+
+By design, training runs for a fixed 5-minute time budget (wall clock, excluding startup/compilation), regardless of the details of your compute. The metric is val_bpb (validation bits per byte) — lower is better, and vocab-size-independent so architectural changes are fairly compared.
+
+If you are new to neural networks, this &quot;Dummy&#x27;s Guide&quot; looks pretty good for a lot more context.
+
+ Quick start
+
+Requirements: A single NVIDIA GPU (tested on H100), Python 3.10+, uv.
+
+bash
+
+ 1. Install uv project manager (if you don&#x27;t already have it)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+ 2. Install dependencies
+uv sync
+
+ 3. Download data and train tokenizer (one-time, ~2 min)
+uv run prepare.py
+
+ 4. Manually </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/karpathy/autoresearch/issues/57"><span class="rp-item-num">#57</span><span class="rp-item-title">Codex doesn&#x27;t seem to work?</span><span class="rp-item-extra">41 comments · 2026-03-08</span></a><a class="rp-item" href="https://github.com/karpathy/autoresearch/issues/47"><span class="rp-item-num">#47</span><span class="rp-item-title">improvements to novelty</span><span class="rp-item-extra">8 comments · 2026-03-08</span></a><a class="rp-item" href="https://github.com/karpathy/autoresearch/issues/599"><span class="rp-item-num">#599</span><span class="rp-item-title">Agent can lower val_bpb without improving the model — add an optional experiment integrity log?</span><span class="rp-item-extra">5 comments · 2026-05-31</span></a><a class="rp-item" href="https://github.com/karpathy/autoresearch/issues/6"><span class="rp-item-num">#6</span><span class="rp-item-title">Rotary embeddings pre-allocate 10x more memory than needed</span><span class="rp-item-extra">4 comments · 2026-03-07</span></a><a class="rp-item" href="https://github.com/karpathy/autoresearch/issues/215"><span class="rp-item-num">#215</span><span class="rp-item-title">Harden downloaded dataset shard cache in prepare.py</span><span class="rp-item-extra">3 comments · 2026-03-12</span></a><a class="rp-item" href="https://github.com/karpathy/autoresearch/issues/200"><span class="rp-item-num">#200</span><span class="rp-item-title">Is there a plan to reduce hallucinations?</span><span class="rp-item-extra">3 comments · 2026-03-12</span></a><a class="rp-item" href="https://github.com/karpathy/autoresearch/issues/42"><span class="rp-item-num">#42</span><span class="rp-item-title">Proposal: explicit &quot;Ralph Wiggum loop&quot; for autonomous experimentation</span><span class="rp-item-extra">3 comments · 2026-03-08</span></a><a class="rp-item" href="https://github.com/karpathy/autoresearch/issues/596"><span class="rp-item-num">#596</span><span class="rp-item-title">RTX 3060 fork — 27 experiments, 25% improvement (1.604 → 1.201 val_bpb)</span><span class="rp-item-extra">2 comments · 2026-05-23</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/karpathy/autoresearch/discussions/649"><span class="rp-item-num">#649</span><span class="rp-item-title">Autonomous research on physical instruments: what should the experiment be allowed to change?</span><span class="rp-item-extra">0 comments · 2026-10-16</span></a><a class="rp-item" href="https://github.com/karpathy/autoresearch/discussions/645"><span class="rp-item-num">#645</span><span class="rp-item-title">Autoresearch Sentinel: a controller-driven experiment loop beyond LLM training</span><span class="rp-item-extra">0 comments · 2026-10-03</span></a><a class="rp-item" href="https://github.com/karpathy/autoresearch/discussions/641"><span class="rp-item-num">#641</span><span class="rp-item-title">autoresearch-xv — one vendor-agnostic source (NVIDIA+AMD) for measuring the cross-vendor efficiency gap</span><span class="rp-item-extra">0 comments · 2026-09-09</span></a><a class="rp-item" href="https://github.com/karpathy/autoresearch/discussions/635"><span class="rp-item-num">#635</span><span class="rp-item-title">Application of the autoresearch loop to verifiable CoT generation (programmatic solvers + twin-blind checks)</span><span class="rp-item-extra">0 comments · 2026-08-02</span></a><a class="rp-item" href="https://github.com/karpathy/autoresearch/discussions/632"><span class="rp-item-num">#632</span><span class="rp-item-title">Causal Architectures of Consciousness</span><span class="rp-item-extra">0 comments · 2026-07-26</span></a><a class="rp-item" href="https://github.com/karpathy/autoresearch/discussions/630"><span class="rp-item-num">#630</span><span class="rp-item-title">check and involve me too</span><span class="rp-item-extra">1 comments · 2026-07-20</span></a><a class="rp-item" href="https://github.com/karpathy/autoresearch/discussions/612"><span class="rp-item-num">#612</span><span class="rp-item-title">What Happens When the Research Loop Gets Stuck?</span><span class="rp-item-extra">1 comments · 2026-06-16</span></a><a class="rp-item" href="https://github.com/karpathy/autoresearch/discussions/603"><span class="rp-item-num">#603</span><span class="rp-item-title">Is Anthropic&#x27;s Recursive Self-Improvement just autoresearch at scale, or a different paradigm?</span><span class="rp-item-extra">1 comments · 2026-06-10</span></a></div></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (6)</h3><div class="rp-list"><a class="rp-item" href="https://tw.news.yahoo.com/autoresearch-%E5%A4%95%E7%88%86%E7%B4%85-github%E7%A0%B44%E8%90%AC%E9%A1%86%E6%98%9F-%E9%80%99630%E8%A1%8C%E7%A8%8B%E5%BC%8F%E7%A2%BC%E5%A6%82%E4%BD%95%E8%AE%93ai%E8%87%AA%E5%B7%B1%E5%81%9A%E7%A0%94%E7%A9%B6-073401603.html" target="_blank" rel="noopener"><span class="rp-news-src">Yahoo奇摩新聞</span><span class="rp-item-title">AutoResearch一夕爆紅！GitHub破4萬顆星，這630行程式碼如何讓AI自己做研究？</span><span class="rp-item-extra">2026-03-20</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTFBMZ0dxZzJYLTRteGNtczNKX2tMVWx6OE5lTUJjdzdmNGliT29aTFVhdFc0RnFLT245dFdfYXhVLXQtVlVaejV5QnlsWkJodGNoYlFv?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">51CTO</span><span class="rp-item-title">详解 Andrej Karpathy 全新工具 Autoresearch 入门全攻略</span><span class="rp-item-extra">2026-04-29</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMif0FVX3lxTE5uN1hPN3A5QzhWVC1hcVE3WXdDbFdzTzE1X1JMcWZfOGZwMFhxYmlnMEhEMVlPNm9Xd1VkMnAyUjhod1plR0c2aGRLRDRYRVhKcWRWX0k3bmpBY2ZkTVN4bHRFd04zczV3bkVCQU5qaUhmcUx6RkZTc3lSYkgwNDA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">新浪财经_金融信息服务商</span><span class="rp-item-title">Karpathy开源“AI研究员”，630行代码让智能体通宵炼模型，一晚可跑100次实验|OpenAI|训练|文件|人类|迭代_手机新浪网</span><span class="rp-item-extra">2026-04-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiV0FVX3lxTE5tS3RiUndUbFU1cVBpY2JMWFlpRm9kY3llNFp4XzVkRnYzVTdLTWw2aHpOUXg1bEQyVVhyaVRMOVhmVkFyM3VZNTdHODdnVkpLbnB2dmhXVQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">麻省理工科技评论</span><span class="rp-item-title">从选题到论文一键生成：最新“论文虾”把Karpathy的autoresearch往前推了十步</span><span class="rp-item-extra">2026-03-18</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE84cGJzSjdjWHBWSXh2VWRZU3RoeERmbWNoS2hnaVdIZDFDekQtTVliNzE4WElqX3MwX3NJZy1idVVXcWlQYTcydF8xVjlNc3czWm4wb0hQOG5sOHR1ZkE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">InfoQ.cn</span><span class="rp-item-title">两天推翻 Karpathy 20 年工作习惯！百行代码开源项目“封神”，AI 替你通宵肝研究、战绩可查</span><span class="rp-item-extra">2026-03-17</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiSEFVX3lxTFBGUXp5aThKbTcwN0NiZXV2ejI3N0Q5OWN1SVVpNHg1b0ZJLWx2d0RfcVNzQWFHdkRDSFZQNkJHSy1sTlFSSlpLZQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">智源社区</span><span class="rp-item-title">卡帕西630行代码炸出81个智能体，4天协作跑2333次实验，公布预训练十大发现</span><span class="rp-item-extra">2026-03-17</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (20)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=47291123" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Autoresearch: Agents researching on single-GPU nanochat training automatically</span><span class="rp-item-extra">▲ 208 · 58 comments · 2026-03-07</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=48076137" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: My AI agents bully each other to prevent context drift</span><span class="rp-item-extra">▲ 9 · 0 comments · 2026-05-09</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47317932" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Karpathy: Autoresearch</span><span class="rp-item-extra">▲ 4 · 1 comments · 2026-03-10</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47399731" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: Karpathy&#x27;s autoresearch applied to debugging – two open-source skills</span><span class="rp-item-extra">▲ 3 · 1 comments · 2026-03-16</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=48091975" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: AI agents who prevent context drift through gossip</span><span class="rp-item-extra">▲ 1 · 0 comments · 2026-05-11</span></a><a class="rp-item" href="https://www.prnewswire.com/news-releases/evomap-open-sources-autoresearch-giving-ai-agents-a-way-to-test-their-own-research-ideas-302863058.html" target="_blank" rel="noopener"><span class="rp-news-src">irblog.prnewswire.com</span><span class="rp-item-title">EvoMap Open-Sources AutoResearch, Giving AI Agents a Way to Test Their Own Research Ideas</span><span class="rp-item-extra">2026-09-01</span></a><a class="rp-item" href="https://www.marktechpost.com/2026/07/12/guide-to-loop-engineering/" target="_blank" rel="noopener"><span class="rp-news-src">marktechpost</span><span class="rp-item-title">Guide to Loop Engineering: How ‘autoresearch’ and ‘Bilevel Autoresearch’ Turn AI Agents Into Autonomous Machine Learning ML Research Loops</span><span class="rp-item-extra">2026-07-12</span></a><a class="rp-item" href="https://www.techtimes.com/articles/316804/20260519/karpathys-autoresearch-loop-spreading-fast-shopifys-53-speed-claim-still-unmerged-flagged.htm" target="_blank" rel="noopener"><span class="rp-news-src">techtimes</span><span class="rp-item-title">Karpathy’s Autoresearch Loop Is Spreading Fast: Shopify’s 53% Speed Claim Still Unmerged, Flagged as Overfit</span><span class="rp-item-extra">2026-05-19</span></a><a class="rp-item" href="https://hackernoon.com/i-let-karpathys-autoresearch-agent-run-overnight" target="_blank" rel="noopener"><span class="rp-news-src">Hacker</span><span class="rp-item-title">I Let Karpathy&#x27;s AutoResearch Agent Run Overnight!</span><span class="rp-item-extra">2026-04-11</span></a><a class="rp-item" href="https://www.geeky-gadgets.com/autoresearch-explained/" target="_blank" rel="noopener"><span class="rp-news-src">Geeky Gadgets</span><span class="rp-item-title">Why Self-Improving AI Is the Next Big Shift in Software Development</span><span class="rp-item-extra">2026-04-09</span></a><details class="rp-news-more"><summary>10 more</summary><a class="rp-item" href="https://www.geeky-gadgets.com/autoresearch-metrics-evaluation/" target="_blank" rel="noopener"><span class="rp-news-src">Geeky Gadgets</span><span class="rp-item-title">Cut Manual AI Training Time With the Karpathy AutoResearch Framework</span><span class="rp-item-extra">2026-03-30</span></a><a class="rp-item" href="https://www.nextbigfuture.com/2026/03/andrej-karpathy-on-code-agents-autoresearch-and-the-self-improvement-loopy-era-of-ai.html" target="_blank" rel="noopener"><span class="rp-news-src">NextBigFuture</span><span class="rp-item-title">Andrej Karpathy on Code Agents, AutoResearch and the Self Improvement Loopy Era of AI</span><span class="rp-item-extra">2026-03-20</span></a><a class="rp-item" href="https://finance.yahoo.com/news/younet-ai-highlights-researgency-ai-151800773.html" target="_blank" rel="noopener"><span class="rp-news-src">Yahoo Finance</span><span class="rp-item-title">Younet.ai Highlights Researgency.ai Collaboration with Kala Bio (KALA) as New &quot;AutoResearch&quot; Milestone Signals the Rise of Autonomous Research Agents</span><span class="rp-item-extra">2026-03-11</span></a><a class="rp-item" href="https://blockchain.news/ainews/autoresearch-by-andrej-karpathy-latest-agentic-research-workflow-guide-and-5-business-use-cases" target="_blank" rel="noopener"><span class="rp-news-src">blockchain</span><span class="rp-item-title">Autoresearch by Andrej Karpathy: Latest Agentic Research Workflow Guide and 5 Business Use Cases</span><span class="rp-item-extra">2026-03-09</span></a><a class="rp-item" href="https://mlq.ai/news/andrej-karpathy-releases-open-source-autoresearch-tool-for-autonomous-ai-experiments/" target="_blank" rel="noopener"><span class="rp-news-src">mlq</span><span class="rp-item-title">Andrej Karpathy Releases Open-Source AutoResearch Tool for Autonomous AI Experiments</span><span class="rp-item-extra">2026-03-09</span></a><a class="rp-item" href="https://x.com/hooeem/status/2030720614752039185" target="_blank" rel="noopener"><span class="rp-news-src">x</span><span class="rp-item-title">How to deploy autoresearch:</span><span class="rp-item-extra">2026-03-08</span></a><a class="rp-item" href="https://venturebeat.com/technology/andrej-karpathys-new-open-source-autoresearch-lets-you-run-hundreds-of-ai" target="_blank" rel="noopener"><span class="rp-news-src">VentureBeat</span><span class="rp-item-title">Andrej Karpathy&#x27;s new open source &#x27;autoresearch&#x27; lets you run hundreds of AI experiments a night — with revolutionary implications</span><span class="rp-item-extra">2026-03-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiZkFVX3lxTFBHM19UQ0g0VlJGSzJYa2FROHBrV19aYVJNTlVDRVFRb3hfaXZvdWJwWkVPT2d1SWVkMVdIdGZpempZSjNZY0dxTWtzdi1CbnFITXlTTmVieVZXVDJua24zdG85Rm83dw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Unisba Media</span><span class="rp-item-title">Karpathy&#x27;s &quot;autoresearch&quot; Broke The Internet Lamine Yamal (p1CF8BOssT)</span><span class="rp-item-extra">2026-11-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxPdVVEY0lqcklFNEZteXlXNUJKMnJRU01uaU9nUTFZY1IzNzhSbUtleWswQUtEb2UyQ2R6TmJiVjY3Rks3WktvYnRJVzhYWV9wM2xKOUpHVTZUdXh2SWNINjZ2czZwWXdodHVXUmJ1OHdNVEFjbXJrTTNnQzk1S2xJNUR6ZWNQa1BJTFFQUWhLMXRYZURadUs5U0FaRFpZcGZ4?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Kingy AI</span><span class="rp-item-title">Karpathy Autoresearch Guide: Setup, Loop &amp; val_bpb</span><span class="rp-item-extra">2026-03-09</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxOVTVEYnlEakxiSVhoSzV3a0NfVXI1YXlLY0x6UWUwXzVpRGR2MnlhNlVIUGJ1clczS25EczAyRzFIWkhlZDcxdldTUEs0a2l1RjEyTGdjUkl5YjYwNnJhbXVoOVpHandfYkhiNm50Z0RqOGk3T0lhN2UtZUFseWt0bG90TDk?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Quantum Zeitgeist</span><span class="rp-item-title">Andrej Karpathy AI’s Iterative Self-Improvement Of Code</span><span class="rp-item-extra">2026-03-08</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/karpathy__autoresearch.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

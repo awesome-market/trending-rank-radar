@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T-Auto/dsh-ops · GitHub Trending Rank Radar</title>
+<meta name="description" content="A toolkit for low-level operations in DSH, designed to reduce token usage and task execution time / DSH 底层操作工具插件，旨在减少 Token 消耗与任务耗时">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="dsh-ops, T-Auto, T-Auto/dsh-ops, github stars, github trending, star growth, star history, 开源项目, 星标增长, dsh, dsh-plugin, dsh-plugins">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/T-Auto__dsh-ops">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="T-Auto/dsh-ops · GitHub Trending Rank Radar">
+<meta property="og:description" content="A toolkit for low-level operations in DSH, designed to reduce token usage and task execution time / DSH 底层操作工具插件，旨在减少 Token 消耗与任务耗时">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/T-Auto__dsh-ops">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "T-Auto/dsh-ops", "codeRepository": "https://github.com/T-Auto/dsh-ops", "url": "https://zhuikan.com/repos/T-Auto__dsh-ops", "description": "A toolkit for low-level operations in DSH, designed to reduce token usage and task execution time / DSH 底层操作工具插件，旨在减少 Token 消耗与任务耗时", "author": {"@type": "Organization", "name": "T-Auto", "url": "https://github.com/T-Auto"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2026-10-08", "keywords": "dsh,dsh-plugin,dsh-plugins"}</script>
+</head>
+<body data-repo="T-Auto/dsh-ops" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">T-Auto/dsh-ops</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="T-Auto__dsh-ops"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/183904010?u=6c04fa54fff4a5dab312d0acbd01a98d520f5dc0&amp;v=4&s=300" width="300" height="300" alt="T-Auto avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">dsh-ops</div>
+      <a class="rp-side-owner" href="https://github.com/T-Auto">T-Auto</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/T-Auto">T-Auto</a>
+        <span class="rp-sep">/</span><span class="rp-name">dsh-ops</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=new">new <b>#116</b></a></div>
+    </div>
+    <p class="rp-desc">A toolkit for low-level operations in DSH, designed to reduce token usage and task execution time / DSH 底层操作工具插件，旨在减少 Token 消耗与任务耗时</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,808</b></span><span class="rp-stat" title="forks">⑂ <b>208</b></span><span class="rp-stat" title="watchers">👁 <b>10</b></span><span class="rp-stat" title="prs">⑃ <b>410</b></span><span class="rp-stat" title="issues">● <b>497</b></span><span class="rp-stat" title="releases">▤ <b>27</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/dsh">dsh</a><a class="rp-topic" href="../tags/dsh-plugin">dsh-plugin</a><a class="rp-topic" href="https://github.com/topics/dsh-plugins">dsh-plugins</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-10-08</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/T-Auto/dsh-ops">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.5.5</span><a class="rp-dl-a" href="https://github.com/T-Auto/dsh-ops/releases/tag/v0.5.5">v0.5.5 ↓</a><span class="rp-dl-ver">0.5.5</span><span class="rp-dl-date">2026-11-13</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+31</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,808</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">208</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">10</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">410</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">497</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">27</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">中文 | English
+
+
+
+  
+    
+  
+
+
+
+  
+  
+  
+
+
+ dsh-ops
+
+以提高token效率为目的，提供新增的ops系列工具并隐藏部分官方工具为方案的插件，低改动面，低侵入性，与其他插件广泛兼容。
+
+- Bash 与宿主 Shell 隐藏独立配置；Windows 可用 ops_bash 替代 pwsh，也可保留官方 Shell。
+- Native/PTC 消费者预设发布共享的有界工具面；Bash 由单行开关控制，关闭替换时原版工具保持可用。
+- 第五个内置模式 ops-ptc 继承 PTC 工具面，由插件运行时注册（定义来自随包片段 presets/ops-ptc.patch.yml，不是插件管理器行），并可开启批量调用上下文提示（batchingGuidance）：会话首轮注入一次英文教学（prompts/batching-guidance.md，进入历史、不改系统提示词），之后按根 run_code 程序形状（bypass/plan/shape，每类每轮一次、合规解锁）以 additionalContexts 纠偏、不阻断不改写程序；默认模式由 global.forceDefaultOpsPtc 开关控制（默认开启，关闭或禁用行时恢复强制前/官方默认），详见预设与默认模式。
+- 启用 DSH 预留的 tools_addition 动态工具加载，并提供渐进式纰漏的工具，作为高级功能（如pdf、word读取、超多文件批量修改）的加载平台，大大减少常见特定场景的token消耗量，且不会导致系统提示词膨胀
+- 为 Native 模式提供返回紧凑、带行号和更好错误回馈的工具以遏制报错循环，减少调用轮次
+- 为 PTC 模式提供一些返回结构化 JSON 值的工具以降低 ai 在 ptc 模式下编写 TypeScript 代码的token总量和心智负担
+- PTC SDK 目录包含 18 个 API：15 个文件/文档工具，加批处理、结果引用和加载器。
+
+
+  
+  &amp;nbsp;&amp;nbsp;&amp;nbsp;
+  
+
+左：deepseek-v4.1-flash-1017在各harness的跑分与开销右：ops在自用benchmark上取得的的成绩。完整benchmark将随后续更新发布dsh-ops团队将致力于持续优化dsh的token效率，以更低的成本更好地完成同样的任务
+
+交流群：企鹅 1127808570
+
+ 安装、更新、卸载
+
+ 本分支候选的 Windows 默认载荷为完整 Niubash 1.5.0，随 dsh-ops 主包管理，不再默认下载 Git Bash 可选包。所有 npm、市场和 CLI 更新入口的二进制位置与清理边界见升级与卸载。@latest 仍指已发布版本，不代表此 PR 已发布。
+
+ 官方插件市场
+
+在目标 DSH 应用的插件市场中输入 npm 包名 dsh-ops，选择自定义地址，输入 https://mirrors.huaweicloud.com/repository/npm/，安装后选择启用。目前不推荐用npmmirror安装，有bug。
+
+当然，如果你确定可以连接 npm 官方源那就选择官方源，如果你不确定那就按教程操作。
+
+!在插件市场中选择自定义地址并填入华为云 npm 镜像
+
+
+
+ npm 一键安装
+
+ 安装方法
+
+console
+npx --yes dsh-ops@latest install --profile desktop
+npx --yes dsh-ops@latest install --profile web
+npx --yes dsh-ops@latest install --profile tui
+
+
+必须显式选择目标 profile；tui 映射到 dsh-TUI 产品的 dsh-tui profile，不是旧的 tui 目录。请先初始化目标应用。该入口委托官方 DSH CLI 安装，不另写一套 profile 锁与回滚逻辑。
+
+桌面端必须使用桌面应用自带的 CLI；默认探测 %LOCALAPPDATA%\Programs\DeepSeek Harness\resources\runtime\cli\bin\dsh.cmd。安装在其它位置时加 --dsh-cli &quot;\resources\runtime\cli\bin\dsh.cmd&quot;。Web/TUI 需要可用的 DSH CLI，可同样显式指定。
+
+安装或卸载时可加 --dry-run 预演。它按指定路径或 PATH（Windows 同时使用 PATHEXT）解析 CLI，检查文件、POSIX 执行权限及通过 Node 启动的入口文件，并在预演时同样拒绝不安全的 Windows 命令脚本路径；检查失败返回非零。预演只打印计划，不启动 CLI、不修改 profile。成功表示这些静态检查已通过，不保证所选程序的身份、版本、profile 兼容性或后续安装结果。
+
+也可以直接使用官方命令：
+
+console
+dsh plugin --profile web add dsh-ops
+dsh plugin --profile dsh-tui add dsh-ops
+&quot;\resources\runtime\cli\bin\dsh.cmd&quot; plugin --profile desktop add dsh-ops
+
+
+普通 DSH CLI 不能管理保留的 desktop profile；不要把它与桌面自带入口混淆。
+
+请安装 registry 发行包，或已完整构建并打包的源码 tarball。直接 git+https 安装与未构建的
+源码检出缺少完整运行时；见不支持通过 Git 通道安装。
+
+ 更新方法
+
+宿主支持从 DSH 0.2.2-rc.1 起；0.5 系列不再支持 0.2.0/0.2.1 或更早的 0.2.2 预览版。保留 DSH adapter 结构，按 0.2.2 原生工具准入和执行器接口接入。
+组件图标导出、profile 刷新及配置/schema 检查见
+宿主兼容范围与展示元数据。
+
+重新运行相同的 npx --yes dsh-ops@latest install --profile ...，或用官方 CLI add dsh-ops@latest。按应用提示重载；替换已加载代码时重启应用。
+
+ 卸载与查看状态
+
+console
+npx --yes dsh-ops@latest status --profile desktop
+npx --yes dsh-ops@latest uninstall --profile desktop
+
+
+把 desktop 换成 web 或 tui 即可。也可在市场卸载，或执行官方 dsh plugin --profile ... remove dsh-ops。随包二进制由 profile 的包管理器管理；显式 provision 的副本不会随 npm 卸载，先查看 dsh-ops bash-runtime status，再用 dsh-ops bash-runtime remove --dry-run 预览、remove --ye</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/T-Auto/dsh-ops/issues/455"><span class="rp-item-num">#455</span><span class="rp-item-title">OPS 0.5.0：协同共进</span><span class="rp-item-extra">9 comments · 2026-10-28</span></a><a class="rp-item" href="https://github.com/T-Auto/dsh-ops/issues/784"><span class="rp-item-num">#784</span><span class="rp-item-title">[BUG] 0.5.1 + DSH 0.2.2-rc.1（Windows / desktop profile / danger-full-access）：publication 工具全部 PUBLICATION_DENIED，卸载即恢复</span><span class="rp-item-extra">6 comments · 2026-11-08</span></a><a class="rp-item" href="https://github.com/T-Auto/dsh-ops/issues/817"><span class="rp-item-num">#817</span><span class="rp-item-title">[跟踪] 0.5.3：删除叠加的防御层，修复 bash 可用性、工具隐藏与固定开销</span><span class="rp-item-extra">4 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/T-Auto/dsh-ops/issues/764"><span class="rp-item-num">#764</span><span class="rp-item-title">[BUG] 0.5.0 + DSH 0.2.2-rc.1（Native/standard）：未选中的延迟工具仍出现在可调用工具列表中，调用返回 PUBLICATION_DENIED（retry=never、无 nextAction），未指向 ops_discover_tools</span><span class="rp-item-extra">4 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/T-Auto/dsh-ops/issues/883"><span class="rp-item-num">#883</span><span class="rp-item-title">更新pwsh设计</span><span class="rp-item-extra">3 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/T-Auto/dsh-ops/issues/771"><span class="rp-item-num">#771</span><span class="rp-item-title">[BUG] Niubash / dsh-ops 运行时被 Windows Defender 误报并隔离的事件报告</span><span class="rp-item-extra">3 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/T-Auto/dsh-ops/issues/704"><span class="rp-item-num">#704</span><span class="rp-item-title">[BUG] 0.5.0 + dsh 0.2.2-rc.1：启动 dsh-tui 后首个会话创建失败 root.events.on is unavailable from a plugin activation</span><span class="rp-item-extra">3 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/T-Auto/dsh-ops/issues/527"><span class="rp-item-num">#527</span><span class="rp-item-title">[学术工程] 行有不得，反求诸己</span><span class="rp-item-extra">3 comments · 2026-10-31</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/T-Auto/dsh-ops/discussions/769"><span class="rp-item-num">#769</span><span class="rp-item-title">[Suggest]: fix 不好写可以先回滚一下啊 (</span><span class="rp-item-extra">2 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/T-Auto/dsh-ops/discussions/461"><span class="rp-item-num">#461</span><span class="rp-item-title">I/O 层的跨平台归一化（Normalizer</span><span class="rp-item-extra">0 comments · 2026-10-28</span></a><a class="rp-item" href="https://github.com/T-Auto/dsh-ops/discussions/460"><span class="rp-item-num">#460</span><span class="rp-item-title">无状态并行批处理映射（Batch Mapper）</span><span class="rp-item-extra">1 comments · 2026-10-28</span></a><a class="rp-item" href="https://github.com/T-Auto/dsh-ops/discussions/457"><span class="rp-item-num">#457</span><span class="rp-item-title">OPS 0.5.0：协同共进</span><span class="rp-item-extra">0 comments · 2026-10-28</span></a><a class="rp-item" href="https://github.com/T-Auto/dsh-ops/discussions/444"><span class="rp-item-num">#444</span><span class="rp-item-title">是否可以考虑引入 Tree-sitter Queries 作为又一种轻量的读取方案？</span><span class="rp-item-extra">1 comments · 2026-10-27</span></a><a class="rp-item" href="https://github.com/T-Auto/dsh-ops/discussions/441"><span class="rp-item-num">#441</span><span class="rp-item-title">LiangShen 模式下 dsh-ops 的兼容性与工具调用</span><span class="rp-item-extra">1 comments · 2026-10-27</span></a><a class="rp-item" href="https://github.com/T-Auto/dsh-ops/discussions/437"><span class="rp-item-num">#437</span><span class="rp-item-title">发布一个支持V0.2.1-rc.3版本</span><span class="rp-item-extra">1 comments · 2026-10-27</span></a><a class="rp-item" href="https://github.com/T-Auto/dsh-ops/discussions/435"><span class="rp-item-num">#435</span><span class="rp-item-title">为什么不支持V0.2.1-rc.3呢？</span><span class="rp-item-extra">1 comments · 2026-10-27</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/T-Auto/dsh-ops/releases"><b>v0.5.5</b> <span class="rp-rel-tag">v0.5.5</span> <span class="rp-item-extra">2026-11-13</span></a><pre class="rp-pre">中文 | English
+
+0.5.5 补丁版本，汇总了自 v0.5.4 以来的主要变更。
+
+问题修复
+
+- 修复 PTC 在关闭常驻工具与动态加载时仍注册 allowedTools 候选池的问题：没有 loader 的作用域不再声明这些 API，首轮提示词不再多出约 22.5k tokens，常驻与默认加载行为不变。 @T-Auto
+- 修复 Native 搜索诊断丢失并统一模式契约（867）。 @Haoming9527
+
+The 0.5.5 patch release summarizes the main changes since v0.5.4.
+
+Bug Fixes
+
+- Fix a PTC scope with resident tools and dynamic loading off still registering the allowedTools pool; a loader-less scope now declares none of those APIs, removing roughly 22.5k tokens from the first prompt while resident and default behavior stay unchanged. by @T-Auto
+- Preserve Native sear</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (3)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/gitblog_00956/article/details/168125048" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">dsh-ops 执行梯级揭秘：bash 5.3.15 → PowerShell 7.6 双引擎如何为 AI 兜底</span><span class="rp-item-extra">2026-10-16</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00822/article/details/168113859" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">如何安全托管长进程：dsh-ops 后台任务 4 件套（启动/输出/列表/终止）实战</span><span class="rp-item-extra">2026-10-16</span></a><a class="rp-item" href="https://www.bilibili.com/video/BV1Ghpy6gE5x/" target="_blank" rel="noopener"><span class="rp-news-src">bilibili</span><span class="rp-item-title">你知道吗，其实你的deepseek还可以优化27倍token，少吃白饭！</span><span class="rp-item-extra">2026-10-13</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/T-Auto__dsh-ops.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

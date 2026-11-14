@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rikkahub/rikkahub · GitHub Trending Rank Radar</title>
+<meta name="description" content="RikkaHub is an Android APP that supports for multiple LLM providers.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="rikkahub, rikkahub, rikkahub/rikkahub, github stars, github trending, star growth, star history, 开源项目, 星标增长, android, jetpack-compose, chatgpt, deepseek, llm-ui, openrouter">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/rikkahub__rikkahub">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="rikkahub/rikkahub · GitHub Trending Rank Radar">
+<meta property="og:description" content="RikkaHub is an Android APP that supports for multiple LLM providers.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/rikkahub__rikkahub">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "rikkahub/rikkahub", "codeRepository": "https://github.com/rikkahub/rikkahub", "url": "https://zhuikan.com/repos/rikkahub__rikkahub", "description": "RikkaHub is an Android APP that supports for multiple LLM providers.", "author": {"@type": "Organization", "name": "rikkahub", "url": "https://github.com/rikkahub"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/AGPL-3.0.html", "programmingLanguage": "Kotlin", "dateCreated": "2025-03-11", "keywords": "android,jetpack-compose,chatgpt,deepseek,llm-ui,openrouter,app,gemini,mcp,agent"}</script>
+</head>
+<body data-repo="rikkahub/rikkahub" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">rikkahub/rikkahub</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="rikkahub__rikkahub"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/211976783?v=4&s=300" width="300" height="300" alt="rikkahub avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">rikkahub</div>
+      <a class="rp-side-owner" href="https://github.com/rikkahub">rikkahub</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/rikkahub">rikkahub</a>
+        <span class="rp-sep">/</span><span class="rp-name">rikkahub</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">RikkaHub is an Android APP that supports for multiple LLM providers.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>8,831</b></span><span class="rp-stat" title="forks">⑂ <b>889</b></span><span class="rp-stat" title="watchers">👁 <b>22</b></span><span class="rp-stat" title="prs">⑃ <b>310</b></span><span class="rp-stat" title="issues">● <b>1,757</b></span><span class="rp-stat" title="releases">▤ <b>186</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/android">android</a><a class="rp-topic" href="https://github.com/topics/jetpack-compose">jetpack-compose</a><a class="rp-topic" href="../tags/chatgpt">chatgpt</a><a class="rp-topic" href="../tags/deepseek">deepseek</a><a class="rp-topic" href="https://github.com/topics/llm-ui">llm-ui</a><a class="rp-topic" href="https://github.com/topics/openrouter">openrouter</a><a class="rp-topic" href="https://github.com/topics/app">app</a><a class="rp-topic" href="../tags/gemini">gemini</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Kotlin</span><span class="rp-meta-bit">AGPL-3.0</span><span class="rp-meta-bit">Created 2025-03-11</span><a class="rp-meta-bit rp-home" href="https://rikka-ai.com" rel="noopener">rikka-ai.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/rikkahub/rikkahub">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">3.2.0</span><a class="rp-dl-a" href="https://github.com/rikkahub/rikkahub/releases/tag/3.2.0">3.2.0 ↓</a><span class="rp-dl-ver">3.2.0</span><span class="rp-dl-date">2026-11-10</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+9</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">8,831</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">889</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">22</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">310</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,757</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">186</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">RikkaHub
+
+A native Android LLM chat client that supports switching between different providers for
+conversations 🤖💬
+
+Click to join our Discord server 👉 【RikkaHub】
+
+简体中文 | 繁體中文 | English
+
+
+
+  
+
+
+ 🚀 Download
+
+🔗 Download from Website (Recommended)
+
+🔗 Download from Google Play
+
+ [!WARNING]
+ There are many forked versions of RikkaHub. Issues with forks are unrelated to RikkaHub, so please use forks with caution to avoid privacy leaks or excessive permission requests.
+
+ 💖 Sponsors
+
+| Sponsor | Description |
+|:---:|:---|
+| STA1N API🍪 | 感谢STA1N API对本项目的赞助！STA1N API 是一家专注于 RP（角色扮演）的 API 提供商。 |
+| APIMart | Thanks to APIMart for sponsoring this project! APIMart is a low-cost API platform for AI image &amp; video generation — GPT-Image-2 from $0.006/image, 160+ images per dollar. One async API covers both image and video: submit a task, get an ID, fetch results via polling or callback. Batch tens of thousands of images without timeouts, switch models without changing code. Pay-as-you-go with no monthly fee — sign up here to get started. |
+| 随想AI中转 | 感谢随想AI中转对本项目的赞助！随想AI中转 是一家可靠高效的 API 中继服务提供商，提供 Claude、Codex、Gemini 等的中继服务。注重隐私的中转站·无数据倒卖·无模型掺水，隐私，透明，极速售后。新账户注册每日签到就送 0.5 元测试额度，充值额度 1:1，无需订阅，按量付费。多线路冗余、跨区域容灾、自动故障切换，长链路 SSE 不中断。99.9% 可用性，关键调用从不掉队。 |
+| 真测 ztest.ai | 感谢真测 ztest.ai对本项目的赞助！真测 ztest.ai 是一个 AI 中转站模型检测平台，检测结果数据全公开，23 项探针覆盖协议、身份、能力、内容完整性、安全性、性能六大维度，交叉印证识别伪造与降级。作为独立第三方验证平台，实时监测 AI 中转站的模型真实性、响应质量与服务可用性。 |
+| MaruCode | MaruCode 是一家偶尔做做慈善的小破站 API，自营号池，主要提供 Codex、Claude Code、GPT Image 等主流模型，支持 Websocket 协议，明码标价(Codex 0.25x, CC 1.5x)，透明汇率(1:1)，新用户注册送 2 刀。生图工作台🖼️ |
+| NaAPI 钠API | 感谢NaAPI（naapi.cc）对本项目的赞助！NaAPI 是一个兼容 OpenAI 的 LLM 网关，以优惠价格稳定提供 OpenAI、Anthropic、Google 等厂商的 300+ 款模型。只需一个 Base URL 和一个 Key 即可接入；多线路冗余、自动故障切换，长链路 SSE 不中断；严格按量付费，充值 1:1，无需订阅，无隐藏加价。 |
+
+ ✨ Features
+
+- 🎨 Material 3 Expressive design
+- 📦 Workspace: a proot-based Linux agent environment
+- 📱 Phone Use: let the AI operate your phone
+- 🎬 Media generation (image and video)
+- 🔄 Multiple AI Provider Support: custom API / URL / models (all OpenAI, Google, Anthropic compatible api)
+- 🖥️ Web access for multi-platform use
+- 🛠️ MCP and Skills support
+- 📝 Markdown Rendering (with code highlighting, Latex formulas, tables, Mermaid)
+- 🔍 Search capabilities (Exa, Tavily, Zhipu, LinkUp, Brave, Perplexity, etc.)
+- 🧩 Prompt variables (model name, time, etc.)
+- 🤳 QR code export and import for providers
+- 🤖 Agent customization
+- 🧠 File-based memory
+- 📝 AI Translation
+- 🌐 Custom HTTP request headers and request bodies
+- 💌 Silly Tavern character card import
+
+ ✨ Development
+
+ [!IMPORTANT]
+ This project does not accept pull requests (PRs).
+
+This project is developed using Android Studio.
+
+Technology stack documentation:
+
+- Kotlin (Development language)
+- Koin (Dependency Injection)
+- Jetpack Compose (UI framework)
+- DataStore (Preference data
+  storage)
+- Room (Database)
+- Coil (Image loading)
+- Material 3 Expressive (UI design)
+- Navigation 3 (Navigation)
+- Okhttp (HTTP client)
+- kotlinx.serialization (JSON serializat</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/rikkahub/rikkahub/issues/509"><span class="rp-item-num">#509</span><span class="rp-item-title">希望能实现可交互式按键的渲染</span><span class="rp-item-extra">13 comments · 2025-09-15</span></a><a class="rp-item" href="https://github.com/rikkahub/rikkahub/issues/1399"><span class="rp-item-num">#1399</span><span class="rp-item-title">希望助手本地工具增加基于Shizuku 的 adb shell</span><span class="rp-item-extra">9 comments · 2026-06-27</span></a><a class="rp-item" href="https://github.com/rikkahub/rikkahub/issues/1736"><span class="rp-item-num">#1736</span><span class="rp-item-title">bug: 当上文有图片时，再继续对话，会强制进入图片识别流程</span><span class="rp-item-extra">6 comments · 2026-08-16</span></a><a class="rp-item" href="https://github.com/rikkahub/rikkahub/issues/1166"><span class="rp-item-num">#1166</span><span class="rp-item-title">gemini api生成中途截断没有任何报错</span><span class="rp-item-extra">8 comments · 2026-05-07</span></a><a class="rp-item" href="https://github.com/rikkahub/rikkahub/issues/465"><span class="rp-item-num">#465</span><span class="rp-item-title">Gemini tts 或者是 openai tts 播放时会漏掉一部分内容</span><span class="rp-item-extra">7 comments · 2025-09-03</span></a><a class="rp-item" href="https://github.com/rikkahub/rikkahub/issues/1194"><span class="rp-item-num">#1194</span><span class="rp-item-title">平板侧边栏折叠</span><span class="rp-item-extra">6 comments · 2026-05-13</span></a><a class="rp-item" href="https://github.com/rikkahub/rikkahub/issues/121"><span class="rp-item-num">#121</span><span class="rp-item-title">feat:支持三方应用的弹窗划词翻译</span><span class="rp-item-extra">6 comments · 2025-06-10</span></a><a class="rp-item" href="https://github.com/rikkahub/rikkahub/issues/2123"><span class="rp-item-num">#2123</span><span class="rp-item-title">feat: 允许 Agent 使用 toolcall 唤起图片生成模型生图</span><span class="rp-item-extra">4 comments · 2026-10-06</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/rikkahub/rikkahub/discussions/2314"><span class="rp-item-num">#2314</span><span class="rp-item-title">模型里怎么没有压缩对话模型了？</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/rikkahub/rikkahub/discussions/2300"><span class="rp-item-num">#2300</span><span class="rp-item-title">接入方案：用 RikkaHub 连接 Mac 上的 Rapid-MLX，并通过现有二维码流程分享配置</span><span class="rp-item-extra">0 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/rikkahub/rikkahub/discussions/2274"><span class="rp-item-num">#2274</span><span class="rp-item-title">翻译功能增加自定义语言输入框</span><span class="rp-item-extra">1 comments · 2026-10-29</span></a><a class="rp-item" href="https://github.com/rikkahub/rikkahub/discussions/2209"><span class="rp-item-num">#2209</span><span class="rp-item-title">关于最新版 App 图标设计的建议</span><span class="rp-item-extra">1 comments · 2026-10-20</span></a><a class="rp-item" href="https://github.com/rikkahub/rikkahub/discussions/2208"><span class="rp-item-num">#2208</span><span class="rp-item-title">建议:优化一个体验问题:关于取消&quot;提问&quot;工具</span><span class="rp-item-extra">2 comments · 2026-10-20</span></a><a class="rp-item" href="https://github.com/rikkahub/rikkahub/discussions/2195"><span class="rp-item-num">#2195</span><span class="rp-item-title">Image generating option.</span><span class="rp-item-extra">0 comments · 2026-10-19</span></a><a class="rp-item" href="https://github.com/rikkahub/rikkahub/discussions/2194"><span class="rp-item-num">#2194</span><span class="rp-item-title">对话抽屉不再跟随当前对话，并会跳跃显示</span><span class="rp-item-extra">0 comments · 2026-10-19</span></a><a class="rp-item" href="https://github.com/rikkahub/rikkahub/discussions/2192"><span class="rp-item-num">#2192</span><span class="rp-item-title">deepseek怎么破甲啊</span><span class="rp-item-extra">1 comments · 2026-10-19</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/rikkahub/rikkahub/releases"><b>3.2.0</b> <span class="rp-rel-tag">3.2.0</span> <span class="rp-item-extra">2026-11-10</span></a><pre class="rp-pre">更新内容:
+
+- 新增 Phone Use，让 AI 操作手机
+- 对话过长时自动压缩历史
+- 可用模型列表支持手动刷新
+- 快捷消息支持追加到输入框
+- 修复对话地图滑动卡顿、搜索框不固定，以及 Claude、Mistral 部分模型多轮对话报错等问题
+- 其他细节改进
+
+Updates:
+
+- Added Phone Use to let AI operate your phone
+- Auto-compress history in long chats
+- Manually refresh the available model list
+- Quick messages can append to the input box
+- Fixed conversation map lag and the search box not staying pinned, plus multi-turn errors with some Claude and Mistral models
+- Other minor improvements</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/rikkahub__rikkahub.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

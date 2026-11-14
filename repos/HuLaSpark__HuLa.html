@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HuLaSpark/HuLa · GitHub Trending Rank Radar</title>
+<meta name="description" content="🍀 A cross-platform instant messaging desktop application with exceptional performance built on Rust + Vue3, compatible with Windows, macOS, Linux, Android, and iOS（一款基于Rust+Vue3极致性能的跨平台即时通讯桌面应用，兼容Wind">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="HuLa, HuLaSpark, HuLaSpark/HuLa, github stars, github trending, star growth, star history, 开源项目, 星标增长, macos, tauri, tsx, windows, windows-10, windows-11">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/HuLaSpark__HuLa">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="HuLaSpark/HuLa · GitHub Trending Rank Radar">
+<meta property="og:description" content="🍀 A cross-platform instant messaging desktop application with exceptional performance built on Rust + Vue3, compatible with Windows, macOS, Linux, Android, and iOS（一款基于Rust+Vue3极致性能的跨平台即时通讯桌面应用，兼容Wind">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/HuLaSpark__HuLa">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "HuLaSpark/HuLa", "codeRepository": "https://github.com/HuLaSpark/HuLa", "url": "https://zhuikan.com/repos/HuLaSpark__HuLa", "description": "🍀 A cross-platform instant messaging desktop application with exceptional performance built on Rust + Vue3, compatible with Windows, macOS, Linux, Android, and iOS（一款基于Rust+Vue3极致性能的跨平台即时通讯桌面应用，兼容Wind", "author": {"@type": "Organization", "name": "HuLaSpark", "url": "https://github.com/HuLaSpark"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Vue", "dateCreated": "2024-01-16", "keywords": "macos,tauri,tsx,windows,windows-10,windows-11,rust,webview,chatbot,vue3"}</script>
+</head>
+<body data-repo="HuLaSpark/HuLa" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">HuLaSpark/HuLa</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="HuLaSpark__HuLa"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/182812476?v=4&s=300" width="300" height="300" alt="HuLaSpark avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">HuLa</div>
+      <a class="rp-side-owner" href="https://github.com/HuLaSpark">HuLaSpark</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/HuLaSpark">HuLaSpark</a>
+        <span class="rp-sep">/</span><span class="rp-name">HuLa</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">🍀 A cross-platform instant messaging desktop application with exceptional performance built on Rust + Vue3, compatible with Windows, macOS, Linux, Android, and iOS（一款基于Rust+Vue3极致性能的跨平台即时通讯桌面应用，兼容Windows、MacOS、Linux、Android、IOS）</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>7,845</b></span><span class="rp-stat" title="forks">⑂ <b>1,067</b></span><span class="rp-stat" title="watchers">👁 <b>44</b></span><span class="rp-stat" title="prs">⑃ <b>386</b></span><span class="rp-stat" title="issues">● <b>140</b></span><span class="rp-stat" title="releases">▤ <b>46</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/macos">macos</a><a class="rp-topic" href="../tags/tauri">tauri</a><a class="rp-topic" href="https://github.com/topics/tsx">tsx</a><a class="rp-topic" href="../tags/windows">windows</a><a class="rp-topic" href="../tags/windows-10">windows-10</a><a class="rp-topic" href="../tags/windows-11">windows-11</a><a class="rp-topic" href="../tags/rust">rust</a><a class="rp-topic" href="https://github.com/topics/webview">webview</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Vue</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2024-01-16</span><a class="rp-meta-bit rp-home" href="https://hulaspark.com" rel="noopener">hulaspark.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/HuLaSpark/HuLa">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v3.0.9</span><a class="rp-dl-a" href="https://github.com/HuLaSpark/HuLa/releases/tag/v3.0.9">v3.0.9 ↓</a><span class="rp-dl-ver">3.0.9</span><span class="rp-dl-date">2026-01-19</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+48</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+95</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">7,845</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,067</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">44</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">386</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">140</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">46</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">一款基于Tauri、Vite 7、Vue 3 和 TypeScript 构建的即时通讯系统
+
+
+  
+    
+  
+  
+    
+  
+
+
+
+
+
+  
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+  
+
+
+
+
+
+  
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+    
+      
+    
+  
+
+
+
+
+
+
+  
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+
+
+
+
+
+  🔗 快速链接
+
+  
+    💻 官网：HuLaSpark |
+    📝 启动文档：环境配置及其启动教程 |
+    ☕️ 服务端：GitHub / Gitee |
+    💬 微信：cy2439646234
+  
+
+
+
+  中文 |
+  English |
+  
+  Deutsch |
+  Español |
+  français |
+  日本語 |
+  한국어 |
+  Português |
+  Русский
+
+
+ 🌐 支持平台
+
+| 平台    | 支持版本                                                              |
+| ------- | --------------------------------------------------------------------- |
+| Windows | Windows 10, Windows 11                                                |
+| macOS   | macOS 10.5+ Mac26已支持                                               |
+| Linux   | Ubuntu 22.0+                                                          |
+| iOS     | iOS 9.0+ (iOS26 真机已支持， Tauri不支持Intel芯片在ios26模拟器上运行) |
+| Android | Android 12+ (SDK30+)                                                  |
+| Web     | ⚠️暂不支持(需要自定义移除对桌面功能)                                  |
+
+ 📝 项目介绍
+
+HuLa 是一款基于 Tauri、Vite 7、Vue 3 和 TypeScript 构建的即时通讯系统。它利用了 Tauri 的跨平台能力和 Vue 3 的响应式设计，结合了 TypeScript 的类型安全特性和 Vite 7 的快速构建，为用户提供了一个高效、安全和易用的通讯解决方案。
+
+ 🛠️ 技术栈
+
+- Tauri: 为本项目提供了一款轻量级的、高性能的桌面应用容器，使得我们可以使用前端技术栈来开发跨平台的桌面应用。Tauri 的设计哲学是在保证安全性的前提下，尽可能减少资源占用。
+- Vite 7: Vite 是一个现代化的前端构建工具，它利用原生 ES 模块导入的能力来提供一个快速的开发服务器，与此同时，它也为生产环境打包提供了强大的支持。Vite 7 是其最新的版本，带来了更多的优化和特性。
+- Vue 3: Vue 3 是一个渐进式JavaScript框架，用于构建用户界面。它的组合式API、更好的TypeScript集成和对移动端的优化使得开发复杂的单页应用变得更加简单和高效。
+- TypeScript: TypeScript 是 JavaScript 的一个超集，它在 JavaScript 的基础上增加了类型系统。这让我们能够在开发过程中捕获更多的错误，并且提供更好的编辑器支持。
+
+ 🖼️ 项目预览
+
+
+  🎨 界面展示
+
+
+
+
+  PC端界面展示，有其他功能未在介绍截图内，请自行下载体验 🙏
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+  移动端界面展示
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+ ✨ 功能特性
+
+
+  🎯 开发进度一览
+
+
+ 🔐 用户认证系统
+
+| 功能 | 描述           | 状态                                                                                           |
+| ---- | -------------- | ---------------------------------------------------------------------------------------------- |
+| 🔑   | 账号密码登录   | !完成 |
+| 📱   | 二维码扫码登录 | !完成 |
+| 💻   | 多设备登录管理 | !完成 |
+
+ 💬 消息通信
+
+| 功能 | 描述            | 状态                                                                                           |
+| ---- | --------------- | ---------------------------------------------------------------------------------------------- |
+| 👤   | 一对一私聊      | !完成 |
+| 👥   | 群组聊天        | !完成 |
+| ↩️   | 消息撤回        | !完成 |
+| 📢   | @提醒、回复功能 | !完成 |
+| 👁️   | 消息已读状态    | !完成 |
+| 😊   | 表情包功能      | !完成 |
+| 🖱️   | 消息右键菜单    | !完成 |
+| 🔗   | 链接预览卡片    | !完成 |
+| 👍   | 消息点赞互动    | !完成 |
+| 📔   | 历史记录管理    | !完成 |
+
+ 🤝 社交管理
+
+| 功能 | 描述           | 状态                                                                                           |
+| ---- | -------------- | -----------------------------------------------------------------------</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/HuLaSpark/HuLa/issues/441"><span class="rp-item-num">#441</span><span class="rp-item-title">[Windows] 建议默认禁用 `bundled-sqlcipher-vendored-openssl` 以改善开发体验</span><span class="rp-item-extra">19 comments · 2025-12-17</span></a><a class="rp-item" href="https://github.com/HuLaSpark/HuLa/issues/491"><span class="rp-item-num">#491</span><span class="rp-item-title">[feat] 性能问题和其他</span><span class="rp-item-extra">3 comments · 2026-02-10</span></a><a class="rp-item" href="https://github.com/HuLaSpark/HuLa/issues/476"><span class="rp-item-num">#476</span><span class="rp-item-title">[feat] 接入离线推送</span><span class="rp-item-extra">3 comments · 2026-01-28</span></a><a class="rp-item" href="https://github.com/HuLaSpark/HuLa/issues/490"><span class="rp-item-num">#490</span><span class="rp-item-title">[bug] 有两个生日的标题，此外头像编辑后保存报错</span><span class="rp-item-extra">2 comments · 2026-02-07</span></a><a class="rp-item" href="https://github.com/HuLaSpark/HuLa/issues/480"><span class="rp-item-num">#480</span><span class="rp-item-title">[bug] 发送语音、文件、图片类型的信息失败</span><span class="rp-item-extra">2 comments · 2026-02-05</span></a><a class="rp-item" href="https://github.com/HuLaSpark/HuLa/issues/397"><span class="rp-item-num">#397</span><span class="rp-item-title">[feat] 登录后有渠道可以修改当前登录用户的密码</span><span class="rp-item-extra">2 comments · 2025-11-20</span></a><a class="rp-item" href="https://github.com/HuLaSpark/HuLa/issues/519"><span class="rp-item-num">#519</span><span class="rp-item-title">[bug] mac版 截图时桌面被缩放，影响截图</span><span class="rp-item-extra">1 comments · 2026-05-06</span></a><a class="rp-item" href="https://github.com/HuLaSpark/HuLa/issues/489"><span class="rp-item-num">#489</span><span class="rp-item-title">[feat] 注册后自动登录或给出账号</span><span class="rp-item-extra">1 comments · 2026-02-07</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/HuLaSpark/HuLa/discussions/537"><span class="rp-item-num">#537</span><span class="rp-item-title">这个项目是不是有1.4了</span><span class="rp-item-extra">1 comments · 2026-10-06</span></a><a class="rp-item" href="https://github.com/HuLaSpark/HuLa/discussions/511"><span class="rp-item-num">#511</span><span class="rp-item-title">安卓的文件在哪下啊？？？</span><span class="rp-item-extra">0 comments · 2026-03-31</span></a><a class="rp-item" href="https://github.com/HuLaSpark/HuLa/discussions/380"><span class="rp-item-num">#380</span><span class="rp-item-title">生产版本构建出错</span><span class="rp-item-extra">2 comments · 2025-11-10</span></a><a class="rp-item" href="https://github.com/HuLaSpark/HuLa/discussions/365"><span class="rp-item-num">#365</span><span class="rp-item-title">v3.0.0</span><span class="rp-item-extra">0 comments · 2025-10-20</span></a><a class="rp-item" href="https://github.com/HuLaSpark/HuLa/discussions/309"><span class="rp-item-num">#309</span><span class="rp-item-title">很高兴发现这个非常棒的项目，不知道有没有uniapp版本的</span><span class="rp-item-extra">1 comments · 2025-08-08</span></a><a class="rp-item" href="https://github.com/HuLaSpark/HuLa/discussions/26"><span class="rp-item-num">#26</span><span class="rp-item-title">Tauri 2的移动端+视频+文件基本就全了</span><span class="rp-item-extra">2 comments · 2024-10-25</span></a><a class="rp-item" href="https://github.com/HuLaSpark/HuLa/discussions/5"><span class="rp-item-num">#5</span><span class="rp-item-title">真的好厉害,这么小的安装包</span><span class="rp-item-extra">1 comments · 2024-07-04</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/HuLaSpark/HuLa/releases"><b>v3.0.9</b> <span class="rp-rel-tag">v3.0.9</span> <span class="rp-item-extra">2026-01-19</span></a><pre class="rp-pre">3.0.9 (2026-01-19)
+
+ ✨ Features | 新功能
+
+ chat: :sparkles: support group member alias resolution when extracting @mentions (86a7f3e)
+ i18n: :sparkles: add loading states and system settings translations (a08bb76)
+ i18n: add i18n for community post (7648f77)
+ i18n: enhance internationalization support by adding mobile titles and computed labels (9c07f86)
+ login: :sparkles: add 3-second delay and cancel option for auto-login on desktop (1f661ea)
+ login: :sparkles: add message sync and error handling for OAuth login (7d7f0c2)
+ login: :sparkles: preload group member data and announcements </pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/HuLaSpark__HuLa.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

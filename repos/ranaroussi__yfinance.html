@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ranaroussi/yfinance · GitHub Trending Rank Radar</title>
+<meta name="description" content="Download market data from Yahoo! Finance&#x27;s API">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="yfinance, ranaroussi, ranaroussi/yfinance, github stars, github trending, star growth, star history, 开源项目, 星标增长, python, pandas, yahoo-finance-api, yahoo-finance, stock-data, market-data">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/ranaroussi__yfinance">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="ranaroussi/yfinance · GitHub Trending Rank Radar">
+<meta property="og:description" content="Download market data from Yahoo! Finance&#x27;s API">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/ranaroussi__yfinance">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ranaroussi/yfinance", "codeRepository": "https://github.com/ranaroussi/yfinance", "url": "https://zhuikan.com/repos/ranaroussi__yfinance", "description": "Download market data from Yahoo! Finance's API", "author": {"@type": "Organization", "name": "ranaroussi", "url": "https://github.com/ranaroussi"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Python", "dateCreated": "2017-05-21", "keywords": "python,pandas,yahoo-finance-api,yahoo-finance,stock-data,market-data,financial-data,fix-yahoo-finance"}</script>
+</head>
+<body data-repo="ranaroussi/yfinance" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">ranaroussi/yfinance</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="ranaroussi__yfinance"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/1185458?u=6ffd8736c95b5bfb7a4f8f7a45b1694639452b8c&amp;v=4&s=300" width="300" height="300" alt="ranaroussi avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">yfinance</div>
+      <a class="rp-side-owner" href="https://github.com/ranaroussi">ranaroussi</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/ranaroussi">ranaroussi</a>
+        <span class="rp-sep">/</span><span class="rp-name">yfinance</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Download market data from Yahoo! Finance&#x27;s API</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>25,914</b></span><span class="rp-stat" title="forks">⑂ <b>3,497</b></span><span class="rp-stat" title="watchers">👁 <b>269</b></span><span class="rp-stat" title="prs">⑃ <b>1,067</b></span><span class="rp-stat" title="issues">● <b>1,733</b></span><span class="rp-stat" title="releases">▤ <b>116</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/python">python</a><a class="rp-topic" href="https://github.com/topics/pandas">pandas</a><a class="rp-topic" href="https://github.com/topics/yahoo-finance-api">yahoo-finance-api</a><a class="rp-topic" href="https://github.com/topics/yahoo-finance">yahoo-finance</a><a class="rp-topic" href="https://github.com/topics/stock-data">stock-data</a><a class="rp-topic" href="https://github.com/topics/market-data">market-data</a><a class="rp-topic" href="https://github.com/topics/financial-data">financial-data</a><a class="rp-topic" href="https://github.com/topics/fix-yahoo-finance">fix-yahoo-finance</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2017-05-21</span><a class="rp-meta-bit rp-home" href="https://ranaroussi.github.io/yfinance" rel="noopener">ranaroussi.github.io/yfinance</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/ranaroussi/yfinance">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">1.8.0</span><a class="rp-dl-a" href="https://github.com/ranaroussi/yfinance/releases/tag/1.8.0">1.8.0 ↓</a><span class="rp-dl-ver">1.8.0</span><span class="rp-dl-date">2026-11-03</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+13</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+104</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+451</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">25,914</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">3,497</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">269</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,067</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,733</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">116</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Download market data from Yahoo! Finance&#x27;s API
+
+
+
+
+
+
+
+
+
+
+yfinance offers a Pythonic way to fetch financial &amp; market data from Yahoo!Ⓡ finance.
+
+---
+
+ [!IMPORTANT]  
+ Yahoo!, Y!Finance, and Yahoo! finance are registered trademarks of Yahoo, Inc.
+
+ yfinance is not affiliated, endorsed, or vetted by Yahoo, Inc. It&#x27;s an open-source tool that uses Yahoo&#x27;s publicly available APIs, and is intended for research and educational purposes.
+ 
+ You should refer to Yahoo!&#x27;s terms of use (here, here, and here) for details on your rights to use the actual data downloaded.
+
+ Remember - the Yahoo! finance API is intended for personal use only.
+
+---
+
+ [!TIP]
+ THE NEW DOCUMENTATION WEBSITE IS NOW LIVE! 🤘
+ 
+ Visit ranaroussi.github.io/yfinance
+
+---
+
+ Main components
+
+- Ticker: single ticker data
+- Tickers: multiple tickers&#x27; data
+- download: download market data for multiple tickers
+- Market: get information about a market
+- WebSocket and AsyncWebSocket: live streaming data
+- Search: quotes and news from search
+- Sector and Industry: sector and industry information
+- EquityQuery and Screener: build query to screen market
+
+ [!NOTE]
+ Prices are default adjusted for dividends (auto_adjust=True).
+
+ Installation
+
+Install yfinance from PYPI using pip:
+
+ {.sourceCode .bash}
+$ pip install yfinance
+
+
+To install without curl_cffi for requests fallback, see Advanced ▸ Installation.
+
+ yfinance relies on the community to investigate bugs and contribute code. Here&#x27;s how you can help.
+
+---
+
+!Star History Chart
+
+---
+
+ Legal Stuff
+
+yfinance is distributed under the Apache Software License. See
+the LICENSE.txt file in the release for details.
+
+AGAIN - yfinance is not affiliated, endorsed, or vetted by Yahoo, Inc. It&#x27;s
+an open-source tool that uses Yahoo&#x27;s publicly available APIs, and is
+intended for research and educational purposes. You should refer to Yahoo!&#x27;s terms of use
+(here,
+here, and
+here) for
+details on your rights to use the actual data downloaded.
+
+---
+
+ P.S.
+
+Please drop me a note with any feedback you have.
+
+Ran Aroussi</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ranaroussi/yfinance/issues/1591"><span class="rp-item-num">#1591</span><span class="rp-item-title">Unable to get open price of a stock on the current day itself, getting yesterday instead</span><span class="rp-item-extra">21 comments · 2023-07-12</span></a><a class="rp-item" href="https://github.com/ranaroussi/yfinance/issues/2070"><span class="rp-item-num">#2070</span><span class="rp-item-title">Adjusted Close from yfinance is not the same as total return from Yahoo Finance</span><span class="rp-item-extra">17 comments · 2024-10-03</span></a><a class="rp-item" href="https://github.com/ranaroussi/yfinance/issues/2486"><span class="rp-item-num">#2486</span><span class="rp-item-title">Unable to use request_cache to cache the yfinance response</span><span class="rp-item-extra">16 comments · 2025-05-11</span></a><a class="rp-item" href="https://github.com/ranaroussi/yfinance/issues/445"><span class="rp-item-num">#445</span><span class="rp-item-title">_requests.get() times out</span><span class="rp-item-extra">14 comments · 2020-09-10</span></a><a class="rp-item" href="https://github.com/ranaroussi/yfinance/issues/2463"><span class="rp-item-num">#2463</span><span class="rp-item-title">[0.2.59] CertificateVerifyError(&#x27;Failed to perform, curl: (60) SSL certificate problem: self signed certificate in certificate chain. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.&#x27;)</span><span class="rp-item-extra">9 comments · 2025-05-08</span></a><a class="rp-item" href="https://github.com/ranaroussi/yfinance/issues/2449"><span class="rp-item-num">#2449</span><span class="rp-item-title">[0.2.59] curl_cffi won&#x27;t compile</span><span class="rp-item-extra">9 comments · 2025-05-06</span></a><a class="rp-item" href="https://github.com/ranaroussi/yfinance/issues/2353"><span class="rp-item-num">#2353</span><span class="rp-item-title">yfinance does not return the latest (current day during market session) day&#x27;s data using &#x27;max&#x27; parameter.</span><span class="rp-item-extra">9 comments · 2025-03-10</span></a><a class="rp-item" href="https://github.com/ranaroussi/yfinance/issues/1868"><span class="rp-item-num">#1868</span><span class="rp-item-title">Add support for python-polars</span><span class="rp-item-extra">8 comments · 2024-02-24</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ranaroussi/yfinance/discussions/2998"><span class="rp-item-num">#2998</span><span class="rp-item-title">^VXN and ^VXD return no intraday data while ^VIX works</span><span class="rp-item-extra">3 comments · 2026-10-14</span></a><a class="rp-item" href="https://github.com/ranaroussi/yfinance/discussions/2975"><span class="rp-item-num">#2975</span><span class="rp-item-title">pandas_datareader exception</span><span class="rp-item-extra">2 comments · 2026-09-20</span></a><a class="rp-item" href="https://github.com/ranaroussi/yfinance/discussions/2940"><span class="rp-item-num">#2940</span><span class="rp-item-title">Data scrutiny/ Data discrepancy</span><span class="rp-item-extra">2 comments · 2026-08-06</span></a><a class="rp-item" href="https://github.com/ranaroussi/yfinance/discussions/2928"><span class="rp-item-num">#2928</span><span class="rp-item-title">Possible Yahoo Finance data issue for GC=F (Gold Aug 2026) on 2026-07-29?</span><span class="rp-item-extra">1 comments · 2026-07-29</span></a><a class="rp-item" href="https://github.com/ranaroussi/yfinance/discussions/2912"><span class="rp-item-num">#2912</span><span class="rp-item-title">sec_filings: fetch from EDGAR directly to fix stale data</span><span class="rp-item-extra">2 comments · 2026-07-21</span></a><a class="rp-item" href="https://github.com/ranaroussi/yfinance/discussions/2854"><span class="rp-item-num">#2854</span><span class="rp-item-title">I ran this morning, missing yesterday&#x27;s data</span><span class="rp-item-extra">3 comments · 2026-06-10</span></a><a class="rp-item" href="https://github.com/ranaroussi/yfinance/discussions/2841"><span class="rp-item-num">#2841</span><span class="rp-item-title">How to resolve data scaling errors?</span><span class="rp-item-extra">3 comments · 2026-06-05</span></a><a class="rp-item" href="https://github.com/ranaroussi/yfinance/discussions/2788"><span class="rp-item-num">#2788</span><span class="rp-item-title">non-English comments &amp; docs</span><span class="rp-item-extra">0 comments · 2026-04-26</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/ranaroussi/yfinance/releases"><b>1.8.0</b> <span class="rp-rel-tag">1.8.0</span> <span class="rp-item-extra">2026-11-03</span></a><pre class="rp-pre">Features
+
+- Force curl_cffi = 0.17 for security updates
+- Tickers.calendar and Tickers.info (use at your own risk of being spam-blocked)
+- Add methodology to EPS
+- Price-split-repair improvement
+
+Lots of fixes! Full changelog 3016 
+
+Thanks @dwaddle @heykav @idpfaff @jackiectl2 @LeonxLJX @louis75aubin-prog @mehdyhaghy @monody0007 @ryanduguid @Shawn-Kim96 @spicysharkco @WatchTree-19 @wavebyrd</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/ranaroussi__yfinance.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

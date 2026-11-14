@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TKkk-iOSer/WeChatPlugin-MacOS · GitHub Trending Rank Radar</title>
+<meta name="description" content="微信小助手">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="WeChatPlugin-MacOS, TKkk-iOSer, TKkk-iOSer/WeChatPlugin-MacOS, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/TKkk-iOSer__WeChatPlugin-MacOS">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="TKkk-iOSer/WeChatPlugin-MacOS · GitHub Trending Rank Radar">
+<meta property="og:description" content="微信小助手">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/TKkk-iOSer__WeChatPlugin-MacOS">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "TKkk-iOSer/WeChatPlugin-MacOS", "codeRepository": "https://github.com/TKkk-iOSer/WeChatPlugin-MacOS", "url": "https://zhuikan.com/repos/TKkk-iOSer__WeChatPlugin-MacOS", "description": "微信小助手", "author": {"@type": "Organization", "name": "TKkk-iOSer", "url": "https://github.com/TKkk-iOSer"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Objective-C", "dateCreated": "2017-04-20"}</script>
+</head>
+<body data-repo="TKkk-iOSer/WeChatPlugin-MacOS" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">TKkk-iOSer/WeChatPlugin-MacOS</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="TKkk-iOSer__WeChatPlugin-MacOS"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/11961989?u=5ff1a6730de1e5816589cb6a2b14da89c7a80777&amp;v=4&s=300" width="300" height="300" alt="TKkk-iOSer avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">WeChatPlugin-MacOS</div>
+      <a class="rp-side-owner" href="https://github.com/TKkk-iOSer">TKkk-iOSer</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/TKkk-iOSer">TKkk-iOSer</a>
+        <span class="rp-sep">/</span><span class="rp-name">WeChatPlugin-MacOS</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">微信小助手</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>14,283</b></span><span class="rp-stat" title="forks">⑂ <b>2,432</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Objective-C</span><span class="rp-meta-bit">Created 2017-04-20</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/TKkk-iOSer/WeChatPlugin-MacOS">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+6</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">14,283</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,432</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">!微信小助手.png
+
+!platform    !support     
+
+ 微信小助手 v2.0
+
+ English | 中文
+
+
+ [功能 &amp;bull; 更新日志 &amp;bull; Demo演示 &amp;bull; 使用 &amp;bull; 安装 &amp;bull; 卸载 &amp;bull; TODO ]
+
+其他插件：
+ [wechat-alfred-workflow &amp;bull; QQ 版本 ]
+
+---
+
+ 功能
+ 消息自动回复
+ 消息防撤回
+ 远程控制(已支持语音)
+ 微信多开
+ 第二次登录免认证
+ 聊天置底功能(~~类似置顶~~)
+ 微信窗口置顶
+ 会话多选删除
+ 自动登录开关
+ 通知中心快捷回复
+ 聊天窗口表情包复制 &amp; 存储
+ 小助手检测更新提醒
+ alfred 快捷发送消息 &amp; 打开窗口 (需安装：wechat-alfred-workflow)
+ 会话一键已读
+ 一键清除空会话
+ 支持国际化
+ 新增一键更新
+ 新增关于小助手
+ 去除微信url转链（从此直接打开抖音链接🌝
+ 史上最强 alfred 扩展🌚
+ 新增移除会话(不删除聊天记录)
+ 菜单栏(关于小助手)新增 alfred 开关 
+ 新增是否使用微信自带浏览器开关
+ 新增LaunchBar 扩展
+ 新增禁止微信检测更新开关(非App Store版本)
+ ~~新增小助手.app安装方式~~
+ 支持退群监控，撤回消息定位
+ 支持微信 3.7.0 
+
+若无使用 alfred，则不必打开 alfred 开关
+
+远程控制：
+
+- [x] 屏幕保护
+- [x] 清空废纸篓
+- [x] 锁屏、休眠、关机、重启
+- [x] 退出QQ、WeChat、Chrome、Safari、所有程序
+- [x] 网易云音乐(播放、暂停、下一首、上一首、喜欢、取消喜欢)
+- [x] 小助手(获取指令、防撤回开关、自动回复开关、免认证登录开关)
+
+若想使用远程控制网易云音乐，请在“系统偏好设置 == 安全性与隐私 == 隐私 == 辅助功能”中添加微信、脚本编辑器
+
+---
+
+ 更新日志
+
+ 适配3.7.0(2023-03-12)
+ 适配2.3.22 &amp; 新增禁止微信检测更新开关(2019-01-13)
+ 适配2.3.19 &amp; 修复安全漏洞(2018-10-23)
+ 适配2.3.17 &amp; 加强 alfred 搜索(2018-07-24)
+ 新增好多功能…(2018-05-12)
+ 新增自动回复延迟 &amp; 修改置顶窗口快捷(2018-04-07)
+ 新增 Alfred 快捷发送消息 &amp; 打开聊天窗口(2018-03-18)
+ 新增语音远程控制mac &amp; 优化撤回消息、快捷回复(2018-03-03)
+ 新增小助手检测更新&amp;表情包复制存储等等 (2018-02-24)
+ 新增窗口置顶&amp;多选删除等等 (2017-10-11)
+ 新增置底&amp;免认证 (2017-09-17)
+ 修复聊天记录消失的bug (2017-09-11)
+ 重构自动回复，实现多回复 (2017-08-23)
+
+详细内容请查看CHANGELOG
+
+---
+
+ Demo演示
+
+ 消息防撤回
+!消息防撤回.gif
+
+ 自动回复
+!自动回复.gif
+
+ 微信多开
+!微信多开.gif
+
+ 远程控制 (测试关闭Chrome、QQ、开启屏幕保护)
+!远程控制.gif
+
+ 免认证 &amp; 置底 &amp; 多选删除
+!免认证&amp;置底&amp;多选删除
+
+ 通知中心快捷回复
+!快捷回复
+
+ 聊天窗口表情复制 &amp; 存储
+
+
+ 语音远程控制 mac
+!语音远程控制
+
+ Alfred 快速搜索 wechat-alfred-workflow   
+!alfred
+
+ Alfred 搜索最近聊天列表 &amp; 查看聊天记录   
+!alfred
+
+ 一键已读 &amp; 一键清除空回话
+!基本操作
+
+---
+
+ 使用
+
+ 消息防撤回：点击开启消息防撤回或者快捷键command + t,即可开启、关闭。
+ 自动回复：点击开启自动回复或者快捷键conmand + k，将弹出自动回复设置的窗口，点击红色箭头的按钮设置开关。
+
+若关键字为 ，则任何信息都回复；
+若关键字为x|y,则 x 和 y 都回复；
+若关键字或者自动回复为空，则不开启该条自动回复；
+可设置延迟回复，单位：秒；
+若开启正则，请确认正则表达式书写正确，在线正则表达式测试
+若开启特定联系人回复，则原先的群聊&amp;私聊回复无效
+
+!自动回复设置.png
+
+ 微信多开：点击登录新微信或者快捷键command + shift + n,即可多开微信。
+
+ 远程控制：点击远程控制 Mac OS或者快捷键command + shift + c,即可打开控制窗口。
+
+注意：仅向自己账号发送指令有效
+
+!远程控制设置.png
+
+ Alfred 使用：请查看 wechat-alfred-workflow
+
+---
+
+ 安装
+
+详细安装方法(或者需要重新编译)请查阅 Install.md
+
+ 1. 安装
+
+若提示无权限：Permission denied，执行 sudo chmod -R 777 /Applications/WeChat.app
+
+ 1.1 需要安装Git
+
+打开应用程序-实用工具-Terminal(终端)，执行下面的命令安装
+
+cd ~/Downloads &amp;&amp; rm -rf WeChatPlugin-MacOS &amp;&amp; git clone https://github.com/TKkk-iOSer/WeChatPlugin-MacOS.git --depth=1 &amp;&amp; ./WeChatPlugin-MacOS/Other/Install.sh
+
+
+ 2. 普通安装
+
+ 点击clone or download按钮下载 WeChatPlugin 并解压，打开Terminal(终端)，拖动解压后Install.sh 文件(在 Other 文件夹中)到 Terminal 回车即可。
+
+ 3. 安装完成
+
+ 重启微信，在菜单栏中看到微信小助手即安装成功。
+
+!微信小助手.png
+
+---
+
+ 卸载
+
+打开Terminal(终端)，拖动解压后Uninstall.sh 文件(在 Other 文件夹中)到 Terminal 回车即可。
+
+---
+
+ TODO
+- [x] 增加Alfred搜索
+- [ ] 查看单向好友
+- [ ] 增加 brew 安装方式
+- [x] 完善自动回复(指定好友回复)
+- [x] 完善消息防撤回(显示撤回用户昵称)
+- [x] ~~清除微信缓存(官方已加)~~
+- [x] 优化小助手设置(更新后保留相关设置，更新提醒)
+- [x] 语音远程控制 mac
+- [x] 支持中英文
+- [ ] 支持深色模式
+
+---
+
+ 依赖
+
+ insert_dylib
+ fishhook
+ GCDWebServer
+
+---
+
+ 免责声明
+ 使用插件有风险，使用需谨慎。
+ 本项目旨在提升生活幸福感使用，不可用于商业和个人其他意图。若使用不当，请使用者自行承担。
+ 如有侵权，请联系本人。tkk.ioser@gmail.com</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-10T09:35:25Z · Data license Apache-2.0 ·
+<a href="../data/repos/TKkk-iOSer__WeChatPlugin-MacOS.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

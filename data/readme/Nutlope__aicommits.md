@@ -1,0 +1,495 @@
+<div align="center">
+  <img src=".github/assets/hero.png" alt="aicommits v5: commit messages written by the AI you already pay for — Anthropic Claude, OpenAI Codex, OpenCode Go, and Together AI"/>
+  <p>A CLI that writes your git commit messages for you with AI. Never write a commit message again.</p>
+  <a href="https://www.npmjs.com/package/aicommits"><img src="https://img.shields.io/npm/v/aicommits" alt="Current version"></a>
+  <a href="https://www.npmjs.com/package/aicommits"><img src="https://img.shields.io/npm/dt/aicommits" alt="Downloads"></a>
+</div>
+
+---
+
+## What's new in v5
+
+- **Use the subscription you already have.** Generate commit messages with your Claude plan, your ChatGPT plan through Codex, or your OpenCode Go plan. No API key needed.
+- **Setup finds it for you.** `aicommits setup` detects a logged-in `claude` or `codex` CLI and an OpenCode key, and lists them first. If a CLI is installed but logged out, setup can start the vendor's own login.
+- **Safe by design.** aicommits never reads or copies your Claude or Codex credentials. Subscription runs have no tools, no shell access and no saved sessions.
+- **Works everywhere aicommits does.** The Git hook, headless mode, the VS Code extension and `aicommits pr` all work with every provider.
+- **More providers.** OpenCode Go and Anthropic join Together AI, OpenAI, Groq, xAI, OpenRouter, Ollama, LM Studio and any OpenAI-compatible endpoint.
+- **Fresh defaults.** Together AI stays the recommended API provider, now on DeepSeek V4.1 Flash 1017, with GLM-5.3 and Beam as highlights.
+
+## Setup
+
+> The minimum supported version of Node.js is v22. Check your Node.js version with `node --version`.
+
+1. Install _aicommits_:
+
+   ```sh
+   npm install -g aicommits
+   ```
+
+2. Run the setup command to choose your AI provider:
+
+   ```sh
+   aicommits setup
+   ```
+
+<img src=".github/assets/setup.png" alt="aicommits setup detecting Claude, Codex and OpenCode Go subscriptions and listing them in the provider menu"/>
+
+This will guide you through:
+
+- Detecting subscriptions you already have on this machine (Claude, Codex, OpenCode Go)
+- Selecting your AI provider (sets the `provider` config)
+- Configuring your API key, when the provider needs one
+- **Automatically fetching and selecting from available models** (when supported)
+- **Choosing your preferred commit message format** (`plain`, `conventional`,
+  `conventional+body`, `gitmoji`, or `subject+body`)
+
+<img src=".github/assets/commit.png" alt="aicommits analyzing three staged files and proposing a conventional commit message with a body"/>
+
+  Supported providers include:
+
+  - **TogetherAI** (recommended) - Get your API key from [TogetherAI](https://api.together.ai/)
+  - **Claude Agent** - Uses your Claude Pro, Max, Team or Enterprise login. No API key. Powered by Claude.
+  - **Codex** - Uses your ChatGPT login through the Codex CLI. No API key.
+  - **OpenCode Go** - Uses your [OpenCode Go](https://opencode.ai/docs/go/) plan
+  - **OpenAI** - Get your API key from [OpenAI API Keys page](https://platform.openai.com/account/api-keys)
+  - **Anthropic** - Get your API key from [Claude Console](https://console.anthropic.com/settings/keys)
+  - **Groq** - Get your API key from [Groq Console](https://console.groq.com/keys)
+  - **xAI** - Get your API key from [xAI Console](https://console.x.ai/)
+  - **OpenRouter** - Get your API key from [OpenRouter](https://openrouter.ai/keys)
+  - **Ollama** (local) - Run AI models locally with [Ollama](https://ollama.ai)
+  - **LM Studio** (local) - No API key required. Runs on your computer via [LM Studio](https://lmstudio.ai/)
+  - **Custom OpenAI-compatible endpoint** - Use any service that implements the OpenAI API
+
+  Together AI, OpenAI, xAI, and LM Studio models use the agentic generation
+  flow. Tested Together models without compatible tool calls use the one-shot
+  path; OpenAI, xAI, and LM Studio fall back when an endpoint rejects tools.
+  LM Studio also falls back when a local model does not submit the required
+  tool call. Other providers continue through the one-shot flow.
+
+  **For CI/CD environments**, you can also set up configuration via the config file:
+
+  ```bash
+  aicommits config set OPENAI_API_KEY="your_api_key_here"
+  aicommits config set OPENAI_BASE_URL="your_api_endpoint"  # Optional, for custom endpoints
+  aicommits config set OPENAI_MODEL="your_model_choice"     # Optional, defaults to provider default
+  ```
+
+  > **Note:** When using environment variables, ensure all related variables (e.g., `OPENAI_API_KEY` and `OPENAI_BASE_URL`) are set consistently to avoid configuration mismatches with the config file.
+
+  This will create a `.aicommits` file in your home directory.
+
+### Use a subscription you already have
+
+If you are logged in to Claude Code or Codex, or have an OpenCode Go key,
+`aicommits setup` lists that subscription first and skips the API key step.
+The first run of `aicommits` without a config also offers it.
+
+| Provider | Requirement | How aicommits uses it |
+| --- | --- | --- |
+| Claude Agent | `claude` CLI installed and logged in with `claude auth login` | Runs your installed `claude` through the Claude Agent SDK, with no tools and no saved session |
+| Codex | `codex` CLI installed and logged in with `codex login` using ChatGPT | Runs your installed `codex` through the Codex SDK, read-only and with the shell tool disabled |
+| OpenCode Go | An OpenCode Go or Go Plus plan | Reads `OPENCODE_API_KEY` or the key the OpenCode CLI saved, and calls the OpenCode Go API |
+
+aicommits never reads or copies your Claude or Codex credentials. Logging in
+always happens in the vendor's own CLI, and setup can start that login for you.
+Usage counts against your plan's limits, the same as using the CLI yourself.
+Detection only runs in an interactive terminal, never in Git hooks or CI. Turn
+it off with `aicommits config set subscription-detection=off`.
+
+### Upgrading
+
+Check the installed version with:
+
+```sh
+aicommits --version
+```
+
+To update to the latest version, run:
+
+```sh
+aicommits update
+```
+
+This will automatically detect your package manager (npm, pnpm, yarn, or bun) and update using the correct command.
+
+Alternatively, you can manually update:
+
+```sh
+npm install -g aicommits
+```
+
+## Usage
+
+### CLI mode
+
+You can call `aicommits` directly to generate a commit message for your staged changes:
+
+```sh
+git add <files...>
+aicommits
+```
+
+`aicommits` passes down unknown flags to `git commit`, so you can pass in [`commit` flags](https://git-scm.com/docs/git-commit).
+
+For example, you can stage all changes in tracked files with as you commit:
+
+```sh
+aicommits --all # or -a
+```
+
+> 👉 **Tip:** Use the `aic` alias if `aicommits` is too long for you.
+
+#### CLI Options
+
+- `--all` or `-a`: Automatically stage changes in tracked files for the commit (default: **false**)
+- `--clipboard` or `-c`: Copy the selected message to the clipboard instead of committing (default: **false**)
+- `--generate` or `-g`: Number of messages to generate (default: **1**)
+- `--exclude` or `-x`: Files to exclude from AI analysis
+- `--description`: Include a commit message description
+- `--type` or `-t`: Git commit message format (default: **plain**). Supports `plain`, `conventional`, `conventional+body`, `gitmoji`, and `subject+body`
+- `--prompt` or `-p`: Custom prompt to guide the LLM behavior (e.g., specific language, style instructions)
+- `--no-verify` or `-n`: Bypass pre-commit hooks while committing (default: **false**)
+- `--yes` or `-y`: Skip confirmation when committing after message generation (default: **false**)
+
+#### Generate multiple recommendations
+
+Sometimes the recommended commit message isn't the best so you want it to generate a few to pick from. You can generate multiple commit messages at once by passing in the `--generate <i>` flag, where 'i' is the number of generated messages:
+
+```sh
+aicommits --generate <i> # or -g <i>
+```
+
+> Warning: this uses more tokens, meaning it costs more.
+
+#### Include a description
+
+Add `--description` when the commit needs context beyond its subject:
+
+```sh
+aicommits --description
+```
+
+#### Commit Message Formats
+
+You can choose from five different commit message formats:
+
+- **plain** (default): Simple, unstructured commit messages
+- **conventional**: [Conventional Commits](https://conventionalcommits.org/) format with type and scope
+- **conventional+body**: Conventional Commit subject plus a generated body
+- **gitmoji**: Emoji-based commit messages
+- **subject+body**: Plain subject plus a generated body
+
+Use the `--type` flag to specify the format:
+
+```sh
+aicommits --type conventional # or -t conventional
+aicommits --type conventional+body
+aicommits --type gitmoji       # or -t gitmoji
+aicommits --type subject+body
+aicommits --type plain         # or -t plain (default)
+```
+
+This feature is useful if your project follows a specific commit message standard or if you're using tools that rely on these commit formats.
+
+#### Custom Prompts
+
+You can customize the LLM's behavior with the `--prompt` flag to guide commit message generation:
+
+```sh
+# Write commit messages in a specific language
+aicommits -p "Write commit messages in Italian"
+
+# Focus on specific aspects of the changes
+aicommits -p "Focus on performance implications of changes"
+
+# Use a specific style or tone
+aicommits -p "Use technical jargon suitable for senior developers"
+
+# Include specific details in the message
+aicommits -p "Always mention the specific function names and file paths changed"
+```
+
+### Git hook
+
+You can also integrate _aicommits_ with Git via the [`prepare-commit-msg`](https://git-scm.com/docs/githooks#_prepare_commit_msg) hook. This lets you use Git like you normally would, and edit the commit message before committing.
+
+#### Install
+
+In the Git repository you want to install the hook in:
+
+```sh
+aicommits hook install
+```
+
+#### Uninstall
+
+In the Git repository you want to uninstall the hook from:
+
+```sh
+aicommits hook uninstall
+```
+
+#### Usage
+
+1. Stage your files and commit:
+
+   ```sh
+   git add <files...>
+   git commit # Only generates a message when it's not passed in
+   ```
+
+   > If you ever want to write your own message instead of generating one, you can simply pass one in: `git commit -m "My message"`
+
+2. Aicommits will generate the commit message for you and pass it back to Git. Git will open it with the [configured editor](https://docs.github.com/en/get-started/getting-started-with-git/associating-text-editors-with-git) for you to review/edit it.
+
+3. Save and close the editor to commit!
+
+### Environment Variables
+
+You can also configure aicommits using environment variables instead of the config file.
+
+**Example:**
+
+```bash
+export OPENAI_API_KEY="sk-..."
+export OPENAI_BASE_URL="https://api.example.com"
+export OPENAI_MODEL="gpt-4"
+aicommits  # Uses environment variables
+```
+
+Configuration settings are resolved in the following order of precedence:
+
+1. Command-line arguments
+2. Environment variables
+3. Configuration file
+4. Default values
+
+## Configuration
+
+### Viewing current configuration
+
+To view all current configuration options that differ from defaults, run:
+
+```sh
+aicommits config
+```
+
+This will display only non-default configuration values with API keys masked for security. If no custom configuration is set, it will show "(using all default values)".
+
+### Changing your model
+
+To interactively select or change your AI model, run:
+
+```sh
+aicommits model
+```
+
+This will:
+
+- Show your current provider and model
+- Fetch available models from your provider's API
+- Let you select from available models or enter a custom model name
+- Update your configuration automatically
+
+### Updating aicommits
+
+To update to the latest version, run:
+
+```sh
+aicommits update
+```
+
+This will:
+
+- Check for the latest version on npm
+- Detect your package manager (npm, pnpm, yarn, or bun)
+- Update using the appropriate command
+- Show progress and confirm when complete
+
+### Reading a configuration value
+
+To retrieve a configuration option, use the command:
+
+```sh
+aicommits config get <key>
+```
+
+For example, to retrieve the API key, you can use:
+
+```sh
+aicommits config get OPENAI_API_KEY
+```
+
+You can also retrieve multiple configuration options at once by separating them with spaces:
+
+```sh
+aicommits config get OPENAI_API_KEY generate
+```
+
+### Setting a configuration value
+
+To set a configuration option, use the command:
+
+```sh
+aicommits config set <key>=<value>
+```
+
+For example, to set the API key, you can use:
+
+```sh
+aicommits config set OPENAI_API_KEY=<your-api-key>
+```
+
+You can also set multiple configuration options at once by separating them with spaces, like
+
+```sh
+aicommits config set OPENAI_API_KEY=<your-api-key> generate=3 locale=en
+```
+
+### Config Options
+
+#### OPENAI_API_KEY
+
+Your OpenAI API key or custom provider API Key
+
+#### OPENAI_BASE_URL
+
+Custom OpenAI-compatible API endpoint URL.
+
+#### OPENAI_MODEL
+
+Model to use for OpenAI-compatible providers.
+
+#### provider
+
+The selected AI provider. Set automatically during `aicommits setup`. Valid values: `claude-agent`, `codex`, `opencode-go`, `togetherai`, `openai`, `anthropic`, `groq`, `xai`, `ollama`, `lmstudio`, `openrouter`, `custom`.
+
+Configs from earlier versions without `provider` keep working: the provider is
+inferred from `OPENAI_BASE_URL`.
+
+#### subscription-detection
+
+Default: `on`
+
+Whether `aicommits setup` and the first run look for Claude, Codex and OpenCode
+Go subscriptions on this machine.
+
+#### claude-path
+
+Path to the `claude` CLI when it is not on your `PATH`.
+
+#### codex-path
+
+Path to the `codex` CLI when it is not on your `PATH`.
+
+#### locale
+
+Default: `en`
+
+The locale to use for the generated commit messages. Consult the list of codes in: https://wikipedia.org/wiki/List_of_ISO_639-1_codes.
+
+```sh
+aicommits config set locale=cs
+```
+
+#### generate
+
+Default: `1`
+
+The number of commit messages to generate to pick from.
+
+Note, this will use more tokens as it generates more results.
+
+#### timeout
+
+The timeout for network requests to the OpenAI API in milliseconds.
+
+Default: `10000` (10 seconds) for hosted providers, `60000` (60 seconds) for
+Together AI and local providers.
+
+```sh
+aicommits config set timeout=20000 # 20s
+```
+
+#### max-length
+
+The preferred character length of the generated commit subject. This guides the
+model toward concise messages, but complete subjects may be longer.
+
+Default: `72`
+
+```sh
+aicommits config set max-length=100
+```
+
+#### max-output-tokens
+
+The maximum number of tokens the model may generate for a commit message.
+
+Default: unset (provider/SDK default)
+
+> **Why you might need this:** reasoning models can exhaust a small output
+> budget on thinking alone and never produce a commit message. If you see
+> "The model did not generate a commit message." with a reasoning model, set
+> this higher (for example `4096`).
+
+```sh
+aicommits config set max-output-tokens=4096
+```
+
+#### thinking
+
+Whether the model's reasoning (thinking) phase is enabled.
+
+Default: `enabled`
+
+Set to `disabled` to send `thinking: { type: 'disabled' }` in the request body
+for OpenAI-compatible providers that support it (faster/cheaper). Official
+OpenAI and Together AI are excluded because they reject unknown body parameters
+or handle reasoning separately.
+
+```sh
+aicommits config set thinking=disabled
+```
+
+#### type
+
+Default: `plain`
+
+The type of commit message to generate. Available options:
+
+- `plain`: Simple, unstructured commit messages
+- `conventional`: Conventional Commits format with type and scope
+- `conventional+body`: Conventional Commit subject plus a generated body
+- `gitmoji`: Emoji-based commit messages
+- `subject+body`: Plain subject plus a generated body
+
+Examples:
+
+```sh
+aicommits config set type=conventional
+aicommits config set type=conventional+body
+aicommits config set type=gitmoji
+aicommits config set type=subject+body
+aicommits config set type=plain
+```
+
+## How it works
+
+The model receives the staged file list, requests the staged diffs it needs, and
+submits a validated commit subject with an optional description. The tool can
+only read Git's staged snapshot, so unstaged edits are never sent to the model.
+
+Video coming soon where I rebuild it from scratch to show you how to easily build your own CLI tools powered by AI.
+
+## Maintainers
+
+- **Hassan El Mghari**: [@Nutlope](https://github.com/Nutlope) [<img src="https://img.shields.io/twitter/follow/nutlope?style=flat&label=nutlope&logo=twitter&color=0bf&logoColor=fff" align="center">](https://x.com/nutlope)
+
+- **Riccardo Giorato**: [@riccardogiorato](https://github.com/riccardogiorato) [<img src="https://img.shields.io/twitter/follow/riccardogiorato?style=flat&label=riccardogiorato&logo=twitter&color=0bf&logoColor=fff" align="center">](https://x.com/riccardogiorato)
+
+- **Hiroki Osame**: [@privatenumber](https://github.com/privatenumber) [<img src="https://img.shields.io/twitter/follow/privatenumbr?style=flat&label=privatenumbr&logo=twitter&color=0bf&logoColor=fff" align="center">](https://twitter.com/privatenumbr)
+
+## Contributing
+
+If you want to help fix a bug or implement a feature in [Issues](https://github.com/Nutlope/aicommits/issues), checkout the [Contribution Guide](CONTRIBUTING.md) to learn how to setup and test the project

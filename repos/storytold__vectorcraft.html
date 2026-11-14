@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>storytold/vectorcraft · GitHub Trending Rank Radar</title>
+<meta name="description" content="VectorCraft: An open-source vector art tool written from scratch in pure Rust">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="vectorcraft, storytold, storytold/vectorcraft, github stars, github trending, star growth, star history, 开源项目, 星标增长, art, rust, rust-lang, svg, svg-editor, vector-graphics">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/storytold__vectorcraft">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="storytold/vectorcraft · GitHub Trending Rank Radar">
+<meta property="og:description" content="VectorCraft: An open-source vector art tool written from scratch in pure Rust">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/storytold__vectorcraft">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "storytold/vectorcraft", "codeRepository": "https://github.com/storytold/vectorcraft", "url": "https://zhuikan.com/repos/storytold__vectorcraft", "description": "VectorCraft: An open-source vector art tool written from scratch in pure Rust", "author": {"@type": "Organization", "name": "storytold", "url": "https://github.com/storytold"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Rust", "dateCreated": "2026-09-30", "keywords": "art,rust,rust-lang,svg,svg-editor,vector-graphics"}</script>
+</head>
+<body data-repo="storytold/vectorcraft" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">storytold/vectorcraft</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="storytold__vectorcraft"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/76897702?v=4&s=300" width="300" height="300" alt="storytold avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">vectorcraft</div>
+      <a class="rp-side-owner" href="https://github.com/storytold">storytold</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/storytold">storytold</a>
+        <span class="rp-sep">/</span><span class="rp-name">vectorcraft</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=new">new <b>#36</b></a></div>
+    </div>
+    <p class="rp-desc">VectorCraft: An open-source vector art tool written from scratch in pure Rust</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>11,717</b></span><span class="rp-stat" title="forks">⑂ <b>5,637</b></span><span class="rp-stat" title="watchers">👁 <b>64</b></span><span class="rp-stat" title="prs">⑃ <b>5,088</b></span><span class="rp-stat" title="issues">● <b>2,178</b></span><span class="rp-stat" title="releases">▤ <b>28</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/art">art</a><a class="rp-topic" href="../tags/rust">rust</a><a class="rp-topic" href="https://github.com/topics/rust-lang">rust-lang</a><a class="rp-topic" href="../tags/svg">svg</a><a class="rp-topic" href="https://github.com/topics/svg-editor">svg-editor</a><a class="rp-topic" href="https://github.com/topics/vector-graphics">vector-graphics</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2026-09-30</span><a class="rp-meta-bit rp-home" href="https://getartcraft.com/apps/vectorcraft" rel="noopener">getartcraft.com/apps/vectorcraft</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="storytold__artcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">artcraft</a><a class="rp-same-link" href="storytold__cadcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">cadcraft</a><a class="rp-same-link" href="storytold__craft-anything"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">craft-anything</a><a class="rp-same-link" href="storytold__craft-launcher"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">craft-launcher</a><a class="rp-same-link" href="storytold__deckcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">deckcraft</a><a class="rp-same-link" href="storytold__designcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">designcraft</a><a class="rp-same-link" href="storytold__effectcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">effectcraft</a><a class="rp-same-link" href="storytold__figcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">figcraft</a><a class="rp-same-link" href="storytold__filmcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">filmcraft</a><a class="rp-same-link" href="storytold__gridcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">gridcraft</a><a class="rp-same-link" href="storytold__lightcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">lightcraft</a><a class="rp-same-link" href="storytold__pdfcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">pdfcraft</a><a class="rp-same-link" href="storytold__photocraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">photocraft</a><a class="rp-same-link" href="storytold__soundcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">soundcraft</a><a class="rp-same-link" href="storytold__wordcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">wordcraft</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/storytold/vectorcraft">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">VectorCraft v0.24.1</span><a class="rp-dl-a" href="https://github.com/storytold/vectorcraft/releases/tag/v0.24.1">VectorCraft-0.24.1 ↓</a><span class="rp-dl-ver">0.24.1</span><span class="rp-dl-date">2026-11-12</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+27</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">11,717</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">5,637</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">64</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">5,088</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">2,178</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">28</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">VectorCraft
+
+
+  Vector illustration; an open-source, modern vector art application, built in pure Rust.
+
+
+
+  A fast, open-source vector illustration workflow. It runs natively on
+  macOS, Windows, Linux and FreeBSD, and in the browser via WebAssembly. Built by the ArtCraft team.
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+  
+
+
+
+  VectorCraft on getartcraft.com ·
+  ArtCraft ·
+  All Crafting Apps
+
+
+
+
+
+  
+  Neon Drive: a Pathfinder-cut sun, live Outer Glow on the type and grid, and clipping masks · examples/neon-drive.vectorcraft
+
+
+ [!NOTE]
+ ArtCraft is a community of artists from all walks of life. Digital, generative, music,
+ games &amp;mdash; if you make things, you&#x27;re one of us. Come say hi on Discord.
+
+
+  A look around ·
+  Made in VectorCraft ·
+  Why VectorCraft ·
+  Quick start ·
+  Status ·
+  Downloads ·
+  The Crafting Apps ·
+  License
+
+
+ A look around
+
+
+
+
+  
+  Live Blends and Layers: editable key paths, smooth colour, every object a row
+
+
+  
+  Pen and Direct Selection: real Bézier anchors and handles, plus a contextual task bar
+
+
+
+
+  
+  3D Revolve: smooth vector shading, caps and a rotation gizmo · examples/still-life.vectorcraft
+
+
+  
+  Dimension tool: lengths, angles and radii that follow the art they measure · examples/bracket-drawing.vectorcraft
+
+
+
+
+  
+  Perspective Grid: art attached to its planes stays editable in perspective · examples/perspective-city.vectorcraft
+
+
+  
+  Multiple artboards, light theme: Pathfinder · Gradient Mesh · live radial Repeat · Envelope Distort · examples/feature-sheet.vectorcraft
+
+
+
+
+ Made in VectorCraft
+
+Every piece below was built entirely through VectorCraft&#x27;s command API, the same one the MCP server
+exposes to agents, and exported by VectorCraft&#x27;s own renderer. The source files are in
+examples/.
+
+
+
+
+  
+  Neon Drive: synthwave poster with glowing type and grid
+
+
+  
+  Dusk: gradient sky, glowing sun, layered mountains
+
+
+
+
+  
+  Live Blends: 70 steps, smooth colour, editable spines
+
+
+
+
+  
+  Still Life: four revolved profiles with smooth vector shading
+
+
+
+
+  
+  Radial Repeat: a live mandala
+
+
+  
+  Envelope Distort: striped type warped into a flag
+
+
+
+
+  
+  Gradient Mesh: shaded spheres
+
+
+  
+  Pathfinder: a crescent and stars from exact booleans
+
+
+
+
+ Why VectorCraft
+
+- Familiar. A familiar layout, tools, menus, panels and shortcuts: the Pen, Direct Selection,
+  Pathfinder, Smart Guides, Appearance, Swatches, Layers and more. You already know how to use it.
+- Fast. Multithreaded SIMD rendering off the UI thread. 20,000 shapes render in about 27 ms at
+  full retina resolution while the interface stays at 120 fps.
+- Robust. Exact curve booleans (no &quot;cannot perform operation&quot;), unlimited undo via structural
+  sharing, and property-tested file round trips.
+- Open. A documented native format (.vectorcraft, JSON), first-class SVG, PDF (and
+  PDF-compatible .ai) import and export, PNG/JPEG/WebP export, Export for Screens, and SVGZ,
+  templates, GIF, TIFF and BMP on open.
+- Agent-native. Every menu item, tool gesture, panel and dialog can be</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/storytold/vectorcraft/issues/2676"><span class="rp-item-num">#2676</span><span class="rp-item-title">Report: a real-world corpus run of 186 files against 0.12.0 — PDF, EMF/WMF and DXF opened headless, exported to SVG, PDF and PNG, compared with pdftoppm, pdftotext and GDI+</span><span class="rp-item-extra">13 comments · 2026-10-17</span></a><a class="rp-item" href="https://github.com/storytold/vectorcraft/issues/3439"><span class="rp-item-num">#3439</span><span class="rp-item-title">Proposal: a quieter interface — no cards inside columns, one corner scale, neutral chrome (two designs, code ready)</span><span class="rp-item-extra">12 comments · 2026-10-21</span></a><a class="rp-item" href="https://github.com/storytold/vectorcraft/issues/663"><span class="rp-item-num">#663</span><span class="rp-item-title">UI suggestions: preset double-click, Recent files, Discord button, Quick Look preview</span><span class="rp-item-extra">12 comments · 2026-10-09</span></a><a class="rp-item" href="https://github.com/storytold/vectorcraft/issues/4948"><span class="rp-item-num">#4948</span><span class="rp-item-title">[Feature Request] Keep each text&#x27;s language on .ai import and export (and in PDF/SVG)</span><span class="rp-item-extra">11 comments · 2026-10-31</span></a><a class="rp-item" href="https://github.com/storytold/vectorcraft/issues/829"><span class="rp-item-num">#829</span><span class="rp-item-title">Tool panels not movable</span><span class="rp-item-extra">11 comments · 2026-10-09</span></a><a class="rp-item" href="https://github.com/storytold/vectorcraft/issues/3179"><span class="rp-item-num">#3179</span><span class="rp-item-title">[Bug Report] [VectorCraft] Envelope Distort</span><span class="rp-item-extra">10 comments · 2026-10-20</span></a><a class="rp-item" href="https://github.com/storytold/vectorcraft/issues/1479"><span class="rp-item-num">#1479</span><span class="rp-item-title">Some Layers from .ai File Not Visible</span><span class="rp-item-extra">10 comments · 2026-10-12</span></a><a class="rp-item" href="https://github.com/storytold/vectorcraft/issues/1433"><span class="rp-item-num">#1433</span><span class="rp-item-title">Ticket to close tickets: already done, duplicates, or off-topic</span><span class="rp-item-extra">10 comments · 2026-10-12</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/storytold/vectorcraft/releases"><b>VectorCraft v0.24.1</b> <span class="rp-rel-tag">v0.24.1</span> <span class="rp-item-extra">2026-11-12</span></a><pre class="rp-pre">What&#x27;s Changed
+ EPS import: charge scanned strings, end failed filter decodes, bound data sources and JPEG/TIFF headers by @dylanmtaylor in https://github.com/storytold/vectorcraft/pull/6627
+ i18n(ka): update the Georgian catalog (55 strings) by @devius in https://github.com/storytold/vectorcraft/pull/6630
+ Guides: ruler guides are document objects on their layers by @dotCooCoo in https://github.com/storytold/vectorcraft/pull/6632
+ Commands: every angle and rotation param says which way it turns (6340) by @Hassan1305 in https://github.com/storytold/vectorcraft/pull/6631
+ Scripts: File and</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (5)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/TunerT_TQ/article/details/167586603" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">【开源评测｜GitHub热榜#7】VectorCraft：纯Rust实现开源矢量编辑器，无尘复刻Adobe Illustrator｜L3静态源码审计</span><span class="rp-item-extra">2026-10-11</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00982/article/details/167278073" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">VectorCraft绘图工具完全教程：钢笔、直接选择与15种形状工具新手指南</span><span class="rp-item-extra">2026-10-08</span></a><a class="rp-item" href="https://note.com/biz_hack_master/n/nee1aa5494a67" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">【無料】【Illustratorが不要になる？】Claude Codeでベクター編集できる無料OSS「VectorCraft」が進化。日本語・MCP対応がすごい。</span><span class="rp-item-extra">2026-10-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMinAFBVV95cUxQcTh6X240TDlSTElRcDhrVzNSZkdEUjRGN2Y0OWVNQ05NMFIyeHV1bWwtT3BhSFNYTWRQeExZaEE0QU9hd1E5NnhyZC03eUEwLUFEdXprY2oyX21uZ2FNZFc3MFNBTWZ1TEptRExYMncybkVaTHl5NXJxYWxNbU10bmZvS0ZpaUZuQk5IdHEzd1Bqd3BPTU4zOHJfekE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">VectorCraft 指南，用 Rust 编写的免费开源 Illustrator 替代品</span><span class="rp-item-extra">2026-10-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMikwFBVV95cUxQaXBJZXBZbzZRRi1HZUFJQlhSODJmOU53SkJmQWt3NlBoRVdmREZwOVJPR244VW42dTNYeG1qN2h5a2NDNC05UWZSTWJ4TkM5aVN4MF9meUNGM3NRaU41Wk9YZ2gxRTVFdG1wcEpJRk15ZU1IdnJmMXI1YlpPRVhhNTJXR3k4bUIzT1dVTjBvOWpZTnc?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">开发者发布七款免费 Adobe 克隆应用，由 Claude Opus 5.5 编写</span><span class="rp-item-extra">2026-10-08</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (9)</h3><div class="rp-list"><a class="rp-item" href="https://www.msn.com/en-us/news/other/i-ditched-inkscape-for-an-open-source-illustrator-rival-built-with-ai/ar-AA2h3a1c" target="_blank" rel="noopener"><span class="rp-news-src">XDA Developers on MSN</span><span class="rp-item-title">I ditched Inkscape for an open-source Illustrator rival built with AI</span><span class="rp-item-extra">2026-11-08</span></a><a class="rp-item" href="https://biz.chosun.com/en/en-it/2026/10/30/VHJX4AC33BCPFMBLFGU6MVAJNI/" target="_blank" rel="noopener"><span class="rp-news-src">Chosunbiz</span><span class="rp-item-title">AI-powered clones challenge Adobe and Microsoft, stoking &#x27;SaaSpocalypse&#x27; fears</span><span class="rp-item-extra">2026-10-30</span></a><a class="rp-item" href="https://note.com/vast_ixora7005/n/n11d153109ef1?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title"># [Contract 800k-2.5M JPY] Commercialization Manual for the Rapidly Rising Global OSS &quot;vectorcraft&quot; | Includes Internal DX Proposal &amp; In-house SaaS Construction Procedures</span><span class="rp-item-extra">2026-10-15</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxOUTdmR2RiM1k3dV9oaG9hMUdCa3F5LWJ4ZkFEMU5ZZGN5bVJwYjgyaWhkV3JTTmNMQnY3ZW1KWWIxLUtpWHY4QlV6dWRXTzIwYnE4R1lYeERlcUJjRUNJZmxPd25zVElUZllMcnhFR2V5THgxQ2JvTDB3NHhlRWQzUWNRb1o?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Korben</span><span class="rp-item-title">I Tested the 12 Free Clones of Adobe and Microsoft</span><span class="rp-item-extra">2026-10-13</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE1obUNOekNXNm1uRHNJWUZ3T0F0M3RQeDN2SXJqak9HeVVIb3QzeGV0UTlBRno2RU1hV1J0YTVfN3FlVWkzU3hmTUZ1WnRTV3AxQlFYOGlrS1pNaFdW?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">YouTube</span><span class="rp-item-title">I’ve used Adobe Illustrator for 37 years. Is this the end?</span><span class="rp-item-extra">2026-10-12</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMimwFBVV95cUxOY0ZwaWpzVTRMZjhvX2NfRV9FWmNzUGtXbEpOWHBmcWtKZXhVZXhFN3M1S083ZnFRLWFYWVloMjB1U3ljdmVBZ3hZNnV0S2U0a3NITHo3N3dNeGZjN0FIRVJSS3FJdy1iX2l3aEl4bmxhbjRhbHJXRWVyMG9wMm1rSmVPYlhsbTV4Ul8teGxGajFHUDN6TFFfb0FKQQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">VectorCraft guide, free open source Illustrator alternative in Rust</span><span class="rp-item-extra">2026-10-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMikwFBVV95cUxNbmpBM0FIY1Fvd1RsREtxempIMVlHUmw2UnBXWlowVjhtUDFGb3lBc0I2ZGhpVWJYQUNZbU1TYmo0NFQ5ZWFaRmZ5azhSTmdtM3BsME9neGNkcThud2pTTV9CWTA3dFdCTFdZdXBjZm1VeG5WbzVXeWpnSzN3U2t3TU1hSE5SeHRYa1BDdGJmV3dpNUk?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Gizmodo</span><span class="rp-item-title">Someone Vibe Coded a Free Knockoff of Adobe Creative Suite</span><span class="rp-item-extra">2026-10-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMif0FVX3lxTE4zYzlFaUdCM3lxVE5ZWGpEX0o0akdiY19DVnFkTDlFN0R4YUxxQWgzaG96QjZ2dnJSQklQYTNyX3A3cnlxQkpCX0NweU9FbnMzSlpMb3JNdDVxd25VbmZqLW1LRFc1ZjhfSmF0WHVUY1pkVDBWMHpUblFnbnR1MFE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Techaeris</span><span class="rp-item-title">ArtCraft Launches 7 Open-Source Creative Apps Built in Rust to Rival Adobe</span><span class="rp-item-extra">2026-10-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMic0FVX3lxTE9LWUVRZ3EtNFFacjdvYkQ1TW1haXZMN2RHYTRhX0VBd2RlVjFocXdrcUg3bjBBMVVON1Z2Vmw4enNZaXJKMjhqanYyMk5LbUxpeWc3cWoyVjN5SkpTckRRXzFjUEF2WkxJWktJQkF5WVVQdGs?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">GIGAZINE</span><span class="rp-item-title">ArtCraft Crafting Apps is a collection of free Adobe alternative apps, aiming to be an open-source alternative to Photoshop, Illustrator, Premiere, Lightroom, Acrobat, After Effects, and InDesign.</span><span class="rp-item-extra">2026-10-05</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/storytold__vectorcraft.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

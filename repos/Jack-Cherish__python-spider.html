@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jack-Cherish/python-spider · GitHub Trending Rank Radar</title>
+<meta name="description" content=":rainbow:Python3网络爬虫实战：淘宝、京东、网易云、B站、12306、抖音、笔趣阁、漫画小说下载、音乐电影下载等">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="python-spider, Jack-Cherish, Jack-Cherish/python-spider, github stars, github trending, star growth, star history, 开源项目, 星标增长, python-spider, python3, python, webspider">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Jack-Cherish__python-spider">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Jack-Cherish/python-spider · GitHub Trending Rank Radar">
+<meta property="og:description" content=":rainbow:Python3网络爬虫实战：淘宝、京东、网易云、B站、12306、抖音、笔趣阁、漫画小说下载、音乐电影下载等">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Jack-Cherish__python-spider">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Jack-Cherish/python-spider", "codeRepository": "https://github.com/Jack-Cherish/python-spider", "url": "https://zhuikan.com/repos/Jack-Cherish__python-spider", "description": ":rainbow:Python3网络爬虫实战：淘宝、京东、网易云、B站、12306、抖音、笔趣阁、漫画小说下载、音乐电影下载等", "author": {"@type": "Organization", "name": "Jack-Cherish", "url": "https://github.com/Jack-Cherish"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Python", "dateCreated": "2017-05-05", "keywords": "python-spider,python3,python,webspider"}</script>
+</head>
+<body data-repo="Jack-Cherish/python-spider" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Jack-Cherish/python-spider</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Jack-Cherish__python-spider"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/16872370?u=ab7b3cc8c6d97e9eb02da3bb577c1305930e8ca9&amp;v=4&s=300" width="300" height="300" alt="Jack-Cherish avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">python-spider</div>
+      <a class="rp-side-owner" href="https://github.com/Jack-Cherish">Jack-Cherish</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Jack-Cherish">Jack-Cherish</a>
+        <span class="rp-sep">/</span><span class="rp-name">python-spider</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">:rainbow:Python3网络爬虫实战：淘宝、京东、网易云、B站、12306、抖音、笔趣阁、漫画小说下载、音乐电影下载等</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>19,854</b></span><span class="rp-stat" title="forks">⑂ <b>5,927</b></span><span class="rp-stat" title="watchers">👁 <b>630</b></span><span class="rp-stat" title="prs">⑃ <b>46</b></span><span class="rp-stat" title="issues">● <b>82</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/python-spider">python-spider</a><a class="rp-topic" href="../tags/python3">python3</a><a class="rp-topic" href="../tags/python">python</a><a class="rp-topic" href="https://github.com/topics/webspider">webspider</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Created 2017-05-05</span><a class="rp-meta-bit rp-home" href="https://cuijiahua.com/blog/spider/" rel="noopener">cuijiahua.com/blog/spider/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Jack-Cherish/python-spider">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">19,854</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">5,927</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">630</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">46</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">82</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">注：2020年最新连载教程请移步：Python Spider 2020
+
+免责声明：
+
+大家请以学习为目的使用本仓库，爬虫违法违规的案件：https://github.com/HiddenStrawberry/Crawler_Illegal_Cases_In_China
+
+本仓库的所有内容仅供学习和参考之用，禁止用于商业用途。任何人或组织不得将本仓库的内容用于非法用途或侵犯他人合法权益。本仓库所涉及的爬虫技术仅用于学习和研究，不得用于对其他平台进行大规模爬虫或其他非法行为。对于因使用本仓库内容而引起的任何法律责任，本仓库不承担任何责任。使用本仓库的内容即表示您同意本免责声明的所有条款和条件。
+
+ Python Spider
+
+原创文章每周最少两篇，后续最新文章会在【公众号】首发，视频【B站】首发，大家可以加我【微信】进交流群，技术交流或提意见都可以，欢迎Star！
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+ 声明
+
+ 代码、教程仅限于学习交流，请勿用于任何商业用途！
+
+ 目录
+
+ 爬虫小工具
+     文件下载小助手
+ 爬虫实战
+     笔趣看小说下载
+     百度文库免费文章下载助手_rev1
+     百度文库免费文章下载助手_rev2
+     《帅啊》网帅哥图片下载
+     构建代理IP池
+     《火影忍者》漫画下载
+     财务报表下载小助手
+     一小时入门网络爬虫
+     抖音App视频下载
+     GEETEST验证码识别
+     12306抢票小助手
+     百万英雄答题辅助系统   
+     网易云音乐免费音乐批量下载
+     B站免费视频和弹幕批量下载
+     京东商品晒单图下载
+     正方教务管理系统个人信息查询
+ 其它
+
+ 爬虫小工具
+
+ downloader.py:文件下载小助手
+
+	一个可以用于下载图片、视频、文件的小工具，有下载进度显示功能。稍加修改即可添加到自己的爬虫中。
+	
+	动态示意图：
+	
+	!image
+
+ 爬虫实战
+ 
+  biqukan.py:《笔趣看》盗版小说网站，爬取小说工具
+
+	第三方依赖库安装：
+
+		pip3 install beautifulsoup4
+
+	使用方法：
+
+		python biqukan.py
+
+  baiduwenku.py: 百度文库word文章爬取
+	
+	原理说明：http://blog.csdn.net/c406495762/article/details/72331737
+	
+	代码不完善，没有进行打包，不具通用性，纯属娱乐。
+	
+  shuaia.py: 爬取《帅啊》网，帅哥图片
+
+	《帅啊》网URL：http://www.shuaia.net/index.html
+
+	原理说明：http://blog.csdn.net/c406495762/article/details/72597755
+	
+	第三方依赖库安装：
+	
+		pip3 install requests beautifulsoup4
+		
+  daili.py: 构建代理IP池
+
+	原理说明：http://blog.csdn.net/c406495762/article/details/72793480
+	
+	
+  carton: 使用Scrapy爬取《火影忍者》漫画
+
+	代码可以爬取整个《火影忍者》漫画所有章节的内容，保存到本地。更改地址，可以爬取其他漫画。保存地址可以在settings.py中修改。
+	
+	动漫网站：http://comic.kukudm.com/
+	
+	原理说明：http://blog.csdn.net/c406495762/article/details/72858983
+	
+  hero.py: 《王者荣耀》推荐出装查询小助手
+
+	网页爬取已经会了，想过爬取手机APP里的内容吗？
+	
+	原理说明：http://blog.csdn.net/c406495762/article/details/76850843
+	
+  financical.py: 财务报表下载小助手
+
+	爬取的数据存入数据库会吗？《跟股神巴菲特学习炒股之财务报表入库(MySQL)》也许能给你一些思路。
+	
+	原理说明：http://blog.csdn.net/c406495762/article/details/77801899
+	
+	动态示意图：
+	
+	!image
+	
+  one_hour_spider:一小时入门Python3网络爬虫。
+
+	原理说明:
+	
+	  知乎：https://zhuanlan.zhihu.com/p/29809609
+	  CSDN：http://blog.csdn.net/c406495762/article/details/78123502
+	
+	本次实战内容有：
+	
+	  网络小说下载(静态网站)-biqukan
+	  优美壁纸下载(动态网站)-unsplash
+	  视频下载
+	 
+  douyin.py:抖音App视频下载
+ 
+	抖音App的视频下载，就是普通的App爬取。
+
+	原理说明:
+	
+	  个人网站：http://cuijiahua.com/blog/2018/03/spider-5.html
+	
+  douyin_pro:抖音App视频下载（升级版）
+ 
+	抖音App的视频下载，添加视频解析网站，支持无水印视频下载，使用第三方平台解析。
+
+	原理说明:
+	
+	  个人网站：http://cuijiahua.com/blog/2018/03/spider-5.html
+	 
+  douyin:抖音App视频下载（升级版2）
+ 
+	抖音App的视频下载，添加视频解析网站，支持无水印视频下载，通过url解析，无需第三方平台。
+	
+	原理说明:
+	
+	  个人网站：http://cuijiahua.com/blog/2018/03/spider-5.html
+	 
+	动态示意图：
+	
+	!image
+	
+  geetest.py:GEETEST验证码识别
+ 
+ 	原理说明:
+	
+	 无
+	
+  12306.py:用Python抢火车票简单代码
+ 
+	可以自己慢慢丰富，蛮简单，有爬虫基础很好操作，没有原理说明。
+	
+  baiwan:百万英雄辅助答题
+ 
+	效果图：
+	
+	!image
+	
+	原理说明：
+	
+	 个人网站：http://cuijiahua.com/blog/2018/01/spider_3.html
+	
+  	功能介绍：
+	
+	服务器端，使用Python（baiwan.py）通过抓包获得的接口获取答题数据，解析之后通过百度知道搜索接口匹配答案，将最终匹配的结果写入文件（file.txt)。
+	
+	手机抓包不会的朋友，可以看下我的早期手机APP抓包教程。
+	
+	Node.js（app.js）每隔1s读取一次file.txt文件，并将读取结果通过socket.io推送给客户端（index.html）。
+	
+	亲测答题延时在3s左右。
+	
+	声明：没做过后端和前端，花了一天时间，现学现卖弄好的，javascript也是现看现用，百度的程序，调试调试而已。</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Jack-Cherish/python-spider/issues/116"><span class="rp-item-num">#116</span><span class="rp-item-title">好多代码都失效了，待更新。</span><span class="rp-item-extra">5 comments · 2022-04-23</span></a><a class="rp-item" href="https://github.com/Jack-Cherish/python-spider/issues/111"><span class="rp-item-num">#111</span><span class="rp-item-title">大佬,可否讲一下怎么在python里面运行js找了个小说网站,他原始html里面的是乱序的文字,要用js重新排序才是正确的.</span><span class="rp-item-extra">4 comments · 2021-08-21</span></a><a class="rp-item" href="https://github.com/Jack-Cherish/python-spider/issues/129"><span class="rp-item-num">#129</span><span class="rp-item-title">求更新</span><span class="rp-item-extra">2 comments · 2024-08-28</span></a><a class="rp-item" href="https://github.com/Jack-Cherish/python-spider/issues/119"><span class="rp-item-num">#119</span><span class="rp-item-title">你好 那个py文件里的 xml2ass这个不是第三方模块吧</span><span class="rp-item-extra">2 comments · 2022-07-18</span></a><a class="rp-item" href="https://github.com/Jack-Cherish/python-spider/issues/110"><span class="rp-item-num">#110</span><span class="rp-item-title">你好为啥我run完之后只print了一个文库文件的网址出来什么都么有</span><span class="rp-item-extra">1 comments · 2021-04-19</span></a><a class="rp-item" href="https://github.com/Jack-Cherish/python-spider/issues/131"><span class="rp-item-num">#131</span><span class="rp-item-title">Bilibili排行榜</span><span class="rp-item-extra">0 comments · 2026-07-18</span></a><a class="rp-item" href="https://github.com/Jack-Cherish/python-spider/issues/128"><span class="rp-item-num">#128</span><span class="rp-item-title">反爬虫</span><span class="rp-item-extra">0 comments · 2024-08-26</span></a><a class="rp-item" href="https://github.com/Jack-Cherish/python-spider/issues/127"><span class="rp-item-num">#127</span><span class="rp-item-title">Cryptographic API Misuse Vulnerability : Do not use non-random/static)predictable IVs in CBC</span><span class="rp-item-extra">0 comments · 2024-01-08</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Jack-Cherish__python-spider.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

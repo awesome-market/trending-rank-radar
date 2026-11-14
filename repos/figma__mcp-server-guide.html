@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>figma/mcp-server-guide · GitHub Trending Rank Radar</title>
+<meta name="description" content="A guide on how to use the Figma MCP server">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="mcp-server-guide, figma, figma/mcp-server-guide, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/figma__mcp-server-guide">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="figma/mcp-server-guide · GitHub Trending Rank Radar">
+<meta property="og:description" content="A guide on how to use the Figma MCP server">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/figma__mcp-server-guide">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "figma/mcp-server-guide", "codeRepository": "https://github.com/figma/mcp-server-guide", "url": "https://zhuikan.com/repos/figma__mcp-server-guide", "description": "A guide on how to use the Figma MCP server", "author": {"@type": "Organization", "name": "figma", "url": "https://github.com/figma"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Python", "dateCreated": "2025-08-05"}</script>
+</head>
+<body data-repo="figma/mcp-server-guide" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">figma/mcp-server-guide</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="figma__mcp-server-guide"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/5155369?v=4&s=300" width="300" height="300" alt="figma avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">mcp-server-guide</div>
+      <a class="rp-side-owner" href="https://github.com/figma">figma</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/figma">figma</a>
+        <span class="rp-sep">/</span><span class="rp-name">mcp-server-guide</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A guide on how to use the Figma MCP server</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>2,183</b></span><span class="rp-stat" title="forks">⑂ <b>215</b></span><span class="rp-stat" title="watchers">👁 <b>30</b></span><span class="rp-stat" title="prs">⑃ <b>128</b></span><span class="rp-stat" title="issues">● <b>0</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Created 2025-08-05</span><a class="rp-meta-bit rp-home" href="https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Dev-Mode-MCP-Server" rel="noopener">help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/figma/mcp-server-guide">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+37</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+125</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">2,183</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">215</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">30</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">128</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Figma MCP Server Guide
+
+The Figma MCP server brings Figma directly into your workflow by providing important design information and context to AI agents generating code from Figma design files.
+
+ [!NOTE]
+ Rate limits apply to Figma MCP server tools that read data from Figma. Some tools, such as those that write to Figma files, are exempt from the rate limits.
+ 
+ Users on the Starter plan or with View or Collab seats on paid plans will be limited to up to 6 tool calls per month.
+ 
+ Users with a Dev or Full seat on the Professional, Organization, or Enterprise plans have per minute rate limits, which follow the same limits as the Tier 1 Figma REST API. As with Figma’s REST API, Figma reserves the right to change rate limits.
+
+For the complete set of Figma MCP server docs, see our developer documentation. By using the Figma MCP server and the related resources (including these skills), you agree to the Figma Developer Terms. These skills are currently available as a Beta feature.
+
+ Features
+
+- Write to the canvas (remote server only): Create and modify native Figma content directly from your MCP client. With the right skills, agents can build and update frames, components, variables, and auto layout in your Figma files using your design system as the source of truth.
+
+    Note: We&#x27;re quickly improving how Figma supports AI agents. The write to canvas feature will eventually be a usage-based paid feature, but is currently available for free during the beta period.
+
+- Generate placeholder images: When source, captured, or library images are unavailable, agents can use generate_image after asking permission and disclosing Figma AI credit usage. Generated images are uploaded with upload_assets and applied to the design.
+
+- Generate code from selected frames
+
+  Select a Figma frame and turn it into code. Great for product teams building new flows or iterating on app features.
+
+- Extract design context
+
+  Pull in variables, components, and layout data directly into your IDE. This is especially useful for design systems and component-based workflows.
+
+- Code smarter with Code Connect
+
+  Boost output quality by reusing your actual components. Code Connect keeps your generated code consistent with your codebase.
+
+  Learn more about Code Connect →
+
+- Generate Figma designs from web pages (rolling out)
+
+  Capture, import, or convert a web page into a Figma design directly from your AI coding agent.
+
+ Installation &amp; Setup
+
+ Connect to the Figma MCP server
+
+Different MCP clients require slightly different setups. Follow the instructions below for your specific client to connect to the Figma MCP server.
+
+ VS Code
+
+1. Use the shortcut ⌘ Shift P to search for MCP:Add Server.
+2. Select HTTP.
+3. Paste the server url https://mcp.figma.com/mcp in the search bar. Then hit Enter.
+4. When you&#x27;re prompted for a server ID, enter figma.
+5. Select whether you want to add this server globally or only for the current workspace. Once confirmed, you&#x27;ll see a configuration like th</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (2)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/gitblog_00243/article/details/158273515" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">Figma MCP Server配置指南：设计到代码的智能桥梁</span><span class="rp-item-extra">2026-06-29</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00557/article/details/154684544" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">终极Figma MCP Server安装教程：VS Code与Cursor配置全攻略</span><span class="rp-item-extra">2026-03-28</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (6)</h3><div class="rp-list"><a class="rp-item" href="https://help.figma.com/hc/en-us/articles/39166810751895-Figma-skills-for-MCP" target="_blank" rel="noopener"><span class="rp-news-src">help.figma</span><span class="rp-item-title">Figma skills for MCP</span><span class="rp-item-extra">2026-03-24</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiggFBVV95cUxOdWJ1SmUxeDhCaDgyRlBMUjFkdmlyZG40VnlWYjYxa3BUUk5SbjB2RmNuRmZhS1EwUW9tWW8zazhxenVvdVM1U0MxTVhFZE9aYXJHYUs4UXJ5VjBZNkNrRmZKVU5mSXVmU24tSE5Ob0tpR0Ewa0Jlbk5rbW5lTzNHWXpR?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">shattered.io</span><span class="rp-item-title">Audit Cursor MCP Servers: 12 Steps, 60 Min [2026]</span><span class="rp-item-extra">2026-11-06</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiTkFVX3lxTFBzSExyR19rU0Z5RVN5Z1UzZUMyRU1IaDl2MlVUeFYtRUY1TWRYckJ3OUtTMnZUMTQxT1NNcWlqeHAyNERxOVgxLXFHN2hJZw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">AIMultiple</span><span class="rp-item-title">Best Design to Code Tools Compared: Detailed Analysis</span><span class="rp-item-extra">2026-11-03</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMigwFBVV95cUxQOXBBbVhGYmxFbm81MzR1Sy1lX253YzdLNU94TmJwaDhrX05Od2xrM1A2TWRiOEFMczBlSmI0MDFJRk9IcEhVSVB3RnczLUhINkpSSkR3YUwwcVRaZUVHM21ZQmMzc3pEU0FFcmE1R1JLOHFQaFpGMGNtd1Q3ZkxWWUdwcw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">www.perfectcorp.com</span><span class="rp-item-title">What Is an MCP Server? How to Work with API? A Developer&#x27;s Guide (2026)</span><span class="rp-item-extra">2026-10-19</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMijgFBVV95cUxPSE9GbUtNUTJlSHpWMDhzZ29FSlVfdUpBZTdiSEtqcjhUWUNaQTNNcUFjNnRIUVFKeVlFUUNnajY3OE9abVRRUmNMNDdacWNsUXlyU1JjQmRfVUhIdTNPZm0zb2dDY0M3SnNPQjJtRlQ3cDNkWG9VVmsyUE92ZzJaNmlldnUtTm1QSS1KUmxB?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">Craft suite and MCP servers, a guide to using them with Claude Code</span><span class="rp-item-extra">2026-10-13</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE1DVnJia1NNVmw1aFRPMDdvX0lCTS1PbElQT0p1SE04V3dDdnBkRUVDWTVkWHJwSUhPd1VKcWdCX09PbGltNFRWOUt2MGhKSWctaUhiMWt3NGZxWE1J?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Kingy AI</span><span class="rp-item-title">CircleCI MCP Server Guide: What It Does, Pricing, Use Cases, and Alternatives</span><span class="rp-item-extra">2026-06-12</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/figma__mcp-server-guide.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+# Spring Tools
+
+The all-new Spring Tools for Visual Studio Code, Eclipse, and Theia. Learn more at https://spring.io/tools.
+
+## Getting started
+
+### Installation
+
+Depending on your development environment, you can choose between:
+
+- __Visual Studio Code:__ We provide extensions for Visual Studio Code if you prefer this lightweight editor for your development.
+- __Cursor:__ We provide extensions for Cursor if you prefer this lightweight editor for agentic development.
+- __AI coding agents:__ The Spring Tools Language Server agent plugin provides Spring-aware MCP tools and skills for Claude Code, GitHub Copilot CLI and Codex; OpenCode can connect to the same server over MCP.
+- __Spring Tools for Eclipse distribution:__ a ready-to-use distribution of the latest Eclipse Desktop IDE, prepackaged with Spring Tools and a few additional third-party extensions. Download, unpack, and start.
+- __Spring Tools for Eclipse extensions:__ you can install the Spring Tools for Eclipse into an existing Eclipse Desktop IDE installation and use it from there.
+- __Eclipse Theia:__ You can install the same extensions into Theia-based environments like gitpod.
+
+For all those choices, you can find detailed installation instructions from the user guide:
+https://github.com/spring-projects/spring-tools/wiki/Installation
+
+## User documentation
+
+The project wiki contains a comprehensive user documentation:
+https://github.com/spring-projects/spring-tools4/wiki
+
+## Ask questions
+
+Please ask general questions on StackOverflow and tag them with `spring-tools`:
+https://stackoverflow.com/questions/ask?tags=spring-tools
+
+## News and updates
+
+You can also find the project here (for everything related to the Spring Toos):
+- on X: https://x.com/springtools4
+- on Bluesky: https://bsky.app/profile/springtools.bsky.social
+
+## Raise an issue
+
+Please raise issues by creating a new GitHub issue at:
+https://github.com/spring-projects/spring-tools/issues
+
+## Contributing
+
+Find details about how to contribute:
+https://github.com/spring-projects/spring-tools/blob/master/CONTRIBUTING.adoc
+
+### Running Claude Code in Docker
+
+To run [Claude Code](https://claude.com/claude-code) against this repository in an isolated container
+(works for regular checkouts and git worktrees), you need Docker with Compose. From the repository root:
+
+```bash
+./docker-claude.sh
+```
+
+The first start builds the image. Run `/login` once inside the container (the login is shared by all
+checkouts and worktrees), or set `ANTHROPIC_API_KEY` on the host beforehand. Set `GH_TOKEN` to use `gh`
+inside the container. Your host `~/.m2/repository` is available read-only; Maven writes stay in the container.
+
+The image is not updated automatically. To pick up security updates (JDK, OS packages, Node.js, Claude Code),
+rebuild it regularly with `./docker-claude.sh --rebuild` (once per checkout or worktree you use).
+Details are in [docker/README.md](docker/README.md).
+
+### Code of Conduct
+
+Please see our https://github.com/spring-projects/.github/blob/master/CODE_OF_CONDUCT.md
+
+### Reporting Security Vulnerabilities
+
+Please see our https://github.com/spring-projects/.github/blob/master/SECURITY.md

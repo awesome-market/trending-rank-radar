@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Light-City/CPlusPlusThings · GitHub Trending Rank Radar</title>
+<meta name="description" content="C++那些事">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="CPlusPlusThings, Light-City, Light-City/CPlusPlusThings, github stars, github trending, star growth, star history, 开源项目, 星标增长, cplusplus, cpp, cpp11, cpp14">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Light-City__CPlusPlusThings">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Light-City/CPlusPlusThings · GitHub Trending Rank Radar">
+<meta property="og:description" content="C++那些事">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Light-City__CPlusPlusThings">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Light-City/CPlusPlusThings", "codeRepository": "https://github.com/Light-City/CPlusPlusThings", "url": "https://zhuikan.com/repos/Light-City__CPlusPlusThings", "description": "C++那些事", "author": {"@type": "Organization", "name": "Light-City", "url": "https://github.com/Light-City"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "C++", "dateCreated": "2019-07-14", "keywords": "cplusplus,cpp,cpp11,cpp14"}</script>
+</head>
+<body data-repo="Light-City/CPlusPlusThings" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Light-City/CPlusPlusThings</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Light-City__CPlusPlusThings"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/25699850?u=ae1ceddf2cd1d69488bc3132d29b5ca3bb57ee26&amp;v=4&s=300" width="300" height="300" alt="Light-City avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">CPlusPlusThings</div>
+      <a class="rp-side-owner" href="https://github.com/Light-City">Light-City</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Light-City">Light-City</a>
+        <span class="rp-sep">/</span><span class="rp-name">CPlusPlusThings</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">C++那些事</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>43,612</b></span><span class="rp-stat" title="forks">⑂ <b>8,782</b></span><span class="rp-stat" title="watchers">👁 <b>553</b></span><span class="rp-stat" title="prs">⑃ <b>127</b></span><span class="rp-stat" title="issues">● <b>231</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/cplusplus">cplusplus</a><a class="rp-topic" href="../tags/cpp">cpp</a><a class="rp-topic" href="https://github.com/topics/cpp11">cpp11</a><a class="rp-topic" href="https://github.com/topics/cpp14">cpp14</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C++</span><span class="rp-meta-bit">Created 2019-07-14</span><a class="rp-meta-bit rp-home" href="https://light-city.github.io/stories_things/" rel="noopener">light-city.github.io/stories_things/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Light-City/CPlusPlusThings">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+4</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">43,612</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">8,782</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">553</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">127</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">231</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">C++ 那些事
+
+
+  🇨🇳 中文 |
+  🇺🇸 English
+
+
+
+  📖 在线阅读（持续更新 · 7 种语言）：C++那些事 · 中文站 ｜ English Site
+
+
+
+
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+
+
+
+  C++ 那些事 | 从入门到进阶的 C++ 学习之旅 | 深入理解现代 C++
+
+
+
+
+---
+
+- C++ 那些事
+    - 重磅项目
+    - 关于作者
+    - 项目运行
+      - 方式1: vscode + bazel
+      - 方式2: docker
+      - 方式3: g++
+    - 视频学习本项目
+    - 飞书知识库
+    - 基础进阶
+    - 实战系列
+      - 10 日狂练
+      - 重点实战练习
+    - C++2.0 新特性
+      - 概况
+      - C++11 新特性
+      - C++14/17/20
+    - 设计模式
+    - STL 源码剖析
+    - 并发编程
+      - C++ Concurrency in Action
+      - 多线程与多进程
+        - Threading In C++
+    - C++ 惯用法
+        - 你最喜欢的 c++ 编程风格惯用法是什么?
+    - 学习课程
+      - 极客时间《现代 C++ 实战 30 讲》
+    - 工具篇
+      - 容器快捷输出工具
+      - 像 Python 一样简单输出（Jupyter Notebook）
+      - 观察编译过程变化
+      - C++ 的 Debug 工具 dbg-macro
+      - 在 Linux 上的 Debug 工具 rr - 拥有回到过去的能力
+    - 拓展部分
+      - 一些问题
+    - 贡献者
+
+ C++ 那些事
+
+
+感谢各位对《C++ 那些事》的支持，现将内容也同步至B站，以视频的方式展示，可以打开网站直接阅读~欢迎大家 star、转发、PR。
+
+在线个人博客：光城的实验室
+
+在线学习网站：C++那些事
+
+- 中文名：C++ 那些事
+- 英文名：Stories About C Plus Plus
+
+这是一个适合初学者从入门到进阶的仓库，解决了面试者与学习者想要深入 C++ 及如何入坑 C++ 的问题。除此之外，本仓库拓展了更加深入的源码分析，多线程并发等的知识，是一个比较全面的 C++ 学习从入门到进阶提升的仓库。
+
+ 🎯 适合人群: C++ 初学者、面试准备者、想系统学习 Modern C++ 的开发者
+ 📚 涵盖内容: C++11/14/17/20 新特性、STL 源码剖析、设计模式、并发编程
+ 🔧 实践导向: 配套完整代码示例和实战项目
+
+
+ 重磅项目
+
+推出一系列重磅项目，带大家实战学习C++，配合本开源项目学习，成长飞快!
+
+直通点：戳这里
+
+ 关于作者
+
+公众号已开放两大入口，分别是专辑与菜单，可以直接在微信公众号上阅读《C++ 那些事》内容，配上该仓库的代码，将会非常的爽，建议大家关注一波。
+
+个人公众号：guangcity
+
+或者扫下面的二维码，欢迎大家反馈及 C++ 交流，本人在微信创建了 C++ 那些事交流群，优质的 C++ 资源交流区，期待大家关注上面公众号，点击公众号右下角-联系我，拉你入群。
+
+---
+
+关注我
+
+如果觉得不错，关注我吧~
+
+
+  
+    
+      
+          
+          星球
+      
+      
+          
+          微信公众号
+      
+    
+  
+
+
+
+ 项目运行
+
+
+ 方式1: vscode + bazel
+
+ 方式2: docker
+
+新推出免开发环境，docker环境，大家可以pull下面镜像：
+
+
+docker pull xingfranics/cplusplusthings:latest
+
+ 方式3: g++
+
+
+ 视频学习本项目
+
+第一期：Step By Step上手编译本项目
+
+第二期：免开发环境docker
+
+第三期：手把手共读HashTable，彻底搞懂C++ STL
+
+第四期：手把手共读STL之enable_shared_from_this
+
+第五期：手把手共读STL之线程，从C++11 thread到C++20 jthread
+
+第六期：手把手共读STL之共读condition_variable、condition_variable_any
+
+第七期：手把手共读STL之Mutex
+
+第八期：手把手共读STL之RAII Lock
+
+ 飞书知识库
+
+互联网大厂面试实录
+
+拿下offer之必备面经
+
+
+ 基础进阶
+
+- const 那些事
+- static 那些事
+- this 那些事
+- inline 那些事
+- sizeof 那些事
+- 函数指针那些事
+- 纯虚函数和抽象类那些事
+- vptr_vtable 那些事
+- virtual 那些事
+- volatile 那些事
+- assert 那些事
+- 位域那些事
+- extern 那些事
+- struct 那些事
+- struct 与 class 那些事
+- union 那些事
+- c 实现 c++ 多态那些事
+- explicit 那些事
+- friend 那些事
+- using 那些事
+- :: 那些事
+- enum 那些事
+- decltype 那些事
+- 引用与指针那些事
+- 宏那些事
+
+ 实战系列
+
+ 10 日狂练
+
+- day1-基本语法
+
+- day2-递归、结构体、枚举、静态变量等
+
+- day3-函数1
+
+- day4-函数2
+
+- day5-继承多态
+
+- day6-虚函数与抽象类
+
+- day7-运算符重载
+
+- day8-模版与STL
+
+- day9-异常
+
+- day10-文件与流
+
+ 重点实战练习
+
+- 中括号重载.cpp
+
+- 时钟++运算符重载.cpp
+
+- 运算符重载之强制转换.cpp
+
+- 重载圆括号的时钟.cpp
+
+- 函数模板.cpp
+
+- 动态数组.cpp
+
+- 字典插入与查找.cpp
+
+- 异常捕获.cpp
+
+- 类模板之栈.cpp
+
+- 类模板特化之数组.cpp
+
+- 继承与封装.cpp
+
+- 读写文件综合题.cpp
+
+- 输入输出运算符重载.cpp
+
+- 输入输出重载.cpp
+
+- 输出格式.cpp
+
+
+ C++2.0 新特性
+
+ 概况
+
+C++2.0 是一个简称，意为「现代 C++」，包括 C++11/14/17/20。
+
+ C++11 新特性
+
+- Variadic Templates
+
+- Spaces in Template Expressions
+
+  cpp
+  vector  //ok in each C++ version
+  vector // before c++ 11 error error: ‘’ should be ‘ ’ within a nested template argum</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Light-City/CPlusPlusThings/issues/348"><span class="rp-item-num">#348</span><span class="rp-item-title">you connect to an OS version that is not supported by VS Code</span><span class="rp-item-extra">3 comments · 2024-11-24</span></a><a class="rp-item" href="https://github.com/Light-City/CPlusPlusThings/issues/338"><span class="rp-item-num">#338</span><span class="rp-item-title">CPlusPlusThings/basic_content /const/READNE.md 中有误</span><span class="rp-item-extra">3 comments · 2024-04-16</span></a><a class="rp-item" href="https://github.com/Light-City/CPlusPlusThings/issues/342"><span class="rp-item-num">#342</span><span class="rp-item-title">提供一个构造函数的那些事儿</span><span class="rp-item-extra">2 comments · 2024-05-10</span></a><a class="rp-item" href="https://github.com/Light-City/CPlusPlusThings/issues/341"><span class="rp-item-num">#341</span><span class="rp-item-title">这个区别太基础了</span><span class="rp-item-extra">2 comments · 2024-05-10</span></a><a class="rp-item" href="https://github.com/Light-City/CPlusPlusThings/issues/345"><span class="rp-item-num">#345</span><span class="rp-item-title">basic_content/pointer_refer/copy_construct.cpp 里面有些问题</span><span class="rp-item-extra">1 comments · 2024-08-02</span></a><a class="rp-item" href="https://github.com/Light-City/CPlusPlusThings/issues/343"><span class="rp-item-num">#343</span><span class="rp-item-title">函数指针的建议</span><span class="rp-item-extra">1 comments · 2024-05-28</span></a><a class="rp-item" href="https://github.com/Light-City/CPlusPlusThings/issues/332"><span class="rp-item-num">#332</span><span class="rp-item-title">which will a green-hand start to learn （初学者学哪个啊，本人大学生，想学习做项目，有基础）</span><span class="rp-item-extra">1 comments · 2024-03-07</span></a><a class="rp-item" href="https://github.com/Light-City/CPlusPlusThings/issues/367"><span class="rp-item-num">#367</span><span class="rp-item-title">在WSL中安装bazel后，不能执行bazel run</span><span class="rp-item-extra">0 comments · 2026-07-29</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Light-City/CPlusPlusThings/discussions/358"><span class="rp-item-num">#358</span><span class="rp-item-title">C++</span><span class="rp-item-extra">1 comments · 2025-10-29</span></a><a class="rp-item" href="https://github.com/Light-City/CPlusPlusThings/discussions/339"><span class="rp-item-num">#339</span><span class="rp-item-title">深入STL线程源码从C++11到C++20</span><span class="rp-item-extra">0 comments · 2024-05-08</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Light-City__CPlusPlusThings.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

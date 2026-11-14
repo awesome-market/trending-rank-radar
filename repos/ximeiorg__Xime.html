@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ximeiorg/Xime · GitHub Trending Rank Radar</title>
+<meta name="description" content="我的自用安卓输入法，基于Rime 构建，部分功能由本人设计的本地AI模型驱动，支持五笔/拼音/自定义方案。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Xime, ximeiorg, ximeiorg/Xime, github stars, github trending, star growth, star history, 开源项目, 星标增长, ai, android, android-application, ime, rime, pinyin">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/ximeiorg__Xime">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="ximeiorg/Xime · GitHub Trending Rank Radar">
+<meta property="og:description" content="我的自用安卓输入法，基于Rime 构建，部分功能由本人设计的本地AI模型驱动，支持五笔/拼音/自定义方案。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/ximeiorg__Xime">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ximeiorg/Xime", "codeRepository": "https://github.com/ximeiorg/Xime", "url": "https://zhuikan.com/repos/ximeiorg__Xime", "description": "我的自用安卓输入法，基于Rime 构建，部分功能由本人设计的本地AI模型驱动，支持五笔/拼音/自定义方案。", "author": {"@type": "Organization", "name": "ximeiorg", "url": "https://github.com/ximeiorg"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-3.0.html", "programmingLanguage": "Kotlin", "dateCreated": "2026-03-28", "keywords": "ai,android,android-application,ime,rime,pinyin,wubi"}</script>
+</head>
+<body data-repo="ximeiorg/Xime" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">ximeiorg/Xime</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="ximeiorg__Xime"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/188173418?v=4&s=300" width="300" height="300" alt="ximeiorg avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Xime</div>
+      <a class="rp-side-owner" href="https://github.com/ximeiorg">ximeiorg</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/ximeiorg">ximeiorg</a>
+        <span class="rp-sep">/</span><span class="rp-name">Xime</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">我的自用安卓输入法，基于Rime 构建，部分功能由本人设计的本地AI模型驱动，支持五笔/拼音/自定义方案。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>1,386</b></span><span class="rp-stat" title="forks">⑂ <b>111</b></span><span class="rp-stat" title="watchers">👁 <b>6</b></span><span class="rp-stat" title="prs">⑃ <b>644</b></span><span class="rp-stat" title="issues">● <b>562</b></span><span class="rp-stat" title="releases">▤ <b>119</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/ai">ai</a><a class="rp-topic" href="../tags/android">android</a><a class="rp-topic" href="https://github.com/topics/android-application">android-application</a><a class="rp-topic" href="https://github.com/topics/ime">ime</a><a class="rp-topic" href="https://github.com/topics/rime">rime</a><a class="rp-topic" href="https://github.com/topics/pinyin">pinyin</a><a class="rp-topic" href="https://github.com/topics/wubi">wubi</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Kotlin</span><span class="rp-meta-bit">GPL-3.0</span><span class="rp-meta-bit">Created 2026-03-28</span><a class="rp-meta-bit rp-home" href="https://ime.ximei.me" rel="noopener">ime.ximei.me</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/ximeiorg/Xime">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Xime v3.5.0-alpha.5</span><a class="rp-dl-a" href="https://github.com/ximeiorg/Xime/releases/tag/v3.5.0-alpha.5">v3.5.0-alpha.5 ↓</a><span class="rp-dl-ver">5</span><span class="rp-dl-date">2026-11-12</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+3</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">1,386</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">111</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">6</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">644</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">562</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">119</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Xime（曦码） - 五笔/拼音输入法
+
+
+  English · 繁體中文
+
+
+
+  
+  
+  
+  
+  
+  
+
+
+面向国内用户：GitHub 下载慢？直接到 GitCode 镜像下载 APK，代码与 Release 会自动同步。
+
+
+
+
+Xime 输入法 (Windows 版) | Xime 输入法 (Linux 版) | 联想词预测模型 | 手写输入法模型
+
+一款基于 Rime 引擎构建的 Android 五笔/拼音输入法，专注于简洁高效的中文输入体验。
+
+如果你觉得 UI 或者功能不符合你的要求，你可以直接 fork 一份自行修改。
+
+---
+
+ 本输入法支持五笔/拼音输入，只是本人以五笔为主，拼音为辅，因此资源会倾向于五笔为主。
+如果你是拼音用户，默认的拼音不是很强大，你可以到扩展市场里下载如凇雾拼音 之类的方案。
+
+
+  
+    全键盘（亮色）
+    全键盘（暗色）
+    字根下滑
+    快捷操作
+  
+  
+    悬浮键盘
+    T9 九宫格拼音
+    数字键盘
+    符号键盘
+  
+  
+    手写输入
+    手写找字（候选）
+    语音输入
+    Emoji 键盘
+  
+  
+    主题设置（亮色）
+    主题设置（暗色）
+    插件管理
+    扩展商店
+  
+
+
+ 功能特点
+
+- 多种输入方案 - 内置五笔86/98、拼音、混输方案，支持自定义（双拼、笔画等），可通过方案市场下载或无线导入
+- Rime 引擎 - 使用成熟稳定的 Rime 输入法引擎，精准可靠的中文输入体验
+- 丰富键盘布局 - QWERTY 全键盘、T9 九宫格拼音、九宫格笔画、手写、数字（含计算器）
+- 悬浮键盘 - 悬浮卡片样式，支持拖拽移动、半透明圆角设计
+- 语音转文本 - 本地离线语音识别（内置流式 zipformer2 引擎），也支持在线 ASR 插件（FunAsr、Volc 等）
+- AI 智能增强 - 基于 Transformer 的联想词预测，输入更高效
+- 简洁界面 - Material Design 3 风格，支持浅色/深色主题及多种配色方案
+- 键盘调节 - 支持键盘高度调整和位置移动
+- 工具栏定制 - 可自定义工具栏按钮布局和功能
+- 按键反馈 - 可调节音效和振动强度
+- 滑动手势 - 光标移动、删除、符号输入等滑动手势操作
+- 剪贴板管理 - 剪贴板历史记录，支持快捷发送和置顶
+- 剪贴板同步 - 通过插件与远端设备双向同步剪贴板（WebDAV、ximed 等）
+- 候选词编码提示 - 候选词显示五笔编码，辅助学习
+- 字根显示 - 下滑按钮显示五笔字根，方便健忘用户
+- 实体键盘支持 - 连接物理/蓝牙键盘时显示浮动候选栏
+- WebDAV 同步 - 通过 WebDAV 备份和恢复方案与配置
+- 插件市场 - 通过内置扩展商店安装可扩展 Lua 插件（表情、剪贴板同步、在线 ASR 等）
+
+ 系统要求
+
+- Android 9.0 (API 28) 及以上
+
+ 安装
+
+ 主程序下载
+
+选择对应架构的 APK：
+- arm64-v8a: 适用于大多数现代手机（绝大部分人的手机都是这个）
+- armeabi-v7a: 适用于旧款32位手机
+- x86_64: 适用于模拟器
+- universal: 包含所有架构，体积较大
+
+ 插件下载（可选）
+
+插件为 Lua 脚本插件（.xipk 格式），可在主应用&quot;设置  扩展商店&quot;中安装和启用：
+- kaomoji: 颜文字插件（提供精选颜文字）
+- meme-bunny: 恶搞兔表情包插件（提供8个表情）
+- xime-fluent-emoji: Fluent UI 3D 风格表情插件（222 个精选 3D 表情，9 大分类）
+- funasr-asr: 阿里百炼 FunAsr 在线语音识别
+- volc-asr: 火山引擎在线语音识别
+- webdav-clipboard-sync: 基于 WebDAV 的剪贴板同步
+- ximed-clipboard-sync: 基于 ximed 服务的剪贴板同步
+
+更多插件请查看 插件中心列表，或直接到手机应用的&quot;设置  扩展商店&quot;中浏览安装。
+
+ 从 Release 下载
+
+1. 在 Releases 页面下载最新版本的 APK
+2. 安装应用
+3. 在系统设置中启用 Xime 输入法
+4. 将 Xime 设为当前输入法
+
+ 国内下载
+
+GitHub Release 在国内偶尔访问不稳定，推荐使用 GitCode 镜像仓库：
+
+- 镜像仓库：https://gitcode.com/ximeiorg/Xime
+- 镜像 Release：https://gitcode.com/ximeiorg/Xime/releases
+
+镜像的代码、tag 与 Release 附件（APK）都会自动同步，国内访问速度更快。
+
+如果镜像也不可用，可以自行构建安装，或通过 https://github.akams.cn 加速下载 GitHub Release。
+
+ 手动构建安装
+
+1. 克隆项目并构建 APK
+2. 安装应用
+3. 在系统设置中启用 Xime 输入法
+4. 将 Xime 设为当前输入法
+
+ 使用文档
+
+详细使用说明请查看 使用文档。
+
+- 常见问题 FAQ
+- Rime 方案列表
+- 插件列表
+- AI 模型列表
+
+ 构建
+
+bash
+ 克隆项目（包含子模块）
+git clone --recursive https://github.com/ximeiorg/Xime.git
+
+ 国内网络可改用 GitCode 镜像（子模块仍指向 GitHub，必要时自行替换 .gitmodules 中的地址）
+git clone https://gitcode.com/ximeiorg/Xime.git
+
+ 或者在已克隆的项目中初始化子模块
+git submodule update --init --recursive
+
+ 构建 Release APK
+./gradlew assembleRelease
+
+
+ 技术栈
+
+- Kotlin
+- Jetpack Compose
+- Material Design 3
+- Rime (librime)
+- JNI (Native C++)
+
+ 贡献
+
+欢迎贡献！在提交 PR 之前，请先阅读 CONTRIBUTING.md 了解贡献流程。
+
+核心规则：
+- 先提 Issue — 所有改动必须先创建 Issue 讨论
+- 最小修改 — PR 只包含所需的最小改动
+- GPG 签名 — 所有 commit 必须 GPG 签名
+
+ 致谢
+
+- Rime - 中州韵输入法引擎
+- Trime - 同文输入法，配置参考
+- fcitx5-android - 键盘布局参考
+- onnxruntime - 联想词预测与语音识别的 ONNX 推理引擎
+
+ 许可证
+
+GPLv3 License
+
+Copyright © 2026 Kingz Cheung
+
+&quot;Xime&quot; 名称、Logo 及其他品牌资产不在 GPLv3 开源授权范围内，详见 TRA</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ximeiorg/Xime/issues/98"><span class="rp-item-num">#98</span><span class="rp-item-title">输入方案测试反馈与收集</span><span class="rp-item-extra">59 comments · 2026-06-05</span></a><a class="rp-item" href="https://github.com/ximeiorg/Xime/issues/45"><span class="rp-item-num">#45</span><span class="rp-item-title">[Feature] 是否能训练一个纠错模型呢？</span><span class="rp-item-extra">34 comments · 2026-05-28</span></a><a class="rp-item" href="https://github.com/ximeiorg/Xime/issues/1264"><span class="rp-item-num">#1264</span><span class="rp-item-title">某些场景不能输入中文</span><span class="rp-item-extra">5 comments · 2026-11-10</span></a><a class="rp-item" href="https://github.com/ximeiorg/Xime/issues/948"><span class="rp-item-num">#948</span><span class="rp-item-title">释放rime的原生词库同步功能</span><span class="rp-item-extra">4 comments · 2026-09-23</span></a><a class="rp-item" href="https://github.com/ximeiorg/Xime/issues/721"><span class="rp-item-num">#721</span><span class="rp-item-title">[Feature] 九键双拼的一些问题</span><span class="rp-item-extra">4 comments · 2026-08-21</span></a><a class="rp-item" href="https://github.com/ximeiorg/Xime/issues/1147"><span class="rp-item-num">#1147</span><span class="rp-item-title">横屏分区键盘收缩箭头会与数字键重叠</span><span class="rp-item-extra">2 comments · 2026-10-22</span></a><a class="rp-item" href="https://github.com/ximeiorg/Xime/issues/1110"><span class="rp-item-num">#1110</span><span class="rp-item-title">备份恢复词库失败问题</span><span class="rp-item-extra">2 comments · 2026-10-15</span></a><a class="rp-item" href="https://github.com/ximeiorg/Xime/issues/519"><span class="rp-item-num">#519</span><span class="rp-item-title">[Feature] 方案市场中加入小鹤音形</span><span class="rp-item-extra">2 comments · 2026-07-27</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ximeiorg/Xime/discussions/1272"><span class="rp-item-num">#1272</span><span class="rp-item-title">设置了上滑是英文的* /, 为何会被自动替换?</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/ximeiorg/Xime/discussions/1256"><span class="rp-item-num">#1256</span><span class="rp-item-title">v3.5.0-alpha.3</span><span class="rp-item-extra">0 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/ximeiorg/Xime/discussions/1246"><span class="rp-item-num">#1246</span><span class="rp-item-title">v3.5.0-alpha.2</span><span class="rp-item-extra">0 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/ximeiorg/Xime/discussions/1241"><span class="rp-item-num">#1241</span><span class="rp-item-title">v3.5.0-alpha.1</span><span class="rp-item-extra">0 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/ximeiorg/Xime/discussions/1236"><span class="rp-item-num">#1236</span><span class="rp-item-title">[BUG]快捷发送短语问题</span><span class="rp-item-extra">2 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/ximeiorg/Xime/discussions/1215"><span class="rp-item-num">#1215</span><span class="rp-item-title">v3.4.3</span><span class="rp-item-extra">0 comments · 2026-10-30</span></a><a class="rp-item" href="https://github.com/ximeiorg/Xime/discussions/1204"><span class="rp-item-num">#1204</span><span class="rp-item-title">v3.4.2</span><span class="rp-item-extra">0 comments · 2026-10-29</span></a><a class="rp-item" href="https://github.com/ximeiorg/Xime/discussions/1203"><span class="rp-item-num">#1203</span><span class="rp-item-title">曦码输入法自定义布局征集：让你的键盘被更多人用上</span><span class="rp-item-extra">0 comments · 2026-10-29</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/ximeiorg/Xime/releases"><b>Xime v3.5.0-alpha.5</b> <span class="rp-rel-tag">v3.5.0-alpha.5</span> <span class="rp-item-extra">2026-11-12</span></a><pre class="rp-pre">What&#x27;s Changed
+ feat(keyboard): 添加空格键点击判定逻辑及单元测试 by @kingzcheung in https://github.com/ximeiorg/Xime/pull/1266
+ feat(keyboard): 支持五档 26 键字母字号 by @UntR in https://github.com/ximeiorg/Xime/pull/1265
+ fix(ime): 修复组合区光标定位逻辑并更新测试与版本号 by @kingzcheung in https://github.com/ximeiorg/Xime/pull/1269
+ fix(market): 修复方案与插件下载进度显示异常的问题 by @kingzcheung in https://github.com/ximeiorg/Xime/pull/1270
+ fix(build): 优化构建工具安装逻辑，仅在缺失时安装 cmake 和 ninja by @kingzcheung in https://github.com/ximeiorg/Xime/pull/1271
+
+ New Contributors
+ @UntR made their first contribution in https://github.com/ximeiorg/Xime/pull/1</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/ximeiorg__Xime.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

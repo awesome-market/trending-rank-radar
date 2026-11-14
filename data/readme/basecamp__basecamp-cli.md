@@ -1,0 +1,594 @@
+# <img src="assets/bc5-snowglobe.png" height="28" alt="Basecamp"> Basecamp CLI
+
+`basecamp` is the official command-line interface for Basecamp. Manage projects, todos, messages, and more from your terminal or through AI agents.
+
+- Works standalone or with any AI agent (Claude, Codex, Grok, Copilot, Gemini)
+- JSON output with breadcrumbs for easy navigation
+- OAuth authentication with automatic token refresh
+- Includes agent skills plus native Claude Code and Codex plugins; Grok Build reads the shared skill directly
+
+## Quick Start
+
+**macOS / Linux / WSL2**
+
+```bash
+curl -fsSL https://basecamp.com/install-cli | bash
+```
+
+**Windows (PowerShell)**
+
+```powershell
+irm https://raw.githubusercontent.com/basecamp/basecamp-cli/main/scripts/install.ps1 | iex
+```
+
+On Windows 11 with Smart App Control, see [Troubleshooting](#windows-smart-app-control-and-smartscreen) if the install is blocked.
+
+On an interactive terminal, the installer opens Basecamp setup: approve OAuth in your browser and the CLI uses the account granted by OAuth, otherwise preserves an existing account or selects the first available. It saves that account globally, clears the global project default, and connects every detected coding agent. Directory-specific and environment project settings continue to apply. Use `basecamp setup --customize` to choose those settings instead.
+
+<details>
+<summary>Other installation methods</summary>
+
+**Brew / macOS**
+
+```
+brew install --cask basecamp/tap/basecamp-cli
+```
+
+**Arch Linux / Omarchy (AUR):**
+```bash
+yay -S basecamp-cli
+```
+
+**Linux (deb/rpm/apk):**
+```bash
+# Download from https://github.com/basecamp/basecamp-cli/releases/latest
+sudo apt install ./basecamp-cli_*_linux_amd64.deb            # Debian/Ubuntu
+sudo dnf install ./basecamp-cli_*_linux_amd64.rpm            # Fedora/RHEL
+sudo apk add --allow-untrusted ./basecamp-cli_*_linux_amd64.apk  # Alpine
+```
+Arm64: substitute `arm64` for `amd64` in the filename. Verify the SHA-256 checksum from `checksums.txt` before installing unsigned Alpine packages.
+
+**Scoop (Windows):**
+```bash
+scoop bucket add basecamp https://github.com/basecamp/homebrew-tap
+scoop install basecamp-cli
+```
+
+**Shell script (macOS / Linux / WSL2 / Git Bash):**
+```bash
+curl -fsSL https://raw.githubusercontent.com/basecamp/basecamp-cli/main/scripts/install.sh | bash
+```
+
+**Nix:**
+```bash
+nix profile install github:basecamp/basecamp-cli
+```
+
+**Go install:**
+```bash
+go install github.com/basecamp/basecamp-cli/cmd/basecamp@latest
+```
+
+**mise:**
+```bash
+mise use --global github:basecamp/basecamp-cli@latest
+```
+
+**GitHub Release:** download from [Releases](https://github.com/basecamp/basecamp-cli/releases).
+
+</details>
+
+## Upgrading
+
+```bash
+basecamp upgrade
+```
+
+What happens depends on how the CLI was installed:
+
+- **Installer script / tarball** (a binary under your home directory, e.g. `~/bin` or `~/.local/bin`): upgrades in place. The CLI downloads the release for your platform, verifies its Sigstore signature (the keyless `checksums.txt.bundle` published by the release pipeline, identity-pinned to the release workflow and tag) and SHA-256 checksum, swaps the executable transactionally, and confirms the installed binary reports the new version. On failure the previous binary is restored; in the worst case — restoration itself fails mid-swap — the error names the preserved backup file next to the binary so you can put it back by hand.
+- **Homebrew / Scoop**: delegates to `brew upgrade --cask` / `scoop update`, then verifies the manager-installed binary actually reports the new version.
+- **System packages** (apt/dnf/apk, AUR, Nix), **mise**, and **`go install` builds**: never touched. `basecamp upgrade` exits nonzero with upgrade guidance for that install method (the exact command where it can be known, e.g. mise or `go install`; otherwise which package manager to use).
+
+`basecamp upgrade` exits 0 only when there is no update, or the update was applied *and confirmed*. Every other outcome is a structured failure (`"ok": false` in JSON) with one of these codes:
+
+| Code | Meaning |
+|---|---|
+| `upgrade_required` | An update exists but the CLI won't apply it for this install method — the hint carries the right next step |
+| `upgrade_incomplete` | The package manager exited 0 but the binary still reports the old version |
+| `upgrade_unverified` | The upgrade may have worked, but the installed version could not be confirmed |
+| `upgrade_failed` | The update check, download, signature/checksum verification, or executable swap failed — the previous binary remains installed (or the error names the preserved backup if restoration also failed) |
+
+The install scripts verify release signatures when `cosign` is available: cosign v3 verifies the published bundle format as-is, v2.6+ is driven with `--new-bundle-format=true`, and older versions skip signature verification with a warning (SHA-256 checksums are always verified).
+
+## First-time setup
+
+The first interactive `basecamp` run applies the recommended setup automatically after browser approval:
+
+- Account granted by OAuth, otherwise the existing configured account or first available account, saved globally
+- No global default project; directory-specific and environment project settings continue to apply
+- Every detected Claude Code, Codex or Grok integration
+
+Run the same setup directly with `basecamp setup`. To choose the account, default project, config scope, and agent integrations, run:
+
+```bash
+basecamp setup --customize
+```
+
+## Usage
+
+```bash
+basecamp projects list                            # List projects
+basecamp todos list --in 12345                    # Todos in a project
+basecamp todos create "Fix bug" --in 12345        # Create todo
+basecamp todos complete 67890                     # Complete todo
+basecamp cards done 67890 --in 12345              # Complete card (move to Done)
+basecamp search "authentication"                  # Search across projects
+basecamp files list --in 12345                    # List docs & files
+basecamp cards list --in 12345                    # List cards (Kanban)
+basecamp chat post "Hello" --in 12345             # Post to chat
+basecamp pings post Jane "Lunch?"                 # Ping someone directly
+basecamp comments create 67890 "@Jane.Smith, done!"    # Comment with @mention
+```
+
+### Output Formats
+
+```bash
+basecamp projects              # Styled output in terminal, JSON when piped
+basecamp projects --json       # JSON with envelope and breadcrumbs
+basecamp projects --quiet      # Raw JSON data only
+```
+
+### JSON Envelope
+
+Every command supports `--json` for structured output:
+
+```json
+{
+  "ok": true,
+  "data": [...],
+  "summary": "5 projects",
+  "breadcrumbs": [{"action": "show", "cmd": "basecamp projects show <id>"}]
+}
+```
+
+Breadcrumbs suggest next commands, making it easy for humans and agents to navigate.
+
+Errors use the same envelope with `ok: false`, a stable `code`, and `retryable`,
+which says whether a retry can change the outcome:
+
+```json
+{
+  "ok": false,
+  "error": "Gateway error (503)",
+  "code": "api_error",
+  "retryable": true,
+  "hint": "..."
+}
+```
+
+Key order within the envelope is not part of the contract — the interactive
+(TTY) path re-encodes through a map and alphabetizes keys — so match on key
+names, never on position.
+
+`retryable` is present on every error envelope — `true` when the CLI classified
+the failure transient (network, timeout, rate limit, circuit open, and most
+5xx/gateway responses — not all: 507 and some 500s are verdicts), `false` for a
+verdict (usage, not found, auth, forbidden, validation, account limit) and for
+any error nothing classified — and never on a success envelope. Key on it rather
+than on the code or message when deciding whether to retry; `false` means no
+known reason a retry would help, not a guarantee the failure is permanent.
+
+## Authentication
+
+OAuth 2.1 with automatic token refresh. First login opens your browser.
+When the server advertises the OAuth device flow, login uses it
+automatically: you approve a short code in the browser instead of a
+redirect. Login falls back to Launchpad's authorization-code flow only when
+no modern OAuth issuer is advertised for the server; once a modern issuer is
+selected, login failures surface loudly rather than silently falling back.
+
+```bash
+basecamp auth login              # Authenticate with Basecamp (full access)
+basecamp auth login --scope read # Read-only access (ignored by Launchpad)
+basecamp auth login --scope full # Full read+write access (default; ignored by Launchpad)
+basecamp auth token              # Print token for scripts
+```
+
+`--expect-identity <id>` makes any login assert who it authenticated as: the
+new credential is checked before it is stored, and on a mismatch nothing is
+written (a profile's previous credential is untouched) and the command exits
+non-zero. `basecamp profile create <name> --expect-identity <id>` does the same
+for a profile that does not exist yet. `--login-hint <email>` names the account to sign in as on the
+device-flow approval page (sent as `login_hint`; it steers the sign-in page and
+never authenticates on its own; ignored by Launchpad).
+
+### Personal access tokens
+
+A [personal access token](https://app.basecamp.com/my/access_tokens) can be
+imported instead of running OAuth — the shape for bots, CI, and any machine
+that should never sign in interactively. The token is read from stdin (never
+an argument), verified against the server — who it authenticates as, and that
+it can reach the profile's account — and only then stored under a named
+profile, with whatever expiry the server reports for it:
+
+```bash
+op read "op://Vault/Item/credential" | basecamp auth login --with-token -P bot --account 999
+op read "op://Vault/Item/credential" | basecamp auth login --with-token -P bot --account 999 --expect-identity 12345 --json
+```
+
+`--account` is required when the profile does not exist yet. `--json` returns
+an envelope with the profile, account, identity and person, `oauth_type`,
+`scope`, and `expires_at` (the expiry the server reports for the token, or
+`null` when it reports none). A token has no refresh token, so near a reported
+expiry the CLI refuses it and asks for a fresh import.
+
+### Agents
+
+A Basecamp agent is a principal with no person behind it, so it has no browser
+to sign in with and is granted no refresh token. It authenticates with the
+OAuth `client_credentials` grant instead: its client id and secret mint a
+short-lived self-token, and the CLI mints another whenever that one nears
+expiry. The client secret is read from stdin (never an argument) and stored
+with the token it mints — in the OS keyring where one is available — because
+the client, not a refresh token, is what survives an expiry:
+
+```bash
+op read "op://Vault/Item/credential" | basecamp auth login --with-client-credentials --client-id <id> -P agent --account 999
+```
+
+The login mints once, which is what proves the client id and secret: a refused
+mint stores nothing. `--account` is required when the profile does not exist
+yet. `basecamp auth logout` forgets the credential; there is no useful
+revocation, since the same client would mint another. To end its access,
+disconnect its connection in Basecamp (on My > Agent for your own agent, in
+Adminland for a shared one), which kills that connection's secret and every
+token minted from it. Where My > Agent lists several connections, disconnect
+the one this profile used: Disconnect all ends every one of them.
+
+### Connecting an agent to this computer
+
+You don't paste an agent's secret anywhere: you approve the connection in your
+browser and the CLI keeps the credential. It needs CLI 0.13.0 or later; check
+with `basecamp --version` and run `basecamp upgrade` first if it's older.
+
+In a terminal, one command does it all:
+
+```bash
+basecamp connect setup
+```
+
+It connects this computer to your agent (one approval in the browser), records
+who may give it work (for your personal agent, you) and which projects it
+serves, and ends by telling you how to start the connector. If the agent is
+already connected on this computer under a profile, name it
+(`basecamp connect setup -P <profile>`), or setup may connect it again under
+another. The same steps, scriptable:
+
+```bash
+basecamp auth agent connect -P my-agent                 # one approval
+basecamp connect setup -P my-agent --serve 12345        # who may give it work, which projects
+basecamp connect -P my-agent                            # the watcher
+```
+
+Campfires normally require an @mention. For a small Campfire where every
+trusted message should reach the agent, opt it in and restart the connector:
+
+```bash
+basecamp chat list --project 12345 -P my-agent --json
+basecamp connect setup -P my-agent --listen-campfire 12345:67890
+```
+
+Use the Campfire id from the listing. Existing trust rules still apply, and
+other agents still need mentions. To restore mentions, run setup with
+`--no-listen-campfire 12345:67890` and restart.
+
+An approval may add a connection or replace an existing one: read the approval
+page before proceeding. Personal and team agents can have several connections
+where Basecamp enables adding them for that kind of agent. Otherwise a new
+approval replaces the existing connection. This applies to both the CLI and
+Basecamp's HTTP handshake. Do not reconnect just to upgrade the CLI.
+
+Each profile has its own projects, ledger, cursor, hold and local lock. When
+two connections serve the same project, a request both admit can be answered
+twice, so serve each project from one. Use a distinct `--device-name` for each
+profile on the same computer.
+
+Only one computer should answer an agent's Pings. A Ping is in no project, so
+every connector for the agent sees all of them, and each one that heard them
+would answer. A connector started with `--pings` hears Pings, and anything
+else outside a project; one started with `--no-pings` hears only its projects.
+Without either, the agent's first connection hears them, a connection added
+after it doesn't, and a bot user's login does, as it always has. A run given
+`--project` hears none and saves nothing. The first start without `--project`
+saves the choice for the profile, as either flag saves its own, and restarts
+keep it until you pass the other flag:
+
+```bash
+basecamp connect -P desktop --pings        # this computer answers Pings
+basecamp connect -P laptop --no-pings      # this one leaves them to the desktop
+```
+
+A connector that hears Pings warns when another one on the same computer hears
+the same agent's. It can't see other computers, so starting just one there is
+yours to arrange. `basecamp connect status` and `basecamp connect doctor` say
+whether a profile's connector answers them, and why. Where Basecamp lists several connections, you
+can rename them and disconnect one without using Disconnect all. Reconnecting
+a profile on an add-capable server leaves its old connection live until you
+disconnect it; older credential files can remain live too. Do not delete them
+as part of setup. See the [upgrade and downgrade runbook](docs/agent-connections-rollout.md)
+for legacy state adoption and mixed-version precautions.
+
+In Claude Code, the `/basecamp-connect` skill runs the watcher and hands each
+request to a subagent. It ships in this CLI's plugin from 0.12.0 on, and an
+older plugin doesn't have it. Update the plugin, restart Claude Code, and only
+then remove any older copy of the skill:
+
+```bash
+claude plugin update basecamp-cli@37signals   # installed as basecamp-cli
+basecamp setup claude                         # installed under the old name, basecamp@37signals
+```
+
+### Containers, CI and scheduled jobs
+
+An OAuth login refreshes by rotation: each refresh replaces its refresh token,
+and Basecamp signs the whole login out when a replaced token is used again.
+That is how it notices a stolen one. So one login can be **shared** by many
+processes, but never **copied**: two containers that each hold a copy of
+`credentials.json` sign each other out as soon as both have refreshed more
+than a minute apart, which a retry window forgives but a schedule won't.
+
+For containers, CI and cron, pick one:
+
+- **A token that never rotates.** Set `BASECAMP_TOKEN` to a
+  [personal access token](#personal-access-tokens), where your account offers
+  them, injected as a secret. Nothing refreshes, so every replica can hold the
+  same one, and revoking it ends access everywhere.
+- **One shared login, on one host.** Mount one config directory into every
+  replica as a read-write volume, with `BASECAMP_NO_KEYRING=1`. The CLI locks
+  the login while it refreshes, so replicas take turns instead of signing
+  each other out. The lock is an `flock` in that directory, which holds
+  between containers on one host. Across hosts, use one of the other two:
+  the CLI can't tell a shared filesystem whose `flock` is local to each host,
+  and there copies would sign each other out with no warning.
+- **One login per install.** Run `basecamp auth login --device-code` in each
+  install, and keep its config directory to itself.
+
+Never bake `credentials.json` into an image or copy it between machines. The
+CLI says so once, the first time a login refreshes inside a container (again
+later only if it cannot write its marker in the config directory).
+
+If refreshes keep failing, Basecamp blocks sign-ins from that address for a
+while. The CLI then waits out the block instead of retrying on every run
+(`basecamp auth status` shows the wait), and forgets a revoked login after
+its first refusal; sign in again once whatever was using the old copy has
+stopped.
+
+### Multiple Identities
+
+Use named profiles when the same machine or agent gateway needs more than one Basecamp identity. Each profile has its own stored OAuth credentials and can be selected per command:
+
+```bash
+basecamp profile create design-agent
+basecamp profile create ops-agent
+basecamp --profile design-agent todo "Fix bug" --in 12345 --list 67890
+```
+
+Set a default with `basecamp profile set-default <name>`, or set `BASECAMP_PROFILE=<name>` for a process. Actions are posted as the authenticated user for the selected profile.
+
+### Custom OAuth Credentials
+
+To use your own OAuth app (e.g., a custom Launchpad integration):
+
+| Variable | Purpose |
+|----------|---------|
+| `BASECAMP_OAUTH_CLIENT_ID` | OAuth client ID |
+| `BASECAMP_OAUTH_CLIENT_SECRET` | OAuth client secret |
+| `BASECAMP_OAUTH_REDIRECT_URI` | Redirect URI (must be `http://` loopback with explicit port) |
+
+Both `BASECAMP_OAUTH_CLIENT_ID` and `BASECAMP_OAUTH_CLIENT_SECRET` must be set together.
+
+`BASECAMP_OAUTH_ISSUER=https://app.basecamp.com` pins the OAuth authorization
+server and skips discovery, so `basecamp auth login` reaches a server that is
+serving piloted clients but not yet advertising itself (discovery still 404s).
+It is a temporary escape hatch for that dark pilot, not a configuration
+surface, and will be removed once the server advertises its metadata.
+
+## AI Agent Integration
+
+`basecamp` works with any AI agent that can run shell commands.
+
+Both plugins require the `basecamp` CLI installed and on your PATH.
+
+The plugin hooks additionally need a CLI new enough to carry the `agent-hook`
+command. If hook errors appear after installing or refreshing the plugin, the
+CLI is older than the hooks: run `basecamp upgrade`, then start a new session.
+Check with `basecamp agent-hook --help` — an "unknown command" reply means the
+CLI needs upgrading.
+
+**Claude Code:** `basecamp setup claude` — installs the plugin with skills, hooks, and agent workflow support.
+
+**Codex:** `basecamp setup codex` — registers the 37signals marketplace and installs the native plugin with Basecamp skills, diagnostics, and opt-in commit-reference hooks. In Codex, review and trust the plugin hooks with `/hooks`, then start a new thread to load the skills and hooks. The plugin does not inject Basecamp context at session start (beyond a pointer to `basecamp instructions` when instructions are set, plus their gist when it can be read without the network); Codex selects the skill when a request is relevant or explicitly references Basecamp.
+
+Manual Codex installation uses the same marketplace:
+
+```bash
+codex plugin marketplace add basecamp/claude-plugins
+codex plugin add basecamp-cli@37signals
+```
+
+To pick up a newer plugin version later, refresh the marketplace with
+`codex plugin marketplace upgrade 37signals` (or re-run `basecamp setup codex`).
+
+**Plugin name:** in the 37signals marketplace this plugin is `basecamp-cli`
+(`basecamp-cli@37signals`). It was published as `basecamp`, a name set aside
+for the hosted Basecamp connector plugin, which works through Basecamp's own
+MCP server rather than this CLI. During a deprecation window the marketplace
+keeps `basecamp` as an alias of `basecamp-cli`, so an existing
+`basecamp@37signals` install keeps working and updating; once per agent it
+says the plugin has been renamed. Switch with `basecamp setup claude` or
+`basecamp setup codex` (or `basecamp setup agents`). For Claude Code, setup
+replaces `basecamp@37signals` with `basecamp-cli` at the scopes it was
+installed in. Codex installs have no scopes, so setup adds `basecamp-cli` and
+then removes the old ID. To switch by hand:
+
+```bash
+claude plugin marketplace update 37signals
+claude plugin install basecamp-cli@37signals
+claude plugin uninstall basecamp@37signals
+
+codex plugin marketplace upgrade 37signals
+codex plugin add basecamp-cli@37signals
+codex plugin remove basecamp@37signals
+```
+
+Skills from the plugin are namespaced by its name, so `basecamp:basecamp`
+becomes `basecamp-cli:basecamp`. The CLI itself is still `basecamp`.
+
+**Grok Build:** `basecamp setup grok` — installs the shared skill and confirms it is healthy. There is no Grok plugin: Grok reads user skills from `~/.grok/skills/` and from the cross-agent `~/.agents/skills/`, so the shared `~/.agents/skills/basecamp` skill is the whole integration. Grok is detected by `$GROK_HOME` (default `~/.grok`) or a `grok` binary on `PATH`, in `~/.local/bin`, or in `$GROK_HOME/bin` where its installers put it. Start a new Grok session after setup to load the skill.
+
+**Other agents:** Point your agent at [`skills/basecamp/SKILL.md`](skills/basecamp/SKILL.md) for Basecamp workflow coverage.
+
+**Agent discovery:** Every command supports `--help --agent` for structured JSON output (flags, gotchas, subcommands). Use `basecamp commands --json` for the full catalog.
+
+See [install.md](install.md) for step-by-step setup instructions.
+
+### MCP Server
+
+`basecamp mcp` runs an MCP (Model Context Protocol) server on stdin/stdout,
+serving Basecamp as tools backed by your signed-in account — no separate
+binary or extra credentials. Register it with any MCP client as a stdio
+server:
+
+```bash
+claude mcp add basecamp -- basecamp mcp
+```
+
+Sixteen domain tools (`basecamp_projects`, `basecamp_todos`, `basecamp_cards`,
+`basecamp_messages`, `basecamp_campfires`, `basecamp_boosts`,
+`basecamp_schedules`, `basecamp_files`, `basecamp_people`,
+`basecamp_automation`, `basecamp_reports`, `basecamp_everything`,
+`basecamp_clientside`, `basecamp_forwards`, `basecamp_account`,
+`basecamp_recordings`) cover the Basecamp API, scoped to the configured
+account. Each tool takes `{"action": "...", "params": {...}}` and serves
+per-action schemas through its `describe` action.
+
+Composite helpers ride on that surface, shared with basecamp-mcp-server
+through basecamp-sdk so both servers answer the same way.
+`basecamp_recordings summarize` resolves the pointer an account event feed
+row carries — bucket id, recording id, and the event or recording type —
+into one compact projection, discovering a chat line's Campfire on the way.
+It is not backed by any single Basecamp endpoint, and the catalogue says so:
+it carries no method and no path, where every model operation carries both,
+and its summary opens with "Synthetic:". `basecamp_messages create_comment`
+is an ordinary endpoint with a synthetic parameter: `mentions`, a list of
+person ids expanded client-side into the attachment markup Basecamp reads as
+a mention. `basecamp_recordings move` and `copy` file a recording into
+another container, in its project or another one, as the web's Move… and
+Copy… dialogs do: they wait for Basecamp to finish and return the new
+recording, and a failure says whether trying again is safe.
+
+```bash
+basecamp mcp --read-only                 # serve only read-only actions
+basecamp mcp --domains projects,todos    # narrow the served surface (fails closed on unknown keys)
+```
+
+## Configuration
+
+```
+~/.config/basecamp/           # Your Basecamp identity
+├── credentials.json          #   OAuth tokens (fallback when keyring unavailable)
+└── config.json               #   Global preferences
+
+~/.config/basecamp/theme/     # Tool display (optional)
+└── colors.toml               #   TUI color scheme
+
+~/.cache/basecamp/            # Ephemeral tool data
+├── completion.json           #   Tab completion cache
+└── resilience/               #   Circuit breaker state
+
+.basecamp/                    # Per-repo (committed to git)
+└── config.json               #   Project, account defaults
+```
+
+A leftover `~/.config/basecamp/client.json` (from the removed development
+client-registration flow) is obsolete and safe to delete.
+
+### Trusting repository configuration
+
+Repository and local configs may set ordinary defaults such as `project_id`
+and `todolist_id` without approval. Settings that control connections, including
+`base_url`, `profiles`, and `default_profile`, require explicit trust:
+
+```bash
+basecamp config trust /path/to/.basecamp/config.json
+```
+
+Review the file and its server addresses before trusting it. Trust applies to
+its current security-sensitive settings, not just its path. If those settings
+change, the CLI ignores them and warns until you review and trust the file
+again. Formatting changes and changes to ordinary top-level defaults retain
+trust.
+
+**Upgrading from path-only trust:** previously trusted configs must be reviewed
+and trusted again before their security-sensitive settings apply. Global
+configuration and saved credentials are unchanged. Until reapproval, trust-gated
+connection, cache, and LLM settings are ignored, including `base_url`, `profiles`,
+`default_profile`, `cache_dir`, `cache_enabled`, and LLM provider, endpoint, model,
+and budget settings. Ordinary top-level defaults such as `account_id`,
+`project_id`, and `todolist_id` still apply. Check the effective server address,
+account, and project with `basecamp config show` before making changes.
+
+## Troubleshooting
+
+```bash
+basecamp doctor              # Check CLI health and diagnose issues
+basecamp doctor --verbose    # Verbose output with details
+basecamp doctor --json       # Structured checks, including Claude, Codex and Grok
+```
+
+### Windows: Smart App Control and SmartScreen
+
+Releases up to v0.8.0-rc.1 ship an unsigned `basecamp.exe`. To check whether
+your installed binary is signed:
+
+```powershell
+Get-AuthenticodeSignature (Get-Command basecamp).Source
+```
+
+**Smart App Control** (Windows 11) blocks unsigned executables no matter where
+they were downloaded from, and it has no per-app exceptions — this applies to
+the PowerShell installer, Scoop installs, and manual downloads alike. If it
+blocks an unsigned `basecamp.exe`, two options:
+
+1. **Use WSL2 (preferred).** Install the Linux build inside WSL2 — Smart App
+   Control doesn't apply there and your Windows security setup is untouched:
+   `wsl --install`, then inside the WSL terminal:
+   `curl -fsSL https://basecamp.com/install-cli | bash`
+2. **Turn Smart App Control off** (Windows Security → App & browser control →
+   Smart App Control settings) **and leave it off while using the unsigned
+   build.** Because there are no per-app exceptions, turning it back on
+   re-blocks `basecamp.exe` on its next run — only re-enable after upgrading
+   to a signed build. Windows 11 with the March/April 2026 updates can
+   re-enable Smart App Control from Windows Security without a reset; on older
+   builds re-enabling requires resetting Windows, so prefer WSL2 there.
+
+**SmartScreen** (without Smart App Control) may warn on first run of an
+unrecognized executable — choose "More info" → "Run anyway" if you downloaded
+the release from this repository.
+
+## Development
+
+```bash
+make build            # Build binary
+make test             # Run Go tests
+make test-e2e         # Run e2e tests
+make lint             # Run linter
+make check            # All checks (fmt-check, vet, lint, test, test-e2e)
+```
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup.
+
+## License
+
+[MIT](MIT-LICENSE)

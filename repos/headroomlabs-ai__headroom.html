@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>headroomlabs-ai/headroom · GitHub Trending Rank Radar</title>
+<meta name="description" content="Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="headroom, headroomlabs-ai, headroomlabs-ai/headroom, github stars, github trending, star growth, star history, 开源项目, 星标增长, agent, ai, anthropic, compression, context-engineering, context-window">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/headroomlabs-ai__headroom">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="headroomlabs-ai/headroom · GitHub Trending Rank Radar">
+<meta property="og:description" content="Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/headroomlabs-ai__headroom">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "headroomlabs-ai/headroom", "codeRepository": "https://github.com/headroomlabs-ai/headroom", "url": "https://zhuikan.com/repos/headroomlabs-ai__headroom", "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.", "author": {"@type": "Organization", "name": "headroomlabs-ai", "url": "https://github.com/headroomlabs-ai"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Python", "dateCreated": "2026-01-07", "keywords": "agent,ai,anthropic,compression,context-engineering,context-window,fastapi,langchain,llm,mcp"}</script>
+</head>
+<body data-repo="headroomlabs-ai/headroom" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">headroomlabs-ai/headroom</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="headroomlabs-ai__headroom"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/294291659?v=4&s=300" width="300" height="300" alt="headroomlabs-ai avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">headroom</div>
+      <a class="rp-side-owner" href="https://github.com/headroomlabs-ai">headroomlabs-ai</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/headroomlabs-ai">headroomlabs-ai</a>
+        <span class="rp-sep">/</span><span class="rp-name">headroom</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily">daily <b>#165</b></a></div>
+    </div>
+    <p class="rp-desc">Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>79,615</b></span><span class="rp-stat" title="forks">⑂ <b>6,230</b></span><span class="rp-stat" title="watchers">👁 <b>213</b></span><span class="rp-stat" title="prs">⑃ <b>3,323</b></span><span class="rp-stat" title="issues">● <b>1,362</b></span><span class="rp-stat" title="releases">▤ <b>178</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/agent">agent</a><a class="rp-topic" href="../tags/ai">ai</a><a class="rp-topic" href="../tags/anthropic">anthropic</a><a class="rp-topic" href="https://github.com/topics/compression">compression</a><a class="rp-topic" href="https://github.com/topics/context-engineering">context-engineering</a><a class="rp-topic" href="https://github.com/topics/context-window">context-window</a><a class="rp-topic" href="https://github.com/topics/fastapi">fastapi</a><a class="rp-topic" href="../tags/langchain">langchain</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2026-01-07</span><a class="rp-meta-bit rp-home" href="https://docs.headroomlabs.ai/docs" rel="noopener">docs.headroomlabs.ai/docs</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/headroomlabs-ai/headroom">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Release v0.44.0</span><a class="rp-dl-a" href="https://github.com/headroomlabs-ai/headroom/releases/tag/v0.44.0">Release-0.44.0 ↓</a><span class="rp-dl-ver">0.44.0</span><span class="rp-dl-date">2026-11-10</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+142</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">79,615</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">6,230</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">213</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">3,323</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,362</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">178</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Quickstart ·
+  Headroom for Teams ·
+  Install ·
+  Proof ·
+  Agents ·
+  Docs ·
+  Discord ·
+  llms.txt
+
+
+AI agents / LLMs: read /llms.txt here, or fetch
+the live index ·
+full docs blob.
+
+
+
+
+
+Headroom (headroom-ai on PyPI and npm) compresses everything your AI agent
+reads — tool outputs, logs, RAG chunks, files, and conversation history — before
+it reaches the LLM. Same answers, fewer input tokens. Measured: 21–57% fewer
+input tokens on four agent scenarios, 90%+ on repeated JSON arrays and log
+lines, little on prose (Proof). Compression
+runs on your machine; no prompt or file content is sent anywhere to be compressed.
+
+ Start here
+
+My app calls an LLM (Python, LangChain, LiteLLM, Agno, Strands):
+
+bash
+pip install headroom-ai
+
+
+python
+from headroom import compress
+
+result = compress(messages, model=&quot;gpt-4o&quot;)   OpenAI or Anthropic message dicts
+client.chat.completions.create(model=&quot;gpt-4o&quot;, messages=result.messages)
+
+
+No API key, no model download, in-process. Set HEADROOM_OFFLINE=1 for a
+zero-network run. Tool and assistant messages are compressed; user messages are
+left alone unless you pass compress_user_messages=True.
+FastAPI example ·
+API reference.
+TypeScript apps: npm install headroom-ai plus the proxy
+(pip install &quot;headroom-ai[proxy]&quot;, headroom proxy --port 8787); the npm SDK
+sends messages to it. TypeScript quickstart
+
+I run coding agents (Claude Code, Codex, Cursor, Copilot, OpenCode, Aider):
+
+bash
+uv tool install --python 3.13 &quot;headroom-ai[all]&quot;
+headroom wrap claude
+
+
+Zero code changes. Agent compatibility ·
+Proxy
+
+
+  
+
+
+
+  
+  10,144 → 1,260 tokens. The same FATAL found.
+
+
+ What it does
+
+- Library — compress(messages) in Python or TypeScript, inline in any app.
+- Proxy — headroom proxy --port 8787, zero code changes, any language.
+- Agent wrap — headroom wrap claude|codex|grok|copilot|cursor|aider|opencode|cline|continue|goose|openhands|openclaw|vibe|omp|droid|zcode in one command; undo with headroom unwrap .
+- MCP server — headroom_compress, headroom_retrieve, headroom_stats for any MCP client.
+- Cross-agent memory — one shared store across Claude, Codex, Gemini and Grok, with automatic dedup.
+- headroom learn — mines failed sessions and writes corrections to CLAUDE.local.md (default, gitignored), CLAUDE.md, AGENTS.md, GEMINI.md or GROK.md.
+- Output token reduction — trims what the model writes back, not only what you send. See below.
+- Reversible (CCR) — originals are cached locally and retrieved on demand.
+
+ How it works
+
+
+ Your agent / app
+   (Claude Code, Cursor, Codex, LangChain, Agno, Strands, your own code…)
+        │   prompts · tool outputs · logs · RAG results · files
+        ▼
+    ┌────────────────────────────────────────────────────┐
+    │  Headroom   (runs locally — your data stays here)  │
+    │  ────────────────────────────────────────────────  │
+    │  CacheAligner  →  ContentRouter  →  CCR            │
+    │                    ├─ SmartCrusher   (JSON)        │
+    │                    ├─ CodeCompressor (AST)         │
+   </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/headroomlabs-ai/headroom/issues/4613"><span class="rp-item-num">#4613</span><span class="rp-item-title">[BUG] Proxy leaks compression-executor threads (image OCR?), pinning cores.</span><span class="rp-item-extra">6 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/headroomlabs-ai/headroom/issues/4433"><span class="rp-item-num">#4433</span><span class="rp-item-title">[BUG] security-model.mdx says an unsafe x-headroom-base-url override is &quot;ignored&quot;, but the proxy routes answer 400</span><span class="rp-item-extra">6 comments · 2026-10-22</span></a><a class="rp-item" href="https://github.com/headroomlabs-ai/headroom/issues/3563"><span class="rp-item-num">#3563</span><span class="rp-item-title">[BUG] CCR recovery JSON re-offloaded through Codex functions.exec wrapper; named retrieval exemption passes</span><span class="rp-item-extra">6 comments · 2026-09-12</span></a><a class="rp-item" href="https://github.com/headroomlabs-ai/headroom/issues/3187"><span class="rp-item-num">#3187</span><span class="rp-item-title">[FEATURE] please add wrap support for prime-agent</span><span class="rp-item-extra">6 comments · 2026-08-21</span></a><a class="rp-item" href="https://github.com/headroomlabs-ai/headroom/issues/2649"><span class="rp-item-num">#2649</span><span class="rp-item-title">[FEATURE] Pre-upstream context limit guard — hard-cap input tokens to avoid upstream 400 + client retry storm</span><span class="rp-item-extra">6 comments · 2026-07-29</span></a><a class="rp-item" href="https://github.com/headroomlabs-ai/headroom/issues/748"><span class="rp-item-num">#748</span><span class="rp-item-title">[FEATURE] One consolidated `headroom uninstall` command + document teardown in --help and README</span><span class="rp-item-extra">6 comments · 2026-06-08</span></a><a class="rp-item" href="https://github.com/headroomlabs-ai/headroom/issues/709"><span class="rp-item-num">#709</span><span class="rp-item-title">[BUG] Proactive context expansion injects stale CCR contexts in fast agentic sessions</span><span class="rp-item-extra">6 comments · 2026-06-06</span></a><a class="rp-item" href="https://github.com/headroomlabs-ai/headroom/issues/975"><span class="rp-item-num">#975</span><span class="rp-item-title">[FEATURE] headroom wrap support for Kilo Code (VS Code, CLI, Cloud)</span><span class="rp-item-extra">5 comments · 2026-06-14</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/headroomlabs-ai/headroom/discussions/4676"><span class="rp-item-num">#4676</span><span class="rp-item-title">RFC: one label set for request attribution (project, client, host, …) instead of one axis per dimension</span><span class="rp-item-extra">0 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/headroomlabs-ai/headroom/discussions/4668"><span class="rp-item-num">#4668</span><span class="rp-item-title">Headroom as a baseline in a study on learned field projections for agent tool outputs</span><span class="rp-item-extra">0 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/headroomlabs-ai/headroom/discussions/4612"><span class="rp-item-num">#4612</span><span class="rp-item-title">Measured byte-level savings on Windows: tool output -71.1%, path list -92.0%, build log +0.7%</span><span class="rp-item-extra">0 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/headroomlabs-ai/headroom/discussions/4483"><span class="rp-item-num">#4483</span><span class="rp-item-title">Headroom with rtk 1.0</span><span class="rp-item-extra">0 comments · 2026-10-25</span></a><a class="rp-item" href="https://github.com/headroomlabs-ai/headroom/discussions/4439"><span class="rp-item-num">#4439</span><span class="rp-item-title">Question about MCP-only mode in Codex Desktop: Who evaluates the need for compression and on what basis?</span><span class="rp-item-extra">1 comments · 2026-10-23</span></a><a class="rp-item" href="https://github.com/headroomlabs-ai/headroom/discussions/4312"><span class="rp-item-num">#4312</span><span class="rp-item-title">Any plan to add support for Mimocode Desktop for Windows?</span><span class="rp-item-extra">0 comments · 2026-10-20</span></a><a class="rp-item" href="https://github.com/headroomlabs-ai/headroom/discussions/3961"><span class="rp-item-num">#3961</span><span class="rp-item-title">OpusBar: a macOS menu bar app for Claude Code and Codex usage, limits and waiting sessions</span><span class="rp-item-extra">0 comments · 2026-10-04</span></a><a class="rp-item" href="https://github.com/headroomlabs-ai/headroom/discussions/3922"><span class="rp-item-num">#3922</span><span class="rp-item-title">README idea: HVTrust badge linking to Headroom&#x27;s independent trust profile</span><span class="rp-item-extra">0 comments · 2026-10-02</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/headroomlabs-ai/headroom/releases"><b>Release v0.44.0</b> <span class="rp-rel-tag">v0.44.0</span> <span class="rp-item-extra">2026-11-10</span></a><pre class="rp-pre">0.44.0 (2026-11-09)
+
+
+ ⚠ BREAKING CHANGES
+
+ packaging: keep PyTorch extras out of all (4067)
+
+ Features
+
+ pipeline: say whose request an OutcomeSnapshot is (4698) (a2bcbd1)
+ providers: add Hermes agent wrap support (934) (7877241)
+ proxy/model-router: add shadow mode (HEADROOM_MODEL_ROUTER_LOG_ONLY) (2395) (861ef95)
+ proxy: add lossless /v1/compress mode and detect provider by wire shape (4617) (33f067a)
+ proxy: expose per-request cost_usd in /stats recent_requests (1079) (1565) (84cedbf)
+ proxy: expose shared Redis store availability in /health and /metrics (4578) (602ca65)
+ proxy: give turn </pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/headroomlabs-ai__headroom.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

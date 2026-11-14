@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fei2411/DS-Bot · GitHub Trending Rank Radar</title>
+<meta name="description" content="A team of long-lived bots for DeepSeek Harness, with main bots, bot-to-bot messages and group chats.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="DS-Bot, Fei2411, Fei2411/DS-Bot, github stars, github trending, star growth, star history, 开源项目, 星标增长, bot, deepseek-harness, dsh-plugin, multi-agent">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Fei2411__DS-Bot">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Fei2411/DS-Bot · GitHub Trending Rank Radar">
+<meta property="og:description" content="A team of long-lived bots for DeepSeek Harness, with main bots, bot-to-bot messages and group chats.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Fei2411__DS-Bot">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Fei2411/DS-Bot", "codeRepository": "https://github.com/Fei2411/DS-Bot", "url": "https://zhuikan.com/repos/Fei2411__DS-Bot", "description": "A team of long-lived bots for DeepSeek Harness, with main bots, bot-to-bot messages and group chats.", "author": {"@type": "Organization", "name": "Fei2411", "url": "https://github.com/Fei2411"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "JavaScript", "dateCreated": "2026-10-07", "keywords": "bot,deepseek-harness,dsh-plugin,multi-agent"}</script>
+</head>
+<body data-repo="Fei2411/DS-Bot" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Fei2411/DS-Bot</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Fei2411__DS-Bot"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/279467036?u=6c335e4548389df3bb10a0063c04f1661959f11b&amp;v=4&s=300" width="300" height="300" alt="Fei2411 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">DS-Bot</div>
+      <a class="rp-side-owner" href="https://github.com/Fei2411">Fei2411</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Fei2411">Fei2411</a>
+        <span class="rp-sep">/</span><span class="rp-name">DS-Bot</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=new">new <b>#72</b></a><a class="rp-board-chip" href="../?board=daily">daily <b>#118</b></a><a class="rp-board-chip" href="../?board=daily_rate">daily_rate <b>#62</b></a><a class="rp-board-chip" href="../?board=weekly">weekly <b>#111</b></a><a class="rp-board-chip" href="../?board=weekly_rate">weekly_rate <b>#48</b></a><a class="rp-board-chip" href="../?board=monthly_rate">monthly_rate <b>#135</b></a></div>
+    </div>
+    <p class="rp-desc">A team of long-lived bots for DeepSeek Harness, with main bots, bot-to-bot messages and group chats.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>7,686</b></span><span class="rp-stat" title="forks">⑂ <b>745</b></span><span class="rp-stat" title="watchers">👁 <b>16</b></span><span class="rp-stat" title="prs">⑃ <b>720</b></span><span class="rp-stat" title="issues">● <b>658</b></span><span class="rp-stat" title="releases">▤ <b>21</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/bot">bot</a><a class="rp-topic" href="../tags/deepseek-harness">deepseek-harness</a><a class="rp-topic" href="../tags/dsh-plugin">dsh-plugin</a><a class="rp-topic" href="../tags/multi-agent">multi-agent</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2026-10-07</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Fei2411/DS-Bot">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.3.6</span><a class="rp-dl-a" href="https://github.com/Fei2411/DS-Bot/releases/tag/v0.3.6">v0.3.6 ↓</a><span class="rp-dl-ver">0.3.6</span><span class="rp-dl-date">2026-11-12</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+193</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">7,686</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">745</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">16</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">720</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">658</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">21</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">DS Bot
+
+English | 中文
+
+!version !DSH !license
+
+DS Bot is an open-source project built on DeepSeek Harness (DSH), available as a standalone desktop app or as a DSH plugin. It turns DSH into bots that you create, talk to and work with.
+
+ Sponsors
+
+
+
+
+ModelGo is a reliable, high-performance, enterprise-grade AI API aggregation platform. Access leading AI models—including Claude, OpenAI, Gemini, and DeepSeek—with a single API key. Sign up now and get 40% off DeepSeek V4.1 Flash.Exclusive perks for DS-Bot users: get $0.50 in credits when you sign up, earn another $2 after your first API call, and receive up to $10 in bonus credits when you top up! Try it now: ModelGo Official Website
+
+
+
+
+
+!Say one sentence to Chief, and it sets up the bots and the group chat
+
+ Install
+
+Desktop app (Windows, macOS, Linux)
+
+The desktop app brings its own DSH, so you don&#x27;t need to install DSH first. Download the installer for your system from Releases, open it, and set up a model in Settings (it can also copy your existing bot team from DSH).
+
+If your system warns about an unsigned app: on Windows select More info → Run anyway; on macOS open System Settings → Privacy &amp; Security and select Open Anyway.
+
+As a plugin in DSH
+
+First install DSH and set up at least one model in it. DS Bot uses the models from DSH.
+
+- DSH Desktop: In the sidebar, select Plugins → Add plugin, enter ds-bot (in mainland China, set Registry to Mainland China mirror), then select Install and Enable now.
+- DSH Web (needs Node.js 22.19 or later, and pnpm):
+
+sh
+npx @deepseek-ai/dsh@0.2.2-rc.1 plugin --profile web add ds-bot
+npx @deepseek-ai/dsh@0.2.2-rc.1 web
+
+
+Docker (NAS, Linux server)
+
+See docker/README.md.
+
+ Setup
+
+I strongly recommend that you set up your other bots and group chats by just talking to a bot.
+
+ Web search
+
+DS Bot selects its auto search provider for the whole profile. If you disable web-search-auto, also select another registered search provider in that profile. See Web search and the recovery steps.
+
+ Features
+
+ Bot
+
+You can do all your talking and work with one bot, in one window. You don&#x27;t need to worry about the context behind it. The bot&#x27;s details page shows its info, and there you can pick the model and thinking level you want it to use. You can switch models at any time, but I still recommend that you keep one model for a bot for a long time, and switch only when you really need to.
+
+Bots also have memory. A bot remembers what you like and uses it in later work. You can manage its memory on the bot&#x27;s details page, or just tell the bot.
+
+Each bot can have its own working folder and permission preset — just tell the bot when you want to switch folders. While a bot is working, you can send a message to steer it right away, or type /side to ask a side question without interrupting its task; it can also draw charts, tables and forms in its replies, or run scheduled tasks. In the sidebar, you can group bots and group chats into collapsible sections by work.
+
+!Bot details: model, mem</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Fei2411/DS-Bot/issues/1071"><span class="rp-item-num">#1071</span><span class="rp-item-title">左下角快捷切换回经典agent模式没有了，希望加上</span><span class="rp-item-extra">11 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/Fei2411/DS-Bot/issues/122"><span class="rp-item-num">#122</span><span class="rp-item-title">[建议] Bot 需要「会话换代」原语（新会话 / /new）：parts 滚动不算干净换代，duplicate/delete+create 太重</span><span class="rp-item-extra">11 comments · 2026-10-13</span></a><a class="rp-item" href="https://github.com/Fei2411/DS-Bot/issues/1199"><span class="rp-item-num">#1199</span><span class="rp-item-title">[Feature] 增加淘宝/天猫可核验的固定只读取数流程</span><span class="rp-item-extra">10 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/Fei2411/DS-Bot/issues/1064"><span class="rp-item-num">#1064</span><span class="rp-item-title">安装了DS Bot版本0.3.1后，DSH切不回经典agent模式，真的无语了，做完不测试吗？？？？？</span><span class="rp-item-extra">7 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/Fei2411/DS-Bot/issues/1272"><span class="rp-item-num">#1272</span><span class="rp-item-title">无法切回普通agent模式</span><span class="rp-item-extra">6 comments · 2026-11-10</span></a><a class="rp-item" href="https://github.com/Fei2411/DS-Bot/issues/926"><span class="rp-item-num">#926</span><span class="rp-item-title">更新了0.2.2 rc1版本dsh，ds-bot的所有会话都读不到了。提示报错：Cannot read properties of undefined (rea</span><span class="rp-item-extra">6 comments · 2026-11-05</span></a><a class="rp-item" href="https://github.com/Fei2411/DS-Bot/issues/1107"><span class="rp-item-num">#1107</span><span class="rp-item-title">[Bug] weixin 接入后 getupdates 永久失败（baseUrl 缺尾斜杠 + 成功响应无 ret 被判错）</span><span class="rp-item-extra">5 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/Fei2411/DS-Bot/issues/922"><span class="rp-item-num">#922</span><span class="rp-item-title">0.2.7: every turn of a Bot Session dies instantly with `Cannot read properties of undefined (reading &#x27;filter&#x27;)`</span><span class="rp-item-extra">5 comments · 2026-11-05</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Fei2411/DS-Bot/discussions/1560"><span class="rp-item-num">#1560</span><span class="rp-item-title">任务看板</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/Fei2411/DS-Bot/discussions/1556"><span class="rp-item-num">#1556</span><span class="rp-item-title">使用说明不够清晰 与工作文件夹混乱</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/Fei2411/DS-Bot/discussions/1527"><span class="rp-item-num">#1527</span><span class="rp-item-title">文档式长期记忆采用 Git 版本管理：保留当前记忆，并按需追溯修改原因</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/Fei2411/DS-Bot/discussions/1526"><span class="rp-item-num">#1526</span><span class="rp-item-title">群任务完成或暂停后，经主 Bot 私聊向 Telegram 通知用户</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/Fei2411/DS-Bot/discussions/1525"><span class="rp-item-num">#1525</span><span class="rp-item-title">连接器通用懒加载：按 Agent / 会话发现并激活工具，避免 Notion 等完整 schema 常驻上下文</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/Fei2411/DS-Bot/discussions/1496"><span class="rp-item-num">#1496</span><span class="rp-item-title">Phone app parity: a Local agents page, and the desktop Usage charts</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/Fei2411/DS-Bot/discussions/1493"><span class="rp-item-num">#1493</span><span class="rp-item-title">做一下通知功能</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/Fei2411/DS-Bot/discussions/1492"><span class="rp-item-num">#1492</span><span class="rp-item-title">Retract a message so it leaves the model&#x27;s context / 撤回消息并真正移出模型上下文</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/Fei2411/DS-Bot/releases"><b>v0.3.6</b> <span class="rp-rel-tag">v0.3.6</span> <span class="rp-item-extra">2026-11-12</span></a><pre class="rp-pre">Download / 下载
+
+| System / 系统 | Download / 下载 | Size / 大小 |
+|---|---|---|
+| Windows 10/11 (64-bit / 64 位)Double-click to install / 双击安装 | DS-Bot-0.3.6-win-x64.exe | 291 MB |
+| macOS, Apple chip / Apple 芯片 | DS-Bot-0.3.6-mac-arm64.zip | 369 MB |
+| macOS, Intel | DS-Bot-0.3.6-mac-x64.zip | 384 MB |
+| Linux, AppImage | DS-Bot-0.3.6-linux-x86_64.AppImage | 371 MB |
+| Linux, deb (Debian, Ubuntu) | DS-Bot-0.3.6-linux-amd64.deb | 291 MB |
+| Android (phone app / 手机 App) | DS-Bot-0.3.6-android.apk | 117 MB |
+
+The .blockmap, latest.yml and ds-bot-.tgz files and the source code archives are for updates an</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (6)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/weixin_63007863/article/details/169924273" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">从装好到跑通第一个群聊：DS Bot 的四步与三处易错</span><span class="rp-item-extra">2026-11-02</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMilgFBVV95cUxNSFA3bHgyeDhIaXp1Y1cyTldhYkQ0cldYRHlVR1JCWHhYTWJ5RU9rOHcxdlpMVDFzRmhicGhqU3RKalU5MUtMOFJYX1VxY2dmY0FXZXg2d2xJdlNmQkRaTjZmQ3l3YUJZR1NpUjNqMGZmdFFLOENRRHJ0TEpYc0w3cWFYYVpNc3RZcWZ0THp0Ti1sTGtrcXc?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">DS Bot 登陆 DeepSeek Harness, 三周内获得 4300 多颗 GitHub 星标</span><span class="rp-item-extra">2026-10-28</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiSEFVX3lxTE9ZMTJtRXM2dG9JeUNETWx2R0g0Z0hLR2tETlZaRGpUWmFScndfam42QVBDVFowYkJOMWQyNWM0Smxqdm1JSEpqVg?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">智东西</span><span class="rp-item-title">DeepSeek Bot民间版作者来了！中国AI智能体大会，北京站12月见</span><span class="rp-item-extra">2026-10-28</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiS0FVX3lxTE9JeERNUWxxdkJqMHh6TFU2LXJqRUhBbzJyVFE2UzAydXpyTThQaWRPNW40Ti1ycHRLNTVjYTI3aGYwR195TTFIOVNqbw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">OSCHINA</span><span class="rp-item-title">给 DeepSeek Harness（DSH）装上bot 插件，把 DSH 变成bot 系统</span><span class="rp-item-extra">2026-10-12</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiakFVX3lxTE43RlVEcGRod29YTkxOYlpvSkFSS1hMdXlxeE1SR0JlNmpJV05yMXdPRTZOR25xR1g4VGhCdS0zMDdxMTBWci1NUlA4bnEtM0VBaVl6NHdwWk5YNmdmSGJBeUlYd1hYQ3M0TUE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">53AI</span><span class="rp-item-title">DeepSeek Bot发布！装个插件就能用！</span><span class="rp-item-extra">2026-10-12</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVEFVX3lxTE5VVGFFUzVxUjhvM1NtXzgzTXBrSVdPbFZrbUxraXQ2ZkxuVnZ4eHRuVVRtX08tV2N6QngyNW9KeTg3bmN0djh2cVpLZG5DZGU5YW1udw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">量子位</span><span class="rp-item-title">DeepSeek Bot来了！民间版，DSH装个插件就能用</span><span class="rp-item-extra">2026-10-11</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (5)</h3><div class="rp-list"><a class="rp-item" href="https://news.google.com/rss/articles/CBMijwFBVV95cUxNWHRETTY5R044bXRaM0lhdFFWeU5MX3I4elNvSlZUSE1YNGtYZktuWmNSV0tna0l0T2JVM2d5RF9SS0p4TjNWOW9QU09KUFZvTk1mc0FReEZTS2ZJckFjaWlkVU5CMDBTUHJ6SFRXYlhaTHFCcGdnanlDYl90YjVnWm5ZOENhWWxkRG9FaGFkRQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">DeepSeek releases the open source prototype of its Super-agent</span><span class="rp-item-extra">2026-10-31</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMilAFBVV95cUxQMHJTZzRZdC1XQVZNaG03UGtiYlRZd05GOGNiZkdQNmNuOG52WUE4Q0tMU2RXdkp6YS1VMGhnRkpicl9aNG5RWE1NelN0bk5XUVhTZ1lWM2t4WHV5dHJmMW9ZbHJvZ25hcjZFeDYzOEkyTzdpdERSR0dsVU91a0R0RmdEYnBRMFpYR0dCdkkxMWZYa0xG?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">DS Bot arrives on DeepSeek Harness, over 4,300 GitHub stars in three weeks</span><span class="rp-item-extra">2026-10-28</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMipAFBVV95cUxOMVpXRjJCMWVJYjF3cDNvMWdXUUx5THAya0theG1SS1FDbExTTlBOSU5iUlZzYW1ZaVNTUkNUZ3B6RDlpLVA2TkRlakJVdWVFZVlmR1V3NEpSa0tPOHRpb0NKZE9DeTZSd1R6MEF2UWktUUhRY1JNVlcwOEV0ang2bm0yeHRrTDhxaV9FYUw0dzA1VkhhUXZGek5NaER6aDNNZXluYw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pandaily</span><span class="rp-item-title">Community-Built DS Bot Plugin Turns DeepSeek Harness Into a Team of Long-Lived Bots</span><span class="rp-item-extra">2026-10-11</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMidkFVX3lxTE5KTEpEVlhhckhGYUhOR2oyQXdjMEk2Tl92OW5BaGF0c2s1SnFpaHNYam5LTmVUNVdaOUlELWNCOUVXQjdTcDdaUllOQzBobnpUTGVGUTBhSVU1VnVPU2p1aGlJMk1lblRlX3BuMlZ3M3ZqTWxseVE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">BigGo Finance</span><span class="rp-item-title">DeepSeek Harness Gets Multi-Bot Management Plugin as Community Builds Persistent Robot Teams</span><span class="rp-item-extra">2026-10-11</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMikgFBVV95cUxOOFduY2dSNXoxZTlWczhNanU2TTRHd3pZeUpxNFFFeUpkNEFodkJ3SmQyZmFnZmhJaE1ieFpqX0dSWXQ1Qks5VUpoZUg1UkE5UFB2dUJVX29oYTJuYmpib25FYjVvYWh2b2syVGNxVEIyejI0NjBnV1Q4bE5YRmdaLUJ5aG5HOW5HOFpaWUZoRjVHQQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">DeepSeek Harness, What It Actually Is and What the Critics Say</span><span class="rp-item-extra">2026-08-17</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Fei2411__DS-Bot.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

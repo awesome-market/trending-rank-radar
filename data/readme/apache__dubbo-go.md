@@ -1,0 +1,284 @@
+# Apache Dubbo for Golang
+
+[![CI](https://github.com/apache/dubbo-go/workflows/CI/badge.svg)](https://github.com/apache/dubbo-go/actions)
+[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white&style=flat-square)](https://pkg.go.dev/github.com/apache/dubbo-go/v3?tab=doc)
+[![Go Report Card](https://goreportcard.com/badge/github.com/apache/dubbo-go)](https://goreportcard.com/report/github.com/apache/dubbo-go)
+![license](https://img.shields.io/badge/license-Apache--2.0-green.svg)
+
+---
+
+English | [中文](README_CN.md)
+
+Apache Dubbo-go is a high-performance RPC and microservice framework compatible with other Dubbo language implementations. It leverages Golang's concurrency features to provide efficient service governance, including service discovery, load balancing, and traffic management. Dubbo-go supports multiple protocols, such as Dubbo, JSONRPC, Triple(gRPC-compatible), gRPC, HTTP, HTTP2, and HTTP/3 (experimental), ensuring seamless integration in heterogeneous environments.
+
+You can visit [the official website](https://dubbo.apache.org/) for more information.
+
+## Recent Updates
+
+For detailed changes, refer to [CHANGELOG.md](CHANGELOG.md).
+
+- **[3.3.2](https://github.com/apache/dubbo-go/releases/tag/v3.3.2)**:
+
+  **Upgrade note:** Go 1.25 or later is required. The legacy `config` package has been removed; applications that imported it directly must migrate to the instance/options APIs and configuration types under `global`. See the [3.3.2 changelog](CHANGELOG.md#332) and [dubbo-go-samples](https://github.com/apache/dubbo-go-samples) for migration details and current usage.
+
+  Apache Dubbo-go 3.3.2 is a production-readiness release focused on API consolidation, Triple protocol capabilities, application-level metadata, service governance, concurrency safety, and release tooling. It completes the removal of the legacy config package, expands generic invocation and HTTP-facing Triple features, refreshes generated-project workflows, and fixes multiple races, stale-snapshot issues, and resource leaks.
+
+- **3.3.1**: Optimized configuration hot-reloading with content-based caching to prevent redundant notifications. Added experimental HTTP/3 support, Apollo integration, and Triple protocol OpenAPI generation. Fixed critical race conditions in service discovery under high-concurrency.
+
+- **3.3.0**: Introduced script routing, multi-destination conditional routing, Triple protocol keepalive and connection pooling, Nacos multi-category subscriptions, and enhancements for observability and interoperability.
+
+## Getting started
+
+### Prerequisites
+
+- Go 1.25 or later.
+
+### Installation
+
+To install Dubbo-go, use the following command:
+
+
+```Bash
+go get dubbo.apache.org/dubbo-go/v3@latest
+```
+
+### Quick Example
+
+You can learn how to develop a dubbo-go RPC application step by step in 5 minutes by following our [Quick Start](https://github.com/apache/dubbo-go-samples/tree/main/helloworld) demo. 
+
+It's as simple as the code shown below, you define a service with Protobuf, provide your own service implementation, register it to a server, and start the server.
+
+```go
+func (srv *GreetTripleServer) Greet(ctx context.Context, req *greet.GreetRequest) (*greet.GreetResponse, error) {
+	resp := &greet.GreetResponse{Greeting: req.Name}
+	return resp, nil
+}
+
+func main() {
+	srv, _ := server.NewServer(
+		server.WithServerProtocol(
+			protocol.WithPort(20000),
+			protocol.WithTriple(),
+		),
+	)
+
+	_ := greet.RegisterGreetServiceHandler(srv, &GreetTripleServer{})
+
+	if err := srv.Serve(); err != nil {
+		logger.Error(err)
+	}
+}
+```
+
+After the server is up and running, call your service via cURL:
+
+```shell
+curl \
+    --header "Content-Type: application/json" \
+    --data '{"name": "Dubbo"}' \
+    http://localhost:20000/greet.GreetService/Greet
+```
+
+Or, you can start a standard dubbo-go client to call the service:
+
+```go
+func main() {
+	cli, _ := client.NewClient(
+		client.WithClientURL("127.0.0.1:20000"),
+	)
+
+	svc, _ := greet.NewGreetService(cli)
+
+	resp, _ := svc.Greet(context.Background(), &greet.GreetRequest{Name: "hello world"})
+	
+	logger.Infof("Greet response: %s", resp.Greeting)
+}
+```
+
+See the [samples](https://github.com/apache/dubbo-go-samples) for detailed information on usage. Next, learn how to deploy, monitor and manage the traffic of your dubbo-go application by visiting the official website.
+
+## Features
+
+![dubbo-go-architecture](./doc/imgs/arc.png)
+
+Dubbo-go provides robust service governance capabilities:
+
+- **RPC Protocols**: Triple, gRPC compatible and HTTP-friendly
+- **Service Discovery**: Nacos, Zookeeper, Etcd, Polaris-mesh.
+- **Load Balance**: Adaptive, Random, RoundRobin, LeastActive, ConsistentHash
+- **Traffic Management**: traffic split, timeout, rate limiting, canary release
+- **Configuration**: yaml file, dynamic configuration(Nacos, Apollo, Zookeeper, etc.).
+- **Observability**: Metrics (Prometheus), tracing (OpenTelemetry v1.21.0+ with insecure options and standardized span names), logging (with service registration lifecycle events).
+- **HA Strategy**: Failover, Failfast, Failsafe/Failback, Available, Broadcast, Forking.
+- **Interoperability**: Full compatibility with Apache Dubbo (Java) via Triple protocol generic calls, group/version wildcard matching, and TLS API redesign.
+
+## Tools
+
+Common development tools live in `tools/`.
+
+| Tool | Purpose |
+| --- | --- |
+| [dubbogo-cli](./tools/dubbogo-cli/README.md) | Scaffold demos/apps, install companion tools, inspect metadata, and debug services. |
+| [protoc-gen-go-triple](./tools/protoc-gen-go-triple/README.md) | Generate dubbo-go Triple bindings from protobuf service definitions. |
+| [protoc-gen-triple-openapi](./tools/protoc-gen-triple-openapi/README.md) | Generate OpenAPI v3 documents from Triple protobuf services. |
+| [imports-formatter](./tools/imports-formatter/README.md) | Format Go import blocks using dubbo-go grouping rules. |
+| [dubbo-go-schema](./tools/dubbo-go-schema/README.md) | Provide JSON Schema completion and validation for dubbo-go YAML config. |
+| [benchmark](./tools/benchmark/README.md) | Performance benchmark suite for comparing Dubbo-Go, Dubbo-Java, and gRPC frameworks. |
+
+## Ecosystem
+- [dubbo-go-samples](https://github.com/apache/dubbo-go-samples)
+- [dubbo-go-pixiu which acting as a proxy to solve Dubbo multi-language interoperability](https://github.com/apache/dubbo-go-pixiu)
+- [Interoperability with Dubbo Java](https://cn.dubbo.apache.org/zh-cn/overview/mannual/golang-sdk/tutorial/interop-dubbo/)
+- [Console](https://github.com/apache/dubbo-admin), under development
+- [dubbo-go-extensions](https://github.com/apache/dubbo-go-extensions), under development
+
+## Documentation
+
+- Official Website: https://dubbo.apache.org/
+- Dubbo-go Documentation: https://cn.dubbo.apache.org/zh-cn/overview/mannual/golang-sdk/
+- CHANGELOG: https://github.com/apache/dubbo-go/blob/main/CHANGELOG.md
+
+## Community
+
+- GitHub Issues: https://github.com/apache/dubbo-go/issues
+- Mailing Lists: https://dubbo.apache.org/en/community/
+
+Contributions, issues, and discussions are welcome. Please visit [CONTRIBUTING](./CONTRIBUTING.md) for details on submitting patches and the contribution workflow.
+
+## Contact
+
+Join our discussion group through Ding talk or WeChat.
+
+![invite.png](./doc/imgs/invite.png)
+
+
+## [User List](https://github.com/apache/dubbo-go/issues/2)
+
+If you are using [apache/dubbo-go](https://github.com/apache/dubbo-go) and think that it helps you or want to contribute code for Dubbo-go, please add your company to [the user list](https://github.com/apache/dubbo-go/issues/2) to let us know your needs.
+
+
+<div>
+<table>
+  <tbody>
+  <tr></tr>
+    <tr>
+      <td align="center"  valign="middle">
+        <a href="" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-beike.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-gaode.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-eht.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="https://github.com/mosn" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-mosn.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-pdd.png">
+        </a>
+      </td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td align="center"  valign="middle">
+        <a href="http://www.j.cn" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-jd.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-kaikele.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-sohu.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="https://www.zto.com" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-zto.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-tianyi.png">
+        </a>
+      </td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td align="center"  valign="middle">
+        <a href="http://www.mgtv.com" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-mgtv.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-vivo.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="http://www.ruubypay.com" target="_blank">
+           <img width="222px"  src="./doc/imgs/usecase-tuya.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+          <a href="https://www.dingtalk.com" target="_blank">
+             <img width="222px"  src="./doc/imgs/usecase-xiecheng.png">
+          </a>
+      </td>
+      <td align="center"  valign="middle">
+          <a href="https://www.autohome.com.cn" target="_blank">
+             <img width="222px"  src="./doc/imgs/usecase-autohome.png">
+          </a>
+      </td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td align="center"  valign="middle">
+        <a href="https://www.mi.com/" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-mi.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="https://opayweb.com/" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-zonghengwenxue.png">
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="" target="_blank">
+          <img width="222px" src="./doc/imgs/usecase-tiger-brokers.png">
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="" target="_blank">
+          <img width="222px" src="./doc/imgs/usecase-zhanzhang.png" >
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="" target="_blank">
+          <img width="222px" src="./doc/imgs/usecase-genshuixue.png" >
+        </a>
+      </td>
+    </tr>
+    <tr></tr>
+  </tbody>
+</table>
+</div>
+
+[See more user cases](https://github.com/apache/dubbo-go/issues/2)
+
+## License
+
+Apache Dubbo-go software is licensed under the Apache License Version 2.0. See the [LICENSE](./LICENSE) file for details.

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MakazhanAlpamys/Soup · GitHub Trending Rank Radar</title>
+<meta name="description" content="Fine-tune LLMs from one YAML. Layer streaming trains an 8B model on a 4 GB laptop GPU.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Soup, MakazhanAlpamys, MakazhanAlpamys/Soup, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/MakazhanAlpamys__Soup">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="MakazhanAlpamys/Soup · GitHub Trending Rank Radar">
+<meta property="og:description" content="Fine-tune LLMs from one YAML. Layer streaming trains an 8B model on a 4 GB laptop GPU.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/MakazhanAlpamys__Soup">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "MakazhanAlpamys/Soup", "codeRepository": "https://github.com/MakazhanAlpamys/Soup", "url": "https://zhuikan.com/repos/MakazhanAlpamys__Soup", "description": "Fine-tune LLMs from one YAML. Layer streaming trains an 8B model on a 4 GB laptop GPU.", "author": {"@type": "Organization", "name": "MakazhanAlpamys", "url": "https://github.com/MakazhanAlpamys"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Python", "dateCreated": "2026-02-20"}</script>
+</head>
+<body data-repo="MakazhanAlpamys/Soup" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">MakazhanAlpamys/Soup</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="MakazhanAlpamys__Soup"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/188336071?u=35a95931cbb806e7cf8a27b01af1a71af5ba293a&amp;v=4&s=300" width="300" height="300" alt="MakazhanAlpamys avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Soup</div>
+      <a class="rp-side-owner" href="https://github.com/MakazhanAlpamys">MakazhanAlpamys</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/MakazhanAlpamys">MakazhanAlpamys</a>
+        <span class="rp-sep">/</span><span class="rp-name">Soup</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Fine-tune LLMs from one YAML. Layer streaming trains an 8B model on a 4 GB laptop GPU.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>10,083</b></span><span class="rp-stat" title="forks">⑂ <b>1,665</b></span><span class="rp-stat" title="watchers">👁 <b>59</b></span><span class="rp-stat" title="releases">▤ <b>183</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Created 2026-02-20</span><a class="rp-meta-bit rp-home" href="https://trysoup.dev" rel="noopener">trysoup.dev</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/MakazhanAlpamys/Soup">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1,657</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">10,083</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,665</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">59</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">183</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">🌍 English | Türkçe | العربية | 日本語 | 中文
+
+
+  
+
+
+Soup
+
+
+  一条命令完成 LLM 微调与后训练。无需 SSH，告别配置灾难。
+
+
+
+  官网 &amp;middot;
+  快速开始 &amp;middot;
+  Web UI &amp;middot;
+  配置 &amp;middot;
+  文档 &amp;middot;
+  命令 &amp;middot;
+  模型 &amp;middot;
+  Discord &amp;middot;
+  Telegram &amp;middot;
+  Product Hunt
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+  
+    
+      
+      
+    
+  
+  
+    
+  
+
+
+---
+
+Soup 把 LLM 微调的痛点变成一条简单的工作流。一份配置、一条命令，搞定。
+
+bash
+pip install &quot;soup-cli[train]&quot;    加 [train] 才能微调；裸 soup-cli 是轻量 CLI
+soup init --template chat
+soup train
+
+
+在 4 GB 笔记本 GPU 上微调 8B 模型。 Layer streaming 让冻结的基座模型不占
+显存，按解码层逐层送入 GPU。在 RTX 3050 Laptop 4 GB 上实测：Llama-3.1-8B-Instruct +
+NF4 达到 952 MHz 下 119.6 tok/s，峰值 3.32 GB（修复前）——与常规常驻显存的运行逐位一致，并在 H100 上
+以同样的 3.32 GB 独立复现出 113.00 tok/s。（两个数字都测于 v0.72.2，早于 v0.73.0 那次
+在 32B 上付出 −4.8% 代价的正确性修复。修复后的复测在另一台 RTX 3050 Laptop 4 GB
+上完成（@umran666，1103），结果是 1935–1957 MHz 下 208.6 tok/s，峰值 2.40 GB。这相当于
+同场 GEMM 上限的 59%，而修复前是 68%：按单位时钟频率折算大约慢 14%，所以表面上 1.74x 的提升来自
+时钟频率，而不是加速。large-layer streaming 也改变了两组数据之间的内存占用方式，因此连这个比例也不是
+同口径的对比——完整记录。）需显式开启
+（stream_layers: true），仍是 BETA——
+工作原理 ·
+全部实测数据 · 论文 ·
+在免费 Colab T4 上亲自验证（把进程限制在 4 GB，
+然后断言流式模型与常驻模型逐位一致）
+
+
+  
+  Llama-3.1-8B-Instruct + NF4、LoRA、batch 1、seq 512，RTX 3050 Laptop 4 GB——峰值 3.32 GB，119.6 tok/s，952 MHz（修复前，v0.72.2；331 修复后：1935 MHz 下 208.6 tok/s，2.40 GB，不可直接比较，@umran666，1103）。完整视频（90 秒）
+
+
+ 为什么选择 Soup
+
+训练 LLM 至今仍然令人痛苦。即使是有经验的团队，也有 30-50% 的时间耗在和基础设施搏斗上，
+而不是改进模型。Soup 解决的就是这件事。
+
+- 零 SSH： 再也不用 SSH 进一台坏掉的 GPU 机器。
+- 一份配置： 一个简单的 YAML 文件就是全部所需。
+- 全部自动： batch size、GPU 检测、量化，都替你处理。
+- 本地可跑： 用自己的 GPU 跑 QLoRA，不需要云。
+
+ 最新动态
+
+v0.77.2——基于 v0.77.1 之后 main 的一次发布：159 个拉取请求，其中 153 个来自维护者之外的 30 位
+贡献者。 大部分是修复。它也新增了功能，以及两条可能拒绝 v0.77.1 所接受内容的规则，因此在升级服务器或
+task: sft 配置之前，请先阅读 v0.77.2 发布说明。从 0.76.x 升级时，请先运行
+soup doctor --config soup.yaml，并阅读 v0.77.0 发布说明。
+
+- soup profile --model  无需 soup.yaml 即可回答“放得下吗？”。 它根据模型的 config.json
+  估算该次运行，由 --seq、--batch、--method、--lora-r、--optimizer 和
+  --gradient-checkpointing 决定形状；在 Apple Silicon 上，它与 Metal 的工作集大小比较。
+  soup plan 和 soup apply 现在接受 --minillm-on-policy。
+- Apple Silicon 上支持更多训练。 带有 preference_loss: dpo、orpo 或 simpo 的
+  task: preference 运行原生 MLX 训练器，MLX GRPO 可在 4 位 mlx-community 基座上训练，
+  MLX Adafactor 会遵循配置的学习率和调度。
+- 两个新的 DPO 配方： qwen3.5-0.8b-dpo 和 qwen3.5-27b-dpo。
+- 更接近实际的 VRAM 估算。 优化器步骤被视为独立阶段，PRM 步骤只计一个位置的 logits，
+  分片的 FSDP 或 ZeRO 运行按每张卡估算，stream_loss_chunk 步骤计入最后一层的重计算，
+  Unsloth 的 LoRA 目标按其加载器的选择估算。
+- 更少的静默覆盖和空结果。 更多命令会拒绝指向某个输入的 --output（soup data ingest、
+  persona-mix、generate 等）；soup ship --adapter 会拒绝不改变任何东西的适配器；
+  soup distill-prompt、soup data evolve、gen-magpie 和 filter --perplexity 会报错，
+  而不是写出空文件或未过滤的文件。
+- 偏好与强化学习修复。 data.max_length 对 SimPO 和 KTO 重新生效，PPO 在要求时会对策略启用
+  gradient checkpointing（在 4 位和 8 位下也不再崩溃），soup merge 会加载适配器训练时所用的基座提交。
+- 文本按输入原样显示。 数十个命令在显示路径、名称和消息时保留方括号和 :name: 文本，
+  并移除终端控制字符。
+
+需要了解的行为变化。 soup serve --tool-auth-token 必须是由 A-Z、a-z、0-9、_ 和 -
+组成的 16 到 128 个字符（否则退出码为 2）。task: sft 会在从未应用这些设置的视觉、音频、MLX、
+Unsloth、RAFT 和预分词路径上拒绝 reasoning_effort、train_on_eot、use_flash_attn 和
+use_liger。soup completions 生成的脚本需要重新</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/MakazhanAlpamys__Soup.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

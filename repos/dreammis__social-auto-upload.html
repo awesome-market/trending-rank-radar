@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dreammis/social-auto-upload · GitHub Trending Rank Radar</title>
+<meta name="description" content="自动化上传视频到社交媒体：抖音、小红书、视频号、tiktok、youtube、bilibili">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="social-auto-upload, dreammis, dreammis/social-auto-upload, github stars, github trending, star growth, star history, 开源项目, 星标增长, bilibili, douyin, tiktok, xiaohongshu, youtube, agent-skills">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/dreammis__social-auto-upload">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="dreammis/social-auto-upload · GitHub Trending Rank Radar">
+<meta property="og:description" content="自动化上传视频到社交媒体：抖音、小红书、视频号、tiktok、youtube、bilibili">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/dreammis__social-auto-upload">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "dreammis/social-auto-upload", "codeRepository": "https://github.com/dreammis/social-auto-upload", "url": "https://zhuikan.com/repos/dreammis__social-auto-upload", "description": "自动化上传视频到社交媒体：抖音、小红书、视频号、tiktok、youtube、bilibili", "author": {"@type": "Organization", "name": "dreammis", "url": "https://github.com/dreammis"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Python", "dateCreated": "2023-12-04", "keywords": "bilibili,douyin,tiktok,xiaohongshu,youtube,agent-skills"}</script>
+</head>
+<body data-repo="dreammis/social-auto-upload" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">dreammis/social-auto-upload</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="dreammis__social-auto-upload"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/12542216?u=8a71d400b8f32618e483b44fafc286770c392018&amp;v=4&s=300" width="300" height="300" alt="dreammis avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">social-auto-upload</div>
+      <a class="rp-side-owner" href="https://github.com/dreammis">dreammis</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/dreammis">dreammis</a>
+        <span class="rp-sep">/</span><span class="rp-name">social-auto-upload</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">自动化上传视频到社交媒体：抖音、小红书、视频号、tiktok、youtube、bilibili</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>16,517</b></span><span class="rp-stat" title="forks">⑂ <b>2,801</b></span><span class="rp-stat" title="watchers">👁 <b>95</b></span><span class="rp-stat" title="prs">⑃ <b>120</b></span><span class="rp-stat" title="issues">● <b>178</b></span><span class="rp-stat" title="releases">▤ <b>6</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/bilibili">bilibili</a><a class="rp-topic" href="https://github.com/topics/douyin">douyin</a><a class="rp-topic" href="https://github.com/topics/tiktok">tiktok</a><a class="rp-topic" href="https://github.com/topics/xiaohongshu">xiaohongshu</a><a class="rp-topic" href="../tags/youtube">youtube</a><a class="rp-topic" href="../tags/agent-skills">agent-skills</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2023-12-04</span><a class="rp-meta-bit rp-home" href="https://sap-doc.nasdaddy.com/" rel="noopener">sap-doc.nasdaddy.com/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/dreammis/social-auto-upload">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.0.0-skills.2</span><a class="rp-dl-a" href="https://github.com/dreammis/social-auto-upload/releases/tag/v1.0.0-skills.2">v1.0.0-skills.2 ↓</a><span class="rp-dl-ver">2</span><span class="rp-dl-date">2026-10-22</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+60</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">16,517</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,801</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">95</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">120</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">178</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">6</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">social-auto-upload
+
+!Python
+!License
+!Release
+
+
+
+social-auto-upload 是一个面向内容创作者和运营者的多平台发布工具，提供统一 CLI 和供 Codex、OpenClaw、Claude Code 等 Agent 使用的 Skill。
+
+支持的视频、文章、图文发布平台及对应入口见下表。
+
+CLI 命令按平台维护在 sau_commands/，发布流程位于 uploader/。日常变更记录见 CHANGELOG.md，稳定版本通过 GitHub Release 发布。
+
+
+
+ 💎 赞助商
+
+
+ 
+    
+      
+        
+      
+    
+    
+      感谢 DolOffer 对本项目的支持！对于做内容矩阵、多平台分发和 AI 自动化运营的创作者来说，ChatGPT、Claude、YouTube Premium、Spotify、Apple Music、Notion、Office 等数字工具往往是长期成本。DolOffer 提供 AI、视频、音乐和效率工具相关的订阅与充值服务，帮助用户更低成本地配置常用数字产品。更多说明可查看 DolOffer Guide。使用优惠码 AI8888 可额外享受 9 折优惠，具体价格和服务规则以官网为准。  
+    
+  
+  
+    
+      
+        
+      
+    
+    
+      轻视AI：一句话生产MG动画，适合知识，科普，讲解，教程，介绍等类型视频的低成本制作，视频矩阵，养号等，成本只有seedance等1%。现在注册送1500积分
+    
+  
+    
+        
+          
+            
+          
+        
+        
+          ClawPower 是一家稳定可靠 AI 大模型中转服务商，提供 Claude、GPT、Gemini 60+ 大模型接入。无论是 OpenClaw、Hermes 智能体自动化场景，Claude Code、Codex 编程工具接入，还是公众号、小红书内容创作；都能获得稳定、顺滑、可长期使用的模型服务体验。低至官方价格的 30%，点击免费领取 5 刀现金体验券
+        
+      
+  
+    
+      
+    
+    
+      成为赞助商
+      如果您有意赞助本项目，请扫描左侧微信二维码（添加时请注明来意：赞助）。
+    
+  
+
+
+---
+
+
+ 目录
+
+- 💡 功能特性
+- 💾 安装指南
+- 🤖 AI Agent
+- 🏁 快速开始
+- 📝 更新日志
+- 📃 详细文档
+- 🐾 交流与支持
+- 🤝 贡献指南
+- 📜 许可证
+- ⭐ Star History
+
+ 💡功能特性
+
+| 平台 | 登录/账号准备 | 视频 | 文章 | 图文 | 定时发布 | CLI | Skill | 说明 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 抖音 | ✅ | ✅ | - | ✅ | ✅ | ✅ | ✅ | 视频与图文发布 |
+| Bilibili | ✅ | ✅ | - | - | ✅ | ✅ | ✅ | 视频发布；运行时自动准备 biliup |
+| 小红书（浏览器版） | ✅ | ✅ | - | ✅ | ✅ | ✅ | ✅ | 视频与图文发布 |
+| 快手 | ✅ | ✅ | - | ✅ | ✅ | ✅ | ✅ | 视频与图文发布 |
+| 视频号 | ✅ | ✅ | - | - | ✅ | ✅ | ✅ | 视频发布 |
+| 百家号 | ✅ | ✅ | - | - | - | ✅ | ✅ | 视频发布 |
+| 大鱼号 | ✅ | ✅ | ✅ | - | ✅ | ✅ | ✅ | 视频发布；文章发布支持 HTML/Markdown/TXT、正文图片和封面 |
+| 支付宝生活号 | ✅ | ✅ | - | - | - | ✅ | ✅ | 视频发布 |
+| 微博 | ✅ | ✅ | - | - | - | ✅ | ✅ | 视频标题最多 30 字 |
+| 虎扑 | ✅ | ✅ | - | - | - | ✅ | ✅ | 视频标题 4–40 字 |
+| TikTok | ✅ | ✅ | - | - | ✅ | - | ✅ | Chrome 版实现；没有 sau CLI |
+| 雪球 | ✅ | - | ✅ | - | - | ✅ | ✅ | 长文与配图：支持 HTML/Markdown/TXT、正文图片和封面 |
+| YouTube | ✅ | ✅ | - | - | 开发中 | ✅ | ✅ | 视频发布 |
+| 知乎 | ✅ | ✅ | ✅ | - | 实验性 | ✅ | ✅ | 文章与视频发布，文章支持正文位置配图 |
+| Facebook | ✅ | ✅ | - | ✅ | - | ✅ | ✅ | 支持作品查询、移至回收站及永久删除 |
+| Facebook Page | ✅ | ✅ | - | ✅ | ✅ | ✅ | ✅ | 支持视频与图文定时发布、查询和取消定时 |
+| Instagram | ✅ | ✅ | - | ✅ | - | ✅ | ✅ | 支持 Reels、单图与轮播 |
+
+✅ 表示支持，- 表示不适用或未提供；开发中、实验性 不计入稳定能力。文章正文可以包含图片，与独立图文发布分列。
+
+ 按内容形态
+
+| 内容形态 | 平台与入口 |
+| --- | --- |
+| 视频 | 抖音、快手、小红书、Bilibili、视频号、百家号、大鱼号、知乎、YouTube 等；CLI 示例见下方和CLI 使用说明 |
+| 文章 | 大鱼号文章发布、雪球长文与配图、知乎文章发布 |
+| 图文 | 抖音、快手、小红书、Facebook、Facebook Page、Instagram；CLI 示例见CLI 使用说明 |
+
+文章主题预览及 Markdown 转 HTML：见 文章文件与主题渲染。内置 default/grace/simple/modern/plain 主题；大鱼号可直接接收 Markdown，并将主题转换为保留文字颜色、背景和近似字号的兼容排版，圆角和精确间距等效果可能与本地预览不同。
+
+ 💾安装指南
+
+ 自己上手使用
+普通用户可按以下文档安装和更新：
+
+- 安装说明
+- 更新说明
+
+
+ AI Agent
+
+若使用 OpenClaw、Codex 或 Claude Code 安装和操作本项目，可将仓库与启动提示词一并交给 Agent：
+
+- Agent Bootstrap Prompt
+
+它会引导 Agent：
+
+- 优先按当前主线安装项目
+- 优先使用 uv、sau CLI 和 skills/
+- 先验证 bilibili、douyin、kuaishou、xiaohongshu 四个平台入口是否可用
+
+
+相关入口：
+
+- CLI 使用说明
+- Agent Bootstrap Prompt
+- 跨平台总入口：social-auto-uplo</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/dreammis/social-auto-upload/issues/39"><span class="rp-item-num">#39</span><span class="rp-item-title">请问暂时还不支持油管吗</span><span class="rp-item-extra">14 comments · 2024-07-23</span></a><a class="rp-item" href="https://github.com/dreammis/social-auto-upload/issues/183"><span class="rp-item-num">#183</span><span class="rp-item-title">需求征集（版本重构）</span><span class="rp-item-extra">12 comments · 2026-03-22</span></a><a class="rp-item" href="https://github.com/dreammis/social-auto-upload/issues/124"><span class="rp-item-num">#124</span><span class="rp-item-title">怎么跳过验证码</span><span class="rp-item-extra">12 comments · 2025-07-31</span></a><a class="rp-item" href="https://github.com/dreammis/social-auto-upload/issues/153"><span class="rp-item-num">#153</span><span class="rp-item-title">不支持图文发布吗？只能发视频吗？</span><span class="rp-item-extra">8 comments · 2025-11-15</span></a><a class="rp-item" href="https://github.com/dreammis/social-auto-upload/issues/190"><span class="rp-item-num">#190</span><span class="rp-item-title">抖音CLI上传超时</span><span class="rp-item-extra">6 comments · 2026-04-02</span></a><a class="rp-item" href="https://github.com/dreammis/social-auto-upload/issues/289"><span class="rp-item-num">#289</span><span class="rp-item-title">小红书风控太严格了 被判定疑似AI/自动化工具发布笔记 大佬们有解决方法吗</span><span class="rp-item-extra">5 comments · 2026-09-18</span></a><a class="rp-item" href="https://github.com/dreammis/social-auto-upload/issues/224"><span class="rp-item-num">#224</span><span class="rp-item-title">CLI 抖音/快手 headless 登录被平台识别为自动化，二维码扫码后被作废；同时 CLI 登录不会自动同步到 Web UI 账号表</span><span class="rp-item-extra">5 comments · 2026-06-11</span></a><a class="rp-item" href="https://github.com/dreammis/social-auto-upload/issues/33"><span class="rp-item-num">#33</span><span class="rp-item-title">【抖音】 增加 是否他人保存选项</span><span class="rp-item-extra">4 comments · 2024-07-08</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/dreammis/social-auto-upload/releases"><b>v1.0.0-skills.2</b> <span class="rp-rel-tag">v1.0.0-skills.2</span> <span class="rp-item-extra">2026-10-22</span></a><pre class="rp-pre">Full Changelog: https://github.com/dreammis/social-auto-upload/compare/v1.0.0-skills.1...v1.0.0-skills.2</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/dreammis__social-auto-upload.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

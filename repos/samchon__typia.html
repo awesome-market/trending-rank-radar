@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>samchon/typia · GitHub Trending Rank Radar</title>
+<meta name="description" content="Super-fast/easy runtime validators and serializers via transformation">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="typia, samchon, samchon/typia, github stars, github trending, star growth, star history, 开源项目, 星标增长, json, stringify, typescript, fast, ajv, checker">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/samchon__typia">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="samchon/typia · GitHub Trending Rank Radar">
+<meta property="og:description" content="Super-fast/easy runtime validators and serializers via transformation">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/samchon__typia">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "samchon/typia", "codeRepository": "https://github.com/samchon/typia", "url": "https://zhuikan.com/repos/samchon__typia", "description": "Super-fast/easy runtime validators and serializers via transformation", "author": {"@type": "Organization", "name": "samchon", "url": "https://github.com/samchon"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2022-04-18", "keywords": "json,stringify,typescript,fast,ajv,checker,generator,runtime,transform,validator"}</script>
+</head>
+<body data-repo="samchon/typia" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">samchon/typia</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="samchon__typia"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/13158709?u=5ad79e103c4092b51e3891677dadbb32e614e46a&amp;v=4&s=300" width="300" height="300" alt="samchon avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">typia</div>
+      <a class="rp-side-owner" href="https://github.com/samchon">samchon</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/samchon">samchon</a>
+        <span class="rp-sep">/</span><span class="rp-name">typia</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Super-fast/easy runtime validators and serializers via transformation</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,966</b></span><span class="rp-stat" title="forks">⑂ <b>235</b></span><span class="rp-stat" title="watchers">👁 <b>15</b></span><span class="rp-stat" title="prs">⑃ <b>1,417</b></span><span class="rp-stat" title="issues">● <b>1,087</b></span><span class="rp-stat" title="releases">▤ <b>283</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/json">json</a><a class="rp-topic" href="https://github.com/topics/stringify">stringify</a><a class="rp-topic" href="../tags/typescript">typescript</a><a class="rp-topic" href="https://github.com/topics/fast">fast</a><a class="rp-topic" href="https://github.com/topics/ajv">ajv</a><a class="rp-topic" href="https://github.com/topics/checker">checker</a><a class="rp-topic" href="https://github.com/topics/generator">generator</a><a class="rp-topic" href="https://github.com/topics/runtime">runtime</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2022-04-18</span><a class="rp-meta-bit rp-home" href="https://typia.io/" rel="noopener">typia.io/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/samchon/typia">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v15.4.0</span><a class="rp-dl-a" href="https://github.com/samchon/typia/releases/tag/v15.4.0">v15.4.0 ↓</a><span class="rp-dl-ver">15.4.0</span><span class="rp-dl-date">2026-11-12</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,966</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">235</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">15</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,417</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,087</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">283</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Typia
+
+!Typia Logo
+
+
+
+
+
+
+
+
+typescript
+// RUNTIME VALIDATORS
+export function is(input: unknown): input is T; // returns boolean
+export function assert(input: unknown): T; // throws TypeGuardError
+export function assertGuard(input: unknown): asserts input is T;
+export function validate(input: unknown): IValidation; // detailed
+
+// JSON FUNCTIONS
+export namespace json {
+  export function schema(): IJsonSchemaUnit; // JSON schema
+  export function assertParse(input: string): T; // type safe parser
+  export function assertStringify(input: T): string; // safe and faster
+}
+
+// AI FUNCTION CALLING HARNESS
+export namespace llm {
+  // collection of function calling schemas + validators/parsers
+  export function application(): ILlmApplication;
+  export function structuredOutput(): ILlmStructuredOutput;
+  // typed questions for evaluation models + checked answer decoder
+  export function evaluation(): ILlmEvaluation;
+  // lenient json parser + type coercion
+  export function parse(str: string): T;
+}
+
+// PROTOCOL BUFFER
+export namespace protobuf {
+  export function message(): string; // Protocol Buffer message
+  export function assertDecode(buffer: Uint8Array): T; // safe decoder
+  export function assertEncode(input: T): Uint8Array; // safe encoder
+}
+
+// RANDOM GENERATOR
+export function random(g?: Partial): T;
+
+
+typia is a transformer library supporting below features:
+
+  - Super-fast Runtime Validators
+  - Enhanced JSON schema and serde functions
+  - LLM function calling harness
+  - Protocol Buffer encoder and decoder
+  - Random data generator
+
+ [!NOTE]
+
+ - Only one line required, with pure TypeScript type
+ - Runtime validator is 20,000x faster than class-validator
+ - JSON serialization is 200x faster than class-transformer
+ - LLM function calling harness turns 6.75% → 100% accuracy
+
+Write the type on the left, and typia compiles it into the validator on the right — at build time, with no schema and no runtime reflection.
+
+!Write a TypeScript type and typia compiles it into a dedicated validator
+
+ Setup
+
+Install typia with the ttsc toolchain.
+
+bash
+ install
+npm i typia
+npm i -D ttsc typescript
+
+ build
+npx ttsc
+
+ run a script directly
+npx ttsx src/index.ts
+
+
+You must use ttsc and ttsx. The stock tsc, ts-node, and tsx cannot apply the typia transform, so they will not work.
+
+For bundler integration (Vite, Next.js, Webpack, Rollup, esbuild, ...), use @ttsc/unplugin.
+
+
+ Transformation
+
+If you call typia function, it would be compiled like below.
+
+This is the key concept of typia, transforming TypeScript type to a runtime function. The typia.is() function is transformed to a dedicated type checker by analyzing the target type T in the compilation level.
+
+This feature enables developers to ensure type safety in their applications, leveraging TypeScript&#x27;s static typing while also providing runtime validation. Instead of defining additional schemas, you can simply utilize the pure TypeScript type itself.
+
+typescript
+//----
+// examples/checkString.ts
+//----
+import ty</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/samchon/typia/issues/447"><span class="rp-item-num">#447</span><span class="rp-item-title">[Discussion] who is using `typia` in production?</span><span class="rp-item-extra">6 comments · 2022-12-23</span></a><a class="rp-item" href="https://github.com/samchon/typia/issues/2518"><span class="rp-item-num">#2518</span><span class="rp-item-title">JSON Schema support is incredibly poorly documented</span><span class="rp-item-extra">1 comments · 2026-10-26</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/samchon/typia/discussions/1867"><span class="rp-item-num">#1867</span><span class="rp-item-title">@typia/mcp forces JSON.stringify on return values — how to return plain text?</span><span class="rp-item-extra">3 comments · 2026-05-24</span></a><a class="rp-item" href="https://github.com/samchon/typia/discussions/1697"><span class="rp-item-num">#1697</span><span class="rp-item-title">Wrong type of `examples`?</span><span class="rp-item-extra">2 comments · 2025-11-28</span></a><a class="rp-item" href="https://github.com/samchon/typia/discussions/1668"><span class="rp-item-num">#1668</span><span class="rp-item-title">Pronunciation of typia</span><span class="rp-item-extra">1 comments · 2025-09-17</span></a><a class="rp-item" href="https://github.com/samchon/typia/discussions/1664"><span class="rp-item-num">#1664</span><span class="rp-item-title">Potential solution for ts-go future</span><span class="rp-item-extra">2 comments · 2025-09-04</span></a><a class="rp-item" href="https://github.com/samchon/typia/discussions/1614"><span class="rp-item-num">#1614</span><span class="rp-item-title">How to specify combinations of properties on an object</span><span class="rp-item-extra">1 comments · 2025-07-23</span></a><a class="rp-item" href="https://github.com/samchon/typia/discussions/1613"><span class="rp-item-num">#1613</span><span class="rp-item-title">How to check that an object has one non-empty property?</span><span class="rp-item-extra">1 comments · 2025-07-23</span></a><a class="rp-item" href="https://github.com/samchon/typia/discussions/1608"><span class="rp-item-num">#1608</span><span class="rp-item-title">Runtime type introspection?</span><span class="rp-item-extra">2 comments · 2025-07-19</span></a><a class="rp-item" href="https://github.com/samchon/typia/discussions/1607"><span class="rp-item-num">#1607</span><span class="rp-item-title">Tagging of properties, retrievable at runtime</span><span class="rp-item-extra">1 comments · 2025-07-15</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/samchon/typia/releases"><b>v15.4.0</b> <span class="rp-rel-tag">v15.4.0</span> <span class="rp-item-extra">2026-11-12</span></a><pre class="rp-pre">&amp;nbsp;&amp;nbsp;&amp;nbsp;🚀 Features
+
+- Require ttsc 0.37.0 and record the transform output variable &amp;nbsp;-&amp;nbsp; by @samchon and Claude Opus 5.5 in https://github.com/samchon/typia/issues/2556 (8cd14)
+
+ &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;View changes on GitHub</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/samchon__typia.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

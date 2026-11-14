@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>yt-dlp/yt-dlp · GitHub Trending Rank Radar</title>
+<meta name="description" content="A feature-rich command-line audio/video downloader">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="yt-dlp, yt-dlp, yt-dlp/yt-dlp, github stars, github trending, star growth, star history, 开源项目, 星标增长, youtube-dl, python, sponsorblock, yt-dlp, youtube-downloader, cli">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/yt-dlp__yt-dlp">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="yt-dlp/yt-dlp · GitHub Trending Rank Radar">
+<meta property="og:description" content="A feature-rich command-line audio/video downloader">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/yt-dlp__yt-dlp">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "yt-dlp/yt-dlp", "codeRepository": "https://github.com/yt-dlp/yt-dlp", "url": "https://zhuikan.com/repos/yt-dlp__yt-dlp", "description": "A feature-rich command-line audio/video downloader", "author": {"@type": "Organization", "name": "yt-dlp", "url": "https://github.com/yt-dlp"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Unlicense.html", "programmingLanguage": "Python", "dateCreated": "2020-10-26", "keywords": "youtube-dl,python,sponsorblock,yt-dlp,youtube-downloader,cli,downloader"}</script>
+</head>
+<body data-repo="yt-dlp/yt-dlp" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">yt-dlp/yt-dlp</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="yt-dlp__yt-dlp"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/79589310?v=4&s=300" width="300" height="300" alt="yt-dlp avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">yt-dlp</div>
+      <a class="rp-side-owner" href="https://github.com/yt-dlp">yt-dlp</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/yt-dlp">yt-dlp</a>
+        <span class="rp-sep">/</span><span class="rp-name">yt-dlp</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily">daily <b>#78</b></a><a class="rp-board-chip" href="../?board=daily_rate">daily_rate <b>#179</b></a><a class="rp-board-chip" href="../?board=weekly">weekly <b>#107</b></a><a class="rp-board-chip" href="../?board=total">total <b>#31</b></a></div>
+    </div>
+    <p class="rp-desc">A feature-rich command-line audio/video downloader</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>207,540</b></span><span class="rp-stat" title="forks">⑂ <b>18,277</b></span><span class="rp-stat" title="watchers">👁 <b>975</b></span><span class="rp-stat" title="prs">⑃ <b>5,030</b></span><span class="rp-stat" title="issues">● <b>12,286</b></span><span class="rp-stat" title="releases">▤ <b>138</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/youtube-dl">youtube-dl</a><a class="rp-topic" href="../tags/python">python</a><a class="rp-topic" href="https://github.com/topics/sponsorblock">sponsorblock</a><a class="rp-topic" href="https://github.com/topics/yt-dlp">yt-dlp</a><a class="rp-topic" href="https://github.com/topics/youtube-downloader">youtube-downloader</a><a class="rp-topic" href="../tags/cli">cli</a><a class="rp-topic" href="https://github.com/topics/downloader">downloader</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Unlicense</span><span class="rp-meta-bit">Created 2020-10-26</span><a class="rp-meta-bit rp-home" href="https://discord.gg/H5MNcFW63r" rel="noopener">discord.gg/H5MNcFW63r</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/yt-dlp/yt-dlp">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">yt-dlp 2026.10.26</span><a class="rp-dl-a" href="https://github.com/yt-dlp/yt-dlp/releases/tag/2026.10.26">yt-dlp-2026.10.26 ↓</a><span class="rp-dl-ver">2026.10.26</span><span class="rp-dl-date">2026-10-26</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+268</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">207,540</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">18,277</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">975</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">5,030</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">12,286</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">138</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">yt-dlp is a feature-rich command-line audio/video downloader with support for thousands of sites. The project is a fork of youtube-dl based on the now inactive youtube-dlc.
+
+
+
+
+ INSTALLATION
+     Detailed instructions
+     Release Files
+     Update
+     Dependencies
+     Compile
+ USAGE AND OPTIONS
+     General Options
+     Network Options
+     Geo-restriction
+     Video Selection
+     Download Options
+     Filesystem Options
+     Thumbnail Options
+     Internet Shortcut Options
+     Verbosity and Simulation Options
+     Workarounds
+     Video Format Options
+     Subtitle Options
+     Authentication Options
+     Post-processing Options
+     SponsorBlock Options
+     Extractor Options
+     Preset Aliases
+ CONFIGURATION
+     Configuration file encoding
+     Authentication with netrc
+     Notes about environment variables
+ OUTPUT TEMPLATE
+     Output template examples
+ FORMAT SELECTION
+     Filtering Formats
+     Sorting Formats
+     Format Selection examples
+ MODIFYING METADATA
+     Modifying metadata examples
+ EXTRACTOR ARGUMENTS
+ PLUGINS
+     Installing Plugins
+     Developing Plugins
+ EMBEDDING YT-DLP
+     Embedding examples
+ CHANGES FROM YOUTUBE-DL
+     New features
+     Differences in default behavior
+     Deprecated options
+ CONTRIBUTING
+     Opening an Issue
+     Developer Instructions
+ WIKI
+     FAQ
+
+
+
+ INSTALLATION
+
+
+
+
+
+
+
+
+
+
+
+You can install yt-dlp using the binaries, pip or one using a third-party package manager. See the wiki for detailed instructions
+
+
+
+ RELEASE FILES
+
+ Recommended
+
+File|Description
+:---|:---
+yt-dlp|Platform-independent zipimport binary. Needs Python (recommended for Linux/BSD)
+yt-dlp.exe|Windows (Win10+) standalone x64 binary (recommended for Windows)
+yt-dlp_macos|Universal MacOS (10.15+) standalone executable (recommended for MacOS)
+
+ Alternatives
+
+File|Description
+:---|:---
+yt-dlp_linux|Linux (glibc 2.17+) standalone x86_64 binary
+yt-dlp_linux.zip|Unpackaged Linux (glibc 2.17+) x86_64 executable (no auto-update)
+yt-dlp_linux_aarch64|Linux (glibc 2.17+) standalone aarch64 binary
+yt-dlp_linux_aarch64.zip|Unpackaged Linux (glibc 2.17+) aarch64 executable (no auto-update)
+yt-dlp_linux_armv7l.zip|Unpackaged Linux (glibc 2.31+) armv7l executable (no auto-update)
+yt-dlp_musllinux|Linux (musl 1.2+) standalone x86_64 binary
+yt-dlp_musllinux.zip|Unpackaged Linux (musl 1.2+) x86_64 executable (no auto-update)
+yt-dlp_musllinux_aarch64|Linux (musl 1.2+) standalone aarch64 binary
+yt-dlp_musllinux_aarch64.zip|Unpackaged Linux (musl 1.2+) aarch64 executable (no auto-update)
+yt-dlp_x86.exe|Windows (Win10+) standalone x86 (32-bit) binary
+yt-dlp_win_x86.zip|Unpackaged Windows (Win10+) x86 (32-bit) executable (no auto-update)
+yt-dlp_arm64.exe|Windows (Win10+) standalone ARM64 binary
+yt-dlp_win_arm64.zip|Unpackaged Windows (Win10+) ARM64 executable (no auto-update)
+yt-dlp_win.zip|Unpackaged Windows (Win10+) x64 executable (no auto-update)
+yt-dlp_macos.zip|Unpackaged MacOS (10.15+) executable (no auto-update)
+
+ Misc
+
+File|Description
+:---|</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/yt-dlp/yt-dlp/issues/6539"><span class="rp-item-num">#6539</span><span class="rp-item-title">CeskaTelevize broken</span><span class="rp-item-extra">169 comments · 2023-03-14</span></a><a class="rp-item" href="https://github.com/yt-dlp/yt-dlp/issues/16529"><span class="rp-item-num">#16529</span><span class="rp-item-title">[SBS] Unable to download SMIL file: HTTP Error 410: Gone</span><span class="rp-item-extra">134 comments · 2026-04-20</span></a><a class="rp-item" href="https://github.com/yt-dlp/yt-dlp/issues/7271"><span class="rp-item-num">#7271</span><span class="rp-item-title">`--cookies-from-browser` &quot;Permission denied&quot; errors when Chrome/chromium-based browser is open in Windows</span><span class="rp-item-extra">105 comments · 2023-06-09</span></a><a class="rp-item" href="https://github.com/yt-dlp/yt-dlp/issues/4311"><span class="rp-item-num">#4311</span><span class="rp-item-title">[facebook] Cannot parse data</span><span class="rp-item-extra">104 comments · 2022-07-09</span></a><a class="rp-item" href="https://github.com/yt-dlp/yt-dlp/issues/13831"><span class="rp-item-num">#13831</span><span class="rp-item-title">[YouTube] Unable to download video subtitles: HTTP Error 429: Too Many Requests</span><span class="rp-item-extra">102 comments · 2025-07-24</span></a><a class="rp-item" href="https://github.com/yt-dlp/yt-dlp/issues/3564"><span class="rp-item-num">#3564</span><span class="rp-item-title">[teachable] ERROR: Unable to find Video URL https://edu.ecomsuccess.pk/courses/enrolled/903296</span><span class="rp-item-extra">90 comments · 2022-04-27</span></a><a class="rp-item" href="https://github.com/yt-dlp/yt-dlp/issues/5478"><span class="rp-item-num">#5478</span><span class="rp-item-title">AngelStudios.com</span><span class="rp-item-extra">79 comments · 2022-11-08</span></a><a class="rp-item" href="https://github.com/yt-dlp/yt-dlp/issues/15089"><span class="rp-item-num">#15089</span><span class="rp-item-title">[Rumble] Unable to download webpage: HTTP Error 403: Forbidden</span><span class="rp-item-extra">69 comments · 2025-11-17</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/yt-dlp/yt-dlp/releases"><b>yt-dlp 2026.10.26</b> <span class="rp-rel-tag">2026.10.26</span> <span class="rp-item-extra">2026-10-26</span></a><pre class="rp-pre">A description of the various files is in the README
+
+The zipimport Unix executable and release tarball contain code licensed under ISC and MIT. The PyInstaller-bundled executables are subject to these and other licenses, all of which are compiled in THIRD_PARTY_LICENSES.txt
+
+---
+
+ Important changes
+- The minimum required Python version has been raised to 3.11
+    - Python 3.10 has reached its end-of-life as of October 2026, and yt-dlp has now removed support for it. Read more
+- The official Windows release binaries now require Windows 10 or later. Read more
+- Security: The recent brotli and ce</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (5)</h3><div class="rp-list"><a class="rp-item" href="https://news.google.com/rss/articles/CBMihwFBVV95cUxPLTVrMUVRSDctbG9CdEk2UHBCQlRzOEV4Y1p3cHVFby1RTnotZ1I0TnQtTVZBdzJ5cktFeHk0WF9tVndzTl9QMFljOWJQSXNHSXRaQ1lJTi1BdTRqM3M0RFh6bzRoRk8xR3NqOGs4dVZIcEFkMTc5Y1VtT1dwOHVsM0JPZ09CN0k?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">10 个替代付费工具的开源 GitHub 仓库 (2026)</span><span class="rp-item-extra">2026-07-04</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiS0FVX3lxTE9Hcjlmd3N0X3ZWM2hQZjh2cnNuaHkyWU1OYlo1blg3MHU1b2tJd0lGd2QwUUJ6by1OaExFdXAzODc3RVY5c01zd3JEMA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">OSCHINA</span><span class="rp-item-title">桌面应用框架 Electrobun 宣布与 Bun 运行时完全脱钩</span><span class="rp-item-extra">2026-05-25</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVEFVX3lxTFBxOHk0OGhzdG56R3gtSTlPOU1GZ1hneWt6Z2h5WFJZTkhlMC1Cc1BOX0NrekxBZkVneS1EaE5mOTZycEVSam9tc0dJUnhhU2t1dVBUSA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Plisio</span><span class="rp-item-title">yt-dlp 指南 2026：安装、命令、法律地位</span><span class="rp-item-extra">2026-05-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9DSE9RSWU4ellnWlFfUHRUYUxRdm9xRE5ENDhwQWxYREdhUmh0RDlEazVhRTQyUkthdVJ2R2VueHdva3h6ZVpLR2RMWTJoUzdCWGRKUENVdFZpQ2h5dGJMYWJYdWZaSzQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">53AI</span><span class="rp-item-title">原来我们可以使用Skills+Github做这么有趣的项目</span><span class="rp-item-extra">2026-01-24</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiakFVX3lxTE5fWTRBb2VSanlrNnMzbG84T0NhOHJLekU5b0UzaDNXWFkwdnk5ak00LXBZQ3VrMjRrWlJhdTk2WHBMSDZaQTdtdDNUTU1HVGU4dDAtd0xMeV9ZVnlDZFpubWk1NzZHdXM5N1E?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">80aj.com</span><span class="rp-item-title">Skill-Creator：用 Github 构建个人技能库</span><span class="rp-item-extra">2026-01-22</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (21)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=45358980" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Yt-dlp: Upcoming new requirements for YouTube downloads</span><span class="rp-item-extra">▲ 1,244 · 611 comments · 2025-09-24</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=45898407" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Yt-dlp: External JavaScript runtime now required for full YouTube support</span><span class="rp-item-extra">▲ 1,106 · 627 comments · 2025-11-12</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=28319624" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Yt-dlp – A YouTube-dl fork with additional features and fixes</span><span class="rp-item-extra">▲ 822 · 332 comments · 2021-08-26</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=48238789" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Bun support is now limited and deprecated</span><span class="rp-item-extra">▲ 594 · 608 comments · 2026-05-22</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=43321145" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">YouTube DRM added on ALL videos with TV (TVHTML5) clients</span><span class="rp-item-extra">▲ 410 · 239 comments · 2025-03-10</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=37474066" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">YouTube-dl fork with additional features and fixes</span><span class="rp-item-extra">▲ 187 · 113 comments · 2023-09-11</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=40918652" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">YouTube is returning 403 to NewPipe and other 3rd party players</span><span class="rp-item-extra">▲ 30 · 13 comments · 2024-07-09</span></a><a class="rp-item" href="https://torrentfreak.com/ifpi-wants-open-source-youtube-downloader-yt-dlp-on-eu-piracy-watch-list/" target="_blank" rel="noopener"><span class="rp-news-src">torrentfreak</span><span class="rp-item-title">IFPI Wants Open Source YouTube Downloader yt-dlp on EU Piracy Watch List</span><span class="rp-item-extra">2026-09-29</span></a><a class="rp-item" href="https://www.msn.com/en-us/entertainment/general/yt-dlp-is-powerful-but-this-upgrade-makes-it-a-joy-to-use/ar-AA28gWKY" target="_blank" rel="noopener"><span class="rp-news-src">MUO on MSN</span><span class="rp-item-title">Yt-dlp is powerful, but this upgrade makes it a joy to use</span><span class="rp-item-extra">2026-07-19</span></a><a class="rp-item" href="https://gigazine.net/gsc_news/en/20260712-ytdlp-web-player/" target="_blank" rel="noopener"><span class="rp-news-src">GIGAZINE</span><span class="rp-item-title">&#x27;YT-DLP Web Player&#x27; replaces videos on web pages with ads via yt-dlp for free.</span><span class="rp-item-extra">2026-07-12</span></a><details class="rp-news-more"><summary>11 more</summary><a class="rp-item" href="https://note.com/eigenarc/n/ndfd77945aa21?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">yt-dlp Environment Setup Guide: A Complete Walkthrough for Installation on Windows 11</span><span class="rp-item-extra">2026-03-26</span></a><a class="rp-item" href="https://note.com/eigenarc/n/n388c7fb1c65b?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">Free Distribution and Usage Guide for yt-dlp BAT Files | Build an Automated Download Environment in 5 Minutes Even for Beginners [Windows 10, 11]</span><span class="rp-item-extra">2026-03-26</span></a><a class="rp-item" href="https://gigazine.net/gsc_news/en/20251113-yt-dlp-required-deno-javascript-runtime/" target="_blank" rel="noopener"><span class="rp-news-src">GIGAZINE</span><span class="rp-item-title">Finally, to fully utilize the YouTube download function of yt-dlp, a JavaScript runtime such as Deno is required, and the installation procedure is like this</span><span class="rp-item-extra">2025-11-11</span></a><a class="rp-item" href="https://gigazine.net/gsc_news/en/20220624-yt-dlp-download-sections/" target="_blank" rel="noopener"><span class="rp-news-src">GIGAZINE</span><span class="rp-item-title">Procedure to clip and download the specified time of the movie with the strongest YouTube downloader &#x27;yt-dlp&#x27;</span><span class="rp-item-extra">2022-06-21</span></a><a class="rp-item" href="https://gigazine.net/gsc_news/en/20220101-yt-dlp/" target="_blank" rel="noopener"><span class="rp-news-src">GIGAZINE</span><span class="rp-item-title">Summary of how to use &#x27;yt-dlp&#x27; that can download movies such as YouTube and Nico Nico video with the highest image quality and high sound quality, age-restricted movies can ...</span><span class="rp-item-extra">2022-01-01</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiZEFVX3lxTE4zejlzc0FoeDZaMFMwSW9nYkZSbU12ZEZkanNSX0VVUWRZT0E5dTctR3NqQzZZczhfTUdUS1A5bHBrTndMdHhaYWlpaGNzWmQyRnhJZngyU2VfTmkxWlFQZHZid2I?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">It&#x27;s FOSS</span><span class="rp-item-title">YT-DLP is Being Treated as a Piracy Tool By The IFPI</span><span class="rp-item-extra">2026-10-01</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxPZnJiYjJtMGFwZy1VMWtJNDQ2clkwS1BBMzN6R29EYm9ablhXeDhkeG9qaUNJM0dYaW5XRXRtdlFLQlpkX19LZmFpcGtCLWdYSUt6WDM4Q0JRU1A4d1R6RUNtZTl6bi1VSzdIaEN1UlhtbU9Ob1BtMHAtN2NzaGw0Y3R0aUcySDZxWkZSMWNwLXhIXzhlYVladnozTURXN3JmeW1LbDhKLWdQcWo1Yi1JcmtNVGZzV21S?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">mediasat.info</span><span class="rp-item-title">Music industry asks EU to add YouTube downloader yt-dlp to its piracy watch list</span><span class="rp-item-extra">2026-10-01</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9EVFAwZHRPX3dLZW5TVTgtdUVpZUxhSWtwRFZPWF9SSlB5dmhPX0d1OFRPcV85R094WjZBYkh0blozODN1TkZ1dDA0Yjc1YVlzdkgtNlp3VVZDUUhNUEw4RDQ3dUtfRms?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">GIGAZINE</span><span class="rp-item-title">A summary of the installation procedure for the video downloader &#x27;yt-dlp&#x27;: it can be installed quickly using the winget command.</span><span class="rp-item-extra">2026-07-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiY0FVX3lxTFAzYUN6RmNMZVJTbW82VHNDWlFNUm9GYnRTSFNna3JoYUZHVHZxNGNKMEdMdk81SG1zVUxMSUlsdTRSYkpiZ1JiUjVwNnY3dmkwU244dUQ1d2lfQXBGSGlkOUpTaw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">GIGAZINE</span><span class="rp-item-title">The video downloader &#x27;yt-dlp&#x27; has deprecated Bun, due to concerns about the risks associated with Bun&#x27;s over-reliance on AI coding.</span><span class="rp-item-extra">2026-05-25</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiUEFVX3lxTE1KRnFEbUdoWF9wYjFMbGZWV3dTMFhWOWQ1REE5ZHR3RS1jRW1KWDR6TXZsdmVMa1V1WWVZdUlpNWl3anBxOEJZd1lER21qNWhC?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Plisio</span><span class="rp-item-title">yt-dlp Guide 2026 : Install, Commands, Legal Status</span><span class="rp-item-extra">2026-05-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMifEFVX3lxTE5KZjBORkN0bWRscFJWVU55Rjg3NzFMTG14eTZfTUhJWVoxN3cyWTg0XzQ3SC1aenZ3S0VjUDkzRXhWOWpDMlcxeTd5UUc5ekRoT3BsSDg3MFVCeFkyeDk4Mi1mWnF3REpOWlFXVVAxVmtMbmR4V1FiTHFzNTA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">MakeUseOf</span><span class="rp-item-title">How to Download YouTube Videos on Linux Using yt-dlp</span><span class="rp-item-extra">2022-10-27</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/yt-dlp__yt-dlp.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

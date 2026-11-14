@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>shader-effects-inc/shaders · GitHub Trending Rank Radar</title>
+<meta name="description" content="WebGPU components for React, Vue, Svelte, Solid, JS &amp; Framer">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="shaders, shader-effects-inc, shader-effects-inc/shaders, github stars, github trending, star growth, star history, 开源项目, 星标增长, shaders, cli, javascript, mcp, react, solid">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/shader-effects-inc__shaders">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="shader-effects-inc/shaders · GitHub Trending Rank Radar">
+<meta property="og:description" content="WebGPU components for React, Vue, Svelte, Solid, JS &amp; Framer">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/shader-effects-inc__shaders">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "shader-effects-inc/shaders", "codeRepository": "https://github.com/shader-effects-inc/shaders", "url": "https://zhuikan.com/repos/shader-effects-inc__shaders", "description": "WebGPU components for React, Vue, Svelte, Solid, JS & Framer", "author": {"@type": "Organization", "name": "shader-effects-inc", "url": "https://github.com/shader-effects-inc"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2026-09-29", "keywords": "shaders,cli,javascript,mcp,react,solid,svelte,vue,webgpu-shaders"}</script>
+</head>
+<body data-repo="shader-effects-inc/shaders" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">shader-effects-inc/shaders</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="shader-effects-inc__shaders"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/265144305?v=4&s=300" width="300" height="300" alt="shader-effects-inc avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">shaders</div>
+      <a class="rp-side-owner" href="https://github.com/shader-effects-inc">shader-effects-inc</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/shader-effects-inc">shader-effects-inc</a>
+        <span class="rp-sep">/</span><span class="rp-name">shaders</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=new">new <b>#112</b></a></div>
+    </div>
+    <p class="rp-desc">WebGPU components for React, Vue, Svelte, Solid, JS &amp; Framer</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,933</b></span><span class="rp-stat" title="forks">⑂ <b>279</b></span><span class="rp-stat" title="watchers">👁 <b>9</b></span><span class="rp-stat" title="prs">⑃ <b>29</b></span><span class="rp-stat" title="issues">● <b>4</b></span><span class="rp-stat" title="releases">▤ <b>8</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/shaders">shaders</a><a class="rp-topic" href="../tags/cli">cli</a><a class="rp-topic" href="../tags/javascript">javascript</a><a class="rp-topic" href="../tags/mcp">mcp</a><a class="rp-topic" href="../tags/react">react</a><a class="rp-topic" href="https://github.com/topics/solid">solid</a><a class="rp-topic" href="../tags/svelte">svelte</a><a class="rp-topic" href="../tags/vue">vue</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-09-29</span><a class="rp-meta-bit rp-home" href="https://shaders.com" rel="noopener">shaders.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/shader-effects-inc/shaders">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v4.0.7</span><a class="rp-dl-a" href="https://github.com/shader-effects-inc/shaders/releases/tag/v4.0.7">v4.0.7 ↓</a><span class="rp-dl-ver">4.0.7</span><span class="rp-dl-date">2026-11-06</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+6</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,933</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">279</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">9</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">29</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">4</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">8</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Shaders
+
+  WebGPU effects as componentsfor React, Vue, Svelte, Solid and JavaScript
+
+
+
+  
+  
+  
+  
+
+
+
+
+bash
+npm install shaders
+
+
+ Table of Contents
+
+1. Why Shaders?
+2. 🧩 Components
+3. 🎨 Design visually, export code
+4. ⌨️ CLI
+5. 🤖 Using Shaders with AI
+6. ⚡️ Shaders Pro
+7. 🧪 Build your own component
+8. 👩🏻‍⚖️ License
+9. 💎 Contribute
+
+ Why Shaders?
+
+-   Real WebGPU, declarative API: 200+ effects you drop in as components. Gradients, noise, glass, metal, light, distortions, transitions, blurs, cursor effects. Nest them, blend them, mask them.
+-   A design editor that writes your code: design on an infinite canvas at shaders.com, then export the exact component tree for your framework. Free.
+-   Every framework, one package: first-class React, Vue, Svelte, Solid and JavaScript entries, with the same props everywhere.
+-   Production-ready: TypeScript, extensively optimized, typed props with reactive updates, SSR safe. Used on thousands of websites by 16,000+ design engineers.
+
+ 🧩 Components
+
+Every effect is a component.  renders the canvas; its children are layers, evaluated top to bottom and blended on the GPU.
+
+ React
+
+jsx
+import { Shader, LinearGradient, CursorTrail } from &#x27;shaders/react&#x27;
+
+
+  
+  
+
+
+
+Get started with Shaders for React.
+
+ Vue
+
+html
+
+import { Shader, LinearGradient, CursorTrail } from &#x27;shaders/vue&#x27;
+
+
+
+  
+    
+    
+  
+
+
+
+Get started with Shaders for Vue.
+
+ Svelte
+
+svelte
+
+  import { Shader, LinearGradient, CursorTrail } from &#x27;shaders/svelte&#x27;
+
+
+
+  
+  
+
+
+
+Get started with Shaders for Svelte.
+
+ Solid
+
+tsx
+import { Shader, LinearGradient, CursorTrail } from &#x27;shaders/solid&#x27;
+
+
+  
+  
+
+
+
+Get started with Shaders for Solid.
+
+ JavaScript
+
+javascript
+import { createShader } from &#x27;shaders/js&#x27;
+
+await createShader(document.getElementById(&#x27;my-shader&#x27;), {
+  components: [
+    { type: &#x27;LinearGradient&#x27;, props: { colorA: &#x27;0f172a&#x27;, colorB: &#x27;7c3aed&#x27; } },
+    { type: &#x27;CursorTrail&#x27; },
+  ],
+})
+
+
+Get started with Shaders for JavaScript.
+
+Browse all 200+ components, each with a live preview and every prop documented.
+
+ 🎨 Design visually, export code
+
+Most people don&#x27;t write their effects by hand. They design them.
+
+The design editor at shaders.com is an infinite canvas where you stack components, tune every prop with real controls, drive props from the cursor or a timeline, and see the result live. When it looks right, Export Code gives you the component tree in your framework, ready to paste.
+
+Design and export are free with an account. Your work is saved as projects you can come back to.
+
+Open the design editor
+
+ ⌨️ CLI
+
+The CLI connects a codebase to your Shaders account, so the effects you design land in your project as real component files and stay in sync.
+
+bash
+npx shaders                 guided flow: set up, find a preset, open the editor
+npx shaders connect         link this codebase to a Shaders project
+npx shaders install         pick shaders from that project; writes component files
+npx shaders search &quot;...&quot;    find a preset in the library by describi</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/shader-effects-inc/shaders/issues/23"><span class="rp-item-num">#23</span><span class="rp-item-title">Preset-to-React code export breaks on string props containing a double quote (text=&quot;He said &quot;hello&quot;&quot; → invalid JSX)</span><span class="rp-item-extra">0 comments · 2026-10-18</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/shader-effects-inc/shaders/releases"><b>v4.0.7</b> <span class="rp-rel-tag">v4.0.7</span> <span class="rp-item-extra">2026-11-06</span></a><pre class="rp-pre">compare changes
+
+ Fixes
+
+- Restore React shader layers after renderer resets (25)
+- Re-register Svelte and Solid layers after renderer resets (26)
+
+ 🏡 Chore
+
+- Remove shader registry dependency for tree-shaking (31)
+
+ Contributors
+
+- Dhruv Arora (@dhruv1220)
+- Simon Le Marchant (@marchantweb)
+- Aakash Kharb</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (2)</h3><div class="rp-list"><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE5QVk8zMG1jcVR2MmQ3Yml2LVVIcDBDYk9vQmdjOGV3X19PZHRYdlk5SktoRzZfajdIRGJXNlVxSWdKUy10Nll0bDJfcUdCNTlYSnIxZ1BxQm9RcTJQT1E?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN</span><span class="rp-item-title">GitHub日榜背后的三大技术信号：合规、协作与限流</span><span class="rp-item-extra">2026-11-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTFBVZjR4Y1huR1dXa3QwekhWU0lOODExbkYySUZmS0ppcEdlMlhGVFFiRXdHNnhrVXBZS1VfUTNJX0FEanVyQXNmeTlrelJiUGd5ZFd3?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">量子位</span><span class="rp-item-title">华人小哥开发“CG工坊”，帮你快速入门计算机图形学 | GitHub热榜</span><span class="rp-item-extra">2021-04-23</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (9)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=49988709" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Shaders, WebGPU Components for React, Vue, Svelte, Solid, JavaScript and Framer</span><span class="rp-item-extra">▲ 64 · 27 comments · 2026-10-07</span></a><a class="rp-item" href="https://shattered.io/scskiller-shader-stutter-killer-tool-2026/" target="_blank" rel="noopener"><span class="rp-news-src">shattered.io</span><span class="rp-item-title">SCSKiller Cuts Shader Stutter From 1,014 to 87 [2026]</span><span class="rp-item-extra">2026-10-06</span></a><a class="rp-item" href="https://www.sportskeeda.com/minecraft/best-shaders-use-minecraft-distant-horizons-mod" target="_blank" rel="noopener"><span class="rp-news-src">Sportskeeda</span><span class="rp-item-title">5 Best shaders to use with Minecraft Distant Horizons mod</span><span class="rp-item-extra">2024-04-09</span></a><a class="rp-item" href="https://www.sportskeeda.com/minecraft/5-best-minecraft-shaders-intel-hd-graphics-low-end-pcs" target="_blank" rel="noopener"><span class="rp-news-src">Sportskeeda</span><span class="rp-item-title">5 Best Minecraft Shaders for Intel HD graphics and low-end PCs</span><span class="rp-item-extra">2020-11-17</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiSEFVX3lxTE14ZnZ3d2JENGZBRnVaWXNzWHVRenlXZUNNWEJtR1ZLN2hjeV9fZU1oeWpiUE1lcXpTVTNmeW5tOTBHdXlYYndjUg?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">YouTube</span><span class="rp-item-title">React Bits background shaders remade from scratch in DirectX 11 (HLSL) for C++ ImGui</span><span class="rp-item-extra">2026-08-14</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxNZmdXb2Z5R3NzR3ZLdURWU25MZDRuUnVkWXJIOGVhdE1ncnM3cnp4R2VvcFdNNGgtTVNvZ2wtVXVHWW8ycllKRjRrTzQ2b01md25CQmp5NGJldlhrV0NHd1M5b051Nkp0WmN3T2R3bFF4aHEzVHpRMWFpX2lSOVE4SkVUQnprVmxHQUFF?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Snyk</span><span class="rp-item-title">Top 8 Claude Skills for 3D Modeling, Game Dev, and Shader Programming</span><span class="rp-item-extra">2026-04-01</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiUkFVX3lxTFBJVUFRb3hsODJJMzNlWjBaalZIYmpYb29WSDdCUENjQkdxUWpFM2N6ZHREbDRyY3hLMEE5WXoxUWtvQUxDVjI3Ym54QW4xdFNEbmc?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">HackMD</span><span class="rp-item-title">Crypto Cities</span><span class="rp-item-extra">2026-01-09</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMisgFBVV95cUxQZEpqVmJJVDJmTm9iQVJsYXBlVk53YWZ2ZDZ5N3lJV05pal9FYk9DX3M5cGt1Nk02Nzh0THNBY25hUm8tVmVGVDR3N1h6Q3VqTHVQRzJ2cG1WWWpkdUFVLXBxeWplQ0NaZzRGQ1hZUjQ3ZHotUzZZQmZFblJuM1FSckhWYXpiTE9JRkhGUTNzSUVFSFl4Uk81NmV1bkc4Z1dhMlhGVl9RaUwyXy00OGFqTjBR?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Digital Production</span><span class="rp-item-title">Skin Deep &amp; Code Clean: Free Human Shaders for Godot (Yes, Godot, Not Unreal)</span><span class="rp-item-extra">2025-09-23</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMibkFVX3lxTE5JaWlPdmg1aFF6UGtkMkJ2b09mQ0NjUjcyT0lpRWFIcVdXRkY3eHpuQ0FFTUUwLUZDTDFtT1hZY3NBSFpEc2VHb1Vzamp6TzJYUXZ3UEN3SXpKWi1Td0l6TERSa000Nk5LQ3BPT2tR?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Retro Handhelds</span><span class="rp-item-title">Retroid Pocket Classic Setup Guide</span><span class="rp-item-extra">2025-06-03</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/shader-effects-inc__shaders.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

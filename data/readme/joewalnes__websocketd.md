@@ -1,0 +1,141 @@
+websocketd
+==========
+
+`websocketd` is a small command-line tool that will wrap an existing command-line interface program, and allow it to be accessed via a WebSocket.
+
+WebSocket-capable applications can now be built very easily. As long as you can write an executable program that reads `STDIN` and writes to `STDOUT`, you can build a WebSocket server. Do it in Python, Ruby, Perl, Bash, .NET, C, Go, PHP, Java, Clojure, Scala, Groovy, Expect, Awk, VBScript, PowerShell, Haskell, Lua, R, whatever! No networking libraries necessary.
+
+-[@joewalnes](https://twitter.com/joewalnes)
+
+Details
+-------
+
+Upon startup, `websocketd` will start a WebSocket server on a specified port, and listen for connections.
+
+Upon a connection, it will fork the appropriate process, and disconnect the process when the WebSocket connection closes (and vice-versa).
+
+Any message sent from the WebSocket client will be piped to the process's `STDIN` stream, followed by a `\n` newline.
+
+Any text printed by the process to `STDOUT` shall be sent as a WebSocket message whenever a `\n` newline is encountered.
+
+
+Download
+--------
+
+If you're on a Mac, you can install `websocketd` using [Homebrew](http://brew.sh/). Just run `brew install websocketd`. For other operating systems, or if you don't want to use Homebrew, check out the link below.
+
+**[Download for Linux, macOS and Windows](https://websocketd.com/docs/start/install/)**
+
+
+Quickstart
+----------
+
+To get started, we'll create a WebSocket endpoint that will accept connections, then send back messages, counting to 10 with 1 second pause between each one, before disconnecting.
+
+To show how simple it is, let's do it in Bash!
+
+__count.sh__:
+
+```sh
+#!/bin/bash
+for ((COUNT = 1; COUNT <= 10; COUNT++)); do
+  echo $COUNT
+  sleep 1
+done
+```
+
+Before turning it into a WebSocket server, let's test it from the command line. The beauty of `websocketd` is that servers work equally well in the command line, or in shell scripts, as they do in the server - with no modifications required.
+
+```sh
+$ chmod +x count.sh
+$ ./count.sh
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+```
+
+Now let's turn it into a WebSocket server:
+
+```sh
+$ websocketd --port=8080 ./count.sh
+```
+
+Finally, let's create a web-page to test it.
+
+__count.html__:
+
+```html
+<!DOCTYPE html>
+<pre id="log"></pre>
+<script>
+  // helper function: log message to screen
+  function log(msg) {
+    document.getElementById('log').textContent += msg + '\n';
+  }
+
+  // setup websocket with callbacks
+  const ws = new WebSocket('ws://localhost:8080/');
+  ws.onopen = () => {
+    log('CONNECT');
+  };
+  ws.onclose = () => {
+    log('DISCONNECT');
+  };
+  ws.onmessage = (event) => {
+    log(`MESSAGE: ${event.data}`);
+  };
+</script>
+```
+Open this page in your web-browser. It will even work if you open it directly
+from disk using a `file://` URL.
+
+More Features
+-------------
+
+*   Very simple install. Just [download](https://websocketd.com/docs/start/install/) the single executable for Linux, Mac or Windows and run it. Minimal dependencies, no installers, no package managers, no external libraries. Suitable for development and production servers.
+*   Server side scripts can access details about the WebSocket HTTP request (e.g. remote host, query parameters, cookies, path, etc) via standard [CGI environment variables](https://websocketd.com/docs/understanding/cgi-environment/). Note that `SERVER_NAME` and `SERVER_PORT` mirror the request's `Host` header (virtual-host semantics, as in `net/http/cgi`), so a client that controls its `Host` header controls them too. Do not make access decisions on them.
+*   As well as serving websocket daemons it also includes a static file server and classic CGI server for convenience.
+*   Can listen on a Unix domain socket (`--unixsocket`) instead of, or alongside, a TCP address. That exposes websocketd only to processes on the same host, e.g. behind an SSH-forwarded or reverse-proxied socket. `--socketmode` (e.g. `0700`) pins the socket's permissions instead of leaving them to the process umask.
+*   STDERR can optionally be forwarded to WebSocket clients (`--passstderr`), tagged alongside STDOUT as JSON so a client can tell the two apart.
+*   When a client disconnects, the command is shut down, and so is any child process it spawned. Teardown signals the whole process group. Scripts that deliberately spawn survivors should start them in their own session (`setsid`).
+*   Command line help available via `websocketd --help`.
+*   Includes a built-in [WebSocket developer console](https://websocketd.com/docs/reference/dev-console/) (`--devconsole`) to test and debug your scripts before you've built a JavaScript frontend. Connect, send a frame, and read back what your script wrote to stdout, with no client code. A compact frame list sits beside a detail pane for the selected frame's opcode, size, and pretty/raw/hex payload views, and it works in light or dark.
+
+    <p align="center">
+      <img src="website/img/console/console-light.png" alt="websocketd dev console, light theme, split inspector with a frame selected" width="420">
+      <img src="website/img/console/console-dark.png" alt="websocketd dev console, dark theme, split inspector with a frame selected" width="420">
+    </p>
+
+    [Watch a short demo](website/img/console/console-demo.mp4) of connect → send → receive.
+*   [Examples in many programming languages](https://github.com/joewalnes/websocketd/tree/main/examples) are available to help you getting started.
+
+Documentation
+-------------
+
+**[More documentation](https://websocketd.com/docs/)**
+
+Example Projects
+----------------
+
+*   [Plot real time Linux CPU/IO/Mem stats to a HTML5 dashboard using websocketd and vmstat](https://github.com/joewalnes/web-vmstats) _(for Linux)_
+*   [Arbitrary REPL in the browser using websocketd](https://github.com/rowanthorpe/ws-repl)
+*   [Retrieve SQL data from server with LiveCode and webSocketd](https://github.com/samansjukur/wslc)
+*   [List files from a configured folder](https://github.com/dbalakirev/directator) _(for Linux)_
+*   [Listen for gamepad events and report them to the system](https://github.com/experiment322/controlloid-server) _(this + android = gamepad emulator)_
+
+Got more examples? Open a pull request.
+
+My Other Projects
+-----------------
+
+*   [ReconnectingWebSocket](https://github.com/joewalnes/reconnecting-websocket) - Simplest way to add some robustness to your WebSocket connections.
+*   [Smoothie Charts](http://smoothiecharts.org/) - JavaScript charts for streaming data.
+
+And [follow @joewalnes](https://twitter.com/joewalnes)!

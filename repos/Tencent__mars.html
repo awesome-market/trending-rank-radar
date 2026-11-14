@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tencent/mars · GitHub Trending Rank Radar</title>
+<meta name="description" content="Mars is a cross-platform network component  developed by WeChat.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="mars, Tencent, Tencent/mars, github stars, github trending, star growth, star history, 开源项目, 星标增长, cross-platform, log, network, wechat">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Tencent__mars">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Tencent/mars · GitHub Trending Rank Radar">
+<meta property="og:description" content="Mars is a cross-platform network component  developed by WeChat.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Tencent__mars">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Tencent/mars", "codeRepository": "https://github.com/Tencent/mars", "url": "https://zhuikan.com/repos/Tencent__mars", "description": "Mars is a cross-platform network component  developed by WeChat.", "author": {"@type": "Organization", "name": "Tencent", "url": "https://github.com/Tencent"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "C++", "dateCreated": "2016-12-12", "keywords": "cross-platform,log,network,wechat"}</script>
+</head>
+<body data-repo="Tencent/mars" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Tencent/mars</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Tencent__mars"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/18461506?v=4&s=300" width="300" height="300" alt="Tencent avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">mars</div>
+      <a class="rp-side-owner" href="https://github.com/Tencent">Tencent</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Tencent">Tencent</a>
+        <span class="rp-sep">/</span><span class="rp-name">mars</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Mars is a cross-platform network component  developed by WeChat.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>17,666</b></span><span class="rp-stat" title="forks">⑂ <b>3,689</b></span><span class="rp-stat" title="watchers">👁 <b>761</b></span><span class="rp-stat" title="prs">⑃ <b>253</b></span><span class="rp-stat" title="issues">● <b>1,124</b></span><span class="rp-stat" title="releases">▤ <b>6</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/cross-platform">cross-platform</a><a class="rp-topic" href="https://github.com/topics/log">log</a><a class="rp-topic" href="../tags/network">network</a><a class="rp-topic" href="../tags/wechat">wechat</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C++</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2016-12-12</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="Tencent__AI-Infra-Guard"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">AI-Infra-Guard</a><a class="rp-same-link" href="Tencent__BrowserSkill"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">BrowserSkill</a><a class="rp-same-link" href="Tencent__LoopForge"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">LoopForge</a><a class="rp-same-link" href="Tencent__MMKV"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">MMKV</a><a class="rp-same-link" href="Tencent__QMUI_Android"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">QMUI_Android</a><a class="rp-same-link" href="Tencent__TNN"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">TNN</a><a class="rp-same-link" href="Tencent__WeKnora"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">WeKnora</a><a class="rp-same-link" href="Tencent__cherry-markdown"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">cherry-markdown</a><a class="rp-same-link" href="Tencent__lemon-cleaner"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">lemon-cleaner</a><a class="rp-same-link" href="Tencent__libpag"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">libpag</a><a class="rp-same-link" href="Tencent__matrix"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">matrix</a><a class="rp-same-link" href="Tencent__ncnn"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">ncnn</a><a class="rp-same-link" href="Tencent__omi"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">omi</a><a class="rp-same-link" href="Tencent__puerts"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">puerts</a><a class="rp-same-link" href="Tencent__teamai-cli"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">teamai-cli</a><a class="rp-same-link" href="Tencent__tinker"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">tinker</a><a class="rp-same-link" href="Tencent__tmagic-editor"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">tmagic-editor</a><a class="rp-same-link" href="Tencent__vConsole"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">vConsole</a><a class="rp-same-link" href="Tencent__wepy"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">wepy</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Tencent/mars">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.3.0</span><a class="rp-dl-a" href="https://github.com/Tencent/mars/releases/tag/v1.3.0">v1.3.0 ↓</a><span class="rp-dl-ver">1.3.0</span><span class="rp-dl-date">2019-04-01</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">17,666</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">3,689</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">761</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">253</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,124</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">6</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Mars
+
+
+
+
+
+![WeChat Approved-%20iOS%20%7C%20OS%20X%20%7C%20Android(ndkr20)%20%7C%20Windows(vs2015)%20-brightgreen.svg)](https://github.com/Tencent/mars/wiki)
+
+(中文版本请参看这里)
+
+Mars is a cross-platform infrastructure component developed by WeChat Mobile Team.
+It has been proved to be effective by billions of WeChat users.
+
+1. Cross platform, easy to deploy if you are developing multi-platform or multi-business application.
+2. Suitable for small amount data transmission
+3. Mobile platform friendly, low power and traffic consumption
+4. A network solution fit for mobile application
+
+!mars
+
+ comm: common library, including socket, thread, message queue, coroutine, etc.
+ Xlog: a reliable log component with high-performance.
+ SDT: a network detection component.
+ STN: a signaling network component, the major part of Mars.
+
+ Samples
+
+Start with sample usage here.
+
+ Getting started
+
+python scripts only support python3.10 or higher
+
+Choose Android or iOS/OS X or Windows.
+
+ Android
+
+You can use either mars-wrapper or mars-core. We recommend you to use mars-wrapper when you just want to build a sample or demo, while mars-core is preferred to be used in your APP.
+
+ mars-wrapper
+
+Add dependencies by adding the following lines to your app/build.gradle.
+
+xml
+dependencies {
+    compile &#x27;com.tencent.mars:mars-wrapper:1.2.5&#x27;
+}
+
+
+OR
+
+ mars-core
+
+Add dependencies by adding the following lines to your app/build.gradle.
+
+xml
+dependencies {
+    compile &#x27;com.tencent.mars:mars-core:1.2.5&#x27;
+}
+
+OR
+ mars-xlog
+If you just want to user xlog, add dependencies by adding the following lines to your app/build.gradle.
+note: xlog is included in mars-core and mars-wrapper.
+
+xml
+dependencies {
+    compile &#x27;com.tencent.mars:mars-xlog:1.2.5&#x27;
+}
+
+
+If you read here, make sure you have added dependencies of mars-wrapper, mars-core or mars-xlog.
+
+ Xlog Init
+
+Initialize Xlog when your APP starts. Remember to use an exclusive folder to save the log files, no other files are acceptable in the folder since they would be removed by the cleansing function in Xlog automatically.
+
+When multiple processes is used in your app, make sure that each process owns its exclusive log file.
+
+java
+System.loadLibrary(&quot;c++_shared&quot;);
+System.loadLibrary(&quot;marsxlog&quot;);
+
+final String SDCARD = Environment.getExternalStorageDirectory().getAbsolutePath();
+final String logPath = SDCARD + &quot;/marssample/log&quot;;
+
+// this is necessary, or may crash for SIGBUS
+final String cachePath = this.getFilesDir() + &quot;/xlog&quot;
+
+//init xlog
+Xlog xlog = new Xlog();
+Log.setLogImp(xlog);
+
+if (BuildConfig.DEBUG) {
+    Log.setConsoleLogOpen(true);
+  	Log.appenderOpen(Xlog.LEVEL_DEBUG, Xlog.AppednerModeAsync, &quot;&quot;, logPath, logFileName, 0);
+} else {
+    Log.setConsoleLogOpen(false);
+  	Log.appenderOpen(Xlog.LEVEL_INFO, Xlog.AppednerModeAsync, &quot;&quot;, logPath, logFileName, 0);
+}
+
+
+
+Uninitialized Xlog when your app exits
+
+
+java
+Log.appenderClose();
+
+
+ STN Init
+
+If you add dependencies of mars-core to your project, you need to initialize and release STN.
+Initialize </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Tencent/mars/issues/1221"><span class="rp-item-num">#1221</span><span class="rp-item-title">Xlog 有计划支持鸿蒙吗？有大概的时间节点吗</span><span class="rp-item-extra">16 comments · 2024-01-31</span></a><a class="rp-item" href="https://github.com/Tencent/mars/issues/599"><span class="rp-item-num">#599</span><span class="rp-item-title">mars crash 求解</span><span class="rp-item-extra">16 comments · 2019-05-06</span></a><a class="rp-item" href="https://github.com/Tencent/mars/issues/526"><span class="rp-item-num">#526</span><span class="rp-item-title">最新版本无法编译，求解！ndk版本16b，Python版本2.7.15</span><span class="rp-item-extra">15 comments · 2019-01-28</span></a><a class="rp-item" href="https://github.com/Tencent/mars/issues/833"><span class="rp-item-num">#833</span><span class="rp-item-title">Android mars版本1.2.4 初始化报错闪退</span><span class="rp-item-extra">14 comments · 2020-08-10</span></a><a class="rp-item" href="https://github.com/Tencent/mars/issues/586"><span class="rp-item-num">#586</span><span class="rp-item-title">app为厂商白名单运行在后台的时候，几分钟后就无法建立连接了。但是微信可以</span><span class="rp-item-extra">14 comments · 2019-04-16</span></a><a class="rp-item" href="https://github.com/Tencent/mars/issues/662"><span class="rp-item-num">#662</span><span class="rp-item-title">pthread_detachd调用导致crash</span><span class="rp-item-extra">13 comments · 2019-07-24</span></a><a class="rp-item" href="https://github.com/Tencent/mars/issues/101"><span class="rp-item-num">#101</span><span class="rp-item-title">flowlimit的数值单位问题</span><span class="rp-item-extra">12 comments · 2017-01-15</span></a><a class="rp-item" href="https://github.com/Tencent/mars/issues/828"><span class="rp-item-num">#828</span><span class="rp-item-title">接入新版本报错</span><span class="rp-item-extra">11 comments · 2020-08-03</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/Tencent/mars/releases"><b>v1.3.0</b> <span class="rp-rel-tag">v1.3.0</span> <span class="rp-item-extra">2019-04-01</span></a><pre class="rp-pre">1. ndk 升级为 ndk-r16b 编译
+2. 构建方案改为 cmake
+3. stl 库从 stlport_shared 改为 c++_shared</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Tencent__mars.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

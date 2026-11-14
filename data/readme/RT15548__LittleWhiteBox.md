@@ -1,0 +1,20 @@
+# LittleWhiteBox
+
+面向 SillyTavern 的多功能扩展，为长篇角色扮演提供剧情记忆、状态管理、绘图、语音和应用面板。
+
+版本更新与说明见 [Releases](https://github.com/RT15548/LittleWhiteBox/releases)。
+
+## 主要功能
+
+- 剧情总结与记忆：整理剧情，辅助长对话中的记忆召回；支持[记忆包导入导出](./modules/story-summary/docs/summary-memory-packages.md)。
+- 变量与任务：管理角色状态、委托和任务进展。
+- 绘图与语音：生成剧情插图，播放角色语音。
+- 小白 OS：集中使用地图、私人通讯、语言学习、钱包和游戏等应用。
+
+## 开发构建
+
+执行 `npm run build` 构建整个插件，`npm run check` 完成整体验收。完整规则见 [构建与发布资源](./docs/plugin-build.md)。
+
+## 许可证
+
+详见 [许可证](./docs/LICENSE.md)。

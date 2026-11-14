@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>bowenliang123/dsh-context · GitHub Trending Rank Radar</title>
+<meta name="description" content="The best DeepSeek Harness plugin for context insight and management, with context dashboard / browser / sidebar and context command, for context statistics, composition, breakdown, evolution details, ">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="dsh-context, bowenliang123, bowenliang123/dsh-context, github stars, github trending, star growth, star history, 开源项目, 星标增长, dsh-external, dsh-plugin, dsh-plugins, cordis-plugin, deepseek-harness, deepseek-harness-plugin">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/bowenliang123__dsh-context">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="bowenliang123/dsh-context · GitHub Trending Rank Radar">
+<meta property="og:description" content="The best DeepSeek Harness plugin for context insight and management, with context dashboard / browser / sidebar and context command, for context statistics, composition, breakdown, evolution details, ">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/bowenliang123__dsh-context">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "bowenliang123/dsh-context", "codeRepository": "https://github.com/bowenliang123/dsh-context", "url": "https://zhuikan.com/repos/bowenliang123__dsh-context", "description": "The best DeepSeek Harness plugin for context insight and management, with context dashboard / browser / sidebar and context command, for context statistics, composition, breakdown, evolution details, ", "author": {"@type": "Organization", "name": "bowenliang123", "url": "https://github.com/bowenliang123"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "TypeScript", "dateCreated": "2026-08-14", "keywords": "dsh-external,dsh-plugin,dsh-plugins,cordis-plugin,deepseek-harness,deepseek-harness-plugin"}</script>
+</head>
+<body data-repo="bowenliang123/dsh-context" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">bowenliang123/dsh-context</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="bowenliang123__dsh-context"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/1935105?u=f854df7221981e09a0a6e5b443f848867b752b73&amp;v=4&s=300" width="300" height="300" alt="bowenliang123 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">dsh-context</div>
+      <a class="rp-side-owner" href="https://github.com/bowenliang123">bowenliang123</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/bowenliang123">bowenliang123</a>
+        <span class="rp-sep">/</span><span class="rp-name">dsh-context</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=weekly_rate">weekly_rate <b>#135</b></a></div>
+    </div>
+    <p class="rp-desc">The best DeepSeek Harness plugin for context insight and management, with context dashboard / browser / sidebar and context command, for context statistics, composition, breakdown, evolution details, agent teams, understanding how the context is made of, and how it evolves. 一站式 DeepSeek Harness 上下文可视化插件，Context 面板、浏览器、侧栏、命令，透视上下文组成、演进、压缩、多 Agent等。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,056</b></span><span class="rp-stat" title="forks">⑂ <b>215</b></span><span class="rp-stat" title="watchers">👁 <b>14</b></span><span class="rp-stat" title="prs">⑃ <b>0</b></span><span class="rp-stat" title="issues">● <b>170</b></span><span class="rp-stat" title="releases">▤ <b>168</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/dsh-external">dsh-external</a><a class="rp-topic" href="../tags/dsh-plugin">dsh-plugin</a><a class="rp-topic" href="https://github.com/topics/dsh-plugins">dsh-plugins</a><a class="rp-topic" href="https://github.com/topics/cordis-plugin">cordis-plugin</a><a class="rp-topic" href="../tags/deepseek-harness">deepseek-harness</a><a class="rp-topic" href="https://github.com/topics/deepseek-harness-plugin">deepseek-harness-plugin</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2026-08-14</span><a class="rp-meta-bit rp-home" href="https://www.npmjs.com/package/dsh-context" rel="noopener">www.npmjs.com/package/dsh-context</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/bowenliang123/dsh-context">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.84.1</span><a class="rp-dl-a" href="https://github.com/bowenliang123/dsh-context/releases/tag/v0.84.1">v0.84.1 ↓</a><span class="rp-dl-ver">0.84.1</span><span class="rp-dl-date">2026-11-13</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+44</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,056</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">215</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">14</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">170</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">168</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">!Social preview
+
+ dsh-context
+
+简体中文 · English · 日本語 · Español · Français · Deutsch · Русский · Português
+
+
+
+
+
+适用于 Agent 上下文洞察与管理的最佳 DeepSeek Harness 插件。
+
+ 获得 DeepSeek Harness 团队成员 @tianyicui 和 @turtle1999 推荐并加星——参见 X 上的这条帖子。
+
+dsh-context 提供完整的上下文生命周期管理功能。
+- 上下文洞察页面 — 跨会话总览，作为一级侧边栏面板（与 Plugins 和 Automation tasks 并列）：包含 7 天 Token/成本使用图表的 KPI 栏、活动热力图、汇总组成环形图，以及可筛选并可直接跳转至任一会话的会话卡片。
+- Context 标签页 — DeepSeek Harness 上下文统计、组成、趋势、事件、消息和命令执行的 UI 上下文仪表板。
+- Fleet 标签页 — Agent 家族专属页面：当前 Agent、它的父级，以及每个子 Agent 各自显示为一张实时卡片。
+- Context 面板 — 同一仪表板也可作为右侧边栏标签页：在侧边栏指南页面选择 Context，面板便会在聊天旁打开，并包含 Agent 网络。
+- /context 命令 — 斜杠命令会显示当前上下文组成模型和近期上下文演变。
+
+▶️ 4 分钟视频导览 — 在 Bilibili 观看。
+
+
+
+ 安装 / 更新
+
+ 在 DeepSeek Harness 网页版或桌面版中安装
+
+在 Add plugin 向导的搜索框中填写 dsh-context，然后点击 Install：
+
+!Add_plugin_wizard
+
+ 使用 dsh CLI 安装
+
+从 DeepSeek Harness 安装 dsh-context 插件：
+
+sh
+dsh plugin --profile web add dsh-context
+
+
+或更新 dsh-context 插件：
+
+sh
+dsh plugin --profile web update dsh-context@latest
+
+
+然后使用 dsh web 启动 Web UI。无需构建，也无需重启。
+
+ 使用方法
+
+五种入口，讲述同一件事——你的 Agent 正在携带什么、它如何获得这些内容，以及它如何使用这些内容：
+
+| 入口 | 功能 |
+| --- | --- |
+| 上下文洞察页面 | 一览所有会话：使用量、成本、缓存命中率、每日活动以及每个会话的上下文概况；可按时间范围、日期、分组或搜索筛选，并一键跳转。 |
+| Context 标签页 | 完整仪表板：统计、组成、逐请求趋势、事件、文件活动和命令执行——适用于每个会话。 |
+| Fleet 标签页 | Agent 网络：当前 Agent、它的父级以及所有子 Agent，实时呈现。 |
+| /context 命令 | 居中弹窗，提供相同的组成信息和上下文浏览器，无需离开聊天。 |
+| Preferences 卡片 | 每位用户的默认设置：面板入口、洞察时间范围、趋势与排序默认值，以及拼接在每个会话系统提示词前后的前缀/后缀。 |
+
+ 🗂️ 上下文洞察页面
+
+点击侧边栏面板列表中的 Context Insights / 上下文洞察（与 Plugins 和 Automation tasks 位于同一层级），页面便会作为完整的中央栏面板打开：
+
+!The Context Insights page
+
+| 区块 | 解答的问题 |
+| --- | --- |
+| KPI 栏 | 我的使用量如何——所选时间范围（今天 / 7 天 / 30 天）内活跃的会话，其计费 Token、预估成本、缓存命中率和轮次按 step 发起日归因；工具执行与活跃时长则统计这些会话及其子 Agent 的全部生命周期，与耗时统计卡片一致。 |
+| 7 天使用量图表 | 每天的花费和用量如何——最近 7 天每天的计费 Token 和预估成本以成对柱状图展示，按会话自身各请求的时间汇总（而不是按会话最后活跃日期）。 |
+| 活动热力图 | 我实际在什么时候工作——最近 8 周每日的计费 Token；点击某天即可筛选当天活跃的会话，并让三个统计卡片只看当天。 |
+| 技能加载 | 加载了哪些技能、各多少次、最近何时——所选时间范围内按技能汇总的加载次数；点击可筛选加载过它的会话。 |
+| 工具调用 | 运行了哪些工具、各多少次、最近何时——按日账本汇总的工具执行次数；点击可筛选运行过它的会话。 |
+| 命令执行 | 运行了哪些程序、各多少次、最近何时——按程序汇总的命令执行次数（按派发计）；点击可筛选执行过它的会话。 |
+| 设置入口 | 页面标题栏中的按钮——与 Context 标签页 Plugin Info 卡片中通往此插件偏好设置的受保护跳转相同。 |
+| Context Composition | 所选时间范围内的计费 Token 用在了哪里，按 Token 卡片的计费分类（Tool Calls、Reasoning、Answers……）拆分。 |
+| 会话卡片 | 四个卡片下方每个会话的概况：组成环形图、计费 Token、轮次、成本以及工作区分组 / 项目路径；可按最近活动、Token 数或上下文大小排序、搜索、按工作区分组。点击卡片即可打开会话。 |
+
+ 📊 Context 标签页
+
+打开任意会话并点击 Context / 上下文 标签页：
+
+!Context panel overview
+
+| 卡片 | 解答的问题 |
+| --- | --- |
+| Context Stats | 轮次、步骤、用户输入、实时工具调用——以及根据 models.dev 价格列表估算的成本（将鼠标悬停在 ? 上可查看每百万 Token 单价；仅 DeepSeek 区分高峰 / 非高峰：其挂牌价为谷时价，高峰时段按 2 倍计费）。 |
+| Token Stats | 计费 Token 用在了哪里——总量与输入框下方聊天统计行相同，拆分为系统提示词、工具定义、用户消息、注入上下文、技能注入、工具调用、推理和回答。工具调用把工具名称与参数（提示词中重放的部分，加上输出中生成的部分）与这些工具返回的结果一并计入；回答从同一份助手内容与输出中拆出模型的回复正文；推理以同样方式拆出其思考内容；会话的缓存命中率显示在角落。 |
+| Timing Stats | 活跃时间如何分布在模型调用、工具运行和开销之间。 |
+| Current Context | 此刻窗口中的内容。 |
+| Context Trend | 每个请求的大小及其变化过程。 |
+| Context Browser | 任意请求实际由哪些内容组成。 |
+| Context Events | 上下文窗口何时以及为何发生变化。 |
+| File Activity | Agent 对你的文件做了什么。 |
+| 命令执行 | Agent 执行了哪些命令、每次运行如何结束、主要用到了哪些</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/bowenliang123/dsh-context/issues/246"><span class="rp-item-num">#246</span><span class="rp-item-title">[Feature] 会话列表顶部增加项目维度总览统计（费用/Token等）</span><span class="rp-item-extra">1 comments · 2026-11-11</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/bowenliang123/dsh-context/releases"><b>v0.84.1</b> <span class="rp-rel-tag">v0.84.1</span> <span class="rp-item-extra">2026-11-13</span></a><pre class="rp-pre">Install / Update
+
+Install the dsh-context plugin on DeepSeek Harness with released NPM package:
+
+sh
+dsh plugin --profile web add dsh-context@latest
+
+
+Update the dsh-context plugin:
+
+sh
+dsh plugin --profile web update dsh-context@latest
+
+
+ What&#x27;s New
+
+
+
+
+
+
+ Features
+
+- Injection rows show the owning agent — Events cards and Context Browser inject-row previews resolve the agent host-side, from the 0.2.2-rc.2+ message text, the parent subagent catalog, team membership, and session-reference labels, and show it as the last label segment. The resolved name rides the fold on s</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (7)</h3><div class="rp-list"><a class="rp-item" href="https://news.qq.com/rain/a/20261021A0DUAD00" target="_blank" rel="noopener"><span class="rp-news-src">腾讯网</span><span class="rp-item-title">DeepSeek Harness不可错过的12款神器！还有崔添翼推荐的</span><span class="rp-item-extra">2026-10-21</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00581/article/details/151023574" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">写第一个 DeepSeek Harness 插件有多难？以 dsh-context 为例的入门教程（双半身结构 + 打包发布）</span><span class="rp-item-extra">2026-08-23</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiY0FVX3lxTE9ZM0pLdmNaWm5uTWxibFZPMGI2bl9ENHB0azdXdkRvc1FEWVcwT0tmbHRWOWpXRjgzTEMwUWhVandaR1Z2OElrVzlqSW1iV3pYdk54b0RwdmhnS0hkTFc4QlBIUQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">新浪网</span><span class="rp-item-title">新浪网· - 新浪网</span><span class="rp-item-extra">2026-10-21</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTFBTaklXbTdXaER5RE43NFhsX2pMYmM0OVY2c3dEdTJjSHdRTHN4d3RzUXdOOG41WEstaWJ5SzZsNE5GM1pJT1lIS3dtVVRvVDVSRnB3?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">电子工程专辑EE Times China</span><span class="rp-item-title">DeepSeek Harness必装的10个插件</span><span class="rp-item-extra">2026-08-25</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiV0FVX3lxTE82WGVDRF9aanFZckhzRUxMUE1tQXV1NDhuV3BnRzB6cGktNWFQNjRtVm1LbVp0TUkzQmJkVVlLckM1amhONE5zNENWSm1PbzExd0c2dTQ5WQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">QQ News</span><span class="rp-item-title">16 个超火的 DeepSeek Harness 插件，大肥鱼已经落后 2 个版本了</span><span class="rp-item-extra">2026-08-21</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTFAyMmREOUd5WmV3bWRqY1dpX1dxQUNleUswcm1oTjlZOVczV2RoeE5PYlJ1SHlURzF1bmRuWkNYZnJrSWRxdlVjbWhZTlJ4a293Qjlj?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Sohu</span><span class="rp-item-title">6天16.5万星：DeepSeek Harness的作者 Tianyi Cui，17年前写完了你的算法启蒙</span><span class="rp-item-extra">2026-08-20</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE5BTnZoOXJJRXFRRzZfMkVqQUdtU1lYUGowS2FDSTluZG55UndhVzA1SHdpdDI4WGEtZ3RtRUxMMTc3LVE1ZXF1M1ctdTRfaTJfalJr?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Sohu</span><span class="rp-item-title">DSH插件生态爆发！首日100+次日破千，先装开智插件提模型表现</span><span class="rp-item-extra">2026-08-17</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/bowenliang123__dsh-context.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

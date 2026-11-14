@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>highlight/highlight · GitHub Trending Rank Radar</title>
+<meta name="description" content="highlight.io: The open source, full-stack monitoring platform. Error monitoring, session replay, logging, distributed tracing, and more.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="highlight, highlight, highlight/highlight, github stars, github trending, star growth, star history, 开源项目, 星标增长, apm, golang, metrics, monitoring, observability, open-source">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/highlight__highlight">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="highlight/highlight · GitHub Trending Rank Radar">
+<meta property="og:description" content="highlight.io: The open source, full-stack monitoring platform. Error monitoring, session replay, logging, distributed tracing, and more.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/highlight__highlight">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "highlight/highlight", "codeRepository": "https://github.com/highlight/highlight", "url": "https://zhuikan.com/repos/highlight__highlight", "description": "highlight.io: The open source, full-stack monitoring platform. Error monitoring, session replay, logging, distributed tracing, and more.", "author": {"@type": "Organization", "name": "highlight", "url": "https://github.com/highlight"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "TypeScript", "dateCreated": "2020-08-20", "keywords": "apm,golang,metrics,monitoring,observability,open-source,self-hosted,session-replay,typescript,full-stack"}</script>
+</head>
+<body data-repo="highlight/highlight" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">highlight/highlight</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="highlight__highlight"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/75946842?v=4&s=300" width="300" height="300" alt="highlight avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">highlight</div>
+      <a class="rp-side-owner" href="https://github.com/highlight">highlight</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/highlight">highlight</a>
+        <span class="rp-sep">/</span><span class="rp-name">highlight</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">highlight.io: The open source, full-stack monitoring platform. Error monitoring, session replay, logging, distributed tracing, and more.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,390</b></span><span class="rp-stat" title="forks">⑂ <b>722</b></span><span class="rp-stat" title="watchers">👁 <b>29</b></span><span class="rp-stat" title="prs">⑃ <b>7,816</b></span><span class="rp-stat" title="issues">● <b>2,803</b></span><span class="rp-stat" title="releases">▤ <b>57</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/apm">apm</a><a class="rp-topic" href="../tags/golang">golang</a><a class="rp-topic" href="https://github.com/topics/metrics">metrics</a><a class="rp-topic" href="../tags/monitoring">monitoring</a><a class="rp-topic" href="../tags/observability">observability</a><a class="rp-topic" href="../tags/open-source">open-source</a><a class="rp-topic" href="../tags/self-hosted">self-hosted</a><a class="rp-topic" href="https://github.com/topics/session-replay">session-replay</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2020-08-20</span><a class="rp-meta-bit rp-home" href="https://app.highlight.io" rel="noopener">app.highlight.io</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/highlight/highlight">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">docker-v0.5.6</span><a class="rp-dl-a" href="https://github.com/highlight/highlight/releases/tag/docker-v0.5.6">docker-v0.5.6 ↓</a><span class="rp-dl-ver">0.5.6</span><span class="rp-dl-date">2025-08-08</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">9,390</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">722</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">29</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">7,816</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">2,803</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">57</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Docs - Community (Support &amp; Feedback) - Feature request - Bug report
+
+
+ highlight.io: The open-source, fullstack monitoring platform.
+
+highlight.io is a monitoring tool for the next generation of developers (like you!). Unlike the age-old, outdated tools out there, we aim to build a cohesive, modern and fully-featured monitoring solution, something we wished WE had. And it&#x27;s all open source :)
+
+At a high level, highlight.io&#x27;s feature set is:
+- Session Replay
+- Error Monitoring
+- Logging
+
+We strive to make highlight.io as easy to install as a few lines of code in any environment.
+
+Read more about our features, values and mission below, and get started at https://highlight.io today!
+
+ Table of Contents
+
+-   Get started for free
+-   Features
+-   SDKs
+-   Contributors
+-   Mission
+-   Values
+
+ Get started
+
+ Hosted highlight.io (free to get started!)
+
+The fastest and most reliable way to get started with highlight.io is signing up for free at app.highlight.io. After making an account, getting started is as easy as installing the client SDK snippet.
+
+ Hobby self-hosted
+
+Deploy a hobby instance in one line on Linux with Docker (we recommend at least 8GB of RAM, 4 CPUs, and 64 GB of disk space):
+
+bash
+git clone --recurse-submodules https://github.com/highlight/highlight
+ or git submodule update --init --recursive on git  docs
+-   Console logs: Analyze the logs printed (console.error, console.log, etc..) to the console from your frontend - docs
+-   Embedded Error Monitoring: See the errors associated with a given session to understand what the user was doing leading up to them.
+-   Session Comments: Comment on errors to communicate with your team on user frustration, bugs, and more! - docs
+-   Integrations with your favorite tools - docs
+
+
+
+
+
+ Error Monitoring: Understand WHAT bugs are happening.
+
+-   Customizable Error Grouping: Customize rules for grouping repeated errors - docs
+-   Customizable Alerting Rules: Customize how often, and where alerts are sent - docs
+-   Embedded Session Replay: See all of the sessions associated with any given error.
+-   SDK Support: Support for a long (and growing!) list of SDKs.
+-   Integrations with your favorite tools - docs
+
+
+
+
+
+ Logs: Dig deeper into what&#x27;s happening on your server.
+
+-   Powerful Search: Search across all your logs, with automatic property collection - docs
+-   Log Alerts: Set thresholds for your log alerts, and view them in the alerts dashboard - docs
+-   Embedded Session Replay and Errors: See all of the sessions &amp; errors associated to a log.
+-   SDK Support: Support for a long (and growing!) list of SDKs.
+-   Integrations with your favorite tools - docs
+
+
+
+
+
+ Traces: Track the performance of operations on your server.
+
+-   Powerful Search: Search across all your traces, with automatic property collection - docs
+-   Log Alerts: Set thresholds for your log alerts, and view them in the alerts dashboard - docs
+-   Embedded Session Replay, Errors and Logs: See all of the sessions, errors, and logs asso</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/highlight/highlight/issues/8635"><span class="rp-item-num">#8635</span><span class="rp-item-title">Update workspace and project settings to not use antd components</span><span class="rp-item-extra">162 comments · 2024-05-21</span></a><a class="rp-item" href="https://github.com/highlight/highlight/issues/8032"><span class="rp-item-num">#8032</span><span class="rp-item-title">document sveltekit backend instrumentation</span><span class="rp-item-extra">108 comments · 2024-03-15</span></a><a class="rp-item" href="https://github.com/highlight/highlight/issues/8614"><span class="rp-item-num">#8614</span><span class="rp-item-title">update design of integrations page</span><span class="rp-item-extra">86 comments · 2024-05-17</span></a><a class="rp-item" href="https://github.com/highlight/highlight/issues/6775"><span class="rp-item-num">#6775</span><span class="rp-item-title">Performance of canvas snapshotting on Safari is poor</span><span class="rp-item-extra">42 comments · 2023-10-02</span></a><a class="rp-item" href="https://github.com/highlight/highlight/issues/9607"><span class="rp-item-num">#9607</span><span class="rp-item-title">Enhance log filtering by record attributes</span><span class="rp-item-extra">41 comments · 2024-11-07</span></a><a class="rp-item" href="https://github.com/highlight/highlight/issues/5082"><span class="rp-item-num">#5082</span><span class="rp-item-title">Support Elixir among our SDKs</span><span class="rp-item-extra">36 comments · 2023-04-21</span></a><a class="rp-item" href="https://github.com/highlight/highlight/issues/4225"><span class="rp-item-num">#4225</span><span class="rp-item-title">Support PHP (Laravel+Symphony) among our SDKs</span><span class="rp-item-extra">18 comments · 2023-02-10</span></a><a class="rp-item" href="https://github.com/highlight/highlight/issues/4444"><span class="rp-item-num">#4444</span><span class="rp-item-title">Mobile + React Native Session Recording</span><span class="rp-item-extra">10 comments · 2023-03-01</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/highlight/highlight/discussions/10215"><span class="rp-item-num">#10215</span><span class="rp-item-title">Notes on running Highlight v0.5.5 under Podman</span><span class="rp-item-extra">2 comments · 2025-07-26</span></a><a class="rp-item" href="https://github.com/highlight/highlight/discussions/10214"><span class="rp-item-num">#10214</span><span class="rp-item-title">Migrating data from one instance to another</span><span class="rp-item-extra">1 comments · 2025-07-26</span></a><a class="rp-item" href="https://github.com/highlight/highlight/discussions/10195"><span class="rp-item-num">#10195</span><span class="rp-item-title">How to build product growth KPIs and measures</span><span class="rp-item-extra">1 comments · 2025-06-23</span></a><a class="rp-item" href="https://github.com/highlight/highlight/discussions/10194"><span class="rp-item-num">#10194</span><span class="rp-item-title">Unable to login in hobby setup</span><span class="rp-item-extra">1 comments · 2025-06-23</span></a><a class="rp-item" href="https://github.com/highlight/highlight/discussions/9765"><span class="rp-item-num">#9765</span><span class="rp-item-title">How do I make Highlight.io React SDK not hide the texts outside of the input fields?</span><span class="rp-item-extra">1 comments · 2025-01-13</span></a><a class="rp-item" href="https://github.com/highlight/highlight/discussions/9645"><span class="rp-item-num">#9645</span><span class="rp-item-title">Cannot run frontend and backend by following the steps from the Docs</span><span class="rp-item-extra">1 comments · 2024-11-20</span></a><a class="rp-item" href="https://github.com/highlight/highlight/discussions/9583"><span class="rp-item-num">#9583</span><span class="rp-item-title">Highlight causing errors while generating angular application build</span><span class="rp-item-extra">1 comments · 2024-11-04</span></a><a class="rp-item" href="https://github.com/highlight/highlight/discussions/9431"><span class="rp-item-num">#9431</span><span class="rp-item-title">Error When Trying to Sign Up</span><span class="rp-item-extra">1 comments · 2024-10-08</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/highlight/highlight/releases"><b>docker-v0.5.6</b> <span class="rp-rel-tag">docker-v0.5.6</span> <span class="rp-item-extra">2025-08-08</span></a><pre class="rp-pre">What&#x27;s Changed
+ fix session processing excluding excessively by @Vadman97 in https://github.com/highlight/highlight/pull/10141
+ switch dotnet4 sdk to OTLP HTTP by @Vadman97 in https://github.com/highlight/highlight/pull/10201
+ update docs page to turn off SSR by @Vadman97 in https://github.com/highlight/highlight/pull/10205
+ ignore excessively-long active intervals by @Vadman97 in https://github.com/highlight/highlight/pull/10209
+ fix SearchForm trim crashing logs loading by @Vadman97 in https://github.com/highlight/highlight/pull/10218
+ use correct retention date for errors by @mayberry</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/highlight__highlight.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/readme-banner-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="docs/assets/readme-banner-light.png">
+  <img alt="AI4Paper 阅读宇宙" src="docs/assets/readme-banner-light.png" width="100%">
+</picture>
+
+</div>
+
+<div align="center">
+
+# AI4Paper 阅读宇宙
+
+### 你的 AI 科研工作台 · 从找文献到写综述,一站打通
+
+**让天下没有难读的 Paper,让天下没有难做的科研。**
+
+<br/>
+
+### 🚀 [**app.ai4paper.pro** — 免安装 · 打开浏览器即用](https://app.ai4paper.pro)
+
+*无需装任何插件,网页版即开即用:速搜文献 · AI 精读 · 全文翻译 · 知识库问答 · 一键综述*
+
+<br/>
+
+[![网页版](https://img.shields.io/badge/⚡_网页版-app.ai4paper.pro-2563eb?style=for-the-badge)](https://app.ai4paper.pro)
+[![官网](https://img.shields.io/badge/官网-ai4paper.pro-0ea5e9?style=for-the-badge)](https://ai4paper.pro)
+
+[![Release](https://img.shields.io/github/v/release/wdcpclover/ai4paper?color=success&label=release)](https://github.com/wdcpclover/ai4paper/releases)
+[![Stars](https://img.shields.io/github/stars/wdcpclover/ai4paper?style=flat&logo=github)](https://github.com/wdcpclover/ai4paper/stargazers)
+[![Zotero](https://img.shields.io/badge/Zotero-7--10-CC2936?logo=zotero&logoColor=white)](https://www.zotero.org)
+[![文档](https://img.shields.io/badge/文档-docs-7c3aed)](https://ai4paper.pro/docs/)
+
+</div>
+
+---
+
+## 为什么是 AI4Paper
+
+- **🧠 每个观点都可溯源。** 所有 AI 功能跑在真实文献上——自有 **2.4 亿文献源 + 引文网络索引**,综述里每一句话都标注真实文献编号,拒绝 AI 编造。
+- **🔁 全流程闭环。** 找文献 → 读文献 → 管文献 → 写综述,一个工作台走完,不用在七八个工具之间来回倒腾。
+- **🌌 多端一个宇宙。** 网页版免安装、Zotero 插件深度集成、微信小程序追刊、浏览器扩展逛学术网站顺手查分区——数据同源,随处接续。
+
+## 产品矩阵
+
+| 端 | 入口 | 适合谁 |
+|---|---|---|
+| ⚡ **网页版**(推荐入门) | [app.ai4paper.pro](https://app.ai4paper.pro) | 不想装任何东西,打开就用 |
+| 🧩 **Zotero 插件** | [下载 XPI](https://github.com/wdcpclover/ai4paper/releases) | Zotero 重度用户,原生级深度集成(Zotero 7–10) |
+| 📱 **微信小程序** | 微信搜「AI4Paper」 | 订阅期刊、追新论文、手机上刷文献 |
+| 🌐 **浏览器扩展** | [官网获取](https://ai4paper.pro) | Google Scholar / 知网页面直接显示期刊分区 |
+
+> 🎁 注册即享 **7 天全功能试用**,一个账号全端通用。
+
+---
+
+### 关于 Zotero 中文社区插件商店
+
+AI4Paper 于 2026 年 4 月 9 日经 [PR #283](https://github.com/zotero-chinese/zotero-plugins/pull/283) 被收录进 Zotero 中文社区插件商店。2026 年 11 月 5 日,商店维护者 l0o0 提交 [a64d7040](https://github.com/zotero-chinese/zotero-plugins/commit/a64d7040)(#318),将 AI4Paper 加入黑名单,理由写作"应维护者请求下架"。该提交标题为"保留中文检索字段并修正插件源数据",未提及下架。我们没有提出过下架请求,此前也没有收到过任何关于侵权的投诉或通知。
+
+我们随后在商店仓库提出了询问([issue #359](https://github.com/zotero-chinese/zotero-plugins/issues/359))和重新收录申请([issue #360](https://github.com/zotero-chinese/zotero-plugins/issues/360))。11 月 10 日,l0o0 回复称商店"避免可能侵害其他插件权益的插件进入商店",未说明具体指哪款插件、侵害了哪一点,也未说明下架请求由谁提出;两个 issue 随即被关闭。
+
+l0o0 同时是茉莉花(Jasminum)插件的作者,该插件与 AI4Paper 同样提供中文元数据识别功能。
+
+AI4Paper 同时提供浏览器扩展([Chrome 应用商店](https://chromewebstore.google.com/detail/ai4paper/emggpnhbiiogpfiofpfjdofppifididk) · [Edge 加载项](https://microsoftedge.microsoft.com/addons/detail/ai4paper/poeeobeiibkgaimmlkfmfamohamdiemn)),在 Google Scholar、知网、Web of Science 等页面显示期刊分区,并一键把文献加入文献库。从网页上识别文献、采集题录,到期刊分区与影响因子查询,都在这一套里完成。下载论文全文不收费,期刊分区查询、BibTeX 导出、PDF 整理等基础功能也免费使用。
+
+如果好用的东西不能被用户自由选择,而是被挡在门外,吃亏的是用户——这就是劣币驱逐良币。
+
+作为以官方名义运营的社区,收录与移除理应公开、公允,依据规则由多位维护者评议,而不应由与被评议对象存在利害关系的个人单方面决定。我们愿意接受任何有具体依据的评议。
+
+我们已就此继续公开提问,并请求由其他维护者依据收录规则评议:[#359](https://github.com/zotero-chinese/zotero-plugins/issues/359#issuecomment-6797237130)。不论商店最终如何处理,AI4Paper 仍将持续更新,可通过本页 [Releases](https://github.com/wdcpclover/ai4paper/releases) 或[官网](https://ai4paper.pro)安装。
+
+---
+
+## ✨ 核心能力
+
+| | |
+|---|---|
+| 📚 **内置知识库 · 2.4 亿文献源** | 自有 2.4 亿篇文献 + 引文网络索引,整个文献库变成可问答的知识库,观点全程可溯源 |
+| 🌐 **PDF 全文翻译 · 零配置** | 整篇 PDF 一键翻译,保留原版排版与公式,开箱即用、无需任何配置 |
+| 🔍 **AI 速搜文献** | 输入中文关键词,AI 自动扩展多组英文检索式,跨多库搜索、按引用排序、一键入库 |
+| ✍️ **AI 一键综述** | 关键词 → 自动搜文献 → 引文网络爬取 → 多轮筛选 → 3000–5000 字专业综述,每个观点标注真实文献 |
+| 🏆 **期刊分区随手查** | 中科院分区 / JCR / 影响因子 / SCIE·SSCI·CSCD·CSSCI 收录,[在线免费查询](https://ai4paper.pro/journal/) |
+| 📱 **小程序期刊订阅** | 微信订阅心仪期刊,新论文邮件 / 小程序提醒,一键回流 Zotero |
+
+## 功能全景
+
+### 🔍 找文献
+
+- **AI 速搜文献** — 中文关键词自动翻译成多组英文变体,同时搜索多个学术数据库,按引用量排序,一键导入
+- **内置知识库(2.4 亿文献源)** — 自有海量文献 + 引文网络,AI 搜文献、扩展引用、Gap 分析都跑在真实数据上
+- **期刊分级** — 搜索结果自动标注中科院分区、JCR 分区(Q1–Q4)、影响因子、SCIE/SSCI/CSCD/CSSCI 收录情况
+- **中文 PDF 识别** — 中文论文拖入自动识别标题、作者、期刊、摘要、关键词
+- **领域追踪 / 期刊订阅** — 锁定高质量期刊定期检索新论文自动导入;微信小程序订阅期刊,新文提醒一键入库
+- **真假文献识别** — 粘贴参考文献列表,逐条比对权威数据库验证,防止引用 AI 编造的假论文
+
+### 📖 读文献
+
+- **PDF 全文翻译(零配置)** — 整篇一键翻译,保留原版排版、图表与公式
+- **划词翻译** — 12 种翻译引擎内置(火山 / Google / DeepL / 有道 / 百度等),选中即翻译
+- **AI 阅读辅助** — 打开 PDF 问什么答什么:术语解释、公式拆解、方法对比;支持图片 / 截图多模态提问
+- **划词 AI 解释** — 选中文字点击浮窗,流式显示 AI 解读
+- **思维导图** — 一键生成论文结构导图,PNG / OPML 导出,可导入 XMind
+- **AI 笔记** — 深度分析、简记、精读、对话、专业综述等多种笔记自动生成保存
+- **笔记管理 / 同步** — 所有 AI 笔记一个面板管理、批量导出 Markdown;支持云端端到端加密同步
+
+### 📁 管文献
+
+- **PDF 一键整理** — 整个文件夹导入,自动提取 DOI、查询元数据、重命名、归档
+- **刷新元数据** — 一键补全标题、作者、摘要、DOI、被引量,英文标题自动翻译为中文
+- **刷新期刊分区** — SCI / 中科院分区 / JCR / 影响因子,自定义列显示
+- **AI 自动标签** — 92 条内置规则零成本秒打 + AI 智能中英双语标签
+- **智能清理** — 重复文献 / 空条目 / 孤儿附件 / 失效附件 / 低质量论文,五类问题一次扫完
+- **高级筛选** — 年份、分区、收录、标签等多条件组合筛选
+
+### ✍️ 写综述
+
+- **AI 一键综述** — 关键词 → 自动搜文献 → 引文网络爬取 → 多轮 AI 筛选 → 3000–5000 字专业综述报告
+- **专业综述报告** — 引言 / 主题聚类 / 方法论对比 / 核心发现与矛盾 / Gap 分析 / 未来路线图,每个观点标注真实文献编号
+- **基础综述** — 三种深度:标题综述(轻量)/ 摘要综述(标准)/ 精读综述(深度)
+- **迭代打磨** — 核心文献反复精选、换角度重生成、追加新文献
+- **文献矩阵** — 多篇论文自动生成对比表格(问题 / 方法 / 数据 / 结果 / 贡献 / 局限)
+
+### 🛠️ 基础工具
+
+- **知识库问答** — 文献库变成可检索、可溯源的知识库,回答保留来源线索
+- **多源下载附件** / **BibTeX 导出** / **批量 PDF 导入** / **10 种护眼模式** / **阅读时长追踪**
+
+### 🤖 AI 服务
+
+支持 20+ AI 服务商一键切换:
+
+- **国内**:AI4Paper(推荐)、通义千问、DeepSeek、智谱、Kimi、豆包、零一万物、文心一言、MiniMax、硅基流动
+- **国际**:OpenAI、Claude、Gemini、Mistral、xAI (Grok)、OpenRouter、Groq、Together AI
+- **本地**:Ollama(完全离线)
+
+---
+
+## 快速开始
+
+**方式一:网页版(30 秒上手)**
+
+打开 [app.ai4paper.pro](https://app.ai4paper.pro) → 注册 → 开始读文献。就这么简单。
+
+**方式二:Zotero 插件**
+
+1. 下载最新版 XPI:[Releases](https://github.com/wdcpclover/ai4paper/releases)
+2. Zotero → 工具 → 插件 → 齿轮图标 → Install Add-on From File → 选择 XPI
+3. 重启 Zotero,注册账号获得 **7 天全功能试用**
+
+> 原生支持 Zotero 7–10,一个账号网页版 / 插件 / 小程序通用。
+
+---
+
+## 📚 教程
+
+跟着做就能上手:每篇都按真实界面写,配截图,先讲方法再讲怎么在 AI4Paper 里做。完整目录见 [教程目录](docs/tutorials/README.md)。
+
+| 想做什么 | 从这里开始 |
+|---|---|
+| 第一次使用 | [安装并登录,先跑通一篇文献](docs/tutorials/01-getting-started/install-and-login.md) · [按任务认识界面](docs/tutorials/01-getting-started/ui-tour.md) · [网页版还是 Zotero 插件](docs/tutorials/01-getting-started/web-and-plugin.md) |
+| 找文献 | [用清楚的问题找到第一批文献](docs/tutorials/02-find/ai-quick-search.md) · [按期刊信息缩小范围](docs/tutorials/02-find/filter-by-ranking.md) · [整理已有文献](docs/tutorials/02-find/import-existing.md) |
+| 读文献 | [全文翻译与划词翻译](docs/tutorials/03-read/translate-pdf.md) · [AI 精读](docs/tutorials/03-read/ai-close-reading.md) · [用五个问题读论文并回查](docs/tutorials/03-read/read-and-verify.md) · [围绕一组文献提问](docs/tutorials/03-read/ask-your-library.md) |
+| 写综述与论文 | [怎么找综述](docs/tutorials/04-write/find-reviews.md) · [文献证据表](docs/tutorials/04-write/evidence-table.md) · [一键综述的用法与核对](docs/tutorials/04-write/one-click-review.md) · [在 Word / WPS 里引用](docs/tutorials/04-write/cite-in-word.md) |
+| 选期刊 | [分区与影响因子怎么看](docs/tutorials/05-journals/ranking-and-if.md) · [订阅期刊动态](docs/tutorials/05-journals/journal-alerts.md) |
+| 整理文库 | [分类与标签](docs/tutorials/06-library/categories-tags.md) · [去重](docs/tutorials/06-library/dedup.md) · [笔记管理](docs/tutorials/06-library/note-management.md) |
+
+---
+
+## ⭐ Star History
+
+如果 AI4Paper 帮到了你的科研,欢迎点亮一颗 Star ⭐ —— 这是我们持续打磨的最大动力。
+
+[![Star History Chart](https://api.star-history.com/svg?repos=wdcpclover/ai4paper&type=Date)](https://star-history.com/#wdcpclover/ai4paper&Date)
+
+---
+
+## 链接
+
+- ⚡ 网页版工作台:[app.ai4paper.pro](https://app.ai4paper.pro)
+- 🌐 官网:[ai4paper.pro](https://ai4paper.pro)
+- 🔍 期刊分区查询(免费):[ai4paper.pro/journal](https://ai4paper.pro/journal/)
+- 📖 使用文档:[ai4paper.pro/docs](https://ai4paper.pro/docs/)
+- 🧭 新手教程:[Zotero AI 插件配置](https://ai4paper.pro/guide/zotero-ai/) · [AI 辅助文献综述](https://ai4paper.pro/guide/literature-review/) · [论文写作全流程](https://ai4paper.pro/guide/paper-writing/) · [AI 辅助写作指南](https://ai4paper.pro/guide/ai-writing/)
+- 📚 GitHub 教程:[教程目录](docs/tutorials/README.md)
+- 📚 GitHub 使用文档:[期刊分区与影响因子](docs/zotero-journal-ranking-impact-factor.md) · [上手与安装](docs/getting-started.md) · [按任务选工具](docs/choose-by-task.md) · [桌面版](docs/desktop-app.md) · [网页工作台](docs/web-workbench.md)
+
+## 许可
+
+Copyright © 2026 AI4Paper. All rights reserved.

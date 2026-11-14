@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NVlabs/instant-ngp · GitHub Trending Rank Radar</title>
+<meta name="description" content="Instant neural graphics primitives: lightning fast NeRF and more">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="instant-ngp, NVlabs, NVlabs/instant-ngp, github stars, github trending, star growth, star history, 开源项目, 星标增长, neural-network, machine-learning, cuda, nerf, computer-graphics, computer-vision">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/NVlabs__instant-ngp">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="NVlabs/instant-ngp · GitHub Trending Rank Radar">
+<meta property="og:description" content="Instant neural graphics primitives: lightning fast NeRF and more">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/NVlabs__instant-ngp">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "NVlabs/instant-ngp", "codeRepository": "https://github.com/NVlabs/instant-ngp", "url": "https://zhuikan.com/repos/NVlabs__instant-ngp", "description": "Instant neural graphics primitives: lightning fast NeRF and more", "author": {"@type": "Organization", "name": "NVlabs", "url": "https://github.com/NVlabs"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "Cuda", "dateCreated": "2022-01-05", "keywords": "neural-network,machine-learning,cuda,nerf,computer-graphics,computer-vision,3d-reconstruction,signed-distance-functions,function-approximation,real-time"}</script>
+</head>
+<body data-repo="NVlabs/instant-ngp" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">NVlabs/instant-ngp</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="NVlabs__instant-ngp"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/2695301?v=4&s=300" width="300" height="300" alt="NVlabs avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">instant-ngp</div>
+      <a class="rp-side-owner" href="https://github.com/NVlabs">NVlabs</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/NVlabs">NVlabs</a>
+        <span class="rp-sep">/</span><span class="rp-name">instant-ngp</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Instant neural graphics primitives: lightning fast NeRF and more</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>17,598</b></span><span class="rp-stat" title="forks">⑂ <b>2,067</b></span><span class="rp-stat" title="watchers">👁 <b>198</b></span><span class="rp-stat" title="prs">⑃ <b>163</b></span><span class="rp-stat" title="issues">● <b>1,038</b></span><span class="rp-stat" title="releases">▤ <b>2</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/neural-network">neural-network</a><a class="rp-topic" href="../tags/machine-learning">machine-learning</a><a class="rp-topic" href="https://github.com/topics/cuda">cuda</a><a class="rp-topic" href="https://github.com/topics/nerf">nerf</a><a class="rp-topic" href="https://github.com/topics/computer-graphics">computer-graphics</a><a class="rp-topic" href="../tags/computer-vision">computer-vision</a><a class="rp-topic" href="https://github.com/topics/3d-reconstruction">3d-reconstruction</a><a class="rp-topic" href="https://github.com/topics/signed-distance-functions">signed-distance-functions</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Cuda</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2022-01-05</span><a class="rp-meta-bit rp-home" href="https://nvlabs.github.io/instant-ngp" rel="noopener">nvlabs.github.io/instant-ngp</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="NVlabs__GraspGenX"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/2695301?v=4" alt="" loading="lazy">GraspGenX</a><a class="rp-same-link" href="NVlabs__SPADE"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/2695301?v=4" alt="" loading="lazy">SPADE</a><a class="rp-same-link" href="NVlabs__Sana"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/2695301?v=4" alt="" loading="lazy">Sana</a><a class="rp-same-link" href="NVlabs__SoL-Pi"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/2695301?v=4" alt="" loading="lazy">SoL-Pi</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/NVlabs/instant-ngp">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Version 2.0</span><a class="rp-dl-a" href="https://github.com/NVlabs/instant-ngp/releases/tag/v2.0">Version-2.0 ↓</a><span class="rp-dl-ver">2.0</span><span class="rp-dl-date">2025-07-08</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+12</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+23</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">17,598</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,067</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">198</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">163</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,038</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">2</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Instant Neural Graphics Primitives !
+
+ 
+
+Ever wanted to train a NeRF model of a fox in under 5 seconds? Or fly around a scene captured from photos of a factory robot? Of course you have!
+
+Here you will find an implementation of four __neural graphics primitives__, being neural radiance fields (NeRF), signed distance functions (SDFs), neural images, and neural volumes.
+In each case, we train and render a MLP with multiresolution hash input encoding using the __tiny-cuda-nn__ framework.
+
+ __Instant Neural Graphics Primitives with a Multiresolution Hash Encoding__  
+ Thomas Müller, Alex Evans, Christoph Schied, Alexander Keller  
+ _ACM Transactions on Graphics (__SIGGRAPH__), July 2022_  
+ __Project page&amp;nbsp;/ Paper&amp;nbsp;/ Video&amp;nbsp;/ Presentation&amp;nbsp;/ Real-Time Live&amp;nbsp;/ BibTeX__
+
+For business inquiries, please submit the NVIDIA research licensing form.
+
+
+ Installation
+
+If you have Windows, download one of the following releases corresponding to your graphics card and extract it. Then, start instant-ngp.exe.
+
+- RTX 5000 series and other Blackwell cards
+- RTX 3000 &amp; 4000 series, RTX A4000&amp;ndash;A6000, and other Ampere &amp; Ada cards
+- RTX 2000 series, Titan RTX, Quadro RTX 4000&amp;ndash;8000, and other Turing cards
+- GTX 1000 series, Titan Xp, Quadro P1000&amp;ndash;P6000, and other Pascal cards
+
+Keep reading for a guided tour of the application or, if you are interested in creating your own NeRF, watch the video tutorial or read the written instructions.
+
+If you use Linux, or want the developer Python bindings, or if your GPU is not listed above (e.g. Hopper, Volta, or Maxwell generations), you need to build __instant-ngp__ yourself.
+
+
+ Usage
+
+
+
+__instant-ngp__ comes with an interactive GUI that includes many features:
+- comprehensive controls for interactively exploring neural graphics primitives,
+- VR mode for viewing neural graphics primitives through a virtual-reality headset,
+- saving and loading &quot;snapshots&quot; so you can share your graphics primitives on the internet,
+- a camera path editor to create videos,
+- NeRF-Mesh and SDF-Mesh conversion,
+- camera pose and lens optimization,
+- and many more.
+
+
+ NeRF fox
+
+Simply start instant-ngp and drag the data/nerf/fox folder into the window. Or, alternatively, use the command line:
+
+sh
+instant-ngp$ ./instant-ngp data/nerf/fox
+
+
+
+
+You can use __any__ NeRF-compatible dataset, e.g. from original NeRF, the SILVR dataset, or the DroneDeploy dataset. To create your own NeRF, watch the video tutorial or read the written instructions.
+
+ SDF armadillo
+
+Drag data/sdf/armadillo.obj into the window or use the command:
+
+sh
+instant-ngp$ ./instant-ngp data/sdf/armadillo.obj
+
+
+
+
+ Image of Einstein
+
+Drag data/image/albert.exr into the window or use the command:
+
+sh
+instant-ngp$ ./instant-ngp data/image/albert.exr
+
+
+
+
+To reproduce the gigapixel results, download, for example, the Tokyo image and convert it to .bin using the scripts/convert_image.py script. This custom format improves compatibility and loading speed when res</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/NVlabs/instant-ngp/issues/1219"><span class="rp-item-num">#1219</span><span class="rp-item-title">cutlass_matmul.h:332 status failed with error Error Internal</span><span class="rp-item-extra">29 comments · 2023-02-03</span></a><a class="rp-item" href="https://github.com/NVlabs/instant-ngp/issues/1095"><span class="rp-item-num">#1095</span><span class="rp-item-title">how to add the depth map from colmap to instant-ngp ?</span><span class="rp-item-extra">29 comments · 2022-11-29</span></a><a class="rp-item" href="https://github.com/NVlabs/instant-ngp/issues/727"><span class="rp-item-num">#727</span><span class="rp-item-title">How can i import camera animation/path from other software?</span><span class="rp-item-extra">28 comments · 2022-06-29</span></a><a class="rp-item" href="https://github.com/NVlabs/instant-ngp/issues/939"><span class="rp-item-num">#939</span><span class="rp-item-title">depth loss question</span><span class="rp-item-extra">22 comments · 2022-09-08</span></a><a class="rp-item" href="https://github.com/NVlabs/instant-ngp/issues/1345"><span class="rp-item-num">#1345</span><span class="rp-item-title">Wrong dimensions of mesh file</span><span class="rp-item-extra">17 comments · 2023-05-09</span></a><a class="rp-item" href="https://github.com/NVlabs/instant-ngp/issues/1142"><span class="rp-item-num">#1142</span><span class="rp-item-title">MAKE_CUDA_ARCHITECTURES must be non-empty if set.</span><span class="rp-item-extra">17 comments · 2022-12-28</span></a><a class="rp-item" href="https://github.com/NVlabs/instant-ngp/issues/1108"><span class="rp-item-num">#1108</span><span class="rp-item-title">failed with error CUDA_ERROR_OUT_OF_MEMORY</span><span class="rp-item-extra">14 comments · 2022-12-02</span></a><a class="rp-item" href="https://github.com/NVlabs/instant-ngp/issues/1318"><span class="rp-item-num">#1318</span><span class="rp-item-title">Can&#x27;t build testbed.cu:175:23: error: no match for ‘operator=&#x27;</span><span class="rp-item-extra">13 comments · 2023-04-06</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/NVlabs/instant-ngp/discussions/1610"><span class="rp-item-num">#1610</span><span class="rp-item-title">introducing physically based rendering</span><span class="rp-item-extra">0 comments · 2025-12-15</span></a><a class="rp-item" href="https://github.com/NVlabs/instant-ngp/discussions/1604"><span class="rp-item-num">#1604</span><span class="rp-item-title">Instants-ngp Output Issue After Reality Scan and Colmap</span><span class="rp-item-extra">1 comments · 2025-08-22</span></a><a class="rp-item" href="https://github.com/NVlabs/instant-ngp/discussions/1598"><span class="rp-item-num">#1598</span><span class="rp-item-title">Blocky and incomplete mesh output despite good input</span><span class="rp-item-extra">0 comments · 2025-07-04</span></a><a class="rp-item" href="https://github.com/NVlabs/instant-ngp/discussions/1595"><span class="rp-item-num">#1595</span><span class="rp-item-title">I can&#x27;t run orange data mining on ubuntu</span><span class="rp-item-extra">0 comments · 2025-05-20</span></a><a class="rp-item" href="https://github.com/NVlabs/instant-ngp/discussions/1593"><span class="rp-item-num">#1593</span><span class="rp-item-title">KinfuTracker camera pose to instant-ngp</span><span class="rp-item-extra">0 comments · 2025-03-28</span></a><a class="rp-item" href="https://github.com/NVlabs/instant-ngp/discussions/1571"><span class="rp-item-num">#1571</span><span class="rp-item-title">I&#x27;m inquiring about debugging.</span><span class="rp-item-extra">0 comments · 2024-10-03</span></a><a class="rp-item" href="https://github.com/NVlabs/instant-ngp/discussions/1568"><span class="rp-item-num">#1568</span><span class="rp-item-title">How can i export the mesh?</span><span class="rp-item-extra">0 comments · 2024-09-07</span></a><a class="rp-item" href="https://github.com/NVlabs/instant-ngp/discussions/1561"><span class="rp-item-num">#1561</span><span class="rp-item-title">Is it possible to convert the &#x27;fox/transforms_base.ingp&#x27; file to &#x27;.obj&#x27; using the run.py script?</span><span class="rp-item-extra">0 comments · 2024-07-30</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/NVlabs/instant-ngp/releases"><b>Version 2.0</b> <span class="rp-rel-tag">v2.0</span> <span class="rp-item-extra">2025-07-08</span></a><pre class="rp-pre">Instant NGP just got 5x faster at rendering and 1.5x faster at training!
+
+The speedup comes from a new just-in-time (JIT) compiler in tiny-cuda-nn, the neural network library that Instant NGP is based on; see tiny-cuda-nn&#x27;s 2.0 release notes.
+
+Using this new JIT compiler, Instant NGP fuses the entire NeRF ray marcher, as well as several other core components, into single CUDA kernels. That is to say: the 5x speed-up comes from optimization through fusion rather than algorithmic changes. Therefore all existing snapshots, and configurations still work unmodified.
+
+ How to use the new Insta</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/NVlabs__instant-ngp.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

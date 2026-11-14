@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>coderamp-labs/gitingest · GitHub Trending Rank Radar</title>
+<meta name="description" content="Replace &#x27;hub&#x27; with &#x27;ingest&#x27; in any GitHub URL to get a prompt-friendly extract of a codebase ">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="gitingest, coderamp-labs, coderamp-labs/gitingest, github stars, github trending, star growth, star history, 开源项目, 星标增长, ai, code, ingestion, developer-tool">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/coderamp-labs__gitingest">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="coderamp-labs/gitingest · GitHub Trending Rank Radar">
+<meta property="og:description" content="Replace &#x27;hub&#x27; with &#x27;ingest&#x27; in any GitHub URL to get a prompt-friendly extract of a codebase ">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/coderamp-labs__gitingest">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "coderamp-labs/gitingest", "codeRepository": "https://github.com/coderamp-labs/gitingest", "url": "https://zhuikan.com/repos/coderamp-labs__gitingest", "description": "Replace 'hub' with 'ingest' in any GitHub URL to get a prompt-friendly extract of a codebase ", "author": {"@type": "Organization", "name": "coderamp-labs", "url": "https://github.com/coderamp-labs"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Python", "dateCreated": "2024-11-29", "keywords": "ai,code,ingestion,developer-tool"}</script>
+</head>
+<body data-repo="coderamp-labs/gitingest" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">coderamp-labs/gitingest</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="coderamp-labs__gitingest"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/219437526?v=4&s=300" width="300" height="300" alt="coderamp-labs avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">gitingest</div>
+      <a class="rp-side-owner" href="https://github.com/coderamp-labs">coderamp-labs</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/coderamp-labs">coderamp-labs</a>
+        <span class="rp-sep">/</span><span class="rp-name">gitingest</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Replace &#x27;hub&#x27; with &#x27;ingest&#x27; in any GitHub URL to get a prompt-friendly extract of a codebase </p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>16,135</b></span><span class="rp-stat" title="forks">⑂ <b>1,215</b></span><span class="rp-stat" title="watchers">👁 <b>57</b></span><span class="rp-stat" title="prs">⑃ <b>370</b></span><span class="rp-stat" title="issues">● <b>241</b></span><span class="rp-stat" title="releases">▤ <b>7</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/ai">ai</a><a class="rp-topic" href="https://github.com/topics/code">code</a><a class="rp-topic" href="https://github.com/topics/ingestion">ingestion</a><a class="rp-topic" href="https://github.com/topics/developer-tool">developer-tool</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2024-11-29</span><a class="rp-meta-bit rp-home" href="https://gitingest.com" rel="noopener">gitingest.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/coderamp-labs/gitingest">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.3.1</span><a class="rp-dl-a" href="https://github.com/coderamp-labs/gitingest/releases/tag/v0.3.1">v0.3.1 ↓</a><span class="rp-dl-ver">0.3.1</span><span class="rp-dl-date">2025-07-31</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+6</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">16,135</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,215</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">57</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">370</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">241</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">7</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Gitingest
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+Turn any Git repository into a prompt-friendly text ingest for LLMs.
+
+You can also replace hub with ingest in any GitHub URL to access the corresponding digest.
+
+
+gitingest.com · Chrome Extension · Firefox Add-on
+
+
+Deutsch |
+Español |
+Français |
+日本語 |
+한국어 |
+Português |
+Русский |
+中文
+
+ 🚀 Features
+
+- Easy code context: Get a text digest from a Git repository URL or a directory
+- Smart Formatting: Optimized output format for LLM prompts
+- Statistics about:
+  - File and directory structure
+  - Size of the extract
+  - Token count
+- CLI tool: Run it as a shell command
+- Python package: Import it in your code
+
+ 📚 Requirements
+
+- Python 3.8+
+- For private repositories: A GitHub Personal Access Token (PAT). Generate your token here!
+
+ 📦 Installation
+
+Gitingest is available on PyPI.
+You can install it using pip:
+
+bash
+pip install gitingest
+
+
+or
+
+bash
+pip install gitingest[server]
+
+
+to include server dependencies for self-hosting.
+
+However, it might be a good idea to use pipx to install it.
+You can install pipx using your preferred package manager.
+
+bash
+brew install pipx
+apt install pipx
+scoop install pipx
+...
+
+
+If you are using pipx for the first time, run:
+
+bash
+pipx ensurepath
+
+
+bash
+ install gitingest
+pipx install gitingest
+
+
+ 🧩 Browser Extension Usage
+
+
+
+
+
+
+
+The extension is open source at lcandy2/gitingest-extension.
+
+Issues and feature requests are welcome to the repo.
+
+ 💡 Command line usage
+
+The gitingest command line tool allows you to analyze codebases and create a text dump of their contents.
+
+bash
+ Basic usage (writes to digest.txt by default)
+gitingest /path/to/directory
+
+ From URL
+gitingest https://github.com/coderamp-labs/gitingest
+
+ or from specific subdirectory
+gitingest https://github.com/coderamp-labs/gitingest/tree/main/src/gitingest/utils
+
+
+For private repositories, use the --token/-t option.
+
+bash
+ Get your token from https://github.com/settings/personal-access-tokens
+gitingest https://github.com/username/private-repo --token github_pat_...
+
+ Or set it as an environment variable
+export GITHUB_TOKEN=github_pat_...
+gitingest https://github.com/username/private-repo
+
+ Include repository submodules
+gitingest https://github.com/username/repo-with-submodules --include-submodules
+
+
+By default, files listed in .gitignore are skipped. Use --include-gitignored if you
+need those files in the digest.
+
+By default, the digest is written to a text file (digest.txt) in your current working directory. You can customize the output in two ways:
+
+- Use --output/-o  to write to a specific file.
+- Use --output/-o - to output directly to STDOUT (useful for piping to other tools).
+
+See more options and usage details with:
+
+bash
+gitingest --help
+
+
+ 🐍 Python package usage
+
+python
+ Synchronous usage
+from gitingest import ingest
+
+summary, tree, content = ingest(&quot;path/to/directory&quot;)
+
+ or from URL
+summary, tree, content = ingest(&quot;https://github.com/coderamp-labs/gitingest&quot;)
+
+ or from a specific subdir</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/coderamp-labs/gitingest/issues/585"><span class="rp-item-num">#585</span><span class="rp-item-title">(bug): include filter not work for SYMLINK</span><span class="rp-item-extra">5 comments · 2026-06-17</span></a><a class="rp-item" href="https://github.com/coderamp-labs/gitingest/issues/606"><span class="rp-item-num">#606</span><span class="rp-item-title">(bug): -b/--branch and /tree/&lt;branch&gt; URLs still ingest the default branch (follow-up to #574)</span><span class="rp-item-extra">2 comments · 2026-09-21</span></a><a class="rp-item" href="https://github.com/coderamp-labs/gitingest/issues/605"><span class="rp-item-num">#605</span><span class="rp-item-title">Access token is written to logs and to RuntimeError messages when cloning with a token (0.3.1)</span><span class="rp-item-extra">1 comments · 2026-09-08</span></a><a class="rp-item" href="https://github.com/coderamp-labs/gitingest/issues/613"><span class="rp-item-num">#613</span><span class="rp-item-title">(bug): Why my markdown file was misrecognized as a binary file</span><span class="rp-item-extra">0 comments · 2026-10-24</span></a><a class="rp-item" href="https://github.com/coderamp-labs/gitingest/issues/609"><span class="rp-item-num">#609</span><span class="rp-item-title">(bug): max_file_size is ignored when ingesting a single local file</span><span class="rp-item-extra">0 comments · 2026-10-13</span></a><a class="rp-item" href="https://github.com/coderamp-labs/gitingest/issues/608"><span class="rp-item-num">#608</span><span class="rp-item-title">(bug): Image-only notebook outputs discard all notebook source cells</span><span class="rp-item-extra">0 comments · 2026-10-13</span></a><a class="rp-item" href="https://github.com/coderamp-labs/gitingest/issues/492"><span class="rp-item-num">#492</span><span class="rp-item-title">Dependency Dashboard</span><span class="rp-item-extra">0 comments · 2025-08-05</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/coderamp-labs/gitingest/discussions/612"><span class="rp-item-num">#612</span><span class="rp-item-title">GitIngest included in AgentManager&#x27;s tool catalog</span><span class="rp-item-extra">0 comments · 2026-10-18</span></a><a class="rp-item" href="https://github.com/coderamp-labs/gitingest/discussions/588"><span class="rp-item-num">#588</span><span class="rp-item-title">Can Gitingest users test a no-write graph proof against a prompt digest?</span><span class="rp-item-extra">0 comments · 2026-06-17</span></a><a class="rp-item" href="https://github.com/coderamp-labs/gitingest/discussions/534"><span class="rp-item-num">#534</span><span class="rp-item-title">add API REST for GitIngest</span><span class="rp-item-extra">0 comments · 2025-09-22</span></a><a class="rp-item" href="https://github.com/coderamp-labs/gitingest/discussions/402"><span class="rp-item-num">#402</span><span class="rp-item-title">New Gitingest update</span><span class="rp-item-extra">1 comments · 2025-07-12</span></a><a class="rp-item" href="https://github.com/coderamp-labs/gitingest/discussions/268"><span class="rp-item-num">#268</span><span class="rp-item-title">Comparison with Repomix (and other similar tools)</span><span class="rp-item-extra">0 comments · 2025-05-20</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/coderamp-labs/gitingest/releases"><b>v0.3.1</b> <span class="rp-rel-tag">v0.3.1</span> <span class="rp-item-extra">2025-07-31</span></a><pre class="rp-pre">0.3.1 (2025-07-31)
+
+
+ Bug Fixes
+
+ make cache aware of subpaths (481) (8b59bef)</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/coderamp-labs__gitingest.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>microsoft/vscode · GitHub Trending Rank Radar</title>
+<meta name="description" content="Visual Studio Code">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="vscode, microsoft, microsoft/vscode, github stars, github trending, star growth, star history, 开源项目, 星标增长, editor, electron, visual-studio-code, typescript, microsoft">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/microsoft__vscode">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="microsoft/vscode · GitHub Trending Rank Radar">
+<meta property="og:description" content="Visual Studio Code">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/microsoft__vscode">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "microsoft/vscode", "codeRepository": "https://github.com/microsoft/vscode", "url": "https://zhuikan.com/repos/microsoft__vscode", "description": "Visual Studio Code", "author": {"@type": "Organization", "name": "microsoft", "url": "https://github.com/microsoft"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2015-09-03", "keywords": "editor,electron,visual-studio-code,typescript,microsoft"}</script>
+</head>
+<body data-repo="microsoft/vscode" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">microsoft/vscode</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="microsoft__vscode"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/6154722?v=4&s=300" width="300" height="300" alt="microsoft avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">vscode</div>
+      <a class="rp-side-owner" href="https://github.com/microsoft">microsoft</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/microsoft">microsoft</a>
+        <span class="rp-sep">/</span><span class="rp-name">vscode</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily_rate">daily_rate <b>#183</b></a><a class="rp-board-chip" href="../?board=total">total <b>#36</b></a></div>
+    </div>
+    <p class="rp-desc">Visual Studio Code</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>195,348</b></span><span class="rp-stat" title="forks">⑂ <b>43,827</b></span><span class="rp-stat" title="watchers">👁 <b>3,623</b></span><span class="rp-stat" title="prs">⑃ <b>72,574</b></span><span class="rp-stat" title="issues">● <b>259,016</b></span><span class="rp-stat" title="releases">▤ <b>255</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/editor">editor</a><a class="rp-topic" href="../tags/electron">electron</a><a class="rp-topic" href="https://github.com/topics/visual-studio-code">visual-studio-code</a><a class="rp-topic" href="../tags/typescript">typescript</a><a class="rp-topic" href="https://github.com/topics/microsoft">microsoft</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2015-09-03</span><a class="rp-meta-bit rp-home" href="https://code.visualstudio.com" rel="noopener">code.visualstudio.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="microsoft__markitdown"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">markitdown</a><a class="rp-same-link" href="microsoft__PowerToys"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">PowerToys</a><a class="rp-same-link" href="microsoft__generative-ai-for-beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">generative-ai-for-beginners</a><a class="rp-same-link" href="microsoft__TypeScript"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">TypeScript</a><a class="rp-same-link" href="microsoft__terminal"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">terminal</a><a class="rp-same-link" href="microsoft__playwright"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">playwright</a><a class="rp-same-link" href="microsoft__Web-Dev-For-Beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">Web-Dev-For-Beginners</a><a class="rp-same-link" href="microsoft__ML-For-Beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">ML-For-Beginners</a><a class="rp-same-link" href="microsoft__AI-For-Beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">AI-For-Beginners</a><a class="rp-same-link" href="microsoft__AirSim"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">AirSim</a><a class="rp-same-link" href="microsoft__BitNet"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">BitNet</a><a class="rp-same-link" href="microsoft__Bringing-Old-Photos-Back-to-Life"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">Bringing-Old-Photos-Back-to-Life</a><a class="rp-same-link" href="microsoft__CNTK"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">CNTK</a><a class="rp-same-link" href="microsoft__Data-Science-For-Beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">Data-Science-For-Beginners</a><a class="rp-same-link" href="microsoft__FluidFramework"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">FluidFramework</a><a class="rp-same-link" href="microsoft__IoT-For-Beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">IoT-For-Beginners</a><a class="rp-same-link" href="microsoft__MMdnn"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">MMdnn</a><a class="rp-same-link" href="microsoft__Ontology-Playground"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">Ontology-Playground</a><a class="rp-same-link" href="microsoft__Procexp-Mac"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">Procexp-Mac</a><a class="rp-same-link" href="microsoft__RD-Agent"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">RD-Agent</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/microsoft/vscode">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">1.146.0</span><a class="rp-dl-a" href="https://github.com/microsoft/vscode/releases/tag/1.146.0">1.146.0 ↓</a><span class="rp-dl-ver">1.146.0</span><span class="rp-dl-date">2026-11-11</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+15</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">195,348</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">43,827</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">3,623</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">72,574</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">259,016</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">255</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Visual Studio Code - Open Source (&quot;Code - OSS&quot;)
+
+
+
+ The Repository
+
+This repository (&quot;Code - OSS&quot;) is where we (Microsoft) develop the Visual Studio Code product together with the community. Not only do we work on code and issues here, but we also publish our roadmap, monthly iteration plans, and our endgame plans. This source code is available to everyone under the standard MIT license.
+
+ Visual Studio Code
+
+
+  
+
+
+Visual Studio Code is a distribution of the Code - OSS repository with Microsoft-specific customizations released under a traditional Microsoft product license.
+
+Visual Studio Code combines the simplicity of a code editor with what developers need for their core edit-build-debug cycle. It provides comprehensive code editing, navigation, and understanding support along with lightweight debugging, a rich extensibility model, and lightweight integration with existing tools.
+
+Visual Studio Code is updated monthly with new features and bug fixes. You can download it for Windows, macOS, and Linux on the Visual Studio Code website. To get the latest releases every day, install the Insiders build.
+
+ Contributing
+
+There are many ways in which you can participate in this project, for example:
+
+ Submit bugs and feature requests, and help us verify them as they are checked in
+ Review source code changes
+ Review the documentation and make pull requests for anything from typos to new content.
+
+If you are interested in fixing issues and contributing directly to the codebase, please see the document How to Contribute, which covers the following:
+
+ How to build and run from source
+ The development workflow, including debugging and running tests
+ Coding guidelines
+ Submitting pull requests
+ Finding an issue to work on
+ Contributing to translations
+
+ Feedback
+
+ Ask a question on Stack Overflow
+ Request a new feature
+ Upvote popular feature requests
+ File an issue
+ Connect with the extension author community on GitHub Discussions or Slack
+ Follow @code and let us know what you think!
+
+See our wiki for a description of each of these channels and information on some other available community-driven channels.
+
+ Related Projects
+
+Many of the core components and extensions to VS Code live in their own repositories on GitHub. For example, the node debug adapter and the mono debug adapter repositories are separate from each other. For a complete list, please visit the Related Projects page on our wiki.
+
+ Bundled Extensions
+
+VS Code includes a set of built-in extensions located in the extensions folder, including grammars and snippets for many languages. Extensions that provide rich language support (inline suggestions, Go to Definition) for a language have the suffix language-features. For example, the json extension provides coloring for JSON and the json-language-features extension provides rich language support for JSON.
+
+ Development Container
+
+This repository includes a Visual Studio Code Dev Containers / GitHub Codespaces development container.
+
+ For Dev C</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/microsoft/vscode/issues/519"><span class="rp-item-num">#519</span><span class="rp-item-title">Allow to change the font size and font of the workbench</span><span class="rp-item-extra">604 comments · 2015-11-24</span></a><a class="rp-item" href="https://github.com/microsoft/vscode/issues/3130"><span class="rp-item-num">#3130</span><span class="rp-item-title">Allow customization of mouse shortcuts</span><span class="rp-item-extra">453 comments · 2016-02-18</span></a><a class="rp-item" href="https://github.com/microsoft/vscode/issues/40239"><span class="rp-item-num">#40239</span><span class="rp-item-title">Feature Request: Enable/disable extensions from config file</span><span class="rp-item-extra">437 comments · 2017-12-15</span></a><a class="rp-item" href="https://github.com/microsoft/vscode/issues/28795"><span class="rp-item-num">#28795</span><span class="rp-item-title">Editor: scroll jumps randomly (related to Chrome, Electron, xinput)</span><span class="rp-item-extra">429 comments · 2017-06-15</span></a><a class="rp-item" href="https://github.com/microsoft/vscode/issues/253136"><span class="rp-item-num">#253136</span><span class="rp-item-title">Meta: Sorry, your request failed. Please try again.</span><span class="rp-item-extra">415 comments · 2025-01-24</span></a><a class="rp-item" href="https://github.com/microsoft/vscode/issues/13960"><span class="rp-item-num">#13960</span><span class="rp-item-title">Virtual Space is not implemented.</span><span class="rp-item-extra">317 comments · 2016-10-18</span></a><a class="rp-item" href="https://github.com/microsoft/vscode/issues/253137"><span class="rp-item-num">#253137</span><span class="rp-item-title">Meta: Language Model Unavailable</span><span class="rp-item-extra">292 comments · 2024-10-30</span></a><a class="rp-item" href="https://github.com/microsoft/vscode/issues/52855"><span class="rp-item-num">#52855</span><span class="rp-item-title">VS Code was lost on shutdown with pending update</span><span class="rp-item-extra">288 comments · 2018-06-26</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/microsoft/vscode/releases"><b>1.146.0</b> <span class="rp-rel-tag">1.146.0</span> <span class="rp-item-extra">2026-11-11</span></a><pre class="rp-pre">https://code.visualstudio.com/updates/v1_146</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (5)</h3><div class="rp-list"><a class="rp-item" href="https://news.google.com/rss/articles/CBMic0FVX3lxTFBtTDdHc1JmRkRId093Z2xKTHBKZWFXbHlRTnJwOHBUS3Q1dlE4aEY5V0F6bXJtQkFLdW01SzNoUFpGMlRhTG90RWZlcWNEeFVLOFF5RGFoeXNMRjdldzlZMlVBQlFLMG5waUF3cnRacnNoLU0?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">www.80aj.com</span><span class="rp-item-title">VSCode内置Copilot引发性能故障：启动卡死数十秒，GitHub侧边栏受波及</span><span class="rp-item-extra">2026-06-18</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5WVG9VRkhaaS1mdmE2dUZJVzRfOFhlMTFteXpyal9BQzhucHdCQ2I4Y1pkZjZRT2FkcDYtWHFfMDNZcXZQY3UyQURNanJxeWt6UjFVZzNNUmVoRmdrYi05X2JLdzJZMVU?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN博客</span><span class="rp-item-title">怒怼微软后，研究员公开GitHub高危漏洞：一个链接拿下私有仓库权限_github.dev 的安全漏洞披露(如 2026</span><span class="rp-item-extra">2026-06-04</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMimAFBVV95cUxOOFFtQVFfb0RZSzFNTUwwaXk0UGowUktTd2RjLXI2Z0ZvbUdMVGNHMXp5QnN1V2NmVk9hdk5UZU9iYURLeWdCUEFxSDVzOGlpZktSZEV1dWdrelNzNFB4eU9CY3hwTEYxS01admZNTG9sMXRDeHBIdTYxNXJZUGZlckNId0FnUVp4T0EyZGRkUWdZN3VpbkNHVA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">VS Code 漏洞：一次点击窃取 GitHub OAuth 令牌，暴露所有私有仓库</span><span class="rp-item-extra">2026-06-03</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMia0FVX3lxTE90RmMxX0tGUGhGNHAxTERySGg4ZW16aGU2dzREenBYcEFCVmljemktX3dBV0RIc1BWaTJZMlNtZU1lYkpEUlQ1MVZOR2N5Mm9FZWpGeUlhejZFY2tYTS1aMU5sWThnSU4zY2Rn?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">www.80aj.com</span><span class="rp-item-title">GitHub 确认遭供应链攻击：恶意 VSCode 扩展致 3800 个内部代码库泄露</span><span class="rp-item-extra">2026-05-21</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiTkFVX3lxTE5PVUtoZFFYQ2xrbVZRazBEZXlrbEhHRUhBODdkcVowWmpyT2dmbXpWLTVIbzRoRy15MDNSUGs5bzl3TmhydmxmX3loaVA1UQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">安全内参</span><span class="rp-item-title">GitHub遭恶意VS Code插件入侵：3800个内部仓库被盗</span><span class="rp-item-extra">2026-05-20</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (22)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=32728850" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ask HN: Compiling VSCode project substantially faster with Panel closed</span><span class="rp-item-extra">▲ 16 · 6 comments · 2022-09-05</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=18285255" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ask HN: Examples of well-written JavaScript/TypeScript applications?</span><span class="rp-item-extra">▲ 11 · 1 comments · 2018-10-23</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=43571908" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: Haystack Code Reviewer – Guided Tours for Pull Requests</span><span class="rp-item-extra">▲ 8 · 0 comments · 2025-04-03</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=15604833" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ask HN: What are some good software roadmap documents?</span><span class="rp-item-extra">▲ 5 · 0 comments · 2017-11-01</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=48571849" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: OctoPunk – a full-featured, AI-integrated GitHub client</span><span class="rp-item-extra">▲ 4 · 0 comments · 2026-06-17</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=42966248" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: Copilot Next Edit Suggestions in VS Code</span><span class="rp-item-extra">▲ 4 · 1 comments · 2025-02-06</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=24128031" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">VSCode feature request: Implement Google Chrome-like grouped tabs</span><span class="rp-item-extra">▲ 2 · 2 comments · 2020-08-12</span></a><a class="rp-item" href="https://note.com/safe_salvia2024/n/n4c521c6f5a27?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">Top 5 Web Development Tools Growing on GitHub [As of November 6, 2026]</span><span class="rp-item-extra">2026-11-06</span></a><a class="rp-item" href="https://www.analyticsinsight.net/artificial-intelligence/github-copilot-adds-new-ai-agent-features-to-vs-code-in-2026" target="_blank" rel="noopener"><span class="rp-news-src">Analytics Insight</span><span class="rp-item-title">GitHub Copilot Adds New AI Agent Features to VS Code in 2026</span><span class="rp-item-extra">2026-10-30</span></a><a class="rp-item" href="https://visualstudiomagazine.com/articles/2026/10/29/github-lets-developers-control-vs-code-ai-agents-from-their-phones.aspx" target="_blank" rel="noopener"><span class="rp-news-src">Visual Studio Magazine</span><span class="rp-item-title">GitHub Lets Developers Control VS Code AI Agents from Their Phones</span><span class="rp-item-extra">2026-10-28</span></a><details class="rp-news-more"><summary>12 more</summary><a class="rp-item" href="https://visualstudiomagazine.com/articles/2026/10/13/vs-code-1-141-brings-copilot-codex-sessions-together-tightens-ai-agent-security.aspx" target="_blank" rel="noopener"><span class="rp-news-src">Visual Studio Magazine</span><span class="rp-item-title">VS Code 1.141 Brings Copilot, Codex Sessions Together, Tightens AI Agent Security</span><span class="rp-item-extra">2026-10-12</span></a><a class="rp-item" href="https://github.blog/changelog/2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available/" target="_blank" rel="noopener"><span class="rp-news-src">github</span><span class="rp-item-title">Browser tools for GitHub Copilot in VS Code are generally available</span><span class="rp-item-extra">2026-07-01</span></a><a class="rp-item" href="https://www.infoworld.com/article/4180925/hole-in-githubs-browser-based-vscode-editor-could-lead-to-stolen-token.html" target="_blank" rel="noopener"><span class="rp-news-src">InfoWorld</span><span class="rp-item-title">Hole in GitHub’s browser-based VSCode editor could lead to stolen token</span><span class="rp-item-extra">2026-06-03</span></a><a class="rp-item" href="https://www.bleepingcomputer.com/news/security/vs-code-zero-day-lets-hackers-steal-github-tokens-in-one-click/" target="_blank" rel="noopener"><span class="rp-news-src">BleepingComputer</span><span class="rp-item-title">VS Code zero-day lets hackers steal GitHub tokens in one click</span><span class="rp-item-extra">2026-06-02</span></a><a class="rp-item" href="https://techcrunch.com/2026/05/20/github-says-hackers-stole-data-from-thousands-of-internal-repositories/" target="_blank" rel="noopener"><span class="rp-news-src">TechCrunch</span><span class="rp-item-title">GitHub says hackers stole data from thousands of internal repositories</span><span class="rp-item-extra">2026-05-20</span></a><a class="rp-item" href="https://note.com/yukikkoaimanabi/n/n2aef5eec5f63?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">24. Guide to Using Graphs and Git Graph in VSCode [For New Engineers]</span><span class="rp-item-extra">2025-04-10</span></a><a class="rp-item" href="https://note.com/amatz/n/nfd6ff5118c78?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">Windows 11 WSL Ubuntu VSCode Git GitHub Development Environment Setup</span><span class="rp-item-extra">2024-04-24</span></a><a class="rp-item" href="https://www.infoq.com/news/2021/11/vscode-dev-launched/" target="_blank" rel="noopener"><span class="rp-news-src">InfoQ</span><span class="rp-item-title">Microsoft Launches VSCode.Dev, Visual Studio Code in the Browser</span><span class="rp-item-extra">2021-11-03</span></a><a class="rp-item" href="https://x.com/GitHubVSCode" target="_blank" rel="noopener"><span class="rp-news-src">x</span><span class="rp-item-title">GitHub for VSCode</span><span class="rp-item-extra">2018-03-27</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMic0FVX3lxTE1hVU56eUlVTkhiSEtwbEFObWplMERpcWY3MXUxcEgxSXVKYkNrRXlKSGp5ekdsRHNMVUhaMDNVOEYybUdndmFYZnpVVEN1THBmNXBJX0oybndiUS1TdlhCV3lpWndqRFl3b0pTaWY4dmEtQ2s?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">GitGuardian Blog</span><span class="rp-item-title">GitHub Copilot Security and Privacy Concerns: Understanding the Risks and Best Practices</span><span class="rp-item-extra">2026-09-28</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMitwFBVV95cUxNdzczX0V3ZFlHektabHpuMlAxZV9JVTRtR2NIcHI3QVV1cEpSR3pXWHNrb0FXZWRuYk5zVTR1VzZRWE1pTEVWaUNvNl9kNGNlN1ZxbTNjWGh3aXkzR0JRN1oyeVhHYmtrZ0cxWm9aN2FJdUR0d0V5M2NEZjUzd3Y4QlZ0WjQ4Wk5Fak9VV0tnMzA2dWNaTXRKS0lCY25kSWVhcEc0V19ub0dfbGxkY1MxY1EwbFYweEHSAbwBQVVfeXFMTXhMZnVVX3BYSGtXS3hRb182d3JPUFk3cUZvdlhSX1JlU09WVnNXRTZ4bXdTLWJjb2s5U2NjdUJETTAxWjZhQzhzWUplMXd0Y1k1UXRPWDFSUU9hSUVLTVphQ0pVWnQtQlFuaVhXSmhhd3ZfTVN4MjQxNEllTzlHcGRyQ29hZVJzbzZJWFFhMl9YSDJTaTd6cVN4QnM0bURmbXFzamRjUGh2WkVZdnBndDFJZFNIdE1RVC0wNFc?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">BleepingComputer</span><span class="rp-item-title">GitHub confirms breach of 3,800 repos via malicious VSCode extension</span><span class="rp-item-extra">2026-05-20</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiekFVX3lxTE9nUEJ3QXJlQkx0LWNTbHNGMEUxRHl0VGVlZXJqWEc2c0VYbndYdklMT2NTQXUzNzZpb2thd3dYTzdXZ3JONUVwaklWS21GRlZmT0J4MVVZTWg4UXZWbEVwRFU5d1F5cG5HZVdWWGxSektKZHBsel92TThB?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">wiz.io</span><span class="rp-item-title">The Worm That Keeps on Digging: TeamPCP Hits @antv in Latest Wave</span><span class="rp-item-extra">2026-05-19</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/microsoft__vscode.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>yuliskov/SmartTube · GitHub Trending Rank Radar</title>
+<meta name="description" content="Browse media content with your own rules on Android TV">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="SmartTube, yuliskov, yuliskov/SmartTube, github stars, github trending, star growth, star history, 开源项目, 星标增长, android, android-tv, android-tv-box, java, rxjava-android, retrofit2">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/yuliskov__SmartTube">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="yuliskov/SmartTube · GitHub Trending Rank Radar">
+<meta property="og:description" content="Browse media content with your own rules on Android TV">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/yuliskov__SmartTube">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "yuliskov/SmartTube", "codeRepository": "https://github.com/yuliskov/SmartTube", "url": "https://zhuikan.com/repos/yuliskov__SmartTube", "description": "Browse media content with your own rules on Android TV", "author": {"@type": "Organization", "name": "yuliskov", "url": "https://github.com/yuliskov"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Java", "dateCreated": "2020-07-28", "keywords": "android,android-tv,android-tv-box,java,rxjava-android,retrofit2,kotlin"}</script>
+</head>
+<body data-repo="yuliskov/SmartTube" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">yuliskov/SmartTube</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="yuliskov__SmartTube"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/5897464?u=bcb1a508a8fdbf9da441be0db25672e42ad4ec64&amp;v=4&s=300" width="300" height="300" alt="yuliskov avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">SmartTube</div>
+      <a class="rp-side-owner" href="https://github.com/yuliskov">yuliskov</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/yuliskov">yuliskov</a>
+        <span class="rp-sep">/</span><span class="rp-name">SmartTube</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Browse media content with your own rules on Android TV</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>36,290</b></span><span class="rp-stat" title="forks">⑂ <b>2,316</b></span><span class="rp-stat" title="watchers">👁 <b>305</b></span><span class="rp-stat" title="prs">⑃ <b>1,756</b></span><span class="rp-stat" title="issues">● <b>4,471</b></span><span class="rp-stat" title="releases">▤ <b>1,025</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/android">android</a><a class="rp-topic" href="https://github.com/topics/android-tv">android-tv</a><a class="rp-topic" href="https://github.com/topics/android-tv-box">android-tv-box</a><a class="rp-topic" href="../tags/java">java</a><a class="rp-topic" href="https://github.com/topics/rxjava-android">rxjava-android</a><a class="rp-topic" href="https://github.com/topics/retrofit2">retrofit2</a><a class="rp-topic" href="../tags/kotlin">kotlin</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Java</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2020-07-28</span><a class="rp-meta-bit rp-home" href="https://smarttubeapp.github.io" rel="noopener">smarttubeapp.github.io</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/yuliskov/SmartTube">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">32.71 Stable</span><a class="rp-dl-a" href="https://github.com/yuliskov/SmartTube/releases/tag/32.71s">32.71s ↓</a><span class="rp-dl-ver">32.71s</span><span class="rp-dl-date">2026-11-06</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+44</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">36,290</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,316</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">305</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,756</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">4,471</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">1,025</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Important announcement about the app
+
+My development environment was infected by unknown malicious software, as a result of which a few builds may have been affected. Once the issue was detected, I secured everything with a full disk wipe, restored a clean setup, and now all builds are scanned with VirusTotal. The F-Droid version will also be verified before release.
+
+Public keys may have been compromised, which is why I am sharing this issue. You can download the new version and the new public key below, and instructions for restoring backups are provided.
+
+No extra actions are required since the app uses one-time connection codes. These codes have very limited permissions (for example, they cannot change your password). Still, you can revoke them if you want full peace of mind.
+
+ How to revoke access:
+
+1. Open myaccount.google.com/security
+2. Find “Your connections to third-party apps &amp; services”
+3. Tap “See all connection” and locate YouTube TV or Google Drive
+4. Select the app → “Remove access”
+
+Please keep built-in security features enabled to stay protected.
+
+ SmartTube
+  
+ --
+
+!The app screenshot
+
+SmartTube is a free and open-source media client for Android TVs and TV boxes. It allows you to browse and play content from various public sources in a TV-optimized interface.
+
+ ✅ Features
+- Clean interface 
+- SponsorBlock integration  
+- Adjustable playback speed  
+- 8K resolution support  
+- 60fps playback  
+- HDR compatibility  
+- View live chat  
+- Customizable buttons  
+- Does not require Google Services  
+- Helpful international community
+
+ ❌ Limitations
+- Not supported on phones and tablets  
+- Comment functionality is unstable  
+- Voice search and casting performance may be inferior to official apps, depending on your device  
+
+Give it a try!
+
+Do you have any question? Ctrl+F or ⌘F this readme first!
+
+Installation | Site | Contributors | Donation | FAQ | Support / Chat | Build | Translate the app | Changelog | Liability
+
+
+ Device support
+ [!IMPORTANT]  
+ Starting in October 2025 new Amazon FireTV devices no longer run Android under the hood. SmartTube will not be compatible with the Fire Stick 4k Select and newer devices which run Amazon&#x27;s own VegaOS.
+
+!Device support image
+ Supported: all Android TVs and TV boxes (incl. All FireTV devices released before Oct. 2025, NVIDIA Shield &amp; Chromecast with Google TV), even older ones with Android 4.3 (Kitkat).
+ Not supported: Smartphones, non-Android platforms like Samsung Tizen, LG webOS, Apple TV, etc.
+
+ Installation
+
+ video of the installation (note: download url changed to kutt.to/stn_beta or kutt.to/stn_stable)
+
+Do not download SmartTube from any app store, APK websites or blogs; these were uploaded by other people and may contain malware or ads. SmartTube is not officially published on any app store.
+
+There is a beta release (recommended) and a stable release. Beta gets new features and bugfixes faster than the stable release.
+</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/yuliskov/SmartTube/issues/6030"><span class="rp-item-num">#6030</span><span class="rp-item-title">[BUG]: infinite loading of videos</span><span class="rp-item-extra">1045 comments · 2026-08-08</span></a><a class="rp-item" href="https://github.com/yuliskov/SmartTube/issues/4287"><span class="rp-item-num">#4287</span><span class="rp-item-title">[BUG]: &quot;Sign in to confirm you&#x27;re not a bot * This helps protect our community. Learn more.&quot; error on any video.</span><span class="rp-item-extra">258 comments · 2025-01-07</span></a><a class="rp-item" href="https://github.com/yuliskov/SmartTube/issues/5142"><span class="rp-item-num">#5142</span><span class="rp-item-title">Clarification request about version 30.56</span><span class="rp-item-extra">138 comments · 2025-11-29</span></a><a class="rp-item" href="https://github.com/yuliskov/SmartTube/issues/6236"><span class="rp-item-num">#6236</span><span class="rp-item-title">[BUG]: My context menu options just disappeared all on their own</span><span class="rp-item-extra">78 comments · 2026-09-19</span></a><a class="rp-item" href="https://github.com/yuliskov/SmartTube/issues/5213"><span class="rp-item-num">#5213</span><span class="rp-item-title">[Security Feature Request]: F-Droid build</span><span class="rp-item-extra">73 comments · 2025-12-14</span></a><a class="rp-item" href="https://github.com/yuliskov/SmartTube/issues/5945"><span class="rp-item-num">#5945</span><span class="rp-item-title">[BUG]: Some videos wont load, infinite loading, unknown source errors</span><span class="rp-item-extra">60 comments · 2026-07-04</span></a><a class="rp-item" href="https://github.com/yuliskov/SmartTube/issues/5980"><span class="rp-item-num">#5980</span><span class="rp-item-title">[BUG]: Player Bug after about 30 seconds of watching a video or skipping</span><span class="rp-item-extra">58 comments · 2026-07-21</span></a><a class="rp-item" href="https://github.com/yuliskov/SmartTube/issues/4128"><span class="rp-item-num">#4128</span><span class="rp-item-title">[BUG]: App preventing TV Box to enter sleep/hibernate</span><span class="rp-item-extra">50 comments · 2024-11-20</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/yuliskov/SmartTube/discussions/6456"><span class="rp-item-num">#6456</span><span class="rp-item-title">32.74 Beta</span><span class="rp-item-extra">1 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/yuliskov/SmartTube/discussions/6454"><span class="rp-item-num">#6454</span><span class="rp-item-title">32.73 Beta</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/yuliskov/SmartTube/discussions/6441"><span class="rp-item-num">#6441</span><span class="rp-item-title">Local Backup &amp; Restore useless due to default &quot;Once a day&quot; setting.</span><span class="rp-item-extra">0 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/yuliskov/SmartTube/discussions/6433"><span class="rp-item-num">#6433</span><span class="rp-item-title">Adblock and Youtube</span><span class="rp-item-extra">1 comments · 2026-11-08</span></a><a class="rp-item" href="https://github.com/yuliskov/SmartTube/discussions/6426"><span class="rp-item-num">#6426</span><span class="rp-item-title">Is it possible to sort the channel by the amount of views?</span><span class="rp-item-extra">0 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/yuliskov/SmartTube/discussions/6417"><span class="rp-item-num">#6417</span><span class="rp-item-title">32.71 Stable</span><span class="rp-item-extra">1 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/yuliskov/SmartTube/discussions/6416"><span class="rp-item-num">#6416</span><span class="rp-item-title">32.71 Beta</span><span class="rp-item-extra">1 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/yuliskov/SmartTube/discussions/6412"><span class="rp-item-num">#6412</span><span class="rp-item-title">32.70 Stable</span><span class="rp-item-extra">0 comments · 2026-11-06</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/yuliskov/SmartTube/releases"><b>32.71 Stable</b> <span class="rp-rel-tag">32.71s</span> <span class="rp-item-extra">2026-11-06</span></a><pre class="rp-pre">- Hotfix: fixed live streams not working after the previous release
+
+Downloader code: 28544 |  F-Droid | Translation
+			
+ 🛡️ VirusTotal Analysis
+
+| Build Variant | VirusTotal Status | Detailed Report |
+| :--- | :--- | :--- |
+| SmartTube_stable_32.71_arm64-v8a.apk |  | View Report |
+| SmartTube_stable_32.71_armeabi-v7a.apk |  | View Report |
+| SmartTube_stable_32.71_universal.apk |  | View Report |
+| SmartTube_stable_32.71_x86.apk |  | View Report |</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/yuliskov__SmartTube.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

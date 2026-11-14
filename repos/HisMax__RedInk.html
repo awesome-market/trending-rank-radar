@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HisMax/RedInk · GitHub Trending Rank Radar</title>
+<meta name="description" content="Red Ink - A one-stop Xiaohongshu image-and-text generator based on the 🍌Nano Banana Pro🍌, &quot;One Sentence, One Image: Generate Xiaohongshu Text and Images.&quot;">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="RedInk, HisMax, HisMax/RedInk, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/HisMax__RedInk">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="HisMax/RedInk · GitHub Trending Rank Radar">
+<meta property="og:description" content="Red Ink - A one-stop Xiaohongshu image-and-text generator based on the 🍌Nano Banana Pro🍌, &quot;One Sentence, One Image: Generate Xiaohongshu Text and Images.&quot;">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/HisMax__RedInk">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "HisMax/RedInk", "codeRepository": "https://github.com/HisMax/RedInk", "url": "https://zhuikan.com/repos/HisMax__RedInk", "description": "Red Ink - A one-stop Xiaohongshu image-and-text generator based on the 🍌Nano Banana Pro🍌, \"One Sentence, One Image: Generate Xiaohongshu Text and Images.\"", "author": {"@type": "Organization", "name": "HisMax", "url": "https://github.com/HisMax"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Python", "dateCreated": "2025-11-25"}</script>
+</head>
+<body data-repo="HisMax/RedInk" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">HisMax/RedInk</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="HisMax__RedInk"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/42793695?u=481ea41f5a707bd5108c3bf764111a7f0760e029&amp;v=4&s=300" width="300" height="300" alt="HisMax avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">RedInk</div>
+      <a class="rp-side-owner" href="https://github.com/HisMax">HisMax</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/HisMax">HisMax</a>
+        <span class="rp-sep">/</span><span class="rp-name">RedInk</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Red Ink - A one-stop Xiaohongshu image-and-text generator based on the 🍌Nano Banana Pro🍌, &quot;One Sentence, One Image: Generate Xiaohongshu Text and Images.&quot;</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,687</b></span><span class="rp-stat" title="forks">⑂ <b>1,055</b></span><span class="rp-stat" title="watchers">👁 <b>24</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Created 2025-11-25</span><a class="rp-meta-bit rp-home" href="https://redink.top" rel="noopener">redink.top</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/HisMax/RedInk">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+68</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,687</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,055</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">24</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">中文 | English
+
+
+
+
+
+
+
+
+ 红墨官方站点上线啦，注册即送50体验积分！
+
+ 注册需要邀请码！可以到 https://watcha.cn/square/discusspost_id=1380 获取
+
+
+
+  
+
+
+ 点击访问在线体验站 → Redink.top
+
+
+
+
+
+
+使用红墨生成的各类小红书封面 - AI驱动，风格统一，文字准确
+
+
+
+---
+
+ ✨ 效果展示
+
+ 输入一句话，生成完整图文
+
+
+Step 1: 智能大纲生成
+
+
+
+!大纲示例
+
+功能特性：
+- ✏️ 可编辑每页内容
+- 🔄 可调整页面顺序（不建议）
+- ✨ 自定义每页描述（强烈推荐）
+
+
+
+
+🎨 Step 2: 封面页生成
+
+
+
+!封面示例
+
+封面亮点：
+- 🎯 符合个人风格
+- 📝 文字准确无误
+- 🌈 视觉统一协调
+
+
+
+
+📚 Step 3: 内容页批量生成
+
+
+
+!内容页示例
+
+生成说明：
+- ⚡ 并发生成所有页面（默认最多 15 张）
+- ⚠️ 如 API 不支持高并发，请在设置中关闭
+- 🔧 支持单独重新生成不满意的页面
+
+
+
+---
+
+ 🏗️ 技术架构
+
+
+
+
+
+ 🔧 后端技术栈
+
+| 技术 | 说明 |
+|------|------|
+| 语言 | Python 3.11+ |
+| 框架 | Flask |
+| 包管理 | uv |
+| 文案AI | Gemini 3 |
+| 图片AI | 🍌 Nano banana Pro |
+
+
+
+
+ 🎨 前端技术栈
+
+| 技术 | 说明 |
+|------|------|
+| 框架 | Vue 3 + TypeScript |
+| 构建工具 | Vite |
+| 状态管理 | Pinia |
+| 样式 | Modern CSS |
+
+
+
+
+
+---
+
+ 📦 如何自己部署
+
+ 方式一：Docker 部署（推荐）
+
+最简单的部署方式，一行命令即可启动：
+
+bash
+docker run -d -p 12398:12398 -v ./history:/app/history -v ./output:/app/output histonemax/redink:latest
+
+
+访问 http://localhost:12398，在 Web 界面的设置页面配置你的 API Key 即可使用。
+
+使用 docker-compose（可选）：
+
+下载 docker-compose.yml 后：
+
+bash
+docker-compose up -d
+
+
+Docker 部署说明：
+- 容器内不包含任何 API Key，需要在 Web 界面配置
+- 使用 -v ./history:/app/history 持久化历史记录
+- 使用 -v ./output:/app/output 持久化生成的图片
+- 可选：挂载自定义配置文件 -v ./text_providers.yaml:/app/text_providers.yaml
+
+---
+
+ 方式二：本地开发部署
+
+前置要求：
+- Python 3.11+
+- Node.js 18+
+- pnpm
+- uv
+
+ 1. 克隆项目
+bash
+git clone https://github.com/HisMax/RedInk.git
+cd RedInk
+
+
+ 2. 配置 API 服务
+
+复制配置模板文件：
+bash
+cp text_providers.yaml.example text_providers.yaml
+cp image_providers.yaml.example image_providers.yaml
+
+
+编辑配置文件，填入你的 API Key 和服务配置。也可以启动后在 Web 界面的设置页面进行配置。
+
+ 3. 安装后端依赖
+bash
+uv sync
+
+
+ 4. 安装前端依赖
+bash
+cd frontend
+pnpm install
+
+
+ 5. 启动服务
+
+ 一键启动（推荐）
+
+双击运行启动脚本，自动安装依赖并启动前后端：
+
+- macOS: start.sh 或双击 scripts/start-macos.command
+- Linux: ./start.sh
+- Windows: 双击 start.bat
+
+启动后自动打开浏览器访问 http://localhost:5173
+
+ 手动启动
+
+启动后端:
+bash
+uv run python -m backend.app
+
+访问: http://localhost:12398
+
+启动前端:
+bash
+cd frontend
+pnpm dev
+
+访问: http://localhost:5173
+
+---
+
+ 🔧 配置说明
+
+ 配置方式
+
+项目支持两种配置方式：
+
+1. Web 界面配置（推荐）：启动服务后，在设置页面可视化配置
+2. YAML 文件配置：直接编辑配置文件
+
+ 文本生成配置
+
+配置文件: text_providers.yaml
+
+yaml
+ 当前激活的服务商
+active_provider: openai
+
+providers:
+   OpenAI 官方或兼容接口
+  openai:
+    type: openai_compatible
+    api_key: sk-xxxxxxxxxxxxxxxxxxxx
+    base_url: https://api.openai.com/v1
+    model: gpt-4o
+
+   Google Gemini（原生接口）
+  gemini:
+    type: google_gemini
+    api_key: AIzaxxxxxxxxxxxxxxxxxxxxxxxxx
+    model: gemini-2.0-flash
+
+
+ 图片生成配置
+
+配置文件: image_providers.yaml
+
+yaml
+ 当前激活的服务商
+active_provider: gemini
+
+providers:
+   Google Gemini 图片生成
+  gemini:
+    type: google_genai
+    api_key: AIzaxxxxxxxxxxxxxxxxxxxxxxxxx
+    model: gemini-3-pro-image-preview
+    high_concurrency: false   高并发模式
+
+   OpenAI 兼容接口
+  openai_image:
+    type: image_api
+    api_key: sk-xxxxxxxxxxxxxxxxxxxx
+    base_url: https://your-api-endpoint.com
+    model: dall-e-3
+    high_concurrency: false
+
+
+ 高并发模式说明
+
+- 关闭（默认）：图片逐张生成，适合 GCP 300$ 试用账号或有速率限制的 API
+- 开启：图片并行生成（最多15张同时），速度更快，但需要 API 支持高并发
+
+⚠️ GCP 300$ 试用账号不建议启用高并发，可能会触发速率限制导致生成失败。
+
+---
+
+ ⚠️</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/HisMax__RedInk.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

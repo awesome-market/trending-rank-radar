@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>doocs/leetcode · GitHub Trending Rank Radar</title>
+<meta name="description" content="🔥LeetCode solutions in any programming language | 多种编程语言实现 LeetCode、《剑指 Offer（第 2 版）》、《程序员面试金典（第 6 版）》题解">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="leetcode, doocs, doocs/leetcode, github stars, github trending, star growth, star history, 开源项目, 星标增长, algorithms, cpp, javascript, golang, csharp, python3">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/doocs__leetcode">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="doocs/leetcode · GitHub Trending Rank Radar">
+<meta property="og:description" content="🔥LeetCode solutions in any programming language | 多种编程语言实现 LeetCode、《剑指 Offer（第 2 版）》、《程序员面试金典（第 6 版）》题解">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/doocs__leetcode">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "doocs/leetcode", "codeRepository": "https://github.com/doocs/leetcode", "url": "https://zhuikan.com/repos/doocs__leetcode", "description": "🔥LeetCode solutions in any programming language | 多种编程语言实现 LeetCode、《剑指 Offer（第 2 版）》、《程序员面试金典（第 6 版）》题解", "author": {"@type": "Organization", "name": "doocs", "url": "https://github.com/doocs"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/CC-BY-SA-4.0.html", "programmingLanguage": "Java", "dateCreated": "2018-09-16", "keywords": "algorithms,cpp,javascript,golang,csharp,python3,java,leetcode"}</script>
+</head>
+<body data-repo="doocs/leetcode" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">doocs/leetcode</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="doocs__leetcode"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/43716716?v=4&s=300" width="300" height="300" alt="doocs avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">leetcode</div>
+      <a class="rp-side-owner" href="https://github.com/doocs">doocs</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/doocs">doocs</a>
+        <span class="rp-sep">/</span><span class="rp-name">leetcode</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">🔥LeetCode solutions in any programming language | 多种编程语言实现 LeetCode、《剑指 Offer（第 2 版）》、《程序员面试金典（第 6 版）》题解</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>36,768</b></span><span class="rp-stat" title="forks">⑂ <b>9,483</b></span><span class="rp-stat" title="watchers">👁 <b>331</b></span><span class="rp-stat" title="prs">⑃ <b>5,883</b></span><span class="rp-stat" title="issues">● <b>129</b></span><span class="rp-stat" title="releases">▤ <b>21</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/algorithms">algorithms</a><a class="rp-topic" href="../tags/cpp">cpp</a><a class="rp-topic" href="../tags/javascript">javascript</a><a class="rp-topic" href="../tags/golang">golang</a><a class="rp-topic" href="../tags/csharp">csharp</a><a class="rp-topic" href="../tags/python3">python3</a><a class="rp-topic" href="../tags/java">java</a><a class="rp-topic" href="https://github.com/topics/leetcode">leetcode</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Java</span><span class="rp-meta-bit">CC-BY-SA-4.0</span><span class="rp-meta-bit">Created 2018-09-16</span><a class="rp-meta-bit rp-home" href="https://leetcode.doocs.org" rel="noopener">leetcode.doocs.org</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="doocs__advanced-java"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/43716716?v=4" alt="" loading="lazy">advanced-java</a><a class="rp-same-link" href="doocs__source-code-hunter"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/43716716?v=4" alt="" loading="lazy">source-code-hunter</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/doocs/leetcode">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.3.0</span><a class="rp-dl-a" href="https://github.com/doocs/leetcode/releases/tag/v0.3.0">v0.3.0 ↓</a><span class="rp-dl-ver">0.3.0</span><span class="rp-dl-date">2025-02-20</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">36,768</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">9,483</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">331</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">5,883</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">129</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">21</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">介绍
+
+本项目包含 LeetCode、《剑指 Offer（第 2 版）》、《剑指 Offer（专项突击版）》、《程序员面试金典（第 6 版）》等题目的相关题解。所有题解均由多种编程语言实现，包括但不限于：Java、Python、C++、Go、TypeScript、Rust。我们正在全力更新，欢迎 Star 🌟 关注本项目，获取项目最新动态。
+
+English Version
+
+ 赞助商
+
+
+
+
+感谢 APINEBULA 赞助本项目！APINEBULA 是银河录像局旗下的企业级 AI 聚合平台，背靠大平台资源，面向开发者、团队与企业用户提供稳定、高性价比的大模型 API 接入服务。平台聚合 Claude、GPT、Gemini 等主流满血模型，一个接口，接入全球顶尖 AI 大模型，各大模型价格低至 1 折起，支持企业级高并发、正式合同、对公打款与开票服务，适合 AI 编程、Agent 开发、业务系统集成等多种场景！使用此链接注册并在充值时填写 &quot;leetcode&quot; 优惠码可享九折优惠！
+
+
+
+ 想出现在这里？如有赞助意向，欢迎添加微信 YLB0109（备注「赞助」）联系洽谈。
+
+ 站点
+
+
+
+ 算法全解
+
+- LeetCode
+- 往期竞赛合集
+- 剑指 Offer（第 2 版）
+- 剑指 Offer（专项突击版）
+- 程序员面试金典（第 6 版）
+
+ 专项突破
+
+- JavaScript 专项练习
+- 数据库专项练习
+
+ 算法提升专题
+
+ 1. 基础算法
+
+- 在排序数组中查找元素的第一个和最后一个位置 - 二分查找
+- 准时到达的列车最小时速 - 二分查找
+- 可移除字符的最大数目 - 二分查找
+- 排序数组 - 快速排序、归并排序
+- 字符串相加 - 高精度加法
+- 字符串相乘 - 高精度乘法
+- 区域和检索 - 数组不可变 - 前缀和
+- 二维区域和检索 - 矩阵不可变 - 二维前缀和
+- 区间加法 - 前缀和、差分
+- 用邮票贴满网格图 - 二维前缀和、二维差分
+- 无重复字符的最长子串 - 双指针、哈希表
+- 乘积小于 K 的子数组 - 双指针
+- 位 1 的个数 - 位运算、lowbit
+- 合并区间 - 区间合并
+
+ 2. 数据结构
+
+- 设计链表 - 单链表、指针引用、数组实现
+- 下一个更大元素 I - 单调栈
+- 每日温度 - 单调栈
+- 子数组的最小值之和 - 单调栈
+- 最大宽度坡 - 单调栈
+- 最多能完成排序的块 II - 单调栈
+- 子数组范围和 - 单调栈
+- 子数组最小乘积的最大值 - 单调栈
+- 滑动窗口最大值 - 单调队列
+- 满足不等式的最大值 - 单调队列
+- 和至少为 K 的最短子数组 - 单调队列
+- 带限制的子序列和 - 动态规划、单调队列优化
+- 单词规律 II - 哈希表、回溯
+- 最短回文串 - 字符串哈希
+- 回文对 - 字符串哈希
+- 最长重复子串 - 字符串哈希、二分查找
+- 不同的循环子字符串 - 字符串哈希
+
+ 3. 搜索
+
+- 图像渲染- BFS、DFS、Flood Fill 算法、连通性模型
+- 岛屿数量 - BFS、Flood Fill 算法
+- 01 矩阵 - 多源 BFS
+- 地图中的最高点 - 多源 BFS
+- 进击的骑士 - BFS、最短路模型
+- 二进制矩阵中的最短路径 - BFS、最短路模型
+- 迷宫中离入口最近的出口 - BFS、最短路模型
+- 网格中的最短路径 - BFS、最短路模型
+- 打开转盘锁 - 最小步数模型、双向 BFS、A 算法
+- 单词接龙 - 最小步数模型、双向 BFS
+- 转化数字的最小运算数 - 最小步数模型、双向 BFS
+- 滑动谜题 - BFS、最小步数模型、A 算法
+- 访问所有节点的最短路径 - BFS、最小步数模型、A 算法
+- 为高尔夫比赛砍树 - BFS、A 算法
+- 使网格图至少有一条有效路径的最小代价 - 双端队列 BFS
+- 到达角落需要移除障碍物的最小数目 - 双端队列 BFS
+- 迷宫 - DFS、连通性模型、Flood Fill 算法
+- 单词搜索 - DFS、搜索顺序、回溯
+- 黄金矿工 - DFS、搜索顺序、回溯
+- 火柴拼正方形 - DFS、回溯、剪枝
+- 划分为 k 个相等的子集 - DFS、回溯、剪枝
+- 完成所有工作的最短时间 - DFS、回溯、剪枝
+- 公平分发饼干 - DFS、回溯、剪枝
+- 矩阵中的最长递增路径 - DFS、记忆化搜索
+- 网格图中递增路径的数目 - DFS、记忆化搜索
+- 翻转游戏 II - DFS、状态压缩、记忆化搜索
+- 统计所有可行路径 - DFS、记忆化搜索
+- 切披萨的方案数 - DFS、记忆化搜索
+
+
+
+ 4. 动态规划（DP）
+
+- 杨辉三角 - 线性 DP、数字三角形模型
+- 最小路径和 - 线性 DP、数字三角形模型
+- 摘樱桃 - 线性 DP、数字三角形模型
+- 摘樱桃 II - 线性 DP、数字三角形模型
+- 最长递增子序列 - 线性 DP、最长上升子序列模型
+- 无重叠区间 - 线性 DP、最长上升子序列模型、贪心优化
+- 删列造序 III - 线性 DP、最长上升子序列模型
+- 俄罗斯套娃信封问题 - 线性 DP、最长上升子序列模型、贪心优化
+- 堆叠长方体的最大高度 - 排序、线性 DP、最长上升子序列模型
+- 无矛盾的最佳球队 - 排序、线性 DP、最长上升子序列模型
+- 最长公共子序列 - 线性 DP、最长公共子序列模型
+- 两个字符串的最小 ASCII 删除和 - 线性 DP、最长公共子序列模型
+- 两个字符串的删除操作 - 线性 DP、最长公共子序列模型
+- 目标和 - 0-1 背包问题
+- 分割等和子集 - 0-1 背包问题
+- 最后一块石头的重量 II - 0-1 背包问题
+- 零钱兑换 - 完全背包问题
+- 组合总和 Ⅳ - 完全背包问题
+- 从栈中取出 K 个硬币的最大面值和 - 分组背包问题
+- 数字 1 的个数 - 数位 DP、记忆化搜索
+- 统计各位数字都不同的数字个数 - 数位 DP、记忆化搜索、状态压缩
+- 不含连续 1 的非负整数 - 数位 DP、记忆化搜索
+- 旋转数字 - 数位 DP、记忆化搜索
+- 最大为 N 的数字组合 - 数位 DP、记忆化搜索
+- 统计特殊整数 - 数位 DP、记忆化搜索
+
+
+
+ 5. 高级数据结构
+
+- 二维网格图中探测环 - 并查集、检测环
+- 除法求值 - 并查集、权值维护
+- 由斜杠划分区域 - 并查集、连通分量个数
+- 水位上升的泳池中游泳 - 并查集
+- 交换字符串中的元素 - 并查集
+- 打砖块 - 并查集、逆向思维
+- 尽量减少恶意软件的传播 II - 并查集、逆向思维
+- 检查边长度限制的路径是否存在 - 并查集、离线思维
+- 保证图可完全遍历 - 双并查集
+- 区域和检索 - 数组可修改 - 树状数组、线段树
+- 通过指令创建有序数组 - 树状数组、线段树
+- 统计数组中好三元组数目 - 树状数组、线段树
+- 最多 K 次交换相邻数位后得到的最小整数 - 树状数组
+- 二维区域和检索 - 可变 - 二维树状数组、线段树
+-</pre><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/doocs/leetcode/discussions/6219"><span class="rp-item-num">#6219</span><span class="rp-item-title">en/lc/3413/</span><span class="rp-item-extra">1 comments · 2026-10-20</span></a><a class="rp-item" href="https://github.com/doocs/leetcode/discussions/6213"><span class="rp-item-num">#6213</span><span class="rp-item-title">en/lc/3/</span><span class="rp-item-extra">0 comments · 2026-10-19</span></a><a class="rp-item" href="https://github.com/doocs/leetcode/discussions/6204"><span class="rp-item-num">#6204</span><span class="rp-item-title">en/lc/2/</span><span class="rp-item-extra">0 comments · 2026-10-18</span></a><a class="rp-item" href="https://github.com/doocs/leetcode/discussions/5381"><span class="rp-item-num">#5381</span><span class="rp-item-title">lc/1393/</span><span class="rp-item-extra">0 comments · 2026-08-31</span></a><a class="rp-item" href="https://github.com/doocs/leetcode/discussions/5256"><span class="rp-item-num">#5256</span><span class="rp-item-title">en/lc/3559/</span><span class="rp-item-extra">0 comments · 2026-06-12</span></a><a class="rp-item" href="https://github.com/doocs/leetcode/discussions/5176"><span class="rp-item-num">#5176</span><span class="rp-item-title">en/lc/3464/</span><span class="rp-item-extra">1 comments · 2026-04-25</span></a><a class="rp-item" href="https://github.com/doocs/leetcode/discussions/5142"><span class="rp-item-num">#5142</span><span class="rp-item-title">0615.Average Salary Departments VS Company</span><span class="rp-item-extra">1 comments · 2026-04-08</span></a><a class="rp-item" href="https://github.com/doocs/leetcode/discussions/5119"><span class="rp-item-num">#5119</span><span class="rp-item-title">en/lc/26/</span><span class="rp-item-extra">1 comments · 2026-03-27</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/doocs/leetcode/releases"><b>v0.3.0</b> <span class="rp-rel-tag">v0.3.0</span> <span class="rp-item-extra">2025-02-20</span></a><pre class="rp-pre">We are thrilled to announce the release of version 0.3.0 of our project! This update brings further enhancements aimed at improving both the usability and functionality of the project.
+
+ Key Changes:
+
+ 1. Comprehensive Website Update
+
+The website has been fully updated to offer a more immersive and user-friendly experience. Notably, we’ve introduced a new feature to Stay on Page, which allows you to seamlessly switch between different languages without losing your place. Additionally, we’ve enhanced the rendering of mathematical formulas, ensuring that equations are displayed correctly a</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/doocs__leetcode.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hoppscotch/hoppscotch · GitHub Trending Rank Radar</title>
+<meta name="description" content="Open-Source API Development Ecosystem • https://hoppscotch.io • Offline, On-Prem &amp; Cloud • Web, Desktop &amp; CLI • Open-Source Alternative to Postman, Insomnia">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="hoppscotch, hoppscotch, hoppscotch/hoppscotch, github stars, github trending, star growth, star history, 开源项目, 星标增长, api, api-client, api-rest, pwa, api-testing, vue">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/hoppscotch__hoppscotch">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="hoppscotch/hoppscotch · GitHub Trending Rank Radar">
+<meta property="og:description" content="Open-Source API Development Ecosystem • https://hoppscotch.io • Offline, On-Prem &amp; Cloud • Web, Desktop &amp; CLI • Open-Source Alternative to Postman, Insomnia">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/hoppscotch__hoppscotch">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "hoppscotch/hoppscotch", "codeRepository": "https://github.com/hoppscotch/hoppscotch", "url": "https://zhuikan.com/repos/hoppscotch__hoppscotch", "description": "Open-Source API Development Ecosystem • https://hoppscotch.io • Offline, On-Prem & Cloud • Web, Desktop & CLI • Open-Source Alternative to Postman, Insomnia", "author": {"@type": "Organization", "name": "hoppscotch", "url": "https://github.com/hoppscotch"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2019-08-21", "keywords": "api,api-client,api-rest,pwa,api-testing,vue,vuejs,tools,testing-tools,testing"}</script>
+</head>
+<body data-repo="hoppscotch/hoppscotch" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">hoppscotch/hoppscotch</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="hoppscotch__hoppscotch"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/56705483?v=4&s=300" width="300" height="300" alt="hoppscotch avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">hoppscotch</div>
+      <a class="rp-side-owner" href="https://github.com/hoppscotch">hoppscotch</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/hoppscotch">hoppscotch</a>
+        <span class="rp-sep">/</span><span class="rp-name">hoppscotch</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Open-Source API Development Ecosystem • https://hoppscotch.io • Offline, On-Prem &amp; Cloud • Web, Desktop &amp; CLI • Open-Source Alternative to Postman, Insomnia</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>80,800</b></span><span class="rp-stat" title="forks">⑂ <b>6,237</b></span><span class="rp-stat" title="watchers">👁 <b>503</b></span><span class="rp-stat" title="prs">⑃ <b>3,569</b></span><span class="rp-stat" title="issues">● <b>2,567</b></span><span class="rp-stat" title="releases">▤ <b>113</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/api">api</a><a class="rp-topic" href="https://github.com/topics/api-client">api-client</a><a class="rp-topic" href="https://github.com/topics/api-rest">api-rest</a><a class="rp-topic" href="https://github.com/topics/pwa">pwa</a><a class="rp-topic" href="https://github.com/topics/api-testing">api-testing</a><a class="rp-topic" href="../tags/vue">vue</a><a class="rp-topic" href="../tags/vuejs">vuejs</a><a class="rp-topic" href="https://github.com/topics/tools">tools</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2019-08-21</span><a class="rp-meta-bit rp-home" href="https://hoppscotch.io" rel="noopener">hoppscotch.io</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/hoppscotch/hoppscotch">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">2026.10.1</span><a class="rp-dl-a" href="https://github.com/hoppscotch/hoppscotch/releases/tag/2026.10.1">2026.10.1 ↓</a><span class="rp-dl-ver">2026.10.1</span><span class="rp-dl-date">2026-11-05</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+10</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">80,800</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">6,237</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">503</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">3,569</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">2,567</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">113</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Hoppscotch
+    
+  
+  
+    Open Source API Development Ecosystem
+  
+  
+
+   
+
+  
+  
+    
+      Built with ❤︎ by
+      
+        contributors
+      
+    
+  
+  
+  
+    
+      
+        
+        
+        
+      
+    
+  
+
+
+_We highly recommend you take a look at the Hoppscotch Documentation to learn more about the app._
+
+ Support
+
+  
+
+ Features
+
+❤️ Lightweight: Crafted with minimalistic UI design.
+
+⚡️ Fast: Send requests and get responses in real time.
+
+🗄️ HTTP Methods: Request methods define the type of action you are requesting to be performed.
+
+- GET - Requests retrieve resource information
+- POST - The server creates a new entry in a database
+- PUT - Updates an existing resource
+- PATCH - Very similar to PUT but makes a partial update on a resource
+- DELETE - Deletes resource or related component
+- HEAD - Retrieve response headers identical to those of a GET request, but without the response body.
+- CONNECT - Establishes a tunnel to the server identified by the target resource
+- OPTIONS - Describe the communication options for the target resource
+- TRACE - Performs a message loop-back test along the path to the target resource
+-  - Some APIs use custom request methods such as LIST. Type in your custom methods.
+
+🌈 Theming: Customizable combinations for background, foreground, and accent colors — customize now.
+
+- Choose a theme: System preference, Light, Dark, and Black
+- Choose accent colors: Green, Teal, Blue, Indigo, Purple, Yellow, Orange, Red, and Pink
+- Distraction-free Zen mode
+
+_Customized themes are synced with your cloud/local session._
+
+🔥 PWA: Install as a Progressive Web App on your device.
+
+- Instant loading with Service Workers
+- Offline support
+- Low RAM/memory and CPU usage
+- Add to Home Screen
+- Desktop PWA
+
+🚀 Request: Retrieve response from endpoint instantly.
+
+1. Choose method
+2. Enter URL
+3. Send
+
+- Copy/share public &quot;Share URL&quot;
+- Generate/copy request code snippets for 10+ languages and frameworks
+- Import cURL
+- Label requests
+
+🔌 WebSocket: Establish full-duplex communication channels over a single TCP connection.
+
+📡 Server-Sent Events: Receive a stream of updates from a server over an HTTP connection without resorting to polling.
+
+🌩 Socket.IO: Send and Receive data with the SocketIO server.
+
+🦟 MQTT: Subscribe and Publish to topics of an MQTT Broker.
+
+🔮 GraphQL: GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.
+
+- Set endpoint and get schema
+- Multi-column docs
+- Set custom request headers
+- Query schema
+- Get query response
+
+🔐 Authorization: Allows to identify the end-user.
+
+- None
+- Basic
+- Bearer Token
+- OAuth 2.0
+- OIDC Access Token/PKCE
+
+📢 Headers: Describes the format the body of your request is being sent in.
+
+📫 Parameters: Use request parameters to set varying parts in simulated requests.
+
+📃 Request Body: Used to send and receive data via the REST API.
+
+- Set Content Type
+- FormData, JSON, and many more
+- Toggle between key-value and RAW input parameter list
+
+📮 Respon</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/hoppscotch/hoppscotch/issues/870"><span class="rp-item-num">#870</span><span class="rp-item-title">[feature]: Sync Collections with Git repo</span><span class="rp-item-extra">68 comments · 2020-05-13</span></a><a class="rp-item" href="https://github.com/hoppscotch/hoppscotch/issues/3349"><span class="rp-item-num">#3349</span><span class="rp-item-title">[bug]: Hard trouble with refreshing and admin dashboard. Software is not usable. </span><span class="rp-item-extra">44 comments · 2023-09-13</span></a><a class="rp-item" href="https://github.com/hoppscotch/hoppscotch/issues/3554"><span class="rp-item-num">#3554</span><span class="rp-item-title">[bug]: &quot;Error while importing: format not recognized&quot; when importing a single environment</span><span class="rp-item-extra">36 comments · 2023-11-15</span></a><a class="rp-item" href="https://github.com/hoppscotch/hoppscotch/issues/3904"><span class="rp-item-num">#3904</span><span class="rp-item-title">[feature]: access original request (headers, body, etc.) in pre-request scripts and test scripts</span><span class="rp-item-extra">32 comments · 2024-03-17</span></a><a class="rp-item" href="https://github.com/hoppscotch/hoppscotch/issues/1376"><span class="rp-item-num">#1376</span><span class="rp-item-title">[feature]: Better error message for first-time-users: No &#x27;Access-Control-Allow-Origin&#x27; header is present </span><span class="rp-item-extra">31 comments · 2020-12-10</span></a><a class="rp-item" href="https://github.com/hoppscotch/hoppscotch/issues/3376"><span class="rp-item-num">#3376</span><span class="rp-item-title">[bug]: Unable to log in</span><span class="rp-item-extra">30 comments · 2023-09-21</span></a><a class="rp-item" href="https://github.com/hoppscotch/hoppscotch/issues/402"><span class="rp-item-num">#402</span><span class="rp-item-title">[feature]: gRPC-Web support</span><span class="rp-item-extra">29 comments · 2019-12-05</span></a><a class="rp-item" href="https://github.com/hoppscotch/hoppscotch/issues/2227"><span class="rp-item-num">#2227</span><span class="rp-item-title">[feature]: Syncing query parameters in URL and query parameter input </span><span class="rp-item-extra">28 comments · 2022-04-02</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/hoppscotch/hoppscotch/discussions/6755"><span class="rp-item-num">#6755</span><span class="rp-item-title">Node2Shell: Node.js Brotli vulnerability allows remote code execution (CVE-2026-111497)</span><span class="rp-item-extra">0 comments · 2026-10-28</span></a><a class="rp-item" href="https://github.com/hoppscotch/hoppscotch/discussions/6724"><span class="rp-item-num">#6724</span><span class="rp-item-title">Proposal to add Tamil language support to hoppscotch</span><span class="rp-item-extra">0 comments · 2026-10-17</span></a><a class="rp-item" href="https://github.com/hoppscotch/hoppscotch/discussions/6614"><span class="rp-item-num">#6614</span><span class="rp-item-title">2026.8.0</span><span class="rp-item-extra">0 comments · 2026-08-28</span></a><a class="rp-item" href="https://github.com/hoppscotch/hoppscotch/discussions/6613"><span class="rp-item-num">#6613</span><span class="rp-item-title">How to delete a Team Workspace in Hoppscotch Desktop App?</span><span class="rp-item-extra">1 comments · 2026-08-28</span></a><a class="rp-item" href="https://github.com/hoppscotch/hoppscotch/discussions/6553"><span class="rp-item-num">#6553</span><span class="rp-item-title">2026.7.0</span><span class="rp-item-extra">0 comments · 2026-07-30</span></a><a class="rp-item" href="https://github.com/hoppscotch/hoppscotch/discussions/6519"><span class="rp-item-num">#6519</span><span class="rp-item-title">Docker AIO container consistently output `Backend Server | ::1 HEAD /ping 200` log</span><span class="rp-item-extra">2 comments · 2026-07-20</span></a><a class="rp-item" href="https://github.com/hoppscotch/hoppscotch/discussions/6507"><span class="rp-item-num">#6507</span><span class="rp-item-title">2026.6.1</span><span class="rp-item-extra">0 comments · 2026-07-15</span></a><a class="rp-item" href="https://github.com/hoppscotch/hoppscotch/discussions/6506"><span class="rp-item-num">#6506</span><span class="rp-item-title">账号登入</span><span class="rp-item-extra">0 comments · 2026-07-15</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/hoppscotch/hoppscotch/releases"><b>2026.10.1</b> <span class="rp-rel-tag">2026.10.1</span> <span class="rp-item-extra">2026-11-05</span></a><pre class="rp-pre">This release focuses on improving the desktop experience and chat navigation. Windows users will now have improved bundle origin permissions and chat reply links will open directly in the browser. It also includes a version update to 2026.10.1.
+
+ What&#x27;s Changed
+ fix(desktop): grant bundle origins on Windows by @CuriousCorrelation in https://github.com/hoppscotch/hoppscotch/pull/6768
+ fix(common): open chat reply links in the browser by @CuriousCorrelation in https://github.com/hoppscotch/hoppscotch/pull/6714
+ chore: bump version to 2026.10.1 by @mirarifhasan in https://github.com/hoppscot</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/hoppscotch__hoppscotch.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

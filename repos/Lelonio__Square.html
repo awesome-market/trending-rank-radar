@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lelonio/Square · GitHub Trending Rank Radar</title>
+<meta name="description" content="Unofficial YouTube Music / Spotify Premium client for Android, built in Liquid Glass. Audio effects, Spotify Connect, listening history, 8 languages. Rust core on librespot.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Square, Lelonio, Lelonio/Square, github stars, github trending, star growth, star history, 开源项目, 星标增长, alternative, client, glassmorphism, liquid-glass, spotify, spotify-connect">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Lelonio__Square">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Lelonio/Square · GitHub Trending Rank Radar">
+<meta property="og:description" content="Unofficial YouTube Music / Spotify Premium client for Android, built in Liquid Glass. Audio effects, Spotify Connect, listening history, 8 languages. Rust core on librespot.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Lelonio__Square">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Lelonio/Square", "codeRepository": "https://github.com/Lelonio/Square", "url": "https://zhuikan.com/repos/Lelonio__Square", "description": "Unofficial YouTube Music / Spotify Premium client for Android, built in Liquid Glass. Audio effects, Spotify Connect, listening history, 8 languages. Rust core on librespot.", "author": {"@type": "Organization", "name": "Lelonio", "url": "https://github.com/Lelonio"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-3.0.html", "programmingLanguage": "Kotlin", "dateCreated": "2026-08-06", "keywords": "alternative,client,glassmorphism,liquid-glass,spotify,spotify-connect,spotifyapi,android,android-application,youtube-music"}</script>
+</head>
+<body data-repo="Lelonio/Square" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Lelonio/Square</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Lelonio__Square"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/21023829?u=18f540afc50bf2418dd4797e0d63c313ca8c25ca&amp;v=4&s=300" width="300" height="300" alt="Lelonio avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Square</div>
+      <a class="rp-side-owner" href="https://github.com/Lelonio">Lelonio</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Lelonio">Lelonio</a>
+        <span class="rp-sep">/</span><span class="rp-name">Square</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Unofficial YouTube Music / Spotify Premium client for Android, built in Liquid Glass. Audio effects, Spotify Connect, listening history, 8 languages. Rust core on librespot.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>519</b></span><span class="rp-stat" title="forks">⑂ <b>53</b></span><span class="rp-stat" title="watchers">👁 <b>5</b></span><span class="rp-stat" title="prs">⑃ <b>13</b></span><span class="rp-stat" title="issues">● <b>119</b></span><span class="rp-stat" title="releases">▤ <b>66</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/alternative">alternative</a><a class="rp-topic" href="https://github.com/topics/client">client</a><a class="rp-topic" href="https://github.com/topics/glassmorphism">glassmorphism</a><a class="rp-topic" href="https://github.com/topics/liquid-glass">liquid-glass</a><a class="rp-topic" href="https://github.com/topics/spotify">spotify</a><a class="rp-topic" href="https://github.com/topics/spotify-connect">spotify-connect</a><a class="rp-topic" href="https://github.com/topics/spotifyapi">spotifyapi</a><a class="rp-topic" href="../tags/android">android</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Kotlin</span><span class="rp-meta-bit">GPL-3.0</span><span class="rp-meta-bit">Created 2026-08-06</span><a class="rp-meta-bit rp-home" href="https://github.com/Lelonio/Square/releases/latest" rel="noopener">github.com/Lelonio/Square/releases/latest</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Lelonio/Square">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">2.10.3</span><a class="rp-dl-a" href="https://github.com/Lelonio/Square/releases/tag/v2.10.3">2.10.3 ↓</a><span class="rp-dl-ver">2.10.3</span><span class="rp-dl-date">2026-11-12</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num">519</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">53</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">5</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">13</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">119</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">66</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Square
+  An unofficial Android music client for Spotify Premium and YouTube Music,
+  built in Liquid Glass.
+
+
+
+  
+  
+  
+  
+
+
+
+  Download ·
+  Features ·
+  First launch ·
+  FAQ ·
+  Telegram community ·
+  Building
+
+
+| Player | Lyrics | Effects |
+| :---: | :---: | :---: |
+| !The player | !Synced lyrics | !The effects panel |
+| Artist | Album | Glass settings |
+| !An artist&#x27;s page | !An album | !The glass settings |
+
+ Features
+
+ Two sources, one app
+
+- Spotify or YouTube Music, chosen at first launch and switchable in the
+  settings. Home, search, the library and the player work the same on both.
+- Spotify: your own account, with its playlists, library and Connect
+  devices. Needs Premium.
+- YouTube Music: the whole catalogue and the music videos, with no account
+  needed. Sign in with Google to bring in your playlists, albums and followed
+  artists.
+
+ Player
+
+- The cover or the song&#x27;s looping canvas video behind the controls.
+- Music videos: switch from the song to its video in place, without losing the
+  queue or the position, and keep watching in picture-in-picture.
+- Radio from any song, and autoplay of similar songs when the queue ends.
+- Crossfade between songs, with an option to skip trailing silence.
+- Sleep timer: after 5 to 60 minutes or at the end of the song, fading out
+  before it stops.
+
+ Audio effects
+
+- Speed and pitch, each on its own, plus reverb.
+- Presets, so &quot;slowed + reverb&quot; is one tap on any song.
+- Karaoke: turn the voice down.
+- Streaming quality that follows the connection, or a fixed one.
+
+ Lyrics
+
+- Synced lyrics, word by word where they exist and line by line otherwise.
+- Translation into your language, under the original lines.
+
+ Library and discovery
+
+- Playlists, albums, artists and liked songs. Create, rename and delete
+  playlists, add and remove songs, pin favourites, follow artists.
+- A home page of shelves made for you, a New tab with releases and charts,
+  and a Radio tab of stations, moods and genres.
+- Search, with your recent searches kept (swipe one away to remove it).
+- The music already on your phone, in a Local files shelf.
+
+ Offline
+
+- Download playlists, albums and songs, from either source. A song kept by two
+  playlists is downloaded once.
+- Downloads over Wi-Fi only, and automatic downloads of your liked songs.
+- Offline mode: play only what is on the phone.
+
+ Spotify extras
+
+- A Connect device: send playback to Square from any other device, and
+  control your other devices from it.
+- What your friends are listening to.
+- Similar playlists at the end of each playlist.
+- Song credits: performers, writers and producers.
+- What you play is saved to your listening history, as it would be anywhere
+  else you listen.
+- Spotify links can open straight in Square.
+
+ Android Auto
+
+- Browse playlists and recently played, search by voice, like a song or start a
+  radio from the car.
+
+ Look and language
+
+- Every control, the tab bar, the player, the sheets and the menus are made of
+  one refracting glass. Blur, ref</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Lelonio/Square/issues/84"><span class="rp-item-num">#84</span><span class="rp-item-title">Like button in media player does not show (OOS)</span><span class="rp-item-extra">5 comments · 2026-10-18</span></a><a class="rp-item" href="https://github.com/Lelonio/Square/issues/137"><span class="rp-item-num">#137</span><span class="rp-item-title">Android Auto Missing Album Art</span><span class="rp-item-extra">4 comments · 2026-10-29</span></a><a class="rp-item" href="https://github.com/Lelonio/Square/issues/198"><span class="rp-item-num">#198</span><span class="rp-item-title">Microphone button is not working in Square app</span><span class="rp-item-extra">2 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/Lelonio/Square/issues/151"><span class="rp-item-num">#151</span><span class="rp-item-title">Update problem</span><span class="rp-item-extra">2 comments · 2026-10-31</span></a><a class="rp-item" href="https://github.com/Lelonio/Square/issues/150"><span class="rp-item-num">#150</span><span class="rp-item-title">My playlists have been automaally deleted</span><span class="rp-item-extra">2 comments · 2026-10-31</span></a><a class="rp-item" href="https://github.com/Lelonio/Square/issues/191"><span class="rp-item-num">#191</span><span class="rp-item-title">Laggy player navigation dock bar</span><span class="rp-item-extra">1 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/Lelonio/Square/issues/165"><span class="rp-item-num">#165</span><span class="rp-item-title">As músicas não estão tocando, as plalistes, as músicas, capas, álbuns ficam tudo preto</span><span class="rp-item-extra">1 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/Lelonio/Square/issues/149"><span class="rp-item-num">#149</span><span class="rp-item-title">Radio of a song</span><span class="rp-item-extra">1 comments · 2026-10-31</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Lelonio/Square/discussions/207"><span class="rp-item-num">#207</span><span class="rp-item-title">Visual display options</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/Lelonio/Square/discussions/196"><span class="rp-item-num">#196</span><span class="rp-item-title">disable Crossfade for gapless albums</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/Lelonio/Square/discussions/195"><span class="rp-item-num">#195</span><span class="rp-item-title">effect quality</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/Lelonio/Square/discussions/194"><span class="rp-item-num">#194</span><span class="rp-item-title">New Playlist &amp; other things</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/Lelonio/Square/discussions/192"><span class="rp-item-num">#192</span><span class="rp-item-title">Adding more smooth animations</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/Lelonio/Square/discussions/188"><span class="rp-item-num">#188</span><span class="rp-item-title">playlist suggestions</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/Lelonio/Square/discussions/187"><span class="rp-item-num">#187</span><span class="rp-item-title">Remove Album Crossfade</span><span class="rp-item-extra">0 comments · 2026-11-10</span></a><a class="rp-item" href="https://github.com/Lelonio/Square/discussions/185"><span class="rp-item-num">#185</span><span class="rp-item-title">It would be great if Square had an Android TV version.</span><span class="rp-item-extra">0 comments · 2026-11-10</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/Lelonio/Square/releases"><b>2.10.3</b> <span class="rp-rel-tag">v2.10.3</span> <span class="rp-item-extra">2026-11-12</span></a><pre class="rp-pre">New
+
+- A smoother menu animation. The sort and other pull-down menus now pour out of their button with softer springs, the button&#x27;s icon travels with the glass as it opens, and the rows fade in once the shape has settled. Contributed by Max from the community — thank you!
+- Serif artist names can be turned off. Settings → App → Appearance → Font → &quot;Serif artist names&quot;. Off, artists without a logo use the app&#x27;s own font.
+
+ Fixed
+
+- Downloaded songs stopped after 10-15 seconds offline (Spotify). While offline the app keeps trying to get back online, and each try threw away the player that was pl</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Lelonio__Square.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

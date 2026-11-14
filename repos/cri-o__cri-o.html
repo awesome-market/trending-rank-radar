@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cri-o/cri-o · GitHub Trending Rank Radar</title>
+<meta name="description" content="Open Container Initiative-based implementation of Kubernetes Container Runtime Interface">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="cri-o, cri-o, cri-o/cri-o, github stars, github trending, star growth, star history, 开源项目, 星标增长, oci, oci-runtime, kubernetes, container-runtime-interface, k8s-sig-node, kata-containers">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/cri-o__cri-o">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="cri-o/cri-o · GitHub Trending Rank Radar">
+<meta property="og:description" content="Open Container Initiative-based implementation of Kubernetes Container Runtime Interface">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/cri-o__cri-o">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "cri-o/cri-o", "codeRepository": "https://github.com/cri-o/cri-o", "url": "https://zhuikan.com/repos/cri-o__cri-o", "description": "Open Container Initiative-based implementation of Kubernetes Container Runtime Interface", "author": {"@type": "Organization", "name": "cri-o", "url": "https://github.com/cri-o"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Go", "dateCreated": "2016-09-09", "keywords": "oci,oci-runtime,kubernetes,container-runtime-interface,k8s-sig-node,kata-containers,runc,hacktoberfest,crun"}</script>
+</head>
+<body data-repo="cri-o/cri-o" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">cri-o/cri-o</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="cri-o__cri-o"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/29074118?v=4&s=300" width="300" height="300" alt="cri-o avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">cri-o</div>
+      <a class="rp-side-owner" href="https://github.com/cri-o">cri-o</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/cri-o">cri-o</a>
+        <span class="rp-sep">/</span><span class="rp-name">cri-o</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Open Container Initiative-based implementation of Kubernetes Container Runtime Interface</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,691</b></span><span class="rp-stat" title="forks">⑂ <b>1,223</b></span><span class="rp-stat" title="watchers">👁 <b>121</b></span><span class="rp-stat" title="prs">⑃ <b>8,759</b></span><span class="rp-stat" title="issues">● <b>1,724</b></span><span class="rp-stat" title="releases">▤ <b>312</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/oci">oci</a><a class="rp-topic" href="https://github.com/topics/oci-runtime">oci-runtime</a><a class="rp-topic" href="../tags/kubernetes">kubernetes</a><a class="rp-topic" href="https://github.com/topics/container-runtime-interface">container-runtime-interface</a><a class="rp-topic" href="https://github.com/topics/k8s-sig-node">k8s-sig-node</a><a class="rp-topic" href="https://github.com/topics/kata-containers">kata-containers</a><a class="rp-topic" href="https://github.com/topics/runc">runc</a><a class="rp-topic" href="../tags/hacktoberfest">hacktoberfest</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Go</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2016-09-09</span><a class="rp-meta-bit rp-home" href="https://cri-o.io" rel="noopener">cri-o.io</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/cri-o/cri-o">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.37.3</span><a class="rp-dl-a" href="https://github.com/cri-o/cri-o/releases/tag/v1.37.3">v1.37.3 ↓</a><span class="rp-dl-ver">1.37.3</span><span class="rp-dl-date">2026-11-03</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,691</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,223</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">121</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">8,759</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,724</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">312</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">!CRI-O logo
+
+ CRI-O - OCI-based implementation of Kubernetes Container Runtime Interface
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Compatibility matrix: CRI-O ⬄ Kubernetes
+- What is the scope of this project?
+- What is not in the scope of this project?
+- Roadmap
+- CI images and jobs
+- Commands
+- Configuration
+- Security
+- OCI Hooks Support
+- CRI-O Usage Transfer
+- Communication
+- Awesome CRI-O
+- Getting started
+  - Installing CRI-O
+  - Running Kubernetes with CRI-O
+    - The HTTP status API
+    - Metrics
+    - Tracing
+    - Container Runtime Interface special cases
+    - Debugging tips
+- Adopters
+- Weekly Meeting
+- Governance
+- AI Assistants
+- License Scan
+
+
+
+ Compatibility matrix: CRI-O ⬄ Kubernetes
+
+CRI-O follows the Kubernetes release cycles with respect to its minor versions
+(1.x.y). Patch releases (1.x.z) for Kubernetes are not in sync with those from
+CRI-O, because they are scheduled for each month, whereas CRI-O provides
+them only if necessary. If a Kubernetes release goes End of
+Life,
+then the corresponding CRI-O version can be considered in the same way.
+
+This means that CRI-O also follows the Kubernetes n-2 release version skew
+policy when it comes to feature graduation, deprecation or removal. This also
+applies to features which are independent from Kubernetes. Nevertheless, feature
+backports to supported release branches, which are independent from Kubernetes
+or other tools like cri-tools, are still possible. This allows CRI-O to decouple
+from the Kubernetes release cycle and have enough flexibility when it comes to
+implement new features. Every feature to be backported will be a case by case
+decision of the community while the overall compatibility matrix should not be
+compromised.
+
+For more information visit the Kubernetes Version Skew
+Policy.
+
+
+
+| CRI-O                           | Kubernetes                      | Maintenance status                                                    |
+| ------------------------------- | ------------------------------- | --------------------------------------------------------------------- |
+| main branch                   | master branch                 | Features from the main Kubernetes repository are actively implemented |
+| release-1.x branch (v1.x.y) | release-1.x branch (v1.x.z) | Maintenance is manual, only bugfixes will be backported.              |
+
+
+
+The release notes for CRI-O are hand-crafted and can be continuously retrieved
+from our GitHub pages website.
+
+ What is the scope of this project?
+
+CRI-O is meant to provide an integration path between OCI conformant runtimes and
+the Kubelet.
+Specifically, it implements the Kubelet Container Runtime Interface (CRI)
+using OCI conformant runtimes.
+The scope of CRI-O is tied to the scope of the CRI.
+
+At a high level, we expect the scope of CRI-O to be restricted to the following functionalities:
+
+- Support multiple image formats including the existing Docker image format
+- Support for multiple means to download images including trust &amp; image verification
+- Container </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/cri-o/cri-o/issues/7586"><span class="rp-item-num">#7586</span><span class="rp-item-title">Reloading CRI-O configuration using SIGHUP overrides settings passed through command-line arguments</span><span class="rp-item-extra">36 comments · 2023-12-12</span></a><a class="rp-item" href="https://github.com/cri-o/cri-o/issues/4941"><span class="rp-item-num">#4941</span><span class="rp-item-title">crio authentification with mirrored registry </span><span class="rp-item-extra">25 comments · 2021-05-25</span></a><a class="rp-item" href="https://github.com/cri-o/cri-o/issues/9242"><span class="rp-item-num">#9242</span><span class="rp-item-title">Proposal: Add `never_wipe_images` Configuration Option to Prevent Image Storage Wiping</span><span class="rp-item-extra">22 comments · 2025-06-02</span></a><a class="rp-item" href="https://github.com/cri-o/cri-o/issues/9865"><span class="rp-item-num">#9865</span><span class="rp-item-title">hostUsers: false with fuse-overlayfs driver mounts unwritable rootfs in container</span><span class="rp-item-extra">19 comments · 2026-04-01</span></a><a class="rp-item" href="https://github.com/cri-o/cri-o/issues/8541"><span class="rp-item-num">#8541</span><span class="rp-item-title">Add option to enable only UNIX socket for metrics endpoint</span><span class="rp-item-extra">15 comments · 2024-09-02</span></a><a class="rp-item" href="https://github.com/cri-o/cri-o/issues/10188"><span class="rp-item-num">#10188</span><span class="rp-item-title">Integration suite hangs after every test has passed, job cancelled at the 2h timeout</span><span class="rp-item-extra">14 comments · 2026-07-25</span></a><a class="rp-item" href="https://github.com/cri-o/cri-o/issues/7275"><span class="rp-item-num">#7275</span><span class="rp-item-title">Refactor of taking container creation pieces from server to internal/factory</span><span class="rp-item-extra">14 comments · 2023-09-06</span></a><a class="rp-item" href="https://github.com/cri-o/cri-o/issues/9969"><span class="rp-item-num">#9969</span><span class="rp-item-title">deps: replace unmaintained github.com/soheilhy/cmux</span><span class="rp-item-extra">11 comments · 2026-05-20</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/cri-o/cri-o/discussions/10544"><span class="rp-item-num">#10544</span><span class="rp-item-title">SELL CVV US/UK/CA/AU GOOD BALANCE FOR WORKING ONLINE =&gt;TELEGRAM: @HUNG525968</span><span class="rp-item-extra">1 comments · 2026-11-10</span></a><a class="rp-item" href="https://github.com/cri-o/cri-o/discussions/10287"><span class="rp-item-num">#10287</span><span class="rp-item-title">pinns and libexec</span><span class="rp-item-extra">2 comments · 2026-08-29</span></a><a class="rp-item" href="https://github.com/cri-o/cri-o/discussions/10286"><span class="rp-item-num">#10286</span><span class="rp-item-title">pinns and setuid</span><span class="rp-item-extra">3 comments · 2026-08-29</span></a><a class="rp-item" href="https://github.com/cri-o/cri-o/discussions/9748"><span class="rp-item-num">#9748</span><span class="rp-item-title">Go 1.26 testing?</span><span class="rp-item-extra">1 comments · 2026-02-04</span></a><a class="rp-item" href="https://github.com/cri-o/cri-o/discussions/9704"><span class="rp-item-num">#9704</span><span class="rp-item-title">Process orphaned after container failure</span><span class="rp-item-extra">2 comments · 2026-01-09</span></a><a class="rp-item" href="https://github.com/cri-o/cri-o/discussions/9383"><span class="rp-item-num">#9383</span><span class="rp-item-title">How to configure a default mirror for all registries</span><span class="rp-item-extra">2 comments · 2025-08-05</span></a><a class="rp-item" href="https://github.com/cri-o/cri-o/discussions/9323"><span class="rp-item-num">#9323</span><span class="rp-item-title">Ship conmon-rs per default</span><span class="rp-item-extra">2 comments · 2025-07-08</span></a><a class="rp-item" href="https://github.com/cri-o/cri-o/discussions/9294"><span class="rp-item-num">#9294</span><span class="rp-item-title">CVE-2025-4437</span><span class="rp-item-extra">1 comments · 2025-06-27</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/cri-o/cri-o/releases"><b>v1.37.3</b> <span class="rp-rel-tag">v1.37.3</span> <span class="rp-item-extra">2026-11-03</span></a><pre class="rp-pre">CRI-O v1.37.3
+
+The release notes have been generated for the commit range
+v1.37.2...v1.37.3 on Tue, 03 Nov 2026 00:21:41 UTC.
+
+ Downloads
+
+ Release Bundles
+
+Download one of our static release bundles via our Google Cloud Bucket.
+Each bundle includes a SHA-256 checksum, a cosign signature (.bundle), and a SPDX 3 bill of materials (.spdx.json) with its own signature:
+
+- cri-o.amd64.v1.37.3.tar.gz
+  - cri-o.amd64.v1.37.3.tar.gz.sha256sum
+  - cri-o.amd64.v1.37.3.tar.gz.bundle
+  - cri-o.amd64.v1.37.3.tar.gz.spdx.json
+  - cri-o.amd64.v1.37.3.tar.gz.spdx.json.bundle
+- cri-o.arm64.v1.37.3.tar.gz
+  - c</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/cri-o__cri-o.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

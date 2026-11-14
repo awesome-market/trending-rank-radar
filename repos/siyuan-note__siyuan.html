@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>siyuan-note/siyuan · GitHub Trending Rank Radar</title>
+<meta name="description" content="An open-source, privacy-first, self-hosted knowledge workspace where humans and AI agents work together 开源、隐私优先、自托管的知识工作空间，让人与智能体在此协作">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="siyuan, siyuan-note, siyuan-note/siyuan, github stars, github trending, star growth, star history, 开源项目, 星标增长, note-taking, local-first, knowledge-base, markdown, self-hosted, siyuan">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/siyuan-note__siyuan">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="siyuan-note/siyuan · GitHub Trending Rank Radar">
+<meta property="og:description" content="An open-source, privacy-first, self-hosted knowledge workspace where humans and AI agents work together 开源、隐私优先、自托管的知识工作空间，让人与智能体在此协作">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/siyuan-note__siyuan">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "siyuan-note/siyuan", "codeRepository": "https://github.com/siyuan-note/siyuan", "url": "https://zhuikan.com/repos/siyuan-note__siyuan", "description": "An open-source, privacy-first, self-hosted knowledge workspace where humans and AI agents work together 开源、隐私优先、自托管的知识工作空间，让人与智能体在此协作", "author": {"@type": "Organization", "name": "siyuan-note", "url": "https://github.com/siyuan-note"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/AGPL-3.0.html", "programmingLanguage": "TypeScript", "dateCreated": "2020-08-30", "keywords": "note-taking,local-first,knowledge-base,markdown,self-hosted,siyuan,ai-agent,mcp,agentic-ai,workspace"}</script>
+</head>
+<body data-repo="siyuan-note/siyuan" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">siyuan-note/siyuan</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="siyuan-note__siyuan"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/70468694?v=4&s=300" width="300" height="300" alt="siyuan-note avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">siyuan</div>
+      <a class="rp-side-owner" href="https://github.com/siyuan-note">siyuan-note</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/siyuan-note">siyuan-note</a>
+        <span class="rp-sep">/</span><span class="rp-name">siyuan</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">An open-source, privacy-first, self-hosted knowledge workspace where humans and AI agents work together 开源、隐私优先、自托管的知识工作空间，让人与智能体在此协作</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>47,217</b></span><span class="rp-stat" title="forks">⑂ <b>3,115</b></span><span class="rp-stat" title="watchers">👁 <b>172</b></span><span class="rp-stat" title="prs">⑃ <b>1,352</b></span><span class="rp-stat" title="issues">● <b>19,972</b></span><span class="rp-stat" title="releases">▤ <b>1,061</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/note-taking">note-taking</a><a class="rp-topic" href="../tags/local-first">local-first</a><a class="rp-topic" href="https://github.com/topics/knowledge-base">knowledge-base</a><a class="rp-topic" href="../tags/markdown">markdown</a><a class="rp-topic" href="../tags/self-hosted">self-hosted</a><a class="rp-topic" href="https://github.com/topics/siyuan">siyuan</a><a class="rp-topic" href="../tags/ai-agent">ai-agent</a><a class="rp-topic" href="../tags/mcp">mcp</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">AGPL-3.0</span><span class="rp-meta-bit">Created 2020-08-30</span><a class="rp-meta-bit rp-home" href="https://b3log.org/siyuan" rel="noopener">b3log.org/siyuan</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/siyuan-note/siyuan">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v3.8.10</span><a class="rp-dl-a" href="https://github.com/siyuan-note/siyuan/releases/tag/v3.8.10">v3.8.10 ↓</a><span class="rp-dl-ver">3.8.10</span><span class="rp-dl-date">2026-11-10</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+13</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+160</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+520</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">47,217</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">3,115</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">172</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,352</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">19,972</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">1,061</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">从思考到洞见，与智能体同行
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+English
+| 中文
+| 日本語
+| Türkçe
+| Português
+
+
+---
+
+ 目录
+
+- 💡 简介
+- 🔮 特性
+- 🏗️ 架构和生态
+- 🗺️ 路线图
+- 🚀 下载安装
+  - 应用市场
+  - 安装包
+  - 包管理器
+  - Docker 部署
+  - Kubernetes 部署
+  - Unraid 部署
+  - TrueNAS 部署
+  - 宝塔面板部署
+  - 小皮面板部署
+  - 1Panel 面板部署
+  - 测试通道
+- ⌨️ 命令行接口
+- 🏘️ 社区
+- 🛠️ 开发指南
+- ❓ 常见问题和解答
+  - 思源是如何存储数据的？
+  - 支持通过第三方同步盘进行数据同步吗？
+  - 思源是开源的吗？
+  - 如何升级到新版本？
+  - 有的块（比如在列表项中的段落块）找不到块标怎么办？
+  - 数据仓库密钥遗失怎么办？
+  - 使用需要付费吗？
+- 🙏 鸣谢
+  - 贡献者列表
+
+---
+
+ 💡 简介
+
+思源笔记是一款隐私优先的个人知识管理系统，支持细粒度块级引用和 Markdown 所见即所得。
+
+!feature0.png
+
+!feature5-1.png
+
+如需了解更多，请阅读在线用户指南或前往思源笔记官方讨论区交流。
+
+ 🔮 特性
+
+大部分功能是免费的，即使是在商业环境下使用。
+
+- 内容块
+  - 块级引用和双向链接
+  - 自定义属性
+  - SQL 查询嵌入
+  - 协议 siyuan://
+- 编辑器
+  - Block 风格
+  - Markdown 所见即所得
+  - 列表大纲
+  - 块缩放聚焦
+  - 百万字大文档编辑
+  - 数学公式、图表、流程图、甘特图、时序图、五线谱等
+  - 网页剪藏
+  - PDF 标注双链
+- 导出
+  - 块引用和嵌入块 
+  - 带 assets 文件夹的标准 Markdown
+  - PDF、Word 和 HTML
+  - 复制到微信公众号、知乎和语雀
+- 数据库
+  - 表格视图
+- 闪卡间隔重复
+- 连接 OpenAI 接口支持人工智能写作和问答聊天
+- Tesseract OCR
+- 模板片段
+- JavaScript/CSS 代码片段
+- Android/iOS/鸿蒙 App
+- Docker 部署
+- API
+- 社区集市
+
+部分功能需要付费会员才能使用，更多细节请参考定价。
+
+ 🏗️ 架构和生态
+
+!思源笔记架构设计
+
+| Project                                                  | Description  | Forks                                                                           | Stars                                                                                | 
+|----------------------------------------------------------|--------------|---------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
+| lute                    | 编辑器引擎        | !GitHub forks                 | !GitHub Repo stars                 |
+| chrome   | Chrome/Edge 扩展 | !GitHub forks  | !GitHub Repo stars  |
+| bazaar          | 社区集市         | !GitHub forks         | !GitHub Repo stars         |
+| dejavu          | 数据仓库         | !GitHub forks         | !GitHub Repo stars         |
+| petal            | 插件 API       | !GitHub forks          | !GitHub Repo stars          |
+| android | Android App  | !GitHub forks | !GitHub Repo stars |
+| ios         | iOS App      | !GitHub forks     | !GitHub Repo stars     |
+| harmony         | 鸿蒙 App       | !GitHub forks     | !GitHub Repo stars     |
+| riff              | 间隔重复         | !GitHub forks           | !GitHub Repo stars           |
+
+ 🗺️ 路线图
+
+- 思源笔记开发计划和进度
+- 思源笔记版本变更和公告
+
+ 🚀 下载安装
+
+桌面端和移动端建议优先考虑通过应用市场安装，这样以后升级版本时可以一键更新。
+
+ 应用市场
+
+移动端：
+
+- App Store
+- Google Play
+- F-Droid
+- 华为应用市场
+- 小米应用商店
+- 酷安
+
+桌面端：
+
+- Microsoft Store
+
+ 安装包
+
+- B3log
+- GitHub
+
+ 包管理器
+
+ siyuan
+
+
+
+ siyuan-note
+
+
+
+ Docker 部署
+
+
+Docker 部署文档
+
+ 概述
+
+在服务器上伺服思源最简单的方案是通过 Docker 部署。
+
+- 镜像名称 b3log/siyuan
+- 镜像地址
+
+ 文件结构
+
+整体程序位于 /opt/siyuan/ 下，基本上就是 Electron 安装包 resources 文件夹下的结构：
+
+- appearance：图标、主题、多语言
+- guide：帮助文档
+- stage：界面和静态资源
+- kernel：内核程序
+
+ 启动入口
+
+入口点在构建 Docker 镜像时设置：ENTRYPOINT [&quot;/opt/siyuan/entrypoint.sh&quot;]。该脚本允许更改将在容器内运行的用户的 PUID 和 PGID。这对于解决从主机挂载目录时的权限问题尤为重要。PUID 和 PGID 可以作为环境变量传递，这样在访问主机挂载的目录时就能更容易地确保正确的权限。
+
+使用 docker run b3log/siyuan 运行容器时，请指定以</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/siyuan-note/siyuan/issues/2024"><span class="rp-item-num">#2024</span><span class="rp-item-title">Card Whiteboard (Maze)</span><span class="rp-item-extra">174 comments · 2021-04-29</span></a><a class="rp-item" href="https://github.com/siyuan-note/siyuan/issues/13121"><span class="rp-item-num">#13121</span><span class="rp-item-title">Global attributes</span><span class="rp-item-extra">51 comments · 2024-11-12</span></a><a class="rp-item" href="https://github.com/siyuan-note/siyuan/issues/19786"><span class="rp-item-num">#19786</span><span class="rp-item-title">Support handwriting notes (stylus/ink)</span><span class="rp-item-extra">18 comments · 2026-09-23</span></a><a class="rp-item" href="https://github.com/siyuan-note/siyuan/issues/19847"><span class="rp-item-num">#19847</span><span class="rp-item-title">Update Noto emoji font and support Unicode 18 emoji</span><span class="rp-item-extra">1 comments · 2026-09-25</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/siyuan-note/siyuan/releases"><b>v3.8.10</b> <span class="rp-rel-tag">v3.8.10</span> <span class="rp-item-extra">2026-11-10</span></a><pre class="rp-pre">Overview
+
+This release adds rich document titles, database sub-items and related views, workspace-level AI long-term memory, and a built-in lightweight Markdown editor.
+
+Document trees handle large directories more efficiently, while unified document and block breadcrumbs make navigation more consistent. Other improvements include mobile bottom sheets, HTTP requests in templates, custom PDF page sizes, LAN sync address selection, and bazaar compatibility filtering.
+
+ Changelogs
+
+Below are the detailed changes in this version.
+
+ Enhancement
+
+ Support unified document and block bread</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/siyuan-note__siyuan.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

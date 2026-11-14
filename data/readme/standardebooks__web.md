@@ -1,0 +1,256 @@
+# Installation
+
+PHP 8.5.4+ is required.
+
+## Installing on Ubuntu 26.04
+
+```shell
+# Set up the Manticore APT list.
+# As of Ubuntu 26.04, Manticore is still not included as a system package.
+wget https://repo.manticoresearch.com/manticore-repo.noarch.deb
+sudo dpkg -i manticore-repo.noarch.deb
+rm manticore-repo.noarch.deb
+
+# Install Apache, PHP, PHP-FPM, and various other dependencies.
+sudo apt update
+sudo apt install -y git composer php-fpm php-cli php-gd php-xml php-apcu php-mbstring php-intl php-curl php-zip php-mysql apache2 apache2-utils libfcgi0ldbl task-spooler ipv6calc mariadb-server attr libapache2-mod-xsendfile libimage-exiftool-perl librsvg2-bin task-spooler attr php-mailparse manticore php-imap awscli
+
+# Create the site root and logs root and clone this repo into it.
+sudo mkdir /standardebooks.org/
+sudo chown $(whoami): /standardebooks.org
+sudo mkdir /var/log/local/
+cd /standardebooks.org/
+git clone https://github.com/standardebooks/web/
+
+# Install dependencies using Composer.
+cd /standardebooks.org/web/
+composer install
+
+# Install the SE toolset as a library in `.venv` so we can use it in some scripts.
+python3 -m venv .venv
+source .venv/bin/activate
+pip3 install standardebooks
+deactivate
+
+# Add standardebooks.test to your hosts file.
+echo -e "127.0.0.1\tstandardebooks.test" | sudo tee -a /etc/hosts
+
+# Create a self-signed SSL certificate for use with the local web site installation.
+mkdir -p /standardebooks.org/web/config/ssl/standardebooks.test
+openssl req -x509 -nodes -days 99999 -newkey rsa:4096 -subj "/CN=standardebooks.test" -keyout /standardebooks.org/web/config/ssl/standardebooks.test/privkey.pem -sha256 -out /standardebooks.org/web/config/ssl/standardebooks.test/fullchain.pem
+sudo mkdir -p /etc/letsencrypt/live
+sudo ln -s /standardebooks.org/web/config/ssl/standardebooks.test /etc/letsencrypt/live
+
+# Enable the necessary Apache modules.
+sudo a2enmod headers expires ssl rewrite proxy proxy_fcgi xsendfile
+
+# Link and enable the SE Apache configuration file.
+sudo ln -s /standardebooks.org/web/config/apache/standardebooks.test.conf /etc/apache2/sites-available/
+sudo a2ensite standardebooks.test
+sudo systemctl restart apache2.service
+
+# Link and enable the SE PHP-FPM pool.
+sudo ln -s /standardebooks.org/web/config/php/fpm/standardebooks.test.ini /etc/php/*/cli/conf.d/
+sudo ln -s /standardebooks.org/web/config/php/fpm/standardebooks.test-secrets.ini /etc/php/*/cli/conf.d/
+sudo ln -s /standardebooks.org/web/config/php/fpm/standardebooks.test.ini /etc/php/*/fpm/conf.d/
+sudo ln -s /standardebooks.org/web/config/php/fpm/standardebooks.test-secrets.ini /etc/php/*/fpm/conf.d/
+sudo ln -s /standardebooks.org/web/config/php/fpm/standardebooks.test.conf /etc/php/*/fpm/pool.d/
+sudo systemctl restart "php*-fpm.service"
+
+# Link MariaDB configuration.
+sudo ln -s /standardebooks.org/web/config/mariadb/99-se.cnf /etc/mysql/mariadb.conf.d/
+sudo systemctl restart mariadb.service
+
+# Create and populate the SE database.
+mariadb < /standardebooks.org/web/config/sql/se.sql
+mariadb < /standardebooks.org/web/config/sql/users.sql
+for file in /standardebooks.org/web/config/sql/se/*.sql; do
+    mariadb se < "$file"
+done
+
+# Create users and groups.
+sudo useradd se
+sudo groupadd committers
+sudo groupadd se-secrets
+sudo usermod --append --groups committers,se-secrets se
+sudo usermod --append --groups se-secrets www-data
+
+# Configure Manticore.
+sudo mv /etc/manticoresearch/manticore.conf /etc/manticoresearch/manticore.conf.bak
+sudo ln -s /standardebooks.org/web/config/manticore/manticore.conf /etc/manticoresearch
+
+# Start the Manticore daemon.
+sudo systemctl start manticore
+
+# Make Manticore start on boot.
+sudo systemctl enable manticore
+
+# Load Manticore tables.
+for file in /standardebooks.org/web/config/manticore/*.sql; do
+    mariadb -P9306 < "$file"
+done
+```
+
+If everything went well you should now be able to open your web browser and visit `https://standardebooks.test`. However, you won’t see any ebooks if you visit `https://standardebooks.test/ebooks`. To install some ebooks, first you have to clone their source from GitHub, then deploy them to your local website using the `./scripts/deploy-ebook-to-www` script:
+
+```shell
+mkdir /standardebooks.org/ebooks/
+cd /standardebooks.org/ebooks/
+git clone --bare https://github.com/standardebooks/david-lindsay_a-voyage-to-arcturus
+/standardebooks.org/web/scripts/deploy-ebook-to-www /standardebooks.org/ebooks/david-lindsay_a-voyage-to-arcturus.git
+```
+
+If everything went well, `https://standardebooks.test/ebooks` will show the one ebook you deployed.
+
+## Installation using Docker
+
+We provide a Dockerfile for testing code changes. You can create a container with:
+
+```shell
+docker build . --tag standardebooks --file vms/docker/Dockerfile
+```
+
+Then run the built image with:
+
+```shell
+docker run --detach --publish 443:443 --volume "$(pwd):/standardebooks.org/web" standardebooks:latest
+```
+
+The site will now be available at `https://localhost/`, although as it’s a self-signed certificate you’ll need to accept whatever browser security warnings come up.
+
+# Filesystem layout
+
+-   `/standardebooks.org/ebooks/` contains one directory per SE ebook, arranged in a flat hierarchy. These directories look like the URL-safe identifier for the ebook, end in `.git`, and are bare Git repos; they are the “source of truth” for SE ebooks.
+
+    For example:
+
+    ````
+    /standardebooks.org/ebooks/algis-budrys_short-fiction.git/
+    /standardebooks.org/ebooks/omar-khayyam_the-rubaiyat-of-omar-khayyam_edward-fitzgerald_edmund-dulac.git/
+    ````
+
+-   `/standardebooks.org/web/www/ebooks/` contains a nested hierarchy of deployed ebook files, that are read by the website for display and download. For example, we might have:
+
+    ````
+    /standardebooks.org/web/www/ebooks/maurice-leblanc/
+    /standardebooks.org/web/www/ebooks/maurice-leblanc/the-hollow-needle/
+    /standardebooks.org/web/www/ebooks/maurice-leblanc/the-hollow-needle/alexander-teixeira-de-mattos/
+    /standardebooks.org/web/www/ebooks/maurice-leblanc/813/
+    /standardebooks.org/web/www/ebooks/maurice-leblanc/813/alexander-teixeira-de-mattos/
+    ````
+
+    These directories contain the full ebook source, as if it were pulled from Git. (But they are not actual Git repositories.) Additionally each one contains a `./downloads/` folder containing built ebook files for distribution.
+
+    The website pulls all ebook information from what is contained in `/standardebooks.org/web/www/ebooks/`. It does not inspect `/standardebooks.org/ebooks/`. Therefore it is possible for one or the other to hold different catalogs if they become out of sync.
+
+    To automatically populate your server with ebooks from https://github.com/standardebooks/, you can use `sync-ebooks` and `deploy-ebook-to-www` in the [scripts](scripts) directory. If you don’t want to clone all ebooks, don’t use `sync-ebooks`, and instead clone the books you want into `/standardebooks.org/ebooks` with `git clone --bare`. To clone a list of books, you can use `while IFS= read -r line; do git clone --bare "${line}"; done < urllist.txt`
+
+-   `/standardebooks.org/web/www/manual/` contains the *compiled* [Standard Ebooks Manual of Style](https://github.com/standardebooks/manual). Because it is compiled from other sources, the distributable PHP files are not included in this repo. To include the manual, clone the SEMoS repo and follow the instructions in its readme to compile it into `/standardebooks.org/web/www/manual/x.y.z/`.
+
+# Testing
+
+This repository includes [PHPStan](https://github.com/phpstan/phpstan) to statically analyze the codebase and [Safe PHP](https://github.com/thecodingmachine/safe) to replace old functions that don’t throw exceptions.
+
+To run PHPStan, execute:
+
+```shell
+<REPO-ROOT>/vendor/phpstan/phpstan/phpstan analyze --configuration=<REPO-ROOT>/config/phpstan/phpstan.neon
+```
+
+If run successfully, it should output `[OK] No errors`.
+
+# Contributing
+
+Before submitting design contributions, please discuss them with the Standard Ebooks lead. While we encourage discussion and contributions, we can’t guarantee that unsolicited design contributions will be accepted. You can open an issue to discuss potential design contributions with us before you begin.
+
+## Help wanted/todo
+
+### Main website
+
+- Creating a favicon.
+
+- Creating a search bar for the SE Manual of Style.
+
+- Finding a self-hosted replacement for GitHub, like possibly [Gitea](https://gitea.io/) or [GitLab](https://about.gitlab.com/) or [Forgejo](https://forgejo.org/), and figuring out how to reproducibly install and update it on the SE server.
+
+## PHP code style
+
+- Indent with tabs.
+
+-   Use single quotes for strings, unless the string must contain a printable escape character.
+
+    ````php
+    $foo = 'baz';
+    $bar = "\tbaz\n";
+    ````
+
+-   When composing strings always use string concatenation. Don’t evaluate PHP variables inside strings.
+
+    Good:
+
+    ````php
+    $foo = 'bar' . $fizz . 'buzz';
+    ````
+
+    Bad:
+
+    ````php
+    $foo = "bar$fizzbuzz";
+    $foo = "bar{$fizz}buzz";
+    ````
+
+-   Variable names are in camelCase.
+
+    ````php
+    $fooBar = 'baz';
+    ````
+
+-   Object members are in PascalCase.
+
+    ````php
+    $myObject->FooBar = 'baz';
+    ````
+
+- Output to HTML is done using `<?= $var ?>`, not `print($var)` or any other printing function.
+
+- Check for `null` using `===` and `!==`.
+
+- Where possible, include type hints for class properties and all functions.
+
+-   If using regex to parse HTML, use `|` as the regex delimiter instead of `/`.
+
+    ````php
+    preg_replace('|</foo>|ius', '</bar>', $text);
+    ````
+
+-   Omit closing PHP tags in files that are pure PHP.
+
+-   Language constructs that can optionally have curly braces (like `if`) should always have curly braces.
+
+    Good:
+
+    ````php
+    if(true){
+        print('Foo!');
+    }
+    else{
+        print('Bar!');
+    }
+    ````
+
+    Bad:
+
+    ````php
+    if(true)
+        print('Foo!');
+    else
+        print('Bar!');
+    ````
+
+- SQL statements have the first keyword in ALL CAPS to facilitate syntax highlighting; however subsequent keywords are all lowercase.
+
+    ````sql
+    SELECT * from Users where Username = 'Foo'
+    ````
+
+- When using SQL to insert a record and later retrieve the last inserted ID, use the `insert ... returning` construct, and not `insert` followed by `select last_insert_id()`.

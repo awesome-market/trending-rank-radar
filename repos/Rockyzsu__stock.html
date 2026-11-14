@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rockyzsu/stock · GitHub Trending Rank Radar</title>
+<meta name="description" content="30天掌握量化交易 (持续更新)">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="stock, Rockyzsu, Rockyzsu/stock, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Rockyzsu__stock">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Rockyzsu/stock · GitHub Trending Rank Radar">
+<meta property="og:description" content="30天掌握量化交易 (持续更新)">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Rockyzsu__stock">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Rockyzsu/stock", "codeRepository": "https://github.com/Rockyzsu/stock", "url": "https://zhuikan.com/repos/Rockyzsu__stock", "description": "30天掌握量化交易 (持续更新)", "author": {"@type": "Organization", "name": "Rockyzsu", "url": "https://github.com/Rockyzsu"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Python", "dateCreated": "2016-04-04"}</script>
+</head>
+<body data-repo="Rockyzsu/stock" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Rockyzsu/stock</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Rockyzsu__stock"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/7868260?u=9f363609c6d0677a5bfa0f250e27c1d51cba3a66&amp;v=4&s=300" width="300" height="300" alt="Rockyzsu avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">stock</div>
+      <a class="rp-side-owner" href="https://github.com/Rockyzsu">Rockyzsu</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Rockyzsu">Rockyzsu</a>
+        <span class="rp-sep">/</span><span class="rp-name">stock</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">30天掌握量化交易 (持续更新)</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>8,980</b></span><span class="rp-stat" title="forks">⑂ <b>1,676</b></span><span class="rp-stat" title="watchers">👁 <b>278</b></span><span class="rp-stat" title="prs">⑃ <b>1</b></span><span class="rp-stat" title="issues">● <b>31</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Created 2016-04-04</span><a class="rp-meta-bit rp-home" href="http://30daydo.com" rel="noopener">30daydo.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Rockyzsu/stock">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+94</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">8,980</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,676</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">278</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">31</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">更好的帮助自己炒股(亏钱-。-)
+
+ 2022-12-08 更新
+
+目前正在重构项目代码，目录结构可能与下面描述有些出入，后期会慢慢更新修改，感谢大家的关注与支持。
+
+---
+
+analysis/ 数据分析部分
+
+datahub/ 数据采集部分
+
+fund/ 基金相关的分析部分
+
+futu/ 富途牛牛接口的基本用法 
+
+hk_stock/ 港股部分
+
+k-line/ K线技术形态部分
+
+machine_learning/ 机器学习预测 
+
+trader/ 交易部分
+
+ptrade/ ptrade自动交易实盘代码
+
+log/ 存放日志
+
+common/ 常用函数与库
+
+configure 数据库连接与配置
+
+----
+ 使用教程：
+ 修改 configure/sample_config.json 配置文件名 为 configure/config.json，根据不同项目，并对着里面的字段进行修改，修改你的mysql，mongodb的用户名和密码，如果项目里面没有用到mysql，mongodb等，则不需要修改。
+对应的映射关系可以看这个文件里面的源码。这个设置主要为了同一套代码便于切换线上和本地的数据库，并没有采用环境变量的方式存储用户密码。需要的朋友也可以自己改动。
+
+configure/setting.py
+
+
+    def config(self, db_type=&#x27;mysql&#x27;, local=&#x27;ubuntu&#x27;):
+        db_dict = self.json_data[db_type][local]
+        user = db_dict[&#x27;user&#x27;]
+        password = db_dict[&#x27;password&#x27;]
+        host = db_dict[&#x27;host&#x27;]
+        port = db_dict[&#x27;port&#x27;]
+        return (user, password, host, port)
+
+    def get_engine(self, db, type_=&#x27;ubuntu&#x27;):
+        from sqlalchemy import create_engine
+        user, password, host, port = self.config(db_type=&#x27;mysql&#x27;, local=type_)
+        try:
+            engine = create_engine(
+                &#x27;mysql+pymysql://{}:{}@{}:{}/{}?charset=utf8&#x27;.format(user, password, host, port, db))
+        except Exception as e:
+            print(e)
+            return None
+        return engine
+
+    def get_mysql_conn(self, db, type_=&#x27;ubuntu&#x27;):
+        import pymysql
+        user, password, host, port = self.config(db_type=&#x27;mysql&#x27;, local=type_)
+        try:
+            conn = pymysql.connect(host=host, port=port, user=user, password=password, db=db, charset=&#x27;utf8&#x27;)
+        except Exception as e:
+            print(e)
+            return None
+        else:
+            return conn
+
+    def mongo(self, location_type=&#x27;ubuntu&#x27;, async_type=False):
+        user, password, host, port = self.config(&#x27;mongo&#x27;, location_type)
+        connect_uri = f&#x27;mongodb://{user}:{password}@{host}:{port}&#x27;
+        if async_type:
+            from motor.motor_asyncio import AsyncIOMotorClient
+            client = AsyncIOMotorClient(connect_uri)
+        else:
+            import pymongo
+            client = pymongo.MongoClient(connect_uri)
+        return client
+
+
+ 文末有券商福利：提供券商自动化下单接口
+
+---
+
+码农的量化交易，把经历写成代码推送到github。代码和策略会一直保持更新，如果你有好的策略或者想法和疑问想要交流，可以加文末微信。
+
+ 新增：
+
+ analysis 目录 数据分析部分
+
+ analysis/get_zt_info 分析次新板块中的涨停强度
+ analysis/diagnose_stock 股票诊断，是否有黑历史和东北股
+ analysis/ipospeed IPO发行速度 与指数的相关性
+ analysis/fd_money A股某段日期内涨停板的封单金额 
+ 
+ fund（基金）
+
+ fund/LOFShareDection.py 监控LOF、ETF场内份额变动
+ fund/ark_funds.py 获取ARK ETF每日持仓数据，并写入mongodb
+ fund/fund_share_update.py 上交所，深交所 基金场内基金份额监控
+ fund/fund_share_monitor.py 上交所，深交所 基金基金份额查询，规模变动
+ fund/fund_info_spider.py 集思录基金,腾讯证券基金折价率，溢价率 爬虫
+ fund/etf_info.py 市场指数基金的持仓股监控
+ fund/ttjj.py 天天基金数据获取
+ fund/xueqiu_private_fund.py 雪球私募私募获取
+ fund/danjuan_fund.py 雪球蛋卷基金数据获取
+ fund/danjuan_fund_data_analysis.py 雪球蛋卷基金分析
+
+ datahub（数据源）
+
+ datahub/foreignexchange.py 美元兑人民币汇率监控
+ datahub/niwen.py 宁稳可转债下载
+ datahub/public_private_fund_members.py 公墓私募基金成员数据
+ datahub/jucao_ammouncement.py 巨潮公告批量获取+PDF下载
+ datahub/bond_industry</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/Rockyzsu__stock.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

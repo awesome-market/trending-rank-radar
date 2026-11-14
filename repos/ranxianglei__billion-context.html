@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ranxianglei/billion-context · GitHub Trending Rank Radar</title>
+<meta name="description" content="A context-compression plugin for month-long single sessions (billions of tokens)  and small context windows (a 100K context is enough), billion-context is all you need .">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="billion-context, ranxianglei, ranxianglei/billion-context, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/ranxianglei__billion-context">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="ranxianglei/billion-context · GitHub Trending Rank Radar">
+<meta property="og:description" content="A context-compression plugin for month-long single sessions (billions of tokens)  and small context windows (a 100K context is enough), billion-context is all you need .">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/ranxianglei__billion-context">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ranxianglei/billion-context", "codeRepository": "https://github.com/ranxianglei/billion-context", "url": "https://zhuikan.com/repos/ranxianglei__billion-context", "description": "A context-compression plugin for month-long single sessions (billions of tokens)  and small context windows (a 100K context is enough), billion-context is all you need .", "author": {"@type": "Organization", "name": "ranxianglei", "url": "https://github.com/ranxianglei"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "TypeScript", "dateCreated": "2026-08-06"}</script>
+</head>
+<body data-repo="ranxianglei/billion-context" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">ranxianglei/billion-context</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="ranxianglei__billion-context"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/12445698?v=4&s=300" width="300" height="300" alt="ranxianglei avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">billion-context</div>
+      <a class="rp-side-owner" href="https://github.com/ranxianglei">ranxianglei</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/ranxianglei">ranxianglei</a>
+        <span class="rp-sep">/</span><span class="rp-name">billion-context</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily">daily <b>#133</b></a><a class="rp-board-chip" href="../?board=daily_rate">daily_rate <b>#65</b></a><a class="rp-board-chip" href="../?board=weekly">weekly <b>#70</b></a><a class="rp-board-chip" href="../?board=weekly_rate">weekly_rate <b>#29</b></a><a class="rp-board-chip" href="../?board=monthly_rate">monthly_rate <b>#98</b></a></div>
+    </div>
+    <p class="rp-desc">A context-compression plugin for month-long single sessions (billions of tokens)  and small context windows (a 100K context is enough), billion-context is all you need .</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>7,237</b></span><span class="rp-stat" title="forks">⑂ <b>595</b></span><span class="rp-stat" title="watchers">👁 <b>18</b></span><span class="rp-stat" title="prs">⑃ <b>3,434</b></span><span class="rp-stat" title="issues">● <b>3,153</b></span><span class="rp-stat" title="releases">▤ <b>206</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2026-08-06</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/ranxianglei/billion-context">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.1.213</span><a class="rp-dl-a" href="https://github.com/ranxianglei/billion-context/releases/tag/v0.1.213">v0.1.213 ↓</a><span class="rp-dl-ver">0.1.213</span><span class="rp-dl-date">2026-11-07</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+180</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">7,237</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">595</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">18</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">3,434</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">3,153</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">206</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">billion-context
+
+English | 中文 | 日本語
+
+上下文压缩插件 — billion-context is all you need。
+
+小窗口（100k 上下文足矣）· 省 5 倍 token · 超长会话（十亿级别单会话）· 高压缩质量
+
+
+
+
+
+
+
+
+
+npm install -g billion-context --prefix=~/.local
+
+
+
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+&amp;nbsp;
+
+
+
+---
+
+ 缓存健康速览：健康会话的前缀缓存命中率在 95–97% 左右——压缩本身代价 ≤2%。持续低于这个数，用 /acp 或 /acp-cache 查归因（见常见问题）；常见原因依次：上游缓存 TTL 到期 · 切换模型 · bili 的 bug（欢迎提报）· 其他/未知。
+
+ 社区
+
+QQ群:
+1056132097(已满)
+1108730198(已满)
+1129868472(未满)
+
+---
+
+ 📄 论文 / 预印本
+
+- 模型驱动的分层增量压缩:面向长寿命编码 Agent 的免训练多代上下文管理(中文版,v0.2)
+
+ 📝 论文本身与代码一同以 MIT 许可开源(位于 paper/ 目录),是代码库的一部分 —— 这是一份活文档,任何人都可以编辑,欢迎提 PR 改进。
+
+生产规模纵向研究:四个半月、三宿主、174,327 次模型调用、187.6 亿累计输入 token(三宿主合计约 247 亿),204,800-token 窗口零违规,马拉松会话 8,584–12,049 次调用。
+
+ 📊 第三方独立评测基准
+
+- 1,500 题三大基准横评报告（LongMemEval-S · ContextBench · MemoryAgentBench）（English）—— 基于 DeepSeek V4.1 Flash、Qwen3-Embedding-8B、Qwen3-Reranker-4B 与 Pi Agent，对 billion-context (v0.1.202)、full 全量上下文及 3 条 RAG 管线（bm25、embedding、embedding-rerank）进行全成本归因盲测：ContextBench 端到端有效 F1 夺得全场第一（0.3097，比 full 省钱 58.3%）、LongMemEval-S 领先最强 RAG 达 +16.6%（79.20% vs 62.60%，比独立会话 full 省钱 71.1%）、MemoryAgentBench 1.48M 超长会话实现 100% 存活与 30× 稳态压缩（full 199 题全部爆窗崩溃）。
+
+---
+
+billion-context 架在任意编程助手与其模型 API 之间,用 acp-kernel 压缩重写 Anthropic/OpenAI 流。何时压缩、压缩什么 —— 由模型决定,而非硬截断。
+
+ 为什么
+
+长编程会话会把上下文撑爆。各家 provider 按 token 计费,一旦超过上下文窗口,会话质量下降甚至崩掉。billion-context 把已消耗的对话压缩成分层摘要,让你一个会话连跑数天 —— 海量 token 穿过同一个上下文窗口。
+
+与宿主自带的摘要器不同,这里的压缩增量、可逆、对前缀缓存友好:摘要在小范围内写入,可按需解压,缓存前缀保持完整。
+
+ 工作原理
+
+!工作原理
+
+ 上下文管理工具
+
+代理向对话注入四个上下文管理工具;模型在上下文增长时自行调用,代理在服务端执行 compress,折叠后的范围在历史中保持摘要形态、直到被恢复:
+
+- compress —— 把一段消息范围折叠成详细摘要。
+- decompress —— 需要精确细节时恢复某个已压缩范围。
+- search_context —— 在压缩摘要与可见消息中做关键词检索。
+- acp_status —— 上下文用量概览 + 哪些区间仍可压缩。
+
+模型会自主使用以上工具自主管控上下文，无需人工干预。
+
+ 该选哪个?
+
+按客户端选:
+
+| 客户端 | 用这个 |
+|---|---|
+| pi | billion-context —— bili pi(启动器)或 bili plugin install pi(原生);独立 billion-context-pi 仍可用 —— 细节见 docs/clients.zh-CN.md |
+| opencode(1.x / 2.x) | billion-context —— bili opencode(启动器)或 bili plugin install opencode(原生);独立 opencode-acp 在 1.x 上仍可用 —— 完整指南:OpenCode |
+| omp | billion-context，bili omp（内置插件）或 bili plugin install omp（自拉起原生插件，免启动器） |
+| dsh | billion-context —— bili dsh(启动器,经 --patch 注入完整原生插件)或 bili plugin install dsh ≡ dsh plugin --profile  add billion-context(统一泳道)—— 细节见 docs/clients.zh-CN.md |
+| kimi | bili plugin install kimi(自拉起原生,需 Kimi Code ≥ 2.0.0)或 bili kimi(证书 MITM)或 /bili/ 前缀 —— 细节见 docs/clients.zh-CN.md |
+| hermes | bili plugin install hermes(自拉起原生,Python 插件 958)或 bili hermes(证书 MITM) |
+| zcode(Z.ai / bigmodel coding plan) | bili plugin install zcode(自拉起原生,1145)或 GUI「设置 → 网络」证书 MITM 或 /bili/ 前缀 —— 细节见 docs/clients.zh-CN.md |
+| claude | bili claude(启动器)或 bili plugin install claude(原生姿态,964 —— 受管 settings 块 + 会话自管代理;见下方&quot;注意&quot;) |
+| codex | bili codex(启动器 —— 全功能零配置姿势)或 bili plugin install codex(MCP shell 工具面配套:先起 bili 再玩 —— shell 不拉代理,也路由不了 codex 本体流量)—— 细节见 docs/clients.zh-CN.md |
+| jcode | billion-context,bili jco</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ranxianglei/billion-context/issues/4599"><span class="rp-item-num">#4599</span><span class="rp-item-title">CI Control Center: Centralized CI Failure Handling &amp; Status Sync (Comment all CI issues here; do not open new issues) | CI 总控: CI 失败集中处理与状态同步(所有 CI 问题在此评论, 勿开新 issue)</span><span class="rp-item-extra">219 comments · 2026-10-24</span></a><a class="rp-item" href="https://github.com/ranxianglei/billion-context/issues/917"><span class="rp-item-num">#917</span><span class="rp-item-title">Message Board | 留言板</span><span class="rp-item-extra">78 comments · 2026-09-17</span></a><a class="rp-item" href="https://github.com/ranxianglei/billion-context/issues/2411"><span class="rp-item-num">#2411</span><span class="rp-item-title">[feature] Intercept TRAE Code (traecode) native compression commands, aligning with dsh native compression interception | [feature] 拦截 TRAE Code（traecode）的原生压缩指令，对齐 dsh 原生压缩拦截</span><span class="rp-item-extra">46 comments · 2026-10-08</span></a><a class="rp-item" href="https://github.com/ranxianglei/billion-context/issues/3011"><span class="rp-item-num">#3011</span><span class="rp-item-title">[Bug] Fork of DSH branch clone: inheritance permanently abandoned by 409 SNAPSHOT_UNAVAILABLE — zero-fold clone triggers context_length_exceeded 400 on first turn | [Bug] DSH 分支克隆的 fork 继承被 409 SNAPSHOT_UNAVAILABLE 永久放弃：克隆零折叠，首轮即 context_length_exceeded …</span><span class="rp-item-extra">41 comments · 2026-10-13</span></a><a class="rp-item" href="https://github.com/ranxianglei/billion-context/issues/2438"><span class="rp-item-num">#2438</span><span class="rp-item-title">[resilience] Preflight compress/timeout loop on sustained mass fold-coverage loss has no graceful degrade</span><span class="rp-item-extra">37 comments · 2026-10-08</span></a><a class="rp-item" href="https://github.com/ranxianglei/billion-context/issues/5643"><span class="rp-item-num">#5643</span><span class="rp-item-title">Snapshot-Centric Compression Foundation: Single-Row Table as Source of Truth + Compression = Insert/Delete/Update Events | Snapshot中心化的压缩底座：单行表真源 + 压缩=对表的增删改事件（非增量车道，#5652/v6 线定位纠正）</span><span class="rp-item-extra">33 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/ranxianglei/billion-context/issues/3978"><span class="rp-item-num">#3978</span><span class="rp-item-title">[Bug] Excessive preflight compression time on ultra-large contexts; client mid-disconnect causes repeated request forwar | [Bug] 超大上下文 preflight 压缩耗时过长，客户端中途断开导致请求反复无法转发</span><span class="rp-item-extra">31 comments · 2026-10-20</span></a><a class="rp-item" href="https://github.com/ranxianglei/billion-context/issues/6111"><span class="rp-item-num">#6111</span><span class="rp-item-title">POC: carry fold summaries as CCR placeholders (not inline prose) — weak-model confusion, from #6025</span><span class="rp-item-extra">30 comments · 2026-11-10</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ranxianglei/billion-context/discussions/6539"><span class="rp-item-num">#6539</span><span class="rp-item-title">提案:msgid 全生命周期「发 + 记 + 用」补齐(车道无关 × 全协议)</span><span class="rp-item-extra">2 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/ranxianglei/billion-context/discussions/6263"><span class="rp-item-num">#6263</span><span class="rp-item-title">Issue 根因归类板（自动维护，勿手编）</span><span class="rp-item-extra">1 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/ranxianglei/billion-context/discussions/6262"><span class="rp-item-num">#6262</span><span class="rp-item-title">提案:fork 继承四原则(msgid 身份轨 / lineage 编号 / 无状态账本 / 纯块拷贝)</span><span class="rp-item-extra">2 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/ranxianglei/billion-context/discussions/5874"><span class="rp-item-num">#5874</span><span class="rp-item-title">提案：快照表式压缩底座（六段固定链，单一存储真源）</span><span class="rp-item-extra">2 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/ranxianglei/billion-context/discussions/5843"><span class="rp-item-num">#5843</span><span class="rp-item-title">My testing shows this tool is not worth it? Am I doing something wrong?</span><span class="rp-item-extra">5 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/ranxianglei/billion-context/discussions/5818"><span class="rp-item-num">#5818</span><span class="rp-item-title">Can billion-context be integrated with opencodex?</span><span class="rp-item-extra">3 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/ranxianglei/billion-context/discussions/5552"><span class="rp-item-num">#5552</span><span class="rp-item-title">What to do when your model keeps treating compressed old content as fresh user instructions?</span><span class="rp-item-extra">0 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/ranxianglei/billion-context/discussions/5551"><span class="rp-item-num">#5551</span><span class="rp-item-title">What to do when billion-context compresses frequently? · billion-context频繁压缩该怎么办?</span><span class="rp-item-extra">0 comments · 2026-11-02</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/ranxianglei/billion-context/releases"><b>v0.1.213</b> <span class="rp-rel-tag">v0.1.213</span> <span class="rp-item-extra">2026-11-07</span></a><pre class="rp-pre">What&#x27;s Changed
+ [PR] fix: revert self-contradictory inclusive billing stamp to split (5515) by @ranxianglei in https://github.com/ranxianglei/billion-context/pull/5518
+ [PR] docs(website): add blog post &#x27;What to Do When the Model Keeps Treating Old Compressed Content as New User Instructions?&#x27; | docs(website): add blog post &#x27;模型总是把压缩老内容当成用户新指令咋办?&#x27; (EN+ZH) by @ranxianglei in https://github.com/ranxianglei/billion-context/pull/5549
+ [PR] fix: read Responses additional_tools preamble in tool reachability observation by @ranxianglei in https://github.com/ranxianglei/billion-context/pull/5528
+ [PR] </pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (2)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/gitblog_00162/article/details/168141639" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">压缩层横评：billion-context 与“95% Token 节省“的同类方案差在哪</span><span class="rp-item-extra">2026-11-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE9FS1M0Zm1vNGluUkttV0FKM3pxTjZfZ0xWSmczejhRTVVPRFRTbEdDZHAzWU40MjQ4X29Ha1NpVWRFWThLdDl2MFJqaVRJLWFvbFBZ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">电子工程专辑EE Times China</span><span class="rp-item-title">12 个超火的 DeepSeek Harness 插件，大肥鱼已经落后 N 个版本了。。。</span><span class="rp-item-extra">2026-11-09</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (3)</h3><div class="rp-list"><a class="rp-item" href="https://note.com/kingclaw/n/n5fed8e0c9d77?hl=ko" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">이번 주 GitHub 주목 7선, AI 에이전트 시대의 개발 도구 정리</span><span class="rp-item-extra">2026-10-18</span></a><a class="rp-item" href="https://note.com/coderadar/n/ne89ab2774429?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">[GitHub Daily] Context compression billion-context debuts, rea leads for 7 consecutive days with +45,327 — 2026-10-13</span><span class="rp-item-extra">2026-10-12</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxQc0QxcFBpcS1LcUtWVHhaUTZRQ0txUm5nalR4c1N1UFZ6MG0tY083UHB6aFplZjFiWFFqRHV1ZFFZcGtMNnFVN2FEOVFZcUFpUUJvcDctRFF3Y09Ndy01R2JZSnZtX2g1d1kwdFZIb1RNRzZzMlJEMUlTamhmUGQtcUpjb1I?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">OpenTools</span><span class="rp-item-title">Anthropic Pays $3.4 Billion for 1.7GW of Gas Generators to Power AI Data Centers</span><span class="rp-item-extra">2026-11-09</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/ranxianglei__billion-context.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

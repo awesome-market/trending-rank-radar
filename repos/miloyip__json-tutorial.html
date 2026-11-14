@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>miloyip/json-tutorial · GitHub Trending Rank Radar</title>
+<meta name="description" content="从零开始的 JSON 库教程">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="json-tutorial, miloyip, miloyip/json-tutorial, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/miloyip__json-tutorial">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="miloyip/json-tutorial · GitHub Trending Rank Radar">
+<meta property="og:description" content="从零开始的 JSON 库教程">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/miloyip__json-tutorial">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "miloyip/json-tutorial", "codeRepository": "https://github.com/miloyip/json-tutorial", "url": "https://zhuikan.com/repos/miloyip__json-tutorial", "description": "从零开始的 JSON 库教程", "author": {"@type": "Organization", "name": "miloyip", "url": "https://github.com/miloyip"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "C", "dateCreated": "2016-09-15"}</script>
+</head>
+<body data-repo="miloyip/json-tutorial" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">miloyip/json-tutorial</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="miloyip__json-tutorial"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/1195774?u=2bbf14929446673df268224afa5fb31a1a5b3758&amp;v=4&s=300" width="300" height="300" alt="miloyip avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">json-tutorial</div>
+      <a class="rp-side-owner" href="https://github.com/miloyip">miloyip</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/miloyip">miloyip</a>
+        <span class="rp-sep">/</span><span class="rp-name">json-tutorial</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">从零开始的 JSON 库教程</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>7,910</b></span><span class="rp-stat" title="forks">⑂ <b>4,249</b></span><span class="rp-stat" title="watchers">👁 <b>200</b></span><span class="rp-stat" title="prs">⑃ <b>90</b></span><span class="rp-stat" title="issues">● <b>165</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C</span><span class="rp-meta-bit">Created 2016-09-15</span><a class="rp-meta-bit rp-home" href="https://zhuanlan.zhihu.com/json-tutorial" rel="noopener">zhuanlan.zhihu.com/json-tutorial</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="miloyip__game-programmer"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1195774?u=2bbf14929446673df268224afa5fb31a1a5b3758&amp;v=4" alt="" loading="lazy">game-programmer</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/miloyip/json-tutorial">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">7,910</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">4,249</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">200</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">90</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">165</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">从零开始的 JSON 库教程
+
+ Milo Yip
+ 2016/9/15
+
+也许有很多同学上过 C/C++ 的课后，可以完成一些简单的编程练习，又能在一些网站刷题，但对于如何开发有实际用途的程序可能感到束手无策。本教程希望能以一个简单的项目开发形式，让同学能逐步理解如何从无到有去开发软件。
+
+为什么选择 JSON？因为它足够简单，除基本编程外不需大量技术背景知识。JSON 有标准，可按照标准逐步实现。JSON 也是实际在许多应用上会使用的格式，所以才会有大量的开源库。
+
+这是一个免费、开源的教程，如果你喜欢，也可以打赏鼓励。因为工作及家庭因素，不能保证每篇文章的首发时间，请各位见谅。
+
+ 对象与目标
+
+教程对象：学习过基本 C/C++ 编程的同学。
+
+通过这个教程，同学可以了解如何从零开始写一个 JSON 库，其特性如下：
+
+ 符合标准的 JSON 解析器和生成器
+ 手写的递归下降解析器（recursive descent parser）
+ 使用标准 C 语言（C89）
+ 跨平台／编译器（如 Windows／Linux／OS X，vc／gcc／clang）
+ 仅支持 UTF-8 JSON 文本
+ 仅支持以 double 存储 JSON number 类型
+ 解析器和生成器的代码合共少于 500 行
+
+除了围绕 JSON 作为例子，希望能在教程中讲述一些课题：
+
+ 测试驱动开发（test driven development, TDD）
+ C 语言编程风格
+ 数据结构
+ API 设计
+ 断言
+ Unicode
+ 浮点数
+ Github、CMake、valgrind、Doxygen 等工具
+
+ 教程大纲
+
+本教程预计分为 9 个单元，第 1-8 个单元附带练习和解答。
+
+1. 启程（2016/9/15 完成）：编译环境、JSON 简介、测试驱动、解析器主要函数及各数据结构。练习 JSON 布尔类型的解析。启程解答篇（2016/9/17 完成）。
+2. 解析数字（2016/9/18 完成）：JSON number 的语法。练习 JSON number 类型的校验。解析数字解答篇（2016/9/20 完成）。
+3. 解析字符串（2016/9/22 完成）：使用 union 存储 variant、自动扩展的堆栈、JSON string 的语法、valgrind。练习最基本的 JSON string 类型的解析、内存释放。解析字符串解答篇（2016/9/27 完成）。
+4. Unicode（2016/10/2 完成）：Unicode 和 UTF-8 的基本知识、JSON string 的 unicode 处理。练习完成 JSON string 类型的解析。Unicode 解答篇（2016/10/6 完成）。
+5. 解析数组（2016/10/7 完成）：JSON array 的语法。练习完成 JSON array 类型的解析、相关内存释放。解析数组解答篇（2016/10/13 完成）。
+6. 解析对象（2016/10/29 完成）：JSON object 的语法、重构 string 解析函数。练习完成 JSON object 的解析、相关内存释放。解析对象解答篇（2016/11/15 完成）。
+7. 生成器（2016/12/20 完成）：JSON 生成过程、注意事项。练习完成 JSON 生成器。生成器解答篇（2017/1/5 完成）。
+8. 访问与其他功能（2018/6/2 完成）：JSON array／object 的访问及修改。练习完成相关功能。
+9. 终点及新开始：加入 nativejson-benchmark 测试，与 RapidJSON 对比及展望。
+
+ 关于作者
+
+叶劲峰（Milo Yip）现任腾讯 T4 专家、互动娱乐事业群魔方工作室群游戏客户端技术总监。他获得香港大学认知科学学士（BCogSc）、香港中文大学系统工程及工程管理哲学硕士（MPhil）。他是《游戏引擎架构》译者、《C++ Primer 中文版（第五版）》审校。他曾参与《天涯明月刀》、《斗战神》、《爱丽丝：疯狂回归》、《美食从天降》、《王子传奇》等游戏项目，以及多个游戏引擎及中间件的研发。他是开源项目 RapidJSON 的作者，开发 nativejson-benchmark 比较 41 个开源原生 JSON 库的标准符合程度及性能。他在 1990 年学习 C 语言，1995 年开始使用 C++ 于各种项目。</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/miloyip__json-tutorial.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

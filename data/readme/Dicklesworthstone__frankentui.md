@@ -1,0 +1,3458 @@
+# FrankenTUI (ftui)
+
+```
+███████╗██████╗  █████╗ ███╗   ██╗██╗  ██╗███████╗███╗   ██╗████████╗██╗   ██╗██╗
+██╔════╝██╔══██╗██╔══██╗████╗  ██║██║ ██╔╝██╔════╝████╗  ██║╚══██╔══╝██║   ██║██║
+█████╗  ██████╔╝███████║██╔██╗ ██║█████╔╝ █████╗  ██╔██╗ ██║   ██║   ██║   ██║██║
+██╔══╝  ██╔══██╗██╔══██║██║╚██╗██║██╔═██╗ ██╔══╝  ██║╚██╗██║   ██║   ██║   ██║██║
+██║     ██║  ██║██║  ██║██║ ╚████║██║  ██╗███████╗██║ ╚████║   ██║   ╚██████╔╝██║
+╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝    ╚═════╝ ╚═╝
+```
+
+<div align="center">
+  <img src="docs/assets/frankentui_illustration.webp" alt="FrankenTUI - Minimal, high-performance terminal UI kernel">
+</div>
+
+High‑performance terminal UI kernel -- 1.1M+ lines of Rust across <!-- fact:crates -->20<!-- /fact --> crates, <!-- fact:widgets -->70<!-- /fact --> widget/stateful-widget implementations across <!-- fact:widget_types -->55<!-- /fact --> widget types in `ftui-widgets` (<!-- fact:widgets_workspace -->93<!-- /fact --> across the workspace), <!-- fact:demo_screens -->45<!-- /fact --> interactive demo screens, a Bayesian intelligence layer, resizable pane workspaces, and in-tree web/WASM backends -- focused on correctness, determinism, and clean architecture.
+
+![status](https://img.shields.io/badge/status-WIP-yellow)
+![rust](https://img.shields.io/badge/rust-nightly-blue)
+![license](https://img.shields.io/badge/license-MIT%2BOpenAI%2FAnthropic%20Rider-green)
+![crates](https://img.shields.io/badge/crates-20-blue)
+![widgets](https://img.shields.io/badge/widgets-70-blue)
+![screens](https://img.shields.io/badge/demo_screens-45-blue)
+
+## Try It in Your Browser
+
+All <!-- fact:demo_screens -->45<!-- /fact --> screens run as WASM at **[frankentui.com/web](https://frankentui.com/web)** — no install, no toolchain. It renders through WebGPU where that exists and falls back to canvas2d, so Chrome, Edge, Safari and Firefox all work.
+
+Phones too: swipe in from either edge to change screens, and the bar along the bottom carries a button for every key the current screen uses. Press and hold to drag; a divider drags straight away.
+
+## Quick Run (from source)
+
+The **primary** way to see what the system can do is the demo showcase:
+`cargo run -p ftui-demo-showcase` (not the harness).
+
+```bash
+# Download source with curl (or grab prebuilt showcase binaries + SHA256SUMS from GitHub Releases)
+curl -fsSL https://codeload.github.com/Dicklesworthstone/frankentui/tar.gz/main | tar -xz
+cd frankentui-main
+
+# Run the demo showcase (primary way to see what FrankenTUI can do)
+cargo run -p ftui-demo-showcase
+```
+
+**Or clone with git:**
+
+```bash
+git clone https://github.com/Dicklesworthstone/frankentui.git
+cd frankentui
+cargo run -p ftui-demo-showcase
+```
+
+**Toolchain.** This checkout builds only with nightly Rust: `rust-toolchain.toml`
+pins a dated nightly, and `.cargo/config.toml` passes nightly-only `-Z` flags.
+You don't need to change your default toolchain. With rustup, every `cargo`
+command inside the checkout uses the pin even when your default is stable, and
+rustup installs it on first use. If automatic installs are off
+(`RUSTUP_AUTO_INSTALL=0`), run `rustup toolchain install` in the checkout first.
+
+Two settings outrank the pin: a `RUSTUP_TOOLCHAIN` environment variable and a
+`rustup override` for the directory. Run `rustup show active-toolchain` in the
+checkout to see which toolchain is in effect and why. If it names stable, unset
+whichever setting it reports, or name the pinned nightly explicitly. The date is
+the `channel` value in `rust-toolchain.toml`:
+
+```bash
+cargo +nightly-YYYY-MM-DD run -p ftui-demo-showcase
+```
+
+---
+
+## TL;DR
+
+**The Problem:** Most TUI stacks make it easy to draw widgets, but hard to build *correct*, *flicker‑free*, *inline* UIs with strict terminal cleanup and deterministic rendering.
+
+**The Solution:** FrankenTUI is a kernel‑level TUI foundation with a disciplined runtime, diff‑based renderer, and inline‑mode support that preserves scrollback while keeping UI chrome stable.
+
+### Why Use FrankenTUI?
+
+| Feature | What It Does | Example |
+|---------|--------------|---------|
+| **Inline mode** | Stable UI at the bottom while logs scroll into real scrollback above it, including inside tmux, screen and zellij | `ScreenMode::Inline { ui_height: 10 }` in the runtime |
+| **Deterministic rendering** | Buffer → Diff → Presenter → ANSI, no hidden I/O | `BufferDiff::compute(&prev, &next)` |
+| **One‑writer rule** | Serializes output for correctness | `TerminalWriter` owns all stdout writes |
+| **RAII cleanup** | Terminal state restored even on panic | `TerminalSession` in `ftui-core` |
+| **Composable crates** | Layout, text, style, runtime, widgets | Add only what you need |
+| **<!-- fact:widgets -->70<!-- /fact --> widget impls** | Block, Paragraph, Table, Input, Tree, Modal, Command Palette, etc. | <!-- fact:widgets -->70<!-- /fact --> direct `Widget` / `StatefulWidget` implementations across <!-- fact:widget_types -->55<!-- /fact --> widget types in `ftui-widgets` (<!-- fact:widgets_workspace -->93<!-- /fact --> workspace-wide) |
+| **Pane workspaces** | Drag‑to‑resize, docking, magnetic snap, inertial throw, undo/redo | `PaneTree` + `PaneDragResizeMachine` in `ftui-layout` |
+| **Web/WASM backend** | Same Rust core renders in browser-oriented environments | In-tree `ftui-web` + `ftui-showcase-wasm` |
+| **Bayesian intelligence** | Statistical diff strategy, resize coalescing, capability detection | BOCPD, VOI, conformal prediction, e‑processes |
+| **Shadow‑run validation** | Prove rendering determinism across runtime migrations | `ShadowRun::compare()` in `ftui-harness` |
+| **<!-- fact:demo_screens -->45<!-- /fact --> demo screens** | Dashboard, visual effects, widget gallery, layout lab, and more | `cargo run -p ftui-demo-showcase` |
+
+---
+
+## Getting Started (Library Consumers)
+
+If you want to embed FrankenTUI in your own Rust app (not just run the demo),
+start here: [docs/getting-started.md](docs/getting-started.md).
+
+For web embedding into `frankentui_website` (Next.js + bun), see the
+`Embedding In frankentui_website` section in
+[`docs/getting-started.md`](docs/getting-started.md). It includes:
+
+- in-tree build/check guidance for `ftui-web` and `ftui-showcase-wasm`,
+- a clear note that `FrankenTermWeb` is currently adjacent/out-of-tree from this checkout,
+- runtime initialization guidance for `FrankenTermWeb` once that bundle is available,
+- and explicit no-`xterm.js` guidance.
+
+---
+
+## Quick Example
+
+```bash
+# Demo showcase (primary)
+cargo run -p ftui-demo-showcase
+
+# Pick a specific showcase screen
+cargo run -p ftui-demo-showcase -- --screen=2   # Dashboard
+FTUI_DEMO_SCREEN=18 cargo run -p ftui-demo-showcase  # Visual Effects
+
+# Agent shell with a real child process
+cargo run -p ftui --example agent_shell -- --exit-when-child-exits -- seq 1 10000
+
+# The child on a pseudo-terminal (isatty, own process group; Unix)
+cargo run -p ftui --example agent_shell -- --pty --log-mode=sgr-only --exit-when-child-exits -- ls --color=auto
+```
+
+Run `cargo run -p ftui-demo-showcase -- --help` for screen numbers and options.
+Press 1–9/0 to select screens 1–10, or Tab/Shift+Tab to cycle through screens.
+
+---
+
+## Demo Showcase Gallery (<!-- fact:demo_screens -->45<!-- /fact --> Screens)
+
+The demo showcase (`cargo run -p ftui-demo-showcase`) ships <!-- fact:demo_screens -->45<!-- /fact --> interactive screens, each demonstrating a different subsystem:
+
+| Category | Screens | What They Show |
+|----------|---------|----------------|
+| **Overview** | `dashboard`, `widget_gallery`, `advanced_features` | Full-system demos with animated panels, sparklines, markdown streaming |
+| **Layout** | `layout_lab`, `layout_inspector`, `intrinsic_sizing`, `responsive_demo` | Flex/Grid solvers, pane workspaces, constraint visualization |
+| **Text** | `shakespeare`, `markdown_rich_text`, `markdown_live_editor`, `advanced_text_editor` | Rope editor, syntax highlighting, streaming markdown |
+| **Data** | `table_theme_gallery`, `data_viz`, `virtualized_search`, `log_search` | Themed tables, charts, Fenwick-backed virtualization |
+| **Input** | `forms_input`, `form_validation`, `command_palette_lab`, `mouse_playground` | Bayesian fuzzy search, gesture recognition, focus management |
+| **Visual FX** | `visual_effects`, `theme_studio`, `mermaid_showcase`, `mermaid_mega_showcase` | Gray-Scott reaction-diffusion, metaballs, Clifford attractors, fractal zooms |
+| **System** | `terminal_capabilities`, `performance`, `performance_hud`, `determinism_lab` | Capability probing, frame budgets, conformal risk gating |
+| **Diagnostics** | `explainability_cockpit`, `voi_overlay`, `snapshot_player`, `accessibility_panel` | Evidence ledgers, VOI sampling visualization, a11y tree |
+| **Workflow** | `file_browser`, `kanban_board`, `async_tasks`, `notifications`, `drag_drop` | File picker, task boards, notification toasts, drag handles |
+| **Advanced** | `inline_mode_story`, `hyperlink_playground`, `i18n_demo`, `macro_recorder`, `quake_easter_egg` | Inline scrollback, OSC 8 links, locale switching, event recording, a depth-buffered E1M1 |
+| **Code** | `code_explorer`, `widget_builder`, `action_timeline` | AST browsing, widget composition, timeline aggregation |
+| **Tour** | `guided_tour` | Cinematic auto-play tour across key screens |
+
+Each screen is also a snapshot test target. `BLESS=1 cargo test -p ftui-demo-showcase` updates baselines.
+
+---
+
+## Use Cases
+
+- Inline UI for CLI tools and agent harnesses where logs must keep scrolling (see the [agent harness tutorial](docs/tutorials/agent-harness.md)).
+- Full-screen dashboards that must never flicker.
+- Deterministic rendering harnesses for terminal regressions.
+- Libraries that want a strict “kernel” but their own widget layer.
+
+## Non-Goals
+
+- Not a full batteries‑included app framework (by design).
+- Not a drop‑in replacement for existing widget libraries.
+- Not a “best effort” renderer; correctness beats convenience.
+
+## Minimal API Example
+
+This example targets FrankenTUI 0.10.0 with the default features enabled. See
+[installation](#installation) for version and local checkout dependencies.
+
+```rust
+use ftui::prelude::*;
+use ftui::widgets::paragraph::Paragraph;
+
+struct TickApp {
+    ticks: u64,
+}
+
+#[derive(Debug, Clone)]
+enum Msg {
+    Tick,
+    Quit,
+}
+
+impl From<Event> for Msg {
+    fn from(e: Event) -> Self {
+        match e {
+            Event::Key(k) if k.is_char('q') => Msg::Quit,
+            _ => Msg::Tick,
+        }
+    }
+}
+
+impl Model for TickApp {
+    type Message = Msg;
+
+    fn update(&mut self, msg: Msg) -> Cmd<Msg> {
+        match msg {
+            Msg::Tick => {
+                self.ticks += 1;
+                Cmd::none()
+            }
+            Msg::Quit => Cmd::quit(),
+        }
+    }
+
+    fn view(&self, frame: &mut Frame) {
+        let text = format!("Ticks: {}  (press 'q' to quit)", self.ticks);
+        let area = Rect::new(0, 0, frame.width(), 1);
+        Paragraph::new(text).render(area, frame);
+    }
+}
+
+fn main() -> std::io::Result<()> {
+    App::new(TickApp { ticks: 0 })
+        .screen_mode(ScreenMode::Inline { ui_height: 1 })
+        .run()
+}
+```
+
+---
+
+## Design Philosophy
+
+1. **Correctness over cleverness.** Predictable terminal state is non-negotiable.
+2. **Deterministic output.** Buffer diffs and explicit presentation over ad-hoc writes.
+3. **Inline first.** Preserve scrollback while keeping chrome stable.
+4. **Layered architecture.** Core, render, runtime, widgets; no cyclic dependencies.
+5. **Zero-surprise teardown.** RAII cleanup, even when apps crash.
+
+---
+
+## Workspace Overview (<!-- fact:crates -->20<!-- /fact --> Crates)
+
+### Core Architecture
+
+| Crate | Purpose | Status |
+|------|---------|--------|
+| `ftui` | Public facade + prelude | Implemented |
+| `ftui-core` | Terminal lifecycle, events, capabilities, animation, input parsing, gestures | Implemented |
+| `ftui-render` | Buffer, diff, ANSI presenter, frame, grapheme pool, budget system | Implemented |
+| `ftui-style` | Style + theme system with CSS‑like cascading | Implemented |
+| `ftui-text` | Spans, segments, rope editor, cursor, BiDi, shaping, normalization | Implemented |
+| `ftui-layout` | Flex + Grid solvers, **pane workspace system**, e‑graph optimizer | Implemented |
+| `ftui-runtime` | Elm/Bubbletea runtime, effect system, subscriptions, rollout policy, telemetry schema (`program.rs`) | Implemented |
+| `ftui-widgets` | <!-- fact:widgets -->70<!-- /fact --> direct `Widget` / `StatefulWidget` implementations across <!-- fact:widget_types -->55<!-- /fact --> widget types in the library (<!-- fact:widgets_workspace -->93<!-- /fact --> workspace-wide) | Implemented |
+| `ftui-extras` | Feature‑gated add‑ons, VFX rasterizer (opt‑level=3) | Implemented |
+
+### Backend & Platform
+
+| Crate | Purpose | Status |
+|------|---------|--------|
+| `ftui-backend` | Backend abstraction layer | Implemented |
+| `ftui-tty` | TTY terminal backend | Implemented |
+| `ftui-web` | Web/WASM adapter with pointer/touch parity | Implemented |
+| `ftui-showcase-wasm` | WASM build of the demo showcase | Implemented |
+
+### Testing & Verification
+
+| Crate | Purpose | Status |
+|------|---------|--------|
+| `ftui-harness` | Test harness, shadow‑run comparison, benchmark gate, rollout scorecard, determinism fixtures | Implemented |
+| `ftui-pty` | PTY‑based test utilities | Implemented |
+| `ftui-demo-showcase` | <!-- fact:demo_screens -->45<!-- /fact --> interactive demo screens + snapshot tests | Implemented |
+| `doctor_frankentui` | Integrated TUI capture, seeding, suite reporting, diagnostics, and coverage gating (9 default core subcommands + 4 aliases across 23 core modules; 23 experimental product subcommands behind `--features experimental`) | Implemented |
+
+### Supporting
+
+| Crate | Purpose | Status |
+|------|---------|--------|
+| `ftui-a11y` | Accessibility tree and node structures | Implemented |
+| `ftui-i18n` | Internationalization support | Implemented |
+| `ftui-simd` | Portable-SIMD ASCII detection and row compare (opt-in `simd` feature) | Implemented |
+
+---
+
+## How FrankenTUI Compares
+
+| Feature | FrankenTUI | Ratatui | tui-rs (legacy) | Raw crossterm |
+|---------|------------|---------|-----------------|---------------|
+| Inline mode w/ scrollback | ✅ First‑class | ⚠️ App‑specific | ⚠️ App‑specific | ❌ Manual |
+| Deterministic buffer diff | ✅ Kernel‑level | ✅ | ✅ | ❌ |
+| One‑writer rule | ✅ Enforced | ⚠️ App‑specific | ⚠️ App‑specific | ❌ |
+| RAII teardown | ✅ TerminalSession | ⚠️ App‑specific | ⚠️ App‑specific | ❌ |
+| Pane workspaces (drag/resize/dock) | ✅ Built‑in | ❌ | ❌ | ❌ |
+| Web/WASM backend | ✅ Shared Rust core | ❌ | ❌ | ❌ |
+| Bayesian diff strategy | ✅ Adaptive | ❌ Fixed | ❌ Fixed | ❌ N/A |
+| Shadow‑run validation harness | ✅ Harness workflow (`ShadowRun`) | ❌ | ❌ | ❌ |
+| Snapshot/time‑travel harness | ✅ Built‑in | ❌ | ❌ | ❌ |
+| Widget count | <!-- fact:widgets -->70<!-- /fact --> direct impls (<!-- fact:widget_types -->55<!-- /fact --> types; <!-- fact:widgets_workspace -->93<!-- /fact --> workspace-wide) | ~20 | ~12 | 0 |
+| Demo screens | <!-- fact:demo_screens -->45<!-- /fact --> | ~5 | ~5 | 0 |
+
+**When to use FrankenTUI:**
+- You want inline + scrollback without flicker.
+- You care about deterministic rendering and teardown guarantees.
+- You need resizable pane workspaces with drag, dock, and undo.
+- You want a single Rust codebase targeting both terminal and web.
+- You prefer a kernel you can build your own UI framework on top of.
+
+**When FrankenTUI might not be ideal:**
+- You need a stable public API today (FrankenTUI is evolving fast).
+- You want a fully opinionated application framework rather than a kernel.
+
+---
+
+## Installation
+
+### Quick Install (Source Tarball)
+
+```bash
+curl -fsSL https://codeload.github.com/Dicklesworthstone/frankentui/tar.gz/main | tar -xz
+cd frankentui-main
+cargo build --release
+```
+
+### Git Clone
+
+```bash
+git clone https://github.com/Dicklesworthstone/frankentui.git
+cd frankentui
+cargo build --release
+```
+
+### Use as a Workspace Dependency
+
+```toml
+# Cargo.toml
+[dependencies]
+ftui = { path = "../frankentui/crates/ftui" }
+```
+
+### Crates.io Dependency
+
+The workspace provides 17 library crates (the `ftui` facade plus
+`ftui-core`, `ftui-render`, `ftui-style`, `ftui-text`, `ftui-layout`,
+`ftui-runtime`, `ftui-widgets`, `ftui-extras`, `ftui-backend`, `ftui-tty`,
+`ftui-web`, `ftui-harness`, `ftui-pty`, `ftui-a11y`, `ftui-i18n`,
+`ftui-simd`):
+
+```toml
+[dependencies]
+ftui = "=0.10.0"
+```
+
+These dependency examples target **0.10.0**. To work from a local checkout, use
+the path dependency above instead.
+
+The default features are `runtime`, `extras`, and `backend`. `App::run()` selects
+native `ftui-tty` on Unix and Crossterm elsewhere; `ftui::DEFAULT_BACKEND`
+reports the selected backend. Headless, WASM, or custom-backend consumers can
+disable the defaults:
+
+```toml
+[dependencies]
+ftui = { version = "=0.10.0", default-features = false, features = ["runtime"] }
+```
+
+Without a compiled terminal backend, `App::run()` returns an `Unsupported`
+error naming the feature to enable. The doctor, demo, and WASM showcase targets
+are repository-only applications. Maintainers cutting a new version follow
+[`docs/release-checklist.md`](docs/release-checklist.md).
+
+---
+
+## Quick Start
+
+1. **Install Rust with rustup.** The checkout selects its pinned nightly from
+   `rust-toolchain.toml` (see [Toolchain](#quick-run-from-source) above).
+2. **Clone the repo** and build:
+   ```bash
+   git clone https://github.com/Dicklesworthstone/frankentui.git
+   cd frankentui
+   cargo build
+   ```
+3. **Run the demo showcase (primary way to see the system):**
+   ```bash
+   cargo run -p ftui-demo-showcase
+   ```
+
+---
+
+## Telemetry (Optional)
+
+Telemetry is opt‑in. Enable the `telemetry` feature on `ftui-runtime` and set
+OTEL env vars (for example, `OTEL_EXPORTER_OTLP_ENDPOINT`) to export spans.
+
+When the feature is **off**, telemetry code and dependencies are excluded.
+When the feature is **on** but env vars are unset, overhead is a single
+startup check.
+
+See `docs/telemetry.md` for integration patterns and trace‑parent attachment.
+
+---
+
+## Feature Flags
+
+| Crate | Feature | What It Enables |
+|------|---------|------------------|
+| `ftui` | `bidi` | Bidirectional text reordering via `unicode-bidi` (default) |
+| `ftui-core` | `tracing` | Structured spans for terminal lifecycle |
+| `ftui-core` | `tracing-json` | JSON output via tracing-subscriber |
+| `ftui-render` | `tracing` | Performance spans for diff/presenter |
+| `ftui-runtime` | `tracing` | Runtime loop instrumentation |
+| `ftui-runtime` | `telemetry` | OpenTelemetry export (OTLP) |
+| `ftui-widgets` | `bidi` | BiDi (UAX#9) visual reordering for `Paragraph`; editable widgets keep logical order |
+
+Enable features per-crate in your `Cargo.toml` as needed.
+
+---
+
+## Evidence Logs (JSONL Diagnostics)
+
+FrankenTUI can emit structured, deterministic evidence logs for diff strategy
+decisions, resize coalescing, and budget alerts. The log sink is shared and
+configured at the runtime level.
+
+```rust
+use ftui::runtime::EvidenceSinkConfig;
+
+App::new(model)
+    .with_evidence_sink(
+        EvidenceSinkConfig::enabled_file("evidence.jsonl").with_flush_on_write(true),
+    )
+    .run()
+```
+
+Example event line:
+
+```json
+{"schema_version":"ftui-evidence-v1","event":"diff_decision","run_id":"diff-521820","event_idx":0,"screen_mode":"altscreen","cols":100,"rows":30,"strategy":"DirtyRows","cost_full":5311.417405,"cost_dirty":5308.417405,"cost_redraw":18000.0,"posterior_mean":0.05,"posterior_variance":0.002262,"alpha":1.0,"beta":19.0,"guard_reason":"uncertainty_variance","hysteresis_applied":false,"hysteresis_ratio":0.05,"dirty_rows":30,"total_rows":30,"total_cells":3000,"span_count":0,"span_coverage_pct":100.0,"max_span_len":100,"fallback_reason":"none","scan_cost_estimate":3000,"tile_used":false,"tile_fallback":"none","tile_w":0,"tile_h":0,"tile_size":0,"tiles_x":0,"tiles_y":0,"dirty_tiles":0,"dirty_tile_count":0,"dirty_cells":0,"dirty_tile_ratio":0.0,"dirty_cell_ratio":0.0,"scanned_tiles":0,"skipped_tiles":0,"skipped_tile_count":0,"tile_scan_cells_estimate":0,"sat_build_cost_est":0,"skipped_tile_rows":0,"sat_queries":0,"bayesian_enabled":true,"dirty_rows_enabled":true,"regime":"sparse"}
+```
+
+---
+
+## Commands
+
+### Run the Demo Showcase (Primary)
+
+```bash
+cargo run -p ftui-demo-showcase
+```
+
+### Run Harness Examples (tests and reference behavior)
+
+`agent_shell` is the flagship inline child-streaming demo (streams a child
+process into terminal scrollback under a compact 3-row status/input/hint UI).
+`minimal` is a 45-line inline hello world with a tick counter; q, Escape or
+Ctrl-C quits. `streaming` demonstrates the 15-row widget-region `LogViewer`
+with generated logs or an optional child command (see the
+[agent harness tutorial](docs/tutorials/agent-harness.md)).
+
+```bash
+cargo run -p ftui --example agent_shell -- --exit-when-child-exits -- seq 1 10000
+cargo run -p ftui-harness --example minimal
+cargo run -p ftui-harness --example streaming
+```
+
+### Tests
+
+```bash
+cargo test
+BLESS=1 cargo test -p ftui-harness  # update snapshot baselines
+```
+
+### Deterministic E2E Runs
+
+Use deterministic fixtures for stable hashes and reproducible logs:
+
+```bash
+# Full E2E suite with deterministic seeds/time
+E2E_DETERMINISTIC=1 E2E_SEED=0 E2E_TIME_STEP_MS=100 ./scripts/e2e_test.sh
+
+# Demo showcase E2E with an explicit seed
+E2E_DETERMINISTIC=1 E2E_SEED=42 ./scripts/demo_showcase_e2e.sh
+```
+
+### Format + Lint
+
+```bash
+cargo fmt
+cargo clippy --all-targets -- -D warnings
+```
+
+### E2E Scripts
+
+DSR runs `./scripts/e2e_test.sh --quick` and `./scripts/pane_e2e.sh --mode smoke` as direct acceptance checks via `frankentui-render-pane-e2e` in [`.config/dsr-quality.yaml`](.config/dsr-quality.yaml) with strict JSONL validation (`validate_jsonl.py --strict`); the full suites (`./scripts/e2e_test.sh` and `./scripts/pane_e2e.sh --mode full`) run in scheduled extended sweeps.
+
+```bash
+./scripts/e2e_test.sh --quick
+./scripts/e2e_test.sh
+./scripts/widget_api_e2e.sh
+./scripts/pane_e2e.sh --mode smoke
+./scripts/pane_e2e.sh --mode full
+./tests/e2e/check_pane_traceability.sh
+./tests/e2e/scripts/run_all.sh
+python3 -B scripts/vision_scorecard.py --skip-cargo-sweeps --out /tmp/ftui_vision_scorecard
+```
+
+### Performance Gates
+
+```bash
+./scripts/perf_regression_gate.sh --quick --json
+python3 -B scripts/render_perf_readme.py --check
+./scripts/perf_gate_e2e.sh
+```
+
+### doctor_frankentui Verification
+
+`doctor_frankentui` ships a default 23-module verification core exposing 9 core subcommands and 4 aliases (`replay`/`capture`, `seed-demo`, `migrate`/`suite`, `report`, `certify`/`doctor`, `plan`/`import`, `list-profiles`, `performance-diff`, `visual-diff`), while the 23 migration/graveyard/gates product subcommands (101 modules) are gated behind `--features experimental` (see [`docs/doctor-frankentui-products.md`](docs/doctor-frankentui-products.md)). DSR runs the canonical verification stack via the `frankentui-doctor-verification` tool in [`.config/dsr-quality.yaml`](.config/dsr-quality.yaml).
+
+Run the full `doctor_frankentui` verification stack locally:
+
+Prerequisites:
+
+- `cargo`
+- `python3`
+- `jq`
+- `rg` (ripgrep)
+- `vhs`, `ffmpeg`, and `ffprobe` (required by `doctor_frankentui_happy_e2e.sh` and `doctor_frankentui_failure_e2e.sh` for real VHS/frame media capture)
+- `cargo-llvm-cov` (`cargo install cargo-llvm-cov`)
+- Python TOML parser support:
+  - Python `3.11+` (built-in `tomllib`), or
+  - `python3 -m pip install tomli` for Python `<3.11`
+
+```bash
+# Unit + integration tests (default core) and core test-time budget (< 300s)
+cargo test -p doctor_frankentui --all-targets -- --nocapture
+./scripts/doctor_frankentui_core_time_budget.sh
+
+# Workflow-level E2E + replay triage
+./scripts/doctor_frankentui_happy_e2e.sh /tmp/doctor_frankentui_ci/happy
+./scripts/doctor_frankentui_failure_e2e.sh /tmp/doctor_frankentui_ci/failure
+python3 -B scripts/doctor_frankentui_replay_triage.py --run-root /tmp/doctor_frankentui_ci/failure --max-signals 8
+
+# Determinism soak (3 iterations, 0 non-volatile divergences)
+./scripts/doctor_frankentui_determinism_soak.sh /tmp/doctor_frankentui_ci/determinism 3
+
+# Coverage gate + retained artifact bundle/JSONL schema validation
+./scripts/doctor_frankentui_coverage.sh /tmp/doctor_frankentui_ci/coverage
+python3 -B scripts/doctor_frankentui_validate_jsonl.py --bundle-root /tmp/doctor_frankentui_ci --write-artifact-map
+```
+
+Artifact contract (DSR and local, retained under `/tmp/doctor_frankentui_ci/`):
+
+- `.../artifact_map.txt`: retained artifact index and paths.
+- `.../happy/meta/summary.json`: happy-path pass/fail and per-step timing.
+- `.../happy/meta/artifact_manifest.json`: checksums, sizes, and mtimes for expected outputs.
+- `.../failure/meta/summary.json`: failure-matrix pass/fail counts.
+- `.../failure/meta/case_results.json`: per-case expected vs actual exits and key artifacts.
+- `.../failure/meta/replay_triage_report.json`: deterministic failure signal triage and replay commands.
+- `.../determinism/meta/determinism_report.json` and `.../determinism/meta/determinism_report.txt`: multi-run determinism comparison results (`total_divergences == 0`).
+- `.../coverage/coverage_gate_report.json`: machine-readable threshold decision (`overall`, `core_engine`, `full_stack_orchestration`, `diagnostics_and_contracts`).
+- `.../coverage/coverage_gate_report.txt`: human-readable coverage gate details.
+
+Troubleshooting map:
+
+- `doctor`/`capture`/`suite`/`report` chain failures: inspect `.../happy/logs/*.stderr.log` and `.../happy/meta/command_manifest.txt`.
+- failure-case assertion mismatches: inspect `.../failure/meta/case_results.json` and `.../failure/cases/<case_id>/logs/`.
+- JSON contract regressions: inspect `json_*` case stdout logs under `.../failure/cases/`.
+- coverage regressions: inspect `.../coverage/coverage_gate_report.json` for failing group + threshold delta.
+
+### Release Publishing (Maintainers)
+
+Releases use DSR on native build hosts with the channel in `rust-toolchain.toml`.
+GitHub Actions stays disabled. Run the registry helper from a clean candidate
+checkout inside the native DSR job:
+
+```text
+bash scripts/release_publish_crates.sh VERSION NEW_OUTPUT_DIR --dry-run
+bash scripts/release_publish_crates.sh VERSION NEW_OUTPUT_DIR --publish
+```
+
+Each invocation requires a fresh output directory outside the checkout.
+The dry run verifies all 17 packages without a registry token once their sibling
+dependency versions are available in the registry; unpublished siblings can
+block a prepublication dry run. Publication
+follows dependency order, verifies registry checksums and Git provenance, and
+retains archives for safe retries. Repeating publication with a new output
+directory verifies and skips already-published versions. Keep the structured
+`release_log.jsonl`, Cargo logs, registry responses, and retained archives.
+
+---
+
+## Configuration
+
+The following variables configure the reference harness binary,
+`cargo run -p ftui-harness`. Export them in your shell or prefix the command
+with assignments; the binary does not load a `.env` file automatically.
+
+<!-- env:ftui-harness -->
+
+```bash
+export FTUI_HARNESS_SCREEN_MODE=inline   # inline | alt
+export FTUI_HARNESS_UI_HEIGHT=12         # rows reserved for UI
+export FTUI_HARNESS_VIEW=layout-grid     # harness fixture selector
+export FTUI_HARNESS_ENABLE_MOUSE=true    # enable mouse events
+export FTUI_HARNESS_ENABLE_FOCUS=true    # enable focus events
+export FTUI_HARNESS_LOG_LINES=25         # generate this many startup log lines
+export FTUI_HARNESS_LOG_MARKUP=true      # parse markup in loaded log lines
+export FTUI_HARNESS_LOG_FILE=/path/to/log.txt  # read lines into the log viewer
+export FTUI_HARNESS_EXIT_AFTER_MS=0      # 0 disables auto-exit
+
+# Optional controls (uncomment only those you need):
+# export FTUI_HARNESS_AUTO_UI_HEIGHT=true      # grow inline UI above its minimum height
+# export FTUI_HARNESS_ENABLE_KITTY_KEYBOARD=true  # request enhanced keyboard reporting
+# export FTUI_HARNESS_LOCALE=en-US            # runtime locale context
+# export FTUI_HARNESS_SUPPRESS_WELCOME=true   # omit startup welcome lines
+# export FTUI_HARNESS_LOG_KEYS=true          # log received key events
+# export FTUI_HARNESS_DIFF_BAYESIAN=true      # Bayesian diff strategy selection
+# export FTUI_HARNESS_BOCPD=true             # change-point resize coalescing
+# export FTUI_HARNESS_CONFORMAL=true         # conformal frame-budget prediction
+# export FTUI_HARNESS_FRAME_BUDGET_US=16667   # total frame budget, microseconds
+# export FTUI_HARNESS_RENDER_BUDGET_US=8000   # render budget; may raise total budget
+# export FTUI_HARNESS_EVIDENCE_JSONL=/path/to/harness.jsonl  # rendering evidence output
+```
+
+Harness view names include `default`, `layout-flex-row`, `layout-flex-col`,
+`layout-grid`, `layout-nested`, `widget-block`, `widget-paragraph`, `widget-table`,
+`widget-list`, `widget-input`, `widget-inspector`, `widget-budget`, `tile-skip`,
+`span-diff`, `selector-storm`, and `locale-context`. Unknown names select the
+default view. Harness examples have their own options: of these harness settings,
+`minimal` uses only auto-exit, rounded up to its 250 ms tick interval.
+
+The showcase, `cargo run -p ftui-demo-showcase`, has separate controls.
+Command-line flags take precedence over environment defaults.
+
+<!-- env:ftui-demo-showcase -->
+
+```bash
+export FTUI_DEMO_SCREEN=2                # --screen=N; 1-indexed
+export FTUI_DEMO_SCREEN_MODE=alt         # --screen-mode=alt|inline|inline-auto
+export FTUI_DEMO_MOUSE=auto              # --mouse=on|off|auto
+export FTUI_DEMO_EXIT_AFTER_MS=0         # 0 disables auto-exit
+export FTUI_DEMO_DETERMINISTIC=1         # deterministic fixtures and time
+export FTUI_DEMO_SEED=0                  # fixture seed
+export FTUI_DEMO_EVIDENCE_JSONL=/path/to/evidence.jsonl  # write rendering evidence
+
+# Optional controls:
+# export FTUI_DEMO_UI_HEIGHT=20         # --ui-height; inline rows
+# export FTUI_DEMO_UI_MIN_HEIGHT=12     # --ui-min-height; inline-auto minimum
+# export FTUI_DEMO_UI_MAX_HEIGHT=40     # --ui-max-height; inline-auto maximum
+# export FTUI_DEMO_TOUR=true            # --tour; guided tour on launch
+# export FTUI_DEMO_TOUR_SPEED=1.0       # --tour-speed; speed multiplier
+# export FTUI_DEMO_TOUR_START_STEP=1    # --tour-start-step; 1-indexed
+# export FTUI_DEMO_PANE_WORKSPACE=/path/to/panes.json  # --pane-workspace; persisted layout
+```
+
+For the full showcase CLI and environment list, including tour and VFX controls,
+run `cargo run -p ftui-demo-showcase -- --help`.
+
+Fixture and diagnostic controls are listed with their purposes in
+[`docs/env-internal-allowlist.txt`](docs/env-internal-allowlist.txt).
+`python3 -B scripts/check_env_docs.py` checks binary attribution and the
+environment-variable inventory in the harness main and showcase CLI entry points.
+
+Terminal capability detection uses standard environment variables (`TERM`, `COLORTERM`, `NO_COLOR`, `TMUX`, `ZELLIJ`, `KITTY_WINDOW_ID`).
+
+---
+
+## Architecture
+
+```
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                                 INPUT LAYER                                  │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ ftui-tty (Unix) / crossterm                                                  │
+│   └─ raw terminal events  →  Event (ftui-core)                               │
+└──────────────────────────────────────────────────────────────────────────────┘
+                                        │
+                                        ▼
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                                RUNTIME LOOP                                  │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ Program / Model (ftui-runtime)                                               │
+│   update(Event) → (Model', Cmd)                                              │
+│   Cmd → Effects                                                              │
+│   Subscriptions → Event stream (tick / io / resize / ...)                    │
+└──────────────────────────────────────────────────────────────────────────────┘
+                                        │
+                                        ▼
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                               RENDER KERNEL                                  │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ view(Model) → Frame → Buffer → BufferDiff → Presenter → ANSI                 │
+│                 (cell grid)    (minimal)       (encode bytes)                │
+└──────────────────────────────────────────────────────────────────────────────┘
+                                        │
+                                        ▼
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                                OUTPUT LAYER                                  │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ BackendPresenter (TerminalPresenter over TerminalWriter; WebPresenter)       │
+│   inline mode (scrollback-friendly)  |  alt-screen mode (classic)            │
+└──────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Frame Pipeline (Step-by-Step)
+
+1. **Input** → `TerminalSession` reads `Event`.
+2. **Model** → `update()` returns `Cmd` for side effects.
+3. **View** → `view()` renders into `Frame`.
+4. **Buffer** → `Frame` writes cells into a 2D `Buffer`.
+5. **Diff** → `BufferDiff` computes minimal changes.
+6. **Presenter** → emits ANSI with state tracking.
+7. **Writer** → enforces one‑writer rule, flushes output.
+
+This is the core loop that ensures determinism and flicker‑free output.
+
+---
+
+## Pane Workspace System
+
+FrankenTUI includes a full pane workspace system (`ftui-layout/src/pane.rs`) that goes far beyond simple split layouts:
+
+- **Drag‑to‑resize** via splitter handles with cell‑level hit‑testing
+- **Drag‑to‑move** with magnetic docking fields and live ghost preview targets
+- **Inertial throw**: release mid-drag and panes coast with momentum via `PaneInertialThrow`
+- **Pressure-sensitive snap**: snap strength derived from drag speed and direction changes via `PanePressureSnapProfile`
+- **Multi‑pane selection** via Shift+Click with `PaneSelectionState`
+- **Intelligence modes**: Focus, Compare, Monitor, Compact layout presets via `PaneLayoutIntelligenceMode`
+- **Persistent interaction timeline** with full undo/redo/replay via `PaneInteractionTimeline`
+- **Right‑click mode cycling** through all four intelligence modes
+- **Scroll-wheel magnetic field tuning**: adjust snap strength without leaving the pane
+- **Terminal + Web parity**: same pane interactions work in both backends via `PaneTerminalAdapter` and `PanePointerCaptureAdapter`
+
+The pane system is integrated into three of the <!-- fact:demo_screens -->45<!-- /fact --> demo screens (Dashboard, Widget Gallery, Layout Lab) and has dedicated E2E tests (`scripts/pane_e2e.sh`).
+
+### Pane Architecture
+
+```
+PaneTree                         ← Spatial layout tree (HSplit / VSplit / Leaf)
+  └── PaneOperation              ← Atomic layout mutation (resize, swap, split, close)
+       └── PaneInteractionTimeline  ← Undo/redo/replay history of operations
+            └── PaneDragResizeMachine   ← State machine for pointer gesture lifecycle
+                 └── PaneSemanticInputEvent  ← High‑level input abstraction
+```
+
+---
+
+## Runtime Migration & Rollout Infrastructure
+
+FrankenTUI is migrating its execution substrate through three lanes:
+
+| Lane | Description | Status |
+|------|-------------|--------|
+| `Legacy` | Thread‑based subscriptions with manual stop coordination | Available |
+| `Structured` | CancellationToken‑backed subscriptions (current default) | **Active** |
+| `Asupersync` | Asupersync blocking task pool with CancellationToken-backed subscriptions | Available with `ftui-runtime/asupersync-executor` |
+
+Selecting `asupersync` without that feature emits a warning and resolves to
+`Structured`. An explicit task backend in `EffectQueueConfig` takes precedence
+over the lane default. Subscriptions retain their structured cancellation;
+the lane selects how `Cmd::Task` closures execute.
+
+### Rollout Policy
+
+Runtime lane transitions are managed through a shadow‑run comparison system to prevent regressions:
+
+```rust
+// Operator workflow: Off → Shadow → Evaluate → Enable → Monitor → Rollback
+let config = ProgramConfig::default()
+    .with_lane(RuntimeLane::Structured) // Current execution backend
+    .with_rollout_policy(RolloutPolicy::Shadow) // Shadow‑compare before enabling
+    .with_env_overrides(); // FTUI_RUNTIME_LANE, FTUI_ROLLOUT_POLICY
+```
+
+When `RolloutPolicy::Shadow` is active alongside an `EvidenceSink`, `Program` emits one `shadow_frame` JSONL line per presented frame containing the 64-bit FNV-1a cell buffer checksum (`checksum`), frame index (`frame`), resolved runtime lane (`lane`), and task executor backend (`task_backend`). Two recorded shadow runs can be compared offline via `ftui_harness::ShadowRun::compare_recorded(&a, &b)` or the CLI tool `cargo run -p ftui-harness --bin shadow_compare -- a.jsonl b.jsonl`, and live dual-lane runs (with external effects recorded once via `ShadowEffectLog` and replayed on the candidate lane) can be compared via `ShadowRun::compare_lanes`.
+
+| Environment Variable | Values | Default | Purpose |
+|---------------------|--------|---------|---------|
+| `FTUI_RUNTIME_LANE` | `legacy`, `structured`, `asupersync` | `structured` | Select execution backend |
+| `FTUI_ROLLOUT_POLICY` | `off`, `shadow`, `enabled` | `off` | Control rollout behavior |
+
+### Shadow‑Run Validation
+
+Prove rendering determinism across runtime migrations by running the same model through two independent execution paths and comparing frame checksums:
+
+```rust
+use ftui_harness::{ShadowRun, ShadowRunConfig, ShadowVerdict};
+
+let config = ShadowRunConfig::new("migration_test", "tick_counter", 42).viewport(80, 24);
+let result = ShadowRun::compare(config, MyModel::new, |session| {
+    session.init();
+    session.tick();
+    session.capture_frame();
+});
+assert_eq!(result.verdict, ShadowVerdict::Match);
+```
+
+### Rollout Scorecard & Evidence Bundle
+
+Combine shadow evidence + benchmark results into a single go/no‑go release decision:
+
+```rust
+use ftui_harness::{
+    RolloutEvidenceBundle, RolloutScorecard, RolloutScorecardConfig, RolloutVerdict,
+};
+
+let mut scorecard =
+    RolloutScorecard::new(RolloutScorecardConfig::default().min_shadow_scenarios(3));
+for shadow_result in shadow_results {
+    scorecard.add_shadow_result(shadow_result);
+}
+assert_eq!(scorecard.evaluate(), RolloutVerdict::Go);
+
+// Machine-readable JSON evidence for CI gates
+let bundle = RolloutEvidenceBundle {
+    scorecard: scorecard.summary(),
+    queue_telemetry: Some(ftui_runtime::effect_system::queue_telemetry()),
+    requested_lane: "structured".to_string(),
+    resolved_lane: "structured".to_string(),
+    rollout_policy: "shadow".to_string(),
+};
+println!("{}", bundle.to_json()); // Self-contained release decision artifact
+```
+
+### Effect Queue Telemetry & Backpressure
+
+The effect executor tracks queue health with monotonic counters and enforces backpressure:
+
+```rust
+// Configure backpressure bounds
+let config = ProgramConfig::default().with_effect_queue(
+    EffectQueueConfig::default()
+        .with_enabled(true)
+        .with_max_queue_depth(64), // Drop tasks beyond this depth
+);
+
+// Monitor queue health at runtime
+let snap = ftui::runtime::effect_system::queue_telemetry();
+// snap.enqueued, snap.processed, snap.dropped, snap.high_water, snap.in_flight
+```
+
+### Unified Telemetry Schema
+
+All runtime telemetry uses canonical targets and event names defined in `ftui_runtime::telemetry_schema`:
+
+| Target | Purpose |
+|--------|---------|
+| `ftui.runtime` | Startup, shutdown, lane resolution |
+| `ftui.effect` | Command/subscription execution, queue drops |
+| `ftui.process` | Process subscription lifecycle |
+| `ftui.decision.resize` | Resize coalescer decisions |
+| `ftui.voi` | Value‑of‑information sampling |
+| `ftui.bocpd` | Change‑point detection |
+| `ftui.eprocess` | E‑process throttle decisions |
+| `ftui.guardrails` | Frame guardrails: soft memory trims and emergency frame drops |
+| `ftui.a11y` | Accessibility tree diffs and screen‑reader announcements (only with `ProgramConfig::with_accessibility`) |
+
+---
+
+## Web/WASM Backend
+
+FrankenTUI targets both native terminals and web browsers from a single Rust codebase. `ftui-web` is a host-driven, deterministic-time patch producer implementing the `ftui-backend` traits (`WebBackend`, `WebPresenter`, `WebEventSource`, `DeterministicClock`); `ftui-showcase-wasm` exports `ShowcaseRunner` via `wasm-bindgen`; rendering and DPR/zoom measurement are performed by a browser host (either `crates/ftui-showcase-wasm/frankentui_showcase_demo.html` paired with the pinned `FrankenTermWeb` renderer built by `build-wasm.sh` and the verified DOM text bridge `crates/ftui-showcase-wasm/accessibility.mjs`, or the lightweight in-tree DOM `<pre>` text host `crates/ftui-showcase-wasm/sdk/showcase-host.js`):
+
+| Crate | Purpose |
+|-------|---------|
+| `ftui-web` | Host-driven web backend with pointer/touch parity (DPR/zoom handling in the JS browser hosts) |
+| `ftui-showcase-wasm` | WASM build target (`ShowcaseRunner`) for the demo showcase |
+
+The web adapter translates browser pointer events into the same `PaneSemanticInputEvent` stream used by the terminal backend, ensuring interaction parity across platforms, and treats every `ShowcaseRunner::resize(cols, rows)` call (including same-geometry DPR/zoom transitions) as a full-repaint boundary.
+
+This checkout does **not** currently vendor local `crates/frankenterm-core` or
+`crates/frankenterm-web` workspace members. Those names still appear in specs and
+adjacent integration docs, but the in-tree browser surface today is `ftui-web`
+plus the `ftui-showcase-wasm` target. `ftui-pty` integrates with an external
+`frankenterm-core` dependency rather than a local workspace crate.
+
+---
+
+## FrankenTerm Integration
+
+FrankenTUI shares contracts and backend primitives with the broader
+FrankenTerm effort, but this repository currently contains the ftui-side
+integration pieces rather than a vendored local browser-terminal crate.
+
+What is in-tree right now:
+- `ftui-web` backend primitives, patch formats, and deterministic host-driven runtime support
+- `ftui-showcase-wasm` as the WASM demo/showcase target
+- `ftui-pty` integration against the external `frankenterm-core` crate
+
+What remains adjacent/out-of-tree from this checkout:
+- a browser-facing `FrankenTermWeb` bundle/package
+- the local `crates/frankenterm-core` / `crates/frankenterm-web` layout still referenced by some specs
+
+The adjacent terminal-emulator design target still includes:
+- **CSI/OSC/DCS sequences** for cursor control, colors, and window operations
+- **Alternate screen** buffer switching (like vim/less)
+- **Mouse reporting** protocols (X10, SGR, URXVT)
+- **Scrollback** with configurable history depth
+- **Selection/copy** with Unicode-aware grapheme boundaries
+
+---
+
+## "Alien Artifact" Quality Algorithms
+
+FrankenTUI employs mathematically rigorous algorithms that go far beyond typical TUI implementations. We call this "alien artifact" quality engineering.
+
+### Bayesian Fuzzy Scoring (Command Palette)
+
+The command palette uses a **Bayesian evidence ledger** for match scoring, not simple string distance:
+
+```
+Score = P(relevant | evidence) computed via posterior odds:
+
+P(relevant | evidence) / P(not_relevant | evidence)
+    = [P(relevant) / P(not_relevant)] × Π_i BF_i
+
+where BF_i = Bayes Factor for evidence type i
+          = P(evidence_i | relevant) / P(evidence_i | not_relevant)
+```
+
+**Prior odds by match type:**
+| Match Type | Prior Odds | P(relevant) | Intuition |
+|------------|------------|-------------|-----------|
+| Exact | 99:1 | 99% | Almost always what user wants |
+| Prefix | 9:1 | 90% | Very likely relevant |
+| Word-start | 4:1 | 80% | Probably relevant |
+| Substring | 2:1 | 67% | Possibly relevant |
+| Fuzzy | 1:3 | 25% | Needs additional evidence |
+
+**Evidence factors that update posterior:**
+- **Word boundary bonus** (BF ≈ 2.0): Match at start of word
+- **Position bonus** (BF ∝ 1/position): Earlier matches stronger
+- **Gap penalty** (BF < 1.0): Gaps between matched chars reduce confidence
+- **Tag match bonus** (BF ≈ 3.0): Query matches command tags
+- **Length factor** (BF ∝ 1/length): Shorter, more specific titles preferred
+
+**Result:** Every search result includes an explainable evidence ledger showing exactly why it ranked where it did.
+
+### Bayesian Hint Ranking (Keybinding Hints)
+
+Keybinding hints are ranked by **expected utility minus display cost**, with a VOI exploration bonus and hysteresis for stability:
+
+```
+Utility posterior:
+    U_i ~ Beta(α_i, β_i)
+    E[U_i] = α_i / (α_i + β_i)
+    VOI_i = sqrt(Var(U_i))
+
+Net value:
+    V_i = E[U_i] + w_voi × VOI_i - λ × C_i
+
+Hysteresis:
+    swap only if V_i - V_j > ε
+```
+
+**Result:** the UI surfaces the most valuable shortcuts without flicker, while still exploring uncertain hints.
+
+**Where it runs:** [`ftui_widgets::hint_ranker::HintRanker`](crates/ftui-widgets/src/hint_ranker.rs) and [`ftui_widgets::help::Help`](crates/ftui-widgets/src/help.rs) (`Help::register_with_ranker`, `Help::apply_ranking`, `Help::record_used`, and `Help::record_shown`), exercised live in the showcase's [`CommandPaletteEvidenceLab`](crates/ftui-demo-showcase/src/screens/command_palette_lab.rs) screen.
+
+### Bayesian Diff Strategy Selection
+
+The renderer adaptively chooses between diff strategies using a **Beta posterior over change rates**:
+
+```
+Change-rate model:
+    p ~ Beta(α, β)
+
+Prior: α₀ = 1, β₀ = 19  →  E[p] = 5% (expect sparse changes)
+
+Per-frame update:
+    α ← α × decay + N_changed
+    β ← β × decay + (N_scanned - N_changed)
+
+where decay = 0.95 (exponential forgetting for non-stationary workloads)
+```
+
+**Strategy cost model:**
+```
+Cost = c_scan × cells_scanned + c_emit × cells_emitted
+
+Full Diff:     Cost = c_row × H + c_scan × D × W + c_emit × p × min(D × W, N)
+Dirty-Row:     Cost = c_scan × scan_cells + c_emit × p × scan_cells
+Full Redraw:   Cost = c_emit × N
+
+Decision: argmin { E[Cost_full], E[Cost_dirty], E[Cost_redraw] }
+```
+
+Here `scan_cells` is `Buffer::dirty_span_stats().span_coverage_cells` — the exact cell count that the default certified dirty-span scan (`BufferDiff::compute_certified_into`) compares. Because `observe()` trains `p` as changes per *scanned* cell, the expected-emission term multiplies `p` by each path's own scanned region (`min(D × W, N)` for `Full`, `scan_cells` for `DirtyRows`) rather than total screen cells `N`.
+
+**Uncertainty guard & conservative mode:** `conservative` defaults to `false`; when `conservative == true` or posterior variance exceeds `uncertainty_guard_variance = 0.002`, `p` uses the `conservative_quantile = 0.95` upper quantile via a normal approximation (`ChangeRateEstimator::upper_quantile`).
+
+### Bayesian Capability Detection (Terminal Caps Probe)
+
+Runtime capability upgrades are decided by a **log-Bayes-factor ledger** (`ftui_core::caps_probe::ledger_for`): every signal contributes a fixed log-odds weight and an upgrade is applied when the posterior clears 0.8 (`DECISION_THRESHOLD`):
+
+```
+log-odds = Σ log BF_i
+    environment/identity   +3.0 present / −0.4 absent
+    XTGETTCAP RGB reply     ±4.6      (truecolor)
+    DECRPM ?2026 reply      ±4.6      (synchronized output)
+    probe timeout           −0.7
+    multiplexer detected    −0.5
+    FTUI_* operator switch  ±9.2      (saturates: no heuristic outvotes it)
+
+P = 1 / (1 + exp(−log-odds))   →   upgrade when P ≥ 0.8
+```
+
+In code: `ftui_core::caps_probe::CapabilityLedger` with weights, threshold $P \ge 0.8$, upgrade-only refinement (`refine_from_ledgers`), evidence event `capability_decision` per capability at startup, feature `caps-probe` (enabled by the showcase; consumers enable it on `ftui-core`), and the probe preconditions (currently: native backend, stdin is a TTY, color depth Ansi256 for the truecolor probe; G05 extends to DECRPM 2026 on all non-mux terminals).
+
+| Constant | Value | Description |
+|----------|-------|-------------|
+| `ENV_POSITIVE` | `+3.0` | Environment variable explicitly indicates support (e.g. `COLORTERM=truecolor`) |
+| `ENV_ABSENT` | `-0.4` | Environment variable absent but not definitive |
+| `DA2_KNOWN_TERMINAL` | `+1.8` | DA2 terminal type matches known-good terminal |
+| `DA1_CONFIRMED` | `+3.5` | DA1 attribute code confirms feature (e.g. Sixel) |
+| `DECRPM_CONFIRMED` | `+4.6` | DECRPM confirms mode is recognized (status 1–4) |
+| `DECRPM_DENIED` | `-4.6` | DECRPM denies mode (status 0) |
+| `TIMEOUT` | `-0.7` | Probe timed out — weak negative evidence |
+| `MUX_PENALTY` | `-0.5` | Multiplexer detected — slight negative for passthrough features |
+
+The ledger is **upgrade-only**: a capability the environment or the allowlist already granted is never removed by a negative or absent reply (terminfo under-reports truecolor over `ssh`; the allowlist knows terminals that ignore DECRPM). The startup probe sends only the two bounded queries above (300 ms, fail-open, `FTUI_CAPS_PROBE=0` disables it); DA1/DA2 weights exist for the asynchronous `CapabilityProber` used by the showcase's capability screen. Every session writes one `capability_decision` evidence row per capability (truecolor, synchronized output, scroll region) carrying exactly the rows that decided.
+
+### Dirty-Span Interval Union (Sparse Diff Scans)
+
+For sparse updates, each row tracks **dirty spans** and the diff scans only the union of those spans:
+
+```
+Row y spans:
+    S_y = union_k [x0_k, x1_k)
+
+Scan cost:
+    sum_y |S_y|
+```
+
+**Where it runs (default path):** `TerminalWriter` defaults to `certified_skips: true`. Under `DiffStrategy::DirtyRows`, `evaluate_render_certificate_for_buffers` verifies in a single pass that `new`'s dirty state was cleared against `old`'s mutation generation and that `dirty_rows` and `dirty_spans` agree, then `BufferDiff::compute_certified_into` walks each dirty row's `DirtySpanRow` directly (`scan_row_changes_spans`). Measured in [`docs/perf/certified_vs_dirty_scan_2026-10-14.md`](docs/perf/certified_vs_dirty_scan_2026-10-14.md): `spinner_tick` p50 `68 ns` (80×24), `126 ns` (200×60), `193 ns` (300×100); `overmarked_chrome` (widgets redrawing border/header/status chrome while 4 cells change) `166 ns` (80×24) and `536 ns` (300×100) — **4.7× to 16.2× faster** than whole-row slice scanning.
+
+### Summed-Area Table (Tile-Skip Diff)
+
+To skip empty tiles on large screens, a **summed-area table** (2D prefix sum) allows O(1) tile density checks:
+
+```
+SAT(x,y) = A(x,y)
+         + SAT(x-1,y) + SAT(x,y-1) - SAT(x-1,y-1)
+```
+
+**Where it runs:** `BufferDiff::compute_dirty_into` (used when `certified_skips: false`, or when calling `BufferDiff::compute_dirty` directly). The SAT is queried per tile row (one subtraction) to skip whole rows of clean tiles before per-tile checks; tiles engage at $\ge 12,000$ cells (200×60 by default; `diff/sparse_5pct_rows/200x60` p50 28 µs → 21 µs in [`docs/perf/sat_tile_skip_2026-09.md`](docs/perf/sat_tile_skip_2026-09.md)). On the default `certified_skips: true` path (`compute_certified_into`), the renderer skips clean rows via `dirty_rows` and scans dirty spans directly without building the whole-screen SAT, which is 1.8×–10.8× faster at 200×60 and 300×100 ([`docs/perf/certified_vs_dirty_scan_2026-10-14.md`](docs/perf/certified_vs_dirty_scan_2026-10-14.md)).
+
+### Fenwick Tree (Prefix Sums for Virtualized Lists)
+
+Variable-height virtualized lists use a **Fenwick tree** (Binary Indexed Tree) for fast prefix sums:
+
+```
+sum(i) = sum_{k=1..i} a_k
+update(i, Δ): for (j=i; j<=n; j+=j&-j) tree[j]+=Δ
+query(i):     for (j=i; j>0; j-=j&-j)  sum+=tree[j]
+```
+
+**Result:** O(log n) height lookup and scroll positioning without scanning all rows.
+
+### Bayesian Height Prediction + Conformal Bounds (Virtualized Lists)
+
+Virtualized lists predict unseen row heights to avoid scroll jumps, using a **Normal-Normal** conjugate update plus conformal bounds:
+
+```
+Prior:     μ ~ N(μ₀, σ₀²/κ₀)
+Posterior: μ_n = (κ₀·μ₀ + n·x̄) / (κ₀ + n)
+
+Conformal interval:
+    [μ_n - q_{1-α}, μ_n + q_{1-α}]
+```
+
+Variance is tracked online with Welford’s algorithm, and `q` is the empirical quantile of |residuals|.
+
+Where it runs (`crates/ftui-widgets/src/virtualized.rs`, `crates/ftui-widgets/src/height_predictor.rs`, `crates/ftui-widgets/src/fenwick.rs`):
+- **Widget (`VirtualizedList`):** Opt in with `VirtualizedList::new(&items).variable_heights()` and `VirtualizedListState::variable(default_height).with_predictor(PredictorConfig::default()).with_remeasure_policy(RemeasurePolicy::default())`. Each item supplies its rendered height (`RenderItem::height`) and category (`RenderItem::category`); as visible items render, their heights are recorded in the state's `FenwickHeightTracker` (or updated explicitly via `VirtualizedListState::measure`), unmeasured items pre-allocate their category's posterior mean (`HeightPredictor`), and `RemeasurePolicy` schedules Beta-VOI remeasurement checks that emit `voi_sample` evidence (`source: "virtualized_list"`) via `Frame::request_remeasure`.
+- **Container (`Virtualized<T>`):** `Virtualized::with_variable_heights(default_height)` selects `FenwickHeightTracker` as the default variable-height tracker (`with_variable_heights_fenwick` takes an explicit capacity; `ItemHeight::Variable(HeightCache)` is the legacy linear-scan cache), following `push`, `trim_front`, `clear`, and `set_external_len`. Attach the predictor with `.with_height_prediction(PredictorConfig)` (`measure(idx, height, category)` updates both the Fenwick tree and category posterior) and VOI remeasurement with `.with_remeasure_policy(RemeasurePolicy::default())`.
+- **Measured scroll-jump improvement:** On a 100k-row 4-category heavy-tail corpus ([`docs/perf/virtualized_scroll_jump_2026-09.md`](docs/perf/virtualized_scroll_jump_2026-09.md), measured 2026-10-16), `Virtualized::scroll_to` runs in **16.63 ns** (`virtualized_scroll_to_100k`), and cumulative scroll correction across 50 viewport jumps dropped from **48,250 cells** with a fixed default of `1` (**27,896 cells** with global mean `2`) to **2,497 cells** with per-category Bayesian height prediction (a **94.8%** reduction vs default `1` and **91.0%** vs global mean `2`).
+- **Demo screens:** Three showcase screens use Fenwick variable-height virtualization in production: `widget_gallery` (`.variable_heights()`), `virtualized_search` (`VirtualizedList::new(&items).variable_heights()` with `VirtualizedListState::variable(1).with_predictor(PredictorConfig::default()).with_remeasure_policy(..)` and multi-line previews toggled by `p`), and `log_search` (`LogViewer` switches its `Virtualized` storage to Fenwick variable heights when line wrapping is toggled with `w`, tracking wrapped visual rows per log line).
+
+### BOCPD: Online Change-Point Detection
+
+Resize coalescing uses **Bayesian Online Change-Point Detection** to detect regime transitions:
+
+```
+Observation model (inter-arrival times):
+    Steady: x_t ~ Exponential(λ_steady)  where μ_steady ≈ 200ms
+    Burst:  x_t ~ Exponential(λ_burst)   where μ_burst ≈ 20ms
+
+Run-length posterior (recursive update):
+    P(r_t = 0 | x_1:t) ∝ Σᵣ P(r_{t-1} = r) × H(r) × P(x_t | r)
+    P(r_t = r+1 | x_1:t) ∝ P(r_{t-1} = r) × (1 - H(r)) × P(x_t | r)
+
+Hazard function (geometric prior):
+    H(r) = 1/λ_hazard  where λ_hazard = 50
+
+Complexity: O(K) per update with K=100 run-length truncation
+```
+
+**Regime posterior:**
+```
+P(burst | observations) = Σᵣ P(burst | r, x_1:t) × P(r | x_1:t)
+
+Decision thresholds:
+    p_burst > 0.7  →  Burst regime (aggressive coalescing)
+    p_burst < 0.3  →  Steady regime (responsive)
+    otherwise      →  Transitional (interpolate delay)
+```
+
+**The delays those regimes select**, and the two numbers most easily confused
+with them:
+
+| | Value | Where |
+|---|---|---|
+| Steady coalescing delay | **16 ms** | `CoalescerConfig::steady_delay_ms` |
+| Burst coalescing delay | **40 ms** | `CoalescerConfig::burst_delay_ms` |
+| Hard deadline | **100 ms** | `CoalescerConfig::hard_deadline_ms` |
+| Steady observation mean μ_steady | 200 ms | `BocpdConfig::mu_steady_ms` |
+| Burst observation mean μ_burst | 20 ms | `BocpdConfig::mu_burst_ms` |
+
+The first three are how long a resize is *held*; the last two are how far apart
+resizes are *expected to arrive* in each regime, and are what the exponential
+observation model above is written in terms of. An earlier version of this
+section reported 200 ms and 20 ms as the coalescing delays, which is the one
+confusion this table exists to prevent. The hard deadline outranks both: a
+pending resize is applied at 100 ms whatever the posterior thinks, so a drag
+cannot be coalesced indefinitely.
+
+`default_config_matches_readme_constants` (`bocpd.rs`) and
+`steady_regime_delay_is_16ms_and_burst_is_40ms` (`resize_coalescer.rs`) fail if
+any number above stops matching the code.
+
+**Does it beat the rate heuristic it replaced? Measured 2026-09-19: no.** Both
+detectors were driven over identical resize-storm schedules on a virtual clock
+([`docs/perf/resize_differential_2026-09.md`](docs/perf/resize_differential_2026-09.md)):
+
+| Pattern | repaints during drag (heuristic → BOCPD) | final apply ms |
+|---|---|---|
+| `burst_50` | 6 → 7 | 33 → 49 |
+| `burst_200` | 26 → 27 | 24 → 0 |
+| `sweep_80x24_to_200x60` | 10 → 12 | 40 → 24 |
+| `oscillate_10` | 4 → 7 | 52 → 52 |
+| `mixed_100` | 25 → 33 | 45 → 45 |
+| `pathological_50` | 20 → 22 | 51 → 19 |
+
+BOCPD draws more repaints during the drag on every pattern, and both detectors
+land outside the 40 ms settling budget on three of six, so it is worse on one
+criterion and no better on the other. It is not the transitional-band
+interpolation: committing to the 40 ms burst hold there left every frame
+count unchanged. The traces put the extra frames at burst onset and in pauses,
+as unforced 0–18 ms applies made while the posterior still says Steady. The
+heuristic, by contrast, holds every drag frame to the 100 ms deadline. The
+observation model is why the posterior lingers: with μ_steady = 200 ms and
+μ_burst = 20 ms, a 30–60 ms gap is nearly equally likely under both (at 50 ms,
+0.0041 vs 0.0039), and these storms are full of such gaps (`bd-i25qn`).
+
+That decision was made on 2026-09-23: the default went back to
+`enable_bocpd = false`, which is the rule the plan set for this outcome
+(`bd-h8l3d`). The rate heuristic ships. Use
+`CoalescerConfig::default().with_bocpd()` to opt the posterior back in;
+everything below describes that mode.
+
+**Where it runs:** opt-in. `CoalescerConfig::default()` carries `enable_bocpd = false` and `heuristic_fallback = true`, so the rate heuristic is the detector until `with_bocpd()` turns the posterior on. With it on, `ResizeCoalescer` feeds every resize event's inter‑arrival to the posterior and reads the regime and the recommended delay from it. The 10/5 events‑per‑second rate heuristic decides only when the posterior is undefined: the first event of a session, an inter‑arrival outside `[min_observation_ms, max_observation_ms]` (1 ms to 10 s by default, which the posterior would otherwise see clamped), or a non‑finite posterior. While the heuristic decides it also owns the Burst exit (cooldown on ticks, rate check on the immediate path). The posterior itself only moves on events, so in BOCPD mode a Burst regime returns to Steady on a frame tick once the silence reaches `mu_steady_ms` (200 ms; reason code `bocpd_idle_exit`, confidence `1 − exp(−idle/μ_burst)`). Every `decision` and `regime_transition` evidence row carries `detector` (`bocpd` or `heuristic`) and `p_burst`, the `config` row carries both flags, `budget_decision` carries `resize_detector`, and `CoalescerStats::detector_decisions` counts decisions per detector. `CoalescerConfig::without_bocpd()` returns to the heuristic alone; `with_heuristic_fallback(false)` hands even the first event to the posterior.
+
+### Bayes-Factor Evidence Ledger (Resize Coalescer)
+
+Resize coalescing decisions are explained with a **log10 Bayes factor** ledger:
+
+```
+LBF = log10(P(evidence | apply_now) / P(evidence | coalesce))
+
+Interpretation:
+    LBF > 0  → apply now
+    LBF < 0  → coalesce
+    |LBF| > 1 strong, |LBF| > 2 decisive
+```
+
+**Result:** coalescing is transparent and audit‑friendly, not heuristic black magic.
+
+### Value-of-Information (VOI) Sampling
+
+Inline-auto height remeasurement and variable-height virtualized list remeasurement use **VOI analysis** to decide when to take another height measurement:
+
+```
+Beta posterior over violation probability:
+    p ~ Beta(α, β)
+
+VOI computation:
+    n = α + β
+    p_hat = α / n
+    variance_before       = αβ / (n² × (n+1))
+    variance_if_violation = (α+1)β / ((n+1)² × (n+2))
+    variance_if_no_violation = α(β+1) / ((n+1)² × (n+2))
+    expected_after = p_hat × variance_if_violation
+                   + (1-p_hat) × variance_if_no_violation
+    VOI = variance_before - expected_after
+        = αβ / (n² × (n+1)²)
+
+Decision:
+    score = VOI × value_scale × (1 + boundary_weight × boundary_score)
+    forced = an enabled maximum time/event interval has been reached
+    blocked = after the first sample, an enabled minimum interval is unmet
+    sample iff forced OR (NOT blocked AND score ≥ sample_cost)
+```
+
+`boundary_score` measures proximity to the sampler's e-value threshold. Initial
+height measurement runs whenever the runtime has no height estimate, independently
+of this sampling decision.
+
+**VOI configuration defaults across the three consumers:**
+
+| Config | Where | `prior_alpha` / `prior_beta` | `sample_cost` | Interval gating |
+|---|---|---|---|---|
+| `InlineAutoRemeasureConfig::default()` | `crates/ftui-runtime/src/program.rs:4623` | `1.0` / `9.0` (10% violation prior) | `0.08` | `min_interval_ms = 100`, `max_interval_ms = 1000`, `max_interval_events = 0` |
+| `VoiConfig::default()` | `crates/ftui-runtime/src/voi_sampling.rs:220` | `1.0` / `1.0` (uniform prior) | `0.01` | `min_interval_ms = 0`, `max_interval_ms = 250`, `max_interval_events = 20` |
+| `RemeasurePolicy::default()` | `crates/ftui-widgets/src/virtualized.rs:73` | `1.0` / `9.0` (`BetaPosterior::new(1.0, 9.0)`) | `0.08` | `min_interval_frames = 6` |
+
+`InlineAutoRemeasureConfig::default()` relies on forced intervals: since `n ≥ 10` and `boundary_score ≤ 1`,
+the VOI score is at most `1/242 ≈ 0.00413`, below `sample_cost = 0.08`. Standalone `VoiConfig::default()`
+uses a permissive `Beta(1, 1)` prior and `sample_cost = 0.01` that actively samples between forced intervals.
+In variable-height lists (`RemeasurePolicy`), observing an interval violation updates `BetaPosterior` and triggers a sample once `min_interval_frames` has elapsed (or whenever `beta_voi(α, β) ≥ sample_cost`). Both the inline-auto sampler and `VirtualizedList` emit structured `voi_sample` JSONL evidence records carrying `source: "inline_auto" | "virtualized_list"`, `widget_id`, `index`, `alpha`, `beta`, `voi`, `sample_cost`, and `decision: "sample" | "skip"`.
+
+### E-Process: Anytime-Valid Testing
+
+Several monitors accumulate multiplicative **e-values** (sequential test wealth processes):
+
+```
+Sub-Gaussian exponential form (ftui_render::budget::EProcessState, conformal_alert):
+    E_t = E_{t-1} × exp(λ_{t-1} · r_t − λ_{t-1}² · σ₀² / 2)
+
+Bernoulli wealth form (experimental ftui_runtime::eprocess_throttle, voi_sampling):
+    W_t = W_{t-1} × (1 + λ_t · (X_t − μ₀))
+
+Ville's inequality (when E[e_t | F_{t-1}] ≤ 1 with predictable λ_{t-1} and no lower-floor bias):
+    P(∃t: E_t ≥ 1/α | H₀) ≤ α   at any stopping time
+```
+
+**Production vs. formal supermartingale distinction:**
+- **Render-path budget gate (`ftui_render::budget::EProcessState`) runs predictable Gaussian GRAPA over an EMA plug-in scale:**
+  By default (`EProcessConfig::default()`: `adaptive_lambda = true`, `grapa_eta = 0.1`, `lambda_min = 0.05`,
+  `lambda_max = 2.0`, initial `lambda = 0.5`), each frame computes $E_t = E_{t-1}\exp(\lambda_{t-1} r_t - \lambda_{t-1}^2 / 2)$
+  using the $\mathcal{F}_{t-1}$-measurable betting fraction $\lambda_{t-1}$ and then updates
+  $\lambda_t = \mathrm{clamp}(\lambda_{t-1} + \eta(r_t - \lambda_{t-1}), \lambda_{\min}, \lambda_{\max})$ after warmup
+  (holding $\lambda_t \ge \lambda_0$ while draining post-burst overload wealth $E_t > 1$ on recovery frames $r_t < 0$).
+  When fed standardized zero-mean unit-variance Gaussian residuals directly, the predictable GRAPA bet preserves the
+  exact supermartingale property $\mathbb{E}[E_t \mid \mathcal{F}_{t-1}] = E_{t-1}$ under $H_0$. On live frame times,
+  residuals are standardized by an EMA of mean absolute deviation (`σ̂_MAD ≈ 0.8σ` for Gaussian noise, floored at
+  `sigma_floor_ms = 1.0`) and `E_t` is clamped to `[0.01, 1e10]`, so `alpha = 0.05` acts as a fail-safe sensitivity
+  calibration that errs toward earlier degradation rather than a formal finite-sample false-positive bound.
+- **Other adaptive $\lambda_t$ (GRAPA) implementations:**
+  - `ftui_runtime::eprocess_throttle` (experimental) adapts $\lambda_t$ on the Bernoulli wealth process via
+    $\lambda_{t+1} = \mathrm{clamp}(\lambda_t + \eta \frac{X_t - \mu_0}{1 + \lambda_t(X_t - \mu_0)})$.
+  - `ftui_runtime::conformal_alert` (experimental) adapts $\lambda_t$ on the sub-Gaussian exponential process via
+    the matching log-wealth gradient $\lambda_{t+1} = \mathrm{clamp}(\lambda_t + \eta ((z_t - \mu_0) - \lambda_t \sigma_0^2), \epsilon, 1 - \epsilon)$.
+
+**Applications in FrankenTUI:**
+- Budget degradation decisions (`ftui_render::budget::BudgetController` with predictable Gaussian GRAPA)
+- Allocation leak alerts (`ftui_render::frame_guardrails::FrameGuardrails` via `AllocLeakDetector`)
+- VOI boundary-proximity weighting (`ftui_runtime::voi_sampling`, clamped `[1e-12, 1e12]` Bernoulli wealth)
+- Flake detection in tests (experimental `flake_detector`)
+- Standalone throttle / conformal alert calibration (experimental `eprocess_throttle`, `conformal_alert`)
+
+Not the Mondrian conformal frame-time gate described below, which is the
+conformal path that is on by default: it calibrates from residual quantiles
+and carries no e-process.
+
+**Where it runs:** `ftui-render::budget` (`EProcessState` with predictable Gaussian GRAPA on the default frame-budget path, emitted as `eprocess_lambda` in `budget_decision` evidence rows) and `ftui-render::frame_guardrails` (`AllocLeakDetector` on the default guardrail path); `ftui-runtime::eprocess_throttle` and `ftui-runtime::conformal_alert` are experimental and not constructed by `Program` or `TerminalWriter`.
+
+### Conformal Alerting
+
+**Status: experimental** (see [Experimental modules](#experimental-modules))
+
+**Where it runs: nowhere in production.** This describes `ftui-runtime`'s
+`conformal_alert`, whose only consumers are other experimental modules
+(`timeline_aggregator`, `alpha_investing`, `resize_sla`) and a proptest — a
+quarantined cluster wired to itself, not to the runtime. The conformal path that
+is on by default is the Mondrian frame-time gate above, which has no e-process
+layer.
+
+Budget and performance alerts in that module combine **exchangeable conformal prediction** with a sequential sub-Gaussian e-process:
+
+```
+Nonconformity score:
+    R_t = |observed_t - predicted_t|
+
+Threshold (finite-sample guarantee when (1-α)(n+1) ≤ n):
+    q = quantile_{⌈(1-α)(n+1)⌉ / n}(R_1, ..., R_n)
+
+Exchangeable coverage guarantee:
+    P(R_{n+1} ≤ q) ≥ 1 - α   for exchangeable (R_1, ..., R_{n+1})
+
+Sub-Gaussian e-process layer (with predictable λ_t updated by ∂ℓ_t/∂λ = (z_t - μ₀) - λ_t σ₀²):
+    e_t = exp(λ_t × (z_t - μ₀) - λ_t² σ₀² / 2)
+```
+
+**Scope & assumptions:** The conformal quantile requires exchangeability of calibration and test residuals (non-stationary drift requires recalibration or sliding windows); the combined OR trigger (`conformal_alert || eprocess_alert`) with empirical $(\hat{\mu}, \hat{\sigma})$ standardization and post-alert resets is a hybrid detector rather than a single-threshold α-test.
+
+### Mondrian Conformal Frame-Time Risk Gating
+
+Frame-time risk gating uses **bucketed (Mondrian) conformal prediction** keyed by screen mode, diff strategy, and size:
+
+```
+Residuals: r_t = y_t - ŷ_t
+Upper bound: ŷ_t^+ = ŷ_t + q_{1-α}(|r|)
+
+Risk if: ŷ_t^+ > budget
+```
+
+Buckets fall back from (mode, diff, size) → (mode, diff) → (mode) → global default,
+preserving coverage even when data is sparse.
+
+**Where it runs:** on by default (`ProgramConfig::default()` carries `ConformalConfig::default()`: α = 0.05, `min_samples` = 20, window 256, `q_default` = 10 ms). Every frame the runtime predicts `ŷ_t^+` for its bucket before rendering and, when the bound exceeds the frame budget, steps the render degradation level down; the frame's measured time is fed back as the next residual. Warm-up rule: a verdict is only acted on once the level it rests on has at least `min_samples` residuals, so the `q_default` prior can never degrade a fresh program (it is still written to the `budget_decision` evidence row as `risk` with `n_b` < 20). `ProgramConfig::without_conformal()` turns the gate off; `with_conformal_config(..)` tunes it.
+
+### CUSUM Control Charts
+
+Allocation budget tracking in `FrameGuardrails` via `AllocLeakDetector` uses **CUSUM** (Cumulative Sum) for fast change detection:
+
+```
+One-sided CUSUM:
+    S_t = max(0, S_{t-1} + (X_t - μ₀) - k)
+
+Alert when:
+    S_t > h (threshold)
+
+Parameters:
+    k = allowance (typically σ/2)
+    h = threshold (controls sensitivity vs false alarms)
+
+Dual detection:
+    Alert iff (CUSUM detects AND e-process confirms)
+           OR (e-process alone exceeds 1/α)
+```
+
+**Why dual?** CUSUM is fast but can false-alarm; e-process is slower but anytime-valid. Intersection gives speed with guarantees.
+
+**Where it runs:** on every rendered frame inside `ftui_render::frame_guardrails::FrameGuardrails` via `ftui_render::alloc_budget::AllocLeakDetector` (reset after soft memory trims and emitted as `leak_e_value`, `leak_cusum_upper`, `leak_mean_bytes`, and `leak_alert` in `guardrail_snapshot` evidence rows).
+
+### CUSUM Hover Stabilizer (Mouse Jitter)
+
+Hover target flicker is suppressed with a **CUSUM change‑point detector** on boundary‑crossing distance:
+
+```
+S_t = max(0, S_{t-1} + d_t - k)
+switch if S_t > h
+```
+
+where `d_t` is signed distance to the current target boundary, `k` is drift allowance, and `h` is the switch threshold.
+
+**Result:** single‑cell jitter doesn’t cause hover flicker, but intentional crossings still switch within a couple frames.
+
+**Where it runs:** `ListState::default().with_hover_stabilizer(HoverStabilizerConfig::default())` routes the list's mouse-move hover through the stabilizer (default: 1-cell hysteresis band, drift allowance 0.5, threshold 2.0, 500 ms hold); without it `hovered` follows the raw hit test. The showcase's mouse playground uses the same type directly. `TableState::hovered` tracks raw mouse-move row hits (`Table` renders `TableTheme.row_hover` when set) without routing through `HoverStabilizer` yet.
+
+### Gesture Recognition State Machine
+
+The `GestureRecognizer` in `ftui-core` transforms raw terminal events into semantic events via a multi-phase state machine:
+
+```
+Raw Events                    Semantic Events
+─────────                    ───────────────
+MouseDown(x,y)  ─┬─ idle ──→ Click
+MouseDown(x,y)   │          DoubleClick
+MouseDown(x,y)  ─┤          TripleClick (select word / line)
+MouseMove(x,y)  ─┤─ armed ─→ DragStart
+MouseMove(x,y)  ─┤          DragMove
+MouseUp(x,y)    ─┤─ drag ──→ DragEnd
+                  │
+Key(a)          ─┤          Chord (multi-key sequences)
+Key(Ctrl+x)     ─┘          ModifiedKey
+```
+
+**Dead zone:** drag is only recognized after the pointer moves beyond a configurable threshold (`GestureConfig::drag_threshold`, default: 3 cells of Manhattan distance), preventing accidental drags from jittery mice.
+
+**Multi-click timing:** double/triple clicks use a configurable interval window (`multi_click_timeout`, default: 300 ms; `click_tolerance` 1 cell) with a `click_count` counter that resets on timeout or position change. A stationary press becomes a `LongPress` after `long_press_threshold` (default: 500 ms).
+
+**Chord recognition:** multi-key sequences like `g g` (vim-style) use `Chord` and `KeyDispatcher` with a configurable chord timeout (default: 1,000 ms), enabling complex keybinding schemes without blocking single-key shortcuts.
+
+**Where it runs:** opt in with `ProgramConfig::default().with_gestures(GestureConfig::default())` and implement `Model::on_gesture(&mut self, SemanticEvent) -> Cmd<Msg>`. The runtime feeds every input event through the recognizer, then hands the raw event to the ordinary `update()` call (raw events are never swallowed), then delivers each recognized gesture to `on_gesture`. Long presses are checked on every loop iteration and the loop wakes at the long-press deadline, so they fire without a `Cmd::tick` rate. Mouse gestures need mouse capture enabled.
+
+`TextArea` handles the mouse itself with the same thresholds, so a host only forwards events through `handle_event`. A left press places the cursor, a double click selects the word under it (Unicode word boundaries), a triple click selects the line, and dragging extends the selection. Presses outside the area it last rendered are ignored, and so is a drag that started outside it. The showcase's forms, advanced text editor and live Markdown screens forward their mouse events to it.
+
+### Input Parser
+
+The `InputParser` in `ftui-core` handles the full complexity of terminal input encoding:
+
+- **ANSI escape sequences**: CSI, SS3, OSC, and DCS (captured via `TerminalResponse::Dcs`, bounded at 8 KiB) with timeout-based ESC disambiguation; APC/SOS/PM are treated as Alt-modified keys unless `InputParser::set_capture_apc(true)` opts into `TerminalResponse::Apc` capture
+- **Kitty keyboard protocol**: repeat/release events, modifier encoding, functional key disambiguation
+- **Bracketed paste**: captures pasted text as a single `Paste` event, preventing paste injection attacks
+- **Mouse protocols**: X10, SGR (`1006`), legacy numeric fallback (`1015`), and SGR-Pixels (`1016`, via `InputParser::set_pixel_mouse(true)` and `MouseEvent::pixel`) with pixel-to-cell conversion from the terminal's reported cell size (`CSI 6 ; height ; width t` / `InputParser::set_cell_size_px`); the active protocol is selected by the session (`SessionOptions::pixel_mouse` / `ProgramConfig::with_pixel_mouse`), not sniffed
+- **UTF-8 streaming**: multi-byte character assembly across partial reads
+- **Ambiguous prefix handling**: `ESC` alone vs `ESC [` (Alt+key vs CSI) resolved by timing
+
+### Keybinding System
+
+The `Keybinding` module supports:
+
+- **Declarative binding maps** (`KeyMap`, `Binding`) with priority levels (`Priority::{Global, Mode, Widget}`)
+- **Chord sequences** (`Chord`: `g g`, `Ctrl+x Ctrl+s`) with configurable timeout (1,000 ms default, clamped to 200..=5,000 ms)
+- **Context-sensitive activation** (`ContextId`): bindings active only in specific modes/focus states
+- **Conflict detection** (`KeyMap::conflicts()`): warns when bindings shadow, duplicate, or prefix-collide with each other
+- **Serialization** (`KeyMap::to_toml` / `from_toml` and `to_json` / `from_json` under `ftui-core` / `ftui` feature `serde`): `KeyMap<A>` serializes as a file with chords as text, contexts by name and `chord_timeout_ms`, so `toml::from_str::<KeyMap<Msg>>(&text)` reads a hand-edited keymap and a bad chord is reported with its binding index
+
+```rust
+let mut map = KeyMap::new();
+let editor = map.context("editor");
+map.bind(Chord::parse("g g").unwrap(), "scroll_to_top");
+map.bind_in(
+    Chord::parse("Ctrl+x Ctrl+s").unwrap(),
+    "save",
+    Priority::Mode,
+    Some(editor),
+);
+```
+
+**Where it runs:** `ftui_core::keybinding::{KeyCombo, Chord, KeyMap, KeyDispatcher, Priority, ContextId}` (also in `ftui::prelude`). `KeyMap::bind(Chord::parse("g g")?, Msg::GoTop)` and `bind_in(chord, action, Priority::Widget, Some(ctx))` declare bindings; `KeyMap::conflicts()` returns the shadow/prefix/duplicate report with one warning line per item; `KeyDispatcher::feed(&key_event, now)` and `tick(now)` return `Dispatch::{Action, Pending, Expired, Unbound, Esc}`. Resolution order: an active-context binding beats a context-free one, then higher priority, then the most recent binding. A key that is both bound alone and a chord prefix (`g` with `g g`) waits for the chord timeout (1,000 ms default, 200 ms to 5,000 ms) or a non-extending key, then fires; single-key shortcuts are never swallowed. `Esc` and `Esc Esc` go through the same 250 ms `SequenceDetector` window the rest of the runtime uses; a key typed inside that window resolves the lone `Esc` first, in the same `feed` call, then is dispatched itself (`ActionMapper::map` likewise returns the Esc's action, then the key's). The pane keyboard controller (`ftui_runtime::pane_keymap`) is routed through a `KeyMap`: `pane_keymap()` builds it from one binding table, `PaneKeyboardController::handle_key` resolves keys against it (`with_keymap` swaps in a host map), and `pane_keyboard_hints()` is generated from the same table, so hints and behaviour cannot drift. The showcase's global keys (`?`, `q`, `Ctrl+C`, `Tab`/`Shift+Tab`, `/`, `Ctrl+K`, ...) and screen chords (`g g` in `LogSearch`, `Ctrl+x Ctrl+s` in `AdvancedTextEditor`) also dispatch through `KeyMap` and `KeyDispatcher`, and `Help::from_keymap` / `KeybindingHints::from_keymap` render directly from `KeyMap::entries_for_help` (in `LogSearch`, scrolling to the top uses the `g g` chord rather than a single `g`).
+
+### Damped Spring Dynamics (Animation System)
+
+Animation transitions use a **damped harmonic oscillator** for natural motion:
+
+```
+F = -k(x - x*) - c v
+⇒ x'' + c x' + k(x - x*) = 0
+```
+
+Critical damping (fastest convergence without overshoot) is:
+
+```
+c_crit = 2√k
+```
+
+We integrate with **semi‑implicit Euler** and clamp large `dt` by subdividing
+into small steps for stability. The result is deterministic, smooth motion
+without frame‑rate sensitivity.
+
+**Where it runs:** standalone library in `ftui_core::animation::Spring` (exercised by `crates/ftui-core/tests/animation_test.rs`; no widget or showcase screen drives `ftui_core::animation` in production today).
+
+### Easing Curves + Stagger Distributions
+
+Base animations use analytic easing curves:
+
+```
+ease_in(t)  = t²
+ease_out(t) = 1 - (1 - t)²
+ease_in_out(t) =
+    2t²                (t < 0.5)
+    1 - (-2t + 2)²/2   (t ≥ 0.5)
+```
+
+Staggered lists distribute start offsets by applying easing to normalized
+indices:
+
+```
+offset_i = D · ease(i / (n - 1))
+```
+
+Optional deterministic jitter is added with a xorshift PRNG and clamped,
+so cascades feel organic but remain reproducible in tests.
+
+**Where it runs:** standalone library in `ftui_core::animation` (`EasingFn`, `StaggerMode`, `stagger_offsets`, `stagger_offsets_with_jitter`; exercised by `crates/ftui-core/tests/animation_test.rs`, with no production widget or showcase caller).
+
+### Sine Pulse Sequences (Attention Cues)
+
+Attention pulses are a single **half‑cycle sine**:
+
+```
+p(t) = sin(πt),  t ∈ [0, 1]
+```
+
+This produces a smooth 0→1→0 emphasis without sharp edges or flicker.
+
+**Where it runs:** standalone library in `ftui_core::animation::Pulse` (exercised by `crates/ftui-core/tests/animation_test.rs`, with no production widget or showcase caller).
+
+### Perceived Luminance (Terminal Background Probe)
+
+Background probing converts RGB to perceived luminance:
+
+```
+Y = 0.299R + 0.587G + 0.114B
+```
+
+That classification feeds capability detection for dark/light defaults.
+
+### Jain's Fairness Index (Input Guard)
+
+Input fairness monitoring uses **Jain's Fairness Index**:
+
+```
+F(x₁, ..., xₙ) = (Σxᵢ)² / (n × Σxᵢ²)
+
+Properties:
+    F = 1.0  →  Perfect fairness (all equal)
+    F = 1/n  →  Complete unfairness (one dominates)
+
+Intervention:
+    if input_latency >= 50ms OR resize_dominance >= 3 OR F < 0.8:
+        defer_pending_resize()  // Program::process_resize_coalescer yields to input
+```
+
+**Why Jain's?** Scale-independent, bounded [1/n, 1], interpretable.
+
+---
+
+## Troubleshooting
+
+### "terminal is corrupted after crash"
+
+FrankenTUI uses RAII cleanup via `TerminalSession`. If you see a broken terminal, make sure you are not force‑killing the process.
+
+```bash
+# Reset terminal state
+reset
+```
+
+### “error: the option `-Z` is only accepted on the nightly compiler”
+
+This error means a stable compiler is building the checkout, which needs the
+dated nightly pinned in `rust-toolchain.toml`. Run this inside the checkout:
+
+```bash
+rustup show active-toolchain
+```
+
+- If it names stable because of a `RUSTUP_TOOLCHAIN` variable or a directory
+  override, that setting outranks the pin. Unset it, or run
+  `cargo +nightly-YYYY-MM-DD ...` with the pinned date.
+- If `rustup` is not installed, your `cargo` comes from a system package that
+  ignores `rust-toolchain.toml`. Install Rust through rustup.
+
+Installing the latest `nightly` does not help, because the pin names a
+specific date. If the pinned nightly is merely missing, rustup says so (rather
+than printing this error); run `rustup toolchain install` in the checkout.
+
+### “raw mode not restored”
+
+Ensure your app exits normally (or panics) and does not call `process::exit()` before `TerminalSession` drops.
+
+### “no mouse events”
+
+Mouse must be enabled in the session and supported by your terminal.
+
+```bash
+FTUI_HARNESS_ENABLE_MOUSE=true cargo run -p ftui-harness
+FTUI_DEMO_MOUSE=on cargo run -p ftui-demo-showcase
+```
+
+For tmux, enable mouse forwarding with `set -g mouse on` in your tmux configuration.
+
+### “Ctrl-Z does nothing” / suspending with `kill -TSTP`
+
+On both backends, native and crossterm, `kill -TSTP` (and SIGTTIN/SIGTTOU)
+hands the terminal back before the process stops: input modes off, alternate screen left, cooked
+mode restored, so the shell works. After `fg`, the program re-arms raw mode and
+repaints the whole screen. `ProgramConfig::with_job_control(false)` turns this
+off.
+
+Ctrl-Z is not a suspend key by default: raw mode delivers it as an ordinary key
+event, and it is undo in `TextArea` and the showcase editors. Opt in with
+`ProgramConfig::default().with_ctrl_z_suspend(true)`. Design and limits:
+`docs/spec/suspend-resume.md`.
+
+### “output flickers”
+
+Inline mode uses synchronized output where supported: allowlisted terminals get
+it immediately and any terminal that answers the DECRPM 2026 probe gets it at
+startup. Inside tmux/screen/zellij and under WezTerm identities it is off by
+policy. If you know your terminal handles `CSI ? 2026 h/l` correctly, set
+`FTUI_SYNC_OUTPUT=1` (and `FTUI_SCROLL_REGION=1` for the inline scroll-region
+strategy); set them to `0` to force the conservative path.
+
+---
+
+## Limitations
+
+### What FrankenTUI Doesn’t Do (Yet)
+
+- **Stable public API**: APIs are evolving quickly.
+- **Full widget ecosystem**: Core widgets exist, but the ecosystem is still growing.
+- **Guaranteed behavior on every terminal**: Capability detection is conservative; older terminals may degrade.
+- **No SSH or remote-session extra**: The plan once listed one; it was dropped on 2026-09-01 (see `docs/planning/reality-check-2026-09-01.md` G38). Run the remote side over your own transport and stream it through `ProcessSubscription`.
+
+### Known Limitations
+
+| Capability | Current State | Planned |
+|------------|---------------|---------|
+| Stable API | ❌ Not yet | Yes (post‑v1) |
+| Widget ecosystem | ✅ <!-- fact:widgets -->70<!-- /fact --> direct widget implementations (<!-- fact:widget_types -->55<!-- /fact --> types; <!-- fact:widgets_workspace -->93<!-- /fact --> workspace-wide) | Expanding |
+| Formal compatibility matrix | ⚠️ In progress | Yes |
+| Asupersync execution lane | ✅ Blocking task pool with `ftui-runtime/asupersync-executor`; otherwise falls back to Structured | Structured subscription cancellation retained |
+| crates.io publishing | ✅ 17 of <!-- fact:crates -->20<!-- /fact --> crates (all libraries) | Showcase targets stay workspace-local |
+
+---
+
+## FAQ
+
+### Why “FrankenTUI”?
+
+A modular kernel assembled from focused, composable parts. A deliberate, engineered “monster.”
+
+### Is this a full framework?
+
+It’s a kernel plus a large widget library plus a demo showcase with <!-- fact:demo_screens -->45<!-- /fact --> screens plus a full pane workspace system. You can build a framework on top, but expect APIs to evolve.
+
+### Does it work on Windows?
+
+Yes, with documented v1 limitations: on Windows, the `ftui` facade selects the Crossterm backend (`crossterm-compat`) by default (`ftui-tty` is Unix-only and returns `Unsupported` on non-Unix targets). Windows Terminal and ConHost are supported for raw-mode lifecycle, key/mouse/resize events, and 16/256/TrueColor output (DEC 2026 synchronized output and Kitty keyboard protocol are disabled on Windows). DSR `frankentui-windows-cross` validates `--target x86_64-pc-windows-gnu` workspace Clippy (`-D warnings`), example builds, and cross-platform capability/input/simulator tests; see [`docs/WINDOWS.md`](docs/WINDOWS.md), [`docs/adr/ADR-004-windows-v1-scope.md`](docs/adr/ADR-004-windows-v1-scope.md), and `docs/spec/frankenterm-architecture.md` (Section 13.5).
+
+### Can I embed it in an existing CLI tool?
+
+Yes. Inline mode is designed for CLI + UI coexistence.
+
+### Can it run in a browser?
+
+Yes, reproducibly from this repository: run `bash build-wasm.sh /absolute/new-browser-build && python3 -m http.server --directory /absolute/new-browser-build/site 8080` to build and serve the complete showcase bundle (or mount `ShowcaseRunner` directly in the lightweight in-tree DOM `<pre>` text host `crates/ftui-showcase-wasm/sdk/showcase-host.js`). `ftui-web` provides the deterministic, host-driven WASM backend and `ftui-showcase-wasm` exports `ShowcaseRunner`.
+
+### How do I update snapshot tests?
+
+```bash
+BLESS=1 cargo test -p ftui-demo-showcase
+```
+
+### How many lines of code is it?
+
+1,110,000+ lines of Rust across <!-- fact:crates -->20<!-- /fact --> crates, with <!-- fact:widgets -->70<!-- /fact --> direct widget implementations across <!-- fact:widget_types -->55<!-- /fact --> widget types in `ftui-widgets` (<!-- fact:widgets_workspace -->93<!-- /fact --> workspace-wide), <!-- fact:demo_screens -->45<!-- /fact --> demo screens, and a broad PTY/scripted E2E surface.
+
+### What's the performance like?
+
+The 16‑byte cell design puts 4 cells per cache line. On an 80×24 grid at 5% change (`opt-level = "z"`), the full diff + present pipeline runs in `17.74 µs` (emitting `169 B` of ANSI against an `832 B` budget), certified diff takes `90.7 ns` on a spinner tick at 120×40 (`52.9 Gcells/s`), `InputParser::parse` takes `152 ns/event`, S3-FIFO cached grapheme width lookup takes `25.6 ns`, and `FrameArena` reduces steady-state heap allocations to `0 allocs/frame` on an 80×24 ASCII dashboard (`3 allocs/frame` / `42 B` on Unicode, down 99.5% from `661 allocs`). All 27 SLO thresholds in [`tests/baseline.json`](tests/baseline.json) are enforced by `./scripts/perf_regression_gate.sh`; see [`docs/perf/baseline_2026-10-19.md`](docs/perf/baseline_2026-10-19.md).
+
+### How does the rollout system work?
+
+The runtime supports three execution lanes (Legacy, Structured, Asupersync) with a shadow‑run comparison system that proves determinism before enabling a new lane. The `RolloutScorecard` combines shadow evidence with benchmark results into a machine‑readable go/no‑go verdict. See the "Runtime Migration & Rollout Infrastructure" section above.
+
+---
+
+## Key Docs
+
+- `docs/planning/reality-check-2026-09-01.md` — evidence-backed codebase audit and gap tracker
+- `docs/claims-ledger.md` — machine-checked claims and vision proof ledger
+- `docs/perf/README.md` — performance baseline & differential benchmark index ([`docs/perf/baseline_2026-10-19.md`](docs/perf/baseline_2026-10-19.md))
+- `docs/main-todo-bead-map.md` — plan A–K execution tracker (generated by `scripts/render_todo_bead_map.py`)
+- `docs/reports/deep-codebase-review-final.md` — historical review report (**superseded** by `docs/planning/reality-check-2026-09-01.md`)
+- `docs/ACCESSIBILITY.md` — accessibility tree / proxy notes (relocated from repo root)
+- `docs/planning/UPGRADE_LOG.md` — upgrade history (relocated from repo root)
+- `docs/operational-playbook.md`
+- `docs/risk-register.md`
+- `docs/glossary.md`
+- `docs/adr/README.md`
+- `docs/concepts/screen-modes.md`
+- `docs/spec/state-machines.md`
+- `docs/spec/frankenterm-correctness.md`
+- `docs/telemetry.md`
+- `docs/spec/telemetry.md`
+- `docs/spec/telemetry-events.md`
+- `docs/testing/coverage-matrix.md`
+- `docs/testing/coverage-playbook.md`
+- `docs/one-writer-rule.md`
+- `docs/ansi-reference.md`
+- `docs/WINDOWS.md`
+- `docs/testing/e2e-playbook.md`
+
+**Pane workspace:**
+- `docs/guides/pane-101.md` — getting started with panes
+- `docs/guides/pane-showcase-scenarios.md` — demo scenarios + regression-test map
+- `docs/cookbook/panes.md` — task-oriented pane recipes
+- `docs/api/pane-stability-contract.md` — supported surface, schema versions, deprecation policy
+- `docs/migration/flex-to-pane-and-versioning.md` — Flex/Grid → panes + persisted-workspace versioning
+- `docs/spec/pane-parity-contract-and-program.md` — terminal/web parity guarantee
+- `docs/pane-release-gate-policy.md` — go/no-go release gate clauses + staged rollout
+- `docs/pane-operational-runbook.md` — incident response + emergency rollback
+
+---
+
+## E-Graph Layout Optimizer
+
+The layout engine includes an **equality saturation** optimizer (`ftui-layout/src/egraph.rs`) that finds optimal constraint solutions through algebraic rewriting:
+
+```
+Expression Language:
+  Expr ::= Num(u16)           -- concrete pixel value
+         | Var(NodeId)         -- widget reference
+         | Add(Expr, Expr)     -- constraint arithmetic
+         | Sub(Expr, Expr)
+         | Max(Expr, Expr)     -- competing constraints
+         | Min(Expr, Expr)     -- bounded constraints
+
+Rewrite Rules (equality saturation):
+  Add(a, Num(0)) → a                    -- identity
+  Add(Num(x), Num(y)) → Num(x + y)     -- constant folding
+  Max(a, a) → a                          -- idempotence
+  Add(a, b) = Add(b, a)                  -- commutativity
+  ...plus ~20 more domain-specific rules
+```
+
+**How it works:** rather than applying rewrites greedily (which can miss global optima), the e-graph compactly represents *all* equivalent forms simultaneously. After saturation, the cheapest expression is extracted using a cost model that penalizes deep nesting and prefers constant propagation.
+
+**Where it runs: nowhere on the layout path, by measurement.** `ftui_layout::egraph::solve_layout` is a complete, tested alternative solver, but `Flex`/`Grid` do not call it and should not: benchmarked against `Flex::split` over the same constraint sets it is **4x to 19x slower** — 233 ns vs 1.99 µs for a typical three-way split, and 5.2 µs vs 99.8 µs for a pathological 200-constraint layout (`cargo bench -p ftui-layout --bench layout_bench -- layout/egraph`, numbers in [docs/perf/egraph_vs_flex_2026-09-18.md](docs/perf/egraph_vs_flex_2026-09-18.md)).
+
+Equality saturation buys a globally optimal expression, and for this problem that optimum is not worth its price: the constraint counts a terminal layout produces are small enough that the direct solver wins outright. The module stays because the saturation engine is a sound piece of work and the comparison is worth keeping honest, not because it is on a path to being switched on.
+
+---
+
+## Text Engine
+
+The `ftui-text` crate provides a full text processing stack:
+
+### Rope-Backed Storage
+
+Large text buffers (e.g., the advanced text editor demo) use a **rope** data structure for efficient editing:
+
+```
+Rope (balanced tree of chunks):
+  ┌──────┐
+  │ Node │  ← weight = total chars in left subtree
+  ├──┬───┤
+  │  │   │
+ ┌┴┐ ┌┴┐
+ │A│ │B│   ← leaf chunks (typically 512–2048 chars)
+ └─┘ └─┘
+
+Insert at position i:  O(log n) — split + rebalance
+Delete range [i,j):    O(log n) — split + drop + rebalance
+Index by position:     O(log n) — walk tree using weights
+```
+
+**Why rope?** For a 100K-line log viewer, inserting at the cursor is O(log n) vs O(n) for a flat `String`. The rope also enables efficient line-index lookups and range extraction.
+
+### Text Editor Core
+
+The `ftui_text::Editor` provides:
+
+- **Cursor model** with visual position (column) vs byte offset tracking
+- **Selection** with anchor/head semantics (Shift+Arrow; `TextArea` mouse input does not extend a selection with Shift+Click)
+- **Word movement** through `move_word_left()` / `move_word_right()`, with Unicode word-boundary detection; **paragraph movement** through `move_paragraph_up()` / `move_paragraph_down()`, landing on separating blank lines.
+- **Grouped undo/redo** joins adjacent typing runs. A new word after whitespace, a change in deletion direction, navigation, paste, or `break_undo_group()` starts a separate group. `set_coalesce_idle()` configures the idle interval (500 ms by default); callers supply monotonic milliseconds through `Editor::tick()`, so the editor does not read a wall clock itself.
+- **Native clipboard commands** through `Cmd::set_clipboard(text)` / `Cmd::get_clipboard()`: the runtime writes OSC 52 through `TerminalWriter`, and terminal replies arrive as `Event::Clipboard`. The encoded payload limit is 74,994 base64 bytes (at most 56,244 input bytes).
+
+Clipboard output follows terminal capability policy. Multiplexer sessions default
+to disabled; `FTUI_OSC52_CLIPBOARD=1` explicitly enables output while preserving
+tmux/screen wrapping, and `FTUI_OSC52_CLIPBOARD=0` disables it. The terminal and
+multiplexer must also permit clipboard access and passthrough. A query does not
+guarantee a reply. Browser clipboard access requires host JavaScript integration;
+native OSC 52 commands do not grant browser clipboard permissions.
+
+### BiDi & Shaping
+
+- **BiDi** (`bidi.rs`): Unicode Bidirectional Algorithm for mixed LTR/RTL text (feature `bidi`, used by `Paragraph` rendering and the opt-in `CursorNavigator::with_visual_bidi` caret mode)
+- **Shaping** (`shaping.rs`): standalone script/run segmentation and ligature/fallback helpers in `ftui-text` (not invoked by the default widget render path)
+- **Normalization** (`normalization.rs`): opt-in NFC/NFD/NFKC/NFKD Unicode normalization helpers (feature `normalization` in `ftui-text`)
+
+### Width Calculation
+
+Every width in the render path goes through `ftui_core::text_width`. Printable
+ASCII strings and graphemes are answered inline (`ascii_width`, SIMD-accelerated
+when `simd` is enabled); in `grapheme_width` and `display_width`, every
+non-ASCII grapheme cluster (`<= 128` bytes) is looked up in a per-thread
+**S3-FIFO cache** in front of the Unicode width tables (`unicode-display-width`,
+`unicode-width`, VS16 stripping, zero-width scans), while `char_width` (single
+scalar) and `grapheme_width_with_cjk` (explicit caller-chosen CJK policy)
+compute directly without caching:
+
+```
+display_width(text) / grapheme_width(cluster)
+  ASCII?            → byte length, no cache
+  cache hit         → width (S3-FIFO, 4096 entries, keyed by a 64-bit hash)
+  miss              → Unicode tables, then insert
+
+Width Embedding:
+  GraphemeId packs the display width (4 bits) next to the pool slot, so cells
+  never consult the pool for width
+```
+
+S3-FIFO is scan-resistant: a stream of one-off emoji in a log viewer cannot
+evict the hot CJK labels of the table above it. `FTUI_WIDTH_CACHE=0` disables
+the cache; `text_width::width_cache_stats()` reports hits and occupancy. The
+`W-TinyLFU` and `LRU` caches in `ftui-text` are benchmark subjects only and are
+not on the render path. Measured numbers (cached vs uncached, cold vs warm) are
+in [docs/perf/text_width_cache_2026-09-02.md](docs/perf/text_width_cache_2026-09-02.md).
+
+---
+
+## Degradation Cascade
+
+When frame rendering exceeds its time budget, FrankenTUI executes a **principled degradation cascade** that preserves correctness while shedding visual fidelity:
+
+```
+Mondrian Conformal Risk Gate (ConformalPredictor)
+  │ "frame upper bound ŷ_t^+ exceeds budget (after 20-sample bucket warmup)"
+  ▼
+Budget Controller (PID + E-Process Gate in ftui_render::budget)
+  │ computes control signal from normalized frame-time error (after 10-frame warmup)
+  ▼
+Degradation Level Selection
+  │ Full → SimpleBorders → NoStyling → EssentialOnly → Skeleton → SkipFrame
+  │ (default controller/conformal floor: SimpleBorders; deeper levels via floor config or guardrails)
+  ▼
+Per-Widget Degradation Shedding (frame.buffer.degradation)
+  │ 34 widget modules shed borders/styling/non-essential work according to the active level
+  ▼
+Evidence Emission
+    structured JSONL documenting every decision (budget_decision / guardrail_snapshot)
+```
+
+**Key properties:**
+- **Recoverable**: when load drops, the cascade automatically restores visual fidelity
+- **Observable**: every degradation event is logged with conformal prediction context
+- **Widget-aware**: critical widgets (input fields, status bars) degrade last; `BudgetControllerConfig::default()` sets `degradation_floor = DegradationLevel::SimpleBorders` (honored by both the PID/e-process controller and the conformal risk gate) so routine frame-time spikes simplify borders without stripping styling or widgets unless a deeper floor is configured or hard memory/queue `FrameGuardrails` intervene
+- **Deterministic over frame-time traces**: `BudgetController::update(frame_time)` is a pure state machine — feeding the same `Duration` sequence (via `record_frame_time` or `DeterministicClock`) always produces the exact same degradation path (live `Program` runs feed measured wall-clock `elapsed()` durations)
+
+**Where it runs:** on by default through `ftui_render::budget::BudgetController` + `ftui_runtime::conformal_predictor::ConformalPredictor` + `Program` (`frame.set_degradation(..)` and `frame.buffer.degradation`, checked by 34 widget modules). Do not confuse this production path with the standalone `ftui_runtime::degradation_cascade` (`DegradationCascade`) and `ftui_runtime::conformal_frame_guard` (`ConformalFrameGuard`) modules, which are quarantined under `--features experimental` with no production consumer.
+
+---
+
+## Formal Cost Models
+
+**Status: experimental** (see [Experimental modules](#experimental-modules))
+
+The `cost_model` module provides closed-form cost models for three subsystems:
+
+**Where it runs: nowhere.** Nothing in any crate's `src/` imports `ftui_runtime::cost_model`; the formulas below are a library you can call, not a model the runtime consults when sizing caches or scheduling. (`ftui-render/src/presenter.rs` has a private `mod cost_model` for ANSI cursor-move costs — same name, unrelated code.)
+
+### Cache Cost Model
+
+```
+Loss function:
+  L(h, m) = c_miss × (1 - h) + c_memory × m
+
+Optimal cache size (LRU under Zipf workload):
+  m* = argmin_m { c_miss × (1 - h(m)) + c_memory × m }
+
+where h(m) is the hit-rate function derived from the characteristic time approximation.
+```
+
+### Pipeline Scheduling Model
+
+```
+M/G/1 queue model:
+  ρ = λ × E[S]                           -- utilization
+  W = (λ × E[S²]) / (2 × (1 - ρ))      -- Pollaczek-Khinchine waiting time
+  T = W + E[S]                            -- mean response time
+
+Applies to: effect queue, render pipeline, subscription dispatch
+```
+
+### Batching Cost Model
+
+```
+Batch-and-process cost:
+  C(b) = c_setup / b + c_per_item × b    -- amortized setup vs holding cost
+
+Optimal batch size:
+  b* = √(c_setup / c_per_item)           -- square root law
+
+Applies to: ANSI emission, change run coalescing, event drain bursts
+```
+
+---
+
+## Flake Detection & Sequential FDR Control
+
+### Anytime-Valid Flake Detector
+
+**Status: experimental** (see [Experimental modules](#experimental-modules))
+
+The design is for E2E timing tests to use an **e-process** to detect flaky regressions without inflating false positives across the hundreds of frames tested:
+
+```
+Sub-Gaussian e-value:
+  e_t = exp(λ × r_t − λ²σ²/2)
+
+Cumulative evidence:
+  E_t = ∏ᵢ eᵢ
+
+Reject H₀ when E_t ≥ 1/α, valid at ANY stopping time.
+```
+
+**Why this matters:** traditional significance tests become unreliable when you check p-values after every frame (the "peeking problem"). E-processes eliminate this entirely.
+
+**Where it runs: nowhere.** No E2E test uses `flake_detector`. Nothing in any crate's `src/` imports it, and its only exercisers are a proptest over the module itself and the quarantine compile check. The detector is implemented and tested; nothing feeds it E2E timings.
+
+### Alpha-Investing (Sequential FDR Control)
+
+**Status: experimental** (see [Experimental modules](#experimental-modules))
+
+When many monitors fire sequentially (budget alerts, degradation triggers, capability decisions), testing each at a fixed alpha inflates expected false discoveries. `ftui_runtime::alpha_investing` implements a **multiplicative alpha-spending rule with partial refund**:
+
+```
+Wealth process (as implemented in AlphaInvestor):
+  W₀ = initial_wealth                                  (default 0.5)
+
+Per-test (while W ≥ min_wealth):
+  αᵢ = clamp(investment_fraction × W, 0, W)            -- default investment_fraction = 0.1
+  W ← W - αᵢ                                           -- deduct αᵢ upfront
+  if pᵢ ≤ αᵢ (rejected):
+    W ← W + reward_fraction × αᵢ                       -- partial refund (default ψ = 0.5)
+
+Guarantees under conditionally super-uniform null p-values (P(pᵢ ≤ αᵢ | Fᵢ₋₁) ≤ αᵢ):
+  Total alpha spent:         Σ αᵢ ≤ W₀ / (1 - ψ)
+  Expected false discoveries: E[V] ≤ W₀ / (1 - ψ · α_max) ≤ W₀ / (1 - ψ)
+  Stabilized modified FDR:    mFDR_η = E[V] / (E[R] + η) ≤ W₀ / (η · (1 - ψ · α_max))
+```
+
+*(Note: Foster & Stine (2008) charge $\alpha_i / (1 - \alpha_i)$, grant an additive payout $\omega$ on rejection, and control the stabilized $\mathrm{mFDR}_\eta = E[V]/(E[R]+\eta)$ with $\eta > 0$; `AlphaInvestor::discovery_rate()` reports the raw rejection rate $R / m$, not $\mathrm{FDP} = V / \max(R, 1)$.)*
+
+**Where it runs: nowhere.** Nothing in any crate's `src/` imports `ftui_runtime::alpha_investing`, so the one monitor that *is* on by default — the Mondrian conformal frame-time gate — does not spend from a shared alpha budget. BOCPD would have been the second, but it is opt-in as of 2026-09-23 (`bd-h8l3d`). One monitor, not dozens, which is why this has not bitten; the accounting exists for a future where it would.
+
+---
+
+## Rough-Path Signatures
+
+**Status: experimental** (see [Experimental modules](#experimental-modules))
+
+The `rough_path` module implements **truncated rough-path signatures** for piecewise-linear sequential traces:
+
+```
+Given a d-dimensional path X: [0,T] → ℝᵈ, the signature is:
+
+S(X)^{i₁,...,iₖ} = ∫₀<t₁<...<tₖ<T dX^{i₁}_{t₁} ⊗ ... ⊗ dX^{iₖ}_{tₖ}
+
+Piecewise-linear increment Δx_t = x_{t+1} - x_t via Chen's identity:
+  S(X_{[0,t+1]}) = S(X_{[0,t]}) ⊗ exp(Δx_t),   exp(Δx_t) = Σ_{m=0}^K Δx_t^{⊗m} / m!
+
+Truncated at depth K:
+  S_K(X) = (1, S¹(X), S²(X), ..., Sᴷ(X))      with Σ_{k=1}^K d^k terms
+```
+
+**Properties & scope:**
+- **Reparametrization & subdivision invariance**: Using the segment tensor exponential $\exp(\Delta x_t)$ in Chen's identity makes $S_K(X)$ invariant under monotone time reparametrization and arbitrary subdivision of linear segments.
+- **Tree-like equivalence vs. finite truncation**: The full infinite signature ($K = \infty$) characterizes continuous bounded-variation paths up to **tree-like equivalence** (Hambly & Lyons, 2010; retraced segments cancel). A **truncated signature at depth $K < \infty$** is a finite-dimensional projection and does not uniquely separate all non-tree-equivalent paths.
+- **Incremental complexity**: Chen's identity updates the depth-$K$ signature in $O(K \cdot d^K)$ time per step ($O(n \cdot K \cdot d^K)$ across $n$ observations).
+
+**Intended applications in FrankenTUI** — none of these are wired; no crate imports `ftui_runtime::rough_path`:
+- **Workload characterization**: time-augmented `(t, frame_ms)` series → signature → anomaly detection
+- **Trace comparison**: compare two execution traces without aligning timestamps
+- **Regression detection**: signature distance between baseline and candidate runs
+
+**Where it runs: nowhere.** The signature computation is implemented and unit/property-tested; nothing feeds it a frame time series.
+
+---
+
+## Core Algorithms & Data Structures
+
+FrankenTUI is built on carefully chosen algorithms and data structures optimized for terminal rendering constraints.
+
+## Math-Driven Performance
+
+FrankenTUI deliberately uses “heavy” math where it buys real-world speed or determinism. The core idea is: spend a little compute on principled decisions that prevent expensive work later.
+
+### Bayesian Match Scoring (Command Palette)
+
+Instead of raw string distance, the palette asks “how likely is this the right command?” Each clue (word start, tags, position) is a multiplier on confidence.
+
+$$
+\frac{P(R\mid E)}{P(\neg R\mid E)} = \frac{P(R)}{P(\neg R)} \prod_i BF_i, \quad
+BF_i = \frac{P(E_i\mid R)}{P(E_i\mid \neg R)}
+$$
+
+Intuition: add a few strong clues and the right command jumps to the top without expensive rescoring passes.
+
+### Evidence Ledger (Explainable Bayes)
+
+Every probabilistic decision records its “why” as a ledger of factors. Internally this is just log‑odds arithmetic:
+
+$$
+\log \frac{P(R\mid E)}{P(\neg R\mid E)} = \log \frac{P(R)}{P(\neg R)} + \sum_i \log BF_i
+$$
+
+Intuition: you can read a human‑friendly list of reasons instead of debugging a black‑box score.
+
+### Bayesian Cost Models (Diff Strategy)
+
+The renderer learns the change rate instead of guessing. It keeps a **Beta posterior** and chooses the cheapest strategy (full diff vs dirty rows vs redraw).
+
+$$
+p \sim \mathrm{Beta}(\alpha,\beta), \quad
+\alpha \leftarrow \alpha\cdot\gamma + k, \quad
+\beta \leftarrow \beta\cdot\gamma + (n-k)
+$$
+
+$$
+E[\text{cost}] = c_{scan}\,N_{scan} + c_{emit}\,N_{emit}
+$$
+
+Intuition: when the screen is stable we avoid scanning; when it’s noisy we switch to the cheapest path.
+
+### Presenter Cost Modeling (Cursor/Byte Economy)
+
+Even after diffing, there are multiple ways to emit ANSI. We compute a cheap byte‑level cost for cursor moves vs merged runs.
+
+$$
+\text{cost} = c_{scan}\,N_{scan} + c_{emit}\,N_{emit}
+$$
+
+Intuition: fewer cursor moves and shorter sequences means less output and lower latency.
+
+### BOCPD for Resize Regimes
+
+Resize storms are handled by **Bayesian Online Change‑Point Detection**. It detects when the stream changes from steady to burst, and only then coalesces aggressively.
+
+$$
+H(r)=\frac{1}{\lambda}, \quad
+P(r_t=0\mid x_{1:t}) \propto \sum_r P(r_{t-1}=r)\,H(r)\,P(x_t\mid r)
+$$
+
+Intuition: no brittle thresholds; the model smoothly adapts to drag vs pause behavior.
+
+**Where it runs:** opt-in via `CoalescerConfig::default().with_bocpd()` in `ftui_runtime::resize_coalescer` (`enable_bocpd = false` by default so the rate heuristic runs unless opted in; see [BOCPD: Online Change-Point Detection](#bocpd-online-change-point-detection)).
+
+### Run‑Length Posterior + Hazard Function (BOCPD Core)
+
+BOCPD’s main state is the **run‑length posterior**, which tracks how long the current regime has lasted.
+
+$$
+P(r_t=r\mid x_{1:t}) \propto P(r_{t-1}=r-1)\,(1-H(r-1))\,P(x_t\mid r)
+$$
+
+Intuition: long steady streaks increase confidence; a sudden timing change collapses the posterior and triggers coalescing.
+
+**Where it runs:** opt-in via `CoalescerConfig::default().with_bocpd()` in `ftui_runtime::bocpd::BocpdDetector` (`enable_bocpd = false` by default).
+
+### Conformal Prediction (Risk Bounds)
+
+Alerts are not hard‑coded. The threshold is learned from recent residuals so false‑alarm rates stay stable under distribution shifts.
+
+$$
+q = \text{Quantile}_{\lceil(1-\alpha)(n+1)\rceil}(R_1,\dots,R_n)
+$$
+
+Intuition: the system learns what “normal” looks like and updates the bar automatically.
+
+### E‑Processes + GRAPA (Anytime‑Valid Monitoring)
+
+We can check alerts continuously without “peeking penalties” using a sub‑Gaussian test‑martingale (e‑process):
+
+$$
+E_t = E_{t-1}\exp\bigl(\lambda_{t-1} r_t - \lambda_{t-1}^2/2\bigr)
+$$
+
+Intuition: we can look after every frame, and the false‑alarm guarantees still hold.
+
+**Where it runs:** `ftui_render::budget::EProcessState` runs on the render path inside `BudgetController` (`warmup_frames = 10`, $\alpha = 0.05$, $\beta = 0.5$, `adaptive_lambda = true` with predictable Gaussian GRAPA) and `AllocLeakDetector` runs on the guardrail path inside `ftui_render::frame_guardrails::FrameGuardrails`; standalone experimental variants remain in `ftui_runtime::conformal_alert` and `ftui_runtime::eprocess_throttle`.
+
+### GRAPA (Adaptive Betting Fraction)
+
+GRAPA adjusts the betting fraction to keep an e‑process sensitive but stable:
+
+$$
+\lambda_t = \mathrm{clamp}\bigl(\lambda_{t-1} + \eta(r_t - \lambda_{t-1}),\,\lambda_{\min},\,\lambda_{\max}\bigr)
+\quad\text{(Gaussian)},\qquad
+\lambda_{t+1} = \mathrm{clamp}\!\left(\lambda_t + \eta\,\frac{z_t}{1 + \lambda_t z_t}\right)
+\quad\text{(Bernoulli)}
+$$
+
+Intuition: it auto‑tunes how aggressively a test martingale bets instead of locking a single sensitivity.
+
+**Where it runs:** predictable Gaussian GRAPA runs on the default render path inside `ftui_render::budget::EProcessState` (`adaptive_lambda = true`, `grapa_eta = 0.1`, `lambda_min = 0.05`, `lambda_max = 2.0`, emitted as `eprocess_lambda` in `budget_decision` evidence rows); Bernoulli and conformal-alert variants remain in the quarantined `experimental` modules `ftui_runtime::eprocess_throttle` and `ftui_runtime::conformal_alert`.
+
+### CUSUM (Fast Drift Detection)
+
+CUSUM accumulates small deviations until they add up, catching sustained drift quickly.
+
+$$
+S_t = \max\bigl(0,\,S_{t-1} + (X_t-\mu_0) - k\bigr)
+$$
+
+Intuition: small problems that persist trigger quickly, while isolated noise is ignored.
+
+### Value‑of‑Information (VOI) Sampling
+
+The sampler weighs expected variance reduction against measurement cost, with minimum and maximum sampling intervals.
+
+$$
+\mathrm{Var}(p)=\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)},\quad
+\mathrm{VOI}=\mathrm{Var}(p)-\mathbb{E}[\mathrm{Var}(p\mid 1\ \text{sample})]
+$$
+
+Intuition: sample when uncertainty reduction is worth the configured cost, or when the maximum interval forces a measurement.
+
+### Jain’s Fairness Index (Input Guarding)
+
+We watch whether rendering is starving input processing.
+
+$$
+F=\frac{(\sum x_i)^2}{n\sum x_i^2}
+$$
+
+Intuition: a single metric tells us when to yield so the UI feels responsive.
+
+### PID / PI Control (Frame Pacing)
+
+Frame‑time control is classic feedback control over normalized error $e_t = (\text{frame\_ms} - \text{target\_ms}) / \text{target\_ms}$:
+
+$$
+u_t = K_p e_t + K_i \sum e_t + K_d \Delta e_t
+$$
+
+Intuition: if we’re too slow, dial down; if we’re too fast, allow more detail. Production `BudgetController` uses full 3-term PID gains by default (`Kp = 0.5, Ki = 0.05, Kd = 0.2`) gated by an anytime-valid e-process (`warmup_frames = 10`, where degradation is suppressed during cold-start calibration while upgrades remain permitted).
+
+### MPC (Model Predictive Control) Evaluation
+
+We benchmark 3-step receding-horizon MPC against a stripped 2-term PI baseline (`Kp = 0.5, Ki = 0.05, Kd = 0`) in `mpc_vs_pi_evaluation` to verify whether lookahead control is worth its per-frame solver cost.
+
+$$
+\min_{u_{t:t+H}} \sum_{k=0}^H \|y_{t+k}-y^*\|^2 + \rho\,\|u_{t+k}\|^2
+$$
+
+Intuition: MPC looks ahead but costs more; the evaluation suite shows single-loop PID/PI control is already sufficient for TUI pacing.
+
+### Count‑Min Sketch (Approximate Counts)
+
+A probabilistic frequency sketch estimates item counts in bounded memory:
+
+$$
+\hat f(x)=\min_j C_{j,h_j(x)},\quad
+$$
+
+Intuition: a tiny data structure gives you “close enough” frequencies at huge scale.
+
+**Where it runs:** `ftui_text::width_cache::CountMinSketch` backs the benchmark-only `TinyLfuWidthCache` (production width caching uses `S3FifoWidthCache` in `ftui_core::text_width`), and `ftui_runtime::countmin_sketch` (`experimental`) provides a Count-Min sketch with PAC-Bayes error budgeting used by `TimelineAggregator`; the showcase `action_timeline` screen exercises it when built with `--features experimental` (no consumer in the default runtime/render path).
+
+### PAC‑Bayes Calibration (Error Tightening)
+
+PAC‑Bayes tightens empirical sketch error bounds from observed residuals:
+
+$$
+\mathbb{E}[\text{err}] \le \bar e + \sqrt{\frac{\mathrm{KL}(q\|\|p)}{2n}}
+$$
+
+Intuition: the bound shrinks as we observe more data, without assuming a specific distribution.
+
+**Where it runs:** Implemented in `ftui_runtime::countmin_sketch` (`experimental`), used by `ftui_runtime::timeline_aggregator`, and exercised by the showcase `action_timeline` screen when built with `--features experimental` (not in the default runtime/render path).
+
+### Scheduling Math (Smith’s Rule + Aging)
+
+Background work is ordered by “importance per remaining time,” with aging to prevent starvation.
+
+$$
+\text{priority}=\frac{w}{r}+a\cdot\text{wait}
+$$
+
+Intuition: short, important jobs finish quickly, but long‑waiting jobs still rise.
+
+**Where it runs:** opt-in via `EffectQueueConfig { scheduler_enabled: true, .. }` in `ftui_runtime::queueing_scheduler::QueueingScheduler` (`EffectQueueConfig::default()` sets `scheduler_enabled: false`, using FIFO order unless enabled).
+
+Every one of these is directly tied to throughput, latency, and determinism under real terminal workloads.
+
+### Visual FX Math At a Glance
+
+The visual effects screen is deterministic math, not “random shader noise.” Each effect is a concrete dynamical system or PDE with explicit time‑stepping.
+
+| Effect | Core Equation (MathJax) | What It Produces |
+|--------|--------------------------|------------------|
+| **Metaballs** | $F(x,y)=\sum_i \frac{r_i^2}{(x-x_i)^2+(y-y_i)^2}$, render iso‑surface $F\ge \tau$ | Smooth, organic blob fields |
+| **Plasma** | $v=\frac{1}{6}\sum_{k=1}^6 \sin(\phi_k(x,y,t))$ (wave interference in 2D) | Psychedelic interference bands |
+| **Gray‑Scott** | $\partial_t u = D_u\nabla^2u - uv^2 + F(1-u)$; $\partial_t v = D_v\nabla^2v + uv^2 - (F+k)v$ | Reaction‑diffusion morphogenesis |
+| **Clifford Attractor** | $x_{t+1}=\sin(a y_t)+c\cos(a x_t)$; $y_{t+1}=\sin(b x_t)+d\cos(b y_t)$ | Chaotic strange‑attractor filaments |
+| **Mandelbrot / Julia** | $z_{n+1}=z_n^2+c$ (escape‑time coloring) | Fractal boundaries + deep zooms |
+| **Lissajous / Harmonograph** | $x=A\sin(a t+\delta)$, $y=B\sin(b t+\phi)$ (optionally $e^{-\gamma t}$ damping) | Elegant phase‑locked curves |
+| **Flow Field** | $\vec v(x,y)=(\cos 2\pi N,\ \sin 2\pi N)$; $p_{t+1}=p_t+\vec v\,\Delta t$ | Particle ribbons through a vector field |
+| **Wave Interference** | $I(x,t)=\sum_i \sin(k_i\|x-s_i\|-\omega_i t)$ | Multi‑source ripple patterns |
+| **Spiral Galaxy** | $r=a e^{b\theta}$ with $\theta(t)=\theta_0+\omega t$ | Logarithmic spiral starfields |
+| **Spin Lattice (LLG)** | $\frac{d\vec S}{dt}=-\vec S\times \vec H-\alpha\,\vec S\times(\vec S\times\vec H)$ | Magnetic domain dynamics |
+
+### Math At a Glance
+
+| Technique | Where It’s Used | Core Formula / Idea (MathJax) | Performance Impact |
+|----------|------------------|-------------------------------|--------------------|
+| **Bayes Factors** | Command palette scoring | $\frac{P(R\mid E)}{P(\neg R\mid E)}=\frac{P(R)}{P(\neg R)}\prod_i BF_i$ | Better ranking with fewer re‑sorts |
+| **Evidence Ledger** | Explanations for probabilistic decisions | $\log\frac{P(R\mid E)}{P(\neg R\mid E)}=\log\frac{P(R)}{P(\neg R)}+\sum_i\log BF_i$ | Debuggable, auditable scoring |
+| **Log‑BF Capability Probe** | Terminal caps detection | $\log BF=\log \frac{P(data\mid H)}{P(data\mid \neg H)}$ | Robust detection from noisy probes |
+| **Log10‑BF Coalescer** | Resize scheduler evidence ledger | $LBF=\log_{10}\frac{P(E\mid apply)}{P(E\mid coalesce)}$ | Explainable, stable resize decisions |
+| **Bayesian Hint Ranking** | Keybinding hint ordering (`Help` + `HintRanker`) | $V_i=E[U_i]+w_{voi}\sqrt{Var(U_i)}-\lambda C_i$ | Stable, utility‑aware hints |
+| **Conformal Rank Confidence** | Command palette tie-break utility (`conformal_rank_confidence`, opt-in helper) | $p_i=\frac{1}{n}\sum_j \mathbf{1}[g_j\le g_i]$ (gap‑based p‑value) | Deterministic tie‑breaks + stable top‑k |
+| **Beta-Binomial** | Diff strategy selection | $p\sim\mathrm{Beta}(\alpha,\beta)$ with binomial updates | Avoids slow strategies as workload shifts |
+| **Interval Union** | Dirty-span diff scan | $S_y=\bigcup_k [x_{0k},x_{1k})$ | Scan proportional to changed segments |
+| **Summed-Area Table** | Tile-skip diff | $SAT(x,y)=A(x,y)+SAT(x-1,y)+SAT(x,y-1)-SAT(x-1,y-1)$ | Row-level clean-tile skip on large screens (200x60: 28→21 µs) |
+| **Fenwick Tree** | Virtualized lists | Prefix sums with $i\pm (i\&-i)$ | O(log n) scroll + height queries |
+| **Bayesian Height Predictor** | Virtualized list preallocation | $\mu_n=\frac{\kappa_0\mu_0+n\bar{x}}{\kappa_0+n}$ + conformal $q_{1-\alpha}$ | Fewer scroll jumps |
+| **BOCPD** | Resize coalescing (opt-in via `with_bocpd()`) | Run‑length posterior + hazard $H(r)$ | Regime-aware delay selection when enabled |
+| **Run‑Length Posterior** | BOCPD core (opt-in via `with_bocpd()`) | $P(r_t=r\mid x_{1:t})$ recursion | Regime switches without static rate thresholds |
+| **E‑Process** | Budget controller gate (`ftui_render::budget`, adaptive $\lambda_{t-1}$, plug‑in $\hat{\sigma}_{\text{MAD}}$) & leak detector (`FrameGuardrails`) | $E_t=\mathrm{clamp}(E_{t-1}\exp(\lambda_{t-1} r_t-\lambda_{t-1}^2/2))$ | Early overload & leak gating (`[0.01, 1e10]` clamp) |
+| **GRAPA** | Budget controller (`ftui_render::budget::EProcessState`, `adaptive_lambda = true`) + experimental `conformal_alert` / `eprocess_throttle` | $\lambda_t=\mathrm{clamp}(\lambda_{t-1}+\eta(r_t-\lambda_{t-1}),\lambda_{\min},\lambda_{\max})$ | Predictable self‑tuning betting sensitivity |
+| **Conformal Prediction** | Risk bounds | $q=\text{Quantile}_{\lceil(1-\alpha)(n+1)\rceil}(R)$ | Stable thresholds without tuning |
+| **Mondrian Conformal** | Frame‑time risk gating | $\hat y^+=\hat y+q_{1-\alpha}(|r|)$ per bucket | Safe budget gating with sparse data |
+| **CUSUM** | Budget change detection (`FrameGuardrails` via `AllocLeakDetector`) | $S_t=\max(0,S_{t-1}+X_t-\mu_0-k)$ | Fast drift detection |
+| **CUSUM Hover Stabilizer** | Mouse hover jitter | $S_t=\max(0,S_{t-1}+d_t-k)$ | Stable hover targets without lag |
+| **Damped Spring** | Animation library (`ftui_core::animation`, standalone) | $x''+c x' + k(x-x^*)=0$ | Natural motion without frame‑rate artifacts |
+| **Easing Curves** | Animation library (`ftui_core::animation`, standalone) | $t^2$, $1-(1-t)^2$, cubic variants | Predictable velocity shaping |
+| **Staggered Cascades** | Animation library (`ftui_core::animation`, standalone) | $offset_i=D\cdot ease(i/(n-1))$ | Coordinated, non‑uniform entrances |
+| **Sine Pulse** | Animation library (`ftui_core::animation`, standalone) | $p(t)=\sin(\pi t)$ | Smooth 0→1→0 emphasis |
+| **Perceived Luminance** | Dark/light probe | $Y=0.299R+0.587G+0.114B$ | Reliable theme defaults |
+| **PID / PI** | Degradation control | $u_t=K_pe_t+K_i\sum e_t+K_d\Delta e_t$ (`Kp=0.5, Ki=0.05, Kd=0.2`) | Smooth frame‑time stabilization |
+| **MPC** | Control evaluation | $\min_{u_{t:t+H}}\sum\|y_{t+k}-y^*\|^2+\rho\|u_{t+k}\|^2$ | Confirms PID/PI is sufficient |
+| **VOI Sampling** | Expensive measurements | $\mathrm{VOI}=\mathrm{Var}-\mathbb{E}[\mathrm{Var}\mid\text{sample}]$ | Lower overhead in steady state |
+| **Jain’s Fairness** | Input guard | $F=(\sum x_i)^2/(n\sum x_i^2)$ | Prevents UI render from starving input |
+| **Count‑Min Sketch** | Benchmark width cache (`TinyLfuWidthCache`) + experimental `countmin_sketch` | $\hat f(x)=\min_j C_{j,h_j(x)}$ | Fast approximate counts (production width cache uses S3-FIFO) |
+| **W‑TinyLFU Admission** | Width cache admission (benchmark-only `TinyLfuWidthCache`; production uses S3-FIFO) | admit if $\hat f(x)\ge \hat f(y)$ (Doorkeeper → CMS) | Benchmark comparison against S3-FIFO |
+| **PAC‑Bayes** | Sketch calibration (experimental `countmin_sketch`) | $\bar e+\sqrt{\mathrm{KL}(q\|\|p)/(2n)}$ | Tighter error bounds in experimental sketch |
+| **Smith’s Rule + Aging** | Queueing scheduler (opt-in via `EffectQueueConfig::scheduler_enabled`) | $priority=\frac{w}{r}+a\cdot\text{wait}$ | Fair throughput under load when enabled |
+| **Cost Modeling** | Presenter decisions | $cost=c_{scan}N_{scan}+c_{emit}N_{emit}$ | Minimizes cursor bytes |
+
+### The Cell: A 16-Byte Cache-Optimized Unit
+
+Every terminal cell is exactly **16 bytes**, fitting 4 cells per 64-byte cache line:
+
+```
+┌──────────────┬──────────────┬──────────────┬───────────────────────┐
+│              │              │              │  CellAttrs (4 bytes)  │
+│  CellContent │      fg      │      bg      ├───────────┬───────────┤
+│   (4 bytes)  │  PackedRgba  │  PackedRgba  │StyleFlags │  link_id  │
+│   char/gid   │   (4 bytes)  │   (4 bytes)  │ bits 31-24│ bits 23-0 │
+│              │              │              │  (8 bits) │ (24 bits) │
+└──────────────┴──────────────┴──────────────┴───────────┴───────────┘
+                              Cell (16 bytes)
+4 cells per 64-byte cache line. SIMD-friendly 128-bit equality via bits_eq().
+```
+
+Four fields, not five: the hyperlink id has no field of its own, it lives in the
+low 24 bits of `CellAttrs` alongside 8 bits of `StyleFlags`. That is why the API
+is `cell.attrs = cell.attrs.with_link(id)` rather than `cell.link_id = id`, and
+why a link id is capped at `LINK_ID_MAX = 0x00FF_FFFF` with `0` reserved as the
+"no hyperlink" sentinel. `const _: () = assert!(size_of::<Cell>() == 16);` in
+`cell.rs` makes the 16 bytes a compile error to break.
+
+**Why 16 bytes?**
+- **Cache efficiency:** 4 cells per cache line means sequential row scans hit L1 cache optimally
+- **SIMD comparison:** Single 128-bit comparison via `bits_eq()` for cell equality
+- **No heap allocation:** 99% of cells store their character inline; only complex graphemes (emoji, ZWJ sequences) use the grapheme pool
+
+That 128-bit comparison is the compiler's, not a hand-written kernel's, and
+measurement says to leave it that way: explicit `std::simd` row compares in
+`ftui-simd` run 3–4× *slower*, because safe code cannot view `&[Cell]` as lanes
+and has to build each vector with shifts and masks, while `bits_eq()` already
+lowers to one 128-bit compare. The `simd` feature therefore accelerates only the
+printable-ASCII width fast path, where the same kernels win by 5–44×. Numbers in
+[docs/perf/simd_kernels_2026-09-18.md](docs/perf/simd_kernels_2026-09-18.md).
+
+### Block-Based Diff Algorithm
+
+The diff engine provides two scan strategies selected per frame by `DiffStrategySelector`:
+
+```
+Default narrow scan (compute_certified_into under DiffStrategy::DirtyRows):
+  for each certified dirty row y:
+    for each dirty span [x0, x1) in new.dirty_span_row(y):
+      compare 128-bit cells in [x0, x1) via bits_eq()
+      coalesce adjacent changes into ChangeRun
+
+Full scan (compute_into under DiffStrategy::Full):
+  for each row y:
+    for each 32-cell block:
+      if block_all_unchanged (4-cell chunks via bits_eq()):
+        continue                         ← Skip unchanged 32-cell block
+      scan cells in block and coalesce into ChangeRun
+```
+
+**Key optimizations:**
+- **Certified dirty-row & span skipping (`DirtyRows` default):** Clean rows are skipped in O(1) via `dirty_rows[y] == false`, and within dirty rows only the mutated column spans (`dirty_spans[y]`) are compared (`scan_row_changes_spans`).
+- **32-cell block skip (`Full` scan):** `compute_into` does not pre-check whole rows; instead it tests 32-cell blocks (`BLOCK_SIZE = 32`) in 4-cell chunks (`bits_eq`) and scans individual cells only inside blocks that differ.
+- **Change coalescing:** Adjacent changed cells become a single `ChangeRun` (one cursor move vs many).
+
+### Presenter Cost Model
+
+The ANSI presenter dynamically chooses the cheapest cursor positioning strategy:
+
+```rust
+// CUP (Cursor Position): CSI {row+1};{col+1}H
+fn cup_cost(row, col) → 4 + digits(row+1) + digits(col+1)   // e.g., "\x1b[12;45H" = 8 bytes
+
+// CHA (Column Absolute): CSI {col+1}G
+fn cha_cost(col) → 3 + digits(col+1)                        // e.g., "\x1b[45G" = 5 bytes
+
+// Per-row decision: sparse runs vs merged write-through
+strategy = argmin(sparse_cost, merged_cost)
+```
+
+`cheapest_move_cost(from, to)` returns 0 when the cursor is already in place, and on the same row prefers CHA over CUP because CUP always pays the extra row field. The costs are byte counts, so the choice is exact rather than estimated: `cup_cost(0, 0) == 6` is pinned against the six bytes of `\x1b[1;1H`.
+
+---
+
+## Bayesian Intelligence Layer
+
+FrankenTUI uses principled statistical methods for runtime decisions, replacing ad-hoc heuristics with Bayesian inference.
+
+### BOCPD: Bayesian Online Change-Point Detection
+
+The resize coalescer uses BOCPD to detect regime changes (steady typing vs burst resizing):
+
+```
+Observation Model:
+  inter-arrival times ~ Exponential(λ_steady) or Exponential(λ_burst)
+
+Run-Length Posterior:
+  P(r_t | x_1:t) with truncation at K=100 for O(K) complexity
+
+Regime Decision:
+  P(burst | observations) → coalescing delay selection
+```
+
+The defaults, the 16/40/100 ms delays, the fallback rule and the evidence
+fields are stated once, in
+[BOCPD: Online Change-Point Detection](#bocpd-online-change-point-detection).
+This section is the motivation; that one is the contract. Restating the numbers
+here is how they drifted apart before.
+
+**Why Bayesian?**
+- **No magic thresholds:** Prior beliefs updated with evidence
+- **Smooth transitions:** Probability-weighted decisions, not binary switches
+- **Principled uncertainty:** Knows when it doesn't know
+
+### E-Process: Anytime-Valid Statistical Testing
+
+Budget decisions and alert thresholds use **e-processes** (sequential test wealth processes):
+
+```
+Sub-Gaussian / Bernoulli E-Process:
+  True conditional supermartingale (fixed known σ₀ or p₀, predictable λ_{t-1}, unclamped):
+    P(∃t: E_t ≥ 1/α) ≤ α under H₀ (Ville's inequality)
+
+  Production render-path gate (ftui_render::budget::EProcessState):
+    E_t = clamp(E_{t-1} × exp(λ_{t-1}·r_t − λ_{t-1}²/2), 0.01, 1e10)
+    λ_t = clamp(λ_{t-1} + η·(r_t − λ_{t-1}), λ_min, λ_max)
+    with EMA plug-in variance and sub-threshold decay
+```
+
+**Where it runs:** `ftui_render::budget::EProcessState` runs on the render path with predictable Gaussian GRAPA (`adaptive_lambda = true` by default in `EProcessConfig`, updating $\lambda_t$ from $\mathcal{F}_{t-1}$-measurable residuals after warmup); quarantined experimental variants remain in `conformal_alert` (sub-Gaussian gradient $z_{\text{centered}} - \lambda_t \sigma_0^2$) and `eprocess_throttle` (Bernoulli GRAPA gradient $r_t / (1 + \lambda_t r_t)$).
+
+**Practical benefit:** Sequential wealth accumulates overload evidence across frames without fixed sample-size windows.
+
+### VOI Sampling: Value of Information
+
+The runtime's inline-auto height policy uses the [VOI sampling rule above](#value-of-information-voi-sampling).
+For a uniform `Beta(1,1)` prior, one Bernoulli observation gives this exact check:
+
+```
+variance_before = 1/12
+variance_after_violation = Var[Beta(2,1)] = 1/18
+variance_after_no_violation = Var[Beta(1,2)] = 1/18
+expected_after = (1/2) × (1/18) + (1/2) × (1/18) = 1/18
+VOI = 1/12 - 1/18 = 1/36
+```
+
+Both possible observations contribute to the expectation. The sampler compares
+the scaled gain with cost, subject to its minimum and maximum sampling intervals.
+
+---
+
+## Experimental modules
+
+These modules compile only with `--features experimental` on the crate that owns them. APIs may change or be removed without notice.
+
+**Read `experimental` here as "quarantined", not "unstable but working".** These are research code with unit tests and **no production consumer**: nothing in the render path, the runtime loop, or the widget library constructs any of them. The workspace's own compile check is named `all_quarantined_modules_are_nameable` (`ftui-runtime/tests/experimental_feature_matrix.rs`) and does exactly what the name says — it binds each type to `None` to prove the module still compiles. Enabling the feature makes the code available to *you*; it does not switch anything on inside FrankenTUI.
+
+Sections below that describe an experimental module each carry a **Where it runs** line, so you do not have to cross-reference this table to find out whether a feature is connected. Checked 2026-09-19 by resolving `use ftui_runtime::<module>` across every crate's `src/`. (One trap if you check this yourself: `ftui-render/src/presenter.rs` declares its own private `mod cost_model` for ANSI cursor-move costs, which is unrelated to `ftui_runtime::cost_model` and makes a bare grep for `cost_model::` look like a hit.)
+
+```toml
+ftui-runtime = { version = "0.10", features = ["experimental"] }
+```
+
+| Crate | Module | What it is | Status |
+|-------|--------|------------|--------|
+| `ftui-render` | `roaring_bitmap` | Minimal Roaring Bitmap for cell-level dirty region tracking | `experimental` |
+| `ftui-runtime` | `alpha_investing` | Sequential FDR control for multiple simultaneous statistical monitors | `experimental` |
+| `ftui-runtime` | `conformal_alert` | Conformal alert threshold calibration with anytime-valid e-process control | `experimental` |
+| `ftui-runtime` | `conformal_frame_guard` | Conformal frame guard for frame timing with explicit unavailable bounds | `experimental` |
+| `ftui-runtime` | `conformal_stages` | Multi-stage Mondrian conformal prediction for render pipeline timing | `experimental` |
+| `ftui-runtime` | `cost_model` | Formal mathematical cost models for caches, scheduling, and batching | `experimental` |
+| `ftui-runtime` | `countmin_sketch` | Count-Min Sketch with PAC-Bayes error budgeting for timeline aggregation (exercised in showcase `action_timeline` under `--features experimental`) | `experimental` |
+| `ftui-runtime` | `degradation_cascade` | Cascade from conformal frame guard risk detection through budget controller to widget priority | `superseded by ftui_render::budget + program.rs (experimental)` |
+| `ftui-runtime` | `eprocess_throttle` | Anytime-valid adaptive recompute throttle using GRAPA test martingales | `superseded by ftui_render::budget::EProcessState (experimental)` |
+| `ftui-runtime` | `evidence_bridges` | Convert domain-specific decision types into unified evidence ledger records | `experimental` |
+| `ftui-runtime` | `flake_detector` | Anytime-valid test martingale detector for flaky timing regressions in E2E tests | `experimental` |
+| `ftui-runtime` | `flat_combine` | Caller-driven flat combining for batched operation dispatch | `experimental` |
+| `ftui-runtime` | `ivm` | Incremental View Maintenance (IVM) signed-tuple delta algebra, DAG topology, and view operators (no propagation engine) | `experimental` |
+| `ftui-runtime` | `lens` | Bidirectional algebraic lenses for state-widget binding | `experimental` |
+| `ftui-runtime` | `policy_config` | Policy-as-data configuration capturing tunable parameters across the decision stack | `experimental` |
+| `ftui-runtime` | `policy_registry` | Thread-safe registry of named policy configurations with lock-free reads and atomic hot-swap | `experimental` |
+| `ftui-runtime` | `resize_sla` | Resize SLA monitoring with conformal alerting | `experimental` |
+| `ftui-runtime` | `reversible` | Reversible computing primitives where mutations know their own inverses for undo | `experimental` |
+| `ftui-runtime` | `rough_path` | Rough-path signatures for sequential trace feature extraction | `experimental` |
+| `ftui-runtime` | `schedule_trace` | Deterministic golden trace infrastructure for async task manager testing | `experimental` |
+| `ftui-runtime` | `slo` | Machine-readable SLO definitions, breach detection, and safe-mode enforcement | `experimental` |
+| `ftui-runtime` | `sos_barrier` | Sum-of-squares (SOS) polynomial barrier certificate evaluator for frame-budget admissibility | `experimental` |
+| `ftui-runtime` | `timeline_aggregator` | Bounded-memory action timeline event aggregation and change-point alerting (exercised in showcase `action_timeline` under `--features experimental`) | `experimental` |
+| `ftui-runtime` | `validation_pipeline` | Expected-cost validation ordering with Bayesian online learning | `experimental` |
+| `ftui-runtime` | `wasm_runner` | Step-based synchronous program runner driving a Model without background threads | `experimental` |
+
+---
+
+## Performance Engineering
+
+### Dirty Row Tracking
+
+Every buffer mutation marks its row dirty in O(1):
+
+```rust
+// ftui-render/src/buffer.rs
+#[inline]
+fn mark_dirty_row(&mut self, y: u16) {
+    if let Some(slot) = self.dirty_rows.get_mut(y as usize) {
+        *slot = true;
+    }
+}
+```
+
+`Buffer::set` calls this after bounds, scissor, opacity and wide-grapheme handling — it is not a bare index-and-assign, and an out-of-bounds or fully clipped write marks nothing.
+
+**Invariant:** If `is_row_dirty(y) == false`, row y is guaranteed unchanged since last clear.
+
+**Three levels, not one.** `dirty_rows` is a `Vec<bool>` (one byte per row) for row-granularity skipping; `dirty_spans` is a per-row `SmallVec<[DirtySpan; 4]>` that keeps sparse edits to a few ranges before overflowing to whole-row; and `dirty_bits` is a per-cell `Vec<u8>` — one **byte** per cell, not one bit — backing tile-based skipping.
+
+**Cost:** `dirty_bits` dominates at width × height bytes, so dirty tracking adds roughly 6% to the memory of a 16-byte-per-`Cell` buffer; `dirty_rows` and `dirty_spans` are O(height). In exchange the diff skips clean rows entirely and clean spans within dirty rows.
+
+### Grapheme Pooling
+
+Complex graphemes (emoji, ZWJ sequences) are reference-counted in a pool:
+
+```
+GraphemeId (4 bytes):
+┌─────────────────────────────────────────────────────────────┐
+│ [30-27: width] [26-16: generation] [15-0: pool slot index] │
+└─────────────────────────────────────────────────────────────┘
+
+Capacity: 65,536 slots, display widths 0-15; the generation counter
+          detects stale ids after a slot is recycled
+Lookup:   O(1) via hash-map deduplication
+```
+
+**Why pooling?**
+- Most cells are ASCII (stored inline, no pool lookup)
+- Complex graphemes deduplicated (same emoji = same GraphemeId)
+- Width embedded in ID (no pool lookup for width queries)
+
+### Synchronized Output
+
+Frames are wrapped in DEC 2026 sync brackets for atomic display:
+
+```
+CSI ? 2026 h    ←Begin synchronized update
+[all frame output]
+CSI ? 2026 l    ← End synchronized update (terminal displays atomically)
+```
+
+**Guarantee:** while sync output is enabled, no partial frame is ever visible,
+eliminating flicker even on slow terminals. It is enabled when either:
+
+- the terminal identity is on the allowlist (kitty, Ghostty, Alacritty via
+  `TERM_PROGRAM` or `TERM=alacritty`, Contour), or
+- the terminal answers the DECRPM probe (`CSI ? 2026 $ p`) at startup saying it
+  recognizes mode 2026. This is how plain `xterm-256color`, iTerm2, VS Code, and
+  any terminal reached over `ssh` get flicker-free frames; the probe is bounded
+  (300 ms), fail-open, and upgrade-only.
+
+It is deliberately **off** inside tmux, screen, and zellij, and for WezTerm
+identities (WezTerm multiplexer sessions were observed to misbehave around
+`?2026 h/l`, and the markers that would distinguish a mux session from a local
+window do not survive every launch path). Operators can override policy without
+rebuilding: `FTUI_SYNC_OUTPUT=1|0` and `FTUI_SCROLL_REGION=1|0` force the
+setting (an explicit `1` also lifts the WezTerm gate, never real multiplexer
+evidence), and `FTUI_CAPS_PROBE=0` disables startup probing. The matrix in
+`scripts/pty_identity_matrix.py` runs the showcase under a real PTY per
+identity and asserts exactly which of these outcomes occur; the measured
+results are in [`docs/compat-matrix.md`](docs/compat-matrix.md).
+
+---
+
+## The Elm Architecture in Rust
+
+FrankenTUI implements the **Elm/Bubbletea** architecture with Rust's type system:
+
+### The Model Trait
+
+```rust
+pub trait Model: Sized {
+    type Message: From<Event> + Send + 'static;
+
+    // Required.
+    fn update(&mut self, msg: Self::Message) -> Cmd<Self::Message>;
+    fn view(&self, frame: &mut Frame);
+
+    // Defaulted — override only what you need.
+    fn init(&mut self) -> Cmd<Self::Message> { Cmd::none() }
+    fn subscriptions(&self) -> Vec<Box<dyn Subscription<Self::Message>>> { vec![] }
+    fn on_gesture(&mut self, gesture: SemanticEvent) -> Cmd<Self::Message> { Cmd::none() }
+}
+```
+
+### Update/View Loop
+
+```
+┌─────────┐    ┌─────────┐    ┌─────────┐    ┌─────────┐
+│  Event  │───▶│ Message │───▶│ Update  │───▶│  View   │
+│ (input) │    │ (enum)  │    │ (model) │    │ (frame) │
+└─────────┘    └─────────┘    └─────────┘    └─────────┘
+                                   │              │
+                                   ▼              ▼
+                              ┌─────────┐    ┌─────────┐
+                              │   Cmd   │    │ Render  │
+                              │ (async) │    │ (diff)  │
+                              └─────────┘    └─────────┘
+```
+
+### Commands & Side Effects
+
+```rust
+Cmd::none()                          // No side effect
+Cmd::task(|| Msg::Loaded(load()))    // Background work on a worker → Message
+Cmd::tick(Duration::from_millis(50)) // Set a recurring tick: Event::Tick every 50 ms (replaces the rate)
+Cmd::msg(Msg::Refresh)               // Call update(Msg::Refresh) right away, within this turn
+Cmd::quit()                          // Exit program
+Cmd::batch(vec![...])                // Multiple commands; today executed in order, like sequence
+Cmd::sequence(vec![...])             // Multiple commands, in order
+```
+
+`Cmd::SetClipboard(String)` requests a clipboard write; construct it with
+`Cmd::set_clipboard(text)`. `Cmd::GetClipboard`, constructed with
+`Cmd::get_clipboard()`, requests a read whose reply is delivered as
+`Event::Clipboard`. Native execution uses the terminal capability policy and
+OSC 52 limits described above.
+
+### Subscriptions
+
+Declarative, long-running event sources:
+
+```rust
+fn subscriptions(&self) -> Vec<Box<dyn Subscription<Msg>>> {
+    vec![
+        tick_every(Duration::from_millis(16), || Msg::Tick), // 60fps timer
+        file_watcher("config.toml", Msg::ConfigChanged), // FileEvent::{Created, Modified, Removed}
+    ]
+}
+```
+
+Subscriptions are automatically started/stopped based on what `subscriptions()` returns each frame; a subscription's id (interval for `tick_every`, path for `file_watcher`) is what keeps it running across frames. `file_watcher` polls metadata (mtime and size, 250 ms by default; `FileWatcher::new(..).with_interval(..)` to change it), so it works on every platform without a native watcher dependency. The demo's Async Tasks screen uses it: while that screen is shown the app watches `$FTUI_DEMO_WATCH_FILE` (default: a file in the temp dir), `w` appends to it, and each event is logged in the Activity panel. `tests/e2e/scripts/test_async_tasks.sh` drives that in a PTY, including a write and a delete made from outside the app.
+
+---
+
+## Safety & Correctness Guarantees
+
+### Zero Unsafe Code Policy
+
+```rust
+// ftui-render/src/lib.rs
+#![forbid(unsafe_code)]
+
+// ftui-runtime/src/lib.rs
+#![forbid(unsafe_code)]
+
+// ftui-layout/src/lib.rs
+#![forbid(unsafe_code)]
+```
+
+The entire render pipeline, runtime, and layout engine contain **zero `unsafe` blocks**.
+
+### Integer Overflow Protection
+
+Coordinate arithmetic uses saturating or checked operations (`saturating_*` and `checked_*`) across the workspace:
+
+```rust
+// Cursor positioning (saturating)
+let next_x = current_x.saturating_add(width as u16);
+
+// Bounds checking (checked)
+let Some(target_x) = x.checked_add(offset) else { continue };
+
+// Intentional wrapping (PRNG only)
+seed.wrapping_mul(6364136223846793005).wrapping_add(1)
+```
+
+This is a convention, not a compiler guarantee: no `clippy::arithmetic_side_effects` lint is enabled, so a bare `+` on a coordinate would compile. The `unsafe` ban above *is* enforced — `#![forbid(unsafe_code)]` is present in all <!-- fact:crates -->20<!-- /fact --> crates.
+
+### Untrusted Output Sanitization (ADR-006)
+
+Agent harnesses and CLI tools routinely display untrusted LLM streams, subprocess logs, and user input. FrankenTUI sanitizes log output by default ([ADR-006](docs/adr/ADR-006-untrusted-output-policy.md)) so injected CSI/OSC/DCS/APC sequences cannot move the cursor, forge prompts, enter alternate screen, or corrupt terminal state:
+
+```rust,no_run
+// 1. Default (strip): removes all escape sequences and C0/C1 controls except TAB/LF/CR
+writer.write_log(untrusted_stream)?;         // or LogSink::new(&mut writer) / Cmd::log(..)
+
+// 2. Semi-trusted (SGR-only): keeps bounded SGR color codes (CSI [0-9;:]* m, <= 64 B),
+//    strips cursor/OSC/mode escapes, and appends \x1b[0m before each newline
+writer.write_log_sgr_only(colored_tool_log)?; // or LogSink::sgr_only(&mut writer) / Cmd::log_sgr_only(..)
+
+// 3. Trusted (explicit raw opt-in): no global switch; emits ftui.sanitize debug trace
+writer.write_log_raw(trusted_ansi)?;          // or LogSink::raw(&mut writer) / Cmd::log_raw(..)
+```
+
+### Flicker-Free Proof Sketch
+
+`crates/ftui-render/tests/no_flicker_proof.rs` tests diff equivalence and DEC 2026 sync-bracket framing in `ftui-render` (`certified_and_dirty_diff_match_full_diff_and_wrap_sync_brackets`), while the full 6-theorem proof sketch and adversarial counterexample suite live in `crates/ftui-harness/tests/render_no_flicker_proof.rs`:
+
+**Theorem 1 (Sync Bracket Completeness):** When `capabilities.sync_output == true` (and no I/O error aborts the write), every byte emitted by `Presenter::present` is enclosed within one DEC 2026 sync bracket pair (`\x1b[?2026h` … `\x1b[?2026l`).
+
+**Theorem 2 (Diff Completeness):** For equal-dimension buffers, `BufferDiff::compute(old, new)` produces exactly `{(x,y) | old[x,y] ≠ new[x,y]}`.
+
+**Theorem 3 (Dirty Tracking Soundness):** If any cell in row `y` was mutated since `clear_dirty()`, `is_row_dirty(y) == true`, `dirty_spans[y]` covers the mutated column range, and `mutation_gen` advances.
+
+**Theorem 4 (Diff-Dirty Equivalence):** When `new` was cleared (`clear_dirty()`) at `old`'s mutation generation (`new.dirty_baseline_gen() == Some(old.mutation_gen())`) or starts full-dirty (`reset_for_frame()`), `compute_certified_into()`, `compute_dirty()`, and `compute()` produce identical output; if the baseline generation or row/span witnesses disagree, `evaluate_render_certificate_for_buffers` falls back to `FullDiff` (`compute_into`).
+
+---
+
+## Test Infrastructure
+
+### Property-Based Testing
+
+`crates/ftui-render/tests/proptest_diff_invariants.rs` generates random buffers and change sets and checks the diff against them from both directions:
+
+```rust
+proptest! {
+    // Soundness: nothing the diff reports is actually unchanged.
+    #[test]
+    fn no_false_positive_changes((w, h) in dims(), changes in change_set(80, 40)) { /* .. */ }
+
+    // Completeness: nothing that changed is missing from the diff.
+    #[test]
+    fn no_false_negative_changes((w, h) in dims(), changes in change_set(80, 40)) { /* .. */ }
+}
+```
+
+Alongside them: `identical_buffers_produce_empty_diff`, `diff_is_deterministic`, `compute_and_compute_into_equivalent`, `runs_cover_all_changes`, `changes_sorted_row_major`, `certified_diff_matches_full_diff_and_respects_span_bound`, `presented_certified_diff_reproduces_the_target_buffer`, and the certificate negative controls (`negative_control_stale_dirty_bits_refuses_skip_and_recovers_exact_diff`, `negative_control_corrupted_witness_refuses_narrow_and_recovers_exact_diff`).
+
+### Snapshot Testing
+
+```bash
+# Run tests, auto-update baselines
+BLESS=1 cargo test -p ftui-demo-showcase
+
+# Plain-text .snap files, one per case, reviewed as an ordinary diff
+crates/ftui-demo-showcase/tests/snapshots/
+├── a11y_accessibility_panel_all_modes_120x40.snap
+├── a11y_accessibility_panel_high_contrast_80x24.snap
+└── widget_gallery_verification_120x40.snap
+crates/ftui-extras/tests/snapshots/
+crates/ftui-harness/tests/snapshots/
+```
+
+The workspace retains <!-- fact:snapshots_total -->604<!-- /fact --> plain-text `.snap` files across `ftui-demo-showcase` (<!-- fact:snapshots_showcase -->436<!-- /fact -->), `ftui-extras` (<!-- fact:snapshots_extras -->101<!-- /fact -->), and `ftui-harness` (<!-- fact:snapshots_harness -->67<!-- /fact -->). A `.snap` file is the rendered frame as text, so a failing snapshot diff shows the actual character grid that changed rather than an opaque blob.
+
+### Formal Verification Patterns
+
+Theorem 3 (dirty-tracking soundness) is pinned by `set_marks_row_dirty` in `ftui-render/src/buffer.rs` — if it fails, the theorem is false:
+
+```rust
+#[test]
+fn set_marks_row_dirty() {
+    let mut buf = Buffer::new(10, 5);
+    buf.clear_dirty(); // Reset initial dirty state
+    buf.set(3, 2, Cell::from_char('X'));
+    assert!(buf.is_row_dirty(2));
+    assert!(!buf.is_row_dirty(0));
+    assert!(!buf.is_row_dirty(1));
+    assert!(!buf.is_row_dirty(3));
+    assert!(!buf.is_row_dirty(4));
+}
+```
+
+Note it clears the initial dirty state first: a fresh `Buffer` starts with every row dirty (`dirty_rows_start_dirty`), so a test that skipped `clear_dirty()` would pass without proving anything. Its siblings cover the other mutation paths — `set_raw_marks_row_dirty`, `get_mut_marks_row_dirty`, `fill_marks_affected_rows_dirty`, `clear_marks_all_dirty`.
+
+### Benchmark Suite
+
+<!-- perf:begin -->
+```bash
+# Run the full 27-threshold SLO + Criterion + byte-budget + allocation gate
+./scripts/perf_regression_gate.sh --quick --json
+python3 -B scripts/render_perf_readme.py --check
+
+# Paired certified vs dirty vs full-scan diff benchmarks (120×40, opt-level="z"):
+cargo bench -p ftui-render --bench diff_bench
+cargo bench -p ftui-render --bench diff_paths_paired
+# diff_paths_paired (certified, spinner_tick 120x40)      p50: [90.7 ns]   throughput: [52.9 Gcells/s]
+# diff_paths_paired (certified, overmarked_chrome 120x40) p50: [251.4 ns]  throughput: [19.1 Gcells/s]
+# diff_paths_paired (certified, scattered_5pct 120x40)    p50: [1.98 µs]   throughput: [2.43 Gcells/s]
+# diff/sparse_5pct/compute/120x40  (full scan)            p50: [7.51 µs]   throughput: [639 Mcells/s]
+# diff/heavy_50pct/compute/120x40  (full scan)            p50: [8.22 µs]   throughput: [584 Mcells/s]
+# diff/full_100pct/compute/120x40  (full scan)            p50: [12.1 µs]   throughput: [396 Mcells/s]
+```
+
+| Operation / Metric | Criterion / Scene ID | Observed (Mean, 95% CI) | Enforced Budget |
+|---|---|---|---|
+| Full frame pipeline (80×24 @ 5%) | `pipeline/truecolor/diff_and_present/full/80x24@5%` | `17.74 µs` (`[16.63 µs, 19.69 µs]`) | `2.00 ms` (+10%) |
+| Diff compute (80×24 @ 5% full scan) | `diff/sparse_5pct/compute/80x24` | `3.01 µs` (`[2.56 µs, 3.59 µs]`) | `200.00 µs` (+10%) |
+| Diff compute (200×60 @ 5% dirty rows) | `diff/sparse_5pct_rows/compute_dirty/200x60` | `12.12 µs` (`[11.69 µs, 12.95 µs]`) | `84.00 µs` (+10%) |
+| Presenter ANSI emit (80×24 @ 5%) | `present/truecolor/sparse_5pct/present/80x24` | `19.45 µs` (`[16.47 µs, 23.39 µs]`) | `3.00 ms` (+10%) |
+| Presenter ANSI emit (120×40 @ 5%) | `present/truecolor/sparse_5pct/present/120x40` | `39.86 µs` (`[37.29 µs, 43.55 µs]`) | `6.00 ms` (+10%) |
+| Presenter ANSI emit (200×60 @ 5%) | `present/truecolor/sparse_5pct/present/200x60` | `94.43 µs` (`[91.14 µs, 100.67 µs]`) | `18.00 ms` (+10%) |
+| ANSI bytes emitted (80×24 @ 5%, 96 cells) | `bytes:present/bytes/sparse_5pct/80x24` | `169 B` (<= `832 B`) | `832 B` (`8*cells+64`) |
+| Input parse + dispatch (per event) | `input/parse_dispatch/mixed_event_stream/per_event` | `152.0 ns` (`[129.4 ns, 188.3 ns]`) | `100.00 µs` (+10%) |
+| Word wrap (200 lines @ 80 cols) | `wrap/word/200_lines_80_cols` | `829.34 µs` (`[789.81 µs, 880.56 µs]`) | `2.00 ms` (+10%) |
+| Grapheme width lookup (S3-FIFO cached) | `text_width/non_ascii_corpus/cached` | `25.6 ns` (`[21.7 ns, 29.5 ns]`) | `30.0 ns` (+10%) |
+| Flex layout solver (10 constraints) | `layout/flex_split/horizontal/10` | `131.7 ns` (`[118.8 ns, 150.0 ns]`) | `20.00 µs` (+10%) |
+| Virtualized Fenwick scroll (100k items) | `virtualized/scroll_to/variable_fenwick/100000` | `16.1 ns` (`[14.6 ns, 18.2 ns]`) | `1.00 µs` (+10%) |
+| Runtime first frame (`80×24` headless) | `runtime/first_frame/headless_80x24` | `94.71 µs` (`[77.36 µs, 111.22 µs]`) | `10.00 ms` (+10%) |
+| Runtime `Cmd::msg` roundtrip | `runtime/command_roundtrip/cmd_msg` | `92.1 ns` (`[83.1 ns, 105.7 ns]`) | `500.00 µs` (+10%) |
+| Runtime shutdown latency | `runtime/shutdown_latency/headless` | `1.64 µs` (`[1.41 µs, 1.90 µs]`) | `5.00 ms` (+10%) |
+| Steady-state heap allocs (ASCII 80×24) | `allocs:ascii_dashboard_80x24` | `0 allocs` (`0 B`, down from `1397` / `142,688 B`) | `0 allocs/frame` |
+| Steady-state heap allocs (Unicode 80×24) | `allocs:unicode_dashboard_80x24` | `3 allocs` (`42 B`, down from `661` / `79,962 B`) | `4 allocs/frame` |
+
+Full 27-metric table, confidence intervals, byte-efficiency breakdown, and `FrameArena` allocation report: [`docs/perf/baseline_2026-10-19.md`](docs/perf/baseline_2026-10-19.md) (generated from [`docs/perf/regression_report_2026-10-19.jsonl`](docs/perf/regression_report_2026-10-19.jsonl)).
+<!-- perf:end -->
+
+---
+
+## Runtime Systems
+
+### Resize Coalescing
+
+Rapid resize events (e.g., window drag) are coalesced to prevent render thrashing:
+
+```
+Event Stream:    R1 ─ R2 ─ R3 ─ R4 ─ R5 ─ [gap] ─ R6
+                 └───────────────────┘           │
+                        coalesced               applied
+                      (only R5 rendered)
+
+Regimes:
+  Steady (16ms delay)   ← Responsive to deliberate resizes (μ_steady = 200ms observation prior)
+  Burst  (40ms delay)   ← Aggressive coalescing during drag (100ms hard deadline, μ_burst = 20ms prior)
+```
+
+### Budget-Based Degradation
+
+Frame time is regulated with a PID controller:
+
+```
+Error:        e_t = (actual_ms - target_ms) / target_ms   // normalized; POSITIVE = over budget
+Control:      u_t = Kp·e_t + Ki·Σe + Kd·Δe
+Integral:     Σe clamped to ±5.0 (anti-windup)
+E-Process:    warmup_frames = 10 (degradation suppressed during calibration), α = 0.05, β = 0.5
+Degradation:  Full → SimpleBorders → NoStyling → EssentialOnly → Skeleton → SkipFrame
+Floor:        degradation_floor = SimpleBorders by default (honored by PID + conformal gate;
+              raise floor or trigger FrameGuardrails for deeper levels)
+
+Gains: Kp=0.5, Ki=0.05, Kd=0.2 (tuned for 16ms / 60fps)
+```
+
+The error is a **fraction of the budget, not milliseconds**, and positive means the frame ran long — so a rising `u_t` degrades. The gains above are tuned for that normalized form; feeding them raw milliseconds would scale the response by the budget. An earlier version of this block had the error as `target_ms - actual_ms`, which is both un-normalized and the opposite sign, and would have had the controller degrading on *fast* frames.
+
+When frames exceed budget after the 10-frame e-process warm-up, the renderer degrades visual fidelity up to the configured `degradation_floor` (`SimpleBorders` by default, or up to `SkipFrame` when configured) and recovers automatically once frame times drop.
+
+### Input Fairness Guard
+
+Prevents render work from starving input processing:
+
+```
+Fairness Index: F = (Σx_i)² / (n × Σx_i²)   ← Jain's Fairness Index
+
+Intervention: if input_latency >= 50ms OR resize_dominance >= 3 OR F < 0.8:
+  defer_pending_resize()  // InputFairnessGuard::check_fairness yields to input
+```
+
+---
+
+## Widget System (<!-- fact:widgets -->70<!-- /fact --> Direct Implementations)
+
+FrankenTUI ships <!-- fact:widgets -->70<!-- /fact --> direct `Widget` and `StatefulWidget` implementations across <!-- fact:widget_types -->55<!-- /fact --> widget types in `ftui-widgets` (<!-- fact:widgets_workspace -->93<!-- /fact --> implementations across the workspace).
+
+### Core Widgets
+
+| Widget | Description | Key Feature |
+|--------|-------------|-------------|
+| `Block` | Container with borders/title | 7 named border styles, title alignment |
+| `Paragraph` | Text with wrapping | Word/char wrap, scroll |
+| `List` | Selectable items | Clipped to the viewport, custom highlight (large lists: `VirtualizedList`) |
+| `Table` | Columnar data | Column constraints, row selection, themed |
+| `Input` | Text input | Cursor, selection, history |
+| `Textarea` | Multi-line input | Line numbers, syntax hooks |
+| `Tabs` | Tab bar | Key/mouse selection; close and reorder through the API (not bound to input) |
+| `Progress` | Progress bars | Determinate/indeterminate |
+| `Sparkline` | Inline charts | Min/max markers |
+| `Tree` | Hierarchical data | Expand/collapse (children supplied up front) |
+| `CommandPalette` | Fuzzy search | Bayesian scoring with evidence ledger |
+| `Modal` | Dialog/overlay system | Stack‑based, focus capture |
+| `JsonView` | JSON tree viewer | Collapse/expand nodes |
+| `FilePicker` | File browser | Directory navigation |
+| `VirtualizedList` | Large lists | Fixed or variable row heights (`variable_heights()`, Fenwick-tracked, O(log n) scroll, per-category Bayesian height prediction via `with_predictor`, Beta-VOI remeasurement via `with_remeasure_policy`); shared with `Virtualized<T>` |
+| `Toast` | Notifications | Timed, dismissable |
+| `Spinner` | Activity indicator | Multiple styles |
+| `Scrollbar` | Scroll position | Proportional thumb |
+
+Plus: `Align`, `Badge`, `CachedWidget`, `Columns`, `ConstraintOverlay`, `DebugOverlay`, `DecisionCard`, `Draggable`, `Emoji`, `ErrorBoundary`, `Group`, `Help`, `HistoryPanel`, `InspectorOverlay`, `LogViewer`, `NotificationQueue`, `Padding`, `Paginator`, `Panel`, `Pretty`, `Rule`, `StatusLine`, `Stopwatch`, `Timer`, `ValidationErrorDisplay`, `VoiDebugOverlay`, `DriftVisualization`, and more.
+
+### Table Theming System
+
+The table widget has a dedicated theme engine (`ftui-style/src/table_theme.rs`) that goes beyond simple row striping:
+
+| Theme Feature | What It Controls |
+|---------------|-----------------|
+| **Row striping** | Alternating background colors with configurable period |
+| **Column emphasis** | Per-column foreground/background overrides |
+| **Header styling** | Separate style for the header row |
+| **Selection highlight** | Selected-row style merged over the row's style (blend modes apply to theme effect rules, not to selection) |
+| **Hover state** | Hovered-row style from mouse hit-testing (`TableState::hovered`), applied as-is |
+| **Border** | One border style for the table's block |
+| **Column gap & cell padding** | `TableTheme::column_gap` sets the default inter-column spacing unless `.column_spacing(..)` overrides it; `TableTheme::padding` sets horizontal cell inset in `MarkdownRenderer` by default and in `Table` when `.use_theme_padding(true)` (or `.cell_padding(..)`) is set |
+| **Truncation** | Ellipsis, clip, or wrap per column (`with_column_truncation(col, Truncate::Ellipsis)`) |
+| **Alignment** | Left/center/right per column with Unicode-aware width (`with_column_alignment(col, Alignment::Right)`) |
+
+Themes are composable (with <!-- fact:table_presets -->10<!-- /fact --> built-in presets); a base theme can be overlaid with per-instance overrides:
+
+```rust
+// Ten built-in presets (Aurora, Graphite, Neon, Slate, Solar, Orchard, Paper,
+// Midnight, TerminalClassic, Modern), each a complete set of header / stripe /
+// selection / hover styles
+let theme = TableTheme::preset(TablePresetId::Aurora);
+let resolver = theme.effect_resolver();
+```
+
+### Stylesheet System
+
+Named styles are defined once in a `StyleSheet` (thread-safe, `ftui_style::stylesheet`) for consistent theming across widgets:
+
+```rust
+use ftui::render::cell::PackedRgba;
+use ftui::style::stylesheet::StyleSheet;
+
+let sheet = StyleSheet::new();
+let heading = Style::new().bold().fg(PackedRgba::rgb(80, 160, 255));
+let error = Style::new().bold().fg(PackedRgba::rgb(220, 60, 60));
+sheet.define("heading", heading);
+sheet.define("error", error);
+sheet.define("muted", Style::new().fg(PackedRgba::rgb(128, 128, 128)));
+
+// Resolve by name anywhere in the widget tree; compose layers left to right
+let resolved = sheet.get_or_default("heading");
+let loud_error = sheet.compose(&["heading", "error"]);
+```
+
+### Widget Composition
+
+```rust
+// Widgets compose via Frame's render helpers (FrameExt, in the prelude)
+use ftui::layout::{Constraint, Flex};
+
+fn view(&self, frame: &mut Frame) {
+    let chunks = Flex::horizontal()
+        .constraints([Constraint::Percentage(30.0), Constraint::Percentage(70.0)])
+        .split(frame.area());
+
+    frame.render_widget(&self.sidebar, chunks[0]);
+    frame.render_widget(&self.main_content, chunks[1]);
+}
+```
+
+### Stateful Widgets
+
+```rust
+// State lives in your Model; `view(&self)` borrows it mutably through a RefCell
+struct MyModel {
+    items: Vec<String>,
+    list_state: RefCell<ListState>,
+}
+
+fn view(&self, frame: &mut Frame) {
+    let list = List::new(self.items.iter().map(String::as_str));
+    frame.render_stateful_widget(&list, frame.area(), &mut self.list_state.borrow_mut());
+}
+```
+
+---
+
+## Advanced Features
+
+### Hyperlink Support
+
+```rust
+let link_id = frame.register_link("https://example.com");
+let mut cell = Cell::from_char('x');
+cell.attrs = cell.attrs.with_link(link_id);
+// Emits OSC 8 hyperlink sequences for supporting terminals
+```
+
+### Focus Management
+
+```rust
+// Declarative focus graph: FocusManager owns a FocusGraph of nodes and nav edges
+let graph = focus.graph_mut();
+let input1 = graph.insert(FocusNode::new(1, input1_area));
+let input2 = graph.insert(FocusNode::new(2, input2_area));
+graph.connect(input1, NavDirection::Next, input2); // Tab order
+
+// Navigation
+focus.focus_next(); // Tab
+focus.focus_prev(); // Shift+Tab
+```
+
+### Modal System
+
+```rust
+let id = modal_stack.push(Box::new(confirm_dialog)); // any `StackModal`
+// Modals capture input, render above main content
+// Escape or button press pops the stack; `pop()` returns the ModalResult
+```
+
+### Time-Travel Debugging
+
+```rust
+// Record frames for debugging (ftui-harness; delta-compressed ring of 256 frames)
+let mut history = TimeTravel::new(256);
+history.record(&frame.buffer, FrameMetadata::new(frame_number, render_time));
+
+// Replay
+let historical_frame = history.get(frame_index);
+```
+
+---
+
+## Accessibility
+
+The `ftui-a11y` crate provides an accessibility tree that mirrors the widget render tree:
+
+- **Semantic nodes** for every interactive widget (button, input, list item)
+- **Role/state/label** properties following WAI-ARIA semantics
+- **Focus graph** with keyboard navigation order (Tab/Shift+Tab)
+- **Live regions** for announcing dynamic content changes to screen readers
+- **Contrast checking** using WCAG 2.1 luminance ratios (`ftui-style/src/color.rs`)
+
+**Runtime wiring.** Widgets that implement `ftui_a11y::Accessible` (Block, Input, List, Table, Tabs, Paragraph, Progress, Scrollbar, Spinner) push their nodes into the `Frame` as they render. Enable collection per program:
+
+```rust
+use ftui::{ProgramConfig, ScreenReaderPolicy};
+
+let config = ProgramConfig::default().with_accessibility(ScreenReaderPolicy::default());
+```
+
+With that set, every rendered frame builds an `A11yTree`, diffs it against the previous frame and derives bounded screen‑reader announcements (focus changes, live‑region additions and changes). Read them through `Program::accessibility_tree` / `accessibility_announcements` / `accessibility_dump`, or react from the model via `Model::on_accessibility`, which runs after each frame whose tree changed:
+
+```rust
+fn on_accessibility(&mut self, a11y: AccessibilityFrame<'_>) -> Cmd<Msg> {
+    // Runs after each frame whose tree changed. Forward the bounded
+    // announcements to a host bridge, a log, or an on-screen live region.
+    self.announcements
+        .extend(a11y.announcements.iter().map(|a| a.text.clone()));
+    Cmd::none()
+}
+```
+
+The evidence sink gets `a11y_tree` and `a11y_announcement` rows (schema in `docs/spec/telemetry-events.md`) and the `ftui.a11y` tracing target carries the same data. Without the config no tree is built and rendering is unchanged.
+
+**Not done:** there is no operating‑system bridge (AT‑SPI, UIA, NSAccessibility). Announcements are evidence rows, tracing events and hook calls that a host or an app forwards; nothing reaches a screen reader on its own. Containers other than `Block` do not scope their children yet, and `Form` has no accessibility nodes. Details and proofs: `docs/ACCESSIBILITY.md`.
+
+The `accessibility_panel` demo screen mirrors the live tree (size, leading dump lines) and the latest announcements as you navigate the UI.
+
+---
+
+## Internationalization
+
+The `ftui-i18n` crate provides locale-aware rendering:
+
+- **Locale context** propagated through the runtime (`ProgramConfig::with_locale("fr")`, `LocaleContext::direction()`)
+- **String catalog** with fallback chains and CLDR-style plural rules (`StringCatalog`, `PluralRule`)
+- **Text direction** from locale with per-line, grapheme-cluster-preserving UAX#9 reordering in `Paragraph` (feature `bidi`, on by default in `ftui`). `TextInput` and `TextArea` draw and navigate editable text in logical order; `CursorNavigator::with_visual_bidi(true)` is an explicit opt-in visual caret for editors that also render in visual order
+
+- **Number & date formatting** backed by pinned Unicode CLDR v45.0 data for 7 declared locales (`NumberFormatter`, `DateTimeFormatter`, `format_number`, `format_date`)
+
+The `i18n_demo` screen switches live between English, Spanish, French, German, Russian, Arabic and Japanese; Arabic renders right-to-left.
+
+---
+
+## Queueing-Theoretic Scheduler (Deep Dive)
+
+The effect queue scheduler (`queueing_scheduler.rs`) implements multiple scheduling disciplines from queueing theory.
+
+**Where it runs:** opt-in via `EffectQueueConfig::default().with_backend(TaskExecutorBackend::EffectQueue)` and `EffectQueueConfig { scheduler_enabled: true, .. }`. By default, `DEFAULT_TASK_BACKEND` is `TaskExecutorBackend::Spawned` for `RuntimeLane::Structured` and `RuntimeLane::Legacy` so blocking polling tasks cannot serialize interactive echo tasks on a single worker thread (see `docs/perf/effect_backend_2026-10-19.md`).
+
+### SRPT (Shortest Remaining Processing Time)
+
+```
+Optimal for minimizing mean response time in M/G/1 queues:
+  E[T_SRPT] ≤ E[T_FCFS]  for any service-time distribution
+
+Selection rule:
+  next_job = argmin { remaining_time(j) : j ∈ ready_queue }
+```
+
+Problem: can starve long jobs indefinitely.
+
+### Smith's Rule (Weighted SRPT)
+
+```
+Maximizes weighted throughput:
+  priority(j) = weight(j) / remaining_time(j)
+
+next_job = argmax { priority(j) : j ∈ ready_queue }
+```
+
+### Aging for Starvation Prevention
+
+```
+Effective priority:
+  priority_eff(j) = weight(j) / remaining_time(j) + aging_factor × wait_time(j)
+
+Wait time grows linearly, so a waiting job's priority overtakes any single newly
+arriving higher-priority competitor within:
+  τ_overtake = Δ(weight / remaining_time) / aging_factor
+
+Actual service wait still scales with the total work of the N jobs ahead in the
+queue (e.g., (N − 1) × s for N equal jobs of service time s), and live effect
+closures (`Box<dyn FnOnce() + Send>`) execute non-preemptively to completion once
+dispatched.
+```
+
+### Queue Telemetry
+
+```rust
+let snap = ftui_runtime::effect_system::queue_telemetry();
+// QueueTelemetry {
+//   enqueued: 1042,          -- total tasks submitted
+//   processed: 1038,         -- total tasks completed
+//   dropped: 2,              -- tasks dropped (backpressure/shutdown)
+//   high_water: 12,          -- peak queue depth observed
+//   in_flight: 2,            -- enqueued − processed: accepted, not finished (process-wide)
+// }
+```
+
+Backpressure: a program's effect queue refuses a submission once its own outstanding tasks (waiting or running) reach `max_queue_depth`, so a long-running task cannot let an unbounded backlog build up behind it; refused tasks count as `dropped`.
+
+---
+
+## Inline Mode: How Scrollback Preservation Works
+
+Most TUI frameworks take over the alternate screen, destroying the user's scrollback history. FrankenTUI's inline mode keeps the UI stable while letting log output scroll naturally above it. Three strategies are implemented and selected automatically based on terminal capabilities:
+
+### Strategy A: Scroll Region (DECSTBM)
+
+```
+Terminal viewport (24 rows):
+  ┌──────────────────────────┐
+  │ log line 47              │ ← scrollable region (rows 1-20)
+  │ log line 48              │    DECSTBM constrains scrolling here
+  │ log line 49              │
+  │ ...                      │
+  │ log line 66              │
+  ├──────────────────────────┤
+  │ ▌Status: 3 tasks  FPS:60│ ← fixed UI region (rows 21-24)
+  │ ▌[Tab] switch  [q] quit │    cursor never enters this region
+  └──────────────────────────┘
+
+CSI sequence: ESC [ top ; bottom r   (set scrolling region)
+```
+
+When new log output arrives, the terminal scrolls only within the designated region. The UI rows below are untouched. Whether rows leaving the top of such a region enter scrollback is up to the terminal: xterm, tmux and Alacritty keep them when the region starts at row 1 (measured for tmux 3.6 by `tests/e2e/scripts/test_inline_scrollback_mux.py`); the `vt100` crate and some other emulators keep only rows that leave a full-screen scroll.
+
+### Strategy B: Overlay Redraw
+
+For terminals that don't support scroll regions reliably (multiplexers, terminals that fail the DECSTBM self-test), log lines are batched and streamed at the next frame, explicit `flush`, or exit (or early, after 256 lines / 64 KiB). The writer erases the UI rows, writes the batch from the UI's first row as ordinary lines, lets the terminal's own line feed at the bottom row scroll the *whole* screen, and redraws the UI below the new lines. Every line therefore reaches scrollback exactly once and in order on any terminal, and no UI row ever does, because the UI rows are erased before anything scrolls. With DEC 2026 synchronized output the erase-and-redraw is applied atomically; multiplexers run without it, so the UI can flash briefly while a batch goes out. A UI anchored to the *top* of the screen cannot use this transport (a whole-screen scroll would push the UI into history): there the newest log line overwrites the bottom row and log lines do not reach scrollback.
+
+### Strategy C: Hybrid
+
+Scroll-region without synchronized output: the fast path is the same DECSTBM region as Strategy A, but without sync brackets around the redraw. Before the first frame the runtime runs a DECSTBM self‑test on the live terminal (`ftui_core::caps_probe::probe_scroll_region`): save cursor, set the region, turn origin mode on, move the cursor far below, ask for a cursor‑position report, restore. A terminal that honours the region reports the region's last row; one that ignores it reports the screen bottom (or nothing within 150 ms). On a bad verdict the writer switches to Strategy B before anything is drawn and writes an `inline_strategy_fallback` evidence row (`reason` `cpr_mismatch` or `cpr_timeout`, observed and expected rows); the `inline_strategy` row carries `scroll_region_verified`. The probe runs at construction time, before the input reader starts, so it cannot race the event loop; it is not repeated on resize. `FTUI_SCROLL_REGION=1` skips the test and trusts the region, `FTUI_SCROLL_REGION=0` selects overlay redraw outright. `scripts/inline_scroll_region_selftest_e2e.py` runs the showcase under a PTY that answers the cursor query as a honouring, an ignoring and a silent terminal and checks all three outcomes. Under this repository's own WezTerm session the WezTerm identity counts as a multiplexer, so inline runs there use overlay redraw and emit no DECSTBM at all; that is the mux rule, not a writer bug.
+
+### Which strategy you actually get
+
+`InlineStrategy::select` (in `ftui_core::inline_mode`) decides in this order:
+
+1. inside tmux, screen, zellij or a WezTerm mux session: **Overlay Redraw**
+2. scroll-region capability and synchronized output both usable: **Scroll Region**
+3. scroll-region usable, no synchronized output: **Hybrid**
+4. otherwise: **Overlay Redraw**
+
+"Usable" is the policy answer (`use_scroll_region()` / `use_sync_output()`) after identity detection, the live DECRPM probe and the `FTUI_SCROLL_REGION` / `FTUI_SYNC_OUTPUT` operator switches. Strategies 2 and 3 are then confirmed by the DECSTBM self‑test described under Strategy C; a terminal that fails it gets Overlay Redraw. The decision is written to the evidence file as `capability_decision` rows plus an `inline_strategy` row (with `scroll_region_verified`) and, on a failed self‑test, an `inline_strategy_fallback` row when an evidence sink is configured.
+
+### Key Invariants
+
+With the UI anchored to the bottom (the default):
+
+- Every completed log line reaches the terminal's or multiplexer's scrollback exactly once, in order: with Overlay Redraw on any terminal, and through a scroll region on terminals that keep rows leaving a region that starts at row 1 (see Strategy A). No UI row enters scrollback while the program runs. Checked against an independent terminal emulator in `crates/ftui-runtime/tests/e2e_inline_mode_scrollback.rs`, and in real tmux 3.6 (both transports), GNU screen 4.09 and zellij 0.43 by `tests/e2e/scripts/test_inline_scrollback_mux.py`.
+- The UI never draws over a row that has not reached scrollback: the first frame scrolls the shell's last lines up to make room, and a growing inline-auto UI scrolls before drawing. (A terminal resize is the exception: FrankenTUI does not emulate the terminal's reflow.)
+- Each present saves and restores the cursor. On exit the final frame stays on screen and the cursor is parked at the start of an empty row below it, so the shell's next output never overwrites part of a UI row.
+- With synchronized output each frame is applied atomically. Hybrid and every multiplexer run without it, so a redraw there can briefly show partial rows.
+
+---
+
+## Incremental View Maintenance (IVM)
+
+**Status: experimental** (see [Experimental modules](#experimental-modules))
+
+The idea is to stop recomputing layouts, styled text, and visibility flags from scratch every frame, and instead propagate *deltas* through a DAG of view operators — the technique materialized-view databases use (Materialize, Noria), adapted for frame-rate rendering.
+
+**Where it runs: nowhere. There is no propagation engine.** `ftui_runtime::ivm` has the pieces such an engine would need and not the engine itself, verified 2026-09-19:
+
+- Nothing walks the DAG feeding one view's output into the next. The module's only `use` statements are `std::fmt` and `std::hash`, so no delta can reach a `Buffer` or the presenter.
+- An earlier version of this section showed a diagram with `StyleMap`, `TextWrap`, `FlexSolve` and `RenderPlan` operators, and said theme-change deltas flow to `RenderPlan` without re-running wrapping or constraint solving. **None of those four types exist**, and neither do the `LayoutView`/`RenderView` that the module's own docs named — the two descriptions did not even agree with each other.
+- `FRANKENTUI_FULL_RECOMPUTE=1` is read by `IvmConfig::from_env`, but nothing reads the resulting flag, so it changes no behaviour.
+
+What does exist, and is tested: the signed-tuple delta algebra (`(key, weight, logical_time)` with cancellation), a DAG with topological ordering and cycle detection, a fallback-policy predicate, and two `IncrementalView` implementations (`StyleResolutionView`, `FilteredListView`). Useful groundwork; not something you can turn on.
+
+Before anyone builds the engine, note that the render cost surface measured on 2026-09-19 found `buffer_diff` to be the **cheapest** pipeline stage at 4.5–9.1% of the frame, while `cell_mutation` and `presenter_emit` dominate ([docs/perf/cost_surface_stage_dominance_2026-09-19.md](docs/perf/cost_surface_stage_dominance_2026-09-19.md)). An incremental layer that avoids recomputation has to beat simply doing the work — which is the measurement that stopped the e-graph. Scoped permanently to the delta algebra, DAG topology, and view library (`bd-lksq7`).
+
+---
+
+## SOS Barrier Certificates
+
+**Status: experimental** (see [Experimental modules](#experimental-modules))
+
+The module offers a frame-budget admissibility test built on a **polynomial barrier certificate** in the sum-of-squares style. It is not used for frame admissibility in the runtime (which is decided by `ConformalPredictor` and `BudgetController`) — see **Where it runs** below — so the present tense here describes the function, not the render path:
+
+```
+State space:
+  x₁ = budget_remaining ∈ [0, 1]    (fraction of frame budget left)
+  x₂ = change_rate ∈ [0, 1]         (estimated render cost)
+
+Barrier certificate B(x₁, x₂):
+  B(x₁, x₂) = Σ cᵢⱼ x₁ⁱ x₂ʲ     (polynomial, degree 4, 15 terms)
+
+Safety:
+  B(x) > 0   ⟹  state is admissible (safe to render at full fidelity)
+  B(x) ≤ 0   ⟹  state is at or beyond the unsafe boundary
+```
+
+**Provenance: the coefficients are hand-chosen, not SDP-solved.** `sos_barrier_coeffs.rs` says so itself — they were written by hand (2026-03-05) to satisfy eight verification points, and have not been verified by an SDP solver. An earlier version of this section claimed an SOS/SDP relaxation produced them; the 2026-09-01 reality check found that claim false, the source header was corrected, and this section was updated to match. If a solver is ever added, regenerate the coefficients from it and record the solver, its inputs and the run date in that file.
+
+So what the evaluator gives you is a *polynomial admissibility test whose shape was chosen by hand*, not a certificate carrying an SOS proof of the Lyapunov-like decrease condition.
+
+**Where it runs: nowhere.** Nothing in any crate's `src/` imports `ftui_runtime::sos_barrier`, so no frame's budget is actually checked against the barrier. An earlier correction of this section said the evaluator "runs in constant time per frame with no allocations" — true of the function's complexity, misleading about its use, since nothing calls it per frame or at all. `sos_barrier.rs` is allocation-free and constant-time *when called*, which is the part worth relying on if you call it yourself.
+
+Why SOS instead of a simple threshold? A polynomial barrier can encode nonlinear safe/unsafe boundaries that accurately reflect the interaction between budget remaining and workload estimate. A flat threshold either triggers too early (wasting visual quality) or too late (missing the deadline).
+
+---
+
+## S3-FIFO Cache
+
+Grapheme width lookups (`ftui_core::text_width`) use an **S3-FIFO** eviction policy, which was shown to match or outperform W-TinyLFU and ARC on most workloads while being simpler to implement (terminal capability detection is not cached; it runs once per session):
+
+```
+Three queues:
+  Small  (10% capacity) ← new entries land here
+  Main   (90% capacity) ← promoted entries (accessed ≥ 1 time in Small)
+  Ghost  (keys only)    ← recently evicted keys for frequency tracking
+
+Eviction from Small:
+  if accessed ≥ 1 time → promote to Main
+  else → evict (key goes to Ghost)
+
+Eviction from Main (FIFO + frequency):
+  if freq > 0 → decrement freq, re-insert at tail
+  else → evict permanently
+```
+
+The key insight: S3-FIFO is scan-resistant without the overhead of an LRU doubly-linked list. Sequential access patterns (like scanning a large buffer) don't flush the cache.
+
+---
+
+## Flat Combining
+
+**Status: experimental** (see [Experimental modules](#experimental-modules))
+
+When multiple event sources (timers, background tasks, input) post operations concurrently, **flat combining** batches them into a single pass. One thread becomes the "combiner" and executes ALL pending operations while holding the state lock:
+
+```
+Thread 1: post(op_a) → wait
+Thread 2: post(op_b) → wait           combiner (Thread 3):
+Thread 3: post(op_c) → becomes          lock state
+           combiner                      execute op_a
+                                         execute op_b
+                                         execute op_c
+                                         unlock state
+                                         wake threads 1, 2
+```
+
+Benefits over a bare `Mutex`:
+- Data stays hot in L1 cache (one thread touches everything)
+- Lock acquisition happens once per batch, not once per operation
+- Natural coalescing: redundant operations (multiple redraws) collapse
+
+**Where it runs: nowhere.** Nothing in any crate's `src/` imports `ftui_runtime::flat_combine`, and the runtime's event sources do not post through a combiner. The diagram above describes what the module implements, not how FrankenTUI dispatches operations today.
+
+---
+
+## Bidirectional Lenses
+
+**Status: experimental** (see [Experimental modules](#experimental-modules))
+
+The `lens` module provides algebraic lenses for binding widgets to model subfields:
+
+```rust
+use ftui::runtime::lens::{Lens, field_lens};
+
+struct Config {
+    volume: u8,
+    brightness: u8,
+}
+
+// A lens focuses on one part of a larger structure
+let volume = field_lens(|c: &Config| c.volume, |c: &mut Config, v| c.volume = v);
+
+// Laws: GetPut (setting what you just read is a no-op),
+//       PutGet (you read back exactly what you set)
+let mut config = Config {
+    volume: 75,
+    brightness: 50,
+};
+assert_eq!(volume.view(&config), 75);
+volume.set(&mut config, 100);
+assert_eq!(config.volume, 100);
+assert_eq!(config.brightness, 50); // other fields untouched
+```
+
+Lenses compose, so `compose(config_lens, volume_lens)` creates a lens from `AppState` directly to `volume` through an intermediate `Config` struct.
+
+**Where it runs: nowhere.** The module is titled "state-widget binding", but no widget binds through a lens: nothing in any crate's `src/` imports `ftui_runtime::lens`. The laws hold and the example above is compiled by `readme_snippets`; what is missing is anything on the widget side that consumes one.
+
+---
+
+## Input Macro Recording & Playback
+
+The `InputMacro` system records terminal events with timing for deterministic replay:
+
+```rust
+// Record
+let mut recorder = MacroRecorder::new("login_flow");
+recorder.record_event(key_event_username);
+recorder.record_event_with_delay(key_event_tab, Duration::from_millis(200));
+recorder.record_event(key_event_password);
+recorder.record_event(key_event_enter);
+let macro_data = recorder.finish();
+
+// Replay through ProgramSimulator (replay_with_timing honors the recorded delays)
+MacroPlayer::new(&macro_data).replay_all(&mut simulator);
+```
+
+Uses: regression testing, demo recording, user workflow capture. The `macro_recorder` demo screen shows this in action.
+
+---
+
+## State Persistence
+
+Widget state survives across sessions via the `StateRegistry`:
+
+```
+┌───────────────────────────────────────────────────────────────┐
+│                       StateRegistry                           │
+│   In-memory cache of widget states (HashMap<WidgetId, State>) │
+│   Delegates to StorageBackend for persistence                 │
+└───────────────────────────────┬───────────────────────────────┘
+                                │
+                ┌───────────────┼───────────────┐
+                ▼               ▼               ▼
+          FileStorage     MemoryStorage   impl StorageBackend
+          (JSON on disk)  (tests only)    (user-provided)
+```
+
+Configuration:
+
+```rust
+use ftui::runtime::{PersistenceConfig, StateRegistry};
+use std::sync::Arc;
+
+// In-memory registry needs no feature; `StateRegistry::with_file(path)` (JSON on
+// disk, atomic writes) needs ftui-runtime's `state-persistence` feature.
+let registry = Arc::new(StateRegistry::in_memory());
+let config = ProgramConfig::default().with_persistence(
+    PersistenceConfig::with_registry(registry)
+        .auto_load(true)
+        .auto_save(true)
+        .checkpoint_every(Duration::from_secs(30)),
+);
+```
+
+Widgets opt in by implementing the `Stateful` trait. On program start, the registry loads saved state; on exit (or periodic checkpoints), it flushes back to the backend.
+
+**Where it runs:** opt-in via `ProgramConfig::with_persistence(..)` (`Program` loads/flushes the configured `StateRegistry` on startup, shutdown, periodic checkpoints, and `Cmd::SaveState` / `Cmd::RestoreState`; `Stateful` is implemented by `ListState`, `TableState`, `TreeState`, `TextAreaState`, and `VirtualizedListState`, and callers synchronize their widget states with the registry explicitly).
+
+---
+
+## SLO Schema & Breach Detection
+
+**Status: experimental** (see [Experimental modules](#experimental-modules))
+
+FrankenTUI supports machine-readable **Service Level Objectives** for runtime behavior:
+
+```yaml
+# slo.yaml - the schema parse_slo_yaml actually accepts
+regression_threshold: 0.10
+noise_tolerance: 0.05
+safe_mode_breach_count: 2
+safe_mode_error_rate: 0.05
+
+metrics:
+  render_p99:
+    metric_type: latency
+    max_value: 16000.0
+    max_ratio: 1.25
+    safe_mode_trigger: true
+  shutdown_us:
+    metric_type: latency
+    max_value: 5000.0
+    safe_mode_trigger: false
+```
+
+`metrics` is a **map keyed by metric name**, not a list. `regression_threshold`
+and `noise_tolerance` are global fractions in `[0.0, 1.0]`; `max_value` is an
+absolute ceiling and `max_ratio` a multiple of the baseline; `safe_mode_trigger`
+makes one breach trip safe mode on its own, while `safe_mode_breach_count`
+covers simultaneous breaches. `metric_type` accepts exactly `latency`, `memory`
+and `error_rate` — anything else is an `UnknownMetricType` error.
+
+Note the parser skips whole-line `#` comments but does **not** strip trailing
+ones, so `max_value: 16000.0  # ceiling` fails to parse. Keep annotations on
+their own lines.
+
+The project's own [`slo.yaml`](slo.yaml) is the worked example, and
+`slo_yaml_parses_without_errors` keeps it parsing.
+
+An earlier version of this block documented an `objectives:` *list* with
+`metric` / `budget_us` / `window_seconds` / `error_budget_pct` keys. No such
+schema exists — not in the parser, and not in the repository's own `slo.yaml`,
+which has used the fields above all along. Because an empty document parses to
+defaults, copying the old example produced a schema with zero metrics rather
+than failing loudly. `readme_slo_yaml_example_parses` now pins the block above
+byte-for-byte against the parser so it cannot drift again.
+
+The SLO engine checks observations against budgets and tracks error-budget consumption:
+
+```
+slo.yaml  ──parse──▶  SloSchema
+                         │
+        observations ──▶ check_breach() ──▶ BreachResult
+                                              │
+                                   ┌──────────┴──────────┐
+                                   ▼                     ▼
+                              No breach             Breach detected
+                              (continue)            (enter safe mode)
+```
+
+When an SLO is breached, safe mode (reduced rendering, aggressive coalescing) is meant to hold until the error budget recovers.
+
+**Where it runs: nowhere.** Nothing in any crate's `src/` imports `ftui_runtime::slo`, so nothing feeds it observations and nothing acts on a `BreachResult` — the runtime does not enter safe mode from this path, because no code path reaches it. The parser, the breach check and the error-budget accounting are implemented and covered by tests in `ftui-harness`.
+
+---
+
+## Multi-Stage Conformal Monitoring
+
+**Status: experimental** (see [Experimental modules](#experimental-modules))
+
+The design gives each render pipeline stage an independent conformal monitor:
+
+```
+view() → [Layout] → Buffer → [Diff] → Changes → [Present] → ANSI
+           ↑               ↑                ↑
+      stage monitor   stage monitor   stage monitor
+      (calibration)   (calibration)   (calibration)
+```
+
+Each stage would maintain its own Mondrian-bucketed residual set, so a regression in layout computation is detected independently from diff or presenter regressions. Buckets are keyed by (screen mode, diff strategy, terminal size) and fall back to coarser groupings when data is sparse. The point of the granularity is to identify *which* pipeline stage is responsible for a slowdown rather than just flagging "frame was slow."
+
+**Where it runs: nowhere.** `StagedConformalPredictor` is never constructed outside its own unit tests — nothing in any crate's `src/` imports `ftui_runtime::conformal_stages`, and no stage timing is fed to it, so the runtime cannot currently attribute a slowdown to a stage. The bucketing, calibration and alerting logic are implemented and tested.
+
+Not to be confused with `conformal_predictor`, which **is** on by default in the runtime and monitors whole-frame timing. That one is real; this one is the per-stage version that was never connected.
+
+---
+
+## Headless Simulator
+
+The `ProgramSimulator` runs a `Model` without a real terminal, enabling deterministic testing:
+
+```rust
+use ftui::runtime::ProgramSimulator;
+
+let mut sim = ProgramSimulator::new(MyModel::default());
+sim.init();
+sim.send(Msg::LoadData);
+sim.tick();
+
+// Capture rendered output without a terminal
+let frame = sim.capture_frame(80, 24);
+assert_eq!(frame.width(), 80);
+assert_eq!(sim.model().items.len(), 42);
+assert!(sim.is_running());
+```
+
+The simulator is the backbone of the shadow-run comparison system and the rollout scorecard. It powers every harness test without needing a PTY or terminal emulator.
+
+---
+
+## Frame Arena Allocator
+
+The render hot path uses a **bump allocator** reset at frame boundaries, eliminating per-frame allocator churn:
+
+```rust
+let mut arena = FrameArena::new(256 * 1024); // 256 KB initial
+
+// During frame rendering: bump-allocate transient strings
+let label: &str = arena.alloc_str(&format!("{done}/{total}"));
+let cell_text: &str = arena.alloc_fmt(format_args!("{value:>8}"));
+
+// At frame boundary:
+arena.reset(); // O(1), no individual deallocations
+```
+
+Why bump allocation? The render path produces many small, short-lived allocations (styled text spans, layout rectangles, change runs). A bump allocator satisfies these in O(1) with zero fragmentation, and `reset()` reclaims everything in a single pointer write.
+
+**Where it runs:** `FrameArena` (`BumpVec`, `BumpString`) lives in `ftui-core::arena` (re-exported by `ftui-render::arena`). `Program` and `StepProgram` reset and attach a shared `FrameArena` to each `Frame` (`frame.arena()`), consumed on the render hot path by `ftui_text::wrap` (`wrap_text_in`, `wrap_with_options_in`, `wrap_text_optimal_in`), `ftui_layout::Flex` (`split_in`, `split_with_measurer_in`, `solve_constraints_with_hints_into`), `ftui_widgets::{paragraph::Paragraph, table::Table, tabs::Tabs, input::TextInput}`, and the showcase's `dashboard` screen. Measured in `alloc_count_bench`: `0 allocs/frame` (`0 B`, down from `1,397 allocs` / `142,688 B`) on the 80×24 ASCII dashboard and `3 allocs/frame` (`42 B` in `GraphemePool::intern`, down 99.5% from `661 allocs` / `79,962 B`) on the 80×24 Unicode dashboard.
+
+---
+
+## Color System
+
+The `ftui-style` color module supports multiple color profiles with automatic downgrade:
+
+| Profile | Colors | When Used |
+|---------|--------|-----------|
+| `TrueColor` | 16M (24-bit RGB) | Modern terminals with `COLORTERM=truecolor` |
+| `Ansi256` | 256 | Terminals with 256-color support |
+| `Ansi16` | 16 | Basic terminals |
+| `Mono` | 2 | `NO_COLOR` set, or dumb terminals |
+
+Color downgrade is automatic based on terminal capability detection:
+
+```
+TrueColor RGB(128, 0, 255)
+  → Ansi256: round channels to the 6×6×6 cube; exact grays choose the closer cube/ramp candidate by weighted RGB distance
+  → Ansi16: map to closest basic color
+  → Mono: drop color entirely, keep bold/underline for emphasis
+```
+
+The module includes **WCAG 2.1 contrast ratio** utilities for accessibility checking:
+
+```rust
+let ratio = contrast_ratio(Rgb::new(220, 220, 220), Rgb::new(30, 30, 30));
+// WCAG AA: ratio ≥ 4.5 for normal text, ≥ 3.0 for large text
+// WCAG AAA: ratio ≥ 7.0 for normal text, ≥ 4.5 for large text
+```
+
+Perceived luminance uses the standard formula: `Y = 0.2126R + 0.7152G + 0.0722B` (linearized sRGB).
+
+---
+
+## Evidence Sink Architecture
+
+Every probabilistic decision in FrankenTUI is logged to a **shared evidence sink**, a structured JSONL stream that captures the reasoning behind runtime behavior:
+
+```rust
+let config = ProgramConfig::default()
+    .with_evidence_sink(EvidenceSinkConfig::enabled_file("evidence.jsonl"));
+```
+
+Evidence events actually written by the runtime (grep for the `"event"` value):
+- `diff_decision`: which diff strategy was chosen and why (Beta posterior, cost estimates, fallback reason)
+- `decision`, `decision_evidence`, `regime_transition`, `summary`: the resize coalescer's apply-vs-coalesce choices with their log10 Bayes-factor ledger and steady/burst regime changes
+- `budget_decision`: the conformal frame-time gate (bucket, quantile, upper bound, risk) together with the degradation tier chosen before and after the frame
+- `guardrail_snapshot`: memory and effect-queue guardrail state whenever a guardrail fires (queue depth is the live effect backlog)
+- `voi_decision`: the inline-auto height sampler's value-of-information decision (posterior, gain, cost, e-value)
+- `capability_decision`: one row per session for truecolor, synchronized output and the scroll-region policy: environment detection, probe outcome, multiplexer veto, operator switch, and the log-odds ledger behind the final value
+- `inline_strategy`: which inline strategy the writer selected from those capabilities (`scroll_region`, `hybrid`, `overlay_redraw`) and where log lines go (`log_transport`: `decstbm`, `scroll_repaint` — the overlay whole-screen stream — or `single_row` for a top-anchored overlay, whose logs do not reach scrollback)
+- `fairness_config` / `fairness_decision`: the input-fairness guard's Jain-index decisions
+- `effect_queue_select`: scheduler job selection when the `EffectQueue` executor backend is enabled
+- `suspend` / `resume`: a job-control stop served (signal, size) and the resume after it (`size_changed`)
+- `widget_refresh`, `certificate_decision`, `task_executor_*`: widget refresh plans, presenter certificates, and executor lifecycle
+
+**Why evidence?** When a frame is slow, operators can `grep` the JSONL for that frame index and see exactly which decisions were made and what statistical state drove them. No black boxes.
+
+---
+
+## About Contributions
+
+*About Contributions:* Please don't take this the wrong way, but I do not accept outside contributions for any of my projects. I simply don't have the mental bandwidth to review anything, and it's my name on the thing, so I'm responsible for any problems it causes; thus, the risk-reward is highly asymmetric from my perspective. I'd also have to worry about other "stakeholders," which seems unwise for tools I mostly make for myself for free. Feel free to submit issues, and even PRs if you want to illustrate a proposed fix, but know I won't merge them directly. Instead, I'll have Claude or Codex review submissions via `gh` and independently decide whether and how to address them. Bug reports in particular are welcome. Sorry if this offends, but I want to avoid wasted time and hurt feelings. I understand this isn't in sync with the prevailing open-source ethos that seeks community contributions, but it's the only way I can move at this velocity and keep my sanity.
+
+---
+
+## License
+
+MIT License (with OpenAI/Anthropic Rider) © 2026 Jeffrey Emanuel. See `LICENSE`.

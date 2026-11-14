@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>microsoft/Ontology-Playground · GitHub Trending Rank Radar</title>
+<meta name="description" content="Free, open-source web app for learning about ontologies and Microsoft Fabric IQ. Explore a catalogue of pre-built ontologies, design your own visually, export as RDF/XML, and share interactive diagram">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Ontology-Playground, microsoft, microsoft/Ontology-Playground, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/microsoft__Ontology-Playground">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="microsoft/Ontology-Playground · GitHub Trending Rank Radar">
+<meta property="og:description" content="Free, open-source web app for learning about ontologies and Microsoft Fabric IQ. Explore a catalogue of pre-built ontologies, design your own visually, export as RDF/XML, and share interactive diagram">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/microsoft__Ontology-Playground">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "microsoft/Ontology-Playground", "codeRepository": "https://github.com/microsoft/Ontology-Playground", "url": "https://zhuikan.com/repos/microsoft__Ontology-Playground", "description": "Free, open-source web app for learning about ontologies and Microsoft Fabric IQ. Explore a catalogue of pre-built ontologies, design your own visually, export as RDF/XML, and share interactive diagram", "author": {"@type": "Organization", "name": "microsoft", "url": "https://github.com/microsoft"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "TypeScript", "dateCreated": "2026-02-17"}</script>
+</head>
+<body data-repo="microsoft/Ontology-Playground" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">microsoft/Ontology-Playground</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="microsoft__Ontology-Playground"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/6154722?v=4&s=300" width="300" height="300" alt="microsoft avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Ontology-Playground</div>
+      <a class="rp-side-owner" href="https://github.com/microsoft">microsoft</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/microsoft">microsoft</a>
+        <span class="rp-sep">/</span><span class="rp-name">Ontology-Playground</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Free, open-source web app for learning about ontologies and Microsoft Fabric IQ. Explore a catalogue of pre-built ontologies, design your own visually, export as RDF/XML, and share interactive diagrams. Zero backend, fully static.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>3,002</b></span><span class="rp-stat" title="forks">⑂ <b>392</b></span><span class="rp-stat" title="watchers">👁 <b>25</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">Created 2026-02-17</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="microsoft__vscode"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">vscode</a><a class="rp-same-link" href="microsoft__markitdown"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">markitdown</a><a class="rp-same-link" href="microsoft__PowerToys"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">PowerToys</a><a class="rp-same-link" href="microsoft__generative-ai-for-beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">generative-ai-for-beginners</a><a class="rp-same-link" href="microsoft__TypeScript"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">TypeScript</a><a class="rp-same-link" href="microsoft__terminal"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">terminal</a><a class="rp-same-link" href="microsoft__playwright"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">playwright</a><a class="rp-same-link" href="microsoft__Web-Dev-For-Beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">Web-Dev-For-Beginners</a><a class="rp-same-link" href="microsoft__ML-For-Beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">ML-For-Beginners</a><a class="rp-same-link" href="microsoft__AI-For-Beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">AI-For-Beginners</a><a class="rp-same-link" href="microsoft__AirSim"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">AirSim</a><a class="rp-same-link" href="microsoft__BitNet"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">BitNet</a><a class="rp-same-link" href="microsoft__Bringing-Old-Photos-Back-to-Life"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">Bringing-Old-Photos-Back-to-Life</a><a class="rp-same-link" href="microsoft__CNTK"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">CNTK</a><a class="rp-same-link" href="microsoft__Data-Science-For-Beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">Data-Science-For-Beginners</a><a class="rp-same-link" href="microsoft__FluidFramework"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">FluidFramework</a><a class="rp-same-link" href="microsoft__IoT-For-Beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">IoT-For-Beginners</a><a class="rp-same-link" href="microsoft__MMdnn"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">MMdnn</a><a class="rp-same-link" href="microsoft__Procexp-Mac"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">Procexp-Mac</a><a class="rp-same-link" href="microsoft__RD-Agent"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">RD-Agent</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/microsoft/Ontology-Playground">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+154</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">3,002</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">392</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">25</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Ontology Playground（预览）☕
+
+English · 简体中文 · 日本語
+
+ 翻译说明： 此简体中文译文仅为提高可用性而按“现状”（as is）提供。术语和内容已由 AI 依据 Microsoft Learn 官方简体中文文档进行核验，但这并不代表 Microsoft 的官方翻译或认证。如有差异，以英文 README为准。
+
+ 注意：本项目使用了 AI 辅助编程进行开发。
+
+在线试用 &amp;x2192; microsoft.github.io/Ontology-Playground
+
+
+
+这是一个用于学习本体和 Microsoft Fabric IQ 的免费开源 Web 应用。
+你可以探索预构建本体、在可视化编辑器中设计自己的本体、导出为
+RDF/XML，并分享交互式图表——所有功能均来自完全静态的网站，
+不依赖任何后端。
+
+!Microsoft Fabric
+!React
+!TypeScript
+!许可证
+
+ 功能
+
+ 交互式图探索
+
+由 Cytoscape.js 驱动的图形系统，可将任意本体渲染为交互式的
+节点与边图。你可以平移、缩放、点击节点查看属性，并使用
+实时搜索栏筛选实体和关系。
+
+ 本体目录
+
+由官方与社区贡献本体组成的精选目录，涵盖六个领域
+（零售、电子商务、医疗保健、金融、制造和教育）。
+可按类别浏览、按名称或标签搜索、一键加载任意本体，
+并查看或下载经过哈希验证的完整 RDF 源文件。目录卡片会保留并显示外部标准和经适配的
+社区条目所提供的许可证、上游来源及版本归属信息。每个本体都有
+可分享的深层链接（//catalogue/official/cosmic-coffee）。图是源文件的
+可视化投影；在设计器中打开目录条目时，完整源文档会一并保留。
+
+ 可视化本体设计器
+
+全屏分栏编辑器，可用于从零创建本体或编辑现有本体。
+添加带图标、颜色和类型化属性的实体类型；定义带基数的关系；
+查看随操作实时更新的图预览。支持撤销/重做（50 级）、实时验证，
+并可导出为 RDF/XML 或 JSON。对于带源文档的 RDF，设计器只允许修改
+能精确映射到单一语句的现有标签、注释和直接 rdfs:subClassOf 边；
+其余控件保持只读，撤销/重做会同时更新图投影与 RDF 补丁。
+
+ RDF 导入与导出
+
+RDF/XML 导入会同时保留原始字节、完整 RDF 图以及 Playground 的可视化投影。
+未修改的文件会逐字节原样下载，包括 BOM、编码、格式和未映射语句。执行受支持的
+编辑后，导出会序列化完整图及其补丁，而不是只重新生成可见子集；撤销全部净变更后，
+文件会重新具备原始字节导出资格。
+
+完整解析器会保留命名节点、空白节点、任意谓词、字面值词法形式、语言标签、
+数据类型、OWL 限制、RDF 列表和 SHACL 语句。owl:imports 与 SHACL 始终保持
+惰性，不会抓取外部资源或执行规则。当前限制为 8 MiB、250,000 条唯一语句，以及每个
+展开后的 RDF 术语或 XML 字面量 16,384 个字符。XML 字面量重建还受总输出和事件数限制。
+输入编码仅支持 UTF-8 或 UTF-16；BOM、字节特征和 XML 声明不一致时会明确拒绝。
+不接受 DOCTYPE，也不会把命名图静默压平。Playground 中新建的本体仍可选择
+Playground 往返配置或面向标准的 OWL + SHACL 配置。通过 URL 嵌入加载的
+文件导入会在分配内容前检查声明的文件大小，并中止已被替换的读取。异步下载只会在
+发起操作的文档和界面仍然有效时输出。大型完整源文件会作为单一纯文本节点显示，
+避免创建无限增长的语法标记树；复制和下载仍使用完整源文件。
+RDF/XML 也使用相同的大小、语句数和 DOCTYPE 限制。当前 Fabric API 只接受
+可视化投影，因此带源文档的 RDF 无法直接推送到 Fabric；请改为下载完整 RDF。
+
+图的呈现方式会
+根据本体规模自动调整：小型本体保持完整显示；高密度本体保留全部数据，同时
+减少标签干扰；超大型本体则先显示经过限制的语义层次结构概览。通过搜索、
+调整层次深度以及展开标有 +N 的边界节点，无需一次绘制整个本体，也能访问
+所有暂时隐藏的实体。目前不支持 Turtle 输入。
+
+ 一键提交本体目录 PR
+
+使用 GitHub（设备流程）登录，即可直接从设计器向社区本体目录
+提交你的本体——应用会 fork 存储库、创建分支、提交 RDF 和元数据，
+并自动发起拉取请求。该基于投影的流程仅用于 Playground 中新建的文档；
+带源文档的 RDF 必须先导出并作为有意派生的文件进行审查。
+
+ 可嵌入小组件
+
+一个自包含的 JavaScript 文件（ontology-embed.js），只需一个
+ 标签即可在任意网页上渲染交互式本体查看器。
+支持深色/浅色主题、多种加载方式（目录 ID、URL、内联 Base64）
+和点击查看详情。目录及 RDF/XML URL 来源还可显示和复制完整 RDF 源文件。
+延迟加载的目录源文件会固定到渲染当前图的同一已验证负载版本。若该不可变源文件
+无法获取，小组件会明确显示错误并保留生成 RDF 作为后备，而不会切换到较新的目录版本。
+URL 来源按 8 MiB 上限读取，RDF/XML 会执行与文件导入相同的安全检查。
+RDF 工作线程已包含在自包含嵌入包中，因此托管在其他 HTTPS 源上的小组件不会尝试
+启动跨源工作线程脚本。详细信息请参阅嵌入指南。
+
+ 本体学校
+
+结构化学习中心（//learn），包含 9 门课程，涵盖概念
+学习路径与动手实验：
+
+- 本体基础——6 篇介绍核心概念的文章（什么是
+  本体？→ RDF/OWL → Fabric IQ → 构建第一个本体 → 设计模式 →
+  参与贡献）
+- 7 条领域学习路径——Fourth Coffee、电子商务、金融、医疗保健、
+  制造、大学和 HR 系统。每条路径包含 4 篇渐进式文章，
+  逐步构建本体，并通过实时嵌入图展示每个阶段新增的实体。
+- IQ 实验室：零售供应链——一个分 7 步进行的动手实验，从零构建
+  包含 15 个实体的本体（通过 6 个渐进式目录条目从 3 个扩展到 15 个实体）。
+
+每篇文章都支持演示模式（在  标题处分割幻灯片），
+并包含提供即时反馈的交互式测验。本体嵌入可从目录加载
+实时图，并可选择突出显示差异。
+
+ 任务系统
+
+五个渐进式任务通过多步说明、提示、进度条和成就徽章，
+引导用户学习本体概念。
+
+ 自然语言查询试验场
+
+输入自然语言问题（“哪些客户下过订单？”），查看这些问题如何
+映射到本体实体与关系——这是 Fabric IQ 的 NL2Ontology
+能力预览。
+
+ 命令面板与键盘快捷键
+
+在任意位置按 ⌘K / Ctrl+K 可打开可搜索的命令面板。无需
+离开键盘即可跳转到目录、设计器、本体学校、导入/导出、帮助等页面。
+按 ? 可快速访问帮助。使用方向键和 Enter 浏览命令面板。
+
+ 入门模板
+
+设计器提供五个领域模板（</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/microsoft__Ontology-Playground.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

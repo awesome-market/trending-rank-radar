@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tencent/LoopForge · GitHub Trending Rank Radar</title>
+<meta name="description" content="Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="LoopForge, Tencent, Tencent/LoopForge, github stars, github trending, star growth, star history, 开源项目, 星标增长, agent-orchestration, agentic-workflow, ai-agents, ai-coding, claude-code, code-review">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Tencent__LoopForge">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Tencent/LoopForge · GitHub Trending Rank Radar">
+<meta property="og:description" content="Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Tencent__LoopForge">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Tencent/LoopForge", "codeRepository": "https://github.com/Tencent/LoopForge", "url": "https://zhuikan.com/repos/Tencent__LoopForge", "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.", "author": {"@type": "Organization", "name": "Tencent", "url": "https://github.com/Tencent"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "Go", "dateCreated": "2026-07-28", "keywords": "agent-orchestration,agentic-workflow,ai-agents,ai-coding,claude-code,code-review,codebuddy,codex,coding-agents,cursor"}</script>
+</head>
+<body data-repo="Tencent/LoopForge" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Tencent/LoopForge</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Tencent__LoopForge"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/18461506?v=4&s=300" width="300" height="300" alt="Tencent avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">LoopForge</div>
+      <a class="rp-side-owner" href="https://github.com/Tencent">Tencent</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Tencent">Tencent</a>
+        <span class="rp-sep">/</span><span class="rp-name">LoopForge</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily_rate">daily_rate <b>#23</b></a><a class="rp-board-chip" href="../?board=weekly_rate">weekly_rate <b>#4</b></a><a class="rp-board-chip" href="../?board=monthly_rate">monthly_rate <b>#34</b></a></div>
+    </div>
+    <p class="rp-desc">Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>682</b></span><span class="rp-stat" title="forks">⑂ <b>112</b></span><span class="rp-stat" title="watchers">👁 <b>6</b></span><span class="rp-stat" title="prs">⑃ <b>378</b></span><span class="rp-stat" title="issues">● <b>278</b></span><span class="rp-stat" title="releases">▤ <b>13</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/agent-orchestration">agent-orchestration</a><a class="rp-topic" href="https://github.com/topics/agentic-workflow">agentic-workflow</a><a class="rp-topic" href="../tags/ai-agents">ai-agents</a><a class="rp-topic" href="https://github.com/topics/ai-coding">ai-coding</a><a class="rp-topic" href="../tags/claude-code">claude-code</a><a class="rp-topic" href="https://github.com/topics/code-review">code-review</a><a class="rp-topic" href="https://github.com/topics/codebuddy">codebuddy</a><a class="rp-topic" href="../tags/codex">codex</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Go</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2026-07-28</span><a class="rp-meta-bit rp-home" href="https://loopforge.cn" rel="noopener">loopforge.cn</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="Tencent__AI-Infra-Guard"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">AI-Infra-Guard</a><a class="rp-same-link" href="Tencent__BrowserSkill"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">BrowserSkill</a><a class="rp-same-link" href="Tencent__MMKV"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">MMKV</a><a class="rp-same-link" href="Tencent__QMUI_Android"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">QMUI_Android</a><a class="rp-same-link" href="Tencent__TNN"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">TNN</a><a class="rp-same-link" href="Tencent__WeKnora"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">WeKnora</a><a class="rp-same-link" href="Tencent__cherry-markdown"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">cherry-markdown</a><a class="rp-same-link" href="Tencent__lemon-cleaner"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">lemon-cleaner</a><a class="rp-same-link" href="Tencent__libpag"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">libpag</a><a class="rp-same-link" href="Tencent__mars"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">mars</a><a class="rp-same-link" href="Tencent__matrix"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">matrix</a><a class="rp-same-link" href="Tencent__ncnn"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">ncnn</a><a class="rp-same-link" href="Tencent__omi"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">omi</a><a class="rp-same-link" href="Tencent__puerts"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">puerts</a><a class="rp-same-link" href="Tencent__teamai-cli"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">teamai-cli</a><a class="rp-same-link" href="Tencent__tinker"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">tinker</a><a class="rp-same-link" href="Tencent__tmagic-editor"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">tmagic-editor</a><a class="rp-same-link" href="Tencent__vConsole"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">vConsole</a><a class="rp-same-link" href="Tencent__wepy"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/18461506?v=4" alt="" loading="lazy">wepy</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Tencent/LoopForge">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">LoopForge v0.3.8</span><a class="rp-dl-a" href="https://github.com/Tencent/LoopForge/releases/tag/v0.3.8">LoopForge-0.3.8 ↓</a><span class="rp-dl-ver">0.3.8</span><span class="rp-dl-date">2026-11-12</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+38</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">682</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">112</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">6</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">378</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">278</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">13</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">English · 简体中文
+
+
+
+  两种工作方式 ·
+  快速开始 ·
+  SOP ·
+  功能 ·
+  本地版 ·
+  FAQ ·
+  文档
+
+
+https://github.com/user-attachments/assets/10b8ae2e-d7e7-4b78-8876-c45818d4a08f
+
+80 秒产品演示（1080p，有声）。
+
+LoopForge 是一个可自主部署的团队工作台，让你和编程 Agent 一起交付软件。在对话里把需求告诉 Main Bot：它会按需打开 Docker 沙箱、检出项目仓库、把任务分派给项目角色，最后提交 PR。某种做法被验证有效后，把它存成 SOP（由 Agent、脚本和人工关口组成的标准交付流程），下一个需求就按同样的方式交付，评审和验收都在流程里。
+
+干活的是编程 Agent CLI：CodeBuddy、Codex、Claude Code、OpenCode、Cursor CLI、Antigravity、Kimi Code、Pi、DeepSeek Harness 和 ZCode；LoopForge 负责它们外面的角色、沙箱、检查点和留痕，全部运行在你自己的环境里，MIT 开源。
+
+ 两种工作方式
+
+| | 与 Main Bot 对话 | 运行 SOP |
+| --- | --- | --- |
+| 适合 | 探索、快速修复、与 Agent 反复迭代 | 阶段固定、需要签字确认的可重复交付 |
+| 如何运行 | Main Bot 按需打开对话工作区（带项目仓库的 Docker 沙箱），并把项目角色作为子 Agent 调用 | 引擎按顺序执行 Agent、脚本、人工关口和子 SOP 节点，每次运行有独立沙箱 |
+| 你如何把控 | 回复中途排队或「引导」消息；在对话里暂停、恢复或接管正在运行的 SOP | 在人工关口审批；打回到指定环节返工；从任意节点重试或重跑 |
+| 交付物 | PR/MR，或直推合入共享分支（mode=direct） | 文档、代码或 PR，以及每个节点的产物和日志 |
+
+两种方式都挂在同一套需求上：无论改动来自对话还是 SOP，都能追溯到原始需求，并计入交付与成本统计。
+
+
+  
+    
+    
+  
+
+
+对话首页：描述需求，用 @ 引用角色、技能、需求、SOP 或仓库；每个会话可单独选择执行器、模型和确认模式。
+
+ 为什么需要 LoopForge
+
+让编程 Agent &quot;修一下这个 Bug&quot;，结果往往取决于这一次的运行：可能跳过方案，可能忘了跑测试，可能自己评审自己的代码，也可能做到一半停下而没人发现。做演示没问题，但团队交付不能这样。
+
+- 可重复。 同一条 SOP、同样的阶段、同样的检查，每个需求都一样。内置后端、前端、缺陷修复、产品方案四类 SOP 可直接起步。
+- 角色分离。 方案、实现、评审、测试各有独立的角色提示词、执行器、模型、规则、Skills 和 MCP 工具；同一个角色既能做 SOP 节点，也能在对话中作为子 Agent 调用。
+- 人在回路。 在关键节点设置人工审批：看完报告再放行，或打回到指定环节返工。
+- 可观测、可续跑。 节点状态、工具轨迹、日志和产物集中呈现；支持暂停、重试失败步骤、从任意节点重跑。
+- 技术栈和服务器都是你的。 执行器支持 10 种编程 Agent CLI，从 CodeBuddy、Codex、Claude Code 到 OpenCode、Cursor CLI 等；工具接入 GitHub、Skills、MCP；运行环境可选 Docker 沙箱或你自己的机器。
+
+ 快速开始
+
+先准备 Git 并克隆仓库。安装脚本会检查 Docker、Compose、Python 3 和 curl，并在获得确认后补装缺少的组件：Linux 的 Python/curl 支持 apt、dnf、yum，Compose 插件支持 x86_64/arm64 并校验官方发行文件的 SHA-256；macOS 需要可运行的 Python 3 和 Docker Desktop，可通过 Homebrew 补装缺少的组件。支持普通用户运行，需要时通过 Docker 组或 sudo 操作 Docker。设置 LOOPFORGE_YES=1 可接受安装提示；安装和拉取镜像需要可用的外网连接。
+
+bash
+git clone https://github.com/Tencent/LoopForge.git
+cd LoopForge
+./start.sh
+
+
+./start.sh 直接拉取 compose.yaml 中 pin 的 GHCR 发布镜像，不在本地构建（bash scripts/install.sh 效果相同）。安装流程会创建 MySQL 和平台服务，生成配置与会话密钥，并导入内置沙箱、通用 SOP 和体验项目；无需在宿主机安装 Go 或 Node.js。模型 API Key 和 GitHub 授权在启动后由用户配置。用 ./start.sh logs、stop、restart、pull 管理服务；需要从源码构建时用 ./start.sh dev。
+
+国内拉取 ghcr.io 经常中断。把 MIRROR 设成可以替换 ghcr.io 的镜像站主机名，./start.sh 会用它拉取，再改回 compose.yaml 里的原名。设置 MIRROR 表示信任该主机，因为下载结果会被标成官方镜像名。发布说明里有 digest，可用 docker image inspect --format &#x27;{{index .RepoDigests 0}}&#x27; ghcr.io/tencent/loopforge: 核对，@ 后面的摘要应一致。不设置时仍直接从 ghcr.io 拉取。compose.yaml 不用改。升级时带上同一个变量执行 ./start.sh pull。南京大学的 GHCR 镜像站是 ghcr.nju.edu.cn。Docker 引擎里的 registry-mirrors（包括 https://docker.nju.edu.cn）只加速 Docker Hub，不能填在这里。
+
+bash
+MIRROR=ghcr.nju.edu.cn ./start.sh
+
+
+打开安装脚本输出的地址创建账号，第一个账号自动成为管理员。服务默认监听 0.0.0.0:8090；在云主机上，安装脚本会从云厂商的元数据服务读取公网 IP 并直接打印出来，放通安全组端口即可访问，或配置 HTTPS 反向代理；管理员账号创建前，建议只允许你的 IP 访问。首页的「快速接入」会带你配置模型凭据、绑定仓库并选好默认 SOP。
+
+GitLab、Gitea、Gogs 等托管可配置 Git SSH，用个人密钥检出和推送分支。Issue 与 PR/MR 自动化需要托管平台的 API Token 或另行配置的 MCP。CNB 官方仅支持 HTTPS + 访问令牌。
+
+ 免 API Key 体验
+
+新注册的账号会自动加入 LoopForge 体验项目，其中有一条只包含脚本和人工审批的 SOP：
+
+1. 切换到体验项目，打开 流程模板，进入 平台验收 ·</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Tencent/LoopForge/issues/450"><span class="rp-item-num">#450</span><span class="rp-item-title">[Bug]: 默认的SOP不进入下一个环节</span><span class="rp-item-extra">5 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/Tencent/LoopForge/issues/125"><span class="rp-item-num">#125</span><span class="rp-item-title">[Feature]: 支持 ZCode 与 Reasonix 作为执行器与本地宿主</span><span class="rp-item-extra">4 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/Tencent/LoopForge/issues/434"><span class="rp-item-num">#434</span><span class="rp-item-title">[Bug] DeepSeek 聊天长历史在启动 CLI 前触发 E2BIG（argument list too long）</span><span class="rp-item-extra">3 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/Tencent/LoopForge/issues/181"><span class="rp-item-num">#181</span><span class="rp-item-title">项目拉取镜像慢，大家有遇到吗，是否有快速的镜像地址呢 loopforege</span><span class="rp-item-extra">3 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/Tencent/LoopForge/issues/180"><span class="rp-item-num">#180</span><span class="rp-item-title">[Bug]: codex api 没法读取最新模型</span><span class="rp-item-extra">3 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/Tencent/LoopForge/issues/128"><span class="rp-item-num">#128</span><span class="rp-item-title">[Feature]: 支持 GitLab，以及通过 Git SSH 接入 Gogs 等其它仓库</span><span class="rp-item-extra">3 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/Tencent/LoopForge/issues/93"><span class="rp-item-num">#93</span><span class="rp-item-title">Same-origin run preview sandbox lets untrusted preview JS use the viewer session</span><span class="rp-item-extra">3 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/Tencent/LoopForge/issues/201"><span class="rp-item-num">#201</span><span class="rp-item-title">[Feature]: 安装和升级时补齐必须的 SQL，避免缺列直接报给用户</span><span class="rp-item-extra">2 comments · 2026-11-12</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Tencent/LoopForge/discussions/127"><span class="rp-item-num">#127</span><span class="rp-item-title">像 DeepSeek Harness 那样，让 LoopForge 支持可安装的插件扩展？</span><span class="rp-item-extra">0 comments · 2026-11-09</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/Tencent/LoopForge/releases"><b>LoopForge v0.3.8</b> <span class="rp-rel-tag">v0.3.8</span> <span class="rp-item-extra">2026-11-12</span></a><pre class="rp-pre">Install
+
+bash
+git clone --branch v0.3.8 https://github.com/Tencent/LoopForge.git
+cd LoopForge
+./start.sh
+
+
+Platform image: ghcr.io/tencent/loopforge:0.3.8 (pinned in compose.yaml).
+
+Digest: ghcr.io/tencent/loopforge@sha256:481ecb6334a21308acb93f164f5dc74f508109d3e108089981a7ea87de095963.
+
+Where ghcr.io is slow, set MIRROR to a registry host that replaces it (for example MIRROR=ghcr.nju.edu.cn ./start.sh). This trusts that host: the download is tagged as the pinned name. Check it with docker image inspect --format &#x27;{{index .RepoDigests 0}}&#x27; ghcr.io/tencent/loopforge:0.3.8 and compare the digest</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Tencent__LoopForge.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

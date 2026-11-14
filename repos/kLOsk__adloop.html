@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kLOsk/adloop · GitHub Trending Rank Radar</title>
+<meta name="description" content="Google Ads MCP server for Claude, ChatGPT and Cursor, with Reddit Ads, GA4 and Tag Manager. Every change is previewed first.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="adloop, kLOsk, kLOsk/adloop, github stars, github trending, star growth, star history, 开源项目, 星标增长, ai, cursor, ga4, google-ads, google-analytics, marketing">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/kLOsk__adloop">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="kLOsk/adloop · GitHub Trending Rank Radar">
+<meta property="og:description" content="Google Ads MCP server for Claude, ChatGPT and Cursor, with Reddit Ads, GA4 and Tag Manager. Every change is previewed first.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/kLOsk__adloop">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "kLOsk/adloop", "codeRepository": "https://github.com/kLOsk/adloop", "url": "https://zhuikan.com/repos/kLOsk__adloop", "description": "Google Ads MCP server for Claude, ChatGPT and Cursor, with Reddit Ads, GA4 and Tag Manager. Every change is previewed first.", "author": {"@type": "Organization", "name": "kLOsk", "url": "https://github.com/kLOsk"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Python", "dateCreated": "2026-03-06", "keywords": "ai,cursor,ga4,google-ads,google-analytics,marketing,mcp,model-context-protocol,python,chatgpt"}</script>
+</head>
+<body data-repo="kLOsk/adloop" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">kLOsk/adloop</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="kLOsk__adloop"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/2656988?v=4&s=300" width="300" height="300" alt="kLOsk avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">adloop</div>
+      <a class="rp-side-owner" href="https://github.com/kLOsk">kLOsk</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/kLOsk">kLOsk</a>
+        <span class="rp-sep">/</span><span class="rp-name">adloop</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Google Ads MCP server for Claude, ChatGPT and Cursor, with Reddit Ads, GA4 and Tag Manager. Every change is previewed first.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>301</b></span><span class="rp-stat" title="forks">⑂ <b>72</b></span><span class="rp-stat" title="watchers">👁 <b>4</b></span><span class="rp-stat" title="prs">⑃ <b>69</b></span><span class="rp-stat" title="issues">● <b>61</b></span><span class="rp-stat" title="releases">▤ <b>86</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/ai">ai</a><a class="rp-topic" href="../tags/cursor">cursor</a><a class="rp-topic" href="https://github.com/topics/ga4">ga4</a><a class="rp-topic" href="https://github.com/topics/google-ads">google-ads</a><a class="rp-topic" href="https://github.com/topics/google-analytics">google-analytics</a><a class="rp-topic" href="https://github.com/topics/marketing">marketing</a><a class="rp-topic" href="../tags/mcp">mcp</a><a class="rp-topic" href="https://github.com/topics/model-context-protocol">model-context-protocol</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-03-06</span><a class="rp-meta-bit rp-home" href="https://getadloop.com" rel="noopener">getadloop.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/kLOsk/adloop">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.42.0</span><a class="rp-dl-a" href="https://github.com/kLOsk/adloop/releases/tag/v0.42.0">v0.42.0 ↓</a><span class="rp-dl-ver">0.42.0</span><span class="rp-dl-date">2026-11-12</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">301</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">72</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">4</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">69</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">61</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">86</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">AdLoop
+
+The Google Ads MCP server for Claude, ChatGPT and Cursor.
+
+Plus Reddit Ads, GA4 and your tracking code, with a preview before every change.
+
+
+
+
+
+
+
+
+
+
+An MCP server that gives your AI assistant read + write access to Google Ads, Reddit Ads and GA4 — with safety guardrails that prevent accidental spend.
+
+☁️ Skip the setup — use AdLoop Cloud (free plan, no card) &amp;nbsp;·&amp;nbsp; or self-host: pip install adloop
+
+
+
+ [!TIP]
+ AdLoop Cloud is the hosted version of this project, with a free plan that needs no credit card. Connect Google in two clicks and use the full toolset from claude.ai, ChatGPT, Claude Code, Cursor, or Gemini. No Google Cloud project, no API access application, no OAuth verification wait. EU-hosted, GDPR-first, DPA included.
+
+ 📚 Documentation: docs.getadloop.com — setup guides per AI client, toolsets, the safety model, and troubleshooting for both editions.
+
+---
+
+ Cloud or Self-Hosted?
+
+Both versions run the same tools with the same safety model. The difference is who handles the plumbing:
+
+|  | ☁️ AdLoop Cloud | 🛠️ Self-hosted (this repo) |
+|---|---|---|
+| Setup | Connect Google in two clicks | ~5 min: own Google Cloud project + adloop init |
+| Google Cloud project | Not needed | Required (free) |
+| Ads API access | Not needed | Granted to your Cloud project (no developer token, no MCC since Sept 2026) |
+| Works with | claude.ai, ChatGPT, Claude Code, Cursor, Gemini | Claude Code, Cursor, Claude Desktop, any local MCP client |
+| Where your data flows | EU servers (Germany), GDPR-first, DPA included | 100% your machine — nothing leaves it |
+| Updates | Automatic | pip install -U adloop |
+| Price | Free plan, no card; paid plans for more accounts and volume | Free forever (MIT) |
+
+Not sure? Start with Cloud — it&#x27;s the fastest way to see what AdLoop can do, and it&#x27;s the only way to use AdLoop from claude.ai or ChatGPT. Self-host when you want everything on your own machine or need to modify the code. And if you&#x27;re here to hack on AdLoop itself: welcome, keep scrolling.
+
+ What It Solves
+
+AdLoop exists because managing Google Ads alongside your code is a mess. These are the specific problems it handles:
+
+- &quot;My conversions dropped and I don&#x27;t know why.&quot; AdLoop cross-references Ads clicks, GA4 sessions, and conversion events in one query. It detects whether the gap is from GDPR consent rejection, broken tracking, or an actual landing page problem — before you waste hours checking each dashboard separately.
+
+- &quot;I&#x27;m wasting ad spend on irrelevant searches.&quot; Pull your search terms report, identify the junk, and add negative keywords — all from a single conversation in your IDE. No context-switching to the Ads UI.
+
+- &quot;Is my tracking even working?&quot; Compare the event names in your actual codebase against what GA4 is receiving. Find the mismatches: events you fire that GA4 never sees, events GA4 records that you didn&#x27;t know about.
+
+- &quot;I need to create ads but the Google Ads UI is hostile.&quot; Draft responsive search ads, create campaigns, add k</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/kLOsk/adloop/issues/67"><span class="rp-item-num">#67</span><span class="rp-item-title">Feature request: optional organic SERP context for keywords and search terms</span><span class="rp-item-extra">1 comments · 2026-09-19</span></a><a class="rp-item" href="https://github.com/kLOsk/adloop/issues/137"><span class="rp-item-num">#137</span><span class="rp-item-title">Feature request: draft tools for price and promotion assets (+ optional asset start/end dates)</span><span class="rp-item-extra">0 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/kLOsk/adloop/issues/136"><span class="rp-item-num">#136</span><span class="rp-item-title">draft_responsive_search_ad: countdown customizer counted as raw text against the 30-char limit</span><span class="rp-item-extra">0 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/kLOsk/adloop/issues/135"><span class="rp-item-num">#135</span><span class="rp-item-title">URL check rejects public sites on DNS64/NAT64 networks (64:ff9b::/96 treated as non-public)</span><span class="rp-item-extra">0 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/kLOsk/adloop/issues/49"><span class="rp-item-num">#49</span><span class="rp-item-title">`deleted_client: The OAuth client was deleted.` — fix for AdLoop ≤0.9 (retired shared sign-in)</span><span class="rp-item-extra">0 comments · 2026-07-11</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/kLOsk/adloop/discussions/133"><span class="rp-item-num">#133</span><span class="rp-item-title">Thank you for your repo!</span><span class="rp-item-extra">0 comments · 2026-11-08</span></a><a class="rp-item" href="https://github.com/kLOsk/adloop/discussions/101"><span class="rp-item-num">#101</span><span class="rp-item-title">Just wanted to say Thanks!</span><span class="rp-item-extra">1 comments · 2026-10-14</span></a><a class="rp-item" href="https://github.com/kLOsk/adloop/discussions/14"><span class="rp-item-num">#14</span><span class="rp-item-title">Community launch strategy — where and how to spread the word</span><span class="rp-item-extra">1 comments · 2026-04-13</span></a><a class="rp-item" href="https://github.com/kLOsk/adloop/discussions/13"><span class="rp-item-num">#13</span><span class="rp-item-title">Google Cloud OAuth verification — status update</span><span class="rp-item-extra">4 comments · 2026-04-13</span></a><a class="rp-item" href="https://github.com/kLOsk/adloop/discussions/12"><span class="rp-item-num">#12</span><span class="rp-item-title">Welcome to AdLoop Discussions</span><span class="rp-item-extra">0 comments · 2026-04-13</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/kLOsk/adloop/releases"><b>v0.42.0</b> <span class="rp-rel-tag">v0.42.0</span> <span class="rp-item-extra">2026-11-12</span></a><pre class="rp-pre">Two contributions from @illia-sapryga: campaigns can now carry geo exclusions and an ad schedule from the start, and a conversion action can be moved to another goal.
+
+ Geo exclusions and ad schedule on campaigns (121)
+
+draft_campaign and update_campaign take two new parameters:
+
+- geo_exclude_ids: locations to exclude, for example a city inside a targeted state. They may not overlap geo_target_ids.
+- ad_schedule: the windows the campaign serves in, in the account time zone, validated like add_ad_schedule (no overlaps, at most six a day, minutes 0, 15, 30 or 45).
+
+On a new campaign both are cr</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/kLOsk__adloop.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

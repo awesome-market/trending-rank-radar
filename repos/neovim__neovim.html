@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>neovim/neovim · GitHub Trending Rank Radar</title>
+<meta name="description" content="Vim-fork focused on extensibility and usability">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="neovim, neovim, neovim/neovim, github stars, github trending, star growth, star history, 开源项目, 星标增长, neovim, c, vim, lua, nvim, text-editor">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/neovim__neovim">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="neovim/neovim · GitHub Trending Rank Radar">
+<meta property="og:description" content="Vim-fork focused on extensibility and usability">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/neovim__neovim">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "neovim/neovim", "codeRepository": "https://github.com/neovim/neovim", "url": "https://zhuikan.com/repos/neovim__neovim", "description": "Vim-fork focused on extensibility and usability", "author": {"@type": "Organization", "name": "neovim", "url": "https://github.com/neovim"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "Vim Script", "dateCreated": "2014-01-31", "keywords": "neovim,c,vim,lua,nvim,text-editor,api"}</script>
+</head>
+<body data-repo="neovim/neovim" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">neovim/neovim</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="neovim__neovim"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/6471485?v=4&s=300" width="300" height="300" alt="neovim avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">neovim</div>
+      <a class="rp-side-owner" href="https://github.com/neovim">neovim</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/neovim">neovim</a>
+        <span class="rp-sep">/</span><span class="rp-name">neovim</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=total">total <b>#138</b></a></div>
+    </div>
+    <p class="rp-desc">Vim-fork focused on extensibility and usability</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>103,619</b></span><span class="rp-stat" title="forks">⑂ <b>7,422</b></span><span class="rp-stat" title="watchers">👁 <b>1,083</b></span><span class="rp-stat" title="prs">⑃ <b>26,438</b></span><span class="rp-stat" title="issues">● <b>14,844</b></span><span class="rp-stat" title="releases">▤ <b>56</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/neovim">neovim</a><a class="rp-topic" href="../tags/c">c</a><a class="rp-topic" href="../tags/vim">vim</a><a class="rp-topic" href="https://github.com/topics/lua">lua</a><a class="rp-topic" href="https://github.com/topics/nvim">nvim</a><a class="rp-topic" href="https://github.com/topics/text-editor">text-editor</a><a class="rp-topic" href="../tags/api">api</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Vim Script</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2014-01-31</span><a class="rp-meta-bit rp-home" href="https://neovim.io" rel="noopener">neovim.io</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="neovim__nvim-lspconfig"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6471485?v=4" alt="" loading="lazy">nvim-lspconfig</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/neovim/neovim">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Nvim 0.12.6</span><a class="rp-dl-a" href="https://github.com/neovim/neovim/releases/tag/v0.12.6">Nvim-0.12.6 ↓</a><span class="rp-dl-ver">0.12.6</span><span class="rp-dl-date">2026-10-09</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-8</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+283</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+646</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">103,619</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">7,422</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">1,083</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">26,438</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">14,844</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">56</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Documentation |
+  Chat
+
+
+
+
+
+
+
+Neovim is a project that seeks to aggressively refactor Vim in order to:
+
+- Simplify maintenance and encourage contributions
+- Split the work between multiple developers
+- Enable [advanced UIs] without modifications to the core
+- Maximize extensibility
+
+See the Introduction wiki page and [Roadmap]
+for more information.
+
+Features
+--------
+
+- Modern GUIs
+- API access
+  from any language including C/C++, C, Clojure, D, Elixir, Go, Haskell, Java/Kotlin,
+  JavaScript/Node.js, Julia, Lisp, Lua, Perl, Python, Racket, Ruby, Rust
+- Embedded, scriptable terminal emulator
+- Asynchronous job control
+- Shared data (shada) among multiple editor instances
+- XDG base directories support
+- Compatible with most Vim plugins, including Ruby and Python plugins
+
+See [:help nvim-features][nvim-features] for the full list, and [:help news][nvim-news] for noteworthy changes in the latest version!
+
+Install from package
+--------------------
+
+Pre-built packages for Windows, macOS, and Linux are found on the
+Releases page.
+
+[Managed packages] are in [Homebrew], [Debian], [Ubuntu], [Fedora], [Arch Linux], [Void Linux], [Gentoo], and more!
+
+Install from source
+-------------------
+
+See BUILD.md and supported platforms for details.
+
+The build is CMake-based, but a Makefile is provided as a convenience.
+After installing the dependencies, run the following command.
+bash
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
+
+
+To install to a non-default location:
+bash
+make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=/full/path/
+make install
+
+
+CMake hints for inspecting the build:
+
+- cmake --build build --target help lists all build targets.
+- build/CMakeCache.txt (or cmake -LAH build/) contains the resolved values of all CMake variables.
+- build/compile_commands.json shows the full compiler invocations for each translation unit.
+
+Transitioning from Vim
+--------------------
+
+See :help nvim-from-vim for instructions.
+
+Project layout
+--------------
+
+    ├─ cmake/           CMake utils
+    ├─ cmake.config/    CMake defines
+    ├─ cmake.deps/      subproject to fetch and build dependencies (optional)
+    ├─ runtime/         plugins and docs
+    ├─ src/nvim/        application source code (see src/nvim/README.md)
+    │  ├─ api/          API subsystem
+    │  ├─ eval/         Vimscript subsystem
+    │  ├─ event/        event-loop subsystem
+    │  ├─ generators/   code generation (pre-compilation)
+    │  ├─ lib/          generic data structures
+    │  ├─ lua/          Lua subsystem
+    │  ├─ msgpack_rpc/  RPC subsystem
+    │  ├─ os/           low-level platform code
+    │  └─ tui/          built-in UI
+    └─ test/            tests (see test/README.md)
+
+License
+-------
+
+Neovim contributions since [b17d96][license-commit] are licensed under the
+Apache 2.0 license, except for contributions copied from Vim (identified by the
+vim-patch token). See LICENSE.txt for details.
+
+[license-commit]: https://github.com/neovim/neovim/commit/b17d9691a24099c9210289f16a</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/neovim/neovim/issues/12064"><span class="rp-item-num">#12064</span><span class="rp-item-title">spell checker integration</span><span class="rp-item-extra">64 comments · 2020-03-29</span></a><a class="rp-item" href="https://github.com/neovim/neovim/issues/23291"><span class="rp-item-num">#23291</span><span class="rp-item-title">LSP: high cpu usage with huge number of files with `workspace/didChangeWatchedFiles` enabled</span><span class="rp-item-extra">59 comments · 2023-04-23</span></a><a class="rp-item" href="https://github.com/neovim/neovim/issues/553"><span class="rp-item-num">#553</span><span class="rp-item-title">Bidi language support</span><span class="rp-item-extra">47 comments · 2014-04-17</span></a><a class="rp-item" href="https://github.com/neovim/neovim/issues/1496"><span class="rp-item-num">#1496</span><span class="rp-item-title">:! (bang) and system() are not interactive</span><span class="rp-item-extra">43 comments · 2014-11-19</span></a><a class="rp-item" href="https://github.com/neovim/neovim/issues/25377"><span class="rp-item-num">#25377</span><span class="rp-item-title">UI flush/redraw can happen before UI attach / UIEnter</span><span class="rp-item-extra">42 comments · 2023-09-26</span></a><a class="rp-item" href="https://github.com/neovim/neovim/issues/31506"><span class="rp-item-num">#31506</span><span class="rp-item-title">`executable()` is slow on WSL</span><span class="rp-item-extra">38 comments · 2024-12-08</span></a><a class="rp-item" href="https://github.com/neovim/neovim/issues/39893"><span class="rp-item-num">#39893</span><span class="rp-item-title">rename `al` text-object and add a better pair for `il`</span><span class="rp-item-extra">37 comments · 2026-05-19</span></a><a class="rp-item" href="https://github.com/neovim/neovim/issues/21629"><span class="rp-item-num">#21629</span><span class="rp-item-title">add :Hardcopy command</span><span class="rp-item-extra">37 comments · 2023-01-03</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/neovim/neovim/discussions/42798"><span class="rp-item-num">#42798</span><span class="rp-item-title">&quot;gO&quot; for viewing the table of content of an help page is not readable</span><span class="rp-item-extra">3 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/neovim/neovim/discussions/42795"><span class="rp-item-num">#42795</span><span class="rp-item-title">Swara: LilyPond support with its own Tree-sitter grammar and a Rust language server</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/neovim/neovim/discussions/42794"><span class="rp-item-num">#42794</span><span class="rp-item-title">Can you completely stop neovim 0.12 interfering with LSP completion options?</span><span class="rp-item-extra">3 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/neovim/neovim/discussions/42782"><span class="rp-item-num">#42782</span><span class="rp-item-title">How do you instruct Neovim 0.12 autocomplete to use raw lsp completions?</span><span class="rp-item-extra">5 comments · 2026-11-10</span></a><a class="rp-item" href="https://github.com/neovim/neovim/discussions/42780"><span class="rp-item-num">#42780</span><span class="rp-item-title">How do you manually trigger auto complete in neovim 0.12?</span><span class="rp-item-extra">2 comments · 2026-11-10</span></a><a class="rp-item" href="https://github.com/neovim/neovim/discussions/42719"><span class="rp-item-num">#42719</span><span class="rp-item-title">Getting Started with Neovim Contributions and Preparing for GSoC 2027</span><span class="rp-item-extra">1 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/neovim/neovim/discussions/42575"><span class="rp-item-num">#42575</span><span class="rp-item-title">Please add btmux to the &quot;GUI&quot; section of the Related Projects wiki</span><span class="rp-item-extra">0 comments · 2026-10-28</span></a><a class="rp-item" href="https://github.com/neovim/neovim/discussions/42543"><span class="rp-item-num">#42543</span><span class="rp-item-title">neovim conf 2027</span><span class="rp-item-extra">0 comments · 2026-10-25</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/neovim/neovim/releases"><b>Nvim 0.12.6</b> <span class="rp-rel-tag">v0.12.6</span> <span class="rp-item-extra">2026-10-09</span></a><pre class="rp-pre">NVIM v0.12.6
+Build type: Release
+LuaJIT 2.1.1774638290
+
+
+ Release notes
+
+- Changelog (fixes + features)
+- News (:help news in Nvim)
+
+ Install
+
+ Windows
+
+ Zip
+
+1. Download nvim-win64.zip (or nvim-win-arm64.zip for ARM)
+2. Extract the zip
+3. Run nvim.exe in your terminal
+
+ MSI
+
+1. Download nvim-win64.msi (or nvim-win-arm64.msi for ARM)
+2. Run the MSI
+3. Run nvim.exe in your terminal
+
+Note: On Windows &quot;Server&quot; you may need to install vcruntime.dll.
+
+ macOS (x86_64)
+
+1. Download nvim-macos-x86_64.tar.gz
+2. Run xattr -c ./nvim-macos-x86_64.tar.gz (to avoid &quot;unknown de</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (7)</h3><div class="rp-list"><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE5TakhpdnFJYUhhNTFEMmNxdHY3WUJLTDZ2VHhWcEpOYVdwR2hGVmdmQ29IQy1XdWYwY3J1Q011Q0tfbjFYMi1ZZ2FYaW5xcGI4eUtyYmhtcTZwNEJ2NUE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN</span><span class="rp-item-title">AI编程的“下半场”：插件形态的收敛与Kimi K3.1 Pro的降维打击</span><span class="rp-item-extra">2026-10-30</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMinAFBVV95cUxNUzd1NVdTY2NvNDRiTExSREp6WjFaa3NVSXhzamRlYm9SZHdtOFNoTzJITzVqRUMtZUF0RnZmNWNDbFNhLTNla3NGWUluLWEwNE1IZ1NncGh3dzZnX2tWc0pJZnhaTlQ5NmJ1ZDN3bTBuVXVQRlBFbmtELVdQblhhbTVUWDlzNl96a3ZoSzRSZkVlLURwM3lYZVBlSUM?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">quasa.io</span><span class="rp-item-title">Cursor还是GitHub Copilot：月费差一半，PR结果看任务</span><span class="rp-item-extra">2026-09-30</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMia0FVX3lxTE5MT3l2N2lHM1BUbG13MWYyUjN1RTBZd2FqdkpkRzZFbWhyUGsxWHhQTTlpZ3I2T3p3a0RkQi1mdDg4MGQ4Um1DajJwZHBqdzBHalUtVG1UOFozQmhicy1CQVJrRmYwa1hUaFl3?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">OSCHINA</span><span class="rp-item-title">有没有感觉 Claude Code 的配置目录很清晰？</span><span class="rp-item-extra">2026-06-02</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiigFBVV95cUxQM1JCbmh2Ymw1LXE3N05LYzZ6TzdVRG5HQjdubV85cHdxTHNIejZxT3BjNHYtNHpETU50TXo4WGd1ekNFQ01pWkFUVmxqanJuSWE0d2pZWHZZSzJjT2Q4ajBQU2VkMWNDaEp0YXhlZWRkZzdQZi1lVkFSNFhDd2xMdEtOTWdZMy1rb0E?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">新浪新闻_手机新浪网</span><span class="rp-item-title">面对GitHub Copilot成本激增，开发者该如何优化使用习惯？</span><span class="rp-item-extra">2026-05-31</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE9KU3ZGNi1pQVlhSWtjSWk3TF9SVmJlYU9hRkNDb2ktYURvVHZaQTg2NDlrVzYzdEMzOVZCR3VHdDJNeVp2b21NTkh1WWVnQklPR0V0bDZJakVXNVVMRkE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">InfoQ.cn</span><span class="rp-item-title">挑战 Claude Code，9.5 万星！又一款开源 AI 编程神器火了</span><span class="rp-item-extra">2026-02-09</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBfUTFPYU9ZX0I3Q3dWd21TYVFYNi1DTEJoTTh6RG1IN2c3Y0xYTEJTeVFYeWd4aWJ6UmJEQl9ZekdSLUZOWk4xbHVsTlVpTm40UjRkYnk3bVo5bTJUa29EZ0Z6WUh1bDg?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN博客</span><span class="rp-item-title">“告别 Neovim！为什么我投奔了刚开源的 Zed 编辑器？”</span><span class="rp-item-extra">2024-08-20</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiSEFVX3lxTFAxOVZ1SEdxMGR3YlB2Tm8yaHJuRjB1c3Q5SmRUYnZOXzFsREJBUUpVaUxSU3RjN3l1cUJYQ1k5YVRNMmxQZ1pENw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">凤凰网</span><span class="rp-item-title">每人每月19美元，GitHub推出Copilot for Business计划</span><span class="rp-item-extra">2022-12-09</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (19)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=7278214" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Neovim</span><span class="rp-item-extra">▲ 879 · 362 comments · 2014-02-21</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=27713358" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Neovim v0.5</span><span class="rp-item-extra">▲ 449 · 208 comments · 2021-07-02</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47565316" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Neovim 0.12.0</span><span class="rp-item-extra">▲ 409 · 262 comments · 2026-03-29</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=31039569" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Neovim 0.7 Released</span><span class="rp-item-extra">▲ 336 · 216 comments · 2022-04-15</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=20981363" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Neovim v0.4.0</span><span class="rp-item-extra">▲ 334 · 162 comments · 2019-09-16</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=33037151" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Neovim 0.8 Released</span><span class="rp-item-extra">▲ 326 · 221 comments · 2022-09-30</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=14244586" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">NeoVim 0.2.0 released</span><span class="rp-item-extra">▲ 319 · 140 comments · 2017-05-02</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=15650504" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Neovim v0.2.1 released</span><span class="rp-item-extra">▲ 301 · 158 comments · 2017-11-08</span></a><a class="rp-item" href="https://note.com/sugarida/n/nb877d8ff480e?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">From VS Code to Neovim: The Story of Building My Dream Black Screen with Claude Code</span><span class="rp-item-extra">2026-11-01</span></a><a class="rp-item" href="https://www.heise.de/en/news/Neovim-0-12-with-native-plugin-manager-11241587.html" target="_blank" rel="noopener"><span class="rp-news-src">heise online</span><span class="rp-item-title">Neovim 0.12 with native plugin manager</span><span class="rp-item-extra">2026-03-31</span></a><details class="rp-news-more"><summary>9 more</summary><a class="rp-item" href="https://www.howtogeek.com/6-essential-plugins-to-get-the-most-out-of-neovim-in-2026/" target="_blank" rel="noopener"><span class="rp-news-src">howtogeek</span><span class="rp-item-title">6 Neovim plugins that finally fixed my coding workflow</span><span class="rp-item-extra">2026-01-17</span></a><a class="rp-item" href="https://www.infoworld.com/article/2270549/github-copilot-adds-neovim-jetbrains-ide-support.html" target="_blank" rel="noopener"><span class="rp-news-src">InfoWorld</span><span class="rp-item-title">GitHub Copilot adds Neovim, JetBrains IDE support</span><span class="rp-item-extra">2021-10-27</span></a><a class="rp-item" href="https://lwn.net/Articles/864712/" target="_blank" rel="noopener"><span class="rp-news-src">LWN.net</span><span class="rp-item-title">New features in Neovim 0.5</span><span class="rp-item-extra">2021-08-02</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE0yYUcwUDEtTTMyYVpQSHFXRlhiV3dDaGFhVEZfQWp5UVV5SGNxWjk3V1pUUUVhVnZVZHBwODVKVWJVTXZpUlRPZDBNWGhCNWJWS0xr?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">肿瘤瞭望</span><span class="rp-item-title">Termux · GitHub</span><span class="rp-item-extra">2026-10-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE12LXRXU0NuZUthMmlYU0hnZDBKQ0RJODRrLVJfY1AwaEJsd1p3ZGI5T1pWZGhGZHlPcDk2YU9SY1FkdzMwNzBJRER5cVNlai1kbjdjaUV2b0JXSWgtTGg1NzdVYWswdw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">wiz.io</span><span class="rp-item-title">GitHub Copilot vs Cursor: Why 2 is Better Than 1</span><span class="rp-item-extra">2026-04-24</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiYEFVX3lxTE5uaXRGZ2E0eXdZVnctTTBtZEFZdFFDQVVGZUNIaFQzN2ZFMWNBMTVvS0dFSjdraHFzZDN3c1ZzZGdwcVFJelNJemh1bGc4Q3dNay13ZkN2UzJNSG1nbEJSSNIBcEFVX3lxTE1mMlkyLWRrN0w5eDl2STRFNkJlWmp6RDJjdEF6amlDMnFDdUxoSVlhckQ4NEdBVFE2WnptOWhFdjdndWhtblh0MUtFcF9tZUlFM1NKNlR2RmdPSjFfM3NhelNWNWppOVhOeFN6UEF1MTY?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Zencoder</span><span class="rp-item-title">9 Best AI Coding Agent Tools for Neovim in 2026 [Comparison]</span><span class="rp-item-extra">2026-03-17</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMibEFVX3lxTE5HSnB4bEduVV8tb3lnTG9QbHNWYUoxWW82dXJEUE95ZGlGYUtPY2JiSENheE9DV3dsbVd0TElxV0cySlJDdnRXNVZqYjJyZjQzeFhLSU9mSUVXWV9CVmNGUHVlOTdWZDVQR3RGcA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Augment Code</span><span class="rp-item-title">GitHub Copilot vs Continue: Compliance &amp; Cost Compared for Enterprise Teams (2026)</span><span class="rp-item-extra">2026-02-11</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMijwFBVV95cUxQbGR2MkE2OG1tZW1DaTlvb0pLY24ybndSZmhfNllmb3NJQ3ZkcHNCSFBGOUV6dF9qQnpQbHgyaVVnUG80T09Zbk92RTI4NnNnWWpQNDlBeWN3d1N6dGtkUURjVXFLNi1OOW1hMS1KTTV6dlhIRnA5MzJkRkhKeEctTlNhcTZNTkNUT3R4SWxTVQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The GitHub Blog</span><span class="rp-item-title">Copilot Language Server SDK is now available</span><span class="rp-item-extra">2025-02-10</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxOSm9xSTN3SnJEUFRRN3B1UlNIcEktdXlpbjA2RndLMjJSSTI2QnVkbnBiMHNtel90YWVWcnNVZjk2NTduVFowemVkUVRzc2l2a3VIenV5VW1ZcVFoSWZ4bXZkNlMzMGNUallwYzNoZjRKeC1NUFZkN0w1Um1HYnZhbzJlU1M?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Towards Data Science</span><span class="rp-item-title">Learn How to Use NeoVim as an IDE</span><span class="rp-item-extra">2025-02-05</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/neovim__neovim.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

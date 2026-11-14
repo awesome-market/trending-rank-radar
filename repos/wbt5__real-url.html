@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>wbt5/real-url · GitHub Trending Rank Radar</title>
+<meta name="description" content="获取斗鱼&amp;虎牙&amp;哔哩哔哩&amp;抖音&amp;快手等 58 个直播平台的真实流媒体地址(直播源)和弹幕，直播源可在 PotPlayer、flv.js 等播放器中播放。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="real-url, wbt5, wbt5/real-url, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/wbt5__real-url">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="wbt5/real-url · GitHub Trending Rank Radar">
+<meta property="og:description" content="获取斗鱼&amp;虎牙&amp;哔哩哔哩&amp;抖音&amp;快手等 58 个直播平台的真实流媒体地址(直播源)和弹幕，直播源可在 PotPlayer、flv.js 等播放器中播放。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/wbt5__real-url">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "wbt5/real-url", "codeRepository": "https://github.com/wbt5/real-url", "url": "https://zhuikan.com/repos/wbt5__real-url", "description": "获取斗鱼&虎牙&哔哩哔哩&抖音&快手等 58 个直播平台的真实流媒体地址(直播源)和弹幕，直播源可在 PotPlayer、flv.js 等播放器中播放。", "author": {"@type": "Organization", "name": "wbt5", "url": "https://github.com/wbt5"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Python", "dateCreated": "2019-09-19"}</script>
+</head>
+<body data-repo="wbt5/real-url" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">wbt5/real-url</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="wbt5__real-url"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/3039195?v=4&s=300" width="300" height="300" alt="wbt5 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">real-url</div>
+      <a class="rp-side-owner" href="https://github.com/wbt5">wbt5</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/wbt5">wbt5</a>
+        <span class="rp-sep">/</span><span class="rp-name">real-url</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">获取斗鱼&amp;虎牙&amp;哔哩哔哩&amp;抖音&amp;快手等 58 个直播平台的真实流媒体地址(直播源)和弹幕，直播源可在 PotPlayer、flv.js 等播放器中播放。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>7,835</b></span><span class="rp-stat" title="forks">⑂ <b>1,550</b></span><span class="rp-stat" title="watchers">👁 <b>101</b></span><span class="rp-stat" title="prs">⑃ <b>52</b></span><span class="rp-stat" title="issues">● <b>429</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Created 2019-09-19</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/wbt5/real-url">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-2</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">7,835</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,550</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">101</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">52</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">429</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Real-Url
+
+ 说明
+
+没想到还有这么多朋友发 issue 和邮件咨询问题，感谢大家的支持🎈！因为有时很忙，回复和提交代码的周期会有点长，抱歉哦😋
+
+这个仓库存放的是：获取一些直播平台真实流媒体地址（直播源）和弹幕的 Python 代码实现。获取的地址经测试，均可在 PotPlayer、VLC、DPlayer(flv.js + hls.js)等播放器中播放。
+
+  🤘👌🤙🙏🐉👉 ：如果该项目能帮助到您，欢迎 star 和 pr；或在您的项目中标注 Real-Url 为参考来源。
+
+目前已实现：
+
+ 59 个直播平台的直播源获取：斗鱼直播、虎牙直播、哔哩哔哩直播、战旗直播、网易 CC 直播、火猫直播、企鹅电竞、YY 直播、一直播、快手直播、花椒直播、映客直播、西瓜直播、触手直播（已倒闭）、NOW 直播、抖音直播，爱奇艺直播、酷狗直播、龙珠直播、PPS 奇秀直播、六间房、17 直播、来疯直播、优酷轮播台、网易 LOOK 直播、千帆直播、陌陌直播、小米直播、迅雷直播、京东直播、企鹅体育、人人直播、棉花糖直播、九秀直播、羚萌直播、95秀、新浪疯播、红人直播、艾米直播、KK直播、酷我聚星、乐嗨直播、秀色直播、星光直播、我秀直播、热猫直播、艺气山直播、AcFun 直播、猫耳FM、畅秀阁、Twitch、TikTok、央视频、PP体育、zhibotv、腾讯体育直播、爱奇艺体育直播、liveU、bigolive、咪咕视频体育。
+
+ 18 个直播平台的弹幕获取：斗鱼直播、虎牙直播、哔哩哔哩直播、快手直播、火猫直播、企鹅电竞、花椒直播、映客直播、网易 CC 直播、酷狗直播、龙珠直播、PPS 奇秀、搜狐千帆、战旗直播、来疯直播、网易 LOOK 直播、AcFun 直播、艺气山直播。
+
+ 运行
+
+1. 项目使用了很简单的 Python 代码，仅在 Python 3 环境运行测试。
+2. 具体所需模块请查看 requirements.txt
+3. 获取斗鱼和爱奇艺的直播源，需 JavaScript 环境，可使用 node.js。爱奇艺直播里有个参数是加盐的 MD5，由仓库中的 iqiyi.js 生成。
+4. 每个平台的直播源和弹幕获取功能相互独立，以后再整合。弹幕食用：python main.py
+
+ 反馈
+
+有直播平台失效或新增其他平台解析的，可发 issue。
+
+ 更新
+2021.11.7：:sparkles:新增咪咕体育。
+
+2021.8.15：:sparkles:新增 liveU、bigolive。
+
+2021.7.4：:art:更新哔哩哔哩直播源；:bug:修复Acfun直播弹幕；:bug:修复企鹅电竞弹幕。
+
+2021.6.20：:sparkles:新增爱奇艺体育直播。
+
+2021.6.13：:bug:修复腾讯体育。
+
+2021.6.12：:bug:修复斗鱼直播。
+
+2021.05.22：:sparkles:新增腾讯体育直播。
+
+2021.05.15：:art:更新爱奇艺、:bug:修复战旗直播。
+
+2021.05.13： :sparkles:新增 zhibotv。
+
+2021.05.05：:sparkles:新增 PP体育。
+
+2021.05.03：:sparkles:新增 央视频。
+
+2021.05.02：:sparkles:新增 Twitch、TikTok。
+
+2021.05.01：:sparkles:新增畅秀阁、猫耳FM。
+
+2020.12.20：修复直播源：抖音、艺气山、花椒、快手、来疯、龙珠、PPS、人人直播、17live 可能需要挂代理。
+
+2020.10.17：修复：西瓜直播、YY直播。
+
+2020.09.26：更新：虎牙直播源；注释掉未完成的 YY 直播弹幕功能。
+
+2020.09.12：新增：斗鱼添加一个从PC网页端获取直播源的方法，可选线路和清晰度；新增requirements.txt文件；更新代码。
+
+2020.08.18：更新快手直播源，现在播放链接需要带参数；更新快手直播弹幕，直接用 protobuf 序列化；新增 AcFun、艺气山两个平台的弹幕功能。
+
+2020.08.08：新增 AcFun 直播、艺气山直播；更新：哔哩哔哩直播、虎牙直播、红人直播；优化：斗鱼直播。
+
+2020.07.31：新增 19 个直播平台，详见上面说明；更新YY直播，现在可以获取最高画质；优化战旗直播、优酷直播代码；
+
+2020.07.25：新增网易 LOOK 直播弹幕获取；修复斗鱼直播源；新增陌陌直播源。
+
+2020.07.19：新增来疯直播弹幕获取
+
+2020.07.18：新增酷狗、龙珠、PPS奇秀、搜狐千帆、战旗直播等5个平台的弹幕获取
+
+2020.07.11：新增网易CC直播弹幕获取
+
+2020.07.05：新增花椒直播、映客直播弹幕获取；更新虎牙直播源
+
+2020.06.25：新增🐧企鹅电竞弹幕获取
+
+2020.06.19：新增火猫直播弹幕获取
+
+2020.06.18：新增弹幕功能
+
+- 添加斗鱼、虎牙、哔哩哔哩和快手 4 个平台的弹幕获取。后续添加其他平台。
+- 实现弹幕功能的代码和思路主要来自：danmaku 和 ks_barrage，感谢两位大佬！
+
+2020.05.30：更新虎牙直播。
+
+2020.05.25：更新哔哩哔哩直播。
+
+- 默认获取最高画质，不同清晰度取决于请求参数中的 qn。
+- 增加 .m3u8 格式播放链接的获取方法。
+
+2020.05.23：更新17直播、虎牙直播
+
+2020.05.19：更新火猫、快手、酷狗、PPS
+
+2020.05.08：新增优酷轮播台、look 直播、千帆直播；
+
+- 新增优酷轮播台：优酷轮播台是优酷直播下的一个子栏目，轮播一些经典电影电视剧，个人感觉要比其他直播平台影视区的画质要好，而且没有平台水印和主播自己贴的乱七八糟的字幕遮挡。
+- 新增 LOOK 直播：LOOK 直播是网易云音乐旗下的直播平台。
+- 新增千帆直播：千帆直播是搜狐旗下的直播平台。
+
+2020.05.01：新增优酷的来疯直播。
+
+2020.04.30：新增17直播。
+
+2020.04.24：修复虎牙、哔哩哔哩、快手、爱奇艺。
+
+2020.02.26：更新一直播。
+
+2020.01.18：更新抖音直播。
+
+2020.01.10：新增酷狗直播、龙珠直播、PPS奇秀直播、六间房。
+
+2020.01.09：新增爱奇艺直播。
+
+2020.01.07：新增抖音直播；删除一个直播平台。
+
+2020.01.03：修复快手直播，请求移动网页版。 
+
+2019.12.31：修复快手直播。 
+
+2019.12.07：修复哔哩哔哩直播。
+
+2019.12.04：更新斗鱼直播，新增一种获取方式。
+
+2019.11.24：新增收米直播。
+
+2019.11.18：新增西瓜直播；触手直播；NOW直播。
+
+2019.11.18：新增一直播；快手直播；花椒直播；映客直播。
+
+2019.11.17：新增火猫直播；新增企鹅电竞；新增YY直播。
+
+2019.11.16：新增战旗tv直播源；新增网易CC直播。
+
+2019.11.09：新增哔哩哔哩直播源。
+
+2019.11.03：新增虎牙直播源。
+
+2019</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/wbt5__real-url.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

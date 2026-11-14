@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>twentyhq/twenty · GitHub Trending Rank Radar</title>
+<meta name="description" content="The open alternative to Salesforce, designed for AI.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="twenty, twentyhq, twentyhq/twenty, github stars, github trending, star growth, star history, 开源项目, 星标增长, crm, customer, graphql, marketing, react, sales">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/twentyhq__twenty">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="twentyhq/twenty · GitHub Trending Rank Radar">
+<meta property="og:description" content="The open alternative to Salesforce, designed for AI.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/twentyhq__twenty">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "twentyhq/twenty", "codeRepository": "https://github.com/twentyhq/twenty", "url": "https://zhuikan.com/repos/twentyhq__twenty", "description": "The open alternative to Salesforce, designed for AI.", "author": {"@type": "Organization", "name": "twentyhq", "url": "https://github.com/twentyhq"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "TypeScript", "dateCreated": "2022-12-01", "keywords": "crm,customer,graphql,marketing,react,sales,typescript,crm-system,nestjs,reactjs"}</script>
+</head>
+<body data-repo="twentyhq/twenty" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">twentyhq/twenty</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="twentyhq__twenty"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/119600397?v=4&s=300" width="300" height="300" alt="twentyhq avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">twenty</div>
+      <a class="rp-side-owner" href="https://github.com/twentyhq">twentyhq</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/twentyhq">twentyhq</a>
+        <span class="rp-sep">/</span><span class="rp-name">twenty</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=monthly">monthly <b>#199</b></a></div>
+    </div>
+    <p class="rp-desc">The open alternative to Salesforce, designed for AI.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>60,891</b></span><span class="rp-stat" title="forks">⑂ <b>10,083</b></span><span class="rp-stat" title="watchers">👁 <b>228</b></span><span class="rp-stat" title="prs">⑃ <b>21,789</b></span><span class="rp-stat" title="issues">● <b>7,213</b></span><span class="rp-stat" title="releases">▤ <b>152</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/crm">crm</a><a class="rp-topic" href="https://github.com/topics/customer">customer</a><a class="rp-topic" href="../tags/graphql">graphql</a><a class="rp-topic" href="https://github.com/topics/marketing">marketing</a><a class="rp-topic" href="../tags/react">react</a><a class="rp-topic" href="https://github.com/topics/sales">sales</a><a class="rp-topic" href="../tags/typescript">typescript</a><a class="rp-topic" href="https://github.com/topics/crm-system">crm-system</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2022-12-01</span><a class="rp-meta-bit rp-home" href="https://twenty.com" rel="noopener">twenty.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/twentyhq/twenty">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">twenty/v2.58.0</span><a class="rp-dl-a" href="https://github.com/twentyhq/twenty/releases/tag/twenty%2Fv2.58.0">twenty/v2.58.0 ↓</a><span class="rp-dl-ver">2.58.0</span><span class="rp-dl-date">2026-11-13</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+45</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+516</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+2,550</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">60,891</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">10,083</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">228</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">21,789</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">7,213</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">152</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">The 1 Open-Source CRM
+
+ Website ·  Documentation ·  Roadmap  ·  Discord ·   Figma
+
+
+  
+    
+      
+      
+      
+    
+  
+
+
+
+
+ Why Twenty
+
+Twenty gives technical teams the building blocks for a custom CRM that meets complex business needs and quickly adapts as the business evolves. Twenty is the CRM you build, ship, and version like the rest of your stack.
+
+ Learn more about why we built Twenty
+
+
+
+ Installation
+
+  Cloud
+
+The fastest way to get started. Sign up at twenty.com and spin up a workspace in under a minute, with no infrastructure to manage and always up to date.
+
+  Build an app
+
+Scaffold a new app with the Twenty CLI:
+
+bash
+npm install -g twenty
+twenty app init my-app
+cd my-app
+yarn install
+
+
+Define objects, fields, and views as code:
+
+ts
+import { defineObject, FieldType } from &#x27;twenty-sdk/define&#x27;;
+
+export default defineObject({
+  nameSingular: &#x27;deal&#x27;,
+  namePlural: &#x27;deals&#x27;,
+  labelSingular: &#x27;Deal&#x27;,
+  labelPlural: &#x27;Deals&#x27;,
+  fields: [
+    { name: &#x27;name&#x27;, label: &#x27;Name&#x27;, type: FieldType.TEXT },
+    { name: &#x27;amount&#x27;, label: &#x27;Amount&#x27;, type: FieldType.CURRENCY },
+    { name: &#x27;closeDate&#x27;, label: &#x27;Close Date&#x27;, type: FieldType.DATE_TIME },
+  ],
+});
+
+
+Then ship it to your workspace:
+
+bash
+twenty auth login --url https://your-workspace.twenty.com
+twenty app publish --private
+
+
+See the app development guide for objects, views, agents, and logic functions.
+
+Building with a coding agent? Install the official Twenty app skills, which work in Claude Code, Codex, Cursor, Pi, and any other harness supported by the skills CLI:
+
+bash
+npx skills add https://github.com/twentyhq/twenty/tree/agent-skills --list
+
+
+The agent-skills branch is created by the first successful publish from main. Until then, use the local build instructions. SKILLS.md explains the other skill families in this repository and who they are for.
+
+  Self-hosting
+
+Run Twenty on your own infrastructure with Docker Compose, or contribute locally via the local setup guide.
+
+
+
+
+ Everything you need
+
+Twenty gives you the building blocks of a modern CRM (objects, views, workflows, and agents) and lets you extend them as code. Here&#x27;s a tour of what&#x27;s in the box.
+
+Want to go deeper? Read the  User Guide for product walkthroughs, or the  Documentation for developer reference.
+
+
+  
+    
+      
+        
+        
+        
+      
+       Learn more about apps in doc
+    
+    
+      
+        
+        
+        
+      
+       Learn more about version control in doc
+    
+  
+  
+    
+      
+        
+        
+        
+      
+       Learn more about primitives in doc
+    
+    
+      
+        
+        
+        
+      
+       Learn more about layouts in doc
+    
+  
+  
+    
+      
+        
+        
+        
+      
+       Learn more about AI in doc
+    
+    
+      
+        
+        
+        
+      
+       Learn more about CRM features in doc
+    
+  
+
+
+
+
+ Stack
+
+-  TypeScript
+-  Nx
+-  NestJS, with BullMQ,  PostgreSQL,  Redis
+-  React, with Jotai, Linaria and Lingui
+
+ Thanks
+
+
+  
+  &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+  
+  &amp;nbsp;</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/twentyhq/twenty/issues/16727"><span class="rp-item-num">#16727</span><span class="rp-item-title">Worker health status shows outage even though it&#x27;s running</span><span class="rp-item-extra">10 comments · 2025-12-20</span></a><a class="rp-item" href="https://github.com/twentyhq/twenty/issues/15231"><span class="rp-item-num">#15231</span><span class="rp-item-title">Users with view-only permissions cannot use workflows</span><span class="rp-item-extra">9 comments · 2025-10-21</span></a><a class="rp-item" href="https://github.com/twentyhq/twenty/issues/17171"><span class="rp-item-num">#17171</span><span class="rp-item-title">Body from Notes are not well shared from one step to another</span><span class="rp-item-extra">8 comments · 2026-01-15</span></a><a class="rp-item" href="https://github.com/twentyhq/twenty/issues/27743"><span class="rp-item-num">#27743</span><span class="rp-item-title">ID column visibility and order are reset in table widgets for junction objects without a Name field</span><span class="rp-item-extra">6 comments · 2026-10-09</span></a><a class="rp-item" href="https://github.com/twentyhq/twenty/issues/27256"><span class="rp-item-num">#27256</span><span class="rp-item-title">Record page layout editor: the side panel header goes blank after renaming a Fields widget group</span><span class="rp-item-extra">6 comments · 2026-10-04</span></a><a class="rp-item" href="https://github.com/twentyhq/twenty/issues/24351"><span class="rp-item-num">#24351</span><span class="rp-item-title">[Functional Regression] Missing menu icon and direct item creation on custom object sections in record detail views</span><span class="rp-item-extra">6 comments · 2026-08-19</span></a><a class="rp-item" href="https://github.com/twentyhq/twenty/issues/24324"><span class="rp-item-num">#24324</span><span class="rp-item-title">Workspace AI instructions (`aiAdditionalInstructions`) are never sent to MCP clients</span><span class="rp-item-extra">6 comments · 2026-08-18</span></a><a class="rp-item" href="https://github.com/twentyhq/twenty/issues/21077"><span class="rp-item-num">#21077</span><span class="rp-item-title">AI agent record search throws on LLM-generated filters (ilike on RICH_TEXT / operator at object level)</span><span class="rp-item-extra">6 comments · 2026-05-30</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/twentyhq/twenty/discussions/30408"><span class="rp-item-num">#30408</span><span class="rp-item-title">Show the object icon in global search results</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/twentyhq/twenty/discussions/30357"><span class="rp-item-num">#30357</span><span class="rp-item-title">Add native right-click context menus for table columns and desktop UI</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/twentyhq/twenty/discussions/30355"><span class="rp-item-num">#30355</span><span class="rp-item-title">Auto-fit table column width by double-clicking the column divider</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/twentyhq/twenty/discussions/30336"><span class="rp-item-num">#30336</span><span class="rp-item-title">Workspace default width (and optional lock) for the side panel / command menu</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/twentyhq/twenty/discussions/30273"><span class="rp-item-num">#30273</span><span class="rp-item-title">Feature Request : Contact synchronisation with office 365</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/twentyhq/twenty/discussions/30104"><span class="rp-item-num">#30104</span><span class="rp-item-title">Campaigns: allow custom objects / Companies in list, not only People</span><span class="rp-item-extra">0 comments · 2026-11-10</span></a><a class="rp-item" href="https://github.com/twentyhq/twenty/discussions/29423"><span class="rp-item-num">#29423</span><span class="rp-item-title">email template</span><span class="rp-item-extra">2 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/twentyhq/twenty/discussions/29257"><span class="rp-item-num">#29257</span><span class="rp-item-title">Feature Request: Implement native Labelled Fields (Emails, Phones, Addresses) and Entity Tags (Types) system-wide</span><span class="rp-item-extra">0 comments · 2026-10-29</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/twentyhq/twenty/releases"><b>twenty/v2.58.0</b> <span class="rp-rel-tag">twenty/v2.58.0</span> <span class="rp-item-extra">2026-11-13</span></a><pre class="rp-pre">⚠️ Breaking changes
+
+- [BREAKING_CHANGE] Drop the legacy workspace workflow object (30036) by @charlesBochet
+- [BREAKING_CHANGE] Read row level permission rules in the permission compiler (30132) by @charlesBochet
+- [BREAKING_CHANGE] Mask record grants with limiting roles and drop legacy current user permissions (30145) by @charlesBochet
+- chore(security): bump exa-js to 2.28.0 in the exa app (30188) by @mabdullahabaid
+
+ ✨ New features
+
+- feat(getting-started): show Keep Twenty in the sidebar card and drop the trial days bar (30056) by @etiennejouan
+- feat(getting-started): add a Nex</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (7)</h3><div class="rp-list"><a class="rp-item" href="https://news.google.com/rss/articles/CBMikwFBVV95cUxNS3FkTFp6amJ4WFNUSVNUakhBNjhyNTZqT2RqZElScW91ZGl2dW90OEdRWjlXRVBoMnpRS2NBOE9qc2s4ZGg3XzEwNFpBMkVJTG0wLVZ3YWZKSnp2S0tNOTd2eUo0eC1idm1KV2FrQjBOWG5jOGdCSDBhNlhfaWxLcUlCNEJqNFl2MF9Rc2dGM2JsT28?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">REA 用 AI 做逆向工程，GitHub 星标创纪录，哪些是真的，哪些不是</span><span class="rp-item-extra">2026-10-14</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMihwFBVV95cUxQV0FjZGgtZ2lZSUFlUTR1RHZPMWZ5Zm50TFV0ZVRNNlVVekhFN0NRd2I0UnRicE9BS0hfOEt2MEhiaER6aUxZSWxjU0ptR1hHT2VYSFM3d3ZhQnMwSlFrRTVweGg4cWFQQ3V0NUlBZXZJSVZsY24ybkYxakNtbGd2YzlwelNKcWM?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">Salesforce 全球宕机，登录和 API 在 Dreamforce 期间中断</span><span class="rp-item-extra">2026-09-16</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMikwFBVV95cUxQLVpBU1h3bks4TjF5R3l1cW1EZG1Ga3hFa2ZjVU1laWhCUWhsVFlKektkME1nNHJwYUhIVHNILURfaUpFYmJ6cnZvTEczTmpVTWxYR2M1NDRTRHdmUURScjdmTjBtT1FoTzJ0cDBoWTZwVmNnWURka1g0X1Nrb2NBNXhYUllMQnk2QWlrM3hwQjNfWlk?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">每家AI初创公司都在用的开源技术栈：7个GitHub仓库（附真实star数）</span><span class="rp-item-extra">2026-08-13</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMikgFBVV95cUxNT3NCOEhJeDhLRG9CdUxlUk43d3NhT1hNZnZSUHplNU01YzR1OGFYbXVBQVkzU0lOYXc3UW1QY25mVk9kUm9tMGJQcHZYVlZaQ2w4XzBGS2ZCRFpDaE9PaFdibUo3cGxaOVJqUm5hTzV4VnlfMWtQLTlaeUJLZ1hGTmxqNFZBdzc2Y2pzeDQzVkdoQQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">Immich: 在你家中运行的 Google 相册开源替代方案</span><span class="rp-item-extra">2026-07-11</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMihwFBVV95cUxPLTVrMUVRSDctbG9CdEk2UHBCQlRzOEV4Y1p3cHVFby1RTnotZ1I0TnQtTVZBdzJ5cktFeHk0WF9tVndzTl9QMFljOWJQSXNHSXRaQ1lJTi1BdTRqM3M0RFh6bzRoRk8xR3NqOGs4dVZIcEFkMTc5Y1VtT1dwOHVsM0JPZ09CN0k?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">10 个替代付费工具的开源 GitHub 仓库 (2026)</span><span class="rp-item-extra">2026-07-04</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMinwFBVV95cUxOTWVJR2x4cnhRUUc2YzduWmoyZ3QxWVRtZ0FjN3hjSWdUZEVBbXhndWttcGM4eVlLSk82MUlyUmxIU19NUGVleWR2a3lSS2JuVnoxdlVadkNEdEpuZm9tWWRtN0wxQ2h6N2RpUXIwSy1xb1BCeV9VNVhMaWZjSVdUQ1pzQm4ySjVyNXpROUszbGpud2N0MVR0Q2NzNVJYb3M?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">Twenty CRM: GitHub 上 44,000 颗星的 Salesforce 开源替代方案</span><span class="rp-item-extra">2026-04-17</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiSEFVX3lxTE5IUHhpcjl5eTZwZ2h4S29oSmFoNFZYdWJSZGZNV1JxaXljb292MDczeUZIZG1tQWtGSTdnQjFVOU9tbDV4YWlIdA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">智源社区</span><span class="rp-item-title">亚马逊&amp;北大：POMP，使用2万类别的PROMPT预训练</span><span class="rp-item-extra">2023-04-11</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (11)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=36791434" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Launch HN: Twenty.com (YC S23) – Open-source CRM</span><span class="rp-item-extra">▲ 415 · 311 comments · 2023-07-19</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=37033753" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Launch HN: GitStart (YC S19) – Remote junior devs working on production PRs</span><span class="rp-item-extra">▲ 235 · 192 comments · 2023-08-07</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=37805520" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Twenty: A Modern open-source CRM</span><span class="rp-item-extra">▲ 164 · 67 comments · 2023-10-07</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=50280650" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: I built a tool that finds reliability bugs in your code</span><span class="rp-item-extra">▲ 6 · 0 comments · 2026-10-28</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47868000" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Twenty: The open alternative to Salesforce, designed for AI</span><span class="rp-item-extra">▲ 4 · 1 comments · 2026-04-22</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=46922213" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Twenty: A Modern Alternative to Salesforce</span><span class="rp-item-extra">▲ 1 · 0 comments · 2026-02-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMi9AFBVV95cUxNaFBDaG1BUHNmUmgxSl9WYzJDZng5TTRCVmowTk1zM081bzcwcEhKTklmUHlxc0pmUzUwYmFFWmM3YUNxVHBsZl96anJpeF9ESzg4cnpXcERJTjVKNGh1T0toRXVxV1ktWXRRVDNlUWhtT1g5QjNaTjRFbUI2WmNXbnJNTXFxNVJjbDFiQ3RBdFlrSFpocW1ZcFJJdnlTQlZyVlI1WWZMaS1fMlhmcndJWWc4X1pySm5pdllFaW1YemtwUkJpYzdKM21hVl9MRWZZbGltZ3Bob0xwZFZ1MDFJbkd0QmtLLTNqY0dqdF9YZUxOSklr0gH7AUFVX3lxTE03UDhvdGFySFcwbzNjbU00Sm9SWFhJVk1FS2xNYnF6T0hpQUhOcXVQWU5SeXU1N01hd25BZ1dDdXdXTXU3bWVZV3JySDFIT2d3YkZ0ZmIzd1RrbHhXTDhPR29BUDNJXzlYVzA0aDJJQVF1eUF5OGlJWnpXNjVObUU5VHhlUUdHVy1DTFA2MnpMcG0ySEMyT0JyRGdBSmVXM3JHRGFjenozSFllZjJ2UVRJUUM2cndfYXJsWmVhRHZ0Z3JFc3VWSFhEajB0NEpaLXU5V0ltcmRlV1laQkZOOUZHb3J5OGowaWtrLVBYMVRrR2paZVN1UGtQQmZB?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The Indian Express</span><span class="rp-item-title">GitHub to developers: Copilot Fusion promises frontier-level AI coding at half the cost</span><span class="rp-item-extra">2026-11-01</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNX1BkSHB4TlFMdnlwbGIya3FURlFHVEYtNTdoVEUzczFxVTZQcEo4ZXQwYlpmM2ZiUGIyTWRPMzgtS0pYa2FoNExUWWd0T0dsTTJqc3VhZkJYOHZmTWFnWnNIcWQzeGxYaXFRUm9MNU82NzJraTZ3U0VraWJ6WWtBd2RxSjdEcG4xNjU2ckhiRU9ic2pseFhxRmttZw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">Twenty CRM: The Open Source Salesforce Alternative with 44,000 GitHub Stars</span><span class="rp-item-extra">2026-04-17</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMieEFVX3lxTE5temlTWWI4RmVlMXlKRzVoZ0VRTFRYaGFOZGRkeFNJcHByNmNBXzV1QXdIR3ZQRHRWUHBrT2hZTUtHMm1uRThHWjBpTkFWNXE2VGJSUUdPdkdJQ0tSeFZJeWE0TXRDRmdtVW9zdUlBOXQyZ2dVYXZmaA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Microsoft</span><span class="rp-item-title">NOS empowers developer collaboration and innovation on GitHub</span><span class="rp-item-extra">2025-05-21</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMimgFBVV95cUxNY1hJeWpfY213WmxCYjFYV3hNYWtramVrczY3U0NDX0NibUhnb1kyMDlLdWhvNVFfZG51NG1KSE12RVE3elRrbFpLREhSVHF6aUJTRFNLYW42bk1kZ1FLTmp5T3lZMXk5TzZ1eHl0Xy1kSGwzd3pPZjRYRXU0ekozVkZ5SWMzcEhURWw5XzJKZlBtMndPLWw0UHlB?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">TechCrunch</span><span class="rp-item-title">Twenty is building an open source alternative to Salesforce</span><span class="rp-item-extra">2024-11-18</span></a><details class="rp-news-more"><summary>1 more</summary><a class="rp-item" href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE1oZzBvNFlYN3hDZlc1RTVJZ1FKbldfNWtzVjcwTjFNUmJ2UFdOYm1MXzQ3eXluVERLem1TdExBZ2FvSjJheHg4alZnM3VNdFhORnBKcXJPTXRvcFVmbVEw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Nature</span><span class="rp-item-title">Coassembly and binning of a twenty-year metagenomic time-series from Lake Mendota | Scientific Data</span><span class="rp-item-extra">2024-09-04</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/twentyhq__twenty.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

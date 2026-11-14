@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>fangzesheng/free-api · GitHub Trending Rank Radar</title>
+<meta name="description" content="收集免费的接口服务,做一个api的搬运工">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="free-api, fangzesheng, fangzesheng/free-api, github stars, github trending, star growth, star history, 开源项目, 星标增长, api, freeapi">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/fangzesheng__free-api">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="fangzesheng/free-api · GitHub Trending Rank Radar">
+<meta property="og:description" content="收集免费的接口服务,做一个api的搬运工">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/fangzesheng__free-api">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "fangzesheng/free-api", "codeRepository": "https://github.com/fangzesheng/free-api", "url": "https://zhuikan.com/repos/fangzesheng__free-api", "description": "收集免费的接口服务,做一个api的搬运工", "author": {"@type": "Organization", "name": "fangzesheng", "url": "https://github.com/fangzesheng"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "dateCreated": "2019-06-16", "keywords": "api,freeapi"}</script>
+</head>
+<body data-repo="fangzesheng/free-api" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">fangzesheng/free-api</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="fangzesheng__free-api"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/26818065?u=093f3015cdd0aff46f977f9abb1bde21e67f41a8&amp;v=4&s=300" width="300" height="300" alt="fangzesheng avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">free-api</div>
+      <a class="rp-side-owner" href="https://github.com/fangzesheng">fangzesheng</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/fangzesheng">fangzesheng</a>
+        <span class="rp-sep">/</span><span class="rp-name">free-api</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">收集免费的接口服务,做一个api的搬运工</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>16,285</b></span><span class="rp-stat" title="forks">⑂ <b>1,645</b></span><span class="rp-stat" title="watchers">👁 <b>312</b></span><span class="rp-stat" title="prs">⑃ <b>1</b></span><span class="rp-stat" title="issues">● <b>62</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/api">api</a><a class="rp-topic" href="https://github.com/topics/freeapi">freeapi</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Created 2019-06-16</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/fangzesheng/free-api">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+10</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">16,285</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,645</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">312</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">62</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">为了方便广大的开发者，特此统计了网上诸多的免费API，为您收集免费的接口服务，做一个API的搬运工，以后会每月定时更新新的接口。有些接口来自第三方，在第三方注册就可以成为他们的会员，免费使用他们的部分接口——您的star是我一直维护的动力 : )
+ 现已发布【免费API】公众号，关注公众号可以获取相关密钥，也可以接收到每月更新接口消息（每月一次，不打扰大家），希望大家多关注，随时来个三连加点击广告——您的关注是我一直更新的动力 : )
+
+
+
+
+ 2026-08-05
+ 本月更新的接口有：数独游戏生成器。
+ 数独游戏生成器(可在线调用): 数独生成器，一款数独谜题和答案在线生成A... 接口地址
+
+ 2026-07-25
+ 本月更新的接口有：字符串加密，台风路径，实时台风。
+ 字符串加密(可在线调用): 提供多种哈希加密算法支持，包括MD4、M... 接口地址
+
+ 2026-06-10
+ 本月更新的接口有：台风路径，实时台风。
+ 台风路径(可在线调用): 通过台风id查询当前台风的路径详情信息 接口地址
+
+ 2026-05-10
+ 本月更新的接口有：台风路径，实时台风。
+ 实时台风(可在线调用): 查询当前沿海活跃的台风列表及基本信息 接口地址
+
+ 2026-04-29
+ 本月更新的接口有：AI新闻简报。
+ AI新闻简报: 最新新闻资讯简报，各类国内、国际、体育、... 接口地址
+
+ 2026-03-29
+ 本月更新的接口有：用户界面头像。
+ 用户界面头像: 根据名字生成带有首字母的头像 接口地址
+
+ 2026-02-25
+ 本月更新的接口有：国内运营商基站信息。
+ 国内运营商基站信息: 国内三网运营商基站位置信息数据查询 接口地址
+
+ 2026-01-24
+ 本月更新的接口有：火车票查询。
+ 火车票查询(可在线调用): 支持查询高铁、动车等列车的实时票务信息，... 接口地址
+
+ 2025-12-31
+ 本月更新的接口有：MBTI。
+ MBTI(可在线调用): MBTI人格测试经过了长达50多年的研究... 接口地址
+
+ 2025-11-30
+ 本月更新的接口有：中文数字运算验证码。
+ 中文数字运算验证码(可在线调用): 提供高效的中文数字运算验证码服务，自动生... 接口地址
+
+ 2025-09-30
+ 本月更新的接口有：周边地点搜索，随机美女视频。
+ 周边地点搜索(可在线调用): 搜索指定经纬度周边区域地点，例如查询指定... 接口地址
+ 随机美女视频(可在线调用): 随机美女，小姐姐视频素材 接口地址
+
+ 2025-08-18
+ 本月更新的接口有：天气预报，短网址生成。
+ 天气预报(可在线调用): 根据IP自动判断IP所属地区当日天气信息... 接口地址
+ 短网址生成(可在线调用): 将网页地址生成短链接，永久有效（打个问号... 接口地址
+
+ 2025-07-31
+ 本月更新的接口有：元素周期表，百家姓。
+ 元素周期表(可在线调用): 查询化学元素信息，原子构造，原子质量，体... 接口地址
+ 百家姓(可在线调用): 查询指定姓氏或随机姓氏详细介绍，图腾等 接口地址
+
+ 2025-06-28
+ 本月更新的接口有：大学信息，随机女神。
+ 大学信息(可在线调用): 中国所有大学信息 接口地址
+ 随机女神(可在线调用): 随机女神，懂得都得 接口地址
+
+ 2025-05-28
+ 本月更新的接口有：手机号归属地，双色球开奖查询。
+ 手机号归属地(可在线调用): 查询指定手机号码归属地 接口地址
+ 双色球开奖查询(可在线调用): 查询双色球最新开奖信息或历史开奖信息，同... 接口地址
+
+ 2025-04-20
+ 本月更新的接口有：百度-财经榜，百度-热梗榜。
+ 百度-财经榜(可在线调用): 获取百度财经榜相关数据 接口地址
+ 百度-热梗榜(可在线调用): 获取百度热梗榜相关数据 接口地址
+
+ 2025-03-31
+ 本月更新的接口有：DeepSeek-超算，DeepSeek-百炼。
+ DeepSeek-超算(可在线调用): 通过超算互联网白嫖DeepSeek-R1... 接口地址
+ DeepSeek-百炼(可在线调用): 通过百炼白嫖DeepSeek-R1满血版... 接口地址
+
+ 2025-02-28
+ 本月更新的接口有：DeepSeek-星火，DeepSeek-硅基流动。
+ DeepSeek-星火(可在线调用): 通过讯飞星火白嫖DeepSeek-R1满... 接口地址
+ DeepSeek-硅基流动(可在线调用): 通过硅基流动白嫖DeepSeek-R1满... 接口地址
+
+ 2025-01-20
+ 本月更新的接口有：相克食物，知乎热搜榜。
+ 相克食物(可在线调用): 会相克的食物查询，避免误食产生不良后果 接口地址
+ 知乎热搜榜(可在线调用): 知乎热搜榜 接口地址
+
+ 2024-12-08
+ 本月更新的接口有：身份证信息验证，全国高校查询。
+ 身份证信息验证(可在线调用): 快速验证身份证合法性，获取例如：性别/发... 接口地址
+ 全国高校查询(可在线调用): 查询全国相关高校基本信息 接口地址
+
+ 2024-11-27
+ 本月更新的接口有：通义AI对话大模型，中国法定节假日查询。
+ 通义AI对话大模型(可在线调用): 阿里旗下通义AI语言对话大模型，暂时还能... 接口地址
+ 中国法定节假日查询(可在线调用): 中国法定节假日查询，数据目前支持2014... 接口地址
+
+ 2024-10-24
+ 本月更新的接口有：二维码生成，高质量小姐姐。
+ 二维码生成: 快速将URL或者文字生成二维码 接口地址
+ 高质量小姐姐(可在线调用): 你们要的小姐姐来了，别又弄崩了 接口地址
+
+ 2024-09-14
+ 本月更新的接口有：时间段的温馨提示，随机人设。
+ 时间段的温馨提示(可在线调用): 根据当前时间段返回相应的问候语和提示言语... 接口地址
+ 随机人设: 随机返回一段人物人设包括背景故事 接口地址
+
+ 2024-08-15
+ 本月更新的接口有：随机密码，全网短剧查询。
+ 随机密码(可在线调用): 随机密码，包含大小写字母、数字、符号 接口地址
+ 全网短剧查询(可在线调用): 全网9000+短剧查询，每日更新，存在网... 接口地址
+
+ 2024-07-15
+ 本月更新的接口有：小姐姐视频，部分免费歌曲。
+ 小姐姐视频(可在线调用): 获取随机性感小姐姐视频 接口地址
+ 部分免费歌曲(可在线调用): 根据歌手和序号获取部分免费歌曲，包括歌词... 接口地址
+
+ 2024-06-03
+ 本月更新的接口有：百度热榜，网页所有链接。
+ 百度热榜(可在线调用): 获取百度热搜相关数据 接口地址
+ 网页所有链接(可在线调用): 提取指定网页内所有链接信息并归类 接口地址
+
+ 2024-05-10
+ 本月更新的接口有：今日头条热点，B站热搜。
+ 今日头条热点(可在线调用): 获取最新的热点新闻列表，包括标题、摘要、... 接口地址
+ B站热搜(可在线调用): B站热搜，用户可以获取到当前B站上热门搜... 接口地址
+
+ 2024-04-15
+ 本月更新的接口有：音乐聚合搜索，音乐ID获取。
+ </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/fangzesheng/free-api/issues/55"><span class="rp-item-num">#55</span><span class="rp-item-title">推一下自家免费50$的ai API网站</span><span class="rp-item-extra">10 comments · 2024-08-23</span></a><a class="rp-item" href="https://github.com/fangzesheng/free-api/issues/40"><span class="rp-item-num">#40</span><span class="rp-item-title">希望可以出个搜索接口功能！</span><span class="rp-item-extra">2 comments · 2022-09-26</span></a><a class="rp-item" href="https://github.com/fangzesheng/free-api/issues/29"><span class="rp-item-num">#29</span><span class="rp-item-title">淘宝IP接口已经失效</span><span class="rp-item-extra">2 comments · 2020-12-01</span></a><a class="rp-item" href="https://github.com/fangzesheng/free-api/issues/11"><span class="rp-item-num">#11</span><span class="rp-item-title">自荐一个，XLS 云生成 API</span><span class="rp-item-extra">2 comments · 2019-10-14</span></a><a class="rp-item" href="https://github.com/fangzesheng/free-api/issues/3"><span class="rp-item-num">#3</span><span class="rp-item-title">建议建立一个API 类型分类表</span><span class="rp-item-extra">2 comments · 2019-08-06</span></a><a class="rp-item" href="https://github.com/fangzesheng/free-api/issues/1"><span class="rp-item-num">#1</span><span class="rp-item-title">一言API链接地址错误</span><span class="rp-item-extra">2 comments · 2019-08-06</span></a><a class="rp-item" href="https://github.com/fangzesheng/free-api/issues/69"><span class="rp-item-num">#69</span><span class="rp-item-title">老师最近怎么不更新了，现阶段还有不错的免费渠道嘛</span><span class="rp-item-extra">1 comments · 2026-09-09</span></a><a class="rp-item" href="https://github.com/fangzesheng/free-api/issues/66"><span class="rp-item-num">#66</span><span class="rp-item-title">建议新增：DeepSeek V4 Flash 免费 API（50次/天，无需绑卡）</span><span class="rp-item-extra">1 comments · 2026-08-11</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/fangzesheng__free-api.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

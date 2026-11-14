@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>open-webui/open-webui · GitHub Trending Rank Radar</title>
+<meta name="description" content="User-friendly AI Interface (Supports Ollama, OpenAI API, ...)">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="open-webui, open-webui, open-webui/open-webui, github stars, github trending, star growth, star history, 开源项目, 星标增长, ollama, ollama-webui, llm, webui, self-hosted, llm-ui">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/open-webui__open-webui">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="open-webui/open-webui · GitHub Trending Rank Radar">
+<meta property="og:description" content="User-friendly AI Interface (Supports Ollama, OpenAI API, ...)">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/open-webui__open-webui">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "open-webui/open-webui", "codeRepository": "https://github.com/open-webui/open-webui", "url": "https://zhuikan.com/repos/open-webui__open-webui", "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)", "author": {"@type": "Organization", "name": "open-webui", "url": "https://github.com/open-webui"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "Svelte", "dateCreated": "2023-10-06", "keywords": "ollama,ollama-webui,llm,webui,self-hosted,llm-ui,llm-webui,llms,rag,ai"}</script>
+</head>
+<body data-repo="open-webui/open-webui" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">open-webui/open-webui</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="open-webui__open-webui"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/158137808?v=4&s=300" width="300" height="300" alt="open-webui avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">open-webui</div>
+      <a class="rp-side-owner" href="https://github.com/open-webui">open-webui</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/open-webui">open-webui</a>
+        <span class="rp-sep">/</span><span class="rp-name">open-webui</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=monthly">monthly <b>#187</b></a><a class="rp-board-chip" href="../?board=total">total <b>#60</b></a></div>
+    </div>
+    <p class="rp-desc">User-friendly AI Interface (Supports Ollama, OpenAI API, ...)</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>158,571</b></span><span class="rp-stat" title="forks">⑂ <b>23,055</b></span><span class="rp-stat" title="watchers">👁 <b>682</b></span><span class="rp-stat" title="prs">⑃ <b>12,944</b></span><span class="rp-stat" title="issues">● <b>11,168</b></span><span class="rp-stat" title="releases">▤ <b>181</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/ollama">ollama</a><a class="rp-topic" href="https://github.com/topics/ollama-webui">ollama-webui</a><a class="rp-topic" href="../tags/llm">llm</a><a class="rp-topic" href="https://github.com/topics/webui">webui</a><a class="rp-topic" href="../tags/self-hosted">self-hosted</a><a class="rp-topic" href="https://github.com/topics/llm-ui">llm-ui</a><a class="rp-topic" href="https://github.com/topics/llm-webui">llm-webui</a><a class="rp-topic" href="../tags/llms">llms</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Svelte</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2023-10-06</span><a class="rp-meta-bit rp-home" href="https://openwebui.com" rel="noopener">openwebui.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/open-webui/open-webui">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.13.3</span><a class="rp-dl-a" href="https://github.com/open-webui/open-webui/releases/tag/v0.13.3">v0.13.3 ↓</a><span class="rp-dl-ver">0.13.3</span><span class="rp-dl-date">2026-11-08</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+75</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+906</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num">158,571</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">23,055</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">682</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">12,944</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">11,168</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">181</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Open WebUI
+
+Open WebUI is a home for AI: an extensible, easy-to-use, self-hosted platform built to run entirely offline. Connect local models through Ollama or use OpenAI-compatible APIs for local and cloud models.
+
+English |
+简体中文 |
+繁體中文 |
+한국어 |
+Deutsch |
+Español |
+Français |
+Italiano |
+Dansk |
+日本語 |
+Polski |
+Русский |
+Bosanski |
+العربية |
+Norsk |
+Português (Brasil) |
+ไทย |
+Türkçe |
+Українська |
+বাংলা |
+Ελληνικά |
+Tiếng Việt
+
+
+
+!GitHub stars
+!GitHub forks
+!GitHub watchers
+!GitHub repo size
+!GitHub language count
+!GitHub top language
+!GitHub last commit
+
+
+
+Explore Open WebUI →
+
+ Installation
+
+ Python
+
+bash
+ With uv installed (macOS/Linux)
+DATA_DIR=~/.open-webui uvx --python 3.12 open-webui@latest serve
+
+ Or install and run with pip (Python 3.12)
+pip install open-webui
+open-webui serve
+
+
+Then open http://localhost:8080.
+
+ Docker
+
+bash
+docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+
+
+Then open http://localhost:3000.
+
+| Image tag | Includes                                                                                 |
+| --------- | ---------------------------------------------------------------------------------------- |
+| :main   | Standard image with local AI dependencies                                                |
+| :slim   | Lightweight image using external services for embeddings, document extraction, and voice |
+| :cuda   | Open WebUI with CUDA acceleration                                                        |
+| :ollama | Open WebUI bundled with Ollama                                                           |
+| :dev    | Latest development build                                                                 |
+
+Add these options to docker run before the image name as needed:
+
+| Option                                               | Purpose                                                                                  |
+| ---------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| -e OLLAMA_BASE_URL=http://your-ollama-server:11434 | Connect to Ollama on another server                                                      |
+| -e OPENAI_API_KEY=your_secret_key                  | Set your OpenAI API key                                                                  |
+| -e HF_HUB_OFFLINE=1                                | Disable Hugging Face model downloads for offline use                                     |
+| --gpus all                                         | Enable Nvidia GPU access for :cuda or :ollama; requires the Nvidia Container Toolkit |
+
+See the Docker installation guide for setup instructions and configuration options.
+
+ Desktop App
+
+Download the native desktop app for macOS, Windows, and Linux.
+
+Read the docs →
+
+ Ecosystem
+
+- Open Terminal / Terminals (Enterprise): The action layer that turns Open WebUI int</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/open-webui/open-webui/issues/21675"><span class="rp-item-num">#21675</span><span class="rp-item-title">enh: analytics</span><span class="rp-item-extra">103 comments · 2026-02-20</span></a><a class="rp-item" href="https://github.com/open-webui/open-webui/issues/19313"><span class="rp-item-num">#19313</span><span class="rp-item-title">feat: User specific MCP headers</span><span class="rp-item-extra">46 comments · 2025-11-20</span></a><a class="rp-item" href="https://github.com/open-webui/open-webui/issues/13464"><span class="rp-item-num">#13464</span><span class="rp-item-title">enh: notes</span><span class="rp-item-extra">46 comments · 2025-05-03</span></a><a class="rp-item" href="https://github.com/open-webui/open-webui/issues/23339"><span class="rp-item-num">#23339</span><span class="rp-item-title">feat: Add model-level toggle to disable reinjecting reasoning/thinking into prompts (prevents &lt;think&gt; tag imitation and rendering/parsing failures)</span><span class="rp-item-extra">44 comments · 2026-04-02</span></a><a class="rp-item" href="https://github.com/open-webui/open-webui/issues/8050"><span class="rp-item-num">#8050</span><span class="rp-item-title">enh: channels</span><span class="rp-item-extra">37 comments · 2024-12-25</span></a><a class="rp-item" href="https://github.com/open-webui/open-webui/issues/12619"><span class="rp-item-num">#12619</span><span class="rp-item-title">feat: Different content extraction settings for chat and knowledge-base</span><span class="rp-item-extra">22 comments · 2025-04-08</span></a><a class="rp-item" href="https://github.com/open-webui/open-webui/issues/23357"><span class="rp-item-num">#23357</span><span class="rp-item-title">feat: send audio and video directly to natively multimodal models instead of forcing STT transcription</span><span class="rp-item-extra">17 comments · 2026-04-02</span></a><a class="rp-item" href="https://github.com/open-webui/open-webui/issues/5872"><span class="rp-item-num">#5872</span><span class="rp-item-title">feat: data sources</span><span class="rp-item-extra">15 comments · 2024-10-02</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/open-webui/open-webui/discussions/34373"><span class="rp-item-num">#34373</span><span class="rp-item-title">Derive Model Controls (reasoning-effort slider) from an OpenAI-compatible provider&#x27;s /models entries</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/open-webui/open-webui/discussions/34372"><span class="rp-item-num">#34372</span><span class="rp-item-title">MCP servers making latency slow?</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/open-webui/open-webui/discussions/34363"><span class="rp-item-num">#34363</span><span class="rp-item-title">Proposal: add Keirolabs as a web search provider</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/open-webui/open-webui/discussions/34332"><span class="rp-item-num">#34332</span><span class="rp-item-title">Ollama proxy doesn&#x27;t forward /v1/systemone</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/open-webui/open-webui/discussions/34331"><span class="rp-item-num">#34331</span><span class="rp-item-title">Set inheritance on models, that are used as sub-agents  (Note: posting was assisted by ChatGPT)</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/open-webui/open-webui/discussions/34315"><span class="rp-item-num">#34315</span><span class="rp-item-title">feat: Add Keenable as an opt-in web search engine (works without an API key)</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/open-webui/open-webui/discussions/34292"><span class="rp-item-num">#34292</span><span class="rp-item-title">Parallel URL retrieval with Playwright and Firecrawl web loaders</span><span class="rp-item-extra">1 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/open-webui/open-webui/discussions/34287"><span class="rp-item-num">#34287</span><span class="rp-item-title">Chopper: a small open model that cuts only the needed sentences out of retrieved text</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/open-webui/open-webui/releases"><b>v0.13.3</b> <span class="rp-rel-tag">v0.13.3</span> <span class="rp-item-extra">2026-11-08</span></a><pre class="rp-pre">Added
+
+- 🦾 Agents in automations. The automation editor now lets you choose a terminal and working folder, then select a coding agent available there. Scheduled runs use that saved terminal and folder, and check that the terminal and agent are still available before starting. Agent automations send their results to a chat; channel destinations remain available for ordinary models. Commit
+- 📂 Change terminal and folder during a chat. You can now choose a different terminal or working folder after sending messages, including in temporary chats. Both controls remain disabled while a reply is bein</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (6)</h3><div class="rp-list"><a class="rp-item" href="https://news.google.com/rss/articles/CBMiYEFVX3lxTE9TRUZIVlRBVDZCLUQ0Ny1RbTRtcnZzWVZDLTV6dnh0alpnV2hDWDVMaUFreEd2a1lnU0M4dnhIOEpXS3gwbnJxbThFRXJuMm9HMXJlckhxekZOWjU0MTMwdw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN</span><span class="rp-item-title">GitHub Trending速递：五大热门开源项目背后的技术趋势与选型实战</span><span class="rp-item-extra">2026-11-09</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE95cHE0dnN3emkyN1hzLTd2VDg1RnZSRWMwUUNVQ01XS0wtT0FxS3hsdWtqN0JENnR5MTR0TlRETXhPcHlZY01qZHdqR0p3VDVyMEpGOGpQRDhXOWZYU0N3?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN</span><span class="rp-item-title">GitHub热点精选方法论：本地模型、AI前端与开源知识库实践</span><span class="rp-item-extra">2026-11-09</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiogFBVV95cUxOTFYwREUxWmtpRmlWNFVsU1FWQ0VCdDhmbkhmMmRRdE1tdUZFNElOZm11RmxxSG0zbm9LVlZvYzhpLVRmcHRKcVp6X1RKejRITGJQUmo2dG8yaWRpWGJGMDZTWVFqYm0wSUZScVJQb3BzVC05cm9pazJLMzFUU2NtSnoxeFo2REtPdDRwdW1RQzRSNHpPOFFEbC1rdEpnRTFsa3fSAacBQVVfeXFMTldhMjZRUXN0VWNjMzNySVlkcklFYmpudnd3WGUzMm1TV2U4YzVDUmhXd09Za3JTSGJGRS1GUm90RTJtbHlNVmFvZHFwSWFiQU9DQ1lrMUFmdzhXZkhUV2pGc3QtRU40bFF3YndaM3QtWXZ2cjJJV2RiUlpBVDNham1aWDFmRHNXSlgxRDFNdGE0WE9NblpfTWZVeE1wa09JNnBRRC1KMEU?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">StorageReview.com</span><span class="rp-item-title">Open WebUI Desktop 实战：在 Windows 上运行本地 LLM</span><span class="rp-item-extra">2026-10-19</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiV0FVX3lxTE8ycEVGVkZHUGt4VHM5ZER5X1BzUVo1a1VDS0IwZFpiME1sQVR4TDJHb0pNcnpRQ0ZPM0lxRmpzQlo0UGtsOEFoQmd1bmFVOU9UY3ZaeUhFVQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">麻省理工科技评论</span><span class="rp-item-title">如果明天互联网消失：这个年轻人希望为全人类留下一套“文明重启”的AI火种</span><span class="rp-item-extra">2025-11-29</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMibkFVX3lxTFBFLVlSNDVXN00wd01wcjd4OGRSeGpaU3BySHhFaGhjRUZYZUlCazlVLWlaQzBXdHhhdldIM1MwcDd0aW9TNmtoclFzd09LNndiejNnV250d3p2Wm1qLXVNR1pVYlAxWWJRWmV5VThR?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">OSCHINA</span><span class="rp-item-title">Open WebUI v0.6.0 发布，正式支持 MCP</span><span class="rp-item-extra">2025-04-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiakFVX3lxTE03bm53M0FhWnhySWVjZHNLYi1QYWt5UlRqZDdOckNPSUFjOEROcTJ6eWJ4MDdUTnphZC1aclROajJsZDljdWY4OEJjMC1MMlFrTGR4ajdLUlRCZnpMNGVPMHVrTzNiQldWV1E?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">53AI</span><span class="rp-item-title">DeepSeek R1，本地部署才是王道！支持WebUI</span><span class="rp-item-extra">2025-01-29</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (19)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=39415771" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Open WebUI: ChatGPT-Style WebUI for Ollama</span><span class="rp-item-extra">▲ 29 · 3 comments · 2024-02-18</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=43901567" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Open WebUI License Change</span><span class="rp-item-extra">▲ 4 · 2 comments · 2025-05-06</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=39415763" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Announcing the New Era of &#x27;open-webui&#x27;</span><span class="rp-item-extra">▲ 3 · 0 comments · 2024-02-18</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47859633" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Open WebUI v0.9.0 adds desktop app with task scheduling</span><span class="rp-item-extra">▲ 2 · 0 comments · 2026-04-22</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=43925698" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">OpenWebUI is not open source anymore</span><span class="rp-item-extra">▲ 2 · 0 comments · 2025-05-08</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=43180599" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Open WebUI Website Temporarily Inaccessible</span><span class="rp-item-extra">▲ 2 · 2 comments · 2025-02-26</span></a><a class="rp-item" href="https://shattered.io/open-webui-vs-librechat-vs-anythingllm-self-hosted-ai-interface-2026/" target="_blank" rel="noopener"><span class="rp-news-src">shattered.io</span><span class="rp-item-title">Open WebUI vs LibreChat vs AnythingLLM: 3 Picks [2026]</span><span class="rp-item-extra">2026-11-04</span></a><a class="rp-item" href="https://note.com/toolupdate/n/n320db9fb0ddc?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">Open WebUI&#x27;s :latest is not a stable version. 3 things to know before updating</span><span class="rp-item-extra">2026-11-03</span></a><a class="rp-item" href="https://note.com/opensourcelab/n/neef5946fd42b?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">How to use open-webui: An introductory guide to talking to local AI via your browser</span><span class="rp-item-extra">2026-09-29</span></a><a class="rp-item" href="https://www.msn.com/en-gb/news/other/how-to-self-host-your-own-ai-agent/ar-AA2aUa6s" target="_blank" rel="noopener"><span class="rp-news-src">TechRadar on MSN</span><span class="rp-item-title">How to self-host your own AI agent</span><span class="rp-item-extra">2026-08-25</span></a><details class="rp-news-more"><summary>9 more</summary><a class="rp-item" href="https://www.how2shout.com/how-to/how-to-install-open-webui-on-windows-11-or-10.html" target="_blank" rel="noopener"><span class="rp-news-src">how2shout.com</span><span class="rp-item-title">How to Install Open WebUI on Windows 11 or 10</span><span class="rp-item-extra">2026-08-13</span></a><a class="rp-item" href="https://www.infoworld.com/article/4113142/open-webui-bug-turns-the-free-model-into-an-enterprise-backdoor.html" target="_blank" rel="noopener"><span class="rp-news-src">InfoWorld</span><span class="rp-item-title">Open WebUI bug turns the ‘free model’ into an enterprise backdoor</span><span class="rp-item-extra">2026-01-05</span></a><a class="rp-item" href="https://www.designnews.com/artificial-intelligence/run-powerful-ai-models-locally-unleash-llms-with-ollama-openwebui-for-enhanced-privacy" target="_blank" rel="noopener"><span class="rp-news-src">Design News</span><span class="rp-item-title">Unlock Limitless LLM Access with Ollama &amp; Open WebUI</span><span class="rp-item-extra">2025-04-15</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMimgFBVV95cUxNcHc1aHQ5Wlkybll5VFFNR1Nqa0Z0WlQwb2xhTlo1bDdZTzZnYXVmbHZHdVBfQTNiTjVHT2NtdUFzZVE5WS1IekZ4VTd1N0xDbmdnejM2T19sNWNQWjBjMUZ2UXZFVFM3Slk1eDJodjVBOWlWUVd0Q3FsLWhmWEZjVnNydEVFOVoydTYtN0RKZjFENnNGcnIyeXV30gGfAUFVX3lxTE9XX2k5bDNMbFVKWnAzMnN5QmRtekRacmJQM2dxMTlDRlpXMUtlVldPb3lCMHhTOWFuNll5dHdKU0FUR21vUUU4NmNkdnZweC1DUV90VnZ6ejVJVy1hUTNOOVJJMTl2d0p4ZTRLTkxTaWJPSFFfaF8zVmtSZHdMYko2WFQ0SENaNEJwRng3TWtTamgwS2U1eWUzWHRwdUgwdw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">StorageReview.com</span><span class="rp-item-title">Open WebUI Desktop Hands-On: Running Local LLMs on Windows</span><span class="rp-item-extra">2026-10-19</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiREFVX3lxTFBDTnpEUlhkWkhXck1tR01pVllBRFFjYzE5X1c3X3hxTGNickdTUkZmZUt3T0xMWk10ZUNpVXlaRW9qOWdQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">It&#x27;s FOSS</span><span class="rp-item-title">I Found a Simple Open WebUI Alternative for Running Ollama Models in a Web Browser</span><span class="rp-item-extra">2026-07-30</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxOQjN0X3pVbUFCNE5fQzlNZF9wY1hlQnpMVzBSd3RBRkduWlVFMHhkQmQ1QWxURWlrSE5LM013dWYxSjJlcWcxSlhmOWhsTGhLSFFXMHE4eEtSa2tVQ0tEU2xwTDFMY3RvME54Q1lxR3VaWmtNMXR3eHZZVWd5N0hULWRiWEE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">finance.biggo.com</span><span class="rp-item-title">Open WebUI&#x27;s License Shift Sparks Community Backlash and Forking Debate</span><span class="rp-item-extra">2025-11-04</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMidEFVX3lxTE1INmZGa2pPU3RVRzN3VVdpZTRCbjJSMC1uT05nNm15a3JQQ2ViQ29GQndQUWZ4SHdZSjJnXzFKUU1hNW01Skpic2RMbngzV2NYU1JINE15UUxpQi12azEyMnNLUUZ3b3o0cm9NSzdIYUVIVGVX?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">infoq.com</span><span class="rp-item-title">New Crypto-Jacking Attacks Target DevOps and AI Infrastructure</span><span class="rp-item-extra">2025-06-24</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMigwFBVV95cUxPUVE1bGFIUm9NNVlRTzF1NVhBcDFJdkVSV3hZTW1wdEVJelNlbzdzYkhmV3JSZG1oTkcyRTg3bDdtMThhSk50OWVHQ1hOVjFKWEpTZnl2Ti1pWGlmX1hBLUJNMTIzbUdIeWNhQ2NtWXlsZm9VZzY3VVZnS2Z1NmE3LTVVVQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The Hacker News</span><span class="rp-item-title">Cryptojacking Campaign Exploits DevOps APIs Using Off-the-Shelf Tools from GitHub</span><span class="rp-item-extra">2025-06-02</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxQZnhneXpUclU0eEFmN2hJTDFMcjNsd3NTTng0emVHRlN2Y0JTbHJ5QUFubGQtUFkzQjJjQkhRZnBITHJaQXduSzNfeTlLRG1EYXFZSVBNWDFEbHB6LVR0WV9pOW0zNVZoVFlIc1B2STdXN2ZJNlVmdDVCWHlHUEpqRXpGQkRYVGtpa2V1czlfLWlDRHBELXhvTEdUMTJMYUlLWkpyUUdqN2lvSjR2Q3lGRDlrLWJ3bV9tZGdzNkZLM1doSU85T093aWllYXZRLXNlZFRCMERrWWxwSFpK?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The GitHub Blog</span><span class="rp-item-title">From MCP to multi-agents: The top 10 new open source AI projects on GitHub right now and why they matter</span><span class="rp-item-extra">2025-05-01</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/open-webui__open-webui.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

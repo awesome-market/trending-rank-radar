@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jekip/naive-ui-admin · GitHub Trending Rank Radar</title>
+<meta name="description" content="基于 Vue 3、Vite 7、Naive UI 与 TypeScript 的开源中后台解决方案。内置二次封装组件、动态菜单、路由与按钮级权限、国际化，开箱即用，助力快速搭建企业级中后台。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="naive-ui-admin, jekip, jekip/naive-ui-admin, github stars, github trending, star growth, star history, 开源项目, 星标增长, naive-ui-admin, naive-ui-pro, naive-ui, vue3, naive">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/jekip__naive-ui-admin">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="jekip/naive-ui-admin · GitHub Trending Rank Radar">
+<meta property="og:description" content="基于 Vue 3、Vite 7、Naive UI 与 TypeScript 的开源中后台解决方案。内置二次封装组件、动态菜单、路由与按钮级权限、国际化，开箱即用，助力快速搭建企业级中后台。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/jekip__naive-ui-admin">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "jekip/naive-ui-admin", "codeRepository": "https://github.com/jekip/naive-ui-admin", "url": "https://zhuikan.com/repos/jekip__naive-ui-admin", "description": "基于 Vue 3、Vite 7、Naive UI 与 TypeScript 的开源中后台解决方案。内置二次封装组件、动态菜单、路由与按钮级权限、国际化，开箱即用，助力快速搭建企业级中后台。", "author": {"@type": "Organization", "name": "jekip", "url": "https://github.com/jekip"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Vue", "dateCreated": "2021-07-03", "keywords": "naive-ui-admin,naive-ui-pro,naive-ui,vue3,naive"}</script>
+</head>
+<body data-repo="jekip/naive-ui-admin" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">jekip/naive-ui-admin</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="jekip__naive-ui-admin"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/19426584?u=24986a79737edcd74e4b4064b280206f91287340&amp;v=4&s=300" width="300" height="300" alt="jekip avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">naive-ui-admin</div>
+      <a class="rp-side-owner" href="https://github.com/jekip">jekip</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/jekip">jekip</a>
+        <span class="rp-sep">/</span><span class="rp-name">naive-ui-admin</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">基于 Vue 3、Vite 7、Naive UI 与 TypeScript 的开源中后台解决方案。内置二次封装组件、动态菜单、路由与按钮级权限、国际化，开箱即用，助力快速搭建企业级中后台。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,936</b></span><span class="rp-stat" title="forks">⑂ <b>1,062</b></span><span class="rp-stat" title="watchers">👁 <b>46</b></span><span class="rp-stat" title="prs">⑃ <b>106</b></span><span class="rp-stat" title="issues">● <b>211</b></span><span class="rp-stat" title="releases">▤ <b>22</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/naive-ui-admin">naive-ui-admin</a><a class="rp-topic" href="https://github.com/topics/naive-ui-pro">naive-ui-pro</a><a class="rp-topic" href="https://github.com/topics/naive-ui">naive-ui</a><a class="rp-topic" href="../tags/vue3">vue3</a><a class="rp-topic" href="https://github.com/topics/naive">naive</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Vue</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2021-07-03</span><a class="rp-meta-bit rp-home" href="https://gratis.naiveadmin.com" rel="noopener">gratis.naiveadmin.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/jekip/naive-ui-admin">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">3.0.0</span><a class="rp-dl-a" href="https://github.com/jekip/naive-ui-admin/releases/tag/v3.0.0">3.0.0 ↓</a><span class="rp-dl-ver">3.0.0</span><span class="rp-dl-date">2026-10-21</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,936</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,062</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">46</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">106</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">211</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">22</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Naive Ui Admin
+
+ 🚀 简介
+
+Naive Ui Admin 是一款基于 MIT 协议开源、可免费商用的中后台解决方案，基于 Vue 3、Vite、Naive UI 和 TypeScript 构建。
+
+它融合了最新的前端技术栈，提炼了典型的业务模型和页面，包括二次封装组件、动态菜单、权限校验等功能，助力快速搭建企业级中后台项目。项目自 2021 年发布，已持续维护五年。
+
+ 3.0.0 包含破坏性变更（依赖大版本升级、路由 meta.title 改为 i18n key 等），升级前请先阅读 CHANGELOG。
+
+ 🌈 特性
+📦 二次封装的实用高扩展性组件
+🎨 响应式、多主题、多配置，快速集成，开箱即用
+🚀 支持前端固定路由 / 后端动态菜单两种路由权限模式，并提供按钮级权限控制
+🌍 内置简体中文 / English 国际化，顶栏可实时切换
+🌐 持续更新的实用性页面模板和交互设计，简化页面构建
+
+
+ 🎥 预览
+- naive-ui-admin
+
+账号：admin，密码：123456（随意）
+
+
+ 💼 Naive Admin 商业版
+
+ 商业版与开源版是相互独立的产品线，无代码继承，源码不公开。
+
+| 交付形态 | 档位 | UI 组件库 | 后端 | 在线预览 |
+| --- | --- | --- | --- | --- |
+| 前端版 | Max | Naive UI | — | max.naiveadmin.com |
+| 前端版 | Next | AntdvNext | — | next.naiveadmin.com |
+| 全栈版 | Max | Naive UI | PHP / Laravel | max-full.naiveadmin.com |
+| 全栈版 | Next | AntdvNext | PHP / Laravel | next-full.naiveadmin.com |
+
+一次买断，全量源码交付，享一年免费更新。价格与活动以官网为准。
+
+商业版官网 · 更新日志 · 常见问题
+
+
+ 📚 文档
+
+开源版本文档
+
+ 🛠 准备
+
+- Node.js 和 Git - 项目开发环境（Node =20.19.0）
+- pnpm - 包管理器（=10）
+- Vite - 熟悉 Vite 特性
+- Vue 3 - 熟悉 Vue 基础语法
+- TypeScript - 熟悉TypeScript基本语法
+- ES6+ - 熟悉 ES6 基本语法
+- Vue Router - 熟悉 Vue Router 基本使用
+- Naive UI - UI 基本使用
+- @alova/mock / @faker-js/faker - mock 数据与造数
+
+
+ 🏗️ 使用
+
+- 获取项目代码
+
+bash
+git clone https://github.com/jekip/naive-ui-admin.git
+
+
+- 安装依赖
+
+bash
+cd naive-ui-admin
+
+pnpm install
+
+
+
+- 运行
+
+bash
+pnpm run dev
+
+
+- 打包
+
+bash
+pnpm build           生产包（默认携带 mock 数据，无需后端即可部署演示）
+pnpm build:no-cache  清缓存后重新构建
+
+
+构建结束后会自动输出体积报告（首屏静态资源，含 gzip / brotli）：
+
+bash
+pnpm size     只输出体积报告
+pnpm report   额外生成 rollup-plugin-visualizer 报告到 .analyze/
+
+
+ 首屏体积受 CI 体积预算保护（gzip ≤ 500KB），超限即失败。
+ 默认 VITE_USE_MOCK=true，接口全部走本地 mock，产物约 458KB（gzip）。
+ 接入真实后端时把 .env.production 的 VITE_USE_MOCK 改为 false，
+ mock 数据与 @faker-js/faker、mockjs 会被完整摇掉，首屏降至约 239KB。
+
+- 类型检查与代码检查
+
+bash
+pnpm type-check      vue-tsc 类型检查（只读）
+pnpm lint:eslint     ESLint（flat config，自动修复）
+pnpm lint:stylelint  Stylelint（自动修复）
+
+
+ 两个 lint 脚本都会加 --fix 修改文件；CI 中使用的是不带 --fix 的只读检查（pnpm exec eslint / pnpm exec stylelint）。
+
+ 🌍 国际化（i18n）
+
+基于 vue-i18n@11，内置 简体中文 / English。顶栏可实时切换，选择会持久化到 localStorage（LOCALE__KEY__），并同步 Naive UI 的 locale / date-locale。
+
+已接入范围：路由菜单、面包屑、多页签、顶栏、项目配置面板、登录页、关于页。业务页面与 src/components 扩展组件保持原样，由使用方按需接入。
+
+路由标题使用 i18n key（如 route.dashboard_console），词条位于 src/locales/lang//route.ts。后端动态菜单同样保留原始 title：返回 key 时跟随切换，返回纯中文标题时因未命中语言包而原样显示。
+
+最小接入示例：
+
+ts
+// src/locales/lang/zh-CN/common.ts
+export default {
+  welcome: &#x27;欢迎&#x27;,
+};
+
+// src/locales/lang/en-US/common.ts（英文包由 satisfies 约束，漏翻会在 type-check 报错）
+export default {
+  welcome: &#x27;Welcome&#x27;,
+};
+
+
+vue
+
+import { useI18n } from &#x27;vue-i18n&#x27;;
+
+const { t } = useI18n();
+
+
+
+  {{ t(&#x27;common.welcome&#x27;) }}
+
+
+
+非组件环境（路由生成、菜单转换等）可使用 src/locales/index.ts 导出的 tr()。更多说明见 文档。
+
+ 📜 更新日志
+
+CHANGELOG
+
+
+ 🤝 如何贡献
+
+非常欢迎你的加入！提一个 Issue 或者提交一个 Pull Request
+
+Pull Request:
+
+1. Fork 代码!
+2. 创建自己的分支: git checkout -b feat/xxxx
+3. 提交你的修改: git commit -am &#x27;feat(function): add xxxxx&#x27;
+4. 推送您的分支: git push origin feat/xxxx
+5. 提交pull request
+
+ 📋 Git 贡献提交规范
+
+- 参考 Conventional Commits 规范（Angular 约定）
+
+  - feat 增加新功能
+  - fix 修复问题/BUG
+  - d</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/jekip/naive-ui-admin/issues/62"><span class="rp-item-num">#62</span><span class="rp-item-title">v2 Need Discuss</span><span class="rp-item-extra">19 comments · 2021-10-18</span></a><a class="rp-item" href="https://github.com/jekip/naive-ui-admin/issues/299"><span class="rp-item-num">#299</span><span class="rp-item-title">bug记录</span><span class="rp-item-extra">15 comments · 2024-10-19</span></a><a class="rp-item" href="https://github.com/jekip/naive-ui-admin/issues/84"><span class="rp-item-num">#84</span><span class="rp-item-title">Consider template version for quick-start?</span><span class="rp-item-extra">4 comments · 2022-01-12</span></a><a class="rp-item" href="https://github.com/jekip/naive-ui-admin/issues/268"><span class="rp-item-num">#268</span><span class="rp-item-title">编辑表格，表头有时会变白，没找到规律，一般是编辑完 cell,滑动滚动条出现</span><span class="rp-item-extra">2 comments · 2023-12-12</span></a><a class="rp-item" href="https://github.com/jekip/naive-ui-admin/issues/202"><span class="rp-item-num">#202</span><span class="rp-item-title">English translation</span><span class="rp-item-extra">2 comments · 2022-12-04</span></a><a class="rp-item" href="https://github.com/jekip/naive-ui-admin/issues/316"><span class="rp-item-num">#316</span><span class="rp-item-title">elementplus版本的源码没有吗</span><span class="rp-item-extra">1 comments · 2025-06-20</span></a><a class="rp-item" href="https://github.com/jekip/naive-ui-admin/issues/302"><span class="rp-item-num">#302</span><span class="rp-item-title">BasicTable 的pagination 手动设置页码的值为1后并没有回到第一页</span><span class="rp-item-extra">1 comments · 2024-11-13</span></a><a class="rp-item" href="https://github.com/jekip/naive-ui-admin/issues/288"><span class="rp-item-num">#288</span><span class="rp-item-title">有关闭当前tag的功能吗?</span><span class="rp-item-extra">1 comments · 2024-06-07</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/jekip/naive-ui-admin/releases"><b>3.0.0</b> <span class="rp-rel-tag">v3.0.0</span> <span class="rp-item-extra">2026-10-21</span></a><pre class="rp-pre">本次为基础设施现代化改造，包含破坏性变更，升级前请阅读下方&quot;破坏性变更&quot;。
+
+ 🚀 包体优化（首屏 gzip：默认 458KB，关闭 mock 后 239KB，预算 500KB）
+
+- mock 可一键摇掉：本项目定位为面向开发者的演示模板，.env.production 默认 VITE_USE_MOCK=true 以保留无后端演示能力；接入真实后端时改为 false，@faker-js/faker + mockjs 等 mock 依赖（约 220KB gzip）会被完整摇掉，首屏 gzip 458KB → 239KB
+- 删除 naive-ui 全局注册（src/plugins/naive.ts）：此前 66 个组件被整包注册，unplugin-vue-components 的按需引入完全失效
+- 重写分包策略：manualChunks 由「整库成块」改为只固定框架基座，naive-ui 与业务模块按路由自然分割，避免 1MB 的 naive-ui 块被入口同步引用
+- echarts 精简按需注册：只保留 Bar / Line / Pie 与 Grid / Tooltip / Legend / Title，其余图表与组件改为注释可选（817KB → 578KB）
+- 新增 scripts/report-bundle-size.mjs：统计首屏静态闭包体积（含 g</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/jekip__naive-ui-admin.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

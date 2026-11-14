@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>haoel/haoel.github.io · GitHub Trending Rank Radar</title>
+<meta name="description" content="haoel/haoel.github.io — GitHub stars trend, board ranks, issues and releases">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="haoel.github.io, haoel, haoel/haoel.github.io, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/haoel__haoel.github.io">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="haoel/haoel.github.io · GitHub Trending Rank Radar">
+<meta property="og:description" content="haoel/haoel.github.io — GitHub stars trend, board ranks, issues and releases">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/haoel__haoel.github.io">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "haoel/haoel.github.io", "codeRepository": "https://github.com/haoel/haoel.github.io", "url": "https://zhuikan.com/repos/haoel__haoel.github.io", "description": "haoel/haoel.github.io — GitHub stars trend, board ranks, issues and releases", "author": {"@type": "Organization", "name": "haoel", "url": "https://github.com/haoel"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Shell", "dateCreated": "2016-08-09"}</script>
+</head>
+<body data-repo="haoel/haoel.github.io" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">haoel/haoel.github.io</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="haoel__haoel.github.io"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/1014558?u=079ac90d9c84c3a96e0bb1d9a3f4528682541c63&amp;v=4&s=300" width="300" height="300" alt="haoel avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">haoel.github.io</div>
+      <a class="rp-side-owner" href="https://github.com/haoel">haoel</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/haoel">haoel</a>
+        <span class="rp-sep">/</span><span class="rp-name">haoel.github.io</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc"></p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>13,078</b></span><span class="rp-stat" title="forks">⑂ <b>2,028</b></span><span class="rp-stat" title="watchers">👁 <b>289</b></span><span class="rp-stat" title="prs">⑃ <b>55</b></span><span class="rp-stat" title="issues">● <b>254</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Shell</span><span class="rp-meta-bit">Created 2016-08-09</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="haoel__leetcode"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1014558?u=079ac90d9c84c3a96e0bb1d9a3f4528682541c63&amp;v=4" alt="" loading="lazy">leetcode</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/haoel/haoel.github.io">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">13,078</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,028</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">289</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">55</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">254</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">科学上网 
+
+作者：左耳朵 http://coolshell.cn
+更新时间：2023-05-02
+
+这篇文章可以写的更好，欢迎到 https://github.com/haoel/haoel.github.io 更新
+
+!
+
+- 0. 序
+- 1. 机场 vs 自建
+- 2. 购买VPS
+  - 2.1 常规VPS
+  - 2.2 CN2 线路
+- 3. 搭建相关代理服务
+  - 3.1 设置Docker服务
+  - 3.2 开启 TCP BBR 拥塞控制算法
+  - 3.3 申请域名和证书
+  - 3.4 用 Gost 设置 HTTPS 服务
+  - 3.5 设置 ShadowSocks 服务 （不推荐）
+  - 3.6 设置L2TP/IPSec服务 （不推荐）
+- 4. 客户端设置
+  - 4.1 电脑端设置
+    - 4.1.1 Chrome 代理设置
+    - 4.1.2 全局 Clash 代理设置
+  - 4.2 手机端设置
+    - 4.2.1 Android
+    - 4.2.2 iPhone
+  - 4.3 平板端设置
+    - 4.3.1 iPad
+- 5. 美国手机和支付
+  - 5.1 美国手机
+  - 5.2 美国支付
+- 6. 流量伪装和防探测
+- 7. 针对 IP 被封的解决方案
+- 8. 家用透明网关
+  - 8.1 OpenWRT 路由器
+  - 8.2 通过树莓派做旁路网关
+  - 8.3 安装 Clash
+  - 8.4 设置 iptables 转发
+- 9. 数据中心透明网关
+  - 9.1 AWS 网络构建
+  - 9.2 安装 Clash
+  - 9.3 配置私有子网中的 EC2
+  - 9.4 私有子网中的 Kubernetes
+- 10. 代理技巧
+  - 10.1 HTTP 隧道
+  - 10.2 SSH 隧道
+  - 10.3 Github / Git SSH 代理
+  - 10.4 Cloudflare Warp 原生 IP
+    - 10.4.1 WARP 模式
+    - 10.4.2 代理模式
+    - 10.4.3 Docker 代理
+- 11. 其它
+  - 11.1 其它方式
+  - 11.2 搭建脚本
+
+ 0. 序
+
+首先，我们先明确一下，我科学上网的目的主要是为了学习、工作、交友、查资料、和丰富自己的眼界，不是其它的事。
+
+对我来说，科学上网很重要，下面罗列一下需要科学上网，我才能真正学习工作和生活的网站：
+
+- Youtube 和 Vimeo 上的各种大会和教学视频，除了我自己要学，我的孩子也要学。
+- Wikipedia 维基百科是我目前唯一信得过的百科全书，我在上面可以比较系统地翻阅各种词条。
+- SlideShare 上有很多的技术文档和资料的PPT，是我的知识学习的地方。
+- Quora 问答网站，在上面有很多有趣的问答。
+- 博客和论文，很多博客和论文站点都被墙了，比如：Blogspot 和 Medium。
+- Google 的各种服务，比如：Gmail, Map, Docs，Driver，照片，图片搜索，Voices，论文搜索……包括Google官方的各种技术文档……
+- 一些云服务，比如：Dropbox，IFTTT，Imgur，archive.org……
+- Twitter 上 Follow 一些牛人和一些官方账号，比如：AWS、Docker……
+- 社交 Facebook, Telegram, Whatsapp, Slack……，有一些我在国外的亲戚和朋友……
+- Reddit 是一个聚合网站，一个新闻和文章的集散地，你可以认为是各种频道的今日头条……
+- Pinterest 和 Instagram  上面有很多不错的图片和视频新闻，是我减压力的地方……
+- 新闻，如BBC。 BBC是全球比较出众的媒体，有太多的有价值资源和内容了，比如纪录片、学英文……
+- 编程，有很多编程的场景需要翻墙，比如，Go语言编程时的 go get 中的很多库是放在 Google的服务器上， 然而Google是全部被墙，包括 Android 和其它一些文档和资源也是一样。包括 SourceForge 的某些项目也需要科学上网，Docker Registry也有部分被墙，还有偶尔抽风的Github，以及不能访问的gist……
+- ……等等
+
+所以，科学上网后，英文是一件很重要的事。
+
+为什么这么说？这主要是针对计算机相关的知识，逻辑是这样的，如果你上了Google还是在用中文关键词，那么你好不容易出来了，结果又回去了，所以没什么意义。 换言之，科学上网的目的是为了进入广阔的世界范围与全世界的人交流，所以，英文是必备的，如果你英文有问题，VPN过去的用处也不大。
+
+所以，我把这个前提条件放在第一的位置，就是说—— 真正的墙不是GFW，而是人的大脑！ 意思是，屏蔽你获得信息能力的不是墙，而很大一部分则是我们自己的语言能力！
+
+
+ 1. 机场 vs 自建
+
+对于科学上网，我强烈建议通过自建的方式。因为使用一些“机场”会有如下的几个问题：
+
+1. 机场主需要公开售卖，使用的人也比较多，所以，都会被重点关注，非常容易被封；
+2. 机场需要购买一堆服务器，所以，很容易经营不善跑路；
+3. 使用机场很容易泄漏自己的隐私，因为你的所有流量都经过了机场的服务器；
+
+自建梯子会是一条很好的路，不过，问题就是，自建梯子需要一定的技术能力，成本和门槛都比机场要高，但是，在安全性方面会比较好一些。自己动手，自力更生，让人有更多的安全感。
+
+所以，如果你不是很有技术能力，或者不想花钱，那么，还是使用“机场”吧。
+
+本文主要是针对自建的文档！
+
+ 2. 购买VPS
+
+自建梯需要购买一台服务器 VPS。现在你买一台VPS也不贵了，一个月几十元钱。当然，如果需要好的线路得需要多花一些钱，但是也不贵。。
+
+购买的 VPS 有几个要点 - “流量” 和 “位置”：
+
+- 配置。服务器的配置不需要很高，用最小的型号就可以了，一般来说，1个CPU，1GB内存，50GB硬盘是足够了；
+- 流量。服务器主是要要年有没有足够的流量和带宽，很多VPS提供商在流量和带宽上会收额外的费用，要小心。一般来说，1TB流量和30Mbps带宽是足够了，如果不看电影的话，500GB左右一个月的流量也够了；
+- 位置。服务器的线路和地理位置还是比较重要的，一般来说，香港，台湾，日本，韩国，新加坡，美国，欧洲都是不错的选择。
+  - 线路。 经过我长期的实践，GIA CN2 的线路是非常好的。但是你要小心，很多VPS提供商会在宣传上说自己是 CN2 的线路，但是，实际上并不是。
+  -  原生 IP。很多海外的应用都有地区限制，会屏蔽IP，所以，使用美国的原生 IP 也是很重要的。
+
+上述的这些东西在后面都会讲到。另外，VPS 建议安装成 Ubuntu，版本用 18.04，20.04，22.04 都行。
+
+
+ 2.1 常规VPS
+
+对于常规 VPS，主要是一个云服务提供商，大的原厂商都提供免费使用和赠金，所以，可以白嫖一段时间。
+
+- AWS LightSail 是一个非常便宜</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/haoel__haoel.github.io.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

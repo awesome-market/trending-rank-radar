@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>elysia395/dsh-wallpaper-engine · GitHub Trending Rank Radar</title>
+<meta name="description" content="把本机 Wallpaper Engine 的壁纸搬进 DSH 网页界面：场景壁纸由内置 MIT 开源引擎 WebWallGL 实时 WebGL 渲染（粒子 / puppet 骨骼 / SceneScript / 音频反应 / 鼠标交互），失败自动降级内嵌 MP4 与场景静态帧；Web 壁纸严格沙箱 + WE API；iOS 风格液态玻璃 UI 高度自定义，遮挡暂停省电、ffmpeg 帧率上限转码、">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="dsh-wallpaper-engine, elysia395, elysia395/dsh-wallpaper-engine, github stars, github trending, star growth, star history, 开源项目, 星标增长, dsh-plugin, dsh-plugin-market, dsh-plugins, deepseek-harness, liquid-glass, theme">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/elysia395__dsh-wallpaper-engine">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="elysia395/dsh-wallpaper-engine · GitHub Trending Rank Radar">
+<meta property="og:description" content="把本机 Wallpaper Engine 的壁纸搬进 DSH 网页界面：场景壁纸由内置 MIT 开源引擎 WebWallGL 实时 WebGL 渲染（粒子 / puppet 骨骼 / SceneScript / 音频反应 / 鼠标交互），失败自动降级内嵌 MP4 与场景静态帧；Web 壁纸严格沙箱 + WE API；iOS 风格液态玻璃 UI 高度自定义，遮挡暂停省电、ffmpeg 帧率上限转码、">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/elysia395__dsh-wallpaper-engine">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "elysia395/dsh-wallpaper-engine", "codeRepository": "https://github.com/elysia395/dsh-wallpaper-engine", "url": "https://zhuikan.com/repos/elysia395__dsh-wallpaper-engine", "description": "把本机 Wallpaper Engine 的壁纸搬进 DSH 网页界面：场景壁纸由内置 MIT 开源引擎 WebWallGL 实时 WebGL 渲染（粒子 / puppet 骨骼 / SceneScript / 音频反应 / 鼠标交互），失败自动降级内嵌 MP4 与场景静态帧；Web 壁纸严格沙箱 + WE API；iOS 风格液态玻璃 UI 高度自定义，遮挡暂停省电、ffmpeg 帧率上限转码、", "author": {"@type": "Organization", "name": "elysia395", "url": "https://github.com/elysia395"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2026-08-16", "keywords": "dsh-plugin,dsh-plugin-market,dsh-plugins,deepseek-harness,liquid-glass,theme,wallpaper-engine,wallpaper,webgl"}</script>
+</head>
+<body data-repo="elysia395/dsh-wallpaper-engine" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">elysia395/dsh-wallpaper-engine</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="elysia395__dsh-wallpaper-engine"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/182482545?u=e54427ef36e56a79ef873163951f434a638d2812&amp;v=4&s=300" width="300" height="300" alt="elysia395 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">dsh-wallpaper-engine</div>
+      <a class="rp-side-owner" href="https://github.com/elysia395">elysia395</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/elysia395">elysia395</a>
+        <span class="rp-sep">/</span><span class="rp-name">dsh-wallpaper-engine</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=new">new <b>#94</b></a><a class="rp-board-chip" href="../?board=daily_rate">daily_rate <b>#112</b></a><a class="rp-board-chip" href="../?board=weekly_rate">weekly_rate <b>#77</b></a></div>
+    </div>
+    <p class="rp-desc">把本机 Wallpaper Engine 的壁纸搬进 DSH 网页界面：场景壁纸由内置 MIT 开源引擎 WebWallGL 实时 WebGL 渲染（粒子 / puppet 骨骼 / SceneScript / 音频反应 / 鼠标交互），失败自动降级内嵌 MP4 与场景静态帧；Web 壁纸严格沙箱 + WE API；iOS 风格液态玻璃 UI 高度自定义，遮挡暂停省电、ffmpeg 帧率上限转码、系统音频频谱与 Now Playing、自定义上传与自动轮播；设置存宿主端，对 agent 零 token 开销。Windows / macOS / Linux 三平台原生（同一个包、同一条命令）。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>6,781</b></span><span class="rp-stat" title="forks">⑂ <b>111</b></span><span class="rp-stat" title="watchers">👁 <b>0</b></span><span class="rp-stat" title="prs">⑃ <b>168</b></span><span class="rp-stat" title="issues">● <b>187</b></span><span class="rp-stat" title="releases">▤ <b>13</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/dsh-plugin">dsh-plugin</a><a class="rp-topic" href="https://github.com/topics/dsh-plugin-market">dsh-plugin-market</a><a class="rp-topic" href="https://github.com/topics/dsh-plugins">dsh-plugins</a><a class="rp-topic" href="../tags/deepseek-harness">deepseek-harness</a><a class="rp-topic" href="https://github.com/topics/liquid-glass">liquid-glass</a><a class="rp-topic" href="https://github.com/topics/theme">theme</a><a class="rp-topic" href="https://github.com/topics/wallpaper-engine">wallpaper-engine</a><a class="rp-topic" href="https://github.com/topics/wallpaper">wallpaper</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-08-16</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/elysia395/dsh-wallpaper-engine">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">🎉 v1.4.2：紧急修复——拖动吉祥物时右侧栏不再疯狂闪烁（1.4.1 回归）</span><a class="rp-dl-a" href="https://github.com/elysia395/dsh-wallpaper-engine/releases/tag/v1.4.2">🎉-1.4.2 ↓</a><span class="rp-dl-ver">1.4.2</span><span class="rp-dl-date">2026-11-08</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+74</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">6,781</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">111</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">168</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">187</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">13</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">把本机 Wallpaper Engine 的 Scene、Web 与视频壁纸带进 DSH 对话界面，再配上液态玻璃、字体、吉祥物与可分享的外观预设。插件不向 agent 注册工具、不注入提示文本，不增加模型 token 开销。
+
+
+  
+
+
+真实界面演示；历史素材与当前安装版本可能略有不同。
+
+
+
+
+  
+    
+      
+        界面预览 · 主要能力 · 支持哪些壁纸
+        快速开始 · 使用 · 兼容与限制
+        开发与贡献 · 致谢
+        赞赏 · 联系方式
+      
+    
+    
+      
+        
+      
+    
+    
+      
+      生鱼的赞赏码
+      项目保持开源，赞赏完全自愿，不影响安装、使用或问题反馈。
+    
+  
+
+
+
+
+- 壁纸：Scene / Web 实时渲染，Video 直接播放；支持自定义图片 / 视频上传与 WE 项目目录。
+- 外观：设置窗、对话区与侧栏液态玻璃；配色、透明度、模糊、边框与字体可调。
+- 玻璃子包：液态玻璃是独立子包行 wallpaper-engine-glass，可在插件管理器单独停用；停用后，除内容区壁纸外界面回到宿中原生外观，壁纸、字体与吉祥物等功能不受影响。
+- 扩展：吉祥物、会话头像、点击 / 拖尾特效、3D 视差；可选桌宠联动 dsh-pet-dshwe（dsh-pet 全量 fork），设置页卡片可一键安装，未装 / 关闭 / 版本过旧时回落原生吉祥物。
+- 壁纸库：筛选、隐藏 / 恢复、自动轮播；外观预设整套导入导出。
+
+
+
+| 类型 | 在 DSH 中的路径 | 支持情况 |
+|---|---|---|
+| Scene（场景） | 内置 WebWallGL 实时渲染，失败时按降级链回退 | 支持，不需要 WE 在后台运行 |
+| Web（网页） | 网页挂载、WE API 注入与沙箱隔离 | 支持；效果取决于网页与浏览器能力 |
+| Video（视频） | 浏览器播放，配合转码、帧率上限与暂停控制 | 支持 |
+| Picture（图片 / 幻灯片项目） | 读取 WE preset 项目的图片目录，按 WE 里设的周期在本机交叉淡化轮播 | 支持；图片不上传、留在本机 |
+| 自定义图片 / 视频 | 上传本地 JPG / PNG / MP4 | 支持，文件保存在本机 |
+
+Application（应用）类壁纸需要启动第三方程序，不支持，也不会进入壁纸库或轮播候选。
+
+
+
+前置：Node.js = 22.12.0、DSH 0.2 内核（含 0.2.0-rc.1/rc.2）与 pnpm。安装前完全退出 DSH。
+
+npm（推荐）
+
+sh
+dsh plugin --profile web add dsh-plugin-wallpaper-engine
+
+
+桌面端把 web 改为 desktop。
+
+本仓按多包发布集发布：主包与同版本子包一起解析（具体包数、tarball 数与 publishOrder 见发布流程，各版本变化见变更记录）。
+
+源码
+
+sh
+node scripts/install-source.mjs --profile desktop --dsh-home &quot;&quot; --app-closed
+
+
+源码安装会构建客户端并注册主包与子包；安装后不要移动或删除源码目录。完整说明见 安装与升级 与 贡献指南；没有命令行经验请先看 入门指南。
+
+
+
+1. 打开 设置 → Wallpaper Engine → 壁纸库，或在聊天顶部从吉祥物拉绳进入壁纸仓库。
+2. 在页内壁纸库选择缩略图，按需调整播放与外观；修改即时生效并保存到宿主端。
+3. 暂停 / 播放只控制当前播放；清除当前壁纸不会删除原文件。
+
+
+  
+
+
+
+  
+
+
+
+
+- Windows / macOS / Linux 使用同一份源码；macOS 没有 WE 客户端，可上传图片 / 视频或指向 WE 项目目录。
+- Scene 渲染依赖浏览器 WebGL 与显卡驱动，复杂工坊项目可能存在兼容差异；失败会逐级降级。
+- 遮挡暂停、窗口失焦暂停与音频回环采集按平台适配。
+- 与其他皮肤 / 插件同时启用时，先看 共存说明。
+
+
+  
+
+
+
+
+欢迎提交 Bug 复现、平台兼容反馈、文档修正和功能 PR。反馈时请附宿主 / 插件版本、操作系统、壁纸类型、复现步骤与脱敏日志。
+
+- 工作原理 · 故障排查 · 升级指南
+- 更新记录 · 共存说明 · 代码结构
+- 贡献指南 · 发布流程
+
+
+
+
+  
+  &amp;nbsp;
+  
+
+
+
+
+
+  
+    
+    
+  
+
+
+
+
+感谢所有贡献者对本项目的贡献 ❤️
+
+
+  
+
+
+代码以 MIT License 开源；壁纸、角色与字体素材的授权可能不同，再分发或商用前请核对 素材说明。</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/elysia395/dsh-wallpaper-engine/issues/70"><span class="rp-item-num">#70</span><span class="rp-item-title">主播灵感枯竭，新idea提交专用issue</span><span class="rp-item-extra">18 comments · 2026-08-31</span></a><a class="rp-item" href="https://github.com/elysia395/dsh-wallpaper-engine/issues/270"><span class="rp-item-num">#270</span><span class="rp-item-title">Bug: 1.4.0 causes full page freezes in DSH Web UI (regression from 1.3.3)</span><span class="rp-item-extra">10 comments · 2026-10-23</span></a><a class="rp-item" href="https://github.com/elysia395/dsh-wallpaper-engine/issues/257"><span class="rp-item-num">#257</span><span class="rp-item-title">[bug] 输入框粘底再次失效：输入卡内的 fixed 浮层（ContextMeter 面板）仍被 ::before 的 backdrop-filter / 视差 transform 重新锚定（1.3.3 / 宿主 0.2.1-rc.2）</span><span class="rp-item-extra">9 comments · 2026-10-20</span></a><a class="rp-item" href="https://github.com/elysia395/dsh-wallpaper-engine/issues/219"><span class="rp-item-num">#219</span><span class="rp-item-title">预设：官方 7 套 + 用户只能存 1 套，本末倒置；且首次应用作者预设前缺少「先保存自己预设」的引导</span><span class="rp-item-extra">8 comments · 2026-10-14</span></a><a class="rp-item" href="https://github.com/elysia395/dsh-wallpaper-engine/issues/358"><span class="rp-item-num">#358</span><span class="rp-item-title">[bug] 「自动画质」开关关掉完全无效：layerWantKey 缺字段 + 三处 selLike 缺字段（叠加 webwallgl 侧一处，已上游报）</span><span class="rp-item-extra">7 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/elysia395/dsh-wallpaper-engine/issues/158"><span class="rp-item-num">#158</span><span class="rp-item-title">[bug] 装插件后桌面端启动变慢，且必须等插件加载完才能新建会话：immediately 客户端包进启动关键路径 + 大库 inventory 全量扫描</span><span class="rp-item-extra">7 comments · 2026-10-08</span></a><a class="rp-item" href="https://github.com/elysia395/dsh-wallpaper-engine/issues/349"><span class="rp-item-num">#349</span><span class="rp-item-title">[Feature] 支持启动时默认暂停壁纸</span><span class="rp-item-extra">5 comments · 2026-11-10</span></a><a class="rp-item" href="https://github.com/elysia395/dsh-wallpaper-engine/issues/248"><span class="rp-item-num">#248</span><span class="rp-item-title">[bug] 大型 dsh-context 页面下 Scene 60fps + 液态玻璃导致 DSH 卡约 10s、全局动画低帧；禁用 wallpaper 后恢复</span><span class="rp-item-extra">5 comments · 2026-10-18</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/elysia395/dsh-wallpaper-engine/releases"><b>🎉 v1.4.2：紧急修复——拖动吉祥物时右侧栏不再疯狂闪烁（1.4.1 回归）</b> <span class="rp-rel-tag">v1.4.2</span> <span class="rp-item-extra">2026-11-08</span></a><pre class="rp-pre">🎉 v1.4.2：紧急修复——拖动吉祥物时右侧栏不再疯狂闪烁（1.4.1 回归）
+
+本版是 1.4.1 的紧急修复版：拖动吉祥物时右侧栏按帧反复弹出又收回（真机复现：40 帧拖动触发 30 次侧栏开/关）。根因是两处叠加——主包拖动路径逐帧向桌宠联动发手势，而 pet-link 的 performer 门面不看当刻模式恒走 linked provider，联动未装/未开（绝大多数用户的常态）时直接回落到「开关右侧栏」。修法两层互为纵深：门面按 provider 路由 + 手势段绝不回落 fallback；修复后端到端复现拖动全程 toggles=0，linked 与 native 两态一致，三条新守卫各自做过反向验证。完整条目见 CHANGELOG。
+
+ 📦 九件套（九包同号锁步 1.4.2）
+
+主包 dsh-plugin-wallpaper-engine + 八个子包（-fonts / -fx / -glass / -parallax / -media-bridge / -about-notice / -mascot-avatar / -pet-link）。其中 -glass（液态玻璃）为 1.4.1 起新增的子包。
+
+本页附件与 npm 包为同一份构建（commit a103909f）：九个 tarball 的 SHA-1 与 npm registry 已发布的 1.4.2 逐</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (2)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/gitblog_00537/article/details/168009912" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">dsh-wallpaper-engine 测试体系揭秘：两档守卫+30余个验证脚本，如何保证开源插件代码质量</span><span class="rp-item-extra">2026-10-15</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00540/article/details/167900586" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">如何使用 dsh-wallpaper-engine：一条命令安装 + 小白零命令行快速上手指南</span><span class="rp-item-extra">2026-10-14</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/elysia395__dsh-wallpaper-engine.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

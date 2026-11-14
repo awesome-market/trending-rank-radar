@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caldis/Mos · GitHub Trending Rank Radar</title>
+<meta name="description" content="一个用于在 macOS 上平滑你的鼠标滚动效果或单独设置滚动方向的小工具, 让你的滚轮爽如触控板  |  A lightweight tool used to smooth scrolling and set scroll direction independently for your mouse on macOS">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Mos, Caldis, Caldis/Mos, github stars, github trending, star growth, star history, 开源项目, 星标增长, mouse, smooth, reverse, osx, swift, scroll">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Caldis__Mos">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Caldis/Mos · GitHub Trending Rank Radar">
+<meta property="og:description" content="一个用于在 macOS 上平滑你的鼠标滚动效果或单独设置滚动方向的小工具, 让你的滚轮爽如触控板  |  A lightweight tool used to smooth scrolling and set scroll direction independently for your mouse on macOS">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Caldis__Mos">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Caldis/Mos", "codeRepository": "https://github.com/Caldis/Mos", "url": "https://zhuikan.com/repos/Caldis__Mos", "description": "一个用于在 macOS 上平滑你的鼠标滚动效果或单独设置滚动方向的小工具, 让你的滚轮爽如触控板  |  A lightweight tool used to smooth scrolling and set scroll direction independently for your mouse on macOS", "author": {"@type": "Organization", "name": "Caldis", "url": "https://github.com/Caldis"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "Swift", "dateCreated": "2017-01-27", "keywords": "mouse,smooth,reverse,osx,swift,scroll,smoothscroll,macos,smooth-scrolling,homebrew"}</script>
+</head>
+<body data-repo="Caldis/Mos" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Caldis/Mos</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Caldis__Mos"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/3529490?u=6b626738e0801ede849df0ab2b5358972602c0d5&amp;v=4&s=300" width="300" height="300" alt="Caldis avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Mos</div>
+      <a class="rp-side-owner" href="https://github.com/Caldis">Caldis</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Caldis">Caldis</a>
+        <span class="rp-sep">/</span><span class="rp-name">Mos</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">一个用于在 macOS 上平滑你的鼠标滚动效果或单独设置滚动方向的小工具, 让你的滚轮爽如触控板  |  A lightweight tool used to smooth scrolling and set scroll direction independently for your mouse on macOS</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>21,916</b></span><span class="rp-stat" title="forks">⑂ <b>711</b></span><span class="rp-stat" title="watchers">👁 <b>95</b></span><span class="rp-stat" title="prs">⑃ <b>141</b></span><span class="rp-stat" title="issues">● <b>844</b></span><span class="rp-stat" title="releases">▤ <b>34</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/mouse">mouse</a><a class="rp-topic" href="https://github.com/topics/smooth">smooth</a><a class="rp-topic" href="https://github.com/topics/reverse">reverse</a><a class="rp-topic" href="https://github.com/topics/osx">osx</a><a class="rp-topic" href="../tags/swift">swift</a><a class="rp-topic" href="https://github.com/topics/scroll">scroll</a><a class="rp-topic" href="https://github.com/topics/smoothscroll">smoothscroll</a><a class="rp-topic" href="../tags/macos">macos</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Swift</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2017-01-27</span><a class="rp-meta-bit rp-home" href="http://mos.caldis.me" rel="noopener">mos.caldis.me</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Caldis/Mos">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">4.2.1</span><a class="rp-dl-a" href="https://github.com/Caldis/Mos/releases/tag/4.2.1">4.2.1 ↓</a><span class="rp-dl-ver">4.2.1</span><span class="rp-dl-date">2026-05-31</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num">21,916</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">711</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">95</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">141</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">844</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">34</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Mos
+
+
+  让 macOS 上的鼠标滚轮和触控板一样顺滑，同时保留鼠标该有的精准控制。
+
+
+
+  
+  
+  
+  
+
+
+
+  中文 ·
+  English ·
+  Deutsch ·
+  日本語 ·
+  한국어 ·
+  Русский ·
+  Bahasa Indonesia
+
+
+
+  官网 ·
+  下载 ·
+  Wiki ·
+  Discussions
+
+
+
+  
+
+
+ 为什么是 Mos
+
+普通滚轮在 macOS 上常常显得生硬, 这是由于滚轮的精度不足导致的。Mos 会接管鼠标滚轮事件，将滚动行为插值转换成更顺滑的滚动，同时保留每个应用、每个方向、每颗按键的控制权。
+
+同时, 你还可以使用 Mos 对任意鼠标按键进行重新映射或改写, 以适配你的工作流。
+
+Mos 是免费的开源菜单栏工具，支持 macOS 10.13 及以上版本。
+
+ 功能亮点
+
+- 平滑滚动：自定义最短步长、速度增益和持续时间，也可以启用模拟触控板模式。
+- 轴向独立：垂直/水平滚动可以分别设置平滑和反向。
+- 滚动功能键：为加速、方向转换、禁用平滑滚动绑定任意自定义按键。
+- 按应用配置：每个 App 可以继承全局设置，也可以单独覆盖滚动、快捷键和按钮绑定规则。
+- 按钮绑定：录制鼠标、键盘或自定义事件，绑定到系统动作、快捷键、打开 App、运行脚本或打开文件。
+- 动作库：内置调度中心、空间切换、截图、访达操作、文档编辑、鼠标滚动等常用动作。
+- Logi/HID++ 支持：支持 Bolt、Unifying 接收器和蓝牙直连设备上的 Logitech 按钮事件，并可处理 Logi 专有动作。
+
+ 截图
+
+| 滚动调节 | 按应用配置 |
+| --- | --- |
+|  |  |
+
+| 打开 App、脚本或文件 | 快捷动作菜单 |
+| --- | --- |
+|  |  |
+
+ 下载与安装
+
+ 手动安装
+
+从 GitHub Releases 下载最新版本，解压后将 Mos.app 放入 /Applications。
+
+首次启动时，macOS 可能会要求你授予 Mos 辅助功能权限。Mos 需要这项权限读取和重写滚动事件；如果授权后仍无法工作，可以参考 Wiki 中的权限排查。
+
+ Homebrew
+
+如果你习惯用 Homebrew 管理应用：
+
+bash
+brew install --cask mos
+
+
+更新：
+
+bash
+brew update
+brew upgrade --cask mos
+
+
+ 贡献
+
+Mos 是一个会处理系统输入、辅助功能权限、Logi/HID 设备和用户持久化配置的小工具。维护成本和回归风险都很真实，所以我们更欢迎小而集中的改动。
+
+涉及 Logi/HID、辅助功能权限、签名、notarization、更新机制或真实设备测试的改动风险较高，请先在 issue 或 Discussions 中说明背景。
+
+PR 描述中请说明变更动机、测试方式和可能影响的行为。
+
+ 由 AI 开发的代码已经成为主流，我们理解现在大量的 PR 都经由 AI 生成 (包括我自己)。但提交者仍需要自行理解、整理并验证每一行代码的实际作用, 因为每个 PR 审查都有成本。
+
+ 非常欢迎
+
+- 小范围 bug 修复，并提供复现路径或验证说明。
+- UI/UX 细节修补，例如布局、文案、可读性和引导流程的小改进。
+- 小范围安全加固，例如更稳妥的权限状态处理、输入保护和边界检查。
+- 本地化、文档和测试补充。
+- 单一主题、变更行数较小、容易 review 的 PR。
+
+ 暂不合并
+
+- 未经讨论的大型新功能、模块或架构改造。
+- 大量 AI 生成的代码重写、格式化、迁移或“顺手优化”。
+- 会改变输入事件处理、权限提示、更新检查、旧用户数据读取或持久化格式的行为。
+- 一次性补全大量机器翻译，尤其是无法由母语使用者校对的翻译集。
+
+我们欢迎任何形式的贡献，有任何建议或意见您可以给我们 提问。
+
+如果你对新增功能非常有热情，欢迎先在 Discussions 发起讨论。
+
+ 鸣谢
+
+- Charts
+- LoginServiceKit
+- Sparkle
+- Smoothscroll-for-websites
+- Solaar
+
+ License
+
+Copyright (c) 2017-2026 Caldis. All rights reserved.
+
+Mos 使用 CC BY-NC 4.0 授权。请不要将 Mos 上传到 App Store。</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Caldis/Mos/issues/958"><span class="rp-item-num">#958</span><span class="rp-item-title">choppy scrolling once the mac comes back from sleep - have to restart the app</span><span class="rp-item-extra">19 comments · 2026-05-24</span></a><a class="rp-item" href="https://github.com/Caldis/Mos/issues/890"><span class="rp-item-num">#890</span><span class="rp-item-title">企业微信APP滚动异常，APP卡死，无法拖拽，滚动</span><span class="rp-item-extra">17 comments · 2026-03-10</span></a><a class="rp-item" href="https://github.com/Caldis/Mos/issues/697"><span class="rp-item-num">#697</span><span class="rp-item-title">The scroll wheel no longer works with smooth scrolling active on MacOS 15.3</span><span class="rp-item-extra">17 comments · 2025-01-29</span></a><a class="rp-item" href="https://github.com/Caldis/Mos/issues/635"><span class="rp-item-num">#635</span><span class="rp-item-title">程序似乎经常性被kill，导致滚轮功能失效，需要重新启动</span><span class="rp-item-extra">15 comments · 2024-02-02</span></a><a class="rp-item" href="https://github.com/Caldis/Mos/issues/868"><span class="rp-item-num">#868</span><span class="rp-item-title">Crashing during scrolling</span><span class="rp-item-extra">14 comments · 2026-02-22</span></a><a class="rp-item" href="https://github.com/Caldis/Mos/issues/655"><span class="rp-item-num">#655</span><span class="rp-item-title">Reverse scroll didn&#x27;t work at iPhone Mirroring in macOS Sequoia beta.</span><span class="rp-item-extra">12 comments · 2024-06-27</span></a><a class="rp-item" href="https://github.com/Caldis/Mos/issues/786"><span class="rp-item-num">#786</span><span class="rp-item-title">Smooth scroll feature not working</span><span class="rp-item-extra">12 comments · 2025-09-21</span></a><a class="rp-item" href="https://github.com/Caldis/Mos/issues/782"><span class="rp-item-num">#782</span><span class="rp-item-title">Scrolling issue on when using Edge Browser on Mac OS 26</span><span class="rp-item-extra">12 comments · 2025-09-18</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Caldis/Mos/discussions/1067"><span class="rp-item-num">#1067</span><span class="rp-item-title">希望能够增加鼠标/键盘按键加滚轮上/下的快捷键组合设置方式</span><span class="rp-item-extra">0 comments · 2026-11-08</span></a><a class="rp-item" href="https://github.com/Caldis/Mos/discussions/1062"><span class="rp-item-num">#1062</span><span class="rp-item-title">Logi 功能讨论：自定义按键顺序切换设备与拇指键四向手势</span><span class="rp-item-extra">0 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/Caldis/Mos/discussions/1057"><span class="rp-item-num">#1057</span><span class="rp-item-title">希望增加识别按键以及自定义配置更多功能</span><span class="rp-item-extra">0 comments · 2026-10-28</span></a><a class="rp-item" href="https://github.com/Caldis/Mos/discussions/1035"><span class="rp-item-num">#1035</span><span class="rp-item-title">horizontal scroll still working after disabling</span><span class="rp-item-extra">1 comments · 2026-09-20</span></a><a class="rp-item" href="https://github.com/Caldis/Mos/discussions/992"><span class="rp-item-num">#992</span><span class="rp-item-title">Logitech G502 X button is not detected by Mos</span><span class="rp-item-extra">0 comments · 2026-07-19</span></a><a class="rp-item" href="https://github.com/Caldis/Mos/discussions/973"><span class="rp-item-num">#973</span><span class="rp-item-title">ccline — AI answers at your macOS terminal prompt (for Mos power users)</span><span class="rp-item-extra">1 comments · 2026-06-10</span></a><a class="rp-item" href="https://github.com/Caldis/Mos/discussions/957"><span class="rp-item-num">#957</span><span class="rp-item-title">choppy scrolling once the mac comes back from sleep - have to restart the app</span><span class="rp-item-extra">0 comments · 2026-05-21</span></a><a class="rp-item" href="https://github.com/Caldis/Mos/discussions/954"><span class="rp-item-num">#954</span><span class="rp-item-title">Hold functions for mouse buttons</span><span class="rp-item-extra">0 comments · 2026-05-18</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/Caldis/Mos/releases"><b>4.2.1</b> <span class="rp-rel-tag">4.2.1</span> <span class="rp-item-extra">2026-05-31</span></a><pre class="rp-pre">如果应用无法启动或遇到权限问题, 请参考 Wiki: 如果应用无法正常运行
+
+ 修复
+- 修复由于应用热键的输入检查导致的部分情况下的性能问题。
+
+---
+
+ If the application fails to start or encounters permission issues, please refer Wiki: If the App not work properly
+
+ Fixes
+- Fixed a performance issue in some cases caused by input checks for app hotkeys.</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Caldis__Mos.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

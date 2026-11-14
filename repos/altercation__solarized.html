@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>altercation/solarized · GitHub Trending Rank Radar</title>
+<meta name="description" content="precision color scheme for multiple applications (terminal, vim, etc.) with both dark/light modes">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="solarized, altercation, altercation/solarized, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/altercation__solarized">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="altercation/solarized · GitHub Trending Rank Radar">
+<meta property="og:description" content="precision color scheme for multiple applications (terminal, vim, etc.) with both dark/light modes">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/altercation__solarized">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "altercation/solarized", "codeRepository": "https://github.com/altercation/solarized", "url": "https://zhuikan.com/repos/altercation__solarized", "description": "precision color scheme for multiple applications (terminal, vim, etc.) with both dark/light modes", "author": {"@type": "Organization", "name": "altercation", "url": "https://github.com/altercation"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Vim Script", "dateCreated": "2011-02-18"}</script>
+</head>
+<body data-repo="altercation/solarized" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">altercation/solarized</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="altercation__solarized"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/113542?u=9460f48b9afa4367bc6f36775f0483b7fd10639f&amp;v=4&s=300" width="300" height="300" alt="altercation avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">solarized</div>
+      <a class="rp-side-owner" href="https://github.com/altercation">altercation</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/altercation">altercation</a>
+        <span class="rp-sep">/</span><span class="rp-name">solarized</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">precision color scheme for multiple applications (terminal, vim, etc.) with both dark/light modes</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>16,021</b></span><span class="rp-stat" title="forks">⑂ <b>3,418</b></span><span class="rp-stat" title="watchers">👁 <b>382</b></span><span class="rp-stat" title="prs">⑃ <b>159</b></span><span class="rp-stat" title="issues">● <b>262</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Vim Script</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2011-02-18</span><a class="rp-meta-bit rp-home" href="http://ethanschoonover.com/solarized" rel="noopener">ethanschoonover.com/solarized</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/altercation/solarized">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">16,021</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">3,418</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">382</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">159</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">262</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">---
+title: Solarized
+description: Precision colors for machines and people
+author: Ethan Schoonover
+tags: test, testing, test123
+colors: light yellow
+created:  2011 Mar 15
+modified: 2011 Apr 16
+
+---
+
+Solarized
+=========
+
+ Precision colors for machines and people
+
+
+
+Solarized is a sixteen color palette (eight monotones, eight accent colors)
+designed for use with terminal and gui applications. It has several unique
+properties. I designed this colorscheme with both precise
+CIELAB lightness relationships
+and a refined set of hues based on fixed color wheel relationships. It has been
+tested extensively in real world use on color calibrated displays (as well as
+uncalibrated/intentionally miscalibrated displays) and in a variety of lighting
+conditions.
+
+See the [changelog] for what&#x27;s new in the most recent release.
+
+!solarized palette
+
+!solarized vim
+
+Currently available in formats for (cf screenshots below):
+
+ Editors &amp; IDEs
+
+   Vim by me (the Vim-only portion of Solarized is
+    available here, for use with
+    Pathogen, etc.). See also the Vim README.
+   Emacs courtesy of Greg Pfeil
+    (@sellout)
+    in the main repo and in a [standalone repository][Emacs Repository]
+   IntelliJ IDEA
+    courtesy of Johan Kaving and
+    (@flangy)
+    in the main repo and in a [standalone repository][IntelliJ Repository]
+   NetBeans courtesy of Brian Fenton and
+    in the main repo and in a [standalone repository][NetBeans Repository]
+   SeeStyle theme for Coda &amp; SubEthaEdit courtesy of
+    Justin Hileman
+    (@bobthecow),
+    in the main repo and in a
+    [standalone repository][SeeStyle-Coda-SubEthaEdit Repository]
+   TextMate --- NOTE: Dark Theme is work in progress\
+    courtesy of Tom Martin
+    (@deplorableword)
+    in the main repo and in a [standalone repository][TextMate Repository]
+    (with key work from Mark Story
+    and Brian Mathiyakom)
+   TextWrangler &amp; BBEdit courtesy of Rui Carmo
+    (@taoofmac)
+    in the main repo and in a [standalone repository][TextWrangler-BBEdit Repository]
+   Visual Studio courtesy of David Thibault
+    (@leddt)
+    in the main repo and in a [standalone repository][Visual Studio Repository]
+
+   Xcode work in progress ports are available for [Xcode 3] and [Xcode 4]
+    and will be pulled into the main Solarized project soon.
+
+ Terminal Emulators
+
+ Xresources / Xdefaults
+ iTerm2
+ OS X Terminal.app
+ Putty courtesy Brant Bobby
+    and on GitHub
+ Xfce terminal courtesy Sasha Gerrand
+    and on GitHub
+
+ Other Applications
+
+   Mutt e-mail client also by [me] (just the Mutt colorscheme is
+    [available here][Mutt Repository])
+
+ Palettes
+
+ Adobe Photoshop Palette (inc. L\a\b values)
+ Apple Color Picker Palettes
+ GIMP Palette
+
+Don&#x27;t see the application you want to use it in? Download the palettes (or pull
+the values from the table below) and create your own. Submit it back and I&#x27;ll
+happily note the contribution and include it on this page.  See also the
+Usage &amp; Development section below for details on the
+specific values to be used in</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/altercation/solarized/issues/220"><span class="rp-item-num">#220</span><span class="rp-item-title">Color fix needed? </span><span class="rp-item-extra">134 comments · 2012-09-12</span></a><a class="rp-item" href="https://github.com/altercation/solarized/issues/7"><span class="rp-item-num">#7</span><span class="rp-item-title">Irssi theme?</span><span class="rp-item-extra">30 comments · 2011-04-01</span></a><a class="rp-item" href="https://github.com/altercation/solarized/issues/8"><span class="rp-item-num">#8</span><span class="rp-item-title">ansi colors - bright colors/lscolors/dircolors - 256 color remapping</span><span class="rp-item-extra">27 comments · 2011-04-01</span></a><a class="rp-item" href="https://github.com/altercation/solarized/issues/102"><span class="rp-item-num">#102</span><span class="rp-item-title">Vim colorscheme leaves a wake of destruction when switching away</span><span class="rp-item-extra">25 comments · 2011-05-04</span></a><a class="rp-item" href="https://github.com/altercation/solarized/issues/164"><span class="rp-item-num">#164</span><span class="rp-item-title">color code 90 (dark gray) nearly invisible in osx terminal / iterm2</span><span class="rp-item-extra">18 comments · 2011-12-23</span></a><a class="rp-item" href="https://github.com/altercation/solarized/issues/146"><span class="rp-item-num">#146</span><span class="rp-item-title">Vim Solarized Looks Horrible in Terminal.app in Lion</span><span class="rp-item-extra">16 comments · 2011-08-31</span></a><a class="rp-item" href="https://github.com/altercation/solarized/issues/167"><span class="rp-item-num">#167</span><span class="rp-item-title">TeXShop color scheme</span><span class="rp-item-extra">14 comments · 2012-01-04</span></a><a class="rp-item" href="https://github.com/altercation/solarized/issues/107"><span class="rp-item-num">#107</span><span class="rp-item-title">Background Colors over SSH</span><span class="rp-item-extra">13 comments · 2011-05-04</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/altercation__solarized.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

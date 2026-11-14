@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>snownico0722/PaperTodo · GitHub Trending Rank Radar</title>
+<meta name="description" content="A minimalist Windows desktop sticky note tool. It puts a few quiet, usable, and unobtrusive sheets of paper on your desktop. Native WPF, with support for to-dos and Markdown.——极简 Windows 桌面便签工具。让桌面上有几">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="PaperTodo, snownico0722, snownico0722/PaperTodo, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/snownico0722__PaperTodo">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="snownico0722/PaperTodo · GitHub Trending Rank Radar">
+<meta property="og:description" content="A minimalist Windows desktop sticky note tool. It puts a few quiet, usable, and unobtrusive sheets of paper on your desktop. Native WPF, with support for to-dos and Markdown.——极简 Windows 桌面便签工具。让桌面上有几">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/snownico0722__PaperTodo">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "snownico0722/PaperTodo", "codeRepository": "https://github.com/snownico0722/PaperTodo", "url": "https://zhuikan.com/repos/snownico0722__PaperTodo", "description": "A minimalist Windows desktop sticky note tool. It puts a few quiet, usable, and unobtrusive sheets of paper on your desktop. Native WPF, with support for to-dos and Markdown.——极简 Windows 桌面便签工具。让桌面上有几", "author": {"@type": "Organization", "name": "snownico0722", "url": "https://github.com/snownico0722"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "C#", "dateCreated": "2026-05-27"}</script>
+</head>
+<body data-repo="snownico0722/PaperTodo" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">snownico0722/PaperTodo</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="snownico0722__PaperTodo"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/36026283?u=fe6d4adb9ef7f7b24aa7150dfd2f711ba68320ec&amp;v=4&s=300" width="300" height="300" alt="snownico0722 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">PaperTodo</div>
+      <a class="rp-side-owner" href="https://github.com/snownico0722">snownico0722</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/snownico0722">snownico0722</a>
+        <span class="rp-sep">/</span><span class="rp-name">PaperTodo</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A minimalist Windows desktop sticky note tool. It puts a few quiet, usable, and unobtrusive sheets of paper on your desktop. Native WPF, with support for to-dos and Markdown.——极简 Windows 桌面便签工具。让桌面上有几张安静、可用、不会打扰人的纸。WPF 原生，支持待办与 Markdown。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>2,662</b></span><span class="rp-stat" title="forks">⑂ <b>140</b></span><span class="rp-stat" title="watchers">👁 <b>7</b></span><span class="rp-stat" title="releases">▤ <b>20</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C#</span><span class="rp-meta-bit">Created 2026-05-27</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/snownico0722/PaperTodo">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+171</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">2,662</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">140</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">7</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">20</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">PaperTodo · 一张纸
+
+
+  让桌面上有几张安静、可用、不打扰人的纸。
+  一个轻量、自由共创的 Windows 桌面便签。
+
+
+
+  
+  PaperTodo 仍可在 GitHub 免费下载。如果你愿意支持项目持续开发，欢迎前往微软商店自愿购买。非常感谢！
+
+
+
+  
+  
+  
+  
+  
+
+
+  语言：简体中文 | English
+  官方网站 
+  用户手册 · 更新日志
+  QQ 交流群：551612664——奇奇怪怪的魔法研究基地
+
+
+---
+
+ 预览
+
+| 纸片 |
+| :---: |
+|  |
+
+| Markdown 浏览 |
+| :---: |
+|  |
+
+| 边缘浏览 |
+| :---: |
+|  |
+
+| 胶囊模式 | 高级胶囊 |
+| :---: | :---: |
+| !胶囊模式 | !胶囊自动贴边 |
+| 纸片可折叠为小胶囊，减少桌面占用。 | 折叠胶囊自动贴到屏幕边缘，悬浮时滑出。 |
+
+---
+
+ 设计理念
+
+- 纸片优先 — 每张纸都是独立窗口，直接常驻桌面，无需打开层级复杂的管理后台。
+- 即时使用 — 想记就写，勾选即完；所有内容自动保存，操作路径极短。
+- 无需管理 — 不刻意承载复杂的项目管理逻辑，降低日常记录的心智负担。
+- 原生轻量 — 基于 WPF 原生开发，拒绝 Web 套壳，启动快速且资源占用低。
+- 交互克制 — 界面干净低干扰，该安静时安静，需要时随时呼出。
+ 拒绝长出非必要的交互层级和视觉焦点负担。
+
+---
+
+ 核心特性
+
+ 1. 两种基础纸片
+- 待办纸（Todo）：清爽高效的任务清单。支持拖拽排序、连续滑动多选、多行粘贴智能拆分；已完成项支持自动清除或置底。
+- 笔记纸（Note）：轻量 Markdown 与图文备忘。支持常用 Markdown 语法与三档实时渲染，编辑与浏览自然融合；支持粘贴或拖入本地图片。
+
+ 2. 边缘胶囊与实时预览卡片
+- 折叠贴边：点击右上角或按 Ctrl+W 将纸片折叠为小胶囊，自动靠在屏幕边缘，彻底释放桌面空间。
+- 悬停预览卡片（Preview）：鼠标悬停在边缘胶囊上，即可平滑展开轻量、可交互的预览卡片，无需打开完整大窗口即可即时速览：
+  - 待办预览：直接在悬停卡片上滚动查看、勾选完成或撤销，点击卡片背景呼出完整纸片；
+  - 笔记预览：即时渲染 Markdown 正文排版与图片占位；
+  - 意图预测与顺滑接续：内置鼠标移动意图预测，在相邻胶囊间连续滑动时平滑过渡切换，离开后自动收回。
+- 多屏流动与主胶囊：支持多显示器拖拽换边；顶部主胶囊可一键收拢整列入口，拖动可调节队列起始高度。
+
+ 3. 全新插件系统（Preview）
+- 桌面微应用扩展：便签不仅能记笔记，还可一键切换为时钟、专注番茄钟、复盘池等丰富插件，下一代的windows桌面小组件。
+- 深度融入胶囊与顶栏：插件同样支持折叠为专属胶囊、边缘悬停卡片与专属顶栏按钮，且数据独立安全保存。
+- 即放即用：将插件文件夹放入 plugins/ 目录即可直接识别。如需自行开发插件，可查阅 插件开发手册。
+
+ 4. 极致流畅与全链路高刷调优
+- 全面适配高刷新率：无论是纸片折叠展开、边缘抽屉滑出、卡片顺滑接续还是跨屏拖拽，全链路动效均经过深度帧率调优，完美适配 120Hz/144Hz/165Hz+ 高刷屏，细腻丝滑、完全不掉帧。
+- 纯原生极速响应：基于 .NET 10 与 WPF 原生构建，拒绝任何 Web 套壳的性能开销，毫秒级即点即开，内存与 CPU 占用极低，常驻后台毫无负担。
+- 长笔记增量渲染：笔记输入采用智能局部增量解析，面对长篇图文依然流畅跟手，彻底杜绝输入法卡顿。
+- 多屏与混合 DPI 顺畅流转：深度适配多显示器与不同缩放比例环境，跨屏拖拽与边缘停靠计算精确，不闪烁、不形变。
+
+ 5. 待办万物互联与脚本胶囊
+- 快速启动与万物关联：从另一张纸片顶栏拖出关联图标，或直接从文件管理器拖入文件/文件夹至待办项，点击即可一键直达。
+- 脚本胶囊（PowerShell）：笔记首行写入 !p 或 !power，便签即可化身脚本运行器；折叠后显示闪电胶囊，点击直接执行脚本命令。
+
+ 6. 实验室深度能力（Preview）
+- 本地 MCP 接口：支持通过 --mcp 模式启动标准 MCP 服务，允许外部 AI 助手（如 Claude、Cursor 等）按授权安全读写与管理待办和笔录。
+- 第三方窗口绑定：可拖拽绑定至任意第三方软件窗口，随目标窗口一同平滑移动、最小化与还原。
+- 定时提醒：待办支持设置自定义倒计时提醒（到期托盘通知与提示音）。
+- 静置与桌面融入：支持失焦自动收起为胶囊、静置收拢标题栏；支持快捷键一键置底并开启鼠标穿透，彻底融入桌面壁纸。
+
+ 7. 个性化与数据安全
+- 外观定制：跟随系统/浅色/深色主题，内置暖纸、墨、林、霞四套配色；支持自定义字体（放置 papertodo.ttf 即可生效）与多语言界面。
+- 本地自主可控：数据与图片完整存放在程序所在目录（data.json 与 note-assets.lmdb），写盘前自动快照备份，完全离线运行。
+
+---
+
+ 常用操作与快捷键速查
+
+| 操作 | 快捷键 / 触发方式 | 说明 |
+| :--- | :--- | :--- |
+| 折叠 / 隐藏纸片 | Ctrl + W 或顶栏中键 | 启用胶囊时折叠为胶囊，未启用时隐藏 |
+| 取消交互 / 收起 | Esc | 取消多选/拖拽；无状态时折叠当前纸片 |
+| 撤销 / 重做 | Ctrl + Z / Ctrl + Y | 待办与笔记通用（支持深达 100 步记录） |
+| 笔记文本格式 | Ctrl + B / I / K | 对应加粗、斜体、插入链接 |
+| 笔记字号缩放 | Ctrl + 滚轮 | 缩放正文字号（右下角点击百分比一键复位） |
+| 找回全部纸片 | 双击托盘图标 | 显亮并拉回全部纸片（多屏断开或窗口漂移时瞬间召回） |
+
+---
+
+ 下载与运行
+
+PaperTodo 为绿色单文件程序，无需安装。请在 Releases 页面 下载对应版本：
+
+- PaperTodo-...-self-contained.exe（推荐）：已内嵌 .NET 运行时，下载后双击即可直接运行。
+- PaperTodo-...-no-runtime.exe：体积更小，适用于电脑已安装 .NET 10 Desktop Runtime (x64) 的环境。
+
+ 提示：建议将程序存放在有写入权限的专用目录（如 D:\Apps\PaperTodo\），请勿存放在只读目录或临时解压目录中。程序目录下放置 PaperTodo.ico 可作为自定义托盘图标。
+
+首次运行后，纸片会出现在桌面上，托盘区会常驻 PaperTodo 图标。若纸片被遮挡或移出屏幕，双击托盘图标即可显示并拉回所有纸片。
+
+---
+
+ 详细文档与进阶
+
+- 📖 完整用户手册：包含新手 3 分钟入门指南、待办/笔记深度用法、多屏胶囊调度、全量设置项大字典、脚本编写规则、换机数据迁移教程及常见问题解答（FAQ）。
+- 🧩 插件开发手册：了解 Pa</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/snownico0722__PaperTodo.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

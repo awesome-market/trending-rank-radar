@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>521xueweihan/git-tips · GitHub Trending Rank Radar</title>
+<meta name="description" content=":trollface:Git的奇技淫巧">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="git-tips, 521xueweihan, 521xueweihan/git-tips, github stars, github trending, star growth, star history, 开源项目, 星标增长, git, cheatsheet, github">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/521xueweihan__git-tips">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="521xueweihan/git-tips · GitHub Trending Rank Radar">
+<meta property="og:description" content=":trollface:Git的奇技淫巧">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/521xueweihan__git-tips">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "521xueweihan/git-tips", "codeRepository": "https://github.com/521xueweihan/git-tips", "url": "https://zhuikan.com/repos/521xueweihan__git-tips", "description": ":trollface:Git的奇技淫巧", "author": {"@type": "Organization", "name": "521xueweihan", "url": "https://github.com/521xueweihan"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "dateCreated": "2016-07-15", "keywords": "git,cheatsheet,github"}</script>
+</head>
+<body data-repo="521xueweihan/git-tips" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">521xueweihan/git-tips</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="521xueweihan__git-tips"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/8255800?u=2024c0f3979fd65c8aab945856eae0852f1186f6&amp;v=4&s=300" width="300" height="300" alt="521xueweihan avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">git-tips</div>
+      <a class="rp-side-owner" href="https://github.com/521xueweihan">521xueweihan</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/521xueweihan">521xueweihan</a>
+        <span class="rp-sep">/</span><span class="rp-name">git-tips</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">:trollface:Git的奇技淫巧</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>15,863</b></span><span class="rp-stat" title="forks">⑂ <b>3,236</b></span><span class="rp-stat" title="watchers">👁 <b>326</b></span><span class="rp-stat" title="prs">⑃ <b>26</b></span><span class="rp-stat" title="issues">● <b>31</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/git">git</a><a class="rp-topic" href="https://github.com/topics/cheatsheet">cheatsheet</a><a class="rp-topic" href="../tags/github">github</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Created 2016-07-15</span><a class="rp-meta-bit rp-home" href="https://hellogithub.com/article/9aed28d4d64b4649bb364685ef557ae4" rel="noopener">hellogithub.com/article/9aed28d4d64b4649bb364685ef557ae4</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="521xueweihan__HelloGitHub"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/8255800?u=2024c0f3979fd65c8aab945856eae0852f1186f6&amp;v=4" alt="" loading="lazy">HelloGitHub</a><a class="rp-same-link" href="521xueweihan__GitHub520"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/8255800?u=2024c0f3979fd65c8aab945856eae0852f1186f6&amp;v=4" alt="" loading="lazy">GitHub520</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/521xueweihan/git-tips">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">15,863</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">3,236</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">326</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">26</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">31</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Git 的奇技淫巧:see_no_evil:
+
+ Git 常用命令集合，Fork 自 tips 项目
+
+Git 是一个分布式版本管理工具，版本管理工具就是大家在写东西的时候都用过 回撤这个功能，但是回撤只能回撤几步，假如想要找回我三天之前的修改，光用回撤是找不回来的。而版本管理工具能记录每次的修改，只要提交到版本仓库，就可以找到之前任何时刻的状态（文本状态）。
+
+下面的内容就是列举了常用的 Git 命令和一些小技巧，可以通过页面内查找的方式 Ctrl/Command+f 进行快速查找。
+
+ 开卷必读
+
+如果之前未使用过 Git，可以学习 Git 小白教程入门
+
+1. 一定要先测试命令的效果后，再用于工作环境中，以防造成不能弥补的后果！到时候别拿着砍刀来找我
+2. 所有的命令都在 git version 2.7.4 (Apple Git-66) 下测试通过
+3. 统一概念：
+	- 工作区：改动（增删文件和内容）
+	- 暂存区：输入命令：git add 改动的文件名，此次改动就放到了 ‘暂存区’
+	- 本地仓库(简称：本地)：输入命令：git commit 此次修改的描述，此次改动就放到了本地仓库，每个 commit，我叫它为一个版本。
+	- 远程仓库(简称：远程)：输入命令：git push 远程仓库，此次改动就放到了远程仓库（GitHub 等)
+	- commit-id：输出命令：git log，最上面那行 commit xxxxxx，后面的字符串就是 commit-id
+4. 如果喜欢这个项目，欢迎 Star、提交 Pr、反馈问题😊
+
+ 目录
+ 脑图
+ 展示帮助信息
+ 回到远程仓库的状态
+ 重设第一个commit
+ 查看冲突文件列表
+ 展示工作区和暂存区的不同
+ 展示暂存区和最近版本的不同
+ 展示暂存区、工作区和最近版本的不同
+ 快速切换到上一个分支
+ 删除已经合并到 master 的分支
+ 展示本地分支关联远程仓库的情况
+ 关联远程分支
+ 列出所有远程分支
+ 列出本地和远程分支
+ 查看远程分支和本地分支的对应关系
+ 远程删除了分支本地也想删除
+ 创建并切换到本地分支
+ 从远程分支中创建并切换到本地分支
+ 删除本地分支
+ 删除远程分支
+ 重命名本地分支
+ 查看标签
+ 查看标签详细信息
+ 本地创建标签
+ 推送标签到远程仓库
+ 删除本地标签
+ 删除远程标签
+ 切回到某个标签
+ 放弃工作区的修改
+ 恢复删除的文件
+ 以新增一个 commit 的方式还原某一个 commit 的修改
+ 回到某个 commit 的状态，并删除后面的 commit
+ 修改上一个 commit 的描述
+ 查看 commit 历史
+ 显示本地更新过 HEAD 的 git 命令记录
+ 修改作者名
+ 修改远程仓库的 url
+ 增加远程仓库
+ 列出所有远程仓库
+ 查看两个星期内的改动
+ 把 A 分支的某一个 commit，放到 B 分支上
+ 给 git 命令起别名
+ 存储当前的修改，但不用提交 commit
+ 保存当前状态，包括 untracked 的文件
+ 展示所有 stashes
+ 回到某个 stash 的状态
+ 回到最后一个 stash 的状态，并删除这个 stash
+ 删除所有的 stash
+ 从 stash 中拿出某个文件的修改
+ 展示所有 tracked 的文件
+ 展示所有 untracked 的文件
+ 展示所有忽略的文件
+ 强制删除 untracked 的文件
+ 强制删除 untracked 的目录
+ 展示简化的 commit 历史
+ 查看某段代码是谁写的
+ 把某一个分支导出成一个文件
+ 从包中导入分支
+ 执行 rebase 之前自动 stash
+ 从远程仓库根据 ID，拉下某一状态，到本地分支
+ 详细展示一行中的修改
+ 清除 .gitignore 文件中记录的文件
+ 展示所有 alias 和 configs
+ 展示忽略的文件
+ commit 历史中显示 Branch1 有的，但是 Branch2 没有 commit
+ 在 commit log 中显示 GPG 签名
+ 删除全局设置
+ 新建并切换到新分支上，同时这个分支没有任何 commit
+ 展示任意分支某一文件的内容
+ clone 下来指定的单一分支
+ clone 最新一次提交
+ 忽略某个文件的改动
+ 忽略文件的权限变化
+ 以最后提交的顺序列出所有 Git 分支
+ 在 commit log 中查找相关内容
+ 把暂存区的指定 file 放到工作区中
+ 强制推送
+ git 配置 http 和 socks 代理
+ git 配置 ssh 代理
+ 优雅的Commit信息
+ commit工具
+ 声明
+
+ 展示帮助信息
+sh
+git help -g
+
+The command output as below:
+
+
+The common Git guides are:
+   attributes          Defining attributes per path
+   cli                 Git command-line interface and conventions
+   core-tutorial       A Git core tutorial for developers
+   cvs-migration       Git for CVS users
+   diffcore            Tweaking diff output
+   everyday            A useful minimum set of commands for Everyday Git
+   glossary            A Git Glossary
+   hooks               Hooks used by Git
+   ignore              Specifies intentionally untracked files to ignore
+   modules             Defining submodule properties
+   namespaces          Git namespaces
+   repository-layout    Git Repository Layout
+   revisions           Specifying revisions and ranges for Git
+   tutorial            A tutorial introduction to Git
+   tutorial-2          A tutorial introduction to Git: part two
+   workflows           An overview of recommended workflows with Git
+
+&#x27;git help -a&#x27; and &#x27;git help -g&#x27; list available subcommands and some concept guides. See &#x27;git help </pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/521xueweihan__git-tips.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

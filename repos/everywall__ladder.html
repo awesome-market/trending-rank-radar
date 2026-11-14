@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>everywall/ladder · GitHub Trending Rank Radar</title>
+<meta name="description" content="Selfhosted alternative to 12ft.io. and 1ft.io. Proxy to remove CORS headers and modify HTML">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="ladder, everywall, everywall/ladder, github stars, github trending, star growth, star history, 开源项目, 星标增长, bypass, paywall, paywall-blocker, paywall-bypasser, cors, cors-proxy">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/everywall__ladder">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="everywall/ladder · GitHub Trending Rank Radar">
+<meta property="og:description" content="Selfhosted alternative to 12ft.io. and 1ft.io. Proxy to remove CORS headers and modify HTML">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/everywall__ladder">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "everywall/ladder", "codeRepository": "https://github.com/everywall/ladder", "url": "https://zhuikan.com/repos/everywall__ladder", "description": "Selfhosted alternative to 12ft.io. and 1ft.io. Proxy to remove CORS headers and modify HTML", "author": {"@type": "Organization", "name": "everywall", "url": "https://github.com/everywall"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-3.0.html", "programmingLanguage": "Go", "dateCreated": "2023-11-01", "keywords": "bypass,paywall,paywall-blocker,paywall-bypasser,cors,cors-proxy"}</script>
+</head>
+<body data-repo="everywall/ladder" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">everywall/ladder</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="everywall__ladder"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/150453436?v=4&s=300" width="300" height="300" alt="everywall avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">ladder</div>
+      <a class="rp-side-owner" href="https://github.com/everywall">everywall</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/everywall">everywall</a>
+        <span class="rp-sep">/</span><span class="rp-name">ladder</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Selfhosted alternative to 12ft.io. and 1ft.io. Proxy to remove CORS headers and modify HTML</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,425</b></span><span class="rp-stat" title="forks">⑂ <b>542</b></span><span class="rp-stat" title="watchers">👁 <b>37</b></span><span class="rp-stat" title="prs">⑃ <b>103</b></span><span class="rp-stat" title="issues">● <b>54</b></span><span class="rp-stat" title="releases">▤ <b>21</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/bypass">bypass</a><a class="rp-topic" href="https://github.com/topics/paywall">paywall</a><a class="rp-topic" href="https://github.com/topics/paywall-blocker">paywall-blocker</a><a class="rp-topic" href="https://github.com/topics/paywall-bypasser">paywall-bypasser</a><a class="rp-topic" href="https://github.com/topics/cors">cors</a><a class="rp-topic" href="https://github.com/topics/cors-proxy">cors-proxy</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Go</span><span class="rp-meta-bit">GPL-3.0</span><span class="rp-meta-bit">Created 2023-11-01</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/everywall/ladder">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.0.23</span><a class="rp-dl-a" href="https://github.com/everywall/ladder/releases/tag/v0.0.23">v0.0.23 ↓</a><span class="rp-dl-ver">0.0.23</span><span class="rp-dl-date">2026-05-04</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+6</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">9,425</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">542</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">37</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">103</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">54</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">21</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Ladder
+     
+
+English | 简体中文
+
+Ladder 是一个 HTTP 网页代理。
+
+Ladder 是一个面向开发者的工具，用于测试和分析现代网站上的付费墙实现与内容投放行为。
+
+它可以帮助开发者、研究人员和发布者模拟不同的客户端环境（例如浏览器和爬虫），观察网站在不同条件下如何返回内容。这对于调试付费墙配置、验证访问控制和 HTTP 头、确认不同 User-Agent 下行为一致等场景都非常有用。
+
+Ladder 仅用于合法的测试、研究和质量保障目的，使用时应遵守相关法律法规以及目标网站的服务条款。
+
+!screenshot
+
+ 工作原理
+
+mermaid
+sequenceDiagram
+    client-+ladder: GET
+    ladder--ladder: apply RequestModifications
+    ladder-+website: GET
+    website--ladder: 200 OK
+    ladder--ladder: apply ResultModifications
+    ladder--client: 200 OK
+
+
+ 功能特性
+- [x] 移除/修改响应、静态资源和图片中的 CORS 头
+- [x] 移除/修改其他响应头（例如 Content-Security-Policy）
+- [x] 移除/注入自定义代码（HTML、CSS、JavaScript）到页面中
+- [x] 按域名应用规则集/代码，对响应或请求 URL 进行修改
+- [x] 保持站点可正常浏览
+- [x] 提供 API
+- [x] 获取原始 HTML
+- [x] 自定义 User-Agent
+- [x] 自定义 X-Forwarded-For IP
+- [x] Docker 镜像（amd64、arm64）
+- [x] Linux 二进制
+- [x] macOS 二进制
+- [x] Windows 二进制（未经测试）
+- [x] 基本认证（Basic Auth）
+- [x] 访问日志
+- [x] 可能会破坏跟踪、广告和其他第三方内容
+- [x] 限制代理仅作用于指定域名列表
+- [x] 将自身规则集对外暴露给其他 ladder 实例
+- [ ] Robots.txt 测试
+- [ ] 可选 TOR 代理
+- [ ] 通过密钥分享被代理的 URL
+
+ 局限性
+部分网站会根据访问客户端的类型（例如搜索引擎爬虫与普通浏览器）返回不同的内容，这种行为称为 Cloaking（内容隐藏）。Ladder 可以被配置为模拟不同的客户端类型，以便用于测试、自动化或研究等用途获取公开可访问的内容。
+
+不过，许多网站会通过指纹识别、速率限制或行为分析等更高级的机制来限制自动化访问。Ladder 并不会绕过这类保护，在那些主动限制或管控访问的服务上可能无法正常工作。
+
+像 FlareSolverr 这样的第三方工具可以独立用于在无头浏览器环境中渲染网页。它们并不属于 Ladder 的一部分，使用这类工具时也可能受到法律和合同方面的约束。用户需自行确保自己的使用方式符合所有适用的法规。
+
+ 安装
+
+ 警告： 如果你的实例对外公开访问，请务必启用基本认证，否则任何人都可以借助你的代理浏览不当或违法内容，由此产生的责任将由你承担。
+
+ 二进制
+1) 在此处下载二进制文件
+2) 解压后运行 ./ladder -r https://raw.githubusercontent.com/everywall/ladder-rules/main/ruleset.yaml
+3) 打开浏览器（默认地址：http://localhost:8080）
+
+ Docker
+bash
+docker run -p 8080:8080 -d --env RULESET=https://raw.githubusercontent.com/everywall/ladder-rules/main/ruleset.yaml --name ladder ghcr.io/everywall/ladder:latest
+
+
+ Docker Compose
+bash
+curl https://raw.githubusercontent.com/everywall/ladder/main/docker-compose.yaml --output docker-compose.yaml
+docker-compose up -d
+
+
+ Helm
+详见 helm-chart 子目录下的 README.md。
+
+ 使用方法
+
+ 浏览器
+1) 打开浏览器（默认地址：http://localhost:8080）
+2) 输入 URL
+3) 按下回车
+
+或者直接将 URL 拼接到代理地址末尾访问：
+http://localhost:8080/https://www.example.com
+
+也可以创建一个包含以下脚本的书签：
+javascript
+javascript:window.location.href=&quot;http://localhost:8080/&quot;+location.href
+
+
+ API
+bash
+curl -X GET &quot;http://localhost:8080/api/https://www.example.com&quot;
+
+
+ RAW
+http://localhost:8080/raw/https://www.example.com
+
+
+ 查看运行中的规则集
+http://localhost:8080/ruleset
+
+ 配置
+
+ 环境变量
+
+| 变量 | 说明 | 取值 |
+| --- | --- | --- |
+| PORT | 监听端口 | 8080 |
+| PREFORK | 启动多个服务实例 | false |
+| USER_AGENT | 模拟的 User-Agent | Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html) |
+| X_FORWARDED_FOR | 转发的 IP 地址 | 66.249.66.1 |
+| USERPASS | 启用基本认证，格式为 admin:123456 |  |
+| LOG_URLS | 是否记录已抓取的 URL | true |
+| DISABLE_FORM | 是否禁用 URL 表单首页 | false |
+| FORM_PATH | 自定义表单 HTML 的路径 |  |
+| RULESET | 规则集文件的路径或 URL，支持本地目录 | https://raw.githubusercontent.com/everywall/ladder-rules/main/ruleset.yaml 或 /path/to/my/rules.yaml 或 /path/to/my/rules/ |
+| EXPOSE_RULESET | 将自身规则集对外暴露给其他 ladder 实例 | true |
+| ALLOWED_DOMAINS | 允许访问的域名列表，使用逗号分隔；为空表示不限制 </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/everywall/ladder/issues/38"><span class="rp-item-num">#38</span><span class="rp-item-title">Idea: API should return structured article json</span><span class="rp-item-extra">27 comments · 2023-11-15</span></a><a class="rp-item" href="https://github.com/everywall/ladder/issues/11"><span class="rp-item-num">#11</span><span class="rp-item-title">Feature: Browser extension</span><span class="rp-item-extra">9 comments · 2023-11-07</span></a><a class="rp-item" href="https://github.com/everywall/ladder/issues/75"><span class="rp-item-num">#75</span><span class="rp-item-title">http: no Host in request URL</span><span class="rp-item-extra">8 comments · 2024-05-21</span></a><a class="rp-item" href="https://github.com/everywall/ladder/issues/8"><span class="rp-item-num">#8</span><span class="rp-item-title">Timeout</span><span class="rp-item-extra">5 comments · 2023-11-06</span></a><a class="rp-item" href="https://github.com/everywall/ladder/issues/72"><span class="rp-item-num">#72</span><span class="rp-item-title">Medium.com blocked by cloudflare</span><span class="rp-item-extra">4 comments · 2024-01-17</span></a><a class="rp-item" href="https://github.com/everywall/ladder/issues/49"><span class="rp-item-num">#49</span><span class="rp-item-title">Ruleset testing</span><span class="rp-item-extra">4 comments · 2023-11-26</span></a><a class="rp-item" href="https://github.com/everywall/ladder/issues/159"><span class="rp-item-num">#159</span><span class="rp-item-title">Panic when github doesn&#x27;t load?</span><span class="rp-item-extra">3 comments · 2026-08-31</span></a><a class="rp-item" href="https://github.com/everywall/ladder/issues/111"><span class="rp-item-num">#111</span><span class="rp-item-title">Share link</span><span class="rp-item-extra">3 comments · 2026-04-12</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/everywall/ladder/discussions/87"><span class="rp-item-num">#87</span><span class="rp-item-title">How do i ignore ssl certificate errors</span><span class="rp-item-extra">0 comments · 2024-12-11</span></a><a class="rp-item" href="https://github.com/everywall/ladder/discussions/86"><span class="rp-item-num">#86</span><span class="rp-item-title">Solve probelm.</span><span class="rp-item-extra">1 comments · 2024-11-24</span></a><a class="rp-item" href="https://github.com/everywall/ladder/discussions/85"><span class="rp-item-num">#85</span><span class="rp-item-title">Getting a 403 forbidden for the ruleset from my Render service</span><span class="rp-item-extra">2 comments · 2024-10-01</span></a><a class="rp-item" href="https://github.com/everywall/ladder/discussions/80"><span class="rp-item-num">#80</span><span class="rp-item-title">The Atlantic</span><span class="rp-item-extra">0 comments · 2024-06-07</span></a><a class="rp-item" href="https://github.com/everywall/ladder/discussions/66"><span class="rp-item-num">#66</span><span class="rp-item-title">Apache reverse proxy</span><span class="rp-item-extra">2 comments · 2023-12-08</span></a><a class="rp-item" href="https://github.com/everywall/ladder/discussions/51"><span class="rp-item-num">#51</span><span class="rp-item-title">Ladder Contributors</span><span class="rp-item-extra">1 comments · 2023-11-29</span></a><a class="rp-item" href="https://github.com/everywall/ladder/discussions/43"><span class="rp-item-num">#43</span><span class="rp-item-title">Google confirms they will disable uBlock Origin in Chrome in 2024 News</span><span class="rp-item-extra">4 comments · 2023-11-17</span></a><a class="rp-item" href="https://github.com/everywall/ladder/discussions/42"><span class="rp-item-num">#42</span><span class="rp-item-title">CORS</span><span class="rp-item-extra">2 comments · 2023-11-15</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/everywall/ladder/releases"><b>v0.0.23</b> <span class="rp-rel-tag">v0.0.23</span> <span class="rp-item-extra">2026-05-04</span></a><pre class="rp-pre">What&#x27;s Changed
+ Bump actions/setup-go from 3 to 6 in /.github/workflows by @dependabot[bot] in https://github.com/everywall/ladder/pull/112
+ Bump docker/login-action from 2 to 4 in /.github/workflows by @dependabot[bot] in https://github.com/everywall/ladder/pull/121
+ Bump pnpm/action-setup from 2 to 6 in /.github/workflows by @dependabot[bot] in https://github.com/everywall/ladder/pull/117
+ Bump actions/checkout from 3 to 6 in /.github/workflows by @dependabot[bot] in https://github.com/everywall/ladder/pull/116
+ fix: increase request header buffer size by @anguscloud in https://github.c</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/everywall__ladder.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

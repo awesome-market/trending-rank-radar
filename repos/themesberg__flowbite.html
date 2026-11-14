@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>themesberg/flowbite · GitHub Trending Rank Radar</title>
+<meta name="description" content="Open-source UI component library and front-end development framework based on Tailwind CSS">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="flowbite, themesberg, themesberg/flowbite, github stars, github trending, star growth, star history, 开源项目, 星标增长, css, html, tailwindcss, components, design-system, ui-components">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/themesberg__flowbite">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="themesberg/flowbite · GitHub Trending Rank Radar">
+<meta property="og:description" content="Open-source UI component library and front-end development framework based on Tailwind CSS">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/themesberg__flowbite">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "themesberg/flowbite", "codeRepository": "https://github.com/themesberg/flowbite", "url": "https://zhuikan.com/repos/themesberg__flowbite", "description": "Open-source UI component library and front-end development framework based on Tailwind CSS", "author": {"@type": "Organization", "name": "themesberg", "url": "https://github.com/themesberg"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "HTML", "dateCreated": "2021-07-28", "keywords": "css,html,tailwindcss,components,design-system,ui-components,ui-library,ui-framework,javascript,figma"}</script>
+</head>
+<body data-repo="themesberg/flowbite" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">themesberg/flowbite</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="themesberg__flowbite"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/52166837?v=4&s=300" width="300" height="300" alt="themesberg avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">flowbite</div>
+      <a class="rp-side-owner" href="https://github.com/themesberg">themesberg</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/themesberg">themesberg</a>
+        <span class="rp-sep">/</span><span class="rp-name">flowbite</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Open-source UI component library and front-end development framework based on Tailwind CSS</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,384</b></span><span class="rp-stat" title="forks">⑂ <b>867</b></span><span class="rp-stat" title="watchers">👁 <b>47</b></span><span class="rp-stat" title="prs">⑃ <b>269</b></span><span class="rp-stat" title="issues">● <b>666</b></span><span class="rp-stat" title="releases">▤ <b>56</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/css">css</a><a class="rp-topic" href="../tags/html">html</a><a class="rp-topic" href="../tags/tailwindcss">tailwindcss</a><a class="rp-topic" href="https://github.com/topics/components">components</a><a class="rp-topic" href="https://github.com/topics/design-system">design-system</a><a class="rp-topic" href="https://github.com/topics/ui-components">ui-components</a><a class="rp-topic" href="https://github.com/topics/ui-library">ui-library</a><a class="rp-topic" href="https://github.com/topics/ui-framework">ui-framework</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">HTML</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2021-07-28</span><a class="rp-meta-bit rp-home" href="https://flowbite.com" rel="noopener">flowbite.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/themesberg/flowbite">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v4.0.2</span><a class="rp-dl-a" href="https://github.com/themesberg/flowbite/releases/tag/v4.0.2">v4.0.2 ↓</a><span class="rp-dl-ver">4.0.2</span><span class="rp-dl-date">2026-05-13</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">9,384</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">867</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">47</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">269</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">666</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">56</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Build websites even faster with components on top of Tailwind CSS
+
+
+
+    
+    
+    
+    
+
+
+------
+ Table of Contents
+
+- Table of Contents
+- Documentation
+- Getting started
+  - Install using NPM
+  - Include via CDN
+  - Bundled JavaScript
+  - Data attributes
+    - Init functions
+  - ESM and CJS
+  - TypeScript
+  - RTL support
+  - JavaScript Frameworks
+  - Back-end Frameworks
+- Components
+- Figma Design System
+- Flowbite Blocks
+- Flowbite Icons
+- Flowbite GPT
+- Pro version
+- Hire us
+- Learn Design Concepts
+- Community
+- Copyright and license
+
+ Documentation
+
+For full documentation, visit flowbite.com.
+
+ Getting started
+
+Flowbite can be included as a plugin into an existing Tailwind CSS project and it is supposed to help you build websites faster by having a set of web components to work with built with the utility classes from Tailwind CSS.
+
+ Install using NPM
+
+Make sure that you have Node.js and Tailwind CSS installed. This guide works with Tailwind v4.
+
+1. Install Flowbite as a dependency using NPM by running the following command:
+
+
+npm install flowbite
+
+
+2. Import the default theme variables from Flowbite inside your main input.css CSS file:
+
+
+/ choose one of the following /
+
+@import url(&#x27;https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap&#x27;);
+@import &quot;flowbite/src/themes/default&quot;;
+
+/ MINIMAL THEME
+@import url(&#x27;https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap&#x27;);
+@import &quot;flowbite/src/themes/minimal&quot;;
+/
+
+/ ENTERPRISE THEME
+@import url(&#x27;https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap&#x27;);
+@import &quot;flowbite/src/themes/enterprise&quot;;
+/
+
+/ PLAYFUL THEME
+@import url(&#x27;https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&amp;display=swap&#x27;);
+@import &quot;flowbite/src/themes/playful&quot;;
+/
+
+/ MONO THEME
+@import &quot;flowbite/src/themes/mono&quot;;
+/
+
+
+3. Import the Flowbite plugin file in your CSS:
+
+
+@plugin &quot;flowbite/plugin&quot;;
+
+
+4. Configure the source files of Flowbite in your CSS:
+
+
+@source &quot;../node_modules/flowbite&quot;;
+
+
+5. Include the JavaScript code that powers the interactive elements before the end of your  tag:
+
+
+
+
+
+Learn more about the Flowbite JavaScript API and functionalities in the JavaScript section.
+
+If you have and old project with Tailwind CSS v3 then check out this guide to learn how to upgrade to v4.
+
+ Include using CDN
+
+The quickest way to get started working with Flowbite is to include the CSS and JS into your project via CDN.
+
+Require the following minified stylesheet inside the head tag:
+
+html
+}}/dist/flowbite.min.css&quot; rel=&quot;stylesheet&quot; /
+
+
+And include the following JavaScript file before the end of the body element:
+
+html
+}}/dist/flowbite.min.js&quot;
+
+
+Please remember that the best way to work with Tailwind CSS and Flowbite is by purging the CSS classes.
+
+ Bundled JavaScript
+
+One of the most popular way of using Flowbite is to include the bundled Javascript file which is UMD ready using a bundl</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/themesberg/flowbite/issues/796"><span class="rp-item-num">#796</span><span class="rp-item-title">Flowbite&#x27;s handling of Turbo is using the wrong strategy</span><span class="rp-item-extra">39 comments · 2024-02-05</span></a><a class="rp-item" href="https://github.com/themesberg/flowbite/issues/579"><span class="rp-item-num">#579</span><span class="rp-item-title">Dropdown and other animations stop working when going through pages.</span><span class="rp-item-extra">24 comments · 2023-06-15</span></a><a class="rp-item" href="https://github.com/themesberg/flowbite/issues/32"><span class="rp-item-num">#32</span><span class="rp-item-title">Datepicker locale</span><span class="rp-item-extra">24 comments · 2021-12-10</span></a><a class="rp-item" href="https://github.com/themesberg/flowbite/issues/132"><span class="rp-item-num">#132</span><span class="rp-item-title">Prefixes in components</span><span class="rp-item-extra">21 comments · 2022-04-11</span></a><a class="rp-item" href="https://github.com/themesberg/flowbite/issues/998"><span class="rp-item-num">#998</span><span class="rp-item-title">Rails 8 + Importmaps - missing backdrop</span><span class="rp-item-extra">17 comments · 2024-11-18</span></a><a class="rp-item" href="https://github.com/themesberg/flowbite/issues/698"><span class="rp-item-num">#698</span><span class="rp-item-title">Rails Turbo Frames multiple backdrops issues</span><span class="rp-item-extra">15 comments · 2023-10-30</span></a><a class="rp-item" href="https://github.com/themesberg/flowbite/issues/25"><span class="rp-item-num">#25</span><span class="rp-item-title">Build an autocomplete input component</span><span class="rp-item-extra">13 comments · 2021-12-03</span></a><a class="rp-item" href="https://github.com/themesberg/flowbite/issues/567"><span class="rp-item-num">#567</span><span class="rp-item-title">Dropdown won&#x27;t close on item click</span><span class="rp-item-extra">11 comments · 2023-05-30</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/themesberg/flowbite/discussions/1146"><span class="rp-item-num">#1146</span><span class="rp-item-title">Changing CSS selectors</span><span class="rp-item-extra">0 comments · 2026-05-18</span></a><a class="rp-item" href="https://github.com/themesberg/flowbite/discussions/1144"><span class="rp-item-num">#1144</span><span class="rp-item-title">Do we have official plan for UnoCSS support?</span><span class="rp-item-extra">0 comments · 2026-04-17</span></a><a class="rp-item" href="https://github.com/themesberg/flowbite/discussions/1126"><span class="rp-item-num">#1126</span><span class="rp-item-title">Navbar hamburger menu, looks rubbish</span><span class="rp-item-extra">1 comments · 2026-01-12</span></a><a class="rp-item" href="https://github.com/themesberg/flowbite/discussions/1125"><span class="rp-item-num">#1125</span><span class="rp-item-title">Flowbite Inline Datepicker — Unable to customize styles (borders, colors, selected date, other month days)</span><span class="rp-item-extra">1 comments · 2026-01-10</span></a><a class="rp-item" href="https://github.com/themesberg/flowbite/discussions/1101"><span class="rp-item-num">#1101</span><span class="rp-item-title">Javascript in Pro Version included?</span><span class="rp-item-extra">2 comments · 2025-10-30</span></a><a class="rp-item" href="https://github.com/themesberg/flowbite/discussions/1097"><span class="rp-item-num">#1097</span><span class="rp-item-title">Can I use the Modal events while initializing with data attributes?</span><span class="rp-item-extra">0 comments · 2025-10-04</span></a><a class="rp-item" href="https://github.com/themesberg/flowbite/discussions/1093"><span class="rp-item-num">#1093</span><span class="rp-item-title">Floating label for select element</span><span class="rp-item-extra">2 comments · 2025-09-17</span></a><a class="rp-item" href="https://github.com/themesberg/flowbite/discussions/1086"><span class="rp-item-num">#1086</span><span class="rp-item-title">Is Volt abandoned?</span><span class="rp-item-extra">1 comments · 2025-07-21</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/themesberg/flowbite/releases"><b>v4.0.2</b> <span class="rp-rel-tag">v4.0.2</span> <span class="rp-item-extra">2026-05-13</span></a><pre class="rp-pre">- fix font leading value by @Bsrat06 
+- fix Astro documentation by @marceloverdijk</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/themesberg__flowbite.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

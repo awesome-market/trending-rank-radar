@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>gokcehan/lf · GitHub Trending Rank Radar</title>
+<meta name="description" content="Terminal file manager">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="lf, gokcehan, gokcehan/lf, github stars, github trending, star growth, star history, 开源项目, 星标增长, terminal, file-manager">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/gokcehan__lf">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="gokcehan/lf · GitHub Trending Rank Radar">
+<meta property="og:description" content="Terminal file manager">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/gokcehan__lf">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "gokcehan/lf", "codeRepository": "https://github.com/gokcehan/lf", "url": "https://zhuikan.com/repos/gokcehan__lf", "description": "Terminal file manager", "author": {"@type": "Organization", "name": "gokcehan", "url": "https://github.com/gokcehan"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Go", "dateCreated": "2016-08-13", "keywords": "terminal,file-manager"}</script>
+</head>
+<body data-repo="gokcehan/lf" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">gokcehan/lf</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="gokcehan__lf"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/1835672?v=4&s=300" width="300" height="300" alt="gokcehan avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">lf</div>
+      <a class="rp-side-owner" href="https://github.com/gokcehan">gokcehan</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/gokcehan">gokcehan</a>
+        <span class="rp-sep">/</span><span class="rp-name">lf</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Terminal file manager</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,601</b></span><span class="rp-stat" title="forks">⑂ <b>390</b></span><span class="rp-stat" title="watchers">👁 <b>61</b></span><span class="rp-stat" title="prs">⑃ <b>1,104</b></span><span class="rp-stat" title="issues">● <b>1,339</b></span><span class="rp-stat" title="releases">▤ <b>42</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/terminal">terminal</a><a class="rp-topic" href="https://github.com/topics/file-manager">file-manager</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Go</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2016-08-13</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/gokcehan/lf">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">r42</span><a class="rp-dl-a" href="https://github.com/gokcehan/lf/releases/tag/r42">r42 ↓</a><span class="rp-dl-ver">42</span><span class="rp-dl-date">2026-07-31</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">9,601</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">390</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">61</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,104</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,339</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">42</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">LF
+
+Doc
+| Wiki
+| lf:matrix.org (with IRC bridge)
+
+
+
+
+lf (as in &quot;list files&quot;) is a terminal file manager written in Go with a heavy inspiration from ranger file manager.
+See faq for more information and tutorial for a gentle introduction with screencasts.
+
+!icons-and-border
+!image-preview
+!new-features
+
+ Features
+
+- Cross-platform (Linux, macOS, BSDs, Windows)
+- Single binary without any runtime dependencies
+- Fast startup and low memory footprint due to native code and static binaries
+- Asynchronous IO operations to avoid UI locking
+- Server/client architecture and remote commands to manage multiple instances
+- Extendable and configurable with shell commands
+- Customizable keybindings (vi and readline defaults)
+- A reasonable set of other features (see the documentation)
+
+ Non-Features
+
+- Tabs or windows (better handled by window manager or terminal multiplexer)
+- Builtin pager/editor (better handled by your pager/editor of choice)
+- Builtin commands for file operations (better handled by the underlying shell tools including but not limited to mkdir, touch, chmod, chown, chgrp, and ln)
+
+ Installation
+
+See packages for community maintained packages.
+
+See releases for pre-built binaries.
+
+Building from the source requires Go.
+
+On Unix:
+
+bash
+env CGO_ENABLED=0 go install -trimpath -ldflags=&quot;-s -w&quot; github.com/gokcehan/lf@latest
+
+
+On Windows cmd:
+
+cmd
+set CGO_ENABLED=0
+go install -trimpath -ldflags=&quot;-s -w&quot; github.com/gokcehan/lf@latest
+
+
+On Windows PowerShell:
+
+powershell
+$env:CGO_ENABLED = &#x27;0&#x27;
+go install -trimpath -ldflags=&quot;-s -w&quot; github.com/gokcehan/lf@latest
+
+
+ Usage
+
+After the installation lf command should start the application in the current directory.
+
+Run lf -help to see command line options.
+
+Run lf -doc to see the documentation.
+
+See etc directory to integrate lf to your shell and/or editor.
+Example configuration files along with example colors and icons files can also be found in this directory.
+
+See integrations to integrate lf to other tools.
+
+See tips for more examples.
+
+ Contributing
+
+See contributing for guidelines.</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/gokcehan/lf/issues/1903"><span class="rp-item-num">#1903</span><span class="rp-item-title">Missing file update after move</span><span class="rp-item-extra">34 comments · 2025-02-03</span></a><a class="rp-item" href="https://github.com/gokcehan/lf/issues/2076"><span class="rp-item-num">#2076</span><span class="rp-item-title">[Feature request] Improved handling for error messages</span><span class="rp-item-extra">30 comments · 2025-08-05</span></a><a class="rp-item" href="https://github.com/gokcehan/lf/issues/1234"><span class="rp-item-num">#1234</span><span class="rp-item-title">`select` command not functioning as expected</span><span class="rp-item-extra">18 comments · 2023-05-10</span></a><a class="rp-item" href="https://github.com/gokcehan/lf/issues/84"><span class="rp-item-num">#84</span><span class="rp-item-title">[Feature request] Expose menu drawing command</span><span class="rp-item-extra">18 comments · 2017-05-23</span></a><a class="rp-item" href="https://github.com/gokcehan/lf/issues/2581"><span class="rp-item-num">#2581</span><span class="rp-item-title">Sixels are not cleared properly inside tmux</span><span class="rp-item-extra">15 comments · 2026-05-11</span></a><a class="rp-item" href="https://github.com/gokcehan/lf/issues/1219"><span class="rp-item-num">#1219</span><span class="rp-item-title">Unexpected Space Added After First Unquoted &#x27;$&#x27; in CLI Commands</span><span class="rp-item-extra">15 comments · 2023-05-01</span></a><a class="rp-item" href="https://github.com/gokcehan/lf/issues/2440"><span class="rp-item-num">#2440</span><span class="rp-item-title">Limitation on replacing locale sort with custom sort.</span><span class="rp-item-extra">13 comments · 2026-03-17</span></a><a class="rp-item" href="https://github.com/gokcehan/lf/issues/1135"><span class="rp-item-num">#1135</span><span class="rp-item-title">[Feature request] Add `on-find` command (mimic `ranger`&#x27;s `find` command)</span><span class="rp-item-extra">12 comments · 2023-03-04</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/gokcehan/lf/discussions/2741"><span class="rp-item-num">#2741</span><span class="rp-item-title">Change background transparency / blur</span><span class="rp-item-extra">1 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/gokcehan/lf/discussions/2729"><span class="rp-item-num">#2729</span><span class="rp-item-title">number column padding/gutter</span><span class="rp-item-extra">1 comments · 2026-10-31</span></a><a class="rp-item" href="https://github.com/gokcehan/lf/discussions/2719"><span class="rp-item-num">#2719</span><span class="rp-item-title">Introducing issue forms 📋📋📋</span><span class="rp-item-extra">1 comments · 2026-10-26</span></a><a class="rp-item" href="https://github.com/gokcehan/lf/discussions/2706"><span class="rp-item-num">#2706</span><span class="rp-item-title">Behavior differences with ranger</span><span class="rp-item-extra">2 comments · 2026-10-11</span></a><a class="rp-item" href="https://github.com/gokcehan/lf/discussions/2686"><span class="rp-item-num">#2686</span><span class="rp-item-title">Can I make it not scroll to file when left/right clicking it</span><span class="rp-item-extra">1 comments · 2026-09-23</span></a><a class="rp-item" href="https://github.com/gokcehan/lf/discussions/2673"><span class="rp-item-num">#2673</span><span class="rp-item-title">An easy way to hide file extension in view only?</span><span class="rp-item-extra">1 comments · 2026-09-01</span></a><a class="rp-item" href="https://github.com/gokcehan/lf/discussions/2670"><span class="rp-item-num">#2670</span><span class="rp-item-title">Search and Filter by Custom Data</span><span class="rp-item-extra">1 comments · 2026-08-22</span></a><a class="rp-item" href="https://github.com/gokcehan/lf/discussions/2641"><span class="rp-item-num">#2641</span><span class="rp-item-title">Borderfmt examples</span><span class="rp-item-extra">1 comments · 2026-07-12</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/gokcehan/lf/releases"><b>r42</b> <span class="rp-rel-tag">r42</span> <span class="rp-item-extra">2026-07-31</span></a><pre class="rp-pre">Changed
+
+- The key  has been renamed to  for map keybindings (2286).
+- .Stat.DirSize and .Stat.DirCount in the ruler file no longer have a pointer type, and will be set to -1 instead of nil if the corresponding value cannot be determined (2397).
+- setlocal commands no longer support the ability to specify recursive directories (2415). For use cases where setlocal should apply to a directory based on some condition, it is recommended to script this inside the on-load hook command.
+- On Windows, files are now considered executable according to PATHEXT when matching colors and icons (2448).</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/gokcehan__lf.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>flatpickr/flatpickr · GitHub Trending Rank Radar</title>
+<meta name="description" content="lightweight, powerful javascript datetimepicker with no dependencies">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="flatpickr, flatpickr, flatpickr/flatpickr, github stars, github trending, star growth, star history, 开源项目, 星标增长, datetime, datetime-picker, datepicker, timepicker, daterange, date">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/flatpickr__flatpickr">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="flatpickr/flatpickr · GitHub Trending Rank Radar">
+<meta property="og:description" content="lightweight, powerful javascript datetimepicker with no dependencies">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/flatpickr__flatpickr">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "flatpickr/flatpickr", "codeRepository": "https://github.com/flatpickr/flatpickr", "url": "https://zhuikan.com/repos/flatpickr__flatpickr", "description": "lightweight, powerful javascript datetimepicker with no dependencies", "author": {"@type": "Organization", "name": "flatpickr", "url": "https://github.com/flatpickr"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2015-08-10", "keywords": "datetime,datetime-picker,datepicker,timepicker,daterange,date,daterangepicker"}</script>
+</head>
+<body data-repo="flatpickr/flatpickr" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">flatpickr/flatpickr</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="flatpickr__flatpickr"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/36319609?v=4&s=300" width="300" height="300" alt="flatpickr avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">flatpickr</div>
+      <a class="rp-side-owner" href="https://github.com/flatpickr">flatpickr</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/flatpickr">flatpickr</a>
+        <span class="rp-sep">/</span><span class="rp-name">flatpickr</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">lightweight, powerful javascript datetimepicker with no dependencies</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>16,450</b></span><span class="rp-stat" title="forks">⑂ <b>1,454</b></span><span class="rp-stat" title="watchers">👁 <b>188</b></span><span class="rp-stat" title="prs">⑃ <b>712</b></span><span class="rp-stat" title="issues">● <b>2,236</b></span><span class="rp-stat" title="releases">▤ <b>137</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/datetime">datetime</a><a class="rp-topic" href="https://github.com/topics/datetime-picker">datetime-picker</a><a class="rp-topic" href="https://github.com/topics/datepicker">datepicker</a><a class="rp-topic" href="https://github.com/topics/timepicker">timepicker</a><a class="rp-topic" href="https://github.com/topics/daterange">daterange</a><a class="rp-topic" href="https://github.com/topics/date">date</a><a class="rp-topic" href="https://github.com/topics/daterangepicker">daterangepicker</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2015-08-10</span><a class="rp-meta-bit rp-home" href="https://flatpickr.js.org" rel="noopener">flatpickr.js.org</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/flatpickr/flatpickr">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v4.6.13</span><a class="rp-dl-a" href="https://github.com/flatpickr/flatpickr/releases/tag/v4.6.13">v4.6.13 ↓</a><span class="rp-dl-ver">4.6.13</span><span class="rp-dl-date">2022-04-14</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">16,450</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,454</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">188</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">712</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">2,236</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">137</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">flatpickr - javascript datetime picker
+
+
+
+
+
+
+
+
+!blue
+!green
+!confetti
+!red
+!default
+!dark
+
+
+ Motivation
+Almost every large SPA or project involves date and time input. Browser&#x27;s native implementations of those are inconsistent and limited in functionality. Most other libraries require you to pull in heavy dependencies like jQuery, Bootstrap, and moment.js. I wanted something that was good-looking out of the box, dependency-free, powerful, and extensible.
+
+Feature overview:
+
+- Dependency-free (no bloated bundles)
+- Simple, polished UX
+- Date + time input
+- Range selections
+- Ability to select multiple dates
+- Can be used as just a time picker
+- Display dates in a human-friendly format
+- Easily disable specific dates, date ranges, or any date using arbitrary logic
+- Week numbers
+- 51 locales
+- 8 colorful themes (incl. dark and material)
+- Numerous plugins
+- Libraries available for React, Angular, Vue, Ember, and more
+
+!
+
+flatpickr provides more functionality at a fraction of the size of other libraries.
+
+ Compatibility
+IE9 and up, Edge, iOS Safari 6+, Chrome 8+, Firefox 6+
+
+ Install &amp; Use
+
+Demos and documentation: https://flatpickr.js.org
+
+See also:
+ angular2+-flatpickr addon
+ angularJS-flatpickr addon
+ ember-flatpickr addon
+ Preact Component
+ React Component
+ Stimulus.js Controller
+ Svelte Component
+ vue-flatpickr component
+ lit-flatpickr component
+
+ Supporting flatpickr
+
+flatpickr will never change its license, pester users for donations, or engage in other user-hostile behavior.
+
+Nevertheless, if you enjoyed working with this library or if its made your life easier, you can buy me a cup of coffee :)</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/flatpickr/flatpickr/issues/1646"><span class="rp-item-num">#1646</span><span class="rp-item-title">Become a flatpickr dev!</span><span class="rp-item-extra">56 comments · 2019-02-04</span></a><a class="rp-item" href="https://github.com/flatpickr/flatpickr/issues/1241"><span class="rp-item-num">#1241</span><span class="rp-item-title">Flatpickr close on any click when on Bootstrap Modal</span><span class="rp-item-extra">38 comments · 2018-02-05</span></a><a class="rp-item" href="https://github.com/flatpickr/flatpickr/issues/1730"><span class="rp-item-num">#1730</span><span class="rp-item-title">Uncaught RangeError: Maximum call stack size exceeded using bootstrap v.4 modal</span><span class="rp-item-extra">22 comments · 2019-04-09</span></a><a class="rp-item" href="https://github.com/flatpickr/flatpickr/issues/1551"><span class="rp-item-num">#1551</span><span class="rp-item-title">Handling manual date input</span><span class="rp-item-extra">22 comments · 2018-10-29</span></a><a class="rp-item" href="https://github.com/flatpickr/flatpickr/issues/576"><span class="rp-item-num">#576</span><span class="rp-item-title">Optional &quot;Today&quot; button in the calendar view</span><span class="rp-item-extra">19 comments · 2017-01-23</span></a><a class="rp-item" href="https://github.com/flatpickr/flatpickr/issues/930"><span class="rp-item-num">#930</span><span class="rp-item-title">Timezone</span><span class="rp-item-extra">18 comments · 2017-07-07</span></a><a class="rp-item" href="https://github.com/flatpickr/flatpickr/issues/1345"><span class="rp-item-num">#1345</span><span class="rp-item-title">Range Plugin: How to manually set date of second input</span><span class="rp-item-extra">17 comments · 2018-04-23</span></a><a class="rp-item" href="https://github.com/flatpickr/flatpickr/issues/2647"><span class="rp-item-num">#2647</span><span class="rp-item-title">Time select does not work correctly in 4.6.10 with altInput</span><span class="rp-item-extra">16 comments · 2022-03-07</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/flatpickr/flatpickr/discussions/3147"><span class="rp-item-num">#3147</span><span class="rp-item-title">MinDate disappears if I get a new instance of the picker</span><span class="rp-item-extra">1 comments · 2026-11-08</span></a><a class="rp-item" href="https://github.com/flatpickr/flatpickr/discussions/3130"><span class="rp-item-num">#3130</span><span class="rp-item-title">New Feature TimeRange</span><span class="rp-item-extra">3 comments · 2026-05-13</span></a><a class="rp-item" href="https://github.com/flatpickr/flatpickr/discussions/3128"><span class="rp-item-num">#3128</span><span class="rp-item-title">Is it possible to hide certain days of the week?</span><span class="rp-item-extra">1 comments · 2026-05-04</span></a><a class="rp-item" href="https://github.com/flatpickr/flatpickr/discussions/3127"><span class="rp-item-num">#3127</span><span class="rp-item-title">Who to contact about issues that can be closed?</span><span class="rp-item-extra">0 comments · 2026-05-01</span></a><a class="rp-item" href="https://github.com/flatpickr/flatpickr/discussions/3121"><span class="rp-item-num">#3121</span><span class="rp-item-title">Temporal API data types</span><span class="rp-item-extra">0 comments · 2025-12-19</span></a><a class="rp-item" href="https://github.com/flatpickr/flatpickr/discussions/3112"><span class="rp-item-num">#3112</span><span class="rp-item-title">Datetime - time picker display in UTC format</span><span class="rp-item-extra">0 comments · 2025-10-10</span></a><a class="rp-item" href="https://github.com/flatpickr/flatpickr/discussions/3107"><span class="rp-item-num">#3107</span><span class="rp-item-title">Аdding Tajik language</span><span class="rp-item-extra">0 comments · 2025-07-08</span></a><a class="rp-item" href="https://github.com/flatpickr/flatpickr/discussions/3104"><span class="rp-item-num">#3104</span><span class="rp-item-title">Docs mismatch: “mode: &#x27;time&#x27;” works but isn’t listed in the options table</span><span class="rp-item-extra">2 comments · 2025-07-07</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/flatpickr/flatpickr/releases"><b>v4.6.13</b> <span class="rp-rel-tag">v4.6.13</span> <span class="rp-item-extra">2022-04-14</span></a><pre class="rp-pre">What&#x27;s Changed
+ Fix change events not firing from the month select plugin
+ Fix week numbers being calculated incorrectly in some cases
+ Fix erroneous change events firing in edge cases (2668 )
+ Run Prettier check in the CI to reject unformatted code by @mshibuya in https://github.com/flatpickr/flatpickr/pull/2663
+ translated more strings into albanian by @dianfishekqi in https://github.com/flatpickr/flatpickr/pull/2674
+ fixes 2669 monthSelectPlugin doesnt highlight correct month, when data is loaded by @koesper in https://github.com/flatpickr/flatpickr/pull/2676
+
+ New Contributors
+ @d</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/flatpickr__flatpickr.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

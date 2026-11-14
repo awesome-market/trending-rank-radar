@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>avelino/awesome-go · GitHub Trending Rank Radar</title>
+<meta name="description" content="A curated list of awesome Go frameworks, libraries and software">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="awesome-go, avelino, avelino/awesome-go, github stars, github trending, star growth, star history, 开源项目, 星标增长, golang, golang-library, go, awesome, awesome-list, hacktoberfest">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/avelino__awesome-go">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="avelino/awesome-go · GitHub Trending Rank Radar">
+<meta property="og:description" content="A curated list of awesome Go frameworks, libraries and software">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/avelino__awesome-go">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "avelino/awesome-go", "codeRepository": "https://github.com/avelino/awesome-go", "url": "https://zhuikan.com/repos/avelino__awesome-go", "description": "A curated list of awesome Go frameworks, libraries and software", "author": {"@type": "Organization", "name": "avelino", "url": "https://github.com/avelino"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Go", "dateCreated": "2014-07-06", "keywords": "golang,golang-library,go,awesome,awesome-list,hacktoberfest"}</script>
+</head>
+<body data-repo="avelino/awesome-go" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">avelino/awesome-go</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="avelino__awesome-go"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/31996?u=867314ee32416a56c62d7b0715d31d7b0ccd8e62&amp;v=4&s=300" width="300" height="300" alt="avelino avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">awesome-go</div>
+      <a class="rp-side-owner" href="https://github.com/avelino">avelino</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/avelino">avelino</a>
+        <span class="rp-sep">/</span><span class="rp-name">awesome-go</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily">daily <b>#114</b></a><a class="rp-board-chip" href="../?board=daily_rate">daily_rate <b>#186</b></a><a class="rp-board-chip" href="../?board=weekly">weekly <b>#171</b></a><a class="rp-board-chip" href="../?board=monthly">monthly <b>#91</b></a><a class="rp-board-chip" href="../?board=total">total <b>#40</b></a></div>
+    </div>
+    <p class="rp-desc">A curated list of awesome Go frameworks, libraries and software</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>193,739</b></span><span class="rp-stat" title="forks">⑂ <b>13,739</b></span><span class="rp-stat" title="watchers">👁 <b>2,814</b></span><span class="rp-stat" title="prs">⑃ <b>5,769</b></span><span class="rp-stat" title="issues">● <b>784</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/golang">golang</a><a class="rp-topic" href="https://github.com/topics/golang-library">golang-library</a><a class="rp-topic" href="../tags/go">go</a><a class="rp-topic" href="../tags/awesome">awesome</a><a class="rp-topic" href="../tags/awesome-list">awesome-list</a><a class="rp-topic" href="../tags/hacktoberfest">hacktoberfest</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Go</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2014-07-06</span><a class="rp-meta-bit rp-home" href="https://awesome-go.com" rel="noopener">awesome-go.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/avelino/awesome-go">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+195</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1,853</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+6,199</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">193,739</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">13,739</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">2,814</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">5,769</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">784</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Awesome Go
+
+
+
+
+
+
+
+
+
+
+We use the _Golang Bridge_ community Slack for instant communication, follow the form here to join.
+
+
+
+Sponsorships:
+
+_Special thanks to_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Awesome Go has no monthly fee_, but we have employees who work hard to keep it running. With money raised, we can repay the effort of each person involved! You can see how we calculate our billing and distribution as it is open to the entire community. Want to be a supporter of the project click here._
+
+ A curated list of awesome Go frameworks, libraries, and software. Inspired by awesome-python.
+
+Contributing:
+
+Please take a quick gander at the contribution guidelines first. Thanks to all contributors; you rock!
+
+ _If you see a package or project here that is no longer maintained or is not a good fit, please submit a pull request to improve this file. Thank you!_
+
+ Contents
+
+
+Expand contents
+
+- Awesome Go
+  - Contents
+  - Actor Model
+  - Artificial Intelligence
+  - Audio and Music
+  - Authentication and Authorization
+  - Blockchain
+  - Bot Building
+  - Build Automation
+  - Command Line
+    - Advanced Console UIs
+    - Standard CLI
+  - Configuration
+  - Continuous Integration
+  - CSS Preprocessors
+  - Data Integration Frameworks
+  - Data Structures and Algorithms
+    - Bit-packing and Compression
+    - Bit Sets
+    - Bloom and Cuckoo Filters
+    - Data Structure and Algorithm Collections
+    - Iterators
+    - Maps
+    - Miscellaneous Data Structures and Algorithms
+    - Nullable Types
+    - Queues
+    - Sets
+    - Text Analysis
+    - Trees
+    - Pipes
+  - Database
+    - Caches
+    - Databases Implemented in Go
+    - Database Schema Migration
+    - Database Tools
+    - SQL Query Builders
+  - Database Drivers
+    - Interfaces to Multiple Backends
+    - Relational Database Drivers
+    - NoSQL Database Drivers
+    - Search and Analytic Databases
+  - Date and Time
+  - Distributed Systems
+  - Dynamic DNS
+  - Email
+  - Embeddable Scripting Languages
+  - Error Handling
+  - File Handling
+  - Financial
+  - Forms
+  - Functional
+  - Game Development
+  - Generators
+  - Geographic
+  - Go Compilers
+  - Goroutines
+  - GUI
+  - Hardware
+  - Images
+  - IoT (Internet of Things)
+  - Job Scheduler
+  - JSON
+  - Logging
+  - Machine Learning
+  - Messaging
+  - Microsoft Office
+    - Microsoft Excel
+    - Microsoft Word
+  - Miscellaneous
+    - Dependency Injection
+    - Project Layout
+    - Strings
+    - Uncategorized
+  - Natural Language Processing
+    - Language Detection
+    - Morphological Analyzers
+    - Slugifiers
+    - Tokenizers
+    - Translation
+    - Transliteration
+  - Networking
+    - HTTP Clients
+  - OpenGL
+  - ORM
+  - Package Management
+  - Performance
+  - Query Language
+  - Reflection
+  - Resource Embedding
+  - Science and Data Analysis
+  - Security
+  - Serialization
+  - Server Applications
+  - Stream Processing
+  - Template Engines
+  - Testing
+    - Testing Frameworks
+    - Mock
+    - Fuzzing and delta-debugging/reducing/shrinking
+    - Selenium and browser control tools
+    - Fail inje</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/avelino/awesome-go/issues/5563"><span class="rp-item-num">#5563</span><span class="rp-item-title">few projects that can be added</span><span class="rp-item-extra">26 comments · 2025-01-16</span></a><a class="rp-item" href="https://github.com/avelino/awesome-go/issues/6643"><span class="rp-item-num">#6643</span><span class="rp-item-title">Coverage link detection failure; also, mangled label</span><span class="rp-item-extra">4 comments · 2026-08-31</span></a><a class="rp-item" href="https://github.com/avelino/awesome-go/issues/6672"><span class="rp-item-num">#6672</span><span class="rp-item-title">awesome-go.com static site generator renders README-derived content unescaped through text/template into three sink classes: stored XSS (CWE-79)</span><span class="rp-item-extra">3 comments · 2026-09-08</span></a><a class="rp-item" href="https://github.com/avelino/awesome-go/issues/6743"><span class="rp-item-num">#6743</span><span class="rp-item-title">identation error in line 43 and not a approriate license to post 
+gnc</span><span class="rp-item-extra">2 comments · 2026-10-04</span></a><a class="rp-item" href="https://github.com/avelino/awesome-go/issues/6592"><span class="rp-item-num">#6592</span><span class="rp-item-title">Kong library possibly mis-categorized</span><span class="rp-item-extra">2 comments · 2026-08-17</span></a><a class="rp-item" href="https://github.com/avelino/awesome-go/issues/6760"><span class="rp-item-num">#6760</span><span class="rp-item-title">Proposal: auto-generated lib/app tags for all entries (follow-up to #5823 / #5861)</span><span class="rp-item-extra">1 comments · 2026-10-08</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/avelino/awesome-go/discussions/6897"><span class="rp-item-num">#6897</span><span class="rp-item-title">🏆 awesome-go earned Repocharts Gold: #1 in Go</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/avelino/awesome-go/discussions/6872"><span class="rp-item-num">#6872</span><span class="rp-item-title">Why Huma is missing?</span><span class="rp-item-extra">1 comments · 2026-11-10</span></a><a class="rp-item" href="https://github.com/avelino/awesome-go/discussions/6851"><span class="rp-item-num">#6851</span><span class="rp-item-title">First first connection mobile datacom.mi.android.globalFileexplorer Wi-Fi data mobile all themes reset</span><span class="rp-item-extra">0 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/avelino/awesome-go/discussions/6811"><span class="rp-item-num">#6811</span><span class="rp-item-title">Cryptic failure &quot;Quality or diff checks failed.&quot;</span><span class="rp-item-extra">1 comments · 2026-10-20</span></a><a class="rp-item" href="https://github.com/avelino/awesome-go/discussions/6788"><span class="rp-item-num">#6788</span><span class="rp-item-title">porn</span><span class="rp-item-extra">0 comments · 2026-10-15</span></a><a class="rp-item" href="https://github.com/avelino/awesome-go/discussions/6786"><span class="rp-item-num">#6786</span><span class="rp-item-title">What is this app exactly??</span><span class="rp-item-extra">2 comments · 2026-10-14</span></a><a class="rp-item" href="https://github.com/avelino/awesome-go/discussions/6697"><span class="rp-item-num">#6697</span><span class="rp-item-title">Feature Request: Add Global Search with Keyboard Shortcut (⌘K / Ctrl+K) to Awesome Go</span><span class="rp-item-extra">2 comments · 2026-09-17</span></a><a class="rp-item" href="https://github.com/avelino/awesome-go/discussions/6637"><span class="rp-item-num">#6637</span><span class="rp-item-title">Why GoModel is not visible on the website?</span><span class="rp-item-extra">2 comments · 2026-08-30</span></a></div></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (5)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/gitblog_00280/article/details/151010012" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">Awesome Go的镜像加速：国内镜像源配置指南</span><span class="rp-item-extra">2025-08-30</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00484/article/details/150998498" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">从0到1：Awesome Go的自动化构建与极速部署全攻略</span><span class="rp-item-extra">2025-08-29</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE54T2NCbmZ3ZzF3YWlhOHljclhXYVh1RTJpVDFYeExhcGE2YnMxNVpsaXNiRVJ5bXNrQmN4QUhGb05xS05KYWl4Mjl3S1N6dVMzYXVRMDdmc2h1bXFTaXVJ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN</span><span class="rp-item-title">2026年第38周GitHub趋势周报：本地AI推理与Agent编排等10大开源项目</span><span class="rp-item-extra">2026-11-09</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiS0FVX3lxTFByMFUwZW4zZHJaQlJRUUNRY2xLamFRbE1ocVd0T2Qzd0RsUkpiRWMtTDRWdVpaOTJsSHJvdUZWWnR4R2VjSHFYUWZDdw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">OSCHINA</span><span class="rp-item-title">go-dongle v1.2.2 发布，新增SM2 国密非对称椭圆曲线签名算法支持</span><span class="rp-item-extra">2025-12-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiS0FVX3lxTFBMZmxqVEV6T3h1aVBJSE83bFFHdm9pUkNtMGdRSTRDd3lWYjJwRm1QN1JuUjlMa0RqTkdXelNFSzE2VGVOVFFTLVJ1TQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">OSCHINA</span><span class="rp-item-title">go-dongle 1.1.3 版本发布，一个轻量级、语义化的golang 编码解码、加密解密库</span><span class="rp-item-extra">2025-09-15</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (11)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=7994703" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">A curated list of Go frameworks, libraries and software</span><span class="rp-item-extra">▲ 158 · 43 comments · 2014-07-06</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=28039306" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">A curated list of Go Projects</span><span class="rp-item-extra">▲ 5 · 0 comments · 2021-08-02</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=17263401" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Awesome-go: A curated list of awesome Go frameworks, libraries and software</span><span class="rp-item-extra">▲ 3 · 0 comments · 2018-06-08</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=13028779" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">This is why iris was removed from awesome-go</span><span class="rp-item-extra">▲ 2 · 0 comments · 2016-11-24</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=9724837" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">A curated list of awesome Go frameworks, libraries and software</span><span class="rp-item-extra">▲ 1 · 0 comments · 2015-06-16</span></a><a class="rp-item" href="https://archive.org/details/github.com-mehdihadeli-awesome-go-education_-_2021-12-24_18-57-09" target="_blank" rel="noopener"><span class="rp-news-src">archive</span><span class="rp-item-title">github.com-mehdihadeli-awesome-go-education_-_2021-12-24_18-57-09</span><span class="rp-item-extra">2021-12-23</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMic0FVX3lxTE5MWXdvYWVEbkFBS2FSeldwZTdvLVJRV0hhdGRwa1FiVW1LYmhUcy1uZnZNMElQNTRZUldxa3JaNGVQUGZiaDRVN1pJREVXOGdmaVNMVmxXdmNOX2dwSXZPd1l2bk9keVFycHRrVFdkaExiTTQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">infoq.com</span><span class="rp-item-title">AI-Powered Bot Compromises GitHub Actions Workflows across Microsoft, DataDog, and CNCF Projects</span><span class="rp-item-extra">2026-03-11</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE1kSmFmZEVRSHBZMGdCQlNjdmQ3Smgzblo0cjlPWnpfeVlUUEZaYmpkTThEYmFJSFBfUElWaUFWTGx1aEdGR3VWbm9QRW1YbkR1X20w?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">GBHackers News</span><span class="rp-item-title">Hackerbot-Claw Bot Exploits GitHub Actions CI/CD Flaw to Attack Microsoft and DataDog</span><span class="rp-item-extra">2026-03-03</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMilAFBVV95cUxOZ01Yd1loZHhNMDhFY1Nva1pWandKTmZnSFZzX1Y4eGtMbGlRR1F0bm13MFNiTDJGZjV2R3RyMS1pMllvai1mVzZ5U0xGRXVhd0hLcjhseThnbTBzOGVpWHV3ekIwR3BUYV9TeHY5enlIcGJzRjlvbll1NGdsaVhCX0ZoTGZqU2tTMXViaWhyNjVDNmdB?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Cybernews</span><span class="rp-item-title">AI bot posing as “security researcher” hacks major GitHub repos from Microsoft, DataDog, and other</span><span class="rp-item-extra">2026-03-03</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMigAFBVV95cUxOakpqYXR0SFFUTXlLU1paWDFYMGFreHZpaFdxUGJONm9aVUhzQ2NVMXBZX080MWc0Z18xcnVIS1ZsNDQ0cE9XbTV5TkZ5SUxSZnU4VlpYVnJGcVpGNzdOekNuLXF1ZzloSDM0VE16eGFPT1dCUTczUVFDaExiV3hwVw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Step Security</span><span class="rp-item-title">hackerbot-claw: An AI-Powered Bot Actively Exploiting GitHub Actions - Microsoft, DataDog, and CNCF Projects Hit So Far</span><span class="rp-item-extra">2026-02-20</span></a><details class="rp-news-more"><summary>1 more</summary><a class="rp-item" href="https://news.google.com/rss/articles/CBMiakFVX3lxTFBMOWVWUmY1WUotRmtOYUZiQ3FNX3hSOWNuTzN6TWZleW5JUnpsMEotcE5OX1B0N2YtZW1NQjNLb0ZFSlBkeTd5Vkh5c3QxU3ZRaFhncVQ1bU9nM1E0LXRLcV9NY0lJOFZYWkE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">HackerNoon</span><span class="rp-item-title">The History of GitHub Awesome-Lists</span><span class="rp-item-extra">2025-01-19</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/avelino__awesome-go.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

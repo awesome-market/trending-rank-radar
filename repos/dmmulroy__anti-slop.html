@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dmmulroy/anti-slop · GitHub Trending Rank Radar</title>
+<meta name="description" content="Opinionated Oxlint rules for rejecting low-evidence TypeScript and JavaScript patterns">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="anti-slop, dmmulroy, dmmulroy/anti-slop, github stars, github trending, star growth, star history, 开源项目, 星标增长, agent-skills, linting, oxlint, typescript">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/dmmulroy__anti-slop">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="dmmulroy/anti-slop · GitHub Trending Rank Radar">
+<meta property="og:description" content="Opinionated Oxlint rules for rejecting low-evidence TypeScript and JavaScript patterns">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/dmmulroy__anti-slop">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "dmmulroy/anti-slop", "codeRepository": "https://github.com/dmmulroy/anti-slop", "url": "https://zhuikan.com/repos/dmmulroy__anti-slop", "description": "Opinionated Oxlint rules for rejecting low-evidence TypeScript and JavaScript patterns", "author": {"@type": "Organization", "name": "dmmulroy", "url": "https://github.com/dmmulroy"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2026-08-12", "keywords": "agent-skills,linting,oxlint,typescript"}</script>
+</head>
+<body data-repo="dmmulroy/anti-slop" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">dmmulroy/anti-slop</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="dmmulroy__anti-slop"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/2755722?u=25950dae7ea516f2588726edb259e87e232de3a6&amp;v=4&s=300" width="300" height="300" alt="dmmulroy avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">anti-slop</div>
+      <a class="rp-side-owner" href="https://github.com/dmmulroy">dmmulroy</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/dmmulroy">dmmulroy</a>
+        <span class="rp-sep">/</span><span class="rp-name">anti-slop</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=monthly_rate">monthly_rate <b>#191</b></a></div>
+    </div>
+    <p class="rp-desc">Opinionated Oxlint rules for rejecting low-evidence TypeScript and JavaScript patterns</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>6,066</b></span><span class="rp-stat" title="forks">⑂ <b>170</b></span><span class="rp-stat" title="watchers">👁 <b>12</b></span><span class="rp-stat" title="prs">⑃ <b>32</b></span><span class="rp-stat" title="issues">● <b>43</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/agent-skills">agent-skills</a><a class="rp-topic" href="https://github.com/topics/linting">linting</a><a class="rp-topic" href="https://github.com/topics/oxlint">oxlint</a><a class="rp-topic" href="../tags/typescript">typescript</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-08-12</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/dmmulroy/anti-slop">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+12</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+169</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+693</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">6,066</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">170</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">12</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">32</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">43</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">anti-slop
+
+
+
+Opinionated Oxlint rules that reject low-evidence and low-signal TypeScript and JavaScript patterns.
+
+Anti-slop is first and foremost the ruleset I use with my work, projects, and team. It reflects my preferences and taste rather than attempting to be a universal coding standard.
+
+This project is meant to be vendored, not treated as a fixed npm dependency. There is no official npm package. Copy the rules into your repository, read them, and change them to match your team&#x27;s standards. The bundled agent skill handles the initial copy and configuration; after that, the vendored files are yours to maintain and make your own. Community-maintained forks and packages are welcome, but their compatibility and release lifecycle belong to their maintainers.
+
+ Install with an agent skill
+
+bash
+npx skills add dmmulroy/anti-slop --skill install-anti-slop
+
+
+Then ask your coding agent to install or configure anti-slop in the current repository. The skill copies the plugin, installs compatible Oxlint dependencies—matching an existing Oxlint version when present—merges the plugin into the existing lint configuration, enables every generic rule, and validates the result. In repositories that depend directly on Effect, it also enables the opt-in Effect rule group.
+
+ Update an existing installation
+
+Ask your agent to update anti-slop while preserving local customizations, optionally naming an upstream revision or selected fixes. The same skill stages incoming source separately, uses a three-way merge when the original upstream snapshot is recoverable, and otherwise ports reviewed changes conservatively. It preserves local rules and configuration, asks about conflicting policy and enabling new rules, and records provenance for future updates. It does not force-replace the vendored directory.
+
+For latest upstream, ask the agent to retrieve and identify that revision; an already-installed skill bundle may be older. The copy script itself does not fetch or merge updates.
+
+To inspect available skills first:
+
+bash
+npx skills add dmmulroy/anti-slop --list
+
+
+ Manual local installation
+
+Copy src/ into the target repository, for example at tools/oxlint/anti-slop/. If the repository already uses oxlint, install @oxlint/plugins at exactly the resolved Oxlint version. Otherwise, install the same current version of both packages. Keep both versions exact so upgrades move them together.
+
+Register the copied entry point in oxlint.config.ts:
+
+ts
+import { defineConfig } from &quot;oxlint&quot;;
+
+export default defineConfig({
+  ignorePatterns: [
+    &quot;.agent/&quot;,
+    &quot;.agents/&quot;,
+    &quot;.claude/&quot;,
+    &quot;.codex/&quot;,
+    &quot;.continue/&quot;,
+    &quot;.cursor/&quot;,
+    &quot;.gemini/&quot;,
+    &quot;.opencode/&quot;,
+    &quot;.pi/&quot;,
+    &quot;.roo/&quot;,
+    &quot;.windsurf/&quot;,
+    &quot;tools/oxlint/anti-slop/&quot;,
+  ],
+  jsPlugins: [
+    { name: &quot;anti-slop&quot;, specifier: &quot;./tools/oxlint/anti-slop/index.ts&quot; },
+  ],
+  rules: {
+    &quot;oxc/no-accumulating-spread&quot;: &quot;error&quot;,
+    &quot;anti-slop/no-array-filter-map&quot;: &quot;error&quot;,
+    &quot;anti-slop/no-reduce-accumulator-copy</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/dmmulroy/anti-slop/issues/60"><span class="rp-item-num">#60</span><span class="rp-item-title">no-unsafe-dictionary-type: a nested generic alias overwrites the caller&#x27;s type arguments</span><span class="rp-item-extra">1 comments · 2026-10-22</span></a><a class="rp-item" href="https://github.com/dmmulroy/anti-slop/issues/76"><span class="rp-item-num">#76</span><span class="rp-item-title">no-conditional-empty-object-spread misses the spread when {} or the conditional is wrapped in as, satisfies or !</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/dmmulroy/anti-slop/issues/71"><span class="rp-item-num">#71</span><span class="rp-item-title">no-unknown-returns reports function types in generic constraints and defaults</span><span class="rp-item-extra">0 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/dmmulroy/anti-slop/issues/70"><span class="rp-item-num">#70</span><span class="rp-item-title">Please make it an npm package for the ease of installtion</span><span class="rp-item-extra">0 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/dmmulroy/anti-slop/issues/66"><span class="rp-item-num">#66</span><span class="rp-item-title">no-unknown-returns reports the implementation signature of an overloaded function</span><span class="rp-item-extra">0 comments · 2026-10-29</span></a><a class="rp-item" href="https://github.com/dmmulroy/anti-slop/issues/65"><span class="rp-item-num">#65</span><span class="rp-item-title">no-known-value-widening reports a type guard call on a union-typed argument</span><span class="rp-item-extra">0 comments · 2026-10-29</span></a><a class="rp-item" href="https://github.com/dmmulroy/anti-slop/issues/54"><span class="rp-item-num">#54</span><span class="rp-item-title">require-readable-spacing is un-usable due to CPU spikes</span><span class="rp-item-extra">0 comments · 2026-10-11</span></a><a class="rp-item" href="https://github.com/dmmulroy/anti-slop/issues/50"><span class="rp-item-num">#50</span><span class="rp-item-title">no-reduce-accumulator-copy flags one-call custom reduce methods</span><span class="rp-item-extra">0 comments · 2026-10-03</span></a></div></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (1)</h3><div class="rp-list"><a class="rp-item" href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxOU0hDbk5xNVZvREl6a2RNa0E4cGpIWTJJaWZKdWdfb0JONUtBUDAwRm1JRHppX1Rra3NHUl96eWxjdmdMXzhXUE5zczhwTU83SThfdm91YnpVcE5HZVlvTWxkbnRuOWFHblNGUEdoS2hUamI4ODJrTmh6MmxNNWJnMzVON0paREFO?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">Claude水印去除工具评测: 我在GitHub上逐一实测, 哪些真的有效, 哪些不行</span><span class="rp-item-extra">2026-08-12</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (6)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=49272634" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">anti-slop: Opinionated Oxlint rules</span><span class="rp-item-extra">▲ 2 · 0 comments · 2026-08-12</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiowFBVV95cUxQSGdsbko1ZmxoU1V4YjZ5UHNGYnBKUUJDd2Y0aFZadzN1eW5ZVTN0V2M1MDdsQVE1ci1ic0ZVcEpPUDljQThsVWRTbHlxd3NMSVdEeTB0Tnh4Uzh5VzhOcDUtTFVmZjRyWDQ0UHVWNzd2eWotbGZpT1M1d09vS3FKVkh1cTMyRnAxenVtNGxuYVp5OEx5YXlORXpxX2xzWGJWdXE0?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">GamingOnLinux</span><span class="rp-item-title">Harbour Masters release &#x27;PaperBoat&#x27; their Paper Mario 64 PC port</span><span class="rp-item-extra">2026-09-17</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiigFBVV95cUxOTUJXc3lWR3drQllUbXEtRWVKTHRaMkZjWkxIdzVPZmdraVp3d3FoMG03Q2lKM19iUmR6dllQUXZrb2JOcy10enhxRDZvbDZuX2FWNmtmZ2ZkUDhXMkYtWlUzaWFWN3ZjLVBLb0wySzFOYUgwRUtsc1VsZGJLc0pPd08yb3JfUW5PalE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">Claude Watermark Remover on GitHub: What Works and What Doesn&#x27;t (I Tested Them)</span><span class="rp-item-extra">2026-08-12</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxPMVdWNjdxUjFVMDdNSWtyeHlaZkxFN3RxWXVYRC1reURDZThyNjRaRFVzNTFFbVVyRFNLUE9WdkJJX1dlZkQ5ODFQdFgyeW9CV3JNOFJiTWtiMVNXYUlyblFsanU0V2FxVDlWbDBhWGw3NkhtQ3NKbHVlRk1CZWZkMlo2X00?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">The 20 Best Claude Code Skills for UI/UX Design: Complete Guide</span><span class="rp-item-extra">2026-03-31</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE5Cby1ram95aUIyTU5MblFnc0Z1VlhTYkxKdDl5ZjhhbTZRZk5mc0VxM0pfamlkOXJmSFBVMlNDZ09FTFFxRXpsODdmdU5UMjhsSmRMSmJB?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The New Stack</span><span class="rp-item-title">96% of codebases rely on open source, and AI slop is putting them at risk</span><span class="rp-item-extra">2026-03-29</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMingFBVV95cUxOc2hJc2gwMFZkbmcydkF2ei1ETk1zUWRuVVF6b2dUOXdZSjZmRFZVc3BlWUNNRHVIUEhtdG5lM05rdFRGMU1KTzFhZmdla3NGc29mVVlwVmJHMHA4elVkalRCZzNaaTh2a3FPelZ5UDJJZl9Ba2N4T1VHWTRabGtPQlltMjN6ZWhoYlVGUUx2UFREMmJKZkpnT0RMeFRqZw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">DevClass</span><span class="rp-item-title">Godot maintainers struggle with &#x27;draining and demoralizing&#x27; AI slop submissions</span><span class="rp-item-extra">2026-02-19</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/dmmulroy__anti-slop.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>peng-zhihui/ElectronBot · GitHub Trending Rank Radar</title>
+<meta name="description" content="peng-zhihui/ElectronBot — GitHub stars trend, board ranks, issues and releases">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="ElectronBot, peng-zhihui, peng-zhihui/ElectronBot, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/peng-zhihui__ElectronBot">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="peng-zhihui/ElectronBot · GitHub Trending Rank Radar">
+<meta property="og:description" content="peng-zhihui/ElectronBot — GitHub stars trend, board ranks, issues and releases">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/peng-zhihui__ElectronBot">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "peng-zhihui/ElectronBot", "codeRepository": "https://github.com/peng-zhihui/ElectronBot", "url": "https://zhuikan.com/repos/peng-zhihui__ElectronBot", "description": "peng-zhihui/ElectronBot — GitHub stars trend, board ranks, issues and releases", "author": {"@type": "Organization", "name": "peng-zhihui", "url": "https://github.com/peng-zhihui"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-3.0.html", "programmingLanguage": "C", "dateCreated": "2022-03-11"}</script>
+</head>
+<body data-repo="peng-zhihui/ElectronBot" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">peng-zhihui/ElectronBot</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="peng-zhihui__ElectronBot"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/12994887?u=6bfec84cb512892557cfed7fd7c52b0b0f41f95b&amp;v=4&s=300" width="300" height="300" alt="peng-zhihui avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">ElectronBot</div>
+      <a class="rp-side-owner" href="https://github.com/peng-zhihui">peng-zhihui</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/peng-zhihui">peng-zhihui</a>
+        <span class="rp-sep">/</span><span class="rp-name">ElectronBot</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc"></p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,602</b></span><span class="rp-stat" title="forks">⑂ <b>2,068</b></span><span class="rp-stat" title="watchers">👁 <b>256</b></span><span class="rp-stat" title="prs">⑃ <b>12</b></span><span class="rp-stat" title="issues">● <b>185</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C</span><span class="rp-meta-bit">GPL-3.0</span><span class="rp-meta-bit">Created 2022-03-11</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="peng-zhihui__Dummy-Robot"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/12994887?u=6bfec84cb512892557cfed7fd7c52b0b0f41f95b&amp;v=4" alt="" loading="lazy">Dummy-Robot</a><a class="rp-same-link" href="peng-zhihui__XUAN"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/12994887?u=6bfec84cb512892557cfed7fd7c52b0b0f41f95b&amp;v=4" alt="" loading="lazy">XUAN</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/peng-zhihui/ElectronBot">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+3</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">9,602</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,068</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">256</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">12</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">185</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">ElectronBot: Mini Desktop Robot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ --
+
+喜欢这个项目吗？请考虑给 Star ⭐️ 以帮助改进！
+
+
+
+---
+
+ 本项目是一个桌面级小机器工具人，外观设计的灵感来源是WALL-E里面的EVE~机器人具备USB通信显示画面功能，具备6个自由度（手部roll、pitch，颈部，腰部各一个），使用自己修改的特制舵机支持关节角度回传。
+
+ 本项目提供了配套的全套开发资料和对应SDK以供二次开发，SDK使用说明见后文。
+
+ 视频介绍：【自制】我做了个能动的 电 脑 配 件！【软核】_哔哩哔哩
+
+ Video : I made a cute mini desktop robot ! - YouTube
+
+
+
+注意：Issues里面是讨论项目开发相关话题的，不要在里面发无意义的消息，不然watch了仓库的人都会收到通知邮件会给别人造成困扰的！！！灌水可以在仓库的Discuss里讨论！
+
+!
+
+---
+
+ 更新说明：
+
+22.4.5更新：
+
+ 添加单独的USB通信功能测试工程以及预编译文件，在6.Tests\TestDisplayUSB\_Released目录；使用方法是直接给STM32F4烧录hex文件，然后直接在电脑端运行Sample.exe，硬件正常的话屏幕会显示文件夹里的视频。
+ 上述预编译文件的源码和固件也在文件夹里有提供，相当于一个最小测试工程，可以自己查看代码进行调试。
+ 注意在6个舵机没有测试验证成功之前，调试代码不要使用舵机收发指令的功能，不然总线会阻塞导致程序卡住，推荐的方式是先单独一个一个功能调试，完成了之后再整合做联调。
+
+ 安装教程可以参考：
+
+ 数码甲鱼的简单生活 同学的胎教级教程：https://www.bilibili.com/video/BV1sY4y1Y7t6
+
+ 绿荫阿广同学的安装视频 ：https://www.bilibili.com/video/BV1oY4y1v7oN
+
+22.4.17更新：
+
+ 添加语音识别版电子，感谢jinsonli/ElectronBot-Voice 的分享，演示效果可以看这个视频：我复刻了电脑配件机器人electronbot【语音版】
+ 视频中演示的舵机调试工具已添加到本仓库
+
+ 1.项目文件说明 
+
+ 1.1 Hardware
+
+Hardware文件夹内是ElectronBot里面用到的所有电路的原理图和PCB文件，提供Altium Designer格式的源文件以及Gerber格式的光绘文件用于提供给厂家进行直接加工。
+
+一共有如下几块板子：
+
+ ElectronBot：头部的主控板，包含主控MCUSTM32F405RGT6，圆形屏幕GC9A01，USB-HS的PHY芯片USB3300，以及SD卡。
+ SensorBoard：肚子里的传感器板子，包含一个手势传感器，一个USB-HUB芯片，5个I2C舵机的接口，一个MPU6050加速度计&amp;陀螺仪等（USB摄像头也是连接到这个板子的）。
+
+ BaseConnector：底座上的USB Type-C插座，通过8-Pin的FFC排线和SensorBoard连接，因为机器人本体需要旋转所以使用了柔性排线。
+ ServoDrive：用于魔改舵机替换舵机驱动板的电路，通过I2C总线接口和SensorBoard以及头部主控连接。
+
+ ServoDrive-DK：同上，但是把PCB的触点接口换成了接插件，方便调试，调试完了下载代码到上面的板子（因为体积太小所以上面的板子没有下载口接插件，所以不方便调试，这里单独提供一个DK版本）。
+
+ 1.2 Firmware
+
+Firmware中提供了上面所有板子的固件源码，主要包含以下两个工程：
+
+ ElectronBot-fw：头部主控板的固件代码，用于驱动圆形屏幕，实现USB-CDC协议的自定义设备，以及进行舵机控制。
+ ServoDrive-fw：ServoDrive板子的固件，包含舵机的电位器ADC采样，I2C从机通信和协议解析，电机控制的PWM输出，以及PID闭环算法实现。
+ ServoDrive-fw-LL：也是ServoDrive板子的固件，与上面不同的是改用LL库而不是HAL库实现，所以Flash占用会小一些，可以放进16K的MCU，大家根据自己的情况选择需要的固件。
+
+工程都是基于STM32HAL实现的，所以提供了对应的.ioc文件，可以自行用STM32CubeMX打开，生成对应的keil或者STM32IDE工程文件。当让也可以像我一样，用CLion进行编译和下载，把CLion变成STM32的IDE的方法参考我之前发的一篇教程：配置CLion用于STM32开发【优雅の嵌入式开发】 。
+
+ 1.3 Software
+
+Software中提供了视频里演示的上位机软件ElectronStudio的Unity工程源码，以及SDK库和SDK源文件，库的层级关系由下至上分别是：
+
+ElectronBotSDK-LowLevel - ElectronBotSDK-Player - ElectronBotSDK-UnityBridge - Electron-Studio
+
+ SDK的使用方法见后文。
+
+此外文件夹里还包含了BotDriver也就是ElectronBot连接电脑需要安装的USB驱动文件，安装方法是在设备管理器里右键更新驱动，然后选择自定义目录导航到这个文件夹即可安装。
+
+ 安装过程需要禁用Windows的强制驱动签名（没钱给M$买签名），禁用方法根据你的操作系统版本有不同，可以百度一下。
+
+ 1.4 CAD-Model
+
+文件夹中包含了ElectronBot的结构设计图纸，.step通用格式可以在所有软件里打开编辑；同时为了满足有的同学想要Fusion360里面的原始工程，我也共享了.f3d格式源文件，源文件里包含了完整的编辑建模时间轴。
+
+共享连接：https://a360.co/3t6CUMS
+
+此目录下也包含了视频里演示的oooooohmygosh同学设计的表情包动画，其中每个表情的动画都包含了三个片段：进入-循环-退出，进入和退出是可以和其他动画进行无缝衔接的，因此可以方便用代码调用这些表情包实现很多效果。
+
+ 表情文件需要修改为英文名和路径后使用。
+
+我把视频结尾提到的收纳盒也上传了，可以用FDM打印，5%填充即可。
+
+!
+
+ 1.5 Docs
+
+相关的参考文件，包括芯片的Datasheet等。
+
+此目录下还有个_LargeFiles文件夹，是软件过程项目中依赖的一些库（比如OpenCV）因为DLL比较大超过了100MB，GitHub需要开启LFS才能提交，而我不想开启LFS，因此单独拿出来压缩了提交到仓库，编译工程的时候需要把这些库放到对应工程目录下，具体的路径见 _path.txt。
+
+ 2.硬件架构说明
+
+机器人的硬件分为结构和电路。
+
+ 2.1 结构设计
+
+结构设计方面大家可以研究3D图纸，值得注意的点如下：
+
+主要部件的加工方式？
+
+ 我是用3D打印加工的，因为包含了齿轮等精密部件，传统FDM打印的精度可能不太理想，光固化是可以的，但是支撑问题可能导致打印机表面</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/peng-zhihui/ElectronBot/issues/131"><span class="rp-item-num">#131</span><span class="rp-item-title">舵机固件和基本的调试方法</span><span class="rp-item-extra">76 comments · 2022-04-05</span></a><a class="rp-item" href="https://github.com/peng-zhihui/ElectronBot/issues/122"><span class="rp-item-num">#122</span><span class="rp-item-title">屏幕花屏，USB通信不显示画面的解决办法</span><span class="rp-item-extra">69 comments · 2022-03-31</span></a><a class="rp-item" href="https://github.com/peng-zhihui/ElectronBot/issues/142"><span class="rp-item-num">#142</span><span class="rp-item-title">Sample.exe 缺失dll 以及 0xc000007b 报错解决方法</span><span class="rp-item-extra">24 comments · 2022-04-10</span></a><a class="rp-item" href="https://github.com/peng-zhihui/ElectronBot/issues/17"><span class="rp-item-num">#17</span><span class="rp-item-title">请问外型的材料是3D打印出来的吗，用的是什么材料呢，看上去不像是普通的材料呀</span><span class="rp-item-extra">16 comments · 2022-03-13</span></a><a class="rp-item" href="https://github.com/peng-zhihui/ElectronBot/issues/60"><span class="rp-item-num">#60</span><span class="rp-item-title">舵机的型号？能否放个购买链接</span><span class="rp-item-extra">11 comments · 2022-03-15</span></a><a class="rp-item" href="https://github.com/peng-zhihui/ElectronBot/issues/34"><span class="rp-item-num">#34</span><span class="rp-item-title">ServoDriver MCU</span><span class="rp-item-extra">11 comments · 2022-03-14</span></a><a class="rp-item" href="https://github.com/peng-zhihui/ElectronBot/issues/192"><span class="rp-item-num">#192</span><span class="rp-item-title">有关烧入程序出现的问题</span><span class="rp-item-extra">10 comments · 2022-06-09</span></a><a class="rp-item" href="https://github.com/peng-zhihui/ElectronBot/issues/118"><span class="rp-item-num">#118</span><span class="rp-item-title">ServoDrive生成STM32 keil工程，然后configurations.h中#include&quot;stdint-gcc.h&quot;报错</span><span class="rp-item-extra">10 comments · 2022-03-26</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/peng-zhihui/ElectronBot/discussions/269"><span class="rp-item-num">#269</span><span class="rp-item-title">有点好奇桌面的那个应用程序是用什么做的，怎么和stm32进行正反向通信的</span><span class="rp-item-extra">1 comments · 2025-04-09</span></a><a class="rp-item" href="https://github.com/peng-zhihui/ElectronBot/discussions/264"><span class="rp-item-num">#264</span><span class="rp-item-title">目前b站宣传很多的精英版是否适合入手操作</span><span class="rp-item-extra">0 comments · 2024-11-28</span></a><a class="rp-item" href="https://github.com/peng-zhihui/ElectronBot/discussions/259"><span class="rp-item-num">#259</span><span class="rp-item-title">实时系统FreeRTOS的必要性，以及c++语言的使用</span><span class="rp-item-extra">3 comments · 2024-06-24</span></a><a class="rp-item" href="https://github.com/peng-zhihui/ElectronBot/discussions/258"><span class="rp-item-num">#258</span><span class="rp-item-title">学习硬件开发首先需要掌握什么知识？</span><span class="rp-item-extra">1 comments · 2024-05-18</span></a><a class="rp-item" href="https://github.com/peng-zhihui/ElectronBot/discussions/257"><span class="rp-item-num">#257</span><span class="rp-item-title">各位大佬，请教一下ElectronBot-Studio的源码是用的什么开发工具写的啊</span><span class="rp-item-extra">4 comments · 2024-05-13</span></a><a class="rp-item" href="https://github.com/peng-zhihui/ElectronBot/discussions/235"><span class="rp-item-num">#235</span><span class="rp-item-title">电子新人关于各种板子的疑问</span><span class="rp-item-extra">1 comments · 2023-02-12</span></a><a class="rp-item" href="https://github.com/peng-zhihui/ElectronBot/discussions/230"><span class="rp-item-num">#230</span><span class="rp-item-title">请问一下固件和sdk有没有什么学习教程或者书籍的，想边了解原理边做</span><span class="rp-item-extra">0 comments · 2022-11-04</span></a><a class="rp-item" href="https://github.com/peng-zhihui/ElectronBot/discussions/223"><span class="rp-item-num">#223</span><span class="rp-item-title">ElectronStudio的Unity工程源码</span><span class="rp-item-extra">6 comments · 2022-09-27</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/peng-zhihui__ElectronBot.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PrivateBin/PrivateBin · GitHub Trending Rank Radar</title>
+<meta name="description" content="A minimalist, open source online pastebin where the server has zero knowledge of pasted data. Data is encrypted/decrypted in the browser using 256 bits AES.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="PrivateBin, PrivateBin, PrivateBin/PrivateBin, github stars, github trending, star growth, star history, 开源项目, 星标增长, self-hosted, self-hosting, pastebin, security, one-time, self-destroy">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/PrivateBin__PrivateBin">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="PrivateBin/PrivateBin · GitHub Trending Rank Radar">
+<meta property="og:description" content="A minimalist, open source online pastebin where the server has zero knowledge of pasted data. Data is encrypted/decrypted in the browser using 256 bits AES.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/PrivateBin__PrivateBin">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "PrivateBin/PrivateBin", "codeRepository": "https://github.com/PrivateBin/PrivateBin", "url": "https://zhuikan.com/repos/PrivateBin__PrivateBin", "description": "A minimalist, open source online pastebin where the server has zero knowledge of pasted data. Data is encrypted/decrypted in the browser using 256 bits AES.", "author": {"@type": "Organization", "name": "PrivateBin", "url": "https://github.com/PrivateBin"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "PHP", "dateCreated": "2016-07-09", "keywords": "self-hosted,self-hosting,pastebin,security,one-time,self-destroy,encrypted,php,paste,crypto"}</script>
+</head>
+<body data-repo="PrivateBin/PrivateBin" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">PrivateBin/PrivateBin</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="PrivateBin__PrivateBin"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/20367028?v=4&s=300" width="300" height="300" alt="PrivateBin avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">PrivateBin</div>
+      <a class="rp-side-owner" href="https://github.com/PrivateBin">PrivateBin</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/PrivateBin">PrivateBin</a>
+        <span class="rp-sep">/</span><span class="rp-name">PrivateBin</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A minimalist, open source online pastebin where the server has zero knowledge of pasted data. Data is encrypted/decrypted in the browser using 256 bits AES.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>8,744</b></span><span class="rp-stat" title="forks">⑂ <b>1,060</b></span><span class="rp-stat" title="watchers">👁 <b>106</b></span><span class="rp-stat" title="prs">⑃ <b>962</b></span><span class="rp-stat" title="issues">● <b>951</b></span><span class="rp-stat" title="releases">▤ <b>45</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/self-hosted">self-hosted</a><a class="rp-topic" href="https://github.com/topics/self-hosting">self-hosting</a><a class="rp-topic" href="https://github.com/topics/pastebin">pastebin</a><a class="rp-topic" href="../tags/security">security</a><a class="rp-topic" href="https://github.com/topics/one-time">one-time</a><a class="rp-topic" href="https://github.com/topics/self-destroy">self-destroy</a><a class="rp-topic" href="https://github.com/topics/encrypted">encrypted</a><a class="rp-topic" href="../tags/php">php</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">PHP</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2016-07-09</span><a class="rp-meta-bit rp-home" href="https://privatebin.info/" rel="noopener">privatebin.info/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/PrivateBin/PrivateBin">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Release v2.1.1 - Fix SVG attachment preview, sizelimit circumvention &amp; Markdown attribute vulnerabilities</span><a class="rp-dl-a" href="https://github.com/PrivateBin/PrivateBin/releases/tag/2.1.1">Release-2.1.1 ↓</a><span class="rp-dl-ver">2.1.1</span><span class="rp-dl-date">2026-11-04</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+13</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+80</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">8,744</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,060</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">106</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">962</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">951</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">45</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Current version: 2.1.1
+
+PrivateBin is a minimalist, open source online
+pastebin
+where the server has zero knowledge of stored data.
+
+Data is encrypted and decrypted in the browser using 256bit AES in
+Galois Counter mode.
+
+This is a fork of ZeroBin, originally developed by
+Sébastien Sauvage. PrivateBin was
+refactored to allow easier and cleaner extensions and has many additional
+features.
+
+ What PrivateBin provides
+
++ As a server administrator you don&#x27;t have to worry if your users post content
+  that is considered illegal in your country. You have plausible deniability of
+  any of the pastes content. If requested or enforced, you can delete any paste
+  from your system.
+
++ Pastebin-like system to store text documents, code samples, etc.
+
++ Encryption of data sent to server.
+
++ Possibility to set a password which is required to read the paste. It further
+  protects a paste and prevents people stumbling upon your paste&#x27;s link
+  from being able to read it without the password.
+
+ What it doesn&#x27;t provide
+
+- As a user you have to trust the server administrator not to inject any
+  malicious code. For security, a PrivateBin installation has to be used over
+  HTTPS! Otherwise you would also have to trust your internet provider, and
+  any jurisdiction the traffic passes through. Additionally the instance should
+  be secured by
+  HSTS. It can
+  use traditional certificate authorities and/or use a
+  DNSSEC
+  protected
+  DANE
+  record.
+
+- The “key” used to encrypt the paste is part of the URL (in
+  the fragment part separated by the ).
+  If you publicly post the URL of a paste that is not password-protected, anyone
+  can read it.
+  Use a password if you want your paste to remain private. In that case, make
+  sure to use a strong password and share it privately and end-to-end-encrypted.
+
+- A server admin can be forced to hand over access logs to the authorities.
+  PrivateBin encrypts your text and the discussion contents, but who accessed a
+  paste (first) might still be disclosed via access logs.
+
+- In case of a server breach your data is secure as it is only stored encrypted
+  on the server. However, the server could be abused or the server admin could
+  be legally forced into sending malicious code to their users, which logs
+  the decryption key and sends it to a server when a user accesses a paste.
+  Therefore, do not access any PrivateBin instance if you think it has been
+  compromised. As long as no user accesses this instance with a previously
+  generated URL, the content can&#x27;t be decrypted.
+
+ Options
+
+Some features are optional and can be enabled or disabled in the configuration
+file:
+
+ Password protection
+
+ Discussions, anonymous or with nicknames and IP based identicons or vizhashes
+
+ Expiration times, including a &quot;forever&quot; and &quot;burn after reading&quot; option
+
+ Markdown format support for HTML formatted pastes, including preview function
+
+ Syntax highlighting for source code using prettify.js, including 4 prettify
+  themes
+
+ File upload support, image, me</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/PrivateBin/PrivateBin/issues/245"><span class="rp-item-num">#245</span><span class="rp-item-title">Brute-force protection: only download password-protected paste in case the receiver knows the password (implement challenge-response mechanism)</span><span class="rp-item-extra">48 comments · 2017-09-04</span></a><a class="rp-item" href="https://github.com/PrivateBin/PrivateBin/issues/541"><span class="rp-item-num">#541</span><span class="rp-item-title">&quot;Burn paste&quot; button for receiver of paste</span><span class="rp-item-extra">23 comments · 2019-11-12</span></a><a class="rp-item" href="https://github.com/PrivateBin/PrivateBin/issues/658"><span class="rp-item-num">#658</span><span class="rp-item-title">Facebook tracking parameter is not rewritten</span><span class="rp-item-extra">16 comments · 2020-06-25</span></a><a class="rp-item" href="https://github.com/PrivateBin/PrivateBin/issues/234"><span class="rp-item-num">#234</span><span class="rp-item-title">raw view link</span><span class="rp-item-extra">16 comments · 2017-06-11</span></a><a class="rp-item" href="https://github.com/PrivateBin/PrivateBin/issues/514"><span class="rp-item-num">#514</span><span class="rp-item-title">Option to Edit English language</span><span class="rp-item-extra">15 comments · 2019-09-04</span></a><a class="rp-item" href="https://github.com/PrivateBin/PrivateBin/issues/835"><span class="rp-item-num">#835</span><span class="rp-item-title">Prettify.js is now abandoned/archived. highlight.js as a replacment?</span><span class="rp-item-extra">14 comments · 2021-09-24</span></a><a class="rp-item" href="https://github.com/PrivateBin/PrivateBin/issues/1336"><span class="rp-item-num">#1336</span><span class="rp-item-title">Improve JS (Frontend) unit testing coverage</span><span class="rp-item-extra">13 comments · 2024-05-14</span></a><a class="rp-item" href="https://github.com/PrivateBin/PrivateBin/issues/460"><span class="rp-item-num">#460</span><span class="rp-item-title">[FEATURE] Add support for chacha20-poly1305</span><span class="rp-item-extra">13 comments · 2019-07-12</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/PrivateBin/PrivateBin/discussions/2133"><span class="rp-item-num">#2133</span><span class="rp-item-title">Outdated https://privatebin.info/category/news.html</span><span class="rp-item-extra">1 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/PrivateBin/PrivateBin/discussions/2123"><span class="rp-item-num">#2123</span><span class="rp-item-title">Release v2.1.1 - Fix SVG attachment preview, sizelimit circumvention &amp; Markdown attribute vulnerabilities</span><span class="rp-item-extra">0 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/PrivateBin/PrivateBin/discussions/2112"><span class="rp-item-num">#2112</span><span class="rp-item-title">Feature: One time ticket service</span><span class="rp-item-extra">0 comments · 2026-10-30</span></a><a class="rp-item" href="https://github.com/PrivateBin/PrivateBin/discussions/2089"><span class="rp-item-num">#2089</span><span class="rp-item-title">PHP CVE-2026-10961/9</span><span class="rp-item-extra">1 comments · 2026-10-23</span></a><a class="rp-item" href="https://github.com/PrivateBin/PrivateBin/discussions/2079"><span class="rp-item-num">#2079</span><span class="rp-item-title">stuck on &quot;Preparing new document…&quot; when discussion = false</span><span class="rp-item-extra">1 comments · 2026-10-22</span></a><a class="rp-item" href="https://github.com/PrivateBin/PrivateBin/discussions/2076"><span class="rp-item-num">#2076</span><span class="rp-item-title">What bout PHP CVE-2026-109618 and CVE-2026-109619 ?</span><span class="rp-item-extra">2 comments · 2026-10-22</span></a><a class="rp-item" href="https://github.com/PrivateBin/PrivateBin/discussions/2061"><span class="rp-item-num">#2061</span><span class="rp-item-title">[Bug in 2.1.0 ] Uncaught TypeError in showCreateButtons when discussion = false</span><span class="rp-item-extra">1 comments · 2026-10-19</span></a><a class="rp-item" href="https://github.com/PrivateBin/PrivateBin/discussions/2052"><span class="rp-item-num">#2052</span><span class="rp-item-title">Release v2.1.0 - Removed jQuery and bootstrap 3 template</span><span class="rp-item-extra">1 comments · 2026-10-18</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/PrivateBin/PrivateBin/releases"><b>Release v2.1.1 - Fix SVG attachment preview, sizelimit circumvention &amp; Markdown attribute vulnerabilities</b> <span class="rp-rel-tag">2.1.1</span> <span class="rp-item-extra">2026-11-04</span></a><pre class="rp-pre">ADDED: Translation for Korean (2071)
+ ADDED: Comments authenticate the IDs of their document and parent comment if present. Older comments without these IDs are still accepted and shown, unless the new discussionrequireauthenticatedids option is enabled to validate these fields (2101)
+ CHANGED: Check sizelimit over full request, before attempting decoding
+ CHANGED: Database backend now logs errors when reading comments, like it already did for comment existence checks (2100)
+ FIXED: Creating a document failed with a JavaScript error when the discussion, password, e-mail or QR code option i</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/PrivateBin__PrivateBin.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

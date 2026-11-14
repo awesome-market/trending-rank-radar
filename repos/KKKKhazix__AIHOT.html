@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KKKKhazix/AIHOT · GitHub Trending Rank Radar</title>
+<meta name="description" content="一个自己找热点、自己写日报的网站框架。把信源和精选标准换成你的，它就是你的行业热点站。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="AIHOT, KKKKhazix, KKKKhazix/AIHOT, github stars, github trending, star growth, star history, 开源项目, 星标增长, ai, llm, mcp, news-aggregator, rss, self-hosted">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/KKKKhazix__AIHOT">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="KKKKhazix/AIHOT · GitHub Trending Rank Radar">
+<meta property="og:description" content="一个自己找热点、自己写日报的网站框架。把信源和精选标准换成你的，它就是你的行业热点站。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/KKKKhazix__AIHOT">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "KKKKhazix/AIHOT", "codeRepository": "https://github.com/KKKKhazix/AIHOT", "url": "https://zhuikan.com/repos/KKKKhazix__AIHOT", "description": "一个自己找热点、自己写日报的网站框架。把信源和精选标准换成你的，它就是你的行业热点站。", "author": {"@type": "Organization", "name": "KKKKhazix", "url": "https://github.com/KKKKhazix"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2026-09-28", "keywords": "ai,llm,mcp,news-aggregator,rss,self-hosted,content-curation,typescript,chinese,daily-digest"}</script>
+</head>
+<body data-repo="KKKKhazix/AIHOT" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">KKKKhazix/AIHOT</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="KKKKhazix__AIHOT"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/239590580?u=e36ff439fc89c0ec6eff33f6d1d5e869ce0b214f&amp;v=4&s=300" width="300" height="300" alt="KKKKhazix avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">AIHOT</div>
+      <a class="rp-side-owner" href="https://github.com/KKKKhazix">KKKKhazix</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/KKKKhazix">KKKKhazix</a>
+        <span class="rp-sep">/</span><span class="rp-name">AIHOT</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=new">new <b>#38</b></a><a class="rp-board-chip" href="../?board=weekly_rate">weekly_rate <b>#131</b></a><a class="rp-board-chip" href="../?board=monthly">monthly <b>#140</b></a><a class="rp-board-chip" href="../?board=monthly_rate">monthly_rate <b>#64</b></a></div>
+    </div>
+    <p class="rp-desc">一个自己找热点、自己写日报的网站框架。把信源和精选标准换成你的，它就是你的行业热点站。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>10,654</b></span><span class="rp-stat" title="forks">⑂ <b>2,478</b></span><span class="rp-stat" title="watchers">👁 <b>29</b></span><span class="rp-stat" title="prs">⑃ <b>296</b></span><span class="rp-stat" title="issues">● <b>73</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/ai">ai</a><a class="rp-topic" href="../tags/llm">llm</a><a class="rp-topic" href="../tags/mcp">mcp</a><a class="rp-topic" href="https://github.com/topics/news-aggregator">news-aggregator</a><a class="rp-topic" href="https://github.com/topics/rss">rss</a><a class="rp-topic" href="../tags/self-hosted">self-hosted</a><a class="rp-topic" href="https://github.com/topics/content-curation">content-curation</a><a class="rp-topic" href="../tags/typescript">typescript</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-09-28</span><a class="rp-meta-bit rp-home" href="https://aihot.news" rel="noopener">aihot.news</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="KKKKhazix__agent-autoloop"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/239590580?u=e36ff439fc89c0ec6eff33f6d1d5e869ce0b214f&amp;v=4" alt="" loading="lazy">agent-autoloop</a><a class="rp-same-link" href="KKKKhazix__human-writing"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/239590580?u=e36ff439fc89c0ec6eff33f6d1d5e869ce0b214f&amp;v=4" alt="" loading="lazy">human-writing</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/KKKKhazix/AIHOT">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+74</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1,278</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+3,951</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">10,654</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,478</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">29</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">296</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">73</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">一个自己找热点、自己写日报的网站框架。
+  把信源换成你的，把精选标准换成你的 KnowHow，它就是你的行业热点站。
+
+
+
+  简体中文 · English
+
+
+
+  跑起来 ·
+  改成你的行业 ·
+  它是怎么工作的 ·
+  文档 ·
+  社区交流
+
+
+
+
+ 这是什么
+
+AIHOT 是我做的一个 AI 热点网站。它每天从一批信源里收资料，用大模型先筛一遍、再独立打两次分，挑出真正值得看的，写成中文标题和摘要；把不同来源说的同一件事聚成一个事件，按有多少人在说排出热点；每天早上出一份日报。
+
+这个仓库是它的引擎和框架：网站、后台、精选流程、聚簇和热度算法，所有提示词的原文和入选门槛，都在这里。
+
+ 为什么开源
+
+这半年，很多做法律、做 HR、做金融、做贵金属的朋友问我，能不能也给他们的行业做一个。
+
+我做不了。我不懂你们的行业，不知道哪些信源有用，也不知道什么样的消息，对你们来说才叫热点。
+
+但你们懂。
+
+既然我没办法满足所有人，那就把火种交到大家自己手上。
+
+ 说在前面
+
+- 我不是专业的开发者。 我是设计师出身，半年前还看不太懂代码。这套代码是我和 AI 一起重写的，比以前干净了很多，但一定还有写得不好的地方。发现问题欢迎提 Issue，我不一定能很快回复，先说声抱歉。
+- 这是 AIHOT 的引擎。 它和 AIHOT 线上跑的是同一份引擎代码，同步时直接从线上导出，不是精心打磨的通用框架。以后 AIHOT 的更新，我会尽量同步过来，但没法保证每一次都同步。模型榜、Codex 重置监控、主题页的大事记这些只对 AI 行业有意义的功能，可安装的 Agent Skill 文件，以及 AIHOT 自己的运营工具，只留在 AIHOT 上；开源版给 Agent 的入口是 MCP 和站点上的 /agent 页面。
+- 里面没有 AIHOT 的信源名单和运营数据。 仓库带了 18 个公开的海外 AI 资讯源做示范，够你跑起来看效果；真正的信源，要换成你自己行业的。
+- 请不要用 AIHOT 的名字和 Logo。 换上你自己的名字，它就是你的站。
+
+ 它是怎么工作的
+
+
+  
+  
+
+
+一条资料从信源进来，先判重，再预筛；可能重要的独立打两次分，写好中文标题和摘要，和别的报道聚成事件，算进热度。X 帖子没有正文或只有链接时，保留原帖的链接和图片，不调用写作或翻译模型。分数过了门槛、又不是精选里已有新闻的重复，才进精选；日报按规则编出当天要闻，周报、月报再从日报里汇编。每一步的提示词都在 industry/prompts/，改标准不用改代码。详见 精选与校准。
+
+ 聚簇与热点
+
+
+  
+  
+
+
+同一件事，官网发一篇、媒体转十篇、X 上吵一天，读者只需要看到一次。AIHOT 把它们聚成一个事件：先用标题摘要的向量（没配向量服务时比文字重合度）在最近两周里找候选，再让模型判断是同一件事、后续进展，还是两件事；拿不准的合并，写入前再让模型复核一遍（复核可以单独换一家模型，设 GROUP_REVIEW_MODEL）。
+
+热度按事件算，不按文章算：48 小时内，每个独立来源只算一次，24 小时减半。重复抓取不会多算，一家媒体发十篇也只算一次，所以排在前面的，是真正有很多人在说的事。
+
+ 速度
+
+
+  
+  
+
+
+ 你会得到什么
+
+| | |
+|---|---|
+| 六种信源 | RSS、网页列表、JSON 接口、X 账号、微信公众号，以及你自己脚本推送进来的内容。信源分三级（官方一手、官方账号与准官方、媒体与个人），各级入选门槛不同；抓取频率按产出自动调整 |
+| 精选 | 预筛，同一份评分标准独立打两次分，再按信源分级的门槛决定入选；同一条新闻只占一条，换个说法的重复不进。提示词和门槛全部公开，全部可以改；用你自己标注的样本在 SelectBench 里校准 |
+| 写作 | 中文标题、答案先行的摘要、推荐理由，外文全文翻译；分类、标签和新闻事实单独抽取；防止模型把原文没提到的公司写进标题 |
+| 聚簇 | 不同来源报道的同一件事聚成一个事件，后续进展挂在同一个事件下，事件页有综述；进展和报道时间线可一起切换“最新在前”或“最早在前”；人工改过的归属不会被覆盖 |
+| 热点 | 按事件算热度：独立来源越多越靠前，X 上的讨论也算进来；和 6 小时前比，涨得快的标上升，新出现的标“新” |
+| 日报、周报、月报 | 每天出日报（默认 08:00），按规则编出当天要闻：一件事一条，报过的事只在有新进展时跟进，不调模型。每周一出周报、每月 1 日出月报（默认 10:00、10:30），从日报里汇编，模型只写总述和栏目导读。几点出刊在 site/site.ts 的 EDITION_TIMES 里改 |
+| 主题与搜索 | 公司、方向、内容形态三类主题页；标题摘要搜索和全文相关搜索 |
+| 阅读设置 | 深浅色外观、网站默认字体或浏览器默认字体；收藏和阅读设置只保存在本机，可以导出、导入备份 |
+| 给 Agent 用 | RSS（精选、全部、全文、日报、周报、月报）、公开 API、MCP、Agent Markdown、llms.txt，同一份内容给人看也给 Agent 用 |
+| 后台 | 信源管理与试抓、内容诊断与人工评分更正、精选评测、每一步单独换模型、付费服务的预算熔断、运行记录与告警 |
+
+ 看一眼
+
+
+  
+  
+
+
+截图来自用示范信源跑起来的本地站，站名是默认的 MyHOT。
+
+ 跑起来
+
+想创建自己的独立站点，可以先点 Use this template，再克隆你生成的仓库。想持续合并上游更新或贡献代码，建议先 Fork。下面的命令适合直接试用。
+
+需要 Docker、Node.js 24（运行 init-env 生成配置要用），和一个 OpenAI 兼容的模型 API Key（DeepSeek、千问、智谱都可以）。
+
+init-env 默认按 DeepSeek 配置。用千问、智谱等别家，照 .env.example 里的例子改 .env 的 LLM_BASE_URL、LLM_MODEL 和 LLM_EXTRA_JSON；用推理模型（先想再答）时，还要设 LLM_REASONING_TOKENS 给推理留出输出额度。
+
+bash
+git clone https://github.com/KKKKhazix/AIHOT.git myhot
+cd myhot
+node scripts/init-env.ts --llm-key 
+docker compose up -d --build
+
+
+打开 。后台在 /admin，管理员密码在 .env 的 ADMIN_PASSWORD 里。一两分钟后开始有内容，第一次导入的资料大约半小时处理完。
+
+机器上没有 Node、服务器在中国大陆、要配域名和 HTTPS，或者不用 Docker、直接在 Linux、macOS 上跑（Windows 用 WSL2），见 部署。
+
+站点跑起来后，打开 /agent 可以复制 MCP、RSS 或 API 的接入方式；只能读网页的 Agent 从 /api/v1/agent 开始；接口说明在 /openapi-v1.json。
+</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/KKKKhazix/AIHOT/issues/394"><span class="rp-item-num">#394</span><span class="rp-item-title">建议：当用户使用edge浏览器把网站做成edge应用时，应用程序图标很大很不协调</span><span class="rp-item-extra">1 comments · 2026-11-12</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/KKKKhazix/AIHOT/discussions/333"><span class="rp-item-num">#333</span><span class="rp-item-title">风向｜用 AIHOT 给企业服务从业者做的中文资讯站</span><span class="rp-item-extra">1 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/KKKKhazix/AIHOT/discussions/328"><span class="rp-item-num">#328</span><span class="rp-item-title">视频信息是否也做成这样的筛选机制</span><span class="rp-item-extra">2 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/KKKKhazix/AIHOT/discussions/306"><span class="rp-item-num">#306</span><span class="rp-item-title">用 AIHOT 做了站？在这里登记一下</span><span class="rp-item-extra">7 comments · 2026-11-01</span></a><a class="rp-item" href="https://github.com/KKKKhazix/AIHOT/discussions/284"><span class="rp-item-num">#284</span><span class="rp-item-title">把 21 条讨论按「谁解决了什么」重排了一次：三个协作提议</span><span class="rp-item-extra">4 comments · 2026-10-30</span></a><a class="rp-item" href="https://github.com/KKKKhazix/AIHOT/discussions/283"><span class="rp-item-num">#283</span><span class="rp-item-title">关于「列表页深度有上限」：要不要内置一种不绑定站点的搜索型信源？</span><span class="rp-item-extra">2 comments · 2026-10-30</span></a><a class="rp-item" href="https://github.com/KKKKhazix/AIHOT/discussions/272"><span class="rp-item-num">#272</span><span class="rp-item-title">大厂观察｜用 AIHOT 做的面向互联网职场人的信息站</span><span class="rp-item-extra">1 comments · 2026-10-26</span></a><a class="rp-item" href="https://github.com/KKKKhazix/AIHOT/discussions/254"><span class="rp-item-num">#254</span><span class="rp-item-title">感谢开源，做了一个类似的 https://hot.foxnan.com/ AI新闻</span><span class="rp-item-extra">1 comments · 2026-10-21</span></a><a class="rp-item" href="https://github.com/KKKKhazix/AIHOT/discussions/253"><span class="rp-item-num">#253</span><span class="rp-item-title">青砚：用 AIHOT 做的环保热点站，附带一套公众号免费采集方案</span><span class="rp-item-extra">1 comments · 2026-10-21</span></a></div></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (6)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/gitblog_01167/article/details/168451260" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">不用改一行代码！9 步把 AIHOT 改成你行业的专属热点站</span><span class="rp-item-extra">2026-10-19</span></a><a class="rp-item" href="https://blog.csdn.net/2401_88904194/article/details/167080809" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">知名自媒体博主：数字生命卡兹克开源，AIHOT：自动采集热点、编排行业日报，GitHub 累计约 5400 Star</span><span class="rp-item-extra">2026-10-03</span></a><a class="rp-item" href="https://www.sohu.com/a/1082056690_122066679" target="_blank" rel="noopener"><span class="rp-news-src">搜狐</span><span class="rp-item-title">开源100万月活级产品AIHOT，愿每个行业也都有自己的「AIHOT」</span><span class="rp-item-extra">2026-09-29</span></a><a class="rp-item" href="https://news.qq.com/rain/a/20260929A02UWS00" target="_blank" rel="noopener"><span class="rp-news-src">腾讯网</span><span class="rp-item-title">开源百万月活级产品AIHOT，愿每个行业也都有自己的「AIHOT」</span><span class="rp-item-extra">2026-09-29</span></a><a class="rp-item" href="https://news.qq.com/rain/a/20260508A02VO200" target="_blank" rel="noopener"><span class="rp-news-src">腾讯网</span><span class="rp-item-title">装了这个AI热点Skill之后，你再也不需要自己去刷AI新闻了</span><span class="rp-item-extra">2026-05-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE85WmZmQmFXNTZsOXRCN3RtcGFrdnRvYzNtZXVHaEM0QXN4M29qREg1eWlqenhWR0JXOHowdGFScTdNWGdYbW1UWDlWV3ZQQlFQVThN?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">华尔街见闻</span><span class="rp-item-title">说一个反常识的真相，Agent如今在真实工作场景的成功率依然很低</span><span class="rp-item-extra">2026-08-17</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (2)</h3><div class="rp-list"><a class="rp-item" href="https://note.com/quiet_eel6488/n/n4446d949156a?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">I Handed Over My 30-Minute Morning Information Gathering to AI: The Automated Trend Collection Framework &#x27;AIHOT&#x27;</span><span class="rp-item-extra">2026-10-20</span></a><a class="rp-item" href="https://www.remio.ai/post/anthropic-claude-design-reverse-engineered-prompts-released-on-github" target="_blank" rel="noopener"><span class="rp-news-src">remio.ai</span><span class="rp-item-title">Anthropic Claude Design Reverse Engineered Prompts Released on GitHub</span><span class="rp-item-extra">2026-07-05</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/KKKKhazix__AIHOT.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

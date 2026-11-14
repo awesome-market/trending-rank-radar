@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#playwright · GitHub Trending Rank Radar</title>
+<meta name="description" content="GitHub 标签 playwright 下的开源项目趋势榜 · 23 repos tagged playwright on GitHub · 独立采集 GitHub 仓库数据的开源趋势榜单">
+<meta name="keywords" content="GitHub trending, GitHub ranking, GitHub 排行榜, 开源榜单, trending repos, star growth, star history, 星标增长, github stars, open data, github pages, github actions, 开源项目, open source rankings">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/tags/playwright">
+<!-- bilingual content lives on ONE url — no per-lang alternates to declare -->
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="GitHub Trending Rank Radar" href="../feed.xml">
+<meta property="og:title" content="GitHub Trending Rank Radar">
+<meta property="og:description" content="GitHub 开源项目趋势榜单 · 每日双快照 · 十一榜单 · 历史回看 | Independent GitHub trend radar · twice-daily snapshots · 11 boards · bilingual">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zhuikan.com/tags/playwright">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zhuikan.com/assets/og.png">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "GitHub Trending Rank Radar",
+      "alternateName": "GitHub 开源项目趋势榜单",
+      "url": "https://zhuikan.com/",
+      "description": "Independent open-source GitHub trend radar: daily/weekly/monthly star growth & rate boards, new-repo and all-time charts, browsable by day, month and year. 独立采集 GitHub 仓库数据的开源趋势榜单。",
+      "inLanguage": ["zh-CN", "en"],
+      "isAccessibleForFree": true,
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "publisher": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "name": "GitHub Trending Rankings Dataset",
+      "description": "Twice-daily snapshots of tracked GitHub repositories with stars, forks, watchers, issues, PRs and releases; precomputed daily/weekly/monthly/new/all-time leaderboard JSON.",
+      "url": "https://zhuikan.com/data/index.json",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "isAccessibleForFree": true,
+      "temporalCoverage": "2026-11-09/..",
+      "creator": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      },
+      "distribution": [
+        {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://zhuikan.com/data/index.json"}
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body data-base="../" data-tag="playwright" data-tag-name="playwright">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到榜单</a>
+
+<noscript>
+  <div style="max-width:760px;margin:64px auto;padding:0 24px;font-family:system-ui,sans-serif;line-height:1.7;color:#333">
+    <h1>GitHub Trending Rank Radar</h1>
+    <p>独立采集 GitHub 仓库数据的开源趋势榜单：新星榜、日 / 周 / 月飙升榜与增速榜、总榜，支持按日 / 月 / 年回看历史。每日两次快照（UTC 02:00 / 14:00），榜单由快照差值计算。</p>
+    <p>An independent open-source GitHub trending radar: new repos, daily / weekly / monthly star-growth and rate boards, an all-time chart, and day / month / year history — snapshots taken twice daily (UTC 02:00 &amp; 14:00).</p>
+    <p>Machine-readable open data:
+      <a href="https://api-site.zhuikan.com/data/index.json">api-site/data/index.json</a> ·
+      <a href="../llms.txt">llms.txt</a> ·
+      <a href="../sitemap.xml">sitemap.xml</a> ·
+      <a href="https://github.com/awesome-market/trending-rank-radar">Source on GitHub</a>
+    </p>
+    <p><strong>榜单交互需要启用 JavaScript。This site requires JavaScript for the interactive boards.</strong></p>
+  </div>
+</noscript>
+
+<!-- shared svg gradient defs for sparklines -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <a class="hero-brand brand-home" href="../">
+      <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+        <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+        <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+        <g class="radar-sweep">
+          <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+        </g>
+      </svg>
+      <div>
+        <h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1>
+        <p class="hero-sub" data-i18n="hero.sub">GitHub 开源项目趋势榜单 · 每日双快照 · 八种榜单 · 日 / 月 / 年历史回看</p>
+      </div>
+    </a>
+    <div class="hero-meta">
+      <div class="search-wrap" id="searchWrap">
+        <select id="searchScope" class="search-scope" data-i18n-aria="search.scope.aria" aria-label="搜索范围">
+          <option value="repo" data-i18n="search.scope.repo">仓库</option>
+          <option value="news" data-i18n="search.scope.news">新闻</option>
+        </select>
+        <div class="search-box">
+          <svg class="search-ico" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"/></svg>
+          <input id="searchInput" class="search-input" type="search" autocomplete="off" spellcheck="false" data-i18n-ph="search.ph.repo" data-i18n-aria="search.ph.repo" aria-label="搜索" enterkeyhint="search">
+        </div>
+        <div class="search-drop" id="searchDrop" hidden></div>
+      </div>
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06-1.06a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.06l1.06-1.061a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero-viz" id="heroViz" data-enter>
+    <div class="hv-copy">
+      <p class="hv-kicker" data-i18n="hv.kicker">独立采集 · 开源数据</p>
+      <h2 class="hv-title" data-i18n="hv.title">独立追踪 GitHub 星标的每一次脉动</h2>
+      <p class="hv-sub" data-i18n="hv.sub">每日两次快照，用差值还原真实增长——不是又一份热榜镜像。</p>
+      <a class="hv-cta" href="#boardTabs" data-i18n="hv.cta">浏览今日榜单 →</a>
+    </div>
+    <div class="hv-side">
+      <div class="hv-chart" id="hvChart" aria-hidden="true"></div>
+      <div class="hv-cap" id="hvCap"></div>
+    </div>
+  </section>
+
+  <div class="controls" id="controls">
+    <div class="ctrl-row">
+      <nav class="board-tabs" id="boardTabs" data-i18n-aria="boards.aria" aria-label="榜单"></nav>
+    </div>
+    <div class="ctrl-row ctrl-sub">
+      <div class="seg" id="periodSeg" role="tablist" data-i18n-aria="period.aria" aria-label="时间维度">
+        <button data-period="day" class="seg-btn active" data-i18n="period.day">日</button>
+        <button data-period="month" class="seg-btn" data-i18n="period.month">月</button>
+        <button data-period="year" class="seg-btn" data-i18n="period.year">年</button>
+      </div>
+      <label class="sf-label" for="selDate" data-i18n="date.label">榜单日期</label>
+      <select id="selDate" class="sel" data-i18n-aria="date.aria" aria-label="日期"></select>
+      <div class="star-filter" role="group" data-i18n-aria="star.range" aria-label="Star 范围筛选">
+        <span class="sf-label" data-i18n="star.range">Star 范围</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="min">下限</span>
+          <input id="minK" type="number" min="0" step="1" value="1" class="sf-input" data-i18n-aria="minK.aria" aria-label="最小 Star 千数">
+        </label>
+        <span class="sf-sep">–</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="max">上限</span>
+          <input id="maxK" type="number" min="0" step="1" value="500" class="sf-input" data-i18n-aria="maxK.aria" aria-label="最大 Star 千数">
+        </label>
+        <span class="sf-unit">k</span>
+        <button id="applyFilter" class="sf-btn" data-i18n="apply">筛选</button>
+      </div>
+      <span class="window-info" id="windowInfo"></span>
+    </div>
+  </div>
+
+  <section id="content">
+    <div class="empty-state" id="emptyState" hidden>
+      <div class="empty-main">
+        <svg class="radar-big" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.4"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.3"/>
+          <g class="radar-sweep radar-sweep-lg">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <h2 data-i18n="empty.title">榜单积累中</h2>
+        <p id="emptyText" data-i18n="empty.text">快照数据正在积累，增长榜需要至少 2 个有效快照日。</p>
+        <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+        <p class="progress-hint" id="progressHint"></p>
+        <div class="empty-actions" id="emptyActions"></div>
+      </div>
+      <div class="empty-preview" id="emptyPreview"></div>
+    </div>
+
+    <div id="podiumWrap"></div>
+    <div id="listWrap"><!--SSR--><p style="color:var(--muted,#8b949e);font-size:13px;margin:0 4px 10px">2026-11-14 · #playwright · 23 <span class="i18n-zh">个仓库 · 按 star 排序</span><span class="i18n-en">repos · by stars</span></p><div class="rank-list"><div class="rank-row" data-fn="browser-use/browser-use"><span class="row-rank top">1</span><a class="row-avatar" href="../repos/browser-use__browser-use"><img src="https://avatars.githubusercontent.com/u/192012301?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/browser-use__browser-use"><span class="row-owner">browser-use</span><span class="row-sep">/</span><span class="row-repo">browser-use</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 120,944</span><span class="m" title="forks">⑂ 13,526</span><span class="m" title="watchers">👁 473</span><span class="m" title="issues">● 1,744</span><span class="m" title="prs">⑃ 4,159</span><span class="m" title="releases">▤ 151</span></div><div class="row-desc">Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/llm">llm</a><a class="row-tag" href="../tags/ai-agents">ai-agents</a><a class="row-tag" href="https://github.com/topics/ai-tools">ai-tools</a><a class="row-tag" href="https://github.com/topics/browser-automation">browser-automation</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 120,944</div></div></div><div class="rank-row" data-fn="D4Vinci/Scrapling"><span class="row-rank top">2</span><a class="row-avatar" href="../repos/D4Vinci__Scrapling"><img src="https://avatars.githubusercontent.com/u/20604835?u=09b7c5077ccfe08e9d863f07bfa60fa0168d0061&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/D4Vinci__Scrapling"><span class="row-owner">D4Vinci</span><span class="row-sep">/</span><span class="row-repo">Scrapling</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 102,472</span><span class="m" title="forks">⑂ 10,672</span><span class="m" title="watchers">👁 354</span><span class="m" title="issues">● 187</span><span class="m" title="prs">⑃ 322</span><span class="m" title="releases">▤ 55</span></div><div class="row-desc">🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don&#x27;t be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/crawler">crawler</a><a class="row-tag" href="https://github.com/topics/crawling">crawling</a><a class="row-tag" href="https://github.com/topics/crawling-python">crawling-python</a><a class="row-tag" href="../tags/playwright">playwright</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 102,472</div></div></div><div class="rank-row" data-fn="microsoft/playwright"><span class="row-rank top">3</span><a class="row-avatar" href="../repos/microsoft__playwright"><img src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/microsoft__playwright"><span class="row-owner">microsoft</span><span class="row-sep">/</span><span class="row-repo">playwright</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 100,106</span><span class="m" title="forks">⑂ 6,871</span><span class="m" title="watchers">👁 617</span><span class="m" title="issues">● 18,526</span><span class="m" title="prs">⑃ 21,925</span><span class="m" title="releases">▤ 169</span></div><div class="row-desc">Playwright is a framework for Web Testing and Automation. It allows testing Chromium, Firefox and WebKit with a single API.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/playwright">playwright</a><a class="row-tag" href="../tags/testing">testing</a><a class="row-tag" href="../tags/automation">automation</a><a class="row-tag" href="https://github.com/topics/webkit">webkit</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 100,106</div></div></div><div class="rank-row" data-fn="unclecode/crawl4ai"><span class="row-rank">4</span><a class="row-avatar" href="../repos/unclecode__crawl4ai"><img src="https://avatars.githubusercontent.com/u/12494079?u=413d68156031fdfe74861491b75ffe6d426d8228&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/unclecode__crawl4ai"><span class="row-owner">unclecode</span><span class="row-sep">/</span><span class="row-repo">crawl4ai</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 87,314</span><span class="m" title="forks">⑂ 9,107</span><span class="m" title="watchers">👁 423</span><span class="m" title="issues">● 1,085</span><span class="m" title="prs">⑃ 970</span><span class="m" title="releases">▤ 23</span></div><div class="row-desc">Official Crawl4AI Cloud: a hosted web scraping, extraction, and search API for AI agents. Free API key, 1,000 credits a month, no card. Fully open source: this repo is the Apache-2.0 crawler that powers it, and you can self-host it.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/ai">ai</a><a class="row-tag" href="../tags/ai-agents">ai-agents</a><a class="row-tag" href="https://github.com/topics/crawler">crawler</a><a class="row-tag" href="https://github.com/topics/data-extraction">data-extraction</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 87,314</div></div></div><div class="rank-row" data-fn="lightpanda-io/browser"><span class="row-rank">5</span><a class="row-avatar" href="../repos/lightpanda-io__browser"><img src="https://avatars.githubusercontent.com/u/145980012?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/lightpanda-io__browser"><span class="row-owner">lightpanda-io</span><span class="row-sep">/</span><span class="row-repo">browser</span></a></div><div class="row-meta"><span class="lang-tag">Zig</span><span class="m" title="stars">★ 42,005</span><span class="m" title="forks">⑂ 2,107</span><span class="m" title="watchers">👁 102</span><span class="m" title="issues">● 647</span><span class="m" title="prs">⑃ 3,968</span><span class="m" title="releases">▤ 28</span></div><div class="row-desc">Lightpanda: the headless browser designed for AI and automation</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/browser">browser</a><a class="row-tag" href="https://github.com/topics/cdp">cdp</a><a class="row-tag" href="https://github.com/topics/headless">headless</a><a class="row-tag" href="../tags/playwright">playwright</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 42,005</div></div></div><div class="rank-row" data-fn="microsoft/playwright-mcp"><span class="row-rank">6</span><a class="row-avatar" href="../repos/microsoft__playwright-mcp"><img src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/microsoft__playwright-mcp"><span class="row-owner">microsoft</span><span class="row-sep">/</span><span class="row-repo">playwright-mcp</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 39,608</span><span class="m" title="forks">⑂ 3,433</span><span class="m" title="watchers">👁 149</span><span class="m" title="issues">● 945</span><span class="m" title="prs">⑃ 881</span><span class="m" title="releases">▤ 75</span></div><div class="row-desc">Playwright MCP server</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/mcp">mcp</a><a class="row-tag" href="../tags/playwright">playwright</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 39,608</div></div></div><div class="rank-row" data-fn="CloakHQ/CloakBrowser"><span class="row-rank">7</span><a class="row-avatar" href="../repos/CloakHQ__CloakBrowser"><img src="https://avatars.githubusercontent.com/u/263128610?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/CloakHQ__CloakBrowser"><span class="row-owner">CloakHQ</span><span class="row-sep">/</span><span class="row-repo">CloakBrowser</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 32,880</span><span class="m" title="forks">⑂ 2,730</span><span class="m" title="watchers">👁 139</span><span class="m" title="issues">● 416</span><span class="m" title="prs">⑃ 168</span><span class="m" title="releases">▤ 31</span></div><div class="row-desc">Stealth Chromium that passes every bot detection test. Drop-in Playwright replacement with source-level fingerprint patches. 50+ tests passed.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/anti-detect">anti-detect</a><a class="row-tag" href="https://github.com/topics/bot-detection">bot-detection</a><a class="row-tag" href="https://github.com/topics/browser-automation">browser-automation</a><a class="row-tag" href="https://github.com/topics/chromium">chromium</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 32,880</div></div></div><div class="rank-row" data-fn="feder-cr/dots"><span class="row-rank">8</span><a class="row-avatar" href="../repos/feder-cr__dots"><img src="https://avatars.githubusercontent.com/u/85809106?u=3856599b073f377b3a5cad264598ee62fc784890&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/feder-cr__dots"><span class="row-owner">feder-cr</span><span class="row-sep">/</span><span class="row-repo">dots</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 32,513</span><span class="m" title="forks">⑂ 4,754</span><span class="m" title="watchers">👁 186</span><span class="m" title="issues">● 697</span><span class="m" title="prs">⑃ 716</span><span class="m" title="releases">▤ 31</span></div><div class="row-desc">AIHawk: AI job application bot, automated job search, job hunting, auto-apply to resume-matching jobs while you sleep.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/ai-agent">ai-agent</a><a class="row-tag" href="../tags/playwright">playwright</a><a class="row-tag" href="https://github.com/topics/browser-automation">browser-automation</a><a class="row-tag" href="../tags/automation">automation</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 32,513</div></div></div><div class="rank-row" data-fn="Skyvern-AI/skyvern"><span class="row-rank">9</span><a class="row-avatar" href="../repos/Skyvern-AI__skyvern"><img src="https://avatars.githubusercontent.com/u/141457985?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/Skyvern-AI__skyvern"><span class="row-owner">Skyvern-AI</span><span class="row-sep">/</span><span class="row-repo">skyvern</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 23,409</span><span class="m" title="forks">⑂ 2,240</span><span class="m" title="watchers">👁 100</span><span class="m" title="issues">● 422</span><span class="m" title="prs">⑃ 8,952</span><span class="m" title="releases">▤ 161</span></div><div class="row-desc">Automate browser based workflows with AI</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/api">api</a><a class="row-tag" href="../tags/automation">automation</a><a class="row-tag" href="../tags/browser">browser</a><a class="row-tag" href="https://github.com/topics/computer">computer</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 23,409</div></div></div><div class="rank-row" data-fn="Usagi-org/ai-goofish-monitor"><span class="row-rank">10</span><a class="row-avatar" href="../repos/Usagi-org__ai-goofish-monitor"><img src="https://avatars.githubusercontent.com/u/233881235?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/Usagi-org__ai-goofish-monitor"><span class="row-owner">Usagi-org</span><span class="row-sep">/</span><span class="row-repo">ai-goofish-monitor</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 19,860</span><span class="m" title="forks">⑂ 3,218</span><span class="m" title="watchers">👁 72</span><span class="m" title="issues">● 331</span><span class="m" title="prs">⑃ 192</span><span class="m" title="releases">▤ 10</span></div><div class="row-desc">基于 Playwright 和AI实现的闲鱼多任务实时/定时监控与智能分析系统，配备了功能完善的后台管理UI。帮助用户从闲鱼海量商品中，找到心仪产品。</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/ai">ai</a><a class="row-tag" href="../tags/playwright">playwright</a><a class="row-tag" href="../tags/automation">automation</a><a class="row-tag" href="../tags/gemini">gemini</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 19,860</div></div></div><div class="rank-row" data-fn="getmaxun/maxun"><span class="row-rank">11</span><a class="row-avatar" href="../repos/getmaxun__maxun"><img src="https://avatars.githubusercontent.com/u/139582646?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/getmaxun__maxun"><span class="row-owner">getmaxun</span><span class="row-sep">/</span><span class="row-repo">maxun</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 18,296</span><span class="m" title="forks">⑂ 1,580</span><span class="m" title="watchers">👁 85</span><span class="m" title="issues">● 334</span><span class="m" title="prs">⑃ 931</span><span class="m" title="releases">▤ 50</span></div><div class="row-desc">Turn any website into a structured API. Extract, automate, search and monitor the web.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/automation">automation</a><a class="row-tag" href="https://github.com/topics/no-code">no-code</a><a class="row-tag" href="https://github.com/topics/scraper">scraper</a><a class="row-tag" href="https://github.com/topics/web-scraper">web-scraper</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 18,296</div></div></div><div class="rank-row" data-fn="miuuyy/codex-chatgpt-web"><span class="row-rank">12</span><a class="row-avatar" href="../repos/miuuyy__codex-chatgpt-web"><img src="https://avatars.githubusercontent.com/u/147659719?u=c58af2df3fd9b7c304b663b18a5d10ff54e14cb5&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/miuuyy__codex-chatgpt-web"><span class="row-owner">miuuyy</span><span class="row-sep">/</span><span class="row-repo">codex-chatgpt-web</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 15,719</span><span class="m" title="forks">⑂ 1,226</span><span class="m" title="watchers">👁 44</span><span class="m" title="issues">● 535</span><span class="m" title="prs">⑃ 324</span><span class="m" title="releases">▤ 67</span></div><div class="row-desc">Use ChatGPT Web (including Pro) as a native model in Codex — with context, tools, streaming and images, without using Codex quota.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/chatgpt">chatgpt</a><a class="row-tag" href="https://github.com/topics/chatgpt-pro">chatgpt-pro</a><a class="row-tag" href="../tags/codex">codex</a><a class="row-tag" href="../tags/mcp">mcp</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 15,719</div></div></div><div class="rank-row" data-fn="checkly/headless-recorder"><span class="row-rank">13</span><a class="row-avatar" href="../repos/checkly__headless-recorder"><img src="https://avatars.githubusercontent.com/u/25982255?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/checkly__headless-recorder"><span class="row-owner">checkly</span><span class="row-sep">/</span><span class="row-repo">headless-recorder</span></a></div><div class="row-meta"><span class="lang-tag">JavaScript</span><span class="m" title="stars">★ 15,312</span><span class="m" title="forks">⑂ 730</span><span class="m" title="watchers">👁 11</span><span class="m" title="issues">● 107</span><span class="m" title="prs">⑃ 124</span><span class="m" title="releases">▤ 20</span></div><div class="row-desc">Chrome extension that records your browser interactions and generates a Playwright or Puppeteer script.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/puppeteer">puppeteer</a><a class="row-tag" href="https://github.com/topics/chrome">chrome</a><a class="row-tag" href="../tags/chrome-extension">chrome-extension</a><a class="row-tag" href="../tags/vue">vue</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 15,312</div></div></div><div class="rank-row" data-fn="daijro/camoufox"><span class="row-rank">14</span><a class="row-avatar" href="../repos/daijro__camoufox"><img src="https://avatars.githubusercontent.com/u/72637910?u=c27bacf931bf944d0ac996cda5d74465e0e388fb&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/daijro__camoufox"><span class="row-owner">daijro</span><span class="row-sep">/</span><span class="row-repo">camoufox</span></a></div><div class="row-meta"><span class="lang-tag">C</span><span class="m" title="stars">★ 13,252</span><span class="m" title="forks">⑂ 1,117</span><span class="m" title="watchers">👁 63</span><span class="m" title="issues">● 596</span><span class="m" title="prs">⑃ 289</span><span class="m" title="releases">▤ 45</span></div><div class="row-desc">🦊 Anti-detect browser</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/antidetect">antidetect</a><a class="row-tag" href="https://github.com/topics/antidetect-browser">antidetect-browser</a><a class="row-tag" href="https://github.com/topics/fingerprint">fingerprint</a><a class="row-tag" href="https://github.com/topics/firefox">firefox</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 13,252</div></div></div><div class="rank-row" data-fn="apify/crawlee-python"><span class="row-rank">15</span><a class="row-avatar" href="../repos/apify__crawlee-python"><img src="https://avatars.githubusercontent.com/u/24586296?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/apify__crawlee-python"><span class="row-owner">apify</span><span class="row-sep">/</span><span class="row-repo">crawlee-python</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 9,668</span><span class="m" title="forks">⑂ 832</span><span class="m" title="watchers">👁 45</span><span class="m" title="issues">● 636</span><span class="m" title="prs">⑃ 1,717</span><span class="m" title="releases">▤ 82</span></div><div class="row-desc">Crawlee—A web scraping and browser automation library for Python to build reliable crawlers. Extract structured data with LLMs via Pydantic AI, or control the browser in natural language with Stagehand. Works with BeautifulSoup, Parsel, Playwright, and raw HTTP. Download HTML, PDF, images, and other files. Proxy rotation included.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/apify">apify</a><a class="row-tag" href="../tags/automation">automation</a><a class="row-tag" href="https://github.com/topics/beautifulsoup">beautifulsoup</a><a class="row-tag" href="https://github.com/topics/crawler">crawler</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 9,668</div></div></div><div class="rank-row" data-fn="ntegrals/openbrowser"><span class="row-rank">16</span><a class="row-avatar" href="../repos/ntegrals__openbrowser"><img src="https://avatars.githubusercontent.com/u/26648900?u=c930fdd6d2603816506104ce36070e3ae168ea50&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/ntegrals__openbrowser"><span class="row-owner">ntegrals</span><span class="row-sep">/</span><span class="row-repo">openbrowser</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 9,589</span><span class="m" title="forks">⑂ 867</span><span class="m" title="watchers">👁 248</span><span class="m" title="issues">● 0</span><span class="m" title="prs">⑃ 35</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">Let AI agents browse the web. An autonomous toolkit for browser-based AI agents.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/ai-agents">ai-agents</a><a class="row-tag" href="../tags/automation">automation</a><a class="row-tag" href="../tags/claude">claude</a><a class="row-tag" href="../tags/playwright">playwright</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 9,589</div></div></div><div class="rank-row" data-fn="artilleryio/artillery"><span class="row-rank">17</span><a class="row-avatar" href="../repos/artilleryio__artillery"><img src="https://avatars.githubusercontent.com/u/12608521?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/artilleryio__artillery"><span class="row-owner">artilleryio</span><span class="row-sep">/</span><span class="row-repo">artillery</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 9,121</span><span class="m" title="forks">⑂ 576</span><span class="m" title="watchers">👁 66</span><span class="m" title="issues">● 1,305</span><span class="m" title="prs">⑃ 1,242</span><span class="m" title="releases">▤ 111</span></div><div class="row-desc">The complete load testing platform. Everything you need for production-grade load tests. Serverless &amp; distributed. Load test with Playwright. Load test HTTP APIs, GraphQL, WebSocket, and more. Use any Node.js module.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/serverless">serverless</a><a class="row-tag" href="https://github.com/topics/load">load</a><a class="row-tag" href="../tags/api">api</a><a class="row-tag" href="../tags/playwright">playwright</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 9,121</div></div></div><div class="rank-row" data-fn="belnadris/angular-electron"><span class="row-rank">18</span><a class="row-avatar" href="../repos/belnadris__angular-electron"><img src="https://avatars.githubusercontent.com/u/10827551?u=9bdbf58d5d34f04ebb00f52498e9bd401dd7b95c&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/belnadris__angular-electron"><span class="row-owner">belnadris</span><span class="row-sep">/</span><span class="row-repo">angular-electron</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 5,708</span><span class="m" title="forks">⑂ 1,341</span><span class="m" title="watchers">👁 170</span><span class="m" title="issues">● 630</span><span class="m" title="prs">⑃ 276</span><span class="m" title="releases">▤ 4</span></div><div class="row-desc">Ultra-fast bootstrapping with Angular and Electron :speedboat:</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/angular">angular</a><a class="row-tag" href="../tags/electron">electron</a><a class="row-tag" href="https://github.com/topics/native-libraries">native-libraries</a><a class="row-tag" href="https://github.com/topics/sass">sass</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,708</div></div></div><div class="rank-row" data-fn="antiwork/shortest"><span class="row-rank">19</span><a class="row-avatar" href="../repos/antiwork__shortest"><img src="https://avatars.githubusercontent.com/u/1178890?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/antiwork__shortest"><span class="row-owner">antiwork</span><span class="row-sep">/</span><span class="row-repo">shortest</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 5,700</span><span class="m" title="forks">⑂ 340</span><span class="m" title="watchers">👁 31</span><span class="m" title="issues">● 0</span><span class="m" title="prs">⑃ 283</span><span class="m" title="releases">▤ 12</span></div><div class="row-desc">QA via natural language AI tests</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/anthropic">anthropic</a><a class="row-tag" href="../tags/automation">automation</a><a class="row-tag" href="https://github.com/topics/chromium">chromium</a><a class="row-tag" href="https://github.com/topics/e2e-testing">e2e-testing</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,700</div></div></div><div class="rank-row" data-fn="Manavarya09/design-extract"><span class="row-rank">20</span><a class="row-avatar" href="../repos/Manavarya09__design-extract"><img src="https://avatars.githubusercontent.com/u/144777973?u=2082a495f519bc3e7dd2946b578da249fe53608b&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/Manavarya09__design-extract"><span class="row-owner">Manavarya09</span><span class="row-sep">/</span><span class="row-repo">design-extract</span></a></div><div class="row-meta"><span class="lang-tag">HTML</span><span class="m" title="stars">★ 5,078</span><span class="m" title="forks">⑂ 421</span><span class="m" title="watchers">👁 15</span><span class="m" title="issues">● 43</span><span class="m" title="prs">⑃ 167</span><span class="m" title="releases">▤ 36</span></div><div class="row-desc">Extract any website&#x27;s complete design system with one command. DTCG tokens, semantic+primitive+composite, MCP server for Claude Code/Cursor/Windsurf, multi-platform emitters (iOS SwiftUI, Android Compose, Flutter, WordPress), Tailwind v4, Figma variables, shadcn/ui, CSS health audit, WCAG remediation, Chrome extension. MIT, Playwright, Node 20+.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/ai">ai</a><a class="row-tag" href="https://github.com/topics/claude-code-plugin">claude-code-plugin</a><a class="row-tag" href="../tags/cli">cli</a><a class="row-tag" href="../tags/css">css</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,078</div></div></div><div class="rank-row" data-fn="EricTechPro/super-board"><span class="row-rank">21</span><a class="row-avatar" href="../repos/EricTechPro__super-board"><img src="https://avatars.githubusercontent.com/u/146783360?u=8fd7023dc45809e884406c776a39fc73e91ed102&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/EricTechPro__super-board"><span class="row-owner">EricTechPro</span><span class="row-sep">/</span><span class="row-repo">super-board</span></a></div><div class="row-meta"><span class="lang-tag">HTML</span><span class="m" title="stars">★ 676</span><span class="m" title="forks">⑂ 189</span><span class="m" title="watchers">👁 11</span><span class="m" title="issues">● 42</span><span class="m" title="prs">⑃ 65</span><span class="m" title="releases">▤ 8</span></div><div class="row-desc">Autonomous GitHub Project build → QA → review loop for Claude Code. One-line install.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/agentic-coding">agentic-coding</a><a class="row-tag" href="../tags/ai">ai</a><a class="row-tag" href="../tags/ai-agents">ai-agents</a><a class="row-tag" href="../tags/automation">automation</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 676</div></div></div><div class="rank-row" data-fn="HarimxChoi/google-surf-mcp"><span class="row-rank">22</span><a class="row-avatar" href="../repos/HarimxChoi__google-surf-mcp"><img src="https://avatars.githubusercontent.com/u/52551321?u=a2d4115cfdcf4f83826fe229355e6a6aa631c9f6&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/HarimxChoi__google-surf-mcp"><span class="row-owner">HarimxChoi</span><span class="row-sep">/</span><span class="row-repo">google-surf-mcp</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 300</span><span class="m" title="forks">⑂ 32</span><span class="m" title="watchers">👁 1</span><span class="m" title="issues">● 4</span><span class="m" title="prs">⑃ 10</span><span class="m" title="releases">▤ 37</span></div><div class="row-desc">Turn Google Search, Papers, and Codebases into an Automatic Local Knowledge Graph for AI Agents.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/google-search">google-search</a><a class="row-tag" href="../tags/mcp">mcp</a><a class="row-tag" href="https://github.com/topics/model-context-protocol">model-context-protocol</a><a class="row-tag" href="../tags/playwright">playwright</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 300</div></div></div><div class="rank-row" data-fn="prod-forge/frontend"><span class="row-rank">23</span><a class="row-avatar" href="../repos/prod-forge__frontend"><img src="https://avatars.githubusercontent.com/u/265806694?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/prod-forge__frontend"><span class="row-owner">prod-forge</span><span class="row-sep">/</span><span class="row-repo">frontend</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 246</span><span class="m" title="forks">⑂ 26</span><span class="m" title="watchers">👁 10</span><span class="m" title="issues">● 10</span><span class="m" title="prs">⑃ 2</span><span class="m" title="releases">▤ 2</span></div><div class="row-desc">Prod Forge frontend: React web client, Expo mobile client and design system with production-grade quality gates</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/design-system">design-system</a><a class="row-tag" href="https://github.com/topics/expo">expo</a><a class="row-tag" href="https://github.com/topics/frontend-architecture">frontend-architecture</a><a class="row-tag" href="https://github.com/topics/monorepo">monorepo</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 246</div></div></div></div><!--/SSR--></div>
+
+    <details class="month-detail" id="monthDetail">
+      <summary data-i18n="month.top10">当月每日飙升 Top10 摘要</summary>
+      <div id="monthTop10"><!--SSRMT--><!--/SSRMT--></div>
+    </details>
+  </section>
+
+  <section id="yearWrap">
+    <h2 class="section-title" data-i18n="year.entry">年度月度榜入口</h2>
+    <div class="month-grid" id="monthGrid"><!--SSRMG--><!--/SSRMG--></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/app.js?v=d2fbeca0"></script>
+</body>
+</html>

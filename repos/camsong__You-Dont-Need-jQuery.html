@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>camsong/You-Dont-Need-jQuery · GitHub Trending Rank Radar</title>
+<meta name="description" content="Examples of how to do query, style, dom, ajax, event etc like jQuery with plain javascript.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="You-Dont-Need-jQuery, camsong, camsong/You-Dont-Need-jQuery, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/camsong__You-Dont-Need-jQuery">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="camsong/You-Dont-Need-jQuery · GitHub Trending Rank Radar">
+<meta property="og:description" content="Examples of how to do query, style, dom, ajax, event etc like jQuery with plain javascript.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/camsong__You-Dont-Need-jQuery">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "camsong/You-Dont-Need-jQuery", "codeRepository": "https://github.com/camsong/You-Dont-Need-jQuery", "url": "https://zhuikan.com/repos/camsong__You-Dont-Need-jQuery", "description": "Examples of how to do query, style, dom, ajax, event etc like jQuery with plain javascript.", "author": {"@type": "Organization", "name": "camsong", "url": "https://github.com/camsong"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2015-11-21"}</script>
+</head>
+<body data-repo="camsong/You-Dont-Need-jQuery" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">camsong/You-Dont-Need-jQuery</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="camsong__You-Dont-Need-jQuery"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/948896?u=85a3066e49484f8c15bb9b9c40cbd331320813b8&amp;v=4&s=300" width="300" height="300" alt="camsong avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">You-Dont-Need-jQuery</div>
+      <a class="rp-side-owner" href="https://github.com/camsong">camsong</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/camsong">camsong</a>
+        <span class="rp-sep">/</span><span class="rp-name">You-Dont-Need-jQuery</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Examples of how to do query, style, dom, ajax, event etc like jQuery with plain javascript.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>20,106</b></span><span class="rp-stat" title="forks">⑂ <b>1,700</b></span><span class="rp-stat" title="watchers">👁 <b>509</b></span><span class="rp-stat" title="prs">⑃ <b>207</b></span><span class="rp-stat" title="issues">● <b>73</b></span><span class="rp-stat" title="releases">▤ <b>2</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2015-11-21</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/camsong/You-Dont-Need-jQuery">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Release 3.0</span><a class="rp-dl-a" href="https://github.com/camsong/You-Dont-Need-jQuery/releases/tag/v3.0">Release-3.0 ↓</a><span class="rp-dl-ver">3.0</span><span class="rp-dl-date">2026-11-06</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-6</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-13</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">20,106</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,700</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">509</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">207</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">73</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">2</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">你也许不需要 jQuery （You (Might) Don&#x27;t Need jQuery）
+
+前端发展很快，现代浏览器原生 API 已经足够好用。我们并不需要为了操作 DOM、Event 等再学习一下 jQuery 的 API。同时由于 React、Angular、Vue 等框架的流行，直接操作 DOM 不再是好的模式，jQuery 使用场景大大减少。本项目总结了大部分 jQuery API 替代的方法。
+
+示例代码面向当前的常青浏览器（Chrome、Edge、Firefox、Safari）。微软已停止支持 Internet Explorer，所以针对 IE 的兼容写法都已删除。如果仍需要，请查看最后一个兼容 IE 的版本。
+
+ 目录
+
+1. 翻译
+2. Query 选择器
+3. CSS &amp; Style
+4. DOM 操作
+5. Ajax
+6. 事件
+7. 实用工具
+8. Promises
+9. 动画
+10. 替代品
+11. 浏览器支持
+
+ 翻译
+
+ 한국어
+ 正體中文
+ 简体中文
+ Bahasa Melayu
+ Bahasa Indonesia
+ Português(PT-BR)
+ Tiếng Việt Nam
+ Español
+ Русский
+ Кыргызча
+ Türkçe
+ Italiano
+ Français
+ 日本語
+ Polski
+
+ Query 选择器
+
+常用的 class、id、属性 选择器都可以使用 document.querySelector 或 document.querySelectorAll 替代。区别是
+ document.querySelector 返回第一个匹配的 Element
+ document.querySelectorAll 返回所有匹配的 Element 组成的静态 NodeList。它支持 forEach，也可以用 Array.from(document.querySelectorAll(selector)) 或 makeArray 里的其他方法转成 Array
+ 如果匹配不到任何 Element，jQuery 返回空的 jQuery 对象，document.querySelectorAll 返回空的 NodeList，而 document.querySelector 返回 null，注意空指针异常。
+
+ 注意：document.getElementById、document.getElementsByClassName 和 document.getElementsByTagName 比 querySelector 略快，但 getElementsBy 返回的是动态（live）HTMLCollection，会随 DOM 变化而变化。除非实测发现性能瓶颈，否则优先用 querySelector。
+
+- 1.0  选择器查询
+
+  js
+  // jQuery
+  $(&#x27;selector&#x27;);
+
+  // Native
+  document.querySelectorAll(&#x27;selector&#x27;);
+  
+
+- 1.1  class 查询
+
+  js
+  // jQuery
+  $(&#x27;.class&#x27;);
+
+  // Native
+  document.querySelectorAll(&#x27;.class&#x27;);
+
+  // or
+  document.getElementsByClassName(&#x27;class&#x27;);
+  
+
+- 1.2  id 查询
+
+  js
+  // jQuery
+  $(&#x27;id&#x27;);
+
+  // Native
+  document.querySelector(&#x27;id&#x27;);
+
+  // or
+  document.getElementById(&#x27;id&#x27;);
+  
+
+- 1.3  属性查询
+
+  js
+  // jQuery
+  $(&#x27;a[target=_blank]&#x27;);
+
+  // Native
+  document.querySelectorAll(&#x27;a[target=_blank]&#x27;);
+  
+
+- 1.4  后代查询
+
+  js
+  // jQuery
+  $el.find(&#x27;li&#x27;);
+
+  // Native
+  el.querySelectorAll(&#x27;li&#x27;);
+  
+
+- 1.5  兄弟及上下元素
+
+  + 兄弟元素
+
+    js
+    // jQuery
+    $el.siblings();
+
+    // Native
+    [...el.parentNode.children].filter((child) =
+      child !== el
+    );
+    
+
+  + 上一个元素
+
+    js
+    // jQuery
+    $el.prev();
+
+    // Native
+    el.previousElementSibling;
+    
+
+  + 下一个元素
+
+    js
+    // jQuery
+    $el.next();
+
+    // Native
+    el.nextElementSibling;
+    
+
+  + 之前所有的兄弟元素
+
+    js
+    // jQuery（可选的过滤选择器）
+    $el.prevAll($filter);
+
+    // Native（可选的过滤函数）
+    function getPreviousSiblings(elem, filter) {
+      const sibs = [];
+      while ((elem = elem.previousElementSibling)) {
+        if (!filter || filter(elem)) sibs.push(elem);
+      }
+      return sibs;
+    }
+    
+
+  + 之后所有的兄弟元素
+
+    js
+    // jQuery（可选的过滤选择器）
+    $el.nextAll($filter);
+
+    // Native（可选的过滤函数）
+    function getNextSiblings(elem, filter) {
+      const sibs = [];
+      while ((elem = elem.nextElementSibling)) {
+        if (!filter || filter(elem)) sibs.push(elem);
+      }
+      return sibs;
+    }
+    
+
+    过滤函数示例：
+
+    js
+    function exampleFilter(elem) {
+      switch (elem.nodeName.toUpperCase()) {
+        case &#x27;DIV&#x27;:
+          return true;
+        case &#x27;SPAN&#x27;:
+          return true;
+        default:
+          r</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/camsong/You-Dont-Need-jQuery/issues/288"><span class="rp-item-num">#288</span><span class="rp-item-title">now AI is good ,I can really dont kown everything!</span><span class="rp-item-extra">0 comments · 2026-11-09</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/camsong/You-Dont-Need-jQuery/releases"><b>Release 3.0</b> <span class="rp-rel-tag">v3.0</span> <span class="rp-item-extra">2026-11-06</span></a><pre class="rp-pre">The guide now targets evergreen browsers. Every snippet that was changed is checked against jQuery 4 by a test.
+
+ Breaking: Internet Explorer is no longer supported
+
+Snippets target the latest Chrome, Edge, Firefox, Safari and Opera. IE-specific fallbacks are gone: vendor-prefixed matchesSelector, the closest polyfill, Array.prototype..call, createEvent / initCustomEvent, pageYOffset, parentNode.removeChild. If you still need IE, use the last IE-compatible version or v2.0.
+
+ Native one-liners
+
+| jQuery | Native |
+|---|---|
+| remove / insertBefore / insertAfter | el.remove() / el.before() / el.</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/camsong__You-Dont-Need-jQuery.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

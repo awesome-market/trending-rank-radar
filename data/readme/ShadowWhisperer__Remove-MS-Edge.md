@@ -1,0 +1,46 @@
+![License](https://img.shields.io/github/license/ShadowWhisperer/Remove-MS-Edge)  
+
+```diff
+- Removing Edge may cause update failure loop. 
+  Install Edge, install all Windows updates, then remove Edge. 
+```
+
+**Requires WebView**  
+- Barracuda Firewall Admin
+- Eclipse IDEs
+- Gmpublisher (Garry's Mod)  
+- ImageGlass 9 (while earlier and later versions do not)
+- Lenovo USB Recovery Creator Tool
+- Microsoft Photos App (Edit)
+- PowerToys File Explorer add-ons utility (Alternative: [win-svg-thumbs-rust](https://github.com/ThioJoe/win-svg-thumbs-rust))
+- Quicken
+- Rex Atmos for MSFS 2020
+- Roblox
+- Safing Portmaster
+- ShowMyPC
+- Windows Mail  
+- Xbox App
+- Tauri-based apps (OmniGet, Readest, etc.)
+
+<br>  
+
+**Build .exe version from source**   Depreciated  
+```pyinstaller --onefile --noconsole -i icon.ico -n Remove-Edge.exe edge.py --add-data "setup.x64.exe;." --add-data "setup.x86.exe;."```  
+
+<br>
+
+**Batch Version** (Mostly by [XakerTwo](https://github.com/XakerTwo))  
+[Both](https://raw.githubusercontent.com/ShadowWhisperer/Remove-MS-Edge/refs/heads/main/Batch/Both.bat) - Removes both Edge, and WebView.  
+[Edge](https://raw.githubusercontent.com/ShadowWhisperer/Remove-MS-Edge/refs/heads/main/Batch/Edge.bat) - Removes Edge and Appx version of Edge only.  
+[Edge-Appx](https://raw.githubusercontent.com/ShadowWhisperer/Remove-MS-Edge/refs/heads/main/Batch/Edge-Appx.bat) - Remove Appx version of Edge only. Leave Webview / Chrome version alone.  
+
+<br>
+
+**Additional Files**  
+Install [Edge](https://www.microsoft.com/en-us/edge/business/download?form=MA13FJ)  
+Install [WebView](https://developer.microsoft.com/en-us/microsoft-edge/webview2/)  
+
+Fix Update issues: [Batch Script](https://raw.githubusercontent.com/ShadowWhisperer/Fix-WinUpdates/refs/heads/main/Fix%20Updates.bat)  
+
+**Restore "Internet Explorer Compatibility" in Edge settings**  
+```reg add "HKLM\SOFTWARE\Microsoft\Internet Explorer\EdgeIntegration" /v "Supported" /t REG_DWORD /d 1 /f```  

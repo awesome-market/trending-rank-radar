@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tenngoxars/WeMD · GitHub Trending Rank Radar</title>
+<meta name="description" content="更优雅的 Markdown 公众号编辑器">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="WeMD, tenngoxars, tenngoxars/WeMD, github stars, github trending, star growth, star history, 开源项目, 星标增长, markdown-editor, markdown-it, markdown-to-html">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/tenngoxars__WeMD">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="tenngoxars/WeMD · GitHub Trending Rank Radar">
+<meta property="og:description" content="更优雅的 Markdown 公众号编辑器">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/tenngoxars__WeMD">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "tenngoxars/WeMD", "codeRepository": "https://github.com/tenngoxars/WeMD", "url": "https://zhuikan.com/repos/tenngoxars__WeMD", "description": "更优雅的 Markdown 公众号编辑器", "author": {"@type": "Organization", "name": "tenngoxars", "url": "https://github.com/tenngoxars"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2025-11-27", "keywords": "markdown-editor,markdown-it,markdown-to-html"}</script>
+</head>
+<body data-repo="tenngoxars/WeMD" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">tenngoxars/WeMD</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="tenngoxars__WeMD"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/22515339?u=331ee43b63e92c561d9f3c80b74357478e691c51&amp;v=4&s=300" width="300" height="300" alt="tenngoxars avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">WeMD</div>
+      <a class="rp-side-owner" href="https://github.com/tenngoxars">tenngoxars</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/tenngoxars">tenngoxars</a>
+        <span class="rp-sep">/</span><span class="rp-name">WeMD</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">更优雅的 Markdown 公众号编辑器</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>993</b></span><span class="rp-stat" title="forks">⑂ <b>146</b></span><span class="rp-stat" title="watchers">👁 <b>9</b></span><span class="rp-stat" title="prs">⑃ <b>11</b></span><span class="rp-stat" title="issues">● <b>107</b></span><span class="rp-stat" title="releases">▤ <b>43</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/markdown-editor">markdown-editor</a><a class="rp-topic" href="https://github.com/topics/markdown-it">markdown-it</a><a class="rp-topic" href="https://github.com/topics/markdown-to-html">markdown-to-html</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2025-11-27</span><a class="rp-meta-bit rp-home" href="https://wemd.app" rel="noopener">wemd.app</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/tenngoxars/WeMD">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">WeMD v1.6.1</span><a class="rp-dl-a" href="https://github.com/tenngoxars/WeMD/releases/tag/v1.6.1">WeMD-1.6.1 ↓</a><span class="rp-dl-ver">1.6.1</span><span class="rp-dl-date">2026-11-04</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">993</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">146</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">9</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">11</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">107</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">43</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">WeMD
+
+
+  用 Markdown 写公众号，复制即排好版。
+  本地优先，无需登录，开源免费。
+
+
+
+  在线使用 ·
+  下载桌面版 ·
+  使用文档 ·
+  官网
+
+
+
+  
+  
+
+
+
+  
+  
+
+
+ 功能
+
+写作
+
+- 支持 GFM、表格、代码高亮、数学公式、Mermaid 图表和滑动图组
+- 一键格式化：中英文之间加空格、标点转全角、引号转直角引号「」、清理多余空白，每条规则可单独开关
+- 搜索替换支持正则和全词匹配
+
+排版
+
+- 内置十余款文章主题，可用可视化设计器调整，也可直接写 CSS
+- 预览公众号深色模式下的效果，接近微信实机表现（算法原理）
+- 界面支持亮色和深色两种模式
+
+AI 写作辅助
+
+- 选中一段文字改写：润色、精简、口语化、换语气，或输入自定义要求
+- 全文审阅：从开头、结构、节奏、表达和结尾五个方面给出修改建议
+- 起标题：按多个方向生成标题候选
+- 填入自己的 API Key 即可使用，请求从浏览器直接发到服务商，不经过 WeMD。支持 DeepSeek、Kimi、通义千问、硅基流动、模力方舟、OpenAI、OpenRouter 和自定义 OpenAI 兼容服务
+
+发布
+
+- 一键复制到公众号，粘贴后尽量保持预览效果
+- 导出 HTML，或按手机宽度导出 PNG 长图
+- 图床支持官方图床、七牛云、阿里云、腾讯云和 S3 兼容服务
+
+本地优先
+
+- 文章存放在浏览器或你选择的本地文件夹里，无需注册登录
+- 本地文件夹模式支持多级目录，文件树可一键展开或折叠
+
+ 开始使用
+
+ 在线使用
+
+打开 edit.wemd.app 即可写作，文章只保存在本地。
+
+网页版支持 PWA：在 Chrome 或 Edge 地址栏点击安装图标，就能把 WeMD 安装到桌面或手机主屏，安装后可离线写作（上传图片仍需联网）。
+
+ 桌面版
+
+从 Releases 下载对应平台的安装包：
+
+| 平台                   | 安装包                        |
+| ---------------------- | ----------------------------- |
+| macOS（Apple Silicon） | WeMD--arm64-mac.zip |
+| Windows                | WeMD.Setup..exe     |
+| Linux                  | WeMD-.AppImage      |
+
+Intel Mac 暂无安装包，可以使用网页版或从源码构建。
+
+
+首次打开遇到提示？
+
+- macOS 提示「应用已损坏」：在终端执行 xattr -cr /Applications/WeMD.app
+- Windows 提示「未知发布者」：点击「更多信息」，再点「仍要运行」
+- Linux 无法运行：先设置可执行权限 chmod +x WeMD-.AppImage
+
+
+
+ Docker 部署
+
+bash
+docker compose pull
+docker compose up -d
+
+
+启动后访问 http://localhost:8080。默认使用 ghcr.io/tenngoxars/wemd-web:latest 镜像，需要固定版本时：
+
+bash
+WEMD_IMAGE=ghcr.io/tenngoxars/wemd-web: docker compose up -d
+
+
+ 使用「本地文件夹」存储
+
+浏览器只在 HTTPS 或 localhost 下开放读写本地文件夹的能力，且需要 Chrome、Edge 等 Chromium 内核浏览器。通过 http://服务器IP:8080 访问时，存储模式里的「本地文件夹」不可用，只能使用浏览器存储。
+
+- 部署在自己电脑上：用 http://localhost:8080 访问即可。
+- 部署在服务器上，有域名：用 Caddy、Nginx 等反向代理配置 HTTPS。
+- 只在局域网使用，没有域名：在 Chrome 打开 chrome://flags/unsafely-treat-insecure-origin-as-secure，填入 http://服务器IP:8080 并重启浏览器。每台电脑需单独设置。
+
+ 参与开发
+
+欢迎提交 Issue 和 Pull Request。本地开发、项目结构和提交前检查见 贡献指南。
+
+ 支持 WeMD
+
+WeMD 会继续保持免费、开源。目前官方图床的免费存储空间逐渐吃紧，如果这个项目对你有所帮助，欢迎通过微信或支付宝自愿支持。收到的支持将优先用于图片存储、带宽及项目持续维护。
+
+
+  
+  
+
+
+感谢每一份支持，也请量力而行。
+
+ 致谢
+
+深色模式预览算法参考了微信官方开源的 wechatjs/mp-darkmode，感谢微信团队。
+
+ License
+
+MIT © WeMD Team</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/tenngoxars/WeMD/issues/121"><span class="rp-item-num">#121</span><span class="rp-item-title">[Bug]: 文件列表刷新似乎不好用</span><span class="rp-item-extra">1 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/tenngoxars/WeMD/issues/119"><span class="rp-item-num">#119</span><span class="rp-item-title">[优化]: 希望导出HTML时能带上样式</span><span class="rp-item-extra">0 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/tenngoxars/WeMD/issues/109"><span class="rp-item-num">#109</span><span class="rp-item-title">桌面端本地图片工作流增强：相对路径渲染、一键批量上传与微信官方图床</span><span class="rp-item-extra">0 comments · 2026-10-10</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/tenngoxars/WeMD/discussions/80"><span class="rp-item-num">#80</span><span class="rp-item-title">主题太少了，默认的几个都不太行，完全不匹配weMD首页的惊艳</span><span class="rp-item-extra">1 comments · 2026-06-10</span></a><a class="rp-item" href="https://github.com/tenngoxars/WeMD/discussions/78"><span class="rp-item-num">#78</span><span class="rp-item-title">WeMD 近期动态-2025.5.15</span><span class="rp-item-extra">0 comments · 2026-05-15</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/tenngoxars/WeMD/releases"><b>WeMD v1.6.1</b> <span class="rp-rel-tag">v1.6.1</span> <span class="rp-item-extra">2026-11-04</span></a><pre class="rp-pre">新功能
+
+- 「检查更新」按钮：桌面版侧边栏底部新增「检查更新」按钮，支持手动检查并获取最新版本。
+
+ 优化
+
+- 编辑区正文更宽：正文区域最大宽度从 760 px 放宽至 1000 px。窗口拉宽时两侧留白更少，一行可展示更多文字。
+
+ 修复
+
+- 阿里云、腾讯云图床自定义域名生效：修复了配置自定义域名后，上传生成的图片链接未采用该域名的问题。已保存的域名无需重新填写。
+- 七牛图床移除不可用区域：移除了已不可用的「亚太-首尔」存储区域。此前选用过该区域的用户，打开图床设置时按提示重新选择即可。
+- Safari 导出长图不再缺图：修复了在 Safari 等 WebKit 内核浏览器中导出长图时，Mermaid 图表与图片内容可能显示为空白的问题。
+- 桌面版不再卡在「正在加载文章」：修复了本地存储异常时，桌面版无法进入工作区的问题。
+
+ 变更
+
+- 为升级 v2.0 做好配置迁移准备：下一代桌面端 v2.0 将采用全新轻量架构（安装包将降至 10 MB 以内）。为确保后续升级无缝衔接，v1.6.1 新增了配置自动备份机制。建议在未来升级到 v2.0 之前，先安装并打开一次 v1.6.1，原有的 AI Key、图床及偏好设置将在升级 v2.0 时自动继承。（注：v1.6.1 仍为现有版本架构，正常提供全平台安装包）。</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/tenngoxars__WeMD.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

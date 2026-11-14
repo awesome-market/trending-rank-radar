@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kepano/obsidian-skills · GitHub Trending Rank Radar</title>
+<meta name="description" content="Agent skills for Obsidian. Teach your agent to use Obsidian CLI and open formats including Markdown, Bases, JSON Canvas.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="obsidian-skills, kepano, kepano/obsidian-skills, github stars, github trending, star growth, star history, 开源项目, 星标增长, claude, codex, obsidian, skills, clawdbot, cli">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/kepano__obsidian-skills">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="kepano/obsidian-skills · GitHub Trending Rank Radar">
+<meta property="og:description" content="Agent skills for Obsidian. Teach your agent to use Obsidian CLI and open formats including Markdown, Bases, JSON Canvas.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/kepano__obsidian-skills">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "kepano/obsidian-skills", "codeRepository": "https://github.com/kepano/obsidian-skills", "url": "https://zhuikan.com/repos/kepano__obsidian-skills", "description": "Agent skills for Obsidian. Teach your agent to use Obsidian CLI and open formats including Markdown, Bases, JSON Canvas.", "author": {"@type": "Organization", "name": "kepano", "url": "https://github.com/kepano"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Shell", "dateCreated": "2026-01-02", "keywords": "claude,codex,obsidian,skills,clawdbot,cli,defuddle,opencode,openclaw,bases"}</script>
+</head>
+<body data-repo="kepano/obsidian-skills" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">kepano/obsidian-skills</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="kepano__obsidian-skills"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/65011256?v=4&s=300" width="300" height="300" alt="kepano avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">obsidian-skills</div>
+      <a class="rp-side-owner" href="https://github.com/kepano">kepano</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/kepano">kepano</a>
+        <span class="rp-sep">/</span><span class="rp-name">obsidian-skills</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily">daily <b>#66</b></a><a class="rp-board-chip" href="../?board=weekly">weekly <b>#124</b></a><a class="rp-board-chip" href="../?board=monthly">monthly <b>#190</b></a></div>
+    </div>
+    <p class="rp-desc">Agent skills for Obsidian. Teach your agent to use Obsidian CLI and open formats including Markdown, Bases, JSON Canvas.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>52,275</b></span><span class="rp-stat" title="forks">⑂ <b>3,715</b></span><span class="rp-stat" title="watchers">👁 <b>235</b></span><span class="rp-stat" title="prs">⑃ <b>90</b></span><span class="rp-stat" title="issues">● <b>60</b></span><span class="rp-stat" title="releases">▤ <b>1</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/claude">claude</a><a class="rp-topic" href="../tags/codex">codex</a><a class="rp-topic" href="https://github.com/topics/obsidian">obsidian</a><a class="rp-topic" href="../tags/skills">skills</a><a class="rp-topic" href="https://github.com/topics/clawdbot">clawdbot</a><a class="rp-topic" href="../tags/cli">cli</a><a class="rp-topic" href="https://github.com/topics/defuddle">defuddle</a><a class="rp-topic" href="../tags/opencode">opencode</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Shell</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-01-02</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="kepano__defuddle"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/65011256?v=4" alt="" loading="lazy">defuddle</a><a class="rp-same-link" href="kepano__kepano-obsidian"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/65011256?v=4" alt="" loading="lazy">kepano-obsidian</a><a class="rp-same-link" href="kepano__obsidian-minimal"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/65011256?v=4" alt="" loading="lazy">obsidian-minimal</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/kepano/obsidian-skills">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">1.1.0</span><a class="rp-dl-a" href="https://github.com/kepano/obsidian-skills/releases/tag/1.1.0">1.1.0 ↓</a><span class="rp-dl-ver">1.1.0</span><span class="rp-dl-date">2026-11-11</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+298</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1,583</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+2,733</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">52,275</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">3,715</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">235</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">90</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">60</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">1</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Agent Skills for use with Obsidian.
+
+These skills follow the Agent Skills specification so they can be used by any skills-compatible agent, including Claude Code, Codex, and Open Code.
+
+ Installation
+
+ Claude Code marketplace
+
+From terminal:
+
+sh
+claude plugin marketplace add obsidianmd/obsidian-skills
+claude plugin install obsidian@obsidian-skills
+
+
+From within a Claude Code session:
+
+sh
+/plugin marketplace add obsidianmd/obsidian-skills
+/plugin install obsidian@obsidian-skills
+
+
+To get new skills later, run claude plugin update obsidian@obsidian-skills.
+
+ Codex marketplace
+
+sh
+codex plugin marketplace add obsidianmd/obsidian-skills
+
+
+Then install Obsidian from the plugin directory in Codex or the ChatGPT desktop app.
+
+ Cursor
+
+Install Obsidian from the Cursor Marketplace.
+
+ npx skills
+
+sh
+npx skills add https://github.com/obsidianmd/obsidian-skills
+
+
+To use ssh instead, if you have a GitHub SSH key set up:
+
+sh
+npx skills add git@github.com:obsidianmd/obsidian-skills.git
+
+
+ Manually
+
+ Claude Code
+
+Copy the plugins/obsidian/skills/ directory to .claude/skills/ in the root of your Obsidian vault (or whichever folder you&#x27;re using with Claude Code). See more in the official Claude Skills documentation.
+
+ Codex
+
+Copy the plugins/obsidian/skills/ directory into your Codex skills path (typically ~/.agents/skills). See the Agent Skills specification for the standard skill format.
+
+ OpenCode
+
+Clone the entire repo into the OpenCode skills directory (~/.opencode/skills/):
+
+sh
+git clone https://github.com/obsidianmd/obsidian-skills.git ~/.opencode/skills/obsidian-skills
+
+
+Do not copy only the inner skills/ folder — clone the full repo so the directory structure is ~/.opencode/skills/obsidian-skills/plugins/obsidian/skills//SKILL.md.
+
+OpenCode auto-discovers all SKILL.md files under ~/.opencode/skills/. No changes to opencode.json or any config file are needed. Skills become available after restarting OpenCode.
+
+ Release maintenance
+
+Update the plugin version in every manifest with:
+
+sh
+./scripts/bump.sh patch
+
+
+The script also accepts major, minor, or an explicit version like 1.1.0.
+
+ Skills
+
+| Skill                                                          | Description                                                                                                                                                                                |
+| -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| obsidian-markdown | Create and edit Obsidian Flavored Markdown (.md) with wikilinks, embeds, callouts, properties, and other Obsidian-specific syntax |
+| obsidian-bases       | Create and edit Obsidian Bases (.base) with views, filters, formulas, and summaries                                                             |
+| json-canvas             | Create and edit </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/kepano/obsidian-skills/issues/141"><span class="rp-item-num">#141</span><span class="rp-item-title">obsidian-cli: base commands don&#x27;t follow the documented file/path targeting rules</span><span class="rp-item-extra">0 comments · 2026-09-06</span></a><a class="rp-item" href="https://github.com/kepano/obsidian-skills/issues/50"><span class="rp-item-num">#50</span><span class="rp-item-title">[Feature Request] Awareness of Obsidian settings</span><span class="rp-item-extra">0 comments · 2026-03-05</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/kepano/obsidian-skills/releases"><b>1.1.0</b> <span class="rp-rel-tag">1.1.0</span> <span class="rp-item-extra">2026-11-11</span></a><pre class="rp-pre">Obsidian Skills is now one plugin for Claude Code, Codex and Cursor, published by Obsidian. The repository moved to obsidianmd/obsidian-skills, and old links redirect.
+
+If you installed from the Claude Code marketplace, run claude plugin update obsidian@obsidian-skills. Earlier changes, including the Knap skill, didn&#x27;t reach existing installs because the version stayed at 1.0.1 (146). scripts/bump.sh now sets the version in every manifest.
+
+ Plugin
+
+- Moved the skills to plugins/obsidian/skills/.
+- Added Codex and Cursor marketplaces next to the Claude one (110, 142).
+- Added a plugin icon, RE</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (9)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/gitblog_00931/article/details/140979500" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">Obsidian-skills知识管理：10个高效管理项目知识的终极方法和工具</span><span class="rp-item-extra">2026-04-05</span></a><a class="rp-item" href="https://news.qq.com/rain/a/20260116A05S9V00" target="_blank" rel="noopener"><span class="rp-news-src">腾讯网</span><span class="rp-item-title">9天暴涨6.6k Star！Obsidian CEO 开源三大专属Skills，Claude Code不再乱改笔记格式</span><span class="rp-item-extra">2026-01-16</span></a><a class="rp-item" href="https://blog.csdn.net/weixin_73134956/article/details/156945003" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">GitHub精选---Obsidian CEO 亲授！Obsidian-Skills：从入门到精通的最佳“实战”指南</span><span class="rp-item-extra">2026-01-14</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTFBVLU44ZnkxNUExbHZVa1d2cHU1d1dhci0wOWNPUkhMcWlBc1g5VDFkZ3FmVzlsUS1nNVJJNzI4cGFvQ0RKR2lfOVE1VUh5bkg0ZEJsUjVB?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">腾讯新闻</span><span class="rp-item-title">最值得推荐的20个宝藏Skills，小众但真香</span><span class="rp-item-extra">2026-05-02</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE81X2JJTnhsbVVGYmlKeUpkdTMwS2R5d0ZHMXR6U0Z4TlQ5TVRnTHdTTE5iX0U3enc5Ulc5eWc2QnlQc1hXRWN2V2hucGU5dHNCT213?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">BlockBeats</span><span class="rp-item-title">60个精选Skills、工作流与开源项目，最全Claude进阶清单</span><span class="rp-item-extra">2026-03-30</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE91emFCWVRyaXRNNzduTk53dlZNUHEza0dYVUY2Rl8ta0N4bFRsY0M1aHRSZG9aZUdBcEhCckVqS29aWmtySnNHLTUyazhUWWt1WVIw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">51CTO</span><span class="rp-item-title">五个让Claude Code效率翻倍的Skill！</span><span class="rp-item-extra">2026-01-13</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiakFVX3lxTFBkeHZLWF8wZXBmbGhZRl9UbkFnVVJONVlocGtxUXhUd3Z2R0I5UF90blJ0ZWliUl9HVlVkMF9xUW4wXzFLMHRocVUyei02UXNoU2JaaHoxcS1LQnFPMDNyOEtVcUpJTER5U2c?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">53AI</span><span class="rp-item-title">Obsidian CEO 亲自下场！开源 obsidian-skills，4 天狂揽 4.6K Star！</span><span class="rp-item-extra">2026-01-11</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiV0FVX3lxTE9Nel95d1hWVkFsUldTNllSbUNIUU4tSno1UWdUbXlMWXhtdUJWOUNRSW5Nc3hvUm1KalVTaWFQQTl5ZjFORUx5anpINU1Xcm9VZl9GNnhqRQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">腾讯新闻</span><span class="rp-item-title">Claude Code Skills + Obsidian 才是个人知识库的版本答案</span><span class="rp-item-extra">2026-01-10</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5PZlBISkFmVXFqUVVWeEUwbmlrZ09nMmZBazdwRDYxUHBrQUJSVVlRWXpuSENibW1KQldXMlJEdVhmS1FFYUUtU0llWWV4VFYwNXhSVi1pSlMzT3JwZlpNU3VLS2JuR0E?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">53AI</span><span class="rp-item-title">扔掉第三方插件吧！Obsidian官方知识库Skills来了！</span><span class="rp-item-extra">2026-01-08</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (7)</h3><div class="rp-list"><a class="rp-item" href="https://note.com/hiroya0317/n/n87ea9431e177?hl=ko" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">&quot;정리해 줘&quot; 한마디로 Obsidian다운 메모가 된다. AI용 스킬 &#x27;Obsidian Skills&#x27; 설치 및 사용법</span><span class="rp-item-extra">2026-10-29</span></a><a class="rp-item" href="https://note.com/3e452/n/n0970fd771975?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">Generating Obsidian Canvas automatically with obsidian-skills and Claude Code is great</span><span class="rp-item-extra">2026-04-16</span></a><a class="rp-item" href="https://note.com/chic_wren6567/n/ne1b3f3e7ec2f?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">A Thorough Analysis of Obsidian Skills Extensibility: Evolving Knowledge Management</span><span class="rp-item-extra">2026-04-13</span></a><a class="rp-item" href="https://x.com/eng_khairallah1/status/2037816689665147355" target="_blank" rel="noopener"><span class="rp-news-src">x</span><span class="rp-item-title">Top 60 Claude Skills, Workflows, and GitHub Repos for AI — The Complete List.</span><span class="rp-item-extra">2026-03-28</span></a><a class="rp-item" href="https://www.ad-hoc-news.de/boerse/news/ueberblick/obsidian-skills-ki-lernt-die-sprache-der-notizen/68493728" target="_blank" rel="noopener"><span class="rp-news-src">ad-hoc-news</span><span class="rp-item-title">Obsidian Skills: KI lernt die Sprache der Notizen</span><span class="rp-item-extra">2026-01-16</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMidEFVX3lxTE5naXpTSldianNuaTAxNVpkdXJSZ2NFRFFnMkU5UmppSHlSeTZfZ2FIUm9JQ3BfTGkweXZORUoweTFEUk1YMHVzOUNvaUJxb21ZcXVVblBoMl9leldPNHhBVVhjOGJwZ3pCNG42ZTlySjZfRHY3?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">MakeUseOf</span><span class="rp-item-title">Obsidian just got a major upgrade, and you barely need to touch the app anymore</span><span class="rp-item-extra">2026-11-03</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiV0FVX3lxTE5YSkZmaTRvUjVXOFBidDZSandNYjd0XzMwMjZ4b1RMLTBydzZldHBTWFJpeXFqZHdHWTZ2X2ZsYlo0bURMa1QyZVhsdFV1ZjVYQ1FZRXo3dw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Snyk</span><span class="rp-item-title">Securing the Agent Skills Registry: How Snyk and Tessl Are Setting the Standard</span><span class="rp-item-extra">2026-03-17</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/kepano__obsidian-skills.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

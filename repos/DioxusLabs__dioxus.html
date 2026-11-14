@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DioxusLabs/dioxus · GitHub Trending Rank Radar</title>
+<meta name="description" content="Fullstack app framework for web, desktop, and mobile.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="dioxus, DioxusLabs, DioxusLabs/dioxus, github stars, github trending, star growth, star history, 开源项目, 星标增长, rust, virtualdom, react, ui, wasm, web">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/DioxusLabs__dioxus">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="DioxusLabs/dioxus · GitHub Trending Rank Radar">
+<meta property="og:description" content="Fullstack app framework for web, desktop, and mobile.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/DioxusLabs__dioxus">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "DioxusLabs/dioxus", "codeRepository": "https://github.com/DioxusLabs/dioxus", "url": "https://zhuikan.com/repos/DioxusLabs__dioxus", "description": "Fullstack app framework for web, desktop, and mobile.", "author": {"@type": "Organization", "name": "DioxusLabs", "url": "https://github.com/DioxusLabs"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Rust", "dateCreated": "2021-01-15", "keywords": "rust,virtualdom,react,ui,wasm,web,html,css,ssr,ios"}</script>
+</head>
+<body data-repo="DioxusLabs/dioxus" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">DioxusLabs/dioxus</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="DioxusLabs__dioxus"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/79236386?v=4&s=300" width="300" height="300" alt="DioxusLabs avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">dioxus</div>
+      <a class="rp-side-owner" href="https://github.com/DioxusLabs">DioxusLabs</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/DioxusLabs">DioxusLabs</a>
+        <span class="rp-sep">/</span><span class="rp-name">dioxus</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Fullstack app framework for web, desktop, and mobile.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>39,759</b></span><span class="rp-stat" title="forks">⑂ <b>1,967</b></span><span class="rp-stat" title="watchers">👁 <b>203</b></span><span class="rp-stat" title="prs">⑃ <b>2,807</b></span><span class="rp-stat" title="issues">● <b>2,672</b></span><span class="rp-stat" title="releases">▤ <b>44</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/rust">rust</a><a class="rp-topic" href="https://github.com/topics/virtualdom">virtualdom</a><a class="rp-topic" href="../tags/react">react</a><a class="rp-topic" href="../tags/ui">ui</a><a class="rp-topic" href="../tags/wasm">wasm</a><a class="rp-topic" href="../tags/web">web</a><a class="rp-topic" href="../tags/html">html</a><a class="rp-topic" href="../tags/css">css</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2021-01-15</span><a class="rp-meta-bit rp-home" href="https://dioxuslabs.com" rel="noopener">dioxuslabs.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/DioxusLabs/dioxus">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.7.10</span><a class="rp-dl-a" href="https://github.com/DioxusLabs/dioxus/releases/tag/v0.7.10">v0.7.10 ↓</a><span class="rp-dl-ver">0.7.10</span><span class="rp-dl-date">2026-07-30</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+21</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+174</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+385</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">39,759</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,967</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">203</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">2,807</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">2,672</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">44</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">--
+      
+          
+       --
+      
+      
+       --
+      
+    
+
+
+  
+  
+    
+  
+  
+  
+    
+  
+  
+  
+    
+  
+  
+  
+    
+  
+
+  
+  
+    
+  
+  
+  
+    
+  
+
+
+
+  
+     Website 
+     | 
+     Examples 
+     | 
+     Tutorial 
+     | 
+     中文 
+     | 
+     PT-BR 
+     | 
+     日本語 
+     | 
+     Türkçe 
+     | 
+     한국어 
+  
+
+
+
+  ✨ Dioxus 0.7 is out!!! ✨
+ --
+
+
+Build for web, desktop, and mobile, and more with a single codebase. Zero-config setup, integrated hot-reloading, and signals-based state management. Add backend functionality with Server Functions and bundle with our CLI.
+
+rust
+fn app() - Element {
+    let mut count = use_signal(|| 0);
+
+    rsx! {
+        h1 { &quot;High-Five counter: {count}&quot; }
+        button { onclick: move |_| count += 1, &quot;Up high!&quot; }
+        button { onclick: move |_| count -= 1, &quot;Down low!&quot; }
+    }
+}
+
+
+ ⭐️ Unique features:
+
+- Cross-platform apps in three lines of code (web, desktop, mobile, server, and more)
+- Ergonomic state management combines the best of React, Solid, and Svelte
+- Built-in featureful, type-safe, fullstack web framework
+- Integrated bundler for deploying to the web, macOS, Linux, and Windows
+- Subsecond Rust hot-patching and asset hot-reloading
+- And more! Take a tour of Dioxus.
+
+ Instant hot-reloading
+
+With one command, dx serve and your app is running. Edit your markup, styles, and see changes in milliseconds. Use our experimental dx serve --hotpatch to update Rust code in real time.
+
+
+  
+   --
+   --
+
+
+ Build Beautiful Apps
+
+Dioxus apps are styled with HTML and CSS. Use the built-in TailwindCSS support or load your favorite CSS library. Easily call into native code (objective-c, JNI, Web-Sys) for a perfect native touch.
+
+
+  
+
+
+
+
+ Truly fullstack applications
+
+Dioxus deeply integrates with axum to provide powerful fullstack capabilities for both clients and servers. Pick from a wide array of built-in batteries like WebSockets, SSE, Streaming, File Upload/Download, Server-Side-Rendering, Forms, Middleware, and Hot-Reload, or go fully custom and integrate your existing axum backend.
+
+
+  
+
+
+ Experimental Native Renderer
+
+Render using web-sys, webview, server-side-rendering, liveview, or even with our experimental WGPU-based renderer. Embed Dioxus in Bevy, WGPU, or even run on embedded Linux!
+
+
+  
+
+
+
+ First-party primitive components
+
+Get started quickly with a complete set of primitives modeled after shadcn/ui and Radix-Primitives.
+
+
+  
+
+
+ First-class Android and iOS support
+
+Dioxus is the fastest way to build native mobile apps with Rust. Simply run dx serve --platform android and your app is running in an emulator or on device in seconds. Call directly into JNI and Native APIs.
+
+
+  
+
+
+
+
+ Bundle for web, desktop, and mobile
+
+Simply run dx bundle and your app will be built and bundled with maximization optimizations. On the web, take advantage of .avif generation, .wasm compression, minification, and more. Build WebApps weighing less than 50kb and desktop/mobile apps less than 5mb.
+
+
+  
+
+
+
+ Fantastic documentation
+
+</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/DioxusLabs/dioxus/issues/4117"><span class="rp-item-num">#4117</span><span class="rp-item-title">Middleware isn&#x27;t running when called through `use_server_future`</span><span class="rp-item-extra">14 comments · 2025-05-15</span></a><a class="rp-item" href="https://github.com/DioxusLabs/dioxus/issues/3401"><span class="rp-item-num">#3401</span><span class="rp-item-title">Not working on Android 9.0</span><span class="rp-item-extra">14 comments · 2024-12-19</span></a><a class="rp-item" href="https://github.com/DioxusLabs/dioxus/issues/3319"><span class="rp-item-num">#3319</span><span class="rp-item-title">dx new command fails - v0.6.0  </span><span class="rp-item-extra">14 comments · 2024-12-09</span></a><a class="rp-item" href="https://github.com/DioxusLabs/dioxus/issues/1504"><span class="rp-item-num">#1504</span><span class="rp-item-title">ondragover event is unresponsive.</span><span class="rp-item-extra">13 comments · 2023-09-29</span></a><a class="rp-item" href="https://github.com/DioxusLabs/dioxus/issues/5411"><span class="rp-item-num">#5411</span><span class="rp-item-title">Page not being hydrated or JavaScript  isn&#x27;t being added to the page</span><span class="rp-item-extra">12 comments · 2026-03-25</span></a><a class="rp-item" href="https://github.com/DioxusLabs/dioxus/issues/4305"><span class="rp-item-num">#4305</span><span class="rp-item-title">subsecond: simple test does not work when async</span><span class="rp-item-extra">11 comments · 2025-06-20</span></a><a class="rp-item" href="https://github.com/DioxusLabs/dioxus/issues/3855"><span class="rp-item-num">#3855</span><span class="rp-item-title">Dioxus Desktop &amp; Mobile Native APIs</span><span class="rp-item-extra">11 comments · 2025-03-11</span></a><a class="rp-item" href="https://github.com/DioxusLabs/dioxus/issues/5511"><span class="rp-item-num">#5511</span><span class="rp-item-title">Support relative asset loading for router-less apps</span><span class="rp-item-extra">10 comments · 2026-04-27</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/DioxusLabs/dioxus/discussions/6059"><span class="rp-item-num">#6059</span><span class="rp-item-title">un fullstack plein</span><span class="rp-item-extra">0 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/DioxusLabs/dioxus/discussions/5882"><span class="rp-item-num">#5882</span><span class="rp-item-title">Filter Virtual List</span><span class="rp-item-extra">1 comments · 2026-10-03</span></a><a class="rp-item" href="https://github.com/DioxusLabs/dioxus/discussions/5881"><span class="rp-item-num">#5881</span><span class="rp-item-title">Scroll to element VirtualList</span><span class="rp-item-extra">2 comments · 2026-10-03</span></a><a class="rp-item" href="https://github.com/DioxusLabs/dioxus/discussions/5820"><span class="rp-item-num">#5820</span><span class="rp-item-title">Lazy loading of different rendering backends through Wasm bundle splitting?</span><span class="rp-item-extra">2 comments · 2026-09-07</span></a><a class="rp-item" href="https://github.com/DioxusLabs/dioxus/discussions/5814"><span class="rp-item-num">#5814</span><span class="rp-item-title">wind-ui-rust挺好用的，做原生的个人小工具，漂亮，内存占用低。</span><span class="rp-item-extra">1 comments · 2026-09-06</span></a><a class="rp-item" href="https://github.com/DioxusLabs/dioxus/discussions/5807"><span class="rp-item-num">#5807</span><span class="rp-item-title">How to effectively debug Dioxus applications?</span><span class="rp-item-extra">2 comments · 2026-09-03</span></a><a class="rp-item" href="https://github.com/DioxusLabs/dioxus/discussions/5806"><span class="rp-item-num">#5806</span><span class="rp-item-title">Workaround for bug #3927</span><span class="rp-item-extra">1 comments · 2026-09-03</span></a><a class="rp-item" href="https://github.com/DioxusLabs/dioxus/discussions/5796"><span class="rp-item-num">#5796</span><span class="rp-item-title">Reserving space for &quot;phantom text&quot; in a Button</span><span class="rp-item-extra">1 comments · 2026-08-30</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/DioxusLabs/dioxus/releases"><b>v0.7.10</b> <span class="rp-rel-tag">v0.7.10</span> <span class="rp-item-extra">2026-07-30</span></a><pre class="rp-pre">What&#x27;s Changed
+ [v0.7] Fix hotpatching when the bin target&#x27;s crate name differs from the package name by @nicoburns in https://github.com/DioxusLabs/dioxus/pull/5720
+
+
+Full Changelog: https://github.com/DioxusLabs/dioxus/compare/v0.7.9...v0.7.10</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/DioxusLabs__dioxus.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+FUSE filesystem over Google Drive
+=================================
+
+[![Join the chat at https://gitter.im/google-drive-ocamlfuse/Lobby](https://badges.gitter.im/google-drive-ocamlfuse/Lobby.svg)](https://gitter.im/google-drive-ocamlfuse/Lobby)
+[![Docker Pulls](https://img.shields.io/docker/pulls/maltokyo/docker-google-drive-ocamlfuse)](https://hub.docker.com/r/maltokyo/docker-google-drive-ocamlfuse)
+
+**google-drive-ocamlfuse** is a FUSE filesystem for Google Drive,
+written in OCaml. It lets you mount your Google Drive on Linux.
+
+### Features (see [what's new](https://github.com/astrada/google-drive-ocamlfuse/wiki/What%27s-new))
+
+* Full read/write access to ordinary files and folders
+* Read-only access to Google Docs, Sheets, and Slides (exported to
+  configurable formats)
+* Multiple account support
+* Duplicate file handling
+* Access to trash (`.Trash` directory)
+* Unix permissions and ownership
+* Symbolic links
+* Read-ahead buffers when streaming
+* Accessing content shared with you (requires [configuration](doc/Configuration.md))
+* Team Drive [Support](https://github.com/astrada/google-drive-ocamlfuse/wiki/Team-Drives)
+* Service Account [Support](https://github.com/astrada/google-drive-ocamlfuse/wiki/Service-Accounts)
+* OAuth2 for Devices [Support](https://github.com/astrada/google-drive-ocamlfuse/wiki/OAuth2-for-Devices)
+* Since version 0.8.0, the process is kept in foreground (**breaking change**)
+* Since version 0.8.0, the new configuration file format is TOML (**breaking change**)
+
+### Resources
+
+* [Homepage](https://astrada.github.io/google-drive-ocamlfuse/)
+* [Wiki](https://github.com/astrada/google-drive-ocamlfuse/wiki): includes
+  installation instructions, and more details about configuration, and
+  authorization
+
+### Authorization
+
+Please be sure to have a look at the
+[authorization](https://github.com/astrada/google-drive-ocamlfuse/wiki/Authorization)
+page, to understand how the authorization process works, and to discover all
+the available options.
+
+Getting started
+---------------
+
+### Installation
+
+I've uploaded .deb packages for Ubuntu to my
+[PPA](https://launchpad.net/~alessandro-strada/+archive/ppa). In order to to
+install it, use the commands below:
+
+    sudo add-apt-repository ppa:alessandro-strada/ppa
+    sudo apt-get update
+    sudo apt-get install google-drive-ocamlfuse
+
+New beta versions are available on this
+[PPA](https://launchpad.net/~alessandro-strada/+archive/ubuntu/google-drive-ocamlfuse-beta).
+If you want to test them, use the commands below:
+
+    sudo add-apt-repository ppa:alessandro-strada/google-drive-ocamlfuse-beta
+    sudo apt-get update
+    sudo apt-get install google-drive-ocamlfuse
+
+For other installation options, please refer to the [wiki](https://github.com/astrada/google-drive-ocamlfuse/wiki/Installation).
+
+How to build
+------------
+
+### Requirements
+
+* [OCaml][] >= 4.08.0
+* [dune][] >= 2.0.0
+* [fuse3][] >= 3.10.0
+* [gapi-ocaml][] >= 0.4.9
+* [sqlite3-ocaml][] >= 1.6.1
+* [tiny_httpd] >= 0.10
+* [otoml] >= 1.0.1
+* [ounit] >= 2.0.0
+
+[OCaml]: https://ocaml.org/
+[dune]: https://dune.build/
+[fuse3]: https://github.com/astrada/ocamlfuse
+[gapi-ocaml]: https://github.com/astrada/gapi-ocaml
+[sqlite3-ocaml]: https://mmottl.github.io/sqlite3-ocaml/
+[tiny_httpd]: https://github.com/c-cube/tiny_httpd/
+[otoml]: https://github.com/dmbaturin/otoml
+[ounit]: https://github.com/gildor478/ounit
+
+### Configuration and installation
+
+To build the executable, run
+
+    dune build @install
+
+To install it, run (as root, if your user doesn't have enough privileges)
+
+    dune install
+
+To uninstall anything that was previously installed, execute
+
+    dune uninstall
+
+Usage
+-----
+
+First, you must [set up OAuth
+2.0](https://support.google.com/cloud/answer/6158849?hl=en):
+
+1. [Activate](https://cloud.google.com/service-usage/docs/enable-disable) the
+   `Google Drive API`.
+1. Create an OAuth client ID.
+1. Choose `Desktop` as `Application type`.
+1. Set the `Name` to anything you like.
+
+This way you will get a `Client ID` and `Client secret` that you can use to
+access your Drive. To authorize `google-drive-ocamlfuse`, pass the client ID
+and the client secret on the command line, e.g.:
+
+    google-drive-ocamlfuse -id xxxxxxxxxx.apps.googleusercontent.com -secret XXX-YYY-ZZZ
+
+This command will create the default application directory
+(`~/.gdfuse/default`), containing the configuration file `config` (see the
+[wiki
+page](https://github.com/astrada/google-drive-ocamlfuse/wiki/Configuration)
+for more details about configuration). And it will start a web browser to
+obtain authorization to access your Google Drive. This way, you can modify the
+default configuration before mounting the filesystem.
+
+Then, you can choose a local directory to mount your Google Drive (e.g.: `~/GoogleDrive`).
+
+Create the mount point, if it doesn't exists:
+
+    mkdir ~/GoogleDrive
+
+Then, you can mount the filesystem (append `&` to the command, if you want to
+run it in background):
+
+    google-drive-ocamlfuse ~/GoogleDrive &
+
+If you have more than one account, you can run:
+
+    google-drive-ocamlfuse -label [label] ~/GoogleDrive &
+
+Using `label` to distinguish different accounts. The program will use the
+directory `~/.gdfuse/[label]` to host the configuration, the application
+state, and the file cache. No file is shared among different accounts, so you
+can have a different configuration for each one.
+
+To unmount the filesystem, issue this command:
+
+    fusermount3 -u ~/GoogleDrive
+
+On distributions that still provide the older helper name, use
+`fusermount -u ~/GoogleDrive` instead.
+
+### Troubleshooting
+
+This application is still under testing, so there are probably bugs to
+discover and fix. To be extra sure, if you want, you can mount the filesystem
+in read-only mode, modifying the configuration (see the
+[documentation](https://github.com/astrada/google-drive-ocamlfuse/wiki/Configuration)),
+to avoid any write attempt to the server. Anyway, the `rm` command will simply
+trash your file, so you should always be able to rollback any changes. If you
+have problems, you can turn on debug logging:
+
+    google-drive-ocamlfuse -debug mountpoint
+
+The process is always kept in foreground; `-debug` enables debug and verbose
+logging.
+
+In `~/.gdfuse/default` you can find `curl.log` that will track every request
+to the Google Drive API, and `gdfuse.log` that will log FUSE operations and
+cache management. If something goes wrong, you can try clearing the cache,
+with this command:
+
+    google-drive-ocamlfuse -cc
+
+If something still doesn't work, try starting from scratch removing everything
+in `~/.gdfuse/default`. In this case you will need to reauthorize the
+application.
+
+Note that in order to reduce latency, cached metadata remains valid for 60
+seconds by default (configurable). After it expires, the next normal resource
+operation checks the server for changes. So, if you make a change to your
+documents (server side), you won't see it immediately in the mounted filesystem.
+Filesystem-capacity queries such as `df` use the latest in-memory quota snapshot
+without contacting Drive; they may report stale values, or unlimited capacity
+before the first snapshot is available.
+
+Note also that Google Documents will be exported read-only.
+
+### Support
+
+If you have questions, suggestions or want to report a problem, you may want
+to open an [issue](https://github.com/astrada/google-drive-ocamlfuse/issues)
+on github.

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sunface/rust-course · GitHub Trending Rank Radar</title>
+<meta name="description" content="什么？你敢放心的把后背交给 AI? 我赌你不敢，那就来学学 AI 时代最酷、最安全、最快的语言吧。本书拥有全面且深入的讲解、生动贴切的示例、德芙般丝滑的内容，这可能是目前最用心的 Rust 中文学习教程 / Book ">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="rust-course, sunface, sunface/rust-course, github stars, github trending, star growth, star history, 开源项目, 星标增长, rust-lang, rust, book, chinese, rust-learning, rust-course">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/sunface__rust-course">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="sunface/rust-course · GitHub Trending Rank Radar">
+<meta property="og:description" content="什么？你敢放心的把后背交给 AI? 我赌你不敢，那就来学学 AI 时代最酷、最安全、最快的语言吧。本书拥有全面且深入的讲解、生动贴切的示例、德芙般丝滑的内容，这可能是目前最用心的 Rust 中文学习教程 / Book ">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/sunface__rust-course">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "sunface/rust-course", "codeRepository": "https://github.com/sunface/rust-course", "url": "https://zhuikan.com/repos/sunface__rust-course", "description": "什么？你敢放心的把后背交给 AI? 我赌你不敢，那就来学学 AI 时代最酷、最安全、最快的语言吧。本书拥有全面且深入的讲解、生动贴切的示例、德芙般丝滑的内容，这可能是目前最用心的 Rust 中文学习教程 / Book ", "author": {"@type": "Organization", "name": "sunface", "url": "https://github.com/sunface"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Rust", "dateCreated": "2018-08-07", "keywords": "rust-lang,rust,book,chinese,rust-learning,rust-course,course,programming-courses,learning,learn"}</script>
+</head>
+<body data-repo="sunface/rust-course" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">sunface/rust-course</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="sunface__rust-course"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/7036754?u=b8136850dbea9e1528dae03648ab4af64dae8f1b&amp;v=4&s=300" width="300" height="300" alt="sunface avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">rust-course</div>
+      <a class="rp-side-owner" href="https://github.com/sunface">sunface</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/sunface">sunface</a>
+        <span class="rp-sep">/</span><span class="rp-name">rust-course</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">什么？你敢放心的把后背交给 AI? 我赌你不敢，那就来学学 AI 时代最酷、最安全、最快的语言吧。本书拥有全面且深入的讲解、生动贴切的示例、德芙般丝滑的内容，这可能是目前最用心的 Rust 中文学习教程 / Book </p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>31,115</b></span><span class="rp-stat" title="forks">⑂ <b>2,604</b></span><span class="rp-stat" title="watchers">👁 <b>176</b></span><span class="rp-stat" title="prs">⑃ <b>975</b></span><span class="rp-stat" title="issues">● <b>229</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/rust-lang">rust-lang</a><a class="rp-topic" href="../tags/rust">rust</a><a class="rp-topic" href="../tags/book">book</a><a class="rp-topic" href="../tags/chinese">chinese</a><a class="rp-topic" href="https://github.com/topics/rust-learning">rust-learning</a><a class="rp-topic" href="https://github.com/topics/rust-course">rust-course</a><a class="rp-topic" href="https://github.com/topics/course">course</a><a class="rp-topic" href="https://github.com/topics/programming-courses">programming-courses</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">Created 2018-08-07</span><a class="rp-meta-bit rp-home" href="https://course.rs" rel="noopener">course.rs</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/sunface/rust-course">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+17</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+93</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">31,115</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,604</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">176</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">975</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">229</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Rust语言圣经  
+
+
+
+    
+    
+
+   
+
+
+
+
+
+  
+   
+
+
+ --
+
+
+
+
+
+为国内用户量身打造、最用心的 Rust 教程，新手入门，老手提升生产力。
+
+- 在线阅读: https://course.rs
+- 在线练习：https://practice.course.rs
+- AI 前沿学习：https://beatai.org 每日精选全球好文，实时、高质、有用
+
+
+ 创作感悟
+
+Rust 语言圣经已写 170 余章、110 余万字、历经 800 多个小时，每一章节都是纯手工，绝无质量上的妥协( 优秀的读者们应该都有此体会 )。
+
+曾有读者问： 这么好的书为何是开源，而非出版？原因很简单，Rust 要在国内发展起来，必须得有追梦之人去做不计付出的事，我希望自己能贡献一份微薄之力。
+
+但要说完全无欲无求，emmm，看到项目多了一颗 🌟，好像也非常开心，有什么能比读者大大的赞美更宝贵:)
+
+你们用指尖绘制星空，那里繁星点点，每一颗都在激励着我们披荆斩棘、不断前行。不夸张的说，没有你们，开源世界就没有星光，自然也不会有今日的开源盛世。
+
+能与大家在茫茫人海中相识，这感觉真好！
+
+
+
+
+
+
+ 🏆 贡献者
+
+非常感谢本教程的所有贡献者，正是有了你们，才有了现在的高质量 Rust 教程! 特别感谢：
+
+
+    
+    
+        
+            
+                
+                
+                EluvK
+            
+        
+        
+            
+                
+                
+                AllanDowney
+            
+        
+    
+    
+
+
+
+
+
+
+    
+    
+        
+            
+                
+                
+                孙立刚
+            
+        
+        
+            
+                
+                
+                JesseAtSZ
+            
+        
+        
+            
+                
+                
+                Rustln
+            
+        
+        
+            
+                
+                
+                1132719438
+            
+        
+    
+    
+
+
+
+ 开源协议
+
+在开源版权上，我们选择了 No License，这意味着读者可以随意的 fork 和阅读，但是不能私下修改后再包装分发，如果有这方面的需求，请联系我们，望理解。
+
+ 借鉴的书籍
+
+站在巨人的肩膀上，能帮我们看的更远，特此感谢以下巨人：
+
+- Rust Book
+- Rust nomicon
+- Async Rust
+- 详细清单参见 这里
+
+因为它们绝大部分是支持 APACHE + MIT 双协议的，因此我们选择了遵循其中的 MIT 协议，并在这里统一对借鉴的书籍进行说明。</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/sunface/rust-course/issues/1599"><span class="rp-item-num">#1599</span><span class="rp-item-title">感谢 AI，终于有机会把一直想做的东西做了出来</span><span class="rp-item-extra">28 comments · 2026-03-12</span></a><a class="rp-item" href="https://github.com/sunface/rust-course/issues/1563"><span class="rp-item-num">#1563</span><span class="rp-item-title">第二版收集建议贴</span><span class="rp-item-extra">20 comments · 2025-09-17</span></a><a class="rp-item" href="https://github.com/sunface/rust-course/issues/559"><span class="rp-item-num">#559</span><span class="rp-item-title">欢迎大家加入 RustCn，公众号+微信群聊</span><span class="rp-item-extra">16 comments · 2022-03-13</span></a><a class="rp-item" href="https://github.com/sunface/rust-course/issues/1471"><span class="rp-item-num">#1471</span><span class="rp-item-title">作者是否有考虑封装成EPUB格式的离线版本的？</span><span class="rp-item-extra">8 comments · 2024-09-24</span></a><a class="rp-item" href="https://github.com/sunface/rust-course/issues/1134"><span class="rp-item-num">#1134</span><span class="rp-item-title">附录/版本更新内容 翻译工作</span><span class="rp-item-extra">8 comments · 2023-01-31</span></a><a class="rp-item" href="https://github.com/sunface/rust-course/issues/1609"><span class="rp-item-num">#1609</span><span class="rp-item-title">文章内链接失效</span><span class="rp-item-extra">2 comments · 2026-06-08</span></a><a class="rp-item" href="https://github.com/sunface/rust-course/issues/1392"><span class="rp-item-num">#1392</span><span class="rp-item-title">可以对文件夹和文件名按照顺序加个001-002-003的前缀吗</span><span class="rp-item-extra">2 comments · 2024-03-07</span></a><a class="rp-item" href="https://github.com/sunface/rust-course/issues/1259"><span class="rp-item-num">#1259</span><span class="rp-item-title">求加一个 changelog 说明</span><span class="rp-item-extra">2 comments · 2023-08-02</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/sunface/rust-course/discussions/1664"><span class="rp-item-num">#1664</span><span class="rp-item-title">rust-course/basic/ownership/borrowing</span><span class="rp-item-extra">0 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/sunface/rust-course/discussions/1663"><span class="rp-item-num">#1663</span><span class="rp-item-title">rust-course/basic/collections/intro</span><span class="rp-item-extra">0 comments · 2026-10-29</span></a><a class="rp-item" href="https://github.com/sunface/rust-course/discussions/1662"><span class="rp-item-num">#1662</span><span class="rp-item-title">rust-course/basic/base-type/function</span><span class="rp-item-extra">1 comments · 2026-10-26</span></a><a class="rp-item" href="https://github.com/sunface/rust-course/discussions/1661"><span class="rp-item-num">#1661</span><span class="rp-item-title">rust-course/first-try/cargo</span><span class="rp-item-extra">1 comments · 2026-10-26</span></a><a class="rp-item" href="https://github.com/sunface/rust-course/discussions/1660"><span class="rp-item-num">#1660</span><span class="rp-item-title">rust-course/basic-practice/iterators</span><span class="rp-item-extra">1 comments · 2026-10-22</span></a><a class="rp-item" href="https://github.com/sunface/rust-course/discussions/1659"><span class="rp-item-num">#1659</span><span class="rp-item-title">rust-course/advance/smart-pointer/deref</span><span class="rp-item-extra">3 comments · 2026-10-21</span></a><a class="rp-item" href="https://github.com/sunface/rust-course/discussions/1657"><span class="rp-item-num">#1657</span><span class="rp-item-title">rust-course/basic/ownership/ownership</span><span class="rp-item-extra">1 comments · 2026-10-10</span></a><a class="rp-item" href="https://github.com/sunface/rust-course/discussions/1656"><span class="rp-item-num">#1656</span><span class="rp-item-title">rust-course/basic/lifetime</span><span class="rp-item-extra">3 comments · 2026-10-06</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/sunface__rust-course.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

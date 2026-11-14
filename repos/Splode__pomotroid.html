@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Splode/pomotroid · GitHub Trending Rank Radar</title>
+<meta name="description" content=":tomato: Simple and visually-pleasing Pomodoro timer">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="pomotroid, Splode, Splode/pomotroid, github stars, github trending, star growth, star history, 开源项目, 星标增长, pomodoro, pomodoro-timer, productivity, time-management, pomodoro-technique, rust">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Splode__pomotroid">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Splode/pomotroid · GitHub Trending Rank Radar">
+<meta property="og:description" content=":tomato: Simple and visually-pleasing Pomodoro timer">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Splode__pomotroid">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Splode/pomotroid", "codeRepository": "https://github.com/Splode/pomotroid", "url": "https://zhuikan.com/repos/Splode__pomotroid", "description": ":tomato: Simple and visually-pleasing Pomodoro timer", "author": {"@type": "Organization", "name": "Splode", "url": "https://github.com/Splode"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Rust", "dateCreated": "2018-01-26", "keywords": "pomodoro,pomodoro-timer,productivity,time-management,pomodoro-technique,rust,svelte,tauri"}</script>
+</head>
+<body data-repo="Splode/pomotroid" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Splode/pomotroid</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Splode__pomotroid"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/13758438?u=b91def1f39a535dd261161bba616c4ce25f3b3e3&amp;v=4&s=300" width="300" height="300" alt="Splode avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">pomotroid</div>
+      <a class="rp-side-owner" href="https://github.com/Splode">Splode</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Splode">Splode</a>
+        <span class="rp-sep">/</span><span class="rp-name">pomotroid</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">:tomato: Simple and visually-pleasing Pomodoro timer</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,611</b></span><span class="rp-stat" title="forks">⑂ <b>494</b></span><span class="rp-stat" title="watchers">👁 <b>38</b></span><span class="rp-stat" title="prs">⑃ <b>255</b></span><span class="rp-stat" title="issues">● <b>237</b></span><span class="rp-stat" title="releases">▤ <b>31</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/pomodoro">pomodoro</a><a class="rp-topic" href="https://github.com/topics/pomodoro-timer">pomodoro-timer</a><a class="rp-topic" href="../tags/productivity">productivity</a><a class="rp-topic" href="https://github.com/topics/time-management">time-management</a><a class="rp-topic" href="https://github.com/topics/pomodoro-technique">pomodoro-technique</a><a class="rp-topic" href="../tags/rust">rust</a><a class="rp-topic" href="../tags/svelte">svelte</a><a class="rp-topic" href="../tags/tauri">tauri</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2018-01-26</span><a class="rp-meta-bit rp-home" href="https://pomotroid.app" rel="noopener">pomotroid.app</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Splode/pomotroid">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.7.1</span><a class="rp-dl-a" href="https://github.com/Splode/pomotroid/releases/tag/v1.7.1">v1.7.1 ↓</a><span class="rp-dl-ver">1.7.1</span><span class="rp-dl-date">2026-05-11</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,611</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">494</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">38</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">255</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">237</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">31</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Simple and visually-pleasing Pomodoro timer.
+
+---
+
+- Overview
+- Features
+- Statistics
+- Themes
+- Install
+- WebSocket API
+- Development
+- License
+
+ Overview
+
+Pomotroid is a simple and configurable Pomodoro timer. It aims to provide a visually-pleasing and reliable way to track productivity using the Pomodoro Technique.
+
+Built with Tauri 2, Rust, and Svelte 5.
+
+ Features
+
+- Configurable timer — customise work duration, break durations, and the number of rounds per long break
+- Statistics — daily, weekly, and all-time session history with charts and a 52-week heatmap
+- 38 bundled themes — including Dracula, Nord, Tokyo Night, Catppuccin, Gruvbox, Rose Piné, and more; auto-switches with your OS light/dark preference
+- Custom themes — drop a JSON file into the themes folder; applied instantly without a restart
+- Localization — 8 languages: English, Spanish, French, German, Japanese, Chinese (Simplified), Turkish, and Portuguese; auto-detects OS language
+- Global shortcuts — control the timer from anywhere, even when the window is hidden
+- Custom audio — replace the built-in alert sounds with your own files
+- Tick sounds — optional ticking during work and break rounds, independently toggleable
+- Dynamic tray icon — progress arc updates in real time; reflects round type and pause state
+- Minimise / close to tray — keep Pomotroid running in the background
+- Desktop notifications — native OS alerts on round transitions
+- Compact mode — a minimal set of controls appears when the window is resized small
+- Always on top — optionally keep the timer above other windows
+- WebSocket server — opt-in local server for stream overlays and external integrations
+- Diagnostic logging — rotating log file with a one-click shortcut to the log folder
+
+ Statistics
+
+Pomotroid tracks every completed session and surfaces the data across three views: a daily summary with an hourly breakdown, a weekly bar chart with streak tracking, and an all-time 52-week heatmap.
+
+
+  
+
+
+ Themes
+
+Pomotroid ships with 38 themes and supports fully custom themes with live hot-reload.
+
+!Screenshots of Pomotroid using various themes
+
+See THEMES.md for the full theme list and instructions on creating your own.
+
+ Install
+
+ Download
+
+Download the latest release from the releases page.
+
+Available for Windows (installer + standalone exe), macOS (universal DMG), and Linux (.deb + AppImage).
+
+ Note: Pomotroid is currently unsigned. Depending on your OS security settings you may see a warning on first launch — this is expected and can be safely dismissed.
+
+ Linux notes
+
+System tray on GNOME: GNOME does not display tray icons by default. To use the tray icon feature (Settings → System → Show in System Tray), install the AppIndicator and KStatusNotifierItem Support extension, then log out and back in. On Fedora: sudo dnf install gnome-shell-extension-appindicator. On Debian/Ubuntu it is pre-installed. Other desktop environments (KDE Plasma, XFCE, Cinnamon, MATE) support tray icons natively with no extra steps</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Splode/pomotroid/issues/357"><span class="rp-item-num">#357</span><span class="rp-item-title">[Feature Request] Mini floating widget when window is minimized</span><span class="rp-item-extra">14 comments · 2026-03-17</span></a><a class="rp-item" href="https://github.com/Splode/pomotroid/issues/207"><span class="rp-item-num">#207</span><span class="rp-item-title">Pomotroid failing to launch</span><span class="rp-item-extra">14 comments · 2022-02-20</span></a><a class="rp-item" href="https://github.com/Splode/pomotroid/issues/107"><span class="rp-item-num">#107</span><span class="rp-item-title">[Feature Request] integrate with Windows 10 live tiles menu</span><span class="rp-item-extra">7 comments · 2020-07-01</span></a><a class="rp-item" href="https://github.com/Splode/pomotroid/issues/371"><span class="rp-item-num">#371</span><span class="rp-item-title">FR: Statistics for Different Activities</span><span class="rp-item-extra">6 comments · 2026-03-24</span></a><a class="rp-item" href="https://github.com/Splode/pomotroid/issues/300"><span class="rp-item-num">#300</span><span class="rp-item-title">Homebrew deprecation?</span><span class="rp-item-extra">6 comments · 2025-09-18</span></a><a class="rp-item" href="https://github.com/Splode/pomotroid/issues/52"><span class="rp-item-num">#52</span><span class="rp-item-title">[Feature request] Pomotroid for Android / iOS</span><span class="rp-item-extra">5 comments · 2019-08-07</span></a><a class="rp-item" href="https://github.com/Splode/pomotroid/issues/99"><span class="rp-item-num">#99</span><span class="rp-item-title">[Feature Request] Remember position on screen</span><span class="rp-item-extra">4 comments · 2020-06-11</span></a><a class="rp-item" href="https://github.com/Splode/pomotroid/issues/90"><span class="rp-item-num">#90</span><span class="rp-item-title">[Feature Request] Pomodoro Task Label</span><span class="rp-item-extra">4 comments · 2020-05-21</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Splode/pomotroid/discussions/447"><span class="rp-item-num">#447</span><span class="rp-item-title">Add GIFs of deaf people</span><span class="rp-item-extra">0 comments · 2026-05-20</span></a><a class="rp-item" href="https://github.com/Splode/pomotroid/discussions/440"><span class="rp-item-num">#440</span><span class="rp-item-title">Unfinished sessions and Overruns</span><span class="rp-item-extra">1 comments · 2026-05-16</span></a><a class="rp-item" href="https://github.com/Splode/pomotroid/discussions/436"><span class="rp-item-num">#436</span><span class="rp-item-title">it would be better to resize on the windows.</span><span class="rp-item-extra">0 comments · 2026-05-13</span></a><a class="rp-item" href="https://github.com/Splode/pomotroid/discussions/407"><span class="rp-item-num">#407</span><span class="rp-item-title">Statistics - Custom daily reset time</span><span class="rp-item-extra">0 comments · 2026-04-27</span></a><a class="rp-item" href="https://github.com/Splode/pomotroid/discussions/390"><span class="rp-item-num">#390</span><span class="rp-item-title">DOWNLOAD</span><span class="rp-item-extra">1 comments · 2026-04-13</span></a><a class="rp-item" href="https://github.com/Splode/pomotroid/discussions/304"><span class="rp-item-num">#304</span><span class="rp-item-title">Reset session count function</span><span class="rp-item-extra">1 comments · 2026-01-01</span></a><a class="rp-item" href="https://github.com/Splode/pomotroid/discussions/284"><span class="rp-item-num">#284</span><span class="rp-item-title">Developing pomotroid2 informally.</span><span class="rp-item-extra">1 comments · 2024-08-25</span></a><a class="rp-item" href="https://github.com/Splode/pomotroid/discussions/281"><span class="rp-item-num">#281</span><span class="rp-item-title">Add sit/stand timer</span><span class="rp-item-extra">0 comments · 2024-04-11</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/Splode/pomotroid/releases"><b>v1.7.1</b> <span class="rp-rel-tag">v1.7.1</span> <span class="rp-item-extra">2026-05-11</span></a><pre class="rp-pre">See CHANGELOG.md for details.
+
+ What&#x27;s Changed
+ chore(deps): bump the tauri group with 3 updates by @dependabot[bot] in https://github.com/Splode/pomotroid/pull/423
+ chore(deps): bump tauri from 2.11.0 to 2.11.1 in /src-tauri by @dependabot[bot] in https://github.com/Splode/pomotroid/pull/427
+ chore(deps): bump @inlang/paraglide-js from 2.16.1 to 2.18.0 in the inlang group across 1 directory by @dependabot[bot] in https://github.com/Splode/pomotroid/pull/425
+ chore(deps-dev): bump the svelte group across 1 directory with 4 updates by @dependabot[bot] in https://github.com/Splode/pomotroi</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Splode__pomotroid.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

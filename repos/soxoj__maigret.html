@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>soxoj/maigret · GitHub Trending Rank Radar</title>
+<meta name="description" content="🕵️‍♂️ Collect a dossier on a person by username from 6K websites">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="maigret, soxoj, soxoj/maigret, github stars, github trending, star growth, star history, 开源项目, 星标增长, osint, social-network, identification, socmint, sherlock, investigation">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/soxoj__maigret">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="soxoj/maigret · GitHub Trending Rank Radar">
+<meta property="og:description" content="🕵️‍♂️ Collect a dossier on a person by username from 6K websites">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/soxoj__maigret">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "soxoj/maigret", "codeRepository": "https://github.com/soxoj/maigret", "url": "https://zhuikan.com/repos/soxoj__maigret", "description": "🕵️‍♂️ Collect a dossier on a person by username from 6K websites", "author": {"@type": "Organization", "name": "soxoj", "url": "https://github.com/soxoj"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Python", "dateCreated": "2020-06-27", "keywords": "osint,social-network,identification,socmint,sherlock,investigation,python,python3,open-source,cybersecurity"}</script>
+</head>
+<body data-repo="soxoj/maigret" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">soxoj/maigret</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="soxoj__maigret"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/31013580?u=ed346e140e288d6b57bad1121b9ec7e5791c4cc5&amp;v=4&s=300" width="300" height="300" alt="soxoj avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">maigret</div>
+      <a class="rp-side-owner" href="https://github.com/soxoj">soxoj</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/soxoj">soxoj</a>
+        <span class="rp-sep">/</span><span class="rp-name">maigret</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=weekly">weekly <b>#198</b></a></div>
+    </div>
+    <p class="rp-desc">🕵️‍♂️ Collect a dossier on a person by username from 6K websites</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>40,601</b></span><span class="rp-stat" title="forks">⑂ <b>3,271</b></span><span class="rp-stat" title="watchers">👁 <b>183</b></span><span class="rp-stat" title="prs">⑃ <b>1,593</b></span><span class="rp-stat" title="issues">● <b>1,661</b></span><span class="rp-stat" title="releases">▤ <b>29</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/osint">osint</a><a class="rp-topic" href="https://github.com/topics/social-network">social-network</a><a class="rp-topic" href="https://github.com/topics/identification">identification</a><a class="rp-topic" href="https://github.com/topics/socmint">socmint</a><a class="rp-topic" href="https://github.com/topics/sherlock">sherlock</a><a class="rp-topic" href="https://github.com/topics/investigation">investigation</a><a class="rp-topic" href="../tags/python">python</a><a class="rp-topic" href="../tags/python3">python3</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2020-06-27</span><a class="rp-meta-bit rp-home" href="https://maigret.app/gh" rel="noopener">maigret.app/gh</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/soxoj/maigret">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.6.6</span><a class="rp-dl-a" href="https://github.com/soxoj/maigret/releases/tag/v0.6.6">v0.6.6 ↓</a><span class="rp-dl-ver">0.6.6</span><span class="rp-dl-date">2026-09-18</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+86</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+953</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1,591</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">40,601</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">3,271</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">183</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,593</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,661</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">29</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Maigret
+
+
+  
+    
+        
+    
+    
+      
+      
+    
+  
+  
+    
+        
+    
+    
+        
+    
+    
+        
+    
+    
+        
+    
+  
+  
+  
+    
+  
+  
+  
+    
+        
+    
+    
+        
+    
+  
+  
+  
+    English · 简体中文 · Français
+  
+  
+  
+    📖 文档
+  
+  
+
+
+Maigret 仅凭一个用户名,就能在大量站点上查找其账号,并从网页中收集所有可获取的公开信息,为目标人物生成一份档案。无需任何 API 密钥。AI 画像(演示)。
+
+ 赞助商
+
+
+
+
+
+
+不止于账号枚举。WebVetted 可将一个电子邮件地址或用户名转化为完整的身份调查，提供深度 OSINT 信息补全、数据泄露情报、AI 分析和交互式身份关系图。
+开始调查 →
+
+
+
+
+
+  
+    
+  
+
+
+
+  RapidProxy 提供高性能住宅代理，适用于 Twitter 抓取、Selenium 自动化和网页数据提取。9000万+ IP · 智能轮换 · 反封锁 · 流量永不过期。
+特别优惠：免费试用 — 套餐低至 $0.65/GB。使用优惠码 RAPID10 享九折优惠。
+
+
+
+  
+    
+  
+
+
+
+  ThorData 提供住宅代理和网页数据 API，适用于 OSINT 研究、用户名检索和搜索侦察。
+  覆盖 190+ 个国家 的 1 亿+ 住宅 IP，减少请求失败、403 错误和地区限制。可使用 SERP API 获取结构化搜索结果，或使用 Web Scraper API 采集公开网页数据。
+  特别优惠：免费 3 天试用，使用优惠码 SOXOJ10 享 9 折优惠。
+
+
+ 目录
+
+- 一分钟上手
+- 核心特性
+- 演示
+- 安装
+- 使用
+- 参与贡献
+- 商业使用
+- 关于
+
+
+ 一分钟上手
+
+请先确认本机的 Python 版本不低于 3.10。
+
+bash
+pip install maigret
+maigret YOUR_USERNAME
+
+
+不想本地安装?可以试试社区 Telegram 机器人,或者使用云端 Shell。
+
+想要一个 Web 界面?参见启动方式。
+
+延伸阅读:快速入门。
+
+
+ 核心特性
+
+- 支持 5900 站点(完整列表见 sites.md)。默认仅检查访问量排名前 500 的站点;加上 -a 可全量扫描,或使用 --tags 按分类/国家筛选。
+- 可作为 Python 库嵌入到自己的项目中——直接 import maigret 即可在代码里发起搜索(参见库使用文档)。
+- 通过 socid_extractor 从个人主页和站点 API 中提取账号所有者的所有可获取信息,包括指向其他账号的链接。
+- 基于已发现的用户名和其他 ID,执行递归搜索。
+- 支持按标签(站点分类、国家)进行筛选。
+- 能够检测并部分绕过封锁、审查和 CAPTCHA。
+- 每次运行时(每 24 小时一次)从 GitHub 拉取一份自动更新的站点数据库;离线时会回退到内置数据库。
+- 可访问 Tor 与 I2P 站点;支持检查域名。
+- 自带一个 Web 界面,可在同一页面将结果以图谱方式浏览,并下载各种格式的报告。
+- 可选的 AI 分析模式(--ai),通过 OpenAI 兼容 API 将原始搜索结果整理成一份简短的调查摘要。
+
+完整特性列表请见特性文档。
+
+ 谁在使用
+
+基于 Maigret 构建的专业 OSINT 与社交媒体分析工具:
+
+
+
+
+
+
+ 演示
+
+ 视频
+
+
+  
+
+
+ 报告示例
+
+PDF 报告、HTML 报告
+
+!HTML 报告截图
+
+!XMind 8 报告截图
+
+完整的命令行输出示例
+
+
+ 安装
+
+如果你已经按一分钟上手的步骤跑通了,就无需再装。下面列出几种可选的安装方式。
+
+什么都不想装?直接用社区 Telegram 机器人。
+
+ Windows
+
+从 Releases 下载 maigret_standalone.exe。有两种启动方式:
+
+- 双击运行 —— Maigret 会询问用户名、执行一次默认搜索,并在结束时停留,方便你查看报告链接。
+- 从终端运行 —— 打开命令提示符(按 Win+R,输入 cmd,回车)或 PowerShell,以便传入额外参数:
+
+cmd
+cd %USERPROFILE%\Downloads
+maigret_standalone.exe USERNAME
+maigret_standalone.exe USERNAME --html       :: 同时保存 HTML 报告
+maigret_standalone.exe --help                :: 列出所有选项
+
+
+视频指引:https://youtu.be/qIgwTZOmMmM。
+
+
+ 云端 Shell
+
+通过云端 Shell 或 Jupyter Notebook 在浏览器里运行 Maigret:
+
+
+
+
+
+
+
+ Snap(Linux)
+
+
+
+bash
+sudo snap install maigret
+
+ 使用
+maigret username
+
+
+支持 amd64 与 arm64,无需安装 Python。该 snap 采用严格受限模式,只能写入你的主目录,因此请从主目录下运行;若要访问 USB 设备,需先执行一次 sudo snap connect maigret:removable-media 连接对应接口。
+
+ 本地安装(pip)
+
+bash
+ 从 PyPI 安装
+pip3 install maigret
+
+ 使用
+maigret username
+
+
+ 从源码安装
+
+bash
+ 也可以克隆仓库后手动安装
+git clone https://github.com/soxoj/maigret &amp;&amp; cd maigret
+
+ 构建并安装
+pip3 install .
+
+ 使用
+maigret username
+
+
+ Docker
+
+官方提供两个镜像变体:
+
+- soxoj/maigret:latest —— CLI 模式(默认)
+- soxoj/maigret:web —— 自动启动 Web 界面
+
+bash
+ 拉取官方镜像(CLI)
+docker pull soxoj/maigret
+
+ CLI 用法
+docker run -v /mydir:/app/reports soxoj/maigret:latest username --html
+
+ Web UI(在 http://localhost:5000 打开)
+docker run -p 5000:5000 soxoj/maigret:web
+
+ 自定义 Web UI 端口
+docker run -e PORT=8080 -p 8080:8080 soxoj/maigret:web
+
+ 手动构建
+docker build -t maigret .            </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/soxoj/maigret/issues/2634"><span class="rp-item-num">#2634</span><span class="rp-item-title">Add support for Chinese sites</span><span class="rp-item-extra">9 comments · 2026-05-09</span></a><a class="rp-item" href="https://github.com/soxoj/maigret/issues/2668"><span class="rp-item-num">#2668</span><span class="rp-item-title">Complete --submit mode: urlProbe, activation, cookies, status_codes, update-existing</span><span class="rp-item-extra">3 comments · 2026-05-16</span></a><a class="rp-item" href="https://github.com/soxoj/maigret/issues/2968"><span class="rp-item-num">#2968</span><span class="rp-item-title">Feature Request: REST API Interface for OSINT Searches</span><span class="rp-item-extra">2 comments · 2026-08-12</span></a><a class="rp-item" href="https://github.com/soxoj/maigret/issues/3363"><span class="rp-item-num">#3363</span><span class="rp-item-title">[Maigret bot] False-positive site probe: Bambu Lab Forum</span><span class="rp-item-extra">1 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/soxoj/maigret/issues/3336"><span class="rp-item-num">#3336</span><span class="rp-item-title">[Maigret bot] False-positive site probe: Tv-games</span><span class="rp-item-extra">1 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/soxoj/maigret/issues/3287"><span class="rp-item-num">#3287</span><span class="rp-item-title">[Maigret bot] False-positive site probe: accounts.eclipse.org</span><span class="rp-item-extra">1 comments · 2026-10-21</span></a><a class="rp-item" href="https://github.com/soxoj/maigret/issues/3285"><span class="rp-item-num">#3285</span><span class="rp-item-title">[Maigret bot] False-positive site probe: Open Game Art</span><span class="rp-item-extra">1 comments · 2026-10-21</span></a><a class="rp-item" href="https://github.com/soxoj/maigret/issues/3277"><span class="rp-item-num">#3277</span><span class="rp-item-title">[Maigret bot] False-positive site probe: 2d-3d</span><span class="rp-item-extra">1 comments · 2026-10-18</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/soxoj/maigret/discussions/3303"><span class="rp-item-num">#3303</span><span class="rp-item-title">From Username Discovery to Cross-Source Investigation</span><span class="rp-item-extra">0 comments · 2026-10-27</span></a><a class="rp-item" href="https://github.com/soxoj/maigret/discussions/3192"><span class="rp-item-num">#3192</span><span class="rp-item-title">Maigret doesn&#x27;t issue reports.</span><span class="rp-item-extra">1 comments · 2026-09-21</span></a><a class="rp-item" href="https://github.com/soxoj/maigret/discussions/3045"><span class="rp-item-num">#3045</span><span class="rp-item-title">🏆 Maigret Contributor Spotlight: 26 July to 30 August 2026</span><span class="rp-item-extra">0 comments · 2026-08-30</span></a><a class="rp-item" href="https://github.com/soxoj/maigret/discussions/2962"><span class="rp-item-num">#2962</span><span class="rp-item-title">v0.6.4</span><span class="rp-item-extra">0 comments · 2026-08-11</span></a><a class="rp-item" href="https://github.com/soxoj/maigret/discussions/2906"><span class="rp-item-num">#2906</span><span class="rp-item-title">🏆 Maigret Contributor Spotlight — Last 6 Months (Feb–Jul 2026)</span><span class="rp-item-extra">0 comments · 2026-07-24</span></a><a class="rp-item" href="https://github.com/soxoj/maigret/discussions/2864"><span class="rp-item-num">#2864</span><span class="rp-item-title">v0.6.3</span><span class="rp-item-extra">0 comments · 2026-07-13</span></a><a class="rp-item" href="https://github.com/soxoj/maigret/discussions/2828"><span class="rp-item-num">#2828</span><span class="rp-item-title">v0.6.2</span><span class="rp-item-extra">1 comments · 2026-07-01</span></a><a class="rp-item" href="https://github.com/soxoj/maigret/discussions/2744"><span class="rp-item-num">#2744</span><span class="rp-item-title">What is this software?</span><span class="rp-item-extra">1 comments · 2026-06-05</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/soxoj/maigret/releases"><b>v0.6.6</b> <span class="rp-rel-tag">v0.6.6</span> <span class="rp-item-extra">2026-09-18</span></a><pre class="rp-pre">What&#x27;s Changed
+ Bump to 0.6.5 by @soxoj in https://github.com/soxoj/maigret/pull/3014
+ Add a website link to the snap metadata by @soxoj in https://github.com/soxoj/maigret/pull/3017
+ Drop the zero-width joiner from the snap summary by @soxoj in https://github.com/soxoj/maigret/pull/3022
+ [LAPOINTE] Add 3 sites by @soxoj in https://github.com/soxoj/maigret/pull/3023
+ [LAPOINTE] Disable fuzzies.wtf by @soxoj in https://github.com/soxoj/maigret/pull/3025
+ Detect status-code checks in --submit fallback by @juliosuas in https://github.com/soxoj/maigret/pull/3024
+ [LAPOINTE] Add 13 sites by @soxoj </pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="en"><h3 class="rp-ph">News &amp; coverage (6)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=33061058" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Maigret: Collect a dossier on a person by username from thousands of sites</span><span class="rp-item-extra">▲ 499 · 197 comments · 2022-10-02</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=44262909" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Maigret – An open source OSINT tool for tracking people</span><span class="rp-item-extra">▲ 2 · 1 comments · 2025-06-12</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=42386395" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Maigret collects a dossier on a person by username only</span><span class="rp-item-extra">▲ 2 · 0 comments · 2024-12-11</span></a><a class="rp-item" href="https://www.ghacks.net/2022/10/03/maigret-create-user-dossiers-based-on-username-searches-on-thousands-of-sites/" target="_blank" rel="noopener"><span class="rp-news-src">ghacks.net</span><span class="rp-item-title">Maigret: create user dossiers based on username searches on thousands of sites</span><span class="rp-item-extra">2022-10-03</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMijAFBVV95cUxNaEY0NUZkcndmN00yTm1sVVduUGpBSDE4NFdZRUtNRjBUSHNfd2dONzVaTXhWNHRuLUFlOUV3RUhtWFFYQW1fTk9SOFgzdElHQ1RZU2Z5dW1UWTJvd1NobjB1Z0xlbEE2VjE3LWhwR2xid1ptWlpHZ255RVFUcmUxTExMUEFqWmthUEZJWg?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Police1</span><span class="rp-item-title">3 OSINT tools every officer should master now</span><span class="rp-item-extra">2025-10-24</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxNOC02bzdQSFVzemM5cURMY2tLN3JwNTc3WHdPMkFzSEZGWXhvbmxNMXQ1ZFBOM3V2ajNUZmEyTnhjRWtTQllySGtPWWluWnItUXplZ2xfOUtxMjJkeklrUnpnVkZEc08zR2NsLWJEWmdmajV3OFQ4VWZyS2pUWjJxMlZwb24?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Korben</span><span class="rp-item-title">GoSearch - 18 billion compromised passwords at your fingertips in the terminal</span><span class="rp-item-extra">2025-08-08</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/soxoj__maigret.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>yynxxxxx/Codex-X · GitHub Trending Rank Radar</title>
+<meta name="description" content="OpenAI Codex 桌面端/CLI 的可视化管理工具，具有Provider/API 切换、会话同步、提示词注入、Skills/MCP 管理、TOML 配置可视化的跨平台工具。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Codex-X, yynxxxxx, yynxxxxx/Codex-X, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/yynxxxxx__Codex-X">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="yynxxxxx/Codex-X · GitHub Trending Rank Radar">
+<meta property="og:description" content="OpenAI Codex 桌面端/CLI 的可视化管理工具，具有Provider/API 切换、会话同步、提示词注入、Skills/MCP 管理、TOML 配置可视化的跨平台工具。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/yynxxxxx__Codex-X">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "yynxxxxx/Codex-X", "codeRepository": "https://github.com/yynxxxxx/Codex-X", "url": "https://zhuikan.com/repos/yynxxxxx__Codex-X", "description": "OpenAI Codex 桌面端/CLI 的可视化管理工具，具有Provider/API 切换、会话同步、提示词注入、Skills/MCP 管理、TOML 配置可视化的跨平台工具。", "author": {"@type": "Organization", "name": "yynxxxxx", "url": "https://github.com/yynxxxxx"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Rust", "dateCreated": "2026-07-04"}</script>
+</head>
+<body data-repo="yynxxxxx/Codex-X" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">yynxxxxx/Codex-X</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="yynxxxxx__Codex-X"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/139136586?u=a1a1bb3d7a737ff2b25bfab40e5652d6f61914f5&amp;v=4&s=300" width="300" height="300" alt="yynxxxxx avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Codex-X</div>
+      <a class="rp-side-owner" href="https://github.com/yynxxxxx">yynxxxxx</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/yynxxxxx">yynxxxxx</a>
+        <span class="rp-sep">/</span><span class="rp-name">Codex-X</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">OpenAI Codex 桌面端/CLI 的可视化管理工具，具有Provider/API 切换、会话同步、提示词注入、Skills/MCP 管理、TOML 配置可视化的跨平台工具。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>4,384</b></span><span class="rp-stat" title="forks">⑂ <b>557</b></span><span class="rp-stat" title="watchers">👁 <b>15</b></span><span class="rp-stat" title="releases">▤ <b>61</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">Created 2026-07-04</span><a class="rp-meta-bit rp-home" href="https://codex-x.site" rel="noopener">codex-x.site</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/yynxxxxx/Codex-X">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+259</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">4,384</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">557</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">15</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">61</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Codex-X
+
+  Codex 可视化提示词注入 · Provider · 会话 · Skills / MCP 管理工具
+
+  一款面向 OpenAI Codex 桌面端 / Codex CLI 的跨平台桌面工具。把提示词模板、自定义 Prompt、第三方 API 供应商、会话同步、Skills / MCP 和 TOML 配置都放进可视化界面里，不用反复手改文件。
+
+  
+    
+    
+    
+    
+  
+
+  
+    
+    
+    
+    
+    
+  
+
+
+---
+
+ Codex-X 是什么？
+
+当你同时使用 Codex 桌面端、CLI、第三方 API、Skills / MCP 和多套提示词时，配置很容易散落在不同文件里。Codex-X 把这些高频操作集中到一个桌面界面中，让当前状态看得见、常用操作点一下就能完成。
+
+你可以用它：
+
+- 像管理插件一样管理提示词：分类、导入 Markdown、自定义编辑、一键启用 / 禁用
+- 内置 5 套提示词模板，同时支持用户把自己的提示词变成可视化模板库
+- 管理多个可命名的官方 Codex 登录与第三方 API，一键复制、切换，并从 cc-switch 导入现有供应商
+- 同步、检查、搜索和删除本地会话，按项目路径整理 Codex 历史记录
+- 集中管理 Skills 与 MCP，查看当前 config.toml、auth.json 和操作备份
+- 在设置中按日期、模型查看 Token 用量趋势，子代理用量归入所属主会话
+
+ 软件预览
+
+
+新版 UI：指令提示词管理中心
+
+
+  
+
+
+
+
+
+
+  
+    
+      分类管理
+      把提示词按破甲 / 逆向、软件开发、写作辅助等分类维护
+      
+    
+    
+      自定义提示词
+      直接添加、编辑或导入自己的 Markdown 提示词
+      
+    
+  
+
+
+
+
+Skills / MCP 可视化管理
+
+
+  
+
+
+
+
+ 功能特性
+
+
+
+  
+    你想做的事
+    Codex-X 能帮你
+  
+  
+    提示词注入管理
+    内置 5 套提示词模板，支持分类、GitHub 同步、本地缓存、导入 .md、添加自定义提示词、编辑说明、一键启用 / 禁用。
+  
+  
+    启用方式切换
+    可选择“保留原提示词”追加写入，也可选择“替换原提示词”完整切换；适合在不同模型、不同任务、不同 Prompt 之间快速切换。
+  
+  
+    Provider / API
+    保存多个可命名的官方 Codex 登录配置，与第三方供应商统一管理、一键复制和切换；第三方供应商支持连接检测、模型获取 / 测试及从 cc-switch 导入。
+  
+  
+    会话管理
+    搜索本地会话、按项目路径分组、同步当前供应商、检查会话状态，并支持单选 / 多选 / 项目级永久删除。
+  
+  
+    Skills / MCP
+    可视化查看 Skills 与 MCP，导入已有配置，从 ZIP 安装 Skill，逐项启用 / 禁用，并检查更新状态。
+  
+  
+    配置与登录
+    集中查看 config.toml 与 auth.json；官方登录和第三方供应商编辑页均可在 config.toml 旁勾选“开启 1M 上下文窗口”，保存后生效，需模型支持；重要写入前自动备份。
+  
+  
+    用量统计
+    设置页提供“通用设置 / 用量统计”标签，按日期与模型筛选本地 Token 用量，查看每日趋势、缓存命中率、模型分布及最近 10 个主会话；子代理用量归入所属主会话，不单独计为会话。
+  
+  
+    跨平台使用
+    提供 macOS Apple Silicon / Intel、Windows MSI / 便携版和 Linux 安装包；MSI 安装版可在应用内直接下载、校验并安装更新，便携版继续使用手动下载。
+  
+
+
+
+ 核心亮点
+
+ 1. 可视化提示词注入中心
+
+
+  
+  
+  
+  
+
+
+ [!TIP]
+ 安装后就能用，联网后自动补齐，也能维护自己的提示词库。
+
+ 安装包离线自带 5 套模板；软件启动后会从 GitHub examples/ 同步另外 6 套软件开发与写作辅助模板，以及后续更新。同步成功的在线版本会缓存到本地，临时离线仍可继续使用。你也可以导入自己的 .md、新增分类、编辑说明，并像切换插件一样启用或禁用任意提示词。
+
+Codex-X 现在不只是“几套内置 Prompt”的启动器，而是一个可视化提示词注入与管理工具：
+
+- 按分类管理提示词，例如破甲 / 逆向、软件开发、写作辅助，也可以新增自己的分类
+- 支持同步 GitHub 模板、导入 Markdown、手动添加提示词、编辑标题 / 文件名 / 内容
+- 每个提示词都有独立开关，打开时自动按当前启用方式写入 Codex 指令文件
+- 支持“保留原提示词”和“替换原提示词”两种模式，适合日常叠加或完整切换
+- 本地缓存可离线使用，后续模板更新不会影响你自己维护的自定义提示词
+
+
+
+  
+    模板
+    适合场景
+    获取方式
+  
+  
+    gpt5.5-unrestricted.md
+    短小通用，适合日常 coding 与常规技术任务
+    离线内置GitHub 更新
+  
+  
+    gpt5.4-unrestricted.md
+    面向 GPT-5.4 / Codex CLI，偏 CTF 与安全研究工作流
+    离线内置GitHub 更新
+  
+  
+    gpt5.5-jeli.md
+    大白话通用版，提供更完整的工程与逆向执行流程
+    离线内置GitHub 更新
+  
+  
+    gpt-5.6-sol-unrestricted.md
+    gpt5.6-sol 破甲提示词，偏直接执行与中英文任务
+    离线内置GitHub 更新
+  
+  
+    海鸥3.0破甲.md
+    中文技术操作员人格，覆盖 coding、CTF、逆向、内存与协议任务路由
+    离线内置GitHub 更新
+  
+  
+    software-development-maintainer.md
+    长期维护正式项目，强调复用、最小改动、安全、测试与可维护性
+    GitHub 在线同步
+  
+  
+    software-development-debugging.md
+    从稳定复现和证据采集推进到根因修复与回归验证
+    GitHub 在线同步
+  
+  
+    software-development-code-review.md
+    按严重级别审查缺陷、回归、安全风险和测试缺口
+    GitHub 在线同步
+  
+  
+    writing-clarity-editor.md
+    在保留原意和事实的前提下润色中英文表达
+    GitHub 在线同步
+  
+  
+    writing-technical-docs.md
+    基于代码与事实编写</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/yynxxxxx__Codex-X.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

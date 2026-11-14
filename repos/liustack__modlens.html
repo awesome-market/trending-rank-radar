@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>liustack/modlens · GitHub Trending Rank Radar</title>
+<meta name="description" content="The first vision plugin for DeepSeek Harness, and the vision bridge for every text-only coding agent. Paste an image, get structured JSON evidence (OCR, layout, semantics). | 全网最强 DeepSeek Harness 外挂视">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="modlens, liustack, liustack/modlens, github stars, github trending, star growth, star history, 开源项目, 星标增长, agent-skills, claude-code, claude-skills, codex, deepseek, dsh-plugin">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/liustack__modlens">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="liustack/modlens · GitHub Trending Rank Radar">
+<meta property="og:description" content="The first vision plugin for DeepSeek Harness, and the vision bridge for every text-only coding agent. Paste an image, get structured JSON evidence (OCR, layout, semantics). | 全网最强 DeepSeek Harness 外挂视">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/liustack__modlens">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "liustack/modlens", "codeRepository": "https://github.com/liustack/modlens", "url": "https://zhuikan.com/repos/liustack__modlens", "description": "The first vision plugin for DeepSeek Harness, and the vision bridge for every text-only coding agent. Paste an image, get structured JSON evidence (OCR, layout, semantics). | 全网最强 DeepSeek Harness 外挂视", "author": {"@type": "Organization", "name": "liustack", "url": "https://github.com/liustack"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2026-02-22", "keywords": "agent-skills,claude-code,claude-skills,codex,deepseek,dsh-plugin,glm,harness,harness-engineering,hermes-agent"}</script>
+</head>
+<body data-repo="liustack/modlens" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">liustack/modlens</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="liustack__modlens"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/83945823?u=ddd515b23c79d1f9ae23b0116db367fac9fc50d9&amp;v=4&s=300" width="300" height="300" alt="liustack avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">modlens</div>
+      <a class="rp-side-owner" href="https://github.com/liustack">liustack</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/liustack">liustack</a>
+        <span class="rp-sep">/</span><span class="rp-name">modlens</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">The first vision plugin for DeepSeek Harness, and the vision bridge for every text-only coding agent. Paste an image, get structured JSON evidence (OCR, layout, semantics). | 全网最强 DeepSeek Harness 外挂视觉插件，为 DeepSeek、GLM 等纯文本模型外挂视觉能力，粘贴图片即得结构化 JSON 证据（OCR、版面、语义）。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>4,956</b></span><span class="rp-stat" title="forks">⑂ <b>155</b></span><span class="rp-stat" title="watchers">👁 <b>8</b></span><span class="rp-stat" title="prs">⑃ <b>0</b></span><span class="rp-stat" title="issues">● <b>118</b></span><span class="rp-stat" title="releases">▤ <b>93</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/agent-skills">agent-skills</a><a class="rp-topic" href="../tags/claude-code">claude-code</a><a class="rp-topic" href="../tags/claude-skills">claude-skills</a><a class="rp-topic" href="../tags/codex">codex</a><a class="rp-topic" href="../tags/deepseek">deepseek</a><a class="rp-topic" href="../tags/dsh-plugin">dsh-plugin</a><a class="rp-topic" href="https://github.com/topics/glm">glm</a><a class="rp-topic" href="https://github.com/topics/harness">harness</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-02-22</span><a class="rp-meta-bit rp-home" href="https://liustack.dev/tools/modlens" rel="noopener">liustack.dev/tools/modlens</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/liustack/modlens">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v3.27.3</span><a class="rp-dl-a" href="https://github.com/liustack/modlens/releases/tag/v3.27.3">v3.27.3 ↓</a><span class="rp-dl-ver">3.27.3</span><span class="rp-dl-date">2026-11-07</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+8</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">4,956</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">155</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">8</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">118</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">93</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">ModLens
+
+为纯文本模型补上视觉能力，直接粘贴图片就能识别。
+
+🥇 全网最强的 DeepSeek Harness（dsh）视觉插件 🥇
+
+
+  English ·
+  配置 ·
+  故障排查 ·
+  安全 ·
+  🔍 ModSearch（DSH 最强免费联网搜索插件）
+
+
+
+  
+  
+  
+  
+  
+  
+
+
+DeepSeek 的主力对话模型和 GLM-5.3 本体仍是纯文本，无法读图。GLM-5.3-Flash 已是原生多模态。ModLens 借助外挂视觉引擎，为纯文本模型补上视觉能力。ModLens 支持直接粘贴图片识别，无需先保存成文件再提供路径。
+
+ 交流
+
+有问题随时提issue。推荐你关注公众号 liustack，也欢迎你来 X 上聊：@liustack。你用它做了什么、在哪个 harness 上跑、接下来该做什么，都会在公众号和 X 同步更新。社群正在筹备中。
+
+ 亮点
+
+🥇 全网最强的 DeepSeek Harness（dsh）外挂视觉识别插件：一条命令即刻安装 npx -y @deepseek-ai/dsh plugin --profile web add @liustack/modlens@3.27.3。更多安装与更新细节参考 配置手册 。如果用不惯命令行，也想想玩玩 DSH，推荐食用全网最轻量级的 DeepSeek Harness 桌面版封装  AIManager，零代码零配置起手，一键帮你安装所有依赖环境。
+
+DeepSeek Harness 粘贴识图有两种玩法。
+
+① 直接粘贴 贴进来的图片自主转换成文件路径进输入框（与 OpenCode、Pi 同款交互），modlens_read_image 工具接手读图。
+
+② 切到带 (modlens vision) 后缀的模型变体（选择器有记忆，选一次就行）再粘贴：缩略图直接可见、所见即所得，体验更接近 Codex App。变体由插件自动发现生成：每条承载纯文本 DeepSeek 或 GLM 模型的 provider 路由各得一组包装条目（默认安装下就是 DeepSeek-V4-Flash (modlens vision) 和 DeepSeek-V4-Pro (modlens vision)，装了 opencode-go、zai 等额外路由的机器会各自多出一组），两家自己的视觉型号（含 GLM-5.3-Flash）自动排除。走哪条通路由 host 依据真实模型元数据逐个裁决：只有被元数据确认纯文本的模型才会被接管，确认不了的一律不动，视觉模型因此保留原生贴图（细节）。
+
+所有 Harness 直接粘贴图片识别 无需先保存成文件再提供路径。
+
+需要快捷键把屏幕截进 DeepSeek Harness 时，用独立插件 dsh-screenshot。
+
+- 全网最轻量。 不用 hook，不套壳，不跑本地代理进程，不改任何 harness 配置的一行字：在 skill 类 harness 里它就是一个 skill 文件夹，在 dsh 里就是一个插件。卸载等于删个文件夹，你的 agent 立刻回到原样。
+- 零配置起手。 复用 Claude Code、Codex、OpenCode、Pi 已有配置，直接复用你本机的其他多模态模型。如果你本机什么都没安装？Antigravity CLI 是免 key 的免费通道，配一个免费 Gemini key 可将识别耗时降至 5 到 10 秒。也支持所有主流的 OpenAI 兼容格式 API key。
+- 多个密钥用英文逗号分隔，鉴权、限流或配额失败时自动轮换。 其他失败会跳过剩余密钥，并继续走现有的 provider 故障转移。
+- 基于证据，而非想象。 全文转录、按阅读顺序划分的版面区块、实体与关系列表，模型引用的是具体内容。
+- 一次安装，多端可用。 Claude Code、Codex、Pi、OpenCode 均经真机验证。
+
+ 在其他 Harness 中安装
+
+方式一，通过 skills.sh 一条命令安装：
+
+bash
+npx -y skills add liustack/modlens --skill modlens --global
+
+
+这会把 modlens skill 安装到用户级目录。重启 Harness 后，让 AI 配置
+modlens 并运行体检即可。
+
+方式二，把安装交给你的 AI。 把这句话发给它：
+
+ 按 https://github.com/liustack/modlens 的 INSTALL.md 安装并配置 modlens skill，完成后运行体检并把结果告诉我。
+
+安装会先盘点你机器上已有的东西。Claude Code、Codex、OpenCode 或 Pi 里任何一个已有的登录态都可能就够了：modlens 复用前一定先征得你同意，体检报告会说清现状。
+
+两种方式完成后，只在体检两手空空时，才需要你配一个免费引擎。 推荐免费的 Gemini api key（到 Google AI Studio 领取，约三分钟，无需信用卡），配上后每次识别 5 到 10 秒。其他平台的免费 openai 兼容 key 也行。想完全免注册就装 Antigravity CLI，然后完成登录：
+
+bash
+curl -fsSL https://antigravity.google/cli/install.sh | bash
+agy                                                            浏览器完成登录后退出
+
+
+安装还会盘点本机其他 harness CLI（Codex、OpenCode、Pi）里可触达的视觉能力，并逐个询问是否允许 modlens 复用。获准的登录态与你自己配的引擎平级入池，每次复用都会在结果里标明花的是谁的额度。
+
+DeepSeek Harness（dsh）用户不走 skill 流程，本包就是原生 dsh 插件：
+
+sh
+npx -y @deepseek-ai/dsh plugin --profile web add @liustack/modlens@3.27.3
+
+
+装完即有 modlens_read_image 工具，选「(modlens vision)」模型变体即可直接粘贴识图。引擎配置同样在 ~/.modlens，详见宿主接入。
+
+命令行不是唯一入口。dsh 设置页的「插件 → 插件配置」里有一张 ModLens 卡片（dsh 0.1.7 起改到侧栏的「插件」页，在「已安装」里点开 @liustack/modlens）：切换引擎，勾选 auto 模式可以复用本机哪些 CLI，在网页上点几下保存就生效。
+
+!dsh 设置页里的「视觉引擎（ModLens）」配置卡片：切换引擎，勾选 auto 模式复用的本机 CLI
+
+ 用法
+
+装好之后不需要记任何命令。正常聊天，粘贴图片或给出图片路径，提问即可，skill 自动触发：图片交给视觉引擎，答案基于读到的内容返回。贴一次，后面追问同一张图不用再贴。
+
+ 视觉引擎：六个内置 provider，四家可复用 CLI，一条故障转移链
+
+ModLen</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/liustack/modlens/issues/130"><span class="rp-item-num">#130</span><span class="rp-item-title">evidence 从不产出 layout.regions：工具描述与 schema 承诺「布局区域」，但 openai 兼容提供方始终给不出该段</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/liustack/modlens/issues/129"><span class="rp-item-num">#129</span><span class="rp-item-title">dsh: one model refused at resolve time takes down the whole (modlens vision) group</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/liustack/modlens/issues/128"><span class="rp-item-num">#128</span><span class="rp-item-title">建议在设置页为视觉提供方增加「测试连接」按钮</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/liustack/modlens/releases"><b>v3.27.3</b> <span class="rp-rel-tag">v3.27.3</span> <span class="rp-item-extra">2026-11-07</span></a><pre class="rp-pre">- dsh: GLM vision models keep their native sight behind gateways that spell versions with dashes (126). The name check that keeps native vision models out of the (modlens vision) wrap only knew the dotted spelling (glm-5.3-flash, glm-4.6v). Gateways such as Raccoon serve the same models as sn-glm-5-3-flash and sn-glm-4-6v, so after adding the gateway prefix to families, a catalog that omits modalities would have handed a vision model a wrapper twin. Both spellings are now excluded, and the text-only sn-glm-5-3 still wraps. Default family matching stays prefix-only: a gateway namespace is opted</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/liustack__modlens.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

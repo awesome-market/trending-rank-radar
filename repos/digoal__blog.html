@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>digoal/blog · GitHub Trending Rank Radar</title>
+<meta name="description" content="AI,Opensource,Database,Business,Finance,Minds. git clone --depth 1 https://github.com/digoal/blog">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="blog, digoal, digoal/blog, github stars, github trending, star growth, star history, 开源项目, 星标增长, postgresql, greenplum, enterprisedb, database, gpdb, hawq">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/digoal__blog">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="digoal/blog · GitHub Trending Rank Radar">
+<meta property="og:description" content="AI,Opensource,Database,Business,Finance,Minds. git clone --depth 1 https://github.com/digoal/blog">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/digoal__blog">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "digoal/blog", "codeRepository": "https://github.com/digoal/blog", "url": "https://zhuikan.com/repos/digoal__blog", "description": "AI,Opensource,Database,Business,Finance,Minds. git clone --depth 1 https://github.com/digoal/blog", "author": {"@type": "Organization", "name": "digoal", "url": "https://github.com/digoal"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-2.0.html", "programmingLanguage": "HTML", "dateCreated": "2015-08-02", "keywords": "postgresql,greenplum,enterprisedb,database,gpdb,hawq,mysql,mongodb,pgsql,postgres"}</script>
+</head>
+<body data-repo="digoal/blog" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">digoal/blog</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="digoal__blog"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/1920239?u=0f00a2636061258c8629f07edf7b1d081088e9f5&amp;v=4&s=300" width="300" height="300" alt="digoal avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">blog</div>
+      <a class="rp-side-owner" href="https://github.com/digoal">digoal</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/digoal">digoal</a>
+        <span class="rp-sep">/</span><span class="rp-name">blog</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">AI,Opensource,Database,Business,Finance,Minds. git clone --depth 1 https://github.com/digoal/blog</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>8,607</b></span><span class="rp-stat" title="forks">⑂ <b>1,923</b></span><span class="rp-stat" title="watchers">👁 <b>612</b></span><span class="rp-stat" title="prs">⑃ <b>11</b></span><span class="rp-stat" title="issues">● <b>407</b></span><span class="rp-stat" title="releases">▤ <b>7</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/postgresql">postgresql</a><a class="rp-topic" href="https://github.com/topics/greenplum">greenplum</a><a class="rp-topic" href="https://github.com/topics/enterprisedb">enterprisedb</a><a class="rp-topic" href="../tags/database">database</a><a class="rp-topic" href="https://github.com/topics/gpdb">gpdb</a><a class="rp-topic" href="https://github.com/topics/hawq">hawq</a><a class="rp-topic" href="../tags/mysql">mysql</a><a class="rp-topic" href="../tags/mongodb">mongodb</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">HTML</span><span class="rp-meta-bit">GPL-2.0</span><span class="rp-meta-bit">Created 2015-08-02</span><a class="rp-meta-bit rp-home" href="https://github.com/digoal/blog/blob/master/README.md" rel="noopener">github.com/digoal/blog/blob/master/README.md</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/digoal/blog">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">20250207</span><a class="rp-dl-a" href="https://github.com/digoal/blog/releases/tag/20250207">blog-20250207 ↓</a><span class="rp-dl-ver">20250207</span><span class="rp-dl-date">2025-02-07</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+2</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+13</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">8,607</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,923</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">612</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">11</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">407</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">7</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">About me 
+  
+ 一、PostgreSQL, Greenplum 学习视频  
+  
+1、视频下载链接： https://pan.baidu.com/s/1Q5u5NSrb0gL5-psA9DCBUQ   (提取码：5nox   如果链接失效请通知我, 谢谢)  
+- PostgreSQL 9.3 数据库管理与优化 4天  
+- PostgreSQL 9.3 数据库管理与优化 5天  
+- PostgreSQL 9.3 数据库优化 3天  
+- PostgreSQL 9.1 数据库管理与开发 1天  
+- PostgreSQL 专题讲座  
+  
+2、《2021-重新发现PG之美 系列 - 适合架构师与业务开发者》  
+3、《2021-DB吐槽大会 系列 - 适合产品经理、架构师与内核开发者》  
+4、《2020-PostgreSQL 应用场景最佳实践 - 适合架构师与业务开发者》  
+5、《2020-PostgreSQL+MySQL 联合解决方案课程 - 适合架构师与业务开发者》  
+6、《2019-PostgreSQL 2天体系化培训 - 适合DBA》  
+7、《2017-PostgreSQL 应用场景实践 - 适合架构师与业务开发者》  
+8、《2019-PG天天象上沙龙纪录 - 适合DBA》  
+9、《2019-Oracle迁移到PostgreSQL - 适合DBA与业务开发者》    
+10、《2021-Ask 德哥 系列 - 适合DBA与业务开发者》    
+11、《2018-PG生态、案例、开发实践系列 - 适合架构师与业务开发者》  
+12、《2018-阿里云POLARDB for Oracle|RDS for PPAS 讲解视频》  
+13、《2022-每天5分钟,PG聊通透 - 系列1 - 热门问题》   
+14、《2023-PostgreSQL|PolarDB 学习实验手册》     
+15、《2024-开源PolarDB|PostgreSQL 应用开发者&amp;DBA 公开课》     
+16、《2025-PolarDB 进阶课程, 穷鬼玩PolarDB RAC一写多读集群 系列文章》     
+17、《2023-PostgreSQL Docker镜像学习环境 ARM64版, 已集成热门插件和工具》     
+18、《2023-PostgreSQL Docker镜像学习环境 AMD64版, 已集成热门插件和工具》     
+19、《2024-数据库筑基课 系列》     
+20、《2025-AI辅助 学PolarDB/PostgreSQL数据库内核源码 系列课程, 含传统学习曲线及素材建议》     
+21、《2025-OceanBase 源码入门学习24篇 汇总》     
+22、《2025-LangChain 源码入门学习21篇 汇总》     
+23、《2025-DuckDB 源码入门学习27篇 汇总》     
+24、《2025-Milvus 源码入门学习31篇 汇总》     
+25、《2025-VectorChord 源码入门学习39篇 汇总》     
+26、《2025-pgvector 源码入门学习27篇 汇总》     
+27、《2025-DuckPGQ 源码入门学习35篇 汇总》     
+28、《2025-pgvectorscale(StreamingDiskANN) 源码入门学习39篇 汇总》     
+29、《2025-pg_tokenizer 源码入门学习29篇 汇总》     
+30、《2025-VectorChord-bm25 源码入门学习20篇 汇总》     
+31、《2025-SeekDB 源码入门学习13篇 汇总》     
+32、《2025-大学生数据库实践课 : 大模型及Dify体验+AI搜索技术实践(向量、关键词、标量、图、以及混合搜索)》     
+33、《2026-散户投资小白金融全品种操盘手册》      
+  
+ 二、学习资料  
+  
+1、《Oracle DBA 增值+转型 PostgreSQL 学习方法、路径》   
+2、《PostgreSQL、Greenplum 技术+108个场景结合最佳实践《如来神掌》》    
+3、《PostgreSQL 数据库安全指南 - 以及安全合规》    
+4、《PostgreSQL 持续稳定使用的小技巧 - 最佳实践、规约、规范》    
+5、《PostgreSQL DBA最常用SQL》    
+6、《PostgreSQL 数据库开发规范》    
+7、《企业数据库选型规则》    
+8、《PostgreSQL 规格评估 - 微观、宏观、精准 多视角估算数据库性能(选型、做预算不求人)》    
+9、《数据库选型之 - 大象十八摸 - 致 架构师、开发者》    
+10、《数据库选型思考(PostgreSQL,MySQL,Oracle)》    
+11、《快速入门PostgreSQL应用开发与管理 - 1 如何搭建一套学习、开发PostgreSQL的环境》    
+12、《快速入门PostgreSQL应用开发与管理 - 2 Linux基本操作》    
+13、《快速入门PostgreSQL应用开发与管理 - 3 访问数据》    
+14、《快速入门PostgreSQL应用开发与管理 - 4 高级SQL用法》    
+15、《快速入门PostgreSQL应用开发与管理 - 5 数据定义》    
+16、《快速入门PostgreSQL应用开发与管理 - 6 事务和锁》    
+17、《快速入门PostgreSQL应用开发与管理 - 7 函数、存储过程和触发器》    
+18、《快速入门PostgreSQL应用开发与管理 - 8 PostgreSQL 管理》    
+19、PolarDB开源数据库高校工作室 发布《PostgreSQL+PolarDB开源数据库人才认证培训》教程+实验手册 下载    
+  
+ 三、感恩  
+ 四、思考  
+  
+1、《德说》     
+2、《读书分享 第1期 - 《臣服实验》》       
+3、《PG社区建设方法论 - 五看三定》     
+4、《PostgreSQL 社区建设思考》    
+5、《PostgreSQL 社区建设商业策划 {未完}》      
+6、[《[未完] PostgreSQL\Greenplum 社区管理 TODO》](201710/20171017_05.md)    
+7、[《[未完] PostgreSQL\Greenplum Customer视角TODO》](201710/20171017_01.md)    
+8、《为什么企业应该参与PG社区建设?》    
+9、《为什么数据库选型和找对象一样重要》    
+10、《云、商业、开源数据库终局之战 - 商业角度解读PG如何破局 - openapi 、 扩展能力、插件开源协议》    
+11、[《[直播]大话数据库终局之战》](202009/20200926_03.md)      
+12、《未来数据库方向 - 以及PostgreSQL 有价值的插件、可改进功能、</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/digoal/blog/issues/76"><span class="rp-item-num">#76</span><span class="rp-item-title">PG 数据库 功能许愿墙</span><span class="rp-item-extra">63 comments · 2020-08-21</span></a><a class="rp-item" href="https://github.com/digoal/blog/issues/121"><span class="rp-item-num">#121</span><span class="rp-item-title">《PostgreSQL+PolarDB开源数据库人才认证培训》实验手册持续建设</span><span class="rp-item-extra">3 comments · 2023-06-16</span></a><a class="rp-item" href="https://github.com/digoal/blog/issues/66"><span class="rp-item-num">#66</span><span class="rp-item-title">请问 如果瓦片中有多个图层 如何实现？？？</span><span class="rp-item-extra">3 comments · 2020-03-26</span></a><a class="rp-item" href="https://github.com/digoal/blog/issues/244"><span class="rp-item-num">#244</span><span class="rp-item-title">德哥自己不写文章了？现在就像AI垃圾堆</span><span class="rp-item-extra">2 comments · 2026-06-02</span></a><a class="rp-item" href="https://github.com/digoal/blog/issues/126"><span class="rp-item-num">#126</span><span class="rp-item-title">有没有办法在pg安装完成后，再重新跑pg的回归测试呢</span><span class="rp-item-extra">2 comments · 2024-12-23</span></a><a class="rp-item" href="https://github.com/digoal/blog/issues/125"><span class="rp-item-num">#125</span><span class="rp-item-title">唯一约束索引条件下存在重复的数据</span><span class="rp-item-extra">2 comments · 2024-05-31</span></a><a class="rp-item" href="https://github.com/digoal/blog/issues/63"><span class="rp-item-num">#63</span><span class="rp-item-title">请教Greenplum的硬件配置问题</span><span class="rp-item-extra">2 comments · 2019-11-18</span></a><a class="rp-item" href="https://github.com/digoal/blog/issues/33"><span class="rp-item-num">#33</span><span class="rp-item-title">使用smlar插件, 相似度计算公式采用tfidf， 效率和你列出的差别特别大</span><span class="rp-item-extra">2 comments · 2018-07-09</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/digoal/blog/discussions/128"><span class="rp-item-num">#128</span><span class="rp-item-title">在使用 pgbouncer 和 go 的 pgx 链接 postgres 会出现 ssl 的异常报错，但是 ssl 并没有开启。</span><span class="rp-item-extra">0 comments · 2025-02-08</span></a><a class="rp-item" href="https://github.com/digoal/blog/discussions/119"><span class="rp-item-num">#119</span><span class="rp-item-title">Thanks for the graph db resources</span><span class="rp-item-extra">2 comments · 2023-02-06</span></a><a class="rp-item" href="https://github.com/digoal/blog/discussions/90"><span class="rp-item-num">#90</span><span class="rp-item-title">Welcome to blog Discussions!</span><span class="rp-item-extra">1 comments · 2021-03-20</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/digoal/blog/releases"><b>20250207</b> <span class="rp-rel-tag">20250207</span> <span class="rp-item-extra">2025-02-07</span></a></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/digoal__blog.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

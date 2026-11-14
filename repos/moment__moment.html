@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>moment/moment · GitHub Trending Rank Radar</title>
+<meta name="description" content="Parse, validate, manipulate, and display dates in javascript.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="moment, moment, moment/moment, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/moment__moment">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="moment/moment · GitHub Trending Rank Radar">
+<meta property="og:description" content="Parse, validate, manipulate, and display dates in javascript.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/moment__moment">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "moment/moment", "codeRepository": "https://github.com/moment/moment", "url": "https://zhuikan.com/repos/moment__moment", "description": "Parse, validate, manipulate, and display dates in javascript.", "author": {"@type": "Organization", "name": "moment", "url": "https://github.com/moment"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2011-03-01"}</script>
+</head>
+<body data-repo="moment/moment" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">moment/moment</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="moment__moment"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/4129662?v=4&s=300" width="300" height="300" alt="moment avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">moment</div>
+      <a class="rp-side-owner" href="https://github.com/moment">moment</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/moment">moment</a>
+        <span class="rp-sep">/</span><span class="rp-name">moment</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Parse, validate, manipulate, and display dates in javascript.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>47,871</b></span><span class="rp-stat" title="forks">⑂ <b>6,972</b></span><span class="rp-stat" title="watchers">👁 <b>815</b></span><span class="rp-stat" title="prs">⑃ <b>2,194</b></span><span class="rp-stat" title="issues">● <b>4,166</b></span><span class="rp-stat" title="releases">▤ <b>2</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2011-03-01</span><a class="rp-meta-bit rp-home" href="https://momentjs.com" rel="noopener">momentjs.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="moment__luxon"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/4129662?v=4" alt="" loading="lazy">luxon</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/moment/moment">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">2.31.0</span><a class="rp-dl-a" href="https://github.com/moment/moment/releases/tag/2.31.0">2.31.0 ↓</a><span class="rp-dl-ver">2.31.0</span><span class="rp-dl-date">2026-09-15</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">47,871</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">6,972</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">815</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">2,194</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">4,166</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">2</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Moment.js
+
+[![NPM version][npm-version-image]][npm-url]
+[![NPM downloads][npm-downloads-image]][npm-downloads-url]
+[![MIT License][license-image]][license-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
+[![FOSSA Status][fossa-badge-image]][fossa-badge-url]
+
+A JavaScript date library for parsing, validating, manipulating, and formatting
+dates.
+
+ ⚠️ Moment.js is a legacy project, now in maintenance mode. New features
+ are not being accepted. For more details, see the
+ latest project status update.
+
+_Thank you._
+
+Moment.js is a project of the OpenJS Foundation, which
+is part of the Linux Foundation.
+
+ Resources
+
+- Documentation
+- Changelog
+- Stack Overflow
+- Security Policy
+- Threat Model
+
+ Installation
+
+Install Moment.js using a package manager like npm, yarn, or bun.
+
+bash
+npm install moment
+
+
+ License
+
+Moment.js is an OpenJS Foundation project and is freely distributable under the
+terms of the [MIT license][license-url].
+
+
+
+  
+    
+    
+  
+
+
+
+Copyright OpenJS Foundation and Moment.js contributors.
+All rights reserved. The OpenJS Foundation has registered
+trademarks and uses trademarks. For a list of trademarks of the
+OpenJS Foundation, please see our
+Trademark Policy and
+Trademark List. Trademarks and logos not
+indicated on the
+list of OpenJS Foundation trademarks are
+trademarks&amp;trade; or registered&amp;reg; trademarks of their respective holders. Use
+of them does not imply any affiliation with or endorsement by them.
+
+The OpenJS Foundation |
+[AI Coding Assistants Policy][ai-policy] |
+Bylaws |
+Code of Conduct |
+Cookie Policy |
+Privacy Policy |
+Terms of Use |
+Trademark List |
+Trademark Policy
+
+[license-image]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat
+[license-url]: LICENSE
+[npm-url]: https://npmjs.org/package/moment
+[npm-version-image]: https://img.shields.io/npm/v/moment.svg?style=flat
+[npm-downloads-image]: https://img.shields.io/npm/dm/moment.svg?style=flat
+[npm-downloads-url]: https://npmcharts.com/compare/moment?minimal=true
+[coveralls-image]: https://coveralls.io/repos/moment/moment/badge.svg?branch=develop
+[coveralls-url]: https://coveralls.io/r/moment/moment?branch=develop
+[fossa-badge-image]: https://app.fossa.io/api/projects/custom%2B20126%2Fgithub.com%2Fmoment%2Fmoment.svg?type=shield
+[fossa-badge-url]: https://app.fossa.io/projects/custom%2B20126%2Fgithub.com%2Fmoment%2Fmoment?ref=badge_shield
+[ai-policy]: https://ai-coding-assistants-policy.openjsf.org/</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/moment/moment/issues/5786"><span class="rp-item-num">#5786</span><span class="rp-item-title">Please fix Russian locale months abbreviations</span><span class="rp-item-extra">10 comments · 2020-12-02</span></a><a class="rp-item" href="https://github.com/moment/moment/issues/2659"><span class="rp-item-num">#2659</span><span class="rp-item-title">Investigate performance tuning of moment creation and comparison</span><span class="rp-item-extra">10 comments · 2015-10-08</span></a><a class="rp-item" href="https://github.com/moment/moment/issues/5698"><span class="rp-item-num">#5698</span><span class="rp-item-title">Support Short Japanese Era Name</span><span class="rp-item-extra">7 comments · 2020-08-26</span></a><a class="rp-item" href="https://github.com/moment/moment/issues/5600"><span class="rp-item-num">#5600</span><span class="rp-item-title">moment giving wrong  month </span><span class="rp-item-extra">6 comments · 2020-06-16</span></a><a class="rp-item" href="https://github.com/moment/moment/issues/5515"><span class="rp-item-num">#5515</span><span class="rp-item-title">Different `utcOffset()` result in firefox and chrome</span><span class="rp-item-extra">6 comments · 2020-05-06</span></a><a class="rp-item" href="https://github.com/moment/moment/issues/2928"><span class="rp-item-num">#2928</span><span class="rp-item-title">Duration days value inconsistent depending on input (years/days)</span><span class="rp-item-extra">6 comments · 2016-01-28</span></a><a class="rp-item" href="https://github.com/moment/moment/issues/5512"><span class="rp-item-num">#5512</span><span class="rp-item-title">Adjustment for moment locale bs.js</span><span class="rp-item-extra">5 comments · 2020-05-04</span></a><a class="rp-item" href="https://github.com/moment/moment/issues/5267"><span class="rp-item-num">#5267</span><span class="rp-item-title">moment(&quot;2019-08-30 23:59:59&quot;).from(moment(&quot;2019-10-25 12:00:00&quot;)) is &#x27;54.50001157407407 days ago&#x27; (should be 55.500... days ago)</span><span class="rp-item-extra">5 comments · 2019-10-24</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/moment/moment/discussions/6373"><span class="rp-item-num">#6373</span><span class="rp-item-title">Project Maintenance Status</span><span class="rp-item-extra">0 comments · 2026-07-26</span></a><a class="rp-item" href="https://github.com/moment/moment/discussions/6411"><span class="rp-item-num">#6411</span><span class="rp-item-title">Need an error if parsing format string does not match expected format, instead of giving some default output.</span><span class="rp-item-extra">2 comments · 2024-12-19</span></a><a class="rp-item" href="https://github.com/moment/moment/discussions/6412"><span class="rp-item-num">#6412</span><span class="rp-item-title">how to use meridiemHour? I can&#x27;t find any info in docs</span><span class="rp-item-extra">1 comments · 2024-08-22</span></a><a class="rp-item" href="https://github.com/moment/moment/discussions/6413"><span class="rp-item-num">#6413</span><span class="rp-item-title">Issue creating basic countdown with special format</span><span class="rp-item-extra">3 comments · 2024-08-18</span></a><a class="rp-item" href="https://github.com/moment/moment/discussions/6414"><span class="rp-item-num">#6414</span><span class="rp-item-title">Moment.js Locale Override Mystery - AM/PM Parsing Gone Wrong!&quot;</span><span class="rp-item-extra">7 comments · 2024-05-15</span></a><a class="rp-item" href="https://github.com/moment/moment/discussions/6415"><span class="rp-item-num">#6415</span><span class="rp-item-title">Time Format without AM and PM</span><span class="rp-item-extra">3 comments · 2024-03-27</span></a><a class="rp-item" href="https://github.com/moment/moment/discussions/6416"><span class="rp-item-num">#6416</span><span class="rp-item-title">Wrong result in date diff in days</span><span class="rp-item-extra">1 comments · 2024-02-23</span></a><a class="rp-item" href="https://github.com/moment/moment/discussions/6417"><span class="rp-item-num">#6417</span><span class="rp-item-title">.weeks() gives 0 for months with daylight saving time time change</span><span class="rp-item-extra">3 comments · 2023-01-26</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/moment/moment/releases"><b>2.31.0</b> <span class="rp-rel-tag">2.31.0</span> <span class="rp-item-extra">2026-09-15</span></a><pre class="rp-pre">_Released Sep 14, 2026_
+
+ Security fixes
+
+- Fix CVE-2026-17495 (GHSA-4p3w-j4w9-5jqw)
+
+ Bug fixes
+
+- 6376 Prevent object prototype properties from being used as format tokens
+- 6386 Normalize lazy-loaded locale names
+- 6404 Fix parsing issue with eHHmm format
+- 6433 Ignore non-Moment arguments in min and max
+- 6434 Fix inherited lowercase long date formats
+- 6436 Reset locale parsing caches after updates
+- 6437 Fix weekday mismatch when the format only has part of a date
+- 6442 Fix locale(&#x27;__proto__&#x27;) corrupting the global locale
+- 6443 Avoid Object.assign in duration.humanize
+- 6446 Validate r</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/moment__moment.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

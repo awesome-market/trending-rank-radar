@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>farion1231/cc-switch · GitHub Trending Rank Radar</title>
+<meta name="description" content="A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode,DeepSeek Harness and more. Only official website: ccswitch.io">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="cc-switch, farion1231, farion1231/cc-switch, github stars, github trending, star growth, star history, 开源项目, 星标增长, ai-tools, claude-code, desktop-app, open-source, rust, tauri">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/farion1231__cc-switch">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="farion1231/cc-switch · GitHub Trending Rank Radar">
+<meta property="og:description" content="A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode,DeepSeek Harness and more. Only official website: ccswitch.io">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/farion1231__cc-switch">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "farion1231/cc-switch", "codeRepository": "https://github.com/farion1231/cc-switch", "url": "https://zhuikan.com/repos/farion1231__cc-switch", "description": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode,DeepSeek Harness and more. Only official website: ccswitch.io", "author": {"@type": "Organization", "name": "farion1231", "url": "https://github.com/farion1231"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Rust", "dateCreated": "2025-08-04", "keywords": "ai-tools,claude-code,desktop-app,open-source,rust,tauri,codex,mcp,provider-management,wsl-support"}</script>
+</head>
+<body data-repo="farion1231/cc-switch" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">farion1231/cc-switch</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="farion1231__cc-switch"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/44939412?u=730e85639662b2f4e29a6b1b1c92c1b9461baa10&amp;v=4&s=300" width="300" height="300" alt="farion1231 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">cc-switch</div>
+      <a class="rp-side-owner" href="https://github.com/farion1231">farion1231</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/farion1231">farion1231</a>
+        <span class="rp-sep">/</span><span class="rp-name">cc-switch</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily">daily <b>#52</b></a><a class="rp-board-chip" href="../?board=weekly">weekly <b>#92</b></a><a class="rp-board-chip" href="../?board=monthly">monthly <b>#48</b></a><a class="rp-board-chip" href="../?board=total">total <b>#65</b></a></div>
+    </div>
+    <p class="rp-desc">A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode,DeepSeek Harness and more. Only official website: ccswitch.io</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>154,317</b></span><span class="rp-stat" title="forks">⑂ <b>10,121</b></span><span class="rp-stat" title="watchers">👁 <b>274</b></span><span class="rp-stat" title="prs">⑃ <b>2,870</b></span><span class="rp-stat" title="issues">● <b>6,248</b></span><span class="rp-stat" title="releases">▤ <b>87</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/ai-tools">ai-tools</a><a class="rp-topic" href="../tags/claude-code">claude-code</a><a class="rp-topic" href="../tags/desktop-app">desktop-app</a><a class="rp-topic" href="../tags/open-source">open-source</a><a class="rp-topic" href="../tags/rust">rust</a><a class="rp-topic" href="../tags/tauri">tauri</a><a class="rp-topic" href="../tags/codex">codex</a><a class="rp-topic" href="../tags/mcp">mcp</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2025-08-04</span><a class="rp-meta-bit rp-home" href="https://ccswitch.io" rel="noopener">ccswitch.io</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/farion1231/cc-switch">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">CC Switch v4.0.31</span><a class="rp-dl-a" href="https://github.com/farion1231/cc-switch/releases/tag/v4.0.31">CC-4.0.31 ↓</a><span class="rp-dl-ver">4.0.31</span><span class="rp-dl-date">2026-11-12</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+384</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+2,811</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+12,423</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">154,317</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">10,121</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">274</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">2,870</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">6,248</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">87</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">CC Switch
+
+ The All-in-One Manager for Claude Code, Claude Desktop, Codex, Gemini CLI, Grok Build, OpenCode, OpenClaw, Hermes Agent, Pi, MiniMax Code, Kimi Code &amp; Oh My Pi
+
+Switch API providers in one click and manage MCP, Skills, and Prompts in one place — no more hand-editing JSON / TOML / YAML config files.
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 🌐 The Only Official Website: ccswitch.io
+
+English | 简体中文 | 繁體中文 | 日本語 | 한국어 | Türkçe | Русский | Deutsch | Changelog
+
+Download · Quick Start · Features · FAQ · User Manual
+
+
+
+ ❤️Sponsor
+
+ Want to appear here?
+
+
+Click to collapse
+
+
+
+Kimi K3.1 Pro is Moonshot AI&#x27;s most capable 3T-class open-weight model to date, with a 1-million-token context window. Built on Kimi K3 with substantially larger post-training compute, it delivers consistent gains across coding, agentic workflows, 3D creation, and reasoning. CC Switch makes it easy to configure and switch to Kimi K3.1 Pro across agentic tools.
+
+Try a Kimi Code plan (中文站 | Global), or use the API through the Kimi Open Platform (中文站 | Global).
+
+New user top-up bonus: register and complete your first top-up via the API links above to receive 10% of the amount as bonus API credit, up to CNY ¥1,000.
+
+---
+
+
+
+
+Thanks to AICodeMirror for sponsoring this project! AICodeMirror provides official high-stability relay services for Claude Code / Codex / Gemini CLI, with enterprise-grade concurrency, fast invoicing, and 24/7 dedicated technical support.
+Claude Code / Codex / Gemini official channels at 38% / 2% / 9% of original price, with extra discounts on top-ups! AICodeMirror offers special benefits for CC Switch users: register via this link to enjoy 20% off your first top-up, and enterprise customers can get up to 25% off!
+
+
+
+
+Thanks to PackyCode for sponsoring this project! PackyCode is a reliable and efficient API relay service provider, offering relay services for Claude Code, Codex, Gemini, and more. PackyCode provides special discounts for our software users: register using this link and enter the &quot;cc-switch&quot; promo code during first recharge to get 10% off.
+
+
+
+
+Thanks to APINEBULA for sponsoring this project! APINEBULA, an enterprise-grade AI aggregation platform under Galaxy Video Bureau, leverages extensive platform resources to provide developers, teams, and enterprises with stable, cost-effective access to large language model APIs. The platform integrates leading, full-powered models like Claude, GPT, and Gemini, allowing you to connect to the world&#x27;s top AI models through a single API, with prices starting as low as 10% of the original cost. Designed for AI programming, Agent development, and business system integration, APINEBULA supports enterprise-grade high concurrency, formal contracts, corporate bank transfers, and invoicing services. APINEBULA provides special discounts for our software users: register using this link and enter the &quot;ccswitch&quot; promo code during your first recharge to get 10% off.
+
+
+
+
+Thanks to PatewayAI for sponsoring this project! PatewayAI is an API relay </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/farion1231/cc-switch/issues/1855"><span class="rp-item-num">#1855</span><span class="rp-item-title">🗺️ New CLI Tool Support Tracker / 新 CLI 工具支持追踪</span><span class="rp-item-extra">201 comments · 2026-04-02</span></a><a class="rp-item" href="https://github.com/farion1231/cc-switch/issues/4043"><span class="rp-item-num">#4043</span><span class="rp-item-title">希望添加同时设置wsl和本机的配置</span><span class="rp-item-extra">39 comments · 2026-06-11</span></a><a class="rp-item" href="https://github.com/farion1231/cc-switch/issues/4205"><span class="rp-item-num">#4205</span><span class="rp-item-title">支持ZCode Agent应用</span><span class="rp-item-extra">25 comments · 2026-06-15</span></a><a class="rp-item" href="https://github.com/farion1231/cc-switch/issues/7459"><span class="rp-item-num">#7459</span><span class="rp-item-title">Codex 桌面端内置工具 automation_update 顶层 oneOf schema 被上游拒绝（HTTP 400）</span><span class="rp-item-extra">18 comments · 2026-09-17</span></a><a class="rp-item" href="https://github.com/farion1231/cc-switch/issues/791"><span class="rp-item-num">#791</span><span class="rp-item-title">新功能需求：增加claude plugins管理</span><span class="rp-item-extra">18 comments · 2026-01-26</span></a><a class="rp-item" href="https://github.com/farion1231/cc-switch/issues/2334"><span class="rp-item-num">#2334</span><span class="rp-item-title">webui和cli</span><span class="rp-item-extra">17 comments · 2026-04-25</span></a><a class="rp-item" href="https://github.com/farion1231/cc-switch/issues/1678"><span class="rp-item-num">#1678</span><span class="rp-item-title">Claude Code Auto Mode Classifier Compatibility Issue</span><span class="rp-item-extra">17 comments · 2026-03-25</span></a><a class="rp-item" href="https://github.com/farion1231/cc-switch/issues/3996"><span class="rp-item-num">#3996</span><span class="rp-item-title">3.16.2版本使用 阿里云存储s3无法正常连接</span><span class="rp-item-extra">16 comments · 2026-06-10</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/farion1231/cc-switch/discussions/9429"><span class="rp-item-num">#9429</span><span class="rp-item-title">关于第三方提供商BotCF疑似使用国产模型冒充Claude的问题</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/farion1231/cc-switch/discussions/9398"><span class="rp-item-num">#9398</span><span class="rp-item-title">自从上了V4版本后，感觉越来越好用了</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/farion1231/cc-switch/discussions/9397"><span class="rp-item-num">#9397</span><span class="rp-item-title">更新skill仓库时会走代理吗,总是检查更新失败</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/farion1231/cc-switch/discussions/9368"><span class="rp-item-num">#9368</span><span class="rp-item-title">خيتو</span><span class="rp-item-extra">0 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/farion1231/cc-switch/discussions/9301"><span class="rp-item-num">#9301</span><span class="rp-item-title">UI太丑了</span><span class="rp-item-extra">0 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/farion1231/cc-switch/discussions/9284"><span class="rp-item-num">#9284</span><span class="rp-item-title">能不能增加用户功能，这样我在不同电脑只需要登录就能同步各种api的配置，以及我自己做的各种skill和MCP了。</span><span class="rp-item-extra">0 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/farion1231/cc-switch/discussions/9278"><span class="rp-item-num">#9278</span><span class="rp-item-title">【经验分享】Claude Desktop通过CC Switch接入第三方模型,和模型为空排错经验</span><span class="rp-item-extra">0 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/farion1231/cc-switch/discussions/9271"><span class="rp-item-num">#9271</span><span class="rp-item-title">建议能够增加远程管理和路由/聚合能力</span><span class="rp-item-extra">0 comments · 2026-11-06</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/farion1231/cc-switch/releases"><b>CC Switch v4.0.31</b> <span class="rp-rel-tag">v4.0.31</span> <span class="rp-item-extra">2026-11-12</span></a><pre class="rp-pre">CC Switch v4.0.31
+
+本版本新增受管应用腾讯 WorkBuddy：自定义模型写进 WorkBuddy 自己的模型配置，在 WorkBuddy 里直接就能选；还能在多个 WorkBuddy 账号之间切换，切换前先看到每个号的套餐、剩余积分和到期时间。界面新增德语，README 也有了全部八种界面语言的版本。
+
+另外修复了 Claude Code 经路由连 OpenAI Responses 格式的中转时，会话被同一个中转分到不同 Azure 资源后每一轮都报 400、再也继续不了；经路由连 Gemini Native 格式上游时，并行工具调用报 400、缓存命中率很低；macOS 托盘悬停提示一直挂在屏幕上；Codex 续接的旧对话用量从不导入等问题。
+
+English → | 日本語版 →
+
+---
+
+ 新增
+
+ WorkBuddy
+
+腾讯 WorkBuddy 成为新的受管应用（8757，需求见 4802、5802、7419、7076）。和 OpenCode 一样是多个供应商同时生效：
+
+- 自定义模型：点「添加」后，供应商的模型写进 WorkBuddy 自己的 models.json，在 WorkBuddy 的模型选择里显示为「名称:模型 ID」，名称留空时用「厂商标签」。WorkBuddy 里自己添加的模型原样保留。WorkBuddy 的自定义模型只支持 Open</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (8)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/weixin_27743991/article/details/167180973" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">cc-switch：一行命令实现Git多账号与SSH配置的无缝切换</span><span class="rp-item-extra">2026-10-06</span></a><a class="rp-item" href="https://blog.csdn.net/pangzi62732/article/details/163441371" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">Claude Code + cc-switch + Git + Node.js 一站式完整安装配置教程【8.3】</span><span class="rp-item-extra">2026-08-03</span></a><a class="rp-item" href="https://news.qq.com/rain/a/20260228A07XMT00" target="_blank" rel="noopener"><span class="rp-news-src">腾讯网</span><span class="rp-item-title">130万次下载，2万Star开源项目CC Switch，36岁转行程序员Jason的第一个作品</span><span class="rp-item-extra">2026-02-28</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE1DT2ZqaTl3akh3bDhUZ1VOYjFXRmRjQzAxaTNLUW13Ql92WWRVb2xTRE03c1RyYTlxdUtFak9IRDg5WGJjQ2lwQ0VnaHptUFBuWEQ5cUs1dlVQenFlOFpWaE9IOHJRZw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">www.80aj.com</span><span class="rp-item-title">GitHub Codex切换节点报错？开源工具Codex++一键修复历史记录与502错误</span><span class="rp-item-extra">2026-06-05</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiakFVX3lxTE43a1AxQ0s3WEYzck9kZmJ2emREY2t3dHhBTVdkaXo2eXJMaUpHaXpSbW5KSFlSemdZeFVyN3VEdlc3VDlLVkpIbmN1a2V0Z3l4RUZSMy04Qzh3eDlTc3o4b3dvejg4UFh0b1E?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">80aj.com</span><span class="rp-item-title">开源工具CC-Switch CLI更新：新增WebDAV同步，统一管理多AI模型CLI环境</span><span class="rp-item-extra">2026-05-20</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE8xNHFBaV9peHNrRHY4S2kzNUdEQlVLTjNCa1k3TThacE81YTBrWGxEQXUxb0VFbXVnejc1SHdIWUNaXzE0MWpQRndqWEVHTW1LY1F2RXFB?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">投资界</span><span class="rp-item-title">这个51K星标的开源神器，让任何Agent都能一键切换所有模型</span><span class="rp-item-extra">2026-04-28</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiV0FVX3lxTE1DT25aY1VJeE9YWlEtSnhBY2hFYWprTXVuZGZkRVN1eTBnaFpiVnBxaGs0UlFXdFllc3hzSy1qVUZPeTltNWpQMFVocU1xNmFLUUxsVGRLNA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">view.inews.qq.com</span><span class="rp-item-title">Codex登录又崩了？零基础用CCSwitch秒连教程</span><span class="rp-item-extra">2026-04-21</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE9jNG9pdFNpd3ZKOHN6V3ZPUnpDSlQxWlJTUHlIei1Tc2l0VmRodXFnQUZ5QnhxVDRXYTItdlp6OGJlRGFQamFZWTdfeHoycHNPY1lYdWdR?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">QQ News</span><span class="rp-item-title">Claude Code保姆级入门：不会命令行也能用，我把5个必学技巧全整理好了</span><span class="rp-item-extra">2025-12-01</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (7)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=45861477" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">CC Switch: Claude Code and Codex Provider Switcher</span><span class="rp-item-extra">▲ 3 · 0 comments · 2025-11-09</span></a><a class="rp-item" href="https://note.com/like_afterhours/n/n35d5d6bc4aae?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">How to Use CC Switch | Switch API Providers for Claude Code / Codex / Gemini CLI in One App [Installation Guide]</span><span class="rp-item-extra">2026-06-13</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiggFBVV95cUxNbGJYRm9iUXV5Q1daNDBjczB4QzlnRlVRVE1zaEQzc2MzMFRCQ09EUTBmdFFGSGhrMnRJdUhjSGljVmg1eXM5T3U4WHdHX29idEZUNWVRdl9qSzBjR3ZDVC1WNVJJN19OUm9NUzZpUnE1ZTNJOGlvNndHYmxuQ0RHQVZ3?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Augment Code</span><span class="rp-item-title">CC Switch Hits 104K Stars: One Desktop App for Seven AI Coding Tools</span><span class="rp-item-extra">2026-06-18</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiY0FVX3lxTFBhbjc2Rk1RNGExekhsWC0zSG12ajNsX1lhamprVkJHNDk2N3ZtSUhseHJmdUJEZ1pwMDQzQ3BGeU9MenhwTE1tZE5TaEZkdFBTOVZXSUNiemJTWDM4Sy1LVU1XRQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Augment Code</span><span class="rp-item-title">CC Switch hits 89.1K stars as a unified manager for AI coding CLIs</span><span class="rp-item-extra">2026-06-02</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMid0FVX3lxTE16Z0tvWlFRb0htdXM5YVlGQTRGZTl5dW9ITGZXRWFRZzVudW0wRVZtMTRSbExOOVE0alVNN3dCdnZGbVlNOXd0M0I2MFN3TzA1bnNCM2x3OTVsaVdlZlVvQmUwbFBacEZ0YVdFam1qenkwdENqX1c0?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Augment Code</span><span class="rp-item-title">CC Switch hits 75K stars: why developers are unifying their AI coding CLIs</span><span class="rp-item-extra">2026-05-19</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiY0FVX3lxTE5LVm5WaXdMSHNrRGJHYnE1SVM2UHFDV09CS0psNGJ1Qy1HdnFGZU1QdUNmMm5aOFRMdDgydGtYdGFMUktCZUlTSDRVZ2EwZ0xOWWYwNDBvSEJLVTJwRElTd3k2WQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Augment Code</span><span class="rp-item-title">CC Switch hits 67.2K stars as a unified manager for AI coding CLIs</span><span class="rp-item-extra">2026-05-11</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMigwFBVV95cUxPdkFkdlY3VlVBWF8wcnVxTTNUZklCV0U2cTFjNE1WRzhJYTU1UTZEZzRZS1dLT3YtUzdxTHI0blRwWnQxbk9fMEdHR1NlZTF0T0R1cmFBNTJZbkpLemt2WWIyeDZvS2FFcmQtQU9QcmxQdEVUQWJQMG12Q2tMRU5ka2V5MA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Tricontinental: Institute for Social Research</span><span class="rp-item-title">How to Connect Claude Code to Alternative APIs</span><span class="rp-item-extra">2026-04-24</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/farion1231__cc-switch.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

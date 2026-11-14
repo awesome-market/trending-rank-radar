@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ollama/ollama · GitHub Trending Rank Radar</title>
+<meta name="description" content="Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="ollama, ollama, ollama/ollama, github stars, github trending, star growth, star history, 开源项目, 星标增长, llama, llm, llms, go, golang, ollama">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/ollama__ollama">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="ollama/ollama · GitHub Trending Rank Radar">
+<meta property="og:description" content="Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/ollama__ollama">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ollama/ollama", "codeRepository": "https://github.com/ollama/ollama", "url": "https://zhuikan.com/repos/ollama__ollama", "description": "Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.", "author": {"@type": "Organization", "name": "ollama", "url": "https://github.com/ollama"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Go", "dateCreated": "2023-06-26", "keywords": "llama,llm,llms,go,golang,ollama,mistral,gemma,deepseek,qwen"}</script>
+</head>
+<body data-repo="ollama/ollama" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">ollama/ollama</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="ollama__ollama"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/151674099?v=4&s=300" width="300" height="300" alt="ollama avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">ollama</div>
+      <a class="rp-side-owner" href="https://github.com/ollama">ollama</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/ollama">ollama</a>
+        <span class="rp-sep">/</span><span class="rp-name">ollama</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily">daily <b>#190</b></a><a class="rp-board-chip" href="../?board=daily_rate">daily_rate <b>#192</b></a><a class="rp-board-chip" href="../?board=monthly">monthly <b>#148</b></a><a class="rp-board-chip" href="../?board=total">total <b>#46</b></a></div>
+    </div>
+    <p class="rp-desc">Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>186,926</b></span><span class="rp-stat" title="forks">⑂ <b>19,079</b></span><span class="rp-stat" title="watchers">👁 <b>1,026</b></span><span class="rp-stat" title="prs">⑃ <b>7,641</b></span><span class="rp-stat" title="issues">● <b>11,613</b></span><span class="rp-stat" title="releases">▤ <b>275</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/llama">llama</a><a class="rp-topic" href="../tags/llm">llm</a><a class="rp-topic" href="../tags/llms">llms</a><a class="rp-topic" href="../tags/go">go</a><a class="rp-topic" href="../tags/golang">golang</a><a class="rp-topic" href="https://github.com/topics/ollama">ollama</a><a class="rp-topic" href="https://github.com/topics/mistral">mistral</a><a class="rp-topic" href="https://github.com/topics/gemma">gemma</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Go</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2023-06-26</span><a class="rp-meta-bit rp-home" href="https://ollama.com" rel="noopener">ollama.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/ollama/ollama">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.40.16</span><a class="rp-dl-a" href="https://github.com/ollama/ollama/releases/tag/v0.40.16">v0.40.16 ↓</a><span class="rp-dl-ver">0.40.16</span><span class="rp-dl-date">2026-11-09</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+121</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1,128</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+3,766</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">186,926</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">19,079</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">1,026</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">7,641</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">11,613</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">275</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Ollama
+
+Start building with open models. Access the latest releases locally or in the cloud with complete privacy.
+
+ Download
+
+ macOS
+
+shell
+curl -fsSL https://ollama.com/install.sh | sh
+
+
+or download manually
+
+ Windows
+
+shell
+irm https://ollama.com/install.ps1 | iex
+
+
+or download manually
+
+ Linux
+
+shell
+curl -fsSL https://ollama.com/install.sh | sh
+
+
+Manual install instructions
+
+ Docker
+
+The official Ollama Docker image ollama/ollama is available on Docker Hub.
+
+ Libraries
+
+- ollama-python
+- ollama-js
+
+ Community
+
+- Discord
+- 𝕏 (Twitter)
+- Reddit
+
+ Get started
+
+
+ollama
+
+
+You&#x27;ll be prompted to run a model or connect Ollama to your existing agents or applications such as Claude Code, OpenClaw, OpenCode , Codex, Copilot,  and more.
+
+ Coding
+
+To launch a specific integration:
+
+
+ollama launch claude
+
+
+Supported integrations include Claude Code, Codex, Copilot CLI, DeepSeek Harness, Droid, and OpenCode.
+
+ AI assistant
+
+Use OpenClaw to turn Ollama into a personal AI assistant across WhatsApp, Telegram, Slack, Discord, and more:
+
+
+ollama launch openclaw
+
+
+ Chat with a model
+
+Run and chat with Gemma 4:
+
+
+ollama run gemma4
+
+
+See ollama.com/library for the full list.
+
+See the quickstart guide for more details.
+
+ REST API
+
+Ollama has a REST API for running and managing models.
+
+
+curl http://localhost:11434/api/chat -d &#x27;{
+  &quot;model&quot;: &quot;gemma4&quot;,
+  &quot;messages&quot;: [{
+    &quot;role&quot;: &quot;user&quot;,
+    &quot;content&quot;: &quot;Why is the sky blue?&quot;
+  }],
+  &quot;stream&quot;: false
+}&#x27;
+
+
+See the API documentation for all endpoints.
+
+ Python
+
+
+pip install ollama
+
+
+python
+from ollama import chat
+
+response = chat(model=&#x27;gemma4&#x27;, messages=[
+  {
+    &#x27;role&#x27;: &#x27;user&#x27;,
+    &#x27;content&#x27;: &#x27;Why is the sky blue?&#x27;,
+  },
+])
+print(response.message.content)
+
+
+ JavaScript
+
+
+npm i ollama
+
+
+javascript
+import ollama from &quot;ollama&quot;;
+
+const response = await ollama.chat({
+  model: &quot;gemma4&quot;,
+  messages: [{ role: &quot;user&quot;, content: &quot;Why is the sky blue?&quot; }],
+});
+console.log(response.message.content);
+
+
+ Supported backends
+
+- llama.cpp project founded by Georgi Gerganov.
+
+ Documentation
+
+- CLI reference
+- REST API reference
+- Importing models
+- Modelfile reference
+- Building from source
+
+ Community Integrations
+
+ Want to add your project? Open a pull request.
+
+ Chat Interfaces
+
+ Web
+
+- Open WebUI - Extensible, self-hosted AI interface
+- Onyx - Connected AI workspace
+- LibreChat - Enhanced ChatGPT clone with multi-provider support
+- Lobe Chat - Modern chat framework with plugin ecosystem (docs)
+- NextChat - Cross-platform ChatGPT UI (docs)
+- Perplexica - AI-powered search engine, open-source Perplexity alternative
+- big-AGI - AI suite for professionals
+- Lollms WebUI - Multi-model web interface
+- ChatOllama - Chatbot with knowledge bases
+- Bionic GPT - On-premise AI platform
+- Chatbot UI - ChatGPT-style web interface
+- Hollama - Minimal web interface
+- Chatbox - Desktop and web AI client
+- chat - Chat web app for teams
+- Ollama RAG Chatbot - Chat with multiple PDFs using RAG
+- Tkinter-based client - Python desktop client
+
+ Desktop
+
+- </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ollama/ollama/issues/1016"><span class="rp-item-num">#1016</span><span class="rp-item-title">Support AMD GPUs on Intel Macs</span><span class="rp-item-extra">174 comments · 2023-11-06</span></a><a class="rp-item" href="https://github.com/ollama/ollama/issues/941"><span class="rp-item-num">#941</span><span class="rp-item-title">`digest mismatch` on download</span><span class="rp-item-extra">162 comments · 2023-10-28</span></a><a class="rp-item" href="https://github.com/ollama/ollama/issues/3368"><span class="rp-item-num">#3368</span><span class="rp-item-title">Reranking models</span><span class="rp-item-extra">109 comments · 2024-03-27</span></a><a class="rp-item" href="https://github.com/ollama/ollama/issues/5245"><span class="rp-item-num">#5245</span><span class="rp-item-title">Allow importing multi-file GGUF models</span><span class="rp-item-extra">110 comments · 2024-06-23</span></a><a class="rp-item" href="https://github.com/ollama/ollama/issues/2006"><span class="rp-item-num">#2006</span><span class="rp-item-title">Rate limit download speed on pulling new models</span><span class="rp-item-extra">91 comments · 2024-01-15</span></a><a class="rp-item" href="https://github.com/ollama/ollama/issues/1590"><span class="rp-item-num">#1590</span><span class="rp-item-title">Add support for Intel Arc GPUs</span><span class="rp-item-extra">76 comments · 2023-12-18</span></a><a class="rp-item" href="https://github.com/ollama/ollama/issues/162"><span class="rp-item-num">#162</span><span class="rp-item-title">Don&#x27;t automatically start on startup / have an option to disable this</span><span class="rp-item-extra">70 comments · 2023-07-21</span></a><a class="rp-item" href="https://github.com/ollama/ollama/issues/5186"><span class="rp-item-num">#5186</span><span class="rp-item-title">AMD Ryzen NPU support</span><span class="rp-item-extra">66 comments · 2024-06-20</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/ollama/ollama/releases"><b>v0.40.16</b> <span class="rp-rel-tag">v0.40.16</span> <span class="rp-item-extra">2026-11-09</span></a><pre class="rp-pre">Ripple Preview
+
+Ripple Preview from Ricursive Intelligence is a 65B dense model built for agentic coding.
+
+sh
+ollama run ripple-preview
+
+
+ What&#x27;s Changed
+
+- Qwen3.8 Flash Next uses about 27 GiB less memory on Apple silicon
+- ollama launch claude always routes Claude Code to the selected model
+- ollama launch explains when a cloud model has been retired
+- /v1/responses respects truncation and no longer silently truncates by default
+- /v1/models returns an empty list instead of null when no models are installed
+- CUDA 13.5 support for Windows on ARM
+- Updated llama.cpp
+
+Full Ch</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (7)</h3><div class="rp-list"><a class="rp-item" href="https://abmedia.io/ollama-complete-guide-2026-local-ai-models-tutorial" target="_blank" rel="noopener"><span class="rp-news-src">abmedia</span><span class="rp-item-title">Ollama 是什麼？2026 完整教學：本地 AI 模型、安裝與硬體需求</span><span class="rp-item-extra">2026-04-12</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiYEFVX3lxTE9TRUZIVlRBVDZCLUQ0Ny1RbTRtcnZzWVZDLTV6dnh0alpnV2hDWDVMaUFreEd2a1lnU0M4dnhIOEpXS3gwbnJxbThFRXJuMm9HMXJlckhxekZOWjU0MTMwdw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN</span><span class="rp-item-title">GitHub Trending速递：五大热门开源项目背后的技术趋势与选型实战</span><span class="rp-item-extra">2026-11-09</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE5zQXBoV1VUUTJwRjBlLVNOeTVDN0NzQjlVbzUtUG5XbXZyZ1duZW9FVlktMGxkY2JNdlpWY1F6ODRXb3BBUGk5MjVpdU45WWctS1d6Q2MxbUJIT0ZWOFVn?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN</span><span class="rp-item-title">Mac本地部署Qwen Coder：从Ollama到IDE的完整指南</span><span class="rp-item-extra">2026-11-06</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMilwFBVV95cUxPY1JobC16QTJpT3hpVFRfYm1xR05JMWN1QlZoX2VvalREUTF2dTdSZG95S1N0U3VfaFN2d1JXWDIyUEpTUklaUGlNN3hwaUw3MHZoalJBRWNkeTR6MUJoUGs3ODNhaEtEQXYwdS1XWmo1cW81c3VxTFpoV2d6Wi1OUG55YVlzZkFFbUZkVmw5RWlBdUpJbXpB?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">Microsoft 称手写代码已终结，开发者纷纷弃用 Ollama</span><span class="rp-item-extra">2026-09-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE9hWl9WZmpTbjlJS0k5OHM5SzNWZXRoenNYVXNoMktxNmtILVo0ZTZabUstaC1FaUJhQXhBckxSM01GRFhyVWlmMGN5TDJUVEYtYTlv?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">51CTO</span><span class="rp-item-title">GitHub 上 25 个热门自托管项目</span><span class="rp-item-extra">2026-06-09</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiSEFVX3lxTE0zSVk5WFV4WGx4cEx3UVlkMGFpcnRkd0hqc2IzODFNQXA5Y3A1MERvWWhDY29yczQ1Z3lDRTBER3p2SGJBQnFFWg?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">智源社区</span><span class="rp-item-title">别跟风买Mac Mini了！国产算力跑OpenClaw，只需5分钟</span><span class="rp-item-extra">2026-02-04</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiSEFVX3lxTFBxOXF5bGNpZ2lOcWt1bXNOcS10R2c2OXp1amJaeE1jeHZMUGl4Y0xiLVhjZjkwckw2bEhERi04em1FX0FJbm5jag?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">智源社区</span><span class="rp-item-title">手把手带你用DeepSeek-R1和Ollama搭建本地应用，一文搞定！</span><span class="rp-item-extra">2025-02-04</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (19)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=42886680" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Llama.cpp supports Vulkan. why doesn&#x27;t Ollama?</span><span class="rp-item-extra">▲ 217 · 228 comments · 2025-01-31</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=44003741" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ollama violating llama.cpp license for over a year</span><span class="rp-item-extra">▲ 202 · 68 comments · 2025-05-16</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=40191723" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ollama v0.1.33 with Llama 3, Phi 3, and Qwen 110B</span><span class="rp-item-extra">▲ 192 · 64 comments · 2024-04-28</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=44867238" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ollama and gguf</span><span class="rp-item-extra">▲ 173 · 91 comments · 2025-08-11</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=40692970" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ollama v0.1.45</span><span class="rp-item-extra">▲ 111 · 64 comments · 2024-06-15</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=40061831" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ollama 0.1.32: WizardLM 2, Mixtral 8x22B, macOS CPU/GPU model split</span><span class="rp-item-extra">▲ 107 · 55 comments · 2024-04-17</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=44303056" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Is GitHub Releases Down?</span><span class="rp-item-extra">▲ 5 · 3 comments · 2025-06-17</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=46385982" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ollama token exfiltration still present in latest release</span><span class="rp-item-extra">▲ 1 · 1 comments · 2025-12-25</span></a><a class="rp-item" href="https://note.com/nobukofu_dev/n/nc4fe2eb7d1c7?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">When I wrote medium for Ollama&#x27;s think, GLM-5.3 silently thought at the deepest max level. Level names not in the model do not cause errors</span><span class="rp-item-extra">2026-11-05</span></a><a class="rp-item" href="https://note.com/kamonegitarou/n/na643f2fd5d6d?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">Running AI on Your Own PC for $0/Month: The Complete Guide to Installing Ollama and Where I Got Stuck</span><span class="rp-item-extra">2026-11-04</span></a><details class="rp-news-more"><summary>9 more</summary><a class="rp-item" href="https://9to5mac.com/2026/10/26/ollama-for-mac-gains-support-for-local-text-to-speech-models/" target="_blank" rel="noopener"><span class="rp-news-src">9to5Mac</span><span class="rp-item-title">Ollama for Mac gains support for local text-to-speech models</span><span class="rp-item-extra">2026-10-26</span></a><a class="rp-item" href="https://visualstudiomagazine.com/articles/2026/08/04/top-5-local-ai-tools-for-vs-code-all-powered-by-ollama.aspx" target="_blank" rel="noopener"><span class="rp-news-src">Visual Studio Magazine</span><span class="rp-item-title">Top 5 Local AI Tools for VS Code -- All Powered by Ollama</span><span class="rp-item-extra">2026-08-03</span></a><a class="rp-item" href="https://www.kdnuggets.com/running-openclaw-with-ollama" target="_blank" rel="noopener"><span class="rp-news-src">KDnuggets</span><span class="rp-item-title">Running OpenClaw with Ollama</span><span class="rp-item-extra">2026-07-08</span></a><a class="rp-item" href="https://note.com/c_c_a/n/ne805d9858047?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">Generating Git commit messages locally with Ollama and Llama 3.1</span><span class="rp-item-extra">2026-06-14</span></a><a class="rp-item" href="https://www.geeky-gadgets.com/how-to-run-llama-2-locally/" target="_blank" rel="noopener"><span class="rp-news-src">Geeky Gadgets</span><span class="rp-item-title">Run Llama 2 Uncensored and other LLMs locally using Ollama for privacy and security</span><span class="rp-item-extra">2023-10-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMijgFBVV95cUxQbmFMMUhMU0VxZTNiS0lsOGxmUEViWXNrNkFlX1VfTy1ybGxvdFBEcENlMVhvLVBMeFNaWXpIVU9FN19RYVVDYXhmWEVXejNqTGZGRWVnQmJrT2pvVHNlNGRCbDh1SXYtQjBGRzFJbW04bkc1UUFfMVBfRURKaU41Ul82QVl4R2trcmFDSmt3?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The GitHub Blog</span><span class="rp-item-title">Discover local models in GitHub Copilot CLI</span><span class="rp-item-extra">2026-10-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxNM0xFMTQ3R2FkU0l2MmpEeDBlQVFUS2x0ZmdRTV9RMlZVN3lQaGkzWTd6dTE5c21yZG9tS3Q5YU1TLXVhVF8wQ3EtQ3Bwanl5bTRJRXFOaG9nVXExZTJ4MThVQjRLUV9sZC1HOHpJM1AwdGV2eDExUnZhenVCWlFNd2thZ25KdzUzajNmcVFmMHJ1Vl9Bek9BVHAyemdpaEJy?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The GitHub Blog</span><span class="rp-item-title">Copilot memory and Ollama in GitHub Copilot for JetBrains</span><span class="rp-item-extra">2026-08-11</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxNcTA3T2J0T3pMNm1TcFNqYmEyRzlTS2JIaHJWeG03SUd2YU1YWkNQR0RiQVRjR3dRaTVsc29sbFFkXzROTGNiUWJEQ0cxMDRUTVFBYWlKc294YUFTSGRhUkdDbHNvNUh3VDB5aExYR2c5MXFhRjlFT25aUFV3RGplSWxJT1JoNnlUMHBENUpKb1dCRnd0dEJHNldCU2FDdWR4MkxDUEJvbw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">remio</span><span class="rp-item-title">Ollama v0.32.4 Hits GitHub Releases, but Its Biggest Changes Are Under the Hood</span><span class="rp-item-extra">2026-07-26</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMid0FVX3lxTFBBb1VqbzR6c1NmZFlpQ1UzTXJEeVowdURWdUR4Q210UzVyS3NpeXpYV3FzOFZDWk4wcXhMekhOZHJJNW1TNVJ3RkZqRXdwYm1tSFQ4NlczaERSM0pWTUV2UjRaNnAxUXlSQkNCeTlFZmRXb3dLa1M4?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">SitePoint</span><span class="rp-item-title">Local Code Assistants: Replacing GitHub Copilot with Private AI</span><span class="rp-item-extra">2026-02-25</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/ollama__ollama.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

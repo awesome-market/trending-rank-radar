@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>01-ai/Yi · GitHub Trending Rank Radar</title>
+<meta name="description" content="A series of large language models trained from scratch by developers @01-ai">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Yi, 01-ai, 01-ai/Yi, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/01-ai__Yi">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="01-ai/Yi · GitHub Trending Rank Radar">
+<meta property="og:description" content="A series of large language models trained from scratch by developers @01-ai">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/01-ai__Yi">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "01-ai/Yi", "codeRepository": "https://github.com/01-ai/Yi", "url": "https://zhuikan.com/repos/01-ai__Yi", "description": "A series of large language models trained from scratch by developers @01-ai", "author": {"@type": "Organization", "name": "01-ai", "url": "https://github.com/01-ai"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Jupyter Notebook", "dateCreated": "2023-11-04"}</script>
+</head>
+<body data-repo="01-ai/Yi" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">01-ai/Yi</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="01-ai__Yi"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/139308978?v=4&s=300" width="300" height="300" alt="01-ai avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Yi</div>
+      <a class="rp-side-owner" href="https://github.com/01-ai">01-ai</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/01-ai">01-ai</a>
+        <span class="rp-sep">/</span><span class="rp-name">Yi</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A series of large language models trained from scratch by developers @01-ai</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>7,834</b></span><span class="rp-stat" title="forks">⑂ <b>499</b></span><span class="rp-stat" title="watchers">👁 <b>106</b></span><span class="rp-stat" title="prs">⑃ <b>271</b></span><span class="rp-stat" title="issues">● <b>294</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Jupyter Notebook</span><span class="rp-meta-bit">Created 2023-11-04</span><a class="rp-meta-bit rp-home" href="https://01.ai" rel="noopener">01.ai</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/01-ai/Yi">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">7,834</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">499</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">106</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">271</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">294</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">English &amp;nbsp; | &amp;nbsp中文&amp;nbsp
+
+
+
+
+
+
+  
+   
+  
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+  打造下一代开源双语大语言模型
+
+
+
+🤗 Hugging Face • 🤖 魔搭 ModelScope • ✡️ 始智 WiseModel
+ 
+
+
+    👩‍🚀 欢迎来  GitHub Discussions 讨论问题
+ 
+
+    👋 欢迎加入 👾 Discord  或者 💬  微信群 一起交流
+ 
+
+
+    📝 欢迎查阅 Yi 技术报告 了解更多
+ 
+
+
+    📚 欢迎来  Yi 学习中心 探索新知
+ 
+
+
+    💪 欢迎来  Yi 技术博客 学习技术
+ 
+
+
+
+
+  🙌 本文由 Yi 和社区志愿者共同翻译完成，感谢每一位传递知识的火炬手。 
+
+  🤗 欢迎大家加入「Yi 起翻译」，开启知识之火旅程，共绘技术内容图谱。
+
+  📝 本文翻译使用了 Yi-34B-Chat，关于翻译时使用的 prompt 及最佳实践，参阅「如何使用 Prompt 来实现高质量翻译」和「翻译与审校的正确姿势」。
+
+
+
+
+
+
+
+📕 目录
+
+- 📌 Yi 是什么?
+  - 介绍
+  - 模型
+    - Chat 模型
+    - Base 模型
+    - 模型信息
+  - 最新动态
+- 📌 如何使用 Yi?
+  - 快速上手
+    - 选择学习路径
+    - 快速上手 - 使用 PyPi (pip install)
+    - 快速上手 - 使用 Docker
+    - 快速上手 - 使用 conda-lock
+    - 快速上手 - 使用 llama.cpp
+    - 快速上手 - 使用 Web demo
+  - 微调
+  - 量化
+  - 部署
+  - FAQ
+  - 学习中心
+- 📌 为什么选择Yi？
+  - 生态
+    - 上游
+    - 下游
+      - 服务
+      - 量化
+      - 微调
+      - API
+  - 基准测试
+    - Chat 模型性能
+    - Base 模型性能
+  - 技术报告
+    - 引用
+- 📌 谁可以使用 Yi？
+- 📌 其它
+  - 致谢
+  - 免责声明
+  - 许可证
+
+
+
+
+
+ 📌 Yi 是什么?
+
+ 介绍
+
+- 🤖 Yi 系列模型是 01.AI 从零训练的下一代开源大语言模型。
+
+- 🙌 Yi 系列模型是一个双语语言模型，在 3T 多语言语料库上训练而成，是全球最强大的大语言模型之一。Yi 系列模型在语言认知、常识推理、阅读理解等方面表现优异。例如，
+
+   - Yi-34B-Chat 模型在 AlpacaEval Leaderboard 排名第二，仅次于 GPT-4 Turbo，超过了 GPT-4、Mixtral 和 Claude 等大语言模型（数据截止至 2024 年 1 月）。
+
+  - Yi-34B 模型在 Hugging Face Open LLM Leaderboard（预训练）与 C-Eval 基准测试中荣登榜首，在中文和英文语言能力方面均超过了其它开源模型，例如，Falcon-180B、Llama-70B 和 Claude（数据截止至 2023 年 11 月）。
+
+  - 🙏 （致谢 Llama ）感谢 Transformer 和 Llama 开源社区，不仅简化了开发者从零开始构建大模型的工作，开发者还可以利用 Llama 生态中现有的工具、库和资源，提高开发效率。
+
+   如果你对 Yi 使用 Llama 架构及其许可使用政策感兴趣，参阅 「Yi 与 Llama 的关系」。 ⬇️  
+
+ 💡 简短总结
+ 
+ Yi 系列模型采用与Llama相同的模型架构，但它们不是 Llama 的衍生品。
+
+
+- Yi 和 Llama 都是基于 Transformer 结构。实际上，自 2018 年以来，Transformer 一直是大语言模型的常用架构。
+
+- 在 Transformer 架构的基础上，Llama 凭借出色的稳定性、可靠的收敛性和强大的兼容性，成为大多数先进开源模型的基石。因此，Llama 也成为 Yi 等模型的基础框架。
+
+- 得益于 Transformer 和 Llama 架构，各类模型可以简化从零开始构建模型的工作，并能够在各自的生态中使用相同的工具。
+
+- 然而，Yi 系列模型不是 Llama 的衍生品，因为它们不使用 Llama 的权重。
+
+  - 虽然大多数开源模型都采用了 Llama 的架构，但决定模型表现的关键因素是训练所使用的数据集、训练管道及其基础设施。
+
+  - 01.AI 用独特的方式开发了 Yi 系列模型，从零开始创建了自己的高质量训练数据集、高效的训练流水线和强大的训练基础设施，因此 Yi 系列模型性能优异，在 Alpaca Leaderboard 上排名仅次于 GPT-4，超过了 Llama（数据截止至 2023 年 12 月）。
+
+
+
+ [
+  返回顶部 ⬆️   ] 
+
+
+
+ 最新动态
+
+  🔥 2024-07-26: 发布  Yi Cookbook 1.0  版本，包含中文和英文的教程和示例。
+
+
+
+🎯 2024-03-16：发布并开源了 Yi-9B-200K 模型。
+
+
+
+  🎯 2024-03-08: 发布了 Yi 技术报告！
+  
+
+
+  🔔 2024-03-07: 增强了 Yi-34B-200K 长文本记忆和检索能力。
+  
+Yi-34B-200K 的“大海捞针”能力增强了 10.5%, 从 89.3% 提升到了 99.8%。
+在 5B tokens 的长文本数据集上，对模型进行继续预训练，模型性能达到预期目标。
+
+
+
+
+  🎯 2024-03-06: 发布并开源了 Yi-9B 模型。
+  
+Yi-9B 模型在 Mistral-7B、SOLAR-10.7B、Gemma-7B、DeepSeek-Coder-7B-Base-v1.5 等相近尺寸的模型中名列前茅，具有出色的代码能力、数学能力、常识推理能力以及阅读理解能力。
+
+
+
+  🎯  2024-01-23: 发布并开源了 Yi-VL-34B 和 Yi-VL-6B 多模态语言大模型。
+  
+   Yi-VL-34B在 MMMU 和 CMMMU 最新的基准测试中荣登榜首（数据截止至 2024 年 1 月）。
+
+
+
+🎯 2023-11-23: 发布并开源了六大 Chat 模型。
+
+其中，两个 4-bits 模型由 AWQ 量化，两个 8-bits 模型由 GPTQ 量化。
+
+- Yi-34B-Chat
+- Yi-34B-Chat-4bits
+- Yi-34B-Chat-8bits
+- Yi-6B-Chat
+- Yi-6B-Chat-4bits
+- Yi-6B-Chat-8bits
+
+
+
+
+🔔 2023-11-23： Yi 系列模型社区许可协议更新至 2.1 版本。
+
+
+  
+🔥 2023-11-08： Yi-34B-Chat 模型开始邀请测试。
+
+
+如需申请测试，你可以填写英文或中文申请表。
+
+
+
+
+🎯 2023-11-05： 发布并开源了 Yi-6B-200K 和 Y</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/01-ai__Yi.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>supabase/supabase · GitHub Trending Rank Radar</title>
+<meta name="description" content="The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="supabase, supabase, supabase/supabase, github stars, github trending, star growth, star history, 开源项目, 星标增长, firebase, supabase, realtime, postgrest, postgres, postgresql">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/supabase__supabase">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="supabase/supabase · GitHub Trending Rank Radar">
+<meta property="og:description" content="The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/supabase__supabase">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "supabase/supabase", "codeRepository": "https://github.com/supabase/supabase", "url": "https://zhuikan.com/repos/supabase__supabase", "description": "The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.", "author": {"@type": "Organization", "name": "supabase", "url": "https://github.com/supabase"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "TypeScript", "dateCreated": "2019-10-12", "keywords": "firebase,supabase,realtime,postgrest,postgres,postgresql,websockets,deno,embeddings,vectors"}</script>
+</head>
+<body data-repo="supabase/supabase" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">supabase/supabase</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="supabase__supabase"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/54469796?v=4&s=300" width="300" height="300" alt="supabase avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">supabase</div>
+      <a class="rp-side-owner" href="https://github.com/supabase">supabase</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/supabase">supabase</a>
+        <span class="rp-sep">/</span><span class="rp-name">supabase</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=monthly">monthly <b>#152</b></a><a class="rp-board-chip" href="../?board=total">total <b>#113</b></a></div>
+    </div>
+    <p class="rp-desc">The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>114,985</b></span><span class="rp-stat" title="forks">⑂ <b>15,129</b></span><span class="rp-stat" title="watchers">👁 <b>818</b></span><span class="rp-stat" title="prs">⑃ <b>26,360</b></span><span class="rp-stat" title="issues">● <b>6,162</b></span><span class="rp-stat" title="releases">▤ <b>30</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/firebase">firebase</a><a class="rp-topic" href="https://github.com/topics/supabase">supabase</a><a class="rp-topic" href="https://github.com/topics/realtime">realtime</a><a class="rp-topic" href="https://github.com/topics/postgrest">postgrest</a><a class="rp-topic" href="https://github.com/topics/postgres">postgres</a><a class="rp-topic" href="../tags/postgresql">postgresql</a><a class="rp-topic" href="https://github.com/topics/websockets">websockets</a><a class="rp-topic" href="https://github.com/topics/deno">deno</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2019-10-12</span><a class="rp-meta-bit rp-home" href="https://supabase.com" rel="noopener">supabase.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="supabase__edge-runtime"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/54469796?v=4" alt="" loading="lazy">edge-runtime</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/supabase/supabase">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Developer Update - August 2026</span><a class="rp-dl-a" href="https://github.com/supabase/supabase/releases/tag/v1.26.08">Developer-1.26.08 ↓</a><span class="rp-dl-ver">1.26.08</span><span class="rp-dl-date">2026-08-07</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+34</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+507</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+3,708</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">114,985</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">15,129</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">818</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">26,360</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">6,162</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">30</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Supabase
+
+Supabase is the Postgres development platform. We&#x27;re building the features of Firebase using enterprise-grade open source tools.
+
+- [x] Hosted Postgres Database. Docs
+- [x] Authentication and Authorization. Docs
+- [x] Auto-generated APIs.
+  - [x] REST. Docs
+  - [x] GraphQL. Docs
+  - [x] Realtime subscriptions. Docs
+- [x] Functions.
+  - [x] Database Functions. Docs
+  - [x] Edge Functions. Docs
+- [x] File Storage. Docs
+- [x] AI + Vector/Embeddings Toolkit. Docs
+- [x] Dashboard.
+
+!Supabase Dashboard
+
+Watch &quot;releases&quot; of this repo to get notified of major updates.
+
+
+
+ Documentation
+
+For full documentation, visit supabase.com/docs
+
+To see how to Contribute, visit Getting Started
+
+ Community &amp; Support
+
+- Community Forum. Best for: help with building, discussion about database best practices.
+- GitHub Issues. Best for: bugs and errors you encounter using Supabase.
+- Email Support. Best for: problems with your database or infrastructure.
+- Discord. Best for: sharing your applications and hanging out with the community.
+
+ How it works
+
+Supabase is a combination of open source tools. We’re building the features of Firebase using enterprise-grade, open source products. If the tools and communities exist, with an MIT, Apache 2, or equivalent open license, we will use and support that tool. If the tool doesn&#x27;t exist, we build and open source it ourselves. Supabase is not a 1-to-1 mapping of Firebase. Our aim is to give developers a Firebase-like developer experience using open source tools.
+
+Architecture
+
+Supabase is a hosted platform. You can sign up and start using Supabase without installing anything.
+You can also self-host and develop locally.
+
+!Architecture
+
+- Postgres is an object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.
+- Realtime is an Elixir server that allows you to listen to PostgreSQL inserts, updates, and deletes using websockets. Realtime polls Postgres&#x27; built-in replication functionality for database changes, converts changes to JSON, then broadcasts the JSON over websockets to authorized clients.
+- PostgREST is a web server that turns your PostgreSQL database directly into a RESTful API.
+- GoTrue is a JWT-based authentication API that simplifies user sign-ups, logins, and session management in your applications.
+- Storage is a RESTful API for managing files in S3, with Postgres handling permissions.
+- pg_graphql is a PostgreSQL extension that exposes a GraphQL API.
+- postgres-meta is a RESTful API for managing your Postgres, allowing you to fetch tables, add roles, and run queries, etc.
+- Envoy is a cloud-native, high-performance edge and service proxy.
+
+ Client libraries
+
+Our approach for client libraries is modular. Each sub-library is a standalone implementation for a single external system. This is one of the ways we support existing tools.
+
+
+  
+    Language
+    Client
+    Feature-Clients (bundled in Supabase cl</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/supabase/supabase/issues/6435"><span class="rp-item-num">#6435</span><span class="rp-item-title">Allow newlines in SMS OTP template</span><span class="rp-item-extra">72 comments · 2021-09-20</span></a><a class="rp-item" href="https://github.com/supabase/supabase/issues/37312"><span class="rp-item-num">#37312</span><span class="rp-item-title">Cookie “__cf_bm” has been rejected for invalid domain, when opening assets in Firefox</span><span class="rp-item-extra">34 comments · 2025-07-18</span></a><a class="rp-item" href="https://github.com/supabase/supabase/issues/40617"><span class="rp-item-num">#40617</span><span class="rp-item-title">New created Supabase project triggers &#x27;pg_pgrst_no_exposed_schemas&#x27; error</span><span class="rp-item-extra">27 comments · 2025-11-19</span></a><a class="rp-item" href="https://github.com/supabase/supabase/issues/34425"><span class="rp-item-num">#34425</span><span class="rp-item-title">Custom SMTP does not work with Microsoft Office 365 / Outlook &gt; 504 Process Timeout Error</span><span class="rp-item-extra">23 comments · 2025-03-26</span></a><a class="rp-item" href="https://github.com/supabase/supabase/issues/20982"><span class="rp-item-num">#20982</span><span class="rp-item-title">Failed Fetch API in Safari due to access control checks</span><span class="rp-item-extra">23 comments · 2024-02-04</span></a><a class="rp-item" href="https://github.com/supabase/supabase/issues/21261"><span class="rp-item-num">#21261</span><span class="rp-item-title">Supabase fails to load in web component</span><span class="rp-item-extra">22 comments · 2024-02-14</span></a><a class="rp-item" href="https://github.com/supabase/supabase/issues/41529"><span class="rp-item-num">#41529</span><span class="rp-item-title">plpgsql_check causing &quot;cannot find parent statement on pldbgapi2 call stack&quot; error in recursive PL/pgSQL functions</span><span class="rp-item-extra">20 comments · 2025-12-22</span></a><a class="rp-item" href="https://github.com/supabase/supabase/issues/48497"><span class="rp-item-num">#48497</span><span class="rp-item-title">error while running - pnpm dev</span><span class="rp-item-extra">19 comments · 2026-07-30</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/supabase/supabase/discussions/53373"><span class="rp-item-num">#53373</span><span class="rp-item-title">Supabase warned you about a high bounce rate? What it means and how to fix it.</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/supabase/supabase/discussions/53371"><span class="rp-item-num">#53371</span><span class="rp-item-title">Paid Pro customer locked out of production dashboard — unable to access paid support</span><span class="rp-item-extra">1 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/supabase/supabase/discussions/53368"><span class="rp-item-num">#53368</span><span class="rp-item-title">Supabase fix recipes: what to do after a scanner flags RLS, a leaked service_role key or a public bucket</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/supabase/supabase/discussions/53350"><span class="rp-item-num">#53350</span><span class="rp-item-title">How to safely freeze and drain Supabase Auth and Storage writes for a consistent PostgreSQL + Storage backup?</span><span class="rp-item-extra">2 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/supabase/supabase/discussions/53346"><span class="rp-item-num">#53346</span><span class="rp-item-title">Backup sign-in options for Supabase accounts</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/supabase/supabase/discussions/53345"><span class="rp-item-num">#53345</span><span class="rp-item-title">gapwatch: crash-test how many database changes your app misses when its connection drops</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/supabase/supabase/discussions/53343"><span class="rp-item-num">#53343</span><span class="rp-item-title">Docs: dashboard password reset still leaves the SCRAM verifier in pg_stat_statements</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/supabase/supabase/discussions/53333"><span class="rp-item-num">#53333</span><span class="rp-item-title">Can Supabase CLI preview and enforce a native stack launch plan?</span><span class="rp-item-extra">2 comments · 2026-11-12</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/supabase/supabase/releases"><b>Developer Update - August 2026</b> <span class="rp-rel-tag">v1.26.08</span> <span class="rp-item-extra">2026-08-07</span></a><pre class="rp-pre">Here’s everything that happened with Supabase in the last month:
+
+ Supabase Select SF 2026
+
+
+
+Supabase Select returns to San Francisco on October 2, a curated day of talks, feature deep dives, and more activations. Tickets are now available by application.
+
+Get your ticket →
+
+ Supabase Pipelines is now in public alpha
+
+
+
+Supabase Pipelines streams Postgres changes to BigQuery in near real time, a managed CDC service you configure in the Dashboard, now available on all paid plans.
+
+Read the blog →
+
+ Sign in with ChatGPT is now in beta
+
+!chatgpt.png
+
+Sign in to Supabase wit</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (7)</h3><div class="rp-list"><a class="rp-item" href="https://www.sohu.com/a/1094568460_122066679" target="_blank" rel="noopener"><span class="rp-news-src">搜狐</span><span class="rp-item-title">Supabase六年冲到100亿美元估值！AI智能体写代码都绕不开它</span><span class="rp-item-extra">2026-10-29</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE05SmRNTEFKQmpPaURYYUNFakVtMS0zYWxfb3BQUHVXSXRyRlZCTTQ4aEVoSVlCdlJfX0NBeF8tZGNESXJMbVdrRGVuTHNCZ2hTZUJSUy1fTGo0amhBamMw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN</span><span class="rp-item-title">ever-gauzy：轻量实时、状态穿透的下一代业务系统设计哲学</span><span class="rp-item-extra">2026-11-06</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE5QbVpzckpKX1lmMUw1alNLTl9TVTdyQnAwalF4RHVDQklzUEt4TnJwUXh1OW5wWDFkb0FsQ3hmTmRmMzdnRjNIZEtpcmttWG5XYVNyMmdB?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">QQ News</span><span class="rp-item-title">本周 GitHub 涨得最猛的十个 AI 开源项目， GitHub 被 AI agent 占领了</span><span class="rp-item-extra">2026-10-25</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMijwFBVV95cUxPRUMwaEkxX2h2TUQ5SDl4VWlOTVVnbnRKcXFESzJKejczaVBPNzNfVG1mS1VhU2Q5VmVuOVRWa3ZTMlBiZjJjN3B0MzdwaHJXYnpabG5keEVXblFfNkpwazdDcUpxcTdaWllIR2ZQVWx6bWxRT0k5YjlQUExoUV9pM1pYbTliQzd6Y2tSdGJ4bw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Buttondown</span><span class="rp-item-title">FutureX·数据库行业 第15期 07/24</span><span class="rp-item-extra">2026-07-24</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE5YUlo3MUlhRFdMeWJicnBZMjR0Q2FTQVdLcXdvMHdQREN2RkEyRUFja0lScjdGSURUdnJkU1lQM1l6bFhPeXBuLXpaZUxLdEdfR1dqcFdvVmJ3SVdpV1E?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">InfoQ.cn</span><span class="rp-item-title">一句话让数据库裸奔？Supabase CEO：MCP 天生不该碰生产库</span><span class="rp-item-extra">2025-07-14</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiTkFVX3lxTE9oLVoxQW1MMjEyaFdFemYybWs4aG5PdF9aOS1xUjZLMUZGZ3dPTjBqcXljakMtRDJrenprblJFY2RUb1d5ZGZSY1pHdG9Udw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">36氪</span><span class="rp-item-title">他用AI三天做了个网站，结果被黑了两次，氛围编码大翻车</span><span class="rp-item-extra">2025-06-03</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVEFVX3lxTE01VFpEZG9fb2ZCT0NMLXIxQzhFSXlHcl9oNVQ2V1FoLVNhdElseW1lNnU2LWxBNWZOSGV2SXZZYnFZNktLeHFvWGNXc255U2xLcTZtLQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">搜狐网</span><span class="rp-item-title">速递｜YC校友开源数据库Supabase，时隔七个月再融2亿美金，估值20亿或成应用“隐形基建”</span><span class="rp-item-extra">2025-04-28</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (17)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=29401589" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Supabase open sourced their dashboard</span><span class="rp-item-extra">▲ 331 · 39 comments · 2021-12-01</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=37033753" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Launch HN: GitStart (YC S19) – Remote junior devs working on production PRs</span><span class="rp-item-extra">▲ 235 · 192 comments · 2023-08-07</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=30992587" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: Multiplayer Demo Built with Elixir</span><span class="rp-item-extra">▲ 221 · 57 comments · 2022-04-11</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=45609621" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ask HN: What in the world is going on at Supabase?</span><span class="rp-item-extra">▲ 57 · 20 comments · 2025-10-16</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=22777614" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: Realtime Slack clone using Postgres</span><span class="rp-item-extra">▲ 29 · 4 comments · 2020-04-04</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=38592314" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: Official Grafana App for Supabase</span><span class="rp-item-extra">▲ 13 · 5 comments · 2023-12-10</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=23997524" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: A Slack Clone Using Postgres Row Level Security</span><span class="rp-item-extra">▲ 6 · 1 comments · 2020-07-30</span></a><a class="rp-item" href="https://note.com/mosir/n/n74ffd4da6c22?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">What should you use to build a website? I created a &#x27;Website Construction Diagnostic&#x27; that even beginners can use</span><span class="rp-item-extra">2026-11-06</span></a><a class="rp-item" href="https://siliconangle.com/2026/06/04/supabase-raises-500m-ai-coding-tools-drive-phenomenal-growth/" target="_blank" rel="noopener"><span class="rp-news-src">SiliconANGLE</span><span class="rp-item-title">Supabase raises $500M as AI coding tools drive ‘phenomenal’ growth</span><span class="rp-item-extra">2026-06-04</span></a><a class="rp-item" href="https://www.infoworld.com/article/4168581/developing-local-first-apps-with-react-supabase-and-powersync.html" target="_blank" rel="noopener"><span class="rp-news-src">InfoWorld</span><span class="rp-item-title">Hands-on with React, Supabase, and PowerSync</span><span class="rp-item-extra">2026-05-12</span></a><details class="rp-news-more"><summary>7 more</summary><a class="rp-item" href="https://finance.yahoo.com/news/supabase-raises-100m-5b-valuation-110000911.html" target="_blank" rel="noopener"><span class="rp-news-src">Yahoo Finance</span><span class="rp-item-title">Supabase Raises $100M at $5B Valuation, Co-Led by Accel and Peak XV</span><span class="rp-item-extra">2025-10-03</span></a><a class="rp-item" href="https://siliconangle.com/2025/04/22/supabase-reels-200m-open-source-relational-database/" target="_blank" rel="noopener"><span class="rp-news-src">SiliconANGLE</span><span class="rp-item-title">Supabase reels in $200M for its open-source relational database</span><span class="rp-item-extra">2025-04-22</span></a><a class="rp-item" href="https://techcrunch.com/2021/09/09/supabase-raises-30m-for-its-open-source-insta-backend/" target="_blank" rel="noopener"><span class="rp-news-src">TechCrunch</span><span class="rp-item-title">Open source backend-as-a-service startup Supabase raises $30M</span><span class="rp-item-extra">2021-09-09</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiW0FVX3lxTFBjc3liSnBPNlJITmxKVWlCeGdBWE9sVE9QeWpKNHlaVWM2dXhSVmctZWRaLW1OeDRLbWFiRjBEYS1hVy1yUmdlTmRETHVhMHQtSTBSNGZDbjVFbG8?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">TOKENPOST</span><span class="rp-item-title">Claude Code Settings Expose Credentials in 1,122 Public GitHub Files</span><span class="rp-item-extra">2026-11-09</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMidkFVX3lxTE9EcmxCaXBlaHZhQjBqZkJYZlhRUlBHdVhjTDRFcjU5czlKX0F1VkJWVm9VUEhSWU5sWXQtSzlMTzMtanFIUFN4cEpERHNzYndQeW5vbjVrWEdxWlZ2Zk1xdlNkRHVSOF90N3VwSlBIbXRMd2xzakHSAXZBVV95cUxPRHJsQmlwZWh2YUIwamZCWGZYUVJQR3VYY0w0RXI1OXM5Sl9BdVZCVlZvVVBIUllObFl0LUs5TE8zLWpxSFBTeHBKRERzc2J3UHlub241a1hHcVpWdmZNcXZTZER1UjhfdDd1cEpQSG10THdsc2pB?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Cyber Press</span><span class="rp-item-title">Claude Code’s “Yes, and Don’t Ask Again” Feature Exposes Passwords and API Keys on GitHub</span><span class="rp-item-extra">2026-11-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMimwFBVV95cUxPT252UXVvUmRmWVlCbjR5blgwREVjZnVpbGM0aXMtem5xeVkzS0o1cmlCeFRfR3NmR1h5Q1JzRnFBZ1FPbXBULU1GWUs2Uk5xUGRRLTlxLS12RkczcGpPaHZ5ekNBRXNVUk9SdDRvdFBDOXlVN011Qzl3ZGdDeHZZUUF4TVNlR3VkbV9SZDlWMmQ4LXFIaFpxUGhDWQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Startup Fortune</span><span class="rp-item-title">Supabase Open-Sources Evals to Grade Claude Code, Codex and OpenCode</span><span class="rp-item-extra">2026-08-01</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMigAFBVV95cUxOTHNVd28ydThtQ3AyWEd4djZMTjJOczU1a1Y3UmhNZC1mRnd4SWpnVXpwUC1xRy04ZHpIV1ZaazlrRlJnS21jV1prdFBQbUJwaG1TekloQ3BUdG1MN1RsQkJscUlFMUtpUmpRZVRxVXB4MjBKSHhQeFAxam5TZWFoTA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The GitHub Blog</span><span class="rp-item-title">Secret scanning updates – June 2026</span><span class="rp-item-extra">2026-06-17</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/supabase__supabase.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhiteNightShadow/wx-mp-mcp · GitHub Trending Rank Radar</title>
+<meta name="description" content="微信小程序逆向 MCP — 在线实时解包 + AI 静态分析还原接口签名/加密，产出本地 Node.js 直接能跑的脚本（零侵入，不碰微信进程）">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="wx-mp-mcp, WhiteNightShadow, WhiteNightShadow/wx-mp-mcp, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/WhiteNightShadow__wx-mp-mcp">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="WhiteNightShadow/wx-mp-mcp · GitHub Trending Rank Radar">
+<meta property="og:description" content="微信小程序逆向 MCP — 在线实时解包 + AI 静态分析还原接口签名/加密，产出本地 Node.js 直接能跑的脚本（零侵入，不碰微信进程）">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/WhiteNightShadow__wx-mp-mcp">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "WhiteNightShadow/wx-mp-mcp", "codeRepository": "https://github.com/WhiteNightShadow/wx-mp-mcp", "url": "https://zhuikan.com/repos/WhiteNightShadow__wx-mp-mcp", "description": "微信小程序逆向 MCP — 在线实时解包 + AI 静态分析还原接口签名/加密，产出本地 Node.js 直接能跑的脚本（零侵入，不碰微信进程）", "author": {"@type": "Organization", "name": "WhiteNightShadow", "url": "https://github.com/WhiteNightShadow"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "JavaScript", "dateCreated": "2026-06-29"}</script>
+</head>
+<body data-repo="WhiteNightShadow/wx-mp-mcp" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">WhiteNightShadow/wx-mp-mcp</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="WhiteNightShadow__wx-mp-mcp"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/50785186?u=a186aac0217e30295543471f547d8a39b55f99cf&amp;v=4&s=300" width="300" height="300" alt="WhiteNightShadow avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">wx-mp-mcp</div>
+      <a class="rp-side-owner" href="https://github.com/WhiteNightShadow">WhiteNightShadow</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/WhiteNightShadow">WhiteNightShadow</a>
+        <span class="rp-sep">/</span><span class="rp-name">wx-mp-mcp</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">微信小程序逆向 MCP — 在线实时解包 + AI 静态分析还原接口签名/加密，产出本地 Node.js 直接能跑的脚本（零侵入，不碰微信进程）</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>302</b></span><span class="rp-stat" title="forks">⑂ <b>57</b></span><span class="rp-stat" title="watchers">👁 <b>1</b></span><span class="rp-stat" title="prs">⑃ <b>0</b></span><span class="rp-stat" title="issues">● <b>2</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2026-06-29</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/WhiteNightShadow/wx-mp-mcp">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">302</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">57</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">1</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">2</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">wx-mp-mcp
+
+微信小程序逆向 MCP
+
+把小程序接口的签名 / 加密参数，还原成一个本地 Node.js 就能直接跑的脚本
+
+
+
+!MCP
+!Node
+!WeChat
+!Platform
+!NonInvasive
+
+
+
+ 一个 MCP（Model Context Protocol）Server，装进你的 AI 编码工具（Claude Code / Cursor / Codex），让 AI 自动完成微信小程序的解包 → 抓包 → 签名分析 → 本地复现。
+
+---
+
+&amp;nbsp;三个核心能力
+
+
+
+
+
+
+
+实时解包
+
+Mac + Windows
+
+直接读磁盘上的加密包（.wxapkg）离线解密成可读 js 源码，主包 / 分包 / 插件全解。微信开不开都行。
+
+
+
+
+
+
+数据抓包
+
+mitmproxy 拦截
+
+HTTPS 代理拦下小程序真实请求，自动存成结构化样本——每条带 url、参数、sign 签名字段。
+
+
+
+
+
+
+AI 离线分析
+
+还原本地 Node 黑盒
+
+AI 读 js 定位签名算法 → 穷举反推 / 沙箱实跑复现 → 导出脱离微信的独立签名脚本。
+
+
+
+
+
+ 🛡️ 不碰微信进程：全程只做「读磁盘加密包 · 走代理被动抓流量 · Node 跑解包出的代码副本」三件事，不 attach 微信、不改内存、不开调试端口——不会让微信环境异常或触发风控。（传统 Frida / WMPFDebugger 要注入微信进程改内存，有封号风险，本工具刻意避开。）
+
+---
+
+&amp;nbsp;工作流
+
+
+
+解包分析mp_analyze
+→
+抓真实样本mp_capture_
+→
+破解 / 沙箱mp_sign_crack
+→
+导出mp_sandbox_export
+→
+本地出 signnode signer.mjs
+
+
+
+多数无混淆小程序，mp_analyze 一步就能定位签名并生成复现代码（走得出 → 直接导出）；只有签名被运行时加密 / JSVMP 混淆、静态读不出时，才走 抓包 → 破解 / 沙箱 那条支线。
+
+---
+
+&amp;nbsp;快速接入
+
+ 1. 安装
+
+方式一（推荐） —— 直接对你的 AI 编码工具说：
+
+
+帮我安装下这个 mcp 工具：wx-mp-mcp
+项目地址：https://github.com/WhiteNightShadow/wx-mp-mcp
+
+
+AI 会自动克隆、装依赖、构建、写好 MCP 配置。
+
+方式二 —— 手动：
+
+bash
+git clone https://github.com/WhiteNightShadow/wx-mp-mcp.git
+cd wx-mp-mcp &amp;&amp; npm install &amp;&amp; npm run build
+
+
+ 2. 配置到客户端
+
+
+Cursor（.cursor/mcp.json）
+
+json
+{
+  &quot;mcpServers&quot;: {
+    &quot;wx-mp-mcp&quot;: {
+      &quot;command&quot;: &quot;node&quot;,
+      &quot;args&quot;: [&quot;/绝对路径/wx-mp-mcp/dist/index.js&quot;]
+    }
+  }
+}
+
+
+
+
+
+Claude Code
+
+bash
+claude mcp add wx-mp-mcp -- node /绝对路径/wx-mp-mcp/dist/index.js
+
+
+
+
+ 抓包额外准备：抓包属于可选能力，需在本机安装 mitmproxy（pip install mitmproxy 或 brew install mitmproxy）。代理接入与证书配置由用户根据自己的采集环境完成；其余工具无额外外部依赖。
+
+ ⚠️ macOS 提示「容器目录受权限保护」/ 找不到缓存 / 解包阻塞：微信缓存在沙盒容器里，受 macOS TCC 保护。MCP 是被你的 AI 工具拉起的 node 子进程，继承上层程序的权限。若报「受保护」「找不到缓存」，二选一：
+ - 推荐：系统设置 → 隐私与安全性 → 完全磁盘访问权限 → 添加运行 MCP 的程序（Terminal / iTerm / Cursor / Claude）→ 完全退出再重开。
+ - 兜底：用访达把 .../radium/Applet/packages 复制到项目下的 wxapkg-cache/（或 ~/Desktop/wxapkg-cache），会被自动发现；也可复制到任意目录后设 WXAPKG_ROOT 指向它。
+
+ 多账号 / 不同微信版本下缓存可能落在 .../radium/users//... 等层级，现已自动递归探测并合并，无需手配。
+
+ Windows：新版微信 4.0(xwechat) 的小程序包在 %APPDATA%\Tencent\xwechat\radium\Applet，旧版 3.x 在 Documents\WeChat Files\Applet，两者均自动探测。注意 Documents\xwechat_files\ 是聊天文件存储、通常不含 wxapkg。
+
+ 3. 上手示例
+
+把目标告诉 AI，它会自动走上面的工作流：
+
+ 分析小程序 wxXXXXXXXXXXXXXXXX 的接口 POST https://api.xxx.com/order/create，定位其 sign 签名算法，导出一个本地可独立运行的 Node 签名脚本。
+
+完成后你本地：
+
+bash
+node signer.mjs &#x27;{&quot;ts&quot;:&quot;1719000000&quot;,&quot;orderId&quot;:&quot;123&quot;}&#x27;
+ → 输出 sign，脱离微信直接复现接口请求
+
+
+---
+
+&amp;nbsp;工具清单（12）
+
+| 工具 | 作用 |
+|------|------|
+|  解包分析 | |
+| mp_list_apps | 列出本机微信缓存的所有小程序（appid / 版本 / 包数量） |
+| mp_decrypt | 解密提取单个 .wxapkg（传 appid 自动找最新，或传文件路径） |
+| mp_analyze | 一键分析：解密解包(主包+分包+插件) → 签名/加密定位 → API 抽取 → 复现代码生成 → 报告（含 crackHint：候选密钥+算法+参数序） |
+| mp_analyze_all | 批量分析本机全部缓存小程序 |
+|  抓包 | |
+| mp_capture_start | 启动 mitmproxy 代理抓包，请求自动存成结构化 JSONL（默认 :8080，可按 URL 过滤） |
+| mp_capture_list | 查看抓到的请求，自动标出 sign / token 等签名字段 |
+| mp_capture_stop | 停止抓包，返回文件路径与请求数 |
+| mp_capture_import | 导入已有抓包 → 归一成 JSONL（HAR / cURL / JSON 体 / JSONL，自己抓的包直接用，免走代理） |
+|  签名破解 | |
+| mp_sign_crack | 签名穷举：抓包样本 → 枚举参数子集 × 算法(HMAC/MD5/SHA/AES/DES/3DES) → 反推精确公式并生成复现代码（传 </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/WhiteNightShadow/wx-mp-mcp/issues/1"><span class="rp-item-num">#1</span><span class="rp-item-title">有没有办法逆向只允许在微信浏览器中打开的页面</span><span class="rp-item-extra">2 comments · 2026-07-24</span></a><a class="rp-item" href="https://github.com/WhiteNightShadow/wx-mp-mcp/issues/2"><span class="rp-item-num">#2</span><span class="rp-item-title">wx.getUserCryptoManager 似乎没办法逆向解决？</span><span class="rp-item-extra">1 comments · 2026-10-27</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/WhiteNightShadow__wx-mp-mcp.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

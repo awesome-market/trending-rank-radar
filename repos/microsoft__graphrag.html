@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>microsoft/graphrag · GitHub Trending Rank Radar</title>
+<meta name="description" content="A modular graph-based Retrieval-Augmented Generation (RAG) system">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="graphrag, microsoft, microsoft/graphrag, github stars, github trending, star growth, star history, 开源项目, 星标增长, graphrag, rag, llm, llms, gpt, gpt-4">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/microsoft__graphrag">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="microsoft/graphrag · GitHub Trending Rank Radar">
+<meta property="og:description" content="A modular graph-based Retrieval-Augmented Generation (RAG) system">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/microsoft__graphrag">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "microsoft/graphrag", "codeRepository": "https://github.com/microsoft/graphrag", "url": "https://zhuikan.com/repos/microsoft__graphrag", "description": "A modular graph-based Retrieval-Augmented Generation (RAG) system", "author": {"@type": "Organization", "name": "microsoft", "url": "https://github.com/microsoft"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Python", "dateCreated": "2024-03-27", "keywords": "graphrag,rag,llm,llms,gpt,gpt-4,gpt4"}</script>
+</head>
+<body data-repo="microsoft/graphrag" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">microsoft/graphrag</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="microsoft__graphrag"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/6154722?v=4&s=300" width="300" height="300" alt="microsoft avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">graphrag</div>
+      <a class="rp-side-owner" href="https://github.com/microsoft">microsoft</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/microsoft">microsoft</a>
+        <span class="rp-sep">/</span><span class="rp-name">graphrag</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A modular graph-based Retrieval-Augmented Generation (RAG) system</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>36,642</b></span><span class="rp-stat" title="forks">⑂ <b>3,884</b></span><span class="rp-stat" title="watchers">👁 <b>205</b></span><span class="rp-stat" title="prs">⑃ <b>1,369</b></span><span class="rp-stat" title="issues">● <b>873</b></span><span class="rp-stat" title="releases">▤ <b>44</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/graphrag">graphrag</a><a class="rp-topic" href="../tags/rag">rag</a><a class="rp-topic" href="../tags/llm">llm</a><a class="rp-topic" href="../tags/llms">llms</a><a class="rp-topic" href="../tags/gpt">gpt</a><a class="rp-topic" href="https://github.com/topics/gpt-4">gpt-4</a><a class="rp-topic" href="https://github.com/topics/gpt4">gpt4</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2024-03-27</span><a class="rp-meta-bit rp-home" href="https://microsoft.github.io/graphrag/" rel="noopener">microsoft.github.io/graphrag/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="microsoft__vscode"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">vscode</a><a class="rp-same-link" href="microsoft__markitdown"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">markitdown</a><a class="rp-same-link" href="microsoft__PowerToys"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">PowerToys</a><a class="rp-same-link" href="microsoft__generative-ai-for-beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">generative-ai-for-beginners</a><a class="rp-same-link" href="microsoft__TypeScript"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">TypeScript</a><a class="rp-same-link" href="microsoft__terminal"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">terminal</a><a class="rp-same-link" href="microsoft__playwright"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">playwright</a><a class="rp-same-link" href="microsoft__Web-Dev-For-Beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">Web-Dev-For-Beginners</a><a class="rp-same-link" href="microsoft__ML-For-Beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">ML-For-Beginners</a><a class="rp-same-link" href="microsoft__AI-For-Beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">AI-For-Beginners</a><a class="rp-same-link" href="microsoft__AirSim"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">AirSim</a><a class="rp-same-link" href="microsoft__BitNet"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">BitNet</a><a class="rp-same-link" href="microsoft__Bringing-Old-Photos-Back-to-Life"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">Bringing-Old-Photos-Back-to-Life</a><a class="rp-same-link" href="microsoft__CNTK"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">CNTK</a><a class="rp-same-link" href="microsoft__Data-Science-For-Beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">Data-Science-For-Beginners</a><a class="rp-same-link" href="microsoft__FluidFramework"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">FluidFramework</a><a class="rp-same-link" href="microsoft__IoT-For-Beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">IoT-For-Beginners</a><a class="rp-same-link" href="microsoft__MMdnn"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">MMdnn</a><a class="rp-same-link" href="microsoft__Ontology-Playground"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">Ontology-Playground</a><a class="rp-same-link" href="microsoft__Procexp-Mac"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">Procexp-Mac</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/microsoft/graphrag">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v3.3.0</span><a class="rp-dl-a" href="https://github.com/microsoft/graphrag/releases/tag/v3.3.0">v3.3.0 ↓</a><span class="rp-dl-ver">3.3.0</span><span class="rp-dl-date">2026-10-08</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+4</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">36,642</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">3,884</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">205</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,369</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">873</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">44</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">GraphRAG
+
+ [!WARNING]
+ GraphRAG is a research project that explores the functional use of graphs to form a targeted context for question answering. Since our first release in July 2024 the capabilities of frontier models have changed dramatically, and our portfolio of research projects has diversified to match. This project is largely in maintenance mode, and won&#x27;t be accepting new PRs or implementing new features. We&#x27;ll perform bug fixes and dependency updates as appropriate, particularly to address CVEs as they arise.
+
+👉 Microsoft Research Blog Post
+👉 Read the docs
+👉 GraphRAG Arxiv
+
+
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+
+
+ Overview
+
+The GraphRAG project is a data pipeline and transformation suite that is designed to extract meaningful, structured data from unstructured text using the power of LLMs.
+
+To learn more about GraphRAG and how it can be used to enhance your LLM&#x27;s ability to reason about your private data, please visit the Microsoft Research Blog Post.
+
+ Quickstart
+
+To get started with the GraphRAG system we recommend trying the command line quickstart.
+
+ Repository Guidance
+
+This repository presents a methodology for using knowledge graph memory structures to enhance LLM outputs. Please note that the provided code serves as a demonstration and is not an officially supported Microsoft offering.
+
+⚠️ _Warning: GraphRAG indexing can be an expensive operation, please read all of the documentation to understand the process and costs involved, and start small._
+
+ Diving Deeper
+
+- To learn about our contribution guidelines, see CONTRIBUTING.md
+- To start developing _GraphRAG_, see DEVELOPING.md
+- Join the conversation and provide feedback in the GitHub Discussions tab!
+
+ Prompt Tuning
+
+Using _GraphRAG_ with your data out of the box may not yield the best possible results.
+We strongly recommend to fine-tune your prompts following the Prompt Tuning Guide in our documentation.
+
+ Versioning
+
+Please see the breaking changes document for notes on our approach to versioning the project.
+
+_Always run graphrag init --root [path] --force between minor version bumps to ensure you have the latest config format. Run the provided migration notebook between major version bumps if you want to avoid re-indexing prior datasets. Note that this will overwrite your configuration and prompts, so back them up if necessary._
+
+ Responsible AI FAQ
+
+See RAI_TRANSPARENCY.md
+
+- What is GraphRAG?
+- What can GraphRAG do?
+- What are GraphRAG’s intended use(s)?
+- How was GraphRAG evaluated? What metrics are used to measure performance?
+- What are the limitations of GraphRAG? How can users minimize the impact of GraphRAG’s limitations when using the system?
+- What operational factors and settings allow for effective and responsible use of GraphRAG?
+
+ Trademarks
+
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
+trademarks or logos is subject to and must follow
+Microsoft&#x27;s Trademark &amp; Brand Guidelines.
+Use of Mi</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/microsoft/graphrag/issues/2583"><span class="rp-item-num">#2583</span><span class="rp-item-title">[Bug]: Community report context seems to keep only one edge per node</span><span class="rp-item-extra">3 comments · 2026-09-30</span></a><a class="rp-item" href="https://github.com/microsoft/graphrag/issues/2540"><span class="rp-item-num">#2540</span><span class="rp-item-title">[Bug]: update_communities leaves dangling entity_ids/relationship_ids after an incremental update</span><span class="rp-item-extra">3 comments · 2026-09-03</span></a><a class="rp-item" href="https://github.com/microsoft/graphrag/issues/2239"><span class="rp-item-num">#2239</span><span class="rp-item-title">[Feature Request]: Doc improvement, add a GraphRAG specific failure mode checklist and debug guide</span><span class="rp-item-extra">3 comments · 2026-02-20</span></a><a class="rp-item" href="https://github.com/microsoft/graphrag/issues/2614"><span class="rp-item-num">#2614</span><span class="rp-item-title">[Bug]: JsonCache.get() crashes with unhandled AttributeError on non-dict or invalid envelope JSON payloads</span><span class="rp-item-extra">2 comments · 2026-10-27</span></a><a class="rp-item" href="https://github.com/microsoft/graphrag/issues/2593"><span class="rp-item-num">#2593</span><span class="rp-item-title">[Bug]: TokenChunker never terminates when chunking overlap &gt;= size (no validation of size/overlap)</span><span class="rp-item-extra">2 comments · 2026-10-08</span></a><a class="rp-item" href="https://github.com/microsoft/graphrag/issues/2573"><span class="rp-item-num">#2573</span><span class="rp-item-title">[Bug]: `community_level` does not select a level — the community roll-up in `read_indexer_reports` is a no-op since v2.0.0</span><span class="rp-item-extra">2 comments · 2026-09-25</span></a><a class="rp-item" href="https://github.com/microsoft/graphrag/issues/2607"><span class="rp-item-num">#2607</span><span class="rp-item-title">Update Dependencies Sweep</span><span class="rp-item-extra">1 comments · 2026-10-19</span></a><a class="rp-item" href="https://github.com/microsoft/graphrag/issues/2606"><span class="rp-item-num">#2606</span><span class="rp-item-title">Community report context building re-renders and re-tokenizes the whole context after every edge</span><span class="rp-item-extra">1 comments · 2026-10-16</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/microsoft/graphrag/discussions/2598"><span class="rp-item-num">#2598</span><span class="rp-item-title">Invitation: open Memory Tournament: review your setup before we run</span><span class="rp-item-extra">0 comments · 2026-10-12</span></a><a class="rp-item" href="https://github.com/microsoft/graphrag/discussions/2584"><span class="rp-item-num">#2584</span><span class="rp-item-title">A hard dollar limit on one GraphRAG indexing run (settings.yaml only)</span><span class="rp-item-extra">0 comments · 2026-10-03</span></a><a class="rp-item" href="https://github.com/microsoft/graphrag/discussions/2574"><span class="rp-item-num">#2574</span><span class="rp-item-title">Extraction is structured output, so format drift gets frozen into the graph</span><span class="rp-item-extra">2 comments · 2026-09-26</span></a><a class="rp-item" href="https://github.com/microsoft/graphrag/discussions/2535"><span class="rp-item-num">#2535</span><span class="rp-item-title">Non-LLM extraction backend for graph indexing: 1000× cheaper, schema-bounded — where would it fit in GraphRAG?</span><span class="rp-item-extra">0 comments · 2026-09-01</span></a><a class="rp-item" href="https://github.com/microsoft/graphrag/discussions/2501"><span class="rp-item-num">#2501</span><span class="rp-item-title">Pre-publication review: our reading of GraphRAG&#x27;s entity matching (corrections welcome by 2026-08-30)</span><span class="rp-item-extra">0 comments · 2026-08-16</span></a><a class="rp-item" href="https://github.com/microsoft/graphrag/discussions/2463"><span class="rp-item-num">#2463</span><span class="rp-item-title">How to refresh GraphRAG when knowledge has change？</span><span class="rp-item-extra">1 comments · 2026-07-23</span></a><a class="rp-item" href="https://github.com/microsoft/graphrag/discussions/2437"><span class="rp-item-num">#2437</span><span class="rp-item-title">GraphRAG Workbench 2.0 — looking for people to break it</span><span class="rp-item-extra">0 comments · 2026-07-12</span></a><a class="rp-item" href="https://github.com/microsoft/graphrag/discussions/2396"><span class="rp-item-num">#2396</span><span class="rp-item-title">ccline — AI at your zsh shell, for knowledge graph developers</span><span class="rp-item-extra">0 comments · 2026-06-10</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/microsoft/graphrag/releases"><b>v3.3.0</b> <span class="rp-rel-tag">v3.3.0</span> <span class="rp-item-extra">2026-10-08</span></a><pre class="rp-pre">What&#x27;s Changed
+ fix sqlite performance issue by @gaudyb in https://github.com/microsoft/graphrag/pull/2591
+ Release v3.3.0 by @gaudyb in https://github.com/microsoft/graphrag/pull/2592
+
+
+Full Changelog: https://github.com/microsoft/graphrag/compare/v3.2.0...v3.3.0</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/microsoft__graphrag.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

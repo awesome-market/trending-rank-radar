@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>layui/layui · GitHub Trending Rank Radar</title>
+<meta name="description" content="一套遵循浏览器原生态开发模式的 Web UI 组件库。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="layui, layui, layui/layui, github stars, github trending, star growth, star history, 开源项目, 星标增长, layui, javascript, html, css, component-library, ui-library">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/layui__layui">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="layui/layui · GitHub Trending Rank Radar">
+<meta property="og:description" content="一套遵循浏览器原生态开发模式的 Web UI 组件库。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/layui__layui">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "layui/layui", "codeRepository": "https://github.com/layui/layui", "url": "https://zhuikan.com/repos/layui__layui", "description": "一套遵循浏览器原生态开发模式的 Web UI 组件库。", "author": {"@type": "Organization", "name": "layui", "url": "https://github.com/layui"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2015-09-22", "keywords": "layui,javascript,html,css,component-library,ui-library,ui-kit"}</script>
+</head>
+<body data-repo="layui/layui" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">layui/layui</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="layui__layui"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/7955643?v=4&s=300" width="300" height="300" alt="layui avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">layui</div>
+      <a class="rp-side-owner" href="https://github.com/layui">layui</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/layui">layui</a>
+        <span class="rp-sep">/</span><span class="rp-name">layui</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">一套遵循浏览器原生态开发模式的 Web UI 组件库。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>30,584</b></span><span class="rp-stat" title="forks">⑂ <b>7,341</b></span><span class="rp-stat" title="watchers">👁 <b>918</b></span><span class="rp-stat" title="prs">⑃ <b>1,073</b></span><span class="rp-stat" title="issues">● <b>1,509</b></span><span class="rp-stat" title="releases">▤ <b>178</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/layui">layui</a><a class="rp-topic" href="../tags/javascript">javascript</a><a class="rp-topic" href="../tags/html">html</a><a class="rp-topic" href="../tags/css">css</a><a class="rp-topic" href="https://github.com/topics/component-library">component-library</a><a class="rp-topic" href="https://github.com/topics/ui-library">ui-library</a><a class="rp-topic" href="https://github.com/topics/ui-kit">ui-kit</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2015-09-22</span><a class="rp-meta-bit rp-home" href="https://layui.dev" rel="noopener">layui.dev</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/layui/layui">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v2.13.9</span><a class="rp-dl-a" href="https://github.com/layui/layui/releases/tag/v2.13.9">v2.13.9 ↓</a><span class="rp-dl-ver">2.13.9</span><span class="rp-dl-date">2026-08-11</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+8</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">30,584</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">7,341</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">918</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,073</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,509</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">178</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Layui
+
+中文 · English
+
+原生态 Web UI 组件库
+
+
+  
+    
+  
+  
+    
+  
+  
+    
+  
+
+
+ Layui 是一套开源免费的 Web UI 组件库，采用纯原生态的 HTML CSS JavaScript 开发模式，它为更便捷地构建现代 Web 界面而生。多年来，凭借别具一格的内外风格而被广泛应用。它给非前端开发者极大地降低了构建复杂网页界面的门槛，开发者只需面向浏览器，即可让页面所需呈现的元素与交互，变得信手拈来。
+
+ 使用文档
+
+- Layui 3 （正在开发中）
+- Layui 2
+
+ Layui 3 所在的 main 分支和预发布版本仍处于开发阶段，不建议用于生产环境，也暂不纳入常规安全公告及安全更新范围。安全报告范围请参阅安全政策。
+
+ 项目参与
+
+项目参与者
+
+ 破旧立新 🌱
+
+2016年10月14日，Layui 发布了 1.0.0 首版，此后多年被广泛应用于众多 Web 平台。
+
+2021年10月13日，Layui 发布了原官网下线的公告（导读），并将文档站点切换到了 Gitee Pages，社区及日常维护亦全面转移到了 Gitee 和 Github 平台，以此呼吁大家拥抱其他更好的主流框架，导致大家误以为 Layui 停更了。事实上，自那以后，Layui 仍然在 Github 和 Gitee 保持活跃，并不存在所谓的停止更新，从当时的 2.6.8 一直连续迭代到如今的最新版本。
+
+2023年4月24日，Layui 发布了 2.8.0 正式版，并上线了新的文档站点，这是一次朴实的回归，更是情怀的延续。 但我们仍然坚持两年前那则公告中的观点， _即仍然推荐大家去拥抱主流，始终保持对前沿技术的无限热爱，是开发者们都应具备的思维属性_。 而 Layui 所做的，是为填补主流之外的那些略显狭小的空隙。Layui 虽不是前端主流，但也早已不是作者个人的 Layui，而是所有仍在坚持使用它的人的 Layui，它仍然支撑着许多项目，也代表着许多人的工作。作为开源创作者，应该要为这些坚持者而守望。
+
+2025年10月24日，Layui 发布了 2.13.0 重要阶段版本，以致敬过去个中滋味的 10 年，并正式开启一个新的节点。
+
+未来，Layui 会持续陪伴着所有为之热爱的人们，共同去论证 Layui 开发模式的可行性。
+
+ 开源许可
+
+Layui 采用 MIT 许可发布。其他相关协议亦可参考《免责声明》。</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/layui/layui/issues/2888"><span class="rp-item-num">#2888</span><span class="rp-item-title">[milestone] Layui 3 设计初衷和开发规范  🔥</span><span class="rp-item-extra">28 comments · 2025-10-25</span></a><a class="rp-item" href="https://github.com/layui/layui/issues/2889"><span class="rp-item-num">#2889</span><span class="rp-item-title">[milestone] Layui 3 当前工作进程</span><span class="rp-item-extra">21 comments · 2025-10-26</span></a><a class="rp-item" href="https://github.com/layui/layui/issues/3132"><span class="rp-item-num">#3132</span><span class="rp-item-title">[empty] 新增 Empty 空状态组件</span><span class="rp-item-extra">5 comments · 2026-08-11</span></a><a class="rp-item" href="https://github.com/layui/layui/issues/3064"><span class="rp-item-num">#3064</span><span class="rp-item-title">[table] 拖动列宽，当分辨率高时，列宽会自动一点一点扩大</span><span class="rp-item-extra">5 comments · 2026-06-01</span></a><a class="rp-item" href="https://github.com/layui/layui/issues/3138"><span class="rp-item-num">#3138</span><span class="rp-item-title">[steps] 新增 Steps 步骤条组件</span><span class="rp-item-extra">4 comments · 2026-08-14</span></a><a class="rp-item" href="https://github.com/layui/layui/issues/3084"><span class="rp-item-num">#3084</span><span class="rp-item-title">[table] 列禁用滚动条并不溢出屏幕</span><span class="rp-item-extra">4 comments · 2026-07-02</span></a><a class="rp-item" href="https://github.com/layui/layui/issues/3136"><span class="rp-item-num">#3136</span><span class="rp-item-title">[tag] 新增 Tag 标签组件</span><span class="rp-item-extra">3 comments · 2026-08-13</span></a><a class="rp-item" href="https://github.com/layui/layui/issues/3090"><span class="rp-item-num">#3090</span><span class="rp-item-title">[code] 重构 Code 代码预览组件</span><span class="rp-item-extra">3 comments · 2026-07-05</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/layui/layui/discussions/3163"><span class="rp-item-num">#3163</span><span class="rp-item-title">layer.photos(options)能否增加一个小图？</span><span class="rp-item-extra">0 comments · 2026-10-18</span></a><a class="rp-item" href="https://github.com/layui/layui/discussions/3160"><span class="rp-item-num">#3160</span><span class="rp-item-title">关于2.13.9的layer.photos在移动端无法双指直接放大问题。</span><span class="rp-item-extra">0 comments · 2026-10-10</span></a><a class="rp-item" href="https://github.com/layui/layui/discussions/3151"><span class="rp-item-num">#3151</span><span class="rp-item-title">[layer]为什么zIndex是19891014？？？</span><span class="rp-item-extra">2 comments · 2026-09-11</span></a><a class="rp-item" href="https://github.com/layui/layui/discussions/3150"><span class="rp-item-num">#3150</span><span class="rp-item-title">layui 表格支持数据行合并单元格吗？</span><span class="rp-item-extra">0 comments · 2026-09-09</span></a><a class="rp-item" href="https://github.com/layui/layui/discussions/3145"><span class="rp-item-num">#3145</span><span class="rp-item-title">[form]表单组件form.render有渲染完成后的回调callback吗</span><span class="rp-item-extra">2 comments · 2026-08-24</span></a><a class="rp-item" href="https://github.com/layui/layui/discussions/3144"><span class="rp-item-num">#3144</span><span class="rp-item-title">作者大大，你每次大更新v3后，能否同步到：dist文件夹下</span><span class="rp-item-extra">1 comments · 2026-08-21</span></a><a class="rp-item" href="https://github.com/layui/layui/discussions/3143"><span class="rp-item-num">#3143</span><span class="rp-item-title">我从2.10.0升级到最新版本，发现.layui-card-header 增加了一些样式，margin和padding，如何还沿用以前的样式，保持原因页面布局</span><span class="rp-item-extra">0 comments · 2026-08-18</span></a><a class="rp-item" href="https://github.com/layui/layui/discussions/3129"><span class="rp-item-num">#3129</span><span class="rp-item-title">[slider] 如何获得值？</span><span class="rp-item-extra">1 comments · 2026-08-07</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/layui/layui/releases"><b>v2.13.9</b> <span class="rp-rel-tag">v2.13.9</span> <span class="rp-item-extra">2026-08-11</span></a><pre class="rp-pre">- 更新日志: https://layui.dev/docs/2/versions.htmlv2.13.9
+- 本次贡献: @sentsim @sunxiaobin89 @Sight-wcg  🎉</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/layui__layui.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

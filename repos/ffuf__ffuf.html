@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ffuf/ffuf · GitHub Trending Rank Radar</title>
+<meta name="description" content="Fast web fuzzer written in Go">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="ffuf, ffuf, ffuf/ffuf, github stars, github trending, star growth, star history, 开源项目, 星标增长, fuzzer, pentesting, infosec, web">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/ffuf__ffuf">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="ffuf/ffuf · GitHub Trending Rank Radar">
+<meta property="og:description" content="Fast web fuzzer written in Go">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/ffuf__ffuf">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ffuf/ffuf", "codeRepository": "https://github.com/ffuf/ffuf", "url": "https://zhuikan.com/repos/ffuf__ffuf", "description": "Fast web fuzzer written in Go", "author": {"@type": "Organization", "name": "ffuf", "url": "https://github.com/ffuf"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Go", "dateCreated": "2018-11-08", "keywords": "fuzzer,pentesting,infosec,web"}</script>
+</head>
+<body data-repo="ffuf/ffuf" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">ffuf/ffuf</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="ffuf__ffuf"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/42502069?v=4&s=300" width="300" height="300" alt="ffuf avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">ffuf</div>
+      <a class="rp-side-owner" href="https://github.com/ffuf">ffuf</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/ffuf">ffuf</a>
+        <span class="rp-sep">/</span><span class="rp-name">ffuf</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Fast web fuzzer written in Go</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>17,050</b></span><span class="rp-stat" title="forks">⑂ <b>1,626</b></span><span class="rp-stat" title="watchers">👁 <b>162</b></span><span class="rp-stat" title="prs">⑃ <b>384</b></span><span class="rp-stat" title="issues">● <b>555</b></span><span class="rp-stat" title="releases">▤ <b>28</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/fuzzer">fuzzer</a><a class="rp-topic" href="https://github.com/topics/pentesting">pentesting</a><a class="rp-topic" href="https://github.com/topics/infosec">infosec</a><a class="rp-topic" href="../tags/web">web</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Go</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2018-11-08</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/ffuf/ffuf">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v2.3.0</span><a class="rp-dl-a" href="https://github.com/ffuf/ffuf/releases/tag/v2.3.0">v2.3.0 ↓</a><span class="rp-dl-ver">2.3.0</span><span class="rp-dl-date">2026-09-09</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+4</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">17,050</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,626</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">162</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">384</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">555</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">28</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">!ffuf mascot
+ ffuf - Fuzz Faster U Fool
+
+A fast web fuzzer written in Go.
+
+- Installation
+- Example usage
+    - Content discovery
+    - Vhost discovery
+    - Parameter fuzzing
+    - POST data fuzzing
+    - Using external mutator
+    - Configuration files
+- Help
+    - Interactive mode
+
+
+ Installation
+
+- Download a prebuilt binary from releases page, unpack and run!
+
+  _or_
+- If you are on Windows with Scoop, ffuf can be installed with: scoop install ffuf
+
+  _or_
+- If you are on Windows with Winget, ffuf can be installed with: winget install ffuf.ffuf
+
+  _or_
+- If you are on macOS with homebrew, ffuf can be installed with: brew install ffuf
+  
+  _or_
+- If you have recent go compiler installed: go install github.com/ffuf/ffuf/v2@latest (the same command works for updating)
+  
+  _or_
+- git clone https://github.com/ffuf/ffuf ; cd ffuf ; go get ; go build
+
+1. Ffuf depends on Go 1.20 or greater.
+2. A go build from a checkout shows git-- rather than the tag. A local build isn&#x27;t an official release even when you&#x27;re sitting on a tag, and Go&#x27;s embedded build info gives us the commit but not the tag name — so we surface the exact commit it was built from. The authoritative versioned binaries are the ones on the releases page.
+
+ Example usage
+
+The usage examples below show just the simplest tasks you can accomplish using ffuf. 
+
+More elaborate documentation that goes through many features with a lot of examples is
+available in the ffuf wiki at https://github.com/ffuf/ffuf/wiki
+
+For more extensive documentation, with real life usage examples and tips, be sure to check out the awesome guide:
+&quot;Everything you need to know about FFUF&quot; by 
+Michael Skelton (@codingo).
+
+You can also practise your ffuf scans against a live host with different lessons and use cases either locally by using the docker container https://github.com/adamtlangley/ffufme or against the live hosted version at http://ffuf.me created by Adam Langley @adamtlangley.  
+
+ Typical directory discovery
+
+
+
+By using the FUZZ keyword at the end of URL (-u):
+
+
+ffuf -w /path/to/wordlist -u https://target/FUZZ
+
+
+ Virtual host discovery (without DNS records)
+
+
+
+Assuming that the default virtualhost response size is 4242 bytes, we can filter out all the responses of that size (-fs 4242)while fuzzing the Host - header:
+
+
+ffuf -w /path/to/vhost/wordlist -u https://target -H &quot;Host: FUZZ&quot; -fs 4242
+
+
+ GET parameter fuzzing
+
+GET parameter name fuzzing is very similar to directory discovery, and works by defining the FUZZ keyword as a part of the URL. This also assumes a response size of 4242 bytes for invalid GET parameter name.
+
+
+ffuf -w /path/to/paramnames.txt -u https://target/script.php?FUZZ=test_value -fs 4242
+
+
+If the parameter name is known, the values can be fuzzed the same way. This example assumes a wrong parameter value returning HTTP response code 401.
+
+
+ffuf -w /path/to/values.txt -u https://target/script.php?valid_name=FUZZ -fc 401
+
+
+ POST data fuzzing
+
+This is a very straightforward operation, again b</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ffuf/ffuf/issues/377"><span class="rp-item-num">#377</span><span class="rp-item-title">recursion not working properly</span><span class="rp-item-extra">21 comments · 2021-01-18</span></a><a class="rp-item" href="https://github.com/ffuf/ffuf/issues/257"><span class="rp-item-num">#257</span><span class="rp-item-title">Multiple and rare feature requests </span><span class="rp-item-extra">16 comments · 2020-06-21</span></a><a class="rp-item" href="https://github.com/ffuf/ffuf/issues/790"><span class="rp-item-num">#790</span><span class="rp-item-title">Proxy and Akamai Errors</span><span class="rp-item-extra">13 comments · 2024-05-30</span></a><a class="rp-item" href="https://github.com/ffuf/ffuf/issues/141"><span class="rp-item-num">#141</span><span class="rp-item-title">Input command usability improvement suggestion</span><span class="rp-item-extra">13 comments · 2020-01-25</span></a><a class="rp-item" href="https://github.com/ffuf/ffuf/issues/324"><span class="rp-item-num">#324</span><span class="rp-item-title">Follow redirects while printing redirect chains</span><span class="rp-item-extra">11 comments · 2020-10-02</span></a><a class="rp-item" href="https://github.com/ffuf/ffuf/issues/387"><span class="rp-item-num">#387</span><span class="rp-item-title">Option -ac is hiding valid results because of the way how auto-calibrated filters are applied.</span><span class="rp-item-extra">10 comments · 2021-02-07</span></a><a class="rp-item" href="https://github.com/ffuf/ffuf/issues/681"><span class="rp-item-num">#681</span><span class="rp-item-title">Output format</span><span class="rp-item-extra">9 comments · 2023-05-17</span></a><a class="rp-item" href="https://github.com/ffuf/ffuf/issues/526"><span class="rp-item-num">#526</span><span class="rp-item-title">ffuf fails to match / filter encoded content due Accept-Encoding header</span><span class="rp-item-extra">8 comments · 2022-03-01</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/ffuf/ffuf/releases"><b>v2.3.0</b> <span class="rp-rel-tag">v2.3.0</span> <span class="rp-item-extra">2026-09-09</span></a><pre class="rp-pre">Changelog
+ 256c1b02499f5f8672af965d4ad7a321d606bc65 Changelog: add v2.3.0, and backfill the v2.2.0 and v2.2.1 sections
+ 90e28bd42efc4ee1f4e4645fc6920212ccd1ea2c Bound the -od/-audit-log response snapshot and the response header size (934)
+ 33c67d28c85b94589d029b3bcaff205a40cee9c4 Count response words/lines without allocating a []string (930)
+ 8162f48742ff140cafd0d8eb4f071714befccef5 Add preflight/postflight requests with variable extraction (920)
+ e43b4a239564e229d7469a957a8574bf25cc0fac Drop redundant security contact link from issue config (919)
+ a614addba3bf9327b115302dea1f5ac47a65c82a Add </pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/ffuf__ffuf.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

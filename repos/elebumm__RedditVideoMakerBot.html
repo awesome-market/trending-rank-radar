@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>elebumm/RedditVideoMakerBot · GitHub Trending Rank Radar</title>
+<meta name="description" content="Create Reddit Videos with just✨ one command ✨">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="RedditVideoMakerBot, elebumm, elebumm/RedditVideoMakerBot, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/elebumm__RedditVideoMakerBot">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="elebumm/RedditVideoMakerBot · GitHub Trending Rank Radar">
+<meta property="og:description" content="Create Reddit Videos with just✨ one command ✨">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/elebumm__RedditVideoMakerBot">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "elebumm/RedditVideoMakerBot", "codeRepository": "https://github.com/elebumm/RedditVideoMakerBot", "url": "https://zhuikan.com/repos/elebumm__RedditVideoMakerBot", "description": "Create Reddit Videos with just✨ one command ✨", "author": {"@type": "Organization", "name": "elebumm", "url": "https://github.com/elebumm"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Python", "dateCreated": "2022-05-26"}</script>
+</head>
+<body data-repo="elebumm/RedditVideoMakerBot" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">elebumm/RedditVideoMakerBot</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="elebumm__RedditVideoMakerBot"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/6053155?u=32f169839931d0b6eac6f5c3633010fd09fbb6b1&amp;v=4&s=300" width="300" height="300" alt="elebumm avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">RedditVideoMakerBot</div>
+      <a class="rp-side-owner" href="https://github.com/elebumm">elebumm</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/elebumm">elebumm</a>
+        <span class="rp-sep">/</span><span class="rp-name">RedditVideoMakerBot</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Create Reddit Videos with just✨ one command ✨</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>12,557</b></span><span class="rp-stat" title="forks">⑂ <b>2,857</b></span><span class="rp-stat" title="watchers">👁 <b>116</b></span><span class="rp-stat" title="releases">▤ <b>16</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Created 2022-05-26</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/elebumm/RedditVideoMakerBot">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+16</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">12,557</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,857</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">116</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">16</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Reddit Video Maker Bot 🎥
+
+All done WITHOUT video editing or asset compiling. Just pure ✨programming magic✨.
+
+Created by Lewis Menelaws &amp; TMRRW
+
+
+
+  
+  
+  
+
+
+
+
+ Video Explainer
+
+![lewisthumbnail
+](https://www.youtube.com/watch?v=3gjcY_00U1w)
+
+ Motivation 🤔
+
+These videos on TikTok, YouTube and Instagram get MILLIONS of views across all platforms and require very little effort.
+The only original thing being done is the editing and gathering of all materials...
+
+... but what if we can automate that process? 🤔
+
+ Disclaimers 🚨
+
+- At the moment, this repository won&#x27;t attempt to upload this content through this bot. It will give you a file that
+  you will then have to upload manually. This is for the sake of avoiding any sort of community guideline issues.
+
+ Requirements
+
+- Python 3.10
+- Playwright (this should install automatically in installation)
+
+ Installation 👩‍💻
+
+1. Clone this repository:
+    sh
+    git clone https://github.com/elebumm/RedditVideoMakerBot.git
+    cd RedditVideoMakerBot
+    
+
+2. Create and activate a virtual environment:
+    - On Windows:
+        sh
+        python -m venv ./venv
+        .\venv\Scripts\activate
+        
+    - On macOS and Linux:
+        sh
+        python3 -m venv ./venv
+        source ./venv/bin/activate
+        
+
+3. Install the required dependencies:
+    sh
+    pip install -r requirements.txt
+    
+
+4. Install Playwright and its dependencies:
+    sh
+    python -m playwright install
+    python -m playwright install-deps
+    
+
+---
+
+EXPERIMENTAL!!!!
+
+   - On macOS and Linux (Debian, Arch, Fedora, CentOS, and based on those), you can run an installation script that will automatically install steps 1 to 3. (requires bash)
+   - bash &lt;(curl -sL https://raw.githubusercontent.com/elebumm/RedditVideoMakerBot/master/install.sh)
+   - This can also be used to update the installation
+
+---
+
+5. Run the bot:
+    sh
+    python main.py
+    
+
+6. Visit the Reddit Apps page, and set up an app that is a &quot;script&quot;. Paste any URL in the redirect URL field, for example: https://jasoncameron.dev.
+
+7. The bot will prompt you to fill in your details to connect to the Reddit API and configure the bot to your liking.
+
+8. Enjoy 😎
+
+9. If you need to reconfigure the bot, simply open the config.toml file and delete the lines that need to be changed. On the next run of the bot, it will help you reconfigure those options.
+
+(Note: If you encounter any errors installing or running the bot, try using python3 or pip3 instead of python or pip.)
+
+For a more detailed guide about the bot, please refer to the documentation.
+
+ Video
+
+https://user-images.githubusercontent.com/66544866/173453972-6526e4e6-c6ef-41c5-ab40-5d275e724e7c.mp4
+
+ Contributing &amp; Ways to improve 📈
+
+In its current state, this bot does exactly what it needs to do. However, improvements can always be made!
+
+I have tried to simplify the code so anyone can read it and start contributing at any skill level. Don&#x27;t be shy :) contribute!
+
+- [ ] Creating better documentation and adding a command line in</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/elebumm__RedditVideoMakerBot.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

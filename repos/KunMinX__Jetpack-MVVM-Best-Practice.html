@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KunMinX/Jetpack-MVVM-Best-Practice · GitHub Trending Rank Radar</title>
+<meta name="description" content="难得一见 Jetpack MVVM 最佳实践。在 &quot;以简驭繁&quot; 代码中，对 &quot;视图控制器&quot; 乃至 &quot;标准化开发模式&quot; 形成正确、深入理解。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Jetpack-MVVM-Best-Practice, KunMinX, KunMinX/Jetpack-MVVM-Best-Practice, github stars, github trending, star growth, star history, 开源项目, 星标增长, jetpack, mvvm">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/KunMinX__Jetpack-MVVM-Best-Practice">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="KunMinX/Jetpack-MVVM-Best-Practice · GitHub Trending Rank Radar">
+<meta property="og:description" content="难得一见 Jetpack MVVM 最佳实践。在 &quot;以简驭繁&quot; 代码中，对 &quot;视图控制器&quot; 乃至 &quot;标准化开发模式&quot; 形成正确、深入理解。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/KunMinX__Jetpack-MVVM-Best-Practice">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "KunMinX/Jetpack-MVVM-Best-Practice", "codeRepository": "https://github.com/KunMinX/Jetpack-MVVM-Best-Practice", "url": "https://zhuikan.com/repos/KunMinX__Jetpack-MVVM-Best-Practice", "description": "难得一见 Jetpack MVVM 最佳实践。在 \"以简驭繁\" 代码中，对 \"视图控制器\" 乃至 \"标准化开发模式\" 形成正确、深入理解。", "author": {"@type": "Organization", "name": "KunMinX", "url": "https://github.com/KunMinX"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Java", "dateCreated": "2019-10-31", "keywords": "jetpack,mvvm"}</script>
+</head>
+<body data-repo="KunMinX/Jetpack-MVVM-Best-Practice" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">KunMinX/Jetpack-MVVM-Best-Practice</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="KunMinX__Jetpack-MVVM-Best-Practice"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/43346411?u=0e9c9d59baa6ea199e6c763c0aa8cafa2827ad38&amp;v=4&s=300" width="300" height="300" alt="KunMinX avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Jetpack-MVVM-Best-Practice</div>
+      <a class="rp-side-owner" href="https://github.com/KunMinX">KunMinX</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/KunMinX">KunMinX</a>
+        <span class="rp-sep">/</span><span class="rp-name">Jetpack-MVVM-Best-Practice</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">难得一见 Jetpack MVVM 最佳实践。在 &quot;以简驭繁&quot; 代码中，对 &quot;视图控制器&quot; 乃至 &quot;标准化开发模式&quot; 形成正确、深入理解。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>8,907</b></span><span class="rp-stat" title="forks">⑂ <b>1,631</b></span><span class="rp-stat" title="watchers">👁 <b>129</b></span><span class="rp-stat" title="prs">⑃ <b>176</b></span><span class="rp-stat" title="issues">● <b>61</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/jetpack">jetpack</a><a class="rp-topic" href="https://github.com/topics/mvvm">mvvm</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Java</span><span class="rp-meta-bit">Created 2019-10-31</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/KunMinX/Jetpack-MVVM-Best-Practice">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">8,907</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,631</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">129</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">176</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">61</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">!
+
+《重学安卓》付费读者加微信进群：myatejx
+
+ 免费试读，专栏目录，更新动态，优惠政策
+
+&amp;nbsp;
+
+ 版权声明
+
+我们就本项目 &quot;被卖课&quot; 一事，在掘金发表一期专访 《开源项目被人拿去做课程卖了 1000 多万是什么体验》
+
+本项目系我为方便开发者们 无痛理解 Google 开源 Jetpack MVVM 中每个架构组件的 存在缘由、职责边界，而 精心设计的高频应用场景，
+
+与此同时，本项目是作为 《重学安卓》专栏 Jetpack MVVM 系列文章 “配套项目” 而存在，文章内容和项目代码设计均涉及本人对 Jetpack MVVM 独家理解，本人对此享有著作权。
+
+任何组织或个人，未经与作者本人沟通，不得将本项目代码设计和本人对 Jetpack MVVM 独家理解用于 &quot;打包贩卖、引流、出书 和 卖课&quot; 等商业用途。
+
+&amp;nbsp;
+
+ 架构图一览
+
+!
+
+&amp;nbsp;
+
+ 前言
+
+上周我在各大 “技术社区” 发表了一篇 《Jetpack MVVM 精讲》，原以为在 “知识网红” 唱衰 Android 的 2019 会无人问津，没想到文章一经发布，从 “国内知名公司” 架构师、技术经理，到 “世界级公司”  Android 开发都在看。
+
+且从读者反馈来看，近期大部分 Android 开发已跳出舒适圈，开始尝试认识和应用 Jetpack MVVM 到实际项目中。
+
+只可惜，关于 Jetpack MVVM，网上多是 东拼西凑、人云亦云、通篇贴代码 文章，这不仅不能提供 “完整视角” 帮助读者 首先明确背景状况，更是给还没入门 Jetpack 读者 徒添困扰、起 劝退 作用。
+
+好消息是，这一期，我们带着 精心打磨 Jetpack MVVM 最佳实践案例 来了！
+
+&amp;nbsp;
+&amp;nbsp;
+
+
+|                       爱不释手交互设计                       |                         连贯用户体验                         |                      可信源统一分发                      |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| ! | ! | ! |
+
+
+
+|                   横竖屏布局无缝切换                   |
+| :----------------------------------------------------: |
+| ! |
+
+&amp;nbsp;
+&amp;nbsp;
+
+ 项目简介
+
+本人拥有 3 年 “移动端业务架构” 践行和设计经验，领导或参与团队 “重构” 中大型项目多达十数个，对 Jetpack MVVM 架构在 “确立规范化、标准化开发模式 以 减少不可预期错误” 所作的努力，有深入理解。
+
+
+
+在这个案例中，我将为你展示，Jetpack MVVM 是如何 以简驭繁 地将原本十分容易出错、一出错就会耽搁半天的开发工作，通过寥寥几行代码 轻而易举完成。
+
+ 👆👆👆 划重点！
+
+&amp;nbsp;
+
+该项目中，
+
+ 我们为 横、竖屏 场景安排两套 截然不同布局，且在 生命周期、重建机制、状态管理、DataBinding、ViewModel、LiveData 、Navigation 等知识点帮助下，通过寥寥几行代码，轻松做到 在横竖屏两种布局间 无缝切换，且不产生任何 预期外错误。
+
+
+ 我们在多个 Fragment 页面 分别安排 播放状态指示器（包括 播放暂停按钮状态、播放列表当前索引指示 等），并向你展示 “如何” 及 “为何” 通过 LiveData 配合 可信源 ViewModel 或单例，实现 全应用范围内 “可追溯事件” 统一分发。
+
+
+ 我们在 Fragment 和 Activity 之间分别安排 跨页面通信，从而向你展示 如何基于 迪米特原则（也称 最少知道原则）、通过 UnPeekLiveData 和 应用级 SharedViewModel 实现 生命周期安全、确保消息同步可靠一致的 页面通信。
+
+
+ 我们在 ui.page 、domain.request 、data.repository 等目录下，分别安排 视图控制器、ViewModel 、Dispatcher 、DataRepository 等 内容，从而向你展示，单向依赖 架构设计，是如何通过分层 数据请求和响应，规避 “内存泄漏” 等问题。
+
+
+ 本项目代码一律采用 经过 ISO 认证 标准化工业级语言 Java 来编写。且在上述类中，我们大都 提供丰富注释，助你理解 “骨架代码” 为何要如此设计、如此设计能 在软件工程背景下 避免哪些不可预期错误。
+
+&amp;nbsp;
+&amp;nbsp;
+
+除了 在 &quot;以简驭繁&quot; 代码中 掌握 MVVM 最佳实践，你还可从该项目中获得内容包括：
+
+1. 整洁代码风格 和 标准资源命名规范。
+2. 对 “视图控制器” 知识点的 深入理解 和 正确使用。
+3. AndroidX 和 Material Design 2 全面使用。
+4. ConstraintLayout 约束布局最佳实践。
+5. 优秀的 用户体验 和 交互设计。
+6. 绝不使用 Dagger，绝不使用奇技淫巧、编写艰深晦涩代码。
+7. The one more thing is：
+
+即日起，可在 &quot;应用商店&quot; 下载体验！
+
+ 
+
+
+&amp;nbsp;
+&amp;nbsp;
+
+ Thanks to
+
+AndroidX
+
+Jetpack
+
+material-components-android
+
+轻听
+
+AndroidSlidingUpPanel
+
+项目中使用 图片素材 来自 UnSplash 提供 免费授权图片。
+
+项目中使用 音频素材 来自 BenSound 提供 免费授权音乐。
+
+&amp;nbsp;
+&amp;nbsp;
+
+ Who is using
+
+根据小伙伴们 “开源库使用情况” 匿名调查问卷参与，截至 2022年5月28日，我们了解到
+
+包括 “腾讯音乐、网易、BMW、TCL” 在内诸多知名厂商软件，都参考过我们开源的此架构模式，或正在使用我们维护的 UnPeek-LiveData 等框架。
+
+目前已将统计数据更新到 相关开源库 ReadMe 中，错过本次问卷调查的小伙伴也不用担心，我们继续对此保持开放，不定期将小伙伴们登记的公司和产品更新到表格，
+
+以便吸纳更多小伙伴参与对 “架构组件” 的使用和反馈，集众人所长，让组件得以不断演化和升级。
+
+https://wj.qq.com/s2/8362688/124a/
+
+| 集团 / 公司 / 品牌 / 团队                             |</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/KunMinX/Jetpack-MVVM-Best-Practice/issues/245"><span class="rp-item-num">#245</span><span class="rp-item-title">进入主页后，左滑或者右滑退回桌面，再次打开后，播放列表数据为空</span><span class="rp-item-extra">1 comments · 2024-05-09</span></a><a class="rp-item" href="https://github.com/KunMinX/Jetpack-MVVM-Best-Practice/issues/71"><span class="rp-item-num">#71</span><span class="rp-item-title">【 提问须知 】</span><span class="rp-item-extra">1 comments · 2021-06-19</span></a><a class="rp-item" href="https://github.com/KunMinX/Jetpack-MVVM-Best-Practice/issues/239"><span class="rp-item-num">#239</span><span class="rp-item-title">RecyclerView列表多项同时发送请求，如何优雅实现？</span><span class="rp-item-extra">0 comments · 2023-12-19</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/KunMinX__Jetpack-MVVM-Best-Practice.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

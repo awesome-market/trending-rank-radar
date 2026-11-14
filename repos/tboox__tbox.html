@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tboox/tbox · GitHub Trending Rank Radar</title>
+<meta name="description" content="🎁 A glib-like multi-platform c library">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="tbox, tboox, tboox/tbox, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/tboox__tbox">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="tboox/tbox · GitHub Trending Rank Radar">
+<meta property="og:description" content="🎁 A glib-like multi-platform c library">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/tboox__tbox">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "tboox/tbox", "codeRepository": "https://github.com/tboox/tbox", "url": "https://zhuikan.com/repos/tboox__tbox", "description": "🎁 A glib-like multi-platform c library", "author": {"@type": "Organization", "name": "tboox", "url": "https://github.com/tboox"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "C", "dateCreated": "2011-04-10"}</script>
+</head>
+<body data-repo="tboox/tbox" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">tboox/tbox</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="tboox__tbox"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/1333270?v=4&s=300" width="300" height="300" alt="tboox avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">tbox</div>
+      <a class="rp-side-owner" href="https://github.com/tboox">tboox</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/tboox">tboox</a>
+        <span class="rp-sep">/</span><span class="rp-name">tbox</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">🎁 A glib-like multi-platform c library</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,129</b></span><span class="rp-stat" title="forks">⑂ <b>750</b></span><span class="rp-stat" title="watchers">👁 <b>200</b></span><span class="rp-stat" title="prs">⑃ <b>95</b></span><span class="rp-stat" title="issues">● <b>211</b></span><span class="rp-stat" title="releases">▤ <b>27</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C</span><span class="rp-meta-bit">Created 2011-04-10</span><a class="rp-meta-bit rp-home" href="https://tboox.top" rel="noopener">tboox.top</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/tboox/tbox">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+6</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,129</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">750</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">200</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">95</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">211</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">27</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">一个用c语言实现的跨平台开发库
+
+
+ 项目支持
+
+通过成为赞助者来支持该项目。您的logo将显示在此处，并带有指向您网站的链接。🙏 [成为赞助商]
+
+
+
+ 简介
+
+TBOX是一个用c语言实现的跨平台开发库。
+
+针对各个平台，封装了统一的接口，简化了各类开发过程中常用操作，使你在开发过程中，更加关注实际应用的开发，而不是把时间浪费在琐碎的接口兼容性上面，并且充分利用了各个平台独有的一些特性进行优化。
+
+这个项目的目的，是为了使C开发更加的简单高效。
+
+目前支持的平台有: Windows, Macosx, Linux, Android, iOS, BSD等等。
+
+通过xmake支持各种编译模式：
+
+ Release: 正式版编译，禁用调试信息、断言，各种检测机制，启用编译器优化
+ Debug: 调试模式，默认启用详细调试信息、断言、内存越界检测、内存泄漏、锁竞争分析等检测机制
+ Small: 最小化编译，默认禁用所有扩展模块，启用编译器最小化优化
+ Micro: 针对嵌入式平台，仅仅编译tbox微内核，仅提供最基础的跨平台接口，生成库仅64K左右（内置轻量libc接口实现）
+
+如果你想了解更多，请参考：在线文档, Github以及Gitee和GitCode。
+
+ 特性
+
+ 流库
+
+针对http、file、socket、data等流数据，实现统一接口进行读写，并且支持: 阻塞、非阻塞、异步 三种读写模式。
+支持中间增加多层filter流进行流过滤，实现边读取，内部边进行解压、编码转换、加密等操作，极大的减少了内存使用。
+
+主要提供以下模块：
+
+- stream：通用非阻塞流，用于一般的单独io处理，同时支持协程以实现异步传输。
+- transfer：流传输器，维护两路流的传输。
+- static_stream：针对静态数据buffer优化的静态流，用于轻量快速的数据解析。
+
+ 协程库
+
+- 快速高效的协程切换支持
+- 提供跨平台支持，核心切换算法参考boost，并且对其进行重写和优化，目前支持架构：x86, x86_64, arm, arm64, mips32
+- 提供channel协程间数据通信支持，基于生产、消费者模型
+- 提供信号量、协程锁支持
+- socket、stream都模块原生支持协程，并且可在线程和协程间进行无缝切换
+- 提供http、file等基于协程的简单服务器实例，只需几百行代码，就可以从socket开始写个高性能io服务器，代码逻辑比异步回调模式更加清晰
+- 同时提供stackfull, stackless两种协程模式支持，stackless协程更加的轻量（每个协程只占用几十个bytes），切换更快（会牺牲部分易用性）
+- 支持epoll, kqueue, poll, select 和 IOCP
+- 在协程和poller中支持同时等待和调度socket，pipe io和process
+
+ 数据库
+
+- 统一并简化数据库操作接口，适配各种数据源，通过统一的url来自动连接打开支持的数据库，数据的枚举采用迭代器模型。
+- 目前支持sqlite3以及mysql两种关系型数据库，也可自定义扩展使用其他关系型数据库。
+
+ xml库
+
+- 针对xml提供DOM和SAX两种解析模式，SAX方式采用外部迭代模式，灵活性和性能更高，并且可以选择指定路径，进行解析。
+- 解析过程完全基于stream，所以是高度流化的，可以实现边下载、边解压、边转码、边解析一条龙服务，使用较低的内存也可以解析大规模数据。
+- 提供xml writer以支持对xml生成
+
+ 内存库
+
+- 参考linux内核内存管理机制的实现，并对其进行各种改造和优化，所实现的TBOX独有的一整套内存池管理架构。
+- 调试模式下，可以轻松检测并定位内存泄露、内存越界溢出、内存重叠覆盖等常见内存问题，并对整体内存的使用进行了统计和简要分析。
+- 针对大块数据、小块数据、字符串数据进行了充分的利用，避免了大量外部碎片和内部碎片的产生。分配操作进行了各种优化，96%的情况下，效率都是在O(1)。
+
+ 容器库
+
+- 提供哈希、链表、数组、队列、堆栈、最小最大堆等常用容器。
+- 支持各种常用成员类型，在原有的容器期初上，其成员类型还可以完全自定义扩展。
+- 所有容器都支持迭代器操作。
+- 大部分容器都可以支持基于stream的序列化和反序列化操作。
+
+ 算法库
+
+- 提供各种排序算法：冒泡排序、堆排序、快速排序、插入排序。
+- 提供各种查找算法：线性遍历、二分法搜索。
+- 提供各种遍历、删除、统计算法。
+- 以迭代器为接口，实现算法和容器的分离，类似stl，但是c实现的，更加轻量。
+
+ 网络库
+
+- 实现http客户端模块
+- 实现cookies
+- 实现dns解析与缓存
+- 实现ssl(支持openssl, polarssl, mbedtls)
+- 支持ipv4、ipv6
+- 支持通过协程实现异步模式
+
+ 数学运算库
+
+- 提供各种精度的定点运算支持
+- 提供随机数生成器
+
+ libc库
+
+- libc的一个轻量级实现，完全跨平台，并且针对不同架构进行了优化。
+- 支持大部分字符串、宽字符串操作。
+- 扩展字符串、宽字符串的各种大小写不敏感操作接口
+- 扩展memset_u16、memset_u32等接口，并对其进行高度优化，尤其适合图形渲染程序
+
+ libm库
+
+- libm部分接口的一个轻量级实现，以及对常用系统接口的封装。（目前只实现了部分，之后有时间会完全实现掉）
+- 扩展部分常用接口，增加对sqrt、log2等常用函数的整数版本计算，进行高度优化，不涉及浮点运算，适合嵌入式环境使用。
+
+ object库
+
+- 轻量级类apple的CoreFoundation库，支持object、dictionary、array、string、number、date、data等常用对象，并且可以方便扩展自定义对象的序列化。
+- 支持对xml、json、binary以及apple的plist(xplist/bplist)格式序列化和反序列化。
+并且实现自有的binary序列化格式， 针对明文进行了简单的加密，在不影响性能的前提下，序列化后的大小比bplist节省30%。
+
+ 平台库
+
+- 提供file、directory、socket、thread、time等常用系统接口
+- 提供atomic、atomic64接口
+- 提供高精度、低精度定时器
+- 提供高性能的线程池操作
+- 提供event、mutex、semaphore、spinlock等事件、互斥、信号量、自旋锁操作
+- 提供获取函数堆栈信息的接口，方便调试和错误定位
+- 提供跨平台动态库加载接口（如果系统支持的话）
+- 提供io轮询器，针对epoll, poll, select, kqueue进行跨平台封装
+- 提供跨平台上下文切换接口，主要用于协程实现，切换效率非常高
+
+ 压缩库
+
+- 支持zlib/zlibraw/gzip的压缩与解压（需要第三方zlib库支持）。
+
+ 字符编码库
+
+- 支持utf8、utf16、gbk、gb2312、uc2、uc4 之间的互相转码，并且支持大小端格式</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/tboox__tbox.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

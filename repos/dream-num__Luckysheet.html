@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dream-num/Luckysheet · GitHub Trending Rank Radar</title>
+<meta name="description" content="Luckysheet upgraded to Univer">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Luckysheet, dream-num, dream-num/Luckysheet, github stars, github trending, star growth, star history, 开源项目, 星标增长, spreadsheet, javascript, excel, data-table, google-spreadsheet, google-sheets">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/dream-num__Luckysheet">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="dream-num/Luckysheet · GitHub Trending Rank Radar">
+<meta property="og:description" content="Luckysheet upgraded to Univer">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/dream-num__Luckysheet">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "dream-num/Luckysheet", "codeRepository": "https://github.com/dream-num/Luckysheet", "url": "https://zhuikan.com/repos/dream-num__Luckysheet", "description": "Luckysheet upgraded to Univer", "author": {"@type": "Organization", "name": "dream-num", "url": "https://github.com/dream-num"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2020-05-15", "keywords": "spreadsheet,javascript,excel,data-table,google-spreadsheet,google-sheets,formula,xlsx,canvas,office"}</script>
+</head>
+<body data-repo="dream-num/Luckysheet" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">dream-num/Luckysheet</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="dream-num__Luckysheet"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/61444807?v=4&s=300" width="300" height="300" alt="dream-num avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Luckysheet</div>
+      <a class="rp-side-owner" href="https://github.com/dream-num">dream-num</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/dream-num">dream-num</a>
+        <span class="rp-sep">/</span><span class="rp-name">Luckysheet</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Luckysheet upgraded to Univer</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>16,625</b></span><span class="rp-stat" title="forks">⑂ <b>2,596</b></span><span class="rp-stat" title="watchers">👁 <b>6</b></span><span class="rp-stat" title="prs">⑃ <b>342</b></span><span class="rp-stat" title="issues">● <b>1,004</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/spreadsheet">spreadsheet</a><a class="rp-topic" href="../tags/javascript">javascript</a><a class="rp-topic" href="https://github.com/topics/excel">excel</a><a class="rp-topic" href="https://github.com/topics/data-table">data-table</a><a class="rp-topic" href="https://github.com/topics/google-spreadsheet">google-spreadsheet</a><a class="rp-topic" href="https://github.com/topics/google-sheets">google-sheets</a><a class="rp-topic" href="https://github.com/topics/formula">formula</a><a class="rp-topic" href="https://github.com/topics/xlsx">xlsx</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2020-05-15</span><a class="rp-meta-bit rp-home" href="https://github.com/dream-num/univer/" rel="noopener">github.com/dream-num/univer/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="dream-num__univer"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/61444807?v=4" alt="" loading="lazy">univer</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/dream-num/Luckysheet">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">16,625</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,596</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">6</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">342</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,004</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">!logo
+
+
+
+简体中文 | English
+
+ Luckysheet 已不再维护，推荐使用升级版 Univer 用于生产环境部署，新版解决了大数据量加载，图表样式，透视表，公式计算等方面的问题，做了很多优化设计，增加了导入，导出，打印，协同等功能，提高了表格性能，更有专业技术团队进行技术支持。
+
+点击 1454 查看更多详情。
+
+
+ 介绍
+🚀Luckysheet ，一款纯前端类似excel的在线表格，功能强大、配置简单、完全开源。
+
+
+ 相关链接
+ | 源码   | 文档 | Demo | 论坛 |
+ | ------ | -------- | ------ | ------ |
+ | Github| 在线文档 | 在线Demo / 协同编辑Demo | 中文论坛 |
+ | Gitee镜像| Gitee在线文档 | Gitee在线Demo | Google Group |
+
+!演示
+
+ 插件
+
+导入导出、打印等高级功能请使用 Univer
+
+ 生态
+
+| 工程 | 描述 |
+|---------|-------------|
+| [Luckysheet Vue]          | 在vue cli 3项目中使用Luckysheet和Luckyexcel|
+| [Luckysheet Vue3]          | 在vue3, vite项目中使用Luckysheet和Luckyexcel|
+| [Luckysheet React]          | 在React项目中使用Luckysheet |
+| [Luckyexcel Node]          | 在koa2中使用Luckyexcel |
+| [Luckysheet Server]          | Java后台Luckysheet Server |
+| [Luckysheet Server Starter]          | LuckysheetServer 一键docker部署 |
+
+[Luckysheet Vue]: https://gitee.com/mengshukeji/luckysheet-vue
+[Luckysheet Vue3]: https://gitee.com/hjwforever/luckysheet-vue3-vite.git
+[Luckysheet React]: https://gitee.com/mengshukeji/luckysheet-react
+[Luckyexcel Node]: https://gitee.com/mengshukeji/Luckyexcel-node
+[Luckysheet Server]: https://gitee.com/mengshukeji/LuckysheetServer
+[Luckysheet Server Starter]: https://gitee.com/mengshukeji/LuckysheetServerStarter
+
+ 特性
+
+- 格式设置：样式，条件格式，文本对齐及旋转，文本截断、溢出、自动换行，多种数据类型，单元格内多样式
+- 单元格：拖拽，下拉填充，多选区，查找和替换，定位，合并单元格，数据验证
+- 行和列操作：隐藏、插入、删除行或列，冻结，文本分列
+- 操作体验：撤销、重做，复制、粘贴、剪切，快捷键，格式刷，选区拖拽
+- 公式和函数：内置公式，远程公式，自定义公式
+- 表格操作：筛选，排序
+- 增强功能：数据透视表，图表，评论，共享编辑，插入图片，矩阵计算，截图，复制到其他格式，EXCEL导入及导出等
+
+更详细的功能列表，请查阅：特性
+
+ 📖 学习资源
+
+- 新用户优先阅读：用户指引
+- 社区提供的教程、学习资料及配套解决方案请查阅：教程与资源
+
+ 📜 更新日志
+
+每个版本的详细更改都记录在 CHANGELOG.md 中。
+
+ ❗️ 问题反馈
+
+在反馈问题之前，请确保仔细阅读 如何提交问题。 不符合准则的问题可能会立即被移除。
+
+ ✅ 开发计划
+
+通过 GitHub Projects 管理
+
+ 💪 贡献
+
+在提交PR之前，请确保仔细阅读 贡献指南。
+
+ 用法
+
+ 第一步
+通过CDN引入依赖
+
+
+
+
+
+
+
+
+
+ 第二步
+指定一个表格容器
+
+
+
+ 第三步
+创建一个表格
+
+
+    $(function () {
+        //配置项
+        var options = {
+            container: &#x27;luckysheet&#x27; //luckysheet为容器id
+        }
+        luckysheet.create(options)
+    })
+
+
+ 开发
+
+ 环境
+Node.js Version = 6 
+
+ 安装
+
+npm install
+npm install gulp -g
+
+ 开发
+
+npm run dev
+
+ 打包
+
+npm run build
+
+
+ 合作项目
+
+- h5-Dooring
+
+ 交流
+
+- 官网
+- Github 论坛
+- 以下扫码加入官方微信群或者QQ群
+
+加小编微信: msuniver，备注:加群
+
+
+
+
+英文社群
+
+ 赞助
+
+Luckysheet是MIT许可的开源项目，其持续稳定的开发离不开这些优秀的 支持者。 如果您想加入他们，请考虑：
+
+- 成为Patreon的支持者或赞助商
+- 成为Open Collective的支持者或赞助商
+- 通过PayPal，微信或支付宝一次性捐赠
+
+| PayPal |  微信  | 支付宝 |
+|---|---|---|
+| Paypal Me | |  |
+
+ Patreon和OpenCollective有什么区别？
+
+通过Patreon捐赠的资金将直接用于支持menshshukeji在Luckysheet上的工作。 通过OpenCollective捐赠的资金由透明费用管理，将用于补偿核心团队成员的工作和费用或赞助社区活动。 通过在任一平台上捐款，您的姓名/徽标将得到适当的认可和曝光。
+
+ 赞助者列表
+
+（按时间顺序排列）
+- 涛 ¥ 200
+- popo ¥ 1
+- 孔垂善 ¥ 5
+- Shawn文 ¥ 99
+- 幸运的小路易 ¥ 1
+- 冯启俊 ¥ 88
+- mxb ¥ 10
+- 祭阳 ¥ 20
+- 勇 ¥ 30
+- 虚我 ¥ 200
+- 甜党 ¥ 50
+- Alphabet(Google)-gcf ¥ 1
+- 平 ¥ 100
+- 东 ¥ 10
+- debugger ¥ 20
+- 烦了烦 ¥ 10
+- 文顶顶 ¥ 200
+- yangxshn ¥ 10
+- 爱乐 ¥ 100
+- 小李飞刀刀 ¥ 66
+- 张铭 ¥ 200
+-</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/dream-num/Luckysheet/issues/1151"><span class="rp-item-num">#1151</span><span class="rp-item-title">支持创建多个luckysheet实例，相互隔离</span><span class="rp-item-extra">17 comments · 2022-09-07</span></a><a class="rp-item" href="https://github.com/dream-num/Luckysheet/issues/799"><span class="rp-item-num">#799</span><span class="rp-item-title">Notice: Luckysheet has stopped maintenance, please use the new version of Univer.</span><span class="rp-item-extra">14 comments · 2021-10-14</span></a><a class="rp-item" href="https://github.com/dream-num/Luckysheet/issues/477"><span class="rp-item-num">#477</span><span class="rp-item-title">[BUG]设置保护单元格，无法对已有数据的单元格进行保护</span><span class="rp-item-extra">14 comments · 2021-01-19</span></a><a class="rp-item" href="https://github.com/dream-num/Luckysheet/issues/230"><span class="rp-item-num">#230</span><span class="rp-item-title">Wanted: Who is using Luckysheet 征求：谁在使用Luckysheet</span><span class="rp-item-extra">14 comments · 2020-11-17</span></a><a class="rp-item" href="https://github.com/dream-num/Luckysheet/issues/97"><span class="rp-item-num">#97</span><span class="rp-item-title">[Feature request] container can be HTMLElement?(not only selector string) #!zh:  container 也可以是HTMLElement，而非只支持 selector string</span><span class="rp-item-extra">14 comments · 2020-10-18</span></a><a class="rp-item" href="https://github.com/dream-num/Luckysheet/issues/896"><span class="rp-item-num">#896</span><span class="rp-item-title">单元格函数公式计算时不会自动向下填充</span><span class="rp-item-extra">11 comments · 2021-12-20</span></a><a class="rp-item" href="https://github.com/dream-num/Luckysheet/issues/188"><span class="rp-item-num">#188</span><span class="rp-item-title">print</span><span class="rp-item-extra">11 comments · 2020-11-09</span></a><a class="rp-item" href="https://github.com/dream-num/Luckysheet/issues/1083"><span class="rp-item-num">#1083</span><span class="rp-item-title">【工作表保护】禁止选中的锁定单元格，在其他单元格编辑状态下可以选中</span><span class="rp-item-extra">10 comments · 2022-07-05</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/dream-num/Luckysheet/discussions/1455"><span class="rp-item-num">#1455</span><span class="rp-item-title">复选框和时间选择器显示异常</span><span class="rp-item-extra">0 comments · 2025-10-24</span></a><a class="rp-item" href="https://github.com/dream-num/Luckysheet/discussions/1443"><span class="rp-item-num">#1443</span><span class="rp-item-title">【有点过分的想法】能否提供nicegui使用的、包装好的Luckysheet控件？</span><span class="rp-item-extra">0 comments · 2023-12-01</span></a><a class="rp-item" href="https://github.com/dream-num/Luckysheet/discussions/1442"><span class="rp-item-num">#1442</span><span class="rp-item-title">index.html页面下直接引入cdn后，在ts里使用的时候，没有luckysheet的类型，要怎么引入它的类型声明</span><span class="rp-item-extra">0 comments · 2023-12-01</span></a><a class="rp-item" href="https://github.com/dream-num/Luckysheet/discussions/1439"><span class="rp-item-num">#1439</span><span class="rp-item-title">需要二开一个树形菜单展示数据的功能，求个方案思路</span><span class="rp-item-extra">0 comments · 2023-11-30</span></a><a class="rp-item" href="https://github.com/dream-num/Luckysheet/discussions/1414"><span class="rp-item-num">#1414</span><span class="rp-item-title">引用 Luckysheet 中的透视表单个模块功能？</span><span class="rp-item-extra">0 comments · 2023-09-07</span></a><a class="rp-item" href="https://github.com/dream-num/Luckysheet/discussions/1401"><span class="rp-item-num">#1401</span><span class="rp-item-title">How to use Luckysheet in Svelte?</span><span class="rp-item-extra">0 comments · 2023-08-28</span></a><a class="rp-item" href="https://github.com/dream-num/Luckysheet/discussions/1395"><span class="rp-item-num">#1395</span><span class="rp-item-title">在同一页面同时打开两个luckysheet文件</span><span class="rp-item-extra">0 comments · 2023-08-22</span></a><a class="rp-item" href="https://github.com/dream-num/Luckysheet/discussions/1378"><span class="rp-item-num">#1378</span><span class="rp-item-title">单元格内上下标支持</span><span class="rp-item-extra">0 comments · 2023-07-30</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/dream-num__Luckysheet.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

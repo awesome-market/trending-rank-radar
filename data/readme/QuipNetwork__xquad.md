@@ -1,0 +1,242 @@
+<!--
+Copyright (C) 2026 Postquant Labs Incorporated
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+# XQuad
+
+> **Early public release.** The instruction set, binary format, and public API
+> may still change before v1.0. Production use is not recommended yet.
+
+XQuad is a hardware-agnostic toolchain for expressing and running quadratic
+optimization problems (QUBO / Ising / integer) across quantum annealers and
+classical solvers. It ships as two Rust crates plus four Python distributions
+built around a single virtual-machine specification.
+
+Think of it as **LLVM for quadratic models** -- a common intermediate
+representation that lets you write a problem once and retarget it to any
+supported backend.
+
+- **Spec-first.** Every behaviour is nailed down in [`spec/xqvm/SPEC.md`](spec/xqvm/SPEC.md)
+  and the VM is mechanically held to it: every committed conformance vector
+  runs `xqvm` in CI against the outcome the spec prescribes, and a mismatch
+  fails the build.
+- **Embeddable.** The Rust core supports `no_std + alloc`, so the same VM
+  runs inside WASM runtimes, Substrate pallets, and native binaries.
+- **Interactive.** The Python umbrella (`xquad`) is REPL and Jupyter-friendly:
+  load a program once, run it with different calldata, inspect outputs by
+  slot. Low-level FFI lives in `xqffi`; user-facing `Program` / `Session` /
+  `RunResult` live in `xquad.program`.
+
+## Install
+
+### Python (from PyPI)
+
+Install XQuad into a project environment first: a virtual environment, or a `uv` project.
+
+```sh
+python -m venv .venv && source .venv/bin/activate
+pip install xquad
+# or, in a uv project:
+uv add xquad
+```
+
+For the `xquad` command alone, outside any project, install it as a `uv` tool, with the `quip` extra for the `xquad quip` commands:
+
+```sh
+uv tool install xquad            # the xquad command
+uv tool install 'xquad[quip]'    # with the xquad quip commands
+```
+
+On macOS, a user install (`pip install --user`, or pip falling back to one) puts the `xquad` command in `~/Library/Python/3.x/bin`, which is not on `PATH`; `python -m xquad` runs the same command without it.
+
+The `xquad` package is the umbrella: the full pipeline and the `xquad` command. To pick individual pieces instead, install `xqffi`, `xqcp` and `xqsa` (FFI bindings, DSL, solvers). Prebuilt wheels are available for Linux x86_64 and aarch64 (CPython >= 3.13). On macOS and Windows, pip builds the `xqffi` Rust extension from source -- this requires a [Rust toolchain](https://rustup.rs/) (>= 1.85).
+
+### GPU/QPU support
+
+The base install includes CPU simulated annealing only. To use GPU or quantum hardware solvers, install the corresponding extra:
+
+| Solver | Install | Prerequisite |
+|--------|---------|-------------|
+| NVIDIA CUDA GPU (`cuda`) | `pip install 'xquad[cuda]'` | CUDA 12.x driver + NVIDIA GPU |
+| Apple Metal GPU (`metal`) | `pip install 'xquad[metal]'` | Apple Silicon Mac with a Metal device |
+| D-Wave Advantage QPU (`dwave`) | `pip install 'xquad[dwave]'` | D-Wave Leap account + API token |
+| Quip Network solver (`quip`) | `pip install 'xquad[quip]'` | `QUIP_RPC_URL` + a configured signer |
+
+Extras are composable: `pip install 'xquad[cuda,dwave]'`. See [`xqsa/README.md`](xqsa/README.md#install) for driver prerequisites and per-solver quick-starts.
+
+For a guided walkthrough that installs XQuad, verifies it, and runs a
+complete problem end to end, see
+[Install XQuad](docs/book/src/start/README.md) in the book.
+
+## Package map
+
+Two Rust crates on **crates.io**:
+
+| Crate | Description |
+|---|---|
+| [`xqvm`](xqvm/) | X-Quadratic Virtual Machine interpreter, bytecode codec, opcode table (`no_std + alloc`) |
+| [`xqasm`](xqasm/) | `.xqasm` text-format assembler |
+
+Four Python distributions on **PyPI**:
+
+| Package | Description |
+|---|---|
+| [`xqffi`](xqffi/) | PyO3 FFI bindings for `xqvm` + `xqasm` (`xqffi.vm`, `xqffi.asm`, `xqffi.verifier`) |
+| [`xqcp`](xqcp/) | Constraint-programming DSL that compiles to `.xqasm` |
+| [`xqsa`](xqsa/) | Solver adapters -- CPU/GPU annealers, D-Wave QPU, Quip network |
+| [`xquad`](xquad/) | Umbrella meta-package with interactive `Program` / `Session` / `RunResult` API, and the `xquad` CLI (`xquad vm asm` / `dis` / `run` / `check`) |
+
+The one Rust package without a crates.io artefact is the `xqffi` pyo3
+crate itself -- it ships as the `xqffi` PyPI wheel rather than a reusable
+Rust library.
+
+## Quick start
+
+### A minimal program (CLI)
+
+```asm
+; add.xqasm -- push two integers and add them
+PUSH 10
+PUSH 32
+ADD
+HALT
+```
+
+```sh
+xquad vm asm add.xqasm -o add.xqb && xquad vm run add.xqb
+```
+
+### End-to-end (Python, via the umbrella)
+
+The recommended user-facing surface is `xquad.program.Program` +
+`Session` + `RunResult`. Load once, run many times with different
+calldata, inspect outputs by slot:
+
+```python
+from xquad.program import Program
+
+program = Program.from_source("""
+PUSH 0
+INPUT r0
+PUSH 1
+INPUT r1
+LOAD r0
+LOAD r1
+ADD
+STOW r2
+PUSH 0
+OUTPUT r2
+HALT
+""")
+
+session = program.session(output_slots=1)
+session.set_calldata([40, 2])
+result = session.run()
+assert dict(result.outputs) == {0: 42}
+```
+
+`Program.load(bytes)` takes wire-format bytecode; `Session.run()`
+returns a `RunResult` with dict-keyed outputs (unset slots present as
+`None`), residual stack, and step count. See
+[Running Programs](docs/book/src/running/README.md) for the full tour.
+
+#### Low-level / conformance surface
+
+For conformance harnesses and one-shot execution, the raw
+`xqffi.vm.Vm` is still available directly:
+
+```python
+from xqffi.asm import assemble_source
+from xqffi.vm import Vm
+
+bytecode = assemble_source(src)
+v = Vm()
+v.set_calldata([40, 2])
+v.set_output_slots(1)
+v.run(bytecode)
+assert v.outputs() == [42]
+```
+
+The `xquad.vm.VM` class offers a middle tier -- a wrapper around the
+Rust VM that accepts `.xqasm` source, keeps calldata, output slots and
+limits across runs, and hands back the `xqffi` types unchanged.
+
+### End-to-end worked example
+
+[`examples/tsp/`](examples/tsp/) shows a full Travelling Salesman Problem
+driven from the `xqcp` DSL through the VM and `xqsa` solver:
+
+```sh
+uv run python examples/tsp/runner.py --seed 42
+uv run python examples/maxcut/runner.py --seed 42
+
+# Run every example and check each finds a valid solution:
+make example-smoke
+```
+
+## Architecture
+
+XQuad is a stack-based interpreter with a 256-slot register file. Registers
+hold typed values -- integers, integer vectors, QUBO/Ising models
+(`XqmxModel`), and candidate solutions (`XqmxSample`). A dedicated loop stack
+drives `RANGE`/`ITER` iteration.
+
+The opcode table is declared once in `xqvm/src/bytecode/types/table.rs` via
+the `opcodes!` x-macro; `xqvm/opcodes.yaml` is the machine-readable
+mirror, compared with the Rust macro at compile time
+(`xqvm/src/bytecode/types/parity.rs`), so the two cannot drift.
+
+The binary format (`.xqb`) opens with a fixed 15-byte XQBC header --
+magic, version, calldata/output-slot counts, code length, and a CRC-32
+checksum of the payload -- followed by the instruction stream: an
+opcode byte followed by its operands in big-endian byte order.
+
+See [`docs/book/src/xqvm/opcodes.md`](docs/book/src/xqvm/opcodes.md) for
+the opcode reference and
+[`spec/xqvm/SPEC.md`](spec/xqvm/SPEC.md) for the normative spec.
+
+## Development
+
+### Prerequisites
+
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh   # stable Rust
+make deps                                                          # dev tools
+```
+
+### Local setup
+
+```sh
+make xquad
+```
+
+This syncs the Python workspace (`xqcp`, `xqsa`, `xqffi`, `xquad`) into
+`.venv/`, builds the `xqffi` pyo3 extension via maturin,
+puts the repo root on `sys.path` so scripts anywhere in the repo can
+`import xqcp` / `xqsa` / `xqffi` / `xquad` naturally, and
+installs the `xquad` command into `.venv/bin/`, run with `uv run xquad`.
+
+Open a REPL with everything ready:
+
+```sh
+make repl
+```
+
+### CI-equivalent locally
+
+```sh
+make preflight    # what CI enforces, split into preflight-rs / -py / -docs / -policy
+make conformance  # the specification vectors under xqvm/tests/vectors/
+```
+
+### Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the development workflow, commit
+conventions, and DCO sign-off requirements. Agent guidelines for AI coding
+assistants are in [AGENTS.md](AGENTS.md); cutting a release is documented in
+[RELEASING.md](RELEASING.md).
+
+## License
+
+Licensed under the [GNU Affero General Public License v3.0 or later](LICENSE).

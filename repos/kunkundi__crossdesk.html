@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kunkundi/crossdesk · GitHub Trending Rank Radar</title>
+<meta name="description" content="A lightweight, cross-platform remote desktop software with support for Web Client access | 一款支持 Web 客户端访问的轻量级跨平台远程桌面软件。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="crossdesk, kunkundi, kunkundi/crossdesk, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/kunkundi__crossdesk">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="kunkundi/crossdesk · GitHub Trending Rank Radar">
+<meta property="og:description" content="A lightweight, cross-platform remote desktop software with support for Web Client access | 一款支持 Web 客户端访问的轻量级跨平台远程桌面软件。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/kunkundi__crossdesk">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "kunkundi/crossdesk", "codeRepository": "https://github.com/kunkundi/crossdesk", "url": "https://zhuikan.com/repos/kunkundi__crossdesk", "description": "A lightweight, cross-platform remote desktop software with support for Web Client access | 一款支持 Web 客户端访问的轻量级跨平台远程桌面软件。", "author": {"@type": "Organization", "name": "kunkundi", "url": "https://github.com/kunkundi"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "C++", "dateCreated": "2023-11-20"}</script>
+</head>
+<body data-repo="kunkundi/crossdesk" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">kunkundi/crossdesk</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="kunkundi__crossdesk"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/29698109?u=0cd85f9b4917192ccd0edb75c0d61a96933909c4&amp;v=4&s=300" width="300" height="300" alt="kunkundi avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">crossdesk</div>
+      <a class="rp-side-owner" href="https://github.com/kunkundi">kunkundi</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/kunkundi">kunkundi</a>
+        <span class="rp-sep">/</span><span class="rp-name">crossdesk</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A lightweight, cross-platform remote desktop software with support for Web Client access | 一款支持 Web 客户端访问的轻量级跨平台远程桌面软件。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>4,664</b></span><span class="rp-stat" title="forks">⑂ <b>465</b></span><span class="rp-stat" title="watchers">👁 <b>25</b></span><span class="rp-stat" title="releases">▤ <b>52</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C++</span><span class="rp-meta-bit">Created 2023-11-20</span><a class="rp-meta-bit rp-home" href="https://www.crossdesk.cn" rel="noopener">www.crossdesk.cn</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/kunkundi/crossdesk">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+210</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">4,664</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">465</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">25</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">52</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">轻量、跨平台的远程桌面，支持电脑、浏览器、移动端和终端连接，用桌面墙集中查看与操控多台设备。
+  官方网站 · 下载客户端 · 打开 Web 客户端 · English
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CrossDesk 让你从电脑、浏览器、手机或终端（桌面 CLI）连接远端电脑，也能通过桌面墙（DeskHub）集中查看与操控多台设备。项目基于 MiniRTC，支持自托管。
+
+主要功能 · 下载与平台支持 · 快速连接 · 终端 CLI · IP 直连 · 可信设备 · 界面预览 · 使用指南 · 自托管 · 构建与反馈 · 赞助
+
+
+
+ 主要功能
+
+- 跨平台远控： Windows、macOS、Linux 桌面互控，浏览器及原生 iOS / Android 客户端访问电脑；鸿蒙 PC 与移动端处于开发阶段。
+- 局域网 IP 直连： 桌面客户端通过 IP、端口和六位密码连接，无需云端信令服务；支持独立端口、记住密码及按模式显示近期设备。
+- 终端主控： 在终端中通过设备 ID 观看和操控远程桌面，支持 ANSI / Kitty / Sixel 画面、局部缩放与平移、持续本地命令模式及 Pi 扩展，可单独构建。
+- 桌面墙：多设备实时预览、分组、放大操控、群控和批量文件分发。
+- 画面与声音： H.264 / AV1、硬件编解码、远端音频，以及会话内画质和帧率调整；可用能力随平台与设备而异。
+- 日常协作： 多显示器切换、键鼠与组合键、文本剪贴板、文件传输。
+- 可信设备： 桌面端可选开启可信设备限制，在连接密码之外校验设备身份；支持复制、粘贴配对信息，提前添加允许访问本机的设备。
+- 部署与运维： P2P 直连、TURN 中继、SRTP 媒体加密、自托管，以及 Windows 登录前远控和 Linux 无头运行。
+
+
+
+ 下载与平台支持
+
+从 官方网站 或 GitHub Releases 下载与你的系统和 CPU 架构匹配的安装包；也可直接打开 Web 客户端。
+
+| 平台 | 支持范围与安装要求 |
+| --- | --- |
+| Windows | 控制 / 被控；Windows 10+，x64；.exe 安装包，也支持便携构建 |
+| macOS | 控制 / 被控；macOS 14.0+；按 Intel / Apple Silicon 选择 x64 / arm64 .pkg |
+| Linux | 控制 / 被控；Ubuntu 20.04+、glibc 2.31 基线；amd64 / arm64 .deb |
+| iOS / iPadOS | 仅控制；iOS 16.0+；发布包为未签名应用，需自行签名，或使用 Xcode 构建安装 |
+| Android | 仅控制；Android 8.0+，arm64；下载已签名 APK 安装，或自行构建 |
+| 鸿蒙 PC（开发版） | 控制 / 被控；API 26，arm64；使用 DevEco 构建并签名 HAP，仍在进行真机验收 |
+| 鸿蒙手机 / 平板（开发版） | 仅控制；API 20+，arm64；使用 DevEco 构建并签名 HAP，仍在进行真机验收 |
+| Web | 仅控制；支持 WebRTC 的浏览器；无需在控制端安装客户端 |
+| 终端 CLI（开发版） | 仅控制；分发目标为 macOS / Linux（x64、arm64）和 Windows（x64）；通过 npm 安装 或从源码构建，平台验收范围见 CLI 说明 |
+
+系统要求按当前源码与构建配置整理，具体安装包以对应 Release 说明为准。各客户端的功能范围见 终端 CLI 与 移动端与鸿蒙。
+
+- Linux： 已有桌面选普通版 crossdesk-linux-…deb；需要独立 Xfce 桌面的服务器选 crossdesk-virtual-desktop-xfce-…deb。两者选择其一，安装与启动方法见 使用指南 和 无头运行。
+- macOS： 首次运行时按提示授予屏幕录制及辅助功能权限；前者用于桌面采集，后者用于远程键鼠输入。权限说明
+- iOS / 鸿蒙： 签名与构建步骤分别见 iOS 和 鸿蒙，不要将未签名产物当作可直接安装的应用。
+
+
+
+ 快速连接
+
+ 通过设备 ID 连接
+
+1. 准备被控电脑。 安装并运行 CrossDesk，切换至 ID 连接模式，等待显示“已连接服务器”，查看“本桌面”中的本机 ID 和密码。
+2. 发起连接。 在另一台电脑的 CrossDesk 中输入被控电脑的 9 位 ID，点击“连接”；也可使用原生移动端或 Web 客户端。
+3. 验证密码。 输入被控电脑当前的连接密码，等待远程画面出现。桌面端可勾选“记住密码”，后续从“近期连接”重连。
+
+使用自建服务器时，两端需要接入同一服务。新版桌面端使用设备密钥登录服务器，请先升级服务端：新 ID 注册时绑定公钥，旧 ID 首次升级时验证原密码后绑定；绑定后，针对该 ID 的错误密码尝试不会阻塞正常签名登录。远程控制仍需输入连接密码；新版控制端也验证设备签名，密码失败按控制端及“控制端 → 目标”计数，不再累计被控端的总失败次数，避免他人的错误尝试锁住目标。身份备份与兼容要求见 设备登录说明。更多连接、密码及浏览器操作见 使用指南；连接失败、黑屏或无法操作键鼠时先查阅 常见问题。
+
+
+
+ 通过局域网 IP 直连
+
+1. 切换模式。 两台电脑均运行支持 IP 直连的桌面客户端，点击左上角模式按钮切换到 IP 直连模式。若按钮未显示，在 设置 → 常规 → 网络连接 中勾选 启用 IP 直连 并保存。
+2. 填写地址。 在控制端输入被控电脑显示的 IP:端口，例如 192.168.1.20:52888 或 [2001:db8::20]:52888，点击“连接”。只输入 IP 时使用默认端口 52888；请以对方界面显示的实际端口为准。
+3. 输入密码。 输入被控电脑在 IP 直连模式下显示的 6 位英文字母或数字密码，可勾选“记住密码”。切换模式时，“近期连接”同步切换为对应模式的设备记录。
+
+两台电脑需要在局域网内可互相访问；网络可以有外网，也可以没有外网，直连会话不依赖云端信令服务。主窗口可直接切换本机 IP、修改端口和密码，默认开启所有 IP 接口监听，支持 IPv4 和 IPv6，支持通过 VPN 等接口连接，可在设置的“网络连接”中调整；关闭设置中的“启用 IP 直连”会停止监听、断开 IP 直连会话并隐藏模式按钮。详见 IP 直连使用指南。
+
+
+
+ 仅允许可信设备连接（可选）
+
+桌面端的可信设备限制默认关闭，适用于 ID 连接和 IP 直连。开启后，控制端仍需通过原有密码验证，并持有可信名单中设备的配对私钥；仅知道 ID 和密码不能通过这项限制。
+
+1. 在控制端复制配对信息。 打开 设置 → 常规 → 隐私保护 → 管理可信设备，在 本机配对信息 中点击 复制配对信息。
+2. 在被控端添加控制端。 打开同一管理界面，将收到的信息粘贴到 添加可信设备 输入框，点击 添加 即可加入，无需再次确认，也无需先建立远程连接。
+3. 在被控端开启限制。 返回设置</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/kunkundi__crossdesk.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

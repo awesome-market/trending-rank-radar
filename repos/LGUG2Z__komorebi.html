@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LGUG2Z/komorebi · GitHub Trending Rank Radar</title>
+<meta name="description" content="A tiling window manager for Windows 🍉">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="komorebi, LGUG2Z, LGUG2Z/komorebi, github stars, github trending, star growth, star history, 开源项目, 星标增长, tiling-window-manager, windows, rust, autohotkey, palestine, status-bar">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/LGUG2Z__komorebi">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="LGUG2Z/komorebi · GitHub Trending Rank Radar">
+<meta property="og:description" content="A tiling window manager for Windows 🍉">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/LGUG2Z__komorebi">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "LGUG2Z/komorebi", "codeRepository": "https://github.com/LGUG2Z/komorebi", "url": "https://zhuikan.com/repos/LGUG2Z__komorebi", "description": "A tiling window manager for Windows 🍉", "author": {"@type": "Organization", "name": "LGUG2Z", "url": "https://github.com/LGUG2Z"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "Rust", "dateCreated": "2021-07-29", "keywords": "tiling-window-manager,windows,rust,autohotkey,palestine,status-bar,whkd"}</script>
+</head>
+<body data-repo="LGUG2Z/komorebi" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">LGUG2Z/komorebi</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="LGUG2Z__komorebi"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/13164844?u=5e11aa66d19176d376f21e4db1c7b3e7f8345933&amp;v=4&s=300" width="300" height="300" alt="LGUG2Z avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">komorebi</div>
+      <a class="rp-side-owner" href="https://github.com/LGUG2Z">LGUG2Z</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/LGUG2Z">LGUG2Z</a>
+        <span class="rp-sep">/</span><span class="rp-name">komorebi</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A tiling window manager for Windows 🍉</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>15,378</b></span><span class="rp-stat" title="forks">⑂ <b>379</b></span><span class="rp-stat" title="watchers">👁 <b>51</b></span><span class="rp-stat" title="prs">⑃ <b>860</b></span><span class="rp-stat" title="issues">● <b>756</b></span><span class="rp-stat" title="releases">▤ <b>43</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/tiling-window-manager">tiling-window-manager</a><a class="rp-topic" href="../tags/windows">windows</a><a class="rp-topic" href="../tags/rust">rust</a><a class="rp-topic" href="https://github.com/topics/autohotkey">autohotkey</a><a class="rp-topic" href="https://github.com/topics/palestine">palestine</a><a class="rp-topic" href="https://github.com/topics/status-bar">status-bar</a><a class="rp-topic" href="https://github.com/topics/whkd">whkd</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2021-07-29</span><a class="rp-meta-bit rp-home" href="https://lgug2z.github.io/komorebi/" rel="noopener">lgug2z.github.io/komorebi/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/LGUG2Z/komorebi">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.1.41</span><a class="rp-dl-a" href="https://github.com/LGUG2Z/komorebi/releases/tag/v0.1.41">v0.1.41 ↓</a><span class="rp-dl-ver">0.1.41</span><span class="rp-dl-date">2026-05-03</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+4</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">15,378</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">379</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">51</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">860</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">756</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">43</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">komorebi
+
+Tiling Window Management for Windows.
+
+
+  
+    
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+
+
+!screenshot
+
+ Note: Students using devices enrolled in mobile device management (MDM)
+
+Your usage still falls under the Komorebi License 2.0.0.
+
+You can email me at the address I sign my commits with (add .patch to the end
+of any commit URL on GitHub to find it) from the address associated with your
+institution with the subject &quot;komorebi - student with an MDM device&quot;, and I will
+be able to remove the splash intended for corporate users, whose usage falls
+under the Individual Commercial Use
+License.
+
+This is currently a manual process - most days this shouldn&#x27;t take more than
+12h, and you will receive an email reply from me when the process is complete.
+
+If you haven&#x27;t had a reply to your email within 24h you can reach out to me on
+Discord.
+
+ Note: Unexpected mobile device management (MDM) detection prompts
+
+You have most likely unintentionally enrolled your device in &quot;Bring Your Own
+Device&quot; (BYOD) MDM. You can confirm if this is the case by running dsregcmd
+/status and then take the appropriate steps to remove the MDM profile and take
+back full control of your system.
+
+If you need help doing this you can ask on Discord.
+
+ Note: komorebi for Mac
+
+komorebi for Mac lives here :)
+
+ Overview
+
+_komorebi_ is a tiling window manager that works as an extension to Microsoft&#x27;s
+Desktop Window
+Manager in
+Windows 10 and above.
+
+_komorebi_ allows you to control application windows, virtual workspaces and display monitors with a CLI which can be
+used with third-party software such as whkd
+and AutoHotKey to set user-defined keyboard shortcuts.
+
+_komorebi_ aims to make _as few modifications as possible_ to the operating
+system and desktop environment by default. Users are free to make such
+modifications in their own configuration files for _komorebi_, but these will
+remain opt-in and off-by-default for the foreseeable future.
+
+Please refer to the documentation for instructions on how
+to install and
+configure
+_komorebi_, common workflows, a complete
+configuration schema reference and a
+complete CLI reference.
+
+ Community
+
+There is a Discord server available for
+_komorebi_-related discussion, help, troubleshooting etc. If you have any
+specific feature requests or bugs to report, please create an issue in this
+repository.
+
+There is a YouTube
+channel where I post
+_komorebi_ development videos, feature previews and release overviews. Subscribing
+to the channel (which is monetized as part of the YouTube Partner Program) and
+watching videos is a really simple and passive way to contribute financially to
+the development and maintenance of _komorebi_.
+
+There is an Awesome List which
+showcases the many awesome projects that exist in the _komorebi_ ecosystem.
+
+ Licensing for Personal Use
+
+komorebi is educational source
+software.
+
+komorebi is licensed under the Komorebi 2.0.0
+license, which is a fork of the
+PolyForm Strict 1.0.0
+license. On a high </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/LGUG2Z/komorebi/issues/1543"><span class="rp-item-num">#1543</span><span class="rp-item-title">[BUG]: Komorebi Fails to Execute Commands on Time (delayed execution up to 10-15sec)</span><span class="rp-item-extra">13 comments · 2025-08-21</span></a><a class="rp-item" href="https://github.com/LGUG2Z/komorebi/issues/1454"><span class="rp-item-num">#1454</span><span class="rp-item-title">[BUG]: Fails to start if komorebi.json is a sym link</span><span class="rp-item-extra">12 comments · 2025-05-19</span></a><a class="rp-item" href="https://github.com/LGUG2Z/komorebi/issues/879"><span class="rp-item-num">#879</span><span class="rp-item-title">[BUG]: Workspace switching loop</span><span class="rp-item-extra">11 comments · 2024-06-14</span></a><a class="rp-item" href="https://github.com/LGUG2Z/komorebi/issues/1446"><span class="rp-item-num">#1446</span><span class="rp-item-title">[FEAT]: Scratchpad</span><span class="rp-item-extra">10 comments · 2025-05-15</span></a><a class="rp-item" href="https://github.com/LGUG2Z/komorebi/issues/1637"><span class="rp-item-num">#1637</span><span class="rp-item-title">Error at installation ?</span><span class="rp-item-extra">9 comments · 2026-01-16</span></a><a class="rp-item" href="https://github.com/LGUG2Z/komorebi/issues/1636"><span class="rp-item-num">#1636</span><span class="rp-item-title">[BUG]: Window class &quot;WinUIDesktopWin32WindowClass&quot; freezes on first launch</span><span class="rp-item-extra">9 comments · 2026-01-14</span></a><a class="rp-item" href="https://github.com/LGUG2Z/komorebi/issues/1595"><span class="rp-item-num">#1595</span><span class="rp-item-title">[BUG]: Cmder will not enter into layout</span><span class="rp-item-extra">9 comments · 2025-11-07</span></a><a class="rp-item" href="https://github.com/LGUG2Z/komorebi/issues/1445"><span class="rp-item-num">#1445</span><span class="rp-item-title">[BUG]: Unexpected result after removing &quot;grouping&quot; from Bar config</span><span class="rp-item-extra">9 comments · 2025-05-15</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/LGUG2Z/komorebi/discussions/1760"><span class="rp-item-num">#1760</span><span class="rp-item-title">Dynamically creating and moving workspaces</span><span class="rp-item-extra">1 comments · 2026-10-13</span></a><a class="rp-item" href="https://github.com/LGUG2Z/komorebi/discussions/1745"><span class="rp-item-num">#1745</span><span class="rp-item-title">How do I allow task manager and other administrator apps to be tiled by Komorebi?</span><span class="rp-item-extra">1 comments · 2026-09-06</span></a><a class="rp-item" href="https://github.com/LGUG2Z/komorebi/discussions/1731"><span class="rp-item-num">#1731</span><span class="rp-item-title">bug?</span><span class="rp-item-extra">1 comments · 2026-07-26</span></a><a class="rp-item" href="https://github.com/LGUG2Z/komorebi/discussions/1720"><span class="rp-item-num">#1720</span><span class="rp-item-title">Light and Dark mode switching?</span><span class="rp-item-extra">0 comments · 2026-06-21</span></a><a class="rp-item" href="https://github.com/LGUG2Z/komorebi/discussions/1702"><span class="rp-item-num">#1702</span><span class="rp-item-title">How to disable padding and border when only one window exist?</span><span class="rp-item-extra">0 comments · 2026-05-01</span></a><a class="rp-item" href="https://github.com/LGUG2Z/komorebi/discussions/1695"><span class="rp-item-num">#1695</span><span class="rp-item-title">How to I get master stack layout like dwm/hyprpland in komorebi?</span><span class="rp-item-extra">2 comments · 2026-04-22</span></a><a class="rp-item" href="https://github.com/LGUG2Z/komorebi/discussions/1694"><span class="rp-item-num">#1694</span><span class="rp-item-title">A graphical user interface or configuration file?</span><span class="rp-item-extra">0 comments · 2026-04-21</span></a><a class="rp-item" href="https://github.com/LGUG2Z/komorebi/discussions/1662"><span class="rp-item-num">#1662</span><span class="rp-item-title">Let me see my desktop for a bit</span><span class="rp-item-extra">1 comments · 2026-02-22</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/LGUG2Z/komorebi/releases"><b>v0.1.41</b> <span class="rp-rel-tag">v0.1.41</span> <span class="rp-item-extra">2026-05-03</span></a><pre class="rp-pre">v0.1.41 (2026-05-03) - Hind Rajab Would Have Been 8 Years Old Today
+
+ Bug Fixes
+
+ borders: prevent use-after-free take 4 (26b14643)
+ wm: factor in monocle mode for work area offset rules (53c81c45)
+ docs: add missing word (41fc316a)
+ docs: update broken configuration schema link (96e87d8a)
+ wm: correct layout rounding for uneven integer division (8889c3ca)
+ wm: correct bsp/grid container positioning when flipped (634a3e7f)
+
+ Code Refactoring
+
+ clippy: apply lints (011bcb8b)
+
+ Features
+
+ wm: add global layout_defaults for per-layout default options (24c0ce0b)
+ wm: add threshol</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/LGUG2Z__komorebi.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

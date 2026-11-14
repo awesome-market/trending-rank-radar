@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Predidit/Kazumi · GitHub Trending Rank Radar</title>
+<meta name="description" content="基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Kazumi, Predidit, Predidit/Kazumi, github stars, github trending, star growth, star history, 开源项目, 星标增长, android, cross-platform, danmaku, flutter, windows, ios">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Predidit__Kazumi">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Predidit/Kazumi · GitHub Trending Rank Radar">
+<meta property="og:description" content="基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Predidit__Kazumi">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Predidit/Kazumi", "codeRepository": "https://github.com/Predidit/Kazumi", "url": "https://zhuikan.com/repos/Predidit__Kazumi", "description": "基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。", "author": {"@type": "Organization", "name": "Predidit", "url": "https://github.com/Predidit"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-3.0.html", "programmingLanguage": "Dart", "dateCreated": "2024-05-09", "keywords": "android,cross-platform,danmaku,flutter,windows,ios,linux-desktop,macos"}</script>
+</head>
+<body data-repo="Predidit/Kazumi" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Predidit/Kazumi</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Predidit__Kazumi"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/34627277?v=4&s=300" width="300" height="300" alt="Predidit avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Kazumi</div>
+      <a class="rp-side-owner" href="https://github.com/Predidit">Predidit</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Predidit">Predidit</a>
+        <span class="rp-sep">/</span><span class="rp-name">Kazumi</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily">daily <b>#183</b></a></div>
+    </div>
+    <p class="rp-desc">基于自定义规则的番剧采集APP，支持流媒体在线观看，支持弹幕，支持实时超分辨率。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>42,412</b></span><span class="rp-stat" title="forks">⑂ <b>1,454</b></span><span class="rp-stat" title="watchers">👁 <b>79</b></span><span class="rp-stat" title="prs">⑃ <b>544</b></span><span class="rp-stat" title="issues">● <b>2,236</b></span><span class="rp-stat" title="releases">▤ <b>141</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/android">android</a><a class="rp-topic" href="../tags/cross-platform">cross-platform</a><a class="rp-topic" href="https://github.com/topics/danmaku">danmaku</a><a class="rp-topic" href="../tags/flutter">flutter</a><a class="rp-topic" href="../tags/windows">windows</a><a class="rp-topic" href="../tags/ios">ios</a><a class="rp-topic" href="https://github.com/topics/linux-desktop">linux-desktop</a><a class="rp-topic" href="../tags/macos">macos</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Dart</span><span class="rp-meta-bit">GPL-3.0</span><span class="rp-meta-bit">Created 2024-05-09</span><a class="rp-meta-bit rp-home" href="https://kazumi.app" rel="noopener">kazumi.app</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Predidit/Kazumi">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">2.4.4</span><a class="rp-dl-a" href="https://github.com/Predidit/Kazumi/releases/tag/2.4.4">2.4.4 ↓</a><span class="rp-dl-ver">2.4.4</span><span class="rp-dl-date">2026-11-12</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+126</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">42,412</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,454</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">79</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">544</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">2,236</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">141</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Kazumi
+
+
+
+
+
+
+
+
+
+
+
+使用 Flutter 开发的基于自定义规则的番剧采集与在线观看程序。使用最多五行基于 Xpath 语法的选择器构建自己的规则。支持规则导入与规则分享。支持基于 Anime4K 的实时超分辨率。绝赞开发中 (～￣▽￣)～
+
+
+ 支持平台
+
+- Android 10 及以上
+- Windows 10 及以上
+- MacOS 10.15 及以上
+- Linux (实验性)
+- iOS 13 及以上 (需要 侧载)
+- HarmonyOS 5.0 及以上 (位于 分支仓库，需要 侧载)
+- Web 浏览器 (位于 分支仓库，需要在 Windows / Linux / MacOS 电脑或通过 Docker 运行服务端，同一局域网内的设备通过浏览器访问)
+
+ 屏幕截图
+
+
+  
+    
+    
+    
+  
+  
+    
+    
+    
+  
+
+
+ 功能 / 开发计划
+
+- [X]  规则编辑器
+- [X]  番剧目录
+- [X]  番剧搜索
+- [X]  番剧时间表
+- [X]  番剧字幕
+- [X]  分集播放
+- [X]  视频播放器
+- [X]  多视频源支持
+- [X]  规则分享
+- [X]  硬件加速
+- [X]  高刷适配
+- [X]  追番列表
+- [X]  番剧弹幕
+- [X]  在线更新
+- [X]  历史记录
+- [X]  倍速播放
+- [X]  配色方案
+- [X]  跨设备同步
+- [X]  无线投屏 (DLNA)
+- [X]  外部播放器播放
+- [X]  超分辨率
+- [X]  一起看
+- [X]  番剧下载
+- [ ]  番剧更新提醒
+- [ ]  还有更多 (/・ω・＼)
+
+ 下载
+
+通过本页面 Releases 选项卡下载：
+
+
+  
+
+
+ Android
+
+
+  
+
+
+ GNU/Linux
+
+
+  
+
+
+ Arch Linux
+
+可以从 AUR 安装。
+
+ AUR
+
+bash
+[yay/paru] -S kazumi  从源码构建
+[yay/paru] -S kazumi-bin  二进制包
+
+
+ 贡献
+
+欢迎向我们的 规则仓库 提交您的自定义规则。您可以自由选择是否在规则中留下您的ID。详细的规则编写教程可以参考 规则开发文档
+
+ Q&amp;A
+
+
+使用者 Q&amp;A
+
+ Q: 为什么少数番剧中有广告？
+
+A: 本项目未插入任何广告。广告来自视频源, 请不要相信广告中的任何内容, 并尽量选择没有广告的视频源观看。
+
+ Q: 为什么我启用超分辨率功能后播放卡顿？
+
+A: 超分辨率功能对 GPU 性能要求较高, 如果没有在高性能独立显卡上运行 Kazumi, 尽量选择效率档而非质量档。对低分辨率视频源而非高分辨率视频源使用超分也可以降低性能消耗。
+
+ Q: 为什么播放视频时内存占用较高？
+
+A: 本程序在视频播放时, 会尽可能多地缓存视频到内存, 以提供较好的观看体验。如果您的内存较为紧张, 可以在播放设置选项卡启用低内存模式, 这将限制缓存。
+
+ Q: 为什么少数番剧无法通过外部播放器观看？
+
+A: 部分视频源的番剧使用了反盗链措施, 这可以被 Kazumi 解决, 但无法被外部播放器解决。
+
+ Q: 为什么下载的 Linux 版本缺少图标和托盘功能？
+
+A: 使用 .deb 版本进行安装, tar.gz 版本仅为方便二次打包, 这一格式先天缺乏图标和托盘功能支持。
+
+
+
+
+规则编写者 Q&amp;A
+
+ Q: 为什么我的自定义规则无法实现检索？
+
+A: 目前我们对 Xpath 语法的支持并不完整, 我们目前只支持以 // 开头的选择器。建议参照我们给出的示例规则构建自定义规则。
+
+ Q: 为什么我的自定义规则可以实现检索, 但不能实现观看？
+
+A: 尝试关闭自定义规则的使用内置播放器选项, 这将尝试使用 webview 进行播放, 提高兼容性。但在内置播放器可用时, 建议启用内置播放器, 以获得更加流畅并带有弹幕的观看体验。
+
+
+
+
+开发者 Q&amp;A
+
+ Q: 我在尝试自行编译该项目, 但编译没有成功。
+
+A: 本项目编译需要良好的网络环境, 除了由 Google 托管的 Flutter 相关依赖外, 本项目同样依赖托管在 MavenCentral/Github/SourceForge 上的资源。如果您位于中国大陆, 可能需要设置恰当的镜像地址。
+
+
+
+ 开发
+
+欢迎您提交 PR！在开始之前, 请阅读 贡献指引 以了解我们对 PR 和 AI 参与辅助开发的规定。
+
+ 美术资源
+
+本项目图标来自 Yuquanaaa 发表在 Pixiv 上的作品。
+
+此图标由其原作者 Yuquanaaa 拥有版权。我们已获得原作者的授权和许可, 可以在本项目中使用这一图标。这一图标不是自由使用的, 未经原作者明确授权, 任何人不得擅自使用、复制、修改或分发这一图标。
+
+本项目内嵌字体为 Mi Sans 字体, 由 Xiaomi 开发和拥有版权。
+
+ 免责声明
+
+本项目基于 GNU 通用公共许可证第 3 版（GPL-3.0）授权。我们不对其适用性、可靠性或准确性作出任何明示或暗示的保证。在法律允许的最大范围内, 作者和贡献者不承担任何因使用本软件而产生的直接、间接、偶然、特殊或后果性的损害赔偿责任。
+
+使用本项目需遵守所在地法律法规, 不得进行任何侵犯第三方知识产权的行为。因使用本项目而产生的数据和缓存应在24小时内清除, 超出 24 小时的使用需获得相关权利人的授权。
+
+ 隐私政策
+
+我们不收集任何用户数据, 不使用任何遥测组件。
+
+ 代码签名策略
+
+提交者: 贡献者
+审阅者: 所有者
+
+ 赞助
+
+
+| !signpath                                                                                                                      | Free code signing on Windows provided bySignPath.io, certficate by SignPath Foundation |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+|                                                                                            </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Predidit/Kazumi/issues/1659"><span class="rp-item-num">#1659</span><span class="rp-item-title">[ 提议 ] 可以维护一个番剧更新时间表仓库吗</span><span class="rp-item-extra">62 comments · 2026-01-29</span></a><a class="rp-item" href="https://github.com/Predidit/Kazumi/issues/914"><span class="rp-item-num">#914</span><span class="rp-item-title">解析模块迭代</span><span class="rp-item-extra">54 comments · 2025-04-20</span></a><a class="rp-item" href="https://github.com/Predidit/Kazumi/issues/1533"><span class="rp-item-num">#1533</span><span class="rp-item-title">平板用快捷键后按一下会出现边框，退到后台后消失，但再按还是有</span><span class="rp-item-extra">34 comments · 2025-11-28</span></a><a class="rp-item" href="https://github.com/Predidit/Kazumi/issues/1204"><span class="rp-item-num">#1204</span><span class="rp-item-title">[Enhancement] 优化 WebDAV 同步</span><span class="rp-item-extra">27 comments · 2025-08-17</span></a><a class="rp-item" href="https://github.com/Predidit/Kazumi/issues/1590"><span class="rp-item-num">#1590</span><span class="rp-item-title">[Bug]: linux平台下从1.8.8版本开始无法播放</span><span class="rp-item-extra">26 comments · 2025-12-26</span></a><a class="rp-item" href="https://github.com/Predidit/Kazumi/issues/995"><span class="rp-item-num">#995</span><span class="rp-item-title">[Android] 支持 HDR 和杜比视界</span><span class="rp-item-extra">25 comments · 2025-05-24</span></a><a class="rp-item" href="https://github.com/Predidit/Kazumi/issues/655"><span class="rp-item-num">#655</span><span class="rp-item-title">[Bug]: 电脑端(Windows x64)播放器进度条不动</span><span class="rp-item-extra">25 comments · 2025-01-24</span></a><a class="rp-item" href="https://github.com/Predidit/Kazumi/issues/1348"><span class="rp-item-num">#1348</span><span class="rp-item-title">[Bug]: Linux平台下无法使用nvdec解码</span><span class="rp-item-extra">23 comments · 2025-09-28</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/Predidit/Kazumi/releases"><b>2.4.4</b> <span class="rp-rel-tag">2.4.4</span> <span class="rp-item-extra">2026-11-12</span></a><pre class="rp-pre">- 适配 flutter 3.50</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="en"><h3 class="rp-ph">News &amp; coverage (2)</h3><div class="rp-list"><a class="rp-item" href="https://www.bilibili.com/en/video/BV1QK9DBfEsw/" target="_blank" rel="noopener"><span class="rp-news-src">bilibili</span><span class="rp-item-title">No-nonsense guide to installing the ultimate anime-watching app kazumi on HarmonyOS</span><span class="rp-item-extra">2026-04-28</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMi9AFBVV95cUxNblZ0LW1tZkEwT05PNmRHYVBNZjZrdU1wYXlxYkVmWEQ1UHVvaGRuMHBaQlBZZExKQzNILUhRamJUS0ZMMmpYLWxjOXl5RG14MHE5QWdVTVNaUWNoRmFNSTY2Z0h6cUdVTlNxTC1GQXp4ZXRZTVJxVzk1bUxXbkJVRll4U2hYbFd3X1JnZ3hEazQ1T09aOTdiWDNtV3lRcTZxMDcwUXRlMEtmOXNoc3M2TTQ0U1F1c2hGTHdLanR0dWFPS3JDamZya2FTbk5MbmFQUkRxSGRxOXV3Yk15MzZQZGVBQ0FGb3VSS0ZtcXdqY3d6Y2Nv?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">OMRON Global</span><span class="rp-item-title">OMRON SINIC X to Present Latest Research Findings at ICLR 2025, Top-tier Conference in the Field of Machine Learning – Activity</span><span class="rp-item-extra">2025-05-23</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Predidit__Kazumi.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>bililive-go/bililive-go · GitHub Trending Rank Radar</title>
+<meta name="description" content="一个直播录制工具">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="bililive-go, bililive-go, bililive-go/bililive-go, github stars, github trending, star growth, star history, 开源项目, 星标增长, golang, ffmpeg, douyu, bilibili, longzhu, zhanqi">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/bililive-go__bililive-go">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="bililive-go/bililive-go · GitHub Trending Rank Radar">
+<meta property="og:description" content="一个直播录制工具">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/bililive-go__bililive-go">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "bililive-go/bililive-go", "codeRepository": "https://github.com/bililive-go/bililive-go", "url": "https://zhuikan.com/repos/bililive-go__bililive-go", "description": "一个直播录制工具", "author": {"@type": "Organization", "name": "bililive-go", "url": "https://github.com/bililive-go"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-3.0.html", "programmingLanguage": "Go", "dateCreated": "2018-01-25", "keywords": "golang,ffmpeg,douyu,bilibili,longzhu,zhanqi,twitchtv"}</script>
+</head>
+<body data-repo="bililive-go/bililive-go" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">bililive-go/bililive-go</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="bililive-go__bililive-go"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/215785280?v=4&s=300" width="300" height="300" alt="bililive-go avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">bililive-go</div>
+      <a class="rp-side-owner" href="https://github.com/bililive-go">bililive-go</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/bililive-go">bililive-go</a>
+        <span class="rp-sep">/</span><span class="rp-name">bililive-go</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">一个直播录制工具</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,850</b></span><span class="rp-stat" title="forks">⑂ <b>708</b></span><span class="rp-stat" title="watchers">👁 <b>34</b></span><span class="rp-stat" title="prs">⑃ <b>351</b></span><span class="rp-stat" title="issues">● <b>878</b></span><span class="rp-stat" title="releases">▤ <b>117</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/golang">golang</a><a class="rp-topic" href="../tags/ffmpeg">ffmpeg</a><a class="rp-topic" href="https://github.com/topics/douyu">douyu</a><a class="rp-topic" href="https://github.com/topics/bilibili">bilibili</a><a class="rp-topic" href="https://github.com/topics/longzhu">longzhu</a><a class="rp-topic" href="https://github.com/topics/zhanqi">zhanqi</a><a class="rp-topic" href="https://github.com/topics/twitchtv">twitchtv</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Go</span><span class="rp-meta-bit">GPL-3.0</span><span class="rp-meta-bit">Created 2018-01-25</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/bililive-go/bililive-go">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.8.3</span><a class="rp-dl-a" href="https://github.com/bililive-go/bililive-go/releases/tag/v0.8.3">v0.8.3 ↓</a><span class="rp-dl-ver">0.8.3</span><span class="rp-dl-date">2026-09-25</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,850</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">708</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">34</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">351</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">878</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">117</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Bililive-go
+
+
+
+
+
+
+Bililive-go是一个支持多种直播平台的直播录制工具   
+
+ 第三方生态
+
+ 安全提示：Bililive-go 未审计任何第三方代码的安全性、合规性和可用性。是否安装或使用来自第三方的脚本、插件、扩展等内容，请自行判断并承担相应风险。
+
+ 社区维护的第三方生态项目列表见：docs/third-party.md
+
+!image
+
+ 支持网站
+
+
+    
+        站点
+        url
+        支持情况
+        cookie
+    
+    
+        Acfun直播
+        live.acfun.cn
+        ✅ 支持
+        
+    
+    
+        哔哩哔哩直播
+        live.bilibili.com
+        ✅ 支持
+        ✅ 支持
+    
+    
+        战旗直播
+        www.zhanqi.tv
+        ✅ 支持
+        
+    
+    
+        斗鱼直播
+        www.douyu.com
+        ✅ 支持
+        
+    
+    
+        虎牙直播
+        www.huya.com
+        ✅ 支持
+        
+    
+    
+        CC直播
+        cc.163.com
+        ✅ 支持
+        
+    
+    
+        一直播
+        www.yizhibo.com
+        ✅ 支持
+        
+    
+    
+        OPENREC
+        www.openrec.tv
+        ✅ 支持
+        
+    
+    
+        企鹅电竞
+        egame.qq.com
+        ✅ 支持
+        
+    
+    
+        浪live
+        play.lang.live &amp; www.lang.live
+        ✅ 支持
+        
+    
+    
+        花椒
+        www.huajiao.com
+        ✅ 支持
+        
+    
+    
+        抖音直播
+        live.douyin.com
+        ✅ 支持
+        ✅ 支持
+    
+    
+        猫耳
+        fm.missevan.com
+        ✅ 支持
+        
+    
+    
+        克拉克拉
+        www.hongdoufm.com
+        ✅ 支持
+        
+    
+    
+        YY直播
+        www.yy.com
+        ✅ 支持
+        
+    
+    
+        微博直播
+        weibo.com
+        ✅ 支持
+        
+    
+    
+        SOOP
+        play.sooplive.com
+        ✅ 支持
+        ✅ 支持
+    
+
+
+ cookie 在 config.yml 中的设置方法
+
+cookie的设置以域名为单位。比如想在录制抖音直播时使用 cookie，那么 config.yml 中可以像下面这样写：
+
+cookies:
+  live.douyin.com: __ac_nonce=123456789012345678903;name=value
+
+这里 name 和 value 只是随便举的例子，用来说明当添加超过一条 cookie 的键值对时应该用分号隔开。
+至于具体应该添加哪些键，就需要用户针对不同网站自己获取了。
+
+ 在网页中修改设置
+
+点击网页左边的 设置 可以在线修改项目的配置文件，之后点击页面下面的 保存设置 按钮保存设置。
+如果保存后窗口提醒设置保存成功，那就是配置文件已经被写入磁盘了。如果是保存失败，那可能是配置文件格式问题或者遇到程序 bug，总之磁盘上的配置文件没变。
+
+在网页中即使保存配置成功也不一定表示相应的配置会立即生效。
+有些配置需要停止监控后再重新开始监控才会生效，有些配置也许要重启程序才会生效。
+
+“直播间设置”中的仅录制音频、清晰度和昵称保存后会同步到运行中的直播间，新参数从下一次录制开始采用；正在写入的录制文件不会中途切换格式。需要立即采用时，可停止并重新开始录制。
+在程序外直接编辑配置文件不会自动重载，需要重启程序。
+
+ 网页播放器
+
+点击对应直播间行右边的 文件 链接可以跳转到对应直播间的录播目录中。  
+当然你点左边的 文件 一路找过去也行。
+
+https://github.com/bililive-go/bililive-go/assets/2352900/6453900c-6321-417b-94f2-d65ec2ab3d7e
+
+ 新增通知服务
+
+新增了 Telegram、ntfy 通知服务，用户可以在 Telegram、ntfy 中收到直播开始、结束、异常等通知。
+
+有关通知服务的更多信息，请参阅 通知服务文档。
+
+
+ Grafana 面板
+
+docker compose 用户可以取消项目根目录下 docker-compose.yml 文件中 prometheus 和 grafana 部分的注释以启用统计面板。  
+这里是 设置说明
+
+非 docker compose 用户需要自行部署 prometheus 和 grafana。  
+这里是 一些建议
+
+!image
+
+
+ 依赖
+ ffmpeg
+
+ 安装和使用
+
+ Windows
+https://github.com/bililive-go/bililive-go/wiki/Install-Windows
+
+ macOS
+https://github.com/bililive-go/bililive-go/wiki/Install-macOS
+
+ Linux
+https://github.com/bililive-go/bililive-go/wiki/Install-Linux
+
+ docker
+
+使用 https://hub.docker.com/r/chigusa/bililive-go 镜像创建容器运行。
+
+例如：
+
+docker run --restart=always -v ~/config.yml:/etc/bililive-go/config.yml -v ~/Videos:/srv/bililive -p 8080:8080 -d chigusa/bililive-go
+
+
+ docker compose
+
+使用项目根目录下的 docker-compose.yml 配置文件启动 docker compose 运行。
+
+例如：
+
+docker compose up
+
+此时默</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/bililive-go/bililive-go/issues/830"><span class="rp-item-num">#830</span><span class="rp-item-title">[提问]: 质量这个咋写才能录1080p60？</span><span class="rp-item-extra">36 comments · 2025-02-02</span></a><a class="rp-item" href="https://github.com/bililive-go/bililive-go/issues/496"><span class="rp-item-num">#496</span><span class="rp-item-title">抖音直播间录制时，报ffmpeg不支持的编码</span><span class="rp-item-extra">21 comments · 2023-07-10</span></a><a class="rp-item" href="https://github.com/bililive-go/bililive-go/issues/872"><span class="rp-item-num">#872</span><span class="rp-item-title">程式用一段時間後整個當掉....之前沒有過</span><span class="rp-item-extra">18 comments · 2025-06-12</span></a><a class="rp-item" href="https://github.com/bililive-go/bililive-go/issues/529"><span class="rp-item-num">#529</span><span class="rp-item-title">录制抖音时候会分成很多一分钟的视频文件</span><span class="rp-item-extra">16 comments · 2023-08-24</span></a><a class="rp-item" href="https://github.com/bililive-go/bililive-go/issues/759"><span class="rp-item-num">#759</span><span class="rp-item-title">想基于bililive-go的http api写一个自动上传投稿的程序</span><span class="rp-item-extra">14 comments · 2024-06-30</span></a><a class="rp-item" href="https://github.com/bililive-go/bililive-go/issues/998"><span class="rp-item-num">#998</span><span class="rp-item-title">Failed to initialize RemoteTools: no value for darwin</span><span class="rp-item-extra">12 comments · 2025-10-24</span></a><a class="rp-item" href="https://github.com/bililive-go/bililive-go/issues/559"><span class="rp-item-num">#559</span><span class="rp-item-title">录制的时长设置为1小时，无法生效</span><span class="rp-item-extra">12 comments · 2023-09-28</span></a><a class="rp-item" href="https://github.com/bililive-go/bililive-go/issues/430"><span class="rp-item-num">#430</span><span class="rp-item-title">level=warning msg=&quot;failed to get stream url, will retry after 5s...&quot; error=&quot;room not exists&quot;</span><span class="rp-item-extra">12 comments · 2023-03-26</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/bililive-go/bililive-go/discussions/1064"><span class="rp-item-num">#1064</span><span class="rp-item-title">关于 Bililive 资源占用过高与“精简模式 (Lite Mode)”需求的调查</span><span class="rp-item-extra">0 comments · 2026-01-24</span></a><a class="rp-item" href="https://github.com/bililive-go/bililive-go/discussions/978"><span class="rp-item-num">#978</span><span class="rp-item-title">v0.7.39-rc.1 风控撞墙比较快</span><span class="rp-item-extra">1 comments · 2025-10-09</span></a><a class="rp-item" href="https://github.com/bililive-go/bililive-go/discussions/908"><span class="rp-item-num">#908</span><span class="rp-item-title">咨询互助等问题可以在这边交流</span><span class="rp-item-extra">2 comments · 2025-08-16</span></a><a class="rp-item" href="https://github.com/bililive-go/bililive-go/discussions/909"><span class="rp-item-num">#909</span><span class="rp-item-title">用绿联Nas部署在Docker里，没找到可以添加cooike的地方</span><span class="rp-item-extra">1 comments · 2025-07-31</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/bililive-go/bililive-go/releases"><b>v0.8.3</b> <span class="rp-rel-tag">v0.8.3</span> <span class="rp-item-extra">2026-09-25</span></a><pre class="rp-pre">What&#x27;s Changed
+ 斗鱼自动续期cookie+部分问题修复 by @Joftal in https://github.com/bililive-go/bililive-go/pull/1210
+
+
+Full Changelog: https://github.com/bililive-go/bililive-go/compare/v0.8.2...v0.8.3</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/bililive-go__bililive-go.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

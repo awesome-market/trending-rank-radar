@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DMQ/mvvm · GitHub Trending Rank Radar</title>
+<meta name="description" content="剖析vue实现原理，自己动手实现mvvm">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="mvvm, DMQ, DMQ/mvvm, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/DMQ__mvvm">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="DMQ/mvvm · GitHub Trending Rank Radar">
+<meta property="og:description" content="剖析vue实现原理，自己动手实现mvvm">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/DMQ__mvvm">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "DMQ/mvvm", "codeRepository": "https://github.com/DMQ/mvvm", "url": "https://zhuikan.com/repos/DMQ__mvvm", "description": "剖析vue实现原理，自己动手实现mvvm", "author": {"@type": "Organization", "name": "DMQ", "url": "https://github.com/DMQ"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "CSS", "dateCreated": "2016-08-10"}</script>
+</head>
+<body data-repo="DMQ/mvvm" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">DMQ/mvvm</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="DMQ__mvvm"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/6860287?u=ea9c08ceb4a7aa253fcf94638332e7b35252c1b6&amp;v=4&s=300" width="300" height="300" alt="DMQ avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">mvvm</div>
+      <a class="rp-side-owner" href="https://github.com/DMQ">DMQ</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/DMQ">DMQ</a>
+        <span class="rp-sep">/</span><span class="rp-name">mvvm</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">剖析vue实现原理，自己动手实现mvvm</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,186</b></span><span class="rp-stat" title="forks">⑂ <b>1,222</b></span><span class="rp-stat" title="watchers">👁 <b>133</b></span><span class="rp-stat" title="prs">⑃ <b>12</b></span><span class="rp-stat" title="issues">● <b>42</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">CSS</span><span class="rp-meta-bit">Created 2016-08-10</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/DMQ/mvvm">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-3</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,186</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,222</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">133</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">12</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">42</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">剖析Vue实现原理 - 如何实现双向绑定mvvm
+
+Update: Vue3.0响应式原理精简代码
+
+ 本文能帮你做什么？
+ 1、了解vue的双向数据绑定原理以及核心代码模块
+ 2、缓解好奇心的同时了解如何实现双向绑定
+ 为了便于说明原理与实现，本文相关代码主要摘自vue源码, 并进行了简化改造，相对较简陋，并未考虑到数组的处理、数据的循环依赖等，也难免存在一些问题，欢迎大家指正。不过这些并不会影响大家的阅读和理解，相信看完本文后对大家在阅读vue源码的时候会更有帮助
+ 本文所有相关代码均在github上面可找到 https://github.com/DMQ/mvvm
+
+ 相信大家对mvvm双向绑定应该都不陌生了，一言不合上代码，下面先看一个本文最终实现的效果吧，和vue一样的语法，如果还不了解双向绑定，猛戳Google
+
+html
+
+    
+    {{word}}
+    change model
+
+
+
+
+
+
+
+var vm = new MVVM({
+    el: &#x27;mvvm-app&#x27;,
+        data: {
+            word: &#x27;Hello World!&#x27;
+        },
+        methods: {
+            sayHi: function() {
+                this.word = &#x27;Hi, everybody!&#x27;;
+            }
+        }
+    });
+
+
+
+效果：
+![img1][img1]
+
+
+ 几种实现双向绑定的做法
+目前几种主流的mvc(vm)框架都实现了单向数据绑定，而我所理解的双向数据绑定无非就是在单向绑定的基础上给可输入元素（input、textarea等）添加了change(input)事件，来动态修改model和 view，并没有多高深。所以无需太过介怀是实现的单向或双向绑定。
+
+实现数据绑定的做法有大致如下几种：
+
+ 发布者-订阅者模式（backbone.js）
+
+ 脏值检查（angular.js） 
+
+ 数据劫持（vue.js）
+
+发布者-订阅者模式: 一般通过sub, pub的方式实现数据和视图的绑定监听，更新数据方式通常做法是 vm.set(&#x27;property&#x27;, value)，这里有篇文章讲的比较详细，有兴趣可点这里
+
+这种方式现在毕竟太low了，我们更希望通过 vm.property = value 这种方式更新数据，同时自动更新视图，于是有了下面两种方式
+
+脏值检查: angular.js 是通过脏值检测的方式比对数据是否有变更，来决定是否更新视图，最简单的方式就是通过 setInterval() 定时轮询检测数据变动，当然Google不会这么low，angular只有在指定的事件触发时进入脏值检测，大致如下：
+
+- DOM事件，譬如用户输入文本，点击按钮等。( ng-click )
+- XHR响应事件 ( $http )
+- 浏览器Location变更事件 ( $location )
+- Timer事件( $timeout , $interval )
+- 执行 $digest() 或 $apply()
+
+数据劫持: vue.js 则是采用数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty()来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。
+
+
+ 思路整理
+已经了解到vue是通过数据劫持的方式来做数据绑定的，其中最核心的方法便是通过Object.defineProperty()来实现对属性的劫持，达到监听数据变动的目的，无疑这个方法是本文中最重要、最基础的内容之一，如果不熟悉defineProperty，猛戳这里
+整理了一下，要实现mvvm的双向绑定，就必须要实现以下几点：
+1、实现一个数据监听器Observer，能够对数据对象的所有属性进行监听，如有变动可拿到最新值并通知订阅者
+2、实现一个指令解析器Compile，对每个元素节点的指令进行扫描和解析，根据指令模板替换数据，以及绑定相应的更新函数
+3、实现一个Watcher，作为连接Observer和Compile的桥梁，能够订阅并收到每个属性变动的通知，执行指令绑定的相应回调函数，从而更新视图
+4、mvvm入口函数，整合以上三者
+
+上述流程如图所示：
+![img2][img2]
+
+ 1、实现Observer
+ok, 思路已经整理完毕，也已经比较明确相关逻辑和模块功能了，let&#x27;s do it
+我们知道可以利用Obeject.defineProperty()来监听属性变动
+那么将需要observe的数据对象进行递归遍历，包括子属性对象的属性，都加上	setter和getter
+这样的话，给这个对象的某个值赋值，就会触发setter，那么就能监听到了数据变化。。相关代码可以是这样：
+javascript
+var data = {name: &#x27;kindeng&#x27;};
+observe(data);
+data.name = &#x27;dmq&#x27;; // 哈哈哈，监听到值变化了 kindeng -- dmq
+
+function observe(data) {
+    if (!data || typeof data !== &#x27;object&#x27;) {
+        return;
+    }
+    // 取出所有属性遍历
+    Object.keys(data).forEach(function(key) {
+	    defineReactive(data, key, data[key]);
+	});
+};
+
+function defineReactive(data, key, val) {
+    observe(val); // 监听子属性
+    Object.defineProperty(data, key, {
+        enumerable: true, // 可枚举
+        configurable: false, // 不能再define
+        get: function() {
+            return val;
+        },
+        set: function(newVal) {
+            console.log(&#x27;哈哈哈，监听到值变化了 &#x27;, val, &#x27; -- &#x27;, newVal);
+            val = newVal;
+        }
+    });
+}
+
+
+这样我们已经可以监听每个数据的变化了，那么监听到变化之后就是怎么通知订阅者了，所以接下来我们需要实现一个消息订阅器，很简单，维护一个数组，用来收集订阅者，数据变动触发notify，再调用订阅者的update方法，代码改善之后是这样：
+javascript
+// ... 省略
+function defineReactive(data, key, val) {
+	var dep = new Dep();
+    observe(val); // 监听子属性
+
+    Ob</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/DMQ__mvvm.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

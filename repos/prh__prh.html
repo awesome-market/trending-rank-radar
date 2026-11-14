@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>prh/prh · GitHub Trending Rank Radar</title>
+<meta name="description" content="proofreading helper">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="prh, prh, prh/prh, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/prh__prh">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="prh/prh · GitHub Trending Rank Radar">
+<meta property="og:description" content="proofreading helper">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/prh__prh">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "prh/prh", "codeRepository": "https://github.com/prh/prh", "url": "https://zhuikan.com/repos/prh__prh", "description": "proofreading helper", "author": {"@type": "Organization", "name": "prh", "url": "https://github.com/prh"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2014-12-18"}</script>
+</head>
+<body data-repo="prh/prh" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">prh/prh</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="prh__prh"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/22939997?v=4&s=300" width="300" height="300" alt="prh avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">prh</div>
+      <a class="rp-side-owner" href="https://github.com/prh">prh</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/prh">prh</a>
+        <span class="rp-sep">/</span><span class="rp-name">prh</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">proofreading helper</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>299</b></span><span class="rp-stat" title="forks">⑂ <b>23</b></span><span class="rp-stat" title="watchers">👁 <b>11</b></span><span class="rp-stat" title="prs">⑃ <b>113</b></span><span class="rp-stat" title="issues">● <b>22</b></span><span class="rp-stat" title="releases">▤ <b>9</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2014-12-18</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/prh/prh">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v7.0.0</span><a class="rp-dl-a" href="https://github.com/prh/prh/releases/tag/v7.0.0">v7.0.0 ↓</a><span class="rp-dl-ver">7.0.0</span><span class="rp-dl-date">2026-11-07</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">299</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">23</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">11</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">113</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">22</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">9</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">proofreading-helper 
+
+あなたの校正を手伝ってくれるライブラリ。
+
+今まで、校正作業は主に編集のフェーズの作業でした。
+これからは校正情報を編集者が作り、著者が執筆しながら自分で校正を行うようになります。
+
+
+
+ インストール
+
+自分のライブラリに組み込んで使う場合。
+
+
+$ npm install --save prh
+
+
+コマンドラインツールとして使う場合。
+
+
+$ npm install -g prh
+
+
+ 利用方法
+
+テキストファイルであれば、どのようなファイルであっても処理対象にすることができます。
+
+
+$ prh --help
+  Usage: prh [options] [command] [--] [files...]
+
+  Options:
+
+    --rules-json    emit rule set in json format
+    --rules-yaml    emit rule set in yaml format
+    --rules   path to rule yaml file
+    --verify        checking file validity
+    --stdout        print replaced content to stdout
+    --diff          show unified diff
+    --verbose       makes output more verbose
+    -r, --replace   replace input files
+
+
+  Commands:
+
+    init  generate prh.yml
+
+
+実際に利用した場合の出力例。
+
+
+ 校正前のファイル例
+$ cat sample.md
+ サンプルですよ
+
+cookieとjqueryという表記は正しいだろうか？
+
+ チェックにひっかかる箇所の表示
+$ prh sample.md
+sample.md(3,1): cookie → Cookie
+sample.md(3,8): jquery → jQuery
+
+
+校正ルールをオプションで指定しない場合、校正対象となるファイルと同じディレクトリ、またはそれより上の階層で最初に見つかったprh.ymlを利用します。
+どのファイルに対してどの校正ルールが利用されているか確認したい場合、 --verbose オプションを利用してください。
+
+ 設定ファイルについて
+
+基本的な書き方についてはmisc/prh.ymlを参照してください。
+
+実用するための設定ファイルはprh/rulesのmedia/techbooster.ymlがおすすめです。
+
+その他、prh/rulesに各種設定を取り揃えてあるので、好きに組み合わせてご利用ください。
+
+init サブコマンドでbasicな設定ファイルを作成できます（実用には不向き）。
+
+
+$ prh init
+create prh.yml
+see prh/rules collection https://github.com/prh/rules
+
+
+実用上は git submodule add https://github.com/prh/rules.git prh-rules して好きなルールを使います。
+これを参照するprh.ymlは次のように書きます。
+
+yaml
+ yaml-language-server: $schema=https://raw.githubusercontent.com/prh/prh/master/prh.schema.json
+version: 1
+
+imports:
+  - ./prh-rules/media/techbooster.yml
+
+
+ --diff オプション
+
+unified diff形式で変更点を出力します。
+colordiffと組み合わせると標準のレポートより見やすくなるかもしれません。
+
+
+$ prh --diff sample.md
+Index: sample.md
+===================================================================
+--- sample.md	before
++++ sample.md	replaced
+@@ -1,4 +1,4 @@
+  サンプルですよ
+
+-cookieとjqueryという表記は正しいだろうか？
++CookieとjQueryという表記は正しいだろうか？
+
+
+ --stdout オプション
+
+校正を適用した結果をstdoutに出力します。
+
+
+$ prh --stdout sample.md
+ サンプルですよ
+
+CookieとjQueryという表記は正しいだろうか？
+
+
+v3.x系まではこのオプションがデフォルトの振る舞いでした。
+
+ --verify オプション
+
+チェック結果をexit codeとして出力します。
+文章のテストやCIなどに組み込む際に便利です。
+
+
+$ prh --verify sample.md
+Error: sample.md failed proofreading
+    ....
+$ echo $?
+1
+
+
+ -r, --replace オプション
+
+指定したファイルの校正結果を直接ファイルに上書きします。
+
+
+$ prh --replace sample.md
+replaced sample.md
+
+$ cat sample.md
+ サンプルですよ
+
+CookieとjQueryという表記は正しいだろうか？
+
+
+ 修正点を意図的に無視させる
+
+prh単体の利用ではMarkdownやRe:VIEWなどのファイルの構造は考慮できません。
+そのため、URLの一部が変換されてしまったりします。
+他にも意図的に指摘内容を無視したい場合があります。
+
+そんな時、 prh:disable プラグマを使うことができます。
+prhは文章を段落毎に処理し、段落にプラグマが含まれる場合大本のルールよりそちらの支持を優先します。
+具体例を見ていきましょう。
+
+
+@ prh:disable
+ここの段落は全く校正されない。
+
+@ prh:disable:web
+web→Webの校正ルールがある場合。
+ここの段落はwebというワードが含まれていても無視するよう指定されているので警告されない。
+
+@ prh:disable:web|jquery|[abc]
+無視ルールは正規表現として解釈されるため複雑な条件も記述できる。
+
+ルールは後置することもできる。
+@ prh:disable
+
+
+こんな塩梅です。
+この例はRe:VIEWのコメント記法を使っていますが、お使いのフォーマットでコメントと解釈される任意の構造を使うことができます。
+Markdownであれば  とすることができます。
+このため、無視するルールの記述に半角スペースを利用することができなくなっています。
+代わりに \s などを使ってください。
+
+ リリース手順
+
+npmへのpublishはG</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/prh/prh/issues/29"><span class="rp-item-num">#29</span><span class="rp-item-title">ファイルパスに依存しないAPIが欲しい</span><span class="rp-item-extra">2 comments · 2017-08-25</span></a><a class="rp-item" href="https://github.com/prh/prh/issues/50"><span class="rp-item-num">#50</span><span class="rp-item-title">prhのメンテナンスについて</span><span class="rp-item-extra">1 comments · 2025-08-20</span></a><a class="rp-item" href="https://github.com/prh/prh/issues/40"><span class="rp-item-num">#40</span><span class="rp-item-title">$1参照で余計な文字削除が行われているように見える事例</span><span class="rp-item-extra">1 comments · 2020-10-31</span></a><a class="rp-item" href="https://github.com/prh/prh/issues/33"><span class="rp-item-num">#33</span><span class="rp-item-title">is there any documentation in English?</span><span class="rp-item-extra">1 comments · 2019-04-01</span></a><a class="rp-item" href="https://github.com/prh/prh/issues/32"><span class="rp-item-num">#32</span><span class="rp-item-title">patternsが配列 かつ キャプチャーを使う場合に $1 の参照先がずれる</span><span class="rp-item-extra">1 comments · 2018-11-08</span></a><a class="rp-item" href="https://github.com/prh/prh/issues/49"><span class="rp-item-num">#49</span><span class="rp-item-title">ブラウザ環境で、fromYAMLでpathのshimが必要</span><span class="rp-item-extra">0 comments · 2025-08-18</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/prh/prh/releases"><b>v7.0.0</b> <span class="rp-rel-tag">v7.0.0</span> <span class="rp-item-extra">2026-11-07</span></a><pre class="rp-pre">破壊的変更
+
+- パッケージを ESM のみにしました（132）。CommonJS からは、Node.js 22.12 以上なら require(&quot;prh&quot;) で引き続き読み込めます。prh/lib/rule のような内部ファイルの直接 import も使えます。Jest の CommonJS モードなど、require(esm) に対応していない環境からは読み込めません。
+- Node.js 22.12.0 以上が必要になりました（131）。
+- YAML の読み込みに js-yaml 5 を使い、YAML 1.2 の Core スキーマで解釈するようになりました（117）。マージキー（&lt;&lt;）は引き続き使えます（131）。日付（timestamp）などの YAML 1.1 固有の型は、文字列として読み込まれます。
+- pattern の /.../ 形式で、フラグ s と u を解釈するようになりました（93）。これまでリテラルとして扱われていた /usr/local/su のような文字列は正規表現として扱われ、/usr/bin/ss のように同じフラグが重なる文字列はエラーになります。
+- --rules-yaml の出力の書式が変わることがあります。
+
+
+ What&#x27;s Changed
+ chore(deps): bump commander from 1</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/prh__prh.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

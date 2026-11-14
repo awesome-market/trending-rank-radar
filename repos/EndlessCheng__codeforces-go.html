@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EndlessCheng/codeforces-go · GitHub Trending Rank Radar</title>
+<meta name="description" content="算法竞赛模板库 by 灵茶山艾府 💭💡🎈">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="codeforces-go, EndlessCheng, EndlessCheng/codeforces-go, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/EndlessCheng__codeforces-go">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="EndlessCheng/codeforces-go · GitHub Trending Rank Radar">
+<meta property="og:description" content="算法竞赛模板库 by 灵茶山艾府 💭💡🎈">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/EndlessCheng__codeforces-go">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "EndlessCheng/codeforces-go", "codeRepository": "https://github.com/EndlessCheng/codeforces-go", "url": "https://zhuikan.com/repos/EndlessCheng__codeforces-go", "description": "算法竞赛模板库 by 灵茶山艾府 💭💡🎈", "author": {"@type": "Organization", "name": "EndlessCheng", "url": "https://github.com/EndlessCheng"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Go", "dateCreated": "2019-09-23"}</script>
+</head>
+<body data-repo="EndlessCheng/codeforces-go" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">EndlessCheng/codeforces-go</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="EndlessCheng__codeforces-go"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/7086966?u=ac53cc01d8798356e5702e8291cb7ddb838ee823&amp;v=4&s=300" width="300" height="300" alt="EndlessCheng avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">codeforces-go</div>
+      <a class="rp-side-owner" href="https://github.com/EndlessCheng">EndlessCheng</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/EndlessCheng">EndlessCheng</a>
+        <span class="rp-sep">/</span><span class="rp-name">codeforces-go</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">算法竞赛模板库 by 灵茶山艾府 💭💡🎈</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>8,798</b></span><span class="rp-stat" title="forks">⑂ <b>829</b></span><span class="rp-stat" title="watchers">👁 <b>71</b></span><span class="rp-stat" title="prs">⑃ <b>8</b></span><span class="rp-stat" title="issues">● <b>7</b></span><span class="rp-stat" title="releases">▤ <b>3</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Go</span><span class="rp-meta-bit">Created 2019-09-23</span><a class="rp-meta-bit rp-home" href="https://space.bilibili.com/206214" rel="noopener">space.bilibili.com/206214</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/EndlessCheng/codeforces-go">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+25</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">8,798</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">829</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">71</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">8</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">7</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">3</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">算法竞赛模板库 by 灵茶山艾府 💭💡🎈
+
+ 算法 Algorithm
+
+由于算法知识点繁杂，将自己学习到的算法、做过的题目分类整理好是有必要的。
+
+一个算法模板应当涵盖以下几点：
+- 对该算法的基本介绍（核心思想、复杂度等）
+- 参考链接或书籍章节（讲得比较好的资料）
+- 模板代码（代码注释、使用说明）
+- 模板补充（常见题型中的额外代码、建模技巧等）
+- 相关题目（模板题、经典题、思维转换题等）
+
+ 算法目录
+
+不了解 Go？快速入门教程
+
+- 集合论与位运算
+- 数据结构
+  - 单调栈 monotone_stack.go
+  - 单调队列 monotone_queue.go
+    - 二维单调队列
+  - 双端队列 deque.go
+    - 最小双端队列 deque_min.go
+  - 堆（优先队列）heap.go
+    - 支持修改、删除指定元素的堆
+    - 懒删除堆
+    - 对顶维
+    - 前缀中位数
+    - 滑动窗口前 k 小元素和
+  - 并查集 union_find.go
+    - 点权并查集
+    - 边权并查集（种类并查集）
+    - 可持久化并查集
+    - 回滚并查集 &amp; 动态图连通性
+  - ST 表 sparse_table.go
+    - 不相交 ST 表（猫树）
+    - 二维 ST 表
+    - 线段树套 ST 表
+  - 树状数组 fenwick_tree.go
+    - 差分树状数组（支持区间加、区间求和）
+    - 二维树状数组
+    - 二维差分树状数组
+    - 离线二维数点
+  - 线段树 segment_tree.go
+    - 线段树二分
+    - 延迟标记（懒标记）
+      - 矩形面积并（扫描线）segment_tree_rect.go
+    - 动态开点
+    - 线段树合并
+    - 线段树分裂
+    - 线段树分治 / 时间线段树
+    - 可持久化线段树（主席树）
+      - 在线二维数点
+  - 树套树 seg_in_bit.go
+  - CDQ 分治 cdq.go
+    - 动态逆序对
+  - 整体二分
+    - 动态区间第 k 小
+  - 0-1 线段树 segment_tree01.go
+  - 左偏树（可并堆）leftist_tree.go
+  - 笛卡尔树 cartesian_tree.go
+  - 二叉搜索树公共方法 bst.go
+  - Treap treap.go
+    - 前 k 小元素和
+  - 伸展树 splay.go
+  - 动态树 LCT link_cut_tree.go
+  - 红黑树 red_black_tree.go
+  - 替罪羊树 scapegoat_tree.go
+  - k-d 树 kd_tree.go
+  - 珂朵莉树（ODT）
+    - 数组版 odt.go
+    - 平衡树版 odt_bst.go
+  - 根号分治、分块 sqrt_decomposition.go
+  - 莫队算法 mo.go
+     - 普通莫队
+     - 带修莫队
+     - 回滚莫队
+     - 树上莫队
+- 字符串 strings.go
+  - 字符串哈希
+  - KMP
+    - pi 函数
+    - border
+    - 最小循环节
+    - fail 树（失配树 / border 树）
+  - 扩展 KMP（Z algorithm）
+  - 最小表示法
+  - 最长回文子串 
+    - Manacher 算法
+  - 回文自动机（回文树，PAM）pam.go
+  - 后缀数组（SA）
+  - 后缀自动机（SAM）sam.go
+  - 字典树 trie.go
+    - 可持久化字典树
+  - 0-1 字典树 trie01.go
+    - 最大异或和
+    - 第 k 大异或和
+    - 删除元素
+    - 可持久化 0-1 字典树
+    - 【研究】0-1 字典树上最多有多少个节点
+  - AC 自动机 acam.go
+- 数学
+  - 数论 math.go
+    - 辗转相除法（最大公因数 GCD）
+    - 类欧几里得算法 ∑⌊(ai+b)/m⌋
+    - Pollard-Rho 质因数分解算法
+    - 埃氏筛（埃拉托斯特尼筛法）
+    - 欧拉筛（线性筛）
+    - 欧拉函数
+    - 原根
+    - 扩展 GCD
+      - 二元一次不定方程
+    - 逆元
+      - 线性求逆元
+    - 中国剩余定理（CRT）
+      - 扩展中国剩余定理
+    - 离散对数
+    - 大步小步算法（BSGS）
+      - 扩展大步小步算法
+    - 二次剩余
+    - Jacobi 符号
+    - N 次剩余
+    - 卢卡斯定理
+      - 扩展卢卡斯定理
+    - 卡特兰数
+    - 默慈金数
+    - 那罗延数
+    - 斯特林数
+      - 第一类斯特林数（轮换）
+      - 第二类斯特林数（子集）
+    - 贝尔数
+    - 欧拉数
+    - 数论分块（整除分块）
+    - 莫比乌斯函数
+    - 莫比乌斯反演
+      - 互质计数问题
+      - GCD 求和问题
+    - 杜教筛
+  - 组合数学 math_comb.go
+    - 常见模型
+    - 常用恒等式
+    - 容斥原理
+  - 快速傅里叶变换 FFT math_fft.go
+    - 分治 FFT
+    - 二维 FFT
+  - 快速数论变换 NTT math_ntt.go
+    - 包含多项式全家桶（求逆、开方等等）
+  - 快速沃尔什变换 FWT math_fwt.go
+  - 连分数、佩尔方程 math_continued_fraction.go
+  - 线性代数 math_matrix.go
+    - 矩阵快速幂
+    - Berlekamp-Massey 算法
+    - Kitamasa 算法
+    - 高斯消元
+    - 行列式
+    - 线性基
+  - 数值分析 math_numerical_analysis.go
+    - 自适应辛普森积分
+    - 拉格朗日插值
+  - 计算几何 geometry.go
+    - 线与点
+    - 线与线
+    - 圆与点
+      - 最小圆覆盖
+        - Welzl 随机增量法
+      - 固定半径覆盖最多点
+    - 圆与线
+    - 圆与圆
+    - 圆与矩形
+    - 最近点对
+    - 多边形与点
+      - 判断点在凸多边形内 $O(\log n)$
+      - 判断点在任意多边形内
+        - 转角法（统计绕数）
+    - 凸包
+      - 动态凸包
+    - 最远点对
+      - 旋转卡壳
+    - 半平面交
+  - 博弈论 games.go
+    - SG 函数</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/EndlessCheng__codeforces-go.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

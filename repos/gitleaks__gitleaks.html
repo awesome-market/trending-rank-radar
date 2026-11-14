@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>gitleaks/gitleaks · GitHub Trending Rank Radar</title>
+<meta name="description" content="Find secrets with Gitleaks 🔑">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="gitleaks, gitleaks, gitleaks/gitleaks, github stars, github trending, star growth, star history, 开源项目, 星标增长, security, security-tools, git, golang, go, secret">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/gitleaks__gitleaks">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="gitleaks/gitleaks · GitHub Trending Rank Radar">
+<meta property="og:description" content="Find secrets with Gitleaks 🔑">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/gitleaks__gitleaks">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "gitleaks/gitleaks", "codeRepository": "https://github.com/gitleaks/gitleaks", "url": "https://zhuikan.com/repos/gitleaks__gitleaks", "description": "Find secrets with Gitleaks 🔑", "author": {"@type": "Organization", "name": "gitleaks", "url": "https://github.com/gitleaks"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Go", "dateCreated": "2018-01-27", "keywords": "security,security-tools,git,golang,go,secret,gitleaks,devsecops,hacktoberfest,ci-cd"}</script>
+</head>
+<body data-repo="gitleaks/gitleaks" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">gitleaks/gitleaks</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="gitleaks__gitleaks"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/90395851?v=4&s=300" width="300" height="300" alt="gitleaks avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">gitleaks</div>
+      <a class="rp-side-owner" href="https://github.com/gitleaks">gitleaks</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/gitleaks">gitleaks</a>
+        <span class="rp-sep">/</span><span class="rp-name">gitleaks</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Find secrets with Gitleaks 🔑</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>30,994</b></span><span class="rp-stat" title="forks">⑂ <b>2,371</b></span><span class="rp-stat" title="watchers">👁 <b>181</b></span><span class="rp-stat" title="prs">⑃ <b>1,183</b></span><span class="rp-stat" title="issues">● <b>1,006</b></span><span class="rp-stat" title="releases">▤ <b>190</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/security">security</a><a class="rp-topic" href="../tags/security-tools">security-tools</a><a class="rp-topic" href="../tags/git">git</a><a class="rp-topic" href="../tags/golang">golang</a><a class="rp-topic" href="../tags/go">go</a><a class="rp-topic" href="https://github.com/topics/secret">secret</a><a class="rp-topic" href="https://github.com/topics/gitleaks">gitleaks</a><a class="rp-topic" href="https://github.com/topics/devsecops">devsecops</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Go</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2018-01-27</span><a class="rp-meta-bit rp-home" href="https://gitleaks.io" rel="noopener">gitleaks.io</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/gitleaks/gitleaks">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v8.30.1</span><a class="rp-dl-a" href="https://github.com/gitleaks/gitleaks/releases/tag/v8.30.1">v8.30.1 ↓</a><span class="rp-dl-ver">8.30.1</span><span class="rp-dl-date">2026-03-21</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+26</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">30,994</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,371</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">181</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,183</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,006</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">190</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Gitleaks
+
+
+┌─○───┐
+│ │╲  │
+│ │ ○ │
+│ ○ ░ │
+└─░───┘
+
+
+ [!WARNING]
+ Gitleaks is feature complete. I&#x27;m not merging new features into Gitleaks. Future releases will be security patches only. I&#x27;m shifting my focus to Betterleaks
+
+[license]: ./LICENSE
+[badge-license]: https://img.shields.io/github/license/gitleaks/gitleaks.svg
+[go-docs-badge]: https://pkg.go.dev/badge/github.com/gitleaks/gitleaks/v8?status
+[go-docs]: https://pkg.go.dev/github.com/zricethezav/gitleaks/v8
+[badge-build]: https://github.com/gitleaks/gitleaks/actions/workflows/test.yml/badge.svg
+[build]: https://github.com/gitleaks/gitleaks/actions/workflows/test.yml
+[go-report-card-badge]: https://goreportcard.com/badge/github.com/gitleaks/gitleaks/v8
+[go-report-card]: https://goreportcard.com/report/github.com/gitleaks/gitleaks/v8
+[dockerhub]: https://hub.docker.com/r/zricethezav/gitleaks
+[dockerhub-badge]: https://img.shields.io/docker/pulls/zricethezav/gitleaks.svg
+[gitleaks-action]: https://github.com/gitleaks/gitleaks-action
+[gitleaks-badge]: https://img.shields.io/badge/protected%20by-gitleaks-blue
+
+
+[![GitHub Action Test][badge-build]][build]
+[![Docker Hub][dockerhub-badge]][dockerhub]
+[![Gitleaks Action][gitleaks-badge]][gitleaks-action]
+[![GoDoc][go-docs-badge]][go-docs]
+[![GoReportCard][go-report-card-badge]][go-report-card]
+[![License][badge-license]][license]
+
+Gitleaks is a tool for detecting secrets like passwords, API keys, and tokens in git repos, files, and whatever else you wanna throw at it via stdin. If you wanna learn more about how the detection engine works check out this blog: Regex is (almost) all you need.
+
+
+➜  ~/code(master) gitleaks git -v
+
+    ○
+    │╲
+    │ ○
+    ○ ░
+    ░    gitleaks
+
+
+Finding:     &quot;export BUNDLE_ENTERPRISE__CONTRIBSYS__COM=cafebabe:deadbeef&quot;,
+Secret:      cafebabe:deadbeef
+RuleID:      sidekiq-secret
+Entropy:     2.609850
+File:        cmd/generate/config/rules/sidekiq.go
+Line:        23
+Commit:      cd5226711335c68be1e720b318b7bc3135a30eb2
+Author:      John
+Email:       john@users.noreply.github.com
+Date:        2022-08-03T12:31:40Z
+Fingerprint: cd5226711335c68be1e720b318b7bc3135a30eb2:cmd/generate/config/rules/sidekiq.go:sidekiq-secret:23
+
+
+
+ Getting Started
+
+Gitleaks can be installed using Homebrew, Docker, or Go. Gitleaks is also available in binary form for many popular platforms and OS types on the releases page. In addition, Gitleaks can be implemented as a pre-commit hook directly in your repo or as a GitHub action using Gitleaks-Action.
+
+ Installing
+
+bash
+ MacOS
+brew install gitleaks
+
+ Docker (DockerHub)
+docker pull zricethezav/gitleaks:latest
+docker run -v ${path_to_host_folder_to_scan}:/path zricethezav/gitleaks:latest [COMMAND] [OPTIONS] [SOURCE_PATH]
+
+ Docker (ghcr.io)
+docker pull ghcr.io/gitleaks/gitleaks:latest
+docker run -v ${path_to_host_folder_to_scan}:/path ghcr.io/gitleaks/gitleaks:latest [COMMAND] [OPTIONS] [SOURCE_PATH]
+
+ From Source (make sure go is installed)
+git clone https://github.com/gitleaks/gitleaks.git
+cd gitleak</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/gitleaks/gitleaks/issues/1078"><span class="rp-item-num">#1078</span><span class="rp-item-title">How to create custom rules to scan secerts in .yaml or .properties file </span><span class="rp-item-extra">18 comments · 2023-01-17</span></a><a class="rp-item" href="https://github.com/gitleaks/gitleaks/issues/539"><span class="rp-item-num">#539</span><span class="rp-item-title">Gitleaks misses quite a few Azure rules.</span><span class="rp-item-extra">13 comments · 2021-03-16</span></a><a class="rp-item" href="https://github.com/gitleaks/gitleaks/issues/1637"><span class="rp-item-num">#1637</span><span class="rp-item-title">XML Regex is not working in Gitleaks</span><span class="rp-item-extra">11 comments · 2024-11-13</span></a><a class="rp-item" href="https://github.com/gitleaks/gitleaks/issues/1048"><span class="rp-item-num">#1048</span><span class="rp-item-title">Support multiple report formats in a single execution</span><span class="rp-item-extra">11 comments · 2022-11-30</span></a><a class="rp-item" href="https://github.com/gitleaks/gitleaks/issues/988"><span class="rp-item-num">#988</span><span class="rp-item-title">No json report file generated in docker version v8.13.0</span><span class="rp-item-extra">11 comments · 2022-09-27</span></a><a class="rp-item" href="https://github.com/gitleaks/gitleaks/issues/821"><span class="rp-item-num">#821</span><span class="rp-item-title">Incoming commits are not scanned as part of pre-receive hook</span><span class="rp-item-extra">10 comments · 2022-03-31</span></a><a class="rp-item" href="https://github.com/gitleaks/gitleaks/issues/1864"><span class="rp-item-num">#1864</span><span class="rp-item-title">Sample AKIA credentials cause SAST/Security Scanners to false flag</span><span class="rp-item-extra">9 comments · 2025-05-19</span></a><a class="rp-item" href="https://github.com/gitleaks/gitleaks/issues/1557"><span class="rp-item-num">#1557</span><span class="rp-item-title">Managing custom config file</span><span class="rp-item-extra">9 comments · 2024-10-10</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/gitleaks/gitleaks/discussions/2351"><span class="rp-item-num">#2351</span><span class="rp-item-title">Thank you! Using Gitleaks to secure AI coding agent workflows in agent-code-guard</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/gitleaks/gitleaks/discussions/2184"><span class="rp-item-num">#2184</span><span class="rp-item-title">I built an Agent-specific static analyzer to catch cross-modal credential leakage</span><span class="rp-item-extra">0 comments · 2026-07-01</span></a><a class="rp-item" href="https://github.com/gitleaks/gitleaks/discussions/2167"><span class="rp-item-num">#2167</span><span class="rp-item-title">ccline — AI terminal helper for security/DevSecOps workflows</span><span class="rp-item-extra">0 comments · 2026-06-10</span></a><a class="rp-item" href="https://github.com/gitleaks/gitleaks/discussions/2042"><span class="rp-item-num">#2042</span><span class="rp-item-title">outcome based on directory executed, 428 leaks in gitleaks/* vs 2 leaks in &quot;.&quot;</span><span class="rp-item-extra">2 comments · 2026-02-23</span></a><a class="rp-item" href="https://github.com/gitleaks/gitleaks/discussions/2033"><span class="rp-item-num">#2033</span><span class="rp-item-title">How to list all possible rules when using --enable-rule</span><span class="rp-item-extra">0 comments · 2026-02-03</span></a><a class="rp-item" href="https://github.com/gitleaks/gitleaks/discussions/1987"><span class="rp-item-num">#1987</span><span class="rp-item-title">Why Gitleaks license request form says &quot;This form was created inside TruffleSec&quot;</span><span class="rp-item-extra">1 comments · 2025-11-12</span></a><a class="rp-item" href="https://github.com/gitleaks/gitleaks/discussions/1950"><span class="rp-item-num">#1950</span><span class="rp-item-title">Commit Author name and email</span><span class="rp-item-extra">2 comments · 2025-09-26</span></a><a class="rp-item" href="https://github.com/gitleaks/gitleaks/discussions/1934"><span class="rp-item-num">#1934</span><span class="rp-item-title">Is all processing done locally?</span><span class="rp-item-extra">1 comments · 2025-08-24</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/gitleaks/gitleaks/releases"><b>v8.30.1</b> <span class="rp-rel-tag">v8.30.1</span> <span class="rp-item-extra">2026-03-21</span></a><pre class="rp-pre">Changelog
+ 83d9cd684c87d95d656c1458ef04895a7f1cbd8e update goreleaser
+ 8d1f98c7967eb1e79cb44ac6241a124e145d2165 Removed unnecessary functions from report template (2040)
+ ca20267a84aa1fa2c2a9c1a13cdb50cafb48eeb0 its the simple things (2020)
+ b66ac75e4fa93d86d78fccd6e2f36d2c0698b2a2 build: switch to Go 1.24 (2002)</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/gitleaks__gitleaks.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>x-hw/amazing-qr · GitHub Trending Rank Radar</title>
+<meta name="description" content="💮 amazing QRCode generator (supporting animated gif) - amazing 二维码生成器（支持 gif 动态图片二维码）">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="amazing-qr, x-hw, x-hw/amazing-qr, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/x-hw__amazing-qr">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="x-hw/amazing-qr · GitHub Trending Rank Radar">
+<meta property="og:description" content="💮 amazing QRCode generator (supporting animated gif) - amazing 二维码生成器（支持 gif 动态图片二维码）">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/x-hw__amazing-qr">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "x-hw/amazing-qr", "codeRepository": "https://github.com/x-hw/amazing-qr", "url": "https://zhuikan.com/repos/x-hw__amazing-qr", "description": "💮 amazing QRCode generator (supporting animated gif) - amazing 二维码生成器（支持 gif 动态图片二维码）", "author": {"@type": "Organization", "name": "x-hw", "url": "https://github.com/x-hw"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Python", "dateCreated": "2016-08-25"}</script>
+</head>
+<body data-repo="x-hw/amazing-qr" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">x-hw/amazing-qr</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="x-hw__amazing-qr"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/21075976?u=4327d45caf7f01b00b095d36fe0d3a7df553b23f&amp;v=4&s=300" width="300" height="300" alt="x-hw avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">amazing-qr</div>
+      <a class="rp-side-owner" href="https://github.com/x-hw">x-hw</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/x-hw">x-hw</a>
+        <span class="rp-sep">/</span><span class="rp-name">amazing-qr</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">💮 amazing QRCode generator (supporting animated gif) - amazing 二维码生成器（支持 gif 动态图片二维码）</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>10,849</b></span><span class="rp-stat" title="forks">⑂ <b>1,576</b></span><span class="rp-stat" title="watchers">👁 <b>298</b></span><span class="rp-stat" title="prs">⑃ <b>39</b></span><span class="rp-stat" title="issues">● <b>85</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Created 2016-08-25</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/x-hw/amazing-qr">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+17</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">10,849</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,576</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">298</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">39</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">85</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Amazing-QR
+
+   !PyPI - Python Version  !PyPI - Wheel   !GitHub code size in bytes !macos !linux !windows
+
+ 
+
+back to English
+
+ 概述
+
+Python 二维码生成器
+
+可生成普通二维码、带图片的艺术二维码（黑白与彩色）、动态二维码（黑白与彩色）。
+
+ Contents 目录
+
+ Amazing-QR
+   概述
+   目录
+   示例
+   安装
+     命令行或Python库
+     Agent 集成
+   使用方法
+     命令行
+     Python库
+     Agent
+   使用提示
+   可用字符
+   环境
+   协议
+   打赏杯咖啡☕️
+
+ 示例
+
+!
+
+!
+
+!
+
+!!
+
+!!
+
+
+ 安装
+
+ 命令行或Python库
+
+python
+pip install amzqr
+
+
+ Agent 集成
+
+可以安装 agent skill 或连接 MCP server，以在 agent 中使用 amazing-qr。
+
+ Agent Skill
+
+x-hw/skills 仓库提供 generate-amazing-qr-code skill，教 AI agent 使用 amzqr 命令行工具来生成二维码。使用以下命令进行安装：
+
+sh
+npx skills add x-hw/skills --skill generate-amazing-qr-code
+
+
+ MCP Server
+
+对于支持 MCP 的 agent，可以使用 x-hw/amzqr-mcp。
+
+
+ 使用方法
+
+ 命令行
+
+（提示：如果你尚未安装 amzqr ，以下内容请使用python(3) amzqr.py 而非amzqr 。）
+
+python
+ 概括
+amzqr  Words
+      [-v {1,2,3,...,40}]
+      [-l {L,M,Q,H}]
+      [-n output-filename]
+      [-d output-directory]
+      [-p picture_file]
+      [-c]
+      [-con contrast]
+      [-bri brightness]
+      [-V]
+
+
+- 普通二维码 介绍了 Words, -v, -l, -n, -d 
+- 艺术二维码 介绍了  -p, -c, -con, -bri
+- 动态GIF二维码 介绍了动态的生成方法和注意点
+
+ 普通二维码
+
+!
+
+markdown
+1 Words
+amzqr https://github.com
+
+
+ 在命令后输入链接或者句子作为参数，然后在程序的当前目录中产生相应的二维码图片文件，默认命名为” qrcode.png“。
+
+markdown
+2 -v, -l
+amzqr https://github.com -v 10 -l Q
+
+
+ 默认边长是取决于你输入的信息的长度和使用的纠错等级；
+
+  而默认纠错等级是最高级的H。
+
+ 自定义：如果想要控制边长和纠错水平就使用 -v 和 -l 参数。
+
+   -v 控制边长，范围是1至40，数字越大边长越大；
+
+   -l 控制纠错水平，范围是L、M、Q、H，从左到右依次升高。
+
+markdown
+3 -n, -d
+amzqr https://github.com -n github_qr.jpg  -d .../paths/
+
+
+- 默认输出文件名是“ qrcode.png &quot;，而默认存储位置是当前目录。
+
+- 自定义：可以自己定义输出名称和位置。注意同名文件会覆盖旧的。
+
+  -n 控制文件名，格式可以是 .jpg， .png ，.bmp ，.gif ；
+
+  -d 控制位置。
+
+   艺术二维码
+
+!!
+
+markdown
+1 -p
+amzqr https://github.com -p github.jpg
+
+
+ 参数-p 用来将QR二维码图像与一张同目录下的图片相结合，产生一张黑白图片。
+
+markdown
+2 -c
+amzqr https://github.com -p github.jpg -c
+
+
+ 加上参数 -c 可以使产生的图片由黑白变为彩色的。
+
+markdown
+3 -con, -bri
+amzqr https://github.com -p github.jpg [-c] -con 1.5 -bri 1.6
+
+
+ 参数-con 用以调节图片的对比度，1.0 表示原始图片，更小的值表示更低对比度，更大反之。默认为1.0。
+
+ 参数 -bri 用来调节图片的亮度，其余用法和取值与 -con 相同。
+
+ 动态GIF二维码
+
+!!
+
+动态二维码与上述的带图片的二维码的生成方法没什么区别，你只要采用 .gif 格式的图片即可生成黑白或者彩色的动态二维码。但注意如果使用了 -n 参数自定义输出的文件名，切记其格式也必须是 .gif 格式。
+
+ Python 库
+
+python
+ 安装模块后
+from amzqr import amzqr
+
+version, level, qr_name = amzqr.run(
+    words,
+    version=1,
+    level=&quot;H&quot;,
+    picture=None,
+    colorized=False,
+    contrast=1.0,
+    brightness=1.0,
+    save_name=None,
+    save_dir=os.getcwd(),
+)
+
+
+以下各个参数已经在上文有所介绍
+
+python
+ help(amzqr)
+Positional parameter
+   words: str
+
+Optional parameters
+   version: int, from 1 to 40
+   level: str, just one of (&#x27;L&#x27;,&#x27;M&#x27;,&#x27;Q&#x27;,&#x27;H&#x27;)
+   picutre: str, a filename of a image
+   colorized: bool
+   contrast: float
+   brightness: float
+   save_name: str, the output filename like &#x27;example.png&#x27;
+   save_dir: str, the output directory
+
+
+ Agent
+
+安装完成后，让 agent 生成二维码即可，agent 会自动识别并加载该技能或 MCP server。
+
+ 使用提示
+
+ 请采用正方形或近似正方形的图片
+
+ 建议在图片尺寸大的时候使用 -v 的值也应该适当变大。
+
+ 如果图片有透明无色部分，最终效果是：!
+
+  你可以将透明部分修改成白色，最终效果会变成!
+
+ 可用字符
+
+ 数字 0 到 9
+
+ 大小写的英文字母
+
+ 常用英文标点符号和空格
+
+  console
+  · , . : ; + -  / \ ~ ! @  $ % ^ &amp;  &#x27; =  [ </pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/x-hw__amazing-qr.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

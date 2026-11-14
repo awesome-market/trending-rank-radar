@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>itzg/docker-minecraft-server · GitHub Trending Rank Radar</title>
+<meta name="description" content="Docker image that provides a Minecraft Server for Java Edition that automatically installs/upgrades versions, modloaders, modpacks and more at startup">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="docker-minecraft-server, itzg, itzg/docker-minecraft-server, github stars, github trending, star growth, star history, 开源项目, 星标增长, minecraft-server, dockerfiles, docker-image, hacktoberfest, java">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/itzg__docker-minecraft-server">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="itzg/docker-minecraft-server · GitHub Trending Rank Radar">
+<meta property="og:description" content="Docker image that provides a Minecraft Server for Java Edition that automatically installs/upgrades versions, modloaders, modpacks and more at startup">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/itzg__docker-minecraft-server">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "itzg/docker-minecraft-server", "codeRepository": "https://github.com/itzg/docker-minecraft-server", "url": "https://zhuikan.com/repos/itzg__docker-minecraft-server", "description": "Docker image that provides a Minecraft Server for Java Edition that automatically installs/upgrades versions, modloaders, modpacks and more at startup", "author": {"@type": "Organization", "name": "itzg", "url": "https://github.com/itzg"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Shell", "dateCreated": "2014-05-17", "keywords": "minecraft-server,dockerfiles,docker-image,hacktoberfest,java"}</script>
+</head>
+<body data-repo="itzg/docker-minecraft-server" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">itzg/docker-minecraft-server</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="itzg__docker-minecraft-server"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/988985?u=444fc4688b09d508685c277a9cbcae5c97f4e1c5&amp;v=4&s=300" width="300" height="300" alt="itzg avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">docker-minecraft-server</div>
+      <a class="rp-side-owner" href="https://github.com/itzg">itzg</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/itzg">itzg</a>
+        <span class="rp-sep">/</span><span class="rp-name">docker-minecraft-server</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Docker image that provides a Minecraft Server for Java Edition that automatically installs/upgrades versions, modloaders, modpacks and more at startup</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>14,536</b></span><span class="rp-stat" title="forks">⑂ <b>1,919</b></span><span class="rp-stat" title="watchers">👁 <b>74</b></span><span class="rp-stat" title="prs">⑃ <b>1,818</b></span><span class="rp-stat" title="issues">● <b>1,963</b></span><span class="rp-stat" title="releases">▤ <b>158</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/minecraft-server">minecraft-server</a><a class="rp-topic" href="https://github.com/topics/dockerfiles">dockerfiles</a><a class="rp-topic" href="https://github.com/topics/docker-image">docker-image</a><a class="rp-topic" href="../tags/hacktoberfest">hacktoberfest</a><a class="rp-topic" href="../tags/java">java</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Shell</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2014-05-17</span><a class="rp-meta-bit rp-home" href="https://docker-minecraft-server.readthedocs.io/" rel="noopener">docker-minecraft-server.readthedocs.io/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/itzg/docker-minecraft-server">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">2026.11.0</span><a class="rp-dl-a" href="https://github.com/itzg/docker-minecraft-server/releases/tag/2026.11.0">2026.11.0 ↓</a><span class="rp-dl-ver">2026.11.0</span><span class="rp-dl-date">2026-11-09</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+23</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+134</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">14,536</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,919</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">74</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,818</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,963</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">158</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">There you will find things like
+
+- Quick start with Docker Compose
+- Running different versions of Minecraft and using various server types for Java Edition
+- Setting server properties via container environment variables
+- Managing mods and plugins with automated downloads and cleanup
+- Using various modpack providers/platforms
+- ...and much more
+
+There are also many examples located in the examples directory of this repo.
+
+This image only supports Java edition natively; however, if looking for a server that is compatible with Bedrock edition, then use itzg/minecraft-bedrock-server or refer to this section to add Bedrock compatibility to a Java edition server.
+
+
+
+
+
+
+
+SpawnBox - Powered by itzg/minecraft-server, it&#x27;s a Windows desktop app for parents, teens, and friend groups who want a Minecraft server on their own PC without learning Docker, WSL2, or networking.
+
+
+
+
+
+Server.pro - A game server hosting platform offering one-click Minecraft server deployment powered by itzg/minecraft-server, with global locations and an easy-to-use control panel.
+
+
+
+
+
+Seedloaf - Built from scratch (by two nerds) on top of itzg/minecraft-server. Seedloaf offers free, and premium Minecraft servers where you have full control!
+
+
+
+
+
+
+
+
+and more...</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/itzg/docker-minecraft-server/issues/1818"><span class="rp-item-num">#1818</span><span class="rp-item-title">Infer type/version/loader from packwiz</span><span class="rp-item-extra">41 comments · 2022-11-11</span></a><a class="rp-item" href="https://github.com/itzg/docker-minecraft-server/issues/1102"><span class="rp-item-num">#1102</span><span class="rp-item-title">Corrupted world on Windows 11</span><span class="rp-item-extra">37 comments · 2021-10-31</span></a><a class="rp-item" href="https://github.com/itzg/docker-minecraft-server/issues/597"><span class="rp-item-num">#597</span><span class="rp-item-title">Provide a better way to update FTB modpacks</span><span class="rp-item-extra">23 comments · 2020-07-24</span></a><a class="rp-item" href="https://github.com/itzg/docker-minecraft-server/issues/1439"><span class="rp-item-num">#1439</span><span class="rp-item-title">Config file to expose all environment variables declaratively</span><span class="rp-item-extra">21 comments · 2022-03-22</span></a><a class="rp-item" href="https://github.com/itzg/docker-minecraft-server/issues/2126"><span class="rp-item-num">#2126</span><span class="rp-item-title">Modrinth Datapack Support</span><span class="rp-item-extra">20 comments · 2023-05-14</span></a><a class="rp-item" href="https://github.com/itzg/docker-minecraft-server/issues/1231"><span class="rp-item-num">#1231</span><span class="rp-item-title">World files only in tmpfs/shared memory</span><span class="rp-item-extra">18 comments · 2021-12-27</span></a><a class="rp-item" href="https://github.com/itzg/docker-minecraft-server/issues/3159"><span class="rp-item-num">#3159</span><span class="rp-item-title">Curseforge API Issues should not be fatal if pack is already installed</span><span class="rp-item-extra">16 comments · 2024-11-24</span></a><a class="rp-item" href="https://github.com/itzg/docker-minecraft-server/issues/1378"><span class="rp-item-num">#1378</span><span class="rp-item-title">Automatically downloading Dynmap with SPIGET_RESOURCES fails</span><span class="rp-item-extra">16 comments · 2022-02-22</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/itzg/docker-minecraft-server/discussions/4394"><span class="rp-item-num">#4394</span><span class="rp-item-title">FoliaScan: Drag-and-drop browser .jar scanner &amp; CLI to check plugins before switching TYPE=FOLIA</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/itzg/docker-minecraft-server/discussions/4345"><span class="rp-item-num">#4345</span><span class="rp-item-title">Why is All the Mons trying (and failing) to install the essential mod?</span><span class="rp-item-extra">4 comments · 2026-10-18</span></a><a class="rp-item" href="https://github.com/itzg/docker-minecraft-server/discussions/4331"><span class="rp-item-num">#4331</span><span class="rp-item-title">Can&#x27;t set game mode</span><span class="rp-item-extra">1 comments · 2026-10-13</span></a><a class="rp-item" href="https://github.com/itzg/docker-minecraft-server/discussions/4317"><span class="rp-item-num">#4317</span><span class="rp-item-title">Docker unable to download mods</span><span class="rp-item-extra">1 comments · 2026-10-07</span></a><a class="rp-item" href="https://github.com/itzg/docker-minecraft-server/discussions/4308"><span class="rp-item-num">#4308</span><span class="rp-item-title">Moved container to new server - says I have more dependencies (some that don&#x27;t make sense, like forge mods - it&#x27;s a fabric server)?</span><span class="rp-item-extra">2 comments · 2026-10-02</span></a><a class="rp-item" href="https://github.com/itzg/docker-minecraft-server/discussions/4276"><span class="rp-item-num">#4276</span><span class="rp-item-title">[ERROR] Failed to auto-install CurseForge modpack</span><span class="rp-item-extra">1 comments · 2026-09-15</span></a><a class="rp-item" href="https://github.com/itzg/docker-minecraft-server/discussions/4199"><span class="rp-item-num">#4199</span><span class="rp-item-title">Do Skins not work if ONLINE_MODE is False?</span><span class="rp-item-extra">4 comments · 2026-07-30</span></a><a class="rp-item" href="https://github.com/itzg/docker-minecraft-server/discussions/4188"><span class="rp-item-num">#4188</span><span class="rp-item-title">Multiple player in minecraft bedrock</span><span class="rp-item-extra">0 comments · 2026-07-22</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/itzg/docker-minecraft-server/releases"><b>2026.11.0</b> <span class="rp-rel-tag">2026.11.0</span> <span class="rp-item-extra">2026-11-09</span></a><pre class="rp-pre">What&#x27;s Changed
+ Enhancements
+ Force-include wakes-reforged for Better MC [FORGE] BMC4 by @denizkoekden in https://github.com/itzg/docker-minecraft-server/pull/4373
+ Add USE_MEOWICE_ZGC_FLAGS to use the ZGC version of MeowIce&#x27;s flags by @spa77k in https://github.com/itzg/docker-minecraft-server/pull/4382
+ pumpkin: Alpine/musl is no longer supported upstream by @itzg in https://github.com/itzg/docker-minecraft-server/pull/4384
+ Force-include SDM UI Lib and GeckolibBetterFPS for CurseForge packs by @Wroud in https://github.com/itzg/docker-minecraft-server/pull/4385
+ Documentation
+ example: po3 fr</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/itzg__docker-minecraft-server.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

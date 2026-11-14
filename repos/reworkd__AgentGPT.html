@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>reworkd/AgentGPT · GitHub Trending Rank Radar</title>
+<meta name="description" content="🤖 Assemble, configure, and deploy autonomous AI Agents in your browser.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="AgentGPT, reworkd, reworkd/AgentGPT, github stars, github trending, star growth, star history, 开源项目, 星标增长, agent, autogpt, agi, openai, gpt, baby-agi">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/reworkd__AgentGPT">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="reworkd/AgentGPT · GitHub Trending Rank Radar">
+<meta property="og:description" content="🤖 Assemble, configure, and deploy autonomous AI Agents in your browser.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/reworkd__AgentGPT">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "reworkd/AgentGPT", "codeRepository": "https://github.com/reworkd/AgentGPT", "url": "https://zhuikan.com/repos/reworkd__AgentGPT", "description": "🤖 Assemble, configure, and deploy autonomous AI Agents in your browser.", "author": {"@type": "Organization", "name": "reworkd", "url": "https://github.com/reworkd"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-3.0.html", "programmingLanguage": "TypeScript", "dateCreated": "2023-04-07", "keywords": "agent,autogpt,agi,openai,gpt,baby-agi,next,t3,t3-stack,langchain"}</script>
+</head>
+<body data-repo="reworkd/AgentGPT" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">reworkd/AgentGPT</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="reworkd__AgentGPT"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/120154269?v=4&s=300" width="300" height="300" alt="reworkd avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">AgentGPT</div>
+      <a class="rp-side-owner" href="https://github.com/reworkd">reworkd</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/reworkd">reworkd</a>
+        <span class="rp-sep">/</span><span class="rp-name">AgentGPT</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">🤖 Assemble, configure, and deploy autonomous AI Agents in your browser.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>36,263</b></span><span class="rp-stat" title="forks">⑂ <b>9,171</b></span><span class="rp-stat" title="watchers">👁 <b>3</b></span><span class="rp-stat" title="prs">⑃ <b>1,082</b></span><span class="rp-stat" title="issues">● <b>469</b></span><span class="rp-stat" title="releases">▤ <b>12</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/agent">agent</a><a class="rp-topic" href="https://github.com/topics/autogpt">autogpt</a><a class="rp-topic" href="https://github.com/topics/agi">agi</a><a class="rp-topic" href="../tags/openai">openai</a><a class="rp-topic" href="../tags/gpt">gpt</a><a class="rp-topic" href="https://github.com/topics/baby-agi">baby-agi</a><a class="rp-topic" href="https://github.com/topics/next">next</a><a class="rp-topic" href="https://github.com/topics/t3">t3</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">GPL-3.0</span><span class="rp-meta-bit">Created 2023-04-07</span><a class="rp-meta-bit rp-home" href="https://agentgpt.reworkd.ai" rel="noopener">agentgpt.reworkd.ai</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/reworkd/AgentGPT">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v.1.0.0</span><a class="rp-dl-a" href="https://github.com/reworkd/AgentGPT/releases/tag/v.1.0.0">v.1.0.0 ↓</a><span class="rp-dl-ver">1.0.0</span><span class="rp-dl-date">2023-11-02</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">36,263</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">9,171</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">3</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,082</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">469</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">12</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">🤖 Assemble, configure, and deploy autonomous AI Agent(s) in your browser. 🤖   
+
+
+    
+      
+  
+  
+
+
+
+🔗 Short link
+&amp;nbsp;&amp;nbsp;•&amp;nbsp;&amp;nbsp;
+📚 Docs
+&amp;nbsp;&amp;nbsp;•&amp;nbsp;&amp;nbsp;
+🐦 Twitter
+&amp;nbsp;&amp;nbsp;•&amp;nbsp;&amp;nbsp;
+📢 Discord
+
+
+AgentGPT allows you to configure and deploy Autonomous AI agents.
+Name your own custom AI and have it embark on any goal imaginable.
+It will attempt to reach the goal by thinking of tasks to do, executing them, and learning from the results 🚀.
+
+---
+
+ ✨ Demo
+For the best demo experience, try our site directly :)
+
+Demo Video
+
+
+ 👨‍🚀 Getting Started
+
+The easiest way to get started with AgentGPT is automatic setup CLI bundled with the project.
+The cli sets up the following for AgentGPT:
+- 🔐 Environment variables (and API Keys)
+- 🗂️ Database (Mysql)
+- 🤖 Backend (FastAPI)
+- 🎨 Frontend (Nextjs)
+
+ Prerequisites :point_up:
+
+Before you get started, please make sure you have the following installed:
+
+- An editor of your choice. For example, Visual Studio Code (VS Code)
+- Node.js
+- Git
+- Docker. After installation, please create an account, open up the Docker application, and sign in.
+- An OpenAI API key
+- A Serper API Key (optional)
+- A Replicate API Token (optional)
+
+ Getting Started :rocket:
+1. Open your editor
+
+2. Open the Terminal - Typically, you can do this from a &#x27;Terminal&#x27; tab or by using a shortcut
+   (e.g., Ctrl + ~ for Windows or Control + ~ for Mac in VS Code).
+
+3. Clone the Repository and Navigate into the Directory - Once your terminal is open, you can clone the repository and move into the directory by running the commands below.
+
+   For Mac/Linux users :apple: :penguin:
+   bash
+   git clone https://github.com/reworkd/AgentGPT.git
+   cd AgentGPT
+   ./setup.sh
+   
+   For Windows users :windows:
+   bash
+   git clone https://github.com/reworkd/AgentGPT.git
+   cd AgentGPT
+   ./setup.bat
+   
+4. Follow the setup instructions from the script - add the appropriate API keys, and once all of the services are running, travel to http://localhost:3000 on your web-browser.
+
+Happy hacking! :tada:
+
+
+ 🚀 Tech Stack
+
+- ✅ Bootstrapping: create-t3-app + FastAPI-template.
+- ✅ Framework: Nextjs 13 + Typescript + FastAPI
+- ✅ Auth: Next-Auth.js
+- ✅ ORM: Prisma &amp; SQLModel.
+- ✅ Database: Planetscale.
+- ✅ Styling: TailwindCSS + HeadlessUI.
+- ✅ Schema Validation: Zod + Pydantic.
+- ✅ LLM Tooling: Langchain.
+
+
+
+💝 Our GitHub sponsors 💝
+
+
+
+Join us in fueling the development of AgentGPT, an open-source project pushing the boundaries of AI agents! Your sponsorship would drive progress by helping us scale up resources, enhance features and functionality, and continue to iterate on this exciting project! 🚀
+
+
+
+
+
+
+
+💪 Contributors 💪
+
+
+
+Our contributors have made this project possible. Thank you! 🙏
+
+
+
+  
+
+
+
+Made with contrib.rocks.</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/reworkd/AgentGPT/issues/1303"><span class="rp-item-num">#1303</span><span class="rp-item-title">Error attempting to connect to the server</span><span class="rp-item-extra">29 comments · 2023-09-29</span></a><a class="rp-item" href="https://github.com/reworkd/AgentGPT/issues/869"><span class="rp-item-num">#869</span><span class="rp-item-title">✨ Create a guide on how to update the documentation website</span><span class="rp-item-extra">24 comments · 2023-06-27</span></a><a class="rp-item" href="https://github.com/reworkd/AgentGPT/issues/716"><span class="rp-item-num">#716</span><span class="rp-item-title">Error: Cannot find module &#x27;@tailwindcss/forms&#x27;</span><span class="rp-item-extra">24 comments · 2023-06-06</span></a><a class="rp-item" href="https://github.com/reworkd/AgentGPT/issues/884"><span class="rp-item-num">#884</span><span class="rp-item-title">Authentication Error. Please make sure you are logged in.</span><span class="rp-item-extra">18 comments · 2023-06-28</span></a><a class="rp-item" href="https://github.com/reworkd/AgentGPT/issues/629"><span class="rp-item-num">#629</span><span class="rp-item-title">Error loading tools.</span><span class="rp-item-extra">18 comments · 2023-05-30</span></a><a class="rp-item" href="https://github.com/reworkd/AgentGPT/issues/411"><span class="rp-item-num">#411</span><span class="rp-item-title">🚨 ERROR accessing OpenAI APIs. Please check your API key or try again later.</span><span class="rp-item-extra">18 comments · 2023-04-30</span></a><a class="rp-item" href="https://github.com/reworkd/AgentGPT/issues/312"><span class="rp-item-num">#312</span><span class="rp-item-title">This agent has maxed out on loops.</span><span class="rp-item-extra">18 comments · 2023-04-22</span></a><a class="rp-item" href="https://github.com/reworkd/AgentGPT/issues/1393"><span class="rp-item-num">#1393</span><span class="rp-item-title">No module named &#x27;langchain.globals&#x27;</span><span class="rp-item-extra">16 comments · 2023-11-21</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/reworkd/AgentGPT/discussions/1679"><span class="rp-item-num">#1679</span><span class="rp-item-title">Hoping for updates</span><span class="rp-item-extra">1 comments · 2025-08-05</span></a><a class="rp-item" href="https://github.com/reworkd/AgentGPT/discussions/1670"><span class="rp-item-num">#1670</span><span class="rp-item-title">Anyone else struggling with data in agent workflows?</span><span class="rp-item-extra">0 comments · 2025-05-09</span></a><a class="rp-item" href="https://github.com/reworkd/AgentGPT/discussions/1669"><span class="rp-item-num">#1669</span><span class="rp-item-title">AgentGPT require update!</span><span class="rp-item-extra">0 comments · 2025-05-01</span></a><a class="rp-item" href="https://github.com/reworkd/AgentGPT/discussions/1665"><span class="rp-item-num">#1665</span><span class="rp-item-title">I subscribed to AgentGPT 16 hours ago. It still thinks I am on the free plan and does allow me to use the system</span><span class="rp-item-extra">0 comments · 2025-03-28</span></a><a class="rp-item" href="https://github.com/reworkd/AgentGPT/discussions/1660"><span class="rp-item-num">#1660</span><span class="rp-item-title">Make it possible to train agents</span><span class="rp-item-extra">0 comments · 2025-03-07</span></a><a class="rp-item" href="https://github.com/reworkd/AgentGPT/discussions/1658"><span class="rp-item-num">#1658</span><span class="rp-item-title">Is it possible to interact with an agent via API?</span><span class="rp-item-extra">0 comments · 2025-02-21</span></a><a class="rp-item" href="https://github.com/reworkd/AgentGPT/discussions/1642"><span class="rp-item-num">#1642</span><span class="rp-item-title">Biodiversité</span><span class="rp-item-extra">0 comments · 2024-10-04</span></a><a class="rp-item" href="https://github.com/reworkd/AgentGPT/discussions/1620"><span class="rp-item-num">#1620</span><span class="rp-item-title">MariaDB Support?</span><span class="rp-item-extra">0 comments · 2024-09-04</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/reworkd/AgentGPT/releases"><b>v.1.0.0</b> <span class="rp-rel-tag">v.1.0.0</span> <span class="rp-item-extra">2023-11-02</span></a><pre class="rp-pre">🎉🤖&amp;nbsp;&amp;nbsp;&amp;nbsp;Stable 1.0.0&amp;nbsp;&amp;nbsp;&amp;nbsp;🤖🎉
+
+
+It&#x27;s been a while but we&#x27;re excited to announce the AgentGPT 1.0 ✨ update!  The first stable release of AgentGPT includes new tools, bug fixes, and a completely overhauled ui! Check our the full release notes below 👇 
+
+Much the @Reworkd team been focusing on a platform outside of AgentGPT. This new platform aims to use AI to take actions on websites and retrieve information. If this is interesting to you, please fill out this form explaining your use case!  We are looking forward to sharing it with the opensource community!
+
+https:/</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/reworkd__AgentGPT.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

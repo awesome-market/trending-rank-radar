@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kelektiv/node-cron · GitHub Trending Rank Radar</title>
+<meta name="description" content="Cron for NodeJS.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="node-cron, kelektiv, kelektiv/node-cron, github stars, github trending, star growth, star history, 开源项目, 星标增长, hacktoberfest">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/kelektiv__node-cron">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="kelektiv/node-cron · GitHub Trending Rank Radar">
+<meta property="og:description" content="Cron for NodeJS.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/kelektiv__node-cron">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "kelektiv/node-cron", "codeRepository": "https://github.com/kelektiv/node-cron", "url": "https://zhuikan.com/repos/kelektiv__node-cron", "description": "Cron for NodeJS.", "author": {"@type": "Organization", "name": "kelektiv", "url": "https://github.com/kelektiv"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2010-06-23", "keywords": "hacktoberfest"}</script>
+</head>
+<body data-repo="kelektiv/node-cron" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">kelektiv/node-cron</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="kelektiv__node-cron"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/22543357?v=4&s=300" width="300" height="300" alt="kelektiv avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">node-cron</div>
+      <a class="rp-side-owner" href="https://github.com/kelektiv">kelektiv</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/kelektiv">kelektiv</a>
+        <span class="rp-sep">/</span><span class="rp-name">node-cron</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Cron for NodeJS.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>8,955</b></span><span class="rp-stat" title="forks">⑂ <b>651</b></span><span class="rp-stat" title="watchers">👁 <b>99</b></span><span class="rp-stat" title="prs">⑃ <b>474</b></span><span class="rp-stat" title="issues">● <b>609</b></span><span class="rp-stat" title="releases">▤ <b>55</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/hacktoberfest">hacktoberfest</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2010-06-23</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/kelektiv/node-cron">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v4.4.0</span><a class="rp-dl-a" href="https://github.com/kelektiv/node-cron/releases/tag/v4.4.0">v4.4.0 ↓</a><span class="rp-dl-ver">4.4.0</span><span class="rp-dl-date">2025-12-09</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">8,955</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">651</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">99</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">474</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">609</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">55</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">cron is a robust tool for running jobs (functions or commands) on schedules defined using the cron syntax.
+  
+  Perfect for tasks like data backups, notifications, and many more!
+
+
+ Cron for Node.js
+
+
+
+
+
+
+
+
+
+
+ 🌟 Features
+
+- execute a function whenever your scheduled job triggers
+- execute a job external to the javascript process (like a system command) using child_process
+- use a Date or Luxon DateTime object instead of cron syntax as the trigger for your callback
+- use an additional slot for seconds (leaving it off will default to 0 and match the Unix behavior)
+
+ 🚀 Installation
+
+bash
+npm install cron
+
+
+ Table of Contents
+
+1. Features
+2. Installation
+3. Migrating
+4. Basic Usage
+5. Cron Patterns
+   - Cron Syntax Overview
+   - Supported Ranges
+6. API
+   - Standalone Functions
+   - CronJob Class
+   - CronTime Class
+7. Gotchas
+8. Community
+   - Join the Community
+9. Contributing
+   - General Contribution
+   - Submitting Bugs/Issues
+10. Acknowledgements
+11. License
+
+ ⬆ Migrating
+
+v4 dropped Node v16 and renamed the job.running property:
+
+
+  Migrating from v3 to v4
+
+ Dropped Node version
+
+Node v16 is no longer supported. Upgrade your Node installation to Node v18 or above
+
+ Property renamed and now read-only
+
+You can no longer set the running property (now isActive). It is read-only. To start or stop a cron job, use job.start() and job.stop().
+
+
+
+v3 introduced TypeScript and tighter Unix cron pattern alignment:
+
+
+  Migrating from v2 to v3
+
+ Month &amp; day-of-week indexing changes
+
+- Month Indexing: Changed from 0-11 to 1-12. So you need to increment all numeric months by 1.
+
+- Day-of-Week Indexing: Support added for 7 as Sunday.
+
+ Adjustments in CronJob
+
+- The constructor no longer accepts an object as its first and only params. Use CronJob.from(argsObject) instead.
+- Callbacks are now called in the order they were registered.
+- nextDates(count?: number) now always returns an array (empty if no argument is provided). Use nextDate() instead for a single date.
+
+ Removed methods
+
+- removed job() method in favor of new CronJob(...args) / CronJob.from(argsObject)
+
+- removed time() method in favor of new CronTime()
+
+
+
+ 🛠 Basic Usage
+
+javascript
+import { CronJob } from &#x27;cron&#x27;;
+
+const job = new CronJob(
+	&#x27;     &#x27;, // cronTime
+	function () {
+		console.log(&#x27;You will see this message every second&#x27;);
+	}, // onTick
+	null, // onComplete
+	true, // start
+	&#x27;America/Los_Angeles&#x27; // timeZone
+);
+// job.start() is optional here because of the fourth parameter set to true.
+
+
+javascript
+// equivalent job using the &quot;from&quot; static method, providing parameters as an object
+const job = CronJob.from({
+	cronTime: &#x27;     &#x27;,
+	onTick: function () {
+		console.log(&#x27;You will see this message every second&#x27;);
+	},
+	start: true,
+	timeZone: &#x27;America/Los_Angeles&#x27;
+});
+
+
+ Note: In the first example above, the fourth parameter to CronJob() starts the job automatically. If not provided or set to falsy, you must explicitly start the job using job.start().
+
+For more advanced examples, check the examples </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/kelektiv/node-cron/issues/813"><span class="rp-item-num">#813</span><span class="rp-item-title">&quot;Error: WARNING: Date in past. Will never be fired.&quot; crash inside callback wrapper</span><span class="rp-item-extra">16 comments · 2023-12-09</span></a><a class="rp-item" href="https://github.com/kelektiv/node-cron/issues/435"><span class="rp-item-num">#435</span><span class="rp-item-title">support extended cron syntax</span><span class="rp-item-extra">16 comments · 2019-08-16</span></a><a class="rp-item" href="https://github.com/kelektiv/node-cron/issues/967"><span class="rp-item-num">#967</span><span class="rp-item-title">Remove `child_process` dependency for improved browser compatibility</span><span class="rp-item-extra">1 comments · 2025-02-27</span></a><a class="rp-item" href="https://github.com/kelektiv/node-cron/issues/674"><span class="rp-item-num">#674</span><span class="rp-item-title">State of the library &amp; moving forward</span><span class="rp-item-extra">6 comments · 2023-06-26</span></a><a class="rp-item" href="https://github.com/kelektiv/node-cron/issues/671"><span class="rp-item-num">#671</span><span class="rp-item-title">Delayed Jobs with suspend</span><span class="rp-item-extra">4 comments · 2023-06-01</span></a><a class="rp-item" href="https://github.com/kelektiv/node-cron/issues/1087"><span class="rp-item-num">#1087</span><span class="rp-item-title">getNextDateFrom(date, timeZone) returns a date before `date` inside the repeated hour of a fall-back transition (regression in 4.1.1)</span><span class="rp-item-extra">3 comments · 2026-09-08</span></a><a class="rp-item" href="https://github.com/kelektiv/node-cron/issues/1049"><span class="rp-item-num">#1049</span><span class="rp-item-title">`getNextMatch()` returns past dates near DST boundaries</span><span class="rp-item-extra">3 comments · 2026-03-08</span></a><a class="rp-item" href="https://github.com/kelektiv/node-cron/issues/854"><span class="rp-item-num">#854</span><span class="rp-item-title">Add randomness to execution time</span><span class="rp-item-extra">3 comments · 2024-02-15</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/kelektiv/node-cron/discussions/969"><span class="rp-item-num">#969</span><span class="rp-item-title">Question about waitForCompletion</span><span class="rp-item-extra">1 comments · 2025-03-01</span></a><a class="rp-item" href="https://github.com/kelektiv/node-cron/discussions/965"><span class="rp-item-num">#965</span><span class="rp-item-title">Use a polling mechanism instead of a look-forward loop</span><span class="rp-item-extra">3 comments · 2025-02-23</span></a><a class="rp-item" href="https://github.com/kelektiv/node-cron/discussions/961"><span class="rp-item-num">#961</span><span class="rp-item-title">Replace `CronTime` with `cron-parser`?</span><span class="rp-item-extra">1 comments · 2025-02-21</span></a><a class="rp-item" href="https://github.com/kelektiv/node-cron/discussions/960"><span class="rp-item-num">#960</span><span class="rp-item-title">Improving Browser Compatibility</span><span class="rp-item-extra">2 comments · 2025-02-21</span></a><a class="rp-item" href="https://github.com/kelektiv/node-cron/discussions/888"><span class="rp-item-num">#888</span><span class="rp-item-title">how could I set up the cron job to run after the previous job completed?</span><span class="rp-item-extra">2 comments · 2024-07-06</span></a><a class="rp-item" href="https://github.com/kelektiv/node-cron/discussions/867"><span class="rp-item-num">#867</span><span class="rp-item-title">How can i stop a job when turn off browser</span><span class="rp-item-extra">0 comments · 2024-03-14</span></a><a class="rp-item" href="https://github.com/kelektiv/node-cron/discussions/864"><span class="rp-item-num">#864</span><span class="rp-item-title">I can&#x27;t stop the job</span><span class="rp-item-extra">1 comments · 2024-03-06</span></a><a class="rp-item" href="https://github.com/kelektiv/node-cron/discussions/782"><span class="rp-item-num">#782</span><span class="rp-item-title">How to set ID to shedule job</span><span class="rp-item-extra">1 comments · 2023-11-13</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/kelektiv/node-cron/releases"><b>v4.4.0</b> <span class="rp-rel-tag">v4.4.0</span> <span class="rp-item-extra">2025-12-09</span></a><pre class="rp-pre">4.4.0 (2025-12-09)
+
+ ✨ Features
+
+ update node versions to include 24 and 25 (1031) (b228e7c), closes 1000
+
+ ♻️ Chores
+
+ deps: lock file maintenance (570f9bc)
+ deps: lock file maintenance (1026) (ac05b84)</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/kelektiv__node-cron.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

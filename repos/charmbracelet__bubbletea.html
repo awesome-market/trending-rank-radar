@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>charmbracelet/bubbletea · GitHub Trending Rank Radar</title>
+<meta name="description" content="A powerful little TUI framework 🏗">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="bubbletea, charmbracelet, charmbracelet/bubbletea, github stars, github trending, star growth, star history, 开源项目, 星标增长, cli, framework, elm-architecture, tui, functional, golang">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/charmbracelet__bubbletea">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="charmbracelet/bubbletea · GitHub Trending Rank Radar">
+<meta property="og:description" content="A powerful little TUI framework 🏗">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/charmbracelet__bubbletea">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "charmbracelet/bubbletea", "codeRepository": "https://github.com/charmbracelet/bubbletea", "url": "https://zhuikan.com/repos/charmbracelet__bubbletea", "description": "A powerful little TUI framework 🏗", "author": {"@type": "Organization", "name": "charmbracelet", "url": "https://github.com/charmbracelet"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Go", "dateCreated": "2020-01-10", "keywords": "cli,framework,elm-architecture,tui,functional,golang,go,hacktoberfest"}</script>
+</head>
+<body data-repo="charmbracelet/bubbletea" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">charmbracelet/bubbletea</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="charmbracelet__bubbletea"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/57376114?v=4&s=300" width="300" height="300" alt="charmbracelet avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">bubbletea</div>
+      <a class="rp-side-owner" href="https://github.com/charmbracelet">charmbracelet</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/charmbracelet">charmbracelet</a>
+        <span class="rp-sep">/</span><span class="rp-name">bubbletea</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A powerful little TUI framework 🏗</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>45,716</b></span><span class="rp-stat" title="forks">⑂ <b>1,830</b></span><span class="rp-stat" title="watchers">👁 <b>143</b></span><span class="rp-stat" title="prs">⑃ <b>1,121</b></span><span class="rp-stat" title="issues">● <b>474</b></span><span class="rp-stat" title="releases">▤ <b>83</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/cli">cli</a><a class="rp-topic" href="../tags/framework">framework</a><a class="rp-topic" href="https://github.com/topics/elm-architecture">elm-architecture</a><a class="rp-topic" href="../tags/tui">tui</a><a class="rp-topic" href="https://github.com/topics/functional">functional</a><a class="rp-topic" href="../tags/golang">golang</a><a class="rp-topic" href="../tags/go">go</a><a class="rp-topic" href="../tags/hacktoberfest">hacktoberfest</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Go</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2020-01-10</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="charmbracelet__bubbles"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/57376114?v=4" alt="" loading="lazy">bubbles</a><a class="rp-same-link" href="charmbracelet__wish"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/57376114?v=4" alt="" loading="lazy">wish</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/charmbracelet/bubbletea">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v2.1.1</span><a class="rp-dl-a" href="https://github.com/charmbracelet/bubbletea/releases/tag/v2.1.1">v2.1.1 ↓</a><span class="rp-dl-ver">2.1.1</span><span class="rp-dl-date">2026-10-28</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-8</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">45,716</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,830</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">143</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,121</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">474</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">83</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Bubble Tea
+
+
+    
+    
+    
+    
+
+
+The fun, functional and stateful way to build terminal apps. A Go framework
+based on [The Elm Architecture][elm]. Bubble Tea is well-suited for simple and
+complex terminal applications, either inline, full-window, or a mix of both.
+
+
+    
+
+
+Bubble Tea is in use in production and includes a number of features and
+performance optimizations we’ve added along the way. Among those is
+a high-performance cell-based renderer, built-in color downsampling,
+declarative views, high-fidelity keyboard and mouse handling, native clipboard
+support, and more.
+
+To get started, see the tutorial below, the [examples][examples], the
+[docs][docs], and some common resources.
+
+ [!TIP]
+
+ Upgrading from v1? Check out the upgrade guide, or
+ point your LLM at it and let it go to town.
+
+ By the way
+
+Be sure to check out [Bubbles][bubbles], a library of common UI components for Bubble Tea.
+
+
+    &amp;nbsp;&amp;nbsp;
+    
+
+
+---
+
+ Tutorial
+
+Bubble Tea is based on the functional design paradigms of [The Elm
+Architecture][elm], which happens to work nicely with Go. It&#x27;s a delightful way
+to build applications.
+
+This tutorial assumes you have a working knowledge of Go.
+
+By the way, the non-annotated source code for this program is available
+[on GitHub][tut-source].
+
+[elm]: https://guide.elm-lang.org/architecture/
+[tut-source]: https://github.com/charmbracelet/bubbletea/tree/main/tutorials/basics
+
+ Enough! Let&#x27;s get to it.
+
+For this tutorial, we&#x27;re making a shopping list.
+
+To start we&#x27;ll define our package and import some libraries. Our only external
+import will be the Bubble Tea library, which we&#x27;ll call tea for short.
+
+go
+package main
+
+// These imports will be used later in the tutorial. If you save the file
+// now, Go might complain they are unused, but that&#x27;s fine.
+// You may also need to run go mod tidy to download bubbletea and its
+// dependencies.
+import (
+    &quot;fmt&quot;
+    &quot;os&quot;
+
+    tea &quot;charm.land/bubbletea/v2&quot;
+)
+
+
+Bubble Tea programs are comprised of a model that describes the application
+state and three simple methods on that model:
+
+- Init, a function that returns an initial command for the application to run.
+- Update, a function that handles incoming events and updates the model accordingly.
+- View, a function that renders the UI based on the data in the model.
+
+ The Model
+
+So let&#x27;s start by defining our model which will store our application&#x27;s state.
+It can be any type, but a struct usually makes the most sense.
+
+go
+type model struct {
+    choices  []string           // items on the to-do list
+    cursor   int                // which to-do list item our cursor is pointing at
+    selected map[int]struct{}   // which to-do items are selected
+}
+
+
+ Initialization
+
+Next, we’ll define our application’s initial state. Init can return a Cmd
+that could perform some initial I/O. For now, we don’t need to do any I/O, so
+for the command, we’ll just return nil, which translates to “no command.”
+
+go
+func initialModel() model {
+	return model{
+		// Our to-do li</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/charmbracelet/bubbletea/issues/1590"><span class="rp-item-num">#1590</span><span class="rp-item-title">If tea program quits too early, garbage chars are printed</span><span class="rp-item-extra">17 comments · 2026-02-18</span></a><a class="rp-item" href="https://github.com/charmbracelet/bubbletea/issues/163"><span class="rp-item-num">#163</span><span class="rp-item-title">Displaying images</span><span class="rp-item-extra">17 comments · 2021-11-29</span></a><a class="rp-item" href="https://github.com/charmbracelet/bubbletea/issues/1698"><span class="rp-item-num">#1698</span><span class="rp-item-title">Tinygo support</span><span class="rp-item-extra">14 comments · 2026-05-11</span></a><a class="rp-item" href="https://github.com/charmbracelet/bubbletea/issues/573"><span class="rp-item-num">#573</span><span class="rp-item-title">Altscreen: rendering artifacts when resizing window</span><span class="rp-item-extra">13 comments · 2022-10-24</span></a><a class="rp-item" href="https://github.com/charmbracelet/bubbletea/issues/1225"><span class="rp-item-num">#1225</span><span class="rp-item-title">lipgloss styles rendered incorrectly when `.Width()` applied</span><span class="rp-item-extra">12 comments · 2024-11-06</span></a><a class="rp-item" href="https://github.com/charmbracelet/bubbletea/issues/1017"><span class="rp-item-num">#1017</span><span class="rp-item-title">The visible area in viewport may seem incorrect when content exceed the viewport.Width</span><span class="rp-item-extra">10 comments · 2024-05-13</span></a><a class="rp-item" href="https://github.com/charmbracelet/bubbletea/issues/309"><span class="rp-item-num">#309</span><span class="rp-item-title">Compositing</span><span class="rp-item-extra">10 comments · 2022-05-08</span></a><a class="rp-item" href="https://github.com/charmbracelet/bubbletea/issues/616"><span class="rp-item-num">#616</span><span class="rp-item-title">bug: loss of input on ReleaseTerminal / Bubbletea shutdown</span><span class="rp-item-extra">9 comments · 2022-11-30</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/charmbracelet/bubbletea/discussions/1862"><span class="rp-item-num">#1862</span><span class="rp-item-title">Cursor style ownership across terminal handoffs</span><span class="rp-item-extra">0 comments · 2026-10-12</span></a><a class="rp-item" href="https://github.com/charmbracelet/bubbletea/discussions/1825"><span class="rp-item-num">#1825</span><span class="rp-item-title">TrafTest: A lightweight local traffic simulator &amp; load sandbox with Bubble Tea TUI and Web UI</span><span class="rp-item-extra">0 comments · 2026-09-30</span></a><a class="rp-item" href="https://github.com/charmbracelet/bubbletea/discussions/1775"><span class="rp-item-num">#1775</span><span class="rp-item-title">Bermuda — a scheduler board in Bubble Tea, and two things it taught me about long-lived TUIs</span><span class="rp-item-extra">0 comments · 2026-08-20</span></a><a class="rp-item" href="https://github.com/charmbracelet/bubbletea/discussions/1768"><span class="rp-item-num">#1768</span><span class="rp-item-title">revision: A lazygit-style TUI for SVN</span><span class="rp-item-extra">0 comments · 2026-08-14</span></a><a class="rp-item" href="https://github.com/charmbracelet/bubbletea/discussions/1760"><span class="rp-item-num">#1760</span><span class="rp-item-title">v2 scrolling performance and pending fixes</span><span class="rp-item-extra">0 comments · 2026-08-08</span></a><a class="rp-item" href="https://github.com/charmbracelet/bubbletea/discussions/1747"><span class="rp-item-num">#1747</span><span class="rp-item-title">Compositor clips layers positioned away from the origin when no root layer spans the viewport</span><span class="rp-item-extra">0 comments · 2026-07-29</span></a><a class="rp-item" href="https://github.com/charmbracelet/bubbletea/discussions/1732"><span class="rp-item-num">#1732</span><span class="rp-item-title">VibeWorld: a shared world that runs in your terminal</span><span class="rp-item-extra">2 comments · 2026-07-12</span></a><a class="rp-item" href="https://github.com/charmbracelet/bubbletea/discussions/1715"><span class="rp-item-num">#1715</span><span class="rp-item-title">An LLM writes a Bubble Tea app - go build decides whether it counts (teatest next?)</span><span class="rp-item-extra">1 comments · 2026-06-12</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/charmbracelet/bubbletea/releases"><b>v2.1.1</b> <span class="rp-rel-tag">v2.1.1</span> <span class="rp-item-extra">2026-10-28</span></a><pre class="rp-pre">Terminal size query vulnerability
+
+This patch version fixes a vulnerability reported by @Reload3d. You can find the details of the exploit here.
+
+Best regards,
+Charm XX 💫
+
+ Changelog
+ Fixed
+ 9c6c325f83348ee7215fb7a7aca3bc6316217056: fix: ingnore implausible terminal resize reports (1887) (@andrinoff)
+ Other stuff
+ 67b4c7a8a2b34a0b1ce15261b0c705bc7e1a04b7: v2.1.1 (@andrinoff)
+
+---
+
+
+
+Thoughts? Questions? We love hearing from you. Feel free to reach out on X, Discord, Slack, The Fediverse, Bluesky.</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/charmbracelet__bubbletea.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

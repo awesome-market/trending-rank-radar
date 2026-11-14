@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kangvcar/InfoSpider · GitHub Trending Rank Radar</title>
+<meta name="description" content="INFO-SPIDER 是一个集众多数据源于一身的爬虫工具箱🧰，旨在安全快捷的帮助用户拿回自己的数据，工具代码开源，流程透明。支持数据源包括GitHub、QQ邮箱、网易邮箱、阿里邮箱、新浪邮箱、Hotmail邮箱、Outlook邮箱、京东、淘宝、支付宝、中国移动、中国联通、中国电信、知乎、哔哩哔哩、网易云音乐、QQ好友、QQ群、生成朋友圈相册、浏览器浏览历史、12306、博客园、CSDN博客、开源">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="InfoSpider, kangvcar, kangvcar/InfoSpider, github stars, github trending, star growth, star history, 开源项目, 星标增长, python3, crawl, spider, selenium, wxpython, tkinter">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/kangvcar__InfoSpider">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="kangvcar/InfoSpider · GitHub Trending Rank Radar">
+<meta property="og:description" content="INFO-SPIDER 是一个集众多数据源于一身的爬虫工具箱🧰，旨在安全快捷的帮助用户拿回自己的数据，工具代码开源，流程透明。支持数据源包括GitHub、QQ邮箱、网易邮箱、阿里邮箱、新浪邮箱、Hotmail邮箱、Outlook邮箱、京东、淘宝、支付宝、中国移动、中国联通、中国电信、知乎、哔哩哔哩、网易云音乐、QQ好友、QQ群、生成朋友圈相册、浏览器浏览历史、12306、博客园、CSDN博客、开源">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/kangvcar__InfoSpider">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "kangvcar/InfoSpider", "codeRepository": "https://github.com/kangvcar/InfoSpider", "url": "https://zhuikan.com/repos/kangvcar__InfoSpider", "description": "INFO-SPIDER 是一个集众多数据源于一身的爬虫工具箱🧰，旨在安全快捷的帮助用户拿回自己的数据，工具代码开源，流程透明。支持数据源包括GitHub、QQ邮箱、网易邮箱、阿里邮箱、新浪邮箱、Hotmail邮箱、Outlook邮箱、京东、淘宝、支付宝、中国移动、中国联通、中国电信、知乎、哔哩哔哩、网易云音乐、QQ好友、QQ群、生成朋友圈相册、浏览器浏览历史、12306、博客园、CSDN博客、开源", "author": {"@type": "Organization", "name": "kangvcar", "url": "https://github.com/kangvcar"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-3.0.html", "programmingLanguage": "Python", "dateCreated": "2020-07-11", "keywords": "python3,crawl,spider,selenium,wxpython,tkinter,automation,hotmail,chrome,csdn"}</script>
+</head>
+<body data-repo="kangvcar/InfoSpider" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">kangvcar/InfoSpider</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="kangvcar__InfoSpider"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/20273349?u=6749c6e0f5994e3aaf34edddbca4ca896fa31450&amp;v=4&s=300" width="300" height="300" alt="kangvcar avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">InfoSpider</div>
+      <a class="rp-side-owner" href="https://github.com/kangvcar">kangvcar</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/kangvcar">kangvcar</a>
+        <span class="rp-sep">/</span><span class="rp-name">InfoSpider</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">INFO-SPIDER 是一个集众多数据源于一身的爬虫工具箱🧰，旨在安全快捷的帮助用户拿回自己的数据，工具代码开源，流程透明。支持数据源包括GitHub、QQ邮箱、网易邮箱、阿里邮箱、新浪邮箱、Hotmail邮箱、Outlook邮箱、京东、淘宝、支付宝、中国移动、中国联通、中国电信、知乎、哔哩哔哩、网易云音乐、QQ好友、QQ群、生成朋友圈相册、浏览器浏览历史、12306、博客园、CSDN博客、开源中国博客、简书。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>8,274</b></span><span class="rp-stat" title="forks">⑂ <b>1,470</b></span><span class="rp-stat" title="watchers">👁 <b>182</b></span><span class="rp-stat" title="prs">⑃ <b>41</b></span><span class="rp-stat" title="issues">● <b>41</b></span><span class="rp-stat" title="releases">▤ <b>1</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/python3">python3</a><a class="rp-topic" href="https://github.com/topics/crawl">crawl</a><a class="rp-topic" href="https://github.com/topics/spider">spider</a><a class="rp-topic" href="https://github.com/topics/selenium">selenium</a><a class="rp-topic" href="https://github.com/topics/wxpython">wxpython</a><a class="rp-topic" href="https://github.com/topics/tkinter">tkinter</a><a class="rp-topic" href="../tags/automation">automation</a><a class="rp-topic" href="https://github.com/topics/hotmail">hotmail</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">GPL-3.0</span><span class="rp-meta-bit">Created 2020-07-11</span><a class="rp-meta-bit rp-home" href="https://infospider.vercel.app" rel="noopener">infospider.vercel.app</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/kangvcar/InfoSpider">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">INFO-SPIDER v1.0</span><a class="rp-dl-a" href="https://github.com/kangvcar/InfoSpider/releases/tag/v1.0">INFO-SPIDER-1.0 ↓</a><span class="rp-dl-ver">1.0</span><span class="rp-dl-date">2020-08-18</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+3</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+4</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+9</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">8,274</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,470</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">182</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">41</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">41</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">1</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">一个神奇的工具箱，拿回你的个人信息。
+👉⚡使用说明 ⚡| 视频演示 | English | 获取最新维护版本 | TG交流群
+
+ 🗣️ TG交流群：加入群组
+
+👍 推荐 RapidProxy 代理IP：
+
+
+  
+
+
+👍 推荐 BestProxy 代理IP：
+
+
+  
+
+
+👍 推荐 ThorData 代理IP：
+
+
+  
+
+
+ 开发者回忆录
+
+点击展开👉 开发者回忆录
+
+ 场景一
+小明一如往常打开 Chrome 浏览器逛着论坛，贴吧，一不小心点开了网页上的广告，跳转到了京东商城，下意识去关闭窗口时发现 （OS：咦？京东怎么知道我最近心心念念的宝贝呢？刚好我正需要呢！），既然打开了那就看看商品详情吧 （OS：哎哟不错哦），那就下单试试吧！
+
+ 场景二
+小白听着网易云音乐的每日推荐歌单无法自拔 （OS：哇！怎么播放列表里都是我喜欢的音乐风格？网易云音乐太棒了吧!深得我心啊！黑胶会员必须来一个！），逛着知乎里的“如何优雅的XXX?”，“XXX是怎样一种体验？”，“如何评价XXX?” （OS：咦？这个问题就是我刚好想问的，原来早已有人提问！什么？？？还有几千条回答！！进去逛逛看！）
+
+ 场景三
+小达上班时不忘充实自己，逛着各大技术论坛博客园、CSDN、开源中国、简书、掘金等等，发现首页的内容推荐太棒了（OS：这些技术博文太棒了，不用找就出来了），再打开自己的博客主页发现不知不觉地自己也坚持写博文也有三年了，自己的技术栈也越来越丰富（OS：怎么博客后台都不提供一个数据分析系统呢？我想看看我这几年来的发文数量，发文时间，想知道哪些博文比较热门，想看看我在哪些技术上花费的时间更多，想看看我过去的创作高峰期时在晚上呢？还是凌晨？我希望系统能给我更多指引数据让我更好的创作！）
+
+看到以上几个场景你可能会感叹科技在进步，技术在发展，极大地改善了我们的生活方式。
+
+但当你深入思考，你浏览的每个网站，注册的每个网站，他们都记录着你的信息你的足迹。
+
+细思恐极的背后是自己的个人数据被赤裸裸的暴露在互联网上并且被众多的公司利用用户数据获得巨额利益，如对用户的数据收集分析后进行定制的广告推送，收取高额广告费。但作为数据的生产者却没能分享属于自己的数据收益。
+
+ 想法
+
+如果有一个这样的工具，它能帮你拿回你的个人信息，它能帮你把分散在各种站点的个人信息聚合起来，它能帮你分析你的个人数据并给你提供建议，它能帮你把个人数据可视化让你更清楚地了解自己。
+
+ 你是否会需要这样的工具呢? 你是否会喜欢这样的工具呢？
+
+基于以上，我着手开发了 INFO-SPIDER 👇👇👇
+
+
+
+ What is INFO-SPIDER
+
+INFO-SPIDER 是一个集众多数据源于一身的爬虫工具箱，旨在安全快捷的帮助用户拿回自己的数据，工具代码开源，流程透明。并提供数据分析功能，基于用户数据生成图表文件，使得用户更直观、深入了解自己的信息。
+目前支持数据源包括GitHub、QQ邮箱、网易邮箱、阿里邮箱、新浪邮箱、Hotmail邮箱、Outlook邮箱、京东、淘宝、支付宝、中国移动、中国联通、中国电信、知乎、哔哩哔哩、网易云音乐、QQ好友、QQ群、生成朋友圈相册、浏览器浏览历史、12306、博客园、CSDN博客、开源中国博客、简书。
+
+详细使用说明参照使用说明文档或视频教程
+
+你可以在  与我们一起交流学习
+
+ Features
+
+- 安全可靠：本项目为开源项目，代码简洁，所有源码可见，本地运行，安全可靠。
+- 使用简单：提供 GUI 界面，只需点击所需获取的数据源并根据提示操作即可。
+- 结构清晰：本项目的所有数据源相互独立，可移植性高，所有爬虫脚本在项目的 Spiders 文件下。
+- 数据源丰富：本项目目前支持多达24+个数据源，持续更新。
+- 数据格式统一：爬取的所有数据都将存储为json格式，方便后期数据分析。
+- 个人数据丰富：本项目将尽可能多地为你爬取个人数据，后期数据处理可根据需要删减。
+- 数据分析：本项目提供个人数据的可视化分析，目前仅部分支持。
+- 文档丰富：本项目包含完整全面的使用说明文档和视频教程
+
+ Screenshot
+
+!screenshot.png
+
+ QuickStart
+
+ 依赖安装
+
+1. 安装python3和Chrome浏览器
+
+2. 安装与Chrome浏览器相同版本的驱动
+
+3. 安装依赖库 pip install -r requirements.txt
+
+ 如果您在这一步操作遇到问题，可以获取免安装版InfoSpider
+
+ 工具运行
+
+1. 进入 tools 目录
+
+2. 运行 python3 main.py
+
+3. 在打开的窗口点击数据源按钮, 根据提示选择数据保存路径
+
+4. 弹出的浏览器输入用户密码后会自动开始爬取数据, 爬取完成浏览器会自动关闭.
+   
+5. 在对应的目录下可以查看下载下来的数据(xxx.json), 数据分析图表(xxx.html)
+
+ 购买服务
+
+ 限量发售中...，去看看
+
+1. InfoSpider 最新维护版本
+2. 更全面的个人数据分析
+3. 免去安装程序的所有依赖环境，便捷，适合小白
+4. 已打包好的程序，双击即可运行程序
+5. 手把手教你如何打包 InfoSpider
+6. 开发者一对一技术支持
+7. 购买后即可免费获得即将发布的全新2.0版本
+
+
+
+
+购买链接
+
+
+ 数据源
+- [x] GitHub
+- [x] QQ邮箱
+- [x] 网易邮箱
+- [x] 阿里邮箱
+- [x] 新浪邮箱
+- [x] Hotmail邮箱
+- [x] Outlook邮箱
+- [x] 京东
+- [x] 淘宝
+- [x] 支付宝
+- [x] 中国移动
+- [x] 中国联通
+- [x] 中国电信
+- [x] 知乎
+- [x] 哔哩哔哩
+- [x] 网易云音乐
+- [x] QQ好友(cjh0613)
+- [x] QQ群(cjh0613)
+- [x] 生成朋友圈相册
+- [x] 浏览器浏览历史
+- [x] 12306
+- [x] 博客园
+- [x] CSDN博客
+- [x] 开源中国博客
+- [x] 简书
+
+ 数据分析
+
+- [x] 博客园
+- [x] CSDN博客
+- [x] 开源中国博客
+- [x] 简书
+
+ 计划
+
+- 提供web界面操作，适应多平台
+- 对爬取的个人数据进行统计分析
+- 融合机器学习技术、自然语言处理技术等对数据深入分析
+- 把分析结果绘制图表直观展示
+- 添加更多数据源...
+
+ Visitors
+
+!
+
+ Developers want to say
+
+1. 该项目解决了个人数据分散在各种各样的公司之间，经常形成数据孤岛，多维数据无法融合的痛点。
+2. 作者认为该项目的最大潜力在于能把多维数据进行融合并对个人数据进行分析，是个人数据效益最大化。
+3. 该项目使用爬虫手段获取数据，所以程序存在时效问题（需要持续维护，根据网站的更新做出修改）。
+4. 该项目的结构清晰，所有数据源相互独立，可移植性高，所有爬虫脚本在项目的Spiders文件下，可移植到你的程序中。
+5. 目前该项目v1.0版本仅在Windows平台上测试，Python 3.7，未适配多平台。
+6. </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/kangvcar/InfoSpider/issues/76"><span class="rp-item-num">#76</span><span class="rp-item-title">和平精英QQ和微信登录的数据</span><span class="rp-item-extra">0 comments · 2024-10-14</span></a><a class="rp-item" href="https://github.com/kangvcar/InfoSpider/issues/74"><span class="rp-item-num">#74</span><span class="rp-item-title">非管理/群主QQ群无法拉取</span><span class="rp-item-extra">0 comments · 2024-08-10</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/kangvcar/InfoSpider/releases"><b>INFO-SPIDER v1.0</b> <span class="rp-rel-tag">v1.0</span> <span class="rp-item-extra">2020-08-18</span></a><pre class="rp-pre">Version：1.0
+项目代码：https://github.com/kangvcar/InfoSpider
+项目使用文档： https://infospider.vercel.app
+项目视频演示： https://www.bilibili.com/video/BV14f4y1R7oF/
+
+INFO-SPIDER 是一个集众多数据源于一身的爬虫工具箱，旨在安全快捷的帮助用户拿回自己的数据，工具代码开源，流程透明。支持数据源包括 GitHub 、QQ 邮箱、网易邮箱、阿里邮箱、新浪邮箱、Hotmail 邮箱、Outlook 邮箱、京东、淘宝、支付宝、中国移动、中国联通、中国电信、知乎、哔哩哔哩、网易云音乐、QQ 好友、QQ 群、生成朋友圈相册、浏览器浏览历史、12306 、博客园、CSDN 博客、开源中国博客、简书。
+
+ Changelog
+
+- 2020年7月10日
+    1. 更新GUI布局
+    2. 添加GitHub、QQ好友、QQ群数据源
+
+- 2020年7月12日
+    1. 修复QQ邮箱、网易邮箱、阿里邮箱、新浪邮箱、Hotmail、Outlook数据源
+    2. 添加生成朋友圈相册功能
+
+- 2020年7月14日
+    1. 修复京东、淘宝、支付宝、12306数据源
+    2. 添加Chrome浏览记录功能
+</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/kangvcar__InfoSpider.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

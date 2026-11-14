@@ -1,0 +1,497 @@
+# Quip Network node
+
+Quip Network solochain node (`quip-network-node`).
+
+## Chain specs
+
+Omit `--chain` to join the live public Quip Testnet (EIP-155 `20033`).
+`--chain=local` is a disposable Alice-and-Bob chain. It is not the public testnet.
+
+| Flag | Preset | Network | EIP-155 |
+|------|--------|---------|--------:|
+| (omit `--chain`) | `quip-testnet` | live public testnet | 20033 |
+| `--chain=quip-testnet` | `quip-testnet` | live public testnet | 20033 |
+| `--dev` or `--chain=dev` | Development | Alice-only local | 1337 |
+| `--chain=local` | Local Testnet | Alice and Bob local | 1337 |
+| `--chain=local3` | Local Testnet (3 Validators) | Alice, Bob, and Charlie local | 1337 |
+
+Aliases for the public testnet: `quip_testnet`, `testnet`. A path argument loads that JSON file and uses the chain ID in its genesis.
+
+Runtime 117 is the H2/H4 chain-wipe relaunch. It starts from fresh genesis and
+is not an in-place upgrade of the earlier H1/H3 network. Operators must use a
+fresh chain database, re-insert the H4 BABE and H2 GRANDPA keys, and sync from
+the new genesis; old signed extrinsics are incompatible (`transaction_version`
+is 7).
+
+## Getting Started
+
+Depending on your operating system and Rust version, there might be additional
+packages required to compile this template. Check the
+[Install](https://docs.substrate.io/install/) instructions for your platform for
+the most common dependencies. Alternatively, you can use one of the [alternative
+installation](#alternatives-installations) options.
+
+Fetch solochain template code:
+
+```sh
+git clone https://github.com/paritytech/polkadot-sdk-solochain-template.git solochain-template
+
+cd solochain-template
+```
+
+### Build
+
+🔨 Use the following command to build the node without launching it:
+
+```sh
+cargo build --release
+```
+
+### Join the live public testnet
+
+Omit `--chain` to select `quip-testnet` (EIP-155 `20033`).
+
+```sh
+# Live public testnet (EIP-155 20033). Default if you omit --chain.
+./target/release/quip-network-node
+```
+
+### Embedded Docs
+
+After you build the project, you can use the following command to explore its
+parameters and subcommands:
+
+```sh
+./target/release/solochain-template-node -h
+```
+
+You can generate and view the [Rust
+Docs](https://doc.rust-lang.org/cargo/commands/cargo-doc.html) for this template
+with this command:
+
+```sh
+cargo +nightly doc --open
+```
+
+### Single-Node Development Chain
+
+The following command starts a single-node development chain that does not
+persist state. `--dev` is the Alice-only local preset (EIP-155 `1337`), not
+the public testnet.
+
+```sh
+# Alice-only local chain (EIP-155 1337)
+./target/release/solochain-template-node --dev
+```
+
+To purge the development chain's state, run the following command:
+
+```sh
+# Alice-only local chain (EIP-155 1337)
+./target/release/solochain-template-node purge-chain --dev
+```
+
+To start the development chain with detailed logging, run the following command:
+
+```sh
+# Alice-only local chain (EIP-155 1337)
+RUST_BACKTRACE=1 ./target/release/solochain-template-node -ldebug --dev
+```
+
+Development chains (`--dev` / `--chain=dev`):
+
+- Maintain state in a `tmp` folder while the node is running.
+- Use the **Alice** account as the sole validator authority.
+- Use the **Alice** account as the default `sudo` account.
+- Are preconfigured with a genesis state (`/node/src/chain_spec.rs`) that
+  includes several pre-funded development accounts.
+- Use EIP-155 chain ID `1337`.
+
+
+To persist chain state between runs, specify a base path by running a command
+similar to the following:
+
+```sh
+// Create a folder to use as the db base path
+$ mkdir my-chain-state
+
+// Alice-only local chain (EIP-155 1337)
+$ ./target/release/solochain-template-node --dev --base-path ./my-chain-state/
+
+// Check the folder structure created inside the base path after running the chain
+$ ls ./my-chain-state
+chains
+$ ls ./my-chain-state/chains/
+dev
+$ ls ./my-chain-state/chains/dev
+db keystore network
+```
+
+### Connect with Polkadot-JS Apps Front-End
+
+After you start the node template locally, you can interact with it using the
+hosted version of the [Polkadot/Substrate
+Portal](https://polkadot.js.org/apps/#/explorer?rpc=ws://localhost:9944)
+front-end by connecting to the local node endpoint. A hosted version is also
+available on [IPFS](https://dotapps.io/). You can
+also find the source code and instructions for hosting your own instance in the
+[`polkadot-js/apps`](https://github.com/polkadot-js/apps) repository.
+
+Quip uses hybrid BABE and GRANDPA consensus keys. Polkadot.js Apps does not
+require custom types for Quip anymore.
+
+### Multi-Node Local Testnet
+
+A scripted three-validator local network is available two ways.
+Both use `--chain=local3` (EIP-155 `1337`). This is not the public testnet.
+
+- **Native build:** `scripts/start-local3.sh` builds the debug binary and starts
+  three validators (Alice/Bob/Charlie) against the embedded `local3` chain spec.
+- **Docker:** `docker compose up --build` starts the same three-validator
+  topology in containers. See the [Docker](#docker) section below.
+
+Both paths use the same hardcoded libp2p node-keys and bootnode peer ID, so
+they're interchangeable for development.
+
+For background on multi-node consensus, see [Simulate a
+network](https://docs.substrate.io/tutorials/build-a-blockchain/simulate-network/).
+
+## Template Structure
+
+A Substrate project such as this consists of a number of components that are
+spread across a few directories.
+
+### Node
+
+A blockchain node is an application that allows users to participate in a
+blockchain network. Substrate-based blockchain nodes expose a number of
+capabilities:
+
+- Networking: Substrate nodes use the [`libp2p`](https://libp2p.io/) networking
+  stack to allow the nodes in the network to communicate with one another.
+- Consensus: Blockchains must have a way to come to
+  [consensus](https://docs.substrate.io/fundamentals/consensus/) on the state of
+  the network. Substrate makes it possible to supply custom consensus engines
+  and also ships with several consensus mechanisms that have been built on top
+  of [Web3 Foundation
+  research](https://research.web3.foundation/Polkadot/protocols/NPoS).
+- RPC Server: A remote procedure call (RPC) server is used to interact with
+  Substrate nodes.
+
+There are several files in the `node` directory. Take special note of the
+following:
+
+- [`chain_spec.rs`](./node/src/chain_spec.rs): A [chain
+  specification](https://docs.substrate.io/build/chain-spec/) is a source code
+  file that defines a Substrate chain's initial (genesis) state. Chain
+  specifications are useful for development and testing, and critical when
+  architecting the launch of a production chain. Take note of the
+  `development_config` and `testnet_genesis` functions. These functions are
+  used to define the genesis state for the local development chain
+  configuration. These functions identify some [well-known
+  accounts](https://docs.substrate.io/reference/command-line-tools/subkey/) and
+  use them to configure the blockchain's initial state.
+- [`service.rs`](./node/src/service.rs): This file defines the node
+  implementation. Take note of the libraries that this file imports and the
+  names of the functions it invokes. In particular, there are references to
+  consensus-related topics, such as the [block finalization and
+  forks](https://docs.substrate.io/fundamentals/consensus/#finalization-and-forks)
+  and other [consensus
+  mechanisms](https://docs.substrate.io/fundamentals/consensus/#default-consensus-models)
+  such as BABE for block authoring and GRANDPA for finality.
+
+
+### Runtime
+
+In Substrate, the terms "runtime" and "state transition function" are analogous.
+Both terms refer to the core logic of the blockchain that is responsible for
+validating blocks and executing the state changes they define. The Substrate
+project in this repository uses
+[FRAME](https://docs.substrate.io/learn/runtime-development/#frame) to construct
+a blockchain runtime. FRAME allows runtime developers to declare domain-specific
+logic in modules called "pallets". At the heart of FRAME is a helpful [macro
+language](https://docs.substrate.io/reference/frame-macros/) that makes it easy
+to create pallets and flexibly compose them to create blockchains that can
+address [a variety of needs](https://substrate.io/ecosystem/projects/).
+
+Review the [FRAME runtime implementation](./runtime/src/lib.rs) included in this
+template and note the following:
+
+- This file configures several pallets to include in the runtime. Each pallet
+  configuration is defined by a code block that begins with `impl
+  $PALLET_NAME::Config for Runtime`.
+- The pallets are composed into a single runtime by way of the
+  [#[runtime]](https://paritytech.github.io/polkadot-sdk/master/frame_support/attr.runtime.html)
+  macro, which is part of the [core FRAME pallet
+  library](https://docs.substrate.io/reference/frame-pallets/#system-pallets).
+
+### Custody vesting
+
+Both runtimes include stock vesting at pallet index 32. Mainnet allocation
+amounts, custody identity, recipients and tranche terms remain unresolved and
+block mainnet export. Genesis creates no vesting schedules; later signed
+multisig custody transfers issue one schedule per tranche.
+
+Vesting constrains the recipient's **total balance**, including held stake:
+ordinary transfers preserve `total >= frozen`. Held stake discounts the amount
+that must stay free, so a pre-bonded account with enough held stake can transfer
+a new grant immediately, even before its vesting start. Both initial `bond`
+and `bond_extra` from vested funds are intentionally allowed. Guaranteeing that
+the grant itself stays illiquid requires a new owner decision and a hold-based
+design; the current pallet does not provide that guarantee.
+
+The minimum vested transfer is `100 * EXISTENTIAL_DEPOSIT` (0.1 QUIP). This raises
+the cost of filling an account's 28 schedule slots: at the former ED floor,
+28 × ED (0.028 QUIP) could fill them, while council Root force-remove is denied.
+The higher floor prices this attack; it does not prevent it. Completed schedules
+can be cleaned up with `vest`/`vest_other`; merging requires the recipient.
+
+The metadata gate is anchored at the native stable2609 state in
+[`tests/fixtures/native-2609/manifest.json`](tests/fixtures/native-2609/manifest.json).
+It compares every metadata field exactly, including docs, paths, type names and
+registry IDs, with no historical delta allowances. Future metadata changes
+require a deliberate re-anchor. Reproduce the anchors with:
+
+```bash
+env -u SKIP_WASM_BUILD cargo test --locked \
+  -p quip-protocol-runtime -p quip-testnet-runtime --test metadata_v16 \
+  capture_native_2609_anchor -- --ignored --exact --nocapture
+```
+
+This explicit capture overwrites each runtime's SCALE metadata and sorted
+`*-storage.json` default-genesis key/value fixture, and writes their SHA-256
+hashes and byte sizes into the manifest. Update capture provenance deliberately
+when accepting a new baseline. Normal tests rebuild default-genesis storage
+and require exact equality, with no omitted top-level keys; unexpected child
+storage fails until the capture format is deliberately extended.
+Normal tests only read the anchors and verify byte-for-byte reproduction from
+both native metadata and the Wasm `Metadata_metadata` and
+`Metadata_metadata_at_version(16)` APIs. Before accepting a
+new capture, run `wasm_metadata_matches_native_2609_anchor` in both runtimes
+with `SKIP_WASM_BUILD` unset and record that result in the manifest.
+The manifest test checks all four anchor SHA-256 digests and byte sizes and fails
+on missing files or pins. The compiler and lockfile hash under `provenance`
+are historical capture information only; they are not machine-enforced.
+If `CI` is set, missing Wasm is a test failure; local builds may soft-skip it.
+
+Attach `cargo run -p metadata-surface -- OLD.scale NEW.scale` output to the
+re-anchor MR; add `--types` before the paths to expose named type layouts
+(see [tool usage and limitations](crates/metadata-surface/README.md)).
+
+Deploy a stable2609-compatible eth-rpc proxy in lockstep with this runtime;
+`ReviveApi` v2 uses the SDK's versioned payload/result types.
+
+Revive's native `Deposit = ()` backend now mints a contract's existential
+deposit (ED) and marks that issuance inactive. The deployer no longer pays
+this ED as a metered storage deposit, so deployment charges and dry-run
+storage-deposit estimates drop by one ED. On termination, the SDK attempts
+to burn/reactivate it only when the account holds exactly the ED and no dust;
+otherwise it remains. It is never refunded to the terminating caller.
+
+We deliberately keep the SDK's permissionless `Revive.batch_map_accounts`
+call. Explicit mapping remains the default with `AutoMap = false`, but this
+batch call is not gated by that setting: any signed non-contract caller can
+map eligible existing third-party accounts without a deposit. The call is
+fee-free when at least 90% of entries create mappings or release held mapping
+deposits. A batch caller may also release an existing mapping's held deposit
+back to its owner; the mapping remains. With `OnKilledAccount = ()`, a mapping
+outlives its account being reaped. Each account's owner can reverse its
+mapping with `unmap_account`,
+although a later batch can map it again. This is an accepted property; no
+`BaseCallFilter` restriction is added.
+
+See [runtime 120 compatibility](docs/runtime-120-compatibility.md) for the
+release-specific event, call, storage, signing and weight changes.
+
+### Pallets
+
+The runtime in this project is constructed using many FRAME pallets that ship
+with [the Substrate
+repository](https://github.com/paritytech/polkadot-sdk/tree/master/substrate/frame) and
+Quip-specific pallets defined in the [`pallets`](./pallets) directory.
+
+A FRAME pallet is comprised of a number of blockchain primitives, including:
+
+- Storage: FRAME defines a rich set of powerful [storage
+  abstractions](https://docs.substrate.io/build/runtime-storage/) that makes it
+  easy to use Substrate's efficient key-value database to manage the evolving
+  state of a blockchain.
+- Dispatchables: FRAME pallets define special types of functions that can be
+  invoked (dispatched) from outside of the runtime in order to update its state.
+- Events: Substrate uses
+  [events](https://docs.substrate.io/build/events-and-errors/) to notify users
+  of significant state changes.
+- Errors: When a dispatchable fails, it returns an error.
+
+Each pallet has its own `Config` trait which serves as a configuration interface
+to generically define the types and parameters it depends on.
+
+## Alternatives Installations
+
+Instead of installing dependencies and building this source directly, consider
+the following alternatives.
+
+### Nix
+
+Install [nix](https://nixos.org/) and
+[nix-direnv](https://github.com/nix-community/nix-direnv) for a fully
+plug-and-play experience for setting up the development environment. To get all
+the correct dependencies, activate direnv `direnv allow`.
+
+### Docker
+
+A multi-stage `Dockerfile` builds the `quip-network-node` binary on top of
+`debian:bookworm-slim` (~80 MB runtime image). The image exposes the binary
+directly as ENTRYPOINT, so any Substrate CLI flag works at `docker run` time.
+
+#### Build
+
+```sh
+docker build -t quip-network-node:local .
+```
+
+The first build compiles the full workspace and takes a while. BuildKit cache
+mounts (declared in the Dockerfile) keep the cargo registry and target
+directory between local rebuilds.
+
+#### Pre-built images
+
+Every push to `main` and every git tag publishes an image to the project's
+GitLab Container Registry, so you don't have to build locally:
+
+```sh
+docker pull registry.gitlab.com/quip.network/quip-validator/quip-network-node:latest
+```
+
+Tag scheme:
+
+- `:latest` — tip of `main`. Floating, advances on every merge.
+- `:sha-<short>` — pinned to a specific commit on `main` or to a tagged release.
+- `:<git-tag>` — pinned to a release tag (e.g. `:v0.1.0`).
+
+#### Run as a validator
+
+```sh
+# Three-validator local chain (EIP-155 1337). Not the public testnet.
+docker run --rm -v quip-data:/data -p 9944:9944 -p 30333:30333 \
+  quip-network-node:local \
+  --chain=local3 --base-path=/data \
+  --validator --alice \
+  --unsafe-rpc-external --rpc-cors=all
+```
+
+`--unsafe-rpc-external` is required because Substrate refuses to combine
+`--rpc-external` with `--validator` by default (a safety guard against
+exposing a validator's RPC to the public internet). For local development
+the unsafe flag is fine; for production validators you almost certainly do
+not want any external RPC at all.
+
+#### Run as a full node
+
+Same command, omit `--validator` (and the `--alice/--bob/--charlie` shortcut):
+
+```sh
+# Three-validator local chain (EIP-155 1337). Not the public testnet.
+docker run --rm -v quip-data:/data -p 9944:9944 -p 30333:30333 \
+  quip-network-node:local \
+  --chain=local3 --base-path=/data \
+  --bootnodes=/dns/<bootnode-host>/tcp/30333/p2p/<peer-id> \
+  --rpc-external --rpc-cors=all
+```
+
+#### Local 3-node network via docker-compose
+
+`docker-compose.yml` reproduces `scripts/start-local3.sh` in containers.
+Each service passes `--chain=local3` (EIP-155 `1337`). This is not the public
+testnet.
+
+```sh
+docker compose up --build           # start local3 (EIP-155 1337)
+docker compose down                 # stop, keep chain state
+docker compose down -v              # stop and wipe state
+```
+
+Then connect Polkadot.js Apps to `ws://localhost:9944` (node1),
+`ws://localhost:9945` (node2), or `ws://localhost:9946` (node3).
+
+## Public testnet
+
+`quip-testnet` is the live public testnet ("AGLS" tokens, 12 decimals,
+EIP-155 `20033`). Omitting `--chain`, or using `quip-testnet`, `quip_testnet`
+or `testnet`, loads the exact raw artifact embedded from
+[`chain-specs/quip-testnet.json`](chain-specs/quip-testnet.json).
+Its historical runtime and genesis storage are independent of the runtime
+compiled into a new node binary.
+
+The file is a byte-for-byte copy of the public testnet raw spec published as
+[`chain-specs/aglais-network.json`](https://gitlab.com/quip.network/nodes.quip.network/-/raw/main/chain-specs/aglais-network.json)
+in the `nodes.quip.network` repository. It is vendored here as
+`quip-testnet.json` because the local filename identifies the network it
+serves; the upstream name refers to the same network under its older AGLS
+label. The upstream file's SHA-256 was verified against GitLab's reported
+content hash at upstream commit
+`d65ab5b7ad62dad2de603c2611c14a72b24c1537`.
+Its pinned SHA-256 is
+`0aeeddaf5b546a491d96c35fd636614c6ab42d4e5d9724126182b52c8c694ad4`;
+its genesis hash is
+`0x542a9915acf840b8940d35ca6de242f669a0c6e3b40f9a8d8c14b9bf7b8ebecb`.
+The blocking `live-testnet-spec` CI job checks the file's exact bytes,
+including formatting. Node tests check all four aliases and the genesis hash.
+
+The registered runtime `quip_testnet` preset remains available through
+GenesisBuilder for policy auditing. Exporting that preset with a newly
+compiled runtime does **not** reproduce the published live genesis.
+`dev`, `local`, `local3` and `rehearsal` continue to use their runtime builders.
+The unfinished `quip-mainnet` and `quip-testnet-relaunch` presets have no
+built-in node chain aliases.
+
+### Quickstart (built node)
+
+```sh
+cargo build --release -p quip-network-node
+# Live public testnet (EIP-155 20033). Omit --chain for the same artifact.
+./target/release/quip-network-node --chain=quip-testnet --base-path=./quip-data
+```
+
+The three canonical bootnodes (`bootnode-{1,2,3}.aglais.quip.network`) are
+embedded in the raw file, with the live protocol ID `agls-network` and AGLS
+properties unchanged.
+
+### Using the raw file with an existing image
+
+Explicit file loading also works with existing images; those images do not
+acquire this new embedded-artifact behavior merely because this repository
+changed. Validate the checked-out artifact before using its path:
+
+```sh
+python3 scripts/check-live-testnet-spec.py
+
+docker run --rm -v "$PWD/chain-specs:/spec:ro" -v quip-data:/data \
+  -p 9944:9944 -p 30333:30333 \
+  registry.gitlab.com/quip.network/quip-validator/quip-network-node:v0.3.0 \
+  --chain=/spec/quip-testnet.json --base-path=/data
+```
+
+The vendored path represents the public network currently selected by the
+four aliases. A future approved relaunch must replace the artifact and update
+its checksum, genesis-hash tests and provenance in the same reviewed activation
+commit. The old artifact remains in Git history and release provenance. A new
+genesis requires fresh databases; this change does not activate a relaunch.
+
+CI also starts a non-validator against a temporary copy with **only bootnodes
+removed**, checks its genesis over RPC, and restarts the same genesis-only DB.
+Isolation relies on empty bootnodes and reserved-peer lists, disabled mDNS,
+and disabled ordinary peers. The pinned litep2p backend still runs periodic
+Kademlia queries. The smoke test therefore verifies empty bootnodes before
+launch, observes at least ten seconds after RPC readiness, requires a Kademlia
+query log marker, and rejects outbound dial logs across the full run. Missing
+discovery logging fails the smoke test instead of silently shortening coverage.
+This smoke test checks startup and DB reopen, not the shipped peer list, live
+sync, consensus, or compatibility with an existing production DB.
+
+### Running a validator
+
+Operator validator slots are committed in
+[`runtime/src/genesis_config_presets.rs`](runtime/src/genesis_config_presets.rs).
+The [`scripts/derive-operator-keys.sh`](scripts/derive-operator-keys.sh) helper
+derives operator keys.

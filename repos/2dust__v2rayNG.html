@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2dust/v2rayNG · GitHub Trending Rank Radar</title>
+<meta name="description" content="A V2Ray client for Android, support Xray core and v2fly core">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="v2rayNG, 2dust, 2dust/v2rayNG, github stars, github trending, star growth, star history, 开源项目, 星标增长, android, proxy, socks5, shadowsocks, trojan, v2ray">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/2dust__v2rayNG">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="2dust/v2rayNG · GitHub Trending Rank Radar">
+<meta property="og:description" content="A V2Ray client for Android, support Xray core and v2fly core">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/2dust__v2rayNG">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "2dust/v2rayNG", "codeRepository": "https://github.com/2dust/v2rayNG", "url": "https://zhuikan.com/repos/2dust__v2rayNG", "description": "A V2Ray client for Android, support Xray core and v2fly core", "author": {"@type": "Organization", "name": "2dust", "url": "https://github.com/2dust"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-3.0.html", "programmingLanguage": "Kotlin", "dateCreated": "2019-05-15", "keywords": "android,proxy,socks5,shadowsocks,trojan,v2ray,v2fly,xray,vmess,vless"}</script>
+</head>
+<body data-repo="2dust/v2rayNG" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">2dust/v2rayNG</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="2dust__v2rayNG"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/31833384?v=4&s=300" width="300" height="300" alt="2dust avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">v2rayNG</div>
+      <a class="rp-side-owner" href="https://github.com/2dust">2dust</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/2dust">2dust</a>
+        <span class="rp-sep">/</span><span class="rp-name">v2rayNG</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A V2Ray client for Android, support Xray core and v2fly core</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>65,865</b></span><span class="rp-stat" title="forks">⑂ <b>8,626</b></span><span class="rp-stat" title="watchers">👁 <b>724</b></span><span class="rp-stat" title="prs">⑃ <b>1,256</b></span><span class="rp-stat" title="issues">● <b>4,186</b></span><span class="rp-stat" title="releases">▤ <b>320</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/android">android</a><a class="rp-topic" href="../tags/proxy">proxy</a><a class="rp-topic" href="https://github.com/topics/socks5">socks5</a><a class="rp-topic" href="../tags/shadowsocks">shadowsocks</a><a class="rp-topic" href="../tags/trojan">trojan</a><a class="rp-topic" href="../tags/v2ray">v2ray</a><a class="rp-topic" href="https://github.com/topics/v2fly">v2fly</a><a class="rp-topic" href="https://github.com/topics/xray">xray</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Kotlin</span><span class="rp-meta-bit">GPL-3.0</span><span class="rp-meta-bit">Created 2019-05-15</span><a class="rp-meta-bit rp-home" href="https://v2rayng.2dust.link" rel="noopener">v2rayng.2dust.link</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="2dust__v2rayN"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/31833384?v=4" alt="" loading="lazy">v2rayN</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/2dust/v2rayNG">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">2.3.15</span><a class="rp-dl-a" href="https://github.com/2dust/v2rayNG/releases/tag/2.3.15">v2rayNG-2.3.15 ↓</a><span class="rp-dl-ver">2.3.15</span><span class="rp-dl-date">2026-11-01</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+87</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">65,865</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">8,626</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">724</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,256</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">4,186</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">320</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">v2rayNG
+
+A V2Ray client for Android, support Xray core and v2fly core
+
+
+
+
+
+
+
+
+---
+
+ Download / 下载
+
+Download the latest release here:
+
+在这里下载最新版本：
+
+https://github.com/2dust/v2rayNG/releases
+
+ [!TIP]
+ v2rayNG is the mobile version. For the desktop version, please visit the v2rayN \
+ v2rayNG 是手机版，电脑版请访问 v2rayN
+
+ https://github.com/2dust/v2rayN
+
+---
+
+ Geoip and Geosite
+
+- geoip.dat and geosite.dat files are in Android/data/com.v2ray.ang/files/assets (path may differ on some Android device)
+- download feature will get enhanced version in this repo (note: it needs a working proxy)
+- latest official domain list and ip list can be imported manually
+- possible to use a third-party dat file in the same folder, like h2y
+
+More in our wiki
+
+ Geoip 与 Geosite
+
+- geoip.dat 和 geosite.dat 文件位于 Android/data/com.v2ray.ang/files/assets（部分设备路径可能不同）
+- 下载功能将获取该 仓库 中的增强版本（注意：此功能需要一个可用的代理）
+- 最新官方 域名列表 和 IP 列表 可手动导入
+- 也可在同一文件夹中使用第三方 dat 文件，例如 h2y
+
+更多内容请见我们的 wiki
+
+---
+
+ Development guide / 开发指南
+
+ Note
+
+- Android project under the V2rayNG folder can be compiled directly in Android Studio, or using the Gradle wrapper. But the v2ray core inside the aar is (probably) outdated.
+- The aar can be compiled from the Golang project AndroidLibV2rayLite or AndroidLibXrayLite. For a quick start, read the guides for Go Mobile and Makefiles for Go Developers.
+- v2rayNG can run on Android Emulators. For WSA, VPN permission needs to be granted via appops set [package name] ACTIVATE_VPN allow.
+
+ 提示
+
+- V2rayNG 文件夹下的 Android 项目可直接在 Android Studio 中编译，或使用 Gradle wrapper 编译。但 aar 内置的 v2ray core（可能）已过时。
+- aar 可由 Golang 项目 AndroidLibV2rayLite 或 AndroidLibXrayLite 编译而成。快速入门可参考 Go Mobile 指南和 Makefiles for Go Developers。
+- v2rayNG 可在 Android 模拟器上运行。对于 WSA，需要通过 appops set [package name] ACTIVATE_VPN allow 授予 VPN 权限。
+
+---
+
+
+ GPG Verification / GPG 签名校验
+
+Release files are signed with GPG to verify authenticity and integrity, helping prevent mirror, ISP, or CDN hijacking.
+
+发布文件已使用 GPG 签名，可用于校验文件真实性与完整性，预防镜像站、运营商或 CDN 劫持。
+
+ Fingerprint / 公钥指纹
+
+text
+7694 5E9F 3E9A 168F 8070 F195 805D 661C
+134D FAF6 8903 C199 463C 31E5 AE90 3AE0
+
+
+---
+
+ Community / 社区
+
+Telegram Group / Telegram 群组：
+
+https://t.me/v2rayN
+
+Telegram Channel / Telegram 频道：
+
+https://t.me/github_2dust</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/2dust/v2rayNG/issues/4590"><span class="rp-item-num">#4590</span><span class="rp-item-title">关于Google play的问题</span><span class="rp-item-extra">15 comments · 2025-05-16</span></a><a class="rp-item" href="https://github.com/2dust/v2rayNG/issues/5898"><span class="rp-item-num">#5898</span><span class="rp-item-title">shizuku support</span><span class="rp-item-extra">8 comments · 2026-07-09</span></a><a class="rp-item" href="https://github.com/2dust/v2rayNG/issues/6324"><span class="rp-item-num">#6324</span><span class="rp-item-title">2.3.11版本在安卓TV上使用时，用电视遥控器无法将光标移动到主界面右下角灰色的“启动”按钮，导致无法使用</span><span class="rp-item-extra">7 comments · 2026-10-18</span></a><a class="rp-item" href="https://github.com/2dust/v2rayNG/issues/6231"><span class="rp-item-num">#6231</span><span class="rp-item-title">Security: requesting a private disclosure channel (exported component allows silent config hijack)</span><span class="rp-item-extra">4 comments · 2026-09-14</span></a><a class="rp-item" href="https://github.com/2dust/v2rayNG/issues/6411"><span class="rp-item-num">#6411</span><span class="rp-item-title">开启root模式之后退出v2rayng会导致互联网不可用</span><span class="rp-item-extra">3 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/2dust/v2rayNG/issues/6385"><span class="rp-item-num">#6385</span><span class="rp-item-title">最新版ng 安装到n1盒子 菜单键后 光标没有跳转到菜单下选项 还在节点那边移动。</span><span class="rp-item-extra">3 comments · 2026-11-01</span></a><a class="rp-item" href="https://github.com/2dust/v2rayNG/issues/6154"><span class="rp-item-num">#6154</span><span class="rp-item-title">root授权</span><span class="rp-item-extra">3 comments · 2026-08-29</span></a><a class="rp-item" href="https://github.com/2dust/v2rayNG/issues/6284"><span class="rp-item-num">#6284</span><span class="rp-item-title">[TV] D-pad navigation broken after Jetpack Compose migration (2.3.1+, PR #5866)</span><span class="rp-item-extra">2 comments · 2026-10-02</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/2dust/v2rayNG/discussions/6439"><span class="rp-item-num">#6439</span><span class="rp-item-title">Config Speed test</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/2dust/v2rayNG/discussions/6430"><span class="rp-item-num">#6430</span><span class="rp-item-title">🏆 v2rayNG earned Repocharts Gold: #1 in Kotlin</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/2dust/v2rayNG/discussions/6400"><span class="rp-item-num">#6400</span><span class="rp-item-title">New idea</span><span class="rp-item-extra">1 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/2dust/v2rayNG/discussions/6347"><span class="rp-item-num">#6347</span><span class="rp-item-title">VPN DNS</span><span class="rp-item-extra">5 comments · 2026-10-22</span></a><a class="rp-item" href="https://github.com/2dust/v2rayNG/discussions/6340"><span class="rp-item-num">#6340</span><span class="rp-item-title">local和localhost</span><span class="rp-item-extra">1 comments · 2026-10-21</span></a><a class="rp-item" href="https://github.com/2dust/v2rayNG/discussions/6339"><span class="rp-item-num">#6339</span><span class="rp-item-title">[Bug] 赞助商九云的 REALITY 订阅在 2.3.12 全部 -1ms（fp=ios），Clash Meta 正常</span><span class="rp-item-extra">0 comments · 2026-10-20</span></a><a class="rp-item" href="https://github.com/2dust/v2rayNG/discussions/6345"><span class="rp-item-num">#6345</span><span class="rp-item-title">Regarding DNS issues</span><span class="rp-item-extra">0 comments · 2026-10-20</span></a><a class="rp-item" href="https://github.com/2dust/v2rayNG/discussions/6325"><span class="rp-item-num">#6325</span><span class="rp-item-title">同一个订阅URL，在v2rayN、NekoBox、Clash Meta这几个APP上测试真链接后有很多可用的节点，但是在v2rayNG上测试后就只有几个节点可用</span><span class="rp-item-extra">1 comments · 2026-10-17</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/2dust/v2rayNG/releases"><b>2.3.15</b> <span class="rp-rel-tag">2.3.15</span> <span class="rp-item-extra">2026-11-01</span></a><pre class="rp-pre">本次更新
+
+- 迁移到 Jetpack Compose UI , 感谢 @fuilloi  - 5866
+- 订阅分组设置中，更新订阅时可以组合多个选项进行后台任务，如果只更新订阅，则会在当前页面进行 。
+
+    1. 更新订阅
+    2. 更新订阅后自动测试
+    3. 测试后自动删除无效
+    4. 测试后自动排序
+
+- 添加 TCP ping 测试，有最大并发控制
+- 支持导入v2rayN 内部分享 v2rayn://
+- 为订阅更新添加自定义 HTTP headers ， JSON 格式内容随意，例子如下 
+
+{
+  &quot;X-hwid&quot;: &quot;my_test_device&quot;,
+  &quot;Authorization&quot;: &quot;Bearer test&quot;
+}
+
+- 修复了一些迁移 UI 导致的问题
+- 一些界面和功能的优化和修复，感谢 @eliotcougar 
+- 支持莫奈动态色彩 - 6067
+- 添加手动配置文件存储修复 - 6094
+- 添加翻译贡献者页面 6114
+- 改进启动自动连接 VPN 设置 - 6179
+- WireGuard 添加 remoteDNS 字段 - 6230
+- 一些优化和修复
+- 在订阅组中显示订阅使用情况信息框（流量、到期时间、支持链接）- 6333
+- 将订阅组标签重新设计为带有计数徽章的</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/2dust__v2rayNG.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

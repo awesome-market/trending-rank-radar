@@ -1,0 +1,332 @@
+<h1 align="center">nonecap</h1>
+
+<p align="center">
+  <a href="https://github.com/nonecap/nonecap-js/actions/workflows/ci.yml"><img src="https://github.com/nonecap/nonecap-js/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://www.npmjs.com/package/nonecap"><img src="https://img.shields.io/npm/v/nonecap.svg" alt="npm"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
+</p>
+
+<p align="center">Official TypeScript client for the NoneCap <a href="https://nonecap.com/">hCaptcha solver</a> API.</p>
+
+Submit a captcha, get back a token. The client handles the polling, the timeouts, and the error cases so you do not have to write the fetch loop yourself.
+
+## Install
+
+```sh
+npm install nonecap
+```
+
+Works on Node 18+, Bun, Deno, and edge runtimes. No dependencies.
+
+## Quick start
+
+Grab an API key from [dashboard.nonecap.com](https://dashboard.nonecap.com/signup?utm_source=npm&utm_medium=sdk-readme), then:
+
+```ts
+import { NoneCap } from "nonecap";
+
+const nc = new NoneCap({ apiKey: process.env.NONECAP_KEY! });
+
+const solve = await nc.solve({
+  type: "hcaptcha",
+  sitekey: "10000000-ffff-ffff-ffff-000000000001",
+  url: "https://example.com/login",
+});
+
+console.log(solve.token); // the hCaptcha token, ready to submit
+console.log(solve.resp_key); // hcaptcha.getRespKey() equivalent, for sites that verify the pair
+console.log(solve.user_agent); // submit the token with this User-Agent: some sites check the browser version
+console.log(solve.warnings); // e.g. proxy_session_refused: tokens you reported through this proxy session or its exit IP were refused; a different exit IP is more likely to pass (or, when your proxy changed its exit IP during the solve, use a sticky session per solve)
+```
+
+`solve()` submits the captcha and waits until it is done, using the API's long-poll so you are not hammering it with requests. It returns the solved solve, or throws if the solve fails or your timeout runs out.
+
+## MCP server (Claude Code, Cursor, and other MCP clients)
+
+The package also ships `nonecap-mcp`, a stdio [MCP](https://modelcontextprotocol.io) server, so an AI agent can solve hCaptcha through your NoneCap account.
+
+Claude Code:
+
+```sh
+claude mcp add nonecap --env NONECAP_API_KEY=<your key> -- npx -y -p nonecap@latest nonecap-mcp
+```
+
+Cursor (`~/.cursor/mcp.json`), Claude Desktop (`claude_desktop_config.json`), and most other clients take the same JSON:
+
+```json
+{
+  "mcpServers": {
+    "nonecap": {
+      "command": "npx",
+      "args": ["-y", "-p", "nonecap@latest", "nonecap-mcp"],
+      "env": { "NONECAP_API_KEY": "<your key>" }
+    }
+  }
+}
+```
+
+Tools:
+
+| Tool | What it does |
+| --- | --- |
+| `solve_hcaptcha` | Solve an hCaptcha (`sitekey`, `url`; optional `type`, `rqdata`, `user_agent`, `proxy`, `wait_seconds`) and return the solve with its `token`. If the solve is still running after `wait_seconds` (default 45, at most 50, inside the 60 s that clients built on the official MCP SDK allow by default), it returns the solve id and status so the agent polls `get_solve` instead of solving again. |
+| `get_solve` | Get a solve by id, optionally waiting up to 50 seconds for it to finish. |
+| `cancel_solve` | Cancel a pending or running solve. |
+| `list_solves` | List your recent solves. |
+| `get_account` | Your credit balance and your plan's solves left today. |
+| `report_solve_outcome` | Tell NoneCap whether the site accepted a token. |
+
+A failed call comes back as a tool error whose JSON carries the API's error code (`insufficient_credits`, `sitekey_rate_limited`, a failed solve's `proxy_error`, …), plus `retry_after` when the API sent one. Set `NONECAP_BASE_URL` to point the server at a different API host.
+
+There is also an [Agent Skill](skills/nonecap-hcaptcha/SKILL.md) that tells Claude Code, Codex and other SKILL.md clients when to reach for NoneCap and how to submit the token: copy `skills/nonecap-hcaptcha` into `~/.claude/skills/` (or your agent's skills folder).
+
+## Handling failures
+
+Every error this library throws extends `NoneCapError`, so you can catch the whole family or pick out the one you care about.
+
+```ts
+import {
+  NoneCap,
+  SolveFailedError,
+  InsufficientCreditsError,
+  RateLimitError,
+} from "nonecap";
+
+try {
+  const { token } = await nc.solve({ type: "hcaptcha", sitekey, url });
+  // use token
+} catch (err) {
+  if (err instanceof SolveFailedError) {
+    // The message says what happened, what to do, and that nothing was charged.
+    console.error(err.solve.error?.message);
+    if (err.retryable) scheduleRetry();
+  } else if (err instanceof InsufficientCreditsError) {
+    console.error("Out of credits. Top up at dashboard.nonecap.com");
+  } else if (err instanceof RateLimitError) {
+    await new Promise((r) => setTimeout(r, (err.retryAfter ?? 1) * 1000));
+  } else {
+    throw err;
+  }
+}
+```
+
+The error subclasses are `AuthenticationError` (401), `PermissionError` (403), `InsufficientCreditsError` (402, with `KeyCreditLimitError` when one API key hit its own cap), `ValidationError` (422/400, with a `param` naming the bad field; `PayloadTooLargeError` for 413 and `UnsupportedMediaTypeError` for 415), `NotFoundError` (404), `ConflictError` (409), `RateLimitError` (429, with `ConcurrencyLimitError`, `SitekeyRateLimitedError`, `ProxyUnavailableError` (your own proxy is refusing connections) and `RateCappedError` (your account reached its submit rate cap on this sitekey, or your own-proxy sessions for it are at their limit) telling them apart; `retryAfter` is the seconds the API asked you to wait), `RecognitionFailedError` (422 from `recognize()` when no answer came back, nothing charged), `APIError` (5xx, with `ServiceUnavailableError` for a maintenance pause and its subclass `SitekeyUnavailableError` when solving for one sitekey is currently in maintenance, `retryAfter` set), and `ConnectionError` (the request never landed). Every error from a response carries `requestId`, the id to quote to support.
+
+`SolveFailedError` carries the full `solve`. `solve.error.code` is a `SolveErrorCode`, `solve.error.reason` a typed sub-reason or `null` (`proxy_rejected`, `sitekey_rate_limited`, …), and `solve.error.retryable` says whether resubmitting the same request unchanged can succeed; `err.retryable`, `err.reason` and `err.solveCode` are shortcuts to those fields. Failed solves are never charged.
+
+## Cancelling a solve
+
+`solve()` is the simple path when you just want a token. When you need to cancel while the solve is in flight — clean shutdown, freeing a worker slot, or stopping early — start it instead. `solves.start()` returns as soon as the submission is accepted, handing you a `SolveHandle` whose `id` is available right away.
+
+Wait for the result when you want the token:
+
+```ts
+const handle = await nc.solves.start({ type: "hcaptcha", sitekey, url });
+console.log(handle.id); // available immediately
+
+const solve = await handle.result({ timeout: 120_000 });
+console.log(solve.token);
+```
+
+Or hold onto the handle and cancel it from somewhere else — a shutdown hook, a request that was abandoned, a "stop" button:
+
+```ts
+const handle = await nc.solves.start({ type: "hcaptcha", sitekey, url });
+
+process.on("SIGTERM", () => {
+  handle.cancel().catch(() => {}); // free the worker slot on shutdown
+});
+
+// elsewhere, whoever needs the token still awaits it:
+const solve = await handle.result();
+```
+
+`handle.result()` long-polls until the solve finishes, throwing `SolveFailedError` or `TimeoutError` exactly like `solve()`. The **terminal** outcome is memoized: once the solve actually finishes, every later `result()` call returns that same result. A `TimeoutError` is not memoized — it just means that wait gave up, so you can call `result()` again (for example with a larger `timeout`) to resume polling. Concurrent `result()` calls share a single in-flight poll.
+
+`handle.cancel()` cancels a pending or in-flight solve. If the solve already finished, the API would answer 409; the handle swallows that and returns the solve's current state instead, since cancelling a finished solve is not something you need to handle. Cancelling settles the handle, so a concurrent or later `result()` stops polling and reflects the cancelled (terminal) state.
+
+Cancelled and abandoned solves are **never charged** — nothing is billed unless a solve actually succeeds, and unfinished solves simply expire uncharged at the server deadline. So cancel is for cleanup and early-stop, not cost protection.
+
+### Cleaning up after a `solve()` timeout
+
+`solve()` blocks until the solve settles, so it hands you no handle to cancel a solve while it's still running — for that, use `solves.start()` above. The one thing the `solve()` path offers is cleanup *after* a timeout: when `solve()` throws `TimeoutError`, the error usually carries the in-flight `solveId` (and last-known `solve`), so you can cancel the solve the wait gave up on. Guard on `solveId` being present — if the very first submission times out at the transport level, no id has been assigned yet, so `solveId` is `undefined`.
+
+```ts
+import { TimeoutError } from "nonecap";
+
+try {
+  await nc.solve({ type: "hcaptcha", sitekey, url });
+} catch (err) {
+  if (err instanceof TimeoutError && err.solveId) {
+    await nc.solves.cancel(err.solveId);
+  } else {
+    throw err;
+  }
+}
+```
+
+## Enterprise captchas
+
+For `hcaptcha_enterprise`, `rqdata` is optional: many enterprise sites never issue one. When the page does pass an `rqdata` blob to its widget, send it, fresh for each challenge.
+
+```ts
+const { token } = await nc.solve({
+  type: "hcaptcha_enterprise",
+  sitekey,
+  url,
+  rqdata: "...", // only when the site provides one
+});
+```
+
+## Proxies
+
+Pass a proxy as a structured object or a URL string. Solves run through it, and the bytes are metered back on the solve.
+
+```ts
+await nc.solve({
+  type: "hcaptcha",
+  sitekey,
+  url,
+  proxy: { scheme: "http", host: "1.2.3.4", port: 8080, username: "u", password: "p" },
+  // or: proxy: "http://u:p@1.2.3.4:8080"
+  // scheme can be http, https, socks5, socks5h, or socks4 (default http)
+  // e.g. proxy: "socks5://u:p@1.2.3.4:1080"
+});
+```
+
+## Reporting token acceptance
+
+A token that hCaptcha blessed can still be refused by the site you send it to. Tell us what happened and we tune minting against your real acceptance rate — it's free, and it's the fastest way to get a regression on your sitekey noticed.
+
+Keep the `solve_id` next to the token you submit downstream, then report the verdict:
+
+```ts
+const solve = await nc.solve({ type: "hcaptcha", sitekey, url });
+const ok = await submitToTheSiteYouAreAutomating(solve.token);
+
+await nc.feedback.report({
+  solve_id: solve.id,
+  outcome: ok ? "accepted" : "rejected",
+  reason: ok ? undefined : "session invalidated", // optional, the code your target returned
+  context: ok ? undefined : "3rd retry, rotating residential pool", // optional, anything you think would help us diagnose it
+});
+```
+
+At volume, buffer the verdicts and flush them in one call. Reports over 500 are split across requests for you:
+
+```ts
+const batch = await nc.feedback.reportMany([
+  { solve_id: "solve_01J...", outcome: "accepted" },
+  { solve_id: "solve_01J...", outcome: "rejected", reason: "...", context: "..." },
+]);
+
+// Items resolve independently, so the call succeeds even when some are
+// rejected — check `failed` rather than relying on a throw.
+if (batch.failed > 0) {
+  console.warn(batch.results.filter((r) => r.status === "error"));
+}
+```
+
+`outcome` is one of `accepted`, `rejected`, `unknown` (submitted, verdict unclear), `unused` (never submitted), or `error` (downstream broke for a non-token reason). Only `accepted` and `rejected` count toward the acceptance rate.
+
+`reason` and `context` are both optional free text. `reason` is the code or message your target gave you; `context` is anything else about the attempt you think would help us diagnose it, with no schema at all. Neither is parsed — they are what a human reads when you raise a ticket, and they carry the half of a rejection we cannot see from our side.
+
+Reporting the same solve again corrects the earlier verdict, so retries and late fixes are safe. You can report any of your own solved solves within ~30 days of the solve; corrections to something you already reported are never cut off by that window.
+
+## Recognizing images
+
+If you run your own browser and only need the answer to a challenge, send the instruction and images to `recognize()`. The answer comes back in the same response: no token, no polling.
+
+```ts
+const { id, data } = await nc.recognize({
+  type: "hcaptcha",
+  task: "Please click each image containing a bus",
+  image_data: tiles, // base64 or data: URIs, 1-27 tiles; or image_urls with hCaptcha image URLs
+});
+// data: boolean[], one per tile, in the order you sent them
+```
+
+For a click-the-point challenge send exactly one image with `type: "hcaptcha_area_select"`. `data` is the first point as `{ x, y, w: 0, h: 0 }` and `points` lists every point to click, all in percent of the image.
+
+You can also send the challenge as hCaptcha served it, in NopeCHA's v1 recognition shape:
+
+```ts
+const result = await nc.recognize({
+  data: {
+    request_type: "image_drag_drop", // or image_label_binary, image_label_area_select
+    requester_question: { en: "Drag the piece into place" },
+    tasklist: [{ task_key, datapoint_uri, entities }],
+  },
+});
+```
+
+`image_label_binary` answers pages of 9 booleans (`boolean[][]`), `image_label_area_select` one box per task (`null` when there is no point) plus `points` per task, and `image_drag_drop` the drop box for each entity per task. The return type follows the request, so TypeScript knows which one you got.
+
+When no answer comes back the call throws `RecognitionFailedError` and nothing is charged. An answered call's charge is final. You can tell us whether the answer worked on the challenge, which helps us track accuracy; it is optional, free, and does not refund the call:
+
+```ts
+await nc.reportRecognitionOutcome(id, solved ? "solved" : "failed");
+```
+
+The first report for an id sticks; a repeat returns it unchanged. Calls are capped per API key by your account's concurrency limit, so a burst over it gets `ConcurrencyLimitError` or `RateLimitError` with `retryAfter` set.
+
+## Lower-level API
+
+`solve()` is the convenient path. When you want control over submission and polling, the raw resource methods map one to one to the REST API.
+
+```ts
+// Submit without waiting: returns immediately with a pending solve
+const pending = await nc.solves.create({ type: "hcaptcha", sitekey, url });
+
+// Submit and hold the connection up to 30s for it to finish
+const maybeDone = await nc.solves.create({ type: "hcaptcha", sitekey, url }, { wait: 30 });
+
+// Poll one solve, long-polling up to 30s
+const solve = await nc.solves.retrieve(pending.id, { wait: 30 });
+
+// Cancel a pending or in-flight solve
+await nc.solves.cancel(pending.id);
+
+// List a page of solves
+const page = await nc.solves.list({ limit: 50, status: "solved" });
+
+// Or iterate every solve, newest first
+for await (const s of nc.solves.listAll()) {
+  console.log(s.id, s.status);
+}
+
+// Your account and credit balance
+const me = await nc.me();
+console.log(me.credits_balance);
+// With a plan: what is left of today's solves, and when they reset (00:00 UTC).
+console.log(me.plan?.remaining_today, me.plan?.resets_at);
+```
+
+## Cancelling and timeouts
+
+Pass an `AbortSignal` to cancel any call, and a `timeout` to bound how long `solve()` waits.
+
+```ts
+const ac = new AbortController();
+setTimeout(() => ac.abort(), 60_000);
+
+await nc.solve(
+  { type: "hcaptcha", sitekey, url },
+  { timeout: 120_000, signal: ac.signal },
+);
+```
+
+## Configuration
+
+```ts
+new NoneCap({
+  apiKey: "nc_live_...",        // required
+  baseURL: "https://api.nonecap.com", // override if you need to
+  timeout: 100_000,             // per HTTP request, ms
+  fetch: customFetch,           // inject your own fetch
+});
+```
+
+## License
+
+MIT, see [LICENSE](LICENSE).

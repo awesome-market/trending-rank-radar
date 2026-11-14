@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tangly1024/NotionNext · GitHub Trending Rank Radar</title>
+<meta name="description" content="Turn your Notion workspace into a fast, customizable website. Built with Next.js + Notion API, with multi-platform deployment and no self-hosted server required.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="NotionNext, tangly1024, tangly1024/NotionNext, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/tangly1024__NotionNext">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="tangly1024/NotionNext · GitHub Trending Rank Radar">
+<meta property="og:description" content="Turn your Notion workspace into a fast, customizable website. Built with Next.js + Notion API, with multi-platform deployment and no self-hosted server required.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/tangly1024__NotionNext">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "tangly1024/NotionNext", "codeRepository": "https://github.com/tangly1024/NotionNext", "url": "https://zhuikan.com/repos/tangly1024__NotionNext", "description": "Turn your Notion workspace into a fast, customizable website. Built with Next.js + Notion API, with multi-platform deployment and no self-hosted server required.", "author": {"@type": "Organization", "name": "tangly1024", "url": "https://github.com/tangly1024"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "JavaScript", "dateCreated": "2021-09-26"}</script>
+</head>
+<body data-repo="tangly1024/NotionNext" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">tangly1024/NotionNext</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="tangly1024__NotionNext"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/162292022?v=4&s=300" width="300" height="300" alt="tangly1024 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">NotionNext</div>
+      <a class="rp-side-owner" href="https://github.com/tangly1024">tangly1024</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/tangly1024">tangly1024</a>
+        <span class="rp-sep">/</span><span class="rp-name">NotionNext</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Turn your Notion workspace into a fast, customizable website. Built with Next.js + Notion API, with multi-platform deployment and no self-hosted server required.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>11,899</b></span><span class="rp-stat" title="forks">⑂ <b>14,675</b></span><span class="rp-stat" title="watchers">👁 <b>48</b></span><span class="rp-stat" title="releases">▤ <b>180</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">Created 2021-09-26</span><a class="rp-meta-bit rp-home" href="https://notionnext.tangly1024.com" rel="noopener">notionnext.tangly1024.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/tangly1024/NotionNext">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+39</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">11,899</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">14,675</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">48</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">180</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">NotionNext
+
+用 Notion 搭建自己的独立站
+
+继续在 Notion 写作，一键发布为博客、作品集、知识库、导航站或产品官网。
+
+
+  在线预览
+  ·
+  开始搭建
+  ·
+  主题全览
+  ·
+  用户作品
+  ·
+  文档站
+  ·
+  讨论区
+
+
+
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+
+
+中文 | English
+
+
+
+---
+
+ NotionNext 是什么？
+
+NotionNext 是一个基于 Next.js + Notion API 的开源站点系统。你继续用 Notion 管理文章、分类、标签、菜单和页面，NotionNext 负责把这些内容发布成可访问、可搜索、可运营的独立网站。
+
+它适合想长期沉淀内容的人：内容创作者、独立开发者、设计师、摄影师、课程作者、开源项目维护者，以及需要快速搭建产品官网或知识库的小团队。
+
+ 你可以用它做什么？
+
+| 目标 | 推荐入口 | 适合人群 |
+| --- | --- | --- |
+| 搭个人博客 | 从这里开始 | 内容创作者、独立开发者、学生 |
+| 做作品集或个人品牌站 | 按场景选主题 | 设计师、摄影师、自由职业者 |
+| 做产品官网或 SaaS 落地页 | Starter / Landing / Proxio | 创业者、独立产品、小团队 |
+| 做知识库或文档站 | GitBook / Claude | 开源项目、课程作者、团队文档 |
+| 做导航站或资源聚合 | Nav 主题 | 资源整理者、社群运营者 |
+
+ 为什么选择 NotionNext？
+
+- 不换写作工具：文章、分类、标签、封面、菜单仍在 Notion 中维护。
+- 上线路径短：复制 Notion 模板、Fork 仓库、连接 Vercel，即可部署。
+- 主题选择多：内置 26 个主题，覆盖博客、文档、作品集、官网、相册、导航站等场景。
+- 适合长期运营：支持独立域名、SEO、Sitemap、RSS、评论、统计、搜索、广告和邮件订阅。
+- 开源可控：源码、配置和主题都在自己的仓库里，后续可以继续二次开发。
+- 数据链路清晰：Notion 负责内容沉淀，站点负责展示和分发，后续可迁移到 Markdown 或其他系统。
+
+ 20 分钟部署路线
+
+1. 打开 主题预览站 看最终效果。
+2. 复制 NotionNext 官方 Notion 模板。
+3. Fork 本仓库到自己的 GitHub 账号。
+4. 使用 Vercel 部署 NotionNext。
+5. 在环境变量中填写 Notion 页面 ID 等配置。
+6. 部署成功后，按场景选择主题并补齐域名、评论、统计、搜索等功能。
+
+新手建议直接从文档站的 从这里开始 阅读。
+
+ 主题与预览
+
+- 在线切换主题：preview.tangly1024.com
+- 26 个内置主题：主题全览
+- 仓库内主题文档：docs/user-guide/themes/
+
+| 场景 | 优先看 |
+| --- | --- |
+| 个人博客 | simple、hexo、nobelium、typography |
+| 文档 / 知识库 | gitbook、claude、thoughtlite |
+| 作品集 / 个人品牌 | opc、proxio、starter、landing |
+| 产品官网 | starter、landing、commerce |
+| 图片 / 摄影 | photo、plog、magzine |
+| 导航站 | nav |
+
+ 本地开发
+
+推荐使用 Node 22 和 Yarn 1。Node 20 已无法安装当前依赖（@ai-sdk/google 要求 Node =22），部署平台也需要同步设置为 Node 22。
+
+bash
+ 1. 使用 Node 22
+nvm use || nvm install
+
+ 2. 安装 Yarn
+npm i -g yarn
+
+ 3. 安装依赖
+yarn
+
+ 4. 启动开发
+yarn dev
+
+
+常用命令：
+
+| 命令 | 用途 |
+| --- | --- |
+| yarn dev | 启动本地开发 |
+| yarn build | 构建生产版本 |
+| yarn export | 静态导出 |
+| yarn docs:site:dev | 本地预览文档站 |
+| yarn docs:site:build | 构建文档站 |
+
+ 文档入口
+
+自 2026 年起，NotionNext 使用仓库内 Markdown 文档作为主要教程来源，并发布为独立文档站。
+
+| 内容 | 链接 |
+| --- | --- |
+| 在线文档站 | notionnext.tangly1024.com |
+| 新手入口 | 从这里开始 |
+| 场景模板 | 按目标选择模板 |
+| 配置索引 | 全站功能与配置索引 |
+| 主题说明 | 26 个主题说明 |
+| 用户作品 | Showcase：已上线站点欢迎提交作品 |
+| 文档源码 | docs/ |
+| 旧版手册 | docs.tangly1024.com |
+
+ 参与社区
+
+NotionNext 主仓库由 GitHub 组织 notionnext-org 维护。欢迎提交问题、补充文档、贡献主题、修复代码或参与讨论。
+
+| 内容 | 链接 |
+| --- | --- |
+| 参与社区 | community-participate.md |
+| 5.0 愿景与路线图 | VISION_ROADMAP.md |
+| 贡献指南 | CONTRIBUTING.zh-CN.md |
+| 项目治理 | GOVERNANCE.zh-CN.md |
+| 维护者 | MAINTAINERS.md |
+| 行为准则 | CODE_OF_CONDUCT.md |
+| 讨论区 | GitHub Discussions |
+
+如果你在仓库转让前已克隆旧地址，建议更新远程仓库：
+
+bash
+git remote set-url origin https://github.com/notionnext-org/NotionNext.git
+git remote -v
+
+
+ 技术栈
+
+- 框架：Next.js
+- 样式：Tailwind CSS
+- 渲染：react-notion-x
+- 评论：Twikoo、Giscus、Gitalk、Cusdis、Utterances
+- 部署：Vercel
+
+ 相关项目
+
+- Elog：Markdown 批量导出工具，支持组合 Notion、语雀、FlowUs、飞书等写作平台与 Hexo、VitePress、Halo、WordPress 等博客平台。
+
+ 致谢
+
+感谢 Craig Hart 发起的 Nobelium 项目。
+
+
+  Craig Hart
+
+
+感谢每一位参与代码、主题、文档、Issue、Review 与发布维护的贡献者。
+
+
+
+ 使用声明
+
+本项目为免费、公开资源，仅限个人学习和合法站点建设使用。禁止利用本项目发布非法内容或进行违法活动。
+
+ License
+
+Th</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/tangly1024__NotionNext.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>vastsa/PI-Desktop · GitHub Trending Rank Radar</title>
+<meta name="description" content="Local-first AI coding agent desktop: Electron + Rust host core + pi Agent Harness + user-installable plugins">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="PI-Desktop, vastsa, vastsa/PI-Desktop, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/vastsa__PI-Desktop">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="vastsa/PI-Desktop · GitHub Trending Rank Radar">
+<meta property="og:description" content="Local-first AI coding agent desktop: Electron + Rust host core + pi Agent Harness + user-installable plugins">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/vastsa__PI-Desktop">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "vastsa/PI-Desktop", "codeRepository": "https://github.com/vastsa/PI-Desktop", "url": "https://zhuikan.com/repos/vastsa__PI-Desktop", "description": "Local-first AI coding agent desktop: Electron + Rust host core + pi Agent Harness + user-installable plugins", "author": {"@type": "Organization", "name": "vastsa", "url": "https://github.com/vastsa"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "TypeScript", "dateCreated": "2023-03-22"}</script>
+</head>
+<body data-repo="vastsa/PI-Desktop" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">vastsa/PI-Desktop</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="vastsa__PI-Desktop"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/48862574?u=66dd2e293df70e164a32ed84b049d77c5d0fb61f&amp;v=4&s=300" width="300" height="300" alt="vastsa avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">PI-Desktop</div>
+      <a class="rp-side-owner" href="https://github.com/vastsa">vastsa</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/vastsa">vastsa</a>
+        <span class="rp-sep">/</span><span class="rp-name">PI-Desktop</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Local-first AI coding agent desktop: Electron + Rust host core + pi Agent Harness + user-installable plugins</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>7,639</b></span><span class="rp-stat" title="forks">⑂ <b>749</b></span><span class="rp-stat" title="watchers">👁 <b>17</b></span><span class="rp-stat" title="releases">▤ <b>106</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">Created 2023-03-22</span><a class="rp-meta-bit rp-home" href="https://pi-docs.aiuo.net" rel="noopener">pi-docs.aiuo.net</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="vastsa__FileCodeBox"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/48862574?u=66dd2e293df70e164a32ed84b049d77c5d0fb61f&amp;v=4" alt="" loading="lazy">FileCodeBox</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/vastsa/PI-Desktop">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1,062</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">7,639</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">749</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">17</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">106</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">PI-Desktop
+
+ 可拆卸的 AI Agent 桌面工作台
+
+把项目、Agent、模型、插件和工作流，装进一个长期可用的桌面环境。
+
+本地优先 · 模型自由 · 插件驱动 · macOS / Windows / Linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+立即下载 ·
+使用文档 ·
+插件开发 ·
+界面预览 ·
+English
+
+
+
+
+
+
+
+你的项目留在本地 · 你的模型由你选择 · 你的工作台由你组装
+
+
+
+---
+
+ 为什么是 PI-Desktop？
+
+终端 Agent 擅长执行，IDE Agent 擅长嵌入编辑器。
+
+PI-Desktop 想做得更进一步：
+
+ 给 AI Agent 一个独立、长期、可扩展的桌面工作空间。
+
+
+
+
+
+
+ 独立工作台
+
+不依附某个 IDE 或 Terminal。
+
+Project、Session、Review、Preview 与 Agent 都有自己的空间。
+
+
+
+
+
+ 插件驱动
+
+插件扩展的不只是 Agent。
+
+面板、视图、Widget、Tool、MCP、主题与后台服务都可以插件化。
+
+
+
+
+
+ Agent 编排
+
+一个 Agent 不够，就拆开做。
+
+Subagent 与 Worker Session 可以承担独立任务并行工作。
+
+
+
+
+
+ 模型自由
+
+云端、本地、自建网关、Compatible API。
+
+模型随时换，工作流不用换。
+
+
+
+
+
+
+
+
+它不是某个模型的壳，也不是某个 IDE 的插件。
+
+ 它是承载 Agent 工作流的桌面平台。
+
+
+
+ [!NOTE]
+ PI-Desktop 目前仍处于 Early Preview。 已可用于真实开发工作流，部分 API、插件接口与桌面能力仍在持续演进。
+
+ 当前发布线：0.21.x（Early Preview）。
+
+---
+
+ 插件不是附加功能，而是工作台的一部分
+
+PI-Desktop 的 Core 负责提供稳定底座。
+
+真正属于你的工作流，由插件组合出来。
+
+
+
+
+
+
+ Agent
+
+扩展 Agent 能力
+
+Agent Tools
+Skills
+Completion
+pi Extensions
+
+
+
+
+
+ Workspace
+
+扩展整个桌面
+
+Commands
+Panels
+Work Panel Views
+Floating Widgets
+Themes
+
+
+
+
+
+ Platform
+
+扩展运行平台
+
+MCP Servers
+Resident Services
+Plugin Message Bus
+
+
+
+
+
+
+插件不必只是“给 Agent 多加一个 Tool”。
+
+它可以是一整个产品：
+
+text
+Voice Agent
+├── Floating Widget
+├── Speech Service
+├── Agent Tool
+└── Commands
+
+GitHub Workspace
+├── Work Panel
+├── MCP Server
+├── Agent Tools
+└── Background Service
+
+Session Analytics
+├── Dashboard
+├── Commands
+└── Workspace View
+
+
+ 插件能做什么？
+
+| 能力                  | 用途                  |
+| ------------------- | ------------------- |
+| Command         | 向全局命令系统添加操作         |
+| Panel           | 创建独立插件界面            |
+| Floating Widget | 创建语音球、状态窗、计时器等悬浮界面  |
+| Work Panel View | 向右侧工作区加入新视图         |
+| Agent Tool      | 注册 Agent 可调用工具      |
+| Completion      | 调用用户已经配置的模型         |
+| Skill           | 为 Agent 提供可复用能力与工作流 |
+| Theme           | 修改工作台视觉             |
+| MCP Server      | 接入本地或远程 MCP         |
+| Service         | 运行常驻后台任务            |
+| Message Bus     | 在插件之间传递消息           |
+
+插件可以通过 .piplug 分发，也可以从插件市场安装。
+
+
+
+ 开发一个插件 →
+
+
+
+---
+
+ 一个底座，组装不同的工作流
+
+text
+                         PI-Desktop
+                             │
+          ┌──────────────────┼──────────────────┐
+          │                  │                  │
+        Agent            Workspace           Platform
+          │                  │                  │
+     Agent Tools           Panels              MCP
+       Skills             Widgets            Services
+     Subagents             Views            Message Bus
+   pi Extensions          Themes
+          │                  │                  │
+          └──────────────────┼──────────────────┘
+                             │
+                       Your Workflow
+
+
+PI-Desktop 可以只是一个 Coding Agent。
+
+也可以被组装成：
+
+AI 开发工作台 · Voice Agent · DevOps Console · GitHub Workspace · 数据分析助手 · 多 Agent 调度中心 · 自动化平台
+
+ Core 提供底座，插件决定它最终长什么样。
+
+---
+
+ 三种工作方式
+
+
+
+
+
+
+ Agent
+
+你给任务，它直接做。
+
+读代码、改文件、跑命令、测试、持续迭代。
+
+适合日常开发。
+
+
+
+
+
+ Plan
+
+它先给方案，你确认后再执行。
+
+先研究项目，再生成实施计划。
+
+适合重构与高风险修改。
+
+
+
+
+
+ Goal
+
+你定义结果，它决定路径。
+
+锁定目标与验收条件，其余交给 Agent。
+
+适合复杂与长期任务。
+
+
+
+
+
+
+高权限操作始终经过 PI-Desktop 的 Perm</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/vastsa__PI-Desktop.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

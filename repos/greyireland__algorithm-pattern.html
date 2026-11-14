@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>greyireland/algorithm-pattern · GitHub Trending Rank Radar</title>
+<meta name="description" content="Algorithm Patterns — the most scientific way to practice, the fastest path to an offer. You deserve it~ ">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="algorithm-pattern, greyireland, greyireland/algorithm-pattern, github stars, github trending, star growth, star history, 开源项目, 星标增长, leetcode, leetcode-go, algorithm, algo, pattern">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/greyireland__algorithm-pattern">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="greyireland/algorithm-pattern · GitHub Trending Rank Radar">
+<meta property="og:description" content="Algorithm Patterns — the most scientific way to practice, the fastest path to an offer. You deserve it~ ">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/greyireland__algorithm-pattern">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "greyireland/algorithm-pattern", "codeRepository": "https://github.com/greyireland/algorithm-pattern", "url": "https://zhuikan.com/repos/greyireland__algorithm-pattern", "description": "Algorithm Patterns — the most scientific way to practice, the fastest path to an offer. You deserve it~ ", "author": {"@type": "Organization", "name": "greyireland", "url": "https://github.com/greyireland"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Go", "dateCreated": "2020-06-13", "keywords": "leetcode,leetcode-go,algorithm,algo,pattern"}</script>
+</head>
+<body data-repo="greyireland/algorithm-pattern" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">greyireland/algorithm-pattern</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="greyireland__algorithm-pattern"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/9276742?u=c0a8bfd3d5bdbb8c9d9ea693551d747be4382034&amp;v=4&s=300" width="300" height="300" alt="greyireland avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">algorithm-pattern</div>
+      <a class="rp-side-owner" href="https://github.com/greyireland">greyireland</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/greyireland">greyireland</a>
+        <span class="rp-sep">/</span><span class="rp-name">algorithm-pattern</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Algorithm Patterns — the most scientific way to practice, the fastest path to an offer. You deserve it~ </p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>15,462</b></span><span class="rp-stat" title="forks">⑂ <b>2,552</b></span><span class="rp-stat" title="watchers">👁 <b>344</b></span><span class="rp-stat" title="prs">⑃ <b>23</b></span><span class="rp-stat" title="issues">● <b>34</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/leetcode">leetcode</a><a class="rp-topic" href="https://github.com/topics/leetcode-go">leetcode-go</a><a class="rp-topic" href="../tags/algorithm">algorithm</a><a class="rp-topic" href="https://github.com/topics/algo">algo</a><a class="rp-topic" href="https://github.com/topics/pattern">pattern</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Go</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2020-06-13</span><a class="rp-meta-bit rp-home" href="https://greyireland.gitbook.io/algorithm-pattern" rel="noopener">greyireland.gitbook.io/algorithm-pattern</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/greyireland/algorithm-pattern">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">15,462</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,552</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">344</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">23</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">34</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">算法模板
+
+English | 中文
+
+!来刷题了
+
+算法模板，最科学的刷题方式，最快速的刷题路径，一个月从入门到 offer，你值得拥有 🐶~
+
+算法模板顾名思义就是刷题的套路模板，掌握了刷题模板之后，刷题也变得好玩起来了~
+
+ 此项目是自己找工作时，从 0 开始刷 LeetCode 的心得记录，通过各种刷题文章、专栏、视频等总结了一套自己的刷题模板。
+
+ 这个模板主要是介绍了一些通用的刷题模板，以及一些常见问题，如到底要刷多少题，按什么顺序来刷题，如何提高刷题效率等。
+
+ 在线文档
+
+在线文档 Gitbook：算法模板 🔥
+
+ 核心内容
+
+ 入门篇 🐶
+
+- go 语言入门
+- 算法快速入门
+
+ 数据结构篇 🐰
+
+- 二叉树
+- 链表
+- 栈和队列
+- 二进制
+
+ 基础算法篇 🐮
+
+- 二分搜索
+- 排序算法
+- 动态规划
+
+ 算法思维 🦁
+
+- 递归思维
+- 滑动窗口思想
+- 二叉搜索树
+- 回溯法
+
+ 心得体会
+
+文章大部分是对题目的思路介绍，和一些问题的解析，有了思路还是需要自己手动写写的，所以每篇文章最后都有对应的练习题
+
+刷完这些练习题，基本对数据结构和算法有自己的认识体会，基本大部分面试题都能写得出来，国内的 BAT、TMD 应该都不是问题
+
+从 4 月份找工作开始，从 0 开始刷 LeetCode，中间大概花了一个半月(6 周)左右时间刷完 240 题。
+
+!一个半月刷完240题
+
+!刷题记录
+
+开始刷题时，确实是无从下手，因为从序号开始刷，刷到几道题就遇到 hard 的题型，会卡住很久，后面去评论区看别人怎么刷题，也去 Google 搜索最好的刷题方式，发现按题型刷题会舒服很多，基本一个类型的题目，一天能做很多，慢慢刷题也不再枯燥，做起来也很有意思，最后也收到不错的 offer（最后去了宇宙系）。
+
+回到最开始的问题，面试到底要刷多少题，其实这个取决于你想进什么样公司，你定的目标如果是国内一线大厂，个人感觉大概 200 至 300 题基本就满足大部分面试需要了。第二个问题是按什么顺序刷及如何提高效率，这个也是本 repo 的目的，给你指定了一个刷题的顺序，以及刷题的模板，有了方向和技巧后，就去动手吧~ 希望刷完之后，你也能自己总结一套属于自己的刷题模板，有所收获，有所成长~
+
+ 推荐的刷题路径
+
+按此 repo 目录刷一遍，如果中间有题目卡住了先跳过，然后刷题一遍 LeetCode 探索基础卡片，最后快要面试时刷题一遍剑指 offer。
+
+为什么这么要这么刷，因为 repo 里面的题目是按类型归类，都是一些常见的高频题，很有代表性，大部分都是可以用模板加一点变形做出来，刷完后对大部分题目有基本的认识。然后刷一遍探索卡片，巩固一下一些基础知识点，总结这些知识点。最后剑指 offer 是大部分公司的出题源头，刷完面试中基本会遇到现题或者变形题，基本刷完这三部分，大部分国内公司的面试题应该就没什么问题了~
+
+1、 algorithm-pattern 练习题
+
+!练习题
+
+2、 LeetCode 卡片
+
+!探索卡片
+
+3、 剑指 offer
+
+!剑指offer
+
+刷题时间可以合理分配，如果打算准备面试了，建议前面两部分 一个半月 （6 周）时间刷完，最后剑指 offer 半个月刷完，边刷可以边投简历进行面试，遇到不会的不用着急，往模板上套就对了，如果面试管给你提示，那就好好做，不要错过这大好机会~
+
+ 注意点：如果为了找工作刷题，遇到 hard 的题如果有思路就做，没思路先跳过，先把基础打好，再来刷 hard 可能效果会更好~
+
+ 面试资源
+
+分享一些计算机的经典书籍，大部分对面试应该都有帮助，强烈推荐 🌝
+
+我看过的 100 本书
+
+ 更新计划
+
+持续更新中，觉得还可以的话点个 star 收藏呀 ⭐️~
+
+【 Github 】https://github.com/greyireland/algorithm-pattern ⭐️
+
+ 完成打卡
+
+完成计划之后，可以提交 Pull requests，在下面添加自己的项目仓库，完成自己的算法模板打卡呀~
+
+| 完成 | 用户                                              | 项目地址                                                            |
+| ---- | ------------------------------------------------- | ------------------------------------------------------------------- |
+| ✅   | easyui | algorithm-pattern-swift(Swift 实现),在线文档 Gitbook |
+| ✅   | wardseptember | notes(Java 实现)          |
+| ✅   | dashidhy | algorithm-pattern-python(Python 实现) |
+| ✅   | binzi56 | algorithm-pattern-c(c++ 实现) |
+| ✅   | lvseouren | algorithm-study-record(c++ 实现) |
+| ✅   | chienmy | algorithm-pattern-java(Java 实现), 在线文档 Gitbook |
+| ✅ | ligecarryme | algorithm-pattern-JavaScript(JS+TS实现) |
+| ✅ | Esdeath | algorithm-pattern-dart(dart实现),在线文档 Gitbook |
+| ✅ | longpi1 | algorithm-pattern-golang(golang实现)
+| ✅ | tpxxn | algorithm-pattern-CSharp(C 实现)</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/greyireland/algorithm-pattern/issues/9"><span class="rp-item-num">#9</span><span class="rp-item-title">大佬加个单调递增栈的专项训练不</span><span class="rp-item-extra">6 comments · 2020-06-29</span></a><a class="rp-item" href="https://github.com/greyireland/algorithm-pattern/issues/53"><span class="rp-item-num">#53</span><span class="rp-item-title">栈的部分解答有误</span><span class="rp-item-extra">2 comments · 2023-02-24</span></a><a class="rp-item" href="https://github.com/greyireland/algorithm-pattern/issues/26"><span class="rp-item-num">#26</span><span class="rp-item-title">写了一个C++版本，欢迎👏参观，有问题issue me</span><span class="rp-item-extra">2 comments · 2020-07-29</span></a><a class="rp-item" href="https://github.com/greyireland/algorithm-pattern/issues/5"><span class="rp-item-num">#5</span><span class="rp-item-title">链表是否有环的题目 ---linked-list-cycle 中有错误，直接使用了节点的值进行比较</span><span class="rp-item-extra">2 comments · 2020-06-26</span></a><a class="rp-item" href="https://github.com/greyireland/algorithm-pattern/issues/4"><span class="rp-item-num">#4</span><span class="rp-item-title">哥们，求加个链接，我把你的代码用Java写了一遍。</span><span class="rp-item-extra">2 comments · 2020-06-25</span></a><a class="rp-item" href="https://github.com/greyireland/algorithm-pattern/issues/2"><span class="rp-item-num">#2</span><span class="rp-item-title">【字节跳动】校招内推</span><span class="rp-item-extra">2 comments · 2020-06-16</span></a><a class="rp-item" href="https://github.com/greyireland/algorithm-pattern/issues/63"><span class="rp-item-num">#63</span><span class="rp-item-title">二分查找模板三可以优化</span><span class="rp-item-extra">1 comments · 2024-08-02</span></a><a class="rp-item" href="https://github.com/greyireland/algorithm-pattern/issues/51"><span class="rp-item-num">#51</span><span class="rp-item-title">模板</span><span class="rp-item-extra">1 comments · 2022-09-21</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/greyireland__algorithm-pattern.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

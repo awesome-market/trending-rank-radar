@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>scwang90/SmartRefreshLayout · GitHub Trending Rank Radar</title>
+<meta name="description" content="🔥下拉刷新、上拉加载、二级刷新、淘宝二楼、RefreshLayout、OverScroll，Android智能下拉刷新框架，支持越界回弹、越界拖动，具有极强的扩展性，集成了几十种炫酷的Header和 Footer。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="SmartRefreshLayout, scwang90, scwang90/SmartRefreshLayout, github stars, github trending, star growth, star history, 开源项目, 星标增长, refreshlayout, overscroll, pull-to-refresh, pulltorefresh, android, android-ui">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/scwang90__SmartRefreshLayout">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="scwang90/SmartRefreshLayout · GitHub Trending Rank Radar">
+<meta property="og:description" content="🔥下拉刷新、上拉加载、二级刷新、淘宝二楼、RefreshLayout、OverScroll，Android智能下拉刷新框架，支持越界回弹、越界拖动，具有极强的扩展性，集成了几十种炫酷的Header和 Footer。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/scwang90__SmartRefreshLayout">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "scwang90/SmartRefreshLayout", "codeRepository": "https://github.com/scwang90/SmartRefreshLayout", "url": "https://zhuikan.com/repos/scwang90__SmartRefreshLayout", "description": "🔥下拉刷新、上拉加载、二级刷新、淘宝二楼、RefreshLayout、OverScroll，Android智能下拉刷新框架，支持越界回弹、越界拖动，具有极强的扩展性，集成了几十种炫酷的Header和 Footer。", "author": {"@type": "Organization", "name": "scwang90", "url": "https://github.com/scwang90"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Java", "dateCreated": "2017-06-02", "keywords": "refreshlayout,overscroll,pull-to-refresh,pulltorefresh,android,android-ui,header,footer"}</script>
+</head>
+<body data-repo="scwang90/SmartRefreshLayout" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">scwang90/SmartRefreshLayout</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="scwang90__SmartRefreshLayout"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/11567071?u=eb2da9db20dc49c1cc0064a6c3f4d59bf77042f5&amp;v=4&s=300" width="300" height="300" alt="scwang90 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">SmartRefreshLayout</div>
+      <a class="rp-side-owner" href="https://github.com/scwang90">scwang90</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/scwang90">scwang90</a>
+        <span class="rp-sep">/</span><span class="rp-name">SmartRefreshLayout</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">🔥下拉刷新、上拉加载、二级刷新、淘宝二楼、RefreshLayout、OverScroll，Android智能下拉刷新框架，支持越界回弹、越界拖动，具有极强的扩展性，集成了几十种炫酷的Header和 Footer。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>25,084</b></span><span class="rp-stat" title="forks">⑂ <b>4,952</b></span><span class="rp-stat" title="watchers">👁 <b>503</b></span><span class="rp-stat" title="prs">⑃ <b>31</b></span><span class="rp-stat" title="issues">● <b>1,575</b></span><span class="rp-stat" title="releases">▤ <b>14</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/refreshlayout">refreshlayout</a><a class="rp-topic" href="https://github.com/topics/overscroll">overscroll</a><a class="rp-topic" href="https://github.com/topics/pull-to-refresh">pull-to-refresh</a><a class="rp-topic" href="https://github.com/topics/pulltorefresh">pulltorefresh</a><a class="rp-topic" href="../tags/android">android</a><a class="rp-topic" href="https://github.com/topics/android-ui">android-ui</a><a class="rp-topic" href="https://github.com/topics/header">header</a><a class="rp-topic" href="https://github.com/topics/footer">footer</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Java</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2017-06-02</span><a class="rp-meta-bit rp-home" href="https://segmentfault.com/a/1190000010066071" rel="noopener">segmentfault.com/a/1190000010066071</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/scwang90/SmartRefreshLayout">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">V3.0.0-alpha</span><a class="rp-dl-a" href="https://github.com/scwang90/SmartRefreshLayout/releases/tag/V3.0.0-alpha">V3.0.0-alpha ↓</a><span class="rp-dl-ver">V3.0.0-alpha</span><span class="rp-dl-date">2024-11-18</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-12</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-20</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">25,084</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">4,952</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">503</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">31</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,575</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">14</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Android智能下拉刷新框架-SmartRefreshLayout
+
+
+
+
+
+
+
+ English | 中文
+
+SmartRefreshLayout以打造一个强大，稳定，成熟的下拉刷新框架为目标，并集成各种的炫酷、多样、实用、美观的Header和Footer。
+正如名字所说，SmartRefreshLayout是一个“聪明”或者“智能”的下拉刷新布局，由于它的“智能”，它不只是支持所有的View，还支持多层嵌套的视图结构。
+它继承自ViewGroup 而不是FrameLayout或LinearLayout，提高了性能。
+也吸取了现在流行的各种刷新布局的优点，包括谷歌官方的 SwipeRefreshLayout，
+其他第三方的 Ultra-Pull-To-Refresh、TwinklingRefreshLayout 。
+还集成了各种炫酷的 Header 和 Footer。
+
+ IOS版本
+
+IOS版本：链接
+
+ 国内加速
+
+github 由于你懂的原因，下载速度缓慢，图片也无法查看，可以跳转 Gitee镜像
+
+ 特点功能:
+
+ - 支持多点触摸
+ - 支持淘宝二楼和二级刷新
+ - 支持嵌套多层的视图结构 Layout (LinearLayout,FrameLayout...)
+ - 支持所有的 View（AbsListView、RecyclerView、WebView....View）
+ - 支持自定义并且已经集成了很多炫酷的 Header 和 Footer.
+ - 支持和 ListView 的无缝同步滚动 和 CoordinatorLayout 的嵌套滚动 .
+ - 支持自动刷新、自动上拉加载（自动检测列表惯性滚动到底部，而不用手动上拉）.
+ - 支持自定义回弹动画的插值器，实现各种炫酷的动画效果.
+ - 支持设置主题来适配任何场景的 App，不会出现炫酷但很尴尬的情况.
+ - 支持设多种滑动方式：平移、拉伸、背后固定、顶层固定、全屏
+ - 支持所有可滚动视图的越界回弹
+ - 支持 Header 和 Footer 交换混用
+ - 支持 AndroidX
+ - 支持横向刷新
+ - 支持IOS
+
+ 传送门
+
+ - 属性文档
+ - 常见问题
+ - 智能之处
+ - 更新日志
+ - 博客文章
+ - 源码下载
+ - 多点触摸
+ - 自定义Header
+
+ Demo
+下载 APK-Demo
+
+!
+
+ 项目演示
+|个人首页|微博列表|
+|:---:|:---:|
+|!|!|
+
+|餐饮美食|个人中心|
+|:---:|:---:|
+|!|!|
+
+ 样式演示 Style
+|Delivery|DropBox|
+|:---:|:---:|
+|!|!|
+|Refresh-your-delivery|Dropbox-Refresh|
+
+上面这两个是我自己实现的，下面的是我把github上其它优秀的Header进行的整理和集合还有优化：
+
+|BezierRadar|BezierCircle|
+|:---:|:---:|
+|!|!|
+|Pull To Refresh|Pull Down To Refresh|
+
+|FlyRefresh|Classics|
+|:---:|:---:|
+|!|!|
+|FlyRefresh|ClassicsHeader|
+
+|Phoenix|Taurus|
+|:---:|:---:|
+|!|!|
+|Yalantis/Phoenix|Yalantis/Taurus
+
+|BattleCity|HitBlock|
+|:---:|:---:|
+|!|!|
+|FunGame/BattleCity|FunGame/HitBlock
+
+|WaveSwipe|Material|
+|:---:|:---:|
+|!|!|
+|WaveSwipeRefreshLayout|MaterialHeader
+
+|StoreHouse|WaterDrop|
+|:---:|:---:|
+|!|!|
+|CRefreshLayout|WaterDrop
+
+
+看到这么多炫酷的Header，是不是觉得很棒？这时你或许会担心这么多的Header集成在一起，但是平时只会用到一个，是不是要引入很多无用的代码和资源？
+V2.x 版本已经把依赖库拆分成8个包啦，用到的时候自行引用就可以啦！
+
+ - refresh-layout-kernel        核心必须依赖
+ - refresh-header-classics      经典刷新头
+ - refresh-header-radar         雷达刷新头
+ - refresh-header-falsify       虚拟刷新头
+ - refresh-header-material      谷歌刷新头
+ - refresh-header-two-level     二级刷新头
+ - refresh-footer-ball          球脉冲加载
+ - refresh-footer-classics      经典加载
+
+ 注：在Demo中有些炫酷的 Header，他们并不具有实用性，所以没有打包上传仓库，所以无法直接添加依赖。
+如果你确实想要在App中集成它们，请自行找到对应个 tag 的分支，把对应版本的Header源码拷贝到自己的项目中，作为自定义Header来使用。
+
+ 需要源码引用的Header如下：
+
+ BezierCircleHeader
+DeliveryHeader
+DropBoxHeader
+FlyRefreshHeader
+FunGameBattleCityHeader
+FunGameHitBlockHeader
+PhoenixHeader
+StoreHouseHeader
+TaurusHeader
+WaterDropHeader
+WaveSwipeHeader
+
+
+ 简单用例
+ 1.在 build.gradle 中添加依赖
+
+ 注：3.x 版本已经发布，主要升级为使用 androidx 替换 support, 并且目前尚未添加新功能, 如果你还需要使用 support 请使用 2.x 版本。
+
+gradle
+implementation &#x27;androidx.appcompat:appcompat:1.0.0&#x27;                 //必须 1.0.0 以上
+
+implementation  &#x27;io.github.scwang90:refresh-layout-kernel:3.0.0-alpha&#x27;      //核心必须依赖
+implementation  &#x27;io.github.scwang90:refresh-header-classics:3.0.0-alpha&#x27;    //经典刷新头
+implementation  &#x27;io.github.scwang90:refresh-header-radar:3.0.0-alpha&#x27;       //雷达刷新头
+implementation  &#x27;io.github.scwang90:refresh-header-falsify:3.0.0-alpha&#x27;     //虚拟刷新头
+implementa</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/scwang90/SmartRefreshLayout/issues/72"><span class="rp-item-num">#72</span><span class="rp-item-title">作者：建议收集</span><span class="rp-item-extra">65 comments · 2017-07-20</span></a><a class="rp-item" href="https://github.com/scwang90/SmartRefreshLayout/issues/1553"><span class="rp-item-num">#1553</span><span class="rp-item-title">MIUI设备滑动异常</span><span class="rp-item-extra">26 comments · 2023-12-30</span></a><a class="rp-item" href="https://github.com/scwang90/SmartRefreshLayout/issues/1160"><span class="rp-item-num">#1160</span><span class="rp-item-title">recycview遮挡住最底部布局</span><span class="rp-item-extra">19 comments · 2020-05-21</span></a><a class="rp-item" href="https://github.com/scwang90/SmartRefreshLayout/issues/71"><span class="rp-item-num">#71</span><span class="rp-item-title">作者：常见问题</span><span class="rp-item-extra">18 comments · 2017-07-20</span></a><a class="rp-item" href="https://github.com/scwang90/SmartRefreshLayout/issues/1546"><span class="rp-item-num">#1546</span><span class="rp-item-title">java.lang.ArrayIndexOutOfBoundsException</span><span class="rp-item-extra">11 comments · 2023-12-01</span></a><a class="rp-item" href="https://github.com/scwang90/SmartRefreshLayout/issues/532"><span class="rp-item-num">#532</span><span class="rp-item-title">pointerIndex out of range </span><span class="rp-item-extra">11 comments · 2018-06-04</span></a><a class="rp-item" href="https://github.com/scwang90/SmartRefreshLayout/issues/1287"><span class="rp-item-num">#1287</span><span class="rp-item-title">WebView嵌套滑动冲突终极解决方案</span><span class="rp-item-extra">10 comments · 2020-12-18</span></a><a class="rp-item" href="https://github.com/scwang90/SmartRefreshLayout/issues/1476"><span class="rp-item-num">#1476</span><span class="rp-item-title">接入之后找不到这个包</span><span class="rp-item-extra">9 comments · 2022-08-24</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/scwang90/SmartRefreshLayout/releases"><b>V3.0.0-alpha</b> <span class="rp-rel-tag">V3.0.0-alpha</span> <span class="rp-item-extra">2024-11-18</span></a><pre class="rp-pre">抛弃 support 使用 androidx
+
+修复问题：复制kernel代码另外起包名后,加载更多时候recyclerview无法流畅滚动
+修复问题：V2.1.0版本，demo案例，使用官方主题下拉刷新操作的时候，视图不可以滑动，但是响应点击，v2.0.6，v2.0.5没有这样的问题
+https://github.com/scwang90/SmartRefreshLayout/issues/1576
+https://github.com/scwang90/SmartRefreshLayout/issues/1585
+
+修复问题：NullPointerException: Attempt to invoke interface method &#x27;onAutoRefreshAnimationEnd()&#x27; on a null object reference
+https://github.com/scwang90/SmartRefreshLayout/issues/1584
+
+修复问题：当场递归死循环， java.lang.StackOverflowError
+https://github.com/scwang90/SmartRefreshLayout/issues/1579</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/scwang90__SmartRefreshLayout.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

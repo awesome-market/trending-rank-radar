@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hoochanlon/fq-book · GitHub Trending Rank Radar</title>
+<meta name="description" content="📖《这本书能让你连接互联网》 详细阐述代理、隧道、VPN运作过程，并对GFW策略如：地址端口封锁、服务器缓存投毒、数字验证攻击、SSL连接阻断做相关的原理说明">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="fq-book, hoochanlon, hoochanlon/fq-book, github stars, github trending, star growth, star history, 开源项目, 星标增长, vpn, ssh, shadowsocks, ssr, gfw, fq-book">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/hoochanlon__fq-book">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="hoochanlon/fq-book · GitHub Trending Rank Radar">
+<meta property="og:description" content="📖《这本书能让你连接互联网》 详细阐述代理、隧道、VPN运作过程，并对GFW策略如：地址端口封锁、服务器缓存投毒、数字验证攻击、SSL连接阻断做相关的原理说明">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/hoochanlon__fq-book">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "hoochanlon/fq-book", "codeRepository": "https://github.com/hoochanlon/fq-book", "url": "https://zhuikan.com/repos/hoochanlon__fq-book", "description": "📖《这本书能让你连接互联网》 详细阐述代理、隧道、VPN运作过程，并对GFW策略如：地址端口封锁、服务器缓存投毒、数字验证攻击、SSL连接阻断做相关的原理说明", "author": {"@type": "Organization", "name": "hoochanlon", "url": "https://github.com/hoochanlon"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Shell", "dateCreated": "2018-05-26", "keywords": "vpn,ssh,shadowsocks,ssr,gfw,fq-book,proxy,ipfs,tunnel,ip-blocking"}</script>
+</head>
+<body data-repo="hoochanlon/fq-book" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">hoochanlon/fq-book</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="hoochanlon__fq-book"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/35732922?u=df2348b6932fc75f844f0a10dfaeb8df995ca889&amp;v=4&s=300" width="300" height="300" alt="hoochanlon avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">fq-book</div>
+      <a class="rp-side-owner" href="https://github.com/hoochanlon">hoochanlon</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/hoochanlon">hoochanlon</a>
+        <span class="rp-sep">/</span><span class="rp-name">fq-book</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">📖《这本书能让你连接互联网》 详细阐述代理、隧道、VPN运作过程，并对GFW策略如：地址端口封锁、服务器缓存投毒、数字验证攻击、SSL连接阻断做相关的原理说明</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,236</b></span><span class="rp-stat" title="forks">⑂ <b>1,825</b></span><span class="rp-stat" title="watchers">👁 <b>126</b></span><span class="rp-stat" title="prs">⑃ <b>0</b></span><span class="rp-stat" title="issues">● <b>0</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/vpn">vpn</a><a class="rp-topic" href="https://github.com/topics/ssh">ssh</a><a class="rp-topic" href="../tags/shadowsocks">shadowsocks</a><a class="rp-topic" href="https://github.com/topics/ssr">ssr</a><a class="rp-topic" href="https://github.com/topics/gfw">gfw</a><a class="rp-topic" href="https://github.com/topics/fq-book">fq-book</a><a class="rp-topic" href="../tags/proxy">proxy</a><a class="rp-topic" href="https://github.com/topics/ipfs">ipfs</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Shell</span><span class="rp-meta-bit">Created 2018-05-26</span><a class="rp-meta-bit rp-home" href="https://hoochanlon.github.io/fq-book" rel="noopener">hoochanlon.github.io/fq-book</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/hoochanlon/fq-book">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+13</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">9,236</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,825</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">126</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">《这本书能让你连接互联网》
+
+|||
+|:-:|:-:|
+
+ [!important]
+ 《这本书》示例的多数网址，以及更多资料收录在 hamuleite ，推荐相关网络切换及计算软件: Ip-Switch、network-calculator。
+
+ 不得不说，Pawdroid/Free-servers、YoulianBoshi/vpn 这些免费梯子真厉害，利用 cloudflare LancelotRar/free-subs 搭建节点也是可以参考的，DiningFactory/panda-vpn-pro 低价付费机场也不失为一种选择。
+
+ clash-verge-rev 都实现VPN的功能了，以及千种配置 mihomo_yamls 太强了。
+
+ 随着AI时代的到来，panxunying/ai-coding-welfare 知道一些 AI Coding 福利站导航也不赖，我更多的是用咸鱼...
+
+ intro
+
+《这本书能让你连接互联网》（以下简称《这本书》）着重于上网的方式与获取信息的技巧，并对相关流行且典型的软件做简要的上手配置，以及原理的相关说明。
+
+ 导读
+ 目录
+ 后记
+
+ update
+
+这本书的更新要点：
+
+ 增加速成科学上网篇章
+ 增加相关上网方式以及软件配置操作
+ crx_header_invalid 解决方案的说明
+ VPN连接上服务器却无法访问任何网页及其他网络的解决办法
+ Windows 无法设置系统代理的问题
+ 项目内置 probot 机器人，method 新增 战略家模式
+
+ 其他更新 click me! 
+
+     增加对虚拟电话注册方案的说明
+     谷歌新账户注册方式
+     网页时光机以及查找相似站点
+     利用个人博客作为连接互联网的中转
+
+    
+
+此外，还精简了不必要的重复内容，图片采用 postimages 支持，项目由30M降低到144KB大小，非常方便在线部署及下载，欢迎 fork 《这本书》！
+
+ NET::ERR_CERT_AUTHORITY_INVALID
+
+浏览器会额外提示：攻击者可能试图从 xxx.github.io 窃取你的信息，此服务器无法证明它是 xxx.github.io；你的计算机的操作系统不信任它的安全证书。这可能是由配置错误或者有攻击者截获你的连接而导致的。当继续访问时又会403。
+
+解招！：更改为如下提供的百度、阿里、腾讯DNS，再用ipconfig/flushdns 刷新缓存。原因简述：ISP提供的DNS发送错误的根证书，换成能向访问网站提供正确证书的第三方DNS。
+
+ 百度DNS：180.76.76.76
+ 阿里DNS：223.5.5.5、223.6.6.6
+ 腾讯DNS：119.29.29.29、182.254.116.116
+
+ usage
+
+ 在线部署
+
+1. fork 《这本书》 到你的 repo
+2. 修改 docs/index.html 将window.$docsify = {} 的repo 修改成你的 repo
+3. 在 settings 找到 GitHub Pages 并选择 master brach/docs folder 
+4. 访问 https://你的GitHub用户名.github.io/fq-book 即可看到效果
+
+这里以 anhoodie 为示例 click me! 
+
+!
+
+!
+
+
+
+ click me! --
+
+预览
+
+!Snipaste_2019-06-10_06-18-56
+
+
+ 本地部署
+
+ 
+所需环境：git、node；安装很简单一直 下一步 直到完成安装即可。
+
+ 右击选择git bash在命令行中输入 npm i docsify-cli -g
+ 点击clone or download下载.zip 并解压缩
+ 进入到fq-book-master/docs目录
+ 右击打开git bash输入docsify init .
+ 使用docsify serve完成本地部署
+ 在浏览器中输入localhost:3000即可看到效果 :joy: 
+
+关于更多详细，请看docsify官网文档
+
+使用Offline Explorer可将《这本书》的整个网页内容下载到本地，进行离线观看
+
+当然，也可选择将该书docsify类型转换为gitbook生成格式，并用其自带的命令制作《这本书》的PDF
+
+
+
+ 获取更新
+
+以01user为例，在本地部署时，旧版图链已经失效了，新版已经采用 postimage 支持；此时就需升级成 《这本书Ⅱ》,获取更新其实非常简单，在fork的基础上，执行以下指令
+
+
+git clone https://github.com/你的github用户名/fq-book.git
+cd fq-book
+git remote add upstream https://github.com/hoochanlon/fq-book.git
+ 若需必要的分支变更，还是使用合适： git fetch --all
+git fetch upstream
+ 对Git有所了解的话，建议还是使用：git pull upstream master --allow-unrelated-histories 以审查代码的形式更新
+git reset --hard upstream/master
+
+
+提交到自己的repo
+
+
+git add .
+git commit -m &quot;test&quot;
+ 此指令只方便newbie或不得已的强制；会些Git还是推荐：git push -u --force-with-lease origin master
+git push -u -f origin master  
+
+
+输入账号&amp;密码即可上传到自己repo完成Github账户仓库远程更新。更多作业指令操作说明，请看Git 官方文档，在特殊情况，有可能需要涉及到代理、镜像、浅克隆设置
+
+更新图示 click me! 
+
+!
+
+!
+
+部署测试
+
+!
+
+提交到repo
+
+!
+
+
+
+ 代理设置
+
+ git代理
+
+git客户端代理设置，以及取消代理
+
+
+git config --global http.proxy &#x27;socks5://127.0.0.1:1080&#x27; &amp;&amp; \
+git config --global https.proxy &#x27;socks5://127.0.0.1:1080&#x27;
+
+git config --global --unset https.proxy
+git config --global --unset http.proxy
+
+
+git clone 默认会下载项目的完整历史版本，若只关心最新的代码，而不关心之前的历史，网速差的朋友可以使用浅复制功能：
+
+
+git clone --depth=1  https://github.com/你的用户名/你的repo.git
+
+
+ Mac终端
+
+Mac终端的代理设置（http&amp;https）以及取消代理
+
+
+export ALL_PROXY=socks5://127.0.0.1:1080
+
+unset ALL_PROXY&quot;
+
+
+代理软件即便是开全局模式，终端</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/hoochanlon__fq-book.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+# garble
+
+	go install mvdan.cc/garble@latest # or @master
+
+Obfuscate Go code by wrapping the Go toolchain. Requires Go 1.27 or later.
+
+	garble build [build flags] [packages]
+
+The tool also supports `garble test` to run tests with obfuscated code,
+`garble run` to obfuscate and execute simple programs,
+`garble reverse` to de-obfuscate text such as stack traces,
+and `garble bug` to file a pre-filled bug report.
+Run `garble -h` to see all available commands and flags.
+
+### Purpose
+
+Produce a binary that works as well as a regular build, but that has as little
+information about the original source code as possible.
+
+The tool is designed to be:
+
+* Coupled with `cmd/go`, to support modules and build caching
+* Deterministic and reproducible, given the same initial source code
+* Reversible given the original source, to de-obfuscate panic stack traces
+
+### Mechanism
+
+The tool wraps calls to the Go compiler and linker to transform the Go build, in
+order to:
+
+* Replace identifiers and package paths with short base64 hashes
+* Replace position information with short base64 hashed filenames
+* Remove all [build](https://go.dev/pkg/runtime/#Version), [module](https://go.dev/pkg/runtime/debug/#ReadBuildInfo), and debug information
+* [Obfuscate literals](#literal-obfuscation) and [embedded files](#embedded-file-obfuscation), if the `-literals` flag is given
+* Remove [extra information](#tiny-mode), if the `-tiny` flag is given
+
+The tool obfuscates all supported packages being built, including the standard runtime.
+The unsupported `runtime/cgo` and `crypto/internal/fips140` packages are excluded.
+Runtime obfuscation follows Go's supported `GOOS`/`GOARCH` targets; Garble does not
+maintain a narrower architecture allowlist.
+
+Note that commands like `garble build` will use the `go` version found in your
+`$PATH`. To use different versions of Go, you can [use `GOTOOLCHAIN`](https://go.dev/doc/toolchain).
+
+### Use cases
+
+A common question is why a code obfuscator is needed for Go, a compiled language.
+Go binaries include a surprising amount of information about the original source;
+even with debug information and symbol tables stripped, many names and positions
+remain in place for the sake of traces, reflection, and debugging.
+
+Some use cases for Go require sharing a Go binary with the end user.
+If the source code for the binary is private or requires a purchase,
+its obfuscation can help discourage reverse engineering.
+
+A similar use case is a Go library whose source is private or purchased.
+Since Go libraries cannot be imported in binary form, and Go plugins
+[have their shortcomings](https://github.com/golang/go/issues/19282),
+sharing obfuscated source code becomes an option.
+See [#369](https://github.com/burrowers/garble/issues/369).
+
+Obfuscation can also help with aspects entirely unrelated to licensing.
+For example, the `-tiny` flag can make binaries 15% smaller,
+similar to the [common practice in Android](https://developer.android.com/build/shrink-code#obfuscate) to reduce app sizes.
+Obfuscation has also helped some open source developers work around
+anti-virus scans incorrectly treating Go binaries as malware.
+
+### Word-list naming
+
+Use `garble -wordlist=words.txt build` to replace identifier, package-path,
+and filename hashes with underscore-separated combinations of words.
+
+The file contains one lowercase ASCII word per line, at most eight letters per
+word. Blank lines and surrounding whitespace are ignored. The list is sorted
+and deduplicated, so changing its order or location does not change obfuscation.
+It must contain between 2 and 65,536 distinct words. No dictionary is bundled.
+
+Garble chooses the smallest word count, at least two, whose combination space
+contains at least 48 bits. For example, 256 words require six words per name.
+Underscores make combinations unambiguous, and the first letter preserves a
+Go identifier's exported status. Lists that could produce names longer than
+128 bytes are rejected. Names are never truncated, because truncation would
+increase collisions. The mapping uses the same salted hash as the normal mode,
+without assigning names in traversal order.
+
+The root process snapshots the list for compiler subprocesses, and its canonical
+contents are included in build-cache keys. Supply the same list and seed to
+`garble reverse` that you used for the build. Word names are longer than the
+normal hashes and can increase binary size, especially with a small dictionary.
+
+### Literal obfuscation
+
+Using the `-literals` flag causes literal expressions such as strings to be
+replaced with more complex expressions, resolving to the same value at run-time.
+String literals injected via `-ldflags=-X` are also replaced by this flag.
+This feature is opt-in, as it can cause slow-downs depending on the input code.
+
+Injected strings use the same size limits as source literals. Variables in the
+runtime and its dependencies are not covered. With `-literals`, `-ldflags` must
+be unpatterned; build commands separately if they need different injected values.
+
+Literals used in constant expressions cannot be obfuscated, since they are
+resolved at compile time. This includes any expressions part of a `const`
+declaration, for example.
+
+Note that this process can be reversed given enough effort;
+see [#984](https://github.com/burrowers/garble/issues/984).
+
+### Embedded file obfuscation
+
+The `-literals` flag also obfuscates files included with `//go:embed`.
+It supports `string`, `[]byte`, and `embed.FS`, including named string and
+byte-slice types. Garble leaves the original files untouched.
+
+Contents are decoded at run time:
+
+* Embedded string and byte-slice variables are decoded during package initialization.
+* Files in an `embed.FS` are decoded each time they are opened. Paths, directory
+  entries, file sizes, seeking, and `ReadAt` behavior are unchanged.
+
+Embedded variables use the same obfuscation algorithms as source literals.
+Values larger than 2 KiB and `embed.FS` contents share a simpler decoder that
+scales to large files. Decoding adds runtime work; opening files in an `embed.FS`
+also allocates temporary buffers.
+
+Embedded filenames remain visible. This is obfuscation, not encryption:
+the executable contains the decoding key, so its contents can still be recovered.
+
+### Tiny mode
+
+With the `-tiny` flag, even more information is stripped from the Go binary.
+Position information is removed entirely, rather than being obfuscated.
+Runtime code which prints panics, fatal errors, and trace/debug info is removed.
+Many symbol names are also omitted from binary sections at link time.
+All in all, this can make binaries about 15% smaller.
+
+With this flag, a panic still prints a single line, so a crash is not mistaken
+for a program which exited without running. A plain string panic prints
+`panic: <token>`, where the token is a hash of the message; `garble -tiny reverse`
+maps it back to the original message using the same source and seed, as long as
+the message is known at compile time. Panic values which are not strings are
+never formatted, and print `panic: hidden` instead. When a deferred call panics
+while another panic unwinds, the line reports the original panic, which is the
+message a regular build prints first.
+Fatal runtime errors stay silent. Panics can still be handled with `recover` as
+normal.
+
+Note that this flag can make debugging crashes harder, as a panic prints no
+stack trace and no source position, and many names are removed.
+`garble reverse` can still recover panic messages and obfuscated names in this
+mode, but it cannot recover source positions.
+
+### Control flow obfuscation
+
+See: [CONTROLFLOW.md](docs/CONTROLFLOW.md)
+
+### Speed
+
+`garble build` should take about twice as long as `go build`, as it needs to
+complete two builds. The original build, to be able to load and type-check the
+input code, and then the obfuscated build.
+
+Garble obfuscates one package at a time, mirroring how Go compiles one package
+at a time. This allows Garble to fully support Go's build cache; incremental
+`garble build` calls should only re-build and re-obfuscate modified code.
+
+Note that the first call to `garble build` may be comparatively slow,
+as it has to obfuscate each package for the first time. This is akin to clearing
+`GOCACHE` with `go clean -cache` and running a `go build` from scratch.
+
+Garble also makes use of its own cache to reuse work, akin to Go's `GOCACHE`.
+It defaults to a directory under your user's cache directory,
+such as `~/.cache/garble`, and can be placed elsewhere by setting `GARBLE_CACHE`.
+
+### Determinism and seeds
+
+Just like Go, garble builds are deterministic and reproducible in nature.
+This has significant benefits, such as caching builds and being able to use
+`garble reverse` to de-obfuscate stack traces.
+
+By default, garble will obfuscate each package in a unique way,
+which will change if its build input changes: the version of garble, the version
+of Go, the package's source code, or any build parameter such as GOOS or -tags.
+This is a reasonable default since guessing those inputs is very hard.
+
+You can use the `-seed` flag to provide your own obfuscation randomness seed.
+Reusing the same seed can help produce the same code obfuscation,
+which can help when debugging or reproducing problems.
+Regularly rotating the seed can also help against reverse-engineering in the long run,
+as otherwise one can look at changes in how Go's standard library is obfuscated
+to guess when the Go or garble versions were changed across a series of builds.
+
+To always use a different seed for each build, use `-seed=random`.
+Note that extra care should be taken when using custom seeds:
+if a `-seed` value used in a build is lost, `garble reverse` will not work.
+
+### Caveats
+
+Most of these can improve with time and effort. The purpose of this section is
+to document the current shortcomings of this tool.
+
+* There is no supported way to exclude obfuscating a selection of files or packages.
+  More often than not, a user would want to do this to work around a bug; please file the bug instead.
+
+* Go programs [are initialized](https://go.dev/ref/spec#Program_initialization) one package at a time,
+  where imported packages are always initialized before their importers,
+  and otherwise they are initialized in the lexical order of their import paths.
+  Since garble obfuscates import paths, this lexical order may change arbitrarily.
+
+* Go plugins are not currently supported; see [#87](https://github.com/burrowers/garble/issues/87).
+
+* Garble requires `git` to patch the linker. That can be avoided once go-gitdiff
+  supports [non-strict patches](https://github.com/bluekeyes/go-gitdiff/issues/30).
+
+* APIs like [`runtime.GOROOT`](https://pkg.go.dev/runtime#GOROOT)
+  and [`runtime/debug.ReadBuildInfo`](https://pkg.go.dev/runtime/debug#ReadBuildInfo)
+  will not work in obfuscated binaries. This can affect
+  [loading timezones](https://github.com/golang/go/issues/51473#issuecomment-2490564684), for example.
+
+### Contributing
+
+We welcome new contributors. If you would like to contribute, see
+[CONTRIBUTING.md](CONTRIBUTING.md) as a starting point.
+
+
+[![CI powered by Namespace](https://namespace.so/oss/badge.svg)](https://namespace.so/github-actions/?utm_source=oss&utm_campaign=garble)

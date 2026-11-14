@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mqttjs/MQTT.js · GitHub Trending Rank Radar</title>
+<meta name="description" content="The MQTT client for Node.js and the browser">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="MQTT.js, mqttjs, mqttjs/MQTT.js, github stars, github trending, star growth, star history, 开源项目, 星标增长, mqtt, javascript, nodejs-library, mqtt-broker, hacktoberfest">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/mqttjs__MQTT.js">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="mqttjs/MQTT.js · GitHub Trending Rank Radar">
+<meta property="og:description" content="The MQTT client for Node.js and the browser">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/mqttjs__MQTT.js">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "mqttjs/MQTT.js", "codeRepository": "https://github.com/mqttjs/MQTT.js", "url": "https://zhuikan.com/repos/mqttjs__MQTT.js", "description": "The MQTT client for Node.js and the browser", "author": {"@type": "Organization", "name": "mqttjs", "url": "https://github.com/mqttjs"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "TypeScript", "dateCreated": "2011-04-05", "keywords": "mqtt,javascript,nodejs-library,mqtt-broker,hacktoberfest"}</script>
+</head>
+<body data-repo="mqttjs/MQTT.js" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">mqttjs/MQTT.js</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="mqttjs__MQTT.js"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/10424911?v=4&s=300" width="300" height="300" alt="mqttjs avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">MQTT.js</div>
+      <a class="rp-side-owner" href="https://github.com/mqttjs">mqttjs</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/mqttjs">mqttjs</a>
+        <span class="rp-sep">/</span><span class="rp-name">MQTT.js</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">The MQTT client for Node.js and the browser</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,131</b></span><span class="rp-stat" title="forks">⑂ <b>1,451</b></span><span class="rp-stat" title="watchers">👁 <b>217</b></span><span class="rp-stat" title="prs">⑃ <b>777</b></span><span class="rp-stat" title="issues">● <b>1,226</b></span><span class="rp-stat" title="releases">▤ <b>197</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/mqtt">mqtt</a><a class="rp-topic" href="../tags/javascript">javascript</a><a class="rp-topic" href="https://github.com/topics/nodejs-library">nodejs-library</a><a class="rp-topic" href="https://github.com/topics/mqtt-broker">mqtt-broker</a><a class="rp-topic" href="../tags/hacktoberfest">hacktoberfest</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2011-04-05</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/mqttjs/MQTT.js">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Release 5.16.1</span><a class="rp-dl-a" href="https://github.com/mqttjs/MQTT.js/releases/tag/v5.16.1">Release-5.16.1 ↓</a><span class="rp-dl-ver">5.16.1</span><span class="rp-dl-date">2026-10-14</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">9,131</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,451</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">217</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">777</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,226</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">197</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">!mqtt.js
+
+ 
+
+
+
+
+![node !npm](https://www.npmjs.com/package/mqtt)
+
+
+MQTT.js is a client library for the MQTT protocol, written
+in JavaScript for node.js and the browser.
+
+ Table of Contents
+
+- Upgrade notes
+- Installation
+- Example
+- React Native
+- Import Styles
+- Command Line Tools
+- API
+- Browser
+- About QoS
+- TypeScript
+- Weapp and Ali support
+- Contributing
+- Sponsor
+- License
+
+MQTT.js is an OPEN Open Source Project, see the Contributing section to find out what this means.
+
+
+
+
+
+ Important notes for existing users
+
+v5.0.0 (07/2023)
+
+- Removes support for all end of life node versions (v12 and v14), and now supports node v18 and v20.
+- Completely rewritten in Typescript 🚀.
+- When creating MqttClient instance new is now required.
+
+v4.0.0 (Released 04/2020) removes support for all end of life node versions, and now supports node v12 and v14. It also adds improvements to
+debug logging, along with some feature additions.
+
+As a breaking change, by default an error handler is built into the MQTT.js client, so if any
+errors are emitted and the user has not created an event handler on the client for errors, the client will
+not break as a result of unhandled errors. Additionally, typical TLS errors like ECONNREFUSED, ECONNRESET have been
+added to a list of TLS errors that will be emitted from the MQTT.js client, and so can be handled as connection errors.
+
+v3.0.0 adds support for MQTT 5, support for node v10.x, and many fixes to improve reliability.
+
+v2.0.0 removes support for node v0.8, v0.10 and v0.12, and it is 3x faster in sending
+packets. It also removes all the deprecated functionality in v1.0.0,
+mainly mqtt.createConnection and mqtt.Server. From v2.0.0,
+subscriptions are restored upon reconnection if clean: true.
+v1.x.x is now in _LTS_, and it will keep being supported as long as
+there are v0.8, v0.10 and v0.12 users.
+
+As a breaking change, the encoding option in the old client is
+removed, and now everything is UTF-8 with the exception of the
+password in the CONNECT message and payload in the PUBLISH message,
+which are Buffer.
+
+Another breaking change is that MQTT.js now defaults to MQTT v3.1.1,
+so to support old brokers, please read the client options doc.
+
+v1.0.0 improves the overall architecture of the project, which is now
+split into three components: MQTT.js keeps the Client,
+mqtt-connection includes the barebone
+Connection code for server-side usage, and mqtt-packet
+includes the protocol parser and generator. The new Client improves
+performance by a 30% factor, embeds Websocket support
+(MOWS is now deprecated), and it has a better
+support for QoS 1 and 2. The previous API is still supported but
+deprecated, as such, it is not documented in this README.
+
+
+
+ Installation
+
+sh
+npm install mqtt --save
+
+
+
+
+ Example
+
+For the sake of simplicity, let&#x27;s put the subscriber and the publisher in the same file:
+
+js
+const mqtt = require(&quot;mqtt&quot;);
+const client = mqtt.connect(&quot;mqtt://test.mosquitto.org&quot;);
+
+client.on(&quot;connect&quot;, () = {
+  client.subscribe(&quot;prese</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/mqttjs/MQTT.js/issues/828"><span class="rp-item-num">#828</span><span class="rp-item-title">TransformUrl function returns a async promise instead of new url string</span><span class="rp-item-extra">22 comments · 2018-05-30</span></a><a class="rp-item" href="https://github.com/mqttjs/MQTT.js/issues/2002"><span class="rp-item-num">#2002</span><span class="rp-item-title">Architectural improvements</span><span class="rp-item-extra">18 comments · 2025-06-09</span></a><a class="rp-item" href="https://github.com/mqttjs/MQTT.js/issues/2038"><span class="rp-item-num">#2038</span><span class="rp-item-title">Roadmap: MQTT.js v6 — Zero/minimal dependencies, tree-shakeable transports, reduced bundle size</span><span class="rp-item-extra">15 comments · 2026-02-18</span></a><a class="rp-item" href="https://github.com/mqttjs/MQTT.js/issues/1569"><span class="rp-item-num">#1569</span><span class="rp-item-title">When connecting `ws://[::1]:8883`, an error is thrown - Uncaught TypeError TypeError [ERR_INVALID_URL]: Invalid URL</span><span class="rp-item-extra">13 comments · 2023-01-16</span></a><a class="rp-item" href="https://github.com/mqttjs/MQTT.js/issues/1939"><span class="rp-item-num">#1939</span><span class="rp-item-title">[Bug]: Errors do not result in an error event</span><span class="rp-item-extra">10 comments · 2024-09-20</span></a><a class="rp-item" href="https://github.com/mqttjs/MQTT.js/issues/1795"><span class="rp-item-num">#1795</span><span class="rp-item-title">[feat] Add support for MQTT 5 refresh auth</span><span class="rp-item-extra">9 comments · 2024-02-26</span></a><a class="rp-item" href="https://github.com/mqttjs/MQTT.js/issues/710"><span class="rp-item-num">#710</span><span class="rp-item-title">end() callback not called if `force` is true and the stream is already closed (eg. after a failed keepalive ping)</span><span class="rp-item-extra">9 comments · 2017-11-04</span></a><a class="rp-item" href="https://github.com/mqttjs/MQTT.js/issues/1651"><span class="rp-item-num">#1651</span><span class="rp-item-title">Problem of sending outgoingStore data even though CONNACK sessionPresent is false</span><span class="rp-item-extra">8 comments · 2023-07-27</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/mqttjs/MQTT.js/discussions/2032"><span class="rp-item-num">#2032</span><span class="rp-item-title">No failure of publish in case of broker down</span><span class="rp-item-extra">3 comments · 2025-11-28</span></a><a class="rp-item" href="https://github.com/mqttjs/MQTT.js/discussions/2029"><span class="rp-item-num">#2029</span><span class="rp-item-title">How to prevent duplicate connect when reload browser</span><span class="rp-item-extra">2 comments · 2025-10-15</span></a><a class="rp-item" href="https://github.com/mqttjs/MQTT.js/discussions/2027"><span class="rp-item-num">#2027</span><span class="rp-item-title">Can React Native connect to TCP MQTT?</span><span class="rp-item-extra">1 comments · 2025-09-28</span></a><a class="rp-item" href="https://github.com/mqttjs/MQTT.js/discussions/2021"><span class="rp-item-num">#2021</span><span class="rp-item-title">Any one else getting massive errors after upgrading to 5.14.0 ?</span><span class="rp-item-extra">1 comments · 2025-08-11</span></a><a class="rp-item" href="https://github.com/mqttjs/MQTT.js/discussions/2014"><span class="rp-item-num">#2014</span><span class="rp-item-title">Missing `url` dependency?</span><span class="rp-item-extra">1 comments · 2025-07-26</span></a><a class="rp-item" href="https://github.com/mqttjs/MQTT.js/discussions/2000"><span class="rp-item-num">#2000</span><span class="rp-item-title">Architectural improvements</span><span class="rp-item-extra">12 comments · 2025-05-30</span></a><a class="rp-item" href="https://github.com/mqttjs/MQTT.js/discussions/1998"><span class="rp-item-num">#1998</span><span class="rp-item-title">Guidance for Using MQTT.js in IoT-Based Web App (New to JavaScript)</span><span class="rp-item-extra">1 comments · 2025-05-15</span></a><a class="rp-item" href="https://github.com/mqttjs/MQTT.js/discussions/1997"><span class="rp-item-num">#1997</span><span class="rp-item-title">MQTT frequent connection and disconnection</span><span class="rp-item-extra">1 comments · 2025-05-12</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/mqttjs/MQTT.js/releases"><b>Release 5.16.1</b> <span class="rp-rel-tag">v5.16.1</span> <span class="rp-item-extra">2026-10-14</span></a><pre class="rp-pre">5.16.1 (2026-10-14)
+
+ Bug Fixes
+
+ reconnect instead of ending a client whose stream is already destroyed (2068) (569bb31)
+ schedule browser process.nextTick with queueMicrotask (2056) (648b79c), closes 2074</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/mqttjs__MQTT.js.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kingcharleslzy-ai/dsh-purge · GitHub Trending Rank Radar</title>
+<meta name="description" content="dsh-purge Community · DeepSeek Harness 社区维护版：宿主兼容、状态诊断、提示词管理、更新与本机备份回滚。基于小杨 / YuJunZhiXue 的 dsh-purge。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="dsh-purge, kingcharleslzy-ai, kingcharleslzy-ai/dsh-purge, github stars, github trending, star growth, star history, 开源项目, 星标增长, agent-tools, backup, deepseek, deepseek-harness, dsh, dsh-plugin">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/kingcharleslzy-ai__dsh-purge">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="kingcharleslzy-ai/dsh-purge · GitHub Trending Rank Radar">
+<meta property="og:description" content="dsh-purge Community · DeepSeek Harness 社区维护版：宿主兼容、状态诊断、提示词管理、更新与本机备份回滚。基于小杨 / YuJunZhiXue 的 dsh-purge。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/kingcharleslzy-ai__dsh-purge">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "kingcharleslzy-ai/dsh-purge", "codeRepository": "https://github.com/kingcharleslzy-ai/dsh-purge", "url": "https://zhuikan.com/repos/kingcharleslzy-ai__dsh-purge", "description": "dsh-purge Community · DeepSeek Harness 社区维护版：宿主兼容、状态诊断、提示词管理、更新与本机备份回滚。基于小杨 / YuJunZhiXue 的 dsh-purge。", "author": {"@type": "Organization", "name": "kingcharleslzy-ai", "url": "https://github.com/kingcharleslzy-ai"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2026-10-16", "keywords": "agent-tools,backup,deepseek,deepseek-harness,dsh,dsh-plugin,prompt-management,rollback,purge-community,jailbreak"}</script>
+</head>
+<body data-repo="kingcharleslzy-ai/dsh-purge" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">kingcharleslzy-ai/dsh-purge</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="kingcharleslzy-ai__dsh-purge"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/260348840?v=4&s=300" width="300" height="300" alt="kingcharleslzy-ai avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">dsh-purge</div>
+      <a class="rp-side-owner" href="https://github.com/kingcharleslzy-ai">kingcharleslzy-ai</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/kingcharleslzy-ai">kingcharleslzy-ai</a>
+        <span class="rp-sep">/</span><span class="rp-name">dsh-purge</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=new">new <b>#63</b></a><a class="rp-board-chip" href="../?board=daily">daily <b>#54</b></a><a class="rp-board-chip" href="../?board=daily_rate">daily_rate <b>#29</b></a><a class="rp-board-chip" href="../?board=weekly">weekly <b>#53</b></a><a class="rp-board-chip" href="../?board=weekly_rate">weekly_rate <b>#22</b></a><a class="rp-board-chip" href="../?board=monthly_rate">monthly_rate <b>#81</b></a></div>
+    </div>
+    <p class="rp-desc">dsh-purge Community · DeepSeek Harness 社区维护版：宿主兼容、状态诊断、提示词管理、更新与本机备份回滚。基于小杨 / YuJunZhiXue 的 dsh-purge。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>8,068</b></span><span class="rp-stat" title="forks">⑂ <b>3,551</b></span><span class="rp-stat" title="watchers">👁 <b>14</b></span><span class="rp-stat" title="prs">⑃ <b>110</b></span><span class="rp-stat" title="issues">● <b>114</b></span><span class="rp-stat" title="releases">▤ <b>117</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/agent-tools">agent-tools</a><a class="rp-topic" href="https://github.com/topics/backup">backup</a><a class="rp-topic" href="../tags/deepseek">deepseek</a><a class="rp-topic" href="../tags/deepseek-harness">deepseek-harness</a><a class="rp-topic" href="https://github.com/topics/dsh">dsh</a><a class="rp-topic" href="../tags/dsh-plugin">dsh-plugin</a><a class="rp-topic" href="https://github.com/topics/prompt-management">prompt-management</a><a class="rp-topic" href="https://github.com/topics/rollback">rollback</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-10-16</span><a class="rp-meta-bit rp-home" href="https://github.com/kingcharleslzy-ai/dsh-purge/releases" rel="noopener">github.com/kingcharleslzy-ai/dsh-purge/releases</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/kingcharleslzy-ai/dsh-purge">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">dsh-purge Community 1.7.14</span><a class="rp-dl-a" href="https://github.com/kingcharleslzy-ai/dsh-purge/releases/tag/v1.7.14">dsh-purge-1.7.14 ↓</a><span class="rp-dl-ver">1.7.14</span><span class="rp-dl-date">2026-11-13</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+379</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">8,068</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">3,551</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">14</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">110</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">114</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">117</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">dsh-purge Community
+
+让 AI 更专注地辅助你的学习与动手实验。
+
+给 DeepSeek Harness 的自托管控件（俗称「破甲」插件）· 86 条宿主补丁 · 25 层状态自检 · 左侧栏整页设置
+
+
+
+
+当前版本 1.7.14 · 适配 DSH Desktop 0.2.2-rc.3（0.2.2-rc.1 / 0.2.1-rc.1 / rc.2 / rc.3 / rc.5 同样通过） · English
+
+1.7.14 让侧栏与插件详情页共享同一份 Purge 设置，并同步维护页的更新偏好与错误状态。发行说明。
+
+原项目与作者：小杨 / YuJunZhiXue 是历史上游 dsh-purge 的作者署名。本仓库独立维护社区版，保留上游版权和 MIT 许可证。历史署名不代表对当前同名 GitHub 账号身份的核实。详见署名记录与许可证。
+
+
+
+---
+
+ 搭配插件 · DSH-Spicy
+
+完美适配 purge 的 nsfw content creation 插件
+
+用 Qwen Image 2.1 为成年虚构角色制作写真和插画，用参考图、LoRA 或蒙版调整造型。选定一张图后，用 MiniMax H3 拍成有声镜头，也可以让 Agent 按角色卡做分镜、逐镜审片，再剪成完整的成人向短片。图像和视频模型可部署在本机或自己的 GPU 服务器。
+
+打开 DSH-Spicy 的 GitHub 仓库
+
+ 它是什么
+
+dsh-purge Community 是一个跑在你自己机器上的 Harness 附加组件。它把日常使用里最消耗注意力的几件事收敛到一处：
+
+- 看清楚状态：安装、补丁、注入到底有没有就绪，一条命令或一屏面板给结论；
+- 少一些往返：把反复出现的确认与打断，收敛成一次设置；
+- 随时能回去：应用、回滚、开关都留记录，操作前自动快照；
+- 方便做实验：提示词、规则、预设集中管理，改坏了能撤。
+
+目标很简单：让助手更连贯地配合你的学习与动手实验，而不是每做一步都先停下来问一句。
+
+社区里通常把它叫作「破甲」或「无限制模式」插件——指的是它降低了交互层面的摩擦，让 agent 能连续执行任务；它不改模型本身，也不改变你要做的事。
+
+ 下载时报 fetch failed？
+
+1.6.39 起，独立安装器会显示失败阶段和错误码，有限重试后可切换系统 curl；两条通道都保留来源、证书和 SHA256 校验。请先重新下载安装脚本再运行 dry-run，仍失败时提交脱敏诊断行即可。见 下载排查说明。不会自动修改代理或重启 DSH。
+
+ 让不同预设保留自己的提示词
+
+1.6.40 新增 excludePresets：默认空列表，保持原有行为；可将 roleplay、minimal 等预设排除在 Purge 提示词注入之外，保留命令、面板与工具。切换预设、并行会话和子 Agent 各自判断，宿主兜底也遵守排除。配置示例、升级步骤与边界见 按预设排除说明。这不会撤销全局宿主补丁。
+
+ 设计原则
+
+| 原则 | 含义 |
+| --- | --- |
+| 本机优先 | 全部逻辑在本机运行，不改云端账号、不上传提示词或配置 |
+| 可见 | 每个动作都有状态与证据，不靠&quot;应该生效了&quot;这种判断 |
+| 可回滚 | 应用 / 安装 / 回滚前自动快照，保留原文件与校验清单 |
+| 不替你做决定 | 只减少摩擦，不改变你的目标；改什么、开什么，都由你确认 |
+
+ 适用场景
+
+本机学习、个人项目、自动化实验与维护工作。请在你拥有或已获授权的环境中使用；涉及他人系统时，先取得许可。
+
+ 1.6.39 更新
+
+修复独立安装器只显示 fetch failed 的问题：分阶段诊断、有限重试和系统 curl 备用下载，继续严格校验官方来源、证书和 SHA256。下载失败不触碰现有安装。发行说明 · 配置与验收
+
+ 安装
+
+手动选择 GitHub 源码文件夹时，先在含 package-lock.json 的插件根目录运行 npm ci --omit=dev --ignore-scripts，再选择该目录。发行 TGZ 走下方官方安装流程。
+
+DSH 官方入口负责安装插件；下面的社区安装器由本仓库维护，不是 DeepSeek 官方脚本。 首次安装可用官方界面或 CLI；已经装过 dsh-purge / 旧独立面板时，用社区安装器原地迁移，不要先卸载。安装、应用宿主补丁、手动重启是独立动作。
+
+ 方式一：DSH 官方界面（首次安装）
+
+1. 先打开 DSH 完成初始化。按当前官方文档，进入「插件」，点击「实验性插件」旁的「更多」，启用「自定义插件市场」；然后进入「发现 → 添加索引源」。
+2. 本项目的社区索引：https://kingcharleslzy-ai.github.io/dsh-purge/index.json。
+3. 选择 dsh-purge Community，核对来源为 kingcharleslzy-ai/dsh-purge、包名为 dsh-purge-community，确认后安装。
+
+界面和安装协议由 DSH 提供，索引与插件由社区维护。不同 DSH 版本的入口文字可能不同；第三方 dsh-market 也可能有额外的筛选与迁移限制。已有旧包时请使用方式三。官方市场说明
+
+ 方式二：DSH 官方 CLI（首次安装）
+
+下面命令适用于已经安装 dsh 命令、且使用 web profile 的 CLI/Web 用户，在 macOS/Linux 终端或 Windows PowerShell 中运行。桌面版用户优先用上面的界面；不要为了安装插件再用 npx 下载另一套宿主。
+
+sh
+dsh plugin --profile web add &quot;https://github.com/kingcharleslzy-ai/dsh-purge/releases/download/v1.7.14/dsh-purge-community-1.7.14.tgz&quot;
+
+
+web 必须与实际启动的 profile 一致；自定义数据目录需要沿用该实例的 DSH_HOME。命令使用本次发行的固定版本 URL；不是 npm install -g，也不是安装裸 npm 包名。本项目通过 GitHub 发行，不要替换成 add dsh-purge 或 add dsh-purge-community。官方 CLI 的安装不会额外运行我们安装器的 Release SHA256 比对及迁移快照；需要这些功能时选方式三。官方 CLI 安装说明
+
+ 方式三：社区安装器（备份、旧版迁移、恢复）
+
+先安装并打开一次 DSH，让实际 profile 初始化。以下命令下载本仓库的脚本，先校验，再安装；dry-run 通过仅代表前置检查、下载和 SHA256 通过，不代表依赖安装、迁移或启动已通过。请先阅读下载的脚本。
+
+ macOS Desktop
+
+默认应用位置 /Applications/DeepSeek Harness.app、数据目录 ~/.dsh、profile desktop。将下面两段放在同一个终端会话中执行：
+
+sh
+PURGE_</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/kingcharleslzy-ai/dsh-purge/issues/165"><span class="rp-item-num">#165</span><span class="rp-item-title">[Bug][Windows] 换包 state 卡在 starting、broker.log 恒 0 字节：WMI + powershell -EncodedCommand 拉不起 handoff 脚本（0.2.2-rc.1 / 1.6.84）</span><span class="rp-item-extra">14 comments · 2026-11-08</span></a><a class="rp-item" href="https://github.com/kingcharleslzy-ai/dsh-purge/issues/183"><span class="rp-item-num">#183</span><span class="rp-item-title">Windows：单独跟踪 #181 附件中 runtime 目录偶发清空的报告</span><span class="rp-item-extra">5 comments · 2026-11-10</span></a><a class="rp-item" href="https://github.com/kingcharleslzy-ai/dsh-purge/issues/177"><span class="rp-item-num">#177</span><span class="rp-item-title">许愿</span><span class="rp-item-extra">3 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/kingcharleslzy-ai/dsh-purge/issues/167"><span class="rp-item-num">#167</span><span class="rp-item-title">回退按钮在 Android 切后台 / 多任务界面后消失（槽位挂在 composer 子树，输入框卸载即丢）</span><span class="rp-item-extra">3 comments · 2026-11-08</span></a><a class="rp-item" href="https://github.com/kingcharleslzy-ai/dsh-purge/issues/187"><span class="rp-item-num">#187</span><span class="rp-item-title">DSH NEXT 2.0.22  MAC版 点应用还是出现：失败: Desktop CLI runtime repair failed; original archive retained. runtime: not_official</span><span class="rp-item-extra">2 comments · 2026-11-10</span></a><a class="rp-item" href="https://github.com/kingcharleslzy-ai/dsh-purge/issues/150"><span class="rp-item-num">#150</span><span class="rp-item-title">希望增加按会话/工作区破，偶尔有这个需要，但不是一直有，感谢</span><span class="rp-item-extra">2 comments · 2026-11-05</span></a><a class="rp-item" href="https://github.com/kingcharleslzy-ai/dsh-purge/issues/126"><span class="rp-item-num">#126</span><span class="rp-item-title">DSH NEXT 上「未定位宿主」：listDesktopPackageRoots 不认 app.asar-only 布局，回落到 npm 全局 CLI</span><span class="rp-item-extra">2 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/kingcharleslzy-ai/dsh-purge/issues/227"><span class="rp-item-num">#227</span><span class="rp-item-title">给插件加一个图标（package.json 的 icon 字段）</span><span class="rp-item-extra">1 comments · 2026-11-13</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/kingcharleslzy-ai/dsh-purge/releases"><b>dsh-purge Community 1.7.14</b> <span class="rp-rel-tag">v1.7.14</span> <span class="rp-item-extra">2026-11-13</span></a><pre class="rp-pre">1.7.14
+
+- 侧栏与插件详情共享设置（220）：两个入口挂载同一个现有设置组件；在侧栏改更新间隔，详情页立即可见，反向亦然。同时打开两个组件、行详情重新挂载都从磁盘读取已保存值。维护页同步更新偏好并合并重复错误，独立错误保留。
+- 详情页打包补齐：组合包详情页与行详情页都使用现有设置组件；补齐 docs/detail..md、图标和 locale 的打包路径，列表摘要保持简短。
+- 宿主补丁、注入正文、CLI 行为不变；版本仍为 1.7.x 两段补丁号。
+
+验证：650 项测试通过 / 29 平台跳过；面板测试 0 失败；Chrome 实测“侧栏 → 详情 → 侧栏”与行详情重新挂载（24 小时从磁盘恢复）；UI、客户端一致性、发行包 smoke 通过。
+
+完整历史见 release-notes.md。</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (7)</h3><div class="rp-list"><a class="rp-item" href="https://www.sohu.com/a/1098466837_122980439" target="_blank" rel="noopener"><span class="rp-news-src">搜狐</span><span class="rp-item-title">作者被裁险些停更！DeepSeek Harness破甲魔改项目狂揽2万Star</span><span class="rp-item-extra">2026-11-07</span></a><a class="rp-item" href="https://note.com/coderadar/n/n778682993ce3" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">【GitHub日報】NVIDIA/auto-ontologyが+2,707で首位交代、jailbreakツールdsh-purge初登場 — 2026-11-06</span><span class="rp-item-extra">2026-11-05</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_01098/article/details/167670376" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">dsh-purge 教程：DeepSeek Harness 破甲补丁与提示词切换，15 分钟装完并验证</span><span class="rp-item-extra">2026-11-04</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00283/article/details/163797353" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">dsh-purge 安装与验收教程：5 步装好 DeepSeek Harness 红队评测插件</span><span class="rp-item-extra">2026-11-02</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00082/article/details/158166040" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">dsh-purge 5分钟完整安装指南：DeepSeek Harness 红队评测插件一键安装与应用</span><span class="rp-item-extra">2026-10-20</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00278/article/details/168450679" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">dsh-purge 上手：五分钟看懂它清理的是什么、怎么安全删</span><span class="rp-item-extra">2026-10-19</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiY0FVX3lxTE1GLXBFVXhYdmdsRmlWOVd2OThocC0xNEEwNFN1eUdlMEl4cG9vOEZMNjczbVF6UzNBT0JUeW1GemhYbVB4eVo0NXlJSDAyWXdTV3VWMkh4dXZCYWJjSEhOX2hUNA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">黑海洋Wiki</span><span class="rp-item-title">逆向 / 安全研究项目里的 Agent 工具链：deva + dsh-purge + Cline Pass 实战配置</span><span class="rp-item-extra">2026-10-20</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/kingcharleslzy-ai__dsh-purge.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

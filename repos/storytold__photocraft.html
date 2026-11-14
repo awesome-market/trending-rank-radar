@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>storytold/photocraft · GitHub Trending Rank Radar</title>
+<meta name="description" content="PhotoCraft: An open-source photo editor written from scratch in pure Rust">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="photocraft, storytold, storytold/photocraft, github stars, github trending, star growth, star history, 开源项目, 星标增长, images, photo-editing, art, rust, image-editing, image-editing-software">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/storytold__photocraft">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="storytold/photocraft · GitHub Trending Rank Radar">
+<meta property="og:description" content="PhotoCraft: An open-source photo editor written from scratch in pure Rust">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/storytold__photocraft">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "storytold/photocraft", "codeRepository": "https://github.com/storytold/photocraft", "url": "https://zhuikan.com/repos/storytold__photocraft", "description": "PhotoCraft: An open-source photo editor written from scratch in pure Rust", "author": {"@type": "Organization", "name": "storytold", "url": "https://github.com/storytold"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Rust", "dateCreated": "2026-09-30", "keywords": "images,photo-editing,art,rust,image-editing,image-editing-software,image-editor"}</script>
+</head>
+<body data-repo="storytold/photocraft" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">storytold/photocraft</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="storytold__photocraft"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/76897702?v=4&s=300" width="300" height="300" alt="storytold avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">photocraft</div>
+      <a class="rp-side-owner" href="https://github.com/storytold">storytold</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/storytold">storytold</a>
+        <span class="rp-sep">/</span><span class="rp-name">photocraft</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=new">new <b>#1</b></a><a class="rp-board-chip" href="../?board=daily">daily <b>#135</b></a><a class="rp-board-chip" href="../?board=weekly">weekly <b>#110</b></a></div>
+    </div>
+    <p class="rp-desc">PhotoCraft: An open-source photo editor written from scratch in pure Rust</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>79,257</b></span><span class="rp-stat" title="forks">⑂ <b>14,007</b></span><span class="rp-stat" title="watchers">👁 <b>333</b></span><span class="rp-stat" title="prs">⑃ <b>6,653</b></span><span class="rp-stat" title="issues">● <b>7,367</b></span><span class="rp-stat" title="releases">▤ <b>27</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/images">images</a><a class="rp-topic" href="https://github.com/topics/photo-editing">photo-editing</a><a class="rp-topic" href="https://github.com/topics/art">art</a><a class="rp-topic" href="../tags/rust">rust</a><a class="rp-topic" href="https://github.com/topics/image-editing">image-editing</a><a class="rp-topic" href="https://github.com/topics/image-editing-software">image-editing-software</a><a class="rp-topic" href="https://github.com/topics/image-editor">image-editor</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2026-09-30</span><a class="rp-meta-bit rp-home" href="https://getartcraft.com/apps/photocraft" rel="noopener">getartcraft.com/apps/photocraft</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="storytold__artcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">artcraft</a><a class="rp-same-link" href="storytold__cadcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">cadcraft</a><a class="rp-same-link" href="storytold__craft-anything"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">craft-anything</a><a class="rp-same-link" href="storytold__craft-launcher"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">craft-launcher</a><a class="rp-same-link" href="storytold__deckcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">deckcraft</a><a class="rp-same-link" href="storytold__designcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">designcraft</a><a class="rp-same-link" href="storytold__effectcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">effectcraft</a><a class="rp-same-link" href="storytold__figcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">figcraft</a><a class="rp-same-link" href="storytold__filmcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">filmcraft</a><a class="rp-same-link" href="storytold__gridcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">gridcraft</a><a class="rp-same-link" href="storytold__lightcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">lightcraft</a><a class="rp-same-link" href="storytold__pdfcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">pdfcraft</a><a class="rp-same-link" href="storytold__soundcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">soundcraft</a><a class="rp-same-link" href="storytold__vectorcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">vectorcraft</a><a class="rp-same-link" href="storytold__wordcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">wordcraft</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/storytold/photocraft">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">PhotoCraft v0.23.1</span><a class="rp-dl-a" href="https://github.com/storytold/photocraft/releases/tag/v0.23.1">PhotoCraft-0.23.1 ↓</a><span class="rp-dl-ver">0.23.1</span><span class="rp-dl-date">2026-11-12</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+174</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">79,257</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">14,007</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">333</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">6,653</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">7,367</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">27</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">PhotoCraft
+
+
+  Image editing; an open-source, clean-room reimplementation of Adobe Photoshop, rebuilt in pure Rust.
+  Layers, masks, adjustment layers, layer styles, type, vectors, brushes and real PSD files,
+  in a native app written entirely in Rust. Open source, offline, and yours.
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+  
+
+
+
+  PhotoCraft on getartcraft.com ·
+  ArtCraft ·
+  All Crafting Apps
+
+
+
+
+
+  
+  
+  A caption card with a drop shadow, live type, and Vibrance and Curves adjustment layers, with the Curves editor open.
+  The Great Wave off Kanagawa, Katsushika Hokusai, c. 1831
+
+
+ [!NOTE]
+ ArtCraft is a community of artists from all walks of life. Digital, generative, music,
+ games &amp;mdash; if you make things, you&#x27;re one of us. Come say hi on Discord.
+
+
+  Features ·
+  Everything in the box ·
+  PSD ·
+  Agents ·
+  Under the hood ·
+  Get started ·
+  Downloads ·
+  Crafting Apps ·
+  Discord
+
+
+
+
+
+  
+    
+      🎛️ Familiar by design
+      The menus, shortcuts, panels and tools are where your hands expect them, from ⌘J to ⇧⌘D. If you know Photoshop, you already know PhotoCraft.
+    
+    
+      ⚡ Native and fast
+      A GPU compositor on wgpu (Metal, Vulkan, DX12, WebGPU), copy-on-write tiles and multithreaded filters. No Electron, no web view, no waiting.
+    
+    
+      🗂️ Real PSD files
+      Open, edit and save layered Photoshop documents. Re-saving keeps the render of 307 of the 309 psd-tools test files.
+    
+    
+      🤖 Agent-ready
+      Every action is a command, so you can drive the same engine from the UI, the CLI, a JSON control channel or an MCP server.
+    
+  
+
+
+
+
+ Features
+
+Every screenshot here is the real app at work on public-domain art, rendered offscreen through its control channel.
+
+
+  
+    
+      
+      
+      Levels and Vibrance adjustment layers, with the live Histogram panel.Impression, Sunrise, Claude Monet, 1872
+      Edit without regret
+      Adjustment layers keep every edit live. Stack Levels, Curves, Vibrance, Hue/Saturation and a dozen more, mask them to an area, reorder them, or turn them off, and your original pixels never change.
+      
+      16 adjustment layers that also apply directly to pixels, including Curves with per-channel editing, Levels with a live histogram, Black &amp;amp; White, Channel Mixer, Gradient Map, Photo Filter, Selective Color and Color Lookup (.cube, .3dl, .look). Plus Shadows/Highlights, Replace Color, Match Color, HDR Toning, Desaturate and Equalize.
+    
+    
+      
+      
+      Outer Glow and Stroke on a live type layer, in the Layer Style dialog.Earthrise, William Anders / NASA, 1968
+      Styles that sell the shot
+      Drop Shadow, Inner Shadow, Outer and Inner Glow, Bevel &amp;amp; Emboss, Satin, Stroke, and Color, Gradient and Pattern Overlay, live on any layer, including type. Patterns come from a library (built-ins, Edit › Define Pattern, .pat import/export) and PSD Patt blocks.
+      
+      Copy and paste styles between layers, hide all effects at once, and open styles straight from your PSDs, rendered </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/storytold/photocraft/issues/1343"><span class="rp-item-num">#1343</span><span class="rp-item-title">Mouse cursor lag — SurfaceConfig::HIGH_THROUGHPUT is wrong default for an image   editor</span><span class="rp-item-extra">35 comments · 2026-10-08</span></a><a class="rp-item" href="https://github.com/storytold/photocraft/issues/41"><span class="rp-item-num">#41</span><span class="rp-item-title">Generative AI editing: Generative Fill, Generative Expand, AI-assisted tools</span><span class="rp-item-extra">29 comments · 2026-10-04</span></a><a class="rp-item" href="https://github.com/storytold/photocraft/issues/3263"><span class="rp-item-num">#3263</span><span class="rp-item-title">Timeline: implement Photoshop-style frame-animation mode</span><span class="rp-item-extra">25 comments · 2026-10-11</span></a><a class="rp-item" href="https://github.com/storytold/photocraft/issues/7996"><span class="rp-item-num">#7996</span><span class="rp-item-title">Clone Stamp Tool inoperable</span><span class="rp-item-extra">23 comments · 2026-10-20</span></a><a class="rp-item" href="https://github.com/storytold/photocraft/issues/4011"><span class="rp-item-num">#4011</span><span class="rp-item-title">PhotoCraft can&#x27;t start on legacy GPUs under macOS 15 (OpenCore Legacy)</span><span class="rp-item-extra">23 comments · 2026-10-12</span></a><a class="rp-item" href="https://github.com/storytold/photocraft/issues/2788"><span class="rp-item-num">#2788</span><span class="rp-item-title">Select Subject, Object Selection and Remove Background with a local segmentation model (BiRefNet / SAM 2), heuristic as fallback</span><span class="rp-item-extra">21 comments · 2026-10-10</span></a><a class="rp-item" href="https://github.com/storytold/photocraft/issues/11465"><span class="rp-item-num">#11465</span><span class="rp-item-title">Can&#x27;t open large PSD: &quot;estimated memory requirement exceeds hard limit&quot; (Photoshop opens it fine)</span><span class="rp-item-extra">18 comments · 2026-11-05</span></a><a class="rp-item" href="https://github.com/storytold/photocraft/issues/2138"><span class="rp-item-num">#2138</span><span class="rp-item-title">Brush interpolation and smoothing problems</span><span class="rp-item-extra">17 comments · 2026-10-09</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/storytold/photocraft/releases"><b>PhotoCraft v0.23.1</b> <span class="rp-rel-tag">v0.23.1</span> <span class="rp-item-extra">2026-11-12</span></a><pre class="rp-pre">What&#x27;s Changed
+ fix(ui): keep the Color Sampler cursor while a sampler is dragged (13063) by @RickiNano in https://github.com/storytold/photocraft/pull/13212
+ fix(ui): the Arbitrary angle rounds in f64 and keeps that value (13067) by @RickiNano in https://github.com/storytold/photocraft/pull/13217
+ Remove tool: 19 px brush after Reset Tool and on first use by @rmsff in https://github.com/storytold/photocraft/pull/13151
+ Release: PhotoCraft v0.23.0 on main by @FredApps in https://github.com/storytold/photocraft/pull/13345
+ Remove: alert on a pixel layer with Lock All by @rmsff in https://g</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (9)</h3><div class="rp-list"><a class="rp-item" href="https://mrmad.com.tw/open-source-photocraft-free-photoshop" target="_blank" rel="noopener"><span class="rp-news-src">瘋先生</span><span class="rp-item-title">Photoshop免費開源版來了！PhotoCraft安裝與7大功能技巧懶人包</span><span class="rp-item-extra">2026-10-11</span></a><a class="rp-item" href="https://news.ltn.com.tw/news/aichannel/breakingnews/5599942" target="_blank" rel="noopener"><span class="rp-news-src">自由時報</span><span class="rp-item-title">GitHub 1.7萬顆星開源軟體 PhotoCraft 企圖取代 Photoshop</span><span class="rp-item-extra">2026-10-08</span></a><a class="rp-item" href="https://hk.news.yahoo.com/%E5%85%8D%E8%B2%BB-photoshop-%E6%9B%BF%E4%BB%A3%E6%96%B0%E6%98%9F-photocraft-%E5%AE%89%E8%A3%9D%E8%88%87%E4%BD%BF%E7%94%A8%E5%85%A8%E6%94%BB%E7%95%A5-113759043.html" target="_blank" rel="noopener"><span class="rp-news-src">hk</span><span class="rp-item-title">免費 Photoshop 替代新星 PhotoCraft 安裝與使用全攻略</span><span class="rp-item-extra">2026-10-08</span></a><a class="rp-item" href="https://www.kocpc.com.tw/archives/671475" target="_blank" rel="noopener"><span class="rp-news-src">電腦王阿達</span><span class="rp-item-title">可以準備退定 Adobe 了！ArtCraft 釋出用 AI 重做的 Adobe 七件套還開源免費下載</span><span class="rp-item-extra">2026-10-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiYkFVX3lxTE1xanN0SHFYcDI2VnN0SFI0N2ZwUWE3Z2RzcFJTbHFjdnJFS0o2ZTdaejN0RXlxM1N0ZU4zeEctamNqZU5xR0szRHNNelBDcjYxXy1lZlZ4cXlFbUdGZkFBUXhB?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">亚洲日报</span><span class="rp-item-title">AI打造免费Photoshop，模仿Adobe的&#x27;ArtCraft Apps&#x27;引发热议</span><span class="rp-item-extra">2026-10-13</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiTkFVX3lxTE9sN0lxTFZ5b1pWMlZxWG5fcjR4UW9hVWZURGZGV21DQTV2ZU9MaS1CMGN3YW0tT0R6dUdyUERvUXRPWTFaaV94VHVTWDFydw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">36氪</span><span class="rp-item-title">AI“克隆”的Adobe全家桶一夜爆火，但先别急着卸载正版</span><span class="rp-item-extra">2026-10-10</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMimAFBVV95cUxNZ3E5RFFvU09sOXN0c3JyOU1iaFpFUkZnaExfazVjdmluc0MybGRnZVBhZThaanM5dDdHVjhjSDYtTFZ2R0dKMlRtS3V4ZGZuV2tienhBdUg4dXk4Y1AtYVRsT2ItYUJraDJJcVRidFlyQW5nWHNmTF9rRlNyN2gxNXY4eHRlbmFxWmdNWjRqTEpEaS1od1BuYw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">PhotoCraft 指南，用 Rust 编写的免费开源 Photoshop 替代品</span><span class="rp-item-extra">2026-10-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPQWhZZnpDSWlEYTJ2SFF6RU9zSlFwYXVXNVJ6MllQOGU3NnVfUFBZLXBUODR1QndsbDZ4eWdYclNUb1JRa2VMOGR5TkNVdmZOZ3p4RDdYT0s4ZVU1R2pZOGlaN3lfVlhXUW5PYU5jTjZuZkVXdldxSWNkMmlCLUVXTEZtYVpBeXlM?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">搜狐网</span><span class="rp-item-title">离谱儿！Photoshop修修补补几十年，一夜之间被AI“偷家”</span><span class="rp-item-extra">2026-10-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxQaGp5c3JpTW5rdlAzRlk5NDBLWkkzajlBUlpud1JNUmZPb2VrYUxsT284OUhXSzZPVXVCNUpJMzBiZXlOWjhRbE1UZkZZLXZVT0FCNDczWV9MMEpIaHdxWEozUGVfRkkyUm9zVnFqODZaM0c1NVlVWWpEY2llSm42akFuZGg0bGJZRjVFR1VSUzVsQzNWMmswZFV3Zkl2X2pGb3lkWEJic1k2R01nMEJGTGJldFZpdGcxOUxkdjB2ZkxZRHM?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">news.lavx.hu</span><span class="rp-item-title">开源 Photoshop 克隆 PhotoCraft 纯 Rust 实现已进入早期 Alpha 阶段</span><span class="rp-item-extra">2026-10-07</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (16)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=49981449" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Adobe Creative Suite Cleanroom Port to Rust</span><span class="rp-item-extra">▲ 144 · 91 comments · 2026-10-06</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=50079786" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ask HN: How long before someone reverse-engineers Windows?</span><span class="rp-item-extra">▲ 10 · 6 comments · 2026-10-13</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=49960141" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Rust clean-room replacements for Photoshop</span><span class="rp-item-extra">▲ 3 · 1 comments · 2026-10-05</span></a><a class="rp-item" href="https://note.com/tg2032/n/n0efc9db581fd?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">I Tried Out &quot;PhotoCraft,&quot; a Free Photoshop-Style Editor</span><span class="rp-item-extra">2026-11-09</span></a><a class="rp-item" href="https://www.msn.com/en-us/technology/software/a-free-photoshop-alternative-turned-out-to-be-a-copy-of-an-indie-project-and-now-i-check-this-before-installing-any-open-source-app/ar-AA2gMZR2" target="_blank" rel="noopener"><span class="rp-news-src">XDA Developers on MSN</span><span class="rp-item-title">A free Photoshop alternative turned out to be a copy of an indie project, and now I check this before installing any open-source app</span><span class="rp-item-extra">2026-11-04</span></a><a class="rp-item" href="https://gizmodo.com/someone-vibe-coded-a-free-knockoff-of-adobe-creative-suite-2000823322" target="_blank" rel="noopener"><span class="rp-news-src">gizmodo</span><span class="rp-item-title">Someone Vibe Coded a Free Knockoff of Adobe Creative Suite</span><span class="rp-item-extra">2026-11-03</span></a><a class="rp-item" href="https://www.msn.com/en-us/news/other/ai-built-a-photoshop-clone-in-24-hours-is-this-piracy-plagiarism-or-progress/ar-AA2gHiFM" target="_blank" rel="noopener"><span class="rp-news-src">PCMag Middle East on MSN</span><span class="rp-item-title">AI Built a Photoshop Clone in 24 Hours. Is This Piracy, Plagiarism, or Progress?</span><span class="rp-item-extra">2026-11-03</span></a><a class="rp-item" href="https://fstoppers.com/legal/it-legal-clone-photoshop-ai-905319" target="_blank" rel="noopener"><span class="rp-news-src">Fstoppers</span><span class="rp-item-title">Is It Legal to Clone Photoshop With AI?</span><span class="rp-item-extra">2026-10-31</span></a><a class="rp-item" href="https://www.xda-developers.com/tried-several-vibe-coded-photoshop-alternatives-this-one-is-by-far-best/" target="_blank" rel="noopener"><span class="rp-news-src">XDA Developers</span><span class="rp-item-title">I tried several vibe-coded Photoshop alternatives, but this one is by far the best</span><span class="rp-item-extra">2026-10-28</span></a><a class="rp-item" href="https://www.msn.com/en-us/news/other/gimp-finally-has-an-open-source-rival-that-competes-on-its-level-and-it-actually-feels-like-photoshop/ar-AA2g8mjY" target="_blank" rel="noopener"><span class="rp-news-src">XDA Developers on MSN</span><span class="rp-item-title">GIMP finally has an open-source rival that competes on its level — and it actually feels like Photoshop</span><span class="rp-item-extra">2026-10-26</span></a><details class="rp-news-more"><summary>6 more</summary><a class="rp-item" href="https://note.com/histone/n/ndcf296338446?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">The Impact of PhotoCraft (Part 4)</span><span class="rp-item-extra">2026-10-13</span></a><a class="rp-item" href="https://note.com/tank_ai/n/n2c4b7d88c0cb?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">PhotoCraft: I tried having AI draw pictures with a Photoshop-like software that has no AI features (Free)</span><span class="rp-item-extra">2026-10-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMid0FVX3lxTE81MUk1dEFrQi02aGdXWUNONnlyTVZIeklDTUk4cWVRSExheV9mdVg3QXQxNThDd0htNEl0dTgzMXF0RXo5dzFoZGpDc1BqMjN3YjZFdTJqMmc4ZXQzZFpWMlpZOUtUN2hqUzNUMzhWd21yODB0XzNv0gF8QVVfeXFMTmpaVmZmZmx4LW04c1BwdllBcFhWTHdDWnFLdUdTanpkdnJscXhvTUI4bHltaWRUYzdrckhPVHhjUjQ4ZmlGWFZXQ2dsc3hoRnZfYkc5bWV1b2ZidUZSV1M1dDhZRk9KZTJkU1FaRmMxQlNXNGZCVEhsOUU2NQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">OMG! Ubuntu</span><span class="rp-item-title">PhotoCraft is an open-source, AI-built clone of Photoshop</span><span class="rp-item-extra">2026-10-15</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxOUTdmR2RiM1k3dV9oaG9hMUdCa3F5LWJ4ZkFEMU5ZZGN5bVJwYjgyaWhkV3JTTmNMQnY3ZW1KWWIxLUtpWHY4QlV6dWRXTzIwYnE4R1lYeERlcUJjRUNJZmxPd25zVElUZllMcnhFR2V5THgxQ2JvTDB3NHhlRWQzUWNRb1o?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Korben</span><span class="rp-item-title">I Tested the 12 Free Clones of Adobe and Microsoft</span><span class="rp-item-extra">2026-10-13</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiY0FVX3lxTFBCRTBBNnZPVDVZVklxZjJBb2duS0dYT3pQUVJTUzMwNFZmcVpqaGwyd1dkckl2enhPSEQ0RXotdy1GWjZ4SnFWS21LT2N5YmN4QUJLWmYxYld4R0NUaDhoUlFncw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Phoronix</span><span class="rp-item-title">AI Makes &quot;Open-Source, Clean Room&quot; Implementations Of Adobe Photoshop &amp; Premier In Rust</span><span class="rp-item-extra">2026-10-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQSHB3bmYtR3Jyb3V6aGxXbjlxVmUxZzFHZ0t5ZHF5LUZoVlJZelI3a2RUYWp0YjlyZm9aWEJ5UWEyU01MeWMycmZ1M1M4ZkN2WGwyWHRMRVUwUjY1d09wMnM4SkktdVRoalNsUzBPQnJRaWRJT0ljUHN4ZUxLQzNuNjdUS0N1WEdRNkRPUnRILWIzU3Nwa1lOMS1QZFg0M2x0STA1czN6UEdaQlBqcnMtcE03YW1wX3pMZ0pQSw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">PetaPixel</span><span class="rp-item-title">Someone Rebuilt Free, Open-Source Versions of Photoshop, Premiere, and Lightroom Using AI</span><span class="rp-item-extra">2026-10-07</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/storytold__photocraft.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

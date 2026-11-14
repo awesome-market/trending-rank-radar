@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>huang-sh/PiX · GitHub Trending Rank Radar</title>
+<meta name="description" content=" A non-linear AI agent workbench — session is a tree: branch anytime, and context follows the branch">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="PiX, huang-sh, huang-sh/PiX, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/huang-sh__PiX">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="huang-sh/PiX · GitHub Trending Rank Radar">
+<meta property="og:description" content=" A non-linear AI agent workbench — session is a tree: branch anytime, and context follows the branch">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/huang-sh__PiX">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "huang-sh/PiX", "codeRepository": "https://github.com/huang-sh/PiX", "url": "https://zhuikan.com/repos/huang-sh__PiX", "description": " A non-linear AI agent workbench — session is a tree: branch anytime, and context follows the branch", "author": {"@type": "Organization", "name": "huang-sh", "url": "https://github.com/huang-sh"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "TypeScript", "dateCreated": "2026-09-04"}</script>
+</head>
+<body data-repo="huang-sh/PiX" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">huang-sh/PiX</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="huang-sh__PiX"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/24741118?u=af65cbe8f95e96ada7c2396ce2d16a91c3a568ac&amp;v=4&s=300" width="300" height="300" alt="huang-sh avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">PiX</div>
+      <a class="rp-side-owner" href="https://github.com/huang-sh">huang-sh</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/huang-sh">huang-sh</a>
+        <span class="rp-sep">/</span><span class="rp-name">PiX</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc"> A non-linear AI agent workbench — session is a tree: branch anytime, and context follows the branch</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>228</b></span><span class="rp-stat" title="forks">⑂ <b>21</b></span><span class="rp-stat" title="watchers">👁 <b>1</b></span><span class="rp-stat" title="releases">▤ <b>34</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">Created 2026-09-04</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/huang-sh/PiX">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+36</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">228</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">21</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">1</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">34</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">PiX
+
+非线性的 AI Agent 工作台 —— 会话是一张图，随时分叉，上下文跟随分支
+
+English · 中文 · 日本語
+
+---
+
+
+  
+
+
+PiX 的会话不是一条线，而是一张会生长的图：每一轮对话都是图上的一个节点，任何一个节点都可以随时长出新分支。
+
+ 非线性会话
+
+传统的 AI 对话是一条单线时间轴：想换一个方向，要么推倒重来，要么在原对话里继续追问、让上下文越来越混乱。
+
+PiX 把会话组织成一张从左到右生长的图：
+
+- 每一轮对话（你的提问 + 助手的回复与工具调用）是图上的一个节点。
+- 多个探索方向可以并存于同一张图上，随时切换分支继续推进，互不干扰。
+- 哪条路径走通了就继续深入，走不通的分支留在图上，随时可以回来换条路再试。
+- 会话就是真实的 Pi 会话，不发明新格式，离开 PiX 也能继续使用。
+
+ 随时创建分支
+
+分支是 PiX 的日常动作，而不是需要预先规划的操作：
+
+- 从任意一条用户消息分叉（Fork）：对某一轮的答案不满意，直接从那里分出一条新分支换个问法或换个方案，原分支完好无损。
+- 从此轮继续：在图上点选任意历史节点，从那一刻接着聊。
+- 克隆当前分支：想做存档点时，克隆一份当前分支再放手尝试。每一个分支都在图中留存显示，随时切换。
+
+ 上下文跟随分支
+
+切分支的时候，你不需要&quot;重新配置上下文&quot;——上下文本来就是分支的一部分：
+
+- 分支聊天面板只显示当前活跃分支上的消息。切到另一个分支，聊天记录立刻跟着切换。
+- 单击节点只在图上高亮选中，不改变任何面板内容（图上的命令，如 /fork，作用于高亮的节点）；双击节点，主聊天面板对齐到那个节点。
+- 双击图上的节点，在主面板打开该节点的对话；Ctrl+双击（或右键菜单&quot;在聊天面板中打开&quot;）则把该分支固定到并排的第二、三个聊天列，最多同时显示 3 列，方便对比不同分支。同一条分支只保留一个面板，后打开的节点会替换该分支已有的面板。每列都能独立滚动、独立回复。在固定列里发送回复，该列会跟随新节点继续显示这条分支的对话，主面板不受影响；关闭全部固定列（或下次启动）后，聊天区宽度自动还原。
+- 分支上下文面板跟随选中的节点，展示该轮的工作过程：思考过程、工具调用、耗时与步骤数，也可以直接在这里对选中节点发起回复。
+
+
+  
+
+
+ 内置扩展
+
+PiX 使用 Pi 1.5，并加载其 MCP、Codemode 和工具搜索扩展。已有 Pi v3 JSONL 会话可继续使用。工具行会显示运行中的实时耗时和完成后保存的耗时。分支聊天会显示工具图片和嵌套调用记录；Pi 保存嵌套调用的名称、参数、状态和耗时，但不会保存每个嵌套调用的完整输出。
+
+设置 → 模型按「对话 / 图像生成 / 分类器」展示可用模型，并提供数量统计和类别筛选。图像与分类器模型通过 Codemode 调用；只有对话模型会出现在会话选择器中，并支持默认模型、轮换和思考级别设置。保存 OpenRouter 登录信息后，会自动刷新该凭据可用的聊天模型。
+
+在会话所在主机的 ~/.pix/agent/mcp.json 或已信任项目的 .pi/mcp.json 中配置 MCP。直接编辑这些文件后，运行 /reload，再用 /mcp 查看状态、/mcp login [服务器名] 登录、/mcp reconnect [服务器名] 重连。PiX 支持扩展的选择、输入和确认弹窗；依赖自定义 TUI 组件的扩展仍需在 Pi 终端中使用。
+
+连接采用默认 codemode 暴露方式的 MCP 服务器时，会自动启用 Codemode。手动启用时，在设置 → 工具与图片 → 默认工具的现有列表末尾追加 , +codemode，点击输入框外保存。这是项目设置，只需配置一次；新会话自动沿用，当前会话会在空闲时自动重载。在设置页这样修改时，无需手动 /reload。
+
+「Codemode 工具调用方式」控制启用后的行为，本身不是启用开关：on（与其他工具并用）保留直接工具调用，only（仅通过 Codemode 调用）让模型通过 Codemode 调用这些工具。服务器配置见 Pi MCP 文档。
+
+PiX 还内置两个带原生二进制的扩展，扩展及运行依赖随安装包分发，无需另行安装（如果已通过 Pi 安装同名 npm 包，则优先使用你安装的版本）。
+
+- @ff-labs/pi-fff — 高速文件与内容搜索：用 FFF（Rust 原生、SIMD 加速）替换内置的 find / grep 工具：fffind 模糊文件名搜索、ffgrep 内容搜索、fff-multi-grep 多模式搜索。会话开始时后台预索引，搜索即时返回；按 frecency 排序（常用文件靠前），git 修改与未跟踪文件加权。
+- @injaneity/pi-computer-use — 桌面应用操控：让智能体观察并操控 macOS、Windows、Linux 上的桌面应用：查找打开的应用与窗口、读取界面上的文本与控件、点击、输入、滚动、等待界面变化。适用于应用没有 API、只有图形界面的场景（macOS 助手要求 macOS 14 或更高版本）。
+
+pi-web-access 不随安装包分发：在设置 → 扩展页可一键安装到用户配置，之后通过 pi update 独立更新。它为智能体提供网页搜索、URL 抓取、PDF 抽取与 GitHub 研究能力；网页搜索服务仍使用你自己的配置与凭据。
+
+此外，PiX 还加载内部扩展：file-changes 在智能体编辑、写入文件前后拍快照，为&quot;变更&quot;面板提供数据；git-branch 为每轮用户输入记录当时所在的 Git 分支。
+
+ CLI
+
+桌面安装版会注册 pix 终端命令（macOS 在移入 Applications 后首次启动时注册）；桌面 CLI 使用应用自带运行时，无需另装 Node.js。注册、卸载及便携格式的区别见 CLI 文档。
+
+GUI 与 CLI 共享同一个独立后台 Host 和现有 PiX 会话树，可在多个终端同时运行分支任务。退出 CLI、关闭 macOS 窗口或最小化到托盘后，已接受的 Agent 任务继续执行。“退出 PiX”会完整停止本机后台；有任务时先确认，默认取消。
+
+交互模式复用 Pi 原生终端编辑器、Markdown 与工具卡片、模型选择器和可搜索的会话树。输入 / 补全命令、/tree 选择分支、/sessions 恢复会话。
+
+安装后，在项目目录打开新的终端，直接运行：
+
+sh
+pix
+pix run &quot;检查项目中的测试&quot;
+pix sessions
+pix tree --session 
+
+
+完整命令、并发语义和真实 Agent 测试见 CLI 文档。
+
+ 下载
+
+从 GitHub Releases 下载对应平台的安装包：
+
+- Windows：PiX-Setup-x.y.z.exe（安装版）或 PiX-Portable-x.y.z.exe（免安装便携版），x64。
+- macOS：根据 Mac 的芯片选择安装包（点击  → 关于本机 查看）：
+  - Apple 芯片（M1、M2、M3、M4 等）：PiX-x.y.z</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/huang-sh__PiX.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

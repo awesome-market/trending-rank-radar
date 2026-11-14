@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hypit-ai/hypit · GitHub Trending Rank Radar</title>
+<meta name="description" content="Clone any viral video with AI agents. Not just a script, the whole workflow: swap the face, the words, the B-roll, ship 100 variants in one command, and get your 100M views.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="hypit, hypit-ai, hypit-ai/hypit, github stars, github trending, star growth, star history, 开源项目, 星标增长, agentic-ai, ai, ai-agents, ai-video, compiler, dsl">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/hypit-ai__hypit">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="hypit-ai/hypit · GitHub Trending Rank Radar">
+<meta property="og:description" content="Clone any viral video with AI agents. Not just a script, the whole workflow: swap the face, the words, the B-roll, ship 100 variants in one command, and get your 100M views.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/hypit-ai__hypit">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "hypit-ai/hypit", "codeRepository": "https://github.com/hypit-ai/hypit", "url": "https://zhuikan.com/repos/hypit-ai__hypit", "description": "Clone any viral video with AI agents. Not just a script, the whole workflow: swap the face, the words, the B-roll, ship 100 variants in one command, and get your 100M views.", "author": {"@type": "Organization", "name": "hypit-ai", "url": "https://github.com/hypit-ai"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "TypeScript", "dateCreated": "2026-07-29", "keywords": "agentic-ai,ai,ai-agents,ai-video,compiler,dsl,ffmpeg,generative-ai,llm,programming-language"}</script>
+</head>
+<body data-repo="hypit-ai/hypit" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">hypit-ai/hypit</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="hypit-ai__hypit"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/274059971?v=4&s=300" width="300" height="300" alt="hypit-ai avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">hypit</div>
+      <a class="rp-side-owner" href="https://github.com/hypit-ai">hypit-ai</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/hypit-ai">hypit-ai</a>
+        <span class="rp-sep">/</span><span class="rp-name">hypit</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily">daily <b>#168</b></a><a class="rp-board-chip" href="../?board=weekly">weekly <b>#63</b></a><a class="rp-board-chip" href="../?board=weekly_rate">weekly_rate <b>#109</b></a><a class="rp-board-chip" href="../?board=monthly">monthly <b>#65</b></a><a class="rp-board-chip" href="../?board=monthly_rate">monthly_rate <b>#72</b></a></div>
+    </div>
+    <p class="rp-desc">Clone any viral video with AI agents. Not just a script, the whole workflow: swap the face, the words, the B-roll, ship 100 variants in one command, and get your 100M views.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>29,679</b></span><span class="rp-stat" title="forks">⑂ <b>3,463</b></span><span class="rp-stat" title="watchers">👁 <b>62</b></span><span class="rp-stat" title="prs">⑃ <b>376</b></span><span class="rp-stat" title="issues">● <b>109</b></span><span class="rp-stat" title="releases">▤ <b>28</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/agentic-ai">agentic-ai</a><a class="rp-topic" href="../tags/ai">ai</a><a class="rp-topic" href="../tags/ai-agents">ai-agents</a><a class="rp-topic" href="https://github.com/topics/ai-video">ai-video</a><a class="rp-topic" href="../tags/compiler">compiler</a><a class="rp-topic" href="https://github.com/topics/dsl">dsl</a><a class="rp-topic" href="../tags/ffmpeg">ffmpeg</a><a class="rp-topic" href="../tags/generative-ai">generative-ai</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2026-07-29</span><a class="rp-meta-bit rp-home" href="https://hypit.ai" rel="noopener">hypit.ai</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/hypit-ai/hypit">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.3.2</span><a class="rp-dl-a" href="https://github.com/hypit-ai/hypit/releases/tag/v0.3.2">v0.3.2 ↓</a><span class="rp-dl-ver">0.3.2</span><span class="rp-dl-date">2026-11-11</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+139</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1,951</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+9,110</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">29,679</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">3,463</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">62</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">376</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">109</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">28</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">让 AI Agent 复刻任何爆款视频
+一条命令，100 个变体，1 亿播放量。
+
+
+  Demo
+  &amp;nbsp;&amp;bull;&amp;nbsp;
+  快速开始
+  &amp;nbsp;&amp;bull;&amp;nbsp;
+  开发指南
+  &amp;nbsp;&amp;bull;&amp;nbsp;
+  English
+
+
+
+  
+
+
+
+  
+  
+
+
+
+  
+  
+  
+  
+  
+
+
+
+  
+  
+  
+  
+
+
+
+  ⭐ 让更多人发现 Hypit，一起壮大社区。给仓库点个 Star！
+
+
+ Hypit
+
+Hypit 为 AI Agent（Claude Code、Codex 等）提供了一套制作视频的语言和系统。给它一条视频，Agent 就能把它复刻成一份完整的 workflow：画面、字幕、B-roll、特效，全部锚定在词上，而不是秒上。
+
+需要说明的是： 复刻视频是最快的入口，但不是唯一的入口。你可以从我们的模板开始，也可以描述你想要的视频，让 Agent 从零写出一份 workflow。生成模型同样不是必需的：字幕、动效和代码渲染的画面，不调用生成模型也能编译成一条成片，因此可以不产生模型服务费用。
+
+!SVML 源文件与实时视频预览
+
+左侧是 SVML 源文件，右侧实时呈现对应视频。
+
+ 只安装一次
+
+bash
+npx skills add hypit-ai/hypit -g
+
+
+这条命令安装 Skill。首次使用时，Agent 会检查 Hypit 可执行程序，并按需协助安装。
+视频项目可以放在任意位置。
+
+Hypit 本身免费使用；Coding Agent 和模型服务各有自己的账号与费用。
+HypiHub 是我们推荐的托管模型服务，也可以使用你自己的 API 或本地模型。
+把服务名称和 API 文档告诉 Agent，它会据此配置合适的连接。
+
+Agent 工作环境与入口合作方 ·
+模型与部署服务
+
+ 示例
+
+ UGC
+
+Generation source · Run and production notes
+
+
+  
+    参考视频
+    
+    
+    
+  
+  
+    复刻视频
+    
+    
+    
+  
+  
+    “GOAT DEBATE”——一条 20 秒的足球 Tier List，把 Ronaldo 排进 D 级，把 Messi 排进 S 级。A-roll 是两段 Seedance 2 Mini 生成的 720p 吐槽片段，B-roll 是 GPT Image 2 生成的一张 2K 哥特女孩肖像和十张 1K 脑腐图；WhisperX 负责逐词对齐，排行榜跟着音效逐条落位，再配上彩色词盒卡拉 OK 字幕、丝滑的动画和抓耳的背景音乐，最后由 64 个无头 Chromium 进程并发渲染。上面给出了三个复刻版本：把解说员换成香蕉猫；翻转排名，让 Ronaldo 成为 GOAT；把所有球员换成科技公司创始人。同一套爆款结构，可以产出完全不同的爆款视频。总成本：$1.15。
+  
+
+
+ 播客
+
+Generation source · Run and production notes
+
+
+  
+    参考视频
+    
+    
+    
+  
+  
+    复刻视频
+    
+    
+    
+  
+  
+    “DAILY CREATINE”——一条 18 秒的播客片段，肌肉芭比向一个瘦弱的大学生强推肌酸。A-roll 是 Seedance 2 Mini 生成的三段 720p 对峙镜头，外加一段展示理想生活方式的 B-roll；图像是 GPT Image 2 生成的两张 2K AI 角色肖像和三张 1K 蒙太奇画面。WhisperX 负责逐词对齐，再配上分屏访谈版式、区分说话人的卡拉 OK 字幕、产品递出的瞬间和背景音乐，最后由 64 个无头 Chromium 进程并发渲染。上面给出了三个复刻版本：把两位主播换成 Pepe 和 Doge，争论狗狗手臂；把肌酸换成视黄醇，让漂亮男孩吐槽假小子的毛孔；把实体产品换成 CheatGPT 应用，让头脑简单的体育生绩点碾压博士生。同一套播客形式，三个广告垂类。总成本：$1.07。
+  
+
+
+ 街头采访
+
+Generation source · Run and production notes
+
+
+  
+    参考视频
+    
+    
+    
+  
+  
+    复刻视频
+    
+    
+    
+  
+  
+    “NICE RIDE”——一条 26 秒的街头采访，黑帮太太分享赚到第一个一百万的三条规则。三段由 Seedance 2 Mini 生成的 720p A-roll，一张由 GPT Image 2 生成的 2K AI 角色肖像；WhisperX 负责逐词对齐，再利用 Google Video Intelligence 和 YOLOv8 AnimeFace 提供的人脸边界框，驱动跟随人脸的说话人专属彩色字幕；配合跟音效同步的表情符号揭示板、彩色闪烁、揭示音效和背景音乐，最后由 64 个无头 Chromium 进程并发渲染。上面给出了三个复刻版本：把主播换成 Wojak 和 Chad；把所有内容翻译成西班牙语，同时保持完全相同的 punchline；或者把兰博基尼换成 F1 赛车，让 Ada 向 Leon 解释自己如何因为开 Uber 意外赢得大奖赛。同样的三阶段揭示结构，三种不同的街头采访混剪。总成本：$1.09。
+  
+
+
+ 使用 Hypit skill
+
+编程 Agent 可以直接使用 /hypit skill。在任意空目录或现有项目目录中开启会话，让 Agent 为你创建视频：
+
+text
+/hypit 复刻这个视频：/path/to/video.mp4，把排行榜内容换成 Hypit（官网：hypit.ai）与其他 AI 视频产品的对比。
+
+
+也可以不提供参考视频，直接从描述开始：
+
+text
+/hypit 做一个 ranking 视频，把 Hypit 排到 S 级。
+
+
+Agent 会检查环境，索要这条视频需要的凭据，生成素材并构建成片。
+
+ 👉 免费获得 100 个拥有独特音色的 AI 人物形象
+
+ 为什么选择 Hypit
+
+- 真的能 Clone： 丢一条视频进来，拿到整份 workflow —— 画面、字幕、B-roll、特效。不是拆解脚本。
+- 一份 workflow，100 个变体： 复用编排和已有素材，需要变化的部分再生成。
+- 可插拔组件： 换主播不动字幕。使用已安装的包、改造一个示例，或自己编写。
+- 开源： Hypit 不按人头或渲染次数收费，也不添加水印。模型服务费用由你选择的服务方收取。
+
+ Hypit 能构建什么
+
+丢一条视频进来，Agent 把整套 workflow 克隆下来；或者直接描述你想要的视频，让它从零写一份。拿到的都是可编辑、可重跑的工作流，而不是一次性的成片。
+
+- 信息流广告 —— 从 Meta 广告库拉一条正在跑的广告，克隆成 workflow，换上你的产品，当天发出 50 个 Hook 变体。两周后创意衰退，换一批开头重跑，主体一个字不动。
+- 复刻爆款 —— 任何 TikTok、</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/hypit-ai/hypit/issues/330"><span class="rp-item-num">#330</span><span class="rp-item-title">[Bug] Render: adding picture track causes cross-cue caption contamination</span><span class="rp-item-extra">3 comments · 2026-09-19</span></a><a class="rp-item" href="https://github.com/hypit-ai/hypit/issues/473"><span class="rp-item-num">#473</span><span class="rp-item-title">[Bug] Studio projection unresolved for completed builds with paid video components (historical outputs not bound back into run graph)</span><span class="rp-item-extra">2 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/hypit-ai/hypit/issues/432"><span class="rp-item-num">#432</span><span class="rp-item-title">[Question] Seedance 2/2.5 source-video editing via HypiHub: reference_videos vs ref_video_url, seconds=-1</span><span class="rp-item-extra">2 comments · 2026-10-21</span></a><a class="rp-item" href="https://github.com/hypit-ai/hypit/issues/270"><span class="rp-item-num">#270</span><span class="rp-item-title">help：Processing a single video exhausted my usage quota; it only managed to process the video frames but didn&#x27;t get around to rendering.</span><span class="rp-item-extra">2 comments · 2026-09-17</span></a><a class="rp-item" href="https://github.com/hypit-ai/hypit/issues/490"><span class="rp-item-num">#490</span><span class="rp-item-title">[Bug] typo:Flow with wrap=&quot;word&quot; breaks lines inside words: per-grapheme inline-grid spans create a break opportunity between every letter</span><span class="rp-item-extra">1 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/hypit-ai/hypit/issues/484"><span class="rp-item-num">#484</span><span class="rp-item-title">[Bug]</span><span class="rp-item-extra">1 comments · 2026-11-08</span></a><a class="rp-item" href="https://github.com/hypit-ai/hypit/issues/452"><span class="rp-item-num">#452</span><span class="rp-item-title">bug(yt-dlp): link parsed as an option can re-enable plugin execution</span><span class="rp-item-extra">1 comments · 2026-10-27</span></a><a class="rp-item" href="https://github.com/hypit-ai/hypit/issues/425"><span class="rp-item-num">#425</span><span class="rp-item-title">yt-dlp: `hypit download --to clip.mkv` writes MP4 bytes when the link serves one muxed file</span><span class="rp-item-extra">1 comments · 2026-10-19</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/hypit-ai/hypit/releases"><b>v0.3.2</b> <span class="rp-rel-tag">v0.3.2</span> <span class="rp-item-extra">2026-11-11</span></a><pre class="rp-pre">Install or update with npm install -g @hypit/hypit@0.3.2.
+
+- Add Bach 1.0 Pro as a default Hypit dependency, with text, frame, and reference SVML surfaces and generation through HypiHub. Last-frame-only generation requires 4K. Reference images, videos, and audio can each set a start-time offset.
+- PixVerse V6 on HypiHub accepts seed and multi-clip. aspect-ratio=&quot;auto&quot; requires at least one video reference, and multi-clip cannot be combined with video references.
+- Add embeddable HTML document output and share HTML playback handling with Studio.
+- Reuse video frames when they already satisfy me</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (8)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/weixin_26767391/article/details/169900357" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">Hypit开源视频工具实操指南：一行命令复刻爆款视频全流程</span><span class="rp-item-extra">2026-11-02</span></a><a class="rp-item" href="https://www.bilibili.com/zh-Hant/video/BV1PNsR6REAu/" target="_blank" rel="noopener"><span class="rp-news-src">bilibili</span><span class="rp-item-title">Hypit，一起嗨皮！~最强大的视频工程复刻人物，0-1难，1-100简单 RunningHub支持Hypit视频工程复刻 本地部署教程</span><span class="rp-item-extra">2026-10-28</span></a><a class="rp-item" href="https://news.qq.com/rain/a/20261025A088O000" target="_blank" rel="noopener"><span class="rp-news-src">腾讯网</span><span class="rp-item-title">本周 AI 项目推荐｜ Hypit、Synvas、Pexo...AI 视频赛道还有新玩家</span><span class="rp-item-extra">2026-10-25</span></a><a class="rp-item" href="https://view.inews.qq.com/a/20261010A09SCQ00" target="_blank" rel="noopener"><span class="rp-news-src">腾讯网</span><span class="rp-item-title">开源 20 天 2 万 Star，00 后清北团队给 Agent 创造了一门视频语言！</span><span class="rp-item-extra">2026-10-10</span></a><a class="rp-item" href="https://blog.csdn.net/weixin_29031057/article/details/166716392" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">Hypit实战：一行命令实现爆款视频自动化复刻与风格迁移</span><span class="rp-item-extra">2026-09-26</span></a><a class="rp-item" href="https://news.cnyes.com/news/id/6609486" target="_blank" rel="noopener"><span class="rp-news-src">即時新聞首頁</span><span class="rp-item-title">給Claude Code裝上「剪映」，Hypit讓Agent直接做完整視頻</span><span class="rp-item-extra">2026-09-17</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiSEFVX3lxTFBxaTVQNUxBYWlyZGVQRTVySjJKb2loQU1Sa0dWYkdaVEdpRHl2M2h3YXlXNlMzTFViNzFlR1JSUjI4T2NrMHJEWA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">智源社区</span><span class="rp-item-title">不只有 Personal Agent，本周我们推荐这 16 款 AI 产品</span><span class="rp-item-extra">2026-10-09</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiY0FVX3lxTE9zelVmODk0YXJPRWtBMEVxSWFOUkVlLTdtY1BvVUoxQmE0VXRuWmNpY2pZOGVUTUFVQ2hQS3pqWk5tdHdTMnNaWHdJQjZZUmhyUnd4eDcwY0ZFQW1IUm9EUkdyZw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">手机新浪网</span><span class="rp-item-title">开源视频工作流引擎Hypit_新浪新闻</span><span class="rp-item-extra">2026-09-15</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (1)</h3><div class="rp-list"><a class="rp-item" href="https://www.ainvest.com/news/hypit-shows-ai-agent-cut-finished-video-dollar-tool-2609/" target="_blank" rel="noopener"><span class="rp-news-src">ainvest</span><span class="rp-item-title">Hypit shows an AI agent can cut a finished video for about a dollar. The tool itself makes nothing.</span><span class="rp-item-extra">2026-09-17</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/hypit-ai__hypit.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

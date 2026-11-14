@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>openai/codex · GitHub Trending Rank Radar</title>
+<meta name="description" content="Lightweight coding agent that runs in your terminal">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="codex, openai, openai/codex, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/openai__codex">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="openai/codex · GitHub Trending Rank Radar">
+<meta property="og:description" content="Lightweight coding agent that runs in your terminal">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/openai__codex">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "openai/codex", "codeRepository": "https://github.com/openai/codex", "url": "https://zhuikan.com/repos/openai__codex", "description": "Lightweight coding agent that runs in your terminal", "author": {"@type": "Organization", "name": "openai", "url": "https://github.com/openai"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Rust", "dateCreated": "2025-04-13"}</script>
+</head>
+<body data-repo="openai/codex" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">openai/codex</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="openai__codex"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/14957082?v=4&s=300" width="300" height="300" alt="openai avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">codex</div>
+      <a class="rp-side-owner" href="https://github.com/openai">openai</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/openai">openai</a>
+        <span class="rp-sep">/</span><span class="rp-name">codex</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily">daily <b>#163</b></a><a class="rp-board-chip" href="../?board=weekly">weekly <b>#132</b></a><a class="rp-board-chip" href="../?board=monthly">monthly <b>#94</b></a><a class="rp-board-chip" href="../?board=total">total <b>#85</b></a></div>
+    </div>
+    <p class="rp-desc">Lightweight coding agent that runs in your terminal</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>135,178</b></span><span class="rp-stat" title="forks">⑂ <b>21,436</b></span><span class="rp-stat" title="watchers">👁 <b>667</b></span><span class="rp-stat" title="prs">⑃ <b>19,034</b></span><span class="rp-stat" title="issues">● <b>40,683</b></span><span class="rp-stat" title="releases">▤ <b>1,292</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2025-04-13</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="openai__whisper"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">whisper</a><a class="rp-same-link" href="openai__CLIP"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">CLIP</a><a class="rp-same-link" href="openai__baselines"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">baselines</a><a class="rp-same-link" href="openai__chatgpt-retrieval-plugin"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">chatgpt-retrieval-plugin</a><a class="rp-same-link" href="openai__codex-plugin-cc"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">codex-plugin-cc</a><a class="rp-same-link" href="openai__codex-security"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">codex-security</a><a class="rp-same-link" href="openai__evals"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">evals</a><a class="rp-same-link" href="openai__gpt-3"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">gpt-3</a><a class="rp-same-link" href="openai__gym"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">gym</a><a class="rp-same-link" href="openai__math"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">math</a><a class="rp-same-link" href="openai__openai-cookbook"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">openai-cookbook</a><a class="rp-same-link" href="openai__parameter-golf"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">parameter-golf</a><a class="rp-same-link" href="openai__shap-e"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">shap-e</a><a class="rp-same-link" href="openai__skills"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">skills</a><a class="rp-same-link" href="openai__tart"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">tart</a><a class="rp-same-link" href="openai__tiktoken"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">tiktoken</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/openai/codex">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">0.169.0</span><a class="rp-dl-a" href="https://github.com/openai/codex/releases/tag/rust-v0.169.0">rust-v0.169.0 ↓</a><span class="rp-dl-ver">0.169.0</span><span class="rp-dl-date">2026-11-13</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+143</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+2,180</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+5,957</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">135,178</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">21,436</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">667</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">19,034</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">40,683</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">1,292</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Codex CLI is a coding agent from OpenAI that runs locally on your computer.
+
+  
+
+
+If you want Codex in your code editor (VS Code, Cursor, Windsurf), install in your IDE.
+If you want the desktop app experience, run codex app or visit the Codex App page.
+If you are looking for the cloud-based agent from OpenAI, Codex Web, go to chatgpt.com/codex.
+
+---
+
+ Quickstart
+
+ Installing and running Codex CLI
+
+Run the following on Mac or Linux to install Codex CLI:
+
+shell
+curl -fsSL https://chatgpt.com/codex/install.sh | sh
+
+
+Run the following on Windows to install Codex CLI:
+
+shell
+powershell -ExecutionPolicy ByPass -c &quot;irm https://chatgpt.com/codex/install.ps1 | iex&quot;
+
+
+The standalone installers download from https://releases.openai.com/codex by default and fall back to GitHub Releases if a metadata or asset download is unavailable. To force GitHub Releases, set CODEX_INSTALLER_USE_RELEASES_OPENAI_COM to false (0 and no are also accepted):
+
+shell
+curl -fsSL https://chatgpt.com/codex/install.sh | CODEX_INSTALLER_USE_RELEASES_OPENAI_COM=false sh
+
+
+powershell
+$env:CODEX_INSTALLER_USE_RELEASES_OPENAI_COM=&#x27;false&#x27;; irm https://chatgpt.com/codex/install.ps1 | iex
+
+
+Codex CLI can also be installed via the following package managers:
+
+shell
+ Install using npm
+npm install -g @openai/codex
+
+
+shell
+ Install using Homebrew
+brew install --cask codex
+
+
+Then simply run codex to get started.
+
+
+You can also go to the latest GitHub Release and download the appropriate binary for your platform.
+
+Each GitHub Release contains many executables, but in practice, you likely want one of these:
+
+- macOS
+  - Apple Silicon/arm64: codex-aarch64-apple-darwin.tar.gz
+  - x86_64 (older Mac hardware): codex-x86_64-apple-darwin.tar.gz
+- Linux
+  - x86_64: codex-x86_64-unknown-linux-musl.tar.gz
+  - arm64: codex-aarch64-unknown-linux-musl.tar.gz
+
+Each archive contains a single entry with the platform baked into the name (e.g., codex-x86_64-unknown-linux-musl), so you likely want to rename it to codex after extracting it.
+
+
+
+ Using Codex with your ChatGPT plan
+
+Run codex and select Sign in with ChatGPT. We recommend signing into your ChatGPT account to use Codex as part of your Plus, Pro, Business, Edu, or Enterprise plan. Learn more about what&#x27;s included in your ChatGPT plan.
+
+You can also use Codex with an API key, but this requires additional setup.
+
+ Docs
+
+- Codex Documentation
+- Contributing
+- Installing &amp; building
+- Open source fund
+
+This repository is licensed under the Apache-2.0 License.</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/openai/codex/issues/51601"><span class="rp-item-num">#51601</span><span class="rp-item-title">Windows app 26.1002.51308: sandbox setup fails with sharing violation when validating its own active runtime</span><span class="rp-item-extra">125 comments · 2026-10-07</span></a><a class="rp-item" href="https://github.com/openai/codex/issues/36040"><span class="rp-item-num">#36040</span><span class="rp-item-title">Regression: iOS Remote only lists projects with recent chats</span><span class="rp-item-extra">115 comments · 2026-07-29</span></a><a class="rp-item" href="https://github.com/openai/codex/issues/20214"><span class="rp-item-num">#20214</span><span class="rp-item-title">Codex App frequently freezes/stutters on Windows 11 Pro despite sufficient system resources</span><span class="rp-item-extra">114 comments · 2026-04-29</span></a><a class="rp-item" href="https://github.com/openai/codex/issues/28969"><span class="rp-item-num">#28969</span><span class="rp-item-title">Add setting to disable the auto-resolve in 60 seconds for questions</span><span class="rp-item-extra">99 comments · 2026-06-18</span></a><a class="rp-item" href="https://github.com/openai/codex/issues/9203"><span class="rp-item-num">#9203</span><span class="rp-item-title">Please make &quot;/undo&quot; back</span><span class="rp-item-extra">99 comments · 2026-01-14</span></a><a class="rp-item" href="https://github.com/openai/codex/issues/49458"><span class="rp-item-num">#49458</span><span class="rp-item-title">[Windows] dot-started local tasks lack Computer Use tools while ordinary local Codex sessions work</span><span class="rp-item-extra">98 comments · 2026-09-30</span></a><a class="rp-item" href="https://github.com/openai/codex/issues/48237"><span class="rp-item-num">#48237</span><span class="rp-item-title">unexpected status 401 Unauthorized issue</span><span class="rp-item-extra">97 comments · 2026-09-25</span></a><a class="rp-item" href="https://github.com/openai/codex/issues/52407"><span class="rp-item-num">#52407</span><span class="rp-item-title">Windows Dots: CUA MXC launcher fails with HRESULT 0x80070003 after direct shell recovery</span><span class="rp-item-extra">96 comments · 2026-10-09</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/openai/codex/discussions/61320"><span class="rp-item-num">#61320</span><span class="rp-item-title">Supported Windows sandbox configuration for native memory consolidation in Codex App Server?</span><span class="rp-item-extra">1 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/openai/codex/discussions/61238"><span class="rp-item-num">#61238</span><span class="rp-item-title">TokenWatch: Codex and Claude usage and reset times on a phone dashboard (iOS/Android, free through Nov 16)</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/openai/codex/discussions/61177"><span class="rp-item-num">#61177</span><span class="rp-item-title">Can Codex app-server verify a fresh thread’s inputs and start its first turn only if they’re unchanged?</span><span class="rp-item-extra">1 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/openai/codex/discussions/61174"><span class="rp-item-num">#61174</span><span class="rp-item-title">Commonly: a shared pod where each teammate&#x27;s Codex joins from their own Mac</span><span class="rp-item-extra">1 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/openai/codex/discussions/61058"><span class="rp-item-num">#61058</span><span class="rp-item-title">1ToolRing: give Codex live Google, Maps and Amazon data through one remote MCP server</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/openai/codex/discussions/61049"><span class="rp-item-num">#61049</span><span class="rp-item-title">TokenWatch: Codex and Claude usage and reset times on a phone dashboard (iOS/Android, free through Nov 16)</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/openai/codex/discussions/61030"><span class="rp-item-num">#61030</span><span class="rp-item-title">Mons beta: continuing a Codex terminal session across computer, iPhone and iPad</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/openai/codex/discussions/60954"><span class="rp-item-num">#60954</span><span class="rp-item-title">Sugestão: permitir que usuários do ChatGPT Pro escolham a janela de uso (5 horas vs. semanal)</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/openai/codex/releases"><b>0.169.0</b> <span class="rp-rel-tag">rust-v0.169.0</span> <span class="rp-item-extra">2026-11-13</span></a><pre class="rp-pre">New Features
+
+- The opt-in terminal workspace supports multiple side-chat tabs. Switch between them with the keyboard or mouse, and reopen saved local side chats after restarting Codex. (59784, 60152, 60181)
+- Search older tasks from the agent command center by name, prompt preview, or working directory. (60286)
+- Turn on Collapse turn details in the full-screen transcript to fold completed activity beneath each prompt while keeping answers visible and tool output searchable. (60554, 60555, 60556, 60557)
+- Add or edit custom model providers from the terminal. With custom gateway onboarding ena</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (12)</h3><div class="rp-list"><a class="rp-item" href="https://www.blocktempo.com/postman-desktop-auto-installs-codex-claude-code-plugins-hook-approval/" target="_blank" rel="noopener"><span class="rp-news-src">動區動趨</span><span class="rp-item-title">開發工具 Postman 會自動幫 AI 代理裝外掛，不需開發者批准同意</span><span class="rp-item-extra">2026-11-04</span></a><a class="rp-item" href="https://www.blocktempo.com/rea-reverse-engineer-anything-github-175k-stars-ai-agents-mcp/" target="_blank" rel="noopener"><span class="rp-news-src">動區動趨</span><span class="rp-item-title">AI 逆向工具「REA 」GitHub 十天衝上 17 萬星，真的什麼都能拆嗎？</span><span class="rp-item-extra">2026-10-13</span></a><a class="rp-item" href="https://technews.tw/2026/02/05/claude-and-codex-are-now-available-in-public-preview-on-github/" target="_blank" rel="noopener"><span class="rp-news-src">TechNews 科技新報</span><span class="rp-item-title">GitHub 擁抱 Claude、Codex，編碼代理程式進駐平台</span><span class="rp-item-extra">2026-02-04</span></a><a class="rp-item" href="https://technews.tw/2025/05/17/openai-introducing-codex/" target="_blank" rel="noopener"><span class="rp-news-src">TechNews 科技新報</span><span class="rp-item-title">OpenAI 推出 AI 編碼代理工具「Codex」，付費用戶優先使用</span><span class="rp-item-extra">2025-05-16</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTFByX042bk5yYmRaamtPcDEyMERnbkRqbnlFYk9YYWVrRDVGdmtXaXQzSFJCQnJMT0V0V2xneHdjYVFRbDh2dDBhcDRkSUU3RlpTTXM4?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">华尔街见闻</span><span class="rp-item-title">OpenAI收购Pierre，不仅要写代码，还要把整个GitHub给端了</span><span class="rp-item-extra">2026-11-05</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiYEFVX3lxTE1mU3JPNjY4TVFXQ2d4Rk41dmcxZm5zalRhMHlzVkw2MHVGUWsydllGU0I2UWVNUU5wMWg4MEs0NzhZOF9XZUwzZERDaUUtVzZoOGx6eU5Nd285NTBSV1JWMw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">cnBeta.COM</span><span class="rp-item-title">OpenAI收购神秘团队 奥特曼要在Codex里再造一个GitHub</span><span class="rp-item-extra">2026-11-05</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiigFBVV95cUxNS0p5UGhFVWtQcncxV1NiLUxYTUtsVUlPa1pBQ21VWTM4NTdSbkxPWmZMWFV5UERhOFVSQ0I1Qzd6VnZpTlllMHJ4Q0N0SlNsaEJfUTFJN1l1Yjc2LVVSRnM2NU1UT193MEw3U21IekZuWG45TnUxZHJVOHpyd21PNWg1ZlI3TjZ1bUE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">新浪财经</span><span class="rp-item-title">刚刚，OpenAI收购Pierre，Codex要对Git下手？_手机新浪网</span><span class="rp-item-extra">2026-11-05</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTFBTVWJOTTM4aGZmTXY0WGJ0SHNrSXJoVm1lRHJtT19Ycm9FVGhKOUthdW96UFY3amlCME9JWFJBdE9qQ01NRHA3ejAzMnR2YjNCc1lwYjNR?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">投资界</span><span class="rp-item-title">刚刚，OpenAI收购Pierre，Codex要对Git下手？</span><span class="rp-item-extra">2026-11-04</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiSEFVX3lxTE5zLWY1MW00MHA2ejNNMVF0c1ZJbkZ4eTRuV09YRmVlcDh0WEN5MjNZRU9FV0lGT25GM0VsVWxmcEctdWl4clQ4NA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">智源社区</span><span class="rp-item-title">OpenAI 将收购 Pierre Computer，计划把 Code Storage 整合进 Codex，瞄准微软 GitHub</span><span class="rp-item-extra">2026-11-04</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMigAFBVV95cUxOM1h2WkVLWXF2eDl1UlhkVUpra1dpeHlyN0RvWnV1OFZsZnNyWmplT0twVEV5RW1laXROZFY1MjREXy1XUlhfUDI2YW5xZXJJQ1VwQnZ2dFE1VWZWSDBIbDRKNXVoNGl0ckxoU1B4WERsZ1Y4RHpGckY5QkhKVFIzeg?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">OpenAI 发布 Pando，用 Codex 在 10 周内构建的 Git 后端</span><span class="rp-item-extra">2026-11-04</span></a><details class="rp-news-more"><summary>展开其余 2 条</summary><a class="rp-item" href="https://news.google.com/rss/articles/CBMi3wFBVV95cUxQLWcxUTg1cHIwZ0lkZlY0ODZhNjlCa3NKVlg1YmlCeEtFX0U4eFkwMHBEYzZLYXoyak5TOUJwaGFkbkEydUhLanBKa2dMUXhXUjR5dVllaTNDNFpnR3IyTGJFRzVDLVZxcmZWOWRycHRZMlpNRmo3WTNRNmhPN2IzM2c5T21OVDhGLWRaTHNvRER3TGhyWnhsWDBYVzNwU1RxUjEtd2l0Qm9EN0QwSC1lVHJxU3lfTjhwNDlUMVhhelJEYWctZVhuUENiMUIzSHVVeC1GenFyenVrazZrWEpN?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">新浪财经</span><span class="rp-item-title">克劳德代码、Codex、Gemini 命令行工具与GitHub Copilot被发现存在同一安全漏洞</span><span class="rp-item-extra">2026-09-18</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiTkFVX3lxTFBPaHpPN0tKZXpqd09POE1LOWJ3ZlQ0Wlhfd2VlRTBhNENSQ2g1dWR1ZU5CeWp5RFRuUmZQcEl5enBmc2NRQ3cwZ0JseHpIQQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">36氪</span><span class="rp-item-title">Claude Code反超GitHub Copilot登顶第一、90%程序员已用上Agent，最新AI编码调查报告来了</span><span class="rp-item-extra">2026-08-24</span></a></details></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (24)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=50422628" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">ChatGPT Desktop forwards your SSH agent to remote machines</span><span class="rp-item-extra">▲ 203 · 71 comments · 2026-11-09</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=48890384" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Tell HN: The Codex App is replaced by ChatGPT</span><span class="rp-item-extra">▲ 6 · 4 comments · 2026-07-13</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47944637" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">A GPT-5.4 bug led to OpenAI banning goblins and raccoons</span><span class="rp-item-extra">▲ 6 · 1 comments · 2026-04-29</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=46640612" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ask HN: Is Codex login down for all workspace (non-personal) users?</span><span class="rp-item-extra">▲ 6 · 2 comments · 2026-01-15</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=46994955" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ask HN: GPT-5.3-Codex being silently routed to GPT-5.2?</span><span class="rp-item-extra">▲ 5 · 3 comments · 2026-02-12</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=48904884" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: BYO AI free notetaking with optional screen reading for OpenClaw/hermes</span><span class="rp-item-extra">▲ 3 · 3 comments · 2026-07-14</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=46444256" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ask HN: Are Google Search AI hallucinations common?</span><span class="rp-item-extra">▲ 1 · 0 comments · 2025-12-31</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=46041660" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Codex can read sensitive files outside the CWD without approval</span><span class="rp-item-extra">▲ 1 · 0 comments · 2025-11-25</span></a><a class="rp-item" href="https://note.com/consuloji_ch/n/n0a9ae81a4475?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">Why Did OpenAI Build Its Own Git in 10 Weeks? The Truth Behind the 7.38 Billion Monthly Commit Limit and the Pierre Acquisition</span><span class="rp-item-extra">2026-11-10</span></a><a class="rp-item" href="https://note.com/eager_canna4734/n/na38211046888?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">My Codex Challenge at Sixty: How I Got Lost on GitHub but Still Built a Web Page Without Writing Code</span><span class="rp-item-extra">2026-11-08</span></a><details class="rp-news-more"><summary>14 more</summary><a class="rp-item" href="https://note.com/sponge841841/n/nd165a5871b57?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">Codex Day 14 In-Depth: Edit Past Messages on Desktop! Differences from Steer, Queue, and Fork</span><span class="rp-item-extra">2026-11-07</span></a><a class="rp-item" href="https://www.msn.com/en-us/news/other/openai-is-building-a-github-alternative-into-codex-and-it-could-change-how-developers-work/ar-AA2gRScB" target="_blank" rel="noopener"><span class="rp-news-src">How-To Geek on MSN</span><span class="rp-item-title">OpenAI is building a GitHub alternative into Codex, and it could change how developers work</span><span class="rp-item-extra">2026-11-05</span></a><a class="rp-item" href="https://www.notebookcheck.net/Postman-added-itself-to-Claude-Code-and-Codex-without-asking.1442933.0.html" target="_blank" rel="noopener"><span class="rp-news-src">Notebookcheck</span><span class="rp-item-title">Postman added itself to Claude Code and Codex without asking</span><span class="rp-item-extra">2026-11-05</span></a><a class="rp-item" href="https://eu.36kr.com/en/p/4056787186881670" target="_blank" rel="noopener"><span class="rp-news-src">eu.36kr</span><span class="rp-item-title">OpenAI has acquired a mysterious team, and Sam Altman wants to build another GitHub within Codex.</span><span class="rp-item-extra">2026-11-04</span></a><a class="rp-item" href="https://www.msn.com/en-us/technology/tech-companies/exclusive-openai-targets-microsoft-s-github-with-deal-for-startup/ar-AA2gJTi1" target="_blank" rel="noopener"><span class="rp-news-src">Axios on MSN</span><span class="rp-item-title">Exclusive: OpenAI targets Microsoft&#x27;s GitHub with deal for startup</span><span class="rp-item-extra">2026-11-04</span></a><a class="rp-item" href="https://xenospectrum.com/en/openai-pierre-code-storage-codex/" target="_blank" rel="noopener"><span class="rp-news-src">xenospectrum</span><span class="rp-item-title">OpenAI to Acquire Pierre, Plans to Bring Git-Based Code Storage to Codex</span><span class="rp-item-extra">2026-11-04</span></a><a class="rp-item" href="https://www.msn.com/en-in/news/other/taking-on-microsoft-s-github-why-openai-is-buying-a-startup-whose-tech-already-powers-codex/ar-AA2gKGQr" target="_blank" rel="noopener"><span class="rp-news-src">NDTV Profit on MSN</span><span class="rp-item-title">Taking on Microsoft’s GitHub? Why OpenAI is buying a startup whose tech already powers Codex</span><span class="rp-item-extra">2026-11-04</span></a><a class="rp-item" href="https://note.com/deft_llama956/n/n6d5a83b8b6f4?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">[Zero Codex Consumption] Breaking Through Personal Development Limits with a 3,000 Yen/Month Plus Plan via ChatGPT x GitHub Integration</span><span class="rp-item-extra">2026-10-27</span></a><a class="rp-item" href="https://www.techrepublic.com/article/news-best-claude-code-alternatives-2026/" target="_blank" rel="noopener"><span class="rp-news-src">TechRepublic</span><span class="rp-item-title">5 Best Claude Code Alternatives for 2026: Codex, Copilot and More</span><span class="rp-item-extra">2026-09-24</span></a><a class="rp-item" href="https://siliconangle.com/2026/03/30/openai-codex-vulnerability-enabled-github-token-theft-via-command-injection-report-finds/" target="_blank" rel="noopener"><span class="rp-news-src">SiliconANGLE</span><span class="rp-item-title">OpenAI Codex vulnerability enabled GitHub token theft via command injection, report finds</span><span class="rp-item-extra">2026-03-30</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMixwFBVV95cUxPX3p2YnItRWc5REkxR1dJY29tcVRYelRqdWJyYTB6Y1hrcW84NUQ1VEFFeC10dUZUTmtPeG5zUFVaTURHX1Qwbl9yQzN3QWk4cVBKaUVmVDRmajE4LXNjYnNDLTdsMDRRdWpuZk9rMHAxY3E3VXdreTJrNHRBU2pKeTVvZ2c1ZlpqTzlDeHlMcGE2S0V5U0lhVU1zeGNsdmJBUDZaLW9WMFVQMlN2TFQ2NzJHUW1WYlBuOThtS25KdkVGSDF0WW5B?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">EIN News</span><span class="rp-item-title">Breachsense Brings Its Dark Web Monitoring API to Claude Code, Codex and GitHub Copilot</span><span class="rp-item-extra">2026-11-10</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMimwFBVV95cUxPY2hlV1QzU0d4dGJlYThMalN4c1ZqX01iQjhQTW5TNTJoM2hSSDBpZTJ5SFpLU0d4VXc5OHRQWEpWWXRKMV94VWRZTWJkSWJKRnBEMWNCV1BHZGQ1WC1DZ2ZXZl85S01ZT1kyV0diNmxuZHFYY3JLTVJPWUtoc0RRZDhrM1p6WUlLWTZZVl8zcmozTUg1THVGOThwOA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Dataconomy</span><span class="rp-item-title">OpenAI Targets GitHub With Pierre Deal And Codex Integration</span><span class="rp-item-extra">2026-11-05</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQZmdaNHBhOXRFQkFNZlF1eDZueXBobXdFS3pNMmxWZi1MbGhaN1lIbnNBVGFaWTNzcFFsVnNvVjJpcGctZExkTmJ6SEk1N1dBbFZCcjAxYW5ad1haLWtnOG1fS3FpMWl5ZFBpcXlCaDZFaG5rUm1hY2RzLUhrbjM4WExOLWF6cXZfVXV2MTZoWmJKXzVHQTFwRGZQaHRjNTBuNGkwWkdPdnJ2SjVNWl92Nmw4N1FLN01ZVHBVNg?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Dealroom</span><span class="rp-item-title">OpenAI to buy Pierre, the code-storage startup already inside Codex, in a shot at GitHub</span><span class="rp-item-extra">2026-11-05</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxQcjQxRTAyemloRmN6REx5bWlORVVacnd4ZDZ3ZUc3ZDhRcnlKYnVqZUxDM19nRC13WDV1U3RaX2xoenk4UUpISmprZDNtNTIxNzF6ejMzQURGVU5zWHc1dkhzYVMxbGVrbUY5dndFMzJRRDVXOGZoVS1fQVhfOHRaa3N4YUVWd1hRb2ZJ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">DevOps.com</span><span class="rp-item-title">OpenAI Acquires Pierre Computer to Expand Codex, Challenge GitHub</span><span class="rp-item-extra">2026-11-04</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/openai__codex.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

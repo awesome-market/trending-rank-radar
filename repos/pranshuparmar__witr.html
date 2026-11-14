@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pranshuparmar/witr · GitHub Trending Rank Radar</title>
+<meta name="description" content="Why is this running? Trace any process, port, container, or file back to what started it - CLI + TUI. ">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="witr, pranshuparmar, pranshuparmar/witr, github stars, github trending, star growth, star history, 开源项目, 星标增长, cli, devops, freebsd, golang, linux, macos">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/pranshuparmar__witr">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="pranshuparmar/witr · GitHub Trending Rank Radar">
+<meta property="og:description" content="Why is this running? Trace any process, port, container, or file back to what started it - CLI + TUI. ">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/pranshuparmar__witr">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "pranshuparmar/witr", "codeRepository": "https://github.com/pranshuparmar/witr", "url": "https://zhuikan.com/repos/pranshuparmar__witr", "description": "Why is this running? Trace any process, port, container, or file back to what started it - CLI + TUI. ", "author": {"@type": "Organization", "name": "pranshuparmar", "url": "https://github.com/pranshuparmar"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Go", "dateCreated": "2025-12-20", "keywords": "cli,devops,freebsd,golang,linux,macos,observability,sysadmin,troubleshooting,tui"}</script>
+</head>
+<body data-repo="pranshuparmar/witr" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">pranshuparmar/witr</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="pranshuparmar__witr"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/4262592?u=dc1af2c7e0a6e001ce67f732c10b69ea33c617d5&amp;v=4&s=300" width="300" height="300" alt="pranshuparmar avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">witr</div>
+      <a class="rp-side-owner" href="https://github.com/pranshuparmar">pranshuparmar</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/pranshuparmar">pranshuparmar</a>
+        <span class="rp-sep">/</span><span class="rp-name">witr</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Why is this running? Trace any process, port, container, or file back to what started it - CLI + TUI. </p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>22,995</b></span><span class="rp-stat" title="forks">⑂ <b>811</b></span><span class="rp-stat" title="watchers">👁 <b>49</b></span><span class="rp-stat" title="prs">⑃ <b>140</b></span><span class="rp-stat" title="issues">● <b>92</b></span><span class="rp-stat" title="releases">▤ <b>22</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/cli">cli</a><a class="rp-topic" href="../tags/devops">devops</a><a class="rp-topic" href="https://github.com/topics/freebsd">freebsd</a><a class="rp-topic" href="../tags/golang">golang</a><a class="rp-topic" href="../tags/linux">linux</a><a class="rp-topic" href="../tags/macos">macos</a><a class="rp-topic" href="../tags/observability">observability</a><a class="rp-topic" href="https://github.com/topics/sysadmin">sysadmin</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Go</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2025-12-20</span><a class="rp-meta-bit rp-home" href="https://pranshuparmar.github.io/witr/" rel="noopener">pranshuparmar.github.io/witr/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/pranshuparmar/witr">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.3.4</span><a class="rp-dl-a" href="https://github.com/pranshuparmar/witr/releases/tag/v0.3.4">v0.3.4 ↓</a><span class="rp-dl-ver">0.3.4</span><span class="rp-dl-date">2026-10-04</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+7</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+81</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+310</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">22,995</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">811</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">49</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">140</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">92</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">22</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">witr
+
+ Why is this running?
+Trace any process, port, container, or file back to the exact chain that started it —
+one command, machine-readable JSON, or an interactive TUI.
+
+   
+
+
+
+
+ 🎮 Try witr in your browser →
+Investigate a simulated Linux box — a guided tutorial and free-play sandbox, no install required.
+
+
+
+
+
+---
+
+
+
+Purpose • Installation • AI Agents • TUI • Examples
+
+Flags • Output Behavior • Platforms • Sponsors
+
+
+
+---
+
+ 1. Purpose
+
+witr exists to answer a single question:
+
+ Why is this running?
+
+When something is running on a system, whether it is a process, a service, or something bound to a port, there is always a cause. That cause is often indirect, non-obvious, or spread across multiple layers such as supervisors, containers, services, or shells.
+
+Existing tools (ps, top, lsof, ss, systemctl, docker ps) expose state and metadata. They show _what_ is running, but leave the user to infer _why_ by manually correlating outputs across tools.
+
+witr makes that causality explicit. Ports, services, containers and files all map back to a PID, and for that PID witr answers:
+
+1. What is running?
+2. How did it start?
+3. What is keeping it running?
+4. What context does it belong to?
+
+The answer comes as a single human-readable report, as JSON for scripts and AI agents, or in an interactive TUI dashboard.
+
+bash
+witr node                  why is this node process running?
+witr --port 8080           what is holding port 8080, and why?
+witr --pid 1234 --tree     its ancestry and children as a tree
+witr --container redis     a container, across Docker, Podman, Kubernetes and more
+witr --port 8080 --json    the same answer for scripts and AI agents
+witr                       browse everything in the interactive TUI
+
+
+ 📖 Curious how witr came to be? Read the story.
+
+---
+
+ 2. Installation
+
+witr is distributed as a single static binary for Linux, macOS, FreeBSD, and Windows.
+
+witr is also independently packaged and maintained across multiple operating systems and ecosystems. An up-to-date overview of packaging status is available on Repology. Please note that community packages may lag GitHub releases due to independent review and validation.
+
+ [!TIP]
+ If you use a package manager (Homebrew, Conda, Winget, etc.), we recommend installing via that for easier updates. Otherwise, the install script is the quickest way to get started.
+
+---
+
+ 2.1 Quick Install
+
+ Unix (Linux, macOS &amp; FreeBSD)
+
+bash
+curl -fsSL https://raw.githubusercontent.com/pranshuparmar/witr/main/install.sh | bash
+
+
+
+Script Details
+
+The script will:
+- Detect your operating system (linux, darwin or freebsd)
+- Detect your CPU architecture (amd64, arm64 or loong64 on Linux)
+- Download the latest released binary and man page
+- Install it to /usr/local/bin/witr
+- Install the man page to /usr/local/share/man/man1/witr.1
+
+To install somewhere else, such as ~/.local (no sudo needed), set INSTALL_PREFIX on bash:
+
+bash
+curl -fsSL https://raw.githubusercontent.com/pranshuparmar/witr/main/install.sh | INSTA</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/pranshuparmar/witr/issues/194"><span class="rp-item-num">#194</span><span class="rp-item-title">[Feature]: Record &amp; Replay Mode (atop-style)</span><span class="rp-item-extra">6 comments · 2026-05-15</span></a><a class="rp-item" href="https://github.com/pranshuparmar/witr/issues/248"><span class="rp-item-num">#248</span><span class="rp-item-title">[Feature]: Why hasn&#x27;t the process-killing functionality been implemented for Windows?</span><span class="rp-item-extra">2 comments · 2026-11-05</span></a><a class="rp-item" href="https://github.com/pranshuparmar/witr/issues/250"><span class="rp-item-num">#250</span><span class="rp-item-title">suggestion: An HN badge might look good</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/pranshuparmar/witr/discussions/222"><span class="rp-item-num">#222</span><span class="rp-item-title">Helps with withdrawing my assets</span><span class="rp-item-extra">1 comments · 2026-08-08</span></a><a class="rp-item" href="https://github.com/pranshuparmar/witr/discussions/78"><span class="rp-item-num">#78</span><span class="rp-item-title">TUI!</span><span class="rp-item-extra">2 comments · 2026-01-01</span></a><a class="rp-item" href="https://github.com/pranshuparmar/witr/discussions/76"><span class="rp-item-num">#76</span><span class="rp-item-title">👋 Welcome to `witr` Discussions!</span><span class="rp-item-extra">0 comments · 2026-01-01</span></a><a class="rp-item" href="https://github.com/pranshuparmar/witr/discussions/77"><span class="rp-item-num">#77</span><span class="rp-item-title">Better README image needed!</span><span class="rp-item-extra">8 comments · 2025-12-31</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/pranshuparmar/witr/releases"><b>v0.3.4</b> <span class="rp-rel-tag">v0.3.4</span> <span class="rp-item-extra">2026-10-04</span></a><pre class="rp-pre">What&#x27;s Changed
+ feat: Add interactive browser playground &amp; guided tutorial by @pranshuparmar in https://github.com/pranshuparmar/witr/pull/212
+ feat: Landing polish: README fixes, contributor docs cleanup, mode-aware playground Reset by @pranshuparmar in https://github.com/pranshuparmar/witr/pull/213
+ feat: Add anonymous analytics via GoatCounter by @pranshuparmar in https://github.com/pranshuparmar/witr/pull/214
+ docs: Add llms.txt for LLM/agent-readable project summary by @abyworkings-coder in https://github.com/pranshuparmar/witr/pull/217
+ fix(install): create the bin directory before insta</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/pranshuparmar__witr.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

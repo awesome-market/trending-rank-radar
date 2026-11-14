@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ryanhanwu/How-To-Ask-Questions-The-Smart-Way · GitHub Trending Rank Radar</title>
+<meta name="description" content="本文原文由知名 Hacker Eric S. Raymond 所撰寫，教你如何正確的提出技術問題並獲得你滿意的答案。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="How-To-Ask-Questions-The-Smart-Way, ryanhanwu, ryanhanwu/How-To-Ask-Questions-The-Smart-Way, github stars, github trending, star growth, star history, 开源项目, 星标增长, rtfm, translation, stfw">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/ryanhanwu__How-To-Ask-Questions-The-Smart-Way">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="ryanhanwu/How-To-Ask-Questions-The-Smart-Way · GitHub Trending Rank Radar">
+<meta property="og:description" content="本文原文由知名 Hacker Eric S. Raymond 所撰寫，教你如何正確的提出技術問題並獲得你滿意的答案。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/ryanhanwu__How-To-Ask-Questions-The-Smart-Way">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ryanhanwu/How-To-Ask-Questions-The-Smart-Way", "codeRepository": "https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way", "url": "https://zhuikan.com/repos/ryanhanwu__How-To-Ask-Questions-The-Smart-Way", "description": "本文原文由知名 Hacker Eric S. Raymond 所撰寫，教你如何正確的提出技術問題並獲得你滿意的答案。", "author": {"@type": "Organization", "name": "ryanhanwu", "url": "https://github.com/ryanhanwu"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2015-03-28", "keywords": "rtfm,translation,stfw"}</script>
+</head>
+<body data-repo="ryanhanwu/How-To-Ask-Questions-The-Smart-Way" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">ryanhanwu/How-To-Ask-Questions-The-Smart-Way</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="ryanhanwu__How-To-Ask-Questions-The-Smart-Way"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/371111?u=fc0e9374b2445fc2329e89089c6b118b0bb4bbe4&amp;v=4&s=300" width="300" height="300" alt="ryanhanwu avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">How-To-Ask-Questions-The-Smart-Way</div>
+      <a class="rp-side-owner" href="https://github.com/ryanhanwu">ryanhanwu</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/ryanhanwu">ryanhanwu</a>
+        <span class="rp-sep">/</span><span class="rp-name">How-To-Ask-Questions-The-Smart-Way</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">本文原文由知名 Hacker Eric S. Raymond 所撰寫，教你如何正確的提出技術問題並獲得你滿意的答案。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>36,124</b></span><span class="rp-stat" title="forks">⑂ <b>5,820</b></span><span class="rp-stat" title="watchers">👁 <b>415</b></span><span class="rp-stat" title="prs">⑃ <b>111</b></span><span class="rp-stat" title="issues">● <b>30</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/rtfm">rtfm</a><a class="rp-topic" href="https://github.com/topics/translation">translation</a><a class="rp-topic" href="https://github.com/topics/stfw">stfw</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2015-03-28</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+54</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+224</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">36,124</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">5,820</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">415</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">111</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">30</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">提问的智慧
+
+
+How To Ask Questions The Smart Way
+
+Copyright © 2001,2006,2014 Eric S. Raymond, Rick Moen
+
+本指南英文版版权为 Eric S. Raymond, Rick Moen 所有。
+
+原文网址：http://www.catb.org/~esr/faqs/smart-questions.html
+
+Copyleft 2001 by D.H.Grand(nOBODY/Ginux), 2010 by Gasolin, 2015 by Ryan Wu
+
+本中文指南是基于原文 3.10 版以及 2010 年由 Gasolin 所翻译版本的最新翻译；
+
+协助指出翻译问题，请发 issue，或直接发 pull request 给我。
+
+本文另有繁體中文版。
+
+ 原文版本历史
+
+ 目录
+   声明
+   简介
+   在提问之前
+   当你提问时
+     慎选提问的论坛
+     Stack Overflow
+     网站和 IRC 论坛
+     第二步，使用项目邮件列表
+     使用有意义且描述明确的标题
+     使问题容易回复
+     使用清晰、正确、精准且合乎语法的语句
+     使用易于读取且标准的文件格式发送问题
+     精确地描述问题并言之有物
+     话不在多而在精
+     别动辄声称找到 Bug
+     低声下气不能代替你的功课
+     描述问题症状而非你的猜测
+     按发生时间先后列出问题症状
+     描述目标而不是过程
+     别要求使用私人电邮回复
+     清楚明确地表达你的问题以及需求
+     询问有关代码的问题时
+     别把自己家庭作业的问题贴上来
+     去掉无意义的提问句
+     即使你很急也不要在标题写紧急
+     礼多人不怪，而且有时还很有帮助
+     问题解决后，加个简短的补充说明
+   如何解读答案
+     RTFM 和 STFW：如何知道你已完全搞砸了
+     如果还是搞不懂
+     处理无礼的回应
+   如何避免扮演失败者
+   不该问的问题
+   好问题与蠢问题
+   如果得不到回答
+   如何更好地回答问题
+   相关资源
+   鸣谢
+
+ 声明
+
+许多项目在他们网站的帮助文档中链接了本指南。这很好，这正是我们想要的用途。但如果你是该项目管理员并试图创建指向本指南的超链接，请在超链接附近的显著位置注明：
+
+本指南不提供此项目的实际支持服务！
+
+我们已经深刻领教到缺少上述声明所带来的痛苦：我们将不停地被那些认为发布这本指南就意味着有责任解决世上所有技术问题的傻瓜苦苦纠缠。
+
+如果你因寻求某些帮助而阅读本指南，并在离开时还觉得可以从本文作者这里得到直接帮助，那你就是我们之前说的那些傻瓜之一。别问我们问题，我们只会忽略你。我们在这本指南中想教你如何从那些真正懂得你所遇到的软件或硬件问题的人处取得协助，而 99% 的情况下那不会是我们。除非你确定本指南的作者之一刚好是你所遇到的问题领域的专家，否则请不要打扰我们，这样大家都会开心一点。
+
+ 简介
+
+在黑客的世界里，你所提技术问题的解答的好坏, 很大程度上取决于你提问的方式与此问题的难度。本指南将教你如何正确地提问以获得你满意的答案。
+
+现在开源（Open Source）软件已经相当盛行，您通常可以从其他更有经验的用户那里获得与黑客一样好的答案，这是件好事；和黑客相比，用户们往往对那些新手常遇到的问题更宽容一些。尽管如此，以我们在此推荐的方式对待这些有经验的用户通常也是从他们那里获得有用答案的最有效方式。
+
+首先你应该明白，黑客们喜爱有挑战性的问题，或者能激发他们思维的好问题。如果我们并非如此，那我们也不会成为你想询问的对象。如果你给了我们一个值得反复咀嚼玩味的好问题，我们自会对你感激不尽。好问题是激励，是厚礼。好问题可以提高我们的理解力，而且通常会暴露我们以前从没意识到或者思考过的问题。对黑客而言，“好问题！”是诚挚的大力称赞。
+
+尽管如此，黑客们有着蔑视或傲慢面对简单问题的坏名声，这有时让我们看起来对新手、无知者似乎较有敌意，但其实不是那样的。
+
+我们不讳言我们对那些不愿思考、或者在发问前不做他们该做的事的人的蔑视。那些人是时间杀手 —— 他们只想索取，从不付出，消耗我们可用在更有趣的问题或更值得回答的人身上的时间。我们称这样的人为 失败者（loser） （由于历史原因，我们有时把它拼作 lusers）。
+
+我们意识到许多人只是想使用我们写的软件，他们对学习技术细节没有兴趣。对大多数人而言，电脑只是种工具，是种达到目的的手段而已。他们有自己的生活并且有更要紧的事要做。我们认可这点，也从不指望每个人都对这些让我们着迷的技术问题感兴趣。尽管如此，我们只为那些真正有兴趣并愿意积极参与问题解决的人调整回答问题的风格。这点不会变，也不该变：否则，我们就是在最擅长的事情上降低效率。
+
+我们（在很大程度上）是自愿的，从繁忙的生活中抽出时间来解答疑惑，而且时常被提问淹没。所以我们无情地滤掉一些话题，特别是拋弃那些看起来像失败者的家伙，以便更高效地利用时间来回答赢家（winner）的问题。
+
+如果你厌恶我们的态度，高高在上，或过于傲慢，不妨也设身处地想想。我们并没有要求你向我们屈服 —— 事实上，我们大多数人非常乐意与你平等地交流，只要你付出小小努力来满足基本要求，我们就会欢迎你加入我们的文化。但让我们帮助那些不愿意帮助自己的人是没有效率的。无知没有关系，但装白痴就是不行。
+
+所以，你不必在技术上很在行才能吸引我们的注意，但你必须表现出能引导你变得在行的特质 —— 机敏、有想法、善于观察、乐于主动参与解决问题。如果你做不到这些使你与众不同的事情，我们建议你花点钱找家商业公司签个技术支持服务合同，而不是要求黑客个人无偿地帮助你。
+
+如果你决定向我们求助，当然你也不希望被视为失败者，更不愿成为失败者中的一员。能立刻得到快速并有效答案的最好方法，就是像赢家那样提问 —— 聪明、自信、有解决问题的思路，只是偶尔在特定的问题上需要获得一点帮助。
+
+（欢迎对本指南提出改进意见。你可以把你的建议发送至 esr@thyrsus.com 或 respond-auto@linuxmafia.com。然而请注意，本文并非网络礼节的通用指南，而我们通常会拒绝无助于在技术论坛得到有用答案的建议）。
+
+ 在提问之前
+
+在你准备要通过电子邮件、新闻群组或者聊天室提出技术问题前，请先做到以下事情：
+
+  1. 尝试在你准备提问的论坛的旧文章中搜索答案。
+  2. 尝试上网搜索以找到答案。
+  3. 尝试阅读手册以找到答案。
+  4. 尝试阅读常见问题文件（FAQ）以找到答案。
+  5. 尝试自己检查或试验以找到答案。
+  6. 向你身边的强者朋友打听以找到答案。
+  7. 如果你是程序开发者，请尝试阅读源代码以找到答案。
+
+当你提出问题的时候，请先表明你已经做了上述的努力；这将有助于树立你并不是一个不劳而获且浪费别人的时间的提问者。如果你能一并表达在做了上述努力的过程中所学到的东西会更好，因为我们更乐于回答那些表现出能从</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/issues/26"><span class="rp-item-num">#26</span><span class="rp-item-title">一个翻译问题探讨</span><span class="rp-item-extra">10 comments · 2017-11-17</span></a><a class="rp-item" href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/issues/86"><span class="rp-item-num">#86</span><span class="rp-item-title">关于向原文中增加简体中文链接的建议</span><span class="rp-item-extra">7 comments · 2020-11-28</span></a><a class="rp-item" href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/issues/68"><span class="rp-item-num">#68</span><span class="rp-item-title">很小的翻译探讨</span><span class="rp-item-extra">6 comments · 2020-04-29</span></a><a class="rp-item" href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/issues/53"><span class="rp-item-num">#53</span><span class="rp-item-title">翻译探讨</span><span class="rp-item-extra">6 comments · 2019-10-13</span></a><a class="rp-item" href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/issues/52"><span class="rp-item-num">#52</span><span class="rp-item-title">翻译探讨</span><span class="rp-item-extra">3 comments · 2019-10-13</span></a><a class="rp-item" href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/issues/216"><span class="rp-item-num">#216</span><span class="rp-item-title">翻译探讨-回報臭蟲(Bug-reporting)</span><span class="rp-item-extra">1 comments · 2025-03-12</span></a><a class="rp-item" href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/issues/178"><span class="rp-item-num">#178</span><span class="rp-item-title">翻译探讨</span><span class="rp-item-extra">1 comments · 2023-01-08</span></a><a class="rp-item" href="https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/issues/224"><span class="rp-item-num">#224</span><span class="rp-item-title">有个病句</span><span class="rp-item-extra">0 comments · 2026-01-27</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/ryanhanwu__How-To-Ask-Questions-The-Smart-Way.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

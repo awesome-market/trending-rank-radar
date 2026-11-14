@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>leandromoreira/ffmpeg-libav-tutorial · GitHub Trending Rank Radar</title>
+<meta name="description" content="FFmpeg libav tutorial - learn how media works from basic to transmuxing, transcoding and more. Translations: 🇺🇸 🇨🇳 🇰🇷 🇪🇸 🇻🇳 🇧🇷 🇷🇺">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="ffmpeg-libav-tutorial, leandromoreira, leandromoreira/ffmpeg-libav-tutorial, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/leandromoreira__ffmpeg-libav-tutorial">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="leandromoreira/ffmpeg-libav-tutorial · GitHub Trending Rank Radar">
+<meta property="og:description" content="FFmpeg libav tutorial - learn how media works from basic to transmuxing, transcoding and more. Translations: 🇺🇸 🇨🇳 🇰🇷 🇪🇸 🇻🇳 🇧🇷 🇷🇺">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/leandromoreira__ffmpeg-libav-tutorial">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "leandromoreira/ffmpeg-libav-tutorial", "codeRepository": "https://github.com/leandromoreira/ffmpeg-libav-tutorial", "url": "https://zhuikan.com/repos/leandromoreira__ffmpeg-libav-tutorial", "description": "FFmpeg libav tutorial - learn how media works from basic to transmuxing, transcoding and more. Translations: 🇺🇸 🇨🇳 🇰🇷 🇪🇸 🇻🇳 🇧🇷 🇷🇺", "author": {"@type": "Organization", "name": "leandromoreira", "url": "https://github.com/leandromoreira"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "C", "dateCreated": "2017-11-07"}</script>
+</head>
+<body data-repo="leandromoreira/ffmpeg-libav-tutorial" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">leandromoreira/ffmpeg-libav-tutorial</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="leandromoreira__ffmpeg-libav-tutorial"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/55913?u=b3b7d650afae54e08e4a361553a263ee508e4ba2&amp;v=4&s=300" width="300" height="300" alt="leandromoreira avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">ffmpeg-libav-tutorial</div>
+      <a class="rp-side-owner" href="https://github.com/leandromoreira">leandromoreira</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/leandromoreira">leandromoreira</a>
+        <span class="rp-sep">/</span><span class="rp-name">ffmpeg-libav-tutorial</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">FFmpeg libav tutorial - learn how media works from basic to transmuxing, transcoding and more. Translations: 🇺🇸 🇨🇳 🇰🇷 🇪🇸 🇻🇳 🇧🇷 🇷🇺</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>11,063</b></span><span class="rp-stat" title="forks">⑂ <b>1,010</b></span><span class="rp-stat" title="watchers">👁 <b>267</b></span><span class="rp-stat" title="prs">⑃ <b>58</b></span><span class="rp-stat" title="issues">● <b>88</b></span><span class="rp-stat" title="releases">▤ <b>1</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C</span><span class="rp-meta-bit">Created 2017-11-07</span><a class="rp-meta-bit rp-home" href="https://github.com/leandromoreira/ffmpeg-libav-tutorial" rel="noopener">github.com/leandromoreira/ffmpeg-libav-tutorial</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="leandromoreira__digital_video_introduction"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/55913?u=b3b7d650afae54e08e4a361553a263ee508e4ba2&amp;v=4" alt="" loading="lazy">digital_video_introduction</a><a class="rp-same-link" href="leandromoreira__linux-network-performance-parameters"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/55913?u=b3b7d650afae54e08e4a361553a263ee508e4ba2&amp;v=4" alt="" loading="lazy">linux-network-performance-parameters</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/leandromoreira/ffmpeg-libav-tutorial">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+10</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">11,063</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,010</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">267</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">58</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">88</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">1</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">起初我在寻找可以学习使用FFmpeg库(又名 libav)的教程或书籍，然后找到了名为&quot;如何在1k行代码内实现视频播放器&quot;的指南。但该项目已经停止维护，因此我决定撰写此教程。
+
+此项目主要使用C语言开发，但请不用担心：项目内容非常通俗易懂。FFmpeg libav具有许多其他语言的实现，例如python，go。即使其中没有你熟悉的编程语言，仍然可以通过  ffi 为它提供支持（这是一个 Lua 的示例）。
+
+下文将会简单介绍什么是视频、音频、编解码和容器，然后我们将尝试使用 FFmpeg 命令行工具，最终使用代码实现一些功能。如果你拥有一些经验，可以随时跳过这些内容，直接阅读 笨办法学 FFmpeg libav 章节。
+
+许多人认为网络视频流媒体是传统 TV 的未来。无论如何，FFmpeg 值得我们深入学习。
+
+__目录__
+
+ 介绍
+   视频 - 目光所见
+   音频 - 耳朵所听
+   编解码 - 压缩数据
+   容器 - 整合音频和视频
+ FFmpeg - 命令行
+   FFmpeg 命令行工具 101
+ 通用视频操作
+   转码
+   转封装
+   转码率
+   转分辨率
+   自适应流
+   更多
+ 笨办法学 FFmpeg libav
+   章节0 - 臭名昭著的 hello world
+     FFmpeg libav 架构
+   章节1 - 音视频同步
+   章节2 - 重新封装
+   章节3 - 转码
+
+ 介绍
+
+ 视频 - 目光所见
+
+如果以一定的频率播放一组图片(比如每秒24张图片)，人将会产生视觉暂留现象。
+概括来讲，视频的本质就是: 以给定频率播放的一系列图片/帧.
+
+
+
+当代插画 (1886)
+
+ 音频 - 耳朵所听
+
+尽管一个没有声音的视频也可以表达很多感受和情绪，但加入音频会带来更多的体验乐趣。
+
+声音是指以压力波形式通过空气或其他介质（例如气体、液体或者固体）传播的振动。
+
+ 在数字音频系统中，麦克风将声音转换为模拟电信号，然后通常使用脉冲编码调制（PCM）的模数转换器（ADC）将模拟信号转换为数字信号。
+
+!audio analog to digital
+
+图片来源
+
+ 编解码 - 压缩数据
+
+ CODEC是用于压缩或解压缩数字音频/视频的硬件或软件。 它提供将原始（未压缩的）数字音频/视频与压缩格式相互转换的能力。
+
+ https://en.wikipedia.org/wiki/Video_codec
+
+如果我们选择打包数百万张图片来生成一个视频文件，那么该文件的大小将会非常惊人。让我们来计算一下：
+
+假如我们创建一个 1080x1920 (高x宽)的视频，每个像素占用 3 bytes 对颜色进行编码(或使用 24 bit 真色彩, 这可以提供 16,777,216 种不同的颜色)，每秒 24 帧，视频时长为 30 分钟。
+
+c
+toppf = 1080  1920 // 每帧所有的像素点
+cpp = 3 // 每个像素的大小(bytes)
+tis = 30  60 // 时长(秒)
+fps = 24 // 每秒帧数
+
+required_storage = tis  fps  toppf  cpp
+
+
+计算结果显示，此视频需要大约 250.28G 的存储空间或 1.19Gbps 的带宽。这就是我们为什么需要使用 CODEC 的原因。
+
+ 容器 - 整合音视频
+
+ 容器或者封装格式描述了不同的数据元素和元数据是如何在计算机文件中共存的。
+ https://en.wikipedia.org/wiki/Digital_container_format
+
+单个这样的文件包含所有的流（主要是音频和视频），并提供同步和通用元数据，比如标题、分辨率等等。
+
+一般我们可以通过文件的后缀来判断文件格式：比如 video.webm 通常是一个使用 webm 容器格式的视频。
+
+!container
+
+ FFmpeg - 命令行
+
+ 这是一个完整的跨平台解决方案，可用于音视频的录制、转换和流式传输等。
+
+我们使用非常优秀的工具/库 FFmpeg 来处理多媒体文件。你可能对它有些了解，也可能已经直接或者间接的在使用它了（你用过 Chrome 吗？）
+
+ffmpeg 是该方案中简单而强大的命令行工具。例如，可以通过以下命令将一个 mp4 文件转换成 avi 格式：
+
+bash
+$ ffmpeg -i input.mp4 output.avi
+
+
+通过上述步骤，我们做了一次重新封装，从一个容器转换为另外一个容器。FFmpeg 也可以用于转码，我们稍后再针对它进行讨论。
+
+ FFmpeg 命令行工具 101
+
+FFmpeg 有一个非常完善的文档来介绍它是如何工作的。
+
+简单来说，FFmpeg 命令行程序需要以下参数格式来执行操作： ffmpeg {1} {2} -i {3} {4} {5}，分别是:
+
+1. 全局参数
+2. 输入文件参数
+3. 输入文件
+4. 输出文件参数
+5. 输出文件
+
+选项 2、3、4、5 可以可以根据自己的需求进行添加。以下是一个易于理解的示例：
+
+ bash
+ 警告：这个文件大约 300MB
+$ wget -O bunny_1080p_60fps.mp4 http://distribution.bbb3d.renderfarming.net/video/mp4/bbb_sunflower_1080p_60fps_normal.mp4
+
+$ ffmpeg \
+-y \  全局参数
+-c:a libfdk_aac \  输入文件参数
+-i bunny_1080p_60fps.mp4 \  输入文件
+-c:v libvpx-vp9 -c:a libvorbis \  输出文件参数
+bunny_1080p_60fps_vp9.webm  输出文件
+
+
+这个命令行作用是将一个 mp4 文件（包含了 aac 格式的音频流，h264 编码格式的视频流）转换为 webm，同时改变了音视频的编码格式。
+
+我们可以简化上述命令行，但请注意 FFmpeg 会猜测或采用默认值。例如我们仅输入 ffmpeg -i input.avi output.mp4 时，FFmpeg 会使用哪种音频/视频编码来生成 output.mp4 呢？
+
+Werner Robitza 写了一篇 关于 ffmpeg 编码和编辑的教程。
+
+ 通用视频操作
+
+在处理音频/视频时，我们通常会执行一系列操作。
+
+ 转码
+
+!transcoding
+
+是什么? 将其中一个流（视频流或音频流）从一种编码格式转换成另一种
+
+为什么? 有时候有些设备（TV，智能手机等等）不支持 X ，但是支持 Y 和一些更新的编码方式，这些方式能提供更好的压缩比
+
+如何做? 转换 H264（AVC）视频为 H265（HEVC）
+
+bash
+$ ffmpeg \
+-i bunny_1080p_60fps.mp4 \
+-c:v libx265 \
+bunny_1080p_60fps_h265.mp4
+
+
+ 转封装
+
+!transmuxing
+
+是什么? 将视频/音频从某一种格式（容器）转换成另一种
+
+为什么? 有时候有些设备（TV，智能</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/leandromoreira__ffmpeg-libav-tutorial.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

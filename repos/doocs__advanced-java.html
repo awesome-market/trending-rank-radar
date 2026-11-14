@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>doocs/advanced-java · GitHub Trending Rank Radar</title>
+<meta name="description" content="😮 Core Interview Questions &amp; Answers For Experienced Java(Backend) Developers | 互联网 Java 工程师进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务、海量数据处理等领域知识">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="advanced-java, doocs, doocs/advanced-java, github stars, github trending, star growth, star history, 开源项目, 星标增长, java, distributed-systems, message-queue, redis, distributed-search-engine, high-availability">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/doocs__advanced-java">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="doocs/advanced-java · GitHub Trending Rank Radar">
+<meta property="og:description" content="😮 Core Interview Questions &amp; Answers For Experienced Java(Backend) Developers | 互联网 Java 工程师进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务、海量数据处理等领域知识">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/doocs__advanced-java">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "doocs/advanced-java", "codeRepository": "https://github.com/doocs/advanced-java", "url": "https://zhuikan.com/repos/doocs__advanced-java", "description": "😮 Core Interview Questions & Answers For Experienced Java(Backend) Developers | 互联网 Java 工程师进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务、海量数据处理等领域知识", "author": {"@type": "Organization", "name": "doocs", "url": "https://github.com/doocs"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/CC-BY-SA-4.0.html", "programmingLanguage": "Java", "dateCreated": "2018-10-06", "keywords": "java,distributed-systems,message-queue,redis,distributed-search-engine,high-availability,high-concurrency,dubbo,zookeeper,rpc"}</script>
+</head>
+<body data-repo="doocs/advanced-java" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">doocs/advanced-java</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="doocs__advanced-java"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/43716716?v=4&s=300" width="300" height="300" alt="doocs avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">advanced-java</div>
+      <a class="rp-side-owner" href="https://github.com/doocs">doocs</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/doocs">doocs</a>
+        <span class="rp-sep">/</span><span class="rp-name">advanced-java</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">😮 Core Interview Questions &amp; Answers For Experienced Java(Backend) Developers | 互联网 Java 工程师进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务、海量数据处理等领域知识</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>79,177</b></span><span class="rp-stat" title="forks">⑂ <b>19,099</b></span><span class="rp-stat" title="watchers">👁 <b>2,526</b></span><span class="rp-stat" title="prs">⑃ <b>152</b></span><span class="rp-stat" title="issues">● <b>150</b></span><span class="rp-stat" title="releases">▤ <b>1</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/java">java</a><a class="rp-topic" href="https://github.com/topics/distributed-systems">distributed-systems</a><a class="rp-topic" href="https://github.com/topics/message-queue">message-queue</a><a class="rp-topic" href="../tags/redis">redis</a><a class="rp-topic" href="https://github.com/topics/distributed-search-engine">distributed-search-engine</a><a class="rp-topic" href="https://github.com/topics/high-availability">high-availability</a><a class="rp-topic" href="https://github.com/topics/high-concurrency">high-concurrency</a><a class="rp-topic" href="https://github.com/topics/dubbo">dubbo</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Java</span><span class="rp-meta-bit">CC-BY-SA-4.0</span><span class="rp-meta-bit">Created 2018-10-06</span><a class="rp-meta-bit rp-home" href="https://java.doocs.org" rel="noopener">java.doocs.org</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="doocs__leetcode"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/43716716?v=4" alt="" loading="lazy">leetcode</a><a class="rp-same-link" href="doocs__source-code-hunter"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/43716716?v=4" alt="" loading="lazy">source-code-hunter</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/doocs/advanced-java">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v2.0</span><a class="rp-dl-a" href="https://github.com/doocs/advanced-java/releases/tag/v2.0">v2.0 ↓</a><span class="rp-dl-ver">2.0</span><span class="rp-dl-date">2021-10-21</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+3</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+3</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+25</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">79,177</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">19,099</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">2,526</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">152</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">150</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">1</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">互联网 Java 工程师进阶知识完全扫盲
+
+
+
+
+
+
+本项目大部分内容来自中华石杉，版权归作者所有，内容涵盖高并发、分布式、高可用、微服务、海量数据处理等领域知识。我们对这部分知识做了一个系统的整理，方便读者们学习查阅。
+
+我们也在全力更新算法项目！如果你在准备笔面试算法，或者想进一步提升 coding 能力，欢迎 Star 关注 doocs/leetcode
+
+学习本项目之前，先来看看 Discussions 讨论区的技术面试官是怎么说的吧。本项目欢迎各位开发者朋友到 Discussions 讨论区分享自己的一些想法和实践经验。也不妨 Star 关注 doocs/advanced-java，随时追踪项目最新动态。
+
+ 高并发架构
+
+ 消息队列
+
+-   为什么使用消息队列？消息队列有什么优点和缺点？Kafka、ActiveMQ、RabbitMQ、RocketMQ 都有什么优点和缺点？
+-   如何保证消息队列的高可用？
+-   如何保证消息不被重复消费？（如何保证消息消费的幂等性）
+-   如何保证消息的可靠性传输？（如何处理消息丢失的问题）
+-   如何保证消息的顺序性？
+-   如何解决消息队列的延时以及过期失效问题？消息队列满了以后该怎么处理？有几百万消息持续积压几小时，说说怎么解决？
+-   如果让你写一个消息队列，该如何进行架构设计啊？说一下你的思路。
+
+ 搜索引擎
+
+-   ES 的分布式架构原理能说一下么（ES 是如何实现分布式的啊）？
+-   ES 写入数据的工作原理是什么啊？ES 查询数据的工作原理是什么啊？底层的 Lucene 介绍一下呗？倒排索引了解吗？
+-   ES 在数据量很大的情况下（数十亿级别）如何提高查询效率啊？
+-   ES 生产集群的部署架构是什么？每个索引的数据量大概有多少？每个索引大概有多少个分片？
+
+ 缓存
+
+-   在项目中缓存是如何使用的？缓存如果使用不当会造成什么后果？
+-   Redis 和 Memcached 有什么区别？Redis 的线程模型是什么？为什么单线程的 Redis 比多线程的 Memcached 效率要高得多？
+-   Redis 都有哪些数据类型？分别在哪些场景下使用比较合适？
+-   Redis 的过期策略都有哪些？手写一下 LRU 代码实现？
+-   如何保证 Redis 高并发、高可用？Redis 的主从复制原理能介绍一下么？Redis 的哨兵原理能介绍一下么？
+-   Redis 主从架构是怎样的？
+-   Redis 哨兵集群如何实现高可用？
+-   Redis 的持久化有哪几种方式？不同的持久化机制都有什么优缺点？持久化机制具体底层是如何实现的？
+-   Redis 集群模式的工作原理能说一下么？在集群模式下，Redis 的 key 是如何寻址的？分布式寻址都有哪些算法？了解一致性 hash 算法吗？如何动态增加和删除一个节点？
+-   了解什么是 Redis 的雪崩、穿透和击穿？Redis 崩溃之后会怎么样？系统该如何应对这种情况？如何处理 Redis 的穿透？
+-   如何保证缓存与数据库的双写一致性？
+-   Redis 的并发竞争问题是什么？如何解决这个问题？了解 Redis 事务的 CAS 方案吗？
+-   生产环境中的 Redis 是怎么部署的？
+-   有了解过 Redis rehash 的过程吗？
+
+ 分库分表
+
+-   为什么要分库分表（设计高并发系统的时候，数据库层面该如何设计）？用过哪些分库分表中间件？不同的分库分表中间件都有什么优点和缺点？你们具体是如何对数据库如何进行垂直拆分或水平拆分的？
+-   现在有一个未分库分表的系统，未来要分库分表，如何设计才可以让系统从未分库分表动态切换到分库分表上？
+-   如何设计可以动态扩容缩容的分库分表方案？
+-   分库分表之后，id 主键如何处理？
+
+ 读写分离
+
+-   如何实现 MySQL 的读写分离？MySQL 主从复制原理是啥？如何解决 MySQL 主从同步的延时问题？
+
+ 高并发系统
+
+-   如何设计一个高并发系统？
+
+ 分布式系统
+
+ 面试连环炮
+
+ 系统拆分
+
+-   为什么要进行系统拆分？如何进行系统拆分？拆分后不用 Dubbo 可以吗？
+
+ 分布式服务框架
+
+-   说一下 Dubbo 的工作原理？注册中心挂了可以继续通信吗？
+-   Dubbo 支持哪些序列化协议？说一下 Hessian 的数据结构？PB 知道吗？为什么 PB 的效率是最高的？
+-   Dubbo 负载均衡策略和集群容错策略都有哪些？动态代理策略呢？
+-   Dubbo 的 spi 思想是什么？
+-   如何基于 Dubbo 进行服务治理、服务降级、失败重试以及超时重试？
+-   分布式服务接口的幂等性如何设计（比如不能重复扣款）？
+-   分布式服务接口请求的顺序性如何保证？
+-   如何自己设计一个类似 Dubbo 的 RPC 框架？
+-   CAP 定理的 P 是什么？
+
+ 分布式锁
+
+-   Zookeeper 都有哪些应用场景？
+-   使用 Redis 如何设计分布式锁？使用 Zookeeper 来设计分布式锁可以吗？以上两种分布式锁的实现方式哪种效率比较高？
+
+ 分布式事务
+
+-   分布式事务了解吗？你们如何解决分布式事务问题的？TCC 如果出现网络连不通怎么办？XA 的一致性如何保证？
+
+ 分布式会话
+
+-   集群部署时的分布式 Session 如何实现？
+
+ 高可用架构
+
+-   Hystrix 介绍
+-   电商网站详情页系统架构
+-   Hystrix 线程池技术实现资源隔离
+-   Hystrix 信号量机制实现资源隔离
+-   Hystrix 隔离策略细粒度控制
+-   深入 Hystrix 执行时内部原理
+-   基于 request cache 请求缓存技术优化批量商品数据查询接口
+-   基于本地缓存的 fallback 降级机制
+-   深入 Hystrix 断路器执行原理
+-   深入 Hystrix 线程池隔离与接口限流
+-   基于 timeout 机制为服务接口调用超时提供安全保护
+
+ 高可用系统
+
+-   如何设计一个高可用系统？
+
+ 限流
+
+-   如何限流？在工作中是怎么做的？说一下具体的实现？
+
+ 熔断
+
+-   如何进行熔断？
+-   熔断框架都有哪些？具体实现原理知道吗？
+-   熔断框架如何做技术选型？选用 Sentinel 还是 Hystrix？
+
+ 降级
+
+-   如何进行降级？
+
+ 微服务架构
+
+-   微服务架构整个章节内容属额外新增，后续抽空更新，也欢迎读者们参与补充完善
+-   关于微服务架构的描述
+-   从单体式架构迁移到微服务架构
+-   微服务的事件驱动数据管理
+-   选择微服务部署策略
+-   微服务架构的优势与不足
+
+ Spring Cloud 微服务架构
+
+-   什么是微服务？微服务之间是如何独立通讯的？
+-   Spring Cloud 和 Dubbo 有哪些区别？
+-   Spring Boot 和 Spring Cloud，谈谈你对它们的理解？
+-   什么是</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/doocs/advanced-java/issues/359"><span class="rp-item-num">#359</span><span class="rp-item-title">拼多多 2027 届校招内推（正式批）+ 社招搜推广算法/工程</span><span class="rp-item-extra">0 comments · 2026-10-28</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/doocs/advanced-java/discussions/321"><span class="rp-item-num">#321</span><span class="rp-item-title">关于缓存一致性部分的一个建议</span><span class="rp-item-extra">6 comments · 2024-03-13</span></a><a class="rp-item" href="https://github.com/doocs/advanced-java/discussions/284"><span class="rp-item-num">#284</span><span class="rp-item-title">HashedDictionary/ word frequency</span><span class="rp-item-extra">1 comments · 2023-03-24</span></a><a class="rp-item" href="https://github.com/doocs/advanced-java/discussions/247"><span class="rp-item-num">#247</span><span class="rp-item-title">Just wanted to say that your repo rocks.</span><span class="rp-item-extra">0 comments · 2021-11-30</span></a><a class="rp-item" href="https://github.com/doocs/advanced-java/discussions/246"><span class="rp-item-num">#246</span><span class="rp-item-title">v2.0</span><span class="rp-item-extra">0 comments · 2021-10-21</span></a><a class="rp-item" href="https://github.com/doocs/advanced-java/discussions/233"><span class="rp-item-num">#233</span><span class="rp-item-title">Terminal</span><span class="rp-item-extra">2 comments · 2021-07-29</span></a><a class="rp-item" href="https://github.com/doocs/advanced-java/discussions/228"><span class="rp-item-num">#228</span><span class="rp-item-title">问下关于高并发/分布式相关知识怎么可以自己去实践测试？</span><span class="rp-item-extra">1 comments · 2021-06-29</span></a><a class="rp-item" href="https://github.com/doocs/advanced-java/discussions/213"><span class="rp-item-num">#213</span><span class="rp-item-title">Confused</span><span class="rp-item-extra">0 comments · 2021-02-17</span></a><a class="rp-item" href="https://github.com/doocs/advanced-java/discussions/206"><span class="rp-item-num">#206</span><span class="rp-item-title">Welcome to advanced-java Discussions!</span><span class="rp-item-extra">1 comments · 2020-11-28</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/doocs/advanced-java/releases"><b>v2.0</b> <span class="rp-rel-tag">v2.0</span> <span class="rp-item-extra">2021-10-21</span></a><pre class="rp-pre">互联网 Java 工程师进阶知识完全扫盲 v2.0 发布 🎈
+
+  
+
+ 项目地址
+
+欢迎 star 关注 doocs/advanced-java 项目，随时追踪项目最新动态。
+
+- Gitee：https://gitee.com/doocs/advanced-java
+- GitHub：https://github.com/doocs/advanced-java
+
+ 站点
+
+本项目基于 Docsify 进行构建，并使用开源小工具 Gitee Pages Action 实现站点的自动部署更新。目前支持以下三个站点访问：
+
+- Gitee Pages: https://doocs.gitee.io/advanced-java
+- GitHub Pages: https://doocs.github.io/advanced-java
+
+ 更多资源获取
+
+在【Doocs开源社区】公众号回复【升级】，可以获取《互联网 Java 工程师进阶知识完全扫盲 v2.0》286 页内容。</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/doocs__advanced-java.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

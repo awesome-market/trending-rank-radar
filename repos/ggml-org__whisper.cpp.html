@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ggml-org/whisper.cpp · GitHub Trending Rank Radar</title>
+<meta name="description" content="Port of OpenAI&#x27;s Whisper model in C/C++">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="whisper.cpp, ggml-org, ggml-org/whisper.cpp, github stars, github trending, star growth, star history, 开源项目, 星标增长, openai, speech-to-text, transformer, whisper, inference, speech-recognition">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/ggml-org__whisper.cpp">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="ggml-org/whisper.cpp · GitHub Trending Rank Radar">
+<meta property="og:description" content="Port of OpenAI&#x27;s Whisper model in C/C++">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/ggml-org__whisper.cpp">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ggml-org/whisper.cpp", "codeRepository": "https://github.com/ggml-org/whisper.cpp", "url": "https://zhuikan.com/repos/ggml-org__whisper.cpp", "description": "Port of OpenAI's Whisper model in C/C++", "author": {"@type": "Organization", "name": "ggml-org", "url": "https://github.com/ggml-org"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "C++", "dateCreated": "2022-09-25", "keywords": "openai,speech-to-text,transformer,whisper,inference,speech-recognition"}</script>
+</head>
+<body data-repo="ggml-org/whisper.cpp" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">ggml-org/whisper.cpp</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="ggml-org__whisper.cpp"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/134263123?v=4&s=300" width="300" height="300" alt="ggml-org avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">whisper.cpp</div>
+      <a class="rp-side-owner" href="https://github.com/ggml-org">ggml-org</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/ggml-org">ggml-org</a>
+        <span class="rp-sep">/</span><span class="rp-name">whisper.cpp</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Port of OpenAI&#x27;s Whisper model in C/C++</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>55,164</b></span><span class="rp-stat" title="forks">⑂ <b>6,300</b></span><span class="rp-stat" title="watchers">👁 <b>399</b></span><span class="rp-stat" title="prs">⑃ <b>1,562</b></span><span class="rp-stat" title="issues">● <b>2,006</b></span><span class="rp-stat" title="releases">▤ <b>45</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/openai">openai</a><a class="rp-topic" href="https://github.com/topics/speech-to-text">speech-to-text</a><a class="rp-topic" href="https://github.com/topics/transformer">transformer</a><a class="rp-topic" href="https://github.com/topics/whisper">whisper</a><a class="rp-topic" href="https://github.com/topics/inference">inference</a><a class="rp-topic" href="https://github.com/topics/speech-recognition">speech-recognition</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C++</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2022-09-25</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="ggml-org__llama.cpp"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/134263123?v=4" alt="" loading="lazy">llama.cpp</a><a class="rp-same-link" href="ggml-org__Llama-macOS"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/134263123?v=4" alt="" loading="lazy">Llama-macOS</a><a class="rp-same-link" href="ggml-org__ggml"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/134263123?v=4" alt="" loading="lazy">ggml</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/ggml-org/whisper.cpp">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.9.5</span><a class="rp-dl-a" href="https://github.com/ggml-org/whisper.cpp/releases/tag/v1.9.5">v1.9.5 ↓</a><span class="rp-dl-ver">1.9.5</span><span class="rp-dl-date">2026-10-06</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+23</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+277</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+915</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">55,164</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">6,300</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">399</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,562</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">2,006</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">45</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">whisper.cpp
+
+
+
+!whisper.cpp
+
+
+
+
+
+
+
+
+
+High-performance inference of OpenAI&#x27;s Whisper automatic speech recognition (ASR) model:
+
+- Plain C/C++ implementation without dependencies
+- Apple Silicon first-class citizen - optimized via ARM NEON, Accelerate framework, Metal and Core ML
+- AVX intrinsics support for x86 architectures
+- VSX intrinsics support for POWER architectures
+- Mixed F16 / F32 precision
+- Integer quantization support
+- Zero memory allocations at runtime
+- Vulkan support
+- Support for CPU-only inference
+- Efficient GPU support for NVIDIA
+- AMD ROCm GPU support
+- AMD Ryzen AI NPU Support
+- OpenVINO Support
+- Huawei Ascend NPU Support
+- Moore Threads GPU Support
+- C-style API
+- Voice Activity Detection (VAD)
+
+Supported platforms:
+
+- [x] Mac OS (Intel and Arm)
+- [x] iOS
+- [x] Android
+- [x] Java
+- [x] Linux / FreeBSD
+- [x] WebAssembly
+- [x] Windows (MSVC and MinGW)
+- [x] Raspberry Pi
+- [x] Docker
+
+The entire high-level implementation of the model is contained in whisper.h and whisper.cpp.
+The rest of the code is part of the ggml machine learning library.
+
+Having such a lightweight implementation of the model allows to easily integrate it in different platforms and applications.
+As an example, here is a video of running the model on an iPhone 13 device - fully offline, on-device: whisper.objc
+
+https://user-images.githubusercontent.com/1991296/197385372-962a6dea-bca1-4d50-bf96-1d8c27b98c81.mp4
+
+You can also easily make your own offline voice assistant application: command
+
+https://user-images.githubusercontent.com/1991296/204038393-2f846eae-c255-4099-a76d-5735c25c49da.mp4
+
+On Apple Silicon, the inference runs fully on the GPU via Metal:
+
+https://github.com/ggml-org/whisper.cpp/assets/1991296/c82e8f86-60dc-49f2-b048-d2fdbd6b5225
+
+ Quick start
+
+First clone the repository:
+
+bash
+git clone https://github.com/ggml-org/whisper.cpp.git
+
+
+Navigate into the directory:
+
+
+cd whisper.cpp
+
+
+Then, download one of the Whisper models converted in ggml format. For example:
+
+bash
+sh ./models/download-ggml-model.sh base.en
+
+
+Now build the whisper-cli example and transcribe an audio file like this:
+
+bash
+ build the project
+cmake -B build
+cmake --build build -j --config Release
+
+ transcribe an audio file
+./build/bin/whisper-cli -f samples/jfk.wav
+
+
+---
+
+For a quick demo, simply run make base.en.
+
+The command downloads the base.en model converted to custom ggml format and runs the inference on all .wav samples in the folder samples.
+
+For detailed usage instructions, run: ./build/bin/whisper-cli -h
+
+Note that the whisper-cli example currently runs only with 16-bit WAV files, so make sure to convert your input before running the tool.
+For example, you can use ffmpeg like this:
+
+bash
+ffmpeg -i input.mp3 -ar 16000 -ac 1 -c:a pcm_s16le output.wav
+
+
+ More audio samples
+
+If you want some extra audio samples to play with, simply run:
+
+
+make -j samples
+
+
+This will download a few more audio files from Wikipedia and convert them to 16-bit WAV format via ffmpeg.
+
+You can do</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ggml-org/whisper.cpp/issues/89"><span class="rp-item-num">#89</span><span class="rp-item-title">Benchmark results</span><span class="rp-item-extra">187 comments · 2022-10-25</span></a><a class="rp-item" href="https://github.com/ggml-org/whisper.cpp/issues/64"><span class="rp-item-num">#64</span><span class="rp-item-title">whisper : mark speakers/voices (diarization)</span><span class="rp-item-extra">49 comments · 2022-10-18</span></a><a class="rp-item" href="https://github.com/ggml-org/whisper.cpp/issues/1724"><span class="rp-item-num">#1724</span><span class="rp-item-title">Hallucination on silence</span><span class="rp-item-extra">29 comments · 2024-01-04</span></a><a class="rp-item" href="https://github.com/ggml-org/whisper.cpp/issues/2454"><span class="rp-item-num">#2454</span><span class="rp-item-title">tests : add WER benchmarks</span><span class="rp-item-extra">26 comments · 2024-10-05</span></a><a class="rp-item" href="https://github.com/ggml-org/whisper.cpp/issues/1502"><span class="rp-item-num">#1502</span><span class="rp-item-title">CUDA an illegal memory access was encountered</span><span class="rp-item-extra">22 comments · 2023-11-16</span></a><a class="rp-item" href="https://github.com/ggml-org/whisper.cpp/issues/1557"><span class="rp-item-num">#1557</span><span class="rp-item-title">NPU support in whisper.cpp</span><span class="rp-item-extra">19 comments · 2023-11-27</span></a><a class="rp-item" href="https://github.com/ggml-org/whisper.cpp/issues/3708"><span class="rp-item-num">#3708</span><span class="rp-item-title">OpenCL for Adreno support</span><span class="rp-item-extra">15 comments · 2026-03-15</span></a><a class="rp-item" href="https://github.com/ggml-org/whisper.cpp/issues/1507"><span class="rp-item-num">#1507</span><span class="rp-item-title">Whisper large v3 model repeats a lot</span><span class="rp-item-extra">15 comments · 2023-11-17</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ggml-org/whisper.cpp/discussions/4176"><span class="rp-item-num">#4176</span><span class="rp-item-title">Earshot: on-device transcription of any Mac app, with speaker names</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/ggml-org/whisper.cpp/discussions/4174"><span class="rp-item-num">#4174</span><span class="rp-item-title">Will whisper.cpp be pushed to 2.0.0 now that ggml is 1.0.0 ?</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/ggml-org/whisper.cpp/discussions/4153"><span class="rp-item-num">#4153</span><span class="rp-item-title">hark: macOS CLI that captures any app&#x27;s audio and transcribes it with whisper.cpp</span><span class="rp-item-extra">0 comments · 2026-11-05</span></a><a class="rp-item" href="https://github.com/ggml-org/whisper.cpp/discussions/4145"><span class="rp-item-num">#4145</span><span class="rp-item-title">interviewr-ai: a Linux interview and meeting copilot using whisper.cpp on Vulkan for live transcription</span><span class="rp-item-extra">0 comments · 2026-10-31</span></a><a class="rp-item" href="https://github.com/ggml-org/whisper.cpp/discussions/4131"><span class="rp-item-num">#4131</span><span class="rp-item-title">Show whisper.cpp: Integrating offline Whisper transcription into an infinite 2D canvas AI workspace (Knovum, Tauri 2 + Rust)</span><span class="rp-item-extra">1 comments · 2026-10-24</span></a><a class="rp-item" href="https://github.com/ggml-org/whisper.cpp/discussions/4118"><span class="rp-item-num">#4118</span><span class="rp-item-title">A tiny offline macOS menu-bar app for using whisper.cpp</span><span class="rp-item-extra">0 comments · 2026-10-19</span></a><a class="rp-item" href="https://github.com/ggml-org/whisper.cpp/discussions/4112"><span class="rp-item-num">#4112</span><span class="rp-item-title">voicememotext — free web app for voice memo transcription (Whisper-powered)</span><span class="rp-item-extra">0 comments · 2026-10-15</span></a><a class="rp-item" href="https://github.com/ggml-org/whisper.cpp/discussions/4110"><span class="rp-item-num">#4110</span><span class="rp-item-title">Utter – Native macOS on-device voice dictation app powered by whisper.cpp and Metal</span><span class="rp-item-extra">0 comments · 2026-10-13</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/ggml-org/whisper.cpp/releases"><b>v1.9.5</b> <span class="rp-rel-tag">v1.9.5</span> <span class="rp-item-extra">2026-10-06</span></a><pre class="rp-pre">Overview
+
+Maintenance release. Updates to ggml v0.26.0.
+
+Nightly build: b5454
+More info: dist : releases and versioning of ggml-org projects
+
+ Changelog since v1.9.4
+
+d1be6fde whisper : bump version to 1.9.5 (4102)
+4afec37b talk-llama : update llama.cpp to v0.6.0
+3d451abe sync : ggml
+47f1c7dc ggml : bump version to 0.26.0 (ggml/1652)
+e71b7844 CUDA: make the alloc_deps check batch independent (llama/29986)
+cdc87302 vulkan: fix Flash Attention shmem write out of bounds (llama/29988)
+563a9f7a vulkan: revert mul_mat_id tile selection PR 29182 (llama/29936)
+ebb8a170 cuda: use the ve</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/ggml-org__whisper.cpp.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

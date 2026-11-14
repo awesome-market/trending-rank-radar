@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>farm-fe/farm · GitHub Trending Rank Radar</title>
+<meta name="description" content="Extremely fast Vite-compatible web build tool written in Rust">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="farm, farm-fe, farm-fe/farm, github stars, github trending, star growth, star history, 开源项目, 星标增长, build-tool, compiler, rust, hmr, frontend, farm">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/farm-fe__farm">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="farm-fe/farm · GitHub Trending Rank Radar">
+<meta property="og:description" content="Extremely fast Vite-compatible web build tool written in Rust">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/farm-fe__farm">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "farm-fe/farm", "codeRepository": "https://github.com/farm-fe/farm", "url": "https://zhuikan.com/repos/farm-fe__farm", "description": "Extremely fast Vite-compatible web build tool written in Rust", "author": {"@type": "Organization", "name": "farm-fe", "url": "https://github.com/farm-fe"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Rust", "dateCreated": "2022-06-26", "keywords": "build-tool,compiler,rust,hmr,frontend,farm,bundler,typescript,vite"}</script>
+</head>
+<body data-repo="farm-fe/farm" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">farm-fe/farm</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="farm-fe__farm"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/108205785?v=4&s=300" width="300" height="300" alt="farm-fe avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">farm</div>
+      <a class="rp-side-owner" href="https://github.com/farm-fe">farm-fe</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/farm-fe">farm-fe</a>
+        <span class="rp-sep">/</span><span class="rp-name">farm</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Extremely fast Vite-compatible web build tool written in Rust</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,596</b></span><span class="rp-stat" title="forks">⑂ <b>191</b></span><span class="rp-stat" title="watchers">👁 <b>17</b></span><span class="rp-stat" title="prs">⑃ <b>1,641</b></span><span class="rp-stat" title="issues">● <b>686</b></span><span class="rp-stat" title="releases">▤ <b>1,097</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/build-tool">build-tool</a><a class="rp-topic" href="../tags/compiler">compiler</a><a class="rp-topic" href="../tags/rust">rust</a><a class="rp-topic" href="https://github.com/topics/hmr">hmr</a><a class="rp-topic" href="../tags/frontend">frontend</a><a class="rp-topic" href="https://github.com/topics/farm">farm</a><a class="rp-topic" href="https://github.com/topics/bundler">bundler</a><a class="rp-topic" href="../tags/typescript">typescript</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2022-06-26</span><a class="rp-meta-bit rp-home" href="https://farmfe.org" rel="noopener">farmfe.org</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/farm-fe/farm">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.0.22-nightly-20250827162746</span><a class="rp-dl-a" href="https://github.com/farm-fe/farm/releases/tag/v0.0.22-nightly-20250827162746">v0.0.22-nightly-20250827162746 ↓</a><span class="rp-dl-ver">20250827162746</span><span class="rp-dl-date">2025-08-27</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,596</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">191</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">17</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,641</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">686</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">1,097</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Rust native Web 构建工具与官方 Rust 插件生态
+  
+    English | 
+    简体中文
+  
+  
+    
+      
+    
+     
+       
+    
+    
+    
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+  
+
+
+---
+
+ 介绍
+
+Farm 是 Rust native Web 构建工具。编译器及内置编译插件在 Rust 中处理模块图、转换、打包与优化，官方 Rust 插件进一步覆盖框架、样式、资源与文档构建。
+
+Node.js 负责配置、CLI 与开发服务器编排；需要时仍会使用 JavaScript 插件、React 渲染与应用运行时。Vite 插件适配器用于渐进迁移，而不是 Farm 架构的定义。
+
+本分支包含 v2 发布候选。源码中的版本与插件实现不代表对应包已在 registry 发布或已完成正式版验收。评估 v2 时应使用匹配且经过验证的候选；@latest 命令安装的是 registry 当前已发布版本。
+
+ 在线体验
+
+
+
+ 为什么选择 Farm？
+
+Farm 以 Rust 原生编译器和编译扩展为基础，为开发与生产提供统一的插件架构，并结合增量编译、可配置打包和现有 JavaScript 工具的适配能力。架构与迁移说明见为什么需要 Farm。
+
+ 特性
+
+- Rust native 编译：Rust 编译器与内置插件覆盖脚本、CSS、HTML、JSON、解析及生产优化。
+- 官方 Rust 插件家族：覆盖 React/Vue、Sass/Tailwind CSS、自动导入、SVG/图标、数据与资源、Worker/Wasm 及文档工具。功能范围和候选状态见插件总览，不同插件的覆盖程度并不相同。
+- 增量工作流：持久缓存、懒编译与热更新；效果取决于项目、配置和缓存状态。
+- 局部打包：控制产物分组，开发与生产使用同一编译器基础。
+- 可扩展与渐进迁移：支持 Rust/JavaScript 编译插件、运行时插件和 Vite 适配器。请验证项目实际使用的 hooks 与框架功能，不假设所有 Vite 插件都可直接替换。
+
+v2 包发布、各平台原生产物及正式版验收，与源码是否存在分别跟踪。
+
+ 快速开始
+
+使用任意常用包管理器，即可快速创建一个 Farm 项目:
+
+bash
+ npm
+npm create farm@latest
+ yarn
+yarn create farm@latest
+ pnpm
+pnpm create farm@latest
+
+
+查看 Farm 文档 了解更多用法。
+
+ 基准测试
+
+历史基准数据与对应工作负载保留在 performance-compare。这些结果不是本次 v2 候选的实测，也不是对项目耗时的保证。评估 v2 时应固定内容、配置、硬件和缓存状态后再比较。
+
+ 贡献
+
+查看 贡献指南
+
+ 交流群
+
+- 作者推特, 官方推特
+
+- 加入 Discord
+
+- 微信交流群
+
+
+
+- QQ 群
+
+
+
+ 感谢贡献者们做出的努力
+
+
+  
+    
+      
+        
+        
+      
+    
+    
+      
+        
+          
+          
+        
+      
+      
+       
+        
+        
+      
+      
+    
+    
+      
+        
+          
+          
+        
+      
+    
+  
+
+
+ 致谢
+
+非常感谢  https://github.com/tmm 给 Farm 团队捐献了 farm npm 包。
+
+感谢:
+
+- SWC 项目由@kdy1创建, 为 Farm 的代码解析、转换和压缩提供了支持。
+
+- NAPI-RS 项目由 @Brooooooklyn创建, 为 Farm 的 node-binding 实现提供了支持。
+
+- Rollup 项目由 @lukastaegert创建, 启发了 Farm 的插件系统的实现。
+
+- Vite 项目由 Evan You创建, 针对 Vite 插件生态的兼容性设计提供了启发。
+
+ 作者 &amp; 维护者
+
+作者：
+
+- brightwu（吴明亮），, 曾就职于字节跳动。推特
+
+维护者：
+
+- ErKeLost
+- shulandmimi</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/farm-fe/farm/issues/1063"><span class="rp-item-num">#1063</span><span class="rp-item-title">Support modulePreload when generating html</span><span class="rp-item-extra">22 comments · 2024-03-24</span></a><a class="rp-item" href="https://github.com/farm-fe/farm/issues/1026"><span class="rp-item-num">#1026</span><span class="rp-item-title">Not working with SvelteKit</span><span class="rp-item-extra">15 comments · 2024-03-14</span></a><a class="rp-item" href="https://github.com/farm-fe/farm/issues/125"><span class="rp-item-num">#125</span><span class="rp-item-title">[Feature] Rust Vue SFC compile</span><span class="rp-item-extra">11 comments · 2023-03-24</span></a><a class="rp-item" href="https://github.com/farm-fe/farm/issues/1425"><span class="rp-item-num">#1425</span><span class="rp-item-title">[Bug Report]: yml This kind of module is not supported</span><span class="rp-item-extra">10 comments · 2024-06-24</span></a><a class="rp-item" href="https://github.com/farm-fe/farm/issues/2169"><span class="rp-item-num">#2169</span><span class="rp-item-title">[Bug Report]: farm build failed</span><span class="rp-item-extra">8 comments · 2025-05-28</span></a><a class="rp-item" href="https://github.com/farm-fe/farm/issues/1204"><span class="rp-item-num">#1204</span><span class="rp-item-title">[@farmfe/js-plugin-solid] during the build process, a large number of console prints appeared on the console</span><span class="rp-item-extra">7 comments · 2024-04-17</span></a><a class="rp-item" href="https://github.com/farm-fe/farm/issues/1579"><span class="rp-item-num">#1579</span><span class="rp-item-title">[Bug Report]: Creating another node_modules directory instead of using the one that&#x27;s already there</span><span class="rp-item-extra">6 comments · 2024-07-10</span></a><a class="rp-item" href="https://github.com/farm-fe/farm/issues/1144"><span class="rp-item-num">#1144</span><span class="rp-item-title">preview command adds cross support</span><span class="rp-item-extra">6 comments · 2024-04-08</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/farm-fe/farm/discussions/2279"><span class="rp-item-num">#2279</span><span class="rp-item-title">Use Oxc tools</span><span class="rp-item-extra">0 comments · 2026-03-11</span></a><a class="rp-item" href="https://github.com/farm-fe/farm/discussions/2278"><span class="rp-item-num">#2278</span><span class="rp-item-title">Replace Rollup With Rolldown</span><span class="rp-item-extra">0 comments · 2026-03-11</span></a><a class="rp-item" href="https://github.com/farm-fe/farm/discussions/2207"><span class="rp-item-num">#2207</span><span class="rp-item-title">Why my CSS is broken?</span><span class="rp-item-extra">1 comments · 2025-07-22</span></a><a class="rp-item" href="https://github.com/farm-fe/farm/discussions/2112"><span class="rp-item-num">#2112</span><span class="rp-item-title">Improve template styling</span><span class="rp-item-extra">1 comments · 2025-03-11</span></a><a class="rp-item" href="https://github.com/farm-fe/farm/discussions/2106"><span class="rp-item-num">#2106</span><span class="rp-item-title">【施工中】模块联邦插件&amp;Runtime脑暴</span><span class="rp-item-extra">0 comments · 2025-03-07</span></a><a class="rp-item" href="https://github.com/farm-fe/farm/discussions/1912"><span class="rp-item-num">#1912</span><span class="rp-item-title">What is the proper way to configure SolidJS with TailwindCSS?</span><span class="rp-item-extra">2 comments · 2024-11-02</span></a><a class="rp-item" href="https://github.com/farm-fe/farm/discussions/1856"><span class="rp-item-num">#1856</span><span class="rp-item-title">Debugging run failures</span><span class="rp-item-extra">1 comments · 2024-10-22</span></a><a class="rp-item" href="https://github.com/farm-fe/farm/discussions/1794"><span class="rp-item-num">#1794</span><span class="rp-item-title">Farm Bundle Analyzer</span><span class="rp-item-extra">1 comments · 2024-09-26</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/farm-fe/farm/releases"><b>v0.0.22-nightly-20250827162746</b> <span class="rp-rel-tag">v0.0.22-nightly-20250827162746</span> <span class="rp-item-extra">2025-08-27</span></a></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/farm-fe__farm.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

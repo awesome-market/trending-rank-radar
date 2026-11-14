@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>labuladong/fucking-algorithm · GitHub Trending Rank Radar</title>
+<meta name="description" content="Crack LeetCode, not only how, but also why. ">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="fucking-algorithm, labuladong, labuladong/fucking-algorithm, github stars, github trending, star growth, star history, 开源项目, 星标增长, leetcode, algorithms, interview-questions, data-structures, kmp, dynamic-programming">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/labuladong__fucking-algorithm">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="labuladong/fucking-algorithm · GitHub Trending Rank Radar">
+<meta property="og:description" content="Crack LeetCode, not only how, but also why. ">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/labuladong__fucking-algorithm">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "labuladong/fucking-algorithm", "codeRepository": "https://github.com/labuladong/fucking-algorithm", "url": "https://zhuikan.com/repos/labuladong__fucking-algorithm", "description": "Crack LeetCode, not only how, but also why. ", "author": {"@type": "Organization", "name": "labuladong", "url": "https://github.com/labuladong"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Markdown", "dateCreated": "2020-02-19", "keywords": "leetcode,algorithms,interview-questions,data-structures,kmp,dynamic-programming,computer-science,dynamic-programming-algorithm"}</script>
+</head>
+<body data-repo="labuladong/fucking-algorithm" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">labuladong/fucking-algorithm</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="labuladong__fucking-algorithm"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/37220920?u=979c1564a86a586d7e44c457f0d776408ff62c48&amp;v=4&s=300" width="300" height="300" alt="labuladong avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">fucking-algorithm</div>
+      <a class="rp-side-owner" href="https://github.com/labuladong">labuladong</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/labuladong">labuladong</a>
+        <span class="rp-sep">/</span><span class="rp-name">fucking-algorithm</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=total">total <b>#83</b></a></div>
+    </div>
+    <p class="rp-desc">Crack LeetCode, not only how, but also why. </p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>136,060</b></span><span class="rp-stat" title="forks">⑂ <b>23,518</b></span><span class="rp-stat" title="watchers">👁 <b>2,259</b></span><span class="rp-stat" title="prs">⑃ <b>511</b></span><span class="rp-stat" title="issues">● <b>983</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/leetcode">leetcode</a><a class="rp-topic" href="../tags/algorithms">algorithms</a><a class="rp-topic" href="../tags/interview-questions">interview-questions</a><a class="rp-topic" href="https://github.com/topics/data-structures">data-structures</a><a class="rp-topic" href="https://github.com/topics/kmp">kmp</a><a class="rp-topic" href="https://github.com/topics/dynamic-programming">dynamic-programming</a><a class="rp-topic" href="../tags/computer-science">computer-science</a><a class="rp-topic" href="https://github.com/topics/dynamic-programming-algorithm">dynamic-programming-algorithm</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Markdown</span><span class="rp-meta-bit">Created 2020-02-19</span><a class="rp-meta-bit rp-home" href="https://labuladong.online/" rel="noopener">labuladong.online/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/labuladong/fucking-algorithm">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+7</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">136,060</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">23,518</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">2,259</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">511</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">983</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">English version is on labuladong.online too. Just enjoy：)
+
+ labuladong 的算法笔记
+
+本仓库总共 60 多篇原创文章，都是基于 LeetCode 的题目，涵盖了所有题型和技巧，而且一定要做到举一反三，通俗易懂，绝不是简单的代码堆砌，后面有目录。
+
+我先吐槽几句。刷题刷题，刷的是题，培养的是思维，本仓库的目的就是传递这种算法思维。我要是只写一个包含 LeetCode 题目代码的仓库，有个锤子用？没有思路解释，没有思维框架，顶多写个时间复杂度，那玩意一眼就能看出来。
+
+只想要答案的话很容易，题目评论区五花八门的答案，动不动就秀 python 一行代码解决，有那么多人点赞。问题是，你去做算法题，是去学习编程语言的奇技淫巧的，还是学习算法思维的呢？你的快乐，到底源自复制别人的一行代码通过测试，已完成题目 +1，还是源自自己通过逻辑推理和算法框架不看答案写出解法？
+
+网上总有大佬喷我，说我写的东西太基础，要么说不能借助框架思维来学习算法。我只能说大家刷算法就是找工作吃饭的，不是打竞赛的，我也是一路摸爬滚打过来的，我们要的是清楚明白有所得，不是故弄玄虚无所指。
+
+不想办法做到通俗易懂，难道要上来先把《算法导论》吹上天，然后把人家都心怀敬仰地劝退？
+
+做啥事情做多了，都能发现套路的，我把各种算法套路框架总结出来，相信可以帮助其他人少走弯路。我这个纯靠自学的小童鞋，花了一年时间刷题和总结，自己写了一份算法小抄，后面有目录，这里就不废话了。
+
+ 在开始学习之前
+
+1、先给本仓库点个 star，满足一下我的虚荣心，文章质量绝对值你一个 star。我还在继续创作，给我一点继续写文的动力，感谢。
+
+2、建议收藏我的在线网站，每篇文章开头都有对应的力扣题目链接，可以边看文章边刷题，一共可以手把手带你刷 500 道题目：
+
+2024 最新地址：https://labuladong.online/algo/
+
+~~GitHub Pages 地址：https://labuladong.online/algo/~~
+
+~~Gitee Pages 地址：https://labuladong.gitee.io/algo/~~
+
+ labuladong 刷题全家桶简介
+
+ 一、算法可视化面板
+
+我的算法网站、所有配套插件都集成了一个算法可视化工具，可以对数据结构和递归过程进行可视化，大幅降低理解算法的难度。几乎每道题目的解法代码都有对应的可视化面板，具体参见下方介绍。
+
+
+ 二、学习网站
+
+内容当然是我的系列算法教程中最核心的部分，我的算法教程都发布在网站 labuladong.online 上，相信你会未来会在这里花费大量的学习时间，而不是仅仅加入收藏夹~
+
+!
+
+ 三、Chrome 插件
+
+主要功能：Chrome 插件可以在中文版力扣或英文版 LeetCode 上快捷查看我的「题解」或「思路」，并添加了题目和算法技巧之间的引用关系，可以和我的网站/公众号/课程联动，给我的读者提供最丝滑的刷题体验。安装使用手册见下方目录。
+
+!
+
+
+ 四、vscode 插件
+
+主要功能：和 Chrome 插件功能基本相同，习惯在 vscode 上刷题的读者可以使用该插件。安装使用手册见下方目录。
+
+!
+
+
+ 五、Jetbrains 插件
+
+主要功能：和 Chrome 插件功能基本相同，习惯在 Jetbrains 家的 IDE（PyCharm/Intellij/Goland 等）上刷题的读者可以使用该插件。安装使用手册见下方目录。
+
+!
+
+
+最后祝大家学习愉快，在题海中自在遨游！
+
+
+ 文章目录
+
+
+
+
+ 本站简介
+
+ 针对初学和速成的学习规划
+   速成目录学习规划
+   完整目录学习规划
+   算法刷题的重点和坑
+
+ 配套学习工具使用指南
+   AI 助教随时答疑
+   算法可视化面板使用说明
+   算法游戏玩法及汇总
+   配套 Chrome 刷题插件
+   配套 vscode/cursor 刷题插件
+   配套 JetBrains 刷题插件
+   本站付费会员
+
+ 入门：编程语言基础及练习
+   本章导读
+   C++ 语言基础
+   Java 语言基础
+   Golang 语言基础
+   Python 语言基础
+   JavaScript 语言基础
+   力扣/LeetCode 解题须知
+   编程语言刷题实践
+   ACM 模式代码模板
+
+ 基础：数据结构及排序精讲
+   本章导读
+   时间空间复杂度入门
+
+   手把手带你实现动态数组
+     数组（顺序存储）基本原理
+     动态数组代码实现
+
+   手把手带你实现单/双链表
+     链表（链式存储）基本原理
+     链表代码实现
+     【游戏】实现贪吃蛇
+
+   数组链表的种种变换
+     环形数组技巧及实现
+     跳表核心原理
+     位图原理及实现
+
+   手把手带你实现队列/栈
+     队列/栈基本原理
+     用链表实现队列/栈
+     用数组实现队列/栈
+     双端队列（Deque）原理及实现
+
+   哈希表的原理及实现
+     哈希表核心原理
+     用拉链法实现哈希表
+     线性探查法的两个难点
+     线性探查法的两种代码实现
+     哈希集合的原理及代码实现
+
+   哈希表结构的种种变换
+     用链表加强哈希表（LinkedHashMap）
+     用数组加强哈希表（ArrayHashMap）
+     布隆过滤器原理及实现
+
+   二叉树结构及遍历
+     二叉树基础及常见类型
+     二叉树的递归/层序遍历
+     DFS 和 BFS 的适用场景
+     多叉树的递归/层序遍历
+
+   二叉树结构的种种变换
+     二叉搜索树的应用及可视化
+     红黑树的完美平衡及可视化
+     Trie/字典树/前缀树原理及可视化
+     二叉堆核心原理及可视化
+     二叉堆/优先级队列代码实现
+     线段树核心原理及可视化
+     数据压缩和霍夫曼树
+     正在更新 ing
+
+   图结构基础及算法概览
+     图论中的基本术语
+     图结构的通用代码实现
+     图结构的 DFS/BFS 遍历
+     欧拉图和一笔画游戏
+     图结构最短路径算法概览
+     最小生成树算法概览
+     Union Find 并查集原理
+     正在更新 ing
+
+   十大排序算法原理及可视化
+     本章导读
+     排序算法的关键指标
+     选择排序所面临的问题
+     拥有稳定性：冒泡排序
+     运用逆向思维：插入排序
+     突破 O(N^2)：希尔排序
+     妙用二叉树前序位置：快速排序
+     妙用二叉树后序位置：归并排序
+     二叉堆结构的运用：堆排序
+     全新的排序原理：计数排序
+     博采众长：桶排序
+     基数排序（Radix Sort）
+
+   正在更新 ing
+
+
+ 第零章、核心刷题框架汇总
+   本章导读
+   学习数据结构和算法的框架思维
+  </pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (1)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/java_beautiful/article/details/128339219" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">GitHub日排行第二名！手把手刷算法项目fucking-algorithm，干翻算法</span><span class="rp-item-extra">2022-12-16</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (2)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=24167297" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">A guide to learning algorithms through LeetCode</span><span class="rp-item-extra">▲ 455 · 204 comments · 2020-08-15</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=30476414" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Crack LeetCode, not only how, but also why</span><span class="rp-item-extra">▲ 2 · 0 comments · 2022-02-26</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/labuladong__fucking-algorithm.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

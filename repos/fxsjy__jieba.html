@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>fxsjy/jieba · GitHub Trending Rank Radar</title>
+<meta name="description" content="结巴中文分词">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="jieba, fxsjy, fxsjy/jieba, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/fxsjy__jieba">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="fxsjy/jieba · GitHub Trending Rank Radar">
+<meta property="og:description" content="结巴中文分词">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/fxsjy__jieba">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "fxsjy/jieba", "codeRepository": "https://github.com/fxsjy/jieba", "url": "https://zhuikan.com/repos/fxsjy__jieba", "description": "结巴中文分词", "author": {"@type": "Organization", "name": "fxsjy", "url": "https://github.com/fxsjy"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Python", "dateCreated": "2012-09-29"}</script>
+</head>
+<body data-repo="fxsjy/jieba" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">fxsjy/jieba</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="fxsjy__jieba"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/167837?u=7f98324d00bffbb363de03881fa0e8cc1e34a538&amp;v=4&s=300" width="300" height="300" alt="fxsjy avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">jieba</div>
+      <a class="rp-side-owner" href="https://github.com/fxsjy">fxsjy</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/fxsjy">fxsjy</a>
+        <span class="rp-sep">/</span><span class="rp-name">jieba</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">结巴中文分词</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>35,228</b></span><span class="rp-stat" title="forks">⑂ <b>6,665</b></span><span class="rp-stat" title="watchers">👁 <b>1,250</b></span><span class="rp-stat" title="prs">⑃ <b>174</b></span><span class="rp-stat" title="issues">● <b>880</b></span><span class="rp-stat" title="releases">▤ <b>9</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2012-09-29</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/fxsjy/jieba">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.42.1 Released</span><a class="rp-dl-a" href="https://github.com/fxsjy/jieba/releases/tag/v0.42.1">v0.42.1 ↓</a><span class="rp-dl-ver">0.42.1</span><span class="rp-dl-date">2020-01-20</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">35,228</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">6,665</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">1,250</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">174</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">880</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">9</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">jieba
+========
+“结巴”中文分词：做最好的 Python 中文分词组件
+
+&quot;Jieba&quot; (Chinese for &quot;to stutter&quot;) Chinese text segmentation: built to be the best Python Chinese word segmentation module.
+
+- _Scroll down for English documentation._
+
+
+特点
+========
+ 支持四种分词模式：
+     精确模式，试图将句子最精确地切开，适合文本分析；
+     全模式，把句子中所有的可以成词的词语都扫描出来, 速度非常快，但是不能解决歧义；
+     搜索引擎模式，在精确模式的基础上，对长词再次切分，提高召回率，适合用于搜索引擎分词。
+     paddle模式，利用PaddlePaddle深度学习框架，训练序列标注（双向GRU）网络模型实现分词。同时支持词性标注。paddle模式使用需安装paddlepaddle-tiny，pip install paddlepaddle-tiny==1.6.1。目前paddle模式支持jieba v0.40及以上版本。jieba v0.40以下版本，请升级jieba，pip install jieba --upgrade 。PaddlePaddle官网
+ 支持繁体分词
+ 支持自定义词典
+ MIT 授权协议
+
+安装说明
+=======
+
+代码对 Python 2/3 均兼容
+
+ 全自动安装：easy_install jieba 或者 pip install jieba / pip3 install jieba
+ 半自动安装：先下载 http://pypi.python.org/pypi/jieba/ ，解压后运行 python setup.py install
+ 手动安装：将 jieba 目录放置于当前目录或者 site-packages 目录
+ 通过 import jieba 来引用
+ 如果需要使用paddle模式下的分词和词性标注功能，请先安装paddlepaddle-tiny，pip install paddlepaddle-tiny==1.6.1。
+
+算法
+========
+ 基于前缀词典实现高效的词图扫描，生成句子中汉字所有可能成词情况所构成的有向无环图 (DAG)
+ 采用了动态规划查找最大概率路径, 找出基于词频的最大切分组合
+ 对于未登录词，采用了基于汉字成词能力的 HMM 模型，使用了 Viterbi 算法
+
+主要功能
+=======
+1. 分词
+--------
+ jieba.cut 方法接受四个输入参数: 需要分词的字符串；cut_all 参数用来控制是否采用全模式；HMM 参数用来控制是否使用 HMM 模型；use_paddle 参数用来控制是否使用paddle模式下的分词模式，paddle模式采用延迟加载方式，通过enable_paddle接口安装paddlepaddle-tiny，并且import相关代码；
+ jieba.cut_for_search 方法接受两个参数：需要分词的字符串；是否使用 HMM 模型。该方法适合用于搜索引擎构建倒排索引的分词，粒度比较细
+ 待分词的字符串可以是 unicode 或 UTF-8 字符串、GBK 字符串。注意：不建议直接输入 GBK 字符串，可能无法预料地错误解码成 UTF-8
+ jieba.cut 以及 jieba.cut_for_search 返回的结构都是一个可迭代的 generator，可以使用 for 循环来获得分词后得到的每一个词语(unicode)，或者用
+ jieba.lcut 以及 jieba.lcut_for_search 直接返回 list
+ jieba.Tokenizer(dictionary=DEFAULT_DICT) 新建自定义分词器，可用于同时使用不同词典。jieba.dt 为默认分词器，所有全局分词相关函数都是该分词器的映射。
+
+代码示例
+
+python
+ encoding=utf-8
+import jieba
+
+jieba.enable_paddle() 启动paddle模式。 0.40版之后开始支持，早期版本不支持
+strs=[&quot;我来到北京清华大学&quot;,&quot;乒乓球拍卖完了&quot;,&quot;中国科学技术大学&quot;]
+for str in strs:
+    seg_list = jieba.cut(str,use_paddle=True)  使用paddle模式
+    print(&quot;Paddle Mode: &quot; + &#x27;/&#x27;.join(list(seg_list)))
+
+seg_list = jieba.cut(&quot;我来到北京清华大学&quot;, cut_all=True)
+print(&quot;Full Mode: &quot; + &quot;/ &quot;.join(seg_list))   全模式
+
+seg_list = jieba.cut(&quot;我来到北京清华大学&quot;, cut_all=False)
+print(&quot;Default Mode: &quot; + &quot;/ &quot;.join(seg_list))   精确模式
+
+seg_list = jieba.cut(&quot;他来到了网易杭研大厦&quot;)   默认是精确模式
+print(&quot;, &quot;.join(seg_list))
+
+seg_list = jieba.cut_for_search(&quot;小明硕士毕业于中国科学院计算所，后在日本京都大学深造&quot;)   搜索引擎模式
+print(&quot;, &quot;.join(seg_list))
+
+
+输出:
+
+    【全模式】: 我/ 来到/ 北京/ 清华/ 清华大学/ 华大/ 大学
+
+    【精确模式】: 我/ 来到/ 北京/ 清华大学
+
+    【新词识别】：他, 来到, 了, 网易, 杭研, 大厦    (此处，“杭研”并没有在词典中，但是也被Viterbi算法识别出来了)
+
+    【搜索引擎模式】： 小明, 硕士, 毕业, 于, 中国, 科学, 学院, 科学院, 中国科学院, 计算, 计算所, 后, 在, 日本, 京都, 大学, 日本京都大学, 深造
+
+2. 添加自定义词典
+----------------
+
+ 载入词典
+
+ 开发者可以指定自己自定义的词典，以便包含 jieba 词库里没有的词。虽然 jieba 有新词识别能力，但是自行添加新词可以保证更高的正确率
+ 用法： jieba.load_userdict(file_name)  file_name 为文件类对象或自定义词典的路径
+ 词典格式和 dict.txt 一样，一个词占一行；每一行分三部分：词语、词频（可省略）、词性（可省略），用空格隔开，顺序不可颠倒。file_name 若为路径或二进制方式打开的文件，则文件必须为 UTF-8 编码。
+ 词频省略时使用自动计算的能保证分出该词的词频。
+
+例如：
+
+
+创新办 3 i
+云计算 5
+凱特琳 nz
+台中
+
+
+ 更改分词器（默认为 jieba.dt）的 tmp_dir 和 cache_file 属性，可分别指定缓存文件所在的文件夹及其文件名，用于受限的文件系统。
+
+ 范例：
+</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/fxsjy/jieba/issues/423"><span class="rp-item-num">#423</span><span class="rp-item-title">【分享】好多人需要的：关键词带空格和特殊字符方法~~</span><span class="rp-item-extra">24 comments · 2016-12-20</span></a><a class="rp-item" href="https://github.com/fxsjy/jieba/issues/35"><span class="rp-item-num">#35</span><span class="rp-item-title">你好~ 在打包程序的时候出现了问题</span><span class="rp-item-extra">21 comments · 2013-04-10</span></a><a class="rp-item" href="https://github.com/fxsjy/jieba/issues/86"><span class="rp-item-num">#86</span><span class="rp-item-title">请问大家都是如何利用这个工具的呢？</span><span class="rp-item-extra">19 comments · 2013-07-30</span></a><a class="rp-item" href="https://github.com/fxsjy/jieba/issues/77"><span class="rp-item-num">#77</span><span class="rp-item-title">请问，jieba有关于停用词的处理吗</span><span class="rp-item-extra">16 comments · 2013-07-13</span></a><a class="rp-item" href="https://github.com/fxsjy/jieba/issues/87"><span class="rp-item-num">#87</span><span class="rp-item-title">关于idf.txt</span><span class="rp-item-extra">15 comments · 2013-07-30</span></a><a class="rp-item" href="https://github.com/fxsjy/jieba/issues/920"><span class="rp-item-num">#920</span><span class="rp-item-title">请问是否支持python 3.8呢？在py3.8下运行报错</span><span class="rp-item-extra">14 comments · 2021-05-03</span></a><a class="rp-item" href="https://github.com/fxsjy/jieba/issues/169"><span class="rp-item-num">#169</span><span class="rp-item-title">关于标点符号</span><span class="rp-item-extra">14 comments · 2014-07-15</span></a><a class="rp-item" href="https://github.com/fxsjy/jieba/issues/645"><span class="rp-item-num">#645</span><span class="rp-item-title">如何动态加载自定义词典</span><span class="rp-item-extra">13 comments · 2018-07-05</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/fxsjy/jieba/releases"><b>v0.42.1 Released</b> <span class="rp-rel-tag">v0.42.1</span> <span class="rp-item-extra">2020-01-20</span></a><pre class="rp-pre">修复setup.py在python2.7版本无法工作的问题</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/fxsjy__jieba.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sansan0/TrendRadar · GitHub Trending Rank Radar</title>
+<meta name="description" content="⭐AI-driven public opinion &amp; trend monitor with multi-platform aggregation, RSS, and smart alerts.🎯 告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 +  RSS 订阅，支持关键词精准筛选。AI 智能筛选新闻 + AI 翻译 +  AI 分析简报直推手机，也支持接入 MCP 架构，">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="TrendRadar, sansan0, sansan0/TrendRadar, github stars, github trending, star growth, star history, 开源项目, 星标增长, data-analysis, python, trending-topics, news, hot-news, docker">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/sansan0__TrendRadar">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="sansan0/TrendRadar · GitHub Trending Rank Radar">
+<meta property="og:description" content="⭐AI-driven public opinion &amp; trend monitor with multi-platform aggregation, RSS, and smart alerts.🎯 告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 +  RSS 订阅，支持关键词精准筛选。AI 智能筛选新闻 + AI 翻译 +  AI 分析简报直推手机，也支持接入 MCP 架构，">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/sansan0__TrendRadar">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "sansan0/TrendRadar", "codeRepository": "https://github.com/sansan0/TrendRadar", "url": "https://zhuikan.com/repos/sansan0__TrendRadar", "description": "⭐AI-driven public opinion & trend monitor with multi-platform aggregation, RSS, and smart alerts.🎯 告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 +  RSS 订阅，支持关键词精准筛选。AI 智能筛选新闻 + AI 翻译 +  AI 分析简报直推手机，也支持接入 MCP 架构，", "author": {"@type": "Organization", "name": "sansan0", "url": "https://github.com/sansan0"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-3.0.html", "programmingLanguage": "Python", "dateCreated": "2025-04-28", "keywords": "data-analysis,python,trending-topics,news,hot-news,docker,ntfy,mail,mcp,mcp-server"}</script>
+</head>
+<body data-repo="sansan0/TrendRadar" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">sansan0/TrendRadar</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="sansan0__TrendRadar"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/77180927?u=d462d567739544cdc5719db08c0deebde772ba7b&amp;v=4&s=300" width="300" height="300" alt="sansan0 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">TrendRadar</div>
+      <a class="rp-side-owner" href="https://github.com/sansan0">sansan0</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/sansan0">sansan0</a>
+        <span class="rp-sep">/</span><span class="rp-name">TrendRadar</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">⭐AI-driven public opinion &amp; trend monitor with multi-platform aggregation, RSS, and smart alerts.🎯 告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 +  RSS 订阅，支持关键词精准筛选。AI 智能筛选新闻 + AI 翻译 +  AI 分析简报直推手机，也支持接入 MCP 架构，赋能 AI 自然语言对话分析、情感洞察与趋势预测等。支持 Docker ，数据本地/云端自持。集成微信/飞书/钉钉/Telegram/邮件/ntfy/bark/slack 等渠道智能推送。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>63,622</b></span><span class="rp-stat" title="forks">⑂ <b>24,915</b></span><span class="rp-stat" title="watchers">👁 <b>209</b></span><span class="rp-stat" title="prs">⑃ <b>706</b></span><span class="rp-stat" title="issues">● <b>505</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/data-analysis">data-analysis</a><a class="rp-topic" href="../tags/python">python</a><a class="rp-topic" href="https://github.com/topics/trending-topics">trending-topics</a><a class="rp-topic" href="https://github.com/topics/news">news</a><a class="rp-topic" href="https://github.com/topics/hot-news">hot-news</a><a class="rp-topic" href="../tags/docker">docker</a><a class="rp-topic" href="https://github.com/topics/ntfy">ntfy</a><a class="rp-topic" href="https://github.com/topics/mail">mail</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">GPL-3.0</span><span class="rp-meta-bit">Created 2025-04-28</span><a class="rp-meta-bit rp-home" href="https://trendradar.sandev.cc" rel="noopener">trendradar.sandev.cc</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/sansan0/TrendRadar">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+9</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+228</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+714</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">63,622</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">24,915</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">209</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">706</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">505</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">最快30秒部署的热点助手 —— 告别无效刷屏，只看真正关心的新闻资讯
+
+🌐 官方网站 · 📖 官网文档 · AI 自建热榜数据源
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+中文 | English
+
+
+
+ 本项目以轻量，易部署为目标
+
+
+
+ 📑 快速导航
+
+ 💡 点击下方链接可快速跳转到对应章节。部署推荐从「快速开始」入手，需要详细自定义请看「配置详解」
+
+
+
+|   |   |   |
+|:---:|:---:|:---:|
+| 🚀 快速开始 | AI 智能分析 | ⚙️ 配置详解 |
+| Docker部署 / 本地部署 | MCP客户端 | 📝 更新日志 |
+| 🎯 核心功能 | 💬 社区交流 | 📚 项目相关 |
+
+
+
+
+
+- 感谢为项目点 star 的观众们，fork 你所欲也，star 我所欲也，两者得兼😍是对开源精神最好的支持
+
+
+👉 点击展开：致谢名单 (天使轮荣誉榜 🔥73+🔥 位)
+
+ 早期支持者致谢
+
+ 💡 特别说明：
+
+ 1. 关于名单：下方表格记录了项目起步阶段（天使轮）的支持者。因早期人工统计繁琐，难免存在疏漏或记录不全的情况，如有遗漏，实非本意，万望海涵。
+ 2. 未来规划：为了将有限的精力回归代码与功能迭代，即日起不再人工维护此名单。
+
+ 无论名字是否上榜，你们的每一份支持都是 TrendRadar 能够走到今天的基石。🙏
+
+ 基础设施支持
+
+感谢 GitHub 免费提供的基础设施，这是本项目得以一键 fork便捷运行的最大前提。
+
+ 数据支持
+
+本项目使用 newsnow 项目的 API 获取多平台数据，特别感谢作者提供的服务。
+
+经联系，作者表示无需担心服务器压力，但这是基于他的善意和信任。请大家：
+- 前往 newsnow 项目 点 star 支持
+- Docker 部署时，请合理控制推送频率，勿竭泽而渔
+
+ 推广助力
+
+ 感谢以下平台和个人的推荐(按时间排列)
+
+- 小众软件 - 开源软件推荐平台
+- LinuxDo 社区 - 技术爱好者的聚集地
+- 阮一峰周刊 - 技术圈有影响力的周刊
+
+ 观众支持
+
+ 感谢给予资金支持的朋友们，你们的慷慨已化身为键盘旁的零食饮料，陪伴着项目的每一次迭代。
+
+ 关于&quot;一元点赞&quot;的回归：
+ 随着 v5.0.0 版本的发布，项目迈入了一个新的阶段。为了支持日益增长的 API 成本和咖啡因消耗，&quot;一元点赞&quot;通道现已重新开启。你的每一份心意，都将转化为代码世界里的 Token 和动力。🚀 前往支持
+
+|           点赞人            |  金额  |  日期  |             备注             |
+| :-------------------------: | :----: | :----: | :-----------------------: |
+|           D5          |  1.8  3 | 2025.11.24  |    | 
+|           鬼          |  1 | 2025.11.17  |    | 
+|           超          |  10 | 2025.11.17  |    | 
+|           Rw          |  10 | 2025.11.17  | 这 agent 做的牛逼啊,兄弟    | 
+|           Jo          |  1 | 2025.11.17  | 感谢开源,祝大佬事业有成    | 
+|           晨          |  8.88  | 2025.11.16  | 项目不错,研究学习中    | 
+|           海          |  1  | 2025.11.15  |    | 
+|           德          |  1.99  | 2025.11.15  |    | 
+|           疏          |  8.8  | 2025.11.14  |  感谢开源，项目很棒，支持一下   | 
+|           Me          |  10  | 2025.11.14  |  开源不易，大佬辛苦了   | 
+|           柯          |  1  | 2025.11.14  |     | 
+|           云          |  88  | 2025.11.13  |    好项目，感谢开源  | 
+|           W          |  6  | 2025.11.13  |      | 
+|           凯          |  1  | 2025.11.13  |      | 
+|           对.          |  1  | 2025.11.13  |    Thanks for your TrendRadar  | 
+|           sy          |  1  | 2025.11.13  |      | 
+|           翔          |  10  | 2025.11.13  |   好项目，相见恨晚，感谢开源！     | 
+|           韦          |  9.9  | 2025.11.13  |   TrendRadar超赞，请老师喝咖啡~     | 
+|           hp          |  5  | 2025.11.12  |   支持中国开源力量，加油！     | 
+|           cr          |  6  | 2025.11.12  |        | 
+|           an          |  5  | 2025.11.12  |        | 
+|           。c          |  1  | 2025.11.12  |    感谢开源分享    | 
+|           记          |  1  | 2025.11.11  |        | 
+|           主          |  1  | 2025.11.10  |        | 
+|           了          |  10  | 2025.11.09  |        | 
+|           杰          |  5  | 2025.11.08  |        | 
+|           点          |  8.80  | 2025.11.07  |   开发不易，支持一下。     | 
+|           QQ          |  6.66  | 2025.11.07  |   感谢开源！     | 
+|           Ce          |  1  | 2025.11.05  |        | 
+|           Peter Fan          |  20 </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/sansan0/TrendRadar/issues/95"><span class="rp-item-num">#95</span><span class="rp-item-title">[分享]自定义添加资讯平台大集合（基于newsnow）</span><span class="rp-item-extra">56 comments · 2025-10-07</span></a><a class="rp-item" href="https://github.com/sansan0/TrendRadar/issues/513"><span class="rp-item-num">#513</span><span class="rp-item-title">[问题] workflow运行失败且我的fork 无法打开</span><span class="rp-item-extra">32 comments · 2025-12-04</span></a><a class="rp-item" href="https://github.com/sansan0/TrendRadar/issues/606"><span class="rp-item-num">#606</span><span class="rp-item-title">[问题] 运行 Get Hot News  工作流 ，fork 无反应，建议改用 Use this template</span><span class="rp-item-extra">21 comments · 2025-12-13</span></a><a class="rp-item" href="https://github.com/sansan0/TrendRadar/issues/237"><span class="rp-item-num">#237</span><span class="rp-item-title">[问题] 飞书无法正常解析显示消息，出现各种标签</span><span class="rp-item-extra">20 comments · 2025-11-16</span></a><a class="rp-item" href="https://github.com/sansan0/TrendRadar/issues/410"><span class="rp-item-num">#410</span><span class="rp-item-title">[建议] 德国？友人希望本项目支持 whatsapp 推送？</span><span class="rp-item-extra">17 comments · 2025-11-27</span></a><a class="rp-item" href="https://github.com/sansan0/TrendRadar/issues/595"><span class="rp-item-num">#595</span><span class="rp-item-title">[建议] AI分析总结</span><span class="rp-item-extra">11 comments · 2025-12-12</span></a><a class="rp-item" href="https://github.com/sansan0/TrendRadar/issues/527"><span class="rp-item-num">#527</span><span class="rp-item-title">[分享] 创建了一个开源的网站，方便配置，部署</span><span class="rp-item-extra">8 comments · 2025-12-07</span></a><a class="rp-item" href="https://github.com/sansan0/TrendRadar/issues/893"><span class="rp-item-num">#893</span><span class="rp-item-title">[问题] 电脑从睡眠状态恢复运行后，到自动执行时点，程序没有自动调用，必须restart，然后开启状态下，第二次自动执行正常，该如何解决？</span><span class="rp-item-extra">5 comments · 2026-02-04</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/sansan0__TrendRadar.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

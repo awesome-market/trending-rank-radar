@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>outline/outline · GitHub Trending Rank Radar</title>
+<meta name="description" content="The fastest knowledge base for growing teams. Beautiful, realtime collaborative, feature packed, and markdown compatible.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="outline, outline, outline/outline, github stars, github trending, star growth, star history, 开源项目, 星标增长, react, wiki, nodejs, mobx, slack, javascript">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/outline__outline">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="outline/outline · GitHub Trending Rank Radar">
+<meta property="og:description" content="The fastest knowledge base for growing teams. Beautiful, realtime collaborative, feature packed, and markdown compatible.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/outline__outline">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "outline/outline", "codeRepository": "https://github.com/outline/outline", "url": "https://zhuikan.com/repos/outline__outline", "description": "The fastest knowledge base for growing teams. Beautiful, realtime collaborative, feature packed, and markdown compatible.", "author": {"@type": "Organization", "name": "outline", "url": "https://github.com/outline"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "TypeScript", "dateCreated": "2016-05-22", "keywords": "react,wiki,nodejs,mobx,slack,javascript,docker"}</script>
+</head>
+<body data-repo="outline/outline" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">outline/outline</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="outline__outline"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/1765001?v=4&s=300" width="300" height="300" alt="outline avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">outline</div>
+      <a class="rp-side-owner" href="https://github.com/outline">outline</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/outline">outline</a>
+        <span class="rp-sep">/</span><span class="rp-name">outline</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">The fastest knowledge base for growing teams. Beautiful, realtime collaborative, feature packed, and markdown compatible.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>41,263</b></span><span class="rp-stat" title="forks">⑂ <b>3,660</b></span><span class="rp-stat" title="watchers">👁 <b>183</b></span><span class="rp-stat" title="prs">⑃ <b>6,938</b></span><span class="rp-stat" title="issues">● <b>4,392</b></span><span class="rp-stat" title="releases">▤ <b>170</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/react">react</a><a class="rp-topic" href="https://github.com/topics/wiki">wiki</a><a class="rp-topic" href="../tags/nodejs">nodejs</a><a class="rp-topic" href="https://github.com/topics/mobx">mobx</a><a class="rp-topic" href="https://github.com/topics/slack">slack</a><a class="rp-topic" href="../tags/javascript">javascript</a><a class="rp-topic" href="../tags/docker">docker</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2016-05-22</span><a class="rp-meta-bit rp-home" href="https://www.getoutline.com" rel="noopener">www.getoutline.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/outline/outline">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.12.0</span><a class="rp-dl-a" href="https://github.com/outline/outline/releases/tag/v1.12.0">v1.12.0 ↓</a><span class="rp-dl-ver">1.12.0</span><span class="rp-dl-date">2026-10-23</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+14</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">41,263</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">3,660</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">183</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">6,938</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">4,392</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">170</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">A fast, collaborative, knowledge base for your team built using React and Node.js.Try out Outline using our hosted version at www.getoutline.com.
+  
+  
+
+
+  
+  
+  
+
+
+This is the source code that runs Outline and all the associated services. If you want to use Outline then you don&#x27;t need to run this code, A hosted version of the app is offered at getoutline.com. You can also find documentation on using Outline in our guide.
+
+If you&#x27;d like to run your own copy of Outline or contribute to development then this is the place for you.
+
+ Installation
+
+Please see the documentation for running your own copy of Outline in a production configuration.
+
+Available container images:
+ 
+ 
+
+If you have questions or improvements for the docs please create a thread in GitHub discussions.
+
+ Contributing
+
+ Note: Please do not submit AI-generated pull requests. We receive a high volume of mass, low-quality PRs generated by AI tools like Claude, ChatGPT, and Copilot from contributors who are unfamiliar with the codebase. These PRs are almost never mergeable and waste maintainer time reviewing them. If you’d like to contribute, please take the time to understand the codebase and write your changes thoughtfully.
+
+Before submitting a pull request _you must_ discuss with the core team by creating or commenting in an issue on GitHub – we’d also love to hear from you in the discussions. This way we can ensure that an approach is agreed on before code is written and that you have read these instructions. This will result in a much higher likelihood of your code being accepted.
+
+If you’re looking for ways to get started, here’s a list of ways to help us improve Outline:
+
+- Translation into other languages
+- Issues with good first issue label
+- Performance improvements, both on server and frontend
+- Developer happiness and documentation
+- Bugs, quality fixes, and other issues listed on GitHub
+
+ Development
+
+There is a short guide for setting up a development environment if you wish to contribute changes, fixes, and improvements to Outline.
+
+ Architecture
+
+If you&#x27;re interested in contributing or learning more about the Outline codebase
+please refer to the architecture document first for a high level overview of how the application is put together.
+
+ Debugging
+
+In development Outline outputs simple logging to the console, prefixed by categories. In production it outputs JSON logs, these can be easily parsed by your preferred log ingestion pipeline.
+
+HTTP logging is disabled by default, but can be enabled by setting the DEBUG=http environment variable. logging
+can be enabled for all categories by setting DEBUG= or for specific categories such as DEBUG=database and LOG_LEVEL=debug, or LOG_LEVEL=silly for very verbose logging.
+
+ Tests
+
+We aim to have sufficient test coverage for critical parts of the application and aren&#x27;t aiming for 100% unit test coverage. All API endpoints and anything authentication related should be thoroughly tested.
+
+To add new tests, write your tests with Vite</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/outline/outline/issues/765"><span class="rp-item-num">#765</span><span class="rp-item-title">Document tags</span><span class="rp-item-extra">115 comments · 2018-08-31</span></a><a class="rp-item" href="https://github.com/outline/outline/issues/1881"><span class="rp-item-num">#1881</span><span class="rp-item-title">Local Authentication</span><span class="rp-item-extra">108 comments · 2021-02-12</span></a><a class="rp-item" href="https://github.com/outline/outline/issues/1084"><span class="rp-item-num">#1084</span><span class="rp-item-title">Add support for page creation and edit approvals</span><span class="rp-item-extra">23 comments · 2019-11-17</span></a><a class="rp-item" href="https://github.com/outline/outline/issues/8168"><span class="rp-item-num">#8168</span><span class="rp-item-title">ldap group mapping</span><span class="rp-item-extra">21 comments · 2024-12-30</span></a><a class="rp-item" href="https://github.com/outline/outline/issues/6025"><span class="rp-item-num">#6025</span><span class="rp-item-title">Add collections to search results</span><span class="rp-item-extra">16 comments · 2023-10-17</span></a><a class="rp-item" href="https://github.com/outline/outline/issues/7917"><span class="rp-item-num">#7917</span><span class="rp-item-title">Allow sorting at all levels of the tree</span><span class="rp-item-extra">13 comments · 2024-11-08</span></a><a class="rp-item" href="https://github.com/outline/outline/issues/11491"><span class="rp-item-num">#11491</span><span class="rp-item-title">When editing, and not yet saving &quot;Copy as Markdown&quot; is outdated</span><span class="rp-item-extra">9 comments · 2026-02-19</span></a><a class="rp-item" href="https://github.com/outline/outline/issues/12311"><span class="rp-item-num">#12311</span><span class="rp-item-title">Add option to alphabetically order collections</span><span class="rp-item-extra">7 comments · 2026-05-10</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/outline/outline/discussions/14533"><span class="rp-item-num">#14533</span><span class="rp-item-title">feat: support searching language within code blocks</span><span class="rp-item-extra">1 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/outline/outline/discussions/14490"><span class="rp-item-num">#14490</span><span class="rp-item-title">Header actions are far from content on wide screens</span><span class="rp-item-extra">0 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/outline/outline/discussions/14488"><span class="rp-item-num">#14488</span><span class="rp-item-title">Auto-expiration for public links</span><span class="rp-item-extra">0 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/outline/outline/discussions/14481"><span class="rp-item-num">#14481</span><span class="rp-item-title">Problem logging into the Windows app</span><span class="rp-item-extra">1 comments · 2026-11-05</span></a><a class="rp-item" href="https://github.com/outline/outline/discussions/14480"><span class="rp-item-num">#14480</span><span class="rp-item-title">“share” button for documents, collections</span><span class="rp-item-extra">1 comments · 2026-11-05</span></a><a class="rp-item" href="https://github.com/outline/outline/discussions/14464"><span class="rp-item-num">#14464</span><span class="rp-item-title">Audit Log is useless</span><span class="rp-item-extra">1 comments · 2026-11-05</span></a><a class="rp-item" href="https://github.com/outline/outline/discussions/14441"><span class="rp-item-num">#14441</span><span class="rp-item-title">Inline Office attachment previews (DOCX, XLSX, PPTX) — client-side, without additional services</span><span class="rp-item-extra">1 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/outline/outline/discussions/14438"><span class="rp-item-num">#14438</span><span class="rp-item-title">customize path</span><span class="rp-item-extra">0 comments · 2026-11-02</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/outline/outline/releases"><b>v1.12.0</b> <span class="rp-rel-tag">v1.12.0</span> <span class="rp-item-extra">2026-10-23</span></a><pre class="rp-pre">[!IMPORTANT]
+ This release upgrades Node in the Docker image to 26.12.1 which fixes multiple recently disclosed vulnerabilities. 
+ It is recommended to update at the earliest opportunity.
+
+
+ What&#x27;s Changed
+
+This release introduces personal documents - a private space for every user, alongside a large round of mobile polish, security hardening, and continued performance work on both the client and server.
+
+ Highlights
+
+ Every user now has a personal section for private documents in the sidebar in https://github.com/outline/outline/pull/14062 https://github.com/outline/outline/pull/14</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/outline__outline.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

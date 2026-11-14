@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>akinsho/toggleterm.nvim · GitHub Trending Rank Radar</title>
+<meta name="description" content="A neovim lua plugin to help easily manage multiple terminal windows">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="toggleterm.nvim, akinsho, akinsho/toggleterm.nvim, github stars, github trending, star growth, star history, 开源项目, 星标增长, neovim, lua, plugin, terminal">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/akinsho__toggleterm.nvim">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="akinsho/toggleterm.nvim · GitHub Trending Rank Radar">
+<meta property="og:description" content="A neovim lua plugin to help easily manage multiple terminal windows">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/akinsho__toggleterm.nvim">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "akinsho/toggleterm.nvim", "codeRepository": "https://github.com/akinsho/toggleterm.nvim", "url": "https://zhuikan.com/repos/akinsho__toggleterm.nvim", "description": "A neovim lua plugin to help easily manage multiple terminal windows", "author": {"@type": "Organization", "name": "akinsho", "url": "https://github.com/akinsho"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-3.0.html", "programmingLanguage": "Lua", "dateCreated": "2020-08-17", "keywords": "neovim,lua,plugin,terminal"}</script>
+</head>
+<body data-repo="akinsho/toggleterm.nvim" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">akinsho/toggleterm.nvim</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="akinsho__toggleterm.nvim"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/22454918?u=5f6cde488c2f8f44af9f27928cfa5f5e0f3b02f9&amp;v=4&s=300" width="300" height="300" alt="akinsho avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">toggleterm.nvim</div>
+      <a class="rp-side-owner" href="https://github.com/akinsho">akinsho</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/akinsho">akinsho</a>
+        <span class="rp-sep">/</span><span class="rp-name">toggleterm.nvim</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A neovim lua plugin to help easily manage multiple terminal windows</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,623</b></span><span class="rp-stat" title="forks">⑂ <b>206</b></span><span class="rp-stat" title="watchers">👁 <b>21</b></span><span class="rp-stat" title="prs">⑃ <b>193</b></span><span class="rp-stat" title="issues">● <b>478</b></span><span class="rp-stat" title="releases">▤ <b>12</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/neovim">neovim</a><a class="rp-topic" href="https://github.com/topics/lua">lua</a><a class="rp-topic" href="https://github.com/topics/plugin">plugin</a><a class="rp-topic" href="../tags/terminal">terminal</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Lua</span><span class="rp-meta-bit">GPL-3.0</span><span class="rp-meta-bit">Created 2020-08-17</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/akinsho/toggleterm.nvim">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v2.13.1</span><a class="rp-dl-a" href="https://github.com/akinsho/toggleterm.nvim/releases/tag/v2.13.1">v2.13.1 ↓</a><span class="rp-dl-ver">2.13.1</span><span class="rp-dl-date">2024-12-30</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,623</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">206</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">21</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">193</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">478</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">12</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">toggleterm.nvim
+
+
+
+
+
+
+A neovim plugin to persist and toggle multiple terminals during an editing session
+
+
+
+
+
+!toggleterm in action
+
+
+
+ Multiple orientations
+
+- Float
+
+
+
+!floating window
+
+
+
+- Vertical
+
+
+
+!vertical-terms
+
+
+
+- Tab
+
+
+
+!tab orientation
+
+
+
+ Send commands to different terminals
+
+
+
+!exec
+
+
+
+ Winbar (Experimental/Nightly ONLY)
+
+
+
+
+
+
+
+ Requirements
+
+This plugin only works in _Neovim 0.7_ or newer.
+
+ Installation
+
+Using packer in lua
+
+lua
+use {&quot;akinsho/toggleterm.nvim&quot;, tag = &#x27;&#x27;, config = function()
+  require(&quot;toggleterm&quot;).setup()
+end}
+
+
+Using lazy.nvim in lua
+
+lua
+{
+  -- amongst your other plugins
+  {&#x27;akinsho/toggleterm.nvim&#x27;, version = &quot;&quot;, config = true}
+  -- or
+  {&#x27;akinsho/toggleterm.nvim&#x27;, version = &quot;&quot;, opts = {--[[ things you want to change go here]]}}
+}
+
+
+Using vim-plug in vimscript
+
+vim
+Plug &#x27;akinsho/toggleterm.nvim&#x27;, {&#x27;tag&#x27; : &#x27;&#x27;}
+
+lua require(&quot;toggleterm&quot;).setup()
+
+
+You can/should specify a tag for the current major version of the plugin, to avoid breaking changes as this plugin evolves.
+To use a version of this plugin compatible with nvim versions less than 0.7 please use the tag v1..
+
+ Notices
+
+- 28/07/1990 — If using persist_mode terminal mappings should be changed to use wincmd instead otherwise persist mode will not work correctly. See here for details.
+
+ Why?
+
+Neovim&#x27;s terminal is a very cool, but not super ergonomic tool to use. I find that I often want to
+set a process going and leave it to continue to run in the background. I don&#x27;t need to see it all the time.
+I just need to be able to refer back to it at intervals. I also sometimes want to create a new terminal and run a few commands.
+
+Sometimes I want these side by side, and I _really_ want these terminals to be easy to access.
+I also want my terminal to look different from non-terminal buffers, so I use winhighlight to darken them based on the Normal
+background colour.
+
+This is the exact use case this was designed for. If that&#x27;s your use case this might work for you.
+
+ Roadmap
+
+All I really want this plugin to be is what I described above. A wrapper around the terminal functionality.
+
+It basically (almost) does all that I need it to.
+
+I won&#x27;t be turning this into a REPL plugin or doing a bunch of complex stuff.
+If you find any issues, _please_ consider a _pull request_ not an issue.
+I&#x27;m also going to be pretty conservative about what I add.
+
+ Setup
+
+This plugin must be explicitly enabled by using require(&quot;toggleterm&quot;).setup{}
+
+Setting the open_mapping key to use for toggling the terminal(s) will set up mappings for _normal_ mode. The open_mapping can be a key string or an array of key strings. 
+If you prefix the mapping with a number that particular terminal will be opened. Otherwise if a prefix is not set, then the last toggled terminal will be opened. In case there are multiple terminals opened they&#x27;ll all be closed, and on the next mapping key they&#x27;ll be restored.
+
+If you set the insert_mappings key to true, the mapping will also take effect in insert mode; similarly</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/akinsho/toggleterm.nvim/issues/322"><span class="rp-item-num">#322</span><span class="rp-item-title">[Bug] First hidden terminal is re-opened using {count}ToggleTerm command</span><span class="rp-item-extra">19 comments · 2022-09-23</span></a><a class="rp-item" href="https://github.com/akinsho/toggleterm.nvim/issues/452"><span class="rp-item-num">#452</span><span class="rp-item-title">[Feature] Allow multiple terminals opened in different tabpages</span><span class="rp-item-extra">16 comments · 2023-07-01</span></a><a class="rp-item" href="https://github.com/akinsho/toggleterm.nvim/issues/425"><span class="rp-item-num">#425</span><span class="rp-item-title">Copying and pasting visual selection to REPL</span><span class="rp-item-extra">9 comments · 2023-04-05</span></a><a class="rp-item" href="https://github.com/akinsho/toggleterm.nvim/issues/219"><span class="rp-item-num">#219</span><span class="rp-item-title">Spawn terminal job using a list (and other jobstart() opts)</span><span class="rp-item-extra">8 comments · 2022-04-29</span></a><a class="rp-item" href="https://github.com/akinsho/toggleterm.nvim/issues/508"><span class="rp-item-num">#508</span><span class="rp-item-title">Is it possible to include double quotes in the `cmd` argument?</span><span class="rp-item-extra">7 comments · 2023-11-09</span></a><a class="rp-item" href="https://github.com/akinsho/toggleterm.nvim/issues/260"><span class="rp-item-num">#260</span><span class="rp-item-title">[Feature] Multiple terminals open in a container tab</span><span class="rp-item-extra">7 comments · 2022-07-08</span></a><a class="rp-item" href="https://github.com/akinsho/toggleterm.nvim/issues/621"><span class="rp-item-num">#621</span><span class="rp-item-title">[BUG] Entering an existing terminal buffer does not trigger TermEnter event</span><span class="rp-item-extra">6 comments · 2024-11-13</span></a><a class="rp-item" href="https://github.com/akinsho/toggleterm.nvim/issues/374"><span class="rp-item-num">#374</span><span class="rp-item-title">on_stderr function doesn&#x27;t excute</span><span class="rp-item-extra">6 comments · 2022-12-20</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/akinsho/toggleterm.nvim/releases"><b>v2.13.1</b> <span class="rp-rel-tag">v2.13.1</span> <span class="rp-item-extra">2024-12-30</span></a><pre class="rp-pre">2.13.1 (2024-12-27)
+
+
+ Bug Fixes
+
+ check for terminal win before check if is valid (622) (22aefd4), closes 435</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/akinsho__toggleterm.nvim.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

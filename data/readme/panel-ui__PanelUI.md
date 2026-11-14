@@ -1,0 +1,384 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/header/surface.svg?title=PanelUI&amp;subtitle=High-performance+UI+components+for+Expo+and+the+web&amp;logo=https%3A%2F%2Fraw.githubusercontent.com%2Fpanel-ui%2FPanelUI%2Fmain%2F.github%2Fassets%2Flogo-dark.png&amp;mode=dark&amp;align=center&amp;font=geist-mono&amp;border=false" />
+    <img alt="PanelUI — high-performance UI components for Expo and the web" src="https://shieldcn.dev/header/surface.svg?title=PanelUI&amp;subtitle=High-performance+UI+components+for+Expo+and+the+web&amp;logo=https%3A%2F%2Fraw.githubusercontent.com%2Fpanel-ui%2FPanelUI%2Fmain%2F.github%2Fassets%2Flogo-light.png&amp;mode=light&amp;align=center&amp;font=geist-mono&amp;border=false" />
+  </picture>
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/panelui-native"><img alt="npm version and monthly downloads" src="https://shieldcn.dev/group/npm/v/panelui-native+npm/dm/panelui-native.svg?variant=branded&amp;size=xs" /></a>
+  <a href="https://github.com/panel-ui/PanelUI"><img alt="GitHub stars, license, contributors and last commit" src="https://shieldcn.dev/group/github/panel-ui/PanelUI/stars+github/panel-ui/PanelUI/license+github/panel-ui/PanelUI/contributors+github/panel-ui/PanelUI/last-commit.svg?variant=branded&amp;size=xs" /></a>
+  <a href="https://openpanel.dev"><img alt="analytics by OpenPanel" src="https://shieldcn.dev/badge/analytics%20by-OpenPanel-2564EB.svg?logo=openpanel&amp;logoColor=fff&amp;variant=branded&amp;brand=openpanel&amp;size=xs" /></a>
+</p>
+
+<p align="center">
+  Semantic design tokens · Tailwind v4 · Reanimated on the UI thread.<br />
+  React Native for Expo, and now React on the web.
+</p>
+
+<p align="center">
+  <a href="https://panelui.dev/docs"><b>Documentation</b></a> ·
+  <a href="https://panelui.dev/docs/installation">Installation</a> ·
+  <a href="https://panelui.dev/docs/components/button">Components</a> ·
+  <a href="https://panelui.dev/docs/web">Web</a> ·
+  <a href="https://panelui.dev/docs/customization/theming">Theming</a> ·
+  <a href="https://panelui.dev/docs/cli">CLI</a>
+</p>
+
+<p align="center">
+  <a href="https://neon.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/badge/Sponsored%20by%3A?variant=ghost&size=lg&font=inter&fontSize=20&height=44&mode=dark" />
+      <img src="https://shieldcn.dev/badge/Sponsored%20by%3A?variant=ghost&size=lg&font=inter&fontSize=20&height=44&mode=light" alt="Sponsored by:" />
+    </picture>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://neon.com">
+    <img
+      src="https://raw.githubusercontent.com/panel-ui/PanelUI/main/.github/assets/neon.png"
+      alt="Neon"
+      width="200"
+    />
+  </a>
+</p>
+
+---
+
+**PanelUI is an open-source React Native UI component library for Expo apps**, styled with
+Tailwind CSS v4 and animated with Reanimated 4. **143 accessible, typed component modules** — buttons,
+inputs, forms, dialogs, bottom sheets, charts, calendars, maps and a set of AI chat components —
+in one coherent visual language, with light and dark themes out of the box.
+
+Pure TypeScript with no native modules, so it runs in **Expo Go** with no `prebuild`, no Xcode and
+no Android Studio.
+
+**New: PanelUI for the web.** [`panelui-web`](#panelui-for-the-web) is a collection of forty
+components for React on the web, in the same visual language and drawn in your project's own
+theme: a prompt for an AI assistant, a board of cards you drag, a canvas of nodes and edges, a
+globe, KPI cards and more.
+
+## Why PanelUI
+
+- ⚡ **Fast styling** — [Uniwind](https://uniwind.dev) brings Tailwind v4 to React
+  Native with no Babel transform, around 2.4–3× faster than the alternatives.
+- 🧵 **UI-thread animations** — press feedback, switches, sheets, dialogs and tabs all run on the
+  UI thread with Reanimated 4. No JS-thread jank.
+- 🎨 **Semantic design tokens** — one colour system (`background`, `primary`, `muted`,
+  `destructive`, …) across light and dark, precomputed to static values for native.
+- 🌗 **Native dark mode** — theme switching is applied natively, without re-rendering your tree.
+- ♿ **Accessible by default** — every interactive component wires up `accessibilityRole` and
+  mirrors its state.
+- 🧩 **Compound APIs** — `Card.Header`, `Dialog.Content`, `Table.Row` compose the way the markup
+  reads.
+- 📦 **Typed, tree-shakeable, zero native code** — works in Expo Go, ships full TypeScript types.
+
+## Getting started
+
+Needs Node 20+. A new app, with everything below already done:
+
+```bash
+npx create-panelui-app@latest
+```
+
+Adding it to an app you already have, on Expo SDK 57+:
+
+```bash
+npx expo install panelui-native
+npx expo install uniwind tailwindcss react-native-reanimated react-native-worklets react-native-gesture-handler react-native-safe-area-context react-native-svg @react-native-masked-view/masked-view expo-linear-gradient
+```
+
+Then three files — a Metro config, a CSS entry and the provider. The
+**[installation guide](https://panelui.dev/docs/installation)** walks through each one and lists a
+fix for every error people hit.
+
+### Or copy the source
+
+`panelui-cli` copies a component's source into your project, to own and edit:
+
+```bash
+npx panelui-cli@latest init
+npx panelui-cli@latest add button
+```
+
+Both approaches are supported and you can mix them. See [the CLI docs](https://panelui.dev/docs/cli).
+
+## Usage
+
+```tsx
+import { Button, Card, Dialog, Input } from 'panelui-native';
+
+function CreateProject() {
+  return (
+    <Card>
+      <Card.Header>
+        <Card.Title>Create project</Card.Title>
+        <Card.Description>Deploy your new project in one click.</Card.Description>
+      </Card.Header>
+      <Card.Content className="gap-4">
+        <Input label="Name" placeholder="My project" />
+      </Card.Content>
+      <Card.Footer>
+        <Dialog>
+          <Dialog.Trigger>
+            <Button>Deploy</Button>
+          </Dialog.Trigger>
+          <Dialog.Content>
+            <Dialog.Title>Are you sure?</Dialog.Title>
+            <Dialog.Description>This will start a deployment.</Dialog.Description>
+            <Dialog.Footer>
+              <Dialog.Close>
+                <Button variant="ghost" size="sm">Cancel</Button>
+              </Dialog.Close>
+              <Dialog.Close>
+                <Button size="sm">Confirm</Button>
+              </Dialog.Close>
+            </Dialog.Footer>
+          </Dialog.Content>
+        </Dialog>
+      </Card.Footer>
+    </Card>
+  );
+}
+```
+
+Every component takes `className`, so anything can be restyled with Tailwind classes:
+
+```tsx
+<Button className="w-full rounded-full" labelClassName="uppercase">
+  Continue
+</Button>
+```
+
+## Components
+
+**143 component modules**, documented with live examples and full props tables at
+**[panelui.dev/docs](https://panelui.dev/docs)**.
+
+- **Layout & content** — Card, Frame, PageHeader, Surface, Item, GridItem, Separator, Splitter, Typography,
+  SplitView,
+  Table, Timeline, Steps, Accordion, Collapsible, Carousel, EmptyState, Skeleton
+- **Forms & inputs** — Form, Field, Input, Textarea, InputGroup, NumberInput, OtpInput, SearchBar,
+  Select, Combobox, TagInput, Checkbox, RadioGroup, Switch, Slider, Rating, Signature, ColorPicker,
+  DatePicker, TimePicker, DateTimePicker, Calendar, WeekStrip, Label, MarkdownEditor, Questionnaire
+- **Actions & navigation** — Button, ButtonGroup, ToggleButton, Fab, Menu, ContextMenu, Swipe,
+  StackCard, SelectionMode, Sortable, Tabs, Breadcrumb, Pagination, SectionRail, Panelside, Tree,
+  Chip, Badge
+- **Overlays & feedback** — Dialog, BottomSheet, Drawer, Popover, Tooltip, Toast, Alert, Tour,
+  Progress, Meter, Spinner, Loader
+- **Data visualisation** — Plot, LineChart, LiveLineChart, AreaChart, MirrorAreaChart, BarChart,
+  WaterfallChart, PyramidChart, ScatterChart, BubbleChart, BumpChart, CandlestickChart, PieChart,
+  PolarAreaChart, FunnelChart, TreemapChart, SankeyChart, RingChart, RadarChart, HeatmapChart,
+  HexChart, WeekHoursGrid, Kpi, Leaderboard, Countdown, Map, Marker, Flow, QRCode
+- **AI components** — Message, MessageScroller, Response, Reasoning, Plan, Task, Sources,
+  CodeBlock, Shimmer, ThinkingOrb, Soundwave
+- **Social** — Post, ImageViewer, Compare, Avatar, Attachment
+- **Scroll & motion** — ScrollHeader, ScrollFade, ScrollText, ScrollCanvas, TextAnimation, Marquee,
+  Direction
+
+Plus the primitives: `PanelUIProvider`, `Portal`, `AnimatedPressable`, `useTheme`, `useThemeMode`,
+`useToast`, `cn`.
+
+## PanelUI for the web
+
+`panelui-web` is a separate collection for React on the web: Next.js, Vite, React Router, or
+anything else that runs React 18 or newer with Tailwind CSS v4. It is not a port of the components
+above. It is forty of its own, styled with Tailwind on the tokens a shadcn project already
+defines, so they take your colours and radius in light and dark.
+
+Copy a component's source into your project with the shadcn CLI. It lands in
+`components/panelui/` and is yours to edit:
+
+```bash
+npx shadcn@latest add https://panelui.dev/r/web/lane-board.json
+```
+
+Or install the package, and let Tailwind see the classes it uses:
+
+```bash
+npm install panelui-web
+```
+
+```css
+/* app/globals.css */
+@import "tailwindcss";
+@source "../node_modules/panelui-web/dist";
+```
+
+```tsx
+import { RollingNumber } from 'panelui-web/rolling-number';
+
+<RollingNumber value={298} className="text-6xl font-bold" />
+```
+
+- **Lane Board** — lanes of cards, dragged with a pointer or carried with the keyboard
+- **Flow** — a canvas of nodes joined by edges, to pan, zoom and rearrange
+- **Planet** — the world as dots on a globe you can turn, with markers pinned to it
+- **Day Grid**, **Bar Picker**, **Range Meter**, **KPI**, **Rolling Number** — figures, to read and
+  to pick from
+- **Sheet** — a panel that rises from any edge, floating clear of it, and stacks over another
+- **Card**, **Frame** — the surfaces the rest of a page sits on
+- **Command Dock**, **Feedback**, **Tilt Card** — asking, answering and showing
+
+KPI, Flow, Card and Frame have the same parts and props as the app library's, so a screen written for one reads
+the same in the other. Every component runs live in the docs, with its source under it, at
+**[panelui.dev/docs/web](https://panelui.dev/docs/web)**.
+
+## Theming
+
+Six themes ship in [`theme.css`](packages/panelui/theme.css) — `light`, `dark`, `moon`,
+`moon-dark`, `grass` and `grass-dark`. Each family sets its own radius scale as well as its own
+palette, so switching one changes the shape of the UI too.
+
+```tsx
+const { theme, setTheme } = useTheme();
+setTheme('moon-dark');
+setTheme('system'); // follow the device
+
+const { family, mode, setFamily, toggleMode } = useThemeMode();
+toggleMode();       // dark ↔ light, staying in the current brand
+setFamily('grass'); // switch family, staying in the current mode
+```
+
+Tokens are CSS variables and can be overridden in your own `global.css`. See
+**[Colors](https://panelui.dev/docs/customization/colors)** for the token reference and the
+`@variant` shape overrides have to use, and **[Fonts](https://panelui.dev/docs/customization/fonts)**
+for pointing the library at a typeface of your own.
+
+## Coding agents
+
+An agent writing React Native in your project has no idea PanelUI is there. It writes a styled
+`View` where there is a `Card`, invents a prop `Button` does not have, and hardcodes `#171717`
+into a screen that has six themes.
+
+The **skill** tells it. In Claude Code it installs as a plugin, and brings the MCP server with it:
+
+```
+/plugin marketplace add panel-ui/PanelUI
+/plugin install panelui
+```
+
+For any other agent — Cursor, Copilot, Windsurf, Codex — the same folder installs with the
+`skills` CLI:
+
+```sh
+npx skills add panel-ui/PanelUI
+```
+
+It carries an index of every component and a file each with the anatomy, every prop with its type
+and default, the variants and the parts, generated from the library's own TypeScript. Alongside
+those: the install steps and **every reason `className` silently does nothing**, worked screens
+for the compositions that come up (settings, form, chat, filters, charts, search), the hooks and
+primitives, and the rules that are not negotiable. It reads from disk, so an agent with no network
+tool is not left guessing.
+
+The skill activates on its own once a project has `panelui-native` in its dependencies or a
+`panelui.json` beside it. Full details, and the URLs everything is served from, at
+**[panelui.dev/docs/skills](https://panelui.dev/docs/skills)**.
+
+The web collection has a skill of its own, generated the same way from its source:
+
+```sh
+npx skills add panel-ui/PanelUI --skill panelui-web
+```
+
+Its components are shadcn registry items, so the shadcn MCP server can search and add them once
+the registry is named in `components.json`. Both are covered at
+**[panelui.dev/docs/web/skills](https://panelui.dev/docs/web/skills)** and
+**[panelui.dev/docs/web/mcp](https://panelui.dev/docs/web/mcp)**.
+
+Two more skills ship beside them. **Apparatus** builds interactive explainers for a React Native
+screen: an isometric machine whose working is the idea, run with a finger and framed in a PanelUI
+card. **Logo Maker** designs an app logo. All four are listed, with what each is for, at
+**[panelui.dev/docs/integrations/skills](https://panelui.dev/docs/integrations/skills)**.
+
+```sh
+npx skills add panel-ui/PanelUI --skill apparatus
+```
+
+## Example app
+
+An Expo Router showcase with a live demo for every component and a theme picker — used to
+smoke-test the whole library in all six themes before a release.
+
+```sh
+git clone https://github.com/panel-ui/PanelUI.git
+cd PanelUI
+npm install
+npx expo prebuild --clean   # in apps/example, once
+npm run example
+```
+
+**The showcase needs a development build; it does not run in Expo Go.** One component is the
+reason — `Map`, whose renderer is native code that Expo Go's prebuilt binary does not contain.
+Opening it in Expo Go closes the app with nothing in the terminal, which looks like a crash in
+the library and is not one. See [`apps/example/README.md`](apps/example/README.md).
+
+The library itself is a different matter: it ships no native code and runs in Expo Go.
+
+## Contributing
+
+Contributions are welcome. The library lives in [`packages/panelui`](packages/panelui), the
+showcase in [`apps/example`](apps/example) and the documentation site in
+[`apps/docs`](apps/docs).
+
+```sh
+npm install         # install workspace deps
+npm test            # run every repository contract test
+npm run typecheck   # typecheck all workspaces
+npm run build       # build the library
+```
+
+Read **[CONTRIBUTING.md](CONTRIBUTING.md)** before opening a pull request, and please follow the
+**[Code of Conduct](CODE_OF_CONDUCT.md)**.
+
+## Community
+
+- **[Report a bug](https://github.com/panel-ui/PanelUI/issues/new?template=bug_report.yml)** or
+  **[request a component](https://github.com/panel-ui/PanelUI/issues/new?template=feature_request.yml)**
+- **[Ask a question](https://github.com/panel-ui/PanelUI/discussions)** in Discussions
+- Star the repo if PanelUI is useful to you — it is how other people find it
+
+## Contributors
+
+Thank you to everyone who has shipped something here. If you would like to join them,
+**[CONTRIBUTING.md](CONTRIBUTING.md)** is the place to start.
+
+<p align="center">
+  <a href="https://github.com/Khalidabdi1" title="@Khalidabdi1"><img src="https://github.com/Khalidabdi1.png?size=112" width="56" height="56" alt="@Khalidabdi1" /></a>
+  <a href="https://github.com/danestves" title="@danestves"><img src="https://github.com/danestves.png?size=112" width="56" height="56" alt="@danestves" /></a>
+  <a href="https://github.com/hoanggbao00" title="@hoanggbao00"><img src="https://github.com/hoanggbao00.png?size=112" width="56" height="56" alt="@hoanggbao00" /></a>
+</p>
+
+### Issue reporters
+
+A clear bug report is how most fixes here start. Thank you to everyone who took the time to
+[open one](https://github.com/panel-ui/PanelUI/issues/new/choose).
+
+<p align="center">
+  <a href="https://github.com/yashDahiwale" title="@yashDahiwale"><img src="https://github.com/yashDahiwale.png?size=112" width="56" height="56" alt="@yashDahiwale" /></a>
+  <a href="https://github.com/arnabJ" title="@arnabJ"><img src="https://github.com/arnabJ.png?size=112" width="56" height="56" alt="@arnabJ" /></a>
+  <a href="https://github.com/AnxavY" title="@AnxavY"><img src="https://github.com/AnxavY.png?size=112" width="56" height="56" alt="@AnxavY" /></a>
+  <a href="https://github.com/MiddleKerb" title="@MiddleKerb"><img src="https://github.com/MiddleKerb.png?size=112" width="56" height="56" alt="@MiddleKerb" /></a>
+  <a href="https://github.com/Carloss616" title="@Carloss616"><img src="https://github.com/Carloss616.png?size=112" width="56" height="56" alt="@Carloss616" /></a>
+  <a href="https://github.com/zerocodefast" title="@zerocodefast"><img src="https://github.com/zerocodefast.png?size=112" width="56" height="56" alt="@zerocodefast" /></a>
+  <a href="https://github.com/ryzencool" title="@ryzencool"><img src="https://github.com/ryzencool.png?size=112" width="56" height="56" alt="@ryzencool" /></a>
+  <a href="https://github.com/ruimarcosjoao" title="@ruimarcosjoao"><img src="https://github.com/ruimarcosjoao.png?size=112" width="56" height="56" alt="@ruimarcosjoao" /></a>
+  <a href="https://github.com/gmarcospires" title="@gmarcospires"><img src="https://github.com/gmarcospires.png?size=112" width="56" height="56" alt="@gmarcospires" /></a>
+  <a href="https://github.com/emran-niftyitsolution" title="@emran-niftyitsolution"><img src="https://github.com/emran-niftyitsolution.png?size=112" width="56" height="56" alt="@emran-niftyitsolution" /></a>
+  <a href="https://github.com/ajoslin" title="@ajoslin"><img src="https://github.com/ajoslin.png?size=112" width="56" height="56" alt="@ajoslin" /></a>
+  <a href="https://github.com/aibohphobia1" title="@aibohphobia1"><img src="https://github.com/aibohphobia1.png?size=112" width="56" height="56" alt="@aibohphobia1" /></a>
+  <a href="https://github.com/Valharault" title="@Valharault"><img src="https://github.com/Valharault.png?size=112" width="56" height="56" alt="@Valharault" /></a>
+  <a href="https://github.com/Pok09" title="@Pok09"><img src="https://github.com/Pok09.png?size=112" width="56" height="56" alt="@Pok09" /></a>
+  <a href="https://github.com/Cyberistic" title="@Cyberistic"><img src="https://github.com/Cyberistic.png?size=112" width="56" height="56" alt="@Cyberistic" /></a>
+  <a href="https://github.com/aymkopi" title="@aymkopi"><img src="https://github.com/aymkopi.png?size=112" width="56" height="56" alt="@aymkopi" /></a>
+  <a href="https://github.com/techzealot" title="@techzealot"><img src="https://github.com/techzealot.png?size=112" width="56" height="56" alt="@techzealot" /></a>
+  <a href="https://github.com/kirianL" title="@kirianL"><img src="https://github.com/kirianL.png?size=112" width="56" height="56" alt="@kirianL" /></a>
+  <a href="https://github.com/goodParasyte" title="@goodParasyte"><img src="https://github.com/goodParasyte.png?size=112" width="56" height="56" alt="@goodParasyte" /></a>
+  <a href="https://github.com/pras-wjy" title="@pras-wjy"><img src="https://github.com/pras-wjy.png?size=112" width="56" height="56" alt="@pras-wjy" /></a>
+</p>
+
+## License
+
+[MIT](LICENSE) © Khalid Abdi

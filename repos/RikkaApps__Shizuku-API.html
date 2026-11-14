@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RikkaApps/Shizuku-API · GitHub Trending Rank Radar</title>
+<meta name="description" content="The API and the developer guide for Shizuku and Sui.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Shizuku-API, RikkaApps, RikkaApps/Shizuku-API, github stars, github trending, star growth, star history, 开源项目, 星标增长, shizuku, android">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/RikkaApps__Shizuku-API">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="RikkaApps/Shizuku-API · GitHub Trending Rank Radar">
+<meta property="og:description" content="The API and the developer guide for Shizuku and Sui.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/RikkaApps__Shizuku-API">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "RikkaApps/Shizuku-API", "codeRepository": "https://github.com/RikkaApps/Shizuku-API", "url": "https://zhuikan.com/repos/RikkaApps__Shizuku-API", "description": "The API and the developer guide for Shizuku and Sui.", "author": {"@type": "Organization", "name": "RikkaApps", "url": "https://github.com/RikkaApps"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Java", "dateCreated": "2021-01-12", "keywords": "shizuku,android"}</script>
+</head>
+<body data-repo="RikkaApps/Shizuku-API" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">RikkaApps/Shizuku-API</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="RikkaApps__Shizuku-API"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/31959043?v=4&s=300" width="300" height="300" alt="RikkaApps avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Shizuku-API</div>
+      <a class="rp-side-owner" href="https://github.com/RikkaApps">RikkaApps</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/RikkaApps">RikkaApps</a>
+        <span class="rp-sep">/</span><span class="rp-name">Shizuku-API</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">The API and the developer guide for Shizuku and Sui.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>2,780</b></span><span class="rp-stat" title="forks">⑂ <b>1,334</b></span><span class="rp-stat" title="watchers">👁 <b>170</b></span><span class="rp-stat" title="prs">⑃ <b>142</b></span><span class="rp-stat" title="issues">● <b>426</b></span><span class="rp-stat" title="releases">▤ <b>2</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/shizuku">shizuku</a><a class="rp-topic" href="../tags/android">android</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Java</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2021-01-12</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="RikkaApps__Shizuku"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/31959043?v=4" alt="" loading="lazy">Shizuku</a><a class="rp-same-link" href="RikkaApps__Sui"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/31959043?v=4" alt="" loading="lazy">Sui</a><a class="rp-same-link" href="RikkaApps__websites"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/31959043?v=4" alt="" loading="lazy">websites</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/RikkaApps/Shizuku-API">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v12.2.0</span><a class="rp-dl-a" href="https://github.com/RikkaApps/Shizuku-API/releases/tag/v12.1.0">v12.2.0-12.1.0 ↓</a><span class="rp-dl-ver">12.1.0</span><span class="rp-dl-date">2022-10-07</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+3</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">2,780</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,334</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">170</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">142</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">426</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">2</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Shizuku-API
+
+Shizuku API is the API provided by Shizuku and Sui. With Shizuku API, you can call your Java/JNI code with root/shell (ADB) identity.
+
+ Requirements
+
+To use Shizuku APIs, you need to guide the user to install Shizuku or Sui first. Both of them require Android 6.0+.
+
+ Shizuku
+
+Shizuku is a standard Android application. You can guide the users to download Shizuku from https://shizuku.rikka.app/download/. Shizuku works for both rooted and non-rooted devices.
+
+On non-rooted devices, Shizuku needs to be manually restarted with adb every time on boot. Before Android 11, a computer is required to run adb. Android 11 and above have built-in wireless debugging support, and users can start Shizuku directly on the device.
+
+ Sui
+
+Sui is a Magisk module. Magisk requires an unlocked bootloader.
+
+No additional setup is required except for the installation. You can guide the rooted users (searching su in PATH is enough) to download Sui from Magisk or https://github.com/RikkaApps/Sui.
+
+ Demo
+
+A demo project is provided. See demo for more.
+
+ Guide
+
+I&#x27;ll say the difficult words first, using Shizuku APIs is similar to framework or system app development, some experience in developing common applications may not be enough. You have to get used to digging into Android source code to find out how things work, cs.android.com and AndroidXref sites will be your best friend.
+
+ Add dependency
+
+!Maven Central
+
+groovy
+def shizuku_version = (the version above)
+implementation &quot;dev.rikka.shizuku:api:$shizuku_version&quot;
+
+// Add this line if you want to support Shizuku
+implementation &quot;dev.rikka.shizuku:provider:$shizuku_version&quot;
+
+
+ Acquire the Binder
+
+The first step is to acquire the Binder from Shizuku or Sui.
+
+Shizuku class provides listeners, ShizukuaddBinderReceivedListener() and Shizuku.addBinderDeadListener(), that allows you to track the life of the binder. You should call methods in Shizuku class when the binder is alive or you will get an IllegalStateException.
+
+The steps to get a Binder from Sui and Shizuku are different.
+
+ Sui
+
+Call Sui.init(packageName) before using Shizuku class. This method only needs to be called once. If this method returns true, means Sui is installed and available.
+
+For multi-process applications, call this method in every process that needs to use Shizuku API.
+
+Note, request the binder for Sui only requires two times of binder IPC, this is significantly cheaper than initialize Shizuku which uses ContentProvider. Sui.init(packageName) can be used in main thread, you don&#x27;t need to worry about performance.
+
+ Shizuku
+
+Add ShizukuProvider to AndroidManifest.xml.
+
+xml
+
+
+
+
+
+For multi-process applications, you need to call ShizukuProvider.enableMultiProcessSupport() in every process which needs to use Shizuku API.
+
+Starting from v12.1.0, Sui is initialized automatically in ShizukuProvider. You can opt-out this behavior by calling ShizukuProviderdisableAutomaticSuiInitialization() before ShizukuProvideronCreate() is called. Unless there are sp</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/RikkaApps/Shizuku-API/issues/518"><span class="rp-item-num">#518</span><span class="rp-item-title">Unlimited diamond💎</span><span class="rp-item-extra">33 comments · 2026-08-28</span></a><a class="rp-item" href="https://github.com/RikkaApps/Shizuku-API/issues/300"><span class="rp-item-num">#300</span><span class="rp-item-title">Draft issue: Please provide additional details</span><span class="rp-item-extra">10 comments · 2025-11-15</span></a><a class="rp-item" href="https://github.com/RikkaApps/Shizuku-API/issues/175"><span class="rp-item-num">#175</span><span class="rp-item-title">OLED</span><span class="rp-item-extra">9 comments · 2024-12-29</span></a><a class="rp-item" href="https://github.com/RikkaApps/Shizuku-API/issues/14"><span class="rp-item-num">#14</span><span class="rp-item-title">一些第三方工具（测试了Tasker和MacroDroid）无法调用Shizuku的rish</span><span class="rp-item-extra">8 comments · 2022-05-03</span></a><a class="rp-item" href="https://github.com/RikkaApps/Shizuku-API/issues/544"><span class="rp-item-num">#544</span><span class="rp-item-title">Android Download 👉: https://st.simpledesign.ltd/fqy2M3  iOS Download 👉: https://apps.apple.com/app/id1636254820</span><span class="rp-item-extra">6 comments · 2026-09-21</span></a><a class="rp-item" href="https://github.com/RikkaApps/Shizuku-API/issues/240"><span class="rp-item-num">#240</span><span class="rp-item-title">Will HiddenApiBypass cause issues on Android 16 (ART changes)?</span><span class="rp-item-extra">6 comments · 2025-08-26</span></a><a class="rp-item" href="https://github.com/RikkaApps/Shizuku-API/issues/548"><span class="rp-item-num">#548</span><span class="rp-item-title">11111000</span><span class="rp-item-extra">5 comments · 2026-09-25</span></a><a class="rp-item" href="https://github.com/RikkaApps/Shizuku-API/issues/514"><span class="rp-item-num">#514</span><span class="rp-item-title">brew install gh</span><span class="rp-item-extra">5 comments · 2026-08-26</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/RikkaApps/Shizuku-API/releases"><b>v12.2.0</b> <span class="rp-rel-tag">v12.1.0</span> <span class="rp-item-extra">2022-10-07</span></a><pre class="rp-pre">- Fix onServiceDisconnected is not called if the UserService is stopped by ShizukuunbindUserService</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/RikkaApps__Shizuku-API.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

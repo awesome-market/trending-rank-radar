@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>getmaxun/maxun · GitHub Trending Rank Radar</title>
+<meta name="description" content="Turn any website into a structured API. Extract, automate, search and monitor the web.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="maxun, getmaxun, getmaxun/maxun, github stars, github trending, star growth, star history, 开源项目, 星标增长, automation, no-code, scraper, web-scraper, web-scraping, api">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/getmaxun__maxun">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="getmaxun/maxun · GitHub Trending Rank Radar">
+<meta property="og:description" content="Turn any website into a structured API. Extract, automate, search and monitor the web.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/getmaxun__maxun">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "getmaxun/maxun", "codeRepository": "https://github.com/getmaxun/maxun", "url": "https://zhuikan.com/repos/getmaxun__maxun", "description": "Turn any website into a structured API. Extract, automate, search and monitor the web.", "author": {"@type": "Organization", "name": "getmaxun", "url": "https://github.com/getmaxun"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/AGPL-3.0.html", "programmingLanguage": "TypeScript", "dateCreated": "2023-10-23", "keywords": "automation,no-code,scraper,web-scraper,web-scraping,api,browser-automation,playwright,self-hosted,robotic-process-automation"}</script>
+</head>
+<body data-repo="getmaxun/maxun" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">getmaxun/maxun</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="getmaxun__maxun"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/139582646?v=4&s=300" width="300" height="300" alt="getmaxun avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">maxun</div>
+      <a class="rp-side-owner" href="https://github.com/getmaxun">getmaxun</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/getmaxun">getmaxun</a>
+        <span class="rp-sep">/</span><span class="rp-name">maxun</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Turn any website into a structured API. Extract, automate, search and monitor the web.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>18,296</b></span><span class="rp-stat" title="forks">⑂ <b>1,580</b></span><span class="rp-stat" title="watchers">👁 <b>85</b></span><span class="rp-stat" title="prs">⑃ <b>931</b></span><span class="rp-stat" title="issues">● <b>334</b></span><span class="rp-stat" title="releases">▤ <b>50</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/automation">automation</a><a class="rp-topic" href="https://github.com/topics/no-code">no-code</a><a class="rp-topic" href="https://github.com/topics/scraper">scraper</a><a class="rp-topic" href="https://github.com/topics/web-scraper">web-scraper</a><a class="rp-topic" href="https://github.com/topics/web-scraping">web-scraping</a><a class="rp-topic" href="../tags/api">api</a><a class="rp-topic" href="https://github.com/topics/browser-automation">browser-automation</a><a class="rp-topic" href="../tags/playwright">playwright</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">AGPL-3.0</span><span class="rp-meta-bit">Created 2023-10-23</span><a class="rp-meta-bit rp-home" href="https://www.maxun.dev" rel="noopener">www.maxun.dev</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/getmaxun/maxun">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.1.0</span><a class="rp-dl-a" href="https://github.com/getmaxun/maxun/releases/tag/v0.1.0">v0.1.0 ↓</a><span class="rp-dl-ver">0.1.0</span><span class="rp-dl-date">2026-10-25</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+77</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">18,296</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,580</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">85</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">931</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">334</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">50</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Maxun
+        
+    
+    将任何网站转化为结构化 API
+
+English | 简体中文
+
+
+开源的 Web 数据平台，支持实时网页抓取、爬取、搜索、监控和 AI 数据提取。
+
+
+    打开应用 •
+    文档 •
+    官网 •
+    Discord •
+    观看教程
+    
+    
+
+
+
+ 赞助商
+
+
+
+
+
+  
+
+
+
+Webshare 提供即时访问超过 8000 万个来自 195 多个国家和地区的合规 IP 代理池，包括轮换住宅代理、静态 ISP 代理和数据中心代理，并提供完整的 API。其网络骨干带宽超过 100 Gbps，支持国家/地区、城市、州、邮政编码及 ASN 级别的精准定位，注册使用无需信用卡。免费套餐：10 个代理 IP + 每月 1GB 流量 · 优惠码：MAXUN20 - 首次购买可享 8 折优惠。
+
+
+
+
+
+
+  
+
+
+
+Swiftproxy 在全球 220 多个地区提供超过 9000 万个住宅 IP，帮助 Maxun 用户抓取网站、访问地理位置限制内容，以及从不同地区收集网页数据。支持轮换和静态住宅代理、HTTP(S) 及 SOCKS5 协议。提供免费测试。优惠码：PROXY90 - 可享 9 折优惠。
+
+
+
+
+
+
+  
+
+
+
+Proxy-Seller 为各种工作流程提供可靠的代理基础设施，包括私人住宅代理、移动代理（4G/5G/LTE）、ISP 代理，以及数据中心 IPv4/IPv6 代理，全面支持 HTTP(S) 和 SOCKS5 协议。拥有覆盖 220 多个地区的 4700 多万个住宅 IP，可精准定位所需的国家、城市或 ISP，并提供 99.7% 的正常运行时间保障及全天候技术支持。
+优惠码：MAXUNDEV - 立享 85 折优惠。
+
+
+
+
+
+
+  
+
+
+
+Byteful 是一家总部位于英国的网页数据基础设施平台，提供合规来源的住宅代理、移动代理、静态住宅（ISP）代理和数据中心代理，同时提供以 API 为核心的网页抓取、数据采集及 AI 驱动自动化工具，每月处理数百亿次请求。优惠码：MAXUN10 - 购买 Byteful 住宅代理可享 9 折优惠。
+
+
+
+
+
+
+  
+
+
+
+Mango Proxy 在 200 多个国家和地区提供住宅代理、ISP 代理、数据中心代理及移动代理，支持 HTTP(S)/SOCKS5 协议和灵活的 IP 管理。优惠码：MAXUN - 静态 ISP 代理可享 8% 优惠。
+
+
+
+
+
+
+  
+
+
+
+Nodemaven 为网页抓取和自动化提供高效的代理服务，拥有市场上品质最高的 IP。为什么选择 Nodemaven？· ZIP 邮政编码级别定位 · 99.9% 正常运行时间 · IP 过滤：所有代理的欺诈评分均低于 97% · 无需 KYC 身份验证 · 提供独特的免费工具，包括代理带宽检测器、Meta 标签检测器、IP 查询等！
+优惠活动：MAXUN2X — 黑色星期五期间流量翻倍 · MAXUN35 — 移动代理和住宅代理享 65 折 · MAXUN40 - ISP（静态）代理享 6 折优惠。
+
+
+
+
+
+
+  
+
+
+
+TestMu AI 是一个原生 AI 智能体驱动的云端质量工程平台，帮助团队更智能地进行软件测试，加快产品交付速度。
+
+
+
+
+ Maxun 能做什么
+
+- 数据提取 – 通过模拟真实用户行为，从任何网站提取结构化数据。
+    录制模式 – 录制浏览器操作，并将其转化为可复用的提取机器人。
+    AI 模式 – 用自然语言描述你的需求，通过 AI 完成提取。
+- 网页抓取 – 将完整网页转换为 Markdown、HTML 并捕获截图。
+- 爬取 – 爬取整个网站，跨页面提取内容。
+- 搜索 – 搜索网页，并按时间筛选提取结果。
+- 监控 – 持续跟踪网站变化，并在变化发生时收到通知。
+- 文档提取与解析 – 从文档中提取并解析结构化数据。
+
+ 如何使用 Maxun
+
+- 仪表盘 – 通过 Maxun 的可视化界面构建、运行和管理机器人。
+- API – 将 Maxun 的抓取和提取能力集成到你的应用中。
+- SDK – 以编程方式使用 Maxun 进行抓取、提取、自动化等操作。
+- CLI – 在终端中创建机器人、触发运行并获取数据。
+- MCP – 通过 Model Context Protocol 将 Maxun 连接到 AI 智能体。
+
+
+ 快速开始
+
+ 入门
+最简单的快速上手方式是使用托管版本：https://app.maxun.dev。
+
+ 安装
+无论是否使用 Docker，Maxun 都可以在本地运行
+1. 使用 Docker Compose 搭建
+2. 不使用 Docker 搭建
+3. 环境变量
+4. SDK
+
+ 升级与自托管
+1. 使用 Docker 自托管 Maxun
+2. 升级 Docker Compose 方式搭建的 Maxun
+3. 升级非 Docker Compose 方式搭建的 Maxun
+
+ 许可证
+
+本项目基于 AGPLv3 许可证发布。
+
+
+ 项目价值观
+
+我们相信应当公平、负责任地使用开源。如果你在商业上依赖本项目，请考虑为项目做贡献或支持其开发。
+
+ 支持我们
+给仓库点星、参与代码贡献，或者赞助我们。
+
+ 贡献者
+感谢每一位贡献者的共同努力！</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/getmaxun/maxun/issues/323"><span class="rp-item-num">#323</span><span class="rp-item-title">Register Account not possible</span><span class="rp-item-extra">36 comments · 2025-01-07</span></a><a class="rp-item" href="https://github.com/getmaxun/maxun/issues/306"><span class="rp-item-num">#306</span><span class="rp-item-title">部署完成访问5173之后可以进入页面，但是在注册页面注册账户时没反应</span><span class="rp-item-extra">25 comments · 2024-12-31</span></a><a class="rp-item" href="https://github.com/getmaxun/maxun/issues/534"><span class="rp-item-num">#534</span><span class="rp-item-title">Can&#x27;t create account to get started docker!</span><span class="rp-item-extra">15 comments · 2025-04-11</span></a><a class="rp-item" href="https://github.com/getmaxun/maxun/issues/506"><span class="rp-item-num">#506</span><span class="rp-item-title">why browser not loading?</span><span class="rp-item-extra">9 comments · 2025-03-27</span></a><a class="rp-item" href="https://github.com/getmaxun/maxun/issues/492"><span class="rp-item-num">#492</span><span class="rp-item-title">browser.newContext: Target page, context or browser has been closed</span><span class="rp-item-extra">9 comments · 2025-03-21</span></a><a class="rp-item" href="https://github.com/getmaxun/maxun/issues/151"><span class="rp-item-num">#151</span><span class="rp-item-title">Feature: perform clicks</span><span class="rp-item-extra">8 comments · 2024-11-07</span></a><a class="rp-item" href="https://github.com/getmaxun/maxun/issues/758"><span class="rp-item-num">#758</span><span class="rp-item-title">docker运行没报错，但是注册不了</span><span class="rp-item-extra">5 comments · 2025-08-28</span></a><a class="rp-item" href="https://github.com/getmaxun/maxun/issues/529"><span class="rp-item-num">#529</span><span class="rp-item-title">Can someone share the aarch64/arm64 Docker file?</span><span class="rp-item-extra">5 comments · 2025-04-09</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/getmaxun/maxun/releases"><b>v0.1.0</b> <span class="rp-rel-tag">v0.1.0</span> <span class="rp-item-extra">2026-10-25</span></a><pre class="rp-pre">We&#x27;re moving beyond 0.0.x and into 0.1.0!
+
+This release brings major improvements across scraping, crawling, AI-powered data extraction, document processing, and MCP. We&#x27;ve also rebuilt parts of the experience to make Maxun more capable, reliable, and useful as an open-source web data platform.
+
+Here&#x27;s what&#x27;s new.
+
+ ⚡ Faster scraping, better results
+
+Scraping is now 4× faster, dropping from 2.5 seconds to 0.63 seconds in our local benchmark covering text, links, Markdown, HTML, and screenshots.
+
+We&#x27;ve also improved the quality of extracted content across 91 real-world pages:
+
+- 26%</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/getmaxun__maxun.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

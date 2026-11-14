@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ustbhuangyi/better-scroll · GitHub Trending Rank Radar</title>
+<meta name="description" content=":scroll: inspired by iscroll, and it supports more features and has a better scroll perfermance">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="better-scroll, ustbhuangyi, ustbhuangyi/better-scroll, github stars, github trending, star growth, star history, 开源项目, 星标增长, iscroll, mobile-web, better-performance, ios, vue, more-features">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/ustbhuangyi__better-scroll">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="ustbhuangyi/better-scroll · GitHub Trending Rank Radar">
+<meta property="og:description" content=":scroll: inspired by iscroll, and it supports more features and has a better scroll perfermance">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/ustbhuangyi__better-scroll">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ustbhuangyi/better-scroll", "codeRepository": "https://github.com/ustbhuangyi/better-scroll", "url": "https://zhuikan.com/repos/ustbhuangyi__better-scroll", "description": ":scroll: inspired by iscroll, and it supports more features and has a better scroll perfermance", "author": {"@type": "Organization", "name": "ustbhuangyi", "url": "https://github.com/ustbhuangyi"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2015-12-18", "keywords": "iscroll,mobile-web,better-performance,ios,vue,more-features"}</script>
+</head>
+<body data-repo="ustbhuangyi/better-scroll" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">ustbhuangyi/better-scroll</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="ustbhuangyi__better-scroll"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/5359011?u=3775312a47fbdf87c61fd96b541312e33233de07&amp;v=4&s=300" width="300" height="300" alt="ustbhuangyi avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">better-scroll</div>
+      <a class="rp-side-owner" href="https://github.com/ustbhuangyi">ustbhuangyi</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/ustbhuangyi">ustbhuangyi</a>
+        <span class="rp-sep">/</span><span class="rp-name">better-scroll</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">:scroll: inspired by iscroll, and it supports more features and has a better scroll perfermance</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>16,428</b></span><span class="rp-stat" title="forks">⑂ <b>2,575</b></span><span class="rp-stat" title="watchers">👁 <b>254</b></span><span class="rp-stat" title="prs">⑃ <b>213</b></span><span class="rp-stat" title="issues">● <b>1,160</b></span><span class="rp-stat" title="releases">▤ <b>42</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/iscroll">iscroll</a><a class="rp-topic" href="https://github.com/topics/mobile-web">mobile-web</a><a class="rp-topic" href="https://github.com/topics/better-performance">better-performance</a><a class="rp-topic" href="../tags/ios">ios</a><a class="rp-topic" href="../tags/vue">vue</a><a class="rp-topic" href="https://github.com/topics/more-features">more-features</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2015-12-18</span><a class="rp-meta-bit rp-home" href="https://better-scroll.github.io/docs/en-US/" rel="noopener">better-scroll.github.io/docs/en-US/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/ustbhuangyi/better-scroll">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v2.4.2</span><a class="rp-dl-a" href="https://github.com/ustbhuangyi/better-scroll/releases/tag/v2.4.2">better-scroll-2.4.2 ↓</a><span class="rp-dl-ver">2.4.2</span><span class="rp-dl-date">2021-08-02</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">16,428</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,575</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">254</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">213</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,160</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">42</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">better-scroll
+
+
+
+      
+
+1.x Docs
+
+2.x Docs
+
+ 注意：1.x 的代码已经不维护，请尽早升级版本。
+
+ puppeteer 安装
+
+BetterScroll 依赖 puppeteer，在国内下载 puppeteer 容易失败，可以设置 puppeteer 的淘宝镜像。
+
+sh
+PUPPETEER_DOWNLOAD_HOST=https://npm.taobao.org/mirrors yarn
+
+
+ 安装
+
+bash
+npm install better-scroll -S   安装带有所有插件的 BetterScroll
+
+npm install @better-scroll/core  核心滚动，大部分情况可能只需要一个简单的滚动
+
+
+js
+import BetterScroll from &#x27;better-scroll&#x27;
+
+let bs = new BetterScroll(&#x27;.wrapper&#x27;, {
+  movable: true,
+  zoom: true
+})
+
+import BScroll from &#x27;@better-scroll/core&#x27;
+let bs = new BScroll(&#x27;.wrapper&#x27;, {})
+
+
+ CDN
+
+带有所有插件的 BetterScroll
+
+js
+
+
+// minify
+
+
+let wrapper = document.getElementById(&quot;wrapper&quot;)
+let bs = BetterScroll.createBScroll(wrapper, {})
+
+
+不带有任何插件的 CoreScroll
+
+js
+
+
+// minify
+
+
+let wrapper = document.getElementById(&quot;wrapper&quot;)
+let bs = new BScroll(wrapper, {})
+
+
+ BetterScroll 是什么
+
+BetterScroll 是一款重点解决移动端（已支持 PC）各种滚动场景需求的插件。它的核心是借鉴的 iscroll 的实现，它的 API 设计基本兼容 iscroll，在 iscroll 的基础上又扩展了一些 feature 以及做了一些性能优化。
+
+BetterScroll 是使用纯 JavaScript 实现的，这意味着它是无依赖的。
+
+ 起步
+
+BetterScroll 最常见的应用场景是列表滚动，我们来看一下它的 html 结构。
+
+html
+
+  
+    ...
+    ...
+    ...
+  
+  
+
+
+上面的代码中 BetterScroll 是作用在外层 wrapper 容器上的，滚动的部分是 content 元素。这里要注意的是，BetterScroll 默认处理容器（wrapper）的第一个子元素（content）的滚动，其它的元素都会被忽略。不过对于 BetterScroll v2.0.4 版本，可以通过 specifiedIndexAsContent 配置项来指定 content，详细的请参考文档。
+
+最简单的初始化代码如下：
+
+ js
+import BScroll from &#x27;@better-scroll/core&#x27;
+let wrapper = document.querySelector(&#x27;.wrapper&#x27;)
+let scroll = new BScroll(wrapper)
+
+BetterScroll 提供了一个类，实例化的第一个参数是一个原生的 DOM 对象。当然，如果传递的是一个字符串，BetterScroll 内部会尝试调用 querySelector 去获取这个 DOM 对象。
+
+ 滚动原理
+
+很多人已经用过 BetterScroll，我收到反馈最多的问题是：
+
+ BetterScroll 初始化了， 但是没法滚动。
+
+不能滚动是现象，我们得搞清楚这其中的根本原因。在这之前，我们先来看一下浏览器的滚动原理：
+浏览器的滚动条大家都会遇到，当页面内容的高度超过视口高度的时候，会出现纵向滚动条；当页面内容的宽度超过视口宽度的时候，会出现横向滚动条。也就是当我们的视口展示不下内容的时候，会通过滚动条的方式让用户滚动屏幕看到剩余的内容。
+
+BetterScroll 也是一样的原理，我们可以用一张图更直观的感受一下：
+
+!布局
+
+绿色部分为 wrapper，也就是父容器，它会有固定的高度。黄色部分为 content，它是父容器的第一个子元素，它的高度会随着内容的大小而撑高。那么，当 content 的高度不超过父容器的高度，是不能滚动的，而它一旦超过了父容器的高度，我们就可以滚动内容区了，这就是 BetterScroll 的滚动原理。
+
+ 插件
+
+通过插件，增强 BetterScroll core scroll 的能力，比如
+
+js
+import BScroll from &#x27;@better-scroll/core&#x27;
+import PullUp from &#x27;@better-scroll/pull-up&#x27;
+
+let bs = new BScroll(&#x27;.wrapper&#x27;, {
+  pullUpLoad: true
+})
+
+
+详细请看插件文档
+
+ BetterScroll 在 MVVM 框架的应用
+
+我之前写过一篇当 BetterScroll 遇见 Vue，也希望大家投稿，分享一下 BetterScroll 在其它框架下的使用心得。
+
+一款超赞的基于 Vue 实现的组件库 cube-ui。
+
+ BetterScroll 在实战项目中的运用
+
+如果你想学习 BetterScroll 在实战项目中的运用，也可以去学习我的 2 门实战课程。
+
+Vue.js 高仿外卖饿了么实战课程
+
+项目演示地址
+
+!二维码
+
+Vue.js 音乐 App 高级实战课程
+
+项目演示地址
+
+!二维码</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ustbhuangyi/better-scroll/issues/580"><span class="rp-item-num">#580</span><span class="rp-item-title">IOS设备滑动时，手动按住停止时有抖动现象</span><span class="rp-item-extra">23 comments · 2018-06-12</span></a><a class="rp-item" href="https://github.com/ustbhuangyi/better-scroll/issues/658"><span class="rp-item-num">#658</span><span class="rp-item-title">希望出一个 react版本的demo</span><span class="rp-item-extra">11 comments · 2018-09-13</span></a><a class="rp-item" href="https://github.com/ustbhuangyi/better-scroll/issues/1042"><span class="rp-item-num">#1042</span><span class="rp-item-title">文档无法访问</span><span class="rp-item-extra">6 comments · 2020-08-07</span></a><a class="rp-item" href="https://github.com/ustbhuangyi/better-scroll/issues/736"><span class="rp-item-num">#736</span><span class="rp-item-title">[New Feature] 向上无限滚动</span><span class="rp-item-extra">6 comments · 2019-01-22</span></a><a class="rp-item" href="https://github.com/ustbhuangyi/better-scroll/issues/1165"><span class="rp-item-num">#1165</span><span class="rp-item-title">[New Feature] 无限滚动，fetch 数据返回resolve(false)后，后续有新的数据，如何再次触发 fetch ?</span><span class="rp-item-extra">5 comments · 2021-03-17</span></a><a class="rp-item" href="https://github.com/ustbhuangyi/better-scroll/issues/1224"><span class="rp-item-num">#1224</span><span class="rp-item-title">[New Feature] 希望能实现类似饿了么首页那样的多层嵌套滚动选项卡</span><span class="rp-item-extra">4 comments · 2021-07-09</span></a><a class="rp-item" href="https://github.com/ustbhuangyi/better-scroll/issues/895"><span class="rp-item-num">#895</span><span class="rp-item-title">infinity不支持水平滚动</span><span class="rp-item-extra">4 comments · 2019-09-09</span></a><a class="rp-item" href="https://github.com/ustbhuangyi/better-scroll/issues/1376"><span class="rp-item-num">#1376</span><span class="rp-item-title">How can BetterScroll disable scrolling without affecting click events when click is enabled?</span><span class="rp-item-extra">3 comments · 2024-11-06</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/ustbhuangyi/better-scroll/releases"><b>v2.4.2</b> <span class="rp-rel-tag">v2.4.2</span> <span class="rp-item-extra">2021-08-02</span></a><pre class="rp-pre">BUG FIX
+
+- mouse-wheel: closed 1227</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/ustbhuangyi__better-scroll.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

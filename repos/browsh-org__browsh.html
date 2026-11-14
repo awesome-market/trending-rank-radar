@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>browsh-org/browsh · GitHub Trending Rank Radar</title>
+<meta name="description" content="A fully-modern text-based browser, rendering to TTY and browsers">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="browsh, browsh-org, browsh-org/browsh, github stars, github trending, star growth, star history, 开源项目, 星标增长, tty, ssh, mosh, bandwidth-saver, http-performance, vnc">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/browsh-org__browsh">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="browsh-org/browsh · GitHub Trending Rank Radar">
+<meta property="og:description" content="A fully-modern text-based browser, rendering to TTY and browsers">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/browsh-org__browsh">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "browsh-org/browsh", "codeRepository": "https://github.com/browsh-org/browsh", "url": "https://zhuikan.com/repos/browsh-org__browsh", "description": "A fully-modern text-based browser, rendering to TTY and browsers", "author": {"@type": "Organization", "name": "browsh-org", "url": "https://github.com/browsh-org"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/LGPL-2.1.html", "programmingLanguage": "JavaScript", "dateCreated": "2016-05-08", "keywords": "tty,ssh,mosh,bandwidth-saver,http-performance,vnc"}</script>
+</head>
+<body data-repo="browsh-org/browsh" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">browsh-org/browsh</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="browsh-org__browsh"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/35799511?v=4&s=300" width="300" height="300" alt="browsh-org avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">browsh</div>
+      <a class="rp-side-owner" href="https://github.com/browsh-org">browsh-org</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/browsh-org">browsh-org</a>
+        <span class="rp-sep">/</span><span class="rp-name">browsh</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A fully-modern text-based browser, rendering to TTY and browsers</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>19,130</b></span><span class="rp-stat" title="forks">⑂ <b>480</b></span><span class="rp-stat" title="watchers">👁 <b>182</b></span><span class="rp-stat" title="prs">⑃ <b>105</b></span><span class="rp-stat" title="issues">● <b>439</b></span><span class="rp-stat" title="releases">▤ <b>44</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/tty">tty</a><a class="rp-topic" href="https://github.com/topics/ssh">ssh</a><a class="rp-topic" href="https://github.com/topics/mosh">mosh</a><a class="rp-topic" href="https://github.com/topics/bandwidth-saver">bandwidth-saver</a><a class="rp-topic" href="https://github.com/topics/http-performance">http-performance</a><a class="rp-topic" href="https://github.com/topics/vnc">vnc</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">LGPL-2.1</span><span class="rp-meta-bit">Created 2016-05-08</span><a class="rp-meta-bit rp-home" href="https://www.brow.sh" rel="noopener">www.brow.sh</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/browsh-org/browsh">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.8.3</span><a class="rp-dl-a" href="https://github.com/browsh-org/browsh/releases/tag/v1.8.3">v1.8.3 ↓</a><span class="rp-dl-ver">1.8.3</span><span class="rp-dl-date">2024-01-29</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">19,130</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">480</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">182</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">105</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">439</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">44</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">!Browsh Logo
+
+A fully interactive, real-time, and modern text-based browser rendered to TTYs and browsers
+
+!Browsh GIF
+
+ Why use Browsh?
+
+Not all the world has good Internet.
+
+If you only have a 3kbps internet connection tethered from a phone,
+then it&#x27;s good to SSH into a server and browse the web through, say,
+elinks. That way the
+_server_ downloads the web pages and uses the limited bandwidth of an
+SSH connection to display the result. However, traditional text-based browsers
+lack JS and all other modern HTML5 support. Browsh is different
+in that it&#x27;s backed by a real browser, namely headless Firefox,
+to create a purely text-based version of web pages and web apps. These can be easily
+rendered in a terminal or indeed, ironically, in another browser. Do note that currently the browser client doesn&#x27;t have feature parity with the terminal client.
+
+Why not VNC? Well VNC is certainly one solution but it doesn&#x27;t quite
+have the same ability to deal with extremely bad Internet. Terminal 
+Browsh can also use MoSH to further reduce bandwidth and increase stability
+of the connection. Mosh offers features like automatic
+reconnection of dropped or roamed connections and diff-only screen updates.
+Furthermore, other than SSH or MoSH, terminal Browsh doesn&#x27;t require a client
+like VNC.
+
+One final reason to use terminal Browsh could be to offload the battery-drain of a modern
+browser from your laptop or low-powered device like a Raspberry Pi. If you&#x27;re a CLI-native,
+then you could potentially get a few more hours of life if your CPU-hungry browser
+is running somewhere else on mains electricity.
+
+ Installation
+
+Download a binary from the releases (~11MB).
+You will need to have Firefox already installed.
+
+Or download and run the Docker image (~230MB) with:
+    docker run --rm -it browsh/browsh
+
+ Usage
+Most keys and mouse gestures should work as you&#x27;d expect on a desktop
+browser.
+
+For full documentation click here.
+
+ Development
+
+ The Firefox Web Extension
+This is needed to run essential JS inside web pages so that they render in a way that Browsh can consume.
+
+You will need to install nodejs, usually available from your OS package manager. Though for development purposes the recommended method is with https://mise.jdx.dev. 
+
+Then in the webext directory
+ npm install
+ npx webpack --watch
+
+ The browsh Golang code
+You will need to install go, usually available from your OS package manager. Though for development purposes the recommended method is with https://mise.jdx.dev. 
+
+Then in the interfacer directory
+ go run ./cmd/browsh --debug
+
+Logs will be available in interfacer/debug.log
+
+ Tests
+
+For the webextension: in webext/ folder, npm test    
+For CLI unit tests: in /interfacer run go test src/browsh/.go    
+For CLI E2E tests: in /interfacer run go test test/tty/.go    
+For HTTP Service tests: in /interfacer run go test test/http-server/.go    
+
+ Special Thanks
+   @tobimensch For essential early feedback and user testing.
+   @arasatasaygin For the Browsh logo.
+
+ Don</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/browsh-org/browsh/issues/77"><span class="rp-item-num">#77</span><span class="rp-item-title">Vertical lines through all content</span><span class="rp-item-extra">66 comments · 2018-07-10</span></a><a class="rp-item" href="https://github.com/browsh-org/browsh/issues/446"><span class="rp-item-num">#446</span><span class="rp-item-title">Ubuntu x64 fresh install returns panic runtime error</span><span class="rp-item-extra">30 comments · 2022-10-03</span></a><a class="rp-item" href="https://github.com/browsh-org/browsh/issues/31"><span class="rp-item-num">#31</span><span class="rp-item-title">Vim mode</span><span class="rp-item-extra">30 comments · 2018-06-12</span></a><a class="rp-item" href="https://github.com/browsh-org/browsh/issues/67"><span class="rp-item-num">#67</span><span class="rp-item-title">Windows binary contains a Virus?</span><span class="rp-item-extra">25 comments · 2018-07-09</span></a><a class="rp-item" href="https://github.com/browsh-org/browsh/issues/404"><span class="rp-item-num">#404</span><span class="rp-item-title">Poor colour rendering on Windows - with a TrueColor terminal</span><span class="rp-item-extra">25 comments · 2022-03-20</span></a><a class="rp-item" href="https://github.com/browsh-org/browsh/issues/86"><span class="rp-item-num">#86</span><span class="rp-item-title">Support libsixel for rendering?</span><span class="rp-item-extra">23 comments · 2018-07-10</span></a><a class="rp-item" href="https://github.com/browsh-org/browsh/issues/190"><span class="rp-item-num">#190</span><span class="rp-item-title">How can we get this project thriving?</span><span class="rp-item-extra">22 comments · 2018-08-27</span></a><a class="rp-item" href="https://github.com/browsh-org/browsh/issues/52"><span class="rp-item-num">#52</span><span class="rp-item-title">Tabbing should navigate input boxes</span><span class="rp-item-extra">20 comments · 2018-06-22</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/browsh-org/browsh/discussions/569"><span class="rp-item-num">#569</span><span class="rp-item-title">Console write problems</span><span class="rp-item-extra">3 comments · 2026-06-02</span></a><a class="rp-item" href="https://github.com/browsh-org/browsh/discussions/561"><span class="rp-item-num">#561</span><span class="rp-item-title">Using ChatGPT with browsh</span><span class="rp-item-extra">0 comments · 2025-10-29</span></a><a class="rp-item" href="https://github.com/browsh-org/browsh/discussions/558"><span class="rp-item-num">#558</span><span class="rp-item-title">There was an error</span><span class="rp-item-extra">1 comments · 2025-10-14</span></a><a class="rp-item" href="https://github.com/browsh-org/browsh/discussions/557"><span class="rp-item-num">#557</span><span class="rp-item-title">How can i increase resolution</span><span class="rp-item-extra">2 comments · 2025-10-01</span></a><a class="rp-item" href="https://github.com/browsh-org/browsh/discussions/541"><span class="rp-item-num">#541</span><span class="rp-item-title">What is the latest Firefox version supported by Browsh 1.8.3?</span><span class="rp-item-extra">1 comments · 2025-03-18</span></a><a class="rp-item" href="https://github.com/browsh-org/browsh/discussions/539"><span class="rp-item-num">#539</span><span class="rp-item-title">Cannot click on cookies and captcha/not visible available to click on some pages</span><span class="rp-item-extra">0 comments · 2025-02-06</span></a><a class="rp-item" href="https://github.com/browsh-org/browsh/discussions/538"><span class="rp-item-num">#538</span><span class="rp-item-title">Is it possible to use gui with librewolf</span><span class="rp-item-extra">1 comments · 2025-02-06</span></a><a class="rp-item" href="https://github.com/browsh-org/browsh/discussions/533"><span class="rp-item-num">#533</span><span class="rp-item-title">Windows 10/11 Install Scripts for browsh</span><span class="rp-item-extra">0 comments · 2024-11-03</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/browsh-org/browsh/releases"><b>v1.8.3</b> <span class="rp-rel-tag">v1.8.3</span> <span class="rp-item-extra">2024-01-29</span></a><pre class="rp-pre">What&#x27;s Changed
+ Bump fast-json-patch and web-ext in /webext by @dependabot in https://github.com/browsh-org/browsh/pull/461
+ Bump loader-utils from 2.0.2 to 2.0.4 in /webext by @dependabot in https://github.com/browsh-org/browsh/pull/453
+ remove unnecessary RUN command by @lpmi-13 in https://github.com/browsh-org/browsh/pull/466
+ Bump http-cache-semantics from 4.1.0 to 4.1.1 in /webext by @dependabot in https://github.com/browsh-org/browsh/pull/467
+ fix: Golang install: use &quot;amd64&quot; for &quot;x86_64&quot; by @tombh in https://github.com/browsh-org/browsh/pull/463
+ feat: Use log/slog for logging to </pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/browsh-org__browsh.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

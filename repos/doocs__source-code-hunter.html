@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>doocs/source-code-hunter · GitHub Trending Rank Radar</title>
+<meta name="description" content="😱 从源码层面，剖析挖掘互联网行业主流技术的底层实现原理，为广大开发者 “提升技术深度” 提供便利。目前开放 Spring 全家桶，Mybatis、Netty、Dubbo 框架，及 Redis、Tomcat 中间件等">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="source-code-hunter, doocs, doocs/source-code-hunter, github stars, github trending, star growth, star history, 开源项目, 星标增长, sourcecode-analysis, spring, mybatis, netty, redis, dubbo">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/doocs__source-code-hunter">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="doocs/source-code-hunter · GitHub Trending Rank Radar">
+<meta property="og:description" content="😱 从源码层面，剖析挖掘互联网行业主流技术的底层实现原理，为广大开发者 “提升技术深度” 提供便利。目前开放 Spring 全家桶，Mybatis、Netty、Dubbo 框架，及 Redis、Tomcat 中间件等">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/doocs__source-code-hunter">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "doocs/source-code-hunter", "codeRepository": "https://github.com/doocs/source-code-hunter", "url": "https://zhuikan.com/repos/doocs__source-code-hunter", "description": "😱 从源码层面，剖析挖掘互联网行业主流技术的底层实现原理，为广大开发者 “提升技术深度” 提供便利。目前开放 Spring 全家桶，Mybatis、Netty、Dubbo 框架，及 Redis、Tomcat 中间件等", "author": {"@type": "Organization", "name": "doocs", "url": "https://github.com/doocs"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/CC-BY-SA-4.0.html", "programmingLanguage": "Java", "dateCreated": "2019-10-28", "keywords": "sourcecode-analysis,spring,mybatis,netty,redis,dubbo"}</script>
+</head>
+<body data-repo="doocs/source-code-hunter" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">doocs/source-code-hunter</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="doocs__source-code-hunter"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/43716716?v=4&s=300" width="300" height="300" alt="doocs avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">source-code-hunter</div>
+      <a class="rp-side-owner" href="https://github.com/doocs">doocs</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/doocs">doocs</a>
+        <span class="rp-sep">/</span><span class="rp-name">source-code-hunter</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">😱 从源码层面，剖析挖掘互联网行业主流技术的底层实现原理，为广大开发者 “提升技术深度” 提供便利。目前开放 Spring 全家桶，Mybatis、Netty、Dubbo 框架，及 Redis、Tomcat 中间件等</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>23,125</b></span><span class="rp-stat" title="forks">⑂ <b>4,207</b></span><span class="rp-stat" title="watchers">👁 <b>435</b></span><span class="rp-stat" title="prs">⑃ <b>154</b></span><span class="rp-stat" title="issues">● <b>35</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/sourcecode-analysis">sourcecode-analysis</a><a class="rp-topic" href="https://github.com/topics/spring">spring</a><a class="rp-topic" href="https://github.com/topics/mybatis">mybatis</a><a class="rp-topic" href="https://github.com/topics/netty">netty</a><a class="rp-topic" href="../tags/redis">redis</a><a class="rp-topic" href="https://github.com/topics/dubbo">dubbo</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Java</span><span class="rp-meta-bit">CC-BY-SA-4.0</span><span class="rp-meta-bit">Created 2019-10-28</span><a class="rp-meta-bit rp-home" href="https://schunter.doocs.org" rel="noopener">schunter.doocs.org</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="doocs__advanced-java"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/43716716?v=4" alt="" loading="lazy">advanced-java</a><a class="rp-same-link" href="doocs__leetcode"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/43716716?v=4" alt="" loading="lazy">leetcode</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/doocs/source-code-hunter">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-4</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-6</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">23,125</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">4,207</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">435</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">154</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">35</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">互联网公司常用框架源码赏析
+
+
+
+
+
+
+
+
+“技术深度” 与 “技术广度”是对开发者来说最为重要的两个维度，本项目致力于从源码层面，剖析和挖掘互联网行业主流技术的底层实现原理，为广大开发者 “提升技术深度” 提供便利。
+
+加入我们，一起通读互联网行业主流框架及中间件源码，成为强大的 “源码猎人”，目前开放的有 Spring 全家桶、Mybatis、Netty、Dubbo 框架，及 Redis、Tomcat 中间件等，让我们一起开拓新的领地，揭开这些源码的神秘面纱。
+
+本项目主要用于记录框架及中间件源码的阅读经验、个人理解及解析，希望能够使阅读源码变成一件简单有趣，且有价值的事情，抽空更新中... (如果本项目对您有帮助，请 watch、star、fork 素质三连一波，鼓励一下作者，谢谢）
+
+ 网站
+
+https://schunter.doocs.org
+
+ Spring 系列
+
+ IoC 容器
+
+- BeanDefinition 的资源定位过程
+- 将 bean 解析封装成 BeanDefinition
+- 将 BeanDefinition 注册进 IoC 容器
+- 依赖注入(DI).md)
+- BeanFactoryPostProcessor
+- BeanPostProcessor
+- Spring BeanFactory 源码解析
+- 循环依赖
+
+ AOP
+
+- AOP 源码实现及分析
+- JDK 动态代理的实现原理解析
+- Spring AOP 如何生效(Spring AOP 标签解析)
+
+ SpringMVC
+
+- IoC 容器 在 Web 环境 中的启动
+- SpringMVC 的设计与实现
+- SpringMVC 跨域解析
+- Spring-MVC-HandlerMapping
+- Spring-mvc-MappingRegistry
+
+ SpringJDBC
+
+- 努力编写中...
+
+ Spring 事务
+
+- Spring 与事务处理
+- Spring 声明式事务处理
+- Spring 事务处理的设计与实现
+- Spring 事务管理器的设计与实现
+- Spring 事务解析
+
+ Spring 源码故事（瞎编版）
+
+- 面筋哥 IoC 容器的一天(上).md)
+
+ Spring 整体脉络
+
+- 16 张图解锁 Spring 的整体脉络
+
+ Spring 类解析
+
+- Spring 自定义标签解析
+- Spring Scan 包扫描
+- Spring 注解工具类
+- Spring 别名注册
+- Spring 标签解析类
+- Spring ApplicationListener
+- Spring messageSource
+- Spring 自定义属性解析器
+- Spring 排序工具
+
+- Spring-import 注解
+- Spring-定时任务
+- Spring StopWatch
+- Spring 元数据
+- Spring 条件接口
+
+- Spring MultiValueMap
+- Spring MethodOverride
+- Spring BeanDefinitionReaderUtils
+- Spring PropertyPlaceholderHelper
+
+- Spring PropertySource
+- Spring PlaceholderResolver
+
+- Spring-AnnotationFormatterFactory
+- Spring-Formatter
+- Spring-Parser
+- Spring-Printer
+
+ Spring5 新特性
+
+- Spring5-spring.components 解析
+
+ Spring RMI
+
+- Spring RMI
+
+ Spring Message
+
+- Spring EnableJMS
+- Spring JmsTemplate
+- Spring MessageConverter
+
+ SpringBoot
+
+- SpringBoot run 方法解析
+- SpringBoot 配置加载解析
+- SpringBoot 自动装配
+- SpringBoot ConfigurationProperties
+- SpringBoot 日志系统
+- SpringBoot ConditionalOnBean
+
+ Spring Cloud
+
+- Spring Cloud Commons 源码
+- Spring Cloud OpenFeign 源码
+- Spring Cloud Gateway 源码
+
+ SpringSecurity
+
+- SpringSecurity 请求全过程解析
+- SpringSecurity 自定义用户认证
+- SpringSecurity 流程补充
+
+ MyBatis
+
+ 基础支持层
+
+- 反射工具箱和 TypeHandler 系列
+- DataSource 及 Transaction 模块
+- binding 模块
+- 缓存模块
+
+ 核心处理层
+
+- MyBatis 初始化
+- SqlNode 和 SqlSource
+- ResultSetHandler
+- StatementHandler
+- Executor 组件
+- SqlSession 组件
+
+ 类解析
+
+- Mybatis-Cache
+- Mybatis-log
+- Mybatis-Reflector
+- Mybatis-Alias
+- Mybatis-Cursor
+- Mybatis-DataSource
+- Mybatis-DynamicSqlSource
+- Mybatis-MapperMethod
+- Mybatis-MetaObject
+- Mybatis-MethodSignature
+- Mybatis-ObjectWrapper
+- Mybatis-ParamNameResolver
+- Mybatis-SqlCommand
+- Mybatis-GenericTokenParser
+
+ Netty
+
+ 网络 IO 技术基础
+
+- 把被说烂的 BIO、NIO、AIO 再从头到尾扯一遍
+- IO 模型
+- 四种 IO 编程及对比
+
+ JDK1.8 NIO 包 核心组件源码剖析
+
+- Selector、SelectionKey 及 Channel 组件
+
+ Netty 粘拆包及解决方案
+
+- TCP 粘拆包问题及 Netty 中的解决方案
+
+ Netty 多协议开发
+
+- 基于 HTTP 协议的 Netty 开发
+- 基于 WebSocket 协议的 Netty 开发
+- 基于自定义协议的 Netty 开发
+
+ 基于 Netty 开发服务端及客户端
+
+- 基于 Netty 的服务端开发
+- 基于 Netty 的客户端开发
+
+ Netty 主要组件的源码分析
+
+- ByteBuf 组件
+- Channel 组件 和 Unsafe 组件
+- EventLoop 组件
+- ChannelPipeline 和 ChannelHandler 组件
+- Future 和 Promise 组件
+
+ Netty 高级特性
+
+</pre><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/doocs/source-code-hunter/discussions/193"><span class="rp-item-num">#193</span><span class="rp-item-title">LearningExperience/PersonalExperience/%E5%88%9D%E7%BA%A7%E5%BC%80%E5%8F%91%E8%80%85%E5%BA%94%E8%AF%A5%E4%BB%8Espring%E6%BA%90%E7%A0%81%E4%B8%AD%E5%AD%A6%E4%BB%80%E4%B9%88</span><span class="rp-item-extra">1 comments · 2026-09-18</span></a><a class="rp-item" href="https://github.com/doocs/source-code-hunter/discussions/183"><span class="rp-item-num">#183</span><span class="rp-item-title">Spring/SpringMVC/IoC%E5%AE%B9%E5%99%A8%E5%9C%A8Web%E7%8E%AF%E5%A2%83%E4%B8%AD%E7%9A%84%E5%90%AF%E5%8A%A8</span><span class="rp-item-extra">3 comments · 2026-03-05</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/doocs__source-code-hunter.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

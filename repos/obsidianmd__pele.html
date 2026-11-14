@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>obsidianmd/pele · GitHub Trending Rank Radar</title>
+<meta name="description" content="Renders Mermaid diagrams faster than you&#x27;d run from a volcano! 🌋 ">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="pele, obsidianmd, obsidianmd/pele, github stars, github trending, star growth, star history, 开源项目, 星标增长, charts, mermaid, mermaid-diagrams, mermaidjs, diagramming, diagrams">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/obsidianmd__pele">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="obsidianmd/pele · GitHub Trending Rank Radar">
+<meta property="og:description" content="Renders Mermaid diagrams faster than you&#x27;d run from a volcano! 🌋 ">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/obsidianmd__pele">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "obsidianmd/pele", "codeRepository": "https://github.com/obsidianmd/pele", "url": "https://zhuikan.com/repos/obsidianmd__pele", "description": "Renders Mermaid diagrams faster than you'd run from a volcano! 🌋 ", "author": {"@type": "Organization", "name": "obsidianmd", "url": "https://github.com/obsidianmd"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "TypeScript", "dateCreated": "2026-10-05", "keywords": "charts,mermaid,mermaid-diagrams,mermaidjs,diagramming,diagrams"}</script>
+</head>
+<body data-repo="obsidianmd/pele" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">obsidianmd/pele</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="obsidianmd__pele"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/65011256?v=4&s=300" width="300" height="300" alt="obsidianmd avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">pele</div>
+      <a class="rp-side-owner" href="https://github.com/obsidianmd">obsidianmd</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/obsidianmd">obsidianmd</a>
+        <span class="rp-sep">/</span><span class="rp-name">pele</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=new">new <b>#151</b></a></div>
+    </div>
+    <p class="rp-desc">Renders Mermaid diagrams faster than you&#x27;d run from a volcano! 🌋 </p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>4,524</b></span><span class="rp-stat" title="forks">⑂ <b>139</b></span><span class="rp-stat" title="watchers">👁 <b>7</b></span><span class="rp-stat" title="prs">⑃ <b>68</b></span><span class="rp-stat" title="issues">● <b>76</b></span><span class="rp-stat" title="releases">▤ <b>22</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/charts">charts</a><a class="rp-topic" href="https://github.com/topics/mermaid">mermaid</a><a class="rp-topic" href="https://github.com/topics/mermaid-diagrams">mermaid-diagrams</a><a class="rp-topic" href="https://github.com/topics/mermaidjs">mermaidjs</a><a class="rp-topic" href="https://github.com/topics/diagramming">diagramming</a><a class="rp-topic" href="https://github.com/topics/diagrams">diagrams</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2026-10-05</span><a class="rp-meta-bit rp-home" href="https://pele.run" rel="noopener">pele.run</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/obsidianmd/pele">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">1.13.0</span><a class="rp-dl-a" href="https://github.com/obsidianmd/pele/releases/tag/1.13.0">1.13.0 ↓</a><span class="rp-dl-ver">1.13.0</span><span class="rp-dl-date">2026-10-31</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+20</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">4,524</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">139</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">7</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">68</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">76</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">22</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Pele
+
+Pele renders Mermaid diagrams to SVG. It is small, synchronous, has no runtime dependencies, and uses CSS variables for colors and fonts.
+
+Pele supports every diagram type built into Mermaid 12.1.0.
+
+Documentation, examples, and a playground are at pele.run.
+
+ Install
+
+sh
+npm install pele
+
+
+Or load it from a CDN:
+
+html
+
+
+  for (const el of document.querySelectorAll(&#x27;pre.mermaid&#x27;)) pele.mount(el, el.textContent);
+
+
+
+ Use
+
+ts
+import { render } from &#x27;pele&#x27;;
+
+const { svg } = render(flowchart LR
+  A[Mermaid text] -- B[SVG]);
+
+document.querySelector(&#x27;diagram&#x27;).innerHTML = svg;
+
+
+In a browser, mount() renders into an element, reads fonts from CSS, and adapts the layout to the container width:
+
+ts
+import { mount } from &#x27;pele&#x27;;
+
+mount(document.querySelector(&#x27;diagram&#x27;), text);
+
+
+See the API for options and error handling.
+
+The main entry point includes every diagram type. Reduce the initial bundle size by registering individual types or loading them on demand:
+
+ts
+import { register, render } from &#x27;pele/core&#x27;;
+import flowchart from &#x27;pele/diagrams/flowchart&#x27;;
+
+register(flowchart);
+
+
+ts
+import { renderAsync } from &#x27;pele/lazy&#x27;;
+
+const { svg } = await renderAsync(text);
+
+
+ Theme
+
+Set CSS variables on the diagram or a parent element to customize colors and fonts:
+
+css
+.pele {
+  --pele-bg: fffcf0;
+  --pele-fg: 100f0f;
+  --pele-muted: 6f6e69;
+  --pele-line: 100f0f;
+  --pele-surface: f2f0e5;
+  --pele-surface-alt: e6e4d9;
+  --pele-border: cecdc3;
+  --pele-accent: 205ea6;
+  --pele-font: sans-serif;
+  --pele-radius: 4px;
+}
+
+
+Charts use --pele-series-1 through --pele-series-8. Colors adapt to theme changes without being re-rendered. See Theming for all variables, fonts, and class names.
+
+ Security
+
+Pele escapes diagram text, filters links and styles, and limits source and output size. See Security for handling untrusted diagrams, displaying errors, and supplying icons.
+
+ Compatibility
+
+Pele targets Mermaid 12.1.0 syntax, with its own layout and visual style. Its parsers are tested against Mermaid&#x27;s parser specs and with differential fuzzing.
+
+ Develop
+
+sh
+npm install
+npm test
+npm run build
+npm run bench
+
+
+npm run bench:mermaid times Pele and Mermaid.js in headless Chrome on the same diagrams and compares bundle sizes. It needs Node 22 or later. It fetches Mermaid 12.1.0 from unpkg; pass -- --mermaid  for another release, and set CHROME if Chrome is not in /Applications.
+
+The documentation site and playground are in website/ and use Node 24 and pnpm 12. With nvm:
+
+sh
+cd website
+nvm use
+pnpm install
+pnpm dev
+
+
+After installing the website dependencies, run npm run test:website from the repository root to check the playground.
+
+See Contributing for parser testing.
+
+ License
+
+MIT. The specs under tests/compat and the grammar files beside them come from Mermaid, which is also MIT licensed.</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/obsidianmd/pele/issues/132"><span class="rp-item-num">#132</span><span class="rp-item-title">Zoom: on touch, a zoomed drawing stops the page from scrolling</span><span class="rp-item-extra">2 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/obsidianmd/pele/issues/121"><span class="rp-item-num">#121</span><span class="rp-item-title">Pele regression: Gantt charts no longer use full note width</span><span class="rp-item-extra">1 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/obsidianmd/pele/issues/114"><span class="rp-item-num">#114</span><span class="rp-item-title">Background color used for text</span><span class="rp-item-extra">1 comments · 2026-10-31</span></a><a class="rp-item" href="https://github.com/obsidianmd/pele/issues/142"><span class="rp-item-num">#142</span><span class="rp-item-title">maxWidth leaves a flowchart&#x27;s label wrapping at 120px and its subgraph titles unwrapped</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/obsidianmd/pele/issues/141"><span class="rp-item-num">#141</span><span class="rp-item-title">Internal links no longer redirect when clicked in stateDiagram-v2 Mermaid diagrams</span><span class="rp-item-extra">0 comments · 2026-11-10</span></a><a class="rp-item" href="https://github.com/obsidianmd/pele/issues/138"><span class="rp-item-num">#138</span><span class="rp-item-title">Architecture: edge passes through an unconnected service</span><span class="rp-item-extra">0 comments · 2026-11-08</span></a><a class="rp-item" href="https://github.com/obsidianmd/pele/issues/131"><span class="rp-item-num">#131</span><span class="rp-item-title">Zoom: keyboard focus is lost when Reset or Zoom out ends its own job</span><span class="rp-item-extra">0 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/obsidianmd/pele/issues/130"><span class="rp-item-num">#130</span><span class="rp-item-title">Zoom: links in a zoomed drawing do not open</span><span class="rp-item-extra">0 comments · 2026-11-06</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/obsidianmd/pele/releases"><b>1.13.0</b> <span class="rp-rel-tag">1.13.0</span> <span class="rp-item-extra">2026-10-31</span></a><pre class="rp-pre">- Series colors follow Mermaid&#x27;s palette theme variables: pie1–pie8 in pie charts, git0–git7 in git graphs, cScale0–cScale7 in timelines, radar charts and treemaps, cScale1–cScale8 in mindmaps, venn1–venn8 in Venn diagrams, and the first eight colors of xyChart.plotColorPalette in XY charts. Shorter Venn and XY palettes repeat. Values that aren&#x27;t colors keep the theme&#x27;s color. 55 98
+- Labels on palette colors in pie charts, git graphs, timelines and treemaps use whichever of --pele-fg-on-light and --pele-fg-on-dark contrasts more.
+- Edges that cross a subgraph&#x27;s border bend less near the nod</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="en"><h3 class="rp-ph">News &amp; coverage (3)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=40846242" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: Edna, note taking app for developers</span><span class="rp-item-extra">▲ 331 · 91 comments · 2024-07-01</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiW0FVX3lxTE1hSFJvVXBwLVRKb2k4ajBxQ2ttczNzSjJuMXR4YkFDa3hiTGQ1R1Izc2xVTHE5cUpNMFduT2NuUmtWUGZrWXkyaGFDWFV3MDlNWlBoblNFRjloZGM?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">GIGAZINE</span><span class="rp-item-title">Obsidian creator kepano has released &#x27;Pele,&#x27; a lightweight open-source library that uses CSS for theme settings and renders Mermaid diagrams as SVGs.</span><span class="rp-item-extra">2026-10-20</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMi4gFBVV95cUxOREg5c3BTUnpsc1R0SlFqU1YxTU1VVFAycnVBT1ZwTlVoaWhJZUpabUFNWUpQRjlmRjNTWnVnOFRlUld6bUd4RzRMUVpQQWtRZ20xM1JXWGRfRDRQOWprZm5ETEVHYktyZ2ZxRWFIUGVMTGVVdVdRXzZ4TUc1SHg2d3ROUFc0MlU3N0tJOEJGbnNWaDNlVkVSdV82MWh0akpKOUZRdzRzc0x6Tm45Um9YZGx6WVAxREdkYTFTVmxDc0czcFJUQWZWUE5rT1IzUVMwUm1yTm81NXQ1bmo0dDNaVG1B0gHnAUFVX3lxTE5VZFhWdkZsRkc1MlhJNW5XTDVCZE11RW9FRXV0ZENyNUtYNFBVc0FiWVRBaFFjelNZSVp1Z3I0dzhHa2V0Q1hFRnFxLWI2TWZxNWlVeHRRSGNrQmJqR25tbnJEM0VvaFBwZmJGX0JvTlE2OUNQa0FucThfVlJxVllTc3VvTTR1MHI0V3VhekNuT3VHWUI3UXJ5UldOYnVlbHhhWmpGZ0tKaGNicFhTYU1VcWt5OE1KUUs2MzhSbkFLc0xFajQ2TFRKU19JUG9OZWhVSFhPRW5JbGpyNV9MQWFiSzlRa2VnVQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">7NEWS</span><span class="rp-item-title">Roy Keane roasted for denouncing Brazil’s ‘disrespectful’ celebration against Korea at FIFA World Cup 2022</span><span class="rp-item-extra">2022-12-05</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/obsidianmd__pele.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

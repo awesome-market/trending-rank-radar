@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>whyour/qinglong · GitHub Trending Rank Radar</title>
+<meta name="description" content="支持 Python3、JavaScript、Shell、Typescript 的定时任务管理平台（Timed task management platform supporting Python3, JavaScript, Shell, Typescript）">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="qinglong, whyour, whyour/qinglong, github stars, github trending, star growth, star history, 开源项目, 星标增长, crontab, python, javascript, task-manager, typescript, shell">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/whyour__qinglong">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="whyour/qinglong · GitHub Trending Rank Radar">
+<meta property="og:description" content="支持 Python3、JavaScript、Shell、Typescript 的定时任务管理平台（Timed task management platform supporting Python3, JavaScript, Shell, Typescript）">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/whyour__qinglong">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "whyour/qinglong", "codeRepository": "https://github.com/whyour/qinglong", "url": "https://zhuikan.com/repos/whyour__qinglong", "description": "支持 Python3、JavaScript、Shell、Typescript 的定时任务管理平台（Timed task management platform supporting Python3, JavaScript, Shell, Typescript）", "author": {"@type": "Organization", "name": "whyour", "url": "https://github.com/whyour"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "JavaScript", "dateCreated": "2021-03-13", "keywords": "crontab,python,javascript,task-manager,typescript,shell,docker"}</script>
+</head>
+<body data-repo="whyour/qinglong" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">whyour/qinglong</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="whyour__qinglong"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/22700758?u=26d911ccb8345dac955238c2ed6c572892ef924a&amp;v=4&s=300" width="300" height="300" alt="whyour avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">qinglong</div>
+      <a class="rp-side-owner" href="https://github.com/whyour">whyour</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/whyour">whyour</a>
+        <span class="rp-sep">/</span><span class="rp-name">qinglong</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">支持 Python3、JavaScript、Shell、Typescript 的定时任务管理平台（Timed task management platform supporting Python3, JavaScript, Shell, Typescript）</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>20,099</b></span><span class="rp-stat" title="forks">⑂ <b>3,230</b></span><span class="rp-stat" title="watchers">👁 <b>133</b></span><span class="rp-stat" title="prs">⑃ <b>299</b></span><span class="rp-stat" title="issues">● <b>2,524</b></span><span class="rp-stat" title="releases">▤ <b>4</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/crontab">crontab</a><a class="rp-topic" href="../tags/python">python</a><a class="rp-topic" href="../tags/javascript">javascript</a><a class="rp-topic" href="https://github.com/topics/task-manager">task-manager</a><a class="rp-topic" href="../tags/typescript">typescript</a><a class="rp-topic" href="../tags/shell">shell</a><a class="rp-topic" href="../tags/docker">docker</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2021-03-13</span><a class="rp-meta-bit rp-home" href="https://qinglong.online" rel="noopener">qinglong.online</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/whyour/qinglong">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">青龙 v2.24.0</span><a class="rp-dl-a" href="https://github.com/whyour/qinglong/releases/tag/v2.24.0">青龙-2.24.0 ↓</a><span class="rp-dl-ver">2.24.0</span><span class="rp-dl-date">2026-10-29</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+3</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+32</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+137</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">20,099</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">3,230</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">133</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">299</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">2,524</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">4</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">青龙
+
+简体中文 | English
+
+支持 Python3、JavaScript、Shell、Typescript 的定时任务管理平台
+
+Timed task management platform supporting Python3, JavaScript, Shell, Typescript
+
+[![npm version][npm-version-image]][npm-version-url] [![docker pulls][docker-pulls-image]][docker-pulls-url] [![docker stars][docker-stars-image]][docker-stars-url] [![docker image size][docker-image-size-image]][docker-image-size-url]
+
+[npm-version-image]: https://img.shields.io/npm/v/@whyour/qinglong?style=flat
+[npm-version-url]: https://www.npmjs.com/package/@whyour/qinglong?activeTab=readme
+[docker-pulls-image]: https://img.shields.io/docker/pulls/whyour/qinglong?style=flat
+[docker-pulls-url]: https://hub.docker.com/r/whyour/qinglong
+[docker-stars-image]: https://img.shields.io/docker/stars/whyour/qinglong?style=flat
+[docker-stars-url]: https://hub.docker.com/r/whyour/qinglong
+[docker-image-size-image]: https://img.shields.io/docker/image-size/whyour/qinglong?style=flat
+[docker-image-size-url]: https://hub.docker.com/r/whyour/qinglong
+
+Demo / Issues / Telegram Channel / Buy Me a Coffee
+
+演示 / 反馈 / Telegram 频道 / 打赏开发者
+
+
+!cover
+
+ 功能
+
+- 支持多种脚本语言（python3、javaScript、shell、typescript）
+- 支持在线管理脚本、环境变量、配置文件
+- 支持在线查看任务日志
+- 支持秒级任务设置
+- 支持系统级通知
+- 支持暗黑模式
+- 支持手机端操作
+- 支持通过 远程 CLI 与 Agent Skill 管理面板
+
+ 版本
+
+ docker
+
+latest 镜像是基于 alpine 构建，debian 镜像是基于 debian-slim 构建。如果需要使用 alpine 不支持的依赖，建议使用 debian 镜像
+
+⚠️ 重要提示: 如果您需要以非 root 用户运行 Docker，请使用 debian 镜像。Alpine 的 crond 需要 root 权限。
+
+bash
+docker pull whyour/qinglong:latest
+docker pull whyour/qinglong:debian
+
+
+使用 debian 镜像以非 root 用户运行时，需指定 --user qinglong：
+
+bash
+docker run -d \
+  -v /path/to/ql/data:/ql/data \
+  -p 5700:5700 \
+  --user qinglong \
+  --name qinglong \
+  whyour/qinglong:debian
+
+
+ npm
+
+npm 版本支持 debian/ubuntu/alpine 系统，需要自行安装 node/npm/python3/pip3/pnpm
+
+bash
+npm i @whyour/qinglong
+
+
+ 部署
+
+查看文档
+
+ 内置 API
+
+查看文档
+
+ 内置命令
+
+查看文档
+
+ 远程 CLI 与 Agent Skill
+
+使用独立 npm 包 @whyour/qinglong-cli，可以从本机终端或自动化流程管理远程青龙面板。支持任务与订阅的创建、修改、运行和日志查看，以及应用、环境变量、脚本、配置、依赖等 OpenAPI 资源；JSON 输出便于脚本和 AI Agent 使用。
+
+需要 Node.js =22.12，推荐 Node.js 24。安装后使用 ql 命令：
+
+bash
+npm install -g @whyour/qinglong-cli
+ql login --url https://ql.example.com
+ql auth status --json
+ql task list --json
+ql subscription list --json
+ql --help
+
+
+在面板「系统设置 → 应用设置」创建应用并授予所需权限，登录时按提示输入 Client ID/Secret；也支持通过 QL_URL 和 QL_ACCESS_TOKEN 使用已有令牌。各命令支持 --help，QL_LANG=en 可切换英文帮助。
+
+npm CLI 用于远程管理。面板内置 ql 同样使用这个命令名，已有面板的机器请使用独立安装目录，避免覆盖内置命令。本机脚本执行和运维见 面板内部工具。
+
+CLI 中文说明 · English guide · 完整命令参考
+
+包内附带 远程管理 Skill，涵盖认证、命令选择和操作结果检查，可供 AI Agent 使用。本机执行与运维另见 内部 Skill。
+
+ 开发
+
+bash
+git clone https://github.com/whyour/qinglong.git
+cd qinglong
+cp .env.example .env
+ 推荐使用 pnpm https://pnpm.io/zh/installation
+npm install -g pnpm@8.3.1
+pnpm install
+pnpm start
+
+
+打开你的浏览器，访问 
+
+ 链接
+
+- nevinee
+- crontab-ui
+- Ant Design
+- Ant Design Pro
+- Umijs
+- darkreader
+- admin-server
+
+ 名称来源
+
+青龙，又名苍龙，在中国传统文化中是四象之一、天之四灵之一，根据五行学说，它是代表东方的灵兽，为青色的龙，五行属木，代表的季节是春季，八卦主震。苍龙与应龙一样，都是身具羽翼。《张果星宗》称“又有辅翼，方为真龙”。
+
+《后汉书·律历志下》记载：日周于天，一寒一暑，四时备成，万物毕改，摄提迁次，青龙移辰，谓之岁。
+
+在中国二十八宿中，青龙是东方七宿（角、亢、氐、房、心、尾</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/whyour/qinglong/issues/2743"><span class="rp-item-num">#2743</span><span class="rp-item-title">V2.19.1版青龙会出现&lt;服务启动超时&gt;</span><span class="rp-item-extra">12 comments · 2025-06-07</span></a><a class="rp-item" href="https://github.com/whyour/qinglong/issues/2404"><span class="rp-item-num">#2404</span><span class="rp-item-title">能不能出个小内存版本？</span><span class="rp-item-extra">9 comments · 2024-06-16</span></a><a class="rp-item" href="https://github.com/whyour/qinglong/issues/2967"><span class="rp-item-num">#2967</span><span class="rp-item-title">v2.20.2版本黑名单问题</span><span class="rp-item-extra">6 comments · 2026-03-11</span></a><a class="rp-item" href="https://github.com/whyour/qinglong/issues/2340"><span class="rp-item-num">#2340</span><span class="rp-item-title">青龙面板能支持IPQ6010吗</span><span class="rp-item-extra">5 comments · 2024-04-17</span></a><a class="rp-item" href="https://github.com/whyour/qinglong/issues/2269"><span class="rp-item-num">#2269</span><span class="rp-item-title">任务执行时间不准确</span><span class="rp-item-extra">5 comments · 2024-02-07</span></a><a class="rp-item" href="https://github.com/whyour/qinglong/issues/795"><span class="rp-item-num">#795</span><span class="rp-item-title">【建议】希望登录时提交的账号密码可以加密</span><span class="rp-item-extra">5 comments · 2021-10-22</span></a><a class="rp-item" href="https://github.com/whyour/qinglong/issues/2863"><span class="rp-item-num">#2863</span><span class="rp-item-title">[BUG] 无法在Linux安装</span><span class="rp-item-extra">4 comments · 2025-12-10</span></a><a class="rp-item" href="https://github.com/whyour/qinglong/issues/2742"><span class="rp-item-num">#2742</span><span class="rp-item-title">经常爆内存，然后面板进不去</span><span class="rp-item-extra">4 comments · 2025-06-04</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/whyour/qinglong/discussions/3124"><span class="rp-item-num">#3124</span><span class="rp-item-title">在线更新关闭通道了吗？</span><span class="rp-item-extra">0 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/whyour/qinglong/discussions/3056"><span class="rp-item-num">#3056</span><span class="rp-item-title">能优化一下内存占用吗</span><span class="rp-item-extra">0 comments · 2026-08-12</span></a><a class="rp-item" href="https://github.com/whyour/qinglong/discussions/3049"><span class="rp-item-num">#3049</span><span class="rp-item-title">紧急求助！我青龙被恶意尝试登录，导致现在我自己也登不上了</span><span class="rp-item-extra">0 comments · 2026-08-01</span></a><a class="rp-item" href="https://github.com/whyour/qinglong/discussions/3045"><span class="rp-item-num">#3045</span><span class="rp-item-title">task_before.sh 脚本中如果包含 export 操作导致nodejs依赖找不到</span><span class="rp-item-extra">0 comments · 2026-07-21</span></a><a class="rp-item" href="https://github.com/whyour/qinglong/discussions/3012"><span class="rp-item-num">#3012</span><span class="rp-item-title">拉库提示下面错误怎么操作</span><span class="rp-item-extra">0 comments · 2026-06-14</span></a><a class="rp-item" href="https://github.com/whyour/qinglong/discussions/3007"><span class="rp-item-num">#3007</span><span class="rp-item-title">无法清除重置登录错误次数</span><span class="rp-item-extra">0 comments · 2026-06-07</span></a><a class="rp-item" href="https://github.com/whyour/qinglong/discussions/3006"><span class="rp-item-num">#3006</span><span class="rp-item-title">漏洞处置问题</span><span class="rp-item-extra">0 comments · 2026-06-04</span></a><a class="rp-item" href="https://github.com/whyour/qinglong/discussions/3004"><span class="rp-item-num">#3004</span><span class="rp-item-title">青龙面板安卓APP前端</span><span class="rp-item-extra">0 comments · 2026-06-03</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/whyour/qinglong/releases"><b>青龙 v2.24.0</b> <span class="rp-rel-tag">v2.24.0</span> <span class="rp-item-extra">2026-10-29</span></a><pre class="rp-pre">青龙 2.24.0
+
+ 新增功能
+
+- Node.js 原生部署支持 Python venv 隔离环境。Python 依赖可使用包名、Git URL，以及位于脚本或订阅仓库中的 requirements 文件和 pyproject.toml；拉取订阅不会自动安装仓库声明的依赖。
+- 新增通知审计日志，便于查看通知发送结果和失败原因。
+- 提供经过平台校验的升级包，支持在线暂存、离线安装及失败回退。升级过程保留账号、配置、环境变量、任务和脚本等数据。
+
+ 修复与优化
+
+- 默认 Alpine 与 Debian 镜像统一使用 Node.js 24；SQLite 依赖升级至 1.1.4。ARM64 升级包使用原生构建环境。
+- 修复额外调度规则校验、单实例任务运行期间的新触发排队、订阅同步、Python 依赖安装与脚本发现等问题。
+- 修复系统日志清理时活跃日志文件被移除、页面加载时序和升级流程中的异常情况，并补齐相关中英文提示。
+- 独立远程 CLI 更新至 0.1.3，最低 Node.js 版本为 22.12.0。
+
+ 镜像与升级提醒
+
+- 2.24.0 的 Alpine 镜像支持 amd64、arm/v6、arm/v7、arm64、ppc64le、s390x 和 386；2.24.0-debian 支持 amd64、arm64、ppc64le 和 s390x。Debian 暂不提供</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/whyour__qinglong.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

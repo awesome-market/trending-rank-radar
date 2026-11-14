@@ -1,0 +1,1082 @@
+<p>
+<sub><strong>Experimental Project.</strong> AIVPN is an engineering research project exploring network protocols and methods of protecting data in transit. It does not guarantee the ability to bypass network restrictions, anonymity, or protection against detection and blocking. The project has no political objectives.</sub><br>
+<sub>The project is not intended for unlawful use. Users must comply with the laws applicable where they are located and use the software at their own risk. The author does not endorse unlawful use of the project.</sub><br>
+<sub>Third-party claims about the project's guaranteed effectiveness or political purpose do not represent the author's position.</sub>
+</p>
+
+🌐 [Русский](README_RU.md) | [中文](README_CN.md) | [日本語](README_JA.md)
+
+# AIVPN
+
+[![CI](https://github.com/infosave2007/aivpn/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/infosave2007/aivpn/actions/workflows/ci.yml)
+[![Crates.io Server](https://img.shields.io/crates/v/aivpn-server.svg?label=aivpn-server)](https://crates.io/crates/aivpn-server)
+[![Crates.io Client](https://img.shields.io/crates/v/aivpn-client.svg?label=aivpn-client)](https://crates.io/crates/aivpn-client)
+![Rust](https://img.shields.io/badge/rust-1.97%2B-blue.svg)
+![Platforms](https://img.shields.io/badge/platforms-Linux%20%7C%20macOS%20%7C%20Windows%20%7C%20Android%20%7C%20iOS%20%7C%20MikroTik-informational)
+
+---
+
+## Overview
+
+AIVPN combines UDP tunnel encryption with traffic masking. Masks define the outer protocol, packet sizes and send intervals. Being recognized as STUN or QUIC does not by itself prove statistical indistinguishability from a specific application.
+
+Key technical properties:
+
+- **InitialV2 and PFS** - the initial exchange confirms a fresh server key; data and management commands travel only after PFS. Bound and privileged devices must also prove their persistent key and, when mTLS is required, present a valid certificate.
+- **O(1) session lookup** — no session ID is transmitted in the clear. Every packet carries an 8-byte *resonance tag* derived from a timestamp and a per-session secret. The server resolves the session in constant time via a `DashMap`.
+- **Perfect Forward Secrecy** — in-flight session key rotation via X25519 ratchet. Compromising the server key does not expose past traffic.
+- **Neural Resonance module** — per-mask micro-MLP (~66 KB) monitors live traffic statistics; high reconstruction error triggers automatic mask rotation without disconnecting clients.
+- **Generative mask distributions** - profiles support multimodal packet-size and inter-arrival models fitted from captured traffic with a BIC-selected Gaussian mixture. Clients sample the stored model; its presence does not establish similarity to a named application.
+- **Written in Rust** — memory-safe, no GC pauses. Client binary ≈ 2.5 MB. Runs on a $5 VPS.
+
+---
+
+## Architecture
+
+### Workspace layout
+
+```
+crates/aivpn-common/     — shared crypto, protocol, mask profiles (no I/O)
+crates/aivpn-server/     — Linux-only VPN gateway and management CLI
+crates/aivpn-client/     — cross-platform VPN client (Linux / macOS / Windows)
+crates/aivpn-android-core/ — JNI bridge for Android (Rust → Kotlin via C FFI)
+crates/aivpn-ios-core/   — iOS Rust staticlib (C FFI), linked by PacketTunnelProvider
+crates/aivpn-windows/    — Windows GUI (egui/eframe 0.31, manages aivpn-client.exe subprocess)
+crates/aivpn-linux/      - Linux GUI (Iced 0.14, wraps aivpn-client subprocess)
+platforms/android/       — Android Kotlin app (MVVM: MainViewModel + RecyclerView)
+platforms/ios/           — iOS SwiftUI app + NetworkExtension PacketTunnelProvider
+platforms/macos/         — macOS SwiftUI menu bar app + privileged helper daemon
+platforms/aivpn-web/     — Web management panel (Hono 4 + SvelteKit 2, SQLite/PostgreSQL)
+platforms/linux/         — Linux desktop packaging (AppImage, .desktop)
+platforms/linux-kernel/  — optional in-kernel data-path module (out-of-tree)
+platforms/openwrt/       — OpenWrt package
+platforms/mikrotik/      — MikroTik RouterOS container
+assets/masks/            — bundled traffic mimicry JSON profiles
+assets/brand/            — icons and brand material
+deploy/                  — server installer, systemd unit, Dockerfiles
+deploy/ci/               — CI gates run by the Makefile (see `make help`)
+```
+
+### Key modules
+
+| Module | Location | Purpose |
+|--------|----------|---------|
+| `crypto.rs` | `aivpn-common` | X25519 key exchange, ChaCha20-Poly1305 AEAD, BLAKE3/HMAC, resonance tag generation |
+| `protocol.rs` | `aivpn-common` | Wire format: `[8-byte tag][pad_len][inner_header][encrypted payload][poly1305 tag]` |
+| `mask.rs` | `aivpn-common` | `MaskProfile` — traffic shaping: header templates, FSM states, IAT distributions |
+| `gateway.rs` | `aivpn-server` | Central event loop: UDP receive, session dispatch, NAT forwarding, neural checks |
+| `session.rs` | `aivpn-server` | `SessionManager` — `DashMap`-based O(1) tag lookup, 256-entry replay window, 500-session cap |
+| `neural.rs` | `aivpn-server` | Neural Resonance: per-mask MLP 64→16→64 / fallback 64→128→64, MSE threshold 0.35, auto mask rotation |
+| `client.rs` | `aivpn-client` | State machine: Unprovisioned → Connecting → Connected, key exchange, reconnection |
+| `tunnel.rs` | `aivpn-client` | Cross-platform TUN: `/dev/net/tun` (Linux), `utun` (macOS), Wintun (Windows) |
+| `mimicry.rs` | `aivpn-client` | `MimicryEngine` — applies `MaskProfile` to outbound packets |
+
+### Initial exchange and accelerator compatibility
+
+Starting with 1.2.0, the initial exchange uses InitialV2. It is incompatible with 1.1.0 and earlier 1.2.0 development builds. Update servers, pool/site/chain nodes and all clients together, including embedded mobile cores. The connection key format and the inter-server management protocol are unchanged. The initial AEAD uses XChaCha20-Poly1305 with a random 24-byte nonce and the connection context in the AAD; the established channel keeps the existing ChaCha20-Poly1305 format and kernel ABI 7.
+
+The Linux module requires compatible Rust-for-Linux APIs, kernel headers built with `CONFIG_RUST=y` and the matching Rust toolchain. A kernel version number alone does not guarantee support. Before registering `/dev/aivpn`, the module checks `file_operations.owner` in the real miscdevice vtable and fails with `ENODEV` if the API does not pin the module code to the open descriptor. This check cannot be bypassed; without the accelerator, userspace TUN is used.
+
+### Mask state and outer traffic validation
+
+The QUIC mask runs bidirectional QUIC v1/TLS 1.3: it keeps CIDs and packet numbers and handles ACKs, loss, timers and connection close. The engine runs inside the shared mask layer on top of the existing UDP/DatagramTransport. A cold Initial carries an empty Token. The initial AIVPN packet travels inside an encrypted HTTP DATAGRAM after TLS, HTTP/3 SETTINGS and CONNECT-UDP; until then payload data waits in a bounded queue. When the local buffer is full, the client waits for free space while it keeps processing ACKs and control messages. The logical UDP peer terminates inside the mask; no proxy sockets are opened. A plain GET and an unrelated CONNECT-UDP receive HTTP 403. CONNECT-UDP is not equivalent to ordinary HTTP/3 requests to Avito or VK Video and does not by itself prove similarity to them. Before inner authentication the server keeps a separate bounded TLS state that grants no VPN access and cannot replace an active session. Up to 128 such states are allowed globally, at most two per UDP peer, with at most ten seconds to complete setup; processing is charged to a shared CPU budget. Until the address is validated, responses are limited to three times the received traffic. TLS verifies the handshake signature and possession of the certificate key, but not the public PKI: trust in the server comes from the inner signed AIVPN exchange. 0-RTT and connection migration are disabled.
+
+The pre-authentication inbound packet limit is set by the server's `--per-ip-pps-limit` / `AIVPN_PER_IP_PPS_LIMIT`, 5000 packets per second per IP by default. The current QUIC generation with an admitted PFS session has a separate finite limit, `--per-ip-authenticated-pps-limit` / `AIVPN_PER_IP_AUTHENTICATED_PPS_LIMIT`, 100000 by default. Queues and counters for the two classes are bounded independently; pending TLS, plain and RTC traffic keep the first limit. The CID selects the route and quota but does not authenticate the packet: Quinn AEAD and the inner AIVPN checks remain mandatory, including for a known CID.
+
+Seven profiles open the exchange with an aligned optional STUN Binding Indication attribute. After PFS, the protected `MaskState` message binds the outer protocol parameters to the profile and connection generation. Zoom and `webrtc_yandex_telemost_v1` use ICE/DTLS/SRTP; SberJazz and Telegram calls add TURN Allocate, Permission, ChannelBind and ChannelData. WhatsApp uses ICE/SRTP without DTLS, with separate per-direction keys from the protected exchange. Keys, ICE credentials and certificates are created anew for each generation. All states run in the shared mask layer on top of the existing UDP socket; queues and setup time are bounded. VK Teams and Salute still use a limited STUN carrier. Mask names and a correct outer protocol do not guarantee indistinguishability from a specific application. Older external signed profiles with a 20-byte header must be reissued; the client does not modify signed data automatically.
+
+The `telegram_calls_v1` profile targets Telegram UDP calls, not MTProto. The former `telegram_mtproto_v1`, which wrongly used QUIC, is removed from the catalog. Explicit mask selections must replace its ID; the old ID is not an alias of the new one. TURN/ICE/DTLS/SRTP reproduce the observed media-channel stages, but not Telegram's signaling protocol.
+
+The `yandex_alice_v1` profile is temporarily excluded from the bundled catalog and installation bundle. The voice RPC of the verified Alice mobile app uses TLS/TCP rather than the current STUN/UDP carrier. The smart speaker protocol has not been verified separately.
+
+The client picks size and IAT as one pair and schedules data without blocking control messages. The server uses a separate bounded queue per session and the reverse profile parameters when one is defined. In both directions IP flows are interleaved while each flow keeps its packet order: a large background transfer does not fill the whole queue ahead of DNS and new connections.
+
+`adaptive` is the default. For QUIC, the protocol's own congestion control and pacer set the rate; no second per-IP-packet IAT timer is added. For other masks, light load keeps the profile intervals; persistent queueing delay gradually raises the rate, which returns to the original once the backlog clears. The controller tracks the age of the oldest packet and the minimum of that age over a 100 ms window. A delay above 5 ms raises the rate 1.5x per window; below 1 ms the rate returns toward the original with a factor of 0.8. Acceleration is capped at 4096x. Short accelerated intervals are merged into a 1 ms quantum limited to 64 original IP packets; after a delay, old quanta give no credit. Fragmentation may produce more outer frames. An expired deadline is processed immediately; a future one keeps waiting. A profile change resets the controller. This is local queue regulation, not a measurement of physical link capacity.
+
+`full` mode keeps the original intervals under any load. Client `off` disables pauses while keeping padding and the mask format. Server `off` also disables padding, as before; server `light` caps the delay at two milliseconds and keeps a small padding budget. In `adaptive`, padding is unchanged, but intervals under load differ from the original profile. Preserving the format and encryption does not by itself prove resistance to DPI. Padding enlarges short packets but does not shrink long ones: the sizes and rate of the real workload limit how closely the profile can be matched.
+
+The policy is set locally and is not imported from the connection key:
+
+- Client: `"upload_shaping": "adaptive"`, `"full"` or `"off"` in the shared `config.json`; the CLI also reads this field from an explicitly selected `--config`. With an explicit `--config`, the default file is not merged with it. On Linux the default path is `$XDG_CONFIG_HOME/aivpn/config.json` or `$HOME/.config/aivpn/config.json`, falling back to `/etc/aivpn/config.json` when neither directory exists. A client started through sudo or a service uses that process's environment. Windows uses `%APPDATA%/aivpn/config.json` with the `C:\ProgramData\aivpn\config.json` fallback; macOS and iOS use `$HOME/Library/Application Support/aivpn/config.json`. Android uses the app's `filesDir/config.json`, including for direct UDP.
+- Server: `"downlink_shaping": "adaptive"` in `server.json` or `--shaping-level adaptive`. `full`, `light`, `off` and legacy booleans remain supported: `true` means `full`, `false` means `off`. Explicit settings are not changed by an upgrade.
+
+Restart the client process or the server service to apply a new setting. An invalid value is a configuration error, not a silent fallback to the default mode.
+
+On Linux, a full tunnel without an assigned IPv6 address blocks IPv6 with two owned blackhole routes, including when the IPv4 MTU is below 1280. With an assigned IPv6 address, the interface MTU is never below 1280. An explicit disconnect removes the owned routes; after a crash, `aivpn-client kill-switch clear` removes the firewall rules and any remaining owned IPv6 guards. Leftover IPv6 routes are not cleaned up automatically on a normal start: only an explicit operator command removes them. Update the CLI and `aivpn-ip-helper` from the same build.
+
+All 10 bundled profiles are available through `--preferred-mask` and `--polymorphic-base`; an unknown ID is rejected. The preference selects an initial candidate of the requested base from the verified bootstrap. If there is no such candidate, the client keeps the trusted opening and requests the base after PFS. `--polymorphic-base` takes precedence; later automatic server rotations still apply. Retries of the initial exchange keep the ephemeral key of a single attempt but use a fresh nonce. The whole attempt is limited to 10 seconds. Switching between the STUN and QUIC mask families does not require a new session. Outer QUIC and SRTP packets are limited to 1380 bytes; QUIC starts at 1200 UDP bytes and probes the path MTU up to 1380. The inner packet is limited to 1140 bytes for QUIC, 1324 for ICE/DTLS/SRTP and 1358 for ICE/SRTP. Padding accounts for the headers, AEAD and alignment of the selected carrier. Control messages are fragmented before encryption. QUIC and RTC run in userspace in both directions, and plain STUN TX also stays in userspace; ABI 7 is unchanged. Native installation and systemd stay the same.
+
+The default TUN MTU is 1280 bytes; an explicit TUN MTU up to 1500 is preserved. Inner DATA and FEC repairs that exceed the carrier budget are authenticated and fragmented separately, then reassembled at the receiver. FEC counts each original IP packet once. A peer must support the 1.2.0 fragment format. Every FEC member carries an authenticated group number and position, including small packets. Groups remain separate across reordering and an FEC pause; completed groups reject late originals before fragment allocation. FEC frames use the userspace receive path even when FEC was enabled after a kernel session was installed.
+
+The new QUIC mask format and bundled STUN profile versions require clients and servers to be updated together, including pool/site/chain nodes and mobile cores. The connection key format, PSK and inter-server management messages are unchanged. `make mask-gate` runs the real client and gateway over UDP with loss, delay and duplicates, verifies PFS and the reverse exchange, then parses bidirectional PCAPs with TShark and nDPI, checking the first packets separately. This validates structure and classification; it does not prove resistance to arbitrary DPI or active probing.
+
+### Pool sync
+
+Server-to-server client database synchronization uses `ControlPayload::PoolSync` carried inside ordinary VPN UDP packets — indistinguishable from client traffic. No separate TCP port or firewall rule required.
+
+---
+
+## Platform Support
+
+| Platform | Server | Client | GUI | TUN driver |
+|----------|:------:|:------:|:---:|------------|
+| Linux CLI | ✅ | ✅ | — | `/dev/net/tun` |
+| Linux GUI | — | ✅ | ✅ iced AppImage + tray | `/dev/net/tun` |
+| macOS | — | ✅ | ✅ menu bar | `utun` |
+| Windows | — | ✅ | ✅ egui GUI | [Wintun](https://www.wintun.net/) |
+| Android | — | ✅ | ✅ native Kotlin | `VpnService` API |
+| iOS | — | ✅ | ✅ SwiftUI | `NetworkExtension` |
+| MikroTik RouterOS 7.6+ | — | ✅ | — | container veth + TUN |
+| Entware routers (ARMv7 / MIPSel) | — | ✅ | — | musl static binary |
+
+### Feature Capability Matrix
+
+| Feature | Linux CLI | Linux GUI | Win | Mac | Android | iOS |
+|---------|:---------:|:---------:|:---:|:---:|:-------:|:---:|
+| Traffic Mimicry | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Adaptive Mode (4 levels) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Live Quality Score | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Split Tunnel | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| DNS Proxy | ✅ | ✅ | ✅ | ✅ | N/A* | ❌ |
+| Kill Switch | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| mTLS Certificate | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| FEC (forward error correction) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Traffic Recording | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Device Key / JIT | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| SOCKS5 Proxy | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
+| Full Tunnel | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Diagnostics / Benchmark | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Bootstrap Descriptor Discovery | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Polymorphic Masks | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Crowdsourced Mask Feedback (opt-in) | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| In-App Admin (roles, client mgmt, revoke, audit)‡ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Pool Topology View + Per-Client Exit Node | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| SSH Server Install Wizard§ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Live Metrics Graphs† | — | — | — | — | — | — |
+
+On macOS, Kill Switch blocks new connections outside the VPN and preserves connections that were already open when it was enabled.
+
+\* Android's `VpnService` API routes all device traffic (including DNS) through the encrypted tunnel by design — there's no separate local DNS-proxy listener because none is needed; DNS leaks aren't possible on this platform.
+
+† Live Metrics Graphs is a server + [Web Management Panel](#web-management-panel) feature, not a client capability — it requires building the server with `--features metrics` and is viewed from the web dashboard, not from any of the clients above.
+
+‡ See [In-App Client Administration & Roles](#in-app-client-administration--roles). On desktop, the CLI exposes the same surface via `aivpn-client mgmt`/`aivpn-client role` (bridged over the local admin socket); Linux CLI's checkmark reflects that CLI bridge rather than a graphical admin screen.
+
+§ See [SSH Server Installer](#ssh-server-installer). Requires the client to be built with the `ssh-install` Cargo feature (bundled by default in the released GUI/mobile builds); on Linux CLI it is the `aivpn-client ssh-install {script,probe,run}` subcommand rather than a graphical wizard.
+
+---
+
+## Web Management Panel
+
+`platforms/aivpn-web/` provides a full-stack web UI for managing the aivpn server.
+
+**Stack:** Hono 4 + Bun (backend) · SvelteKit 2 + Svelte 5 + TailwindCSS 4 (frontend) · Layerchart charts · SQLite (default) or PostgreSQL
+
+**Features:**
+- JWT auth (15 min access token + 7-day refresh httpOnly cookie), argon2id passwords
+- TOTP 2FA (AES-256-GCM encrypted secrets) and WebAuthn passkeys
+- Roles: `admin` (full access) and `viewer` (read-only) — these are the **web panel's own** login roles, independent of a VPN client's [`ClientRole`](#in-app-client-administration--roles). `viewer` is enforced through a fail-closed allowlist of GET-only proxied endpoints (clients, pool nodes/links/health, masks, status, kernel, events); config, backup, bootstrap export, and mask upload/delete stay admin-only.
+- Pages: Dashboard (live charts), Clients (add/edit/QR/revoke, role assignment), Pool (topology graph, per-client exit node, audit hash-chain verify badge), Config, Masks, Backup, Logs, Settings
+- All `/api/v1/*` proxied to the aivpn Unix socket (`/run/aivpn/api.sock`)
+- Realtime SSE event stream at `/web/events`
+- **Live metrics graphs** — the Dashboard renders live time-series charts (active sessions, bandwidth in/out, packet rate, p50/p95 packet-processing latency) plus pulsing badges for mask/key rotations and DPI-attacks-detected, all fed over the same `/web/events` SSE stream from an in-memory ~10-minute ring buffer (no new persistent storage). Requires the server to be built with `--features metrics` (see [Optional features (Cargo)](#optional-features-cargo)); the dashboard shows a hint instead of the charts if the server lacks that feature.
+
+**Quick Start:**
+
+```bash
+# 1. Generate secrets
+JWT_SECRET=$(openssl rand -base64 48)
+TOTP_KEY=$(openssl rand -base64 32)
+
+# 2. Run with Docker (simplest)
+docker run -d --name aivpn-web \
+  -v /run/aivpn:/run/aivpn \
+  -e JWT_SECRET="$JWT_SECRET" \
+  -e TOTP_ENCRYPTION_KEY="$TOTP_KEY" \
+  -e ORIGIN=https://vpn.example.com \
+  -p 8080:8080 \
+  ghcr.io/infosave2007/aivpn-web:latest
+
+# 3. Get the one-time admin password from the startup log
+docker logs aivpn-web 2>&1 | grep -A4 "FIRST-TIME SETUP"
+
+# 4. Open https://vpn.example.com and log in with username "admin"
+```
+
+Or via `docker compose up -d aivpn-web` (secrets go in `platforms/aivpn-web/.env`).
+
+**Run (Bun, from source):**
+```bash
+cd platforms/aivpn-web
+cp .env.example .env          # fill JWT_SECRET, TOTP_ENCRYPTION_KEY, ORIGIN
+bun install && bun run build
+bun run start                 # listens on PORT (default 8080)
+```
+
+**Key environment variables:**
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `DATABASE_URL` | `file:./data/aivpn-web.db` | SQLite path or `postgres://...` |
+| `JWT_SECRET` | — | Long random string for token signing |
+| `TOTP_ENCRYPTION_KEY` | — | 32-byte base64 key (`openssl rand -base64 32`) |
+| `ORIGIN` | — | Public HTTPS URL (required for WebAuthn / CSRF) |
+| `UNIX_SOCK` | `/run/aivpn/api.sock` | Path to aivpn management socket |
+| `PORT` | `8080` | HTTP listen port |
+
+**Makefile targets:**
+```bash
+make web           # install deps + build frontend
+make web-docker    # build Docker image aivpn-web:latest
+make web-dev       # start dev servers (hot reload)
+```
+
+An nginx reverse-proxy example is in `deploy/nginx/aivpn-web.conf`.
+
+**Default credentials (first run):**
+
+On first startup with an empty database, a random admin password is generated and printed once to the server console:
+
+```
+╔══════════════════════════════════════════════════╗
+║         FIRST-TIME SETUP — SAVE THESE NOW        ║
+╠══════════════════════════════════════════════════╣
+║  Username : admin                                 ║
+║  Password : <random 22-char base64url string>     ║
+╚══════════════════════════════════════════════════╝
+```
+
+Save this password immediately — it is shown **once** only. After logging in, change it in **Settings → Security** or register a passkey.
+
+**OIDC / SSO (optional):**
+
+| Variable | Description |
+|----------|-------------|
+| `OIDC_ISSUER` | IdP base URL (e.g. `https://accounts.google.com`) |
+| `OIDC_CLIENT_ID` | OAuth2 client ID |
+| `OIDC_CLIENT_SECRET` | Client secret (omit for public PKCE clients) |
+| `OIDC_MODE` | `disabled` (default) · `enabled` (adds SSO button) · `exclusive` (SSO only) |
+| `OIDC_ROLE_CLAIM` | ID token claim containing the user's role (e.g. `role`) |
+| `OIDC_ADMIN_VALUE` | Claim value that grants `admin` role (default: `admin`) |
+
+The role from OIDC is applied only on **first** SSO login; admins can override it afterwards in the web panel.
+
+---
+
+## Quick Start
+
+### Server (Linux)
+
+#### Docker (recommended)
+
+```bash
+mkdir -p config
+docker compose up -d aivpn-server
+```
+
+The container auto-generates `server.key` and `server.json` on first start. It runs with `network_mode: host` and mounts `./config` → `/etc/aivpn`.
+
+Open UDP port 443 in your firewall:
+
+```bash
+# UFW
+sudo ufw allow 443/udp
+# firewalld
+sudo firewall-cmd --add-port=443/udp --permanent && sudo firewall-cmd --reload
+```
+
+#### Bare metal
+
+```bash
+sudo mkdir -p /etc/aivpn
+openssl rand 32 | sudo tee /etc/aivpn/server.key > /dev/null
+sudo chmod 600 /etc/aivpn/server.key
+sudo ./aivpn-server --listen 0.0.0.0:443 --key-file /etc/aivpn/server.key
+```
+
+The server automatically enables IPv4 forwarding and installs NAT masquerade rules (nftables preferred, iptables fallback). No manual firewall configuration is required for the tunnel itself.
+
+#### Add a client
+
+```bash
+# Docker
+docker compose exec aivpn-server aivpn-server \
+    --add-client "Alice Phone" \
+    --key-file /etc/aivpn/server.key \
+    --clients-db /etc/aivpn/clients.json \
+    --server-ip YOUR_PUBLIC_IP:443
+
+# Bare metal
+aivpn-server \
+    --add-client "Alice Phone" \
+    --key-file /etc/aivpn/server.key \
+    --clients-db /etc/aivpn/clients.json \
+    --server-ip YOUR_PUBLIC_IP:443
+```
+
+Output includes the connection key (`aivpn://…`) — distribute it to the client.
+
+Add `--role viewer|admin` to grant that client [in-app management access](#in-app-client-administration--roles) (requires the client to already be device-bound — combine with `--device-pubkey <BASE64>` to create a device-bound admin in one shot, no separate enrollment step):
+
+```bash
+aivpn-server --add-client "Admin Phone" --role admin --device-pubkey <BASE64_DEVICE_PUBKEY> \
+    --key-file /etc/aivpn/server.key --clients-db /etc/aivpn/clients.json --server-ip YOUR_PUBLIC_IP:443
+```
+
+Other management commands: `--list-clients`, `--show-client`, `--remove-client`, `--enable-client`/`--disable-client`, `--reset-device`.
+
+---
+
+### Client — Linux
+
+```bash
+sudo ./aivpn-client -k "aivpn://..."
+# Full tunnel (route all traffic through VPN)
+sudo ./aivpn-client -k "aivpn://..." --full-tunnel
+```
+
+The Linux GUI offers two layouts: Material and KDE / Breeze. The choice is in the Settings section and persists between launches. The color theme is selected separately: light, dark or system. Changing the appearance keeps the VPN session and form input. Profiles, routes, masks and service tools share the same logic in both layouts. Disconnect the VPN before changing the profile or network settings.
+
+### Client — macOS
+
+Download `aivpn-macos.dmg` from [Releases](https://github.com/infosave2007/aivpn/releases), drag **Aivpn.app** to Applications, launch — appears in the menu bar. Paste the connection key and click **Connect**.
+
+CLI:
+```bash
+sudo ./aivpn-client -k "aivpn://..."
+```
+
+> The app prompts for a password via `sudo` to create the `utun` interface.
+
+### Client — Windows
+
+The Windows GUI offers Fluent Desktop and a compact Fluent layout. Desktop is the default; the switch is in the Settings section. The layout and color theme are stored separately from connection settings. Changing the appearance keeps the VPN session, counters, timer and form input. Disconnect the VPN before manually changing the profile or network settings. Include/exclude and SOCKS5 belong to the selected profile; the DNS proxy remains a global client setting.
+
+**Installer (recommended):** download `aivpn-windows-installer.exe`, run as Administrator, launch **AIVPN** from the Start Menu.
+
+**Portable:** extract `aivpn-windows-package.zip` (contains `aivpn.exe`, `aivpn-client.exe`, `wintun.dll`). Run `aivpn.exe` as Administrator.
+
+CLI (PowerShell, elevated):
+```powershell
+.\aivpn-client.exe -k "aivpn://..."
+```
+
+> Administrator privileges are required to create the Wintun network adapter.
+
+### Client — Android
+
+1. Install `aivpn-client.apk`
+2. Paste the connection key (`aivpn://…`)
+3. Tap **Connect**
+
+### Client — iOS
+
+Build on macOS (Xcode 15+ required):
+
+```bash
+make ios TEAM_ID=YOUR_TEAM_ID
+```
+
+Install `releases/aivpn-ios.ipa`:
+```bash
+xcrun devicectl device install app --device <UDID> releases/aivpn-ios.ipa
+```
+
+> A free Apple Developer account is sufficient. Sideloaded builds expire after 7 days.
+
+### Client — Entware routers (ARMv7 / MIPSel)
+
+```bash
+# Copy the static musl binary to the router
+scp aivpn-client-linux-armv7-musleabihf root@router:/opt/bin/aivpn-client
+ssh root@router 'chmod +x /opt/bin/aivpn-client && /opt/bin/aivpn-client -k "aivpn://..."'
+```
+
+### Client — MikroTik RouterOS 7.6+
+
+```routeros
+/system/device-mode/update container=yes   # then reboot
+/interface/veth/add name=veth-aivpn address=172.31.0.2/30 gateway=172.31.0.1
+/ip/address/add address=172.31.0.1/30 interface=veth-aivpn
+/container/mounts/add name=aivpn-tun src=/dev/net/tun dst=/dev/net/tun type=bind
+/container/envs/add list=aivpn-env name=AIVPN_KEY value="aivpn://..."
+/container/add remote-image=infosave2007/aivpn-mikrotik:latest \
+    interface=veth-aivpn start-on-boot=yes envlist=aivpn-env mounts=aivpn-tun
+/container/start [find remote-image~"aivpn-mikrotik"]
+/ip/route/add dst-address=0.0.0.0/0 gateway=172.31.0.2
+```
+
+See [platforms/mikrotik/README.md](platforms/mikrotik/README.md) for policy routing and troubleshooting.
+
+### SOCKS5 proxy mode (no root)
+
+```bash
+aivpn-client -k "aivpn://..." --proxy-listen 127.0.0.1:1080
+```
+
+Configure Firefox / Chrome / curl to use `SOCKS5 127.0.0.1:1080`. No TUN device or administrator privileges required.
+
+For multiple clients, assign distinct SOCKS and admin ports and use a separate connection key for each client. Admin endpoints accept only `127.0.0.1` with a nonzero port:
+
+```bash
+AIVPN_CONNECTION_KEY="$KEY_ONE" aivpn-client --proxy-listen 127.0.0.1:1080 --admin-listen 127.0.0.1:44301
+AIVPN_CONNECTION_KEY="$KEY_TWO" aivpn-client --proxy-listen 127.0.0.1:1081 --admin-listen 127.0.0.1:44302
+
+aivpn-client --admin-listen 127.0.0.1:44302 record status
+aivpn-client --admin-listen 127.0.0.1:44302 role
+aivpn-client --admin-listen 127.0.0.1:44302 mgmt --method GET --path /api/v1/clients
+```
+
+`AIVPN_ADMIN_LISTEN` can replace the flag. Tokens, recording status and traffic counters are scoped to the admin port. The GUI uses `127.0.0.1:44301`; additional CLI clients must select other ports. A busy address fails before tunnel setup without replacing the running client's token.
+
+---
+
+## Connection Key Format
+
+Connection keys encode all server and client parameters in a single portable string:
+
+```
+aivpn://<base64url(JSON)>
+```
+
+JSON fields:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `s` | `string` | Server address, e.g. `"1.2.3.4:443"` |
+| `k` | `string` | Server X25519 public key (base64) |
+| `p` | `string` | Client pre-shared key / PSK (base64) |
+| `i` | `string` | Client static VPN IP, e.g. `"10.0.0.2"` |
+| `n` | `object` | *(optional)* Bootstrap `network_config` (see below) |
+
+`network_config` object (`n`):
+
+| Field | Description |
+|-------|-------------|
+| `client_ip` | Client TUN IP |
+| `server_vpn_ip` | Server TUN IP |
+| `prefix_len` | Subnet prefix length |
+| `mtu` | Inner MTU |
+
+Priority order when connecting:
+
+1. Settings confirmed by `ServerHello` (authoritative)
+2. Bootstrap `network_config` from the key
+3. Legacy fallback `10.0.0.0/24`
+
+Keys without `network_config` remain fully supported.
+
+Generate a key:
+```bash
+aivpn-server --add-client "Name" --key-file /etc/aivpn/server.key \
+    --clients-db /etc/aivpn/clients.json --server-ip IP:PORT
+```
+
+Reprint an existing key:
+```bash
+aivpn-server --show-client "Name" --key-file /etc/aivpn/server.key \
+    --clients-db /etc/aivpn/clients.json --server-ip IP:PORT
+```
+
+---
+
+## Server Configuration Reference
+
+Precedence of persistent settings: explicit CLI flags > environment variables > JSON file > built-in defaults. Explicit `false`, `0` and values equal to the built-in defaults also override the lower layers.
+
+Every JSON field is available through env: the name is upper-cased with the `AIVPN_` prefix, and nested fields are separated by a double underscore. For example, `pool.peers` maps to `AIVPN_POOL__PEERS`, and `network_config.server_vpn_ip` maps to `AIVPN_NETWORK_CONFIG__SERVER_VPN_IP`. Objects and arrays are passed as JSON; a nested object extends the lower layer, while an array replaces it entirely. A type error or an unknown nested env field stops startup and names the setting without printing its value.
+
+```bash
+AIVPN_CONFIG=/etc/aivpn/server.json \
+AIVPN_SERVER_IP=vpn.example.com:443 \
+AIVPN_KEY_FILE=/etc/aivpn/server.key \
+AIVPN_CLIENTS_DB=/var/lib/aivpn/clients.json \
+AIVPN_POOL__PEERS='["edge.example.com:443"]' \
+AIVPN_NEURAL_ENABLED=false \
+aivpn-server
+```
+
+The paths `key_file`, `clients_db`, `audit_log`, the public address `server_ip`, the `per_ip_pps_limit` limit, `pool_config`, `log_level`, `event_webhook`, `event_stdout`, `kernel_downlink` and `enable_nat` are set in the same JSON as the network settings. `public_endpoint` is an alias of `server_ip`. The public address accepts a DNS name, IPv4 or IPv6; if the port is omitted, the `listen_addr` port is used.
+
+The existing names `AIVPN_LISTEN`, `AIVPN_SHAPING_LEVEL` and `RUST_LOG` remain supported. The canonical names are `AIVPN_LISTEN_ADDR`, `AIVPN_DOWNLINK_SHAPING` and `AIVPN_LOG_LEVEL`. The configuration path is selected with `--config`, `AIVPN_CONFIG` or automatically from `/etc/aivpn/server.json` and `deploy/config/server.json`.
+
+In Kubernetes, the same names go into `env`/`envFrom`; the JSON file and key files can be mounted into the container. One-off actions such as `--add-client` and `--remove-client` remain CLI commands.
+
+Administration requests from all clients share one queue: a 210 ms send interval respects the server's 200 ms limit. A GET after an explicit `429` is retried at most twice within the original timeout. Mutating requests and timeouts are not retried automatically. `/diagnostics/v1/*` measurements use a separate limit and bypass the administration pause and retries. Management errors carry `code`, `message` and an optional `retry_after_ms`; the HTTP API also keeps the `error` field for the existing web panel.
+
+
+```json
+{
+  "listen_addr": "0.0.0.0:443",
+  "tun_name": "aivpn0",
+  "tun_mtu": "auto",
+  "mask_dir": "/var/lib/aivpn/masks",
+  "bootstrap_mask_files": [],
+  "session_timeout_secs": 0,
+  "idle_timeout_secs": 300,
+  "allow_peer_routing": false,
+  "network_config": {
+    "server_vpn_ip": "10.0.0.1",
+    "prefix_len": 24,
+    "mtu": 1280,
+    "keepalive_secs": 8,
+    "ipv6_enabled": false,
+    "ipv6_prefix": "fd10:cafe::/48"
+  },
+  "pool": {
+    "peers": [],
+    "sync_key": ""
+  }
+}
+```
+
+| Field | Default | Description |
+|-------|---------|-------------|
+| `listen_addr` | `0.0.0.0:443` | UDP bind address. Port is embedded in connection keys automatically |
+| `tun_name` | random | TUN interface name |
+| `tun_mtu` | _(unset)_ | `"auto"` = physical MTU minus 64-byte overhead, capped at 1280 (fallback 1280); or a fixed integer up to 1500 |
+| `mask_dir` | `/var/lib/aivpn/masks` | Directory scanned for `.json` mask profiles |
+| `bootstrap_mask_files` | `[]` | Mask files pre-loaded at startup to reduce first-connection latency |
+| `session_timeout_secs` | `0` | Hard session cap; `0` = unlimited |
+| `idle_timeout_secs` | `300` | Disconnect sessions silent for this many seconds |
+| `allow_peer_routing` | `false` | Route packets between VPN clients inside the subnet |
+| `network_config.server_vpn_ip` | `10.0.0.1` | Server TUN IP |
+| `network_config.prefix_len` | `24` | VPN subnet prefix |
+| `network_config.mtu` | `1280` | Inner MTU sent to clients in `ServerHello` |
+| `network_config.keepalive_secs` | `8` | Keepalive interval negotiated with clients |
+| `network_config.ipv6_enabled` | `false` | Enable IPv6 NAT66 |
+| `network_config.ipv6_prefix` | `fd10:cafe::/48` | ULA /48 prefix for client IPv6 addresses |
+| `pool.peers` | `[]` | Peer server addresses for database sync |
+| `pool.sync_key` | `""` | Shared 32-byte BLAKE3 key (base64). Generate: `openssl rand -base64 32` |
+| `pool.node_id` | _(unset)_ | This node's own identifier within the pool (recommended: its `host:port`); pool sync is disabled while unset |
+| `pool.node_ip_partition` | hash-derived | Pin this node's hard VPN-IP partition index explicitly instead of deriving it from `hash(node_id)` — rules out a hash collision, or hand-balances a large pool. See [Pool Topology and Per-Client Exit Routing](#pool-topology-and-per-client-exit-routing) |
+| `pool.transport` | `"legacy"` | `"masked"` switches pool sync to dial peers as a fully masked pool-client with bidirectional anti-entropy, instead of the mask-independent push-only legacy transport |
+| `pool.exit_node` / `pool.exit_node_enabled` | unset / `false` | Global-default multi-hop exit (see [Multi-hop Chain Forwarding](#multi-hop-chain-forwarding)); overridable per client |
+
+### Optional features (Cargo)
+
+| Feature | What it enables |
+|---------|----------------|
+| `neural` | Neural Resonance module (MSE-based mask rotation) |
+| `management-api` | Unix socket HTTP API at `/run/aivpn/api.sock` |
+| `metrics` | Prometheus exporter, and live runtime metrics (active sessions, bandwidth, mask/key rotations, DPI-attacks-detected, packet-processing latency) over `/web/events` SSE for the [web panel's live graphs](#web-management-panel) |
+| `passive-distribution` | Bootstrap descriptor distribution channels |
+| `bootstrap-publish` | Auto-publish rotated bootstrap descriptors to S3/GitHub/Telegram (see [Bootstrap Descriptor Distribution](#bootstrap-descriptor-distribution)) |
+
+---
+
+### Reference model training
+
+The server uses learned reference weights from `assets/neural/models.json` when the mask ID and signature hash match. `neural.trained_models_file` selects another validated library. Unknown signatures retain the calibrated projection fallback. The current references describe WebRTC and QUIC families; they do not certify individual services or DPI resistance.
+
+Prepare features from a classic RAW-IP PCAP, train, then evaluate the frozen model:
+
+```bash
+cargo run --release -p aivpn-server --example neural_dataset -- mask.json reference.pcap 40 > dataset.json
+cargo run --release -p aivpn-server --example neural_train -- dataset.json model.json evaluation.json
+cargo run --release -p aivpn-server --example neural_evaluate -- dataset.json model.json
+```
+
+`40` is an explicit size adjustment from an inner IP capture to the server observation, matching the reference preparation. Packet sizes and timestamps come from the capture; encrypted-payload entropy is modeled with uniform bytes of the same length. The exporter does not publish packet payloads or addresses. It separates train, validation and test by time, resets statistics for each partition and leaves a 256-packet gap at each boundary. Each partition must contain enough samples for the gateway's stride of 16 and minimum 32 samples per window. A model library has `schema_version: 1`, `feature_version: 1` and `models: [{"mask_id": "...", "model": <model.json>, "evaluation": <evaluation.json>}]`. Models and reports must agree on the signature hash and hidden dimension. Reports include the exact model digest, the digest of all three data partitions, and Adam parameters; library loading verifies the binding to the weights. Invalid libraries fail loading rather than silently replacing the requested models.
+
+The runtime keeps configured warm-up thresholds and derives live adaptive thresholds after 500 MSE checks per mask. Training a new encoder does not silently lower those thresholds. Aggregate held-out windows in `assets/neural/heldout.json` let tests verify the shipped weights without private captures.
+
+## Build from Source
+
+Requires: Rust 1.97+, `cargo`, `make`.
+
+```bash
+git clone https://github.com/infosave2007/aivpn
+cd aivpn
+make help          # show all available targets
+```
+
+### Server builds (Linux)
+
+```bash
+make server        # x86_64 → releases/aivpn-server-linux-x86_64
+make server-arm64  # ARM64  → releases/aivpn-server-linux-arm64
+make server-docker # via Docker (minimal host dependencies)
+```
+
+### Client builds
+
+```bash
+make client        # Linux x86_64
+```
+
+### musl static cross-builds (for routers)
+
+```bash
+make server-musl-armv7        # ARMv7
+make server-musl-mipsel       # MIPSel
+make server-musl-aarch64      # AArch64 (default features)
+make server-musl-aarch64-full # AArch64, full feature set (management-api,metrics,neural) — what CI publishes as aivpn-server-linux-aarch64
+```
+
+### Platform builds
+
+```bash
+make windows              # Windows GUI + zip (cross-compile from Linux)
+make windows-docker       # Windows GUI via Docker (no mingw-w64 required)
+make ios [TEAM_ID=XX]     # iOS IPA (macOS + Xcode 15+ only)
+make macos                # macOS .app + .pkg + .dmg (macOS only)
+make linux                 # Linux GUI binary (no extra tools)
+make linux-appimage        # Linux GUI as AppImage (requires appimagetool)
+```
+
+### Deploy
+
+```bash
+make deploy               # VPS: download binary + start docker compose
+make server-deploy HOST=vps.example.com  # SSH upload local binary to VPS
+```
+
+### Tests and development
+
+```bash
+make test           # cargo test --workspace
+make clippy         # cargo clippy
+make check          # cargo check (fast)
+make test-docker    # integration test: server + client in Docker
+```
+
+### Android
+
+```bash
+export ANDROID_SDK_ROOT=/opt/android-sdk
+export ANDROID_NDK_ROOT=/opt/android-ndk
+echo "sdk.dir=$ANDROID_SDK_ROOT" > platforms/android/local.properties
+
+make android
+```
+
+Signed build: create `platforms/android/keystore.properties` before running the script.
+
+### Optional Cargo features (server)
+
+```bash
+cargo build --release --bin aivpn-server --features "management-api,metrics,neural"
+```
+
+### Install from crates.io
+
+```bash
+cargo install aivpn-client
+cargo install aivpn-server
+```
+
+---
+
+### Android release signing
+
+`make android` builds a **release** APK and requires signing material — it fails
+rather than falling back to a debug build. A debug APK is `android:debuggable`,
+so anyone with adb access can attach to the VPN process and read session keys
+and the PSK out of its memory, and it carries the public Android debug
+signature, which proves nothing about who built it and cannot be upgraded to a
+properly signed build later.
+
+Provide the keystore through `platforms/android/keystore.properties`:
+
+```properties
+storeFile=/absolute/path/to/release.jks
+storePassword=...
+keyAlias=...
+keyPassword=...
+```
+
+or through `AIVPN_UPLOAD_STORE_FILE`, `AIVPN_UPLOAD_STORE_PASSWORD`,
+`AIVPN_UPLOAD_KEY_ALIAS`, `AIVPN_UPLOAD_KEY_PASSWORD`. In CI these come from the
+repository secrets `ANDROID_KEYSTORE_BASE64`, `ANDROID_KEYSTORE_PASSWORD`,
+`ANDROID_KEY_ALIAS` and `ANDROID_KEY_PASSWORD`.
+
+For a throwaway local build, `AIVPN_ALLOW_DEBUG_APK=1 make android` restores the
+old debug-signed fallback. Never publish what it produces.
+
+## Advanced Features
+
+### Device Binding (JIT enrollment)
+
+A connection key can be designated as *one-time*: the first device to connect binds its X25519 static key, and subsequent connections from a different device are rejected.
+
+```bash
+# Create enrollment slot
+aivpn-server --add-client-one-time "Alice-Phone" \
+    --key-file /etc/aivpn/server.key \
+    --clients-db /etc/aivpn/clients.json \
+    --server-ip IP:PORT
+
+# Reset binding (re-enable enrollment)
+aivpn-server --reset-device "Alice-Phone" \
+    --clients-db /etc/aivpn/clients.json
+```
+
+Device key storage per platform:
+
+| Platform | Location |
+|----------|----------|
+| Linux / macOS | `~/.config/aivpn/device.key` (mode 600, auto-generated) |
+| Windows | `%APPDATA%\aivpn\device.key` |
+| Android | Android Keystore via `EncryptedSharedPreferences` |
+| iOS | Keychain, `kSecAttrAccessibleAfterFirstUnlock` |
+
+### In-App Client Administration & Roles
+
+Any client can be granted a management **role** that gates what it may do — both against the Unix-socket REST API and via an in-tunnel management channel carried inside ordinary VPN traffic, so administration works even when no other path to the server is reachable:
+
+| Role (`ClientRole`) | Rank | Grants (curated tunnel/API surface: clients, pool topology, audit log, status, heavy-config apply/confirm) |
+|---|---|---|
+| `user` (default) | 0 | connect only — no management access |
+| `viewer` | 1 | read-only: GET on every curated route (list/inspect clients, connection key, pool nodes/health/links, status, audit log) |
+| `admin` | 2 | the full curated allowlist, reads and mutations: add/edit/remove/revoke clients, role assignment, per-client `exit_node`, reset-device, apply/confirm heavy config (active mask, global exit node) |
+
+Elevating a client above `user` requires it to already be **device-bound** (see [Device Binding](#device-binding-jit-enrollment)) — a role is a privilege grant, so it is always tied to a proven device key, never a bare PSK:
+
+```bash
+# Fresh client, device-bound and elevated to admin in one step
+aivpn-server --add-client "Admin Phone" --role admin --device-pubkey <BASE64_DEVICE_PUBKEY> \
+    --key-file /etc/aivpn/server.key --clients-db /etc/aivpn/clients.json --server-ip IP:PORT
+
+# Elevate an already device-bound client afterwards (role-only re-add)
+aivpn-server --add-client "Alice" --role viewer --key-file /etc/aivpn/server.key \
+    --clients-db /etc/aivpn/clients.json --server-ip IP:PORT
+```
+
+`--role` and `--device-pubkey` also apply to `--add-client-one-time`, so a fresh one-time-enrollment slot can be pre-granted a role that takes effect once the device actually binds.
+
+**Managing the server from inside the tunnel** — an admin/viewer-role client can issue `MgmtRequest`/`MgmtResponse` control messages against a curated subset of the REST surface (`/api/v1/status`, `/api/v1/clients*`, `/api/v1/audit-log`, `/api/v1/config/apply`+`/confirm`, `/api/v1/pool/*`), rate-limited per session. Full config `PUT`, `/api/v1/backup/import`, and mask-signing-key management are deliberately **never** reachable this way, even for `admin` — those stay Unix-socket-only (local CLI, or the web panel's own separately-gated `admin` login). Desktop clients bridge the curated surface to a local admin socket via the CLI:
+
+```bash
+aivpn-client mgmt --method GET --path /api/v1/clients
+aivpn-client role   # prints the role (0=user/1=viewer/2=admin) the server granted this client
+```
+
+Android and iOS expose the equivalent calls through JNI/FFI (`mgmtRequest`/`getRole`/`qrPng`), and all 5 platform GUIs (Linux, Windows, macOS, Android, iOS) plus the web panel's Clients page ship an admin screen: list clients, add a new one with its QR code, edit, and revoke — role-gated so a `viewer`-role session only sees the read side.
+
+**Revoke** — `POST /api/v1/clients/:id/revoke` (or the tunnel equivalent) force-disconnects the client's live session immediately and disables it from reconnecting, and pushes a priority pool beacon so other pool nodes learn about the revoke without waiting for the next sync interval.
+
+**Tamper-evident audit log** — every admin action, whether via the REST API or the in-tunnel path, is appended to a hash-chain log (`--audit-log`, default `/var/log/aivpn/audit.log`, JSONL). `GET /api/v1/audit-log?verify=1` walks the chain and returns `{ entries, verified, broken_at }` instead of the plain entry array; the web panel surfaces this as a verify badge.
+
+**Apply-with-rollback for heavy settings** — changes that could lock the operator out if misapplied (the server's active mask, the global-default exit node) go through a commit-confirm flow instead of applying immediately: `POST /api/v1/config/apply` stages the change and starts a rollback timer; `POST /api/v1/config/confirm` commits it before the timer expires. An unconfirmed change reverts automatically.
+
+**Web panel role gating** — the web panel has its own separate `admin`/`viewer` login roles that gate its proxy in front of the server API; see [Web Management Panel](#web-management-panel) for the allowlist. They are independent of the `ClientRole` table above.
+
+### Connection Quality Score and Adaptive Mode
+
+AIVPN continuously computes a **0–100 quality score** from RTT (40 pts), jitter (20 pts), packet loss (30 pts), and Neural MSE (10 pts). The adaptive level selects the keepalive. The FEC column describes the initial setting and the legacy mode used when no fresh receiver report is available:
+
+| Score | Adaptive Level | Keepalive | Initial / legacy FEC |
+|-------|---------------|-----------|-----------|
+| 80–100 | Off | 8 s | disabled |
+| 50–79 | Light | 6 s | 1/16 |
+| 20–49 | Aggressive | 4 s | 1/8 |
+| 0–19 | Satellite | 15 s | 1/4 |
+
+Enable Adaptive Mode:
+```bash
+aivpn-client -k "aivpn://..." --adaptive
+```
+
+### Forward Error Correction (FEC)
+
+For every N original client IP packets, one XOR packet is added to recover a single loss in the group. The receiver on the server estimates counter gaps in a separate 4096-counter window and sends a report once PFS is established. Statistics appear after a range of at least 32 counters. The report drives the client's uplink FEC; the client's own RTT and jitter still select the keepalive.
+
+| Loss in the fresh receiver report | FEC |
+|----------------------------------|-----|
+| 0 | off |
+| above 0, below 1% | 1/16 |
+| 1% to below 5% | 1/8 |
+| 5% and above | 1/4 |
+
+This is a counter-based estimate, not a guarantee of recovery for every loss pattern. A report is valid for 30 seconds; an older report counter does not replace a newer one. A reconnect or a full PFS resets the estimate. With an older server, incomplete kernel RX observation or an expired report, the previous adaptive-level setting stays in effect. The server limits report processing and sending to one operation per second per session. Inter-server sessions do not answer a report with another report. The fragment format keeps the 900-byte size: with FEC active, an IP packet larger than 900 bytes needs several protected frames. Reverse FEC on the server's send path is not implemented.
+
+### Multi-server Pool Sync
+
+Nodes in a pool share their client databases in real time over the standard VPN port:
+
+```json
+{
+  "pool": {
+    "peers": ["node2.example.com:443"],
+    "sync_key": "<base64-32-byte-key>"
+  }
+}
+```
+
+### Pool Topology and Per-Client Exit Routing
+
+**Read-only topology endpoints** — `GET /api/v1/pool/nodes`, `/api/v1/pool/health`, `/api/v1/pool/links` expose the pool's current node list, per-node health, and inter-node link status, reachable by `viewer`-role sessions too. The web panel's **Pool** page renders this as a live topology graph.
+
+**Hard per-node VPN-IP partitioning** — each pool node claims a disjoint slice of the VPN subnet (`hash(node_id) % partitions` by default, or pinned explicitly via `pool.node_ip_partition`), so independent client adds performed on two different nodes at the same time can never collide on the same VPN IP. Nodes exchange their claimed partitions (`ControlPayload::PartitionAnnounce`) and flag an operator-caused overlap (e.g. a hash collision, or a misconfigured `node_ip_partition`) instead of silently corrupting the pool. The pre-existing deterministic re-home logic remains as a backstop for any IP that still ends up contended.
+
+**Per-client exit routing** — independent of the pool-wide default below, any individual client can be routed through a specific pool exit node, live, without a server restart: `PATCH /api/v1/clients/:id` with `{"exit_node": "host:port"}` (or `null` to fall back to the global default), also reachable over the tunnel mgmt path. Unlike `role`, setting a client's own `exit_node` is not a privilege grant and needs no device binding. The server dials the target exit peer on demand if it isn't already an active pool connection. All 5 client GUIs and the web panel's Pool/Clients pages expose an exit-node picker per client.
+
+### Multi-hop Chain Forwarding
+
+Route client traffic through two AIVPN nodes. The client connects only to the entry node; the internet sees the exit node's IP. This sets the **global default** exit node for every client that has no per-client `exit_node` override (see [Pool Topology and Per-Client Exit Routing](#pool-topology-and-per-client-exit-routing) above); changing it live goes through the [apply-with-rollback](#in-app-client-administration--roles) flow since a bad global exit can black-hole all pool traffic.
+
+**Entry node:**
+```json
+{ "pool": { "sync_key": "<key>", "exit_node": "exit.example.com:443" } }
+```
+**Exit node:**
+```json
+{ "pool": { "sync_key": "<same-key>", "exit_node_enabled": true } }
+```
+
+### SSH Server Installer
+
+`deploy/install-server.sh` is an idempotent, systemd-first installer for a fresh Linux VPS: it detects the distro/architecture, checks the target port is free, fetches (or accepts a locally-supplied) `aivpn-server` release binary and verifies its SHA256, generates `server.key`/`server.json`, seeds mask profiles, installs and starts a systemd unit (or deploys via `docker compose` with `--mode docker`), opens the firewall, optionally provisions a device-bound admin client in the same run, and health-checks that `aivpn-server` actually owns the listening port afterwards. Re-running it is an upgrade: `server.key`/`clients.json` are never overwritten, the binary/unit are always replaced, and the service restarts at the end. Every step prints one machine-readable line on stdout:
+
+```
+##AIVPN {"step":"...","status":"ok|error|info","code":"...","msg":"..."}
+```
+
+so a caller (a script, or the in-app installer UI below) can track progress without scraping text.
+
+```bash
+sudo bash deploy/install-server.sh --device-pubkey <BASE64_DEVICE_PUBKEY> --server-ip vpn.example.com:443
+deploy/install-server.sh --help          # full flag / env-var reference
+deploy/install-server.sh --show-script   # print the script's own source before running it as root
+deploy/install-server.sh --print-sha256  # print the script's own sha256sum
+```
+
+Key flags: `--mode systemd|docker`, `--port`/`--listen`, `--binary-url`/`--binary-file`, `--masks-url`/`--masks-dir`, `--device-pubkey`/`--server-ip`/`--admin-name`, `--config`/`--key-file`/`--clients-db`/`--mask-dir`/`--management-socket`/`--audit-log`, `--skip-firewall`, `--skip-deps`. Must be run from this repo's `deploy/` directory (or a full checkout) so it can find `deploy/config/server.json.example` and `deploy/systemd/aivpn-server.service` alongside it — only the server *binary* is fetched over the network by default.
+
+**In-app install wizard** — every native client (Linux, Windows, macOS, Android, iOS) embeds a `russh`-based SSH client (`aivpn_common::ssh_install`, behind the `ssh-install` Cargo feature) together with the installer script, systemd unit, bundled masks, and config template as an embedded asset, and drives a setup wizard entirely from the app: enter the target host, confirm the TOFU SSH host-key fingerprint, optionally review the install script and its SHA256 before running it, watch live progress parsed from the `##AIVPN` markers, then import the resulting `aivpn://` connection key. The wizard's entry point is on the main screen, not gated behind an existing connection or an admin session — bootstrapping a brand-new server from scratch needs neither. On the CLI the same flow is `aivpn-client ssh-install {script,probe,run}`:
+
+```bash
+aivpn-client ssh-install probe --host vpn.example.com --user root
+aivpn-client ssh-install run --host vpn.example.com --fingerprint "SHA256:..." \
+    --key-file ~/.ssh/id_ed25519 --device-pubkey <BASE64_DEVICE_PUBKEY> --server-ip vpn.example.com:443
+```
+
+`ssh-install run` authenticates with exactly one of `--password-env`/`--password-stdin`/`--key-file` (never a raw `--password` argument — argv is visible via `/proc/<pid>/cmdline`), and accepts `--binary-file`/`--binary-url` to control which `aivpn-server` build gets installed, plus `--mode systemd|docker` and pass-through `--extra-arg` tokens forwarded to `install-server.sh`.
+
+In the web panel, the Backup page exports a backup and validates an uploaded archive without changing files (`POST /api/v1/backup/import?dry_run=true`). Restore runs only offline through the CLI: stop the server and every process that uses the same database, then run `aivpn-server --import /path/backup.bin --config /path/server.json --clients-db /path/clients.json --mask-dir /path/masks`. Use the real file paths and mask directory. Start the service after a successful import. A running process with the database open blocks the restore; an HTTP request without `dry_run=true` returns 409. Native clients include only the installation wizard, not the server migration wizard.
+
+CI publishes full-feature (`management-api,metrics,neural`) `aivpn-server` release binaries for both `x86_64` and `aarch64`, each with a `SHA256SUMS` file — matching what `install-server.sh`'s default `--binary-url` (GitHub Releases) fetches and verifies against.
+
+### Bootstrap Descriptor Distribution
+
+Signed (ed25519) bootstrap descriptors let a brand-new client — one without a working `aivpn://` key yet — discover a usable mask configuration via the same redundant fallback channels (CDN/GitHub/Telegram) the client's `bootstrap_loader.rs` already knows how to fetch from. The server builds, signs, and rotates these every 24h automatically, pushing fresh copies to already-connected clients over the live session.
+
+**CLI export** — print or save the current previous/current/next-epoch signed descriptors as JSON, for manual upload to any hosting:
+```bash
+aivpn-server --export-bootstrap-descriptor --key-file /etc/aivpn/server.key
+aivpn-server --export-bootstrap-descriptor --key-file /etc/aivpn/server.key --bootstrap-output /path/to/bootstrap.json
+```
+Requires a real `--key-file` — an ephemeral/random server key is rejected, since no client would trust a descriptor signed by a throwaway key.
+
+**Management API export** — the same JSON array is available at `GET /api/v1/bootstrap/export` (feature `management-api`, same Unix-socket auth model as the rest of the API). Treat it as admin-only in any web-panel proxy layer, same as `/config` and `/backup/*`.
+
+**Auto-publish on rotation** — build with `--features bootstrap-publish` and add a `bootstrap_publish` section to `server.json` to push freshly-rotated descriptors automatically whenever the 24h epoch actually advances:
+```json
+{
+  "bootstrap_publish": {
+    "enabled": true,
+    "channels": [
+      { "type": "s3", "endpoint": "https://s3.us-east-1.amazonaws.com", "region": "us-east-1", "bucket": "my-aivpn-bootstrap", "key": "bootstrap.json", "access_key": "...", "secret_key": "..." },
+      { "type": "github", "repo": "owner/repo", "asset_name": "bootstrap-descriptors.json", "tag_name": "bootstrap", "token": "..." },
+      { "type": "telegram", "bot_token": "...", "chat_id": "..." }
+    ]
+  }
+}
+```
+
+- **S3** — any S3-compatible provider (AWS S3, Cloudflare R2, MinIO), path-style addressing (`{endpoint}/{bucket}/{key}`), signed with AWS SigV4.
+- **GitHub** — published as a release asset under a fixed `tag_name` (kept up to date across rotations, since clients always fetch `/releases/latest`). Use a fine-grained personal access token scoped to just that one repo.
+- **Telegram** — sent as a document via a bot (`sendDocument`). Scope the bot to a single chat/channel.
+
+Each channel is independent (one failing doesn't block the others) and retries 3× with backoff (5s / 30s / 120s) before logging a failure. Without the `bootstrap-publish` feature, `enabled: true` just logs a warning and does nothing — the config section itself is always valid JSON, so config files stay portable across builds.
+
+**Security note:** if the server's private key is compromised, an attacker can already forge valid bootstrap descriptors (the signing key is derived deterministically from it). Auto-publish credentials don't add that forgery capability, but they do let a compromised server push a forged descriptor through the operator's real, trusted distribution channels to reach brand-new users, not just already-connected ones — treat these credentials in `server.json` with the same care as any other secret (file mode `0600`, readable only by the user running `aivpn-server`).
+
+### Local DNS Proxy
+
+Forward all DNS queries through the VPN tunnel (Linux):
+
+```bash
+aivpn-client -k "aivpn://..." --dns-proxy 127.0.0.1:5300 --dns-upstream 1.1.1.1:53
+```
+
+### Traffic Recording — Custom Mask Creation
+
+Record real application traffic to generate new mimicry profiles:
+
+```bash
+# Connect with an admin key, then:
+aivpn-client record start --service myapp
+# ... use the application for 60+ seconds ...
+aivpn-client record stop
+```
+
+The server analyzes packet size histograms and inter-arrival times, generates a `MaskProfile`, validates it via self-test, and distributes it to active sessions.
+
+### Polymorphic Masks
+
+Each session can use a per-session, uniquely-perturbed variant of a base mask, so a single static mask profile can't be fingerprinted across users or sessions by an observer comparing traffic from many connections. The server derives the variant deterministically from the session's own key material and pushes it to the client over the existing `MaskUpdate` channel — the client only applies it, with no new client-side cryptography. Perturbation is bounded per-mask (IAT jitter scale, padding shift, header-gap bytes, FSM dwell-time scale) so the traffic still plausibly matches the mimicked protocol; the FSM state graph, spoofed protocol, and ephemeral-key length are never altered. The opening handshake always uses the bootstrap fallback mask (not the named preset), so it isn't fingerprintable before the session's variant is pushed.
+
+```bash
+aivpn-client -k "aivpn://..." --polymorphic-base webrtc_yandex_telemost_v1
+```
+
+A matching "Polymorphic" checkbox is available in the Linux, Windows, macOS, iOS, and Android GUIs next to the mask picker.
+
+Mask profiles can declare optional `perturbation_bounds` to control how far a polymorphic variant may drift from the base profile:
+
+```json
+{
+  "mask_id": "webrtc_yandex_telemost_v1",
+  "perturbation_bounds": {
+    "iat_jitter_scale": 0.15,
+    "padding_shift_bytes": 8,
+    "header_gap_bytes": 4,
+    "fsm_dwell_scale": 0.2
+  }
+}
+```
+
+### Crowdsourced Mask Feedback (opt-in)
+
+Clients can opt in (off by default) to share which masks worked for them and to receive server hints about masks that are working well in their region. Reports are aggregated by a coarse, user-set 2-letter ISO-3166 country code — no finer location ever leaves the client. The server only aggregates a report once at least K=20 distinct reporters have contributed for a given mask/region (tracked with a HyperLogLog sketch that stores no reporter identities), rolling sparse countries up to their continent once same-continent neighbors clear the k-anonymity gate; aggregate memory is bounded by a hard cap with eviction and a periodic sweep. A per-reporter vote cap also bounds how much a single reporter can skew a region's ranking.
+
+Desktop clients record both mask *successes and failures*: pre-handshake connection failures are batched and attributed to the mask that was in use, persisted across restarts at `~/.config/aivpn/mask_feedback.json`, and reported in aggregate the next time a connection succeeds. When `--receive-mask-hints` is on, the client softly biases its initial mask choice toward the highest-scored preset reported for its region — it never overrides an explicit `--preferred-mask`/`--polymorphic-base`, and it never applies when the opening mask must stay a signed bootstrap descriptor (e.g. `--no-fallback`/production-secure builds), so bootstrap security is never weakened. `--share-mask-feedback` and `--receive-mask-hints` are fully independent toggles — a client can receive regional hints without ever sharing its own feedback.
+
+The server pushes reporting cadence to opted-in clients via a `FeedbackConfig` control message, tunable through an optional `"feedback"` block in `server.json`:
+
+```json
+{
+  "feedback": {
+    "report_failure_threshold": 3,
+    "report_interval_secs": 3600
+  }
+}
+```
+
+`report_failure_threshold` is the minimum number of consecutive failures on a mask before it is marked failed; `report_interval_secs` is the minimum spacing between a client's feedback sends. Both are optional and default to `3` and `3600` respectively when the block (or a key) is omitted.
+
+```bash
+aivpn-client -k "aivpn://..." --share-mask-feedback --receive-mask-hints --country-code DE
+```
+
+Both toggles and the country-code field are also available in the Linux, Windows, macOS, iOS, and Android GUIs' settings screens.
+
+### Benchmarking
+
+```bash
+aivpn-client bench -k "aivpn://..."
+# P50: 12ms  P95: 28ms  Up: 47 Mbps  Down: 52 Mbps  Score: 94/100
+aivpn-client bench -k "aivpn://..." --json
+```
+
+---
+
+### Mask Signing & Verification (provenance)
+
+A mask defines how traffic is shaped and, critically, *how packets are parsed*
+(`tag_offset`, header layout, `spoof_protocol`). A malicious or corrupted mask
+reaching a server or client is therefore a real attack surface. aivpn masks carry
+an ed25519 signature over the **whole** profile; the server can sign the masks it
+distributes with an operator key, and both server and client can verify that
+signature on load.
+
+Verification has three modes (`mask_verify_mode`, or `--mask-verify-mode`, env
+`AIVPN_MASK_VERIFY_MODE`):
+
+| Mode | Behaviour |
+|------|-----------|
+| `off` | No signature check. |
+| `warn` | **Default.** Verify and log a warning on failure, but still load the mask — nothing breaks if the corpus isn't signed yet. |
+| `enforce` | Reject any mask whose signature doesn't verify against the operator public key. Requires the entire mask corpus to be signed first. |
+
+Operator workflow to turn on `enforce`:
+
+```bash
+# 1. Generate an operator signing key (prints the public key to distribute).
+aivpn-server --gen-mask-signing-key /etc/aivpn/mask-signing.key
+
+# 2. Sign your whole mask corpus in place (run once; also re-run after adding masks).
+aivpn-server --sign-mask-dir /var/lib/aivpn/masks --mask-signing-key /etc/aivpn/mask-signing.key
+
+# 3. Server: point at the signing key (auto-signs newly generated masks) and enforce.
+#    server.json:  "mask_signing_key": "/etc/aivpn/mask-signing.key", "mask_verify_mode": "enforce"
+
+# 4. Clients: ship them the operator PUBLIC key and enforce.
+#    client:  --mask-operator-pubkey <BASE64_PUBKEY> --mask-verify-mode enforce
+```
+
+The public key is verified independently for the downlink `reverse_profile` too.
+Because `enforce` rejects unsigned masks, roll it out phased — stay on `warn`
+until every server's mask directory is signed and clients carry the public key.
+The signing key is a secret: store it `0600`, readable only by the operator.
+
+
+### ML-DPI validation
+
+The GBDT receives selected outer QUIC, RTC and STUN frames after client admission and authentication. Decapsulated inner packets are not used as outer traffic. QUIC 1-RTT features ignore the spin bit and the protected bits of the first byte; bytes on the wire are unchanged. Training weights balance classes, masks and original sessions so that a long capture of one family does not crowd out the others. Training and validation are split by session; nDPI labels the complete exchange. Its labels describe conformance with the target protocol, not the probability that an ISP detects a VPN. The tools are in [tools/dpi](tools/dpi/README.md), and metrics and limitations are in the [model report](assets/dpi/report.md). Validation on a shared traffic-generation scheme does not prove resistance to arbitrary DPI.
+
+
+## Security Model
+
+| Property | Mechanism |
+|----------|-----------|
+| Encryption | ChaCha20-Poly1305 AEAD |
+| Key exchange | X25519 ECDH |
+| Session authentication | Per-client PSK (optional device binding) |
+| Forward secrecy | In-flight X25519 key ratchet |
+| Replay protection | 256-entry sliding window per session |
+| Session anonymity | 8-byte BLAKE3-derived resonance tag; no session ID in the clear |
+| Traffic mimicry | `MaskProfile` FSM: header injection, IAT shaping |
+| Mask integrity | Neural Resonance MSE threshold (0.35); automatic rotation |
+| NAT traversal | Server-side nftables/iptables, client-side `SO_REUSEPORT` |
+
+Detailed adversary model and threat analysis: [THREAT_MODEL.md](THREAT_MODEL.md).
+
+---
+
+## Project Structure
+
+```
+aivpn/
+├── crates/aivpn-common/src/
+│   ├── crypto.rs          # X25519, ChaCha20-Poly1305, BLAKE3
+│   ├── mask.rs            # Mimicry profiles (WebRTC, QUIC, DNS)
+│   ├── protocol.rs        # Packet format and control plane
+│   └── fec.rs             # XOR Forward Error Correction
+├── crates/aivpn-client/src/
+│   ├── client.rs          # Core state machine
+│   ├── tunnel.rs          # Cross-platform TUN interface
+│   ├── kill_switch.rs     # Kill-switch (nftables / pfctl / WFP)
+│   └── mimicry.rs         # Traffic shaping engine
+├── crates/aivpn-server/src/
+│   ├── gateway.rs         # UDP gateway, session dispatch
+│   ├── neural.rs          # Neural Resonance module
+│   ├── nat.rs             # NAT forwarder (IPv4 + IPv6 NAT66)
+│   ├── client_db.rs       # Client database (roles, device binding, exit_node)
+│   ├── mgmt_service.rs    # Shared REST + in-tunnel management dispatch
+│   ├── audit_log.rs       # Tamper-evident hash-chain admin audit log
+│   ├── pending_config.rs  # Apply-with-rollback (commit-confirm) for heavy config
+│   ├── pool_sync.rs       # In-protocol pool synchronization
+│   ├── pool_dialer.rs     # Masked pool-client transport (dial peers, exit routing)
+│   └── pool_partition.rs  # Hard per-node VPN-IP partitioning
+├── crates/aivpn-common/src/ssh_install.rs  # russh SSH-install client + embedded installer bundle
+├── deploy/install-server.sh   # systemd-first server installer (##AIVPN progress markers)
+├── platforms/android/         # Android Kotlin app
+├── platforms/ios/             # iOS SwiftUI app + NEPacketTunnelProvider
+├── crates/aivpn-windows/      # Windows egui GUI
+├── platforms/macos/           # macOS SwiftUI menu bar app
+├── assets/masks/          # Bundled traffic mimicry profiles (JSON)
+├── deploy/ci/             # CI gates invoked from the Makefile
+├── deploy/docker/             # Dockerfiles and entrypoint
+├── Dockerfile
+├── docker-compose.yml
+└── THREAT_MODEL.md
+```
+
+---
+
+## License
+
+MIT — see [LICENSE](LICENSE).

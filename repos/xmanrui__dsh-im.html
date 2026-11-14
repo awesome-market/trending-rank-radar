@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>xmanrui/dsh-im · GitHub Trending Rank Radar</title>
+<meta name="description" content="通过扫码或机器人凭据把IM机器人接入DeepSeek Harness（支持飞书、微信、钉钉、企业微信、QQ、Slack、Telegram、Discord和WhatsApp）。 Connect IM bots to DeepSeek Harness via QR code or credentials (9 channels).">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="dsh-im, xmanrui, xmanrui/dsh-im, github stars, github trending, star growth, star history, 开源项目, 星标增长, dsh-plugin, ai-agents, chatbot, cordis, deepseek, deepseek-harness">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/xmanrui__dsh-im">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="xmanrui/dsh-im · GitHub Trending Rank Radar">
+<meta property="og:description" content="通过扫码或机器人凭据把IM机器人接入DeepSeek Harness（支持飞书、微信、钉钉、企业微信、QQ、Slack、Telegram、Discord和WhatsApp）。 Connect IM bots to DeepSeek Harness via QR code or credentials (9 channels).">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/xmanrui__dsh-im">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "xmanrui/dsh-im", "codeRepository": "https://github.com/xmanrui/dsh-im", "url": "https://zhuikan.com/repos/xmanrui__dsh-im", "description": "通过扫码或机器人凭据把IM机器人接入DeepSeek Harness（支持飞书、微信、钉钉、企业微信、QQ、Slack、Telegram、Discord和WhatsApp）。 Connect IM bots to DeepSeek Harness via QR code or credentials (9 channels).", "author": {"@type": "Organization", "name": "xmanrui", "url": "https://github.com/xmanrui"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2026-08-14", "keywords": "dsh-plugin,ai-agents,chatbot,cordis,deepseek,deepseek-harness,dingtalk-bot,discord-bot,dsh,feishu-bot"}</script>
+</head>
+<body data-repo="xmanrui/dsh-im" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">xmanrui/dsh-im</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="xmanrui__dsh-im"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/4094054?u=f68ad970a1a41b5e23d415717fe8056c2be6f5a6&amp;v=4&s=300" width="300" height="300" alt="xmanrui avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">dsh-im</div>
+      <a class="rp-side-owner" href="https://github.com/xmanrui">xmanrui</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/xmanrui">xmanrui</a>
+        <span class="rp-sep">/</span><span class="rp-name">dsh-im</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">通过扫码或机器人凭据把IM机器人接入DeepSeek Harness（支持飞书、微信、钉钉、企业微信、QQ、Slack、Telegram、Discord和WhatsApp）。 Connect IM bots to DeepSeek Harness via QR code or credentials (9 channels).</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>3,571</b></span><span class="rp-stat" title="forks">⑂ <b>377</b></span><span class="rp-stat" title="watchers">👁 <b>7</b></span><span class="rp-stat" title="prs">⑃ <b>239</b></span><span class="rp-stat" title="issues">● <b>342</b></span><span class="rp-stat" title="releases">▤ <b>116</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/dsh-plugin">dsh-plugin</a><a class="rp-topic" href="../tags/ai-agents">ai-agents</a><a class="rp-topic" href="../tags/chatbot">chatbot</a><a class="rp-topic" href="https://github.com/topics/cordis">cordis</a><a class="rp-topic" href="../tags/deepseek">deepseek</a><a class="rp-topic" href="../tags/deepseek-harness">deepseek-harness</a><a class="rp-topic" href="https://github.com/topics/dingtalk-bot">dingtalk-bot</a><a class="rp-topic" href="https://github.com/topics/discord-bot">discord-bot</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-08-14</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/xmanrui/dsh-im">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v5.10.0</span><a class="rp-dl-a" href="https://github.com/xmanrui/dsh-im/releases/tag/v5.10.0">v5.10.0 ↓</a><span class="rp-dl-ver">5.10.0</span><span class="rp-dl-date">2026-11-03</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+35</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">3,571</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">377</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">7</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">239</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">342</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">116</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">&amp;nbsp;&amp;nbsp;
+  
+
+
+---
+
+
+  让 DeepSeek Harness 触手可及
+  Connecting DeepSeek Harness
+
+  
+    
+    
+    
+    
+    
+    
+  
+
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+  
+    
+      
+    &amp;nbsp;
+    
+      
+    
+  
+
+  简体中文 · English
+
+
+---
+
+ ❤️ 赞助商
+
+
+  
+    
+      
+    
+    
+      88API Token聚合平台赞助了本项目！88API 是一家由香港企业运营并且主要面向开发者、创作者与 AI 应用用户的一站式多模型 API 平台，通过统一接口接入文本、图片、语音和视频模型，覆盖 AI 编程、智能翻译、内容创作、配音、图像生成、视频生成等常见工作流。可提供高质量的折扣Deepseek官转算力和自有B300集群自部署Deepseek算力；支持国际主流付款方式，可提供发票，提供企业级稳定服务。通过此链接注册可以获取专属赠送额度！
+    
+  
+  
+    
+      
+      DeepSeekHarness
+    
+    
+      DSH-IM 已获得 DeepSeek Harness 官方 Token 赞助。感谢官方对本项目的支持！
+      本项目由社区开发者独立开发与维护。
+    
+  
+
+
+---
+
+ [!IMPORTANT]
+ 安装请认准完整包名：@xmanrui/dsh-im
+
+ 为避免名称混淆，在插件市场搜索、插件安装框中填写或使用命令安装时，请复制下方完整包名。
+
+ text
+ @xmanrui/dsh-im
+ 
+
+ 选择对应的一条命令：Desktop 在内置终端执行，Web 在启动当前 Harness 的终端执行。
+
+ sh
+ dsh plugin --profile desktop add -w @xmanrui/dsh-im
+ 
+
+ sh
+ dsh plugin --profile web add -w @xmanrui/dsh-im
+ 
+
+ 安装后重启 Desktop 或 dsh web，Web 刷新浏览器，再打开「设置 → IM机器人」。
+
+ 简介
+
+通过扫码、App Manifest 或已有机器人凭据把 IM 机器人接入 DeepSeek Harness，并让本机 Harness 主动连接公网 AI Office。一个插件、一个设置入口，统一管理内置 IM 渠道和 AI Office Connector。每个 IM 渠道都支持接入多个机器人，各机器人的连接状态、工作区、模型和会话绑定彼此独立；iMessage 是本机 Messages.app 身份接入的例外，详见iMessage 渠道说明。
+
+Connect IM bots to DeepSeek Harness by scanning a QR code, using an App Manifest, or entering existing bot credentials, and let the local Harness connect outward to a public AI Office. One plugin and one settings entry manage the built-in IM channels and the AI Office Connector.
+
+ 界面
+
+!IM 机器人页面
+
+ 
+
+ 当前内置渠道
+
+| 渠道 | 接入方式 | 消息与回复 |
+| --- | --- | --- |
+| 飞书 | 扫码创建机器人，或使用 App ID + App Secret 手动绑定 | 长连接接收消息；可选择飞书原生“实时直播”、单张实时过程卡或逐步消息展示任务过程；每机器人可开启语音交互（可选渠道能力，默认关闭）：语音消息转写为文字走正常流程，答案同时以语音回复 |
+| 微信 | 使用微信扫码绑定机器人 | 腾讯 iLink 长轮询收发消息；等待 Harness 回答时显示“正在输入”，最终回复按 1,800 字符分段发送 |
+| 钉钉 | 扫码创建机器人，或使用 Client ID + Client Secret 手动绑定 | 钉钉 Stream 长连接；通过 AI Card 流式显示回答 |
+| 企业微信 | 使用企业微信 App 扫码创建智能机器人，或使用 Bot ID + Secret 手动绑定 | 官方 WebSocket 长连接；原生显示“正在思考中”、工具执行进度和流式回答 |
+| 企业微信应用 | 在企业微信管理后台创建自建应用，填写企业 ID、AgentId、Secret、Token、EncodingAESKey（可选代理地址） | HTTP 回调接收；私聊支持流式回复（微信端不支持时自动改为分段文本），支持图片输入与结果文件回传；成员的微信关注该企业的微信插件后可在微信中直接使用 |
+| QQ | 使用手机 QQ 扫码创建机器人，或使用 AppID + AppSecret 手动绑定 | WebSocket 长连接；私聊显示“正在输入”并以单条 Markdown 回复，群聊被 @ 后只发送最终答案 |
+| Slack | 使用预置 App Manifest 创建应用，再填写 Bot Token（xoxb-）和 App Token（xapp-） | Socket Mode 长连接；私聊直接回复，频道被 @ 后响应，优先使用官方流式消息 API |
+| Telegram | 使用 @BotFather 生成的 Bot Token | Bot API 长轮询；默认私聊直接响应、群聊被提及或回复时响应，也可为每个机器人独立启用私聊白名单安全模式；关闭思考过程留痕时，私聊、群聊和 Topic 均通过占位消息编辑展示进度并原位完成富文本回复，避免 Android 私聊 Draft 占用发送入口，平台不支持富文本时回退为普通文字 |
+| Discord | 使用 Developer Portal 生成的 Bot Token | Gateway v10 长连接；私信直接回复；服务器文字/公告频道首次 @ 后创建原生 Thread，后续在线程中无需重复 @，并通过编辑消息流式显示回答 |
+| WhatsApp | 使用手机 WhatsApp 扫码关联设备 | WhatsApp Web 长连接；默认仅响应账号自聊，也可切换到指定联系人或开放响应模式；群聊仅在被 @ 或回复机器人消息时触发，主人普通发言不触发；显示已读和“正在输入”，通过每秒编辑同一条消息显示工具进度和逐步生成的回答，长回复自动分段，编辑失败时回退为完整文字回复 |
+| iMessage | 在 macOS Messages.app 中登录 iMessage，并按渠道说明授予本机权限 | 使用 macOS 原生 Messages.app 收发文本私聊；不依赖 BlueBubbles；每个 macOS 用户账户</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/xmanrui/dsh-im/issues/472"><span class="rp-item-num">#472</span><span class="rp-item-title">[FR] 入站文本自动合并窗口：同一私聊连续分条发送，静默 2.5s 合并成一次提交</span><span class="rp-item-extra">8 comments · 2026-10-27</span></a><a class="rp-item" href="https://github.com/xmanrui/dsh-im/issues/434"><span class="rp-item-num">#434</span><span class="rp-item-title">QQ无法成功</span><span class="rp-item-extra">8 comments · 2026-10-22</span></a><a class="rp-item" href="https://github.com/xmanrui/dsh-im/issues/299"><span class="rp-item-num">#299</span><span class="rp-item-title">bug  deepseek harness 桌面版 当前版本：0.2.0-rc.2 ，插件 v4.34.0 连接超时，错误码 INTERNAL_UNKNOWN</span><span class="rp-item-extra">6 comments · 2026-10-02</span></a><a class="rp-item" href="https://github.com/xmanrui/dsh-im/issues/459"><span class="rp-item-num">#459</span><span class="rp-item-title">无法连接飞书</span><span class="rp-item-extra">4 comments · 2026-10-26</span></a><a class="rp-item" href="https://github.com/xmanrui/dsh-im/issues/521"><span class="rp-item-num">#521</span><span class="rp-item-title">Mac使用企业微信，选择模型不生效</span><span class="rp-item-extra">3 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/xmanrui/dsh-im/issues/489"><span class="rp-item-num">#489</span><span class="rp-item-title">[FR] QQ 群聊三个可配置项：必须 @ 才回 / 群上下文注入 / 失败提示开关</span><span class="rp-item-extra">3 comments · 2026-10-30</span></a><a class="rp-item" href="https://github.com/xmanrui/dsh-im/issues/450"><span class="rp-item-num">#450</span><span class="rp-item-title">飞书绑定机器人后，我尝试点击补全权限，出现The Feishu integration operation failed.尝试手动填入id和secret也是The Feishu integration operation failed.</span><span class="rp-item-extra">3 comments · 2026-10-24</span></a><a class="rp-item" href="https://github.com/xmanrui/dsh-im/issues/385"><span class="rp-item-num">#385</span><span class="rp-item-title">[Feature] /hold：图文暂存合成一次输入 + 主动投递文件接口</span><span class="rp-item-extra">3 comments · 2026-10-18</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/xmanrui/dsh-im/releases"><b>v5.10.0</b> <span class="rp-rel-tag">v5.10.0</span> <span class="rp-item-extra">2026-11-03</span></a><pre class="rp-pre">Added / 新增
+
+- 新增「通用设置 → 投递」，可分别开启 Web 用户输入镜像与非本聊天发起回合的最终回答投递，并设置各自的前缀图标；两项默认关闭。无已保存投递目标时，可按 Session 当前绑定的聊天投递 Web、定时任务及子代理通知等来源的回答；已有目标继续遵循目标范围和同步开关。（480）
+  Added General Settings → Delivery with separate, default-off switches for mirroring Web user input and delivering final answers from turns initiated outside the chat, plus configurable prefixes. Bots without saved delivery targets can deliver Web, scheduled and subagent-triggered answers through current Session bindings; saved targets retain their scope and sync controls. (480)
+- 消息语言可在跟随 DSH 界面语言与中文、英文、俄语之间选择，显式插件 language 配置仍优先。
+  Messag</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/xmanrui__dsh-im.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

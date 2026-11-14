@@ -1,0 +1,279 @@
+# Apache Dubbo for Golang
+
+[![CI](https://github.com/apache/dubbo-go/workflows/CI/badge.svg)](https://github.com/apache/dubbo-go/actions)
+[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white&style=flat-square)](https://pkg.go.dev/github.com/apache/dubbo-go/v3?tab=doc)
+[![Go Report Card](https://goreportcard.com/badge/github.com/apache/dubbo-go)](https://goreportcard.com/report/github.com/apache/dubbo-go)
+![license](https://img.shields.io/badge/license-Apache--2.0-green.svg)
+
+---
+
+[English](README.md) | 中文
+
+**Apache Dubbo-go** 是一款高性能、功能丰富的微服务框架。作为 Apache Dubbo 生态的 Go 语言实现，它充分利用 Golang 的并发特性，助力开发者在云原生时代构建扩展性强、可靠性高的分布式应用。
+
+在全新的 **v3.3.x** 系列版本中，Dubbo-go 已从传统的 RPC 框架演进为**云原生智能微服务治理平台**，引入了深度的 AI 集成与 Proxyless Mesh（无代理网格）能力。
+
+您可以访问 [官网](https://dubbo.apache.org/) 以获取更多信息。
+
+## 近期更新
+
+详细变更请参阅 [CHANGELOG.md](CHANGELOG.md)。
+
+- **[3.3.2](https://github.com/apache/dubbo-go/releases/tag/v3.3.2)**：
+
+  **升级提醒：** 需要 Go 1.25 或更高版本。旧版 `config` 包已被移除；直接导入该包的应用需要迁移到实例/选项 API 和 `global` 包下的配置类型。迁移说明和当前用法请参阅 [3.3.2 更新日志](CHANGELOG.md#332)及 [dubbo-go-samples](https://github.com/apache/dubbo-go-samples)。
+
+  Apache Dubbo-go 3.3.2 重点提升生产可用性，涵盖 API 整合、Triple 协议能力、应用级元数据、服务治理、并发安全和发布工具链。该版本扩展了泛化调用和面向 HTTP 的 Triple 能力，更新了项目生成流程，并修复了多项竞态、过期快照和资源泄漏问题。
+
+- **3.3.1**：优化配置热加载，通过基于内容的缓存避免重复通知；新增实验性 HTTP/3 支持、Apollo 集成和 Triple 协议 OpenAPI 生成；修复高并发服务发现中的关键竞态问题。
+
+- **3.3.0**：引入脚本路由、多目标条件路由、Triple 协议 keepalive 与连接池、Nacos 多类别订阅，并增强可观测性和互操作性。
+
+## 快速开始
+
+### 环境准备
+
+* Go 1.25 或更高版本。
+
+### 安装
+
+使用以下命令安装 Dubbo-go：
+
+```bash
+go get dubbo.apache.org/dubbo-go/v3@latest
+
+```
+
+### 快速示例
+
+通过我们的 [快速开始 (Helloworld)](https://github.com/apache/dubbo-go-samples/tree/main/helloworld) 示例，您可以在 5 分钟内掌握如何开发一个 RPC 应用。
+
+过程如下方代码所示，非常简单：您使用 Protobuf 定义一个服务，提供您自己的服务实现，将其注册到服务器，然后启动服务器。
+
+```go
+func (srv *GreetTripleServer) Greet(ctx context.Context, req *greet.GreetRequest) (*greet.GreetResponse, error) {
+    resp := &greet.GreetResponse{Greeting: req.Name}
+    return resp, nil
+}
+
+func main() {
+    srv, _ := server.NewServer(
+       server.WithServerProtocol(
+          protocol.WithPort(20000),
+          protocol.WithTriple(),
+       ),
+    )
+
+    _ := greet.RegisterGreetServiceHandler(srv, &GreetTripleServer{})
+
+    if err := srv.Serve(); err != nil {
+       logger.Error(err)
+    }
+}
+```
+
+服务器启动并运行后，您可以通过 cURL 调用您的服务：
+
+```shell
+curl \
+    --header "Content-Type: application/json" \
+    --data '{"name": "Dubbo"}' \
+    http://localhost:20000/greet.GreetService/Greet
+```
+
+或者，您也可以启动一个标准的 dubbo-go 客户端来调用该服务：
+
+```go
+func main() {
+    cli, _ := client.NewClient(
+       client.WithClientURL("127.0.0.1:20000"),
+    )
+
+    svc, _ := greet.NewGreetService(cli)
+
+    resp, _ := svc.Greet(context.Background(), &greet.GreetRequest{Name: "hello world"})
+    
+    logger.Infof("Greet response: %s", resp.Greeting)
+}
+```
+
+有关详细用法，请参阅[示例](https://github.com/apache/dubbo-go-samples)。接下来，请访问官网，了解如何部署、监控和管理您的 dubbo-go 应用的流量。
+
+## 功能特性
+
+![dubbo-go-architecture](./doc/imgs/arc.png)
+
+* **RPC 协议**: Triple (兼容 gRPC 且对 HTTP 友好)、Dubbo、JSONRPC、HTTP/2、HTTP/3 (实验性)。
+* **服务发现**: Nacos、Zookeeper、Etcd、Polaris-mesh。
+* **负载均衡**: 自适应、随机、轮询、最少活跃调用、一致性哈希。
+* **流量管理**: 流量切分、超时设置、速率限制、金丝雀发布。
+* **配置管理**: YAML 文件、动态配置（Nacos、Apollo、Zookeeper 等），支持基于指纹去重的优化版文件监听。
+* **可观测性**: 指标（Prometheus）、追踪（OpenTelemetry v1.21.0+ 标准化 Span 名）、日志（完整的生命周期事件记录）。
+* **高可用策略**: 故障转移 (Failover)、快速失败 (Failfast)、失败安全/失败自动恢复 (Failsafe/Failback)、广播 (Broadcast)、并行调用 (Forking)。
+* **跨语言互通**: 通过 Triple 协议泛化调用、版本通配符匹配等技术，实现与 Java 版 Dubbo 的完美互通。
+
+## 工具
+
+常用开发工具位于 `tools/` 目录。
+
+| 工具 | 用途 |
+| --- | --- |
+| [dubbogo-cli](./tools/dubbogo-cli/README_CN.md) | 创建 demo/应用脚手架、安装配套工具、查看元数据并调试服务。 |
+| [protoc-gen-go-triple](./tools/protoc-gen-go-triple/README_CN.md) | 从 protobuf 服务定义生成 dubbo-go Triple 绑定代码。 |
+| [protoc-gen-triple-openapi](./tools/protoc-gen-triple-openapi/README_CN.md) | 从 Triple protobuf 服务生成 OpenAPI v3 文档。 |
+| [imports-formatter](./tools/imports-formatter/README_CN.md) | 按 dubbo-go 分组规则整理 Go import 块。 |
+| [dubbo-go-schema](./tools/dubbo-go-schema/README_CN.md) | 为 dubbo-go YAML 配置提供 JSON Schema 补全与校验。 |
+| [benchmark](./tools/benchmark/README_CN.md) | 对比 Dubbo-Go、Dubbo-Java 和 gRPC 框架性能的基准测试套件。 |
+
+## 生态系统
+
+- [dubbo-go-samples](https://github.com/apache/dubbo-go-samples)
+- [dubbo-go-pixiu: 作为代理解决 Dubbo 多语言互通问题](https://github.com/apache/dubbo-go-pixiu)
+- [与 Dubbo Java 互通](https://cn.dubbo.apache.org/zh-cn/overview/mannual/golang-sdk/tutorial/interop-dubbo/)
+- [控制台 (Console)](https://github.com/apache/dubbo-admin)，开发中
+- [dubbo-go-extensions](https://github.com/apache/dubbo-go-extensions)，建设中
+
+## 社区与文档
+
+* **官方网站**: https://dubbo.apache.org/
+* **官方文档**: https://cn.dubbo.apache.org/zh-cn/overview/mannual/golang-sdk/
+* **问题反馈**: [GitHub Issues](https://github.com/apache/dubbo-go/issues)
+
+关于提交补丁和贡献流程的详细信息，请访问 [CONTRIBUTING](./CONTRIBUTING.md)。
+
+## 联系我们
+
+通过钉钉或微信加入我们的讨论组。
+
+![invite.png](./doc/imgs/invite.png)
+
+
+## [用户列表](https://github.com/apache/dubbo-go/issues/2)
+
+如果您正在使用 [apache/dubbo-go](https://github.com/apache/dubbo-go) 并且它对您有所帮助，或者您想为 Dubbo-go 贡献代码，请将您的公司添加到[用户列表](https://github.com/apache/dubbo-go/issues/2)，让我们了解您的需求。
+
+<div>
+<table>
+  <tbody>
+  <tr></tr>
+    <tr>
+      <td align="center"  valign="middle">
+        <a href="" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-beike.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-gaode.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-eht.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="https://github.com/mosn" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-mosn.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-pdd.png">
+        </a>
+      </td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td align="center"  valign="middle">
+        <a href="http://www.j.cn" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-jd.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-kaikele.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-sohu.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="https://www.zto.com" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-zto.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-tianyi.png">
+        </a>
+      </td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td align="center"  valign="middle">
+        <a href="http://www.mgtv.com" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-mgtv.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-vivo.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="http://www.ruubypay.com" target="_blank">
+           <img width="222px"  src="./doc/imgs/usecase-tuya.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+          <a href="https://www.dingtalk.com" target="_blank">
+             <img width="222px"  src="./doc/imgs/usecase-xiecheng.png">
+          </a>
+      </td>
+      <td align="center"  valign="middle">
+          <a href="https://www.autohome.com.cn" target="_blank">
+             <img width="222px"  src="./doc/imgs/usecase-autohome.png">
+          </a>
+      </td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td align="center"  valign="middle">
+        <a href="https://www.mi.com/" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-mi.png">
+        </a>
+      </td>
+      <td align="center"  valign="middle">
+        <a href="https://opayweb.com/" target="_blank">
+          <img width="222px"  src="./doc/imgs/usecase-zonghengwenxue.png">
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="" target="_blank">
+          <img width="222px" src="./doc/imgs/usecase-tiger-brokers.png">
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="" target="_blank">
+          <img width="222px" src="./doc/imgs/usecase-zhanzhang.png" >
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="" target="_blank">
+          <img width="222px" src="./doc/imgs/usecase-genshuixue.png" >
+        </a>
+      </td>
+    </tr>
+    <tr></tr>
+  </tbody>
+</table>
+</div>
+
+[查看更多用户案例](https://github.com/apache/dubbo-go/issues/2)
+
+## 许可证
+
+Apache Dubbo-go 软件基于 Apache 许可证 2.0 版本进行许可。详情请参阅 [LICENSE](./LICENSE) 文件。

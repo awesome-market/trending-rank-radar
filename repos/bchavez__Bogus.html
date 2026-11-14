@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>bchavez/Bogus · GitHub Trending Rank Radar</title>
+<meta name="description" content=":card_index: A simple fake data generator for C#, F#, and VB.NET. Based on and ported from the famed faker.js.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Bogus, bchavez, bchavez/Bogus, github stars, github trending, star growth, star history, 开源项目, 星标增长, fake, data, generator, dotnet, csharp, faker">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/bchavez__Bogus">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="bchavez/Bogus · GitHub Trending Rank Radar">
+<meta property="og:description" content=":card_index: A simple fake data generator for C#, F#, and VB.NET. Based on and ported from the famed faker.js.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/bchavez__Bogus">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "bchavez/Bogus", "codeRepository": "https://github.com/bchavez/Bogus", "url": "https://zhuikan.com/repos/bchavez__Bogus", "description": ":card_index: A simple fake data generator for C#, F#, and VB.NET. Based on and ported from the famed faker.js.", "author": {"@type": "Organization", "name": "bchavez", "url": "https://github.com/bchavez"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "C#", "dateCreated": "2015-06-06", "keywords": "fake,data,generator,dotnet,csharp,faker,c-sharp,bogus,poco,data-access-layer"}</script>
+</head>
+<body data-repo="bchavez/Bogus" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">bchavez/Bogus</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="bchavez__Bogus"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/478118?u=11f9443a54fcd5069ed5966fe451df1e07380ffa&amp;v=4&s=300" width="300" height="300" alt="bchavez avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Bogus</div>
+      <a class="rp-side-owner" href="https://github.com/bchavez">bchavez</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/bchavez">bchavez</a>
+        <span class="rp-sep">/</span><span class="rp-name">Bogus</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">:card_index: A simple fake data generator for C#, F#, and VB.NET. Based on and ported from the famed faker.js.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,753</b></span><span class="rp-stat" title="forks">⑂ <b>540</b></span><span class="rp-stat" title="watchers">👁 <b>120</b></span><span class="rp-stat" title="prs">⑃ <b>243</b></span><span class="rp-stat" title="issues">● <b>362</b></span><span class="rp-stat" title="releases">▤ <b>129</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/fake">fake</a><a class="rp-topic" href="https://github.com/topics/data">data</a><a class="rp-topic" href="https://github.com/topics/generator">generator</a><a class="rp-topic" href="../tags/dotnet">dotnet</a><a class="rp-topic" href="../tags/csharp">csharp</a><a class="rp-topic" href="https://github.com/topics/faker">faker</a><a class="rp-topic" href="https://github.com/topics/c-sharp">c-sharp</a><a class="rp-topic" href="https://github.com/topics/bogus">bogus</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C#</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2015-06-06</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/bchavez/Bogus">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Release v35.6.5 build 1571</span><a class="rp-dl-a" href="https://github.com/bchavez/Bogus/releases/tag/v35.6.5">Release-35.6.5 ↓</a><span class="rp-dl-ver">35.6.5</span><span class="rp-dl-date">2025-10-26</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">9,753</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">540</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">120</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">243</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">362</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">129</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Bogus for .NET: C, F, and VB.NET
+======================
+
+Project Description
+-------------------
+Hello. I&#x27;m your host Brian Chavez (twitter). Bogus is a simple fake data generator for .NET languages like C, F and VB.NET. Bogus is fundamentally a C port of faker.js
+and inspired by FluentValidation&#x27;s syntax sugar.
+
+Bogus will help you load databases, UI and apps with fake data for your testing needs. If you like Bogus star :star: the repository and show your friends! :smile: If you find Bogus useful consider supporting the project by purchasing a Bogus Premium license that gives you extra Bogus superpowers! :dizzy: :muscle: You can also sponsor the project here! :moneybag: :dollar:
+
+
+ Download &amp; Install
+Nuget Package Bogus
+
+powershell
+Install-Package Bogus
+
+Minimum Requirements: .NET Standard 1.3 or .NET Standard 2.0 or .NET Framework 4.0.
+
+ Projects That Use Bogus
+
+ Bitwarden Passwordless Server [[code]](https://github.com/bitwarden/passwordless-server/blob/147e0ffa6e687634edcda7ac89518eab56936835/tests/Api.IntegrationTests/Helpers/User/UserHelpers.csL12-L22)
+ Elasticsearch .NET Client (NEST) [[code]](https://github.com/elastic/elasticsearch-net/tree/82c938893b2ff4ddca03a8e977ad14a16da712ba/src/Tests/Framework/MockData)
+ FluentValidation [[code]](https://github.com/FluentValidation/FluentValidation/search?q=Bogus)
+ Microsoft Windows-XAML / Template10 [[code]](https://github.com/Windows-XAML/Template10/blob/beed5e58a4f8ab381cff6f063d2a91db5b4fc3bc/Basics/PrismSample/Services/DataService.csL1)
+ Microsoft Learning / Cloud-Native Applications Using Microsoft Azure Cosmos DB [[code]](https://github.com/MicrosoftLearning/dp-420-cosmos-db-dev/blob/fdbb3811c20a601fdfda8ea04c9c7de89b8afb19/instructions/08-sdk-bulk.md)
+ Microsoft Office Developer
+     Office 365 Development Training Content [[code]](https://github.com/OfficeDev/TrainingContent/blob/0b2579517f0271f9a64f613b2046ab2821a73956/Teams/03%20Authentication/LabFiles/Starter/officedev-talent-management/DataModel/PositionCandidateData.cs)
+     Microsoft Teams Sample Connector [[code]](https://github.com/OfficeDev/microsoft-teams-sample-connector-csharp/blob/8805bb1acb136949905e4644c4e714dd7b70a61a/TeamsToDoAppConnector/Utils/TaskHelper.cs)
+
+ Featured In
+ Amazon AWS .NET Open Source Fund Recipient - Oct. 1st, 2024
+ Microsoft &#x27;On .NET Live&#x27;: Next-level EF Core Data Seeding with Bogus - Apr. 15th, 2024
+ Adventures in .NET: Building Bogus with Brian Chavez - Jan 5th, 2024
+ Microsoft Docs: Deploy Orleans to Azure App Service - May 5th, 2022
+ Microsoft Docs: Modernize a WPF app tutorial - Aug. 2nd, 2019
+ Microsoft Build 2018: Azure Tips and Tricks - May 8th, 2018
+ NuGet Must Haves: Top 10 Unit Testing Libraries in 2017
+ .NET Rocks Podcast: BetterKnowThatFramework - Mar. 16th 2017, Sep. 13th, 2018, and May 7th, 2020
+ .NET Engineering Blog: NuGet Package of the week 1. - &quot;This week in .NET - December 8th 2015&quot;
+
+ Blog Posts
+ Nick Chapsas - [Generating realistic fake data in .NET using Bogus [YouTube]](https://w</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/bchavez/Bogus/issues/405"><span class="rp-item-num">#405</span><span class="rp-item-title">How to register custom `DataSet`s for scoped/local seed propagation given by `UseSeed`</span><span class="rp-item-extra">16 comments · 2022-01-11</span></a><a class="rp-item" href="https://github.com/bchavez/Bogus/issues/55"><span class="rp-item-num">#55</span><span class="rp-item-title">FinishWith for the whole generate set</span><span class="rp-item-extra">8 comments · 2017-01-23</span></a><a class="rp-item" href="https://github.com/bchavez/Bogus/issues/418"><span class="rp-item-num">#418</span><span class="rp-item-title">picsum requests are outdated</span><span class="rp-item-extra">5 comments · 2022-04-04</span></a><a class="rp-item" href="https://github.com/bchavez/Bogus/issues/441"><span class="rp-item-num">#441</span><span class="rp-item-title">Bogus database seeding fails on .NET 6</span><span class="rp-item-extra">4 comments · 2022-09-08</span></a><a class="rp-item" href="https://github.com/bchavez/Bogus/issues/612"><span class="rp-item-num">#612</span><span class="rp-item-title">DateTimeReference is null</span><span class="rp-item-extra">3 comments · 2025-07-25</span></a><a class="rp-item" href="https://github.com/bchavez/Bogus/issues/548"><span class="rp-item-num">#548</span><span class="rp-item-title">Update `zh_CN` dataset to latest</span><span class="rp-item-extra">3 comments · 2024-05-11</span></a><a class="rp-item" href="https://github.com/bchavez/Bogus/issues/539"><span class="rp-item-num">#539</span><span class="rp-item-title">Add hungarian (hu) locale from faker-js</span><span class="rp-item-extra">3 comments · 2024-04-15</span></a><a class="rp-item" href="https://github.com/bchavez/Bogus/issues/516"><span class="rp-item-num">#516</span><span class="rp-item-title">Update Denmark (da) locale from faker-js </span><span class="rp-item-extra">3 comments · 2023-12-14</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/bchavez/Bogus/discussions/582"><span class="rp-item-num">#582</span><span class="rp-item-title">Seed syntetic database (E2E fwk)</span><span class="rp-item-extra">1 comments · 2025-02-12</span></a><a class="rp-item" href="https://github.com/bchavez/Bogus/discussions/564"><span class="rp-item-num">#564</span><span class="rp-item-title">Alternative for FormatterServices.GetUninitializedObject</span><span class="rp-item-extra">1 comments · 2024-09-16</span></a><a class="rp-item" href="https://github.com/bchavez/Bogus/discussions/563"><span class="rp-item-num">#563</span><span class="rp-item-title">How to created nested data such as XML files or JSON objects?</span><span class="rp-item-extra">2 comments · 2024-09-10</span></a><a class="rp-item" href="https://github.com/bchavez/Bogus/discussions/552"><span class="rp-item-num">#552</span><span class="rp-item-title">&quot;adding&quot; onto a rule</span><span class="rp-item-extra">1 comments · 2024-06-05</span></a><a class="rp-item" href="https://github.com/bchavez/Bogus/discussions/541"><span class="rp-item-num">#541</span><span class="rp-item-title">Applying distributions when generating collections</span><span class="rp-item-extra">1 comments · 2024-04-18</span></a><a class="rp-item" href="https://github.com/bchavez/Bogus/discussions/536"><span class="rp-item-num">#536</span><span class="rp-item-title">how to dynamically hydrate all properties</span><span class="rp-item-extra">0 comments · 2024-03-16</span></a><a class="rp-item" href="https://github.com/bchavez/Bogus/discussions/533"><span class="rp-item-num">#533</span><span class="rp-item-title">Export/Save/Serialize Rules</span><span class="rp-item-extra">0 comments · 2024-02-22</span></a><a class="rp-item" href="https://github.com/bchavez/Bogus/discussions/532"><span class="rp-item-num">#532</span><span class="rp-item-title">Attributes for similar experience of xUnit, AutoFixture &amp; Moq?</span><span class="rp-item-extra">1 comments · 2024-02-16</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/bchavez/Bogus/releases"><b>Release v35.6.5 build 1571</b> <span class="rp-rel-tag">v35.6.5</span> <span class="rp-item-extra">2025-10-26</span></a><pre class="rp-pre">CHANGE LOG</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/bchavez__Bogus.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

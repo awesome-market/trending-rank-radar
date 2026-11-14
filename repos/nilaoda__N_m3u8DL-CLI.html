@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>nilaoda/N_m3u8DL-CLI · GitHub Trending Rank Radar</title>
+<meta name="description" content="[.NET] m3u8 downloader 开源的命令行m3u8/HLS/dash下载器，支持普通AES-128-CBC解密，多线程，自定义请求头等. 支持简体中文,繁体中文和英文. English Supported.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="N_m3u8DL-CLI, nilaoda, nilaoda/N_m3u8DL-CLI, github stars, github trending, star growth, star history, 开源项目, 星标增长, m3u8dl-cli, m3u8, m3u8-downloader, m3u8-parser, downloader, command-line">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/nilaoda__N_m3u8DL-CLI">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="nilaoda/N_m3u8DL-CLI · GitHub Trending Rank Radar">
+<meta property="og:description" content="[.NET] m3u8 downloader 开源的命令行m3u8/HLS/dash下载器，支持普通AES-128-CBC解密，多线程，自定义请求头等. 支持简体中文,繁体中文和英文. English Supported.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/nilaoda__N_m3u8DL-CLI">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "nilaoda/N_m3u8DL-CLI", "codeRepository": "https://github.com/nilaoda/N_m3u8DL-CLI", "url": "https://zhuikan.com/repos/nilaoda__N_m3u8DL-CLI", "description": "[.NET] m3u8 downloader 开源的命令行m3u8/HLS/dash下载器，支持普通AES-128-CBC解密，多线程，自定义请求头等. 支持简体中文,繁体中文和英文. English Supported.", "author": {"@type": "Organization", "name": "nilaoda", "url": "https://github.com/nilaoda"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "C#", "dateCreated": "2019-04-18", "keywords": "m3u8dl-cli,m3u8,m3u8-downloader,m3u8-parser,downloader,command-line,windows"}</script>
+</head>
+<body data-repo="nilaoda/N_m3u8DL-CLI" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">nilaoda/N_m3u8DL-CLI</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="nilaoda__N_m3u8DL-CLI"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/20772925?u=6332a7ef3fc5f4f6ce844a764e912638fc01b64a&amp;v=4&s=300" width="300" height="300" alt="nilaoda avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">N_m3u8DL-CLI</div>
+      <a class="rp-side-owner" href="https://github.com/nilaoda">nilaoda</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/nilaoda">nilaoda</a>
+        <span class="rp-sep">/</span><span class="rp-name">N_m3u8DL-CLI</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">[.NET] m3u8 downloader 开源的命令行m3u8/HLS/dash下载器，支持普通AES-128-CBC解密，多线程，自定义请求头等. 支持简体中文,繁体中文和英文. English Supported.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>16,162</b></span><span class="rp-stat" title="forks">⑂ <b>2,276</b></span><span class="rp-stat" title="watchers">👁 <b>199</b></span><span class="rp-stat" title="prs">⑃ <b>15</b></span><span class="rp-stat" title="issues">● <b>692</b></span><span class="rp-stat" title="releases">▤ <b>84</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/m3u8dl-cli">m3u8dl-cli</a><a class="rp-topic" href="https://github.com/topics/m3u8">m3u8</a><a class="rp-topic" href="https://github.com/topics/m3u8-downloader">m3u8-downloader</a><a class="rp-topic" href="https://github.com/topics/m3u8-parser">m3u8-parser</a><a class="rp-topic" href="https://github.com/topics/downloader">downloader</a><a class="rp-topic" href="../tags/command-line">command-line</a><a class="rp-topic" href="../tags/windows">windows</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C#</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2019-04-18</span><a class="rp-meta-bit rp-home" href="https://nilaoda.github.io/N_m3u8DL-CLI/" rel="noopener">nilaoda.github.io/N_m3u8DL-CLI/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="nilaoda__BBDown"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/20772925?u=6332a7ef3fc5f4f6ce844a764e912638fc01b64a&amp;v=4" alt="" loading="lazy">BBDown</a><a class="rp-same-link" href="nilaoda__N_m3u8DL-RE"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/20772925?u=6332a7ef3fc5f4f6ce844a764e912638fc01b64a&amp;v=4" alt="" loading="lazy">N_m3u8DL-RE</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/nilaoda/N_m3u8DL-CLI">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">N_m3u8DL-CLI_v3.0.2</span><a class="rp-dl-a" href="https://github.com/nilaoda/N_m3u8DL-CLI/releases/tag/3.0.2">N_m3u8DL-CLI_v3.0.2 ↓</a><span class="rp-dl-ver">3.0.2</span><span class="rp-dl-date">2022-07-11</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">16,162</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,276</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">199</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">15</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">692</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">84</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">███╗   ██╗        ███╗   ███╗██████╗ ██╗   ██╗ █████╗ ██████╗ ██╗       ██████╗██╗     ██╗
+████╗  ██║        ████╗ ████║╚════██╗██║   ██║██╔══██╗██╔══██╗██║      ██╔════╝██║     ██║
+██╔██╗ ██║        ██╔████╔██║ █████╔╝██║   ██║╚█████╔╝██║  ██║██║█████╗██║     ██║     ██║
+██║╚██╗██║        ██║╚██╔╝██║ ╚═══██╗██║   ██║██╔══██╗██║  ██║██║╚════╝██║     ██║     ██║
+██║ ╚████║███████╗██║ ╚═╝ ██║██████╔╝╚██████╔╝╚█████╔╝██████╔╝███████╗ ╚██████╗███████╗██║
+╚═╝  ╚═══╝╚══════╝╚═╝     ╚═╝╚═════╝  ╚═════╝  ╚════╝ ╚═════╝ ╚══════╝  ╚═════╝╚══════╝╚═╝
+                                                                                          
+
+---
+        
+
+
+ ENGLISH VERSION
+
+ 下载使用
+ 发行版: https://github.com/nilaoda/N_m3u8DL-CLI/releases
+ 自动构建版(供测试): https://github.com/nilaoda/N_m3u8DL-CLI/actions
+ 
+ 关于开源
+本项目已于2019年10月9日开源，采用MIT许可证，各取所需。
+
+ 关于跨平台
+ N_m3u8DL-CLI (本项目): 基于 .NET Framework, 不具备跨平台能力. 目前已进入维护阶段.
+
+ N_m3u8DL-RE : 抛弃历史包袱从零做起, 支持Win/Linux/Mac, 更丰富的功能会在这里出现 ...
+
+ N_m3u8DL-CLI
+一个简单易用的m3u8下载器，下载地址：https://github.com/nilaoda/N_m3u8DL-CLI/releases  
+
+支持下载m3u8链接或文件为mp4或ts格式，并提供丰富的命令行选项。
+   不支持优酷视频解密
+   不支持气球云视频解密
+   支持AES-128-CBC加密自动解密
+   支持多线程下载
+   支持下载限速
+   支持断点续传
+   支持Master List
+   支持直播流录制(BETA)
+   支持自定义HTTP Headers
+   支持自动合并 (二进制合并或使用ffmpeg合并)
+   支持选择下载m3u8中的指定时间段/分片内容
+   支持下载路径为网络驱动器的情况
+   支持下载外挂字幕轨道、音频轨道
+   支持仅合并为音频
+   支持设置特定http代理
+   支持自动使用系统代理（默认行为, 可禁止）
+   支持m3u8dl链接协议（通过web链接调用本机客户端）
+   提供SimpleG简易的GUI生成常用参数
+
+
+
+!运行截图  
+
+ 命令行选项
+
+N_m3u8DL-CLI
+
+USAGE:
+
+  N_m3u8DL-CLI  [OPTIONS]
+
+OPTIONS:
+
+  --workDir                  设定程序工作目录
+  --saveName                 设定存储文件名(不包括后缀)
+  --baseUrl                  设定Baseurl
+  --headers                  设定请求头，格式 key:value 使用|分割不同的key&amp;value
+  --maxThreads               (Default: 32) 设定程序的最大线程数
+  --minThreads               (Default: 16) 设定程序的最小线程数
+  --retryCount               (Default: 15) 设定程序的重试次数
+  --timeOut                  (Default: 10) 设定程序网络请求的超时时间(单位为秒)
+  --muxSetJson               使用外部json文件定义混流选项
+  --useKeyFile               使用外部16字节文件定义AES-128解密KEY
+  --useKeyBase64             使用Base64字符串定义AES-128解密KEY
+  --useKeyIV                 使用HEX字符串定义AES-128解密IV
+  --downloadRange            仅下载视频的一部分分片或长度
+  --liveRecDur               直播录制时，达到此长度自动退出软件(HH:MM:SS)
+  --stopSpeed                当速度低于此值时，重试(单位为KB/s)
+  --maxSpeed                 设置下载速度上限(单位为KB/s)
+  --proxyAddress             设置HTTP/SOCKS5代理, 如 http://127.0.0.1:8080
+  --enableDelAfterDone       开启下载后删除临时文件夹的功能
+  --enableMuxFastStart       开启混流mp4的FastStart特性
+  --enableBinaryMerge        开启二进制合并分片
+  --enableParseOnly          开启仅解析模式(程序只进行到meta.json)
+  --enableAudioOnly          合并时仅封装音频轨道
+  --disableDateInfo          关闭混流中的日期写入
+  --disableIntegrityCheck    不检测分片数量是否完整
+  --noMerge                  禁用自动合并
+  --noProxy                  不自动使用系统代理
+  --registerUrlProtocol      注册m3u8dl链接协议
+  --unregisterUrlProtocol    取消注册m3u8dl链接协议
+  --enableChaCha20           enableChaCha20
+  --chaCha20KeyBase64        ChaCha20KeyBase64
+  --chaCha20NonceBase64      ChaCha20NonceBase64
+</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/nilaoda/N_m3u8DL-CLI/issues/473"><span class="rp-item-num">#473</span><span class="rp-item-title">求教DMM视频流破解方法；</span><span class="rp-item-extra">101 comments · 2021-07-22</span></a><a class="rp-item" href="https://github.com/nilaoda/N_m3u8DL-CLI/issues/741"><span class="rp-item-num">#741</span><span class="rp-item-title">关于DMM VR视频下载的讨论</span><span class="rp-item-extra">25 comments · 2022-10-23</span></a><a class="rp-item" href="https://github.com/nilaoda/N_m3u8DL-CLI/issues/647"><span class="rp-item-num">#647</span><span class="rp-item-title">【Chrome插件分享】修改猫爪视频下载插件，识别地址后点击识别地址自动调用下载器开始下载，让下载一步到位【支持N_m3u8DL-CLI_v3.0.1协议下载】</span><span class="rp-item-extra">25 comments · 2022-04-22</span></a><a class="rp-item" href="https://github.com/nilaoda/N_m3u8DL-CLI/issues/508"><span class="rp-item-num">#508</span><span class="rp-item-title">大大請問一下為什麼IDM可下載m3u8檔??  N_m3u8DL-CLI卻找不網址??</span><span class="rp-item-extra">14 comments · 2021-09-09</span></a><a class="rp-item" href="https://github.com/nilaoda/N_m3u8DL-CLI/issues/729"><span class="rp-item-num">#729</span><span class="rp-item-title">win11系统，下载完分片后不自动合并或者合并失败</span><span class="rp-item-extra">13 comments · 2022-09-20</span></a><a class="rp-item" href="https://github.com/nilaoda/N_m3u8DL-CLI/issues/666"><span class="rp-item-num">#666</span><span class="rp-item-title">浏览器一键下载插件无需安装任何软件</span><span class="rp-item-extra">11 comments · 2022-05-26</span></a><a class="rp-item" href="https://github.com/nilaoda/N_m3u8DL-CLI/issues/633"><span class="rp-item-num">#633</span><span class="rp-item-title">下载时提示：请求被中止: 未能创建 SSL/TLS 安全通道。</span><span class="rp-item-extra">10 comments · 2022-03-31</span></a><a class="rp-item" href="https://github.com/nilaoda/N_m3u8DL-CLI/issues/699"><span class="rp-item-num">#699</span><span class="rp-item-title">视频标题输入框对英文问号的转义</span><span class="rp-item-extra">9 comments · 2022-07-13</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/nilaoda/N_m3u8DL-CLI/discussions/839"><span class="rp-item-num">#839</span><span class="rp-item-title">批量下载</span><span class="rp-item-extra">1 comments · 2024-12-27</span></a><a class="rp-item" href="https://github.com/nilaoda/N_m3u8DL-CLI/discussions/832"><span class="rp-item-num">#832</span><span class="rp-item-title">有bug</span><span class="rp-item-extra">1 comments · 2024-09-28</span></a><a class="rp-item" href="https://github.com/nilaoda/N_m3u8DL-CLI/discussions/829"><span class="rp-item-num">#829</span><span class="rp-item-title">小白求各位路过大佬赐教 DMM片子的mpd破解</span><span class="rp-item-extra">1 comments · 2024-08-15</span></a><a class="rp-item" href="https://github.com/nilaoda/N_m3u8DL-CLI/discussions/801"><span class="rp-item-num">#801</span><span class="rp-item-title">设置时间范围误差问题</span><span class="rp-item-extra">0 comments · 2023-11-22</span></a><a class="rp-item" href="https://github.com/nilaoda/N_m3u8DL-CLI/discussions/773"><span class="rp-item-num">#773</span><span class="rp-item-title">下载失败问题？</span><span class="rp-item-extra">0 comments · 2023-02-05</span></a><a class="rp-item" href="https://github.com/nilaoda/N_m3u8DL-CLI/discussions/770"><span class="rp-item-num">#770</span><span class="rp-item-title">Video Only</span><span class="rp-item-extra">3 comments · 2023-01-30</span></a><a class="rp-item" href="https://github.com/nilaoda/N_m3u8DL-CLI/discussions/759"><span class="rp-item-num">#759</span><span class="rp-item-title">empty</span><span class="rp-item-extra">0 comments · 2023-01-02</span></a><a class="rp-item" href="https://github.com/nilaoda/N_m3u8DL-CLI/discussions/721"><span class="rp-item-num">#721</span><span class="rp-item-title">能否考虑支持一下byutv</span><span class="rp-item-extra">0 comments · 2022-09-03</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/nilaoda/N_m3u8DL-CLI/releases"><b>N_m3u8DL-CLI_v3.0.2</b> <span class="rp-rel-tag">3.0.2</span> <span class="rp-item-extra">2022-07-11</span></a><pre class="rp-pre">下载器更新：
+ 修正m3u8dl协议 转义符问题 https://github.com/nilaoda/N_m3u8DL-CLI/pull/698
+ 优化对EXT-X-BYTERANGE的处理
+ 支持ChaCha20解密（感谢渔滒指点）
+
+由于沉重的历史包袱，此版本后如果没有重大问题将不会有新功能引入，请等待全新开发的跨平台下载器
+
+---
+
+SimpleG更新：
+ 当Key文件路径恰好为32或34位时，HEX转Base64异常导致闪退的问题</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/nilaoda__N_m3u8DL-CLI.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

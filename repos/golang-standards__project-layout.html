@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>golang-standards/project-layout · GitHub Trending Rank Radar</title>
+<meta name="description" content="Standard Go Project Layout">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="project-layout, golang-standards, golang-standards/project-layout, github stars, github trending, star growth, star history, 开源项目, 星标增长, go, golang, project-template, standards, project-structure">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/golang-standards__project-layout">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="golang-standards/project-layout · GitHub Trending Rank Radar">
+<meta property="og:description" content="Standard Go Project Layout">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/golang-standards__project-layout">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "golang-standards/project-layout", "codeRepository": "https://github.com/golang-standards/project-layout", "url": "https://zhuikan.com/repos/golang-standards__project-layout", "description": "Standard Go Project Layout", "author": {"@type": "Organization", "name": "golang-standards", "url": "https://github.com/golang-standards"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "Makefile", "dateCreated": "2017-09-09", "keywords": "go,golang,project-template,standards,project-structure"}</script>
+</head>
+<body data-repo="golang-standards/project-layout" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">golang-standards/project-layout</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="golang-standards__project-layout"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/31396365?v=4&s=300" width="300" height="300" alt="golang-standards avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">project-layout</div>
+      <a class="rp-side-owner" href="https://github.com/golang-standards">golang-standards</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/golang-standards">golang-standards</a>
+        <span class="rp-sep">/</span><span class="rp-name">project-layout</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Standard Go Project Layout</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>56,745</b></span><span class="rp-stat" title="forks">⑂ <b>5,416</b></span><span class="rp-stat" title="watchers">👁 <b>591</b></span><span class="rp-stat" title="prs">⑃ <b>159</b></span><span class="rp-stat" title="issues">● <b>116</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/go">go</a><a class="rp-topic" href="../tags/golang">golang</a><a class="rp-topic" href="https://github.com/topics/project-template">project-template</a><a class="rp-topic" href="https://github.com/topics/standards">standards</a><a class="rp-topic" href="https://github.com/topics/project-structure">project-structure</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Makefile</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2017-09-09</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/golang-standards/project-layout">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">56,745</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">5,416</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">591</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">159</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">116</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Go项目标准布局
+
+ English
+ 한국어 문서
+ 简体中文
+ 正體中文
+ 简体中文 - ???
+ Français
+ 日本語
+ Portuguese
+ Español
+ Română
+ Русский
+ Türkçe
+ Italiano
+ Vietnamese
+ Українська
+ Indonesian
+ हिन्दी
+ Беларуская
+ বাংলা
+
+这是Go应用程序项目的基础布局。这不是Go核心开发团队定义的官方标准；无论是在经典项目还是在新兴的项目中，这都是Go生态系统中一组常见的项目布局模式。这其中有一些模式比另外的一些更受欢迎。它通过几个支撑目录为任何足够大规模的实际应用程序提供一些增强功能。
+
+如果你正准备学习Go、正在构建PoC项目或编写玩具项目，那么按照这个项目进行布局就大材小用了。从一些真正简单的事情开始（一个main.go文件就足够了）。随着项目的增长，确保代码结构的合理是非常重要的，否则最终会出现很多隐藏的依赖关系和全局状态而导致这个项目的代码混乱。当一个项目多人同时进行时，就更需要有清晰的结构，此时引入一种通用的项目包/标准库管理工具就显得尤为重要。当你维护一个开源项目或者有其他项目导入了你的代码，那么有一个私有的包（如internal）就很重要了。克隆这个项目，保留你项目中需要的部分，并删除其他部分。通常来说不需要也没必要使用这个项目中的全部内容。因为，从来没有在一个单一的项目中使用本项目中定义的全部模式，甚至如vendor模式。
+
+Go 1.14 Go Modules已经可以用于生产环境。没有什么特殊原因的话，请使用Go Modules，使用它之后，你就再也不用担心$GOPATH的配置和项目实际的存放位置，项目想放在哪里就放在哪里。本项目中go.mod文件的内容假设你的项目是托管在GitHub上的，当然这不是必选项，因为Module中的路径可以是任意的值，一般Module路径的第一部分中应该包含一个点（最新版的Go中不再强制要求这一点，如果使用的是稍微旧一些的版本，那么可能遇到编译失败的问题）。了解更多请看Issues 37554和 32819。
+
+本项目布局有意设计的更通用一些，而不会尝试去引入一些特定的Go包结构。
+
+这是社区共同的努力。如果发现了一种新的模式或者项目中已经存在的某些模式需要更新，请新建一个issue。
+
+如果需要一些关于命名、格式化或者样式方面的帮助，请先运行gofmt和golint。另外，请务必阅读以下Go代码样式指南和建议：
+
+ 
+ 
+ 
+
+ 
+
+ Style guideline for Go packages (rakyll/JBD)
+
+更多背景信息请查看Go Project Layout。
+
+有关命名和项目包组织样式以及其他代码结构的更多推荐文章：
+
+ GopherCon EU 2018: Peter Bourgon - Best Practices for Industrial Programming
+ GopherCon Russia 2018: Ashley McNamara + Brian Ketelsen - Go best practices
+ GopherCon 2017: Edward Muller - Go Anti-Patterns
+ GopherCon 2018: Kat Zien - How Do You Structure Your Go Apps
+
+ Go目录
+
+ /cmd
+
+项目主要的应用程序。
+
+对于每个应用程序来说这个目录的名字应该和项目可执行文件的名字相匹配（例如，/cmd/myapp）。
+
+不要在这个目录中放太多的代码。如果目录中的代码可以被其他项目导入并使用，那么应该把他们放在/pkg目录。如果目录中的代码不可重用，或者不希望被他人使用，应该将代码放在/internal目录。显式地表明意图比较好！
+
+通常来说，项目都应该拥有一个小的main函数，并在main函数中导入或者调用/internal和/pkg目录中的代码。
+
+更多详情，请看/cmd目录中的例子。
+
+ /internal
+
+私有的应用程序代码库。这些是不希望被其他人导入的代码。请注意：这种模式是Go编译器强制执行的。详细内容情况Go 1.4的release notes。再次注意，在项目的目录树中的任意位置都可以有internal目录，而不仅仅是在顶级目录中。
+
+可以在内部代码包中添加一些额外的结构，来分隔共享和非共享的内部代码。这不是必选项（尤其是在小项目中），但是有一个直观的包用途是很棒的。应用程序实际的代码可以放在/internal/app目录（如，internal/app/myapp），而应用程序的共享代码放在/internal/pkg目录（如，internal/pkg/myprivlib）中。
+
+ /pkg
+
+外部应用程序可以使用的库代码（如，/pkg/mypubliclib）。其他项目将会导入这些库来保证项目可以正常运行，所以在将代码放在这里前，一定要三思而行。请注意，internal目录是一个更好的选择来确保项目私有代码不会被其他人导入，因为这是Go强制执行的。使用/pkg目录来明确表示代码可以被其他人安全的导入仍然是一个好方式。Travis Jeffery撰写的关于 I’ll take pkg over internal 文章很好地概述了pkg和inernal目录以及何时使用它们。
+
+当您的根目录包含大量非Go组件和目录时，这也是一种将Go代码分组到一个位置的方法，从而使运行各种Go工具更加容易（在如下的文章中都有提到：2018年GopherCon Best Practices for Industrial Programming，Kat Zien - How Do You Structure Your Go Apps ，Golab 2018 Massimiliano Pippi - Project layout patterns in Go）。
+
+点击查看/pkg就能看到那些使用这个布局模式的流行Go代码仓库。这是一种常见的布局模式，但未被普遍接受，并且Go社区中的某些人不推荐这样做。
+
+如果项目确实很小并且嵌套的层次并不会带来多少价值（除非你就是想用它），那么就不要使用它。请仔细思考这种情况，当项目变得很大，并且根目录中包含的内容相当繁杂（尤其是有很多非Go的组件）。
+
+ /vendor
+
+应用程序的依赖关系（通过手动或者使用喜欢的依赖管理工具，如新增的内置Go Modules特性）。执行go mod vendor命令将会在项目中创建/vendor目录，注意，如果使用的不是Go 1.14版本，在执行go build进行编译时，需要添加-mod=vendor命令行选项，因为它不是默认选项。
+
+构建库文件时，不要提交应用程序依赖项。
+
+请注意，从1.13开始，Go也启动了模块代理特性（使用https：//proxy.golang.org作为默认的模块代理服务器）。点击这里阅读有关它的更多信息，来了解它是否符合所需要求和约束。如果Go Module满足需要，那么就不需要vendor目录。
+
+ 服务端应用程</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/golang-standards/project-layout/issues/18"><span class="rp-item-num">#18</span><span class="rp-item-title">Best project structure when using go 1.11 mod</span><span class="rp-item-extra">31 comments · 2018-10-31</span></a><a class="rp-item" href="https://github.com/golang-standards/project-layout/issues/10"><span class="rp-item-num">#10</span><span class="rp-item-title">pkg directory should not be recommended for use</span><span class="rp-item-extra">29 comments · 2018-08-14</span></a><a class="rp-item" href="https://github.com/golang-standards/project-layout/issues/61"><span class="rp-item-num">#61</span><span class="rp-item-title">golang.org says to use a src/ directory</span><span class="rp-item-extra">15 comments · 2020-03-12</span></a><a class="rp-item" href="https://github.com/golang-standards/project-layout/issues/36"><span class="rp-item-num">#36</span><span class="rp-item-title">Delete this repo</span><span class="rp-item-extra">14 comments · 2019-08-12</span></a><a class="rp-item" href="https://github.com/golang-standards/project-layout/issues/11"><span class="rp-item-num">#11</span><span class="rp-item-title">What about mail templates, localization files and sql files (migrations)?</span><span class="rp-item-extra">10 comments · 2018-08-21</span></a><a class="rp-item" href="https://github.com/golang-standards/project-layout/issues/1"><span class="rp-item-num">#1</span><span class="rp-item-title">Go project sturcture question </span><span class="rp-item-extra">10 comments · 2017-12-13</span></a><a class="rp-item" href="https://github.com/golang-standards/project-layout/issues/119"><span class="rp-item-num">#119</span><span class="rp-item-title">#117 must be closed and locked</span><span class="rp-item-extra">9 comments · 2021-04-29</span></a><a class="rp-item" href="https://github.com/golang-standards/project-layout/issues/53"><span class="rp-item-num">#53</span><span class="rp-item-title">Proposal: It would be nice if there&#x27;s a CLI to generate this layout</span><span class="rp-item-extra">9 comments · 2020-01-06</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/golang-standards/project-layout/discussions/288"><span class="rp-item-num">#288</span><span class="rp-item-title">Start aa project on my iPad</span><span class="rp-item-extra">0 comments · 2026-10-10</span></a><a class="rp-item" href="https://github.com/golang-standards/project-layout/discussions/254"><span class="rp-item-num">#254</span><span class="rp-item-title">Any idea to manage the constants properly?</span><span class="rp-item-extra">1 comments · 2024-07-29</span></a><a class="rp-item" href="https://github.com/golang-standards/project-layout/discussions/250"><span class="rp-item-num">#250</span><span class="rp-item-title">.</span><span class="rp-item-extra">0 comments · 2024-06-28</span></a><a class="rp-item" href="https://github.com/golang-standards/project-layout/discussions/242"><span class="rp-item-num">#242</span><span class="rp-item-title">Welcome to project-layout Discussions!</span><span class="rp-item-extra">1 comments · 2024-01-25</span></a><a class="rp-item" href="https://github.com/golang-standards/project-layout/discussions/251"><span class="rp-item-num">#251</span><span class="rp-item-title">Should auxiliary code generators be in `cmd/` or in `tools/`?</span><span class="rp-item-extra">2 comments · 2023-09-28</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/golang-standards__project-layout.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

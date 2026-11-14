@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>fishjar/kiss-translator · GitHub Trending Rank Radar</title>
+<meta name="description" content="A simple, open source bilingual translation extension &amp; Greasemonkey script (一个简约、开源的 双语对照翻译扩展 &amp; 油猴脚本)">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="kiss-translator, fishjar, fishjar/kiss-translator, github stars, github trending, star growth, star history, 开源项目, 星标增长, extension, translation, translator, translate, userscripts, userscript">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/fishjar__kiss-translator">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="fishjar/kiss-translator · GitHub Trending Rank Radar">
+<meta property="og:description" content="A simple, open source bilingual translation extension &amp; Greasemonkey script (一个简约、开源的 双语对照翻译扩展 &amp; 油猴脚本)">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/fishjar__kiss-translator">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "fishjar/kiss-translator", "codeRepository": "https://github.com/fishjar/kiss-translator", "url": "https://zhuikan.com/repos/fishjar__kiss-translator", "description": "A simple, open source bilingual translation extension & Greasemonkey script (一个简约、开源的 双语对照翻译扩展 & 油猴脚本)", "author": {"@type": "Organization", "name": "fishjar", "url": "https://github.com/fishjar"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-3.0.html", "programmingLanguage": "JavaScript", "dateCreated": "2023-07-18", "keywords": "extension,translation,translator,translate,userscripts,userscript"}</script>
+</head>
+<body data-repo="fishjar/kiss-translator" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">fishjar/kiss-translator</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="fishjar__kiss-translator"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/1157624?u=ac5503f5c5b4f38a4df99f1866074e607a1dd784&amp;v=4&s=300" width="300" height="300" alt="fishjar avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">kiss-translator</div>
+      <a class="rp-side-owner" href="https://github.com/fishjar">fishjar</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/fishjar">fishjar</a>
+        <span class="rp-sep">/</span><span class="rp-name">kiss-translator</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A simple, open source bilingual translation extension &amp; Greasemonkey script (一个简约、开源的 双语对照翻译扩展 &amp; 油猴脚本)</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>13,329</b></span><span class="rp-stat" title="forks">⑂ <b>681</b></span><span class="rp-stat" title="watchers">👁 <b>30</b></span><span class="rp-stat" title="prs">⑃ <b>480</b></span><span class="rp-stat" title="issues">● <b>848</b></span><span class="rp-stat" title="releases">▤ <b>97</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/extension">extension</a><a class="rp-topic" href="https://github.com/topics/translation">translation</a><a class="rp-topic" href="https://github.com/topics/translator">translator</a><a class="rp-topic" href="https://github.com/topics/translate">translate</a><a class="rp-topic" href="https://github.com/topics/userscripts">userscripts</a><a class="rp-topic" href="https://github.com/topics/userscript">userscript</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">GPL-3.0</span><span class="rp-meta-bit">Created 2023-07-18</span><a class="rp-meta-bit rp-home" href="https://kiss-translator.rayjar.com/" rel="noopener">kiss-translator.rayjar.com/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/fishjar/kiss-translator">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Release v2.2.3</span><a class="rp-dl-a" href="https://github.com/fishjar/kiss-translator/releases/tag/v2.2.3">Release-2.2.3 ↓</a><span class="rp-dl-ver">2.2.3</span><span class="rp-dl-date">2026-11-13</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+17</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">13,329</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">681</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">30</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">480</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">848</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">97</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">KISS Translator 简约翻译
+
+English | 中文 | 日本語 | 한국어
+
+
+
+
+
+一个简约、开源的 双语对照翻译扩展 &amp; 油猴脚本。
+
+kiss-translator.webm
+
+ 感谢以下赞助商对本项目的支持
+
+
+  
+    
+    
+      
+        APIMart 是专注 AI 图片/视频生成的低价 API 平台，GPT-Image-2 低至 $0.006/张，1 美元可出图 160+ 张。图片、视频一套异步 API 通吃，提交任务拿 ID、回调取结果，跑批万张不超时、换模型不改代码。按量付费、无月费，通过此注册链接注册即可开用。
+      
+    
+  
+  
+    
+    
+      
+        ePhone AI 是一个面向开发者的 AI 模型 API 中转与聚合平台，支持 OpenAI、Claude、Gemini、DeepSeek、GLM 等多家大模型。
+      
+    
+  
+
+
+ 功能概览
+
+ 提示：本文档对应当前分支代码，新增功能（接口插件、本地 AI、文件翻译及剪贴板自动翻译等）目前面向 Chrome/Edge、Firefox 扩展版本提供，油猴脚本及其他客户端暂不包含这些入口。具体 AI 能力取决于所用浏览器、设备硬件及所选模型。
+
+ 翻译场景与交互
+
+- 多场景覆盖：支持网页双语对照翻译、输入框即时翻译、划词查词与鼠标悬停翻译；完美支持富文本排版、自定义译文样式，并支持「仅显示译文（隐藏原文）」。
+- 查词与对比面板：提供翻译浮窗与独立对比窗口，支持多个翻译服务横向对照、柯林斯/内置英文词典查词与生词本收藏，支持可选的剪贴板自动翻译。
+- YouTube 双语字幕：支持基础智能合并算法与 AI 语义断句，提供自定义字幕样式、完整对照列表、字幕悬停查词、生词收藏以及基于字幕的 AI 视频总结。
+
+ 服务配置与接口插件
+
+- 海量内置服务：涵盖主流传统与 AI 翻译服务，包括 Google、Microsoft、Baidu、Tencent、Volcengine、DeepL/DeepLX，以及 OpenAI、Gemini、Claude、Ollama、DeepSeek、OpenRouter、OrcaRouter、Requesty、AzureAI、CloudflareAI，并支持 Chrome 浏览器内置 AI 与本地 AI。
+- 按能力自由选用：按文本翻译、词典查词、字幕断句、OCR 识别、语音合成等能力独立配置服务与模型参数；根据模型能力无缝支持批量聚合翻译、流式输出、上下文记忆对话、AI 专业术语及思考链（Reasoning）配置。
+- 接口插件体系：官方与外部插件分列表展示，点击联网安装；也可通过 ZIP、本地文件夹、GitHub 项目根地址或 HTTPS 链接导入。请求受声明的网络范围限制，支持手动更新及配置实例升级。
+- 开放自定义协议：任意非标准 API 均可通过插件实现对接。详细开发指引请参阅 插件开发指南、OpenAI 兼容协议插件 和 DeepSeek 插件。
+
+ 本地 AI（边缘端计算）
+
+- 全流程端侧多模态：内置模型中心，支持模型的下载、删除与设备环境选择（GPU/CPU）；提供涵盖 LLM 文本生成、VLM 图像理解、OCR 文字识别、ASR 语音识别、TTS 语音合成、JEV 判定和版面分析的独立功能测试页。
+- 运行控制与缓存：支持实时查看运行状态与调试日志、手动停止推理任务、卸载内存/显存中的已加载模型；支持文本与结构化推理结果缓存（二进制音频/图片暂不缓存）。
+- 隐私与轻量纯离线：模型下载完成后所有计算均在本机设备运行，保护数据隐私；云端服务保持原有网络请求逻辑。（可用性、推理速度与内存占用取决于具体硬件环境与模型大小）。
+
+ 文件翻译
+
+- 多格式支持与能力拆分：支持 TXT、Markdown、PDF、EPUB 电子书，以及 PNG、JPEG、WebP 图片；各阶段可独立选用专用的翻译、OCR 识别、版面分析与表格/公式解析服务。
+- PDF 深度解析：支持原文阅读、版面结构检测、文字识别、表格/公式解析与分阶段翻译及结果缓存；支持导出为 Markdown、单文件 HTML 或带资源的 ZIP 包（不还原 PDF 排版，不导出 PDF）。
+- EPUB 电子书翻译：支持按章节阅读/单章翻译、整本图书批量翻译、自定义阅读排版样式；支持导出双语 EPUB、纯译文 EPUB 或当前章节 HTML。
+- 纯文本与图片翻译：TXT 支持下载双语对照或纯译文；Markdown 支持导出翻译后 Markdown/HTML；图片支持文字识别、选区翻译及译文图片（PNG）下载。
+
+ 规则、设置与同步
+
+- 智能与自定义规则：支持网页内容自动识别扫描；提供可视化元素选取器，支持草稿编辑、撤销/重做、翻译范围高亮预览；支持规则订阅、导出分享及个人专业术语库。
+- 配置管理与测试套件：提供设置全局搜索、系统提示词模板管理、服务连通性测试工具、术语库与字幕断句调试工具。
+- 多端数据同步：支持通过 KISS-Worker（基于 Cloudflare Workers 或 Docker 自建）或标准 WebDAV 协议进行全量配置跨设备同步。
+- 自定义全局快捷键：
+  - Alt+Q：开启/切换网页翻译
+  - Alt+D：打开独立翻译窗口
+  - Alt+K：打开设置浮窗
+  - Alt+S：打开翻译弹窗 / 翻译选中文字
+  - Alt+O：直接打开完整设置页
+  - Alt+I：翻译当前光标所在输入框
+
+ 快速上手
+
+ 基础使用（3 步极速上手）
+
+1. 添加翻译服务：打开扩展设置中的「服务配置」，添加所需内置服务，填写 API 地址、API Key 和模型名称，点击「测试」确认可用后保存。
+2. 场景关联服务：在「场景设置」中（网页翻译、划词查词、输入框翻译或字幕翻译）勾选对应服务（仅具备对应能力的服务会出现在列表中）；可在「提示词管理」中定制 Prompt 模板。
+3. 启动翻译体验：点击网页浮动图标或使用快捷键 Alt+Q 启动网页翻译；使用 Alt+D 打开独立窗口可同时对比多个服务的翻译质量。
+
+ 进阶功能上手
+
+- 使用接口插件：在「接口插件」页面导入 ZIP 文件、文件夹或 GitHub/HTTPS 仓库链接，完成权限检查并授权；随后在「服务配置 → 添加 → 外部插件」中创建服务实例并配置使用。（注：授权属于本机状态，同步到新设备后需重新授权）。
+- 启用本地 AI：打开「本地 AI」模块，先检测设备环境（WebGPU/WASM 等）；在「模型中心」下载所需任务模型，并在任务测试页调试；随后在「服务配置」中添加对应的本地 AI 服务并在各场景中选用。
+- 文档与图片翻译：打开「文件翻译」页面，上传文件并设定源语言与目标语言；分别选择识别与翻译服务后点击处理。PDF 支持逐步执行版面识别与翻译，EPUB 支持单章或全书翻译，处理完成后选择相应格式导出。
+
+ 安装
+
+ 建议优先使用浏览器扩展：
+
+ - 浏览器扩展提供更完整的能力（本地语言识别、独立窗口、文件翻译、本地 AI、右键菜单等</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/fishjar/kiss-translator/issues/710"><span class="rp-item-num">#710</span><span class="rp-item-title">[BUG] YouTube给视频翻译，电脑直接卡成ppt</span><span class="rp-item-extra">23 comments · 2026-05-28</span></a><a class="rp-item" href="https://github.com/fishjar/kiss-translator/issues/730"><span class="rp-item-num">#730</span><span class="rp-item-title">[BUG] 在Thunderbird里第一次按ALT+Q翻译结果会Double</span><span class="rp-item-extra">17 comments · 2026-06-03</span></a><a class="rp-item" href="https://github.com/fishjar/kiss-translator/issues/695"><span class="rp-item-num">#695</span><span class="rp-item-title">[BUG] 千问模型添加失败</span><span class="rp-item-extra">16 comments · 2026-05-22</span></a><a class="rp-item" href="https://github.com/fishjar/kiss-translator/issues/466"><span class="rp-item-num">#466</span><span class="rp-item-title">无法使用New API提供的Gemini系列模型</span><span class="rp-item-extra">13 comments · 2026-01-01</span></a><a class="rp-item" href="https://github.com/fishjar/kiss-translator/issues/1110"><span class="rp-item-num">#1110</span><span class="rp-item-title">关于新界面的建议</span><span class="rp-item-extra">12 comments · 2026-09-25</span></a><a class="rp-item" href="https://github.com/fishjar/kiss-translator/issues/780"><span class="rp-item-num">#780</span><span class="rp-item-title">[BUG] Safari 油猴脚本 DeepSeek 字幕加载失败</span><span class="rp-item-extra">11 comments · 2026-06-09</span></a><a class="rp-item" href="https://github.com/fishjar/kiss-translator/issues/742"><span class="rp-item-num">#742</span><span class="rp-item-title">[BUG] 网页选项卡切换，导致插件功能全部失效的随机触发问题</span><span class="rp-item-extra">11 comments · 2026-06-04</span></a><a class="rp-item" href="https://github.com/fishjar/kiss-translator/issues/373"><span class="rp-item-num">#373</span><span class="rp-item-title">【征集】你认为不错的译文样式</span><span class="rp-item-extra">11 comments · 2025-11-03</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/fishjar/kiss-translator/releases"><b>Release v2.2.3</b> <span class="rp-rel-tag">v2.2.3</span> <span class="rp-item-extra">2026-11-13</span></a><pre class="rp-pre">- 精简翻译面板和弹窗控件，将页面翻译面板的支持与设置入口移至顶部。
+- 统一翻译提示词的默认回退与显式占位符规则，默认使用双大括号占位符。
+- 改进 EPUB 正文搜索，支持 EPUB 和 PDF 阅读卡片全屏。
+- 修复 YouTube 字幕侧栏自动弹出及显示控制问题。
+- 修复 Telegram Web K 翻译规则、X 图片悬浮菜单及网页富文本行内布局问题。
+- 修复油猴脚本在内嵌页面聚焦时的快捷键，并允许连接讯飞翻译接口。
+- 修复 Gemini 流式错误处理、Markdown 代码围栏解析和翻译样式预览，改进设置搜索。</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/fishjar__kiss-translator.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

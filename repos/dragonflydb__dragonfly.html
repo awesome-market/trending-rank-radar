@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dragonflydb/dragonfly · GitHub Trending Rank Radar</title>
+<meta name="description" content="A modern replacement for Redis and Memcached">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="dragonfly, dragonflydb, dragonflydb/dragonfly, github stars, github trending, star growth, star history, 开源项目, 星标增长, memcached, multi-threading, redis, cpp, fibers, cache">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/dragonflydb__dragonfly">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="dragonflydb/dragonfly · GitHub Trending Rank Radar">
+<meta property="og:description" content="A modern replacement for Redis and Memcached">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/dragonflydb__dragonfly">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "dragonflydb/dragonfly", "codeRepository": "https://github.com/dragonflydb/dragonfly", "url": "https://zhuikan.com/repos/dragonflydb__dragonfly", "description": "A modern replacement for Redis and Memcached", "author": {"@type": "Organization", "name": "dragonflydb", "url": "https://github.com/dragonflydb"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "C++", "dateCreated": "2021-12-11", "keywords": "memcached,multi-threading,redis,cpp,fibers,cache,database,in-memory,in-memory-database,key-value"}</script>
+</head>
+<body data-repo="dragonflydb/dragonfly" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">dragonflydb/dragonfly</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="dragonflydb__dragonfly"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/104819355?v=4&s=300" width="300" height="300" alt="dragonflydb avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">dragonfly</div>
+      <a class="rp-side-owner" href="https://github.com/dragonflydb">dragonflydb</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/dragonflydb">dragonflydb</a>
+        <span class="rp-sep">/</span><span class="rp-name">dragonfly</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A modern replacement for Redis and Memcached</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>31,868</b></span><span class="rp-stat" title="forks">⑂ <b>1,294</b></span><span class="rp-stat" title="watchers">👁 <b>169</b></span><span class="rp-stat" title="prs">⑃ <b>5,948</b></span><span class="rp-stat" title="issues">● <b>2,551</b></span><span class="rp-stat" title="releases">▤ <b>124</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/memcached">memcached</a><a class="rp-topic" href="https://github.com/topics/multi-threading">multi-threading</a><a class="rp-topic" href="../tags/redis">redis</a><a class="rp-topic" href="../tags/cpp">cpp</a><a class="rp-topic" href="https://github.com/topics/fibers">fibers</a><a class="rp-topic" href="https://github.com/topics/cache">cache</a><a class="rp-topic" href="../tags/database">database</a><a class="rp-topic" href="https://github.com/topics/in-memory">in-memory</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C++</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2021-12-11</span><a class="rp-meta-bit rp-home" href="https://www.dragonflydb.io/" rel="noopener">www.dragonflydb.io/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/dragonflydb/dragonfly">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v2.1</span><a class="rp-dl-a" href="https://github.com/dragonflydb/dragonfly/releases/tag/v2.1">v2.1 ↓</a><span class="rp-dl-ver">2.1</span><span class="rp-dl-date">2026-11-04</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-17</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+27</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+102</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">31,868</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,294</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">169</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">5,948</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">2,551</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">124</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">在您继续之前，请考虑给我们一个 GitHub 星标 ⭐️。谢谢！
+
+其他语言:  English 日本語 한국어 Português ภาษาไทย
+
+主页 • 快速入门 • 社区 Slack • Dragonfly 论坛 • 加入 Dragonfly 社区
+
+GitHub Discussions • GitHub Issues • 贡献指南
+
+ 全世界最快的内存数据库
+
+Dragonfly是一种针对现代应用程序负荷需求而构建的内存数据库，完全兼容Redis和Memcached的 API，迁移时无需修改任何代码。相比于这些传统的内存数据库，Dragonfly提供了其25倍的吞吐量，高缓存命中率和低尾延迟，并且对于相同大小的工作负载运行资源最多可减少80%。
+
+ 目录
+
+- 基准测试
+- 快速入门
+- 配置方法
+- 开发路线和开发现状
+- 设计决策
+- 开发背景
+
+  基准测试
+
+
+
+Dragonfly在c6gn.16xlarge上达到了每秒380万个查询（QPS），相比于Redis，吞吐量提高了25倍。
+
+在Dragonfly的峰值吞吐量下，P99延迟如下：
+
+| op    | r6g   | c6gn  | c7g   |
+| ----- | ----- | ----- | ----- |
+| set   | 0.8ms | 1ms   | 1ms   |
+| get   | 0.9ms | 0.9ms | 0.8ms |
+| setex | 0.9ms | 1.1ms | 1.3ms |
+
+所有基准测试均使用memtier_benchmark（见下文），根据服务器类型和实例类型调整线程数。memtier运行在独立的c6gn.16xlarge机器上。对于setex基准测试，我们使用了500的到期范围，以便其能够存活直到测试结束。
+
+bash
+  memtier_benchmark --ratio ... -t  -c 30 -n 200000 --distinct-client-seed -d 256 \
+     --expiry-range=...
+
+
+当以管道模式运行，并设置参数--pipeline=30时，Dragonfly可以实现10M qps的SET操作和 15M qps的GET操作。
+
+ Memcached / Dragonfly
+
+我们在 AWS 的 c6gn.16xlarge 实例上比较了 memcached 和 Dragonfly。如下图所示，与 memcached 相比，Dragonfly 的吞吐量在读写两方面上都占据了优势，并且在延迟方面也还不错。对于写入工作，Dragonfly 的延迟更低，这是由于在 memcached 的写入路径上存在竞争（请参见此处）。
+
+ SET benchmark
+
+|  Server   | QPS(thousands qps) | latency 99% |  99.9%  |
+| :-------: | :----------------: | :---------: | :-----: |
+| Dragonfly |       🟩 3844       |   🟩 0.9ms   | 🟩 2.4ms |
+| Memcached |        806         |    1.6ms    |  3.2ms  |
+
+ GET benchmark
+
+| Server    | QPS(thousands qps) | latency 99% |  99.9%  |
+| --------- | :----------------: | :---------: | :-----: |
+| Dragonfly |       🟩 3717       |     1ms     |  2.4ms  |
+| Memcached |        2100        |  🟩 0.34ms   | 🟩 0.6ms |
+
+
+对于读取基准测试，Memcached 表现出了更低的延迟，但在吞吐量方面比不上Dragonfly。
+
+ 内存效率
+
+在接下来的测试中，我们使用 debug populate 5000000 key 1024 命令向 Dragonfly 和 Redis 分别写入了约 5GB 的数据。然后我们使用 memtier 发送更新流量并使用 bgsave 命令启动快照。下图清楚地展示了这两个服务器在内存效率方面的表现。
+
+
+
+在空闲状态下，Dragonfly 比 Redis 节省约 30% 的内存。
+在快照阶段，Dragonfly 也没有显示出任何明显的内存增加。
+但同时，Redis 在峰值时的内存几乎达到了 Dragonfly 的 3 倍。
+Dragonfly 完成快照也很快，仅在启动后几秒钟内就完成了。
+有关 Dragonfly 内存效率的更多信息，请参见 dashtable 文档。
+
+
+
+ 配置方法
+
+Dragonfly 支持 Redis 的常见参数。
+例如，您可以运行：dragonfly --requirepass=foo --bind localhost。
+
+目前，Dragonfly 支持以下 Redis 特定参数：
+
+ port：Redis 连接端口，默认为 6379。
+ bind：使用本地主机名仅允许本地连接，使用公共 IP 地址允许外部连接到该 IP 地址。
+ requirepass：AUTH 认证密码，默认为空 &quot;&quot;。
+ maxmemory：限制数据库使用的最大内存（以字节为单位）。0 表示程序将自动确定其最大内存使用量。默认为 0。
+ dir：默认情况下，dragonfly docker 使用 /data 文件夹进行快照。CLI 使用的是 &quot;&quot;。你可以使用 -v docker 选项将其映射到主机文件夹。
+ dbfilename：保存/加载数据库的文件名。默认为 dump；
+
+此外，还有 Dragonfly 特定的参数选项：
+
+ memcached_port：在此端口上启用 memcached 兼容的 API。默认禁用。
+
+ keys_output_limit：在keys 命令中返回的最大键数。默认为 8192。
+
+  keys 命令是危险命令。我们会截断结果以避免在获取太多键时内存溢出。
+
+ dbnum：select 支持的最大数据库数。
+
+ cache_mode：请参见下面的 缓存 部分。
+
+ hz：键到期评估频率。默认为 100。空闲时，使用较低的频率可以占用较少的 CPU资源，但这会导致清理过期键的速度下降。
+
+ snapshot_cron：定时自动备份快照的 cron 表达式，使用标准的、精确到分钟的 cron 语法。默认为空 &quot;&quot;。
+
+  下面是一些 cron 表达式的示例，更多关于此参数的细节请参见文档。
+
+  | Cron 表达式      | 描述                               |
+  |---------------|----------------------------------|
+  |        | 每分钟                </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/dragonflydb/dragonfly/issues/5662"><span class="rp-item-num">#5662</span><span class="rp-item-title">test_replicaof_reject_on_load</span><span class="rp-item-extra">59 comments · 2025-08-12</span></a><a class="rp-item" href="https://github.com/dragonflydb/dragonfly/issues/5625"><span class="rp-item-num">#5625</span><span class="rp-item-title">Snapshot causes dragonfly fresszing?</span><span class="rp-item-extra">42 comments · 2025-08-06</span></a><a class="rp-item" href="https://github.com/dragonflydb/dragonfly/issues/3170"><span class="rp-item-num">#3170</span><span class="rp-item-title">Software error on replication</span><span class="rp-item-extra">36 comments · 2024-06-12</span></a><a class="rp-item" href="https://github.com/dragonflydb/dragonfly/issues/2824"><span class="rp-item-num">#2824</span><span class="rp-item-title">FR: Allow setting amount of snapshots (logrotate for snapshots)</span><span class="rp-item-extra">16 comments · 2024-04-02</span></a><a class="rp-item" href="https://github.com/dragonflydb/dragonfly/issues/8226"><span class="rp-item-num">#8226</span><span class="rp-item-title">Rapid increase in psync_buffer_bytes causing high memory usage</span><span class="rp-item-extra">12 comments · 2026-09-03</span></a><a class="rp-item" href="https://github.com/dragonflydb/dragonfly/issues/7652"><span class="rp-item-num">#7652</span><span class="rp-item-title">Design: Memory efficient OAH Entry Encoding for OAHSet</span><span class="rp-item-extra">12 comments · 2026-06-19</span></a><a class="rp-item" href="https://github.com/dragonflydb/dragonfly/issues/3000"><span class="rp-item-num">#3000</span><span class="rp-item-title">Repositories for Linux distributions install</span><span class="rp-item-extra">12 comments · 2024-05-02</span></a><a class="rp-item" href="https://github.com/dragonflydb/dragonfly/issues/303"><span class="rp-item-num">#303</span><span class="rp-item-title">Are there support memcached binary protocols?</span><span class="rp-item-extra">12 comments · 2022-09-16</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/dragonflydb/dragonfly/discussions/8793"><span class="rp-item-num">#8793</span><span class="rp-item-title">New license 100 vCPU limit</span><span class="rp-item-extra">1 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/dragonflydb/dragonfly/discussions/8744"><span class="rp-item-num">#8744</span><span class="rp-item-title">v2.1</span><span class="rp-item-extra">0 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/dragonflydb/dragonfly/discussions/8331"><span class="rp-item-num">#8331</span><span class="rp-item-title">v2.0.0</span><span class="rp-item-extra">0 comments · 2026-09-16</span></a><a class="rp-item" href="https://github.com/dragonflydb/dragonfly/discussions/8261"><span class="rp-item-num">#8261</span><span class="rp-item-title">Issue: HINCRBY commands taking 10–30 ms despite low memory usage</span><span class="rp-item-extra">2 comments · 2026-09-08</span></a><a class="rp-item" href="https://github.com/dragonflydb/dragonfly/discussions/8166"><span class="rp-item-num">#8166</span><span class="rp-item-title">Support skipping TLS certificate/hostname verification for S3 snapshot storage (private CA / self-signed endpoints)</span><span class="rp-item-extra">0 comments · 2026-08-25</span></a><a class="rp-item" href="https://github.com/dragonflydb/dragonfly/discussions/7990"><span class="rp-item-num">#7990</span><span class="rp-item-title">v1.40.0</span><span class="rp-item-extra">1 comments · 2026-08-04</span></a><a class="rp-item" href="https://github.com/dragonflydb/dragonfly/discussions/7693"><span class="rp-item-num">#7693</span><span class="rp-item-title">docker.dragonflydb.io - docker pull failure</span><span class="rp-item-extra">1 comments · 2026-06-24</span></a><a class="rp-item" href="https://github.com/dragonflydb/dragonfly/discussions/7549"><span class="rp-item-num">#7549</span><span class="rp-item-title">v1.39.0</span><span class="rp-item-extra">0 comments · 2026-06-09</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/dragonflydb/dragonfly/releases"><b>v2.1</b> <span class="rp-rel-tag">v2.1</span> <span class="rp-item-extra">2026-11-04</span></a><pre class="rp-pre">Dragonfly v2.1
+
+This release is important because starting from this version, it changes how teams can use our software in production.
+Starting from v2.1.0 the project moves from BUSL-1.1 to the Dragonfly Source-Available License (DSAL).
+
+For more details, please read https://www.dragonflydb.io/blog/introducing-dragonfly-enterprise
+
+Besides this much of the work is hardening. ACL enforcement is stricter, credentials are redacted from logs, and many crashes and deadlocks are fixed across blocking commands, tiered storage, Lua and search. Search gains index aliases, multi-attribute fields</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/dragonflydb__dragonfly.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

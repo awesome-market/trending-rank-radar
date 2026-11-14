@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>boykopovar/AnyPS5 · GitHub Trending Rank Radar</title>
+<meta name="description" content="Tool for automatic PS5 executables porting to Linux and Windows">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="AnyPS5, boykopovar, boykopovar/AnyPS5, github stars, github trending, star growth, star history, 开源项目, 星标增长, dynamic-library, game-porting, ps5-tools, vulkan, spir-v, anyps5">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/boykopovar__AnyPS5">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="boykopovar/AnyPS5 · GitHub Trending Rank Radar">
+<meta property="og:description" content="Tool for automatic PS5 executables porting to Linux and Windows">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/boykopovar__AnyPS5">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "boykopovar/AnyPS5", "codeRepository": "https://github.com/boykopovar/AnyPS5", "url": "https://zhuikan.com/repos/boykopovar__AnyPS5", "description": "Tool for automatic PS5 executables porting to Linux and Windows", "author": {"@type": "Organization", "name": "boykopovar", "url": "https://github.com/boykopovar"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-2.0.html", "programmingLanguage": "C++", "dateCreated": "2026-08-03", "keywords": "dynamic-library,game-porting,ps5-tools,vulkan,spir-v,anyps5,ps5"}</script>
+</head>
+<body data-repo="boykopovar/AnyPS5" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">boykopovar/AnyPS5</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="boykopovar__AnyPS5"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/184076081?u=40e04decaef5e83780e1df82f41d8367652c460e&amp;v=4&s=300" width="300" height="300" alt="boykopovar avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">AnyPS5</div>
+      <a class="rp-side-owner" href="https://github.com/boykopovar">boykopovar</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/boykopovar">boykopovar</a>
+        <span class="rp-sep">/</span><span class="rp-name">AnyPS5</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily">daily <b>#105</b></a><a class="rp-board-chip" href="../?board=weekly">weekly <b>#101</b></a><a class="rp-board-chip" href="../?board=monthly">monthly <b>#8</b></a><a class="rp-board-chip" href="../?board=monthly_rate">monthly_rate <b>#25</b></a></div>
+    </div>
+    <p class="rp-desc">Tool for automatic PS5 executables porting to Linux and Windows</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>53,683</b></span><span class="rp-stat" title="forks">⑂ <b>5,121</b></span><span class="rp-stat" title="watchers">👁 <b>411</b></span><span class="rp-stat" title="prs">⑃ <b>17,438</b></span><span class="rp-stat" title="issues">● <b>1,520</b></span><span class="rp-stat" title="releases">▤ <b>6</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/dynamic-library">dynamic-library</a><a class="rp-topic" href="https://github.com/topics/game-porting">game-porting</a><a class="rp-topic" href="https://github.com/topics/ps5-tools">ps5-tools</a><a class="rp-topic" href="https://github.com/topics/vulkan">vulkan</a><a class="rp-topic" href="https://github.com/topics/spir-v">spir-v</a><a class="rp-topic" href="https://github.com/topics/anyps5">anyps5</a><a class="rp-topic" href="https://github.com/topics/ps5">ps5</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C++</span><span class="rp-meta-bit">GPL-2.0</span><span class="rp-meta-bit">Created 2026-08-03</span><a class="rp-meta-bit rp-home" href="https://boykopovar.github.io/AnyPS5/" rel="noopener">boykopovar.github.io/AnyPS5/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/boykopovar/AnyPS5">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.1.5</span><a class="rp-dl-a" href="https://github.com/boykopovar/AnyPS5/releases/tag/v0.1.5">v0.1.5 ↓</a><span class="rp-dl-ver">0.1.5</span><span class="rp-dl-date">2026-11-11</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+207</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+2,785</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+32,483</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">53,683</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">5,121</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">411</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">17,438</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,520</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">6</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">English | Português (Brasil) | Español | Català | Italiano | 简体中文 | Русский | Bahasa Indonesia | Polski | 日本語
+
+ About
+
+Tool for automatic executables porting to Linux and Windows.
+
+The relinker-only build runs on macOS, including Apple silicon.
+
+Web converter - files stay on your device.
+
+!anyps5_collage1
+
+Includes a relinker that converts executable to the target system&#x27;s native format and implementations of system prx libraries suitable for dynamic linking. No emulation or separate runtime process.
+
+Discord, Usage, Build instructions, Architecture, Technical debt of the project, code style conventions, contributing
+
+ Status
+
+   
+
+
+
+Progress history
+
+ System libraries: percentage of the functions known to the project so far (declared in core/libs/prx), not of every PS5 system function. The total grows as more functions are declared.
+
+Unsupported or unexpected states throw a C++ exception, usually std::runtime_error. An exception that nothing catches prints its what() to stderr and ends the process.
+
+The shader recompiler successfully produces SPIR-V (validated via Spirv-Tools when built with ANYPS5_ENABLE_SPIRV_TOOLS).
+
+ Compatibility
+
+Per-game status and test reports live in the Game bring-up discussions, one thread per title.
+
+ Input mapping
+
+SDL-mapped game controllers are supported, including analog sticks and triggers. Keyboard and mouse controls can be configured with an anyps5-input.ini file. See input mapping for the supported devices and configuration format.
+
+ Disclaimer
+
+This project is intended for interoperability, research, preservation, and compatibility purposes. It does not include, distribute, or require copyrighted software, firmware, cryptographic keys, or proprietary libraries. Users are responsible for ensuring that any binaries used with this project are obtained and used in accordance with applicable laws and their respective license terms.
+
+AnyPS5 is an independent project and is not affiliated with, authorized or endorsed by Sony Interactive Entertainment. &quot;PlayStation&quot; and &quot;PS5&quot; are trademarks of Sony Interactive Entertainment Inc.
+
+ License
+
+This project is licensed under the GNU General Public License version 2 only.</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/boykopovar/AnyPS5/issues/1"><span class="rp-item-num">#1</span><span class="rp-item-title">macOS support</span><span class="rp-item-extra">193 comments · 2026-09-24</span></a><a class="rp-item" href="https://github.com/boykopovar/AnyPS5/issues/5166"><span class="rp-item-num">#5166</span><span class="rp-item-title">Ghost of Tsushima Director&#x27;s Cut (PPSA02225, Windows): black frames despite continuing draw and presentation activity</span><span class="rp-item-extra">145 comments · 2026-10-13</span></a><a class="rp-item" href="https://github.com/boykopovar/AnyPS5/issues/7895"><span class="rp-item-num">#7895</span><span class="rp-item-title">perf(agc): the queue-0 draw committer bounds draw-heavy titles on the CPU — is parallel draw recording planned?</span><span class="rp-item-extra">53 comments · 2026-10-19</span></a><a class="rp-item" href="https://github.com/boykopovar/AnyPS5/issues/6528"><span class="rp-item-num">#6528</span><span class="rp-item-title">AGC: run mesh-path draws on devices without mesh shaders through a compute pass and an indexed draw</span><span class="rp-item-extra">31 comments · 2026-10-15</span></a><a class="rp-item" href="https://github.com/boykopovar/AnyPS5/issues/6191"><span class="rp-item-num">#6191</span><span class="rp-item-title">Recompiler: a T# reached through two loads after a dynamically indexed read (pointer → pointer → T#, pointer → V# → buffer → T#) stops Ratchet &amp; Clank (PPSA01474) and Guardians of the Galaxy (PPSA01748)</span><span class="rp-item-extra">30 comments · 2026-10-15</span></a><a class="rp-item" href="https://github.com/boykopovar/AnyPS5/issues/4235"><span class="rp-item-num">#4235</span><span class="rp-item-title">PPSA28997: presents pure-black frames after the studio logo, stalled following level1 asset loads</span><span class="rp-item-extra">26 comments · 2026-10-12</span></a><a class="rp-item" href="https://github.com/boykopovar/AnyPS5/issues/1409"><span class="rp-item-num">#1409</span><span class="rp-item-title">AGC: storage image access to depth/stencil surface 0x201a800000 is not implemented</span><span class="rp-item-extra">26 comments · 2026-10-08</span></a><a class="rp-item" href="https://github.com/boykopovar/AnyPS5/issues/13538"><span class="rp-item-num">#13538</span><span class="rp-item-title">Ratchet &amp; Clank: Rift Apart (PPSA01474): the compute shader whose s_swappc_b64 calls a computed target becomes a 2.5M-word SPIR-V module that RADV cannot compile (nir_opt_copy_prop_vars grows past 16 GB; Mesa 25.2.8 and 26.2.6)</span><span class="rp-item-extra">23 comments · 2026-10-30</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/boykopovar/AnyPS5/discussions/19684"><span class="rp-item-num">#19684</span><span class="rp-item-title">Cult of the Lamb (PPSA06465)</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/boykopovar/AnyPS5/discussions/19679"><span class="rp-item-num">#19679</span><span class="rp-item-title">Clair Obscur: Expedition 33 (PPSA17599)</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/boykopovar/AnyPS5/discussions/19642"><span class="rp-item-num">#19642</span><span class="rp-item-title">Achilles Legends Untold (PPSA16626)</span><span class="rp-item-extra">1 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/boykopovar/AnyPS5/discussions/19621"><span class="rp-item-num">#19621</span><span class="rp-item-title">Baldur’s Gate 3 (PPSA14002)</span><span class="rp-item-extra">2 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/boykopovar/AnyPS5/discussions/19307"><span class="rp-item-num">#19307</span><span class="rp-item-title">In rays of the Light (PPSA02902)</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/boykopovar/AnyPS5/discussions/19298"><span class="rp-item-num">#19298</span><span class="rp-item-title">Bedlam 2: Absolute Bedlam (PPSA94003)</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/boykopovar/AnyPS5/discussions/19297"><span class="rp-item-num">#19297</span><span class="rp-item-title">2 Ship 2 Harkinian (PPSA99621)</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/boykopovar/AnyPS5/discussions/19269"><span class="rp-item-num">#19269</span><span class="rp-item-title">Overcooked! All You Can Eat (PPSA01528)</span><span class="rp-item-extra">1 comments · 2026-11-13</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/boykopovar/AnyPS5/releases"><b>v0.1.5</b> <span class="rp-rel-tag">v0.1.5</span> <span class="rp-item-extra">2026-11-11</span></a><pre class="rp-pre">New Contributors
+ @Brecherbernd made their first contribution in https://github.com/boykopovar/AnyPS5/pull/13631
+ @CobaltMoth482 made their first contribution in https://github.com/boykopovar/AnyPS5/pull/13657
+ @dmto made their first contribution in https://github.com/boykopovar/AnyPS5/pull/13704
+ @jbooba made their first contribution in https://github.com/boykopovar/AnyPS5/pull/13754
+ @ryanc2112 made their first contribution in https://github.com/boykopovar/AnyPS5/pull/9125
+ @angrysandhill made their first contribution in https://github.com/boykopovar/AnyPS5/pull/14215
+ @deepak-r-135 made the</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (11)</h3><div class="rp-list"><a class="rp-item" href="https://www.gameapps.hk/news/71359/fake-ps5-emulators-github-password-stealing-malware/" target="_blank" rel="noopener"><span class="rp-news-src">香港手機遊戲網 GameApps.hk</span><span class="rp-item-title">PS5 模擬器爆安全危機 GitHub 假冒版本暗藏密碼竊取木馬</span><span class="rp-item-extra">2026-10-30</span></a><a class="rp-item" href="https://news.xfastest.com/169375/others-17/" target="_blank" rel="noopener"><span class="rp-news-src">XFastest News</span><span class="rp-item-title">小心假 PS5 模擬器！GitHub 冒牌 KytyPS5、AnyPS5 專案散播竊密惡意程式</span><span class="rp-item-extra">2026-10-30</span></a><a class="rp-item" href="https://www.techritual.com/2026/10/29/595594/" target="_blank" rel="noopener"><span class="rp-news-src">Techritual 香港</span><span class="rp-item-title">假冒 PS5 模擬器在 GitHub 流傳，潛藏竊取密碼的惡意軟件</span><span class="rp-item-extra">2026-10-28</span></a><a class="rp-item" href="https://www.kocpc.com.tw/archives/671390" target="_blank" rel="noopener"><span class="rp-news-src">電腦王阿達</span><span class="rp-item-title">madeira-anyps5轉譯三次，網路神人成功在 iPad 直接運行 PS5 遊戲！</span><span class="rp-item-extra">2026-10-07</span></a><a class="rp-item" href="https://www.blocktempo.com/anyps5-open-source-project-ps5-games-native-pc-binary-translation/" target="_blank" rel="noopener"><span class="rp-news-src">動區動趨</span><span class="rp-item-title">開源 AnyPS5 不靠模擬器 PC 直跑 PS5 遊戲，Github 已累積 2,000 顆星</span><span class="rp-item-extra">2026-09-28</span></a><a class="rp-item" href="https://www.kocpc.com.tw/archives/670351" target="_blank" rel="noopener"><span class="rp-news-src">電腦王阿達</span><span class="rp-item-title">係金A！開源專案 AnyPS5 讓 PC 直跑 PS5 遊戲，但跟你想的差很多</span><span class="rp-item-extra">2026-09-28</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMigwFBVV95cUxPMXl1aTNueDNiNjNzNW9XcWJETWNvLXV0b0dlbWRRRENObmhNU3RPMzg3ZlFqc3RsRFQyck9NTGtzVi1oSTBGVmtIVGlOTUtrWUJqUVU3QVRNbkNDYXg4OUd5RlFsT3NPMllOem9WZ0hiMGRvY0Vwc2lXTTZRY3gyYWdmbw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">GitHub 上的假 PS5 模拟器冒充 AnyPS5，信息窃取木马攻击玩家</span><span class="rp-item-extra">2026-10-29</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMitgFBVV95cUxNRXZKZXRNMks0V2lnQkxJNU1EcWhobWhBUHFERVFhYV9fZXU4VklXZEdodTVjWGxwYUJMWGkzMjdMNEZaclhRSDEwbFY3RTV3Y1dBTml3YkxkaS1jM24xd0lPVk9xWElTT2tOZEZvZHFtaFVPeGE4N0FhOW5lNVh6b2VQYlFKcGRVN3dsbUdqem5CbFRZcHpKcWRYRktSbm91OU50WWNzcTdQS09WNm5tYjI3LWdadw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">UA.NEWS</span><span class="rp-item-title">NordVPN发现GitHub上伪造的PS5模拟器含密码窃取程序——Engadget</span><span class="rp-item-extra">2026-10-29</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMikwFBVV95cUxObS1peGxjbWliTGJXUGNwbGlJWE1lT2dpZGVDUVBNVGxidElCVUVISWZqMEszQmZoV2dMcVduZnNGbE9FRkJrM1pQQUE2SW1YMjEzaFk4RXBjZW5XYXFzWkpOel9IUFY4eEM0ZDRtQ2pfTjZNci1OcHd1Z3NRbFUtakl0V0dyTnlDbThCYUhxTWJLRWM?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">AnyPS5已让5款PS5游戏登陆PC并可玩，含Minecraft</span><span class="rp-item-extra">2026-10-17</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMif0FVX3lxTE5IMGllSVdFVlRKc3dzVHoxYlM0dmFuQVV6Mjh0X2FaeDVnVURLOTdfSFg2UklWUzJpZ09VVXAxY3BFa1dFM0ZwWUtkRW45SGJiS1ZudmxvcTRVb2MwdGlkQVpHal9sU1VDV0pUdnpva19QaHFDY0lqWU9BYzBYT2s?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">AnyPS5 v0.1 登场, 尝试把PS5游戏带到Windows和Linux</span><span class="rp-item-extra">2026-10-08</span></a><details class="rp-news-more"><summary>展开其余 1 条</summary><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE1GNFdlVlU0ZUV3eTRoUkhiMFRqM3hhLWhINmhrTjI2NWJ1UXE5M1pqX2d3TDhDa1Q1YVNPNTlnLWpYd1E3UWNSU3hTT1RjTXRfS3o3c2d3?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">腾讯新闻</span><span class="rp-item-title">PS5游戏能在PC上原生运行吗？AnyPS5目前完成初步启动</span><span class="rp-item-extra">2026-09-25</span></a></details></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (12)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=49985664" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">AnyPS5: Port PS5 binaries to PC without emulation (87% system libraries mapped)</span><span class="rp-item-extra">▲ 375 · 326 comments · 2026-10-06</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=49890624" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">ANYPS5 Runs PS5 Games Natively on PC – No Emulation Required</span><span class="rp-item-extra">▲ 3 · 0 comments · 2026-09-29</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=49874729" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">AnyPS5: Convert PS5 executables to run natively on Linux and Windows</span><span class="rp-item-extra">▲ 1 · 0 comments · 2026-09-28</span></a><a class="rp-item" href="https://tech.yahoo.com/cybersecurity/articles/fake-ps5-emulator-repos-github-184135175.html" target="_blank" rel="noopener"><span class="rp-news-src">YAHOO!</span><span class="rp-item-title">Fake PS5 Emulator Repos on GitHub Are Delivering Password-Stealing Malware</span><span class="rp-item-extra">2026-11-02</span></a><a class="rp-item" href="https://shiftdelete.net/en/ps5-emulator-malware" target="_blank" rel="noopener"><span class="rp-news-src">ShiftDelete.Net</span><span class="rp-item-title">PS5 Emulator Malware Hides in Fake AnyPS5 and KytyPS5 Repos</span><span class="rp-item-extra">2026-10-31</span></a><a class="rp-item" href="https://www.tweaktown.com/news/114386/fake-anyps5-and-kytyps5-repositories-on-github-are-spreading-password-stealing-malware/index.html" target="_blank" rel="noopener"><span class="rp-news-src">TweakTown</span><span class="rp-item-title">Fake AnyPS5 and KytyPS5 repositories on GitHub are spreading password-stealing malware</span><span class="rp-item-extra">2026-10-30</span></a><a class="rp-item" href="https://videocardz.com/newz/fake-ps5-emulators-on-github-spread-password-stealing-malware-anyps5-and-kytyps5-impersonated" target="_blank" rel="noopener"><span class="rp-news-src">VideoCardz.com</span><span class="rp-item-title">Fake PS5 emulators on GitHub spread password-stealing malware, AnyPS5 and KytyPS5 impersonated</span><span class="rp-item-extra">2026-10-30</span></a><a class="rp-item" href="https://www.msn.com/en-us/gaming/gaming-platforms/hackers-target-ps5-emulators-for-pc-with-malware-on-look-alike-github-pages/ar-AA2gnRzq" target="_blank" rel="noopener"><span class="rp-news-src">PCMag on MSN</span><span class="rp-item-title">Hackers target PS5 emulators for PC with malware on look-alike GitHub pages</span><span class="rp-item-extra">2026-10-29</span></a><a class="rp-item" href="https://www.msn.com/en-us/gaming/gaming-platforms/fake-ps5-emulators-on-github-are-spreading-password-stealing-malware/ar-AA2ggSzn" target="_blank" rel="noopener"><span class="rp-news-src">Engadget on MSN</span><span class="rp-item-title">Fake PS5 Emulators On GitHub Are Spreading Password-Stealing Malware</span><span class="rp-item-extra">2026-10-28</span></a><a class="rp-item" href="https://decrypt.co/380833/ai-powered-playstation-crack-could-let-you-play-gta-6-on-pc-at-launch" target="_blank" rel="noopener"><span class="rp-news-src">Decrypt</span><span class="rp-item-title">AI Powered PlayStation Crack Could Let You Play GTA 6 on PC at Launch</span><span class="rp-item-extra">2026-10-13</span></a><details class="rp-news-more"><summary>2 more</summary><a class="rp-item" href="https://news.google.com/rss/articles/CBMipAJBVV95cUxPUEZ6dWdsQ2lwUEY3T0hWOUVZdWp2THhSVjZvQ25POS14VE1vVFVaUTJSU2FkVlI3aUEzdVRoWGNpdU42a3I5TERhM0Y1NVMwbGtXZ19KNTRSY0p6d3RiZk9QckllRDh5ZmRJZmc2UjBRMVFVVm9ncmxQbjlyd0hZVzIyOTV1S3RNZmhob1FDQ1JrR2xRZlJ3ZmYxeEtNNFAzLU5uVTNhdVZWX1FWdFgtOW9RZnJKNDdCS1dKNWFqcmxHb0xzLUJUT0pBYzVVZnBfSjNhME0yQnNadG5qenNLM3VLNkRTVXUtTlFyWHIwQUpEalFSNWJKOGg4ZGJvQnNlN3h5SWpBTGplWVRZaWpXOXRnNkhCODQ3bXY2N3VxbV8xRmpa?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Tom&#x27;s Hardware</span><span class="rp-item-title">Fake PS5 emulators are being used to steal gamers&#x27; passwords — two well-known GitHub repos, including popular AnyPS5, get hit, infecting gamers&#x27; computers with password-scraping malware</span><span class="rp-item-extra">2026-10-29</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPd3hUR1pNSGUwZnYzUERNb2RpcjU0c0I3a21VLS02LTA4MjVjLUJ3UG8wdDRCZTFCS2x5SXRFOWtsbkxqWTkxWVpLVm1JR3V0OU8zT1dyQ2QwY3V1SG9Ccm1sVF9MQXN1VFdQT1ZGSUFubFFhcFlVSGtGS3BDSXJ4cGZBNXJVRkZTTTRqTkJDUHhiQ0tmQU1mMEZlOVd1NWRRNXfSAacBQVVfeXFMTnItb2VNNjZYaFdGNndKTzl4aHpIY0M2S3htZEZBZVZhY3VWTDFleEZNOGY4amtuR0h0TEx4NE9tQmFyNmMtQjJpYUE4OFFIOVhQUHlGdGg3Rk9ETTV2dGpqa2N1WlZ1eU5IaTRndGdZXzFGaU9nM0ZvLWFvV3l6MFp1TE1pUFBnbzQ2aW4zUG1CQU9IOXlVWERIcmVFME1PYTZPbS02a0k?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">TechPowerUp</span><span class="rp-item-title">PSA: Fake KytyPS5 and AnyPS5 Repos on GitHub Are Spreading Malware</span><span class="rp-item-extra">2026-10-29</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/boykopovar__AnyPS5.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tldr-pages/tldr · GitHub Trending Rank Radar</title>
+<meta name="description" content="Collaborative cheatsheets for console commands 📚.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="tldr, tldr-pages, tldr-pages/tldr, github stars, github trending, star growth, star history, 开源项目, 星标增长, shell, man-page, tldr, documentation, terminal, command-line">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/tldr-pages__tldr">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="tldr-pages/tldr · GitHub Trending Rank Radar">
+<meta property="og:description" content="Collaborative cheatsheets for console commands 📚.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/tldr-pages__tldr">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "tldr-pages/tldr", "codeRepository": "https://github.com/tldr-pages/tldr", "url": "https://zhuikan.com/repos/tldr-pages__tldr", "description": "Collaborative cheatsheets for console commands 📚.", "author": {"@type": "Organization", "name": "tldr-pages", "url": "https://github.com/tldr-pages"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "Markdown", "dateCreated": "2013-12-08", "keywords": "shell,man-page,tldr,documentation,terminal,command-line,console,examples,help,manual"}</script>
+</head>
+<body data-repo="tldr-pages/tldr" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">tldr-pages/tldr</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="tldr-pages__tldr"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/7366472?v=4&s=300" width="300" height="300" alt="tldr-pages avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">tldr</div>
+      <a class="rp-side-owner" href="https://github.com/tldr-pages">tldr-pages</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/tldr-pages">tldr-pages</a>
+        <span class="rp-sep">/</span><span class="rp-name">tldr</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Collaborative cheatsheets for console commands 📚.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>64,200</b></span><span class="rp-stat" title="forks">⑂ <b>5,651</b></span><span class="rp-stat" title="watchers">👁 <b>412</b></span><span class="rp-stat" title="prs">⑃ <b>23,121</b></span><span class="rp-stat" title="issues">● <b>1,842</b></span><span class="rp-stat" title="releases">▤ <b>6</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/shell">shell</a><a class="rp-topic" href="https://github.com/topics/man-page">man-page</a><a class="rp-topic" href="https://github.com/topics/tldr">tldr</a><a class="rp-topic" href="../tags/documentation">documentation</a><a class="rp-topic" href="../tags/terminal">terminal</a><a class="rp-topic" href="../tags/command-line">command-line</a><a class="rp-topic" href="https://github.com/topics/console">console</a><a class="rp-topic" href="https://github.com/topics/examples">examples</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Markdown</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2013-12-08</span><a class="rp-meta-bit rp-home" href="https://tldr.sh" rel="noopener">tldr.sh</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/tldr-pages/tldr">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Client specification v2.3: Option placeholders and old asset website deprecation date</span><a class="rp-dl-a" href="https://github.com/tldr-pages/tldr/releases/tag/v2.3">Client-2.3 ↓</a><span class="rp-dl-ver">2.3</span><span class="rp-dl-date">2025-03-07</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">64,200</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">5,651</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">412</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">23,121</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,842</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">6</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">[![Build status][github-actions-image]][github-actions-url]
+[![Matrix chat][matrix-image]][matrix-url]
+[![Merged PRs][prs-merged-image]][prs-merged-url]
+[![GitHub contributors][contributors-image]][contributors-url]
+[![license][license-image]][license-url]
+[![Mastodon][mastodon-image]][mastodon-url]
+
+[github-actions-url]: https://github.com/tldr-pages/tldr/actions
+[github-actions-image]: https://img.shields.io/github/actions/workflow/status/tldr-pages/tldr/ci.yml?branch=main&amp;label=Build
+[matrix-url]: https://matrix.to//tldr-pages:matrix.org
+[matrix-image]: https://img.shields.io/matrix/tldr-pages:matrix.org?label=Chat+on+Matrix
+[prs-merged-url]: https://github.com/tldr-pages/tldr/pulls?q=is:pr+is:merged
+[prs-merged-image]: https://img.shields.io/github/issues-pr-closed-raw/tldr-pages/tldr.svg?label=Merged+PRs&amp;color=green
+[contributors-url]: https://github.com/tldr-pages/tldr/graphs/contributors
+[contributors-image]: https://img.shields.io/github/contributors-anon/tldr-pages/tldr.svg?label=Contributors
+[license-url]: https://github.com/tldr-pages/tldr/blob/main/LICENSE.md
+[license-image]: https://img.shields.io/badge/license-CC_BY_4.0-blue.svg?label=License
+[mastodon-url]: https://fosstodon.org/@tldr_pages
+[mastodon-image]: https://img.shields.io/badge/Mastodon-6364FF?logo=mastodon&amp;logoColor=fff
+
+
+ What is tldr-pages?
+
+The tldr-pages project is a collection of community-maintained help pages
+for command-line tools, that aims to be a simpler, more approachable complement
+to traditional man pages.
+
+Maybe you&#x27;re new to the command-line world. Perhaps you&#x27;re just a little rusty or can&#x27;t always recall the arguments for commands like lsof, or tar?
+
+It certainly doesn&#x27;t help that, in the past, the first option explained in man tar was:
+
+console
+$ man tar
+...
+-b blocksize
+   Specify the block size, in 512-byte records, for tape drive I/O.
+   As a rule, this argument is only needed when reading from or writing to tape drives,
+   and usually not even then as the default block size of 20 records (10240 bytes) is very common.
+...
+
+
+There is room for simpler help pages focused on practical examples.
+How about:
+
+
+    
+    
+    
+
+
+This repository is just that: an ever-growing collection of examples
+for the most common UNIX, Linux, macOS, FreeBSD, NetBSD, OpenBSD,
+SunOS, Android, Windows, Cisco IOS, and DOS command-line tools.
+
+ How do I use it?
+
+ [!TIP]
+ For browsing without installing a client on your computer,
+ see the web client at  (with offline support using PWA).
+
+There are several official clients available.
+
+ Python client
+
+The official Python client can be installed from PyPI via pipx (or other package managers):
+
+shell
+pipx install tldr
+
+
+ Rust client
+
+Linux and Mac users can also install the official Rust Client using Homebrew, Cargo
+(or other package managers on other operating systems):
+
+shell
+brew install tlrc
+
+
+shell
+cargo install tlrc --locked
+
+
+Windows users can also install the official Rust Client using Winget (or other package managers on oth</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/tldr-pages/tldr/issues/5653"><span class="rp-item-num">#5653</span><span class="rp-item-title">Let&#x27;s document: aws</span><span class="rp-item-extra">63 comments · 2021-03-31</span></a><a class="rp-item" href="https://github.com/tldr-pages/tldr/issues/1070"><span class="rp-item-num">#1070</span><span class="rp-item-title">Create lists of commands to test coverage parity against</span><span class="rp-item-extra">41 comments · 2016-09-17</span></a><a class="rp-item" href="https://github.com/tldr-pages/tldr/issues/3689"><span class="rp-item-num">#3689</span><span class="rp-item-title">Reach parity with cheat cheatsheets</span><span class="rp-item-extra">31 comments · 2019-12-24</span></a><a class="rp-item" href="https://github.com/tldr-pages/tldr/issues/5137"><span class="rp-item-num">#5137</span><span class="rp-item-title">Let&#x27;s document: tj/git-extras</span><span class="rp-item-extra">25 comments · 2021-01-11</span></a><a class="rp-item" href="https://github.com/tldr-pages/tldr/issues/3591"><span class="rp-item-num">#3591</span><span class="rp-item-title">Decide on a free web hosted translation service</span><span class="rp-item-extra">24 comments · 2019-11-19</span></a><a class="rp-item" href="https://github.com/tldr-pages/tldr/issues/13575"><span class="rp-item-num">#13575</span><span class="rp-item-title">Page translation request: outdated or missing Portuguese Brazilian pages</span><span class="rp-item-extra">22 comments · 2024-09-02</span></a><a class="rp-item" href="https://github.com/tldr-pages/tldr/issues/20199"><span class="rp-item-num">#20199</span><span class="rp-item-title">Translate the translation templates</span><span class="rp-item-extra">20 comments · 2025-12-22</span></a><a class="rp-item" href="https://github.com/tldr-pages/tldr/issues/3953"><span class="rp-item-num">#3953</span><span class="rp-item-title">Let&#x27;s document! Git edition</span><span class="rp-item-extra">18 comments · 2020-03-30</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/tldr-pages/tldr/discussions/24788"><span class="rp-item-num">#24788</span><span class="rp-item-title">Is there any senior expert who can update the corresponding manual in Chinese?</span><span class="rp-item-extra">3 comments · 2026-10-19</span></a><a class="rp-item" href="https://github.com/tldr-pages/tldr/discussions/23971"><span class="rp-item-num">#23971</span><span class="rp-item-title">Preferred PR size for a batch of Japanese translations md</span><span class="rp-item-extra">1 comments · 2026-09-13</span></a><a class="rp-item" href="https://github.com/tldr-pages/tldr/discussions/22788"><span class="rp-item-num">#22788</span><span class="rp-item-title">ccline: AI at the zsh prompt when tldr doesn&#x27;t have what you need</span><span class="rp-item-extra">0 comments · 2026-06-10</span></a><a class="rp-item" href="https://github.com/tldr-pages/tldr/discussions/22055"><span class="rp-item-num">#22055</span><span class="rp-item-title">In Draw mode, if user holds right mouse, temporary let him use Eraser.</span><span class="rp-item-extra">1 comments · 2026-04-14</span></a><a class="rp-item" href="https://github.com/tldr-pages/tldr/discussions/21021"><span class="rp-item-num">#21021</span><span class="rp-item-title">Showed tldr pages today in Powerful github repos</span><span class="rp-item-extra">0 comments · 2026-02-06</span></a><a class="rp-item" href="https://github.com/tldr-pages/tldr/discussions/21020"><span class="rp-item-num">#21020</span><span class="rp-item-title">Similar project: Manned Pages</span><span class="rp-item-extra">0 comments · 2026-02-05</span></a><a class="rp-item" href="https://github.com/tldr-pages/tldr/discussions/20929"><span class="rp-item-num">#20929</span><span class="rp-item-title">Upgrade error, is it because the tldr version is too low?</span><span class="rp-item-extra">1 comments · 2026-01-29</span></a><a class="rp-item" href="https://github.com/tldr-pages/tldr/discussions/19918"><span class="rp-item-num">#19918</span><span class="rp-item-title">General feedback from a tourist / release engineering improvements</span><span class="rp-item-extra">1 comments · 2025-12-10</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/tldr-pages/tldr/releases"><b>Client specification v2.3: Option placeholders and old asset website deprecation date</b> <span class="rp-rel-tag">v2.3</span> <span class="rp-item-extra">2025-03-07</span></a><pre class="rp-pre">Attention maintainers!
+
+We have released a new client specification. In this release we are adding a new client-side syntax to allow the clients to show either shortform or longform options. This should remove a lot of clutter. It would also allow power users to view shortform options by default while showing longform options to new users. The syntax is backwards compatible so there is no need to rush support.
+
+ [!IMPORTANT]
+ The old https://tldr.sh domain will stop providing assets at the end of this year.
+
+ Changelog
+- Added longform/shortform specifications (15253) (by @Managor)
+- </pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/tldr-pages__tldr.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

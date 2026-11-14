@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>google-gemini/gemini-cli · GitHub Trending Rank Radar</title>
+<meta name="description" content="An open-source AI agent that brings the power of Gemini directly into your terminal.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="gemini-cli, google-gemini, google-gemini/gemini-cli, github stars, github trending, star growth, star history, 开源项目, 星标增长, gemini, gemini-api, ai, ai-agents, cli, mcp-client">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/google-gemini__gemini-cli">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="google-gemini/gemini-cli · GitHub Trending Rank Radar">
+<meta property="og:description" content="An open-source AI agent that brings the power of Gemini directly into your terminal.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/google-gemini__gemini-cli">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "google-gemini/gemini-cli", "codeRepository": "https://github.com/google-gemini/gemini-cli", "url": "https://zhuikan.com/repos/google-gemini__gemini-cli", "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.", "author": {"@type": "Organization", "name": "google-gemini", "url": "https://github.com/google-gemini"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "TypeScript", "dateCreated": "2025-04-17", "keywords": "gemini,gemini-api,ai,ai-agents,cli,mcp-client,mcp-server"}</script>
+</head>
+<body data-repo="google-gemini/gemini-cli" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">google-gemini/gemini-cli</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="google-gemini__gemini-cli"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/161781182?v=4&s=300" width="300" height="300" alt="google-gemini avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">gemini-cli</div>
+      <a class="rp-side-owner" href="https://github.com/google-gemini">google-gemini</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/google-gemini">google-gemini</a>
+        <span class="rp-sep">/</span><span class="rp-name">gemini-cli</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=total">total <b>#127</b></a></div>
+    </div>
+    <p class="rp-desc">An open-source AI agent that brings the power of Gemini directly into your terminal.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>108,818</b></span><span class="rp-stat" title="forks">⑂ <b>14,948</b></span><span class="rp-stat" title="watchers">👁 <b>582</b></span><span class="rp-stat" title="prs">⑃ <b>13,380</b></span><span class="rp-stat" title="issues">● <b>14,648</b></span><span class="rp-stat" title="releases">▤ <b>687</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/gemini">gemini</a><a class="rp-topic" href="https://github.com/topics/gemini-api">gemini-api</a><a class="rp-topic" href="../tags/ai">ai</a><a class="rp-topic" href="../tags/ai-agents">ai-agents</a><a class="rp-topic" href="../tags/cli">cli</a><a class="rp-topic" href="https://github.com/topics/mcp-client">mcp-client</a><a class="rp-topic" href="../tags/mcp-server">mcp-server</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2025-04-17</span><a class="rp-meta-bit rp-home" href="https://geminicli.com" rel="noopener">geminicli.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="google-gemini__cookbook"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/161781182?v=4" alt="" loading="lazy">cookbook</a><a class="rp-same-link" href="google-gemini__gemini-fullstack-langgraph-quickstart"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/161781182?v=4" alt="" loading="lazy">gemini-fullstack-langgraph-quickstart</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/google-gemini/gemini-cli">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Release v0.68.0</span><a class="rp-dl-a" href="https://github.com/google-gemini/gemini-cli/releases/tag/v0.68.0">Release-0.68.0 ↓</a><span class="rp-dl-ver">0.68.0</span><span class="rp-dl-date">2026-11-10</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+17</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">108,818</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">14,948</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">582</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">13,380</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">14,648</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">687</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Gemini CLI
+
+
+
+
+
+
+
+
+ [!IMPORTANT]
+ Read before installing — Gemini CLI status &amp; tool guide
+
+ - Enterprise Code Assist only: Designed for Gemini Code Assist Standard / Enterprise licenses and Code Assist for GitHub on Google Cloud (your access remains unchanged).
+ - No free tier or Google AI plans: Free individual access and Google AI Pro / Ultra (Google One) moved to Antigravity CLI on June 18, 2026 (transition post).
+ - Not optimized for Gemini 4+: Not tuned for the Gemini 4 series (for example, Gemini 4 Argon) or future releases in this or later generations.
+ - Not for model benchmarks: Don&#x27;t use Gemini CLI to benchmark Gemini models—its harness isn&#x27;t tuned for Gemini 4+ and produces unrepresentative scores.
+
+ Which Google CLI do you need?
+
+ | Tool | Best for | Links |
+ | :--- | :--- | :--- |
+ | Antigravity CLI (agy) | Interactive multi-agent coding terminal. Use for Gemini 4 Argon+, free / Google AI Pro &amp; Ultra accounts, or Google Cloud. | Download · Migrate · Argon post |
+ | Gemini API CLI (gemini-api) | Stateless API CLI (not a coding harness). Gives agents (agy, Claude Code, Codex), scripts, and CI direct commands for Gemini models, media gen, file analysis, and managed agents. | GitHub · Releases · API docs |
+ | Gemini CLI (gemini, this repo) | Organizations with Gemini Code Assist Standard / Enterprise or Code Assist for GitHub on Google Cloud (plus legacy paid API / Vertex keys). | Docs |
+
+Gemini CLI (gemini) is an open-source terminal agent maintained for enterprise
+Gemini Code Assist workflows on Google Cloud. Learn more in the
+Gemini CLI documentation.
+
+ 📦 Installation
+
+See
+Gemini CLI installation, execution, and releases
+for recommended system specifications and a detailed installation guide.
+
+ Quick Install
+
+ Run instantly with npx
+
+bash
+ Using npx (no installation required)
+npx @google/gemini-cli
+
+
+ Install globally with npm
+
+bash
+npm install -g @google/gemini-cli
+
+
+ Install globally with Homebrew (macOS/Linux)
+
+bash
+brew install gemini-cli
+
+
+ Install globally with MacPorts (macOS)
+
+bash
+sudo port install gemini-cli
+
+
+ Install with Anaconda (for restricted environments)
+
+bash
+ Create and activate a new environment
+conda create -y -n gemini_env -c conda-forge nodejs
+conda activate gemini_env
+
+ Install Gemini CLI globally via npm (inside the environment)
+npm install -g @google/gemini-cli
+
+
+ Release Channels
+
+See Releases for more details.
+
+ Preview
+
+New preview releases will be published each week at UTC 23:59 on Tuesdays. These
+releases will not have been fully vetted and may contain regressions or other
+outstanding issues. Please help us test and install with preview tag.
+
+bash
+npm install -g @google/gemini-cli@preview
+
+
+ Stable
+
+- New stable releases will be published each week at UTC 20:00 on Tuesdays, this
+  will be the full promotion of last week&#x27;s preview release + any bug fixes
+  and validations. Use latest tag.
+
+bash
+npm install -g @google/gemini-cli@latest
+
+
+ Nightly
+
+- New releases will be published each day at UTC 00:00. T</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/google-gemini/gemini-cli/issues/16750"><span class="rp-item-num">#16750</span><span class="rp-item-title">&quot;Allow for session&quot; only allows once for shell commands that include a path</span><span class="rp-item-extra">159 comments · 2026-01-15</span></a><a class="rp-item" href="https://github.com/google-gemini/gemini-cli/issues/24937"><span class="rp-item-num">#24937</span><span class="rp-item-title">Tracking: 429 / Capacity Issues</span><span class="rp-item-extra">131 comments · 2026-04-08</span></a><a class="rp-item" href="https://github.com/google-gemini/gemini-cli/issues/19532"><span class="rp-item-num">#19532</span><span class="rp-item-title">Add gemini-3.1-pro-preview</span><span class="rp-item-extra">127 comments · 2026-02-19</span></a><a class="rp-item" href="https://github.com/google-gemini/gemini-cli/issues/23331"><span class="rp-item-num">#23331</span><span class="rp-item-title">GSoC Behavioral evals, Quality, and the OSS Community</span><span class="rp-item-extra">77 comments · 2026-03-21</span></a><a class="rp-item" href="https://github.com/google-gemini/gemini-cli/issues/23316"><span class="rp-item-num">#23316</span><span class="rp-item-title">Long-Context &amp; Complex Reasoning Coding Evaluation Dataset</span><span class="rp-item-extra">80 comments · 2026-03-20</span></a><a class="rp-item" href="https://github.com/google-gemini/gemini-cli/issues/29101"><span class="rp-item-num">#29101</span><span class="rp-item-title">Authentication failure blocking Enterprise Workspace accounts</span><span class="rp-item-extra">65 comments · 2026-08-26</span></a><a class="rp-item" href="https://github.com/google-gemini/gemini-cli/issues/3132"><span class="rp-item-num">#3132</span><span class="rp-item-title">[Agents] Post V1.0 Work</span><span class="rp-item-extra">46 comments · 2025-07-03</span></a><a class="rp-item" href="https://github.com/google-gemini/gemini-cli/issues/16388"><span class="rp-item-num">#16388</span><span class="rp-item-title">feat(stats): Expose aggregate &#x27;Chat API requests per day&#x27; quota in /stats</span><span class="rp-item-extra">38 comments · 2026-01-12</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/google-gemini/gemini-cli/discussions/30260"><span class="rp-item-num">#30260</span><span class="rp-item-title">Chopper: a small open model that cuts only the needed sentences out of retrieved text</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/google-gemini/gemini-cli/discussions/30257"><span class="rp-item-num">#30257</span><span class="rp-item-title">Mons: access your coding-agent terminal from iPhone and iPad (public beta)</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/google-gemini/gemini-cli/discussions/30255"><span class="rp-item-num">#30255</span><span class="rp-item-title">1ToolRing: live Google, Maps and Amazon data in Gemini CLI through one remote MCP server</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/google-gemini/gemini-cli/discussions/30251"><span class="rp-item-num">#30251</span><span class="rp-item-title">claude-bulkhead: BeforeTool guards for running Gemini CLI next to other agents on one machine</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/google-gemini/gemini-cli/discussions/30248"><span class="rp-item-num">#30248</span><span class="rp-item-title">Trying Concord with Gemini CLI and another coding agent</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/google-gemini/gemini-cli/discussions/30244"><span class="rp-item-num">#30244</span><span class="rp-item-title">gemini-pro-mcp: Flow, Notebooks, Deep Research and Jules as MCP tools for Gemini CLI</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/google-gemini/gemini-cli/discussions/30200"><span class="rp-item-num">#30200</span><span class="rp-item-title">agentswarm.space: inspect task fit and payer before registering (Gemini CLI untested)</span><span class="rp-item-extra">0 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/google-gemini/gemini-cli/discussions/30198"><span class="rp-item-num">#30198</span><span class="rp-item-title">Pushary: Gemini CLI approvals on your phone, through native hooks</span><span class="rp-item-extra">0 comments · 2026-11-07</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/google-gemini/gemini-cli/releases"><b>Release v0.68.0</b> <span class="rp-rel-tag">v0.68.0</span> <span class="rp-item-extra">2026-11-10</span></a><pre class="rp-pre">What&#x27;s Changed
+ Changelog for v0.67.0-preview.0 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29990
+ Changelog for v0.66.0 by @gemini-cli-robot in https://github.com/google-gemini/gemini-cli/pull/29992
+ docs(readme): clarify Gemini CLI scope, limitations, and tool landscape by @LyalinDotCom in https://github.com/google-gemini/gemini-cli/pull/29995
+ fix(cli): bound inline history re-render after terminal width changes by @jvargassanchez-dot in https://github.com/google-gemini/gemini-cli/pull/29904
+ fix(ui): handle surrogate pairs when truncating in sanitizeForDisplay </pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (6)</h3><div class="rp-list"><a class="rp-item" href="https://www.ithome.com.tw/news/178005" target="_blank" rel="noopener"><span class="rp-news-src">iThome Online</span><span class="rp-item-title">Claude Code、Gemini CLI與Codex共通信任風險，惡意GitHub議題可影響後續代理</span><span class="rp-item-extra">2026-08-09</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMickFVX3lxTE5BbkplMlB6RXJSVWZEaHdPbmpPc25BU01sdWV0Sy1GNzNfczNkUWlkWHpCQTBSdlRvSTdQRmhMNy1KWkl5NUI4cHI0TG1JUlRUbUd4ME9TeVFaYnlHYlNpbWdRZEZpUGFwYkNIZ0NuZVh6UQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">80aj.com</span><span class="rp-item-title">Google 宣布 Antigravity CLI 取代 Gemini CLI，全面转向多 Agent 协同开发</span><span class="rp-item-extra">2026-05-20</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMia0FVX3lxTE1WYjl5R0tCd09CNzBITDdrZ3BsZUpUMDdHSEZ5by16WHBPczBOTVpOcmRIa1E3RFU4NHRxcVJTVDY4elhIejM2ZHFlRDFDTXVWQVFaY1hxWjV3c2RWdnhmLUp2VHRveFM4eGlZ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN博客</span><span class="rp-item-title">2026 年 Gemini CLI 向 Antigravity CLI 过渡，新平台更快、更高效！</span><span class="rp-item-extra">2026-05-20</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1vYkJHZnhDYkhsVDNDR290NVViUFNOcGtLbklqSThER2hxS1F0eDFERDRvVGxOTUhOblJTMjRSTHFOUm8xb1BWQVozNnQwMHByUGg0U091NE1xdWNMYlR3WnNtbVFKaWM?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN博客</span><span class="rp-item-title">GitHub评论可触发Claude Code、Gemini CLI和GitHub Copilot的提示注入漏洞</span><span class="rp-item-extra">2026-04-22</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMingFBVV95cUxNLUUwSFViXzFmQ1dqZHhKeEJDdWxRYUFvTlhRQXpQNl83ZDhyM2l1emZDNzBGdHBla0VNcVlDM0thLTZPeXY5UGVySHQzRWttbi1FUVNFc2t1dngtZzB4YzJkWTQyOE5QTjhpOUFTWVllcU4teVU0c0pMTEJnUG9KUHlQMl9QOU1IZVlZODgtU0tLbmhGUVdweWtmMjE5QQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">2026 AI 编程工具: Claude Code, Copilot, Codex 和 Gemini 之间的价格大涨</span><span class="rp-item-extra">2026-04-21</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE5aaEVSNjU4SENjWEZqSzRPN3otRkRYcWxLSXN6NFg1ZXlIVTZ1eUJwazN5eS1jd1NmeFhaNGRjamNST0N2eWdFcEV5SDdLOUN1T3VZ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">51CTO</span><span class="rp-item-title">谷歌重磅开源Gemini CLI：免费AI工具，居然要干掉GitHub Copilot？</span><span class="rp-item-extra">2025-06-27</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (24)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=44376919" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Gemini CLI</span><span class="rp-item-extra">▲ 1,428 · 788 comments · 2025-06-25</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=46721179" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">It looks like the status/need-triage label was removed</span><span class="rp-item-extra">▲ 303 · 82 comments · 2026-01-22</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47195371" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Addressing Antigravity Bans and Reinstating Access</span><span class="rp-item-extra">▲ 254 · 216 comments · 2026-02-28</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47445173" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Gemini CLI: mitigating abuse and prioritizing traffic</span><span class="rp-item-extra">▲ 7 · 0 comments · 2026-03-19</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47522296" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Google Gemini bans OAuth with third parties blocking most OpenClaw users</span><span class="rp-item-extra">▲ 6 · 1 comments · 2026-03-25</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=45307360" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">MacOS14.8、15.7 update breaks TMPDIR environment variable</span><span class="rp-item-extra">▲ 5 · 2 comments · 2025-09-19</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47536256" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Gemini CLI not working for many users</span><span class="rp-item-extra">▲ 4 · 4 comments · 2026-03-26</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=45455337" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Gemini CLI tried to RF -RF / on my system</span><span class="rp-item-extra">▲ 4 · 3 comments · 2025-10-02</span></a><a class="rp-item" href="https://note.com/ryohonma/n/n79cdc665d427?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">Migration Steps from Gemini CLI to Antigravity CLI</span><span class="rp-item-extra">2026-11-05</span></a><a class="rp-item" href="https://note.com/illustpentz/n/n160b4f293545?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">Gemini CLI not working? I looked into points to confirm regarding the end of personal use and the migration to Antigravity CLI</span><span class="rp-item-extra">2026-10-30</span></a><details class="rp-news-more"><summary>14 more</summary><a class="rp-item" href="https://9to5google.com/2026/06/17/gemini-cli-code-assist-shutting-down/" target="_blank" rel="noopener"><span class="rp-news-src">9to5google.com</span><span class="rp-item-title">Gemini CLI and Code Assist shut down for consumers this week amid Antigravity focus</span><span class="rp-item-extra">2026-06-17</span></a><a class="rp-item" href="https://www.ibtimes.com/google-accepted-6000-gemini-cli-contributions-then-closed-tool-enterprise-only-3803227" target="_blank" rel="noopener"><span class="rp-news-src">International Business Times</span><span class="rp-item-title">Google Accepted 6,000 Gemini CLI Contributions, Then Closed Tool for Enterprise Only</span><span class="rp-item-extra">2026-05-23</span></a><a class="rp-item" href="https://virtualizationreview.com/articles/2026/05/19/google-moves-gemini-cli-into-antigravity-cli-as-agent-platform-expands.aspx" target="_blank" rel="noopener"><span class="rp-news-src">Virtualization Review</span><span class="rp-item-title">Google Moves Gemini CLI Into Antigravity CLI as Agent Platform Expands</span><span class="rp-item-extra">2026-05-18</span></a><a class="rp-item" href="https://www.securityweek.com/gemini-cli-vulnerability-could-have-led-to-code-execution-supply-chain-attack/" target="_blank" rel="noopener"><span class="rp-news-src">SecurityWeek</span><span class="rp-item-title">Gemini CLI Vulnerability Could Have Led to Code Execution, Supply Chain Attack</span><span class="rp-item-extra">2026-05-07</span></a><a class="rp-item" href="https://hackread.com/google-cvss-10-gemini-cli-vulnerability-github-rce/" target="_blank" rel="noopener"><span class="rp-news-src">hackread</span><span class="rp-item-title">Google Fixes CVSS 10 Gemini CLI Vulnerability Enabling GitHub Issue-Based RCE</span><span class="rp-item-extra">2026-05-06</span></a><a class="rp-item" href="https://thehackernews.com/2026/04/google-fixes-cvss-10-gemini-cli-ci-rce.html" target="_blank" rel="noopener"><span class="rp-news-src">The Hacker News</span><span class="rp-item-title">Google Fixes CVSS 10 Gemini CLI CI RCE and Cursor Flaws Enable Code Execution</span><span class="rp-item-extra">2026-04-30</span></a><a class="rp-item" href="https://www.securityweek.com/claude-code-gemini-cli-github-copilot-agents-vulnerable-to-prompt-injection-via-comments/" target="_blank" rel="noopener"><span class="rp-news-src">SecurityWeek</span><span class="rp-item-title">Claude Code, Gemini CLI, GitHub Copilot Agents Vulnerable to Prompt Injection via Comments</span><span class="rp-item-extra">2026-04-16</span></a><a class="rp-item" href="https://www.marktechpost.com/2025/09/03/google-brings-gemini-cli-to-github-actions-secure-free-and-enterprise-ready-ai-integration/" target="_blank" rel="noopener"><span class="rp-news-src">marktechpost</span><span class="rp-item-title">Google Brings Gemini CLI to GitHub Actions: Secure, Free, and Enterprise-Ready AI Integration</span><span class="rp-item-extra">2025-09-03</span></a><a class="rp-item" href="https://www.infoworld.com/article/4036153/google-rolls-out-ai-coding-tool-for-github-repos.html" target="_blank" rel="noopener"><span class="rp-news-src">InfoWorld</span><span class="rp-item-title">Google rolls out AI coding tool for GitHub repos</span><span class="rp-item-extra">2025-08-07</span></a><a class="rp-item" href="https://www.maketecheasier.com/run-gemini-cli-ai-agent-on-terminal/" target="_blank" rel="noopener"><span class="rp-news-src">maketecheasier.com</span><span class="rp-item-title">How to Run the Gemini CLI AI Agent on Your Terminal</span><span class="rp-item-extra">2025-07-09</span></a><a class="rp-item" href="https://techcrunch.com/2025/06/25/google-unveils-gemini-cli-an-open-source-ai-tool-for-terminals/" target="_blank" rel="noopener"><span class="rp-news-src">TechCrunch</span><span class="rp-item-title">Google unveils Gemini CLI, an open source AI tool for terminals</span><span class="rp-item-extra">2025-06-25</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMirAFBVV95cUxQV1Z1ZGtBcVBYNG54amIwN3BpcFczRWJqMVhWYVZlMGRIVUx3bHlSeVNycE5jRUVpNXpSeDdUbkpQUlpIS1N3NUxRVXY5NS1hSzlhVS1TaWZvUndBbzdaa0dsZnJTZ2t5U09leTZadHQ5SVRCMWxsSWpkYlpEX3dBMUlkYUY3eGhPNzgtRHFiZS1LbjIxclc4SnJSQWlaV0xNWlB4LVVoVEpEYi1k?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The Information</span><span class="rp-item-title">Same Flaw Found in Claude Code, Codex, Gemini CLI and GitHub Copilot</span><span class="rp-item-extra">2026-09-17</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMigAFBVV95cUxOZTJSbUhQN2ZMWGx5RVR0d3NOYXJxMHZRZDFnNXRUVlNsZmJSTlNTZ2Nybkc4ZTRkdTdBUDVOSXdqZ3Y1bDJWbE5mVUhiLVk2a0tWUW1oY09tVzZsOXZ6Y3FGcExsRkNFSk9reFN6d3hfZ1NJVjFDWFUtMUxuc0ZmWQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The Hacker News</span><span class="rp-item-title">Claude Code and Gemini CLI Flaws Let a GitHub Issue Reach CI Workflow Secrets</span><span class="rp-item-extra">2026-08-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxPYXBDZjhtS0RWSnRrczlKalRlcXhPNEowR0NjMEROYk5vcG1FTTZ0cW5HVWhkNXg0ZzRjU1hTYXAtTUJ1VUg4RUFBaktmdmREaE5Mb3dlMl92N0dhT2czdGVHREkzV3E1VzBWYWVZUi1qT2N0cXA3bERkTG1qSG1BVllWdHVjdjctbmlnemw0bU8zLVVPM1JVY0JNdl9EZlFRX0pRODN1UWFISURiMnY0WDd2U0JsazZsa1lETUpSNEc?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Google Cloud</span><span class="rp-item-title">Ship code within minutes with the Gemini CLI DevOps Extension</span><span class="rp-item-extra">2026-05-09</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/google-gemini__gemini-cli.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

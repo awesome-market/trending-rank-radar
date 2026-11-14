@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Translate-It-App/Translate-It · GitHub Trending Rank Radar</title>
+<meta name="description" content="Open-source translation extension for Chrome and Firefox with text, page, PDF, OCR, subtitles, and live dubbing.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Translate-It, Translate-It-App, Translate-It-App/Translate-It, github stars, github trending, star growth, star history, 开源项目, 星标增长, addons, chrome-extension, dubbing, firefox, firefox-addon, mobile-extensions">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Translate-It-App__Translate-It">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Translate-It-App/Translate-It · GitHub Trending Rank Radar">
+<meta property="og:description" content="Open-source translation extension for Chrome and Firefox with text, page, PDF, OCR, subtitles, and live dubbing.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Translate-It-App__Translate-It">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Translate-It-App/Translate-It", "codeRepository": "https://github.com/Translate-It-App/Translate-It", "url": "https://zhuikan.com/repos/Translate-It-App__Translate-It", "description": "Open-source translation extension for Chrome and Firefox with text, page, PDF, OCR, subtitles, and live dubbing.", "author": {"@type": "Organization", "name": "Translate-It-App", "url": "https://github.com/Translate-It-App"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "JavaScript", "dateCreated": "2025-02-18", "keywords": "addons,chrome-extension,dubbing,firefox,firefox-addon,mobile-extensions,ocr-recognition,pdf-translation,pdf-translator,translate"}</script>
+</head>
+<body data-repo="Translate-It-App/Translate-It" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Translate-It-App/Translate-It</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Translate-It-App__Translate-It"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/330971868?v=4&s=300" width="300" height="300" alt="Translate-It-App avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Translate-It</div>
+      <a class="rp-side-owner" href="https://github.com/Translate-It-App">Translate-It-App</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Translate-It-App">Translate-It-App</a>
+        <span class="rp-sep">/</span><span class="rp-name">Translate-It</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Open-source translation extension for Chrome and Firefox with text, page, PDF, OCR, subtitles, and live dubbing.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>299</b></span><span class="rp-stat" title="forks">⑂ <b>39</b></span><span class="rp-stat" title="watchers">👁 <b>5</b></span><span class="rp-stat" title="prs">⑃ <b>254</b></span><span class="rp-stat" title="issues">● <b>139</b></span><span class="rp-stat" title="releases">▤ <b>53</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/addons">addons</a><a class="rp-topic" href="../tags/chrome-extension">chrome-extension</a><a class="rp-topic" href="https://github.com/topics/dubbing">dubbing</a><a class="rp-topic" href="https://github.com/topics/firefox">firefox</a><a class="rp-topic" href="https://github.com/topics/firefox-addon">firefox-addon</a><a class="rp-topic" href="https://github.com/topics/mobile-extensions">mobile-extensions</a><a class="rp-topic" href="https://github.com/topics/ocr-recognition">ocr-recognition</a><a class="rp-topic" href="https://github.com/topics/pdf-translation">pdf-translation</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2025-02-18</span><a class="rp-meta-bit rp-home" href="https://translate-it.app" rel="noopener">translate-it.app</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Translate-It-App/Translate-It">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Translate It! v1.25.2</span><a class="rp-dl-a" href="https://github.com/Translate-It-App/Translate-It/releases/tag/v1.25.2">Translate-1.25.2 ↓</a><span class="rp-dl-ver">1.25.2</span><span class="rp-dl-date">2026-11-05</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">299</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">39</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">5</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">254</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">139</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">53</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Translate It!
+ Translate the web, your way.
+
+
+  
+    
+  
+  
+    
+  
+
+
+
+
+---
+
+
+
+
+  
+    • English | 
+    • 日本語 |
+    • فارسی
+  
+
+
+
+
+Translate It is more than a translator, it&#x27;s a modular translation ecosystem built around a zero-pressure philosophy. Designed to stay lightweight during everyday browsing, it brings text, page, document, image, subtitle, and live-audio translation into one extension across desktop, touch, and mobile environments.
+
+Powered by 10+ translation providers, Translate It focuses on privacy, flexibility, performance, and giving users control over how and where their translations are processed.
+
+
+
+
+  
+  
+  
+  https://github.com/user-attachments/assets/16e12bef-7771-4285-9117-f167b0f62359
+
+
+
+
+---
+
+ Goals
+
+- Privacy and control: Choose how your translations are processed, including local, offline, free, and cloud-based providers where supported.
+- Freedom to choose: Switch between traditional and AI-powered translation providers without being locked into a single service.
+- One tool for different needs: Translate selected text, input fields, page elements, full pages, PDFs, subtitles, images with OCR, text on hover, and live audio.
+- Built for everyday browsing: Designed for dynamic pages, long content, continuous translation, desktop, touch, and mobile environments.
+
+---
+
+ Features at a Glance
+
+| Feature | Description |
+| :--- | :--- |
+| Text Selection | Translate selected text instantly without leaving the page. |
+| Select Element | Translate specific page elements inline while preserving the surrounding layout. |
+| Whole Page | Translate full pages continuously, including dynamically loaded content. |
+| Popup &amp; Side Panel | Translate text directly from the extension popup or persistent side panel. |
+| Live Dubbing | Translate active-tab audio in real time using Gemini or OpenAI. Chrome only. |
+| PDF Translator | Translate local and online PDFs with bilingual views, OCR, and export support. |
+| Subtitle (SRT) Translator | Translate .srt subtitle files while preserving timestamps and formatting. |
+| Screen Capture &amp; OCR | Capture and translate text from images, videos, PDFs, or other non-selectable content. |
+| Mouse Hover | Translate words, sentences, or text containers directly on hover. |
+| Desktop &amp; Mobile FAB | Quick access to translation tools through a draggable floating action button. |
+| In-Field (Ctrl+/) | Translate text directly inside editable fields before sending it. |
+| Dictionary &amp; TTS | Look up words and listen to source or translated text. |
+| History &amp; Export | Keep translation history and export it for later use. |
+
+---
+
+ Supported Providers
+
+Choose from traditional, AI-powered, local, and specialized translation providers:
+
+- Traditional: Google Translate, Microsoft Edge Translator, DeepL, Yandex, Lingva, Bing
+- AI: Gemini, OpenAI, OpenRouter, Requesty, DeepSeek
+- Custom &amp; Local: OpenAI-Compatible APIs, WebAI-to-API, Browser Translation
+- Dictionary: Vajehyab
+
+Some providers require an API key, while other</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Translate-It-App/Translate-It/issues/322"><span class="rp-item-num">#322</span><span class="rp-item-title">[Feature]: Add on-demand model compatibility checks to Provider settings</span><span class="rp-item-extra">3 comments · 2026-10-15</span></a><a class="rp-item" href="https://github.com/Translate-It-App/Translate-It/issues/378"><span class="rp-item-num">#378</span><span class="rp-item-title">feat(pdf): make page translation an opt-in experimental feature</span><span class="rp-item-extra">2 comments · 2026-10-24</span></a><a class="rp-item" href="https://github.com/Translate-It-App/Translate-It/issues/377"><span class="rp-item-num">#377</span><span class="rp-item-title">chore(pdf): rename user-facing PDF Translator branding to PDF Viewer</span><span class="rp-item-extra">2 comments · 2026-10-24</span></a><a class="rp-item" href="https://github.com/Translate-It-App/Translate-It/issues/376"><span class="rp-item-num">#376</span><span class="rp-item-title">chore(i18n): standardize Persian language naming across UI</span><span class="rp-item-extra">2 comments · 2026-10-24</span></a><a class="rp-item" href="https://github.com/Translate-It-App/Translate-It/issues/310"><span class="rp-item-num">#310</span><span class="rp-item-title">[Feature]: Show Translate It context menu only where relevant</span><span class="rp-item-extra">2 comments · 2026-10-13</span></a><a class="rp-item" href="https://github.com/Translate-It-App/Translate-It/issues/242"><span class="rp-item-num">#242</span><span class="rp-item-title">Simplify the provider speed selector UI</span><span class="rp-item-extra">2 comments · 2026-09-27</span></a><a class="rp-item" href="https://github.com/Translate-It-App/Translate-It/issues/219"><span class="rp-item-num">#219</span><span class="rp-item-title">Improve text-selection icon positioning on Firefox</span><span class="rp-item-extra">2 comments · 2026-09-27</span></a><a class="rp-item" href="https://github.com/Translate-It-App/Translate-It/issues/367"><span class="rp-item-num">#367</span><span class="rp-item-title">refactor(live-dubbing): modularize offscreen controller</span><span class="rp-item-extra">1 comments · 2026-10-21</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Translate-It-App/Translate-It/discussions/261"><span class="rp-item-num">#261</span><span class="rp-item-title">88API — translation provider compatibility and ecosystem partnership</span><span class="rp-item-extra">1 comments · 2026-09-28</span></a><a class="rp-item" href="https://github.com/Translate-It-App/Translate-It/discussions/259"><span class="rp-item-num">#259</span><span class="rp-item-title">Alternative API for DeepL</span><span class="rp-item-extra">0 comments · 2026-09-28</span></a><a class="rp-item" href="https://github.com/Translate-It-App/Translate-It/discussions/258"><span class="rp-item-num">#258</span><span class="rp-item-title">Feature Request : Convert extension from translator to linguistics professor</span><span class="rp-item-extra">0 comments · 2026-09-28</span></a><a class="rp-item" href="https://github.com/Translate-It-App/Translate-It/discussions/252"><span class="rp-item-num">#252</span><span class="rp-item-title">Future dictionary and linguistic features</span><span class="rp-item-extra">0 comments · 2026-09-27</span></a><a class="rp-item" href="https://github.com/Translate-It-App/Translate-It/discussions/251"><span class="rp-item-num">#251</span><span class="rp-item-title">PDF future architecture and performance ideas</span><span class="rp-item-extra">0 comments · 2026-09-27</span></a><a class="rp-item" href="https://github.com/Translate-It-App/Translate-It/discussions/250"><span class="rp-item-num">#250</span><span class="rp-item-title">Select Element interaction and capability decisions</span><span class="rp-item-extra">0 comments · 2026-09-27</span></a><a class="rp-item" href="https://github.com/Translate-It-App/Translate-It/discussions/249"><span class="rp-item-num">#249</span><span class="rp-item-title">Writing and vocabulary workflow ideas</span><span class="rp-item-extra">0 comments · 2026-09-27</span></a><a class="rp-item" href="https://github.com/Translate-It-App/Translate-It/discussions/248"><span class="rp-item-num">#248</span><span class="rp-item-title">External integrations and web search</span><span class="rp-item-extra">0 comments · 2026-09-27</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/Translate-It-App/Translate-It/releases"><b>Translate It! v1.25.2</b> <span class="rp-rel-tag">v1.25.2</span> <span class="rp-item-extra">2026-11-05</span></a><pre class="rp-pre">Released on 29 October 2026
+
+
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+---
+
+ Changed
+
+- Improved compatibility with various websites for smoother, more reliable floating translation controls and a more consistent browsing experience.
+
+
+
+---
+
+ 🧩 Install Now
+
+Click your preferred browser to install:
+
+
+
+
+  
+
+
+  
+
+
+
+
+---
+
+
+What&#x27;s Changed
+
+ docs: update demo video links in README files by @Amm1rr in https://github.com/Translate-It-App/Translate-It/pull/387
+ fix(content): prevent UI positioning issues on pages with root containment by @Amm1rr in https://github.com/Tr</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Translate-It-App__Translate-It.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

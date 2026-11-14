@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ourongxing/newsnow · GitHub Trending Rank Radar</title>
+<meta name="description" content="Elegant reading of real-time and hottest news">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="newsnow, ourongxing, ourongxing/newsnow, github stars, github trending, star growth, star history, 开源项目, 星标增长, news, elegant">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/ourongxing__newsnow">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="ourongxing/newsnow · GitHub Trending Rank Radar">
+<meta property="og:description" content="Elegant reading of real-time and hottest news">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/ourongxing__newsnow">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ourongxing/newsnow", "codeRepository": "https://github.com/ourongxing/newsnow", "url": "https://zhuikan.com/repos/ourongxing__newsnow", "description": "Elegant reading of real-time and hottest news", "author": {"@type": "Organization", "name": "ourongxing", "url": "https://github.com/ourongxing"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2024-09-23", "keywords": "news,elegant"}</script>
+</head>
+<body data-repo="ourongxing/newsnow" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">ourongxing/newsnow</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="ourongxing__newsnow"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/260840380?v=4&s=300" width="300" height="300" alt="ourongxing avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">newsnow</div>
+      <a class="rp-side-owner" href="https://github.com/ourongxing">ourongxing</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/ourongxing">ourongxing</a>
+        <span class="rp-sep">/</span><span class="rp-name">newsnow</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Elegant reading of real-time and hottest news</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>22,442</b></span><span class="rp-stat" title="forks">⑂ <b>6,171</b></span><span class="rp-stat" title="watchers">👁 <b>69</b></span><span class="rp-stat" title="prs">⑃ <b>124</b></span><span class="rp-stat" title="issues">● <b>244</b></span><span class="rp-stat" title="releases">▤ <b>43</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/news">news</a><a class="rp-topic" href="https://github.com/topics/elegant">elegant</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2024-09-23</span><a class="rp-meta-bit rp-home" href="https://newsnow.busiyi.world" rel="noopener">newsnow.busiyi.world</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/ourongxing/newsnow">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.0.43</span><a class="rp-dl-a" href="https://github.com/ourongxing/newsnow/releases/tag/v0.0.43">v0.0.43 ↓</a><span class="rp-dl-ver">0.0.43</span><span class="rp-dl-date">2026-10-13</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+13</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+181</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+407</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">22,442</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">6,171</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">69</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">124</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">244</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">43</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">!
+
+English | 简体中文 | 日本語
+
+优雅地阅读实时热门新闻
+
+ [!NOTE]
+ NewsNext（下一代 NewsNow）即将到来，快加入 等待名单 吧。
+
+ 功能特性
+- 优雅的阅读界面设计，实时获取最新热点新闻
+- 支持 GitHub 登录及数据同步
+- 默认缓存时长为 30 分钟，登录用户可强制刷新获取最新数据
+- 根据内容源更新频率动态调整抓取间隔（最快每 2 分钟），避免频繁抓取导致 IP 被封禁
+- 支持 MCP server
+
+json
+{
+  &quot;mcpServers&quot;: {
+    &quot;newsnow&quot;: {
+      &quot;command&quot;: &quot;npx&quot;,
+      &quot;args&quot;: [
+        &quot;-y&quot;,
+        &quot;newsnow-mcp-server&quot;
+      ],
+      &quot;env&quot;: {
+        &quot;BASE_URL&quot;: &quot;https://newsnow.busiyi.world&quot;
+      }
+    }
+  }
+}
+
+
+你可以将 BASE_URL 修改为你的域名。
+
+ 部署指南
+
+ 基础部署
+无需登录和缓存功能时，可直接部署至 Cloudflare Pages 或 Vercel：
+1. Fork 本仓库
+2. 导入至目标平台
+
+ Cloudflare Pages 配置
+- 构建命令：pnpm run build
+- 输出目录：dist/output/public
+
+ GitHub OAuth 配置
+1. 创建 GitHub App
+2. 无需特殊权限
+3. 回调 URL 设置为：https://your-domain.com/api/oauth/github（替换 your-domain 为实际域名）
+4. 获取 Client ID 和 Client Secret
+
+ 环境变量配置
+参考 example.env.server 文件，本地运行时重命名为 .env.server 并填写以下配置：
+
+env
+ Github Clien ID
+G_CLIENT_ID=
+ Github Clien Secret
+G_CLIENT_SECRET=
+ JWT Secret, 通常就用 Clien Secret
+JWT_SECRET=
+ 初始化数据库, 首次运行必须设置为 true，之后可以将其关闭
+INIT_TABLE=true
+ 是否启用缓存
+ENABLE_CACHE=true
+
+
+ 数据库支持
+本项目主推 Cloudflare Pages 以及 Docker 部署， Vercel 需要你自行搞定数据库，其他支持的数据库可以查看 https://db0.unjs.io/connectors 。
+
+1. 在 Cloudflare Worker 控制面板创建 D1 数据库
+2. 在 wrangler.toml 中配置 database_id 和 database_name
+3. 若无 wrangler.toml ，可将 example.wrangler.toml 重命名并修改配置
+4. 重新部署生效
+
+ Docker 部署
+对于 Docker 部署，只需要项目根目录 docker-compose.yaml 文件，同一目录下执行
+
+docker compose up
+
+同样可以通过 docker-compose.yaml 配置环境变量。
+
+ 开发
+ [!Note]
+ 需要 Node.js = 20
+
+bash
+corepack enable
+pnpm i
+pnpm dev
+
+
+你可能想要添加数据源，请关注 shared/sources server/sources，项目类型完备，结构简单，请自行探索。
+
+ 路线图
+- 添加 多语言支持（英语、中文，更多语言即将推出）
+- 改进 个性化选项（基于分类的新闻、保存的偏好设置）
+- 扩展 数据源 以涵盖多种语言的全球新闻
+
+ 贡献指南
+~~欢迎贡献代码！您可以提交 pull request 或创建 issue 来提出功能请求和报告 bug~~
+
+新版即将到来，当前版本将不再接受贡献。
+
+ License
+
+MIT © ourongxing
+
+ 赞赏
+如果你依赖本服务，欢迎赞助以帮助它长期运行。如果需要定制或者其他帮助，也可以下列方式联系备注。
+
+!</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ourongxing/newsnow/issues/131"><span class="rp-item-num">#131</span><span class="rp-item-title">Cloudflare 部署成功分享过程记录，感谢博主开源</span><span class="rp-item-extra">26 comments · 2025-04-09</span></a><a class="rp-item" href="https://github.com/ourongxing/newsnow/issues/183"><span class="rp-item-num">#183</span><span class="rp-item-title">关于增加国外主要社交媒体热搜板的请求</span><span class="rp-item-extra">12 comments · 2025-06-01</span></a><a class="rp-item" href="https://github.com/ourongxing/newsnow/issues/172"><span class="rp-item-num">#172</span><span class="rp-item-title">知乎板块显示获取失败</span><span class="rp-item-extra">8 comments · 2025-05-12</span></a><a class="rp-item" href="https://github.com/ourongxing/newsnow/issues/44"><span class="rp-item-num">#44</span><span class="rp-item-title">docker 部署的，是否可以修改，添加，禁用某些源？</span><span class="rp-item-extra">7 comments · 2024-12-10</span></a><a class="rp-item" href="https://github.com/ourongxing/newsnow/issues/74"><span class="rp-item-num">#74</span><span class="rp-item-title">支持网络代理设置</span><span class="rp-item-extra">6 comments · 2025-03-15</span></a><a class="rp-item" href="https://github.com/ourongxing/newsnow/issues/59"><span class="rp-item-num">#59</span><span class="rp-item-title">docker 安装后， 查看日志只是显示Listening on http://0.0.0.0:4444，  链接HTPP:// 4444也没有显示， 端口4444已经开放了， 是什么原因？</span><span class="rp-item-extra">5 comments · 2025-02-14</span></a><a class="rp-item" href="https://github.com/ourongxing/newsnow/issues/289"><span class="rp-item-num">#289</span><span class="rp-item-title">希望可以增加小红书热搜、热点</span><span class="rp-item-extra">5 comments · 2025-12-25</span></a><a class="rp-item" href="https://github.com/ourongxing/newsnow/issues/229"><span class="rp-item-num">#229</span><span class="rp-item-title">你好，明亮模式怎么开启的，一直找不到这个开关，记得之前是有的，现在没看到了。</span><span class="rp-item-extra">5 comments · 2025-08-28</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/ourongxing/newsnow/releases"><b>v0.0.43</b> <span class="rp-rel-tag">v0.0.43</span> <span class="rp-item-extra">2026-10-13</span></a><pre class="rp-pre">NewsNext, the next gen of NewsNow, is coming soon, join the waitlist. 
+
+NewsNext，下一代 NewsNow, 即将到来，快加入 等待名单 吧。
+
+---
+
+ &amp;nbsp;&amp;nbsp;&amp;nbsp;🐞 Bug Fixes
+
+- Update Kaopu and AIHOT RSS feeds &amp;nbsp;-&amp;nbsp; by @ourongxing (30151)
+
+ &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;View changes on GitHub</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/ourongxing__newsnow.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

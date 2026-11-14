@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>andreknieriem/open-headunit · GitHub Trending Rank Radar</title>
+<meta name="description" content="Headunit App for displaying Android Auto">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="open-headunit, andreknieriem, andreknieriem/open-headunit, github stars, github trending, star growth, star history, 开源项目, 星标增长, android, androidauto, headunit">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/andreknieriem__open-headunit">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="andreknieriem/open-headunit · GitHub Trending Rank Radar">
+<meta property="og:description" content="Headunit App for displaying Android Auto">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/andreknieriem__open-headunit">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "andreknieriem/open-headunit", "codeRepository": "https://github.com/andreknieriem/open-headunit", "url": "https://zhuikan.com/repos/andreknieriem__open-headunit", "description": "Headunit App for displaying Android Auto", "author": {"@type": "Organization", "name": "andreknieriem", "url": "https://github.com/andreknieriem"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/AGPL-3.0.html", "programmingLanguage": "Kotlin", "dateCreated": "2025-10-28", "keywords": "android,androidauto,headunit"}</script>
+</head>
+<body data-repo="andreknieriem/open-headunit" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">andreknieriem/open-headunit</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="andreknieriem__open-headunit"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/4500367?u=6f365c616df7735589a82eac69d82e37d85c9f8d&amp;v=4&s=300" width="300" height="300" alt="andreknieriem avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">open-headunit</div>
+      <a class="rp-side-owner" href="https://github.com/andreknieriem">andreknieriem</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/andreknieriem">andreknieriem</a>
+        <span class="rp-sep">/</span><span class="rp-name">open-headunit</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Headunit App for displaying Android Auto</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>3,309</b></span><span class="rp-stat" title="forks">⑂ <b>321</b></span><span class="rp-stat" title="watchers">👁 <b>33</b></span><span class="rp-stat" title="prs">⑃ <b>460</b></span><span class="rp-stat" title="issues">● <b>720</b></span><span class="rp-stat" title="releases">▤ <b>115</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/android">android</a><a class="rp-topic" href="https://github.com/topics/androidauto">androidauto</a><a class="rp-topic" href="https://github.com/topics/headunit">headunit</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Kotlin</span><span class="rp-meta-bit">AGPL-3.0</span><span class="rp-meta-bit">Created 2025-10-28</span><a class="rp-meta-bit rp-home" href="https://headunit.andrerinas.com/" rel="noopener">headunit.andrerinas.com/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/andreknieriem/open-headunit">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">4.0.0</span><a class="rp-dl-a" href="https://github.com/andreknieriem/open-headunit/releases/tag/v.4.0.0">v.4.0.0 ↓</a><span class="rp-dl-ver">4.0.0</span><span class="rp-dl-date">2026-11-10</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+13</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">3,309</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">321</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">33</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">460</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">720</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">115</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Open Headunit
+
+
+
+
+
+    
+
+
+Open Headunit is an Android app that allows you to turn your Android tablet or phone into an Android Auto receiver. This project is a revived version of the original headunit project by the great Michael Reid. The original project can be found here:
+https://github.com/mikereidis/headunit
+
+It runs on Android 4.1 and newer (Android 5.0 and newer for the Play Store build). Besides the stores above, you can download APKs from the Releases page.
+
+Contents: How to use · Known Issues · Planned · Changelog · Contributing
+
+ NOTE!
+Android Auto 17.4 and newer can prevent legacy wireless triggers from launching projection, including Self-Mode and automated startup via Wireless Helper. Rooted devices have a workaround: re-enable Android Auto&#x27;s wireless startup receiver.
+Use a USB wireless dongle, Native Mode or the Headunit Server instead. Wireless Helper works up to Android Auto 17.3, or on 17.4+ with the root workaround. See Wireless Connection Options.
+
+ Screenshots
+
+
+
+
+
+ How to use
+Check out the Wiki for detailed documentation, setup guides and troubleshooting!
+
+ Wired USB Connection
+- Connect your Android device (phone) to the tablet running Open Headunit via USB cable.
+- Make sure that Android Auto is installed on your phone.
+- Set your phone to Host-Mode if necessary and select Android Auto
+- Click the USB Button in Open Headunit, find your phone and click the right button to allow connection
+- Click on your phone in the list and wait for Android Auto to start
+
+Once a phone is set up, plugging it in connects by itself. You can change this in the Auto-start settings with Connect when plugged in.
+
+ Wireless Connection Options
+Choose from the five options below depending on your Android Auto version and setup:
+
+ 1. USB Wireless Android Auto Dongle (Most Reliable)
+- A standard hardware USB Wireless Android Auto Dongle (plugged into the headunit) handles the entire wireless negotiation independently.
+- Provides seamless plug-and-play connection regardless of phone Android Auto version.
+
+ 2. Native Mode (Wi-Fi Direct / Headunit Hotspot)
+- Directly communicates with Android Auto&#x27;s native wireless protocol without helper apps.
+- Supports Wi-Fi Direct (P2P) or the Headunit Hotspot transport.
+- Configure under Open Headunit Settings - Wireless Connection - Wireless Mode - Native.
+- Native Mode starts over Bluetooth, then moves to WiFi. Detect automatically fits most units. Units that keep Bluetooth on a separate module, or that use a relay, take one of these routes:
+  - ZLink module (experimental): units with a ZJ/ZLink Bluetooth service on port 3152.
+  - ZJ socket: Unisoc units whose module uses /dev/socket/zj_bt_socket.
+  - FYT BLINK module (experimental): FYT units with a separate module, such as DUDUAUTO on DUDUOS.
+  - HCT service: units with a verified HCT Bluetooth service, without root. The app detects it by itself.
+  - ESP32 relay: an original ESP32 relays the handshake. Firmware: aa-native-bt-broker-for-openheadunit.
+
+ 3. Headu</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/andreknieriem/open-headunit/issues/1136"><span class="rp-item-num">#1136</span><span class="rp-item-title">New home screen: launcher mode in the wizard, shortcuts and widgets in the favorites row, a shorter exit menu in launcher mode</span><span class="rp-item-extra">25 comments · 2026-10-19</span></a><a class="rp-item" href="https://github.com/andreknieriem/open-headunit/issues/1099"><span class="rp-item-num">#1099</span><span class="rp-item-title">Audio Issues on Mgear Mstick4</span><span class="rp-item-extra">21 comments · 2026-10-11</span></a><a class="rp-item" href="https://github.com/andreknieriem/open-headunit/issues/585"><span class="rp-item-num">#585</span><span class="rp-item-title">Navigation stream on a virtual display?</span><span class="rp-item-extra">20 comments · 2026-06-06</span></a><a class="rp-item" href="https://github.com/andreknieriem/open-headunit/issues/1122"><span class="rp-item-num">#1122</span><span class="rp-item-title">Auto-start, next step: optional root tools so the head unit stops killing the app</span><span class="rp-item-extra">19 comments · 2026-10-15</span></a><a class="rp-item" href="https://github.com/andreknieriem/open-headunit/issues/1085"><span class="rp-item-num">#1085</span><span class="rp-item-title">Need to forget car every connection</span><span class="rp-item-extra">13 comments · 2026-10-09</span></a><a class="rp-item" href="https://github.com/andreknieriem/open-headunit/issues/1194"><span class="rp-item-num">#1194</span><span class="rp-item-title">USB permission popup keeps appearing – Open Headunit 4.0 Alpha</span><span class="rp-item-extra">11 comments · 2026-10-26</span></a><a class="rp-item" href="https://github.com/andreknieriem/open-headunit/issues/1059"><span class="rp-item-num">#1059</span><span class="rp-item-title">Headunit Revived Log Analysis: Spotify audio stuttering and transport link drops (v3.5.0-beta2)</span><span class="rp-item-extra">11 comments · 2026-10-05</span></a><a class="rp-item" href="https://github.com/andreknieriem/open-headunit/issues/1009"><span class="rp-item-num">#1009</span><span class="rp-item-title">Audio Sutter Remains After 3.4.0 Update [Native Mode] [Wi-Fi Direct]</span><span class="rp-item-extra">9 comments · 2026-09-22</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/andreknieriem/open-headunit/discussions/1271"><span class="rp-item-num">#1271</span><span class="rp-item-title">Hybrid mode?</span><span class="rp-item-extra">1 comments · 2026-11-10</span></a><a class="rp-item" href="https://github.com/andreknieriem/open-headunit/discussions/1268"><span class="rp-item-num">#1268</span><span class="rp-item-title">Open headunit wifi mode working after the Android Auto update version 18</span><span class="rp-item-extra">0 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/andreknieriem/open-headunit/discussions/1264"><span class="rp-item-num">#1264</span><span class="rp-item-title">Bluetooth connectivity</span><span class="rp-item-extra">1 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/andreknieriem/open-headunit/discussions/1225"><span class="rp-item-num">#1225</span><span class="rp-item-title">THANKS A LOT</span><span class="rp-item-extra">2 comments · 2026-10-29</span></a><a class="rp-item" href="https://github.com/andreknieriem/open-headunit/discussions/1202"><span class="rp-item-num">#1202</span><span class="rp-item-title">AARE - Anyone tested this Android Auto clone?</span><span class="rp-item-extra">1 comments · 2026-10-27</span></a><a class="rp-item" href="https://github.com/andreknieriem/open-headunit/discussions/1201"><span class="rp-item-num">#1201</span><span class="rp-item-title">Feature: Speed Adjusted Volume</span><span class="rp-item-extra">0 comments · 2026-10-27</span></a><a class="rp-item" href="https://github.com/andreknieriem/open-headunit/discussions/1161"><span class="rp-item-num">#1161</span><span class="rp-item-title">What is native android auto? how does it work vs headunit server or wireless helper?</span><span class="rp-item-extra">1 comments · 2026-10-22</span></a><a class="rp-item" href="https://github.com/andreknieriem/open-headunit/discussions/1125"><span class="rp-item-num">#1125</span><span class="rp-item-title">Hacks for specific HU</span><span class="rp-item-extra">1 comments · 2026-10-17</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/andreknieriem/open-headunit/releases"><b>4.0.0</b> <span class="rp-rel-tag">v.4.0.0</span> <span class="rp-item-extra">2026-11-10</span></a><pre class="rp-pre">- New Homescreen, favorites under the card on 16:9 units, and drawer tabs for shortcuts, thanks to @andrecuellar
+- Home: a separate switch for the widgets, and a panel opacity slider
+- Settings: redesign the screen in Material 3 and make the accent blue, thanks to @andrecuellar
+- Settings: a help button on every setting, sections ordered by use, a rail that folds to its icons, and one Bluetooth choice for Native AA
+- Settings: remove the Fake Speed switch that did nothing, thanks to @teodortomas
+- Wizard: test the decoder before recommending settings, thanks to @andrecuellar
+- Status pil</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/andreknieriem__open-headunit.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

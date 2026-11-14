@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>youngyangyang04/leetcode-master · GitHub Trending Rank Radar</title>
+<meta name="description" content="《代码随想录》LeetCode 刷题攻略：200道经典题目刷题顺序，共60w字的详细图解，视频难点剖析，50余张思维导图，支持C++，Java，Python，Go，JavaScript等多语言版本，从此算法学习不再迷茫！🔥🔥 来看看，你会发现相见恨晚！🚀 ">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="leetcode-master, youngyangyang04, youngyangyang04/leetcode-master, github stars, github trending, star growth, star history, 开源项目, 星标增长, leetcode, programmer, interview, offer, algorithm, cpp">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/youngyangyang04__leetcode-master">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="youngyangyang04/leetcode-master · GitHub Trending Rank Radar">
+<meta property="og:description" content="《代码随想录》LeetCode 刷题攻略：200道经典题目刷题顺序，共60w字的详细图解，视频难点剖析，50余张思维导图，支持C++，Java，Python，Go，JavaScript等多语言版本，从此算法学习不再迷茫！🔥🔥 来看看，你会发现相见恨晚！🚀 ">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/youngyangyang04__leetcode-master">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "youngyangyang04/leetcode-master", "codeRepository": "https://github.com/youngyangyang04/leetcode-master", "url": "https://zhuikan.com/repos/youngyangyang04__leetcode-master", "description": "《代码随想录》LeetCode 刷题攻略：200道经典题目刷题顺序，共60w字的详细图解，视频难点剖析，50余张思维导图，支持C++，Java，Python，Go，JavaScript等多语言版本，从此算法学习不再迷茫！🔥🔥 来看看，你会发现相见恨晚！🚀 ", "author": {"@type": "Organization", "name": "youngyangyang04", "url": "https://github.com/youngyangyang04"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Shell", "dateCreated": "2019-12-14", "keywords": "leetcode,programmer,interview,offer,algorithm,cpp,java,python,go,javascript"}</script>
+</head>
+<body data-repo="youngyangyang04/leetcode-master" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">youngyangyang04/leetcode-master</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="youngyangyang04__leetcode-master"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/8636020?u=bfb439d6152b4aaf21a79b6ddfff4df1c1e24818&amp;v=4&s=300" width="300" height="300" alt="youngyangyang04 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">leetcode-master</div>
+      <a class="rp-side-owner" href="https://github.com/youngyangyang04">youngyangyang04</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/youngyangyang04">youngyangyang04</a>
+        <span class="rp-sep">/</span><span class="rp-name">leetcode-master</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">《代码随想录》LeetCode 刷题攻略：200道经典题目刷题顺序，共60w字的详细图解，视频难点剖析，50余张思维导图，支持C++，Java，Python，Go，JavaScript等多语言版本，从此算法学习不再迷茫！🔥🔥 来看看，你会发现相见恨晚！🚀 </p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>62,822</b></span><span class="rp-stat" title="forks">⑂ <b>12,288</b></span><span class="rp-stat" title="watchers">👁 <b>406</b></span><span class="rp-stat" title="prs">⑃ <b>2,729</b></span><span class="rp-stat" title="issues">● <b>282</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/leetcode">leetcode</a><a class="rp-topic" href="https://github.com/topics/programmer">programmer</a><a class="rp-topic" href="../tags/interview">interview</a><a class="rp-topic" href="https://github.com/topics/offer">offer</a><a class="rp-topic" href="../tags/algorithm">algorithm</a><a class="rp-topic" href="../tags/cpp">cpp</a><a class="rp-topic" href="../tags/java">java</a><a class="rp-topic" href="../tags/python">python</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Shell</span><span class="rp-meta-bit">Created 2019-12-14</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/youngyangyang04/leetcode-master">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">62,822</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">12,288</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">406</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">2,729</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">282</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">代码随想录 · 全网最强数据结构算法学习路线
+
+
+  🌍 海外英文版 ·
+  🌍🇸 英文仓库 ·
+  🇨🇳 国内在线阅读 ·
+  🇨  Gitee 同步
+
+
+
+  
+  
+  
+  
+
+
+ 一套 循序渐进、少走弯路 的刷题计划。
+ 题目已按知识脉络与难度 排好顺序，每题配 图文题解 + 视频讲解。
+ 适合从零到进阶、系统化掌握数据结构与算法。
+
+---
+
+ 🔗 快速入口
+
+- 📘 出版书籍：《代码随想录》
+- 🧾 PDF 精讲：算法精讲 PDF
+- 🎬 算法公开课：170期硬核视频
+- 🧠 卡码笔记：最强八股文
+- 👥 学习社区：项目 / 面经 / 学习方法 / 面试技巧 → 加入 「代码随想录」知识星球
+- 🤝 参与贡献：本仓讲解以 C++ 为主，含 Java / Python / Go / JS 多语言实现。想点亮头像 👉 如何提交代码 · 致谢贡献者
+- 📢 转载须知：全部为原创，引用请标注来源；恶意搬运将依法维权。
+
+---
+
+ 📚 为什么选这套刷题路线？
+
+- 不再海选题目：README 就是刷题路线，按顺序刷即可。
+- 全链路学习体验：每个专题含「理论基础 → 实战题目 → 总结复盘」。
+- 经典高频必会：题目均为高频面试题与典型考点。
+- 多语言覆盖：除 C++ 主线，还有社区贡献的多语言实现。
+
+
+
+	
+
+
+
+---
+
+ 🚀 如何使用本攻略
+
+1. 从头开始：按模块顺序「数组 → 链表 → 哈希表 → … → 图论」。
+2. 带着问题学：每个模块先看「理论基础」，再刷对应题单。
+3. 及时复盘：刷完一个模块，阅读「总结篇」，形成知识闭环。
+4. 语言不设限：题解以 C++ 讲解为主，配多语言代码，思路通用。
+
+ 建议：新手先刷「数组/链表/哈希/字符串」，再进阶到「二叉树/回溯/贪心/动态规划/图论」。
+
+---
+
+ 🧭 刷题总目录（可折叠）
+
+ 已根据学习曲线优化排序；下方仅展示每章前若干题目，完整清单请展开查看。
+
+
+前序
+
+
+ AI工具
+     国内支付宝、微信给ChatGPT、Claude充值 
+     国内如何使用Claude Code
+     Claude Code OpAPI 接入
+
+ 算法性能分析
+     关于时间复杂度，你不知道的都在这里！
+     O(n)的算法居然超时了，此时的n究竟是多大？
+     通过一道面试题目，讲一讲递归算法的时间复杂度！
+     关于空间复杂度，可能有几个疑问？
+     递归算法的时间与空间复杂度分析！
+     刷了这么多题，你了解自己代码的内存消耗么？
+
+
+
+数组
+
+
+1. 数组过于简单，但你该了解这些！
+2. 数组：704.二分查找
+3. 数组：27.移除元素
+4. 数组：977.有序数组的平方
+5. 数组：209.长度最小的子数组
+6. 数组：区间和
+7. 数组：开发商购买土地
+8. 数组：59.螺旋矩阵II
+9. 数组：总结篇
+
+
+
+链表
+
+1. 关于链表，你该了解这些！
+2. 链表：203.移除链表元素
+3. 链表：707.设计链表
+4. 链表：206.翻转链表
+5. 链表：24.两两交换链表中的节点
+6. 链表：19.删除链表的倒数第 N 个结点
+7. 链表：链表相交
+8. 链表：142.环形链表
+9. 链表：总结篇！
+
+
+
+
+哈希表
+
+
+1. 关于哈希表，你该了解这些！
+2. 哈希表：242.有效的字母异位词
+3. 哈希表：1002.查找常用字符
+4. 哈希表：349.两个数组的交集
+5. 哈希表：202.快乐数
+6. 哈希表：1.两数之和
+7. 哈希表：454.四数相加II
+8. 哈希表：383.赎金信
+9. 哈希表：15.三数之和
+10. 双指针法：18.四数之和
+11. 哈希表：总结篇！
+
+
+
+字符串
+
+
+1. 字符串：344.反转字符串
+2. 字符串：541.反转字符串II
+3. 字符串：替换数字
+4. 字符串：151.翻转字符串里的单词
+5. 字符串：右旋字符串
+6. 帮你把KMP算法学个通透
+8. 字符串：459.重复的子字符串
+9. 字符串：总结篇！
+
+
+
+双指针法
+
+双指针法基本都是应用在数组，字符串与链表的题目上
+
+1. 数组：27.移除元素
+2. 字符串：344.反转字符串
+3. 字符串：替换数字
+4. 字符串：151.翻转字符串里的单词
+5. 链表：206.翻转链表
+6. 链表：19.删除链表的倒数第 N 个结点
+7. 链表：链表相交
+8. 链表：142.环形链表
+9. 双指针：15.三数之和
+10. 双指针：18.四数之和
+11. 双指针：总结篇！
+
+
+
+栈与队列
+
+1. 栈与队列：理论基础
+2. 栈与队列：232.用栈实现队列
+3. 栈与队列：225.用队列实现栈
+4. 栈与队列：20.有效的括号
+5. 栈与队列：1047.删除字符串中的所有相邻重复项
+6. 栈与队列：150.逆波兰表达式求值
+7. 栈与队列：239.滑动窗口最大值
+8. 栈与队列：347.前K个高频元素
+9. 栈与队列：总结篇！
+
+
+
+二叉树
+
+
+题目分类大纲如下：
+ 
+
+1. 关于二叉树，你该了解这些！
+2. 二叉树：二叉树的递归遍历
+3. 二叉树：二叉树的迭代遍历
+4. 二叉树：二叉树的统一迭代法
+5. 二叉树：二叉树的层序遍历
+6. 二叉树：226.翻转二叉树
+7. 本周小结！（二叉树）
+8. 二叉树：101.对称二叉树
+9. 二叉树：104.二叉树的最大深度
+10. 二叉树：111.二叉树的最小深度
+11. 二叉树：222.完全二叉树的节点个数
+12. 二叉树：110.平衡二叉树
+13. 二叉树：257.二叉树的所有路径
+14. 本周总结！（二叉树）
+16. 二叉树：404.左叶子之和
+17. 二叉树：513.找树左下角的值
+18. 二叉树：112.路径总和
+19. 二叉树：106.构造二叉树
+20. 二叉树：654.最大二叉树
+21. 本周小结！（二叉树）
+22. 二叉树：617.合并两个二叉树
+23. 二叉树：700.二叉搜索树登场！
+24. 二叉树：98.验证二叉搜索树
+25. 二叉树：530.搜索树的最小绝对差
+26. 二叉树：501.二叉搜索树中的众数
+27. 二叉树：236.公共祖先问题
+28. 本周小结！（二叉树）
+29. 二叉树：235.搜索树的最近公共祖先
+30. 二叉树：701.搜索树中的插入操作
+31. 二叉树：450.搜索树中的删除操作
+32. 二叉树：669.修剪二叉搜索树
+33. 二叉树：108.将有序数组转换为二叉搜索树
+34. 二叉树：538.把二叉搜索树转换为累加树
+35. 二叉树：总结篇！（需要掌握的二叉树技能都在这里了）
+
+
+
+回溯算法
+
+
+ 
+
+1. 关于回溯算法，你该了解这些！
+2. 回溯算法：77.组合
+3. 回溯算法：77.组合优化
+4. 回溯算法：216.组合总和III
+5. 回溯算法：17.电话号码的字母组合
+6. 本周小结！（回溯算法系列一）
+7. 回溯算法：39.组合总和
+8. 回溯算法：40.组合总和II
+9. 回溯算法：131.分割回文串
+10. 回溯算法：93.复原IP地址
+11. 回溯算法：78.子集
+12. 本周小结！（回溯算法</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/youngyangyang04/leetcode-master/issues/1141"><span class="rp-item-num">#1141</span><span class="rp-item-title">面试题 02.07. 链表相交 ，python 题解疑问</span><span class="rp-item-extra">7 comments · 2022-03-04</span></a><a class="rp-item" href="https://github.com/youngyangyang04/leetcode-master/issues/1169"><span class="rp-item-num">#1169</span><span class="rp-item-title">你在leetcode上面的博文的各个连接挂了!</span><span class="rp-item-extra">4 comments · 2022-03-20</span></a><a class="rp-item" href="https://github.com/youngyangyang04/leetcode-master/issues/2981"><span class="rp-item-num">#2981</span><span class="rp-item-title">【动态规划】- 718.最长重复子数组dp定义有歧义</span><span class="rp-item-extra">3 comments · 2025-11-12</span></a><a class="rp-item" href="https://github.com/youngyangyang04/leetcode-master/issues/2634"><span class="rp-item-num">#2634</span><span class="rp-item-title">哈希表第一题两数之和的相关表述（存疑）</span><span class="rp-item-extra">3 comments · 2024-07-19</span></a><a class="rp-item" href="https://github.com/youngyangyang04/leetcode-master/issues/2627"><span class="rp-item-num">#2627</span><span class="rp-item-title">关于pr的一些问题</span><span class="rp-item-extra">3 comments · 2024-07-18</span></a><a class="rp-item" href="https://github.com/youngyangyang04/leetcode-master/issues/2360"><span class="rp-item-num">#2360</span><span class="rp-item-title">19.删除链表的倒数第N个节点 Java版本 勘誤</span><span class="rp-item-extra">3 comments · 2023-12-09</span></a><a class="rp-item" href="https://github.com/youngyangyang04/leetcode-master/issues/2256"><span class="rp-item-num">#2256</span><span class="rp-item-title">对称二叉树 勘误</span><span class="rp-item-extra">3 comments · 2023-08-26</span></a><a class="rp-item" href="https://github.com/youngyangyang04/leetcode-master/issues/1936"><span class="rp-item-num">#1936</span><span class="rp-item-title">图片只有一半</span><span class="rp-item-extra">3 comments · 2023-03-07</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/youngyangyang04__leetcode-master.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

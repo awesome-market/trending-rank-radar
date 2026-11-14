@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>huluoyang/freecodecamp.cn · GitHub Trending Rank Radar</title>
+<meta name="description" content="随着FCC中文社区的快速发展和更多小伙伴的崛起，此项目已从个人项目升级到团队项目。详情请移步：">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="freecodecamp.cn, huluoyang, huluoyang/freecodecamp.cn, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/huluoyang__freecodecamp.cn">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="huluoyang/freecodecamp.cn · GitHub Trending Rank Radar">
+<meta property="og:description" content="随着FCC中文社区的快速发展和更多小伙伴的崛起，此项目已从个人项目升级到团队项目。详情请移步：">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/huluoyang__freecodecamp.cn">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "huluoyang/freecodecamp.cn", "codeRepository": "https://github.com/huluoyang/freecodecamp.cn", "url": "https://zhuikan.com/repos/huluoyang__freecodecamp.cn", "description": "随着FCC中文社区的快速发展和更多小伙伴的崛起，此项目已从个人项目升级到团队项目。详情请移步：", "author": {"@type": "Organization", "name": "huluoyang", "url": "https://github.com/huluoyang"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "JavaScript", "dateCreated": "2016-03-30"}</script>
+</head>
+<body data-repo="huluoyang/freecodecamp.cn" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">huluoyang/freecodecamp.cn</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="huluoyang__freecodecamp.cn"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/1304552?u=e91d1ba8d81fc2a8f09b466ba78c9b8ba91dfa8d&amp;v=4&s=300" width="300" height="300" alt="huluoyang avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">freecodecamp.cn</div>
+      <a class="rp-side-owner" href="https://github.com/huluoyang">huluoyang</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/huluoyang">huluoyang</a>
+        <span class="rp-sep">/</span><span class="rp-name">freecodecamp.cn</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">随着FCC中文社区的快速发展和更多小伙伴的崛起，此项目已从个人项目升级到团队项目。详情请移步：</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,570</b></span><span class="rp-stat" title="forks">⑂ <b>281</b></span><span class="rp-stat" title="watchers">👁 <b>218</b></span><span class="rp-stat" title="prs">⑃ <b>120</b></span><span class="rp-stat" title="issues">● <b>112</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">Created 2016-03-30</span><a class="rp-meta-bit rp-home" href="https://github.com/FreeCodeCampChina/freecodecamp.cn" rel="noopener">github.com/FreeCodeCampChina/freecodecamp.cn</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/huluoyang/freecodecamp.cn">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,570</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">281</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">218</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">120</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">112</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">!
+
+
+
+
+ freecodecamp.cn
+欢迎来到freecodecamp中文社区(https://freecodecamp.cn)
+
+!
+
+ freecodecamp是什么？
+freecodecamp 是一个自由的开源编程社区，它致力于抹平教育差距，
+
+让像你我一样的平凡人也能享受到花费巨资才可能享受到的优质教育。
+
+ freecodecamp的特点
+freecodecamp最大的特点是它本身就是个开源项目。
+
+我们不仅可以在freecodecamp上学习，还可以利用所学的知识来把freecodecamp建设得更好。
+
+学编程的都知道编程语言之间的区别很大程度上体现在语言本身是否能完成自举。
+
+对于语言来说，自举分为3个层次：
+
+1、调用--自己调用自己（编程语言中常见的递归操作）
+
+2、改进--自己改进自己（编程语言的更新迭代）
+
+3、实现--自己实现自己（实现编程语言自己的解释器或编译器）
+
+对于个人来说，自举也分为3个层次：
+
+1、调用--自己调用自己的独立思考能力、自学能力。
+
+2、改进--自己经常review自己，意识到自己的不足，勇敢走出自己的舒适区。
+
+3、实现--做一个作品来证明自己的能力，实现自己的人生价值。
+
+ 为什么要创建freecodecamp中文社区？
+freecodecamp发展速度太快了，从1月五万star到3月排第二，现在已经超越bootstrap成为github上star最多的项目了。
+
+github这个全球最大的编程社交网站上诞生了全球最大的编程学习网站freecodecamp。
+
+我和各位小伙伴一样都先在freecodecamp英文社区上学习，
+
+我用谷歌翻译和有道词典来解决英文问题，看得非常吃力、理解得也有些生硬，学习效率较低。
+
+当我学到Counting Cards（21点算法）时，发现英文的讲解怎么也看不懂，在网上查找大量资料后，我才搞明白。
+
+我瞬间产生了建立freecodecamp中文社区的念头，
+
+这样许多同学就可以少走很多弯路，直接获取最有效的学习路径。
+
+ freecodecamp中文社区发展历程
+| 时间            | done          | 
+| :------------- | :------------- |
+| 2016.3.22    | 基于freecodecamp代码贡献文档和优才公开课视频在本机搭建freecodecamp项目 |
+| 2016.3.28    | 基于花生壳动态域名解析服务在极路由搭建临时网站：freecodecamp.jios.org:3000 |
+| 2016.4.1     | 基于邹治免费提供的域名(freecodecamp.cn)和美国扳道工VPS上线freecodecamp中文社区 |
+| 2016.4.2     | 基于let&#x27;s encryto给freecodecamp中文社区添加https。 |
+| 2016.4.5     | 基于优才公开课视频给freecodecamp中文社区添加nginx。 |
+| 2016.4.6     | 和freecodecamp创始人quincy沟通翻译规范、提交流程。 |
+| 2016.4.7     | 搜索freecodecamp issue中有关中文的翻译和提交，才发现2015.10月份就已经有人做中文翻译的事情了。 |
+| 2016.4.10    | 不再纠结于英文社区翻译规范和提交流程，独立思考、独立发展。 |
+| 2016.4.11    | 正式开始翻译网站首页：learning by doing。 |
+| 2016.4.13    | 正式开始翻译课程第一部分:getting started。 |
+| 2016.4.16    | 写了第一版翻译规范和参与流程。 |
+| 2016.4.17    | 开始翻译课程第二部分：html5 + css3。 |
+| 2016.4.24    | 参加猿生态在北京车库咖啡举办的第一次freecodecamp线下活动，结识了晋剑、jason、海良等小伙伴。 |
+| 2016.4.25    | 通过freecodecamp中文聊天室招募到第一位参与翻译的小伙伴tegrat。 |
+| 2016.4.28    | 胡可同学加入翻译志愿组，贡献翻译工具。 |
+| 2016.4.29    | 受胡可同学的感染，我写了simleJson.js来轻松干掉json文件的冗余部分。 |
+| 2016.5.8     | 受晋剑同学的邀请，我来到苏州，加入猿生态，负责freecodecamp中文社区的翻译和开发。 |
+| 2016.6.5     | 启动了苏州首届全民编程挑战赛 |
+
+ 志愿者招募
+
+ 能坚持看到这里的都是非常有耐心的人，你应该给自己的努力点个赞！
+
+ 我们正在招募翻译志愿者，如果你想考察下自己的英文水平，可以尝试利用github来参与协作翻译。
+ 
+  传送门：https://github.com/huluoyang/freecodecamp.cn/wiki
+ 
+ 我们也在招募代码贡献者，如果你想考察下自己的技术水平，可以尝试clone代码到本机跑个站点看看。
+
+ 传送门：https://github.com/huluoyang/freecodecamp.cn/blob/dev/CONTRIBUTING.md
+ 
+ 那些值得尊敬的人
+
+ 感谢优才网CEO伍星，是他在2016年1月录制的公开课视频才让我接触到freecodecamp。
+
+ 感谢走之网的邹治，是他无偿提供了freecodecamp.cn域名。
+
+ 感谢freecodecamp开源项目的创始人QuincyLarson，是他以一己之力开创了这个开源项目。
+
+ 感谢freecodecamp开源项目的贡献者，是他们的参与让这个项目得以完善、发展。
+
+ 感谢freecodecamp中文社区的翻译者，是他们的参与让这个项目得以在中国生根、发芽。</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/huluoyang/freecodecamp.cn/issues/3"><span class="rp-item-num">#3</span><span class="rp-item-title">欢迎加入FCC中文社区！</span><span class="rp-item-extra">17 comments · 2016-04-20</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/huluoyang__freecodecamp.cn.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

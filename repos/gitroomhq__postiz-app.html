@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>gitroomhq/postiz-app · GitHub Trending Rank Radar</title>
+<meta name="description" content="📨 The ultimate agentic social media scheduling tool 🤖">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="postiz-app, gitroomhq, gitroomhq/postiz-app, github stars, github trending, star growth, star history, 开源项目, 星标增长, typescript, nextjs, redis, open-source, oss, scheduling-tool">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/gitroomhq__postiz-app">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="gitroomhq/postiz-app · GitHub Trending Rank Radar">
+<meta property="og:description" content="📨 The ultimate agentic social media scheduling tool 🤖">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/gitroomhq__postiz-app">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "gitroomhq/postiz-app", "codeRepository": "https://github.com/gitroomhq/postiz-app", "url": "https://zhuikan.com/repos/gitroomhq__postiz-app", "description": "📨 The ultimate agentic social media scheduling tool 🤖", "author": {"@type": "Organization", "name": "gitroomhq", "url": "https://github.com/gitroomhq"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/AGPL-3.0.html", "programmingLanguage": "TypeScript", "dateCreated": "2023-07-08", "keywords": "typescript,nextjs,redis,open-source,oss,scheduling-tool,social-media-scheduling-tool,open-source-social-media-scheduling-tool,postiz-cloud,postiz-hosted"}</script>
+</head>
+<body data-repo="gitroomhq/postiz-app" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">gitroomhq/postiz-app</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="gitroomhq__postiz-app"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/128401275?v=4&s=300" width="300" height="300" alt="gitroomhq avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">postiz-app</div>
+      <a class="rp-side-owner" href="https://github.com/gitroomhq">gitroomhq</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/gitroomhq">gitroomhq</a>
+        <span class="rp-sep">/</span><span class="rp-name">postiz-app</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=monthly">monthly <b>#124</b></a><a class="rp-board-chip" href="../?board=monthly_rate">monthly_rate <b>#189</b></a></div>
+    </div>
+    <p class="rp-desc">📨 The ultimate agentic social media scheduling tool 🤖</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>41,535</b></span><span class="rp-stat" title="forks">⑂ <b>7,932</b></span><span class="rp-stat" title="watchers">👁 <b>145</b></span><span class="rp-stat" title="prs">⑃ <b>1,345</b></span><span class="rp-stat" title="issues">● <b>883</b></span><span class="rp-stat" title="releases">▤ <b>205</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/typescript">typescript</a><a class="rp-topic" href="../tags/nextjs">nextjs</a><a class="rp-topic" href="../tags/redis">redis</a><a class="rp-topic" href="../tags/open-source">open-source</a><a class="rp-topic" href="https://github.com/topics/oss">oss</a><a class="rp-topic" href="https://github.com/topics/scheduling-tool">scheduling-tool</a><a class="rp-topic" href="https://github.com/topics/social-media-scheduling-tool">social-media-scheduling-tool</a><a class="rp-topic" href="https://github.com/topics/open-source-social-media-scheduling-tool">open-source-social-media-scheduling-tool</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">AGPL-3.0</span><span class="rp-meta-bit">Created 2023-07-08</span><a class="rp-meta-bit rp-home" href="https://postiz.com" rel="noopener">postiz.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/gitroomhq/postiz-app">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Encrypted channel tokens, connect links, Amazon SES &amp; 40+ fixes</span><a class="rp-dl-a" href="https://github.com/gitroomhq/postiz-app/releases/tag/v2.26.0">Encrypted-2.26.0 ↓</a><span class="rp-dl-ver">2.26.0</span><span class="rp-dl-date">2026-11-13</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+36</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+742</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+4,599</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">41,535</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">7,932</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">145</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,345</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">883</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">205</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Postiz is a social media management platform for scheduling, automating, and analyzing your content.
+    
+  Use Postiz Cloud for a fully managed experience, or deploy the open-source edition on your own infrastructure.
+  
+
+
+
+  
+  Explore the docs »
+  
+
+  
+  Watch the YouTube Tutorials»
+  
+
+
+
+  Register
+  ·
+  Join Our Discord (devs only)
+  ·
+  Public API
+
+
+  NodeJS SDK
+  ·
+  N8N custom node
+  ·
+  Make.com integration
+
+
+
+
+Schedule posts to:
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+With your favorite AI agent:
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+ 🔌 See the leading Postiz features
+
+
+  
+    
+  
+
+
+ ✨ Features
+
+| !Image 1 | !Image 2 |
+| ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| !Image 3 | !Image 4 |
+
+ Our Sponsors
+
+| Sponsor |                                  Logo                                   | Description     |
+|---------|:-----------------------------------------------------------------------:|-----------------|
+| Hostinger |  | Hostinger is on a mission to make online success possible for anyone – from developers to aspiring bloggers and business owners |
+| Virlo |  | Virlo is the 1 social media trend spotting and all-in-one GTM tool for teams leveraging short-form video |
+| ChatbotX |  | The ManyChat alternative that you can self-host, white-label, and resell to your clients. Bring your own OpenClaw, Hermes, or Claude agents! |
+| RapidProxy |  | RapidProxy provides 90M+ residential IPs for social media, browser automation, and AI workflows, with smart rotation and stable sessions. From $0.55/GB; use RAPID10 for 10% off.
+
+
+ Intro
+
+- Schedule all your social media posts (many AI features)
+- Measure your work with analytics.
+- Collaborate with other team members to exchange or buy posts.
+- Invite your team members to collaborate, comment, and schedule posts.
+- Perfect for automation (API) with platforms like N8N, Make.com, Zapier, etc.
+
+ Tech Stack
+
+- Pnpm workspaces (Monorepo)
+- NextJS (React)
+- NestJS
+- Prisma (Default to PostgreSQL)
+- Temporal
+- Resend (email notifications)
+
+ Quick Start
+
+To have the project up and running, please follow the Quick Start Guide
+
+ Sponsor Postiz
+
+We now offer a few options to sponsor Postiz:
+- Just a donation: You like what we are building, and want to buy us some coffee so we can build faster.
+- Main repository: Get your logo with a backlink from the main Postiz repository. Postiz has over 7M downloads and 20k views per month.
+
+Link: https://opencollective.com/postiz
+
+ 
+  
+
+ Postiz Cloud vs. Open-source
+
+Choose Postiz Cloud for a fully managed experience, or deploy Postiz Open-source on your own infrastructure. Both provide the same core Postiz product and features.
+
+We do not &quot;gate&quot; features or limit the license.
+
+The main difference is the infrastructure you need to own, approval from social media providers, and deployment that might be hard at tim</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/gitroomhq/postiz-app/issues/918"><span class="rp-item-num">#918</span><span class="rp-item-title">Cannot add channels - &quot;Could not add provider&quot; error when trying to add Instagram or other providers</span><span class="rp-item-extra">56 comments · 2025-08-03</span></a><a class="rp-item" href="https://github.com/gitroomhq/postiz-app/issues/1074"><span class="rp-item-num">#1074</span><span class="rp-item-title">Support ENV Variables for Custom OpenAI Base URL &amp; Model</span><span class="rp-item-extra">23 comments · 2025-11-21</span></a><a class="rp-item" href="https://github.com/gitroomhq/postiz-app/issues/1053"><span class="rp-item-num">#1053</span><span class="rp-item-title">Issue sign in</span><span class="rp-item-extra">20 comments · 2025-11-08</span></a><a class="rp-item" href="https://github.com/gitroomhq/postiz-app/issues/866"><span class="rp-item-num">#866</span><span class="rp-item-title">User Level Role can invite an Admin</span><span class="rp-item-extra">17 comments · 2025-07-11</span></a><a class="rp-item" href="https://github.com/gitroomhq/postiz-app/issues/1582"><span class="rp-item-num">#1582</span><span class="rp-item-title">Personal LinkedIn OAuth fails for self-hosted instances (prompt=none + unauthorized scopes)</span><span class="rp-item-extra">16 comments · 2026-06-06</span></a><a class="rp-item" href="https://github.com/gitroomhq/postiz-app/issues/1563"><span class="rp-item-num">#1563</span><span class="rp-item-title">TikTok Direct Post audit rejection: UI does not comply with TikTok Content Sharing UX Guidelines</span><span class="rp-item-extra">14 comments · 2026-05-26</span></a><a class="rp-item" href="https://github.com/gitroomhq/postiz-app/issues/510"><span class="rp-item-num">#510</span><span class="rp-item-title">New provider: Pixelfed</span><span class="rp-item-extra">13 comments · 2025-01-02</span></a><a class="rp-item" href="https://github.com/gitroomhq/postiz-app/issues/1143"><span class="rp-item-num">#1143</span><span class="rp-item-title">Using domain name for cookies may be rejected by browsers, leaving users unable to get past login screen</span><span class="rp-item-extra">12 comments · 2025-12-29</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/gitroomhq/postiz-app/discussions/2346"><span class="rp-item-num">#2346</span><span class="rp-item-title">Posting streak: let me skip weekends (or set a weekly goal)</span><span class="rp-item-extra">0 comments · 2026-10-28</span></a><a class="rp-item" href="https://github.com/gitroomhq/postiz-app/discussions/2314"><span class="rp-item-num">#2314</span><span class="rp-item-title">Are upstream security fixes being incorporated into Postiz Docker releases?</span><span class="rp-item-extra">1 comments · 2026-10-23</span></a><a class="rp-item" href="https://github.com/gitroomhq/postiz-app/discussions/2192"><span class="rp-item-num">#2192</span><span class="rp-item-title">Missing API/MCP support: image alt text, post tags, post deletion, and direct local-file upload</span><span class="rp-item-extra">1 comments · 2026-10-01</span></a><a class="rp-item" href="https://github.com/gitroomhq/postiz-app/discussions/2176"><span class="rp-item-num">#2176</span><span class="rp-item-title">The option to automatically add comments less than 1 hour in advance</span><span class="rp-item-extra">0 comments · 2026-09-29</span></a><a class="rp-item" href="https://github.com/gitroomhq/postiz-app/discussions/2170"><span class="rp-item-num">#2170</span><span class="rp-item-title">Teams/Oganisations?</span><span class="rp-item-extra">0 comments · 2026-09-28</span></a><a class="rp-item" href="https://github.com/gitroomhq/postiz-app/discussions/1793"><span class="rp-item-num">#1793</span><span class="rp-item-title">Workflows keep stacking up</span><span class="rp-item-extra">1 comments · 2026-07-26</span></a><a class="rp-item" href="https://github.com/gitroomhq/postiz-app/discussions/1789"><span class="rp-item-num">#1789</span><span class="rp-item-title">What happend to the &quot;Open Source&quot; version?</span><span class="rp-item-extra">1 comments · 2026-07-25</span></a><a class="rp-item" href="https://github.com/gitroomhq/postiz-app/discussions/1709"><span class="rp-item-num">#1709</span><span class="rp-item-title">Multi Account Management (i.e. multiple companies) &amp; regulary updating Token for Meta API</span><span class="rp-item-extra">0 comments · 2026-07-13</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/gitroomhq/postiz-app/releases"><b>Encrypted channel tokens, connect links, Amazon SES &amp; 40+ fixes</b> <span class="rp-rel-tag">v2.26.0</span> <span class="rp-item-extra">2026-11-13</span></a><pre class="rp-pre">Highlights
+
+This release brings encryption of the channel tokens in the database (opt-in, with a local key or AWS KMS), connect links so the public API or an MCP agent can hand someone a link that adds a channel to your workspace, Amazon SES as an email provider, and a channel checklist in the save and delete dialogs of multi-channel posts. Instagram carousels go up to 20 items and send alt text, and a sweep of billing and provider fixes removes false &quot;may have already published&quot; warnings, duplicate reconnect notifications and several silent billing dead ends.
+
+ [!IMPORTANT]
+ This release cont</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (3)</h3><div class="rp-list"><a class="rp-item" href="https://note.com/auto_code_lab/n/nca53242d20a7" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">【環境構築・導入手順】自律型SNS運用ツール「Postiz」の導入手順と配信自動化ガイド</span><span class="rp-item-extra">2026-11-01</span></a><a class="rp-item" href="https://www.bilibili.com/zh-Hant/video/BV17qxT6HERt/" target="_blank" rel="noopener"><span class="rp-news-src">bilibili</span><span class="rp-item-title">【开源精选】斩获 38k+ 星！postiz-app 究竟有多强？深度体验与上手</span><span class="rp-item-extra">2026-10-27</span></a><a class="rp-item" href="https://x.com/github_trendjp/status/2115216151747961134" target="_blank" rel="noopener"><span class="rp-news-src">x</span><span class="rp-item-title">10/28 07:56 JST｜postiz-app に注目。何ができるリポジトリか、スレッドで見ていきます。</span><span class="rp-item-extra">2026-10-27</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (7)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=41402138" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: Postiz – open-source social media scheduling tool</span><span class="rp-item-extra">▲ 19 · 7 comments · 2024-08-30</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=42588579" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Postiz – open-source social media scheduler</span><span class="rp-item-extra">▲ 8 · 2 comments · 2025-01-03</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=42398005" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: Postiz – social media open-source scheduler</span><span class="rp-item-extra">▲ 7 · 0 comments · 2024-12-12</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=42769275" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ask HN: What would you like to see in Postiz?</span><span class="rp-item-extra">▲ 3 · 1 comments · 2025-01-20</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=42449156" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: Postiz – open-source social media scheduler</span><span class="rp-item-extra">▲ 2 · 0 comments · 2024-12-18</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=42245494" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Postiz – open-source social media scheduling tool</span><span class="rp-item-extra">▲ 2 · 0 comments · 2024-11-26</span></a><a class="rp-item" href="https://note.com/auto_code_lab/n/nca53242d20a7?hl=ko" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">[환경 구축 및 도입 절차] 자율형 SNS 운영 도구 &#x27;Postiz&#x27; 도입 절차 및 배포 자동화 가이드</span><span class="rp-item-extra">2026-10-31</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/gitroomhq__postiz-app.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

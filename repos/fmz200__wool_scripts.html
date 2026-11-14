@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>fmz200/wool_scripts · GitHub Trending Rank Radar</title>
+<meta name="description" content="收集一些Loon、Surge、QuantumultX、ShadowRocket、Egern的配置与去广告规则。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="wool_scripts, fmz200, fmz200/wool_scripts, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/fmz200__wool_scripts">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="fmz200/wool_scripts · GitHub Trending Rank Radar">
+<meta property="og:description" content="收集一些Loon、Surge、QuantumultX、ShadowRocket、Egern的配置与去广告规则。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/fmz200__wool_scripts">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "fmz200/wool_scripts", "codeRepository": "https://github.com/fmz200/wool_scripts", "url": "https://zhuikan.com/repos/fmz200__wool_scripts", "description": "收集一些Loon、Surge、QuantumultX、ShadowRocket、Egern的配置与去广告规则。", "author": {"@type": "Organization", "name": "fmz200", "url": "https://github.com/fmz200"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Vim Snippet", "dateCreated": "2022-08-27"}</script>
+</head>
+<body data-repo="fmz200/wool_scripts" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">fmz200/wool_scripts</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="fmz200__wool_scripts"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/57740735?u=c8c2c43328baa5d5fe97bbd2e24f83030886f7cc&amp;v=4&s=300" width="300" height="300" alt="fmz200 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">wool_scripts</div>
+      <a class="rp-side-owner" href="https://github.com/fmz200">fmz200</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/fmz200">fmz200</a>
+        <span class="rp-sep">/</span><span class="rp-name">wool_scripts</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">收集一些Loon、Surge、QuantumultX、ShadowRocket、Egern的配置与去广告规则。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,915</b></span><span class="rp-stat" title="forks">⑂ <b>326</b></span><span class="rp-stat" title="watchers">👁 <b>32</b></span><span class="rp-stat" title="prs">⑃ <b>101</b></span><span class="rp-stat" title="issues">● <b>104</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Vim Snippet</span><span class="rp-meta-bit">Created 2022-08-27</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/fmz200/wool_scripts">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+151</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,915</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">326</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">32</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">101</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">104</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">wool_scripts
+
+ 致敬开源精神 净化网络环境
+
+!GitHub contributors
+!GitHub stars
+!GitHub forks
+!GitHub issues
+!GitHub
+
+
+
+
+
+  
+    
+  
+
+
+---
+
+ ✅ 一些说明
+
+▶️ 每个配置文件的开头部分都有使用说明，使用前请先看一看。
+
+▶️ 本库中部分内容收集于其他开源项目，在此对原作者表示衷心的感谢。同时我们谴责将他人内容标注为自己原创的行为。
+
+▶️ 使用本项目中的内容所造成的一切后果，均由使用者承担。
+
+▶️ 如果你在使用过程中有问题欢迎提交PR或ISSUE，也可进群交流，群链接在下方。
+
+▶️ 交流群组：👉🏻苹果iOS去广告交流群，👉🏻奶思资源分享|频道，👉🏻Quantumult X Community。
+
+
+ ⚠️ 温馨提示
+
+▶️ 本项目中的任何内容请不要在中国大陆的任何平台传播（包括但不限于链接分享，评论装逼，发帖炫耀），否则你可能会被开盒或收到大量举报。
+
+▶️ Please do not disseminate the content in this project on any platform in mainland China. Thanks!
+
+
+---
+
+ 🚸 常见问题
+
+ 1️⃣ ~~我为什么指定了抖音的分流到国外，评论视频却显示“IP未知”~~ 
+ ✅ 抖音已经不需要家宽就可以更改IP，稍微干净的IP就可以
+
+ ~~答：抖音与其他软件判断IP归属地的方式不同，抖音需要家庭宽带IP（又叫住宅IP）才能生效，而现在的大部分机场都是机房的IP，所以评论视频就显示IP未知。~~
+ 如果你不知道自己抖音分流的IP是不是家宽，可以访问https://ipinfo.io 查看，在asn
+ 信息中如果你看到type:
+&quot;isp&quot;那就是家庭宽带，其他值（比如：hosting，business）都不是家宽。
+
+下方的抖音分流就可以实现修改IP（需要代理IP干净）：
+plaintext
+ 抖音修改IP (QuanX 打开解析器，Loon，Surge，Egern直接引用)
+https://github.com/fmz200/wool_scripts/raw/main/Loon/rule/Douyin.list
+
+
+ 2️⃣ 为什么有些软件明明很热门，却没有人做去广告的规则
+
+ 答：对于一些软件，如果整个域名都是广告，则可以直接reject整个域名去广告，但是大部分广告都和非广告内容一起返回，这就需要对响应体（response-body）进行解析来去掉其中的广告内容。
+ 解析响应体的前提条件是访问的域名可以MITM（MAN-IN-THE-MIDDLE：中间人攻击），但是有些域名禁止了MITM，所以无法对响应体进行解析去广告。
+
+ 3️⃣ 支持的规则都哪些？
+支持列表（部分可能失效需要自己排查）：
+ 往下翻有详细的列表
+
+已知不能或不能完全去广告的app有：
+ 抖音，今日头条、蜂巢、滴答清单 Taio、小米运动、有条下载、Fileball、万年历、豆瓣（信息流）、虎牙直播、货拉拉、番茄小说、凯叔讲故事、银行类（绝大部分）。
+
+---
+
+ 🍑 开始使用
+
+ 0️⃣ 其它配置
+
+|  | 配置类型  | 配置名称    | 配置链接                                                                                                | 作者                                | 特别说明                     | 使用教程                           |
+|---|-----------|-------------|---------------------------------------------------------------------------------------------------------|-------------------------------------|------------------------------|------------------------------------|
+|  | icons图标 | icons图标 | icons-all.json       | fmz200 | 包含APP，机场，LPL等大量图标 | 暂无                               |
+|  | BoxJS订阅 | BoxJS订阅 | fmz200_boxjs.json | fmz200 | 先查看使用教程               | 点击查看 |
+
+
+ 1️⃣ Loon配置
+
+|  | 配置类型 | 配置名称               | 配置链接                                                                                         | 作者                                | 特别说明                                               | 使用教程 |
+|---|----------|------------------------|--------------------------------------------------------------------------------------------------|-------------------------------------|--------------------------------------------------------|----------|
+|  | 配置     | 懒人配置             | Loon.conf    | fmz200 | 下载此文件会覆盖原本所有配置，小白慎用                 | 暂无     |
+|  | 插件     | 微博去广告           | weibo.plugin         | fmz200 | 可能有遗漏                                             | 暂无     |
+|  | 插件     | 去广告合集           | blockAds.plugin   | fmz200 | (支持约538款APP/小程序)针对部分APP和小程序广告进行拦截 | 暂无     |
+|  | 插件     | 获取cookie&amp;token合集 | cookies.plugin     | fmz200 | 包含fmz200/NobyDa/chavyleung/Sunert等                  | 暂无     |
+|  | 脚本     | Task订阅          </pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/fmz200__wool_scripts.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

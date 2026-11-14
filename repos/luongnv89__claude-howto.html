@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>luongnv89/claude-howto · GitHub Trending Rank Radar</title>
+<meta name="description" content="A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="claude-howto, luongnv89, luongnv89/claude-howto, github stars, github trending, star growth, star history, 开源项目, 星标增长, claude-code, guide, tutorial">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/luongnv89__claude-howto">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="luongnv89/claude-howto · GitHub Trending Rank Radar">
+<meta property="og:description" content="A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/luongnv89__claude-howto">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "luongnv89/claude-howto", "codeRepository": "https://github.com/luongnv89/claude-howto", "url": "https://zhuikan.com/repos/luongnv89__claude-howto", "description": "A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.", "author": {"@type": "Organization", "name": "luongnv89", "url": "https://github.com/luongnv89"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Python", "dateCreated": "2025-11-07", "keywords": "claude-code,guide,tutorial"}</script>
+</head>
+<body data-repo="luongnv89/claude-howto" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">luongnv89/claude-howto</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="luongnv89__claude-howto"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/3288457?u=a6493eedf171bb49cdff32c07991c31d70926ab7&amp;v=4&s=300" width="300" height="300" alt="luongnv89 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">claude-howto</div>
+      <a class="rp-side-owner" href="https://github.com/luongnv89">luongnv89</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/luongnv89">luongnv89</a>
+        <span class="rp-sep">/</span><span class="rp-name">claude-howto</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=monthly">monthly <b>#112</b></a><a class="rp-board-chip" href="../?board=monthly_rate">monthly_rate <b>#188</b></a></div>
+    </div>
+    <p class="rp-desc">A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>47,146</b></span><span class="rp-stat" title="forks">⑂ <b>5,744</b></span><span class="rp-stat" title="watchers">👁 <b>204</b></span><span class="rp-stat" title="prs">⑃ <b>174</b></span><span class="rp-stat" title="issues">● <b>80</b></span><span class="rp-stat" title="releases">▤ <b>11</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/claude-code">claude-code</a><a class="rp-topic" href="https://github.com/topics/guide">guide</a><a class="rp-topic" href="../tags/tutorial">tutorial</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2025-11-07</span><a class="rp-meta-bit rp-home" href="http://luongnv.com/claude-howto/" rel="noopener">luongnv.com/claude-howto/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/luongnv89/claude-howto">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v2.1.322</span><a class="rp-dl-a" href="https://github.com/luongnv89/claude-howto/releases/tag/v2.1.322">v2.1.322 ↓</a><span class="rp-dl-ver">2.1.322</span><span class="rp-dl-date">2026-11-12</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+77</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+683</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+5,367</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">47,146</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">5,744</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">204</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">174</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">80</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">11</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">🌐 Language / Ngôn ngữ / 语言 / Мова / 언어: English | Tiếng Việt | 中文 | Українська | 日本語 | 한국어 | فارسی
+
+ Master Claude Code in a Weekend
+
+Go from typing claude to orchestrating agents, hooks, skills, and MCP servers — with visual tutorials, copy-paste templates, and a guided learning path.
+
+Get Started in 15 Minutes | Find Your Level | Browse the Feature Catalog
+
+---
+
+ Table of Contents
+
+- The Problem
+- How Claude How To Fixes This
+- How It Works
+- Not Sure Where to Start?
+- Get Started in 15 Minutes
+- What Can You Build With This?
+- FAQ
+- Contributing
+- License
+
+---
+
+ The Problem
+
+You installed Claude Code. You ran a few prompts. Now what?
+
+- The official docs describe features — but don&#x27;t show you how to combine them. You know slash commands exist, but not how to chain them with hooks, memory, and subagents into a workflow that actually saves hours.
+- There&#x27;s no clear learning path. Should you learn MCP before hooks? Skills before subagents? You end up skimming everything and mastering nothing.
+- Examples are too basic. A &quot;hello world&quot; slash command doesn&#x27;t help you build a production code review pipeline that uses memory, delegates to specialized agents, and runs security scans automatically.
+
+You&#x27;re leaving 90% of Claude Code&#x27;s power on the table — and you don&#x27;t know what you don&#x27;t know.
+
+---
+
+ How Claude How To Fixes This
+
+This isn&#x27;t another feature reference. It&#x27;s a structured, visual, example-driven guide that teaches you to use every Claude Code feature with real-world templates you can copy into your project today.
+
+| | Official Docs | This Guide |
+|--|---------------|------------|
+| Format | Reference documentation | Visual tutorials with Mermaid diagrams |
+| Depth | Feature descriptions | How it works under the hood |
+| Examples | Basic snippets | Production-ready templates you use immediately |
+| Structure | Feature-organized | Progressive learning path (beginner to advanced) |
+| Onboarding | Self-directed | Guided roadmap with time estimates |
+| Self-Assessment | None | Interactive quizzes to find your gaps and build a personalized path |
+
+ What you get:
+
+- 10 tutorial modules covering every Claude Code feature — from slash commands to custom agent teams
+- Copy-paste configs — slash commands, CLAUDE.md templates, hook scripts, MCP configs, subagent definitions, and full plugin bundles
+- Mermaid diagrams showing how each feature works internally, so you understand why, not just how
+- A guided learning path that takes you from beginner to power user in 11-13 hours
+- Built-in self-assessment — run /self-assessment or /lesson-quiz hooks directly in Claude Code to identify gaps
+
+Start the Learning Path  -
+
+---
+
+ How It Works
+
+ 1. Find your level
+
+Take the self-assessment quiz or run /self-assessment in Claude Code. Get a personalized roadmap based on what you already know.
+
+ 2. Follow the guided path
+
+Work through 10 modules in order — each builds on the last. Copy templates directly into your project as you learn.
+
+ 3. Combine features into </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/luongnv89/claude-howto/issues/139"><span class="rp-item-num">#139</span><span class="rp-item-title">[phantomstars] Fake engagement detected on this repository</span><span class="rp-item-extra">4 comments · 2026-06-09</span></a><a class="rp-item" href="https://github.com/luongnv89/claude-howto/issues/103"><span class="rp-item-num">#103</span><span class="rp-item-title">中文版本的md说明比英文版本的少很多内容</span><span class="rp-item-extra">4 comments · 2026-04-28</span></a><a class="rp-item" href="https://github.com/luongnv89/claude-howto/issues/110"><span class="rp-item-num">#110</span><span class="rp-item-title">[QUESTION]</span><span class="rp-item-extra">2 comments · 2026-05-01</span></a><a class="rp-item" href="https://github.com/luongnv89/claude-howto/issues/275"><span class="rp-item-num">#275</span><span class="rp-item-title">docs: changes from v2.1.111 are labelled v2.1.112 in 01-slash-commands and CATALOG (all locales)</span><span class="rp-item-extra">1 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/luongnv89/claude-howto/issues/116"><span class="rp-item-num">#116</span><span class="rp-item-title">[FEATURE] Codex CLI Tutorial Repository (codex-howto)</span><span class="rp-item-extra">1 comments · 2026-05-08</span></a><a class="rp-item" href="https://github.com/luongnv89/claude-howto/issues/92"><span class="rp-item-num">#92</span><span class="rp-item-title">NLPM audit findings: 4 agent bugs + 2 security fixes (NL score: 77/100)</span><span class="rp-item-extra">1 comments · 2026-04-22</span></a><a class="rp-item" href="https://github.com/luongnv89/claude-howto/issues/274"><span class="rp-item-num">#274</span><span class="rp-item-title">docs(i18n): remove the --enable-auto-mode flag from uk/zh 10-cli and ja/uk/vi/zh QUICK_REFERENCE</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/luongnv89/claude-howto/issues/272"><span class="rp-item-num">#272</span><span class="rp-item-title">fix(hooks): fork-bomb pattern misses the spaced spelling; Slack limit comment cites the wrong API (follow-up to #263)</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/luongnv89/claude-howto/releases"><b>v2.1.322</b> <span class="rp-rel-tag">v2.1.322</span> <span class="rp-item-extra">2026-11-12</span></a><pre class="rp-pre">What&#x27;s Changed
+ docs: sync to Claude Code v2.1.170 by @luongnv89 in https://github.com/luongnv89/claude-howto/pull/140
+ docs: sync to Claude Code v2.1.176 by @luongnv89 in https://github.com/luongnv89/claude-howto/pull/141
+ docs: sync to Claude Code v2.1.179 by @luongnv89 in https://github.com/luongnv89/claude-howto/pull/143
+ perf(scripts): single-parse website build + CI caching by @luongnv89 in https://github.com/luongnv89/claude-howto/pull/144
+ docs: sync to Claude Code v2.1.187 by @luongnv89 in https://github.com/luongnv89/claude-howto/pull/146
+ docs: sync to Claude Code v2.1.206 by @luong</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (8)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/weixin_42593549/article/details/168125606" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">GitHub项目推荐--claude-howto：从“会打字”到“会指挥”的 Claude Code 实战手册（TaoToken 统一 Key 接入版）</span><span class="rp-item-extra">2026-10-16</span></a><a class="rp-item" href="https://blog.csdn.net/j8267643/article/details/160155110" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">【GitHub项目推荐--claude-howto：从“会打字”到“会指挥”的 Claude Code 实战手册】⭐⭐⭐⭐</span><span class="rp-item-extra">2026-04-14</span></a><a class="rp-item" href="https://note.com/miyabi5432/n/nddd5f334a87f" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">【Claude Code入門】GitHubで無料公開されているClaude学習リポジトリが神だった【初心者におすすめ】</span><span class="rp-item-extra">2026-04-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiY0FVX3lxTE45bk9icTNoNVNEanlwbW1oWHBCVjJRZGEzSjlmSFhsSXllQWNhU1J2UktMS0hpNjFEcVVqZWh2TmJGTGtDeVhvZWl3OS1MUHZKZUVnNmlWRl84V0dxNU1jSjVMbw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">新浪网</span><span class="rp-item-title">新浪网· - 新浪网</span><span class="rp-item-extra">2026-11-05</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiY0FVX3lxTE5uRTBYUGlXVTAyODZnRlZ6UC1DRU1wRDJpXzdReHVhVE9iNml6VHZHQkVCUE8yTlRNMkFVX0pRX1o2Z04zRFQzREdZd2piaWwwc1BwQ3p4cXJpd0NhRXV1R0F4bw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">新浪网</span><span class="rp-item-title">看着Q 版角色被水龙头冲成橙色，这设计思路太抽象了|Claude_新浪新闻</span><span class="rp-item-extra">2026-10-25</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiY0FVX3lxTFA3Nk9XRzZ0QUk1a0xweHY1NlJGX0k1UjRTT0diX1FPS1BLdVViOGNlS0JzSkxfN19LOWFpcjZxREJRVnRNRHM3STNxODZNaHBpbHNxeUczcnhyRWlHQ3JzVElETQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">新浪网</span><span class="rp-item-title">把一张照片变成可探索的3D 世界，这五分钟比Blender 十年还香|image-blaster|GitHub|Claude|FAL_新浪新闻</span><span class="rp-item-extra">2026-10-22</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiY0FVX3lxTE1JckxnQ0VSanU5THR1dmNiVlAxdUVneEdSQ0FLLTA0aWlIZGpRcEZzeXlsenlRMC1rckZIRWtESE9zMkprLWhXWC1CMTRSSnZTdWFxc3VuMF9nbm8zd3dWck1YRQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">新浪网</span><span class="rp-item-title">像是A社能干出来的事#ai创造营# #科技先锋官# [允悲][允悲][允悲] ​</span><span class="rp-item-extra">2026-10-16</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiY0FVX3lxTE5sT09acTZUbW9YWlpHV1Jydm04WGdBb0FOZXdkdkNYc0R1QzUxQmZvVGRGWk1ZdjlMWlJMNjJUdXRWbUlja3Y5d25tMkhUSzNNMEZiMUluajR6bUM3dld4Y1lfQQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">新浪网</span><span class="rp-item-title">Claude 插件重构遗留系统，工程师把控，逐字节核对防幻觉|Anthropic|Claude Code|代码现代化_新浪新闻</span><span class="rp-item-extra">2026-10-14</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (5)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=46380942" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Claude-How To</span><span class="rp-item-extra">▲ 3 · 0 comments · 2025-12-25</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=46877857" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Complete Guide to Claude Concepts</span><span class="rp-item-extra">▲ 1 · 0 comments · 2026-02-03</span></a><a class="rp-item" href="https://note.com/miyabi5432/n/nddd5f334a87f?hl=ko" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">[Claude Code 입문]GitHub에서 무료로 공개된 Claude 학습 저장소가 대박이다[초보자에게 추천]</span><span class="rp-item-extra">2026-04-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiZEFVX3lxTE5VQ1BjWWowN25vNll5VW9XX0VZQTdCS2Y4NDZ1dm1BYlZDOER0eEZpRTZyby1lOEM0VWFKb0U4bUV3MEdIOHdUeXhmVzlXYkdnRk5HRzhXMm83eTZNNFNILW9EcTE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">OpenTools</span><span class="rp-item-title">chess-postmortem-skills: Claude Code Chess Analysis Skill...</span><span class="rp-item-extra">2026-09-26</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE9tVlhEdWJmUkNGd0puVElVYnNCMWhtZEF5OXh5MGE4NzJVS3ZiZkZHbXJVQUxNU3ZOd1g3Y0N3X2prM0JSQ0x2VXFjWDdIRzlPRnJTQjkwbnl1VGN2?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">OpenTools</span><span class="rp-item-title">Matt Pocock Skills for Claude Code</span><span class="rp-item-extra">2026-06-02</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/luongnv89__claude-howto.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

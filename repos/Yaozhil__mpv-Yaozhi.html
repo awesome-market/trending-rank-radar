@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yaozhil/mpv-Yaozhi · GitHub Trending Rank Radar</title>
+<meta name="description" content="mpv-Yaozhi 自制整合包 -重构mpv播放内核 - 自制 UI 优化、可视化配置脚本、弹幕、中文 stats">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="mpv-Yaozhi, Yaozhil, Yaozhil/mpv-Yaozhi, github stars, github trending, star growth, star history, 开源项目, 星标增长, alist, lua, mpv, mpv-config, mpv-script, mpv-scripts">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Yaozhil__mpv-Yaozhi">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Yaozhil/mpv-Yaozhi · GitHub Trending Rank Radar">
+<meta property="og:description" content="mpv-Yaozhi 自制整合包 -重构mpv播放内核 - 自制 UI 优化、可视化配置脚本、弹幕、中文 stats">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Yaozhil__mpv-Yaozhi">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Yaozhil/mpv-Yaozhi", "codeRepository": "https://github.com/Yaozhil/mpv-Yaozhi", "url": "https://zhuikan.com/repos/Yaozhil__mpv-Yaozhi", "description": "mpv-Yaozhi 自制整合包 -重构mpv播放内核 - 自制 UI 优化、可视化配置脚本、弹幕、中文 stats", "author": {"@type": "Organization", "name": "Yaozhil", "url": "https://github.com/Yaozhil"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "dateCreated": "2026-06-24", "keywords": "alist,lua,mpv,mpv-config,mpv-script,mpv-scripts,portable-config"}</script>
+</head>
+<body data-repo="Yaozhil/mpv-Yaozhi" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Yaozhil/mpv-Yaozhi</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Yaozhil__mpv-Yaozhi"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/178059045?u=f71a6b7389b4b0e9fc1c0c9e8665611bdfa71cc6&amp;v=4&s=300" width="300" height="300" alt="Yaozhil avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">mpv-Yaozhi</div>
+      <a class="rp-side-owner" href="https://github.com/Yaozhil">Yaozhil</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Yaozhil">Yaozhil</a>
+        <span class="rp-sep">/</span><span class="rp-name">mpv-Yaozhi</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">mpv-Yaozhi 自制整合包 -重构mpv播放内核 - 自制 UI 优化、可视化配置脚本、弹幕、中文 stats</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>1,007</b></span><span class="rp-stat" title="forks">⑂ <b>35</b></span><span class="rp-stat" title="watchers">👁 <b>5</b></span><span class="rp-stat" title="prs">⑃ <b>7</b></span><span class="rp-stat" title="issues">● <b>34</b></span><span class="rp-stat" title="releases">▤ <b>14</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/alist">alist</a><a class="rp-topic" href="https://github.com/topics/lua">lua</a><a class="rp-topic" href="https://github.com/topics/mpv">mpv</a><a class="rp-topic" href="https://github.com/topics/mpv-config">mpv-config</a><a class="rp-topic" href="https://github.com/topics/mpv-script">mpv-script</a><a class="rp-topic" href="https://github.com/topics/mpv-scripts">mpv-scripts</a><a class="rp-topic" href="https://github.com/topics/portable-config">portable-config</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2026-06-24</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Yaozhil/mpv-Yaozhi">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">杳知mpv整合包（1.0.9-2）</span><a class="rp-dl-a" href="https://github.com/Yaozhil/mpv-Yaozhi/releases/tag/mpv-Yaozhi%281.0.9-2%29">mpv-Yaozhi(1.0.9-2) ↓</a><span class="rp-dl-ver">mpv-Yaozhi(1.0.9-2)</span><span class="rp-dl-date">2026-11-07</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+5</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">1,007</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">35</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">5</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">7</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">34</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">14</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">mpv-Yaozhi
+
+
+  
+  
+  
+  
+  
+
+
+ 让每一次播放，都值得期待
+
+Dolby Vision / HDR · 蓝光原盘菜单 · 沉浸声 · AI 超分补帧
+
+从蓝光原盘到在线追剧，将画面增强、沉浸声与顺手的中文操作融于一体，打造开箱即用的 Windows 观影体验
+
+
+
+
+ &amp;nbsp; 
+
+
+
+
+
+
+
+
+ 播放界面
+
+
+
+ 杳知功能菜单
+
+
+
+
+查看杳知配置助手 7.1
+
+
+
+
+
+ 近期精选
+
+ 以下包含近期内测与工作版进展；公开下载版本所含功能以对应发行说明为准。
+
+- Emby 片库，更有影院感（内测）：海报选片、影院式详情、按季选集与继续观看，选好影片就交给播放器。
+- IPTV，像电视一样顺手：保存多个频道源，分组搜索、收藏常看频道，用方向键或底栏切台；列表可定时更新。
+- B站追剧，字幕与章节都跟上：合集自动加入播放列表，章节显示在进度条；平台已有字幕可自动加载，切换画质保留字幕选择。
+- HDR 影片，普通屏幕也能按喜好看：新增 HDR→SDR 自然、明亮、更亮与原始映射四档，即时调整并记住选择。
+
+ Emby 媒体库（内测）
+
+ 把片库变成影院，选好就开播
+
+连接已有的 Emby 服务器与账号，用海报与影院式详情浏览片库；从选片、选集到继续观看，衔接熟悉的播放器。
+
+
+  
+
+
+从首页发现想看的故事影院式横幅 · 分类浏览 · 继续观看
+
+
+
+
+   &amp;nbsp;
+  
+
+
+海报墙浏览 · 影院式详情与选集点击图片可全屏查看，按 Esc 或点右上角关闭。
+
+- 选片更直观：分类、搜索与筛选结合海报浏览，查看服务器提供的评分、简介和演员资料。
+- 追剧更连贯：继续观看、按季选集、海报／数字选集切换，支持快速跳集与定位当前集。
+- 版本看得清：展示实际分辨率、动态范围与编码，可选择版本，并记住本剧的音轨与字幕偏好。
+- 喜欢的先收好：Emby 收藏与本机待看分开管理；还支持音乐库的专辑、歌曲浏览与专辑连播。
+
+ Emby 媒体库为内测功能，需自行准备有效的服务器与账号；影片、评分及演员等资料由服务器提供，可用内容以账号权限为准。
+
+ AI 超分与补帧
+
+“杳知  超分与补帧”统一管理画面增强与运动平滑，两项功能默认关闭，可独立启用并保存选择。自动模式根据显卡、片源分辨率、帧率、输出负载与画面格式选择方案，菜单可查看实际运行状态。
+
+- 画面增强：通用方案以 SSim 与 FSRCNNX 为主；Anime4K、NNEDI3、RAVU 等可手动选择。
+- AI 补帧：RIFE v4.6 提供 Vulkan 后端；安装完整依赖包后，兼容的 NVIDIA RTX 显卡可按需使用 TensorRT FP16 扩展。
+- 自动保护：默认优先以片源原分辨率建立 AI 2× 链路，保留已有超分质量；无法实时运行或条件不满足时自动回退。
+- 4K 流畅优先：可主动选择降低处理负载以优先补帧。SDR 使用降分辨率的流畅方案；HDR 基底路径仅降低运动推理尺寸，原始帧与最终输出仍保持片源尺寸。
+- HDR 处理：HDR10 / HDR10+ 可使用保留 PQ、BT.2020 与逐帧信息的路径。HDR Vivid 默认保持原有处理；近期内测可主动允许普通 HDR 基底兼容补帧，此时保留 10-bit / PQ / BT.2020，不应用 Vivid 专属动态映射。
+- 格式适配：Dolby Vision、HLG、光盘和 VFR 等场景保持原始色彩链与原生平滑。暂停、跳转和播放恢复时优先复用现有滤镜图，减少重复初始化与等待。
+
+
+
+实机示例：RTX 5090 D v2 · 4K HDR 片源 · RIFE TensorRT · 25 → 50 FPS。实际处理方式与推理尺寸以播放器统计为准，性能随设备及片源变化。
+
+下载超分补帧完整依赖包：RTX 40 / 50 系列用户如需高端扩展，可按需安装；其他显卡先使用播放器主包提供的通用方案。
+
+ 主要功能
+
+mpv-Yaozhi 基于 mpv 与 dyphire/mpv-config 持续维护，集成自编译播放核心、Windows 便携配置与中文交互体验，提供开箱即用的完整懒人包。
+
+项目重点覆盖 HDR / Dolby Vision、蓝光与 DVD 原盘菜单、图形字幕、AV3A / Audio Vivid、Dolby Atmos 源码直通、多声道 PCM、AI 超分与补帧、AList/OpenList 以及日常播放体验。
+
+ 本项目是社区维护的第三方发行方案，并非 mpv 官方版本。
+
+| 分类 | 支持内容 |
+| --- | --- |
+| 播放核心 | 自维护 Windows x86-64 mpv；D3D11、gpu-next、Schannel/libcurl 与定制补丁链 |
+| 画面格式 | HDR10、HDR10+、HLG、Dolby Vision P5 / P7 MEL/FEL / P8.1 / P8.4、HDR Vivid 元数据识别 |
+| 视频解码 | H.264、HEVC、AV1、VVC / H.266、AVS2、AVS3、Animated WebP 等 |
+| 图形字幕 | UHD HDR/DV 内封 PGS 与 SDR 图形字幕分别处理；支持手动色彩覆盖及 150–400 nits 独立亮度 |
+| 原盘导航 | 本地蓝光 / DVD / ISO 自动进入原盘导航；支持 HDMV、BD-J Java 菜单与中文操作入口 |
+| 沉浸声音频 | AV3A / Audio Vivid / AVS3 Audio 解码，对象与 HOA 双耳渲染，可选标准声床与点对象 7.1.4 渲染，5.1.4 至 9.1.6 PCM 高度声道 |
+| 音频源码直通 | AC-3、E-AC-3、Dolby TrueHD、DTS、DTS-HD HRA/MA，以及相应载荷中的 Dolby Atmos / DTS:X |
+| 超分与补帧 | FSRCNNX、SSim、RIFE v4.6 Vulkan，可选 NVIDIA TensorRT FP16 扩展与实时安全回退 |
+| 交互与字幕 | 深度定制 uosc，中英文界面切换、媒体信息、轨道选择、弹幕、片头片尾、播放历史与格式标签；三源字幕聚合搜索，近期工作版新增 B站平台字幕 |
+| 网络播放 | YouTube、B站视频与番剧，以及 B站、抖音、斗鱼、虎牙直播；AList/OpenList、WebDAV、SMB、SFTP、HTTPS 媒体直链、ZIP/RAR 内视频与远程蓝光 ISO 主标题模式；近期工作版新增 IPTV 多订阅管理 |
+| Emby 媒体库（内测） | 海报墙、影院式详情、搜索筛选、继续观看、按季选集、版本选择、收藏与本机待看，以及音乐库 |
+| 手机遥控（内测） | 同一局域网内浏览影片、控制播放、发送链接，以及弹幕、搜索与选集界面 |
+
+ 蓝光 / DVD 原盘菜单
+
+本地蓝光目录、光驱与 ISO 会在建立播放链时启用光盘导航；如果 First Play 直接进入正片，播放器会在合适时机请求一次原盘主菜单。普通用户无需预先安装 Java，也不需要手动修改环境变量。</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Yaozhil/mpv-Yaozhi/issues/34"><span class="rp-item-num">#34</span><span class="rp-item-title">历史记录</span><span class="rp-item-extra">2 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/Yaozhil/mpv-Yaozhi/issues/32"><span class="rp-item-num">#32</span><span class="rp-item-title">期待支持 ubuntu26.04 wayland</span><span class="rp-item-extra">2 comments · 2026-10-30</span></a><a class="rp-item" href="https://github.com/Yaozhil/mpv-Yaozhi/issues/9"><span class="rp-item-num">#9</span><span class="rp-item-title">可否增加自動偵測字幕修改變動的功能？感謝</span><span class="rp-item-extra">2 comments · 2026-08-25</span></a><a class="rp-item" href="https://github.com/Yaozhil/mpv-Yaozhi/issues/30"><span class="rp-item-num">#30</span><span class="rp-item-title">增加屏幕刷新率自动匹配内容帧率功能</span><span class="rp-item-extra">1 comments · 2026-10-21</span></a><a class="rp-item" href="https://github.com/Yaozhil/mpv-Yaozhi/issues/41"><span class="rp-item-num">#41</span><span class="rp-item-title">请问有音频延后的功能吗？</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/Yaozhil/mpv-Yaozhi/issues/40"><span class="rp-item-num">#40</span><span class="rp-item-title">1.0.9-2 版本 Yaoplayer-Atmos.exe 人声消失</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/Yaozhil/mpv-Yaozhi/issues/39"><span class="rp-item-num">#39</span><span class="rp-item-title">选择字幕轨</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/Yaozhil/mpv-Yaozhi/issues/38"><span class="rp-item-num">#38</span><span class="rp-item-title">请问是否可以增加下载搜索到的字幕文件到本地指定文件夹的功能，这样下次就不用重新搜索了</span><span class="rp-item-extra">0 comments · 2026-11-10</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/Yaozhil/mpv-Yaozhi/releases"><b>杳知mpv整合包（1.0.9-2）</b> <span class="rp-rel-tag">mpv-Yaozhi(1.0.9-2)</span> <span class="rp-item-extra">2026-11-07</span></a><pre class="rp-pre">mpv-Yaozhi · V1.0.9-2 · 11.06 更新公告
+
+一、弹幕时间精度修复
+
+ - 普通滚动弹幕保留原始小数秒时间，不再取整到整秒，减少高能等卡点内容最多约半秒的提前或延后；原有滚动时长及长短弹幕的速度关系保持
+
+二、兼容弹幕暂停与恢复修复
+
+ - 修正兼容 Overlay 路径在暂停、缓冲恢复时可能逐次丢失少量播放时间的问题，减少多次恢复后弹幕逐渐落后；暂停期间弹幕仍保持静止，保留跳转与倍速播放行为
+
+三、近期播放显示与小窗口适配
+
+ - 网盘历史记录的来源标签改为“网盘”或“Network”，随播放器界面语言显示，保留日期与时间，减少内部长标签占用空间
+ - 修正文字测量字体与实际显示字体不一致、不同字体宽度缓存混用的问题，改善菜单标题与右侧信息的宽度计算和截断表现
+ - 近期播放菜单按窗口大小调整宽高，小窗口下保留四周空间，以完整行显示记录；更多记录可继续滚动查看，保留原有字号和历史容量
+ - 收紧删除按钮的空白预留，为窄窗口中的片名和日期保留更多空间；搜索、清空搜索及窗口缩放后保持布局约束，保留播放、删除与完整历史记录
+
+四、mpv 0.42 双核心升级与稳定性优化
+
+ - 普通与 Atmos 核心同步升级至 mpv 0.42.0
+ - 修复网络分段打开失败时的资源清理问题，改善 HLS 失败恢复、取消与切换播放时的</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Yaozhil__mpv-Yaozhi.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UFund-Me/Qbot · GitHub Trending Rank Radar</title>
+<meta name="description" content="[🔥updating ...] AI 自动量化交易机器人(完全本地部署) AI-powered Quantitative Investment Research Platform. 📃 online docs: https://ufund-me.github.io/Qbot   ✨ :news: qbot-mini: https://github.com/Charmve/iQuant">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Qbot, UFund-Me, UFund-Me/Qbot, github stars, github trending, star growth, star history, 开源项目, 星标增长, funds, machine-learning, pytrade, quantitative-finance, quantitative-trading, quantization">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/UFund-Me__Qbot">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="UFund-Me/Qbot · GitHub Trending Rank Radar">
+<meta property="og:description" content="[🔥updating ...] AI 自动量化交易机器人(完全本地部署) AI-powered Quantitative Investment Research Platform. 📃 online docs: https://ufund-me.github.io/Qbot   ✨ :news: qbot-mini: https://github.com/Charmve/iQuant">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/UFund-Me__Qbot">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "UFund-Me/Qbot", "codeRepository": "https://github.com/UFund-Me/Qbot", "url": "https://zhuikan.com/repos/UFund-Me__Qbot", "description": "[🔥updating ...] AI 自动量化交易机器人(完全本地部署) AI-powered Quantitative Investment Research Platform. 📃 online docs: https://ufund-me.github.io/Qbot   ✨ :news: qbot-mini: https://github.com/Charmve/iQuant", "author": {"@type": "Organization", "name": "UFund-Me", "url": "https://github.com/UFund-Me"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Jupyter Notebook", "dateCreated": "2022-11-23", "keywords": "funds,machine-learning,pytrade,quantitative-finance,quantitative-trading,quantization,strategies,trademarks,quant-trade,quant-trader"}</script>
+</head>
+<body data-repo="UFund-Me/Qbot" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">UFund-Me/Qbot</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="UFund-Me__Qbot"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/75005393?v=4&s=300" width="300" height="300" alt="UFund-Me avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Qbot</div>
+      <a class="rp-side-owner" href="https://github.com/UFund-Me">UFund-Me</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/UFund-Me">UFund-Me</a>
+        <span class="rp-sep">/</span><span class="rp-name">Qbot</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">[🔥updating ...] AI 自动量化交易机器人(完全本地部署) AI-powered Quantitative Investment Research Platform. 📃 online docs: https://ufund-me.github.io/Qbot   ✨ :news: qbot-mini: https://github.com/Charmve/iQuant</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>18,807</b></span><span class="rp-stat" title="forks">⑂ <b>2,619</b></span><span class="rp-stat" title="watchers">👁 <b>160</b></span><span class="rp-stat" title="prs">⑃ <b>17</b></span><span class="rp-stat" title="issues">● <b>97</b></span><span class="rp-stat" title="releases">▤ <b>3</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/funds">funds</a><a class="rp-topic" href="../tags/machine-learning">machine-learning</a><a class="rp-topic" href="https://github.com/topics/pytrade">pytrade</a><a class="rp-topic" href="https://github.com/topics/quantitative-finance">quantitative-finance</a><a class="rp-topic" href="https://github.com/topics/quantitative-trading">quantitative-trading</a><a class="rp-topic" href="https://github.com/topics/quantization">quantization</a><a class="rp-topic" href="https://github.com/topics/strategies">strategies</a><a class="rp-topic" href="https://github.com/topics/trademarks">trademarks</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Jupyter Notebook</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2022-11-23</span><a class="rp-meta-bit rp-home" href="https://github.com/Charmve" rel="noopener">github.com/Charmve</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/UFund-Me/Qbot">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">qbot_pro_v1.2.1-alpha</span><a class="rp-dl-a" href="https://github.com/UFund-Me/Qbot/releases/tag/qbot-pro_v1.2.1">qbot-pro_v1.2.1 ↓</a><span class="rp-dl-ver">1.2.1</span><span class="rp-dl-date">2024-06-16</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+7</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+33</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+150</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">18,807</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,619</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">160</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">17</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">97</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">3</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">👆 右上角点击  告诉我，你希望这个项目继续加速开发迭代 ❤️ &amp; ☕️
+  
+   🤖 Qbot 
+
+
+
+    
+    
+     since Sep 26
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+      
+      
+    
+  
+  &amp;nbsp;
+  
+    Qbot website
+    
+      
+        HOT
+      
+    
+    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;
+    Qbot DeepWiki
+    
+      
+        TRY IT OUT
+      
+    
+  
+  &amp;nbsp;
+
+
+
+  AI智能量化投研平台
+
+
+  Qbot is an AI-oriented automated quantitative investment platform, which aims to realize the potential, empower AI technologies in quantitative investment. Qbot supports diverse machine learning modeling paradigms. including supervised learning, market dynamics modeling, and RL.
+
+
+   --
+  
+
+
+
+🤖 Qbot = 智能交易策略 + 回测系统 + 自动化量化交易 (+ 可视化分析工具)
+            |           |            |            |
+            |           |            |             \_ quantstats (dashboard\online operation)
+            |           |             \______________ Qbot - vnpy, pytrader, pyfunds
+            |           \____________________________ BackTest - backtrader, easyquant
+            \________________________________________ quant.ai - qlib, deep learning strategies
+
+
+
+
+
+  
+  🎺 号外：Qbot微信小程序开发招募 UFund-miniprogram
+
+  不建议 fork 项目，本项目会持续更新，只 fork 看不到更新，建议 Star ⭐️ ~
+
+  喜欢这个项目吗？请考虑 ❤️赞助 本项目，以帮助改进！
+
+
+
+ Quick Start
+
+Qbot是一个免费的量化投研平台，提供从数据获取、交易策略开发、策略回测、模拟交易到最终实盘交易的全闭环流程。在实盘接入前，有股票、基金评测和策略回测，在模拟环境下做交易验证，近乎实盘的时延、滑点仿真。故，本平台提供GUI前端/客户端（部分功能也支持网页），后端做数据处理、交易调度，实现事件驱动的交易流程。对于策略研究部分，尤其强调机器学习、强化学习的AI策略，结合多因子模型提高收益比。
+
+但本项目可能需要一点点python基础知识，有一点点交易经验，会更容易体会作者的初衷，解决当下产品空缺和广大散户朋友的交易痛点，现在直接免费开源出来！
+
+Qbot 目前仅在 python3.8 pyhont3.9 下测试过，其他版本未测试。
+
+
+    
+    
+        
+            
+                1. 模块化分层设计：数据层、策略层、交易引擎抽象设计
+                - 数据、策略中间表达，方便多种数据接口、交易接口接入，用户自定义策略和因子挖掘 - 支持多种交易对象：股票、基金、期货、虚拟货币
+            
+        
+    
+    
+        
+            
+                
+            
+        
+        
+            
+                
+            
+        
+        
+            
+                
+            
+        
+    
+    
+        
+            
+                
+            
+        
+        
+            
+                
+            
+        
+        
+            
+                
+            
+        
+    
+    
+
+
+
+    
+    
+        
+            
+                2. 人工智能交易策略、自动化因子挖掘
+                机器学习、强化学习、深度学习策略开发，因子挖掘自动化workflow
+            
+        
+    
+    
+        
+            
+                
+            
+        
+        
+            
+                
+            
+        
+        
+            
+                
+            
+        
+    
+    
+
+
+
+    
+    
+        
+            
+                3. 多种交易方式：在线回测 + 模拟交易 + 实盘自动化交易
+                以策略研究为目标，提供多种交易方式验证策略和提高收益。
+            
+        
+    
+    
+        
+            
+                
+            
+        
+        
+            
+                
+            
+        
+        
+            
+                
+            
+        
+    
+    
+
+
+
+    
+    
+        
+            
+                4. 多种提示方式：邮件 + 飞书 + 弹窗 + 微信
+                这是qbot的消息提示模块，多种方式提示交易信息：交易买卖信息、每日交易收益结果、股票每日推荐等。
+            
+        
+    
+    
+        
+           </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/UFund-Me/Qbot/issues/10"><span class="rp-item-num">#10</span><span class="rp-item-title">mac python3.9 pip install -r requirements.txt error.</span><span class="rp-item-extra">11 comments · 2023-05-23</span></a><a class="rp-item" href="https://github.com/UFund-Me/Qbot/issues/76"><span class="rp-item-num">#76</span><span class="rp-item-title">wxpython version?</span><span class="rp-item-extra">10 comments · 2024-03-20</span></a><a class="rp-item" href="https://github.com/UFund-Me/Qbot/issues/55"><span class="rp-item-num">#55</span><span class="rp-item-title">有没有docker版本</span><span class="rp-item-extra">9 comments · 2023-06-16</span></a><a class="rp-item" href="https://github.com/UFund-Me/Qbot/issues/8"><span class="rp-item-num">#8</span><span class="rp-item-title">can&#x27;t setup a valid environment on windows 10</span><span class="rp-item-extra">9 comments · 2023-05-21</span></a><a class="rp-item" href="https://github.com/UFund-Me/Qbot/issues/6"><span class="rp-item-num">#6</span><span class="rp-item-title"> &#x27;gbk&#x27; codec can&#x27;t decode byte 0xa3 in position 83: illegal multibyte sequence</span><span class="rp-item-extra">9 comments · 2023-05-19</span></a><a class="rp-item" href="https://github.com/UFund-Me/Qbot/issues/13"><span class="rp-item-num">#13</span><span class="rp-item-title">Can not build docker image</span><span class="rp-item-extra">7 comments · 2023-05-24</span></a><a class="rp-item" href="https://github.com/UFund-Me/Qbot/issues/90"><span class="rp-item-num">#90</span><span class="rp-item-title">No module named &#x27;qbot.engine.config&#x27;</span><span class="rp-item-extra">6 comments · 2024-12-19</span></a><a class="rp-item" href="https://github.com/UFund-Me/Qbot/issues/22"><span class="rp-item-num">#22</span><span class="rp-item-title">windows版本怎么查看选股？页面不显示，不知道如何配置，教程里go build不生效</span><span class="rp-item-extra">6 comments · 2023-05-29</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/UFund-Me/Qbot/releases"><b>qbot_pro_v1.2.1-alpha</b> <span class="rp-rel-tag">qbot-pro_v1.2.1</span> <span class="rp-item-extra">2024-06-16</span></a><pre class="rp-pre">启动方式为：以main.py为主程序入口，另外需要启动fund-strategy和qinvestool基金和股票选股策略分析后台插件。
+
+
+
+
+✨ News! ✨
+	
+	
+         :fire: 2025.05.14: V3.1.15 release （试用版）Download ! 提取码: n8rt
+		 :fire: 2024.06.16: V1.2.1-alpha release （付费版）Download !
+        2024.04.22: V1.2.0-alpha release Download !
+	
+
+
+ Changelog:
+
+更新策略库，更新qinvestool启动方式说明（支持多个平台），加入掘金仿真后台、更多交易接口。
+
+!indicator_list
+!fund_strategy
+!juejin_trade
+
+
+
+---------
+
+ Get Started
+
+本项目分为前端（客户端）和后端两部分，前端由wxPython编写的轻量化GUI客户端，后端分为策略开发、策略回测 qbot/strategies、股票基金评测、模拟交易、在线回测几个部分，对应于客户端从左到右的三个菜单。
+
+ 前端/客户端
+
+➕ 请注意：本项目建议使用python 3.8、3.9版本，推荐使用conda</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/UFund-Me__Qbot.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

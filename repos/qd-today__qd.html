@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>qd-today/qd · GitHub Trending Rank Radar</title>
+<meta name="description" content="QD [v20240210] —— HTTP请求定时任务自动执行框架 base on HAR Editor and Tornado Server">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="qd, qd-today, qd-today/qd, github stars, github trending, star growth, star history, 开源项目, 星标增长, qiandao, docker, checkin, har, qd">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/qd-today__qd">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="qd-today/qd · GitHub Trending Rank Radar">
+<meta property="og:description" content="QD [v20240210] —— HTTP请求定时任务自动执行框架 base on HAR Editor and Tornado Server">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/qd-today__qd">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "qd-today/qd", "codeRepository": "https://github.com/qd-today/qd", "url": "https://zhuikan.com/repos/qd-today__qd", "description": "QD [v20240210] —— HTTP请求定时任务自动执行框架 base on HAR Editor and Tornado Server", "author": {"@type": "Organization", "name": "qd-today", "url": "https://github.com/qd-today"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Python", "dateCreated": "2020-05-11", "keywords": "qiandao,docker,checkin,har,qd"}</script>
+</head>
+<body data-repo="qd-today/qd" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">qd-today/qd</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="qd-today__qd"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/65381530?v=4&s=300" width="300" height="300" alt="qd-today avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">qd</div>
+      <a class="rp-side-owner" href="https://github.com/qd-today">qd-today</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/qd-today">qd-today</a>
+        <span class="rp-sep">/</span><span class="rp-name">qd</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">QD [v20240210] —— HTTP请求定时任务自动执行框架 base on HAR Editor and Tornado Server</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,595</b></span><span class="rp-stat" title="forks">⑂ <b>647</b></span><span class="rp-stat" title="watchers">👁 <b>27</b></span><span class="rp-stat" title="prs">⑃ <b>130</b></span><span class="rp-stat" title="issues">● <b>401</b></span><span class="rp-stat" title="releases">▤ <b>50</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/qiandao">qiandao</a><a class="rp-topic" href="../tags/docker">docker</a><a class="rp-topic" href="https://github.com/topics/checkin">checkin</a><a class="rp-topic" href="https://github.com/topics/har">har</a><a class="rp-topic" href="https://github.com/topics/qd">qd</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2020-05-11</span><a class="rp-meta-bit rp-home" href="https://qd-today.github.io/qd/" rel="noopener">qd-today.github.io/qd/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/qd-today/qd">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">20261108</span><a class="rp-dl-a" href="https://github.com/qd-today/qd/releases/tag/20261108">20261108 ↓</a><span class="rp-dl-ver">20261108</span><span class="rp-dl-date">2026-11-07</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,595</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">647</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">27</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">130</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">401</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">50</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">QD for Python3
+
+
+QD —— 一个HTTP请求定时任务自动执行框架 base on HAR Editor and Tornado Server
+
+[![HomePage][HomePage-image]][HomePage-url]
+[![Github][Github-image]][Github-url]
+[![Gitee][Gitee-image]][Gitee-url]
+[![license][github-license-image]][github-license-url]
+[![QQ频道][QQPD-image]][QQPD-url]
+[![Build Image][workflow-image]][workflow-url]
+[![last commit][last-commit-image]][last-commit-url]
+[![commit activity][commit-activity-image]][commit-activity-url]
+![repo size][repo-size-image]
+[![docker version][docker-version-image]][docker-version-url]
+[![docker pulls][docker-pulls-image]][docker-pulls-url]
+[![docker stars][docker-stars-image]][docker-stars-url]
+[![docker image size][docker-image-size-image]][docker-image-size-url]
+![python version][python-version-image]
+
+
+
+
+[HomePage-image]: https://img.shields.io/badge/HomePage-QD--Today-brightgreen
+[HomePage-url]: https://qd.a76yyyy.cn
+[Github-image]: https://img.shields.io/static/v1?label=Github&amp;message=QD&amp;color=brightgreen
+[Github-url]: https://github.com/qd-today/qd/
+[Gitee-image]: https://img.shields.io/static/v1?label=Gitee&amp;message=QD&amp;color=brightgreen
+[Gitee-url]: https://gitee.com/qd-today/qd/
+[github-license-image]: https://img.shields.io/github/license/qd-today/qd
+[github-license-url]: https://github.com/qd-today/qd/blob/master/LICENSE
+[QQPD-image]: https://img.shields.io/static/v1?label=QQ%E9%A2%91%E9%81%93&amp;message=QD&amp;color=brightgreen
+[QQPD-url]: https://pd.qq.com/s/g9qaiue25
+[workflow-image]: https://github.com/qd-today/qd/actions/workflows/Publish%20Package.yml/badge.svg
+[workflow-url]: https://github.com/qd-today/qd/actions/workflows/Publish%20Package.yml
+[last-commit-image]: https://img.shields.io/github/last-commit/qd-today/qd
+[last-commit-url]: https://github.com/qd-today/qd/
+[commit-activity-image]: https://img.shields.io/github/commit-activity/m/qd-today/qd
+[commit-activity-url]: https://github.com/qd-today/qd/
+[repo-size-image]: https://img.shields.io/github/repo-size/qd-today/qd
+[docker-version-image]: https://img.shields.io/docker/v/qdtoday/qd/latest?style=flat
+[docker-version-url]: https://hub.docker.com/r/qdtoday/qd/tags?latest
+[docker-pulls-image]: https://img.shields.io/docker/pulls/qdtoday/qd?style=flat
+[docker-pulls-url]: https://hub.docker.com/r/qdtoday/qd
+[docker-stars-image]: https://img.shields.io/docker/stars/qdtoday/qd?style=flat
+[docker-stars-url]: https://hub.docker.com/r/qdtoday/qd
+[docker-image-size-image]: https://img.shields.io/docker/image-size/qdtoday/qd/latest?style=flat&amp;arch=amd64
+[docker-image-size-url]: https://hub.docker.com/r/qdtoday/qd
+[python-version-image]: https://img.shields.io/badge/dynamic/toml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fqd-today%2Fqd%2Fmaster%2Fpyproject.toml&amp;query=project.requires-python&amp;label=python&amp;color=blue
+
+
+
+
+   
+   
+
+
+操作说明
+==========
+
+请参阅 使用指南
+
+镜像
+==========
+
+| 标签 | 说明 |
+|---|---|
+| latest | 完整功能，含验证码识别 |
+| lite-latest | 精简版，不含验证码识别 |
+| ja3-latest | 含验证码识别，pycurl 带 TLS 指纹伪装 |
+| ja3-lite-latest | 精简 + TLS 指纹伪装 |
+
+386 / arm/v6 / s</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/qd-today/qd/issues/539"><span class="rp-item-num">#539</span><span class="rp-item-title">[Feature] QD2 路线图</span><span class="rp-item-extra">15 comments · 2024-07-09</span></a><a class="rp-item" href="https://github.com/qd-today/qd/issues/491"><span class="rp-item-num">#491</span><span class="rp-item-title">[Bug] Telegram 推送不了</span><span class="rp-item-extra">11 comments · 2024-01-01</span></a><a class="rp-item" href="https://github.com/qd-today/qd/issues/425"><span class="rp-item-num">#425</span><span class="rp-item-title">[Feature] 希望增加通知API</span><span class="rp-item-extra">7 comments · 2023-06-10</span></a><a class="rp-item" href="https://github.com/qd-today/qd/issues/518"><span class="rp-item-num">#518</span><span class="rp-item-title">[Feature] 反代二级目录的显示异常</span><span class="rp-item-extra">6 comments · 2024-03-27</span></a><a class="rp-item" href="https://github.com/qd-today/qd/issues/440"><span class="rp-item-num">#440</span><span class="rp-item-title">[Feature] 麻烦搞个独立的请求超时时间，单个任务的</span><span class="rp-item-extra">6 comments · 2023-07-05</span></a><a class="rp-item" href="https://github.com/qd-today/qd/issues/587"><span class="rp-item-num">#587</span><span class="rp-item-title">[Feature] 钉钉推送会支持加签吗？</span><span class="rp-item-extra">5 comments · 2025-02-24</span></a><a class="rp-item" href="https://github.com/qd-today/qd/issues/540"><span class="rp-item-num">#540</span><span class="rp-item-title">[Feature] 能否支持 cookiecloud 自动读取cookie</span><span class="rp-item-extra">5 comments · 2024-07-17</span></a><a class="rp-item" href="https://github.com/qd-today/qd/issues/472"><span class="rp-item-num">#472</span><span class="rp-item-title">[Feature] 支持更多加密算法</span><span class="rp-item-extra">5 comments · 2023-10-08</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/qd-today/qd/discussions/635"><span class="rp-item-num">#635</span><span class="rp-item-title">如何设置随机时间执行任务</span><span class="rp-item-extra">1 comments · 2026-07-14</span></a><a class="rp-item" href="https://github.com/qd-today/qd/discussions/634"><span class="rp-item-num">#634</span><span class="rp-item-title">如何避免定点签到带来的风控？</span><span class="rp-item-extra">1 comments · 2026-07-14</span></a><a class="rp-item" href="https://github.com/qd-today/qd/discussions/633"><span class="rp-item-num">#633</span><span class="rp-item-title">如何避免定点签到带来的风控？</span><span class="rp-item-extra">2 comments · 2026-07-13</span></a><a class="rp-item" href="https://github.com/qd-today/qd/discussions/616"><span class="rp-item-num">#616</span><span class="rp-item-title">出现403 forbidden·是什么问题</span><span class="rp-item-extra">1 comments · 2025-09-28</span></a><a class="rp-item" href="https://github.com/qd-today/qd/discussions/615"><span class="rp-item-num">#615</span><span class="rp-item-title">运动步数不能用了</span><span class="rp-item-extra">0 comments · 2025-09-27</span></a><a class="rp-item" href="https://github.com/qd-today/qd/discussions/614"><span class="rp-item-num">#614</span><span class="rp-item-title">任务结束后代理连接没有释放，有办法让其立即释放嘛？</span><span class="rp-item-extra">1 comments · 2025-09-24</span></a><a class="rp-item" href="https://github.com/qd-today/qd/discussions/598"><span class="rp-item-num">#598</span><span class="rp-item-title">为什么无法增加变量</span><span class="rp-item-extra">1 comments · 2025-05-21</span></a><a class="rp-item" href="https://github.com/qd-today/qd/discussions/589"><span class="rp-item-num">#589</span><span class="rp-item-title">请问添加模板测试时显示“请使用更现代的浏览器并启用 JavaScript 以获得最佳浏览体验。”如何处理？</span><span class="rp-item-extra">1 comments · 2025-02-28</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/qd-today/qd/releases"><b>20261108</b> <span class="rp-rel-tag">20261108</span> <span class="rp-item-extra">2026-11-07</span></a><pre class="rp-pre">Features
+
+1. Feature(push): 🚀 新增 WxPusher 极简模式推送支持, 降低推送配置门槛 (632)
+2. Feature(update): 🚀 -v 支持指定 tag / commit / 分支切换代码; 网络访问点支持镜像源参数
+3. Feature(update): 🚀 依赖按 libc 形态分流安装, 版本未变时跳过下载与安装, 解释器版本不足时自动补齐; update.sh 在容器外也可自行安装依赖
+4. Feature(tools): 🛠️ 新增离线密钥轮换工具, 支持 SQLite 与 MySQL
+5. Feature(image): 🐳 新增 Dockerfile.ja3-lite 变体, 四条镜像线统一骨架
+6. Feature(compliance): 📄 镜像内随附第三方许可证文书; FOSSA 改用 CLI 上传, 一个项目覆盖 Python 层与随包原生库
+7. Feature(update): 🚀 声明 /.venv 虚拟环境并支持 PATH 优先级提升（默认临时生效, QD_VENV_PERSIST=1 可持久化）; 支持 QD_HOME 指定服务目录
+
+ Changed
+
+1. Change(depends): 📦 依赖管理迁移到 pyproject.toml + uv.lock, 依赖安装到 .venv; 移除 Pi</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/qd-today__qd.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

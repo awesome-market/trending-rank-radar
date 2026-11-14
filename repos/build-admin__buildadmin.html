@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>build-admin/buildadmin · GitHub Trending Rank Radar</title>
+<meta name="description" content="可视化生成CRUD代码、内置WEB终端、workerman常驻内存运行支持，技术栈为Vue3.x(setup)+ThinkPHP8+TypeScript+Vite+Pinia+Element Plus，自适应多端，同时提供Web和Server端、自动注册路由、无限级菜单权限节点、全局数据回收站、字段级修改保护等等，是集颜值、实用、敏捷于一身的管理系统。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="buildadmin, build-admin, build-admin/buildadmin, github stars, github trending, star growth, star history, 开源项目, 星标增长, vue3, element-plus, typescript, vite, admin, php">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/build-admin__buildadmin">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="build-admin/buildadmin · GitHub Trending Rank Radar">
+<meta property="og:description" content="可视化生成CRUD代码、内置WEB终端、workerman常驻内存运行支持，技术栈为Vue3.x(setup)+ThinkPHP8+TypeScript+Vite+Pinia+Element Plus，自适应多端，同时提供Web和Server端、自动注册路由、无限级菜单权限节点、全局数据回收站、字段级修改保护等等，是集颜值、实用、敏捷于一身的管理系统。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/build-admin__buildadmin">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "build-admin/buildadmin", "codeRepository": "https://github.com/build-admin/buildadmin", "url": "https://zhuikan.com/repos/build-admin__buildadmin", "description": "可视化生成CRUD代码、内置WEB终端、workerman常驻内存运行支持，技术栈为Vue3.x(setup)+ThinkPHP8+TypeScript+Vite+Pinia+Element Plus，自适应多端，同时提供Web和Server端、自动注册路由、无限级菜单权限节点、全局数据回收站、字段级修改保护等等，是集颜值、实用、敏捷于一身的管理系统。", "author": {"@type": "Organization", "name": "build-admin", "url": "https://github.com/build-admin"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Vue", "dateCreated": "2022-06-01", "keywords": "vue3,element-plus,typescript,vite,admin,php,thinkphp8,workerman"}</script>
+</head>
+<body data-repo="build-admin/buildadmin" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">build-admin/buildadmin</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="build-admin__buildadmin"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/106626227?u=cdd4587ccef6750824a5b675e96a03fdbb081962&amp;v=4&s=300" width="300" height="300" alt="build-admin avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">buildadmin</div>
+      <a class="rp-side-owner" href="https://github.com/build-admin">build-admin</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/build-admin">build-admin</a>
+        <span class="rp-sep">/</span><span class="rp-name">buildadmin</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">可视化生成CRUD代码、内置WEB终端、workerman常驻内存运行支持，技术栈为Vue3.x(setup)+ThinkPHP8+TypeScript+Vite+Pinia+Element Plus，自适应多端，同时提供Web和Server端、自动注册路由、无限级菜单权限节点、全局数据回收站、字段级修改保护等等，是集颜值、实用、敏捷于一身的管理系统。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>2,411</b></span><span class="rp-stat" title="forks">⑂ <b>291</b></span><span class="rp-stat" title="watchers">👁 <b>92</b></span><span class="rp-stat" title="prs">⑃ <b>28</b></span><span class="rp-stat" title="issues">● <b>40</b></span><span class="rp-stat" title="releases">▤ <b>42</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/vue3">vue3</a><a class="rp-topic" href="https://github.com/topics/element-plus">element-plus</a><a class="rp-topic" href="../tags/typescript">typescript</a><a class="rp-topic" href="https://github.com/topics/vite">vite</a><a class="rp-topic" href="https://github.com/topics/admin">admin</a><a class="rp-topic" href="../tags/php">php</a><a class="rp-topic" href="https://github.com/topics/thinkphp8">thinkphp8</a><a class="rp-topic" href="https://github.com/topics/workerman">workerman</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Vue</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2022-06-01</span><a class="rp-meta-bit rp-home" href="https://buildadmin.com" rel="noopener">buildadmin.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/build-admin/buildadmin">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v2.3.9-20260917</span><a class="rp-dl-a" href="https://github.com/build-admin/buildadmin/releases/tag/v2.3.9">v2.3.9-20260917 ↓</a><span class="rp-dl-ver">2.3.9</span><span class="rp-dl-date">2026-09-17</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">2,411</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">291</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">92</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">28</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">40</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">42</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">BuildAdmin
+    使用流行技术栈快速创建商业级后台管理系统
+    官网 |
+    演示 |
+    社区 |
+    文档 |
+    加群 |
+    视频介绍 |
+    Gitee仓库 |
+    GitHub仓库 |
+    AtomGit仓库
+
+
+
+    
+        
+    
+    
+        
+    
+    
+        
+    
+    
+        
+    
+    
+        
+    
+    
+        
+    
+    
+        
+    
+
+
+
+
+  
+
+
+
+ 介绍
+🌈 基于 Vue3 + ThinkPHP8 + TypeScript + Vite + Pinia + Element Plus 等流行技术栈的后台管理系统，支持常驻内存运行、可视化 CRUD 代码生成、自带 WEB 终端、自适应多端、同时提供 Web、WebNuxt、Server 端，内置全局数据回收站和字段级数据修改保护、自动注册路由、无限子级权限管理等，无需授权即可免费商用，希望能帮助大家实现快速开发。
+
+ Golang 版本已发布！诚挚邀您体验 
+
+ 主要特性
+🚀 CRUD 代码生成：
+图形化拖拽生成后台增删改查代码，自动创建数据表；支持 从零、从已有数据表、从 AI 设计数据表 开始 CRUD 设计，生成大气且实用的表格，多达 25 种表单组件支持，行拖拽排序，受权限控制的编辑和删除等等，并支持关联表，可为您节省大量开发时间。
+
+💥 内置 WEB 终端：
+在后台管理系统领域，我们率先将终端深度集成于系统的 本地开发环境 中，它能实现很多理想中的功能，比如：虽然是基于 Vue3 的系统，但在安装时并不需要手动的执行 npm install 命令；CRUD 代码生成完毕后，自动调用 prettier 格式化代码等。本终端设计上能够调用环境变量中的任意命令，天花板极高，后续将为您提供更多方便、快捷的服务。
+
+👍 流行且稳定的技术栈：
+除了基于 ThinkPHP8 前后端分离架构外，我们的 Vue3 使用了 setup、useTemplateRef 等，状态管理使用 Pinia，并使用了 TypeScript、Vite 等可以为你的知识面添砖加瓦的技术栈。使用流行技术栈自然代表本框架兼容相关（Vue3+TP8+PHP8.x）生态，生态系统内数不清的库、包、组件，能够使您的开发事半功倍。
+
+🎨 模块市场：
+一键安装数据导入导出、短信发送、支付、云存储、富文本编辑器，甚至 CMS、多商户商城、社区、纯前端技术栈的学习案例项目等，随时随地为系统添砖加瓦，系统能够自动维护 package.json 和 composer.json 并通过内置终端自动完成模块所需依赖的安装。
+
+🔀 前后端分离：
+项目的 web 文件夹内包含： 干净（不含后端代码）、完整（所有前端代码文件均在此内）的前端代码文件，代码和部署均可前后分离，对前端开发者友好，作为纯前端开发者，您可以将 BAdmin 当做学习与资源的社群，本系统可为您准备好案例和模板等所需要的环境，而您只需专注于学习或工作，不需要会任何后端代码！（邀您：和我们一起 ）
+
+⚡️ 常驻内存：
+系统内置的功能均可常驻内存运行，享受比传统框架快上数十倍的性能提升！目前 Workerman 模块 可提供框架的常驻内存 HTTP 服务，同时该模块还提供了开箱即用的 WebSocket 服务。
+
+🚚 按需加载：
+前端的页面组件和语言包均是在使用到它们时，才从网络异步加载，服务端则是基于 TP8 和 PSR 规范，天生拥有真正的按需加载能力，所以，您无需考虑 我并不需要多语言、我并不需要某个后台功能 这类的问题，不需要不使用或隐藏即可。
+
+🌴 数据回收与反悔：
+内置全局数据回收站，并且提供字段级数据修改记录和修改对比，随时回滚和还原，安全且无感。
+
+✨ 高颜值：
+提供三种布局模式，其中默认布局使用无边框设计风格，它并没有强行填满屏幕的每一个缝然后使用边框线进行分隔，所有的功能版块，都像是悬浮在屏幕上的，同时又将屏幕空间及其合理的利用了。
+
+🔐 权限验证：
+可视化的管理权限，然后根据权限动态的注册路由、菜单、页面、按钮（权限节点）、支持无限父子级权限分组、前后端搭配鉴权，自由分派页面和按钮权限。
+
+📝 未来可期：
+我们正在持续维护系统，并着手开发更多基础设施模块，按需一键安装，甚至提供开箱即用的各行业完整应用。
+
+🧱 一举多得：
+后台自适应 PC、平板、手机 等多种场景的支持，轻松应对各种需求。
+
+💖 其他杂项：
+角色组/管理员/管理员日志、 会员/会员组/会员余额、积分日志、系统配置/控制台/附件管理/个人资料管理等等、更多特性等你探索...
+
+ 安装使用
+💫 我们提供了完善的文档，对于熟悉 ThinkPHP 和 Vue 的用户，请使用大佬版：快速上手 ，对于新人朋友，我们额外准备了各个操作系统的从零开始套餐：Windows从零到一 | Linux从零到一 | MacBook安装引导
+
+ 联系我们
+- 演示站 账户：admin，密码：123456（演示站数据无法修改，请下载源码安装体验全部功能）
+- 问答社区：ask.buildadmin.com
+- 官方网站：uni.buildadmin.com
+- 文档：doc.buildadmin.com
+- 加群：687903819（960/1000）、751852082（1990/2000）、1039646575
+- Gitee仓库、GitHub仓库
+- 备用文档：docs.buildadmin.net
+- 官方邮箱 hi@buildadmin.com
+
+ 项目预览
+|  |  |
+|---------------------|---------------------|
+|!登录|!控制台|
+|!布局配置|!表格|
+|!表单|!系统配置|
+|!数据回收规则|!数据回收日志|
+|!敏感数据|!菜单|
+|!单栏布局|!经典布局|
+
+ 特别鸣谢
+💕 感谢巨人提供肩膀，排名不分先后
+- Thinkphp
+- FastAdmin
+- Vue
+- vue-next-admin
+- Element Plus
+- TypeScript
+- vue-router
+- vite
+- Pinia
+- Axios
+- nprogress
+- screenfull
+- mitt
+- sass
+- echarts
+- vueuse
+- lodash
+- eslint
+- prettier
+- Sortable
+- v-code-diff
+- clicaptcha
+- phinx
+- jetbrains
+
+ 版权信息
+🔐 BuildAdmin 遵循 Apache2.0 开源协议发布，提供无需授权的免费使用。\
+本项目包含的第三方源码和二进制文件之版权信息另行标注。
+
+ 支持项目
+💕 无需捐赠，如果觉得项目不错，或者已经在使用了，希望您可以去 Github | Gitee | AtomGit 帮我们点个 ⭐ Star，这将是对我们极大的鼓励与支持。</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/build-admin/buildadmin/issues/58"><span class="rp-item-num">#58</span><span class="rp-item-title">初始化安装失败，php8.4，高版本需要兼容修复</span><span class="rp-item-extra">3 comments · 2025-07-16</span></a><a class="rp-item" href="https://github.com/build-admin/buildadmin/issues/63"><span class="rp-item-num">#63</span><span class="rp-item-title">作者考虑增加hyperf的适配吗</span><span class="rp-item-extra">2 comments · 2025-11-06</span></a><a class="rp-item" href="https://github.com/build-admin/buildadmin/issues/66"><span class="rp-item-num">#66</span><span class="rp-item-title">考虑增加webman的适配么</span><span class="rp-item-extra">1 comments · 2026-07-31</span></a><a class="rp-item" href="https://github.com/build-admin/buildadmin/issues/57"><span class="rp-item-num">#57</span><span class="rp-item-title">CRUD无法拖拽</span><span class="rp-item-extra">1 comments · 2025-07-03</span></a><a class="rp-item" href="https://github.com/build-admin/buildadmin/issues/54"><span class="rp-item-num">#54</span><span class="rp-item-title">能够加一个菜单搜索功能</span><span class="rp-item-extra">1 comments · 2025-05-14</span></a><a class="rp-item" href="https://github.com/build-admin/buildadmin/issues/70"><span class="rp-item-num">#70</span><span class="rp-item-title">[SECURITY] 管理员日志 URL 字段存储型 XSS</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/build-admin/buildadmin/issues/62"><span class="rp-item-num">#62</span><span class="rp-item-title">是否可以创建其他应用 并使用admin的代码生成功能？</span><span class="rp-item-extra">0 comments · 2025-09-29</span></a><a class="rp-item" href="https://github.com/build-admin/buildadmin/issues/59"><span class="rp-item-num">#59</span><span class="rp-item-title">菜单路由未实现国际化</span><span class="rp-item-extra">0 comments · 2025-07-16</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/build-admin/buildadmin/releases"><b>v2.3.9-20260917</b> <span class="rp-rel-tag">v2.3.9</span> <span class="rp-item-extra">2026-09-17</span></a><pre class="rp-pre">新增
+- 增加 AGENTS.md
+- 系统配置增加 AI 相关配置项
+- 可视化 CRUD 增加 从 AI 设计数据表 开始
+- 可视化 CRUD 增加复制上下文按钮，以便无缝对接 AGENT
+
+ 重构/优化/修复
+- 优化默认节流配置
+- 优化系统安装控制器
+- 优化模块安装器的 uid 设置
+- 优化刷新 token 的注销逻辑
+- 点选验证码在单次验证失败时立即删除
+- 包管理器仅超管可设置、增加包管理器白名单
+- 优化附件管理及本地附件删除功能，防止删除附件时路径穿越
+- 仅超管可删除 CRUD 记录和防止删除 CRUD 文件时路径穿越
+- 构建文件后缀的 svg 图片时额外过滤一次XSS（不仅依赖框架的全局过滤设定）
+- 邮件发送接口增加 event 白名单校验，防止通过自定义 event 绕过频控（受点选验证码和节流管控的绕过频控）
+
+ badmin-v2.3.9-full文件为完整包（已composer install）。</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/build-admin__buildadmin.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

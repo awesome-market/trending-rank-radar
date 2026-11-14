@@ -1,0 +1,91 @@
+# AI Engineering Field Guide
+
+Data-driven field guide to AI engineering roles, skills, and interviews. AI Engineering Field Guide is **the** go-to resource for AI engineering.
+
+Everything here is based on real data: 9,760 actual job descriptions, real interview experiences, and real stories from practitioners. This is not AI-generated filler dumped into a repo - every insight comes from analyzing actual data and synthesizing patterns from it.
+
+Star this repo to keep an eye on updates. To get notified about new content, subscribe to my newsletter: [AI Shipping Blog](https://aishippingblog.com/).
+
+
+## The AI Engineer Role
+
+- [My vision of the role](role/01-my-vision.md) - how I see AI engineering, comparison with DS/ML/DE roles, CRISP-DM for AI
+- [Skills analysis](role/02-skills.md) - top skills, job types, cloud platforms, frameworks
+- [Responsibilities](role/03-responsibilities.md) - patterns extracted from 69,498 job responsibilities
+- [Use cases](role/04-use-cases.md) - 43,822 real use cases showing what companies build with AI
+- [Reality vs. job postings](role/05-reality-vs-postings.md) - what candidates experience vs. what's advertised
+- [Forward Deployed Engineers](role/06-fde.md) - growth, responsibilities, and skills from 277 FDE job postings
+- [Job market trends](role/07-trends.md) - month-over-month analysis of role archetypes, skill stacks, and trajectories across 10 scrapes
+
+
+## Interview Preparation
+
+- [Interview process](interview/01-interview-process.md) - common patterns, step counts, time estimates, AI use in hiring, key takeaways
+- [Interview questions](interview/02-questions.md) - consolidated from 100+ sources
+  - [Theory](interview/questions/01-theory.md) - LLMs, RAG, agents, ML fundamentals, company-specific questions
+  - [Coding](interview/questions/02-coding.md) - coding round formats, DSA problems, ML implementation exercises
+  - [Project deep dive](interview/questions/03-project-deep-dive.md) - presentation rounds, follow-up probes, what interviewers evaluate
+  - [AI system design](interview/questions/04-ai-system-design.md) - system design for AI applications
+  - [Behavioral](interview/questions/05-behavioral.md) - values, leadership, problem-solving
+  - [Home assignments](interview/questions/06-home-assignments.md) - take-home assignments and paid work trials from 100+ GitHub repos
+- [Skills that get you hired](interview/03-get-hired.md) - baseline expectations, differentiators, and portfolio strategy
+- [After the interview](interview/04-after-the-interview.md) - handling offers, rejections, and salary negotiation
+- [Interview trends](interview/05-trends.md) - realistic assessments, AI cheating, AI-proctored rounds
+- [Company-by-company data](interview/data/) - individual interview process descriptions for 51 companies, linked to source job postings
+
+
+
+## Learning Paths
+
+- [General learning path](learning-paths/) - what to learn and in what order
+- [From Data Engineer](learning-paths/from-data-engineer.md) - smoothest transition, 3-4 months
+- [From Data Scientist](learning-paths/from-data-scientist.md) - evaluation is your superpower, add engineering
+- [From ML Engineer](learning-paths/from-ml-engineer.md) - easiest transition, replace model call with API call
+- [From Backend Engineer](learning-paths/from-backend-engineer.md) - 2-3 months, add AI on top of engineering
+- [From Frontend Engineer](learning-paths/from-frontend-engineer.md) - backend first, then AI, unique full-stack advantage
+
+
+## Portfolio
+
+- [Portfolio guide](portfolio/) - how to choose, build, and present AI engineering portfolio projects
+
+
+## Job Market Data
+
+9,760 job descriptions scraped from builtin.com covering LA, NY, London, Amsterdam, Berlin, and India.
+
+- [Structured job descriptions](job-market/data_structured/) - YAML files grouped by scrape date
+- [Raw extracted postings](job-market/data_raw/) - original extracted data grouped by scrape date
+
+
+## [Awesome AI Engineering](awesome.md)
+
+Curated collection of resources we compiled while researching content for this field guide:
+
+- Practitioner interview stories
+- AI system design guides
+- Company engineering blogs
+- Books and courses
+- Case study collections
+
+See [awesome.md](awesome.md) for the list.
+
+
+## [Webinars](webinars/)
+
+Webinars and workshops on AI engineering careers, hosted through Maven and [AI Shipping Labs](https://aishippinglabs.com/):
+
+1. [A Day of an AI Engineer](webinars/01-a-day-of-ai-engineer.md) - the practical reality of the role (Maven, [AI Shipping Labs](https://aishippinglabs.com/blog/what-is-an-ai-engineer-alexey-grigorev-perspective)) - recording available
+2. [Defining the AI Engineer Role](webinars/02-defining-the-role.md) - what companies actually hire for, based on 2,400+ job descriptions (Maven) - recording available
+3. [The Interview Process](webinars/03-the-interview-process.md) - real hiring trends, technical questions, and live coding challenges (Maven) - recording available
+4. [Take-Home Assignments](webinars/04-take-home-assignments.md) - analyzing real assignments and building production-ready solutions (Maven) - recording available
+5. [Selecting a Portfolio Project](webinars/05-selecting-a-portfolio-project.md) - how to choose what to build and scope the first version (AI Shipping Labs, June 29, 2026)
+
+
+
+## Learn AI Engineering
+
+There's more to learning AI engineering than watching tutorials:
+
+- [AI Engineering Buildcamp: From RAG to Agents](https://maven.com/alexey-grigorev/from-rag-to-agents) - my 9-week intensive course on building production-ready AI applications, covering RAG, agents, testing, evaluation, and monitoring
+- [AI Shipping Labs](https://aishippinglabs.com/) - a community of practitioners building AI and with AI, with workshops, courses, case studies, and discussions on what actually works

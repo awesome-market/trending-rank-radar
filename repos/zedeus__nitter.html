@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>zedeus/nitter · GitHub Trending Rank Radar</title>
+<meta name="description" content="Alternative Twitter front-end">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="nitter, zedeus, zedeus/nitter, github stars, github trending, star growth, star history, 开源项目, 星标增长, nim, twitter, privacy, self-hosted, x">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/zedeus__nitter">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="zedeus/nitter · GitHub Trending Rank Radar">
+<meta property="og:description" content="Alternative Twitter front-end">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/zedeus__nitter">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "zedeus/nitter", "codeRepository": "https://github.com/zedeus/nitter", "url": "https://zhuikan.com/repos/zedeus__nitter", "description": "Alternative Twitter front-end", "author": {"@type": "Organization", "name": "zedeus", "url": "https://github.com/zedeus"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/AGPL-3.0.html", "programmingLanguage": "Nim", "dateCreated": "2019-06-20", "keywords": "nim,twitter,privacy,self-hosted,x"}</script>
+</head>
+<body data-repo="zedeus/nitter" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">zedeus/nitter</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="zedeus__nitter"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/9434921?u=70b0757a69d84b0f31f0d50e2100cc5a505ca12c&amp;v=4&s=300" width="300" height="300" alt="zedeus avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">nitter</div>
+      <a class="rp-side-owner" href="https://github.com/zedeus">zedeus</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/zedeus">zedeus</a>
+        <span class="rp-sep">/</span><span class="rp-name">nitter</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Alternative Twitter front-end</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>14,453</b></span><span class="rp-stat" title="forks">⑂ <b>1,386</b></span><span class="rp-stat" title="watchers">👁 <b>181</b></span><span class="rp-stat" title="prs">⑃ <b>238</b></span><span class="rp-stat" title="issues">● <b>1,103</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/nim">nim</a><a class="rp-topic" href="https://github.com/topics/twitter">twitter</a><a class="rp-topic" href="../tags/privacy">privacy</a><a class="rp-topic" href="../tags/self-hosted">self-hosted</a><a class="rp-topic" href="https://github.com/topics/x">x</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Nim</span><span class="rp-meta-bit">AGPL-3.0</span><span class="rp-meta-bit">Created 2019-06-20</span><a class="rp-meta-bit rp-home" href="https://nitter.net" rel="noopener">nitter.net</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/zedeus/nitter">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-10</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-26</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">14,453</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,386</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">181</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">238</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,103</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Nitter
+
+ [!NOTE]
+ On 24 August 2026, cease and desist letters were sent by X Corp. demanding a permanent takedown of Nitter instances and the project&#x27;s repository. \
+ UPDATE 10 October 2026: I&#x27;m seeking funding and legal help. See nitter.net for more details.
+
+A free and open source alternative Twitter front-end focused on privacy and
+performance. \
+Inspired by the Invidious project.
+
+
+
+
+
+ Features
+
+- No JavaScript required
+- Zero ads
+- All requests go through the backend, client never talks to Twitter
+- Prevents Twitter from tracking your IP or JavaScript fingerprint
+- Uses Twitter&#x27;s unofficial API (no developer account required)
+- Lightweight (for @nim_lang, 60KB vs 784KB from twitter.com)
+- RSS feeds (instance-specific, often disabled due to abuse)
+- Themes
+- Mobile support (responsive design)
+- AGPLv3 licensed, no proprietary instances permitted
+
+ Roadmap
+
+- ~~Embeds~~ (see https://github.com/zedeus/nitter/wiki/Embeds-guide)
+- Account system with timeline support
+
+ Donations
+
+
+
+
+
+
+BTC: bc1qpqpzjkcpgluhzf7x9yqe7jfe8gpfm5v08mdr55
+ETH: 0x24a0DB59A923B588c7A5EBd0dBDFDD1bCe9c4460
+XMR: 42hKayRoEAw4D6G6t8mQHPJHQcXqofjFuVfavqKeNMNUZfeJLJAcNU19i1bGdDvcdN6romiSscWGWJCczFLe9RFhM3d1zpL
+SOL: FF5bheiD5AqPEdc3eyjymJ8AoMRF1hS78Ht6FiSZZF1t
+$Nitter: 4fSxCKc91ELQYVdv3tmHW8R15KoALPwEngyoQe1Xpump
+ZEC: u1vndfqtzyy6qkzhkapxelel7ams38wmfeccu3fdpy2wkuc4erxyjm8ncjhnyg747x6t0kf0faqhh2hxyplgaum08d2wnj4n7cyu9s6zhxkqw2aef4hgd4s6vh5hpqvfken98rg80kgtgn64ff70djy7s8f839z00hwhuzlcggvefhdlyszkvwy3c7yw623vw3rvar6q6evd3xcvveypt
+
+ Resources
+
+The wiki contains
+a list of instances and
+browser extensions
+maintained by the community.
+
+ Why?
+
+It&#x27;s impossible to use Twitter without JavaScript enabled, and as of 2024 you
+need to sign up. For privacy-minded folks, preventing JavaScript analytics and
+IP-based tracking is important, but apart from using a VPN and uBlock/uMatrix,
+it&#x27;s impossible. Despite being behind a VPN and using heavy-duty adblockers,
+you can get accurately tracked with your browser&#x27;s
+fingerprint, no
+JavaScript required. This all became
+particularly important after Twitter removed the
+ability
+for users to control whether their data gets sent to advertisers.
+
+Using an instance of Nitter (hosted on a VPS for example), you can browse
+Twitter without JavaScript while retaining your privacy. In addition to
+respecting your privacy, Nitter is on average around 15 times lighter than
+Twitter, and in most cases serves pages faster (eg. timelines load 2-4x faster).
+
+In the future a simple account system will be added that lets you follow Twitter
+users, allowing you to have a clean chronological timeline without needing a
+Twitter account.
+
+ Screenshot
+
+!nitter
+
+ Installation
+
+ Dependencies
+
+- libpcre
+- libsass
+- redis/valkey
+
+To compile Nitter you need a Nim installation, see
+nim-lang.org for details. It is possible
+to install it system-wide or in the user directory you create below.
+
+To compile the scss files, you need to install libsass. On Ubuntu and Debian,
+you can use libsass-d</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/zedeus/nitter/issues/1301"><span class="rp-item-num">#1301</span><span class="rp-item-title">get_session.py returns Authentication failed every time</span><span class="rp-item-extra">97 comments · 2025-10-28</span></a><a class="rp-item" href="https://github.com/zedeus/nitter/issues/1442"><span class="rp-item-num">#1442</span><span class="rp-item-title">All public nitter instances do not work.</span><span class="rp-item-extra">33 comments · 2026-08-25</span></a><a class="rp-item" href="https://github.com/zedeus/nitter/issues/493"><span class="rp-item-num">#493</span><span class="rp-item-title">Twitter RSS feed title behavior</span><span class="rp-item-extra">30 comments · 2021-12-30</span></a><a class="rp-item" href="https://github.com/zedeus/nitter/issues/1188"><span class="rp-item-num">#1188</span><span class="rp-item-title">nitter over IPFS or torrent</span><span class="rp-item-extra">20 comments · 2024-03-01</span></a><a class="rp-item" href="https://github.com/zedeus/nitter/issues/1208"><span class="rp-item-num">#1208</span><span class="rp-item-title">Avatars/Pictures won&#x27;t load</span><span class="rp-item-extra">11 comments · 2024-11-27</span></a><a class="rp-item" href="https://github.com/zedeus/nitter/issues/228"><span class="rp-item-num">#228</span><span class="rp-item-title">Increase number of items in RSS feed?</span><span class="rp-item-extra">17 comments · 2020-08-01</span></a><a class="rp-item" href="https://github.com/zedeus/nitter/issues/202"><span class="rp-item-num">#202</span><span class="rp-item-title">Account system</span><span class="rp-item-extra">17 comments · 2020-06-26</span></a><a class="rp-item" href="https://github.com/zedeus/nitter/issues/1171"><span class="rp-item-num">#1171</span><span class="rp-item-title">Thank you</span><span class="rp-item-extra">19 comments · 2024-02-08</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/zedeus/nitter/discussions/1443"><span class="rp-item-num">#1443</span><span class="rp-item-title">Welcome back!!!</span><span class="rp-item-extra">0 comments · 2026-09-08</span></a><a class="rp-item" href="https://github.com/zedeus/nitter/discussions/1441"><span class="rp-item-num">#1441</span><span class="rp-item-title">X RSS</span><span class="rp-item-extra">1 comments · 2026-08-25</span></a><a class="rp-item" href="https://github.com/zedeus/nitter/discussions/1356"><span class="rp-item-num">#1356</span><span class="rp-item-title">New Android app for alternatives: Sidestep</span><span class="rp-item-extra">0 comments · 2026-01-13</span></a><a class="rp-item" href="https://github.com/zedeus/nitter/discussions/1355"><span class="rp-item-num">#1355</span><span class="rp-item-title">Is there a way to download/archive a whole account offline?</span><span class="rp-item-extra">1 comments · 2026-01-09</span></a><a class="rp-item" href="https://github.com/zedeus/nitter/discussions/1294"><span class="rp-item-num">#1294</span><span class="rp-item-title">[User] How does subscribing to many RSS feeds affect an instance</span><span class="rp-item-extra">1 comments · 2025-10-15</span></a><a class="rp-item" href="https://github.com/zedeus/nitter/discussions/1230"><span class="rp-item-num">#1230</span><span class="rp-item-title">Question about Nitter Instances</span><span class="rp-item-extra">1 comments · 2025-03-11</span></a><a class="rp-item" href="https://github.com/zedeus/nitter/discussions/1220"><span class="rp-item-num">#1220</span><span class="rp-item-title">Good browser-extensions for redirecting links to Nitter?</span><span class="rp-item-extra">4 comments · 2025-02-22</span></a><a class="rp-item" href="https://github.com/zedeus/nitter/discussions/1212"><span class="rp-item-num">#1212</span><span class="rp-item-title">nitter.net is back</span><span class="rp-item-extra">7 comments · 2025-02-06</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/zedeus__nitter.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

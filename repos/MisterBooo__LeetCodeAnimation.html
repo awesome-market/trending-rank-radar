@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MisterBooo/LeetCodeAnimation · GitHub Trending Rank Radar</title>
+<meta name="description" content="Demonstrate all the questions on LeetCode in the form of animation.（用动画的形式呈现解LeetCode题目的思路,完整单步/回看/变速/语音讲解在 algomooc.com）">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="LeetCodeAnimation, MisterBooo, MisterBooo/LeetCodeAnimation, github stars, github trending, star growth, star history, 开源项目, 星标增长, leetcode, leetcode-solutions, leetcode-java, animation, leetcode-c">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/MisterBooo__LeetCodeAnimation">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="MisterBooo/LeetCodeAnimation · GitHub Trending Rank Radar">
+<meta property="og:description" content="Demonstrate all the questions on LeetCode in the form of animation.（用动画的形式呈现解LeetCode题目的思路,完整单步/回看/变速/语音讲解在 algomooc.com）">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/MisterBooo__LeetCodeAnimation">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "MisterBooo/LeetCodeAnimation", "codeRepository": "https://github.com/MisterBooo/LeetCodeAnimation", "url": "https://zhuikan.com/repos/MisterBooo__LeetCodeAnimation", "description": "Demonstrate all the questions on LeetCode in the form of animation.（用动画的形式呈现解LeetCode题目的思路,完整单步/回看/变速/语音讲解在 algomooc.com）", "author": {"@type": "Organization", "name": "MisterBooo", "url": "https://github.com/MisterBooo"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Java", "dateCreated": "2018-12-06", "keywords": "leetcode,leetcode-solutions,leetcode-java,animation,leetcode-c"}</script>
+</head>
+<body data-repo="MisterBooo/LeetCodeAnimation" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">MisterBooo/LeetCodeAnimation</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="MisterBooo__LeetCodeAnimation"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/15308811?u=e28ce46461e497b635691637db08b2742d8ac84a&amp;v=4&s=300" width="300" height="300" alt="MisterBooo avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">LeetCodeAnimation</div>
+      <a class="rp-side-owner" href="https://github.com/MisterBooo">MisterBooo</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/MisterBooo">MisterBooo</a>
+        <span class="rp-sep">/</span><span class="rp-name">LeetCodeAnimation</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Demonstrate all the questions on LeetCode in the form of animation.（用动画的形式呈现解LeetCode题目的思路,完整单步/回看/变速/语音讲解在 algomooc.com）</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>76,709</b></span><span class="rp-stat" title="forks">⑂ <b>13,849</b></span><span class="rp-stat" title="watchers">👁 <b>2,487</b></span><span class="rp-stat" title="prs">⑃ <b>80</b></span><span class="rp-stat" title="issues">● <b>61</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/leetcode">leetcode</a><a class="rp-topic" href="https://github.com/topics/leetcode-solutions">leetcode-solutions</a><a class="rp-topic" href="https://github.com/topics/leetcode-java">leetcode-java</a><a class="rp-topic" href="../tags/animation">animation</a><a class="rp-topic" href="https://github.com/topics/leetcode-c">leetcode-c</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Java</span><span class="rp-meta-bit">Created 2018-12-06</span><a class="rp-meta-bit rp-home" href="https://www.algomooc.com" rel="noopener">www.algomooc.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/MisterBooo/LeetCodeAnimation">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-7</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+6</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">76,709</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">13,849</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">2,487</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">80</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">61</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">LeetCodeAnimation
+
+ 用动画把 LeetCode 题解过程拆开看：指针怎么移动、状态怎么转移、递归怎么展开、边界为什么成立。
+ GitHub 这份是公开索引与历史素材；完整的单步、回看、变速、语音讲解在网站版。
+
+
+
+
+
+
+
+
+
+
+
+如果这个项目帮到你，欢迎 Star 支持持续更新。
+
+---
+
+ 🚧 2026 大版本进行中
+
+这个仓库不是一次性归档。2026 年正在做一轮大版本升级，只列已上线 / 进行中的实话：
+
+- ✅ 三语言参考代码：每道题的题解配 Python / C++ / Java 三种实现，Python 为默认。
+- ✅ AI 私教「小欧」：吴师兄带的 AI 算法私教，做题卡住可随时追问思路与边界。
+- ✅ 吴师兄声线语音讲解：动画边演示边讲，语音为 AI 合成（吴师兄声线授权）；点播放器里的 🔊 即可听。
+- 🚧 299 题全量质量清算：对全站动画题逐题做质量复核与重制，分批上线，持续同步回本仓库索引。
+
+ 进度会随同步脚本更新到下方「当前索引」与 docs/sync-log.md。
+
+---
+
+ 网站版动画预览
+
+下面四张 GIF 取自网站播放器的关键帧，点图直达对应题目页（完整步骤播放、三语言代码、语音讲解都在网站版）。
+
+
+  
+    
+      
+        
+      
+      
+      两数之和
+      
+      边扫数组边维护哈希表，看清 complement 是怎么被找到的。
+    
+    
+      
+        
+      
+      
+      接雨水
+      
+      用柱状图把左右边界和蓄水过程拆开，直观看懂为什么能接住水。
+    
+  
+  
+    
+      
+        
+      
+      
+      岛屿数量
+      
+      DFS 染色过程一格一格展开，连通块边界会更容易看清。
+    
+    
+      
+        
+      
+      
+      环形链表
+      
+      快慢指针在链表上同步移动，什么时候相遇一眼能看到。
+    
+  
+
+
+↑ 网站版还能单步、回看、变速、听讲解 —— 打开在线交互版 →
+
+---
+
+ 项目特点
+
+- 动画题解：先看清算法过程，再回到代码。很多题目保留了 GIF 或分步动画素材。
+- 三语言代码：题解配 Python / C++ / Java 三种参考实现。
+- 结构化数据：docs/data/manifest.json 可被脚本读取，用于生成索引、检查链接或二次整理。
+- 持续同步：网站侧新增或调整动画后，通过脚本同步回 GitHub —— 仓库不是静态归档。
+
+
+ 当前索引
+
+ 下表数字由 tools/scripts/build-readme.js 据 docs/data/manifest.json 实算注入，请勿手改。
+
+| 项目 | 数量 / 位置 |
+| :-- | :-- |
+| LeetCode 动画题数 | 256 |
+| 简单 | 71 |
+| 中等 | 160 |
+| 困难 | 25 |
+| 数据文件 | docs/data/manifest.json |
+| 按题号索引 | docs/leetcode-animation-index.md |
+| 按专题索引 | docs/index-by-topic.md |
+| 网站路径 |  |
+
+
+
+ 数字口径：上表 256 指已同步到本仓库的 LeetCode 题动画数（脚本据网站侧 study_index.js → manifest.json 实算）。
+ 近况区提到的 299 指 algomooc.com 全站动画内容总数（含进阶题与专题，口径来自站内 content-stats 单一数据源），范围比本仓库已同步的 LeetCode 子集更大。
+ 两个数字都由脚本接管、禁止手写：256 来自本仓库 manifest，299 随站内 content-stats 同步回填（见 docs/data/stats.json 的 siteTotal 字段）。
+
+---
+
+ 内容地图
+
+| 想找什么 | 从这里开始 |
+| :-- | :-- |
+| 按题号查动画 | docs/leetcode-animation-index.md |
+| 按专题查动画 | docs/index-by-topic.md |
+| 用脚本处理题目数据 | docs/data/manifest.json |
+| 查看早期题解文章 | docs/notes/ 或 problems/ 下各题的 Article/ |
+| 查看早期动画素材 | problems/ 下各题的 Animation/ |
+| 查看同步记录 | docs/sync-log.md |
+
+---
+
+
+🛠 维护者：同步与数据说明（点击展开 —— 普通读者可略过）
+
+ 仓库和网站的关系
+
+GitHub 仓库保存历史内容、公开索引和同步脚本；网站侧维护当前动画页面。交互播放、步骤切换、阅读体验以网站版本为准。同步脚本把网站题目列表写回仓库，方便在 GitHub 上审阅、检索和版本化。
+
+ 同步方式
+
+网站侧题目索引来自 study_index.js。同步前先审查：
+
+bash
+npm run review:site
+
+
+确认需要同步后运行：
+
+bash
+npm run sync         更新 manifest / 题号索引 / 专题索引 / 同步记录
+npm run validate     校验 manifest
+node tools/scripts/build-readme.js --write    把 README 数字段 + stats.json 重新注入
+
+
+会更新：
+
+- docs/data/manifest.json
+- docs/leetcode-animation-index.md
+- docs/index-by-topic.md
+- docs/sync-log.md
+- docs/data/stats.json 与 README 的 当前索引 标记区（数字段）
+
+更完整的判断规则、commit 规范和数字接管机制见 docs/sync-workflow.md 与 docs/HOW-TO-INTERACT.md。
+
+ 目录
+
+| 路径 | 说明 |
+| :-- | :-- |
+| docs/data/manifest.json | LeetCode 动画索引数据（数字单一数据源） |
+| docs/data/stats.json | 由脚本实算的计数，供 README 徽章读取 |
+| docs/leetcode-animation-index.md | 由 manifest 生成的题目列表 |
+| docs/index-by-topic.md | 由 manifest 生成的专题索引 |
+| docs/sync-log.md | 网站侧索引同步记录 |
+| docs/sync-workflow.md | 网站和 GitHub 联动流程 |
+| tool</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/MisterBooo/LeetCodeAnimation/issues/104"><span class="rp-item-num">#104</span><span class="rp-item-title">23图片爆炸了</span><span class="rp-item-extra">5 comments · 2020-06-22</span></a><a class="rp-item" href="https://github.com/MisterBooo/LeetCodeAnimation/issues/127"><span class="rp-item-num">#127</span><span class="rp-item-title">我可以提pr吗</span><span class="rp-item-extra">4 comments · 2021-05-19</span></a><a class="rp-item" href="https://github.com/MisterBooo/LeetCodeAnimation/issues/140"><span class="rp-item-num">#140</span><span class="rp-item-title">算法动画java</span><span class="rp-item-extra">3 comments · 2022-09-04</span></a><a class="rp-item" href="https://github.com/MisterBooo/LeetCodeAnimation/issues/139"><span class="rp-item-num">#139</span><span class="rp-item-title">在题目矩阵中的路径(12)的算法描述上好像有点不对</span><span class="rp-item-extra">2 comments · 2022-07-20</span></a><a class="rp-item" href="https://github.com/MisterBooo/LeetCodeAnimation/issues/134"><span class="rp-item-num">#134</span><span class="rp-item-title">第一道题就错了~晕</span><span class="rp-item-extra">2 comments · 2021-08-10</span></a><a class="rp-item" href="https://github.com/MisterBooo/LeetCodeAnimation/issues/141"><span class="rp-item-num">#141</span><span class="rp-item-title">专题leetcode</span><span class="rp-item-extra">1 comments · 2022-10-02</span></a><a class="rp-item" href="https://github.com/MisterBooo/LeetCodeAnimation/issues/135"><span class="rp-item-num">#135</span><span class="rp-item-title">挺好的</span><span class="rp-item-extra">1 comments · 2021-10-20</span></a><a class="rp-item" href="https://github.com/MisterBooo/LeetCodeAnimation/issues/128"><span class="rp-item-num">#128</span><span class="rp-item-title">关于01题的时间复杂度疑惑</span><span class="rp-item-extra">1 comments · 2021-06-20</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/MisterBooo__LeetCodeAnimation.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

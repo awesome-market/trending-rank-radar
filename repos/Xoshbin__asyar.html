@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xoshbin/asyar · GitHub Trending Rank Radar</title>
+<meta name="description" content="The power of Raycast. The speed of Alfred. Privacy by design.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="asyar, Xoshbin, Xoshbin/asyar, github stars, github trending, star growth, star history, 开源项目, 星标增长, launcher, rust, spotlight, tauri, privacy-first, local-first">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Xoshbin__asyar">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Xoshbin/asyar · GitHub Trending Rank Radar">
+<meta property="og:description" content="The power of Raycast. The speed of Alfred. Privacy by design.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Xoshbin__asyar">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Xoshbin/asyar", "codeRepository": "https://github.com/Xoshbin/asyar", "url": "https://zhuikan.com/repos/Xoshbin__asyar", "description": "The power of Raycast. The speed of Alfred. Privacy by design.", "author": {"@type": "Organization", "name": "Xoshbin", "url": "https://github.com/Xoshbin"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-3.0.html", "programmingLanguage": "Rust", "dateCreated": "2025-02-18", "keywords": "launcher,rust,spotlight,tauri,privacy-first,local-first,raycast"}</script>
+</head>
+<body data-repo="Xoshbin/asyar" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Xoshbin/asyar</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Xoshbin__asyar"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/1606070?u=c8cced12b85ec6fb1cbffc8d64517f48c08c6d04&amp;v=4&s=300" width="300" height="300" alt="Xoshbin avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">asyar</div>
+      <a class="rp-side-owner" href="https://github.com/Xoshbin">Xoshbin</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Xoshbin">Xoshbin</a>
+        <span class="rp-sep">/</span><span class="rp-name">asyar</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">The power of Raycast. The speed of Alfred. Privacy by design.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>1,001</b></span><span class="rp-stat" title="forks">⑂ <b>80</b></span><span class="rp-stat" title="watchers">👁 <b>8</b></span><span class="rp-stat" title="prs">⑃ <b>880</b></span><span class="rp-stat" title="issues">● <b>150</b></span><span class="rp-stat" title="releases">▤ <b>69</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/launcher">launcher</a><a class="rp-topic" href="../tags/rust">rust</a><a class="rp-topic" href="https://github.com/topics/spotlight">spotlight</a><a class="rp-topic" href="../tags/tauri">tauri</a><a class="rp-topic" href="https://github.com/topics/privacy-first">privacy-first</a><a class="rp-topic" href="../tags/local-first">local-first</a><a class="rp-topic" href="https://github.com/topics/raycast">raycast</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">GPL-3.0</span><span class="rp-meta-bit">Created 2025-02-18</span><a class="rp-meta-bit rp-home" href="https://asyar.org/" rel="noopener">asyar.org/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Xoshbin/asyar">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.1.1</span><a class="rp-dl-a" href="https://github.com/Xoshbin/asyar/releases/tag/v0.1.1">v0.1.1 ↓</a><span class="rp-dl-ver">0.1.1</span><span class="rp-dl-date">2026-11-08</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">1,001</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">80</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">8</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">880</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">150</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">69</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Asyar
+  The power of Raycast. The speed of Alfred. Privacy by design.
+  A fast, native Rust &amp; Tauri launcher for macOS, Windows, and Linux.
+  
+    
+    
+    
+  
+  
+    Download for macOS
+    ·
+    Reddit (r/asyarapp)
+    ·
+    Community
+    ·
+    Documentation
+  
+
+
+https://github.com/user-attachments/assets/ad0e51f5-9b1c-4674-9021-4204aa85ecce
+
+ Tiny Footprint. Native Performance.
+
+Asyar is built with Tauri + Rust instead of Electron. That means:
+
+- Significantly less RAM — no bundled Chromium, no V8 runtime sitting idle
+- Instant startup — the Rust backend initializes in milliseconds
+- Real OS integration — native APIs for app indexing, clipboard, global hotkeys, and accessibility
+- Secure by default — extensions run in isolated iframes; a broken extension can&#x27;t crash the launcher
+
+ _Native performance, web flexibility — Rust does the heavy lifting, Svelte 5 keeps the UI snappy._
+
+ Measured against Raycast
+
+
+
+| Metric                                 | Asyar 0.1.1-49 | Raycast 2.6.2.0 |
+| -------------------------------------- | -------------: | --------------: |
+| Hotkey → window visible (median of 15) |        13.9 ms |         22.2 ms |
+| Hotkey → window visible (p95)          |        17.3 ms |         32.0 ms |
+| Hotkey → window visible (p99)          |        20.5 ms |         32.5 ms |
+| Keystroke → results painted (p50)      |            n/a |             n/a |
+| Keystroke → results painted (p95)      |            n/a |             n/a |
+| Cold start → usable                    |         585 ms |         2129 ms |
+| Memory footprint, idle (all processes) |       419.2 MB |        451.5 MB |
+| CPU while idle (30s average)           |         0.64 % |          1.44 % |
+| CPU deep idle (60s, after 120s quiet)  |         0.10 % |          1.41 % |
+| Memory deep idle                       |       664.4 MB |        680.4 MB |
+| CPU ms/s (powermetrics, deep idle)     |           1.02 |           13.92 |
+| Idle wakeups/s (deep idle)             |          11.82 |           46.33 |
+| Idle disk write ops (60s)              |              0 |              96 |
+| App size on disk                       |          68 MB |          223 MB |
+
+Measured 2026-10-04 on a Apple M4 Max (36 GB RAM), macOS 27.0.1, each app
+as installed, summoned by its own registered global hotkey, one at a time on a
+quiet machine. Black-box measurement: synthetic hotkey press → launcher window
+on screen. Reproduce with benchmarks/bench.sh.
+
+
+
+Don&#x27;t take my word for it: benchmarks/bench.sh measures Asyar against Raycast black-box on your own machine — hotkey-to-window latency, cold start, full-process-group memory, idle CPU and wakeups, idle disk writes, and app size — and regenerates this table with --update-readme. Raycast Beta is included automatically when it is installed; the run above was made on a machine without it. The three privileged rows (CPU ms/s, idle wakeups, idle disk writes) need passwordless sudo for powermetrics and fs_usage and report n/a without it — see ben</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Xoshbin/asyar/issues/864"><span class="rp-item-num">#864</span><span class="rp-item-title">[Feature]: move custom themes to themes section and fix onboarding wrapping</span><span class="rp-item-extra">5 comments · 2026-10-13</span></a><a class="rp-item" href="https://github.com/Xoshbin/asyar/issues/841"><span class="rp-item-num">#841</span><span class="rp-item-title">[Feature]: Support for OpenAI Subscription OAuth as AI provider</span><span class="rp-item-extra">2 comments · 2026-10-08</span></a><a class="rp-item" href="https://github.com/Xoshbin/asyar/issues/986"><span class="rp-item-num">#986</span><span class="rp-item-title">[Feature]: file search: open in custom</span><span class="rp-item-extra">1 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/Xoshbin/asyar/issues/696"><span class="rp-item-num">#696</span><span class="rp-item-title">[Bug]: File research crash</span><span class="rp-item-extra">1 comments · 2026-08-28</span></a><a class="rp-item" href="https://github.com/Xoshbin/asyar/issues/690"><span class="rp-item-num">#690</span><span class="rp-item-title">[Bug]: Launcher flashes and forces visibility on empty macOS desktops</span><span class="rp-item-extra">1 comments · 2026-08-27</span></a><a class="rp-item" href="https://github.com/Xoshbin/asyar/issues/1018"><span class="rp-item-num">#1018</span><span class="rp-item-title">[Feature]: Highlight settings tab on hover</span><span class="rp-item-extra">0 comments · 2026-11-10</span></a><a class="rp-item" href="https://github.com/Xoshbin/asyar/issues/1010"><span class="rp-item-num">#1010</span><span class="rp-item-title">[Feature]: &quot;Copy Text From Image&quot; (local OCR) for image clipboard items</span><span class="rp-item-extra">0 comments · 2026-11-08</span></a><a class="rp-item" href="https://github.com/Xoshbin/asyar/issues/1009"><span class="rp-item-num">#1009</span><span class="rp-item-title">[Feature]: Rename Clipboard History items (custom display title)</span><span class="rp-item-extra">0 comments · 2026-11-08</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Xoshbin/asyar/discussions/949"><span class="rp-item-num">#949</span><span class="rp-item-title">Custom icons for extensions and commands</span><span class="rp-item-extra">7 comments · 2026-10-25</span></a><a class="rp-item" href="https://github.com/Xoshbin/asyar/discussions/905"><span class="rp-item-num">#905</span><span class="rp-item-title">File Search UI / UX overhaul</span><span class="rp-item-extra">5 comments · 2026-10-18</span></a><a class="rp-item" href="https://github.com/Xoshbin/asyar/discussions/766"><span class="rp-item-num">#766</span><span class="rp-item-title">Feature Request: Add Chinese (zh-CN) localization support</span><span class="rp-item-extra">1 comments · 2026-09-20</span></a><a class="rp-item" href="https://github.com/Xoshbin/asyar/discussions/753"><span class="rp-item-num">#753</span><span class="rp-item-title">File options</span><span class="rp-item-extra">1 comments · 2026-09-15</span></a><a class="rp-item" href="https://github.com/Xoshbin/asyar/discussions/730"><span class="rp-item-num">#730</span><span class="rp-item-title">Support authenticated Codex CLI and Claude Code runtime providers</span><span class="rp-item-extra">3 comments · 2026-09-04</span></a><a class="rp-item" href="https://github.com/Xoshbin/asyar/discussions/728"><span class="rp-item-num">#728</span><span class="rp-item-title">hyperkey</span><span class="rp-item-extra">1 comments · 2026-09-03</span></a><a class="rp-item" href="https://github.com/Xoshbin/asyar/discussions/677"><span class="rp-item-num">#677</span><span class="rp-item-title">Proposal: Consider GPUI + Lua as a Native, Lightweight Alternative to Tauri + JavaScript/TypeScript</span><span class="rp-item-extra">6 comments · 2026-08-26</span></a><a class="rp-item" href="https://github.com/Xoshbin/asyar/discussions/665"><span class="rp-item-num">#665</span><span class="rp-item-title">Very good app, any AUR package?</span><span class="rp-item-extra">1 comments · 2026-08-23</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/Xoshbin/asyar/releases"><b>v0.1.1</b> <span class="rp-rel-tag">v0.1.1</span> <span class="rp-item-extra">2026-11-08</span></a><pre class="rp-pre">What&#x27;s Changed
+ chore: release 0.1.1-54 by @Xoshbin in https://github.com/Xoshbin/asyar/pull/965
+ feat(cli): ship README and icon in the package for the Store by @Xoshbin in https://github.com/Xoshbin/asyar/pull/956
+ fix(scripts): honor @asyar.mode silent by suppressing success notifications (941) by @Xoshbin in https://github.com/Xoshbin/asyar/pull/966
+ feat(sdk): add optional background flag to shell.spawn for quiet runs (939) by @Xoshbin in https://github.com/Xoshbin/asyar/pull/967
+ feat(scripts): add settings to hide successful script notifications and rows (940) by @Xoshbin in https://git</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Xoshbin__asyar.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

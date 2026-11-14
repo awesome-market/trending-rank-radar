@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Graphify-Labs/graphify · GitHub Trending Rank Radar</title>
+<meta name="description" content="Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, e">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="graphify, Graphify-Labs, Graphify-Labs/graphify, github stars, github trending, star growth, star history, 开源项目, 星标增长, claude-code, graphrag, knowledge-graph, codex, openclaw, skills">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Graphify-Labs__graphify">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Graphify-Labs/graphify · GitHub Trending Rank Radar">
+<meta property="og:description" content="Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, e">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Graphify-Labs__graphify">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Graphify-Labs/graphify", "codeRepository": "https://github.com/Graphify-Labs/graphify", "url": "https://zhuikan.com/repos/Graphify-Labs__graphify", "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, e", "author": {"@type": "Organization", "name": "Graphify-Labs", "url": "https://github.com/Graphify-Labs"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Python", "dateCreated": "2026-04-03", "keywords": "claude-code,graphrag,knowledge-graph,codex,openclaw,skills,antigravity,gemini,leiden,rag"}</script>
+</head>
+<body data-repo="Graphify-Labs/graphify" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Graphify-Labs/graphify</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Graphify-Labs__graphify"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/297659074?v=4&s=300" width="300" height="300" alt="Graphify-Labs avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">graphify</div>
+      <a class="rp-side-owner" href="https://github.com/Graphify-Labs">Graphify-Labs</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Graphify-Labs">Graphify-Labs</a>
+        <span class="rp-sep">/</span><span class="rp-name">graphify</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily">daily <b>#27</b></a><a class="rp-board-chip" href="../?board=weekly">weekly <b>#44</b></a><a class="rp-board-chip" href="../?board=monthly">monthly <b>#86</b></a><a class="rp-board-chip" href="../?board=total">total <b>#70</b></a></div>
+    </div>
+    <p class="rp-desc">Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>147,223</b></span><span class="rp-stat" title="forks">⑂ <b>14,109</b></span><span class="rp-stat" title="watchers">👁 <b>424</b></span><span class="rp-stat" title="prs">⑃ <b>2,796</b></span><span class="rp-stat" title="issues">● <b>2,267</b></span><span class="rp-stat" title="releases">▤ <b>254</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/claude-code">claude-code</a><a class="rp-topic" href="https://github.com/topics/graphrag">graphrag</a><a class="rp-topic" href="https://github.com/topics/knowledge-graph">knowledge-graph</a><a class="rp-topic" href="../tags/codex">codex</a><a class="rp-topic" href="../tags/openclaw">openclaw</a><a class="rp-topic" href="../tags/skills">skills</a><a class="rp-topic" href="https://github.com/topics/antigravity">antigravity</a><a class="rp-topic" href="../tags/gemini">gemini</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2026-04-03</span><a class="rp-meta-bit rp-home" href="https://www.graphify.com" rel="noopener">www.graphify.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Graphify-Labs/graphify">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">graphify 0.9.108</span><a class="rp-dl-a" href="https://github.com/Graphify-Labs/graphify/releases/tag/v0.9.108">graphify-0.9.108 ↓</a><span class="rp-dl-ver">0.9.108</span><span class="rp-dl-date">2026-11-12</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+540</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+5,488</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num">147,223</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">14,109</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">424</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">2,796</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">2,267</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">254</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Read this in other languages
+
+English | 简体中文 | 日本語 | 한국어 | Deutsch | Français | Español | हिन्दी | Português | Русский | العربية | فارسی | Italiano | Polski | Nederlands | Türkçe | Українська | Tiếng Việt | Bahasa Indonesia | Svenska | Ελληνικά | Română | Čeština | Suomi | Dansk | Norsk | Magyar | ภาษาไทย | Oʻzbekcha | 繁體中文 | Filipino | עברית
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+  Start free, no card required &amp;rarr;
+  
+  Cut agent token spend by 80%. Graphify Cloud is always-on memory that governs your agents, keeps code quality high, and proves correctness with formal verification.
+
+
+Type /graphify in your AI coding assistant and it maps your entire project (code, docs, PDFs, images, videos) into a knowledge graph you can query instead of grepping through files.
+
+- Code maps for free, fully local. Code is parsed with tree-sitter AST: deterministic, no LLM, nothing leaves your machine. (Docs, PDFs, images and video use your assistant&#x27;s model, or a configured API key, for a semantic pass.)
+- Every edge is explained. Each connection is tagged EXTRACTED (explicit in the source) or INFERRED (resolved by graphify), so you can tell what was read directly from what was inferred.
+- Not a vector index. No embeddings, no vector store: a real graph you traverse. Ask a question, trace the path between two things, or explain one concept.
+
+ [!NOTE]
+ Want this always-on? Graphify Cloud keeps the graph live across your entire SDLC: monorepo and cross-repo support, formal verification, and code review with a bird&#x27;s-eye view of your SDLC, plus connectors for Sentry, Jira, and more so incidents and tickets sit in the same graph as your code. Start free, no card required.
+
+
+  
+
+
+  The FastAPI codebase mapped by graphify. Every node is a concept, colors are detected communities, and the whole thing is clickable in graph.html.
+
+
+Get started (30 seconds). Needs Python 3.10+ and uv (or pipx):
+
+bash
+uv tool install graphifyy       install the CLI (or: pipx install graphifyy)
+graphify install                detects your assistant and registers the skill
+
+
+Then, in your AI assistant:
+
+
+/graphify .
+
+
+That&#x27;s it. You get three files:
+
+
+graphify-out/
+├── graph.html       open in any browser: click nodes, filter, search
+├── GRAPH_REPORT.md  the highlights: key concepts, surprising connections, suggested questions
+└── graph.json       the full graph: query it anytime without re-reading your files
+
+
+The persisted graph includes graph.schema_version so integrations can detect
+incompatible format changes, plus graph.graphify_version identifying the
+Graphify release that produced it.
+
+One install, any assistant, any OS. Claude Code, Cursor, Codex, Gemini CLI, GitHub Copilot, and 20+ more, on macOS, Linux, and Windows: pick your platform.
+
+---
+
+ See it in action
+
+
+  
+
+
+Once the graph is built you query it instead of reading files. Real output, graphify run on the FastAPI codebase shown above:
+
+text
+$ graphify explain &quot;APIRouter&quot;
+Node: APIRouter
+  Source:    routing.py L2210
+  Commun</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Graphify-Labs/graphify/issues/4281"><span class="rp-item-num">#4281</span><span class="rp-item-title">Node IDs drop the file extension (and doc IDs the path), so distinct entities in x.py/x.html or a/x.md/b/x.md collide and one is lost</span><span class="rp-item-extra">16 comments · 2026-10-10</span></a><a class="rp-item" href="https://github.com/Graphify-Labs/graphify/issues/533"><span class="rp-item-num">#533</span><span class="rp-item-title">codex not support additionalContext on PreToolUse</span><span class="rp-item-extra">10 comments · 2026-04-24</span></a><a class="rp-item" href="https://github.com/Graphify-Labs/graphify/issues/152"><span class="rp-item-num">#152</span><span class="rp-item-title">Integration idea: agentmemory for temporal memory + graphify for structural knowledge</span><span class="rp-item-extra">9 comments · 2026-04-09</span></a><a class="rp-item" href="https://github.com/Graphify-Labs/graphify/issues/1667"><span class="rp-item-num">#1667</span><span class="rp-item-title">Non-deterministic community assignments across identical-corpus runs (0.9.6)</span><span class="rp-item-extra">8 comments · 2026-07-04</span></a><a class="rp-item" href="https://github.com/Graphify-Labs/graphify/issues/4494"><span class="rp-item-num">#4494</span><span class="rp-item-title">[Bug] Pi skill uses unsupported general-purpose subagent instead of delegate</span><span class="rp-item-extra">7 comments · 2026-10-16</span></a><a class="rp-item" href="https://github.com/Graphify-Labs/graphify/issues/1829"><span class="rp-item-num">#1829</span><span class="rp-item-title">Node IDs collide for files sharing a basename (e.g. layout.py vs layout.ts)</span><span class="rp-item-extra">7 comments · 2026-07-12</span></a><a class="rp-item" href="https://github.com/Graphify-Labs/graphify/issues/1689"><span class="rp-item-num">#1689</span><span class="rp-item-title">R (.r/.R) listed in CODE_EXTENSIONS but has no AST extractor — silently drops all R files with zero warning</span><span class="rp-item-extra">7 comments · 2026-07-05</span></a><a class="rp-item" href="https://github.com/Graphify-Labs/graphify/issues/1566"><span class="rp-item-num">#1566</span><span class="rp-item-title">Extend indirect_call to remaining dispatch patterns (dict tables, assignments, other languages)</span><span class="rp-item-extra">7 comments · 2026-06-30</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Graphify-Labs/graphify/discussions/4120"><span class="rp-item-num">#4120</span><span class="rp-item-title">GraphGuild: Graphify&#x27;s community program is now open</span><span class="rp-item-extra">0 comments · 2026-10-05</span></a><a class="rp-item" href="https://github.com/Graphify-Labs/graphify/discussions/3827"><span class="rp-item-num">#3827</span><span class="rp-item-title">Welcome: Use Discussions for ideas, Discord for real-time chat</span><span class="rp-item-extra">2 comments · 2026-09-25</span></a><a class="rp-item" href="https://github.com/Graphify-Labs/graphify/discussions/3515"><span class="rp-item-num">#3515</span><span class="rp-item-title">The graphify platform is now free for open-source projects</span><span class="rp-item-extra">0 comments · 2026-09-12</span></a><a class="rp-item" href="https://github.com/Graphify-Labs/graphify/discussions/2874"><span class="rp-item-num">#2874</span><span class="rp-item-title">We just did our official Y Combinator launch (an upvote would mean a lot)</span><span class="rp-item-extra">0 comments · 2026-08-19</span></a><a class="rp-item" href="https://github.com/Graphify-Labs/graphify/discussions/2855"><span class="rp-item-num">#2855</span><span class="rp-item-title">Graphify is on X, come say hi (a repost would mean a lot)</span><span class="rp-item-extra">0 comments · 2026-08-18</span></a><a class="rp-item" href="https://github.com/Graphify-Labs/graphify/discussions/2772"><span class="rp-item-num">#2772</span><span class="rp-item-title">Graphify is on YouTube, and our first video is up</span><span class="rp-item-extra">1 comments · 2026-08-15</span></a><a class="rp-item" href="https://github.com/Graphify-Labs/graphify/discussions/2359"><span class="rp-item-num">#2359</span><span class="rp-item-title">100k stars, and early access to the graphify platform before v1</span><span class="rp-item-extra">0 comments · 2026-07-31</span></a><a class="rp-item" href="https://github.com/Graphify-Labs/graphify/discussions/1931"><span class="rp-item-num">#1931</span><span class="rp-item-title">How to effectivally use it on antigravity or other IDEs?</span><span class="rp-item-extra">1 comments · 2026-07-15</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/Graphify-Labs/graphify/releases"><b>graphify 0.9.108</b> <span class="rp-rel-tag">v0.9.108</span> <span class="rp-item-extra">2026-11-12</span></a><pre class="rp-pre">- Fix: csharp a member call on a receiver typed by a lowercase, underscore-prefixed or keyword-like type (_Pair, pair, a field or primary-constructor parameter so typed) now binds, and a static call like pair.Create() resolves; namespace and unknown receivers still fail closed. Classic extension-method calls on bool/char? receivers also bind (5174, thanks @JensD-git).
+- Fix: java a call through a class-qualified static field (Service.INSTANCE.get(), and a chain Service.INSTANCE.other().m()) resolves via that field&#x27;s declared type; a local or parameter that shadows the class name keeps that bin</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (8)</h3><div class="rp-list"><a class="rp-item" href="https://cyberq.tw/2026/08/22/github-trends-weekly-report-vol-29/" target="_blank" rel="noopener"><span class="rp-news-src">cyberq</span><span class="rp-item-title">GitHub 趨勢周報 Vol.29：代理記憶與程式碼圖譜補上長期脈絡，資安技能庫規模化</span><span class="rp-item-extra">2026-08-21</span></a><a class="rp-item" href="https://www.alphamatch.ai/zh/blog/graphify-knowledge-graph-ai-coding-2026" target="_blank" rel="noopener"><span class="rp-news-src">alphamatch.ai</span><span class="rp-item-title">Graphify：讓 AI 程式助手真正「讀懂」你程式碼的知識圖譜層</span><span class="rp-item-extra">2026-06-06</span></a><a class="rp-item" href="https://news.qq.com/rain/a/20260426A064VV00" target="_blank" rel="noopener"><span class="rp-news-src">腾讯网</span><span class="rp-item-title">Graphify：为代码库构建知识图谱，以图遍历替代向量检索</span><span class="rp-item-extra">2026-04-26</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE0zbzNEYm9kYS1ETnZTVGd5anRMTTRPemJjRjlGY3J2dEtZUHdIUGR4VnBQRGk5VzFJN2lfcFNveHptREtiLUxZUDc2TVZrekZCblpXMmhOYXJzMWVlRGc?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">InfoQ.cn</span><span class="rp-item-title">Graphify：整合代码库上下文，优化基于代理的软件工程</span><span class="rp-item-extra">2026-10-02</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE9ZRU9NdkdrbXNDUlMza3ZuZ0VKaGJXWjVweER5YkNCeENSQjNOWmh2bk9lcHYtV1Yxbjd3eUIzTmVuYzFHc3FObjdDU1pQVTJmOHVrNTF3?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">腾讯新闻</span><span class="rp-item-title">知识库分层编排：从 RAG 到 Agent-native Knowledge Context Layer</span><span class="rp-item-extra">2026-06-10</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE1FdlZ2RjE5NXBHaU03bWRTVENtNjludTJub180MFZzWEFPTG5VMHhFSzNLLXdXQ0V6V29ab1Jla3g2ajFBWmZDY1kzcWtuQ2ZCSmFMSlEwV2pFUlRG?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">53AI</span><span class="rp-item-title">Karpathy的LLM Wiki + 3.5 万Star的Graphify：企业级 RAG 缺的真是知识图谱？</span><span class="rp-item-extra">2026-04-27</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiakFVX3lxTE50ZW9LZWZrdDVsRmIwUE5rMnFHMGI4VWRJeUlZZ0szeWoxZC1aTS1MTmFYNnVzbTBSMUJxaEtwNGJjLTZMWlMzdlFjT3ltV3l4UWdxT0xKMlVoUHlSc2dxYTVlQ0p1akdpMGc?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN博客</span><span class="rp-item-title">【实战】AI图谱工具实战：Graphify vs GitNexus 深度对比，让AI读懂你的代码仓库</span><span class="rp-item-extra">2026-04-19</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiSEFVX3lxTE9PVmJkS2RsYmFxUWVSR0k3cHExZF9GQmpTM2lIVThmNDdYUEVod2NjcXBkd1R2QTVwOTROVldUQjVoaUxSaTJUMg?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">智源社区</span><span class="rp-item-title">卡帕西没做完的，开源社区48小时搞定了！完全体知识库，token省70倍</span><span class="rp-item-extra">2026-04-08</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (16)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=49217306" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Graphify – Less token use for Claude Code</span><span class="rp-item-extra">▲ 3 · 0 comments · 2026-08-07</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=49195383" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Graphify – Turn any codebase into a queryable knowledge graph</span><span class="rp-item-extra">▲ 2 · 0 comments · 2026-08-06</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=49094378" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Graphify: Codebase Knowledge Graph</span><span class="rp-item-extra">▲ 2 · 0 comments · 2026-07-29</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=48903692" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: Turn any folder of code, SQL schemas into a queryable knowledge graph</span><span class="rp-item-extra">▲ 2 · 0 comments · 2026-07-14</span></a><a class="rp-item" href="https://www.analyticsinsight.net/artificial-intelligence/from-developer-interest-to-recurring-use-safi-shamsi-tracks-graphifys-growth-as-an-ai-coding-context-layer" target="_blank" rel="noopener"><span class="rp-news-src">Analytics Insight</span><span class="rp-item-title">From Developer Interest to Recurring Use: Safi Shamsi Tracks Graphify’s Growth as an AI Coding Context Layer</span><span class="rp-item-extra">2026-11-08</span></a><a class="rp-item" href="https://note.com/kemigawa_beri/n/nbc7a8f43cee1?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">[Verification] Is it true that &quot;7 free repositories can do 80% of a designer&#x27;s work&quot;? I investigated the 7</span><span class="rp-item-extra">2026-10-30</span></a><a class="rp-item" href="https://note.com/ai_gachi_oji/n/n23b786451edd?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">How graphify, which turns folders into knowledge graphs, changes the &#x27;ask that person&#x27; culture in teams</span><span class="rp-item-extra">2026-10-19</span></a><a class="rp-item" href="https://www.forbes.com/sites/stevenwolfepereira/2026/10/02/your-ai-agents-can-write-code-can-they-understand-your-business/" target="_blank" rel="noopener"><span class="rp-news-src">Forbes</span><span class="rp-item-title">Your AI Agents Can Write Code. Can They Understand Your Business?</span><span class="rp-item-extra">2026-10-02</span></a><a class="rp-item" href="https://www.infoq.com/news/2026/09/graphify-codebase-exploration/" target="_blank" rel="noopener"><span class="rp-news-src">InfoQ</span><span class="rp-item-title">Graphify: Unifying Codebase Context to Streamline Agentic Software Engineering</span><span class="rp-item-extra">2026-09-23</span></a><a class="rp-item" href="https://note.com/iwata9999/n/nb18429b534ae?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">Turning Your Codebase into a Knowledge Graph with Graphify — An Introduction to Drastically Reducing Token Consumption in AI Coding —</span><span class="rp-item-extra">2026-07-29</span></a><details class="rp-news-more"><summary>6 more</summary><a class="rp-item" href="https://www.alphamatch.ai/blog/graphify-knowledge-graph-ai-coding-2026" target="_blank" rel="noopener"><span class="rp-news-src">alphamatch.ai</span><span class="rp-item-title">Graphify: The Knowledge Graph Layer That Makes AI Coding Assistants Actually Smart</span><span class="rp-item-extra">2026-06-06</span></a><a class="rp-item" href="https://x.com/i/trending/2041307935901651321" target="_blank" rel="noopener"><span class="rp-news-src">x</span><span class="rp-item-title">Graphify Brings Karpathy&#x27;s LLM Knowledge Base Idea to Life in Days</span><span class="rp-item-extra">2026-04-06</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiigFBVV95cUxNY09qN0ZZYmNuMlBHYlIxS3hzMDIwc3I2MTlaQXYzQXNVZTNRVGxnYkU3M1UydWt0MU9pRXRHMnZjMUtjQ1lwVmo4R0pQRHJqZ0YxMmo4UnJmTFJZX29JQl9hU2JqNzZORGVNX3JZb0NsM05sbmJMTWFiRXNLbkhBcFhSc0twQTE5LWc?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">HackerNoon</span><span class="rp-item-title">I Tested Graphify on a Real Python Repo. Here&#x27;s What Happened</span><span class="rp-item-extra">2026-10-21</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMif0FVX3lxTE8xWTZ5WFU0N2pqMWUyUW9rUVNiQU4xcUZkVDFKN3EwQzluQmtSc0VGX0w1VjlmLUZoRlNuaUVzcXdLakpSRmJ4SmRWSmZLeE0yZzc4XzMta1RuemJTS3VGNkwzMFVyemczeXpoR0xZdTVmYXJpX2NZV05FaWNkZUU?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Augment Code</span><span class="rp-item-title">Graphify v0.9.9: Benchmarks, a New Org, and Why the Graph Beats Grepping</span><span class="rp-item-extra">2026-07-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMifkFVX3lxTE03YUMtTWpON1k1dnF3N1d0c3MzbFptRUE4SXdrYTJwLVBkalRYdTBGMVBJRU1Qd2w0SkpHZUxDcVVFU0JlN3lFOHpFa0RGaWU0ajBPRTI5SUxhbDdGY0JjUG5FSS1vMnRSdGdlTFJzOHh2MVhmQnBtOGoyRnNadw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Augment Code</span><span class="rp-item-title">Graphify Turns Your Codebase Into a Knowledge Graph You Can Actually Query</span><span class="rp-item-extra">2026-06-30</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMijgFBVV95cUxNMml5VHREN3pIYUE1V1oyMHlTX1ZaWlUtRjVDVmZiNURvanl1UEtfMU82T1h3NUU5a08zU181T2lTOTFYMFpjQkpuTXV4Z0phc1dWeDJwLWRFbkZPVnhvZVFVQ25kWXlrT0ZER01jUEpRU25QalA2S29ZT1JJXzA0U3F5T3hfdGlRZmlVb1VB?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Augment Code</span><span class="rp-item-title">Graphify Ships v0.8.41: A Knowledge Graph Skill for 20+ AI Coding Assistants</span><span class="rp-item-extra">2026-06-18</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Graphify-Labs__graphify.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

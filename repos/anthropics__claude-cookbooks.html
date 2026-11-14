@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>anthropics/claude-cookbooks · GitHub Trending Rank Radar</title>
+<meta name="description" content="A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="claude-cookbooks, anthropics, anthropics/claude-cookbooks, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/anthropics__claude-cookbooks">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="anthropics/claude-cookbooks · GitHub Trending Rank Radar">
+<meta property="og:description" content="A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/anthropics__claude-cookbooks">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "anthropics/claude-cookbooks", "codeRepository": "https://github.com/anthropics/claude-cookbooks", "url": "https://zhuikan.com/repos/anthropics__claude-cookbooks", "description": "A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.", "author": {"@type": "Organization", "name": "anthropics", "url": "https://github.com/anthropics"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Jupyter Notebook", "dateCreated": "2023-08-15"}</script>
+</head>
+<body data-repo="anthropics/claude-cookbooks" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">anthropics/claude-cookbooks</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="anthropics__claude-cookbooks"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/76263028?v=4&s=300" width="300" height="300" alt="anthropics avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">claude-cookbooks</div>
+      <a class="rp-side-owner" href="https://github.com/anthropics">anthropics</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/anthropics">anthropics</a>
+        <span class="rp-sep">/</span><span class="rp-name">claude-cookbooks</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>54,609</b></span><span class="rp-stat" title="forks">⑂ <b>6,627</b></span><span class="rp-stat" title="watchers">👁 <b>633</b></span><span class="rp-stat" title="prs">⑃ <b>679</b></span><span class="rp-stat" title="issues">● <b>231</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Jupyter Notebook</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2023-08-15</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="anthropics__skills"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76263028?v=4" alt="" loading="lazy">skills</a><a class="rp-same-link" href="anthropics__claude-code"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76263028?v=4" alt="" loading="lazy">claude-code</a><a class="rp-same-link" href="anthropics__claude-code-action"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76263028?v=4" alt="" loading="lazy">claude-code-action</a><a class="rp-same-link" href="anthropics__claude-for-legal"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76263028?v=4" alt="" loading="lazy">claude-for-legal</a><a class="rp-same-link" href="anthropics__claude-plugins-community"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76263028?v=4" alt="" loading="lazy">claude-plugins-community</a><a class="rp-same-link" href="anthropics__claude-plugins-official"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76263028?v=4" alt="" loading="lazy">claude-plugins-official</a><a class="rp-same-link" href="anthropics__claude-quickstarts"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76263028?v=4" alt="" loading="lazy">claude-quickstarts</a><a class="rp-same-link" href="anthropics__commerce-agents"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76263028?v=4" alt="" loading="lazy">commerce-agents</a><a class="rp-same-link" href="anthropics__cwc-workshops"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76263028?v=4" alt="" loading="lazy">cwc-workshops</a><a class="rp-same-link" href="anthropics__financial-services"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76263028?v=4" alt="" loading="lazy">financial-services</a><a class="rp-same-link" href="anthropics__knowledge-work-plugins"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76263028?v=4" alt="" loading="lazy">knowledge-work-plugins</a><a class="rp-same-link" href="anthropics__prompt-eng-interactive-tutorial"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76263028?v=4" alt="" loading="lazy">prompt-eng-interactive-tutorial</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/anthropics/claude-cookbooks">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+24</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+461</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1,304</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">54,609</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">6,627</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">633</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">679</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">231</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Claude Cookbooks
+
+The Claude Cookbooks provide code and guides designed to help developers build with Claude, offering copy-able code snippets that you can easily integrate into your own projects.
+
+ Prerequisites
+
+To make the most of the examples in this cookbook, you&#x27;ll need a Claude API key (sign up for free here).
+
+While the code examples are primarily written in Python, the concepts can be adapted to any programming language that supports interaction with the Claude API.
+
+If you&#x27;re new to working with the Claude API, we recommend starting with our Claude API Fundamentals course to get a solid foundation.
+
+ Explore Further
+
+Looking for more resources to enhance your experience with Claude and AI assistants? Check out these helpful links:
+
+- Anthropic developer documentation
+- Anthropic support docs
+- Anthropic Discord community
+
+ Contributing
+
+The Claude Cookbooks thrives on the contributions of the developer community. We value your input, whether it&#x27;s submitting an idea, fixing a typo, adding a new guide, or improving an existing one. By contributing, you help make this resource even more valuable for everyone.
+
+To avoid duplication of efforts, please review the existing issues and pull requests before contributing.
+
+If you have ideas for new examples or guides, share them on the issues page.
+
+ Table of recipes
+
+ Capabilities
+- Classification: Explore techniques for text and data classification using Claude.
+- Retrieval Augmented Generation: Learn how to enhance Claude&#x27;s responses with external knowledge.
+- Summarization: Discover techniques for effective text summarization with Claude.
+
+ Tool Use and Integration
+- Tool use: Learn how to integrate Claude with external tools and functions to extend its capabilities.
+  - Customer service agent
+  - Calculator integration
+  - SQL queries
+
+ Third-Party Integrations
+- Retrieval augmented generation: Supplement Claude&#x27;s knowledge with external data sources.
+  - Vector databases (Pinecone)
+  - Web pages
+- Embeddings with Voyage AI
+
+ Multimodal Capabilities
+- Vision with Claude: 
+  - Getting started with images
+  - Best practices for vision
+  - Interpreting charts and graphs
+  - Extracting content from forms
+- Generate images with Claude: Use Claude with Stable Diffusion for image generation.
+
+ Advanced Techniques
+- Sub-agents: Learn how to use Haiku as a sub-agent in combination with Opus.
+- Upload PDFs to Claude: Parse and pass PDFs as text to Claude.
+- Automated evaluations: Use Claude to automate the prompt evaluation process.
+- Enable JSON mode: Ensure consistent JSON output from Claude.
+- Create a moderation filter: Use Claude to create a content moderation filter for your application.
+- Prompt caching: Learn techniques for efficient prompt caching with Claude.
+- Cost optimization: Work through a cost optimization checklist on an agent, measuring pass rate and cost per task to find the Pareto-optimal configuration.
+- Latency optimization: Work through the latency levers on an agent, measuring t</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/anthropics/claude-cookbooks/issues/546"><span class="rp-item-num">#546</span><span class="rp-item-title">Proposal: add agent spending governance cookbook</span><span class="rp-item-extra">8 comments · 2026-04-16</span></a><a class="rp-item" href="https://github.com/anthropics/claude-cookbooks/issues/612"><span class="rp-item-num">#612</span><span class="rp-item-title">[PROPOSAL] Pre-flight tool input safety for Claude tool use</span><span class="rp-item-extra">7 comments · 2026-05-10</span></a><a class="rp-item" href="https://github.com/anthropics/claude-cookbooks/issues/473"><span class="rp-item-num">#473</span><span class="rp-item-title">Energy Efficiency: 10 Mathematical Techniques for 60-70% AI Energy Reduction (Phi6Simple, FFT-Mix, Phi MoE)</span><span class="rp-item-extra">7 comments · 2026-03-26</span></a><a class="rp-item" href="https://github.com/anthropics/claude-cookbooks/issues/701"><span class="rp-item-num">#701</span><span class="rp-item-title">[PROPOSAL] Human-in-the-loop approval for irreversible agent actions</span><span class="rp-item-extra">5 comments · 2026-06-11</span></a><a class="rp-item" href="https://github.com/anthropics/claude-cookbooks/issues/719"><span class="rp-item-num">#719</span><span class="rp-item-title">[PROPOSAL] Cookbook: Deterministic guardrails as pre/post-action checks on agent tool calls</span><span class="rp-item-extra">4 comments · 2026-06-17</span></a><a class="rp-item" href="https://github.com/anthropics/claude-cookbooks/issues/687"><span class="rp-item-num">#687</span><span class="rp-item-title">Cookbook Proposal: Claude Agent with Autonomous x402 Micropayments on Solana</span><span class="rp-item-extra">4 comments · 2026-06-03</span></a><a class="rp-item" href="https://github.com/anthropics/claude-cookbooks/issues/596"><span class="rp-item-num">#596</span><span class="rp-item-title">[Notebook Proposal] Shared context caching across multi-agent Claude workflows</span><span class="rp-item-extra">4 comments · 2026-05-04</span></a><a class="rp-item" href="https://github.com/anthropics/claude-cookbooks/issues/753"><span class="rp-item-num">#753</span><span class="rp-item-title">Feature Request: Add scheduled full-repo sweep to lint-format.yml (similar to links.yml)</span><span class="rp-item-extra">3 comments · 2026-07-02</span></a></div></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (5)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/gitblog_00625/article/details/155430560" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">claude-cookbooks Observability Agent 架构与通信流解析：从 MCP 到 GitHub API 的全链路监控设计</span><span class="rp-item-extra">2026-09-07</span></a><a class="rp-item" href="https://blog.csdn.net/wangdq_1989/article/details/154351256" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">【GitHub每日速递 20251103】Claude Cookbooks：一站式掌握Claude开发秘籍，解锁AI无限可能！</span><span class="rp-item-extra">2026-08-12</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiTkFVX3lxTFA4R0NoRUJWdWJDSi1wY0VtNG1tTm1VRGJmOHIxOU9PSkgwaGs5eU1yTzVPY2pOR2EtQ3FmcHBNYzk1VkM0WDhnd2NSMzVZUQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">36Kr</span><span class="rp-item-title">刚刚，Claude Fable 5续命5天，省钱攻略来了</span><span class="rp-item-extra">2026-07-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiWkFVX3lxTFBPbkFYeXJBdjVrMUVnZDhuZWZMTTJDSzlqejhTZ1hTMW1FUHdPUWtOeGo2NnVvQmpRYmMwR1NTMV9RVzd0SWwtMm4yMjlwdHNrb3hvUjVlamw0QQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">InfoQ.cn</span><span class="rp-item-title">Anthropic 这两天真“忙”：上线网页版 Claude Code，还让 Claude 搞科研</span><span class="rp-item-extra">2025-10-21</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE43NkJzNkIxMloxaDZjMkR3S1F4eGRBUkJYQVhPREhWZGg1bzlyUzhMSFJ1dE1GTmctS0Y1S3Nta3Yzc0lhaWRLeHVITG9PU3dLOEFpTVBR?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">QQ News</span><span class="rp-item-title">Claude Sonnet 4.5、DeepSeek-V3.2 发布，OpenAI 最新动态</span><span class="rp-item-extra">2025-09-30</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (8)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=45925820" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Front End Aesthetics: A Prompting Guide</span><span class="rp-item-extra">▲ 1 · 1 comments · 2025-11-14</span></a><a class="rp-item" href="https://opentools.ai/resources/claude-cookbooks-recipes" target="_blank" rel="noopener"><span class="rp-news-src">opentools.ai</span><span class="rp-item-title">Claude Cookbooks: Official Recipes and Notebooks by Anthropic</span><span class="rp-item-extra">2026-05-24</span></a><a class="rp-item" href="https://blockchain.news/ainews/claude-cookbooks-on-github-latest-developer-guide-for-claude-3-5-use-cases-and-api-patterns" target="_blank" rel="noopener"><span class="rp-news-src">blockchain</span><span class="rp-item-title">Claude Cookbooks on GitHub: Latest Developer Guide for Claude 3.5 Use Cases and API Patterns</span><span class="rp-item-extra">2026-02-27</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE1RanhDdHllVWRuVVZWcGljek1WdFVrVXBmeHJBRTdYRXVpUkx3YXZEalNiVGlLR2xTbTFIMXJnTkwzVm9aby1mbllUOGw0cldVeHNr?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">eu.36kr.com</span><span class="rp-item-title">Claude Fable 5 Extended 5 Days: Exclusive Money-Saving Guide Just Released</span><span class="rp-item-extra">2026-07-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQdFVRQjVPY1hmdS1rUFRvMkNBeDlZSXpkd2cxV1FQSjJOQVR2bUNicWVNX3g1Wl9LZ2JJc2d6S0t1T1RkSDhnRUFyOVNlTGZZamRKOTJKWnVnS21ZX3BQcEdjSUk4ckYzdFc0eWVaLS1SZkh3TTVvN0N4VFByR2Z1Y243azhrVld0dWdfcVZ3YWJQVVJLUjZHclloTUhVZzZkMVNXcmd3dFpUZ19ua3JxTVAxbG11QQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">KuCoin</span><span class="rp-item-title">Anthropic Extends Free Access to Fable 5 Until July 12, Shares Cost-Saving Strategies</span><span class="rp-item-extra">2026-07-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMif0FVX3lxTE1teEx3dUFITFBETnRNZlh5a1lOTkRDX1Y4VUtHWU9LVEZiU1VhSzdXVlRRa0wzRmRqSUlSaHRScG5aVHZrUmN1bHR3Z1RnTXRlLVZib1ZyUTNZdTNHUld0amYyVDNBQ2t3U2UyY1FERDh6OXFWZ2FFdHhxQ3hxeEk?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">The Best GitHub Repos to Learn Artificial Intelligence (Free)</span><span class="rp-item-extra">2026-07-04</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMi3wFBVV95cUxOUDVnMHBLRUM4NnhQWm80T2Z2WDNxdjZQMGZaMzdMUm9BWi1sRHVIVGF4YW9vTTVyb21EejJDcWdvOUhEalZPUDZiandta3JXMmgzRXdqWGJBb3Y1NWJkRlhnalJsREZKdjItTl84YlFNdmtINXhjbjdwRFhqb2xmX0Rjcl9jb1kzZ2Q4b2Y1aXpHUDZaUEt3N0p2ZlpOcmY4R3RYWF9vZU9XUUM1bkllR0ZRYXEwQWhHVzZaU2tlWVRVNHh4QVl0aUpuMTFvRmk4UkMyRUpZMXhSRHBVZG5F?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">DataDrivenInvestor</span><span class="rp-item-title">Top 9 Claude Skills for Finance and Quantitative Developers (Including One That Connects to Live…</span><span class="rp-item-extra">2026-06-02</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE9tVlhEdWJmUkNGd0puVElVYnNCMWhtZEF5OXh5MGE4NzJVS3ZiZkZHbXJVQUxNU3ZOd1g3Y0N3X2prM0JSQ0x2VXFjWDdIRzlPRnJTQjkwbnl1VGN2?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">OpenTools</span><span class="rp-item-title">Matt Pocock Skills for Claude Code</span><span class="rp-item-extra">2026-06-02</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/anthropics__claude-cookbooks.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RROrg/rr · GitHub Trending Rank Radar</title>
+<meta name="description" content="Redpill Recovery (arpl-i18n)">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="rr, RROrg, RROrg/rr, github stars, github trending, star growth, star history, 开源项目, 星标增长, bootloader, dsm, redpill, synology">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/RROrg__rr">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="RROrg/rr · GitHub Trending Rank Radar">
+<meta property="og:description" content="Redpill Recovery (arpl-i18n)">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/RROrg__rr">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "RROrg/rr", "codeRepository": "https://github.com/RROrg/rr", "url": "https://zhuikan.com/repos/RROrg__rr", "description": "Redpill Recovery (arpl-i18n)", "author": {"@type": "Organization", "name": "RROrg", "url": "https://github.com/RROrg"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-3.0.html", "programmingLanguage": "Shell", "dateCreated": "2023-04-08", "keywords": "bootloader,dsm,redpill,synology"}</script>
+</head>
+<body data-repo="RROrg/rr" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">RROrg/rr</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="RROrg__rr"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/151816514?v=4&s=300" width="300" height="300" alt="RROrg avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">rr</div>
+      <a class="rp-side-owner" href="https://github.com/RROrg">RROrg</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/RROrg">RROrg</a>
+        <span class="rp-sep">/</span><span class="rp-name">rr</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Redpill Recovery (arpl-i18n)</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>8,784</b></span><span class="rp-stat" title="forks">⑂ <b>1,392</b></span><span class="rp-stat" title="watchers">👁 <b>49</b></span><span class="rp-stat" title="prs">⑃ <b>29</b></span><span class="rp-stat" title="issues">● <b>34,327</b></span><span class="rp-stat" title="releases">▤ <b>226</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/bootloader">bootloader</a><a class="rp-topic" href="https://github.com/topics/dsm">dsm</a><a class="rp-topic" href="https://github.com/topics/redpill">redpill</a><a class="rp-topic" href="https://github.com/topics/synology">synology</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Shell</span><span class="rp-meta-bit">GPL-3.0</span><span class="rp-meta-bit">Created 2023-04-08</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/RROrg/rr">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">26.9.0</span><a class="rp-dl-a" href="https://github.com/RROrg/rr/releases/tag/26.9.0">26.9.0 ↓</a><span class="rp-dl-ver">26.9.0</span><span class="rp-dl-date">2026-09-04</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">8,784</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,392</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">49</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">29</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">34,327</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">226</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">RR: redpill’s preinstallation and recovery environment
+
+
+
+
+
+ The ultimate solution to self-centralized Synology DSM OS on any local machine with any x86/x64 CPU architecture via a single flash of bootload pre-installation process in addition within recovery environment.
+
+ 1: Disclaimer
+
+ 硬盘有价，数据无价，任何对引导的修改都是有风险的，本人/组织不承担数据丢失的责任。本工具仅用作学习交流，严禁用于商业用途。
+----
+ Hardware/hard-drives are priced whilst data are priceless, any user-specific custom modification of the tested &amp; prebuilt bootloader images could potentially cause irreversible data destruction towards your local machine. Us, as (RROrg) are not responsibly liable for damage nor personal loss of any types. The project with its affiliation is released for educational and learning purpose only, commercial application of the software is strictly prohibited.
+
+
+ 2: Documentation &amp; FAQ
+
+- RRManager
+- rr-tools
+- blog
+- docs
+- 📣
+
+ 3: Components
+
+- During the compilation process, you need to connect to the Internet to obtain model and version information and download the corresponding ROM.
+If you cannot connect to the Internet, please build a pre-compiled bootloader through RR-CUSTOM.
+  - Models: models
+  - PATs: pats
+  - Addons: addons
+  - Modules: modules
+  - Driver Lookup: driver lookup
+
+- Proxmox VE One Click Install:
+  
+  curl -fsSL https://github.com/RROrg/rr/raw/refs/heads/main/scripts/pve.sh | bash -s -- --bltype usb
+
+   Optional Parameters:
+  --onboot            Enable VM on boot, default 1 (enable)
+  --efi               Enable UEFI boot, default 1 (enable)
+  --bltype  Bootloader disk type, default sata
+  --storage          Storage name for images, as local-lvm, default auto get
+  --v9ppath          Set to /path/to/9p to mount virtio 9p share
+  --vfsdirid        Set to  to mount virtio fs share
+  --tag               Image tag, download latest release if not set
+  --img              Local image path, use local image if set
+  
+
+- Docker Compose:
+  yml
+   请从最新版本中下载 rr.img 文件。
+   并将  替换为你的 rr.img 文件的实际路径.
+   Please download the rr.img file from the latest release.
+   And replace  with the actual path to your rr.img file.
+
+  version: &quot;3.9&quot;
+  services:
+    rr:
+      image: qemux/qemu:latest
+      container_name: rr
+      environment:
+        BOOT: &quot;&quot;
+        RAM_SIZE: &quot;4G&quot;   = 4G recommended for DSM
+        CPU_CORES: &quot;2&quot;
+        DISK_FMT: &quot;qcow2&quot;
+        DISK_TYPE: &quot;sata&quot;
+        DISK_SIZE: &quot;32G&quot;   data disk size
+        ARGUMENTS: &quot;-device nec-usb-xhci,id=usb0,multifunction=on -drive file=/rr.img,media=disk,format=raw,if=none,id=udisk1 -device usb-storage,bus=usb0.0,port=1,drive=udisk1,bootindex=999,removable=on&quot;
+      devices:
+        - /dev/kvm
+        - /dev/net/tun
+      cap_add:
+        - NET_ADMIN
+      ports:
+        - 5000:5000   For DSM management
+        - 5001:5001   For DSM management
+        - 7681:7681   For RR management
+        - 7304:7304   For RR management
+        - 7080:7080   For RR management
+        - 8006:8006   For QEMU management
+      volumes:
+        - ./rr.img:/rr.img   :/</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/RROrg/rr/issues/7336"><span class="rp-item-num">#7336</span><span class="rp-item-title">Intel C602 driver</span><span class="rp-item-extra">52 comments · 2025-03-12</span></a><a class="rp-item" href="https://github.com/RROrg/rr/issues/15599"><span class="rp-item-num">#15599</span><span class="rp-item-title">BUG SA6400无故死机</span><span class="rp-item-extra">30 comments · 2025-09-10</span></a><a class="rp-item" href="https://github.com/RROrg/rr/issues/1185"><span class="rp-item-num">#1185</span><span class="rp-item-title">NVMe drives started to disconnect randomly</span><span class="rp-item-extra">28 comments · 2024-06-13</span></a><a class="rp-item" href="https://github.com/RROrg/rr/issues/1555"><span class="rp-item-num">#1555</span><span class="rp-item-title">Xen Virtual Block Device无法加载bootloader</span><span class="rp-item-extra">24 comments · 2024-06-27</span></a><a class="rp-item" href="https://github.com/RROrg/rr/issues/9941"><span class="rp-item-num">#9941</span><span class="rp-item-title">Driver request for Silicon Image Sil3114 controller</span><span class="rp-item-extra">18 comments · 2025-05-20</span></a><a class="rp-item" href="https://github.com/RROrg/rr/issues/1222"><span class="rp-item-num">#1222</span><span class="rp-item-title">BUG UHD770核显 SR-IOV安装SA6400使用Jellyfin OpenCL色调映射问题</span><span class="rp-item-extra">18 comments · 2024-06-17</span></a><a class="rp-item" href="https://github.com/RROrg/rr/issues/29832"><span class="rp-item-num">#29832</span><span class="rp-item-title">Migration from DS3622xs+ to DS425+ fail</span><span class="rp-item-extra">16 comments · 2026-03-30</span></a><a class="rp-item" href="https://github.com/RROrg/rr/issues/1066"><span class="rp-item-num">#1066</span><span class="rp-item-title">Freezes when shutdown</span><span class="rp-item-extra">16 comments · 2024-05-27</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/RROrg/rr/releases"><b>26.9.0</b> <span class="rp-rel-tag">26.9.0</span> <span class="rp-item-extra">2026-09-04</span></a><pre class="rp-pre">1. 修复 64g 及以上引导盘 p3 分区没有自动扩容的问题.
+2. 修复 克隆引导盘对 64g 及以上磁盘和 emmc 磁盘的兼容性问题.
+3. 更新 hdddb 插件, 版本升级至 v3.6.139. Thanks @007revad.
+4. 更新 cpuinfo 插件, 修复对 NVIDIA 计算卡的支持.
+5. 更新 r8168, r8126, yt6801, ch35x_38x, igc(33782, Thanks @llzg) 驱动.
+6. 其他.
+
+----
+
+1. Fixed the issue of p3 partition not automatically expanding on boot disks of 64g and above.
+2. Fixed the compatibility issue of cloning boot disks with 64g and above disks and emmc disks.
+3. Updated hdddb addon, version to v3.6.139. Thanks @007revad.
+4. Updated cpuinfo addon, fixed the support for NVIDIA compute cards.
+5. Updated r8168, r812</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/RROrg__rr.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

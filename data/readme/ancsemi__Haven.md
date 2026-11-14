@@ -1,0 +1,190 @@
+# ⬡ HAVEN
+
+**A private Discord alternative that runs on your own machine.** No cloud, no company
+account, no telemetry, no paid tier. Free forever.
+
+![Version](https://img.shields.io/github/v/release/ancsemi/Haven?label=version&color=blue)
+![License](https://img.shields.io/badge/license-AGPL--3.0-green)
+![Node](https://img.shields.io/badge/node-22%20to%2026-brightgreen)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey)
+
+One person runs the server. Everyone else joins with a code. Messages, files and
+voice never touch anybody else's infrastructure.
+
+<img width="1918" height="1010" alt="Haven's default look: channels and DMs on the left, the member list on the right" src="docs/img/haven-4-6-default.jpg" />
+
+---
+
+## Get started in about a minute
+
+**Docker**
+
+```bash
+docker run -d -p 3000:3000 -v haven_data:/data ghcr.io/ancsemi/haven:latest
+```
+
+**Windows**, no Docker: download the zip, unzip it, double-click **`Start Haven.bat`**.
+It installs Node.js for you if you do not have it.
+
+**Linux / macOS**, no Docker: `chmod +x start.sh && ./start.sh`
+
+Then open `https://localhost:3000`, register with the username `admin`, make a
+channel, share the code. The certificate warning on first load is expected, click
+**Advanced** then **Proceed**.
+
+[One-click cloud deploy on Zeabur](https://zeabur.com/templates?repoURL=https://github.com/ancsemi/Haven) · [on RepoCloud](https://repocloud.io/details/Haven/) · [Full setup guide](GUIDE.md)
+
+**What does it need?** About 100 MB of memory and almost no processor time for a group of
+friends. In testing, 1,000 people online at once in a very busy channel used about an eighth
+of one desktop processor core. The measured numbers, and a
+one-command benchmark to check them on your own machine, are in
+[How much hardware does Haven need?](docs/hardware.md)
+
+**Prefer video?** Short [video tutorials](https://haven-app.com/tutorials.html) walk through installing and running a
+server. They are also on [YouTube](https://www.youtube.com/@Haven-App_Tutorials) and [Rumble](https://rumble.com/user/HavenApp).
+
+---
+
+## Three ways in
+
+| | |
+|---|---|
+| 🖥️ **[Haven Desktop](https://github.com/ancsemi/Haven-Desktop/releases/latest)** | Windows and Linux. Per-app audio sharing (send one app’s sound, nothing else), device switching mid-call, native notifications, tray. It can also **run the server itself**. |
+| 💻 **[Haven for macOS](https://github.com/Amnibro/Haven-Desktop/releases/latest/download/Haven-Desktop-universal.dmg)** | A Mac version of Haven Desktop, built by [Amnibro](https://github.com/Amnibro). One download for Apple Silicon and Intel Macs. |
+| 📱 **[Haven for Android (Google Play)](https://play.google.com/store/apps/details?id=com.havenapp.mobile&gl=US)** <br> 💠 **[Android (via Obtainium)](https://apps.obtainium.imranr.dev/redirect?r=obtainium://add/https://amni-scient.com/downloads/amni-haven.apk)** | On Google Play, or as a direct download through Obtainium. Native, not a web wrapper. Full chat, voice and push notifications. Built by [Amnibro](https://github.com/Amnibro). |
+| 🍎 **[Haven for iOS](https://testflight.apple.com/join/ADeG5zRq)** | In testing through TestFlight. Native, by [Amnibro](https://github.com/Amnibro) as well. Until it is on the App Store, the browser works too: open your server in Safari and Add to Home Screen. |
+| 🌐 **Any browser** | Nothing to install. Send a link, they are in. Works on phones. |
+
+Apps and browser talk to the same server and see the same thing, so nobody has to
+install anything to be included.
+
+**Want to look around first?** The [community server](https://haven.moviethingy.xyz/?invite=da0b9be7)
+is open, no code needed, just sign up. Volunteer-hosted, thanks MutantRabbit.
+
+---
+
+## Why bother
+
+| | Discord | Haven |
+|---|---------|-------|
+| Hosting | Their cloud | Your machine |
+| Account | Email and phone | No email, no verification |
+| Your messages | Stored by Discord Inc. | Never leave your server |
+| Cost | Nitro, boosts | Free, no paid tier |
+| Telemetry | Analytics and tracking | None |
+| Source | Closed | Open, AGPL-3.0 |
+
+---
+
+## What you get
+
+**Coming from Discord**
+
+- **Import your whole server history** from inside Haven. Every channel, thread,
+  forum post, reaction, pin and attachment. Paste a token, pick a server, go.
+- **Ferry, a two-way Discord bridge.** Messages pass both ways between a Haven
+  channel and a Discord channel, under each person's real name. Friends who are not
+  ready to leave Discord can still talk to the ones who did.
+
+**Talking**
+
+- Voice chat, peer to peer by default so audio doesn't pass through the server
+  (an optional voice relay is there for big servers). Per-user
+  volume, mute, deafen, noise suppression, talking indicators.
+- Screen sharing, several people at once in a tiled grid. Watch parties work.
+- Listen together with synced playback from Spotify, YouTube and SoundCloud, or a
+  music player right in the voice channel.
+- Threads, replies, reactions, pins, editing, mentions, polls, search, link
+  previews, code blocks, spoilers.
+- Direct messages, **end-to-end encrypted**. Private keys never leave the browser,
+  so not even the person hosting can read them.
+- Rich presence for what people are playing and listening to, via Steam, Last.fm or
+  Spotify. Off until you turn it on, never written to the database.
+
+**Making it yours**
+
+- 26 built-in themes, a colour picker, an RGB cycle, and stackable visual effects
+  like CRT, Matrix rain and snowfall.
+- A plugin and theme system, so you can drop in your own without forking anything.
+- Custom stickers, custom emoji, personas (send as an alternate character),
+  soundboard, avatar shapes and borders.
+- Server branding, sidebar layout options, font size and density controls.
+- 11 languages out of the box: English, Français, Deutsch, Español, Polski, Русский, 中文, Português, فارسی, 日本語 and 한국어.
+
+**Running it**
+
+- **One-click updates from inside the app.** Haven takes a pre-update backup and
+  restarts itself.
+- **Built-in backups**, scheduled or on demand, with restore.
+- **Single sign-on** via OpenID Connect, so Authentik, Keycloak, Authelia and Auth0
+  all work as your login.
+- **Bots and webhooks** with a REST API. Send messages, play soundboard sounds,
+  register slash commands, join voice, receive signed callbacks.
+- Roles with per-channel permissions. Kick, timed mute, ban, IP bans, slow mode,
+  automod link filtering, an audit log, and a moderation API.
+- Guest accounts, invite links, per-channel join codes with automatic rotation.
+- Push notifications, including UnifiedPush if you would rather leave Google out.
+- Built-in Cloudflare and LocalTunnel support, so friends can reach you without
+  port forwarding.
+- Bcrypt passwords, JWT auth, HTTPS, MFA, rate-limited logins, and a disk reserve
+  so a full drive never wedges the server.
+
+<img width="1918" height="1009" alt="A community channel in the Braid theme" src="docs/img/haven-theme-braid.jpg" />
+
+---
+
+## Documentation
+
+Everything in detail lives in **[GUIDE.md](GUIDE.md)**: setup, Docker, remote access
+(port forwarding, Tailscale, Cloudflare Tunnel, reverse proxies), themes, voice and
+TURN, Discord import, Ferry, encryption, backups, configuration, translations, the
+bot API, and troubleshooting.
+
+Short how-to videos are on the [tutorials page](https://haven-app.com/tutorials.html), [YouTube](https://www.youtube.com/@Haven-App_Tutorials) and
+[Rumble](https://rumble.com/user/HavenApp).
+
+Release notes are in [CHANGELOG.md](CHANGELOG.md).
+
+---
+
+## Contributing
+
+Issues and PRs are welcome, including translations and themes. If you are reporting
+a bug, the version number from `https://your-server:3000/api/version` helps.
+
+## AI usage
+
+Haven is built with AI. I'm not a professional programmer. I came up with Haven, I
+decide what goes in, and I test it and run it with my own community. Most of the
+code, the server logic included, was written by AI coding tools (mainly Claude Code)
+working from my direction, and most code review is AI-assisted too. Commits don't
+carry a per-commit AI label, so assume any part of the code may have been written by
+AI. Contributors sometimes use AI as well, and pull requests are welcome either way.
+
+What keeps it in check:
+
+- An automated test suite (over 650 tests) runs before every push.
+- Every pull request is read in full and checked for security problems before it's
+  merged.
+- Logins, permissions, encryption and uploads have had dedicated security reviews,
+  and the fixes ship in public releases.
+- Bugs are reported and fixed in the open, here on GitHub.
+
+## License
+
+AGPL-3.0. Free to use, modify and share. If you deploy a modified version as a
+network service, you have to publish its source. See [LICENSE](LICENSE).
+
+## Gallery
+
+<img width="1916" height="1006" alt="A DM window and profile card in the CRT theme" src="docs/img/haven-theme-crt.jpg" />
+
+<img width="1200" height="591" alt="Screen sharing with voice chat and more than one stream" src="docs/img/haven-screen-share.jpg" />
+
+<img width="1200" height="593" alt="The login screen with the theme picker" src="docs/img/haven-theme-chat.jpg" />
+
+---
+
+<p align="center">
+  <b>⬡ Haven</b>
+</p>

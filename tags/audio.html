@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#audio · GitHub Trending Rank Radar</title>
+<meta name="description" content="GitHub 标签 audio 下的开源项目趋势榜 · 25 repos tagged audio on GitHub · 独立采集 GitHub 仓库数据的开源趋势榜单">
+<meta name="keywords" content="GitHub trending, GitHub ranking, GitHub 排行榜, 开源榜单, trending repos, star growth, star history, 星标增长, github stars, open data, github pages, github actions, 开源项目, open source rankings">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/tags/audio">
+<!-- bilingual content lives on ONE url — no per-lang alternates to declare -->
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="GitHub Trending Rank Radar" href="../feed.xml">
+<meta property="og:title" content="GitHub Trending Rank Radar">
+<meta property="og:description" content="GitHub 开源项目趋势榜单 · 每日双快照 · 十一榜单 · 历史回看 | Independent GitHub trend radar · twice-daily snapshots · 11 boards · bilingual">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zhuikan.com/tags/audio">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zhuikan.com/assets/og.png">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "GitHub Trending Rank Radar",
+      "alternateName": "GitHub 开源项目趋势榜单",
+      "url": "https://zhuikan.com/",
+      "description": "Independent open-source GitHub trend radar: daily/weekly/monthly star growth & rate boards, new-repo and all-time charts, browsable by day, month and year. 独立采集 GitHub 仓库数据的开源趋势榜单。",
+      "inLanguage": ["zh-CN", "en"],
+      "isAccessibleForFree": true,
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "publisher": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "name": "GitHub Trending Rankings Dataset",
+      "description": "Twice-daily snapshots of tracked GitHub repositories with stars, forks, watchers, issues, PRs and releases; precomputed daily/weekly/monthly/new/all-time leaderboard JSON.",
+      "url": "https://zhuikan.com/data/index.json",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "isAccessibleForFree": true,
+      "temporalCoverage": "2026-11-09/..",
+      "creator": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      },
+      "distribution": [
+        {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://zhuikan.com/data/index.json"}
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body data-base="../" data-tag="audio" data-tag-name="audio">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到榜单</a>
+
+<noscript>
+  <div style="max-width:760px;margin:64px auto;padding:0 24px;font-family:system-ui,sans-serif;line-height:1.7;color:#333">
+    <h1>GitHub Trending Rank Radar</h1>
+    <p>独立采集 GitHub 仓库数据的开源趋势榜单：新星榜、日 / 周 / 月飙升榜与增速榜、总榜，支持按日 / 月 / 年回看历史。每日两次快照（UTC 02:00 / 14:00），榜单由快照差值计算。</p>
+    <p>An independent open-source GitHub trending radar: new repos, daily / weekly / monthly star-growth and rate boards, an all-time chart, and day / month / year history — snapshots taken twice daily (UTC 02:00 &amp; 14:00).</p>
+    <p>Machine-readable open data:
+      <a href="https://api-site.zhuikan.com/data/index.json">api-site/data/index.json</a> ·
+      <a href="../llms.txt">llms.txt</a> ·
+      <a href="../sitemap.xml">sitemap.xml</a> ·
+      <a href="https://github.com/awesome-market/trending-rank-radar">Source on GitHub</a>
+    </p>
+    <p><strong>榜单交互需要启用 JavaScript。This site requires JavaScript for the interactive boards.</strong></p>
+  </div>
+</noscript>
+
+<!-- shared svg gradient defs for sparklines -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <a class="hero-brand brand-home" href="../">
+      <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+        <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+        <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+        <g class="radar-sweep">
+          <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+        </g>
+      </svg>
+      <div>
+        <h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1>
+        <p class="hero-sub" data-i18n="hero.sub">GitHub 开源项目趋势榜单 · 每日双快照 · 八种榜单 · 日 / 月 / 年历史回看</p>
+      </div>
+    </a>
+    <div class="hero-meta">
+      <div class="search-wrap" id="searchWrap">
+        <select id="searchScope" class="search-scope" data-i18n-aria="search.scope.aria" aria-label="搜索范围">
+          <option value="repo" data-i18n="search.scope.repo">仓库</option>
+          <option value="news" data-i18n="search.scope.news">新闻</option>
+        </select>
+        <div class="search-box">
+          <svg class="search-ico" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"/></svg>
+          <input id="searchInput" class="search-input" type="search" autocomplete="off" spellcheck="false" data-i18n-ph="search.ph.repo" data-i18n-aria="search.ph.repo" aria-label="搜索" enterkeyhint="search">
+        </div>
+        <div class="search-drop" id="searchDrop" hidden></div>
+      </div>
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06-1.06a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.06l1.06-1.061a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero-viz" id="heroViz" data-enter>
+    <div class="hv-copy">
+      <p class="hv-kicker" data-i18n="hv.kicker">独立采集 · 开源数据</p>
+      <h2 class="hv-title" data-i18n="hv.title">独立追踪 GitHub 星标的每一次脉动</h2>
+      <p class="hv-sub" data-i18n="hv.sub">每日两次快照，用差值还原真实增长——不是又一份热榜镜像。</p>
+      <a class="hv-cta" href="#boardTabs" data-i18n="hv.cta">浏览今日榜单 →</a>
+    </div>
+    <div class="hv-side">
+      <div class="hv-chart" id="hvChart" aria-hidden="true"></div>
+      <div class="hv-cap" id="hvCap"></div>
+    </div>
+  </section>
+
+  <div class="controls" id="controls">
+    <div class="ctrl-row">
+      <nav class="board-tabs" id="boardTabs" data-i18n-aria="boards.aria" aria-label="榜单"></nav>
+    </div>
+    <div class="ctrl-row ctrl-sub">
+      <div class="seg" id="periodSeg" role="tablist" data-i18n-aria="period.aria" aria-label="时间维度">
+        <button data-period="day" class="seg-btn active" data-i18n="period.day">日</button>
+        <button data-period="month" class="seg-btn" data-i18n="period.month">月</button>
+        <button data-period="year" class="seg-btn" data-i18n="period.year">年</button>
+      </div>
+      <label class="sf-label" for="selDate" data-i18n="date.label">榜单日期</label>
+      <select id="selDate" class="sel" data-i18n-aria="date.aria" aria-label="日期"></select>
+      <div class="star-filter" role="group" data-i18n-aria="star.range" aria-label="Star 范围筛选">
+        <span class="sf-label" data-i18n="star.range">Star 范围</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="min">下限</span>
+          <input id="minK" type="number" min="0" step="1" value="1" class="sf-input" data-i18n-aria="minK.aria" aria-label="最小 Star 千数">
+        </label>
+        <span class="sf-sep">–</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="max">上限</span>
+          <input id="maxK" type="number" min="0" step="1" value="500" class="sf-input" data-i18n-aria="maxK.aria" aria-label="最大 Star 千数">
+        </label>
+        <span class="sf-unit">k</span>
+        <button id="applyFilter" class="sf-btn" data-i18n="apply">筛选</button>
+      </div>
+      <span class="window-info" id="windowInfo"></span>
+    </div>
+  </div>
+
+  <section id="content">
+    <div class="empty-state" id="emptyState" hidden>
+      <div class="empty-main">
+        <svg class="radar-big" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.4"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.3"/>
+          <g class="radar-sweep radar-sweep-lg">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <h2 data-i18n="empty.title">榜单积累中</h2>
+        <p id="emptyText" data-i18n="empty.text">快照数据正在积累，增长榜需要至少 2 个有效快照日。</p>
+        <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+        <p class="progress-hint" id="progressHint"></p>
+        <div class="empty-actions" id="emptyActions"></div>
+      </div>
+      <div class="empty-preview" id="emptyPreview"></div>
+    </div>
+
+    <div id="podiumWrap"></div>
+    <div id="listWrap"><!--SSR--><p style="color:var(--muted,#8b949e);font-size:13px;margin:0 4px 10px">2026-11-14 · #audio · 25 <span class="i18n-zh">个仓库 · 按 star 排序</span><span class="i18n-en">repos · by stars</span></p><div class="rank-list"><div class="rank-row" data-fn="huggingface/transformers"><span class="row-rank top">1</span><a class="row-avatar" href="../repos/huggingface__transformers"><img src="https://avatars.githubusercontent.com/u/25720743?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/huggingface__transformers"><span class="row-owner">huggingface</span><span class="row-sep">/</span><span class="row-repo">transformers</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 168,952</span><span class="m" title="forks">⑂ 35,187</span><span class="m" title="watchers">👁 1,285</span><span class="m" title="issues">● 19,866</span><span class="m" title="prs">⑃ 30,032</span><span class="m" title="releases">▤ 284</span></div><div class="row-desc">🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/nlp">nlp</a><a class="row-tag" href="../tags/natural-language-processing">natural-language-processing</a><a class="row-tag" href="../tags/pytorch">pytorch</a><a class="row-tag" href="https://github.com/topics/pytorch-transformers">pytorch-transformers</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 168,952</div></div></div><div class="rank-row" data-fn="FFmpeg/FFmpeg"><span class="row-rank top">2</span><a class="row-avatar" href="../repos/FFmpeg__FFmpeg"><img src="https://avatars.githubusercontent.com/u/729418?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/FFmpeg__FFmpeg"><span class="row-owner">FFmpeg</span><span class="row-sep">/</span><span class="row-repo">FFmpeg</span></a></div><div class="row-meta"><span class="lang-tag">C</span><span class="m" title="stars">★ 67,200</span><span class="m" title="forks">⑂ 14,627</span><span class="m" title="watchers">👁 1,607</span><span class="m" title="issues">● 0</span><span class="m" title="prs">⑃ 0</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">Mirror of https://git.ffmpeg.org/ffmpeg.git</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/ffmpeg">ffmpeg</a><a class="row-tag" href="../tags/video">video</a><a class="row-tag" href="../tags/audio">audio</a><a class="row-tag" href="../tags/c">c</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 67,200</div></div></div><div class="rank-row" data-fn="OpenBMB/VoxCPM"><span class="row-rank top">3</span><a class="row-avatar" href="../repos/OpenBMB__VoxCPM"><img src="https://avatars.githubusercontent.com/u/89920203?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/OpenBMB__VoxCPM"><span class="row-owner">OpenBMB</span><span class="row-sep">/</span><span class="row-repo">VoxCPM</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 42,450</span><span class="m" title="forks">⑂ 4,849</span><span class="m" title="watchers">👁 164</span><span class="m" title="issues">● 341</span><span class="m" title="prs">⑃ 116</span><span class="m" title="releases">▤ 14</span></div><div class="row-desc">VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/audio">audio</a><a class="row-tag" href="https://github.com/topics/deeplearning">deeplearning</a><a class="row-tag" href="https://github.com/topics/minicpm">minicpm</a><a class="row-tag" href="../tags/python">python</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 42,450</div></div></div><div class="rank-row" data-fn="mpv-player/mpv"><span class="row-rank">4</span><a class="row-avatar" href="../repos/mpv-player__mpv"><img src="https://avatars.githubusercontent.com/u/2550273?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/mpv-player__mpv"><span class="row-owner">mpv-player</span><span class="row-sep">/</span><span class="row-repo">mpv</span></a></div><div class="row-meta"><span class="lang-tag">C</span><span class="m" title="stars">★ 38,106</span><span class="m" title="forks">⑂ 3,655</span><span class="m" title="watchers">👁 500</span><span class="m" title="issues">● 11,262</span><span class="m" title="prs">⑃ 6,518</span><span class="m" title="releases">▤ 90</span></div><div class="row-desc">🎥 Command line media player</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/mpv">mpv</a><a class="row-tag" href="https://github.com/topics/mplayer">mplayer</a><a class="row-tag" href="../tags/c">c</a><a class="row-tag" href="../tags/ffmpeg">ffmpeg</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 38,106</div></div></div><div class="rank-row" data-fn="ossrs/srs"><span class="row-rank">5</span><a class="row-avatar" href="../repos/ossrs__srs"><img src="https://avatars.githubusercontent.com/u/12165287?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/ossrs__srs"><span class="row-owner">ossrs</span><span class="row-sep">/</span><span class="row-repo">srs</span></a></div><div class="row-meta"><span class="lang-tag">C++</span><span class="m" title="stars">★ 29,441</span><span class="m" title="forks">⑂ 5,709</span><span class="m" title="watchers">👁 818</span><span class="m" title="issues">● 1,670</span><span class="m" title="prs">⑃ 1,025</span><span class="m" title="releases">▤ 86</span></div><div class="row-desc">SRS is a simple, high-performance, AI-driven real-time media server supporting RTMP, WebRTC, HLS, HTTP-FLV, HTTP-TS, SRT, MPEG-DASH, and GB28181, with codec support for H.264, H.265, AV1, VP9, AAC, Opus, and G.711.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/rtmp">rtmp</a><a class="row-tag" href="https://github.com/topics/live-streaming">live-streaming</a><a class="row-tag" href="https://github.com/topics/live">live</a><a class="row-tag" href="https://github.com/topics/media-server">media-server</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 29,441</div></div></div><div class="rank-row" data-fn="modelscope/FunASR"><span class="row-rank">6</span><a class="row-avatar" href="../repos/modelscope__FunASR"><img src="https://avatars.githubusercontent.com/u/109945100?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/modelscope__FunASR"><span class="row-owner">modelscope</span><span class="row-sep">/</span><span class="row-repo">FunASR</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 21,018</span><span class="m" title="forks">⑂ 2,127</span><span class="m" title="watchers">👁 113</span><span class="m" title="issues">● 1,809</span><span class="m" title="prs">⑃ 1,992</span><span class="m" title="releases">▤ 87</span></div><div class="row-desc">Open-source speech recognition toolkit for training, inference, streaming ASR, VAD, punctuation, speaker diarization pipelines, and OpenAI-compatible/MCP serving.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/pytorch">pytorch</a><a class="row-tag" href="https://github.com/topics/speech-recognition">speech-recognition</a><a class="row-tag" href="https://github.com/topics/paraformer">paraformer</a><a class="row-tag" href="https://github.com/topics/punctuation">punctuation</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 21,018</div></div></div><div class="rank-row" data-fn="ExistentialAudio/BlackHole"><span class="row-rank">7</span><a class="row-avatar" href="../repos/ExistentialAudio__BlackHole"><img src="https://avatars.githubusercontent.com/u/55156514?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/ExistentialAudio__BlackHole"><span class="row-owner">ExistentialAudio</span><span class="row-sep">/</span><span class="row-repo">BlackHole</span></a></div><div class="row-meta"><span class="lang-tag">C</span><span class="m" title="stars">★ 20,053</span><span class="m" title="forks">⑂ 856</span><span class="m" title="watchers">👁 148</span><span class="m" title="issues">● 419</span><span class="m" title="prs">⑃ 53</span><span class="m" title="releases">▤ 16</span></div><div class="row-desc">BlackHole is a modern macOS audio loopback driver that allows applications to pass audio to other applications with zero additional latency.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/audio">audio</a><a class="row-tag" href="https://github.com/topics/driver">driver</a><a class="row-tag" href="../tags/macos">macos</a><a class="row-tag" href="https://github.com/topics/loopback">loopback</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 20,053</div></div></div><div class="rank-row" data-fn="kyleneideck/BackgroundMusic"><span class="row-rank">8</span><a class="row-avatar" href="../repos/kyleneideck__BackgroundMusic"><img src="https://avatars.githubusercontent.com/u/2290968?u=3190a10fac7a30478367fb367d64ddfb19361e18&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/kyleneideck__BackgroundMusic"><span class="row-owner">kyleneideck</span><span class="row-sep">/</span><span class="row-repo">BackgroundMusic</span></a></div><div class="row-meta"><span class="lang-tag">C++</span><span class="m" title="stars">★ 19,392</span><span class="m" title="forks">⑂ 785</span><span class="m" title="watchers">👁 154</span><span class="m" title="issues">● 727</span><span class="m" title="prs">⑃ 68</span><span class="m" title="releases">▤ 45</span></div><div class="row-desc">Background Music, a macOS audio utility: automatically pause your music, set individual apps&#x27; volumes and record system audio.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/audio">audio</a><a class="row-tag" href="https://github.com/topics/audio-utility">audio-utility</a><a class="row-tag" href="../tags/macos">macos</a><a class="row-tag" href="../tags/cpp">cpp</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 19,392</div></div></div><div class="rank-row" data-fn="audacity/audacity"><span class="row-rank">9</span><a class="row-avatar" href="../repos/audacity__audacity"><img src="https://avatars.githubusercontent.com/u/11648186?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/audacity__audacity"><span class="row-owner">audacity</span><span class="row-sep">/</span><span class="row-repo">audacity</span></a></div><div class="row-meta"><span class="lang-tag">C++</span><span class="m" title="stars">★ 19,050</span><span class="m" title="forks">⑂ 2,729</span><span class="m" title="watchers">👁 265</span><span class="m" title="issues">● 7,638</span><span class="m" title="prs">⑃ 4,717</span><span class="m" title="releases">▤ 68</span></div><div class="row-desc">Audio Editor</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/audio">audio</a><a class="row-tag" href="../tags/editor">editor</a><a class="row-tag" href="../tags/cross-platform">cross-platform</a><a class="row-tag" href="https://github.com/topics/wxwidgets-applications">wxwidgets-applications</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 19,050</div></div></div><div class="rank-row" data-fn="alyssaxuu/screenity"><span class="row-rank">10</span><a class="row-avatar" href="../repos/alyssaxuu__screenity"><img src="https://avatars.githubusercontent.com/u/7581348?u=428dff6968d72fe5eda6c79217c3c684336b2fd9&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/alyssaxuu__screenity"><span class="row-owner">alyssaxuu</span><span class="row-sep">/</span><span class="row-repo">screenity</span></a></div><div class="row-meta"><span class="lang-tag">JavaScript</span><span class="m" title="stars">★ 18,988</span><span class="m" title="forks">⑂ 1,549</span><span class="m" title="watchers">👁 161</span><span class="m" title="issues">● 256</span><span class="m" title="prs">⑃ 60</span><span class="m" title="releases">▤ 90</span></div><div class="row-desc">The free and privacy-friendly screen recorder with no limits 🎥</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/screen-capture">screen-capture</a><a class="row-tag" href="https://github.com/topics/screencast">screencast</a><a class="row-tag" href="https://github.com/topics/recorder">recorder</a><a class="row-tag" href="https://github.com/topics/annotation">annotation</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 18,988</div></div></div><div class="rank-row" data-fn="mahmoud/awesome-python-applications"><span class="row-rank">11</span><a class="row-avatar" href="../repos/mahmoud__awesome-python-applications"><img src="https://avatars.githubusercontent.com/u/130193?u=87d388d2ceb804aabda330a5f81cf078a2342b03&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/mahmoud__awesome-python-applications"><span class="row-owner">mahmoud</span><span class="row-sep">/</span><span class="row-repo">awesome-python-applications</span></a></div><div class="row-meta"><span class="lang-tag">Jupyter Notebook</span><span class="m" title="stars">★ 18,155</span><span class="m" title="forks">⑂ 2,752</span><span class="m" title="watchers">👁 708</span><span class="m" title="issues">● 101</span><span class="m" title="prs">⑃ 129</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">💿 Free software that works great, and also happens to be open-source Python.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/python">python</a><a class="row-tag" href="https://github.com/topics/application">application</a><a class="row-tag" href="../tags/video">video</a><a class="row-tag" href="../tags/audio">audio</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 18,155</div></div></div><div class="rank-row" data-fn="ffmpegwasm/ffmpeg.wasm"><span class="row-rank">12</span><a class="row-avatar" href="../repos/ffmpegwasm__ffmpeg.wasm"><img src="https://avatars.githubusercontent.com/u/56998921?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/ffmpegwasm__ffmpeg.wasm"><span class="row-owner">ffmpegwasm</span><span class="row-sep">/</span><span class="row-repo">ffmpeg.wasm</span></a></div><div class="row-meta"><span class="lang-tag">C</span><span class="m" title="stars">★ 17,958</span><span class="m" title="forks">⑂ 1,125</span><span class="m" title="watchers">👁 110</span><span class="m" title="issues">● 627</span><span class="m" title="prs">⑃ 258</span><span class="m" title="releases">▤ 43</span></div><div class="row-desc">FFmpeg for browser, powered by WebAssembly</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/ffmpeg">ffmpeg</a><a class="row-tag" href="../tags/wasm">wasm</a><a class="row-tag" href="https://github.com/topics/experimental-features">experimental-features</a><a class="row-tag" href="../tags/video">video</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 17,958</div></div></div><div class="rank-row" data-fn="koel/koel"><span class="row-rank">13</span><a class="row-avatar" href="../repos/koel__koel"><img src="https://avatars.githubusercontent.com/u/20983373?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/koel__koel"><span class="row-owner">koel</span><span class="row-sep">/</span><span class="row-repo">koel</span></a></div><div class="row-meta"><span class="lang-tag">PHP</span><span class="m" title="stars">★ 17,346</span><span class="m" title="forks">⑂ 2,118</span><span class="m" title="watchers">👁 300</span><span class="m" title="issues">● 1,173</span><span class="m" title="prs">⑃ 1,859</span><span class="m" title="releases">▤ 176</span></div><div class="row-desc">Music streaming solution that works.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/laravel">laravel</a><a class="row-tag" href="../tags/vue">vue</a><a class="row-tag" href="../tags/audio">audio</a><a class="row-tag" href="https://github.com/topics/streaming">streaming</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 17,346</div></div></div><div class="rank-row" data-fn="leandromoreira/digital_video_introduction"><span class="row-rank">14</span><a class="row-avatar" href="../repos/leandromoreira__digital_video_introduction"><img src="https://avatars.githubusercontent.com/u/55913?u=b3b7d650afae54e08e4a361553a263ee508e4ba2&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/leandromoreira__digital_video_introduction"><span class="row-owner">leandromoreira</span><span class="row-sep">/</span><span class="row-repo">digital_video_introduction</span></a></div><div class="row-meta"><span class="lang-tag">Jupyter Notebook</span><span class="m" title="stars">★ 16,386</span><span class="m" title="forks">⑂ 1,379</span><span class="m" title="watchers">👁 424</span><span class="m" title="issues">● 56</span><span class="m" title="prs">⑃ 87</span><span class="m" title="releases">▤ 2</span></div><div class="row-desc">A hands-on introduction to video technology: image, video, codec (av1, vp9, h265) and more (ffmpeg encoding). Translations: 🇺🇸 🇨🇳 🇯🇵 🇮🇹 🇰🇷 🇷🇺 🇧🇷 🇪🇸</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/video">video</a><a class="row-tag" href="https://github.com/topics/codec">codec</a><a class="row-tag" href="../tags/audio">audio</a><a class="row-tag" href="https://github.com/topics/learning">learning</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 16,386</div></div></div><div class="rank-row" data-fn="crmne/spotifast"><span class="row-rank">15</span><a class="row-avatar" href="../repos/crmne__spotifast"><img src="https://avatars.githubusercontent.com/u/106617?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/crmne__spotifast"><span class="row-owner">crmne</span><span class="row-sep">/</span><span class="row-repo">spotifast</span></a></div><div class="row-meta"><span class="lang-tag">Rust</span><span class="m" title="stars">★ 10,313</span><span class="m" title="forks">⑂ 611</span><span class="m" title="watchers">👁 28</span><span class="m" title="issues">● 666</span><span class="m" title="prs">⑃ 485</span><span class="m" title="releases">▤ 40</span></div><div class="row-desc">Spotify, native and fast. One lightweight Rust app for your whole library, local playback, and Spotify Connect on Linux, macOS, and Windows.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/audio">audio</a><a class="row-tag" href="../tags/cross-platform">cross-platform</a><a class="row-tag" href="../tags/desktop-app">desktop-app</a><a class="row-tag" href="https://github.com/topics/egui">egui</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 10,313</div></div></div><div class="rank-row" data-fn="Uberi/speech_recognition"><span class="row-rank">16</span><a class="row-avatar" href="../repos/Uberi__speech_recognition"><img src="https://avatars.githubusercontent.com/u/437196?u=e2fe34385a074749284dbe2dce5ea013b35e842c&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/Uberi__speech_recognition"><span class="row-owner">Uberi</span><span class="row-sep">/</span><span class="row-repo">speech_recognition</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 9,004</span><span class="m" title="forks">⑂ 2,416</span><span class="m" title="watchers">👁 263</span><span class="m" title="issues">● 639</span><span class="m" title="prs">⑃ 268</span><span class="m" title="releases">▤ 45</span></div><div class="row-desc">Speech recognition module for Python, supporting several engines and APIs, online and offline.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/python">python</a><a class="row-tag" href="../tags/audio">audio</a><a class="row-tag" href="https://github.com/topics/speech-recognition">speech-recognition</a><a class="row-tag" href="https://github.com/topics/speech-to-text">speech-to-text</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 9,004</div></div></div><div class="rank-row" data-fn="librosa/librosa"><span class="row-rank">17</span><a class="row-avatar" href="../repos/librosa__librosa"><img src="https://avatars.githubusercontent.com/u/18124827?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/librosa__librosa"><span class="row-owner">librosa</span><span class="row-sep">/</span><span class="row-repo">librosa</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 8,928</span><span class="m" title="forks">⑂ 1,118</span><span class="m" title="watchers">👁 133</span><span class="m" title="issues">● 1,316</span><span class="m" title="prs">⑃ 807</span><span class="m" title="releases">▤ 49</span></div><div class="row-desc">Python library for audio and music analysis</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/audio">audio</a><a class="row-tag" href="../tags/python">python</a><a class="row-tag" href="../tags/music">music</a><a class="row-tag" href="https://github.com/topics/dsp">dsp</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 8,928</div></div></div><div class="rank-row" data-fn="xiph/rnnoise"><span class="row-rank">18</span><a class="row-avatar" href="../repos/xiph__rnnoise"><img src="https://avatars.githubusercontent.com/u/8365509?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/xiph__rnnoise"><span class="row-owner">xiph</span><span class="row-sep">/</span><span class="row-repo">rnnoise</span></a></div><div class="row-meta"><span class="lang-tag">C</span><span class="m" title="stars">★ 5,964</span><span class="m" title="forks">⑂ 1,087</span><span class="m" title="watchers">👁 157</span><span class="m" title="issues">● 235</span><span class="m" title="prs">⑃ 49</span><span class="m" title="releases">▤ 1</span></div><div class="row-desc">Recurrent neural network for audio noise reduction</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/rnn">rnn</a><a class="row-tag" href="https://github.com/topics/noise-reduction">noise-reduction</a><a class="row-tag" href="../tags/audio">audio</a><a class="row-tag" href="../tags/c">c</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,964</div></div></div><div class="rank-row" data-fn="WyattBlue/auto-editor"><span class="row-rank">19</span><a class="row-avatar" href="../repos/WyattBlue__auto-editor"><img src="https://avatars.githubusercontent.com/u/57511737?u=d02d45959a96726b8cf6846c2b3a0b33699dc67c&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/WyattBlue__auto-editor"><span class="row-owner">WyattBlue</span><span class="row-sep">/</span><span class="row-repo">auto-editor</span></a></div><div class="row-meta"><span class="lang-tag">Nim</span><span class="m" title="stars">★ 5,873</span><span class="m" title="forks">⑂ 730</span><span class="m" title="watchers">👁 42</span><span class="m" title="issues">● 413</span><span class="m" title="prs">⑃ 757</span><span class="m" title="releases">▤ 159</span></div><div class="row-desc">Effort free video editing!</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/video">video</a><a class="row-tag" href="https://github.com/topics/video-processing">video-processing</a><a class="row-tag" href="../tags/audio">audio</a><a class="row-tag" href="https://github.com/topics/audio-processing">audio-processing</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,873</div></div></div><div class="rank-row" data-fn="xiangyuecn/Recorder"><span class="row-rank">20</span><a class="row-avatar" href="../repos/xiangyuecn__Recorder"><img src="https://avatars.githubusercontent.com/u/13175029?u=c34c17d66736681ad787ca64ae1e77cf1f0cf59e&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/xiangyuecn__Recorder"><span class="row-owner">xiangyuecn</span><span class="row-sep">/</span><span class="row-repo">Recorder</span></a></div><div class="row-meta"><span class="lang-tag">JavaScript</span><span class="m" title="stars">★ 5,641</span><span class="m" title="forks">⑂ 1,093</span><span class="m" title="watchers">👁 82</span><span class="m" title="issues">● 290</span><span class="m" title="prs">⑃ 5</span><span class="m" title="releases">▤ 46</span></div><div class="row-desc">html5 js 录音 mp3 wav ogg webm amr g711a g711u 格式，支持pc和Android、iOS部分Web浏览器、Hybrid App（提供Android iOS App源码）、微信，提供ASR语音识别转文字 H5版语音通话聊天示例 DTMF编码解码</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/recorder">recorder</a><a class="row-tag" href="https://github.com/topics/record">record</a><a class="row-tag" href="../tags/javascript">javascript</a><a class="row-tag" href="https://github.com/topics/html5">html5</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,641</div></div></div><div class="rank-row" data-fn="Rikorose/DeepFilterNet"><span class="row-rank">21</span><a class="row-avatar" href="../repos/Rikorose__DeepFilterNet"><img src="https://avatars.githubusercontent.com/u/16517898?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/Rikorose__DeepFilterNet"><span class="row-owner">Rikorose</span><span class="row-sep">/</span><span class="row-repo">DeepFilterNet</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 5,011</span><span class="m" title="forks">⑂ 553</span><span class="m" title="watchers">👁 46</span><span class="m" title="issues">● 353</span><span class="m" title="prs">⑃ 361</span><span class="m" title="releases">▤ 18</span></div><div class="row-desc">Noise supression using deep filtering</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/pytorch">pytorch</a><a class="row-tag" href="../tags/audio">audio</a><a class="row-tag" href="../tags/deep-learning">deep-learning</a><a class="row-tag" href="https://github.com/topics/speech-enhancement">speech-enhancement</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,011</div></div></div><div class="rank-row" data-fn="unchihugo/FluentFlyout"><span class="row-rank">22</span><a class="row-avatar" href="../repos/unchihugo__FluentFlyout"><img src="https://avatars.githubusercontent.com/u/43926158?u=090aaae675afc9aacf4a65481f5c1575dfa0de66&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/unchihugo__FluentFlyout"><span class="row-owner">unchihugo</span><span class="row-sep">/</span><span class="row-repo">FluentFlyout</span></a></div><div class="row-meta"><span class="lang-tag">C#</span><span class="m" title="stars">★ 4,910</span><span class="m" title="forks">⑂ 250</span><span class="m" title="watchers">👁 15</span><span class="m" title="issues">● 820</span><span class="m" title="prs">⑃ 385</span><span class="m" title="releases">▤ 45</span></div><div class="row-desc">The modern Flyout app for Windows 11, built with Fluent 2 Design principles. Media Flyouts, Taskbar Widgets and more.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/audio">audio</a><a class="row-tag" href="https://github.com/topics/fluent">fluent</a><a class="row-tag" href="https://github.com/topics/flyout">flyout</a><a class="row-tag" href="https://github.com/topics/media">media</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 4,910</div></div></div><div class="rank-row" data-fn="Leonxlnx/earshot"><span class="row-rank">23</span><a class="row-avatar" href="../repos/Leonxlnx__earshot"><img src="https://avatars.githubusercontent.com/u/219127460?u=756c535309425d086d735cbbb410de4fd9013a63&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/Leonxlnx__earshot"><span class="row-owner">Leonxlnx</span><span class="row-sep">/</span><span class="row-repo">earshot</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 4,780</span><span class="m" title="forks">⑂ 310</span><span class="m" title="watchers">👁 9</span><span class="m" title="issues">● 8</span><span class="m" title="prs">⑃ 24</span><span class="m" title="releases">▤ 4</span></div><div class="row-desc">Ears for coding agents: let AI hear, review and make sound. CPU-only, open source.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/ai-agents">ai-agents</a><a class="row-tag" href="../tags/audio">audio</a><a class="row-tag" href="../tags/claude-code">claude-code</a><a class="row-tag" href="../tags/mcp">mcp</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 4,780</div></div></div><div class="rank-row" data-fn="OpenShot/libopenshot-audio"><span class="row-rank">24</span><a class="row-avatar" href="../repos/OpenShot__libopenshot-audio"><img src="https://avatars.githubusercontent.com/u/5551888?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/OpenShot__libopenshot-audio"><span class="row-owner">OpenShot</span><span class="row-sep">/</span><span class="row-repo">libopenshot-audio</span></a></div><div class="row-meta"><span class="lang-tag">C++</span><span class="m" title="stars">★ 299</span><span class="m" title="forks">⑂ 120</span><span class="m" title="watchers">👁 17</span><span class="m" title="issues">● 28</span><span class="m" title="prs">⑃ 148</span><span class="m" title="releases">▤ 17</span></div><div class="row-desc">OpenShot Audio Library (libopenshot-audio) is a free, open-source project that enables high-quality editing and playback of audio, and is based on the amazing JUCE library.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/audio">audio</a><a class="row-tag" href="https://github.com/topics/audio-processing">audio-processing</a><a class="row-tag" href="https://github.com/topics/openshot">openshot</a><a class="row-tag" href="https://github.com/topics/audio-library">audio-library</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 299</div></div></div><div class="rank-row" data-fn="fulldecent/FDSoundActivatedRecorder"><span class="row-rank">25</span><a class="row-avatar" href="../repos/fulldecent__FDSoundActivatedRecorder"><img src="https://avatars.githubusercontent.com/u/382183?u=499298f335f6f4f2b2498c3510275590dd8e67fc&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/fulldecent__FDSoundActivatedRecorder"><span class="row-owner">fulldecent</span><span class="row-sep">/</span><span class="row-repo">FDSoundActivatedRecorder</span></a></div><div class="row-meta"><span class="lang-tag">Swift</span><span class="m" title="stars">★ 299</span><span class="m" title="forks">⑂ 65</span><span class="m" title="watchers">👁 14</span><span class="m" title="issues">● 28</span><span class="m" title="prs">⑃ 12</span><span class="m" title="releases">▤ 15</span></div><div class="row-desc">Start recording when the user speaks</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/ios">ios</a><a class="row-tag" href="../tags/swift">swift</a><a class="row-tag" href="https://github.com/topics/sound">sound</a><a class="row-tag" href="https://github.com/topics/listen">listen</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 299</div></div></div></div><!--/SSR--></div>
+
+    <details class="month-detail" id="monthDetail">
+      <summary data-i18n="month.top10">当月每日飙升 Top10 摘要</summary>
+      <div id="monthTop10"><!--SSRMT--><!--/SSRMT--></div>
+    </details>
+  </section>
+
+  <section id="yearWrap">
+    <h2 class="section-title" data-i18n="year.entry">年度月度榜入口</h2>
+    <div class="month-grid" id="monthGrid"><!--SSRMG--><!--/SSRMG--></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/app.js?v=d2fbeca0"></script>
+</body>
+</html>

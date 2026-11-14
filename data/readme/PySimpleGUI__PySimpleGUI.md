@@ -1,0 +1,310 @@
+
+<p align="center">
+    <img height="250" src="https://pysimplegui.net/images/logos/Logo_Full_Transparent_Cropped.png">
+  
+</p>
+
+
+# Open Source Once Again...
+
+Hey, it's Mike....![](https://PySimpleGUI.net/images/emojis/wave_56.png?raw=true&v=1) 
+
+
+We gave commercialization a try. It was an incredible experience, but it didn’t generate the resources needed to sustain PySimpleGUI at the level we had hoped. In February 2025, we announced that PySimpleSoft would be shutting down, with support continuing through the end of 2025.
+
+That process is now complete. The next question was what to do with the code, documentation, and repositories. I always planned to keep the repos available for reference—so the decision came down to the software itself.
+
+See the **History** section below for a summary of the PySimpleGUI history.
+
+
+# PySimpleGUI 6
+
+<div>
+<img src="https://pysimplegui.net/images/logos/psg6_logo_plain.png" height="80" alt="Alt text">
+</div>
+
+
+I’ve released the PySimpleGUI 5 code as open source. After removing licensing and security components, it’s now available under the LGPL3 license on GitHub and PyPI.
+
+## Installing from PyPI
+
+To install the latest version (v6):
+
+```bash
+python -m pip install PySimpleGUI
+```
+
+
+If you need the older version (4.60.5.1):
+
+
+```bash
+python -m pip install PySimpleGUI==4.60.5.1
+```
+
+## Installing from Github
+
+The GitHub repo has the most up-to-date code. You can install directly without cloning:
+
+
+```bash
+python -m pip install --upgrade https://github.com/PySimpleGUI/PySimpleGUI/zipball/master
+```
+
+To install a specific release that's here on GitHub, change `master` to the release number.  To install version 6.1:
+
+```bash
+python -m pip install --upgrade https://github.com/PySimpleGUI/PySimpleGUI/zipball/6.1
+```
+
+
+Or clone/download the repo and install locally:
+
+```bash
+python -m pip install .
+```
+
+ 
+## Longer Term Outlook
+
+I’m honestly not sure what the long-term future looks like—but if the past 8 years are any indication, I’m not great at predicting it.  
+
+For now, I’m here, having fun writing code, and happy to help.
+
+## Thank you
+
+PySimpleGUI has been a once-in-a-lifetime experience. It’s been amazing to see what people have built and to be a small part of it. Thanks to everyone who supported the project over the years.
+
+---------------------------------
+
+# The PySimpleGUI Playground
+
+<p align="center"><img src="https://raw.githubusercontent.com/PySimpleGUI/psgplayground/main/screenshots/playground.png" width="800" alt="The Toybox - the Playground's program browser"></p>
+
+The [PySimpleGUI Playground](https://github.com/PySimpleGUI/psgplayground) is a collection of the programs I run on my own PCs every day - desktop widgets, tools, things I use to work on PySimpleGUI itself, and a set of piano practice programs for a MIDI keyboard. I wrote them with Claude over the past 10 weeks. Each one is a single file you can run, read and take apart.
+
+One pip command installs all of them, along with the Toybox, a program that shows you what's there and runs it:
+
+```bash
+python -m pip install --upgrade https://github.com/PySimpleGUI/psgplayground/zipball/main
+psgplayground
+```
+
+The repo also has a [prompts](https://github.com/PySimpleGUI/psgplayground/tree/main/prompts) folder - one page per trick (the frameless window, draggable panes, drag-to-reorder, dropping a file) with a prompt you can paste into any AI chatbot to get the same thing in your own program.
+
+---------------------------------
+
+
+# What is PySimpleGUI?
+
+PySimpleGUI is a wrapper for tkinter (and other GUI libraries) that transforms the GUI SDK into a simpler, more compact architecture while still providing detailed customization.  No prior GUI programming experience needed.
+
+This is an entire interactive application.
+
+```python
+import PySimpleGUI as sg
+
+# Define the window's contents
+layout = [[sg.Text("What's your name?")],
+          [sg.Input(key='-INPUT-')],
+          [sg.Text(size=(40,1), key='-OUTPUT-')],
+          [sg.Button('Ok'), sg.Button('Quit')]]
+
+# Create the window
+window = sg.Window('Window Title', layout)
+
+# Display and interact with the Window using an Event Loop
+while True:
+    event, values = window.read()
+    # See if user wants to quit or window was closed
+    if event == sg.WINDOW_CLOSED or event == 'Quit':
+        break
+    # Output a message to the window
+    window['-OUTPUT-'].update('Hello ' + values['-INPUT-'] + "! Thanks for trying PySimpleGUI")
+
+# Finish up by removing from the screen
+window.close()
+```
+
+This is the window that's created.
+
+![win1](https://raw.githubusercontent.com/PySimpleGUI/PySimpleGUI/master/images/for_readme/Example2-1.jpg)
+
+Here's the same window after some user interaction.
+
+![win2](https://raw.githubusercontent.com/PySimpleGUI/PySimpleGUI/master/images/for_readme/Example2-2.jpg)
+
+##  Documentation - want to learn more? 
+
+
+You'll find **extensive** documentation at:
+
+https://Docs.PySimpleGUI.com
+
+## Contributing
+
+PySimpleGUI has always been developed more like a proprietary product than an open source project.  Pull requests aren't accepted.
+
+
+-----
+
+
+# What's new...
+
+
+## Features & Fixes in version 6.4
+
+**New**
+
+* `resizable` can be a tuple to allow resizing in one direction only, e.g. `resizable=(False, True)` for vertical only
+* Pane element - new `sash_width` and `sash_cursor` parameters
+* Each PySimpleGUI program now gets its own taskbar identity on Windows, so the right icon shows when several are running
+* Windows with a custom titlebar get a taskbar icon, including after minimize / restore
+* `popup_error_with_traceback` shows the full traceback in a Multiline so the whole error can be copied
+* `set_options(tooltip_text_color=, tooltip_background_color=)` to color tooltips application-wide
+* `set_options(set_tooltip_to_element_key=True)` - debugging aid that shows each element's key as its tooltip
+* `set_options` ignores options it doesn't recognize instead of crashing
+* `Window.frame_extents()` and `Window.current_frame_location()`
+* `fname()` debugging aid - `print(f'[{fname()}] starting')` prints the name of the function it's in
+* Ctrl+C in a program using `read_all_windows` exits cleanly
+
+**Fixes**
+
+* `Button.update(image_data=...)` crashed on a button that didn't have an image
+* `Input.update` with `COLOR_SYSTEM_DEFAULT`
+* Mouse wheel stopped scrolling a scrollable Column when the pointer was over an element inside it
+* `auto_save_location` crashed reading a location of `[None, None]` (#6904) and crept down by the titlebar height on Linux
+* Window creation reworked for Linux and Wayland (#3507)
+* `disable_minimize=True` crashed on Linux
+* Right-click menus didn't close when clicking away on Linux (#6664)
+* Windows: hiding or changing the menubar with `Menu.update` left a blank strip at the bottom of the window
+* PyCharm "Edit" opened at the wrong line (file now comes before `--line`)
+* Many color checks reworked so bad colors no longer crash element creation
+
+
+## Drag and Drop!  
+
+Hard to believe, but drag and drop is working on PySimpleGUI.
+
+
+Drag and Drop support has been a wish for many years.  We finally may have found a way to do it such that the PySimpleGUI code is not changed.  All code is in the user code-space.
+
+
+[`psgdnd`](https://github.com/PySimpleGUI/psgdnd) is a new package posted on GitHub that adds drag and drop to PySimpleGUI.  You can pip install it and try drag and drop for yourself.  More information and examples can be found in that repo.
+
+Version 6.1 is on PyPI (`python -m pip install --upgrade psgdnd`).  It works on Windows and Linux.  The Mac is still an unknown.
+
+----
+
+
+## AI
+
+![](https://PySimpleGUI.net/images/emojis/weary_56.png?raw=true&v=1)
+
+It's been an exhausting process coming to terms with the changes in software over the past 4 years.  After spending a few months seeing for myself what it can do, and what I can do with it, I've concluded that I can do a better job developing software with AI than without.  It can also be fun and a learning experience too.
+
+I now use Claude to help write code, PySimpleGUI core code included. Changes Claude made are marked "Claude:" in the changelog.
+
+### PySimpleGUI in the AI era
+
+A common question today is whether a GUI library still matters when an AI can write the code. I think PySimpleGUI may matter more now than before.
+
+The idea came from Claude: a PySimpleGUI program is short and always follows the same pattern - a layout, a window, an event loop. The same window written directly in tkinter takes more lines and more decisions, and that's more for an AI to get wrong. Short code is also easier for a person to read and check.
+
+That's a hypothesis, not a result. Claude also proposed a test that has an AI write the same programs both ways and compares how often they work. I'm planning to run it and post what I find. Details may change.  I'm certainly aware that these LLMs are particularlyi skilled at making users feel right, smart, on the right track, when that may not match up with reality.  
+
+
+---------------------------
+
+# History
+
+## Open Source v4 → Commercial v5 → Open Source v6
+
+PySimpleGUI’s journey has included plenty of ups and downs, good decisions and bad ones, a few surprises, and a lot of fun along the way.
+
+Hi, it’s Mike. I thought it might be useful to share the story from my perspective.
+
+PySimpleGUI began in 2018 as throwaway code. I needed a GUI for a media player prototype and had no experience building GUIs or working with object-oriented GUI frameworks. My goal was simple: wrap Tkinter in a way that felt more linear and straightforward so I could get something working quickly.
+
+There was no bigger plan. But as I used it, it started to feel genuinely useful, so I shared it.
+
+My background is in Silicon Valley startups—building products, shipping software, and later managing teams. I had no experience with Python or open source at the time. So when I put PySimpleGUI on GitHub, I approached it the way I knew how: like a startup. It became a full-time, self-funded effort rather than a traditional open source project.
+
+## Timeline
+
+- July 2018 – Version 1
+- June 2019 – Version 4
+- January 2020 – Funding becomes a major concern; commercialization mentioned
+- November 2020 – Udemy course announced; a public plea for help added
+- December 2021 – Course released
+- February 2024 – Version 5 (commercial launch)
+- April 2026 – Version 6
+
+There’s an [Announcements Issue](https://github.com/PySimpleGUI/PySimpleGUI/issues/142) on GitHub that I’ve used like a running blog. It has grown to over 1,700 entries documenting the project in detail. To make reading it easier, a snapshot is posted in the documnation under the tab [Announcements 2018-2024](https://docs.pysimplegui.com/githubannouncements/).  
+
+## Funding Reality
+
+Working full-time on an open source project creates immediate and ongoing financial pressure.
+
+I explored the common options:
+
+- Sponsorships and donations (GitHub Sponsors, Buy Me a Coffee). At peak, this brought in about \$150 per month.
+- Education. We built an 11.5-hour Udemy course with 61 lessons. It performed well initially, reaching around \$2,000 per month for a short time, but eventually dropped below \$100.
+
+Neither path was enough to sustain the project long term.
+
+## Commercialization
+
+Moving to a commercial model wasn’t a sudden decision. It had been discussed openly for years in the README and announcements.
+
+By early 2024, after exhausting other options, Version 5 launched as a paid product. Even then, the goal was to keep things accessible, not to put up barriers.
+
+## How Did It Go?
+
+If the metric is financial sustainability, it didn’t go well.
+
+If the metric is experience, learning, and relationships, it was absolutely worth it.
+
+We didn’t lose most users after commercialization. Many companies continued using PySimpleGUI. The challenge was getting them to purchase licenses.
+
+## The Hobbyist License
+
+We made a deliberate choice: hobbyists and students could use PySimpleGUI for free, while companies were expected to pay.
+
+It felt like the right balance.
+
+In practice, the vast majority of users identified as hobbyists. Tens of thousands of corporate users registered under the free tier. It wasn’t unusual to see large companies with hundreds of users and only a handful of paid licenses.
+
+I don’t regret the decision to offer a free option.
+
+## A Culture of Free
+
+My personal takeaway is that there’s a strong cultural expectation that Python tools & libraries should be free.
+
+The issue didn’t seem to be price or dissatisfaction. People kept using PySimpleGUI—they just didn’t feel obligated to pay for it. Even clear licensing terms didn’t consistently change that behavior.
+
+That’s my interpretation, based on what I saw. Others may see it differently.
+
+## Having Fun
+
+Startups fail more often than they succeed. This one didn’t achieve financial sustainability, and that’s part of the process.
+
+From the beginning, one of the stated goals of PySimpleGUI was: have fun.
+
+That part has held true. Writing code, building things, seeing what others create, and working with people along the way—that’s the part I’ve enjoyed the most.
+
+Business, on the other hand, has never been the fun part for me.
+
+## Thank You
+
+Thank you to everyone who has supported the project over the years.
+
+I don’t know exactly what comes next, but I’ve enjoyed the journey and I'm looking forward to whatever is ahead.
+
+-------
+
+## License & Copyright
+
+Copyright 2018-2026 PySimpleGUI.  All rights reserved.
+
+Licensed under LGPL3.

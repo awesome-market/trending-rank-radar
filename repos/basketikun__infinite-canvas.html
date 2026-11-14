@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>basketikun/infinite-canvas · GitHub Trending Rank Radar</title>
+<meta name="description" content="面向 AI 创作的开源无限画布工作台，集成 AI 生图、参考图编辑、视频生成、Agent 智能助手、画布编排、对话创作、提示词库与素材管理等能力，支持可视化创作流程与多 Agent 协同工作。兼容 OpenAI 接口生态，支持 chatgpt2api、grok2api、flow2api、newapi 等渠道接入。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="infinite-canvas, basketikun, basketikun/infinite-canvas, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/basketikun__infinite-canvas">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="basketikun/infinite-canvas · GitHub Trending Rank Radar">
+<meta property="og:description" content="面向 AI 创作的开源无限画布工作台，集成 AI 生图、参考图编辑、视频生成、Agent 智能助手、画布编排、对话创作、提示词库与素材管理等能力，支持可视化创作流程与多 Agent 协同工作。兼容 OpenAI 接口生态，支持 chatgpt2api、grok2api、flow2api、newapi 等渠道接入。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/basketikun__infinite-canvas">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "basketikun/infinite-canvas", "codeRepository": "https://github.com/basketikun/infinite-canvas", "url": "https://zhuikan.com/repos/basketikun__infinite-canvas", "description": "面向 AI 创作的开源无限画布工作台，集成 AI 生图、参考图编辑、视频生成、Agent 智能助手、画布编排、对话创作、提示词库与素材管理等能力，支持可视化创作流程与多 Agent 协同工作。兼容 OpenAI 接口生态，支持 chatgpt2api、grok2api、flow2api、newapi 等渠道接入。", "author": {"@type": "Organization", "name": "basketikun", "url": "https://github.com/basketikun"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2026-05-18"}</script>
+</head>
+<body data-repo="basketikun/infinite-canvas" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">basketikun/infinite-canvas</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="basketikun__infinite-canvas"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/114481029?u=28028a33575dd5ce7610a1f541e9b7b28d0309b5&amp;v=4&s=300" width="300" height="300" alt="basketikun avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">infinite-canvas</div>
+      <a class="rp-side-owner" href="https://github.com/basketikun">basketikun</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/basketikun">basketikun</a>
+        <span class="rp-sep">/</span><span class="rp-name">infinite-canvas</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">面向 AI 创作的开源无限画布工作台，集成 AI 生图、参考图编辑、视频生成、Agent 智能助手、画布编排、对话创作、提示词库与素材管理等能力，支持可视化创作流程与多 Agent 协同工作。兼容 OpenAI 接口生态，支持 chatgpt2api、grok2api、flow2api、newapi 等渠道接入。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>10,307</b></span><span class="rp-stat" title="forks">⑂ <b>2,390</b></span><span class="rp-stat" title="watchers">👁 <b>21</b></span><span class="rp-stat" title="prs">⑃ <b>131</b></span><span class="rp-stat" title="issues">● <b>179</b></span><span class="rp-stat" title="releases">▤ <b>38</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-05-18</span><a class="rp-meta-bit rp-home" href="https://canvas.best" rel="noopener">canvas.best</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/basketikun/infinite-canvas">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.20.0</span><a class="rp-dl-a" href="https://github.com/basketikun/infinite-canvas/releases/tag/v0.20.0">v0.20.0 ↓</a><span class="rp-dl-ver">0.20.0</span><span class="rp-dl-date">2026-10-10</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+40</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">10,307</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,390</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">21</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">131</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">179</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">38</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">无限画布 (infinite-canvas)
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+  快速开始 · 功能介绍 · Render 部署 · Docker 部署 · 画布节点操作手册 · 画布快捷键 · 漏洞提交 · 待办事项 · 本地 Canvas Agent · Codex app 插件
+
+
+无限画布是一款面向图片创作的开源工作台。它把画布编排、AI 图片生成、参考图编辑、对话助手、提示词库和素材沉淀放在同一个界面里，适合用来探索视觉方案并连续迭代图片结果。
+
+ [!CAUTION]
+ 项目目前处于开发阶段，不保证历史数据兼容。各种本地存储格式都可能直接调整，欢迎关注后续更新。
+
+ 如果你需要稳定维护自己的分支，建议自行 fork 后独立开发。二次开发与 PR 请保留原作者信息和前端页面标识。
+
+ 赞助商
+
+
+  
+    
+      
+    
+    
+      坤肉AI 是一站式 AI 视觉创作平台，集 AI 生图、视频生成、多人协作画布及 Agent/MCP 连接于一体，适合个人创作与团队协作，同时面向企业提供源码出售及私有化部署服务，欢迎企业咨询合作！另有 API 开放平台，提供丰富的 AI 模型 API 接口，支持快速接入与集成，欢迎开发者及企业对接合作！
+    
+  
+  
+    
+      
+    
+    
+      感谢 APIMart 赞助了本项目！APIMart 是专注 AI 图片/视频生成的低价 API 平台，GPT-Image-2 低至 $0.006/张，1 美元可出图 160+ 张。图片、视频一套异步 API 通吃，提交任务拿 ID、回调取结果，跑批万张不超时、换模型不改代码。按量付费、无月费，通过 此注册链接 注册即可开用。
+    
+  
+  
+    
+      
+    
+    
+      Atlas Cloud is a full-modal AI inference platform that gives developers a single AI API to access video generation, image generation, and LLM APIs. Instead of managing multiple vendor integrations, you connect once and get unified access to 300+ curated models across all modalities. Check out Atlas Cloud&#x27;s new coding plan promotion for more budget-friendly API access.
+    
+  
+  
+    
+      
+    
+    
+      MiniMax H3 视频生成 API｜秘塔科技 秘塔科技提供高性价比的 MiniMax H3 视频生成服务：768P 仅 0.09 元/秒，2K 仅 0.15 元/秒。支持原生 2K、音画同步，API 兼容 OpenAI 协议，同时支持 ComfyUI，无需自行部署 GPU。 🎁 通过 无限画布专属链接注册，即可领取赠送额度及专属优惠。
+    
+  
+  
+    
+      
+    
+    
+      88API｜无限画布 深度优化分支
+      让主流模型能力结合得更紧密，内置海量提示词、满参满血！
+      🎨&amp;nbsp;支持 GPT-Image、Gemini、Grok 等图片模型；原生 124K 全部同价！
+      🎬&amp;nbsp;支持 Seedance、H3、Kling、Wan、Grok、Veo、omni 等视频模型；
+      🎙️&amp;nbsp;支持 Whisper、TTS、STT 等语音能力。
+      从文案、出图、改图，到视频生成与配音，一张画布串联完整创作链路。不只是模型聚合，更让不同模型在同一工作流中真正协同。👉&amp;nbsp;立即体验 🎁&amp;nbsp;通过 无限画布专属链接注册，即可赠送额度及专属优惠。
+    
+  
+  
+    
+      
+    
+    
+      无限画布 × Infistar.ai 无限星河｜内置原生画布 · 全能多模态 API 💡 原生集成，即点即用： Infistar.ai 已原生上架无限画布！同时提供低至官方 1 折的稳定 API 中转服务，模型倍率与调用明细全程透明。 🎨 多模态生图/生视频： 完美适配 Seedance、FLUX、Midjourney、Sora、Runway、Luma、可灵（Kling）等顶级图片与视频大模型。 🧠 全系语言模型： 覆盖 OpenAI、Claude、Gemini、Grok、DeepSeek、Qwen、GLM 等国内外主流模型，兼容 OpenAI 标准接口。 ⚡ 动态调度： 多路供应保障高可用，拒绝断连。 🎁 专属福利： 通过 专属链接 注册，立享赠送额度/专属折扣/首充权益！
+    
+  
+  
+    
+      
+    
+    
+      无限画布 × PackyCode｜稳定高效的 API 中转服务商
+      💡&amp;nbsp;PackyCode 是一家稳定、高效的 API 中转服务商，提供 Claude Code、Codex、Gemini 等多种中转服务，让 AI 编程成为真正的生产力工具。
+      ⚡&amp;nbsp;稳定高效： 具备自动故障转移、智能路由和无限并发等多种功能，保障调用稳定可靠。
+      🎁&amp;nbsp;专属福利： 通过 专属链接 注册，立即开始使用！
+    
+  
+  
+    
+      
+    
+    
+      无限画布 × HeyRoute｜全能多模态 API 服务商
+      💡&amp;nbsp;HeyRoute 深度接入无限画布，将创意构思、图片生成、视频制作与内容开发融为一体，让每个灵感都能快速落地。
+      🎨&amp;nbsp;多模态创作能力： 支持 AI 生图、生视频、图像编辑及内容生成，兼容 Seedance、MiniMax-H3、Image-2、Grok Video、Flux Klein、Gemini 等主流模型。
+      🧠&amp;nbsp;丰富模型生态： 覆盖 OpenAI、Claude、Gemini、Grok、DeepSeek、Qwen、GLM 等语言模型，并兼容 OpenAI 标准接口。
+      ⚡&amp;nbsp;稳定高效调用： 支持多模型、多线路灵活调度，调用记录清晰透明，满足日常创作、应用开发与批量生产需求。
+      🎁&amp;nbsp;专属福利： 通过 专属链接 注册，即可领取新用户 15 美元试用额度！
+    
+  
+
+
+ 核心功能
+
+- 无限画布：多画布项目、节点拖拽缩放、连线、小地图、撤销重做、导入导出。
+- AI 创作：浏览器前台直连你配置的 OpenAI 兼容接口，支持文生图、图生图、参考图编辑、文本问答、音频和视频生成。
+- 画布助手：围绕选中节点和上游节点对话、生图，并把结果插回画布。
+- 本地 Agent：通过本</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/basketikun/infinite-canvas/issues/301"><span class="rp-item-num">#301</span><span class="rp-item-title">那个大二男生不会真拿的这个吧</span><span class="rp-item-extra">5 comments · 2026-10-23</span></a><a class="rp-item" href="https://github.com/basketikun/infinite-canvas/issues/286"><span class="rp-item-num">#286</span><span class="rp-item-title">无法像多数画布那样可以把画布已有的图片批量连接到「空图片节点」上作参考图</span><span class="rp-item-extra">1 comments · 2026-10-02</span></a><a class="rp-item" href="https://github.com/basketikun/infinite-canvas/issues/267"><span class="rp-item-num">#267</span><span class="rp-item-title">grok-imagine-video生成视频报错</span><span class="rp-item-extra">1 comments · 2026-09-19</span></a><a class="rp-item" href="https://github.com/basketikun/infinite-canvas/issues/253"><span class="rp-item-num">#253</span><span class="rp-item-title">这个卡顿的问题，只能通过清理历史纪录来解决吗？</span><span class="rp-item-extra">1 comments · 2026-09-17</span></a><a class="rp-item" href="https://github.com/basketikun/infinite-canvas/issues/239"><span class="rp-item-num">#239</span><span class="rp-item-title">无法接入火山方舟</span><span class="rp-item-extra">1 comments · 2026-09-04</span></a><a class="rp-item" href="https://github.com/basketikun/infinite-canvas/issues/231"><span class="rp-item-num">#231</span><span class="rp-item-title">feat(image): 支持 OpenAI 兼容接口的异步图片任务轮询</span><span class="rp-item-extra">0 comments · 2026-09-02</span></a><a class="rp-item" href="https://github.com/basketikun/infinite-canvas/issues/313"><span class="rp-item-num">#313</span><span class="rp-item-title">加个默认参数配置</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/basketikun/infinite-canvas/issues/311"><span class="rp-item-num">#311</span><span class="rp-item-title">[Bug] v0.20.0 拖拽图片/视频边角缩放时报 Maximum update depth exceeded，附面板更新隔离补丁</span><span class="rp-item-extra">0 comments · 2026-11-06</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/basketikun/infinite-canvas/releases"><b>v0.20.0</b> <span class="rp-rel-tag">v0.20.0</span> <span class="rp-item-extra">2026-10-10</span></a><pre class="rp-pre">What&#x27;s Changed
+ fix(canvas): keep overlay UI at a constant on-screen size while zooming by @peanut2001 in https://github.com/basketikun/infinite-canvas/pull/251
+ fix: prevent unavailable model selections from silently falling back by @blackdm666 in https://github.com/basketikun/infinite-canvas/pull/252
+ fix(canvas): pin select-references hint to the viewport top center by @Booome in https://github.com/basketikun/infinite-canvas/pull/256
+ fix(canvas): hide node hover toolbar while selecting references by @Booome in https://github.com/basketikun/infinite-canvas/pull/257
+ fix(canvas): compac</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/basketikun__infinite-canvas.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

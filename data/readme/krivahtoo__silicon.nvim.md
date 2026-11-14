@@ -1,0 +1,198 @@
+<div align="center">
+
+# silicon.nvim
+
+Render beautiful image of your code in neovim using [silicon](https://github.com/Aloxaf/silicon),
+highlighted either with a syntect theme or with Neovim's tree-sitter and your current colorscheme.
+
+[![Release](https://github.com/krivahtoo/silicon.nvim/actions/workflows/release.yml/badge.svg)](https://github.com/krivahtoo/silicon.nvim/actions/workflows/ci.yml)
+![License](https://img.shields.io/github/license/krivahtoo/silicon.nvim)
+![Neovim version](https://img.shields.io/badge/Neovim-0.11-57A143?logo=neovim)
+
+</div>
+
+<!-- panvimdoc-ignore-start -->
+
+https://github.com/krivahtoo/silicon.nvim/assets/41364823/d67912b0-190e-4990-bf79-039e79f8b4ad
+
+<img width="1394" height="854" alt="Example of code rendered with Silicon in Neovim" src="https://github.com/user-attachments/assets/0ef0b00f-5652-4b30-868c-b835fa47f355" />
+
+
+<!-- panvimdoc-ignore-end -->
+
+## Installation
+
+### Requirements
+
+- nvim `v0.11`
+- **[Optional]** cargo and rust toolchain
+- **[Optional]** a tree-sitter parser for the filetype, when using `theme = 'nvim'`
+
+#### Packer
+
+```lua
+use {'krivahtoo/silicon.nvim', run = './install.sh'}
+```
+
+Build from source (requires cargo)
+
+```lua
+use {'krivahtoo/silicon.nvim', run = './install.sh build'}
+```
+
+#### Vim-Plug
+
+```vim
+Plug 'krivahtoo/silicon.nvim', { 'do': './install.sh' }
+```
+
+Build from source (requires cargo)
+
+```vim
+Plug 'krivahtoo/silicon.nvim', { 'do': './install.sh build' }
+```
+
+## Configuration
+
+Initialize the plugin.
+
+Lua init file:
+```lua
+require('silicon').setup({
+  font = 'FantasqueSansMono Nerd Font=16',
+  theme = 'Monokai Extended',
+})
+```
+
+Vimscript init file:
+```vim
+lua << EOF
+require('silicon').setup({
+  font = 'FantasqueSansMono Nerd Font=16',
+  theme = 'Monokai Extended',
+})
+EOF
+```
+
+The `setup` function accepts the following table:
+
+```lua
+{
+  -- Output configuration for the saved image
+  output = {
+    -- (string) The full path of the file to save to.
+    file = "",
+    -- (boolean) Whether to copy the image to clipboard instead of saving to file.
+    clipboard = true,
+    -- (string) Where to save images, defaults to the current directory.
+    --  e.g. /home/user/Pictures
+    path = ".",
+    -- (string) The filename format to use. Can include placeholders for date and time.
+    -- https://time-rs.github.io/book/api/format-description.html#components
+    format = "silicon_[year][month][day]_[hour][minute][second].png",
+  },
+
+  -- Font and theme configuration for the screenshot.
+  font = 'Hack=20', -- (string) The font and font size to use for the screenshot.
+  -- (string) The color theme to use for syntax highlighting.
+  -- It can be a theme name or path to a .tmTheme file.
+  -- Use 'nvim' to highlight with tree-sitter and your current colorscheme
+  -- (falls back to syntect when the buffer has no tree-sitter parser).
+  theme = 'Dracula',
+
+  -- Background and shadow configuration for the screenshot
+  background = '#eff', -- (string) The background color for the screenshot.
+  shadow = {
+    blur_radius = 0.0, -- (number) The blur radius for the shadow, set to 0.0 for no shadow.
+    offset_x = 0, -- (number) The horizontal offset for the shadow.
+    offset_y = 0, -- (number) The vertical offset for the shadow.
+    color = '#555' -- (string) The color for the shadow.
+  },
+
+  pad_horiz = 100, -- (number) The horizontal padding.
+  pad_vert = 80, -- (number) The vertical padding.
+  line_number = false, -- (boolean) Whether to show line numbers in the screenshot.
+  line_pad = 2, -- (number) The padding between lines.
+  line_offset = 1, -- (number) The starting line number for the screenshot.
+  tab_width = 4, -- (number) The tab width for the screenshot.
+  gobble = false, -- (boolean) Whether to trim extra indentation.
+  highlight_selection = false, -- (boolean) Whether to capture the whole file and highlight selected lines.
+  round_corner = true,
+  window_controls = true, -- (boolean) Whether to show window controls (minimize, maximize, close) in the screenshot.
+  window_title = nil, -- (function) A function that returns the window title as a string.
+
+  -- Watermark configuration for the screenshot
+  watermark = {
+    text = nil, -- (string) The text to use as the watermark, set to nil to disable.
+    color = '#222', -- (string) The color for the watermark text.
+    -- (string) The style for the watermark text, possible values are:
+    -- 'bold', 'italic', 'bolditalic', or anything else defaults to 'regular'.
+    style = 'bold',
+  },
+}
+```
+
+### Tree-sitter highlighting
+
+Set `theme = 'nvim'` to render the image with the same highlighting you see in
+the editor:
+
+```lua
+require('silicon').setup({
+  theme = 'nvim',
+})
+```
+
+With this theme:
+
+- Highlights come from the buffer's tree-sitter parser, including injected
+  languages (e.g. code blocks in markdown).
+- Captures are resolved against your current colorscheme the way Neovim does
+  (`@function.call.lua` → `@function.call` → `@function`), including bold,
+  italic and underline.
+- The code background and default text color come from the `Normal`
+  highlight group.
+- If the buffer has no tree-sitter parser, a warning is shown and the image is
+  rendered with syntect instead.
+
+`nvim` is also included in `require('silicon').list_themes()`.
+
+### Example
+
+```lua
+require('silicon').setup {
+  font = 'FantasqueSansMono Nerd Font=26',
+  background = '#87f',
+  theme = 'Monokai Extended',
+  line_number = true,
+  pad_vert = 80,
+  pad_horiz = 50,
+  output = {
+    path = "/home/krivah/Pictures/Screenshots"
+  },
+  watermark = {
+    text = ' @krivahtoo',
+  },
+  window_title = function()
+    return vim.fn.fnamemodify(vim.fn.bufname(vim.fn.bufnr()), ':~:.')
+  end,
+}
+```
+
+<!-- panvimdoc-ignore-start -->
+
+![image](https://user-images.githubusercontent.com/41364823/219902305-6efa37cf-4ee4-4e6b-803b-39c344a56dfe.png)
+
+<!-- panvimdoc-ignore-end -->
+
+## Usage
+
+Command:
+
+```bash
+:'<,'>Silicon[!] [file]
+# Defaults to clipboard if [file] is not specified.
+# With bang file is saved to specified output.file in the
+# output.format specified
+# Also mapped to 'SS' in Visual mode
+```

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>desandro/imagesloaded · GitHub Trending Rank Radar</title>
+<meta name="description" content=":camera: JavaScript is all like &quot;You images done yet or what?&quot;">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="imagesloaded, desandro, desandro/imagesloaded, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/desandro__imagesloaded">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="desandro/imagesloaded · GitHub Trending Rank Radar">
+<meta property="og:description" content=":camera: JavaScript is all like &quot;You images done yet or what?&quot;">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/desandro__imagesloaded">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "desandro/imagesloaded", "codeRepository": "https://github.com/desandro/imagesloaded", "url": "https://zhuikan.com/repos/desandro__imagesloaded", "description": ":camera: JavaScript is all like \"You images done yet or what?\"", "author": {"@type": "Organization", "name": "desandro", "url": "https://github.com/desandro"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2011-08-25"}</script>
+</head>
+<body data-repo="desandro/imagesloaded" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">desandro/imagesloaded</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="desandro__imagesloaded"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/85566?u=0cafa0e94ee0c295c381a94c084971a6b4137d44&amp;v=4&s=300" width="300" height="300" alt="desandro avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">imagesloaded</div>
+      <a class="rp-side-owner" href="https://github.com/desandro">desandro</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/desandro">desandro</a>
+        <span class="rp-sep">/</span><span class="rp-name">imagesloaded</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">:camera: JavaScript is all like &quot;You images done yet or what?&quot;</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>8,836</b></span><span class="rp-stat" title="forks">⑂ <b>1,105</b></span><span class="rp-stat" title="watchers">👁 <b>223</b></span><span class="rp-stat" title="prs">⑃ <b>68</b></span><span class="rp-stat" title="issues">● <b>247</b></span><span class="rp-stat" title="releases">▤ <b>5</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2011-08-25</span><a class="rp-meta-bit rp-home" href="https://imagesloaded.desandro.com" rel="noopener">imagesloaded.desandro.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="desandro__masonry"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/85566?u=0cafa0e94ee0c295c381a94c084971a6b4137d44&amp;v=4" alt="" loading="lazy">masonry</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/desandro/imagesloaded">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v4.1.4</span><a class="rp-dl-a" href="https://github.com/desandro/imagesloaded/releases/tag/v4.1.4">imagesloaded-4.1.4 ↓</a><span class="rp-dl-ver">4.1.4</span><span class="rp-dl-date">2018-01-02</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">8,836</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,105</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">223</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">68</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">247</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">5</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">imagesLoaded
+
+JavaScript is all like &quot;You images done yet or what?&quot;
+
+imagesloaded.desandro.com
+
+Detect when images have been loaded.
+
+ Install
+
+ Download
+
++ imagesloaded.pkgd.min.js minified
++ imagesloaded.pkgd.js un-minified
+
+ CDN
+
+ html
+
+
+
+
+
+ Package managers
+
+Install via npm: npm install imagesloaded
+
+Install via Yarn: yarn add imagesloaded
+
+ jQuery
+
+You can use imagesLoaded as a jQuery Plugin.
+
+ js
+$(&#x27;container&#x27;).imagesLoaded( function() {
+  // images have loaded
+});
+
+// options
+$(&#x27;container&#x27;).imagesLoaded( {
+  // options...
+  },
+  function() {
+    // images have loaded
+  }
+);
+
+
+.imagesLoaded() returns a jQuery Deferred object. This allows you to use .always(), .done(), .fail() and .progress().
+
+ js
+$(&#x27;container&#x27;).imagesLoaded()
+  .always( function( instance ) {
+    console.log(&#x27;all images loaded&#x27;);
+  })
+  .done( function( instance ) {
+    console.log(&#x27;all images successfully loaded&#x27;);
+  })
+  .fail( function() {
+    console.log(&#x27;all images loaded, at least one is broken&#x27;);
+  })
+  .progress( function( instance, image ) {
+    var result = image.isLoaded ? &#x27;loaded&#x27; : &#x27;broken&#x27;;
+    console.log( &#x27;image is &#x27; + result + &#x27; for &#x27; + image.img.src );
+  });
+
+
+ Vanilla JavaScript
+
+You can use imagesLoaded with vanilla JS.
+
+ js
+imagesLoaded( elem, callback )
+// options
+imagesLoaded( elem, options, callback )
+// you can use new if you like
+new imagesLoaded( elem, callback )
+
+
++ elem _Element, NodeList, Array, or Selector String_
++ options _Object_
++ callback _Function_ - function triggered after all images have been loaded
+
+Using a callback function is the same as binding it to the always event (see below).
+
+ js
+// element
+imagesLoaded( document.querySelector(&#x27;container&#x27;), function( instance ) {
+  console.log(&#x27;all images are loaded&#x27;);
+});
+// selector string
+imagesLoaded( &#x27;container&#x27;, function() {...});
+// multiple elements
+var posts = document.querySelectorAll(&#x27;.post&#x27;);
+imagesLoaded( posts, function() {...});
+
+
+Bind events with vanilla JS with .on(), .off(), and .once() methods.
+
+ js
+var imgLoad = imagesLoaded( elem );
+function onAlways( instance ) {
+  console.log(&#x27;all images are loaded&#x27;);
+}
+// bind with .on()
+imgLoad.on( &#x27;always&#x27;, onAlways );
+// unbind with .off()
+imgLoad.off( &#x27;always&#x27;, onAlways );
+
+
+ Background
+
+Detect when background images have loaded, in addition to s.
+
+Set { background: true } to detect when the element&#x27;s background image has loaded.
+
+ js
+// jQuery
+$(&#x27;container&#x27;).imagesLoaded( { background: true }, function() {
+  console.log(&#x27;container background image loaded&#x27;);
+});
+
+// vanilla JS
+imagesLoaded( &#x27;container&#x27;, { background: true }, function() {
+  console.log(&#x27;container background image loaded&#x27;);
+});
+
+
+See jQuery demo or vanilla JS demo on CodePen.
+
+Set to a selector string like { background: &#x27;.item&#x27; } to detect when the background images of child elements have loaded.
+
+ js
+// jQuery
+$(&#x27;container&#x27;).imagesLoaded( { background: &#x27;.item&#x27; }, function() {
+  console.log(&#x27;all .item background images loaded&#x27;);
+});
+
+// vanilla JS
+imagesLoaded( &#x27;con</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/desandro/imagesloaded/issues/156"><span class="rp-item-num">#156</span><span class="rp-item-title">Works fine locally but fires early on production</span><span class="rp-item-extra">26 comments · 2014-07-04</span></a><a class="rp-item" href="https://github.com/desandro/imagesloaded/issues/306"><span class="rp-item-num">#306</span><span class="rp-item-title">Imagesloaded v5 triggers loading of largest image when using srcset</span><span class="rp-item-extra">7 comments · 2022-09-23</span></a><a class="rp-item" href="https://github.com/desandro/imagesloaded/issues/136"><span class="rp-item-num">#136</span><span class="rp-item-title">Does imagesLOaded not fire when the src attribute of an img element is changed with javascript?</span><span class="rp-item-extra">6 comments · 2014-03-11</span></a><a class="rp-item" href="https://github.com/desandro/imagesloaded/issues/270"><span class="rp-item-num">#270</span><span class="rp-item-title">Background load is not detected. Always calls the &#x27;isLoaded&#x27; callback.</span><span class="rp-item-extra">5 comments · 2017-12-18</span></a><a class="rp-item" href="https://github.com/desandro/imagesloaded/issues/197"><span class="rp-item-num">#197</span><span class="rp-item-title">Images Loaded with HTML5 Video Poster Attribute</span><span class="rp-item-extra">5 comments · 2015-06-17</span></a><a class="rp-item" href="https://github.com/desandro/imagesloaded/issues/66"><span class="rp-item-num">#66</span><span class="rp-item-title">add timeout option</span><span class="rp-item-extra">5 comments · 2013-05-27</span></a><a class="rp-item" href="https://github.com/desandro/imagesloaded/issues/277"><span class="rp-item-num">#277</span><span class="rp-item-title">Add support for SVG and &lt;image&gt; tag</span><span class="rp-item-extra">4 comments · 2018-08-06</span></a><a class="rp-item" href="https://github.com/desandro/imagesloaded/issues/308"><span class="rp-item-num">#308</span><span class="rp-item-title">obj is not iterable</span><span class="rp-item-extra">3 comments · 2022-10-19</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/desandro/imagesloaded/releases"><b>v4.1.4</b> <span class="rp-rel-tag">v4.1.4</span> <span class="rp-item-extra">2018-01-02</span></a><pre class="rp-pre">Check for non-zero naturalWidth; Fixes bug with metafizzy/infinite-scroll671</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/desandro__imagesloaded.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

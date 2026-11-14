@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>enyo/dropzone · GitHub Trending Rank Radar</title>
+<meta name="description" content="Dropzone is an easy to use drag&#x27;n&#x27;drop library. It supports image previews and shows nice progress bars.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="dropzone, enyo, enyo/dropzone, github stars, github trending, star growth, star history, 开源项目, 星标增长, dropzone, javascript, drag-and-drop, javascript-library, file-upload">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/enyo__dropzone">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="enyo/dropzone · GitHub Trending Rank Radar">
+<meta property="og:description" content="Dropzone is an easy to use drag&#x27;n&#x27;drop library. It supports image previews and shows nice progress bars.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/enyo__dropzone">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "enyo/dropzone", "codeRepository": "https://github.com/enyo/dropzone", "url": "https://zhuikan.com/repos/enyo__dropzone", "description": "Dropzone is an easy to use drag'n'drop library. It supports image previews and shows nice progress bars.", "author": {"@type": "Organization", "name": "enyo", "url": "https://github.com/enyo"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "JavaScript", "dateCreated": "2012-02-12", "keywords": "dropzone,javascript,drag-and-drop,javascript-library,file-upload"}</script>
+</head>
+<body data-repo="enyo/dropzone" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">enyo/dropzone</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="enyo__dropzone"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/133277?u=5675a5f3cf49446bc3954e73fabdb4d8b43e6c85&amp;v=4&s=300" width="300" height="300" alt="enyo avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">dropzone</div>
+      <a class="rp-side-owner" href="https://github.com/enyo">enyo</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/enyo">enyo</a>
+        <span class="rp-sep">/</span><span class="rp-name">dropzone</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Dropzone is an easy to use drag&#x27;n&#x27;drop library. It supports image previews and shows nice progress bars.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>18,409</b></span><span class="rp-stat" title="forks">⑂ <b>3,227</b></span><span class="rp-stat" title="watchers">👁 <b>369</b></span><span class="rp-stat" title="prs">⑃ <b>307</b></span><span class="rp-stat" title="issues">● <b>1,867</b></span><span class="rp-stat" title="releases">▤ <b>54</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/dropzone">dropzone</a><a class="rp-topic" href="../tags/javascript">javascript</a><a class="rp-topic" href="https://github.com/topics/drag-and-drop">drag-and-drop</a><a class="rp-topic" href="https://github.com/topics/javascript-library">javascript-library</a><a class="rp-topic" href="https://github.com/topics/file-upload">file-upload</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2012-02-12</span><a class="rp-meta-bit rp-home" href="http://www.dropzone.dev/js" rel="noopener">www.dropzone.dev/js</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/enyo/dropzone">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">dropzone@6.3.5</span><a class="rp-dl-a" href="https://github.com/enyo/dropzone/releases/tag/dropzone%406.3.5">dropzone@6.3.5 ↓</a><span class="rp-dl-ver">6.3.5</span><span class="rp-dl-date">2026-09-27</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">18,409</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">3,227</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">369</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">307</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,867</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">54</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Dropzone is a JavaScript library that turns any HTML element into a dropzone.
+This means that a user can drag and drop a file onto it, and Dropzone will
+display file previews and upload progress, and handle the upload for you via
+XHR.
+
+It&#x27;s fully configurable, can be styled according to your needs and is trusted by
+thousands. It&#x27;s written in TypeScript and ships its own types, so there&#x27;s
+nothing extra to install.
+
+
+  
+
+
+ Quickstart
+
+Install:
+
+bash
+$ npm install dropzone
+ or with pnpm:
+$ pnpm add dropzone
+
+
+Use as ES6 module (recommended):
+
+js
+import { Dropzone } from &quot;dropzone&quot;;
+const dropzone = new Dropzone(&quot;divmyId&quot;, { url: &quot;/file/post&quot; });
+
+
+or use as CommonJS module:
+
+js
+const { Dropzone } = require(&quot;dropzone&quot;);
+const dropzone = new Dropzone(&quot;divmyId&quot;, { url: &quot;/file/post&quot; });
+
+
+ TypeScript
+
+The types come with the package — there&#x27;s no @types/dropzone to install, and
+you should remove it if you have it: it stopped at 5.7.9 and describes the
+v5 API.
+
+ts
+import { Dropzone } from &quot;dropzone&quot;;
+import type { DropzoneFile, DropzoneOptions } from &quot;dropzone&quot;;
+
+const options: DropzoneOptions = { url: &quot;/file/post&quot;, maxFilesize: 10 };
+const dropzone = new Dropzone(&quot;divmyId&quot;, options);
+
+// listener arguments are inferred from the event name
+dropzone.on(&quot;addedfile&quot;, (file) = console.log(file.name, file.upload.uuid));
+
+
+👉 Checkout our example implementations for different
+bundlers
+
+ Not using a package manager or bundler?
+
+Use the standalone files like this:
+
+html
+
+
+
+
+
+
+  // Dropzone has been added as a global variable.
+  const dropzone = new Dropzone(&quot;div.my-dropzone&quot;, { url: &quot;/file/post&quot; });
+
+
+
+---
+
+- 📚 Full documentation
+- ⚙️ src/options.ts
+  for all available options
+
+---
+
+ ⚠️ NOTE: Dropzone 6 does not support Internet Explorer. If you still need
+ it, use 5.9.3. See the CHANGELOG for everything that
+ changed in 6.0.0.
+
+ Repository layout
+
+This is a monorepo. It holds the library, the documentation and the website:
+
+|                                          |                                            |
+| ---------------------------------------- | ------------------------------------------ |
+| packages/dropzone | the library published to npm as dropzone |
+| apps/docs                 | the documentation, built with Docusaurus   |
+| apps/website           | www.dropzone.dev, built with SvelteKit     |
+
+bash
+pnpm install
+
+pnpm build           the library and the docs
+pnpm test            the library&#x27;s unit tests
+pnpm test:e2e        the library&#x27;s browser tests
+pnpm dev:docs        the documentation, locally
+pnpm dev:website     the website, locally
+
+
+ Building the deployable site
+
+The website and the documentation are published together as one GitHub Pages
+site: the website at the root, the documentation under /docs. One command
+produces exactly what gets deployed, in _site/:
+
+bash
+pnpm build:site
+
+
+CI runs the same script, so what you get locally is
+what ships. It builds each half with its own toolchain and combines them, which
+means there is no manual cop</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/enyo/dropzone/issues/1984"><span class="rp-item-num">#1984</span><span class="rp-item-title">Heic format conversion via heic2any</span><span class="rp-item-extra">19 comments · 2021-05-24</span></a><a class="rp-item" href="https://github.com/enyo/dropzone/issues/2012"><span class="rp-item-num">#2012</span><span class="rp-item-title">Dropzonejs Error upload attached file</span><span class="rp-item-extra">9 comments · 2021-07-26</span></a><a class="rp-item" href="https://github.com/enyo/dropzone/issues/2067"><span class="rp-item-num">#2067</span><span class="rp-item-title">Drop broken after uploading first file</span><span class="rp-item-extra">7 comments · 2021-11-30</span></a><a class="rp-item" href="https://github.com/enyo/dropzone/issues/816"><span class="rp-item-num">#816</span><span class="rp-item-title">Problem with combining normal form with file inputs and dropzone</span><span class="rp-item-extra">7 comments · 2015-01-16</span></a><a class="rp-item" href="https://github.com/enyo/dropzone/issues/1967"><span class="rp-item-num">#1967</span><span class="rp-item-title">Orientation fix vs Image Exif</span><span class="rp-item-extra">6 comments · 2021-04-28</span></a><a class="rp-item" href="https://github.com/enyo/dropzone/issues/1930"><span class="rp-item-num">#1930</span><span class="rp-item-title">acceptedFiles ignored when uploading through mobile browser.</span><span class="rp-item-extra">6 comments · 2021-03-10</span></a><a class="rp-item" href="https://github.com/enyo/dropzone/issues/2243"><span class="rp-item-num">#2243</span><span class="rp-item-title">Documentation: Dead external links</span><span class="rp-item-extra">5 comments · 2023-07-06</span></a><a class="rp-item" href="https://github.com/enyo/dropzone/issues/2031"><span class="rp-item-num">#2031</span><span class="rp-item-title">when i use displayExistingFile function maxFiles does not seem to work</span><span class="rp-item-extra">5 comments · 2021-09-09</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/enyo/dropzone/discussions/2340"><span class="rp-item-num">#2340</span><span class="rp-item-title">Using Python Flask</span><span class="rp-item-extra">1 comments · 2026-05-17</span></a><a class="rp-item" href="https://github.com/enyo/dropzone/discussions/2339"><span class="rp-item-num">#2339</span><span class="rp-item-title">Documentation mistake</span><span class="rp-item-extra">1 comments · 2025-11-13</span></a><a class="rp-item" href="https://github.com/enyo/dropzone/discussions/2336"><span class="rp-item-num">#2336</span><span class="rp-item-title">Processing chunks</span><span class="rp-item-extra">0 comments · 2025-06-20</span></a><a class="rp-item" href="https://github.com/enyo/dropzone/discussions/2332"><span class="rp-item-num">#2332</span><span class="rp-item-title">I use flask-dropzone pypi package and I want to know how to edit the progress bar</span><span class="rp-item-extra">1 comments · 2025-05-05</span></a><a class="rp-item" href="https://github.com/enyo/dropzone/discussions/2329"><span class="rp-item-num">#2329</span><span class="rp-item-title">How do I handle file becoming inaccessible before queue processing?</span><span class="rp-item-extra">0 comments · 2025-03-19</span></a><a class="rp-item" href="https://github.com/enyo/dropzone/discussions/2327"><span class="rp-item-num">#2327</span><span class="rp-item-title">Documentation discrepancy: `maxFileSize` configuration option unit mismatch</span><span class="rp-item-extra">1 comments · 2025-02-27</span></a><a class="rp-item" href="https://github.com/enyo/dropzone/discussions/2324"><span class="rp-item-num">#2324</span><span class="rp-item-title">Integration into the shadowDom</span><span class="rp-item-extra">0 comments · 2025-01-28</span></a><a class="rp-item" href="https://github.com/enyo/dropzone/discussions/2323"><span class="rp-item-num">#2323</span><span class="rp-item-title">Upload different filetypes to different upload-urls</span><span class="rp-item-extra">2 comments · 2025-01-14</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/enyo/dropzone/releases"><b>dropzone@6.3.5</b> <span class="rp-rel-tag">dropzone@6.3.5</span> <span class="rp-item-extra">2026-09-27</span></a><pre class="rp-pre">Patch Changes
+
+- 2380 88901b7 - Fix binaryBody uploads sending the original file instead of the transformed one. resizeWidth, resizeHeight and any custom transformFile were silently ignored, so an unresized image went to the server. Chunked and form-data uploads were unaffected.
+
+- 2379 eae9121 - Fix cancelling an upload while transformFile is still running. The file had no xhr yet, so it was grouped with every other file that had not started and the whole queue was cancelled with it — and the file itself was still sent once the transform finished.</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/enyo__dropzone.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

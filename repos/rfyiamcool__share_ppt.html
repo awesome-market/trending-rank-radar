@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rfyiamcool/share_ppt · GitHub Trending Rank Radar</title>
+<meta name="description" content="🚗  个人做过的技术分享... ( topic: 高性能架构,  中间件原理实践，云原生，Golang 等)">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="share_ppt, rfyiamcool, rfyiamcool/share_ppt, github stars, github trending, star growth, star history, 开源项目, 星标增长, ppt, python, golang, keynote, etcd, kafka">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/rfyiamcool__share_ppt">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="rfyiamcool/share_ppt · GitHub Trending Rank Radar">
+<meta property="og:description" content="🚗  个人做过的技术分享... ( topic: 高性能架构,  中间件原理实践，云原生，Golang 等)">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/rfyiamcool__share_ppt">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "rfyiamcool/share_ppt", "codeRepository": "https://github.com/rfyiamcool/share_ppt", "url": "https://zhuikan.com/repos/rfyiamcool__share_ppt", "description": "🚗  个人做过的技术分享... ( topic: 高性能架构,  中间件原理实践，云原生，Golang 等)", "author": {"@type": "Organization", "name": "rfyiamcool", "url": "https://github.com/rfyiamcool"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "dateCreated": "2017-08-04", "keywords": "ppt,python,golang,keynote,etcd,kafka,kubernetes,mysql"}</script>
+</head>
+<body data-repo="rfyiamcool/share_ppt" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">rfyiamcool/share_ppt</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="rfyiamcool__share_ppt"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/3785409?u=4be39965811b26feb9f46cf22c55a7e8d1c62f9d&amp;v=4&s=300" width="300" height="300" alt="rfyiamcool avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">share_ppt</div>
+      <a class="rp-side-owner" href="https://github.com/rfyiamcool">rfyiamcool</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/rfyiamcool">rfyiamcool</a>
+        <span class="rp-sep">/</span><span class="rp-name">share_ppt</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">🚗  个人做过的技术分享... ( topic: 高性能架构,  中间件原理实践，云原生，Golang 等)</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,753</b></span><span class="rp-stat" title="forks">⑂ <b>988</b></span><span class="rp-stat" title="watchers">👁 <b>247</b></span><span class="rp-stat" title="prs">⑃ <b>3</b></span><span class="rp-stat" title="issues">● <b>34</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/ppt">ppt</a><a class="rp-topic" href="../tags/python">python</a><a class="rp-topic" href="../tags/golang">golang</a><a class="rp-topic" href="https://github.com/topics/keynote">keynote</a><a class="rp-topic" href="https://github.com/topics/etcd">etcd</a><a class="rp-topic" href="https://github.com/topics/kafka">kafka</a><a class="rp-topic" href="../tags/kubernetes">kubernetes</a><a class="rp-topic" href="../tags/mysql">mysql</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Created 2017-08-04</span><a class="rp-meta-bit rp-home" href="https://xiaorui.cc" rel="noopener">xiaorui.cc</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/rfyiamcool/share_ppt">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,753</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">988</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">247</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">3</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">34</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">技术分享PPT
+在公司内部及社区中分享的PPT.
+
+ Download
+
+download in github
+
+ Agenda
+
+- 网络编程那些事儿-meican
+- apache pulsar的设计实现原理
+- Qcon海量长连接消息推送系统实践
+- 网络编程那些事儿
+- Golang项目实战
+- Etcd的设计与实现
+- git的那些事儿
+- 分布式消息推送
+- Kafka的设计与实现
+- TCP的那些事儿
+- Golang高级编程技巧
+- GRPC的那些事儿
+- 分布式任务系统
+- 优雅的编程者
+- 分布式行情推送系统(golang)
+- Redis经验之谈
+- http2和quic的那些事儿
+- kubernetes的那些事儿
+- istio的那些事儿
+- Service Mesh的那些事儿
+- RedisCluster那些事儿
+- golang高级讲义
+- golang高性能实战
+- mysql快速讲义
+- 微服务那些事儿
+- 异步io调度框架的实现
+- cdn设计原理
+- 分析mysql acid设计实现
+- Python Gil全局锁那些事儿
+- Redis设计实现
+- 分布式一致性raft实现原理
+- Python高级内存管理
+- 美妙的多进程管理
+- 聊聊集群管理
+
+ LIST
+
+ 网络编程那些事儿-meican
+
+ 分享时间
+
+2023-12-20
+
+ ppt地址
+
+下载地址
+
+ 截图
+
+
+
+
+
+
+ ApachePulsar的设计实现原理
+
+ 分享时间
+
+2023-10-12
+
+ 内容
+
+- Apache pulsar 的架构设计
+- Pulsar broker 的计算层设计
+- 系统 IO 的介绍 (page cache, buffered io, direct io ...)
+- Pulsar bookKeeper 的存储层设计
+- Pulsar 的高级功能设计
+- QA
+
+ ppt地址
+
+下载地址
+
+ 截图
+
+
+
+
+
+
+ Qcon海量长连接消息推送系统实践
+
+ 分享时间
+
+2021-06-30
+ 内容
+
+- 超百万的⻓连接接入
+- 每天近 100 亿条消息
+- 高峰值时每秒 70w+ 条消息 目标
+- 如何尽量保证消息的低延迟
+- 如何保证系统的高并发
+- 如何保证消息的可靠性
+- 如何保证系统的可用性
+- ...
+
+ ppt地址
+
+下载地址
+
+ 截图
+
+
+
+
+
+ 网络编程那些事儿
+
+ 分享时间
+
+2021-12-16
+
+ 内容
+
+- 收包发包原理, socket及阻塞非阻塞, 同步异步的本质
+- linux 五种IO模型
+- io多路复用模型
+  - select
+  - poll
+  - epoll
+    - 数据结构组成
+    - 如何使用 epoll 的那几个方法
+    - 从底层来讲解 epoll 的实现原理
+    - epolloneshot 的场景
+    - 水平触发和边缘触发到底是怎么一回事, 各种case来描述
+    - 社区中常见的服务端使用 epoll 哪种触发模型
+    - epoll 的开发技巧
+  - io_uring
+- aio 到底是怎么一回事？ 存在的问题
+- 当前社区比较流行的 网络编程 模型
+  - 新线程模型
+  - 单多路复用 + 业务线程池模型
+  - prefork 模型
+  - reactor
+  - proactor
+- 常见的网络编程问题
+  - 半连接全连接代表的意思，如何配置，不同内核参数下表现形式
+  - 常见的读写返回值的处理方式
+  - reuseaddr vs reuseport
+  - epoll 的惊群问题
+  - 粘包半包
+  - 半关闭
+  - 如何实现异步 connect
+  - 弱网络问题, kcp
+  - fork, exec, system 在继承传递 fd 的问题
+  - 如何实现网络服务的 upgrade
+  - 论心跳的重要性, 为什么使用应用层心跳
+  - 如何处理各种的网络异常问题
+
+ ppt地址
+
+下载地址
+
+ 截图
+
+
+
+ Golang项目实战
+
+ 分享时间
+
+2021-11-08
+
+ 内容
+
+- 代码规范
+- 接口规范
+- Git规范
+- 常见设计模式
+- Golang开发经验
+- Golang编码技巧
+
+ ppt地址
+
+下载地址
+
+ 截图
+
+
+
+ Etcd的设计与实现
+
+ 分享时间
+
+2021-07-05
+
+ 内容
+
+- raft共识算法
+- boltdb知识点
+- etcd自身的功能实现
+  - 关键结构体
+  - mvcc实现
+  - treeindex及boltdb存储布局
+  - txn事务的实现
+  - watch监听的实现
+  - lease监听的实现
+  - compact的实现
+  - defrag的实现
+  - 锁的实现
+- etcd的使用经验
+
+ ppt地址
+
+下载地址
+
+ 截图
+
+
+
+ GIT的那些事儿
+
+ 分享时间
+
+2021-04-21
+
+ 内容
+
+- git由来
+- git原理 (大篇幅讲解)
+- git规范 (git-flow工作流讲解)
+- git技巧
+
+ ppt地址
+
+下载地址
+
+ 截图
+
+
+
+ 分布式消息推送
+
+ 分享时间
+
+2021-03-24
+
+ ppt地址
+
+在线观看
+
+下载地址
+
+ 截图
+
+
+
+ Kafka的设计与实现
+
+ 分享时间
+
+2021-02-23
+
+ ppt地址
+
+在线观看
+
+下载地址
+
+ 截图
+
+
+
+ TCP的那些事儿
+
+ 分享时间
+
+2021-01-06
+
+ ppt地址
+
+在线观看
+
+下载地址
+
+ 截图
+
+
+
+ Golang高级技巧
+
+ 分享时间
+
+2020-11-15
+
+ ppt地址
+
+在线观看
+
+下载地址
+
+ 截图
+
+
+
+ GRPC的那些事儿
+
+ 分享时间
+
+2020-09-30
+
+ ppt地址
+
+在线观看
+
+下载地址
+
+ 截图
+
+
+
+讲述了grpc的特点, 使用方法及生产环境中的经验，话题包括了http1.1, http2.0, http3.0的实现, protobuf的编码实现, wireshark抓包分析grpc等等.
+
+ 分布式任务系统
+
+ 分享时间
+
+2020-06
+
+ ppt地址
+
+在线观看
+
+下载地址
+
+ 截图
+
+
+
+ 优雅的编程者
+
+ 分享时间
+
+2020-03
+
+ ppt地址
+
+在线观看
+
+下载地址
+
+ 截图
+
+
+
+ 分布式行情推送系统golang
+
+ 分享时间
+
+2019-12
+
+ ppt地址
+
+在线观看
+
+下载地址
+
+ Redis经验之谈
+
+ 分享时间
+
+2019-11
+
+ 截图
+
+
+
+ ppt地址
+
+在线观看
+
+下载地址
+
+ http2和quic的那些事儿
+
+ 分享时间
+
+2019-08
+
+ ppt地址
+
+在线观看
+
+下载地址
+
+ kubernetes的那些事儿
+
+ 分享时间
+
+2019-08
+
+ ppt地址
+
+在线观看
+
+下载地址
+
+ istio的那些事儿
+
+ 分享时间
+
+2019-07
+
+ ppt地址
+
+在线观看
+
+下载地址
+
+ ServiceMesh的那些事儿
+
+ 分享时间
+
+2019-07
+
+ ppt地址
+
+在线观看
+
+下载地址
+
+ RedisCluste</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/rfyiamcool/share_ppt/issues/40"><span class="rp-item-num">#40</span><span class="rp-item-title">请问有宣讲视频资料吗？</span><span class="rp-item-extra">1 comments · 2023-08-10</span></a><a class="rp-item" href="https://github.com/rfyiamcool/share_ppt/issues/26"><span class="rp-item-num">#26</span><span class="rp-item-title">message_pusher无法访问了</span><span class="rp-item-extra">1 comments · 2021-10-31</span></a><a class="rp-item" href="https://github.com/rfyiamcool/share_ppt/issues/33"><span class="rp-item-num">#33</span><span class="rp-item-title">分享都做的好用心，赞一个</span><span class="rp-item-extra">0 comments · 2022-05-08</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/rfyiamcool__share_ppt.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<div align="center">
+  <h1>MediaGo</h1>
+  <a href="https://downloader.caorushizi.cn/en/guides.html?form=github">Quick Start</a>
+  <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+  <a href="https://downloader.caorushizi.cn/en?form=github">Website</a>
+  <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+  <a href="https://downloader.caorushizi.cn/en/documents.html?form=github">Docs</a>
+  <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+  <a href="https://github.com/caorushizi/mediago/discussions">Discussions</a>
+  <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+  <a href="https://discord.gg/yxWBVRWGqM">Discord</a>
+  <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+  <a href="https://www.reddit.com/r/MediaGo_Studio/">Reddit</a>
+  <br>
+
+<a href="https://github.com/caorushizi/mediago/blob/master/README.zh.md">中文</a>
+<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+<a href="https://github.com/caorushizi/mediago/blob/master/README.jp.md">日本語</a>
+<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
+<a href="https://github.com/caorushizi/mediago/blob/master/README.it.md">Italiano</a>
+<br>
+
+  <img alt="GitHub Downloads (all assets, all releases)" src="https://img.shields.io/github/downloads/caorushizi/mediago/total">
+  <img alt="GitHub Downloads (all assets, latest release)" src="https://img.shields.io/github/downloads/caorushizi/mediago/latest/total">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/caorushizi/mediago">
+  <img alt="GitHub forks" src="https://img.shields.io/github/forks/caorushizi/mediago">
+  <img alt="GitCode" src="https://gitcode.com/caorushizi/mediago/star/badge.svg">
+  <br>
+
+  <a href="https://trendshift.io/repositories/11083" target="_blank">
+    <img src="https://trendshift.io/api/badge/repositories/11083" alt="caorushizi%2Fmediago | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/>
+  </a>
+
+  <hr />
+</div>
+
+A cross-platform video downloader with built-in sniffing — point it at a
+page, pick what you want, and save. No packet capture, no browser
+extensions to configure, no fiddling with command-line tools.
+
+The app UI currently ships with English, Simplified Chinese, and Italian.
+
+## ✨ What's inside
+
+### 🌐 Browser extension for Chrome / Edge
+
+See something you want on any site → click the extension → send it to
+MediaGo. Detects video resources automatically, shows the count on the
+toolbar badge, works with most mainstream video platforms including
+YouTube, Bilibili and more. Ships bundled with the Desktop app — open
+**Settings → More Settings → Browser extension directory** to find the
+install folder.
+
+### 🎬 YouTube and 1000+ sites
+
+Powered by yt-dlp under the hood. Supports YouTube, Twitter/X, Instagram,
+Reddit and [over a thousand more video sites](https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md).
+
+### 🦞 AI assistants can download for you — OpenClaw Skill
+
+Using Claude Code, Cursor or another AI coding assistant? Install the
+MediaGo skill and just say _"please download this video: &lt;url&gt;"_.
+The AI handles the rest.
+
+```shell
+npx clawhub@latest install mediago
+```
+
+### 🔌 Works with other tools
+
+MediaGo exposes a full HTTP API — scripts, automation tools and other
+apps can create download tasks, query progress and manage the list
+directly. The browser extension uses this same API to talk to the desktop
+app; anyone else can tap in too.
+
+### 🎞️ Built-in format conversion
+
+After a download finishes, convert it to another format or quality
+without leaving MediaGo. No more opening a separate tool for ffmpeg.
+
+### 🐳 One-line Docker deployment
+
+Headless install on your server, then access the web UI from anywhere on
+the same network:
+
+```shell
+docker run -d --name mediago -p 8899:8899 -v /path/to/mediago:/app/mediago caorushizi/mediago:3.5.0
+```
+
+For builds that request an initialization code, read `setup-token` in the server config directory (`docker exec mediago cat /app/mediago/data/setup-token` for the default container), then enter it on the setup page. The file is deleted after successful setup; existing accounts do not need to initialize again.
+
+Available on [Docker Hub](https://hub.docker.com/r/caorushizi/mediago) and GHCR (`ghcr.io/caorushizi/mediago`) — same image, pick whichever registry is faster for you. Supports both Intel / AMD (amd64) and ARM (arm64). On the desktop build,
+MediaGo listens on both `127.0.0.1` and your LAN IP out of the box, so
+phones and tablets on the same Wi-Fi can open the web UI too.
+
+## 📷 Screenshots
+
+![Home](./images/home_en.png)
+
+![Home — dark mode](./images/home-dark_en.png)
+
+![Settings](./images/settings_en.png)
+
+![Resource extraction](./images/browser_en.png)
+
+## 📥 Download
+
+### v3.5.0 (stable)
+
+- [Windows — installer](https://github.com/caorushizi/mediago/releases/download/v3.5.0/mediago-community-setup-win32-x64-3.5.0.exe)
+- [Windows — portable](https://github.com/caorushizi/mediago/releases/download/v3.5.0/mediago-community-portable-win32-x64-3.5.0.exe)
+- [macOS — Apple Silicon (arm64)](https://github.com/caorushizi/mediago/releases/download/v3.5.0/mediago-community-setup-darwin-arm64-3.5.0.dmg)
+- [macOS — Intel (x64)](https://github.com/caorushizi/mediago/releases/download/v3.5.0/mediago-community-setup-darwin-x64-3.5.0.dmg)
+- [Linux (deb)](https://github.com/caorushizi/mediago/releases/download/v3.5.0/mediago-community-setup-linux-amd64-3.5.0.deb)
+- [**Docker Hub**](https://hub.docker.com/r/caorushizi/mediago): `docker run -d --name mediago -p 8899:8899 -v /path/to/mediago:/app/mediago caorushizi/mediago:3.5.0`
+- **GHCR**: `docker run -d --name mediago -p 8899:8899 -v /path/to/mediago:/app/mediago ghcr.io/caorushizi/mediago:3.5.0`
+
+Browsing older releases? See the [GitHub Releases page](https://github.com/caorushizi/mediago/releases).
+
+### 🪄 One-click Docker deployment via BT Panel
+
+1. Install [BT Panel](https://www.bt.cn/new/download.html?r=dk_mediago) using the official script.
+2. Log in to the panel, click **Docker** in the sidebar and finish the
+   Docker service setup (just follow the prompts).
+3. Find **MediaGo** in the app store, click **Install**, configure your
+   domain, and you're done.
+
+## 📝 What's new in v3.5.0
+
+- **🌐 Browser extension** — sniff videos on any site, send to MediaGo
+  in one click
+- **🎬 YouTube + 1000+ sites** — powered by yt-dlp
+- **🦞 OpenClaw Skill** — download videos via AI coding assistants
+- **🔌 HTTP API** — integrate with scripts, automation and third-party tools
+- **🎞️ In-app format conversion** — choose output format and quality
+- **🐳 Simpler Docker deployment** — mount a single folder, multi-arch images on GHCR
+- **⚡ Faster startup** — backend rewrite, lower memory footprint, built-in video player
+
+## 🧑‍💻 Development from source
+
+Install [One CLI](https://github.com/1cli-team/one-cli) 0.1.24 or newer first.
+
+**macOS / Linux:**
+
+```bash
+curl -fsSL https://1cli.dev/install.sh | bash
+```
+
+**Windows (PowerShell):**
+
+```powershell
+irm https://1cli.dev/install.ps1 | iex
+```
+
+For manual installation, download the CLI archive for your operating system
+and architecture from [GitHub Releases](https://github.com/1cli-team/one-cli/releases/latest)
+and add the `one` executable to `PATH`.
+
+After installation, open a new terminal and run these commands from the
+repository root:
+
+```shell
+one --version
+one mise trust
+one mise install
+one setup
+one dev
+one dev:web
+one dev:electron
+one check
+```
+
+`one.manifest.toml` registers the existing projects. `mise.toml` pins Node,
+pnpm, Go and Task and exposes product workflows through One. Run `one run`
+to list tasks, `one build -p core` to build Core, or `one build -p docs`
+to build the documentation. `one dev --dry-run -o json` previews execution.
+After changing package scripts, run `one init mise` and review the diff.
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for configuration and validation.
+
+The following Task commands remain compatible and are used by existing CI:
+
+Repository workflows support [Task](https://taskfile.dev/) v3.51.1 or newer
+within the v3 release line. Install the latest compatible v3 release on macOS,
+Linux, or Windows (PowerShell) with a Go toolchain, make sure the Go binary
+directory is on `PATH`, and verify it before running repository commands:
+
+```shell
+go install github.com/go-task/task/v3/cmd/task@latest
+task --version
+```
+
+From the repository root, the primary clone-and-start flow is:
+
+```shell
+git clone https://github.com/caorushizi/mediago.git
+cd mediago
+task setup
+task dev:all
+```
+
+`task setup` installs the Node workspace and the runtime tools needed by the
+application. Their only version source is `packages/tooling/manifests/runtime-deps.json`; Task
+does not automatically upgrade them. Running `pnpm install` alone installs
+only Node workspace packages, not runtime binaries such as BBDown.
+
+One delegates product workflows to the existing Taskfile. Turbo, pnpm `:raw`
+scripts, Go commands, and utilities in `packages/tooling` remain implementation
+details used by Task and CI.
+
+Use `task dev:web` for the web surface or `task dev:electron` for
+desktop-only development. The deployable Web product is the Docker image;
+there is no separate Node.js server package. Before submitting changes, run:
+
+```shell
+task check
+```
+
+## 🛠️ Built with
+
+[![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://react.dev/)
+[![Electron](https://img.shields.io/badge/Electron-191970?logo=electron&logoColor=white)](https://www.electronjs.org)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)](https://vitejs.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-000?logo=shadcnui&logoColor=white)](https://ui.shadcn.com/)
+[![Go](https://img.shields.io/badge/Go-00ADD8?logo=go&logoColor=white)](https://go.dev/)
+
+## 🙏 Acknowledgements
+
+- [N_m3u8DL-RE](https://github.com/nilaoda/N_m3u8DL-RE)
+- [BBDown](https://github.com/nilaoda/BBDown)
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+- [aria2](https://aria2.github.io/)
+- [mediago-core](https://github.com/caorushizi/mediago-core)
+
+## ⚖️ Disclaimer
+
+> **This project is for educational and research purposes only. Do not use it for any commercial or illegal purposes.**
+>
+> 1. All code and functionality provided by this project are intended solely as a reference for learning about streaming media technologies. Users must comply with the laws and regulations of their jurisdiction.
+> 2. Any content downloaded using this project remains the property of its original copyright holders. Users should delete downloaded content within 24 hours or obtain proper authorization.
+> 3. The developers of this project are not responsible for any actions taken by users, including but not limited to downloading copyrighted content or impacting third-party platforms.
+> 4. Using this project for mass scraping, disrupting platform services, or any activity that infringes upon the legitimate rights of others is strictly prohibited.
+> 5. By using this project you acknowledge that you have read and agree to this disclaimer. If you do not agree, stop using the project and delete it immediately.
+
+---
+
+> Building from source? See [CONTRIBUTING.md](./CONTRIBUTING.md).
+>
+> Translating MediaGo? See [TRANSLATION.md](./TRANSLATION.md).
+
+### Security checks
+
+Run `pnpm security:js` for the complete workspace dependency audit and
+`pnpm security:go` with official `govulncheck` v1.9.0 on PATH for affected Go
+function calls. GitHub runs these checks, CodeQL, and container dependency scans
+on pull requests and daily. Container scans cover OS and identifiable embedded
+packages; absence of findings does not validate every bundled native library.
+
+The UI development server binds to `127.0.0.1` by default. For intentional LAN
+testing, set `MEDIAGO_DEV_HOST=0.0.0.0` in `.env.development.local`.
+
+The runtime container uses Distroless Debian 13 with the required ICU/zlib libraries
+and package provenance. It keeps the same port, volume paths and appended flag
+overrides. There is no shell or package manager inside the production image; use
+`docker logs` and the health/API endpoints for diagnostics. The external streaming
+engine is rebuilt from checksum-pinned v0.2.1 source with the patched Go toolchain.
+
+## Privacy and Code signing policy
+
+Usage statistics are optional. See the [Privacy policy](docs/en/privacy.md) for installer-time choice and in-app controls. MediaGo has joined the SignPath Foundation program; Windows signing is maintained on the [codex/signpath-integration branch](https://github.com/mediago-dev/mediago/tree/codex/signpath-integration) while production signing remains pending. Public Windows releases remain unsigned. See the [Code signing policy](docs/en/code-signing.md).

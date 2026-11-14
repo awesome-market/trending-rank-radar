@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Priyanshu-byte-coder/devtrack · GitHub Trending Rank Radar</title>
+<meta name="description" content="Open-source developer productivity dashboard - GitHub stats, PR metrics, streaks &amp; goals.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="devtrack, Priyanshu-byte-coder, Priyanshu-byte-coder/devtrack, github stars, github trending, star growth, star history, 开源项目, 星标增长, dashboard, developer-tools, nextjs, open-source, postgresql, productivity">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Priyanshu-byte-coder__devtrack">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Priyanshu-byte-coder/devtrack · GitHub Trending Rank Radar">
+<meta property="og:description" content="Open-source developer productivity dashboard - GitHub stats, PR metrics, streaks &amp; goals.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Priyanshu-byte-coder__devtrack">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Priyanshu-byte-coder/devtrack", "codeRepository": "https://github.com/Priyanshu-byte-coder/devtrack", "url": "https://zhuikan.com/repos/Priyanshu-byte-coder__devtrack", "description": "Open-source developer productivity dashboard - GitHub stats, PR metrics, streaks & goals.", "author": {"@type": "Organization", "name": "Priyanshu-byte-coder", "url": "https://github.com/Priyanshu-byte-coder"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2026-05-10", "keywords": "dashboard,developer-tools,nextjs,open-source,postgresql,productivity,typescript,github-stats,supabase,tailwindcss"}</script>
+</head>
+<body data-repo="Priyanshu-byte-coder/devtrack" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Priyanshu-byte-coder/devtrack</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Priyanshu-byte-coder__devtrack"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/180809390?u=75e23309f81d48488181f44bf120f6f7549b5122&amp;v=4&s=300" width="300" height="300" alt="Priyanshu-byte-coder avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">devtrack</div>
+      <a class="rp-side-owner" href="https://github.com/Priyanshu-byte-coder">Priyanshu-byte-coder</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Priyanshu-byte-coder">Priyanshu-byte-coder</a>
+        <span class="rp-sep">/</span><span class="rp-name">devtrack</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Open-source developer productivity dashboard - GitHub stats, PR metrics, streaks &amp; goals.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>309</b></span><span class="rp-stat" title="forks">⑂ <b>436</b></span><span class="rp-stat" title="watchers">👁 <b>2</b></span><span class="rp-stat" title="prs">⑃ <b>2,093</b></span><span class="rp-stat" title="issues">● <b>1,523</b></span><span class="rp-stat" title="releases">▤ <b>2</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/dashboard">dashboard</a><a class="rp-topic" href="../tags/developer-tools">developer-tools</a><a class="rp-topic" href="../tags/nextjs">nextjs</a><a class="rp-topic" href="../tags/open-source">open-source</a><a class="rp-topic" href="../tags/postgresql">postgresql</a><a class="rp-topic" href="../tags/productivity">productivity</a><a class="rp-topic" href="../tags/typescript">typescript</a><a class="rp-topic" href="https://github.com/topics/github-stats">github-stats</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-05-10</span><a class="rp-meta-bit rp-home" href="https://devtrack.live" rel="noopener">devtrack.live</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Priyanshu-byte-coder/devtrack">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.2.0 — Community Edition</span><a class="rp-dl-a" href="https://github.com/Priyanshu-byte-coder/devtrack/releases/tag/v0.2.0">v0.2.0 ↓</a><span class="rp-dl-ver">0.2.0</span><span class="rp-dl-date">2026-06-09</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">309</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">436</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">2</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">2,093</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,523</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">2</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">▲ DevTrack
+
+Turn your GitHub into a high score.
+
+One ranking for every developer. Your commits, PRs, reviews and streaks become one score,
+one tier and one spot on a global leaderboard, built from the GitHub activity you already have.
+Look anyone up, duel your friends, flex it in your README. Free, open source and self-hostable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+▶ Watch the trailer (0:41, YouTube): score, leaderboard, duels, README badges and more. Or just type any GitHub username at devtrack.live and see where they&#x27;d rank. No sign-up needed.
+
+
+
+| 🎮 Play                       | 🛠️ Build                          | 💎 Sponsor                         |
+| ------------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------- |
+| Get your rank, tier and badges in under a minute. | 280+ contributors, mentoring, and a no-accounts demo mode. | Put your brand where developers check their rank daily. |
+
+
+
+---
+
+ For players
+
+ Three steps to your high score
+
+1. Press start. Sign in with GitHub. You approve on github.com; DevTrack never sees your password.
+2. Get your player card. Your score (0–1000), tier from Bronze to Legend, XP and level, and your spot on the global leaderboard, built from your real commits, PRs and reviews.
+3. Flex it. Duel friends, share your card, and drop live badges into your README.
+
+Just curious? Try any username in the score attack, or open anyone&#x27;s card at devtrack.live/u/. No account needed.
+
+ Take a look
+
+
+  
+    
+      
+      Hi-score table: overall, streak, commits and PR boards, by language, for the week, month or all time
+    
+    
+      
+      Duels: any two GitHub users, eight rounds, one shareable result
+    
+  
+  
+    
+      
+      Player cards: rank, tier, level and XP, a 30-day commit chart and a share card
+    
+    
+      
+      HQ: your week as a game HUD, your season rank, and everything else one click away
+    
+  
+  
+    
+      
+      Year in Code: your year as a run of levels, with a share card at the end
+    
+    
+      
+      Top developers: by language and by country, updated daily
+    
+  
+
+
+ Flex it in your README
+
+Live, animated pixel badges that update on their own. Here are the maintainer&#x27;s:
+
+
+  
+  
+  
+
+
+Sign in once, then paste this into your profile README (replace YOUR_LOGIN):
+
+md
+
+
+
+
+
+The rank badge also takes &amp;board=month or &amp;board=week. More in BADGE_API.md and the README stats guide.
+
+ Everything you get
+
+
+
+
+
+Play
+
+- DevTrack score (0–1000): consistency, impact, volume and breadth
+- Six tiers, Bronze to Legend; XP and levels that never go down
+- Global leaderboard by language, with weekly and monthly seasons, a podium and daily rank changes
+- Duels between any two GitHub users
+- Top developers by language (20) and country (28)
+- Year in Code, your year as a shareable run
+- Bit, the pixel mascot, with a tip on every page
+
+
+
+
+Your dashboard
+
+- Weekly HUD, season rank card, level-up celebrations
+- Contribution heatmap, str</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Priyanshu-byte-coder/devtrack/issues/2249"><span class="rp-item-num">#2249</span><span class="rp-item-title">[GOOD FIRST ISSUE] Add aria-label to all icon-only buttons</span><span class="rp-item-extra">46 comments · 2026-06-09</span></a><a class="rp-item" href="https://github.com/Priyanshu-byte-coder/devtrack/issues/1937"><span class="rp-item-num">#1937</span><span class="rp-item-title">Add &quot;Copy Success&quot; Visual Feedback Animation to All Copy Actions</span><span class="rp-item-extra">15 comments · 2026-06-03</span></a><a class="rp-item" href="https://github.com/Priyanshu-byte-coder/devtrack/issues/2329"><span class="rp-item-num">#2329</span><span class="rp-item-title">Add Informational Tooltips for Dashboard Analytics Metrics</span><span class="rp-item-extra">14 comments · 2026-06-11</span></a><a class="rp-item" href="https://github.com/Priyanshu-byte-coder/devtrack/issues/2445"><span class="rp-item-num">#2445</span><span class="rp-item-title">[BUG] Streak freeze button remains clickable after freeze is applied — allows multiple freezes in same period</span><span class="rp-item-extra">13 comments · 2026-06-14</span></a><a class="rp-item" href="https://github.com/Priyanshu-byte-coder/devtrack/issues/2395"><span class="rp-item-num">#2395</span><span class="rp-item-title">[BUG] [PERF] Refactor dashboard data fetching to eliminate N+1 API requests</span><span class="rp-item-extra">13 comments · 2026-06-13</span></a><a class="rp-item" href="https://github.com/Priyanshu-byte-coder/devtrack/issues/2344"><span class="rp-item-num">#2344</span><span class="rp-item-title">Feature: Add focus mode toggle to hide sidebars and distractions</span><span class="rp-item-extra">13 comments · 2026-06-11</span></a><a class="rp-item" href="https://github.com/Priyanshu-byte-coder/devtrack/issues/2438"><span class="rp-item-num">#2438</span><span class="rp-item-title">[FEAT] Add Interactive Onboarding Walkthrough for First-Time Users</span><span class="rp-item-extra">12 comments · 2026-06-14</span></a><a class="rp-item" href="https://github.com/Priyanshu-byte-coder/devtrack/issues/1488"><span class="rp-item-num">#1488</span><span class="rp-item-title">[FEAT] Add metric status filter controls (Merged vs Open vs Closed) to the PR Analytics chart module</span><span class="rp-item-extra">12 comments · 2026-05-29</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Priyanshu-byte-coder/devtrack/discussions/2923"><span class="rp-item-num">#2923</span><span class="rp-item-title">Concern: Same issues being opened multiple times &amp; closed after PR submission</span><span class="rp-item-extra">1 comments · 2026-06-29</span></a><a class="rp-item" href="https://github.com/Priyanshu-byte-coder/devtrack/discussions/2745"><span class="rp-item-num">#2745</span><span class="rp-item-title">PR Review Request: #2639 - Dashboard Widget Skeleton Loading States</span><span class="rp-item-extra">0 comments · 2026-06-23</span></a><a class="rp-item" href="https://github.com/Priyanshu-byte-coder/devtrack/discussions/2651"><span class="rp-item-num">#2651</span><span class="rp-item-title">📢 Shifting Focus: Code Quality Sprint (UI PRs on Hold)</span><span class="rp-item-extra">0 comments · 2026-06-21</span></a><a class="rp-item" href="https://github.com/Priyanshu-byte-coder/devtrack/discussions/2576"><span class="rp-item-num">#2576</span><span class="rp-item-title">Thank you to everyone who&#x27;s contributed to DevTrack</span><span class="rp-item-extra">0 comments · 2026-06-19</span></a><a class="rp-item" href="https://github.com/Priyanshu-byte-coder/devtrack/discussions/2472"><span class="rp-item-num">#2472</span><span class="rp-item-title">GSSoC-approved PRs not appearing after DevTrack repository transfer</span><span class="rp-item-extra">1 comments · 2026-06-15</span></a><a class="rp-item" href="https://github.com/Priyanshu-byte-coder/devtrack/discussions/2471"><span class="rp-item-num">#2471</span><span class="rp-item-title">GSSoC-approved PRs not appearing after DevTrack repository transfer</span><span class="rp-item-extra">2 comments · 2026-06-15</span></a><a class="rp-item" href="https://github.com/Priyanshu-byte-coder/devtrack/discussions/2247"><span class="rp-item-num">#2247</span><span class="rp-item-title">Contributor Roadmap — June/July 2026</span><span class="rp-item-extra">1 comments · 2026-06-09</span></a><a class="rp-item" href="https://github.com/Priyanshu-byte-coder/devtrack/discussions/2205"><span class="rp-item-num">#2205</span><span class="rp-item-title">Missing Gssoc : approved tag in my PR #2084</span><span class="rp-item-extra">2 comments · 2026-06-08</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/Priyanshu-byte-coder/devtrack/releases"><b>v0.2.0 — Community Edition</b> <span class="rp-rel-tag">v0.2.0</span> <span class="rp-item-extra">2026-06-09</span></a><pre class="rp-pre">What&#x27;s New in v0.2.0
+
+ Highlights
+- Collaboration Rooms — Real-time chat rooms linked to GitHub repos for team coordination
+- Public Profile QR Codes — Generate and download QR codes for your public DevTrack profile
+- Leaderboard Caching — 5-minute API cache with automatic invalidation on opt-out
+- Edge Functions — WakaTime and GitHub sync moved to Edge Functions for faster execution
+- Customizable Dashboard — Drag-and-drop widget layout with persistent preferences
+- Streak Freeze System — Freeze your coding streak on off days
+- Developer Wrapped — Year-in-review style summary of your coding a</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Priyanshu-byte-coder__devtrack.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

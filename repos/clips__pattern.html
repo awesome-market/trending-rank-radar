@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>clips/pattern · GitHub Trending Rank Radar</title>
+<meta name="description" content="Web mining module for Python, with tools for scraping, natural language processing, machine learning, network analysis and visualization.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="pattern, clips, clips/pattern, github stars, github trending, star growth, star history, 开源项目, 星标增长, python, machine-learning, natural-language-processing, web-mining, wordnet, sentiment-analysis">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/clips__pattern">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="clips/pattern · GitHub Trending Rank Radar">
+<meta property="og:description" content="Web mining module for Python, with tools for scraping, natural language processing, machine learning, network analysis and visualization.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/clips__pattern">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "clips/pattern", "codeRepository": "https://github.com/clips/pattern", "url": "https://zhuikan.com/repos/clips__pattern", "description": "Web mining module for Python, with tools for scraping, natural language processing, machine learning, network analysis and visualization.", "author": {"@type": "Organization", "name": "clips", "url": "https://github.com/clips"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/BSD-3-Clause.html", "programmingLanguage": "Python", "dateCreated": "2011-05-03", "keywords": "python,machine-learning,natural-language-processing,web-mining,wordnet,sentiment-analysis,network-analysis"}</script>
+</head>
+<body data-repo="clips/pattern" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">clips/pattern</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="clips__pattern"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/765924?v=4&s=300" width="300" height="300" alt="clips avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">pattern</div>
+      <a class="rp-side-owner" href="https://github.com/clips">clips</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/clips">clips</a>
+        <span class="rp-sep">/</span><span class="rp-name">pattern</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Web mining module for Python, with tools for scraping, natural language processing, machine learning, network analysis and visualization.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>8,857</b></span><span class="rp-stat" title="forks">⑂ <b>1,549</b></span><span class="rp-stat" title="watchers">👁 <b>522</b></span><span class="rp-stat" title="prs">⑃ <b>134</b></span><span class="rp-stat" title="issues">● <b>210</b></span><span class="rp-stat" title="releases">▤ <b>1</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/python">python</a><a class="rp-topic" href="../tags/machine-learning">machine-learning</a><a class="rp-topic" href="../tags/natural-language-processing">natural-language-processing</a><a class="rp-topic" href="https://github.com/topics/web-mining">web-mining</a><a class="rp-topic" href="https://github.com/topics/wordnet">wordnet</a><a class="rp-topic" href="https://github.com/topics/sentiment-analysis">sentiment-analysis</a><a class="rp-topic" href="https://github.com/topics/network-analysis">network-analysis</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">BSD-3-Clause</span><span class="rp-meta-bit">Created 2011-05-03</span><a class="rp-meta-bit rp-home" href="https://github.com/clips/pattern/wiki" rel="noopener">github.com/clips/pattern/wiki</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/clips/pattern">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">3.7-beta</span><a class="rp-dl-a" href="https://github.com/clips/pattern/releases/tag/3.7-beta">3.7-beta ↓</a><span class="rp-dl-ver">3.7-beta</span><span class="rp-dl-date">2022-08-30</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">8,857</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,549</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">522</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">134</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">210</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">1</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">WARNING: This repository is no longer maintained.
+
+This project is archived and will not receive further updates, bug fixes, or security patches. Issues and pull requests may not be reviewed.
+
+Use this software at your own risk.
+__________________________________________________
+
+Pattern
+=======
+
+
+
+
+
+
+Pattern is a web mining module for Python. It has tools for:
+
+  Data Mining: web services (Google, Twitter, Wikipedia), web crawler, HTML DOM parser
+  Natural Language Processing: part-of-speech taggers, n-gram search, sentiment analysis, WordNet
+  Machine Learning: vector space model, clustering, classification (KNN, SVM, Perceptron)
+  Network Analysis: graph centrality and visualization.
+
+It is well documented, thoroughly tested with 350+ unit tests and comes bundled with 50+ examples. The source code is licensed under BSD.
+
+!Example workflow
+
+Example
+-------
+
+This example trains a classifier on adjectives mined from Twitter using Python 3. First, tweets that contain hashtag win or fail are collected. For example: &quot;$20 tip off a sweet little old lady today win&quot;. The word part-of-speech tags are then parsed, keeping only adjectives. Each tweet is transformed to a vector, a dictionary of adjective → count items, labeled WIN or FAIL. The classifier uses the vectors to learn which other tweets look more like WIN or more like FAIL.
+
+python
+from pattern.web import Twitter
+from pattern.en import tag
+from pattern.vector import KNN, count
+
+twitter, knn = Twitter(), KNN()
+
+for i in range(1, 3):
+    for tweet in twitter.search(&#x27;win OR fail&#x27;, start=i, count=100):
+        s = tweet.text.lower()
+        p = &#x27;win&#x27; in s and &#x27;WIN&#x27; or &#x27;FAIL&#x27;
+        v = tag(s)
+        v = [word for word, pos in v if pos == &#x27;JJ&#x27;]  JJ = adjective
+        v = count(v)  {&#x27;sweet&#x27;: 1}
+        if v:
+            knn.train(v, type=p)
+
+print(knn.classify(&#x27;sweet potato burger&#x27;))
+print(knn.classify(&#x27;stupid autocorrect&#x27;))
+
+
+Installation
+------------
+
+Pattern supports Python 2.7 and Python 3.6. To install Pattern so that it is available in all your scripts, unzip the download and from the command line do:
+bash
+cd pattern-3.6
+python setup.py install
+
+
+If you have pip, you can automatically download and install from the PyPI repository:
+bash
+pip install pattern
+
+
+If none of the above works, you can make Python aware of the module in three ways:
+- Put the pattern folder in the same folder as your script.
+- Put the pattern folder in the standard location for modules so it is available to all scripts:
+   c:\python36\Lib\site-packages\ (Windows),
+   /Library/Python/3.6/site-packages/ (Mac OS X),
+   /usr/lib/python3.6/site-packages/ (Unix).
+- Add the location of the module to sys.path in your script, before importing it:
+
+python
+MODULE = &#x27;/users/tom/desktop/pattern&#x27;
+import sys; if MODULE not in sys.path: sys.path.append(MODULE)
+from pattern.en import parsetree
+
+
+Documentation
+-------------
+
+For documentation and examples see the user documentation.
+
+Version
+-------
+
+3.6
+
+License
+-------
+
+BSD, see LICEN</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/clips/pattern/issues/62"><span class="rp-item-num">#62</span><span class="rp-item-title">Python 3 support</span><span class="rp-item-extra">70 comments · 2013-12-19</span></a><a class="rp-item" href="https://github.com/clips/pattern/issues/8"><span class="rp-item-num">#8</span><span class="rp-item-title">how extend to other languages?</span><span class="rp-item-extra">19 comments · 2011-09-05</span></a><a class="rp-item" href="https://github.com/clips/pattern/issues/203"><span class="rp-item-num">#203</span><span class="rp-item-title">SQL config error on Mac OSX installation</span><span class="rp-item-extra">11 comments · 2018-01-03</span></a><a class="rp-item" href="https://github.com/clips/pattern/issues/275"><span class="rp-item-num">#275</span><span class="rp-item-title">Installing fails: mysql_config not found</span><span class="rp-item-extra">9 comments · 2019-04-22</span></a><a class="rp-item" href="https://github.com/clips/pattern/issues/243"><span class="rp-item-num">#243</span><span class="rp-item-title">StopIteration raised every time </span><span class="rp-item-extra">8 comments · 2018-08-09</span></a><a class="rp-item" href="https://github.com/clips/pattern/issues/279"><span class="rp-item-num">#279</span><span class="rp-item-title"> Command &quot;python setup.py egg_info&quot; failed with error code 1 </span><span class="rp-item-extra">7 comments · 2019-06-26</span></a><a class="rp-item" href="https://github.com/clips/pattern/issues/209"><span class="rp-item-num">#209</span><span class="rp-item-title">Error while installing</span><span class="rp-item-extra">7 comments · 2018-01-24</span></a><a class="rp-item" href="https://github.com/clips/pattern/issues/238"><span class="rp-item-num">#238</span><span class="rp-item-title">ModuleNotFoundError: No module named &#x27;pattern.en&#x27;</span><span class="rp-item-extra">6 comments · 2018-07-03</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/clips/pattern/releases"><b>3.7-beta</b> <span class="rp-rel-tag">3.7-beta</span> <span class="rp-rel-pre">Pre-release</span> <span class="rp-item-extra">2022-08-30</span></a><pre class="rp-pre">Beta release of version 3.7 including support for Python versions 3.6 ~ 3.10.
+
+Includes multiple fixes to code to reduce unit test noise and associated fixes to tests.</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/clips__pattern.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

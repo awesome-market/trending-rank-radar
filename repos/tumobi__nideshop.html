@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tumobi/nideshop · GitHub Trending Rank Radar</title>
+<meta name="description" content="NideShop 开源微信小程序商城服务端 API（Node.js + ThinkJS）">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="nideshop, tumobi, tumobi/nideshop, github stars, github trending, star growth, star history, 开源项目, 星标增长, nideshop, wechat-app, min-program, shopping, nodejs, thinkjs">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/tumobi__nideshop">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="tumobi/nideshop · GitHub Trending Rank Radar">
+<meta property="og:description" content="NideShop 开源微信小程序商城服务端 API（Node.js + ThinkJS）">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/tumobi__nideshop">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "tumobi/nideshop", "codeRepository": "https://github.com/tumobi/nideshop", "url": "https://zhuikan.com/repos/tumobi__nideshop", "description": "NideShop 开源微信小程序商城服务端 API（Node.js + ThinkJS）", "author": {"@type": "Organization", "name": "tumobi", "url": "https://github.com/tumobi"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2017-05-25", "keywords": "nideshop,wechat-app,min-program,shopping,nodejs,thinkjs,mysql,b2c,api,weapp"}</script>
+</head>
+<body data-repo="tumobi/nideshop" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">tumobi/nideshop</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="tumobi__nideshop"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/28944170?v=4&s=300" width="300" height="300" alt="tumobi avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">nideshop</div>
+      <a class="rp-side-owner" href="https://github.com/tumobi">tumobi</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/tumobi">tumobi</a>
+        <span class="rp-sep">/</span><span class="rp-name">nideshop</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">NideShop 开源微信小程序商城服务端 API（Node.js + ThinkJS）</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,688</b></span><span class="rp-stat" title="forks">⑂ <b>1,768</b></span><span class="rp-stat" title="watchers">👁 <b>312</b></span><span class="rp-stat" title="prs">⑃ <b>17</b></span><span class="rp-stat" title="issues">● <b>60</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/nideshop">nideshop</a><a class="rp-topic" href="https://github.com/topics/wechat-app">wechat-app</a><a class="rp-topic" href="https://github.com/topics/min-program">min-program</a><a class="rp-topic" href="https://github.com/topics/shopping">shopping</a><a class="rp-topic" href="../tags/nodejs">nodejs</a><a class="rp-topic" href="https://github.com/topics/thinkjs">thinkjs</a><a class="rp-topic" href="../tags/mysql">mysql</a><a class="rp-topic" href="https://github.com/topics/b2c">b2c</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2017-05-25</span><a class="rp-meta-bit rp-home" href="https://www.nideshop.com/" rel="noopener">www.nideshop.com/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/tumobi/nideshop">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,688</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,768</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">312</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">17</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">60</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">NideShop商城（服务端）
+
++ 界面高仿网易严选商城(主要是2016年wap版)
++ 测试数据采集自网易严选商城
++ 功能和数据库参考ecshop
++ 服务端api基于Ｎode.js+ThinkJS+MySQL
++ 计划添加基于Vue.js的后台管理系统、PC版、Ｗap版
+
+本项目需要配合微信小程序端使用，GitHub: https://github.com/tumobi/nideshop-mini-program
+
+ 本地开发环境配置
++ 克隆项目到本地
+
+git clone https://github.com/tumobi/nideshop
+
++ 创建数据库nideshop并导入项目根目录下的nideshop.sql
+
+CREATE SCHEMA nideshop DEFAULT CHARACTER SET utf8mb4 ;
+
+ 注意数据库字符编码为utf8mb4 
++ 更改数据库配置
+  src/common/config/database.js
+  
+
+const mysql = require(&#x27;think-model-mysql&#x27;);
+
+module.exports = {
+    handle: mysql,
+    database: &#x27;nideshop&#x27;,
+    prefix: &#x27;nideshop_&#x27;,
+    encoding: &#x27;utf8mb4&#x27;,
+    host: &#x27;127.0.0.1&#x27;,
+    port: &#x27;3306&#x27;,
+    user: &#x27;root&#x27;,
+    password: &#x27;你的密码&#x27;,
+    dateStrings: true
+};
+
+
++ 填写微信登录和微信支付配置
+src/common/config/config.js
+
+// default config
+module.exports = {
+  default_module: &#x27;api&#x27;,
+  weixin: {
+    appid: &#x27;&#x27;, // 小程序 appid
+    secret: &#x27;&#x27;, // 小程序密钥
+    mch_id: &#x27;&#x27;, // 商户帐号ID
+    partner_key: &#x27;&#x27;, // 微信支付密钥
+    notify_url: &#x27;&#x27; // 微信异步通知，例：https://www.nideshop.com/api/pay/notify
+  }
+};
+
+
++ 安装依赖并启动
+
+npm install
+npm start
+
+访问http://127.0.0.1:8360/
+
+ 线上部署
+云服务器ECS-云主机优惠-2折上云
+
+在阿里云（CentOS 7）上部署文档
+
+
+ 微信小程序客户端截图
+
+!首页
+
+!专题
+
+!分类
+
+!商品列表
+
+!商品详情
+
+!购物车
+
+!订单中心
+
+
+ 功能列表
++ 首页
++ 分类首页、分类商品、新品首发、人气推荐商品页面
++ 商品详情页面，包含加入购物车、收藏商品、商品评论功能
++ 搜索功能
++ 专题功能
++ 品牌功能
++ 完整的购物流程，商品的加入、编辑、删除、批量选择，收货地址的选择，下单支付
++ 会员中心（订单、收藏、足迹、收货地址、意见反馈）
+....
+
+ 交流
+喜欢别忘了 Star，有问题可通过微信、公众号、QQ 群联系我，谢谢您的关注。
+
+!联系方式</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/tumobi/nideshop/issues/70"><span class="rp-item-num">#70</span><span class="rp-item-title">后台做好了吗</span><span class="rp-item-extra">3 comments · 2020-03-04</span></a><a class="rp-item" href="https://github.com/tumobi/nideshop/issues/77"><span class="rp-item-num">#77</span><span class="rp-item-title">怎么打开后台页面</span><span class="rp-item-extra">1 comments · 2024-01-05</span></a><a class="rp-item" href="https://github.com/tumobi/nideshop/issues/75"><span class="rp-item-num">#75</span><span class="rp-item-title">有没有接口文档</span><span class="rp-item-extra">0 comments · 2022-04-21</span></a><a class="rp-item" href="https://github.com/tumobi/nideshop/issues/73"><span class="rp-item-num">#73</span><span class="rp-item-title">在登录部分生成的token不能当作sessionKey来用</span><span class="rp-item-extra">0 comments · 2021-03-12</span></a><a class="rp-item" href="https://github.com/tumobi/nideshop/issues/72"><span class="rp-item-num">#72</span><span class="rp-item-title">可以手动遍历生成token，且在校验的token的时候没有校验iat</span><span class="rp-item-extra">0 comments · 2020-08-10</span></a><a class="rp-item" href="https://github.com/tumobi/nideshop/issues/67"><span class="rp-item-num">#67</span><span class="rp-item-title">大神 有没有计划集成Ueditor或者其他的插件实现产品详情哇</span><span class="rp-item-extra">0 comments · 2019-10-18</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/tumobi__nideshop.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HKUDS/ClawTeam · GitHub Trending Rank Radar</title>
+<meta name="description" content="&quot;ClawTeam: Agent Swarm Intelligence&quot; (One Command → Full Automation)">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="ClawTeam, HKUDS, HKUDS/ClawTeam, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/HKUDS__ClawTeam">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="HKUDS/ClawTeam · GitHub Trending Rank Radar">
+<meta property="og:description" content="&quot;ClawTeam: Agent Swarm Intelligence&quot; (One Command → Full Automation)">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/HKUDS__ClawTeam">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "HKUDS/ClawTeam", "codeRepository": "https://github.com/HKUDS/ClawTeam", "url": "https://zhuikan.com/repos/HKUDS__ClawTeam", "description": "\"ClawTeam: Agent Swarm Intelligence\" (One Command → Full Automation)", "author": {"@type": "Organization", "name": "HKUDS", "url": "https://github.com/HKUDS"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Python", "dateCreated": "2026-03-17"}</script>
+</head>
+<body data-repo="HKUDS/ClawTeam" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">HKUDS/ClawTeam</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="HKUDS__ClawTeam"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/118165258?v=4&s=300" width="300" height="300" alt="HKUDS avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">ClawTeam</div>
+      <a class="rp-side-owner" href="https://github.com/HKUDS">HKUDS</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/HKUDS">HKUDS</a>
+        <span class="rp-sep">/</span><span class="rp-name">ClawTeam</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">&quot;ClawTeam: Agent Swarm Intelligence&quot; (One Command → Full Automation)</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,553</b></span><span class="rp-stat" title="forks">⑂ <b>759</b></span><span class="rp-stat" title="watchers">👁 <b>41</b></span><span class="rp-stat" title="prs">⑃ <b>101</b></span><span class="rp-stat" title="issues">● <b>61</b></span><span class="rp-stat" title="releases">▤ <b>2</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-03-17</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="HKUDS__AI-Researcher"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/118165258?v=4" alt="" loading="lazy">AI-Researcher</a><a class="rp-same-link" href="HKUDS__AI-Trader"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/118165258?v=4" alt="" loading="lazy">AI-Trader</a><a class="rp-same-link" href="HKUDS__AutoAgent"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/118165258?v=4" alt="" loading="lazy">AutoAgent</a><a class="rp-same-link" href="HKUDS__CLI-Anything"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/118165258?v=4" alt="" loading="lazy">CLI-Anything</a><a class="rp-same-link" href="HKUDS__DeepCode"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/118165258?v=4" alt="" loading="lazy">DeepCode</a><a class="rp-same-link" href="HKUDS__DeepTutor"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/118165258?v=4" alt="" loading="lazy">DeepTutor</a><a class="rp-same-link" href="HKUDS__LightRAG"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/118165258?v=4" alt="" loading="lazy">LightRAG</a><a class="rp-same-link" href="HKUDS__OpenHarness"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/118165258?v=4" alt="" loading="lazy">OpenHarness</a><a class="rp-same-link" href="HKUDS__Vibe-Trading"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/118165258?v=4" alt="" loading="lazy">Vibe-Trading</a><a class="rp-same-link" href="HKUDS__nanobot"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/118165258?v=4" alt="" loading="lazy">nanobot</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/HKUDS/ClawTeam">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.2.0 — Stabilization Release</span><a class="rp-dl-a" href="https://github.com/HKUDS/ClawTeam/releases/tag/v0.2.0">v0.2.0 ↓</a><span class="rp-dl-ver">0.2.0</span><span class="rp-dl-date">2026-03-23</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,553</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">759</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">41</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">101</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">61</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">2</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">&amp;nbsp; ClawTeam：Agent 群体智能
+
+
+  今天的 Agent 各自为战 🤖，明天的 Agent 将协同作战 🦞🤖🤖🤖
+  ClawTeam：让 AI Agent 自主组建团队、分配任务、协同工作的 CLI 工具
+
+
+
+  
+  
+  
+  
+
+
+
+  
+  
+  
+  
+  
+  
+
+
+一行命令：给 Agent 一个目标，它自动组建团队完成任务。支持 Claude Code、Codex、OpenClaw、nanobot、Cursor 及任意 CLI Agent。&amp;nbsp;&amp;nbsp;English
+
+---
+
+ 📰 News
+
+2026-03-18 ClawTeam 项目正式公开发布。
+
+2026-03-23 ClawTeam v0.2.0 今日发布。
+
+2026-03 当前能力基线已包含配置管理、多用户协作、Web UI、P2P 传输与团队模板。
+
+---
+
+
+
+
+
+v0.1.0
+
+https://github.com/user-attachments/assets/7e2f0ecd-8fe3-4970-90ac-5c9669ff060c
+
+
+
+
+v0.2.0
+
+https://github.com/user-attachments/assets/fd23be91-5cf4-457c-a77e-bac24b76e58f
+
+
+
+
+
+☝️ 智能 Leader Agent 在 8 块 H100 GPU 上编排 8 个专职子 Agent，自主设计实验，并根据实时表现动态重分配资源。
+
+🧠 系统会在团队之间汇总突破、持续调整策略，实现无需人工介入的研究自动化。
+
+
+  
+
+
+---
+
+ ✨ 核心场景
+
+
+
+
+
+🔬 自主 ML 研究
+
+
+  
+
+
+
+
+多 GPU 实验群体
+
+8 Agent × 8 H100 自主优化 LLM 训练：2430+ 实验，val_bpb 1.044→0.977
+
+
+
+
+🏗️ Agent 软件工程
+
+
+  
+
+
+
+
+并行软件开发
+
+Agent 自动拆分为 API、后端、前端、测试 —— 各自独立分支，完成后自动合并
+
+
+
+
+💰 AI 对冲基金
+
+
+  
+
+
+
+
+多分析师信号融合
+
+7 个分析师 Agent（价值、成长、技术、基本面、情绪）+ 风控经理收敛投资决策
+
+
+
+
+🎪 自定义群体
+
+
+  
+
+
+
+
+一键启动团队
+
+用 TOML 模板定义任意团队原型 —— 角色、任务、提示词 —— 一条命令 clawteam launch 启动
+
+
+
+
+
+---
+
+ 🤔 为什么需要 ClawTeam？
+
+AI 编程 Agent 很强大 —— 但它们各自为战。当任务太大时，你只能手动拆分工作、复制粘贴上下文、合并结果。
+
+如果 Agent 能自己组队呢？
+
+ClawTeam 实现了 Agent 群体智能（Swarm Intelligence）—— Agent 自主组建团队、分工协作、共享发现、收敛到最优方案。一个 Leader Agent 可以：
+
+- 🚀 创建子 Agent —— 每个子 Agent 拥有独立的 Git Worktree 和 tmux 会话
+- 📋 分配任务 —— 支持依赖链，完成时自动解除下游阻塞
+- 💬 发送消息 —— 向任意子 Agent 发送指令
+- 📊 监控进度 —— 查看看板、读取实验结果
+- 🔄 调整方向 —— 终止低效 Agent，用新方向重新分配
+
+人类只需提供初始目标，群体智能完成剩下的一切。
+
+
+  
+
+
+---
+
+ 🎯 群体智能的优势
+
+
+
+
+
+ 🦞 Agent 创建 Agent
+Leader Agent 调用 clawteam spawn 创建 Worker。每个 Worker 自动获得独立的 Git Worktree、tmux 窗口和身份标识。
+
+bash
+ Leader Agent 执行：
+clawteam spawn --team my-team \
+  --agent-name worker1 \
+  --task &quot;实现认证模块&quot;
+
+
+
+
+
+ 🤖 Agent 之间对话
+Worker 检查收件箱、更新任务状态、汇报结果 —— 全部通过 CLI 命令，启动时自动注入协作提示词。
+
+bash
+ Worker Agent 检查任务：
+clawteam task list my-team --owner me
+ 汇报结果：
+clawteam inbox send my-team leader \
+  &quot;认证模块完成，全部测试通过。&quot;
+
+
+
+
+
+ 👀 你只需观看
+通过 tmux 平铺视图或 Web UI 监控群体工作。Leader 负责协调 —— 你只在需要时介入。
+
+bash
+ 同时观看所有 Agent
+clawteam board attach my-team
+ 或打开 Web 仪表板
+clawteam board serve --port 8080
+
+
+
+
+
+
+| | ClawTeam | 其他多 Agent 框架 |
+|---|---------|-----------------|
+| 🎯 使用者 | AI Agent 自身 | 人类编写编排代码 |
+| ⚡ 搭建 | pip install + 一句提示词 | Docker、云 API、YAML 配置 |
+| 🏗️ 基础设施 | 文件系统 + tmux 即可 | Redis、消息队列、数据库 |
+| 🤖 Agent 支持 | 任意 CLI Agent（Claude Code、Codex、OpenClaw 等） | 仅限特定框架 |
+| 🌳 隔离机制 | Git Worktree（真实分支、真实 diff） | 容器或虚拟环境 |
+| 🧠 协调方式 | 群体自组织 CLI 命令 | 硬编码编排逻辑 |
+
+---
+
+ 🎬 使用场景
+
+ 🔬 1. 自主 ML 研究 — 8 Agent × 8 块 H100 GPU
+
+基于 @karpathy 的 autoresearch。人类告诉 Leader Agent：&quot;用 8 块 GPU 优化这个 LLM 训练配置。&quot; Leader 自主完成所有工作。
+
+
+  
+  
+  🏆 val_bpb: 1.044 → 0.977（提升 6.4%）| 2430+ 实验 | ~30 GPU 小时
+
+
+Leader Agent 自主完成的操作：
+
+
+人类提示词：&quot;用 8 块 GPU 优化 train.py，阅读 program.md 了解规则。&quot;
+
+🦞 Leader Agent 的行动：
+├── 📖 阅读 program.md，理解实验协议
+├── 🏗️ clawteam team spawn-team autoresearch
+├── 🚀 为每块 GPU 分配研究方向：
+│   ├── GPU 0: clawteam spawn --task &quot;探索模型深度（DEPTH 10-16）&quot;
+│   ├── GPU 1: clawteam spawn --task &quot;探索模型宽度（ASPECT_RATIO 80-128）&quot;
+│   ├── GPU 2: clawteam spawn --task &quot;调优学习率和优化器&quot;
+│   ├── GPU 3</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/HKUDS/ClawTeam/issues/76"><span class="rp-item-num">#76</span><span class="rp-item-title">Security testing for multi-agent swarms: agent isolation, delegation trust, inbox spoofing</span><span class="rp-item-extra">6 comments · 2026-03-23</span></a><a class="rp-item" href="https://github.com/HKUDS/ClawTeam/issues/8"><span class="rp-item-num">#8</span><span class="rp-item-title">Does it support Agent communication between multiple devices? 多设备间的 Agent 通信是否支持？</span><span class="rp-item-extra">5 comments · 2026-03-18</span></a><a class="rp-item" href="https://github.com/HKUDS/ClawTeam/issues/138"><span class="rp-item-num">#138</span><span class="rp-item-title">OPENSOURCE-18: ClawTeam v0.3.0 — ready for release</span><span class="rp-item-extra">3 comments · 2026-04-13</span></a><a class="rp-item" href="https://github.com/HKUDS/ClawTeam/issues/137"><span class="rp-item-num">#137</span><span class="rp-item-title">JIRA-5: Agent-Commerce — Metered Billing for Agent API Calls</span><span class="rp-item-extra">2 comments · 2026-04-13</span></a><a class="rp-item" href="https://github.com/HKUDS/ClawTeam/issues/141"><span class="rp-item-num">#141</span><span class="rp-item-title">ClawHub: Create HKUDS/clawhub GitHub repo</span><span class="rp-item-extra">1 comments · 2026-04-13</span></a><a class="rp-item" href="https://github.com/HKUDS/ClawTeam/issues/166"><span class="rp-item-num">#166</span><span class="rp-item-title">`clawteam launch` reports every agent as &quot;launched&quot; even when 100% of spawns fail validation (missing binary)</span><span class="rp-item-extra">0 comments · 2026-07-18</span></a><a class="rp-item" href="https://github.com/HKUDS/ClawTeam/issues/163"><span class="rp-item-num">#163</span><span class="rp-item-title">docker: `_volume_targets` breaks on Windows paths — duplicate `-v` on every spawn</span><span class="rp-item-extra">0 comments · 2026-07-04</span></a><a class="rp-item" href="https://github.com/HKUDS/ClawTeam/issues/157"><span class="rp-item-num">#157</span><span class="rp-item-title">Proposal: 8-PR sequence — canonical WorkerState, persistent event log, project namespacing, contract verify states, SCM plugin + reaction engine</span><span class="rp-item-extra">0 comments · 2026-05-10</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/HKUDS/ClawTeam/discussions/122"><span class="rp-item-num">#122</span><span class="rp-item-title">Clawteam and superpower plugin for claudecode</span><span class="rp-item-extra">0 comments · 2026-04-04</span></a><a class="rp-item" href="https://github.com/HKUDS/ClawTeam/discussions/18"><span class="rp-item-num">#18</span><span class="rp-item-title">Welcome! Share your use cases, ideas, and vision for ClawTeam</span><span class="rp-item-extra">0 comments · 2026-03-18</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/HKUDS/ClawTeam/releases"><b>v0.2.0 — Stabilization Release</b> <span class="rp-rel-tag">v0.2.0</span> <span class="rp-item-extra">2026-03-23</span></a><pre class="rp-pre">What&#x27;s New
+
+ClawTeam v0.2.0 is the first stabilization release after the initial PyPI launch on March 18, 2026.
+
+ Demo Time
+
+https://github.com/user-attachments/assets/09ac1f72-d3b8-4341-b33f-d58c2479bee8
+
+ Highlights
+
+- Improved spawn reliability across tmux and subprocess backends
+- Better startup handling for Claude Code interactive sessions
+- Clearer non-worktree repo execution prompts and cwd regression coverage
+- Workspace / conflict detection fixes and broader test coverage
+- Refreshed docs landing page and project presentation
+
+ Included in this release
+
+- Spawn/works</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/HKUDS__ClawTeam.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

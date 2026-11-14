@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ben1234560/k8s_PaaS · GitHub Trending Rank Radar</title>
+<meta name="description" content="如何基于K8s(Kubernetes)部署成PaaS/DevOps(一套完整的软件研发和部署平台)--教程/学习(实战代码/架构设计/大量注释/操作配图)，你将习得部署如：K8S(Kubernetes)、Dashboard、Harbor、Jenkins、本地Gitlab、Apollo框架、Promtheus、Grafana、Spinnaker等。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="k8s_PaaS, ben1234560, ben1234560/k8s_PaaS, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/ben1234560__k8s_PaaS">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="ben1234560/k8s_PaaS · GitHub Trending Rank Radar">
+<meta property="og:description" content="如何基于K8s(Kubernetes)部署成PaaS/DevOps(一套完整的软件研发和部署平台)--教程/学习(实战代码/架构设计/大量注释/操作配图)，你将习得部署如：K8S(Kubernetes)、Dashboard、Harbor、Jenkins、本地Gitlab、Apollo框架、Promtheus、Grafana、Spinnaker等。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/ben1234560__k8s_PaaS">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ben1234560/k8s_PaaS", "codeRepository": "https://github.com/ben1234560/k8s_PaaS", "url": "https://zhuikan.com/repos/ben1234560__k8s_PaaS", "description": "如何基于K8s(Kubernetes)部署成PaaS/DevOps(一套完整的软件研发和部署平台)--教程/学习(实战代码/架构设计/大量注释/操作配图)，你将习得部署如：K8S(Kubernetes)、Dashboard、Harbor、Jenkins、本地Gitlab、Apollo框架、Promtheus、Grafana、Spinnaker等。", "author": {"@type": "Organization", "name": "ben1234560", "url": "https://github.com/ben1234560"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Shell", "dateCreated": "2020-09-12"}</script>
+</head>
+<body data-repo="ben1234560/k8s_PaaS" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">ben1234560/k8s_PaaS</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="ben1234560__k8s_PaaS"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/51939568?u=262367f6b624e0f8254c9982d51d618490918f29&amp;v=4&s=300" width="300" height="300" alt="ben1234560 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">k8s_PaaS</div>
+      <a class="rp-side-owner" href="https://github.com/ben1234560">ben1234560</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/ben1234560">ben1234560</a>
+        <span class="rp-sep">/</span><span class="rp-name">k8s_PaaS</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">如何基于K8s(Kubernetes)部署成PaaS/DevOps(一套完整的软件研发和部署平台)--教程/学习(实战代码/架构设计/大量注释/操作配图)，你将习得部署如：K8S(Kubernetes)、Dashboard、Harbor、Jenkins、本地Gitlab、Apollo框架、Promtheus、Grafana、Spinnaker等。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,467</b></span><span class="rp-stat" title="forks">⑂ <b>1,075</b></span><span class="rp-stat" title="watchers">👁 <b>186</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Shell</span><span class="rp-meta-bit">Created 2020-09-12</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/ben1234560/k8s_PaaS">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+6</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,467</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,075</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">186</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">k8s_PaaS
+       
+
+   
+
+基于Kubernetes(K8S)一步步部署成PaaS/DevOps（一套完整的软件研发和部署平台）——教程/学习（实战代码/欢迎讨论/大量注释/操作配图），你将习得部署如：Kubernetes(K8S)、dashboard、Harbor、Jenkins、本地gitlab、Apollo框架、promtheus、grafana、spinnaker等。
+
+注释及配图覆盖率达80%以上，旨在帮助快速入门。
+
+并将告诉你：是什么（WHAT）、为什么这么做(WHY)、怎么做(HOW)。
+
+建议学习时长1个月+，最终将实现点点点（自动化）的形式就能部署上线并维护。
+
+ PaaS架构图
+
+!K8S_PaaS架构图
+
+ 橙色框内软件皆部署在K8S集群中，也就是我们可以随时扩容缩容
+
+ Features
+
+- 对做的事情进行说明是什么（WHAT），为什么要做（WHY）。
+- 对相关文件进行解析、指明哪部机器操作、配图，并在易出错点添加解决办法。第二章由于配置内容较多，建议配合check_tool使用。
+- 使用文件皆是官方文件，相关软件包有对应文件，避免被更新或其它问题导致无法下载等情况，百度云https://pan.baidu.com/s/1arE2LdtAbcR80gmIQtIELw 提取码：ouy1。
+- 无数前人遍历/建设代码，为代码完整性保驾护航，欢迎给我们提供你的建议、扩展、报错。
+- 整理了多人问的4个问题Q&amp;A：配置只有4核8G够吗，新手可以吗，找不到报错怎么办，做完看不懂怎么办
+- 推出公有云部署版本，如第二章——企业部署实战_K8S【公有云版】。自己电脑资源紧张的完全可以用，而且费用也便宜
+
+ 学习章节：
+
+
+    第一章——Docker
+    
+        安装Docker
+      开启我们的第一个docker容器
+      Dockerhub注册（自己的远程仓库）
+      Docker镜像管理实战
+      docker容器操作
+      dockerfile 综合实验
+    
+  
+    第二章——企业部署实战_K8S
+
+  K8S前置准备工作——bind9安装部署（DNS服务）
+  K8S前置工作——准备签发证书环境
+  K8S前置工作——部署docker环境
+  K8S前置工作——部署harbor仓库
+  安装部署主控节点服务etcd
+  部署API-server集群
+  安装部署主控节点L4反代服务
+  安装部署controller-manager（节点控制器/调度器服务）
+  安装部署运算节点服务
+
+    第三章——k8s集群
+    
+        安装部署flanneld
+      flannel之SNAT规则优化
+      安装部署coredns（服务发现）
+      K8S的服务暴露ingress
+    
+  
+  第四章——dashboard插件及k8s实战交付
+    
+        dashboard安装部署
+      K8S仪表盘鉴权
+      dashboard——heapster
+      K8S平滑升级技巧
+    
+  
+  第五章——K8S结合CI&amp;CD持续交付和集中管理配置
+    
+        安装部署zookeeper
+        安装部署Jenkins
+        安装maven
+        制作dubbo微服务的底包镜像
+        使用Jenkins持续构建交付dubbo服务的提供者
+        借助BlueOcean插件回顾Jenkins流水线构建原理
+        交付dubbo-monitor到k8s集群
+        实现dubbo集群的日常维护
+        实战K8S集群毁灭性测试
+    
+  
+  第六章——在K8S中集成Apollo配置中心
+    
+      configmap使用详解
+      交付Apollo-ConfigService到K8S
+      Apollo-ConfigService连接数据库IP分析
+      交付Apollo-Portal前，数据库初始化
+      制作Portal的docker镜像，并交付
+      dubbo服务提供者连接Apollo实战
+      dubbo服务消费者连接Apollo实战
+      实战Apollo分环境管理dubbo服务-交付Apollo-configservice
+      实战使用Apollo分环境管理dubbo服务——交付Apollo-portal和adminservice
+      实战发布dubbo连接Apollo到不同环境
+      实战演示项目提测，发版流程
+    
+  
+  第七章——Promtheus监控k8s企业级应用
+    
+      Prometheus监控软件概述
+      交付kube-state-metric
+      交付node-exporter
+      交付cadvisor
+      交付blackbox-exporter
+      安装部署Prometheus-server
+      配置Prometheus监控业务容器
+      安装部署配置Grafana
+      安装部署alertmanager
+      测试alertmanager报警功能
+      通过K8S部署dubbo微服务接入ELK架构
+      制作tomcat容器的底包镜像
+      交付tomcat形式的dubbo服务消费者到K8S集群
+      二进制安装部署elasticsearch
+      安装部署kafka和kafka-manager
+      制作filebeat底包并接入dubbo服务消费者
+      部署logstash镜像
+      交付kibana到K8S集群
+      详解Kibana生产实践方法
+    
+  
+  第八章——spinaker部署与应用
+    
+      部署Spinnaker的Amory发行版
+      安装部署redis
+      安装部署clouddriver
+      安装部署spinnaker其余组件
+      使用spinnaker结合Jenkins构建镜像
+      使用spinnaker配置dubbo服务提供者发布至K8S
+      使用spinnaker配置dubbo服务消费者到K8S
+      模拟生产上代码迭代
+    
+  
+  终章——常用操作命令及相关方案
+  
+
+
+
+
+
+ 资料参考：
+
+深入剖析kubernetes也可以免费下载（在Docker章节最下面）
+
+老男孩教育K8S容器云架构师1期
+
+ 互助群
+
+2025年5月1日创建了新群，QQ群号：1045126911（群未回的，请一定要提Issues或者发邮件给作者）
+
+
+    
+
+
+群内禁止一切广告，只为解决问题而存在。
+
+首群的QQ群号：676040917（满员了）
+
+
+    
+
+
+
+ 贡献者
+
+欢迎参与贡献和完善内容</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/ben1234560__k8s_PaaS.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

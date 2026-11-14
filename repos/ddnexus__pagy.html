@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ddnexus/pagy · GitHub Trending Rank Radar</title>
+<meta name="description" content="Agnostic pagination in plain ruby">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="pagy, ddnexus, ddnexus/pagy, github stars, github trending, star growth, star history, 开源项目, 星标增长, ruby, rails, sinatra, padrino, bootstrap, bulma">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/ddnexus__pagy">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="ddnexus/pagy · GitHub Trending Rank Radar">
+<meta property="og:description" content="Agnostic pagination in plain ruby">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/ddnexus__pagy">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ddnexus/pagy", "codeRepository": "https://github.com/ddnexus/pagy", "url": "https://zhuikan.com/repos/ddnexus__pagy", "description": "Agnostic pagination in plain ruby", "author": {"@type": "Organization", "name": "ddnexus", "url": "https://github.com/ddnexus"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Ruby", "dateCreated": "2017-12-31", "keywords": "ruby,rails,sinatra,padrino,bootstrap,bulma,searchkick,elasticsearch-rails,hanami,jsonapi"}</script>
+</head>
+<body data-repo="ddnexus/pagy" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">ddnexus/pagy</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="ddnexus__pagy"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/100721?v=4&s=300" width="300" height="300" alt="ddnexus avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">pagy</div>
+      <a class="rp-side-owner" href="https://github.com/ddnexus">ddnexus</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/ddnexus">ddnexus</a>
+        <span class="rp-sep">/</span><span class="rp-name">pagy</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Agnostic pagination in plain ruby</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>4,998</b></span><span class="rp-stat" title="forks">⑂ <b>447</b></span><span class="rp-stat" title="watchers">👁 <b>30</b></span><span class="rp-stat" title="prs">⑃ <b>484</b></span><span class="rp-stat" title="issues">● <b>319</b></span><span class="rp-stat" title="releases">▤ <b>99</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/ruby">ruby</a><a class="rp-topic" href="https://github.com/topics/rails">rails</a><a class="rp-topic" href="https://github.com/topics/sinatra">sinatra</a><a class="rp-topic" href="https://github.com/topics/padrino">padrino</a><a class="rp-topic" href="https://github.com/topics/bootstrap">bootstrap</a><a class="rp-topic" href="https://github.com/topics/bulma">bulma</a><a class="rp-topic" href="https://github.com/topics/searchkick">searchkick</a><a class="rp-topic" href="https://github.com/topics/elasticsearch-rails">elasticsearch-rails</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Ruby</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2017-12-31</span><a class="rp-meta-bit rp-home" href="https://ddnexus.github.io/pagy/" rel="noopener">ddnexus.github.io/pagy/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/ddnexus/pagy">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Version 43.8.2</span><a class="rp-dl-a" href="https://github.com/ddnexus/pagy/releases/tag/43.8.2">Version-43.8.2 ↓</a><span class="rp-dl-ver">43.8.2</span><span class="rp-dl-date">2026-11-08</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">4,998</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">447</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">30</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">484</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">319</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">99</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">!Coverage 
+!Rubocop Status 
+ 
+ 
+ 
+ 
+
+
+
+
+Pagy the leaping gem!
+
+_Agnostic pagination in plain Ruby_
+
+
+
+ [!TIP]
+ ⭐ If you like Pagy, please support it with a Star! ⭐
+
+
+
+
+
+
+ 💚 v3 was already quite snappy...
+
+
+
+
+
+
+
+
+ ... and now it&#x27;s more, with less.
+
+- Compatible with all environments and collection types
+- It can use OFFSET, COUNTISH, COUNTLESS, KEYSET, KEYNAV, SEARCH, and CALENDAR pagination techniques
+- It supports server-side rendering or faster client-side rendering for popular CSS frameworks and APIs
+- It autoloads ONLY the methods that you actually use, with almost zero configuration
+- It boasts 100% test coverage for Ruby, HTML, and JavaScript end-to-end (E2E)
+
+
+
+ 💚 Examples
+
+ Pagination code
+
+rb
+ Include pagy in your code (usually application_controller.rb)
+include Pagy::Method
+
+ Offset-based pagination
+@pagy, @records = pagy(:offset, Product.all)
+
+ Keyset-based pagination (fastest technique)
+@pagy, @records = pagy(:keyset, Product.order(my_order).all)
+
+ Paginate your collection with one of several paginators
+@pagy, @records = pagy(...)
+
+
+_See all the available paginators_
+
+ JSON:API pagination
+
+ruby
+ JSON:API nested query string. E.g.: ?page[number]=2&amp;page[size]=100
+@pagy, @records = pagy(:offset, Product.all, jsonapi: true)
+@pagy, @records = pagy(:keyset, Product.order(my_order).all, jsonapi: true)
+render json: { links: @pagy.urls_hash, data: @records }
+
+
+ JSON-client pagination
+
+ruby
+render json: { pagy: @pagy.data_hash, data: @records }
+
+
+ Search server pagination
+
+Available paginators: :elasticsearch_rails, :meilisearch, :rails_active_search, :searchkick, :typesense_rails
+
+rb
+ Extend your models (e.g. application_record.rb)
+extend Pagy::Search
+
+ Paginate with pagy:
+search           = Product.pagy_search(params[:q])
+@pagy, @response = pagy(:a_search_paginator, search)
+
+ Or get pagy from paginated results:
+@results = Product.search(params[:q])
+@pagy    = pagy(:a_search_paginator, @results)
+
+
+ Calendar pagination
+
+Combine time-range and offset pagination.
+
+_(Available time units: year, quarter, month, week, and day)_
+
+
+
+ruby
+@calendar, @pagy, @records = pagy(:calendar, collection, year: {}, month: {}, offset: {})
+
+
+ERB
+
+
+
+...
+
+
+
+ Server side rendering
+
+ series_nav
+
+Default :pagy, :bootstrap and :bulma styles shown.
+
+
+
+
+
+erb
+
+ 
+
+
+
+
+ Client side rendering
+
+rb
+ pagy.rb initializer
+javascript_dir = Rails.root.join(&#x27;app/javascript&#x27;)
+Pagy.sync_javascript(javascript_dir, &#x27;pagy.mjs&#x27;) if Rails.env.development?
+
+
+ series_nav_js
+
+Faster and responsive
+
+Dynamically fills the container width.
+
+
+
+
+erb
+
+ 
+
+
+
+
+ input_nav_js
+
+Fastest! Combines navigation and info in minimum space.
+
+
+
+erb
+
+ 
+
+
+
+
+
+
+ 💚 Dev Tools
+
+Integrate pagy with your app&#x27;s themes interactively (watch demo), and ask specific questions to the Pagy AI __right in your app__! You need only a single line in your page/layout head to get the Pagy Wand and the Pagy AI:
+
+erb
+
+
+
+
+
+See Dev Tools
+
+
+
+ 💚 Support and Docs
+
+- Quick Start
+- How To (quick recipes)
+- Upgrade to 43 (from version 9 or earlier</pre><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ddnexus/pagy/discussions/925"><span class="rp-item-num">#925</span><span class="rp-item-title">Active Search Support</span><span class="rp-item-extra">3 comments · 2026-09-28</span></a><a class="rp-item" href="https://github.com/ddnexus/pagy/discussions/923"><span class="rp-item-num">#923</span><span class="rp-item-title">`null` value support for keyset pagination</span><span class="rp-item-extra">2 comments · 2026-09-11</span></a><a class="rp-item" href="https://github.com/ddnexus/pagy/discussions/922"><span class="rp-item-num">#922</span><span class="rp-item-title">Should nil limit return Pagy::OPTIONS[:limit] when set in initializer?</span><span class="rp-item-extra">1 comments · 2026-09-02</span></a><a class="rp-item" href="https://github.com/ddnexus/pagy/discussions/912"><span class="rp-item-num">#912</span><span class="rp-item-title">Missing a step for pagy v43 (probably)</span><span class="rp-item-extra">1 comments · 2026-07-09</span></a><a class="rp-item" href="https://github.com/ddnexus/pagy/discussions/910"><span class="rp-item-num">#910</span><span class="rp-item-title">Paginate only MAX records for searchkick</span><span class="rp-item-extra">5 comments · 2026-07-06</span></a><a class="rp-item" href="https://github.com/ddnexus/pagy/discussions/906"><span class="rp-item-num">#906</span><span class="rp-item-title">Prevent Pagy from appending current params to pagination URLs</span><span class="rp-item-extra">1 comments · 2026-05-21</span></a><a class="rp-item" href="https://github.com/ddnexus/pagy/discussions/905"><span class="rp-item-num">#905</span><span class="rp-item-title">Pagy method overrides</span><span class="rp-item-extra">1 comments · 2026-05-21</span></a><a class="rp-item" href="https://github.com/ddnexus/pagy/discussions/899"><span class="rp-item-num">#899</span><span class="rp-item-title">Why no support for foundation framework?</span><span class="rp-item-extra">1 comments · 2026-04-30</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/ddnexus/pagy/releases"><b>Version 43.8.2</b> <span class="rp-rel-tag">43.8.2</span> <span class="rp-item-extra">2026-11-08</span></a><pre class="rp-pre">Changes in 43.8.2
+
+
+- Fix the page placeholder in the Croatian info_tag.no_count (937)
+- Require cgi/escape instead of cgi in a_lambda (934)
+- Build page URLs 1.5x faster by escaping the query with CGI.escape (933)
+
+
+CHANGELOG
+
+Upgrading from version 9 or earlier? See the Upgrade Guide.</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/ddnexus__pagy.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

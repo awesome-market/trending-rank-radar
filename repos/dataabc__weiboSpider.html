@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dataabc/weiboSpider · GitHub Trending Rank Radar</title>
+<meta name="description" content="新浪微博爬虫，用python爬取新浪微博数据">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="weiboSpider, dataabc, dataabc/weiboSpider, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/dataabc__weiboSpider">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="dataabc/weiboSpider · GitHub Trending Rank Radar">
+<meta property="og:description" content="新浪微博爬虫，用python爬取新浪微博数据">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/dataabc__weiboSpider">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "dataabc/weiboSpider", "codeRepository": "https://github.com/dataabc/weiboSpider", "url": "https://zhuikan.com/repos/dataabc__weiboSpider", "description": "新浪微博爬虫，用python爬取新浪微博数据", "author": {"@type": "Organization", "name": "dataabc", "url": "https://github.com/dataabc"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Python", "dateCreated": "2016-03-25"}</script>
+</head>
+<body data-repo="dataabc/weiboSpider" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">dataabc/weiboSpider</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="dataabc__weiboSpider"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/15182260?u=c041ed7a8bd8ae8a5e5002fa5b16bef319bf58af&amp;v=4&s=300" width="300" height="300" alt="dataabc avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">weiboSpider</div>
+      <a class="rp-side-owner" href="https://github.com/dataabc">dataabc</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/dataabc">dataabc</a>
+        <span class="rp-sep">/</span><span class="rp-name">weiboSpider</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">新浪微博爬虫，用python爬取新浪微博数据</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,746</b></span><span class="rp-stat" title="forks">⑂ <b>2,058</b></span><span class="rp-stat" title="watchers">👁 <b>136</b></span><span class="rp-stat" title="prs">⑃ <b>79</b></span><span class="rp-stat" title="issues">● <b>612</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Created 2016-03-25</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/dataabc/weiboSpider">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+13</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">9,746</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,058</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">136</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">79</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">612</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Weibo Spider
+
+本程序可以连续爬取一个或多个新浪微博用户（如胡歌、迪丽热巴、郭碧婷）的数据，并将结果信息写入文件或数据库。写入信息几乎包括用户微博的所有数据，包括用户信息和微博信息两大类。因为内容太多，这里不再赘述，详细内容见获取到的字段。如果只需要用户信息，可以通过设置实现只爬取微博用户信息的功能。本程序需设置cookie来获取微博访问权限，后面会讲解如何获取cookie。如果不想设置cookie，可以使用免cookie版，二者功能类似。
+
+爬取结果可写入文件和数据库，具体的写入文件类型如下：
+
+- txt文件（默认）
+- csv文件（默认）
+- json文件（可选）
+- MySQL数据库（可选）
+- MongoDB数据库（可选）
+- SQLite数据库（可选）
+
+同时支持下载微博中的图片和视频，具体的可下载文件如下：
+
+- 原创微博中的原始图片（可选）
+- 转发微博中的原始图片（可选）
+- 原创微博中的视频（可选）
+- 转发微博中的视频（可选）
+- 原创微博Live Photo中的视频（免cookie版特有）
+- 转发微博Live Photo中的视频（免cookie版特有）
+
+ 内容列表
+
+[TOC]
+
+- Weibo Spider
+  - 内容列表
+  - 获取到的字段
+    - 用户信息
+    - 微博信息
+  - 示例
+  - 运行环境
+  - 使用说明
+    - 0.版本
+    - 1.安装程序
+      - 源码安装
+      - pip安装
+    - 2.程序设置
+    - 3.运行程序
+  - 个性化定制程序（可选）
+  - 定期自动爬取微博（可选）
+  - 如何获取cookie
+  - 如何获取user_id
+  - 常见问题
+  - 学术研究
+  - 相关项目
+  - 贡献
+  - 贡献者
+  - 注意事项
+
+ 获取到的字段
+
+本部分为爬取到的字段信息说明，为了与免cookie版区分，下面将两者爬取到的信息都列出来。如果是免cookie版所特有的信息，会有免cookie标注，没有标注的为二者共有的信息。
+
+ 用户信息
+
+- 用户id：微博用户id，如&quot;1669879400&quot;，其实这个字段本来就是已知字段
+- 昵称：用户昵称，如&quot;Dear-迪丽热巴&quot;
+- 性别：微博用户性别
+- 生日：用户出生日期
+- 所在地：用户所在地
+- 学习经历：用户上学时学校的名字和时间
+- 工作经历：用户所属公司名字和时间
+- 阳光信用（免cookie版）：用户的阳光信用
+- 微博注册时间（免cookie版）：用户微博注册日期
+- 微博数：用户的全部微博数（转发微博+原创微博）
+- 关注数：用户关注的微博数量
+- 粉丝数：用户的粉丝数
+- 简介：用户简介
+- 主页地址（免cookie版）：微博移动版主页url
+- 头像url（免cookie版）：用户头像url
+- 高清头像url（免cookie版）：用户高清头像url
+- 微博等级（免cookie版）：用户微博等级
+- 会员等级（免cookie版）：微博会员用户等级，普通用户该等级为0
+- 是否认证（免cookie版）：用户是否认证，为布尔类型
+- 认证类型（免cookie版）：用户认证类型，如个人认证、企业认证、政府认证等
+- 认证信息：为认证用户特有，用户信息栏显示的认证信息
+
+ 微博信息
+
+- 微博id：微博唯一标志
+- 微博内容：微博正文
+- 头条文章url：微博中头条文章的url，若微博中不存在头条文章，则值为&#x27;&#x27;
+- 原始图片url：原创微博图片和转发微博转发理由中图片的url，若某条微博存在多张图片，每个url以英文逗号分隔，若没有图片则值为&quot;无&quot;
+- 视频url: 微博中的视频url，若微博中没有视频，则值为&quot;无&quot;
+- 微博发布位置：位置微博中的发布位置
+- 微博发布时间：微博发布时的时间，精确到分
+- 点赞数：微博被赞的数量
+- 转发数：微博被转发的数量
+- 评论数：微博被评论的数量
+- 微博发布工具：微博的发布工具，如iPhone客户端、HUAWEI Mate 20 Pro等
+- 结果文件：保存在当前目录weibo文件夹下以用户昵称为名的文件夹里，名字为&quot;user_id.csv&quot;和&quot;user_id.txt&quot;的形式
+- 微博图片：原创微博中的图片和转发微博转发理由中的图片，保存在以用户昵称为名的文件夹下的img文件夹里
+- 微博视频：原创微博中的视频，保存在以用户昵称为名的文件夹下的video文件夹里
+- 微博bid（免cookie版）：为免cookie版所特有，与本程序中的微博id是同一个值
+- 话题（免cookie版）：微博话题，即两个中的内容，若存在多个话题，每个url以英文逗号分隔，若没有则值为&#x27;&#x27;
+- @用户（免cookie版）：微博@的用户，若存在多个@用户，每个url以英文逗号分隔，若没有则值为&#x27;&#x27;
+- 原始微博（免cookie版）：为转发微博所特有，是转发微博中那条被转发的微博，存储为字典形式，包含了上述微博信息中的所有内容，如微博id、微博内容等等
+
+ 示例
+
+如果想要知道程序的具体运行结果，可以查看示例文档，该文档介绍了爬取迪丽热巴微博的例子，并附有部分结果文件截图。
+
+ 运行环境
+
+- 开发语言：python2/python3
+- 系统： Windows/Linux/macOS
+
+ 使用说明
+
+ 0.版本
+
+本程序有两个版本，你现在看到的是python3版，另一个是python2版，python2版位于python2分支。目前主力开发python3版，包括新功能开发和bug修复；python2版仅支持bug修复。推荐python3用户使用当前版本，推荐python2用户使用python2版，本使用说明是python3版的使用说明。
+
+ 1.安装程序
+
+本程序提供两种安装方式，一种是源码安装，另一种是pip安装，二者功能完全相同。如果你需要修改源码，建议使用第一种方式，否则选哪种安装方式都可以。
+
+ 源码安装
+
+bash
+$ git clone https://github.com/dataabc/weiboSpider.git
+$ cd weiboSpider
+$ pip install -r requirements.txt
+
+
+ pip安装
+
+bash
+$ python3 -m pip install weibo-spider
+
+
+ 2.程序设置
+
+要了解程序设置，请查看程序设置文档。
+
+ 3.运行程序
+
+源码安装的用户可以在weiboSpider目录运行如下命令，pip安装的用户可以在任意有写权限的目录运行如下命令
+
+bash
+$ python3 -m weibo_spider
+
+
+第一次执行，会自动在当前目录创建config.json配置文件，配置好后执行同样的命令就可以获取微博了。
+
+如果你已经有config.json文件了，也可以通过config_path参数配置config.json路径，运行程序，命令行如下：
+
+bash
+$ python3 -m weibo_spider --config_path=&quot;config.json&quot;
+
+
+如果你想指定文件（csv、</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/dataabc__weiboSpider.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>unclecode/crawl4ai · GitHub Trending Rank Radar</title>
+<meta name="description" content="Official Crawl4AI Cloud: a hosted web scraping, extraction, and search API for AI agents. Free API key, 1,000 credits a month, no card. Fully open source: this repo is the Apache-2.0 crawler that powe">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="crawl4ai, unclecode, unclecode/crawl4ai, github stars, github trending, star growth, star history, 开源项目, 星标增长, ai, ai-agents, crawler, data-extraction, llm, markdown">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/unclecode__crawl4ai">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="unclecode/crawl4ai · GitHub Trending Rank Radar">
+<meta property="og:description" content="Official Crawl4AI Cloud: a hosted web scraping, extraction, and search API for AI agents. Free API key, 1,000 credits a month, no card. Fully open source: this repo is the Apache-2.0 crawler that powe">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/unclecode__crawl4ai">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "unclecode/crawl4ai", "codeRepository": "https://github.com/unclecode/crawl4ai", "url": "https://zhuikan.com/repos/unclecode__crawl4ai", "description": "Official Crawl4AI Cloud: a hosted web scraping, extraction, and search API for AI agents. Free API key, 1,000 credits a month, no card. Fully open source: this repo is the Apache-2.0 crawler that powe", "author": {"@type": "Organization", "name": "unclecode", "url": "https://github.com/unclecode"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Python", "dateCreated": "2024-05-09", "keywords": "ai,ai-agents,crawler,data-extraction,llm,markdown,mcp,open-source,playwright,python"}</script>
+</head>
+<body data-repo="unclecode/crawl4ai" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">unclecode/crawl4ai</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="unclecode__crawl4ai"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/12494079?u=413d68156031fdfe74861491b75ffe6d426d8228&amp;v=4&s=300" width="300" height="300" alt="unclecode avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">crawl4ai</div>
+      <a class="rp-side-owner" href="https://github.com/unclecode">unclecode</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/unclecode">unclecode</a>
+        <span class="rp-sep">/</span><span class="rp-name">crawl4ai</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=total">total <b>#191</b></a></div>
+    </div>
+    <p class="rp-desc">Official Crawl4AI Cloud: a hosted web scraping, extraction, and search API for AI agents. Free API key, 1,000 credits a month, no card. Fully open source: this repo is the Apache-2.0 crawler that powers it, and you can self-host it.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>87,314</b></span><span class="rp-stat" title="forks">⑂ <b>9,107</b></span><span class="rp-stat" title="watchers">👁 <b>423</b></span><span class="rp-stat" title="prs">⑃ <b>970</b></span><span class="rp-stat" title="issues">● <b>1,085</b></span><span class="rp-stat" title="releases">▤ <b>23</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/ai">ai</a><a class="rp-topic" href="../tags/ai-agents">ai-agents</a><a class="rp-topic" href="https://github.com/topics/crawler">crawler</a><a class="rp-topic" href="https://github.com/topics/data-extraction">data-extraction</a><a class="rp-topic" href="../tags/llm">llm</a><a class="rp-topic" href="../tags/markdown">markdown</a><a class="rp-topic" href="../tags/mcp">mcp</a><a class="rp-topic" href="../tags/open-source">open-source</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2024-05-09</span><a class="rp-meta-bit rp-home" href="https://crawl4ai.com/?ref=github-about" rel="noopener">crawl4ai.com/?ref=github-about</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/unclecode/crawl4ai">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Release v0.9.5</span><a class="rp-dl-a" href="https://github.com/unclecode/crawl4ai/releases/tag/v0.9.5">Release-0.9.5 ↓</a><span class="rp-dl-ver">0.9.5</span><span class="rp-dl-date">2026-10-14</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+37</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+472</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+2,232</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">87,314</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">9,107</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">423</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">970</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,085</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">23</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Crawl4AI
+
+Crawl4AI Cloud is a hosted web scraping, extraction, and search API for AI agents and data pipelines. Turn pages into clean Markdown for RAG, extract structured JSON, or search the live web with one API key. Crawl4AI runs the browsers and manages the proxies.
+
+Get a free API key · 1,000 free credits every month. No credit card required.
+
+Try a URL in the playground · Set up Crawl4AI Cloud in Claude Code, Cursor, or Codex
+
+This repository is home to the Apache-2.0 crawler that powers Crawl4AI Cloud. Run it yourself with Python or Docker.
+
+
+  
+    
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+ Cloud quickstart
+
+Hosted API base URL: https://api.crawl4ai.com.
+
+Cloud API reference · Agent setup and MCP
+
+Set CRAWL4AI_KEY to your API key, then scrape a page as Markdown:
+
+bash
+curl -s https://api.crawl4ai.com/scrape \
+  -H &quot;Authorization: Bearer $CRAWL4AI_KEY&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#x27;{&quot;url&quot;: &quot;https://news.ycombinator.com&quot;}&#x27; | jq -r .markdown
+
+
+
+Python 3
+
+python
+import json
+import os
+from urllib.request import Request, urlopen
+
+request = Request(
+    &quot;https://api.crawl4ai.com/scrape&quot;,
+    data=json.dumps({&quot;url&quot;: &quot;https://news.ycombinator.com&quot;}).encode(&quot;utf-8&quot;),
+    headers={
+        &quot;Authorization&quot;: f&quot;Bearer {os.environ[&#x27;CRAWL4AI_KEY&#x27;]}&quot;,
+        &quot;Content-Type&quot;: &quot;application/json&quot;,
+    },
+    method=&quot;POST&quot;,
+)
+
+with urlopen(request) as response:
+    print(json.load(response)[&quot;markdown&quot;])
+
+
+
+
+
+Node.js (18+)
+
+javascript
+async function main() {
+  const key = process.env.CRAWL4AI_KEY;
+  if (!key) throw new Error(&quot;Set CRAWL4AI_KEY first.&quot;);
+
+  const response = await fetch(&quot;https://api.crawl4ai.com/scrape&quot;, {
+    method: &quot;POST&quot;,
+    headers: {
+      Authorization: Bearer ${key},
+      &quot;Content-Type&quot;: &quot;application/json&quot;,
+    },
+    body: JSON.stringify({ url: &quot;https://news.ycombinator.com&quot; }),
+  });
+
+  if (!response.ok) {
+    throw new Error(Scrape failed (HTTP ${response.status}): ${await response.text()});
+  }
+
+  const { markdown } = await response.json();
+  console.log(markdown);
+}
+
+main().catch((error) = {
+  console.error(error.message);
+  process.exitCode = 1;
+});
+
+
+
+
+Example Markdown output (illustrative excerpt):
+
+markdown
+ Hacker News
+
+1. Example story title
+2. Another story title
+
+
+The same key works for /extract, /search, /serp, /answer and many URLs at once (/scrape/batch, /scrape/jobs). Pay as you go: live prices.
+For Claude Code, connect to the hosted MCP server:
+
+bash
+claude mcp add --transport http crawl4ai https://api.crawl4ai.com/mcp \
+  --header &quot;Authorization: Bearer $CRAWL4AI_KEY&quot;
+
+
+ Run Crawl4AI yourself
+
+Latest: v0.9.5 (14 Oct 2026) · all releases →
+
+
+bash
+pip install -U crawl4ai
+crawl4ai-setup         installs the browser, once
+
+
+python
+import asyncio
+from crawl4ai import AsyncWebCrawler
+
+async def main():
+    async with AsyncWebCrawler() as crawler:
+        result = await crawler.arun(url=&quot;https://news.ycombinator.com&quot;)
+        print(result.markdown)
+
+asyncio.run(main())
+
+
+Docker server, CLI and every option: Installation · Self-ho</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/unclecode/crawl4ai/issues/731"><span class="rp-item-num">#731</span><span class="rp-item-title">[Bug]: When extracting data with scroll_full_page, only the final elements get parsed</span><span class="rp-item-extra">22 comments · 2025-02-20</span></a><a class="rp-item" href="https://github.com/unclecode/crawl4ai/issues/1256"><span class="rp-item-num">#1256</span><span class="rp-item-title">[Bug]: Memory Leak on Repeated /md Requests via Docker (MacOS) — Container Crashes Randomly Over Time</span><span class="rp-item-extra">15 comments · 2025-06-29</span></a><a class="rp-item" href="https://github.com/unclecode/crawl4ai/issues/2251"><span class="rp-item-num">#2251</span><span class="rp-item-title">[docs] DOM XSS: unescaped innerHTML interpolation in docs/apps/linkdin graph view template (5 sinks)</span><span class="rp-item-extra">5 comments · 2026-09-12</span></a><a class="rp-item" href="https://github.com/unclecode/crawl4ai/issues/2098"><span class="rp-item-num">#2098</span><span class="rp-item-title">unclecode-litellm shadows the upstream litellm package; the quarantine that motivated the fork has been lifted</span><span class="rp-item-extra">4 comments · 2026-07-25</span></a><a class="rp-item" href="https://github.com/unclecode/crawl4ai/issues/2380"><span class="rp-item-num">#2380</span><span class="rp-item-title">[Bug]: After a streamed deep crawl is stopped early, the next deep crawl returns only the start page</span><span class="rp-item-extra">3 comments · 2026-10-15</span></a><a class="rp-item" href="https://github.com/unclecode/crawl4ai/issues/2202"><span class="rp-item-num">#2202</span><span class="rp-item-title">[Bug]: Browser pages and renderer processes accumulate for weeks on non-streaming /crawl (Docker 0.9.2)</span><span class="rp-item-extra">3 comments · 2026-08-26</span></a><a class="rp-item" href="https://github.com/unclecode/crawl4ai/issues/2023"><span class="rp-item-num">#2023</span><span class="rp-item-title">Feature request: opt-out for the mandatory token when binding non-loopback (Kubernetes / trusted-network deployments)</span><span class="rp-item-extra">2 comments · 2026-06-19</span></a><a class="rp-item" href="https://github.com/unclecode/crawl4ai/issues/1964"><span class="rp-item-num">#1964</span><span class="rp-item-title">[Bug]: Markdown export loses heading hierarchy and table structure</span><span class="rp-item-extra">3 comments · 2026-05-11</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/unclecode/crawl4ai/discussions/2556"><span class="rp-item-num">#2556</span><span class="rp-item-title">Exploring Moli with Crawl4AI</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/unclecode/crawl4ai/discussions/2549"><span class="rp-item-num">#2549</span><span class="rp-item-title">Chopper: a small open model that cuts only the needed sentences out of retrieved text</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/unclecode/crawl4ai/discussions/2508"><span class="rp-item-num">#2508</span><span class="rp-item-title">RAG Source Receipts: offline content and processing fingerprints for Crawl4AI outputs (early MVP)</span><span class="rp-item-extra">0 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/unclecode/crawl4ai/discussions/2492"><span class="rp-item-num">#2492</span><span class="rp-item-title">[Feature Request]: Staged build to decrease image size</span><span class="rp-item-extra">0 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/unclecode/crawl4ai/discussions/2488"><span class="rp-item-num">#2488</span><span class="rp-item-title">Docker image update for HTTP2Shell (CVE-2026-111497)</span><span class="rp-item-extra">1 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/unclecode/crawl4ai/discussions/2465"><span class="rp-item-num">#2465</span><span class="rp-item-title">Proposal: versioned content blocks and meaningful change events</span><span class="rp-item-extra">0 comments · 2026-10-29</span></a><a class="rp-item" href="https://github.com/unclecode/crawl4ai/discussions/2446"><span class="rp-item-num">#2446</span><span class="rp-item-title">Show and tell: Hardening Downstream Database Tools Against Indirect Prompt Injections in Crawl4AI Pipelines</span><span class="rp-item-extra">0 comments · 2026-10-26</span></a><a class="rp-item" href="https://github.com/unclecode/crawl4ai/discussions/2430"><span class="rp-item-num">#2430</span><span class="rp-item-title">Crawl4AI is #2 in Data and scraping for AI on Archestack (badge, if you want it)</span><span class="rp-item-extra">0 comments · 2026-10-21</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/unclecode/crawl4ai/releases"><b>Release v0.9.5</b> <span class="rp-rel-tag">v0.9.5</span> <span class="rp-item-extra">2026-10-14</span></a><pre class="rp-pre">🎉 Crawl4AI v0.9.5 Released!
+
+ 📦 Installation
+
+PyPI:
+bash
+pip install crawl4ai==0.9.5
+
+
+Docker:
+bash
+docker pull unclecode/crawl4ai:0.9.5
+docker pull unclecode/crawl4ai:latest
+
+
+Note: Docker images are being built and will be available shortly.
+Check the Docker Release workflow for build status.
+
+ 📝 What&#x27;s Changed
+See CHANGELOG.md for details.</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (7)</h3><div class="rp-list"><a class="rp-item" href="https://www.techritual.com/2026/07/13/526843/" target="_blank" rel="noopener"><span class="rp-news-src">techritual</span><span class="rp-item-title">Crawl4AI：開源網頁爬蟲工具，專為 LLM 數據提取而設計</span><span class="rp-item-extra">2026-07-12</span></a><a class="rp-item" href="https://blog.csdn.net/Aliaoo/article/details/161612655" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">crawl4ai 从零到上手：GitHub 排名第一的开源 AI 爬虫，5 行代码抓取任意网页</span><span class="rp-item-extra">2026-06-02</span></a><a class="rp-item" href="https://blog.csdn.net/xiaobing259/article/details/147874552" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">【GitHub开源AI精选】Crawl4AI：LLM专属极速开源爬虫利器、1秒处理百万级数据</span><span class="rp-item-extra">2025-05-12</span></a><a class="rp-item" href="https://news.qq.com/rain/a/20250417A02NQF00" target="_blank" rel="noopener"><span class="rp-news-src">腾讯网</span><span class="rp-item-title">Crawl4AI：为大语言模型打造的开源网页数据采集工具</span><span class="rp-item-extra">2025-04-17</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxORGZEaDBndmMzUDdFYUdOTnRmeG9QQUw0RHRIZUFCTlNTMncyTjJIUWRWOVpLejNMa011VU5XeXNaZzQ1R0dEWk1IMWQweUFNZ2hyQjJMdlE3cy0xSDYxYTB0QllyOFh0QU1nNWxXVjRTazVzdDd1MTJ5R2VnbXdVRFpVenA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">2026 年抓取互联网的 10 个 GitHub 仓库 (附真实星标)</span><span class="rp-item-extra">2026-06-30</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiSEFVX3lxTE1YOVNwVGdNRUJwU1VqaTV6NDRUOFFpeWxWb3BNMVhDdnJtOHNuQVM4ejhNS2hEaFpUM1JZdWtpcnlQaElwRXR6Sg?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">智源社区</span><span class="rp-item-title">OpenAI Atlas等AI浏览器暴露Web Agent安全风险！南洋理工破解底层机制</span><span class="rp-item-extra">2025-11-06</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiP0FVX3lxTE0wb0NhNF9fRlN3SmVYSnJVLTZodlEtTXhLSVIyekkwNGJVcUlMazVQOVVJNU1tNHlzcTliQ2VoNA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">blog.upx8.com</span><span class="rp-item-title">Crawl4AI：开源 LLM 友好型 Web 爬虫和抓取工具</span><span class="rp-item-extra">2024-10-05</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (15)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=43827993" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Crawl4AI is an open-source, LLM-friendly web crawler and scraper</span><span class="rp-item-extra">▲ 7 · 2 comments · 2025-04-29</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=41689534" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Crawl4AI: Open-Source Web Crawler for Seamless AI Data Scraping</span><span class="rp-item-extra">▲ 6 · 0 comments · 2024-09-29</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=44543172" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">crawl4ai: The Adaptive Intelligence Update</span><span class="rp-item-extra">▲ 4 · 0 comments · 2025-07-12</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=46733548" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ask HN: What do you use (AI based) web crawlers for?</span><span class="rp-item-extra">▲ 3 · 0 comments · 2026-01-23</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=41747108" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Crawl4AI</span><span class="rp-item-extra">▲ 2 · 0 comments · 2024-10-05</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=48857017" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Crawl4AI: Open-source web crawler and scraper for LLMs</span><span class="rp-item-extra">▲ 1 · 0 comments · 2026-07-10</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=45963180" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Crawl4AI: Open-Source LLM Friendly Web Crawler and Scraper</span><span class="rp-item-extra">▲ 1 · 0 comments · 2025-11-18</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=43048990" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Crawl4ai – open-source web crawler for your AI agent</span><span class="rp-item-extra">▲ 1 · 0 comments · 2025-02-14</span></a><a class="rp-item" href="https://www.marktechpost.com/2026/04/14/a-coding-implementation-of-crawl4ai-for-web-crawling-markdown-generation-javascript-execution-and-llm-based-structured-extraction/" target="_blank" rel="noopener"><span class="rp-news-src">marktechpost</span><span class="rp-item-title">A Coding Implementation of Crawl4AI for Web Crawling, Markdown Generation, JavaScript Execution, and LLM-Based Structured Extraction</span><span class="rp-item-extra">2026-04-13</span></a><a class="rp-item" href="https://www.marktechpost.com/2025/04/23/a-coding-guide-to-asynchronous-web-data-extraction-using-crawl4ai-an-open-source-web-crawling-and-scraping-toolkit-designed-for-llm-workflows/" target="_blank" rel="noopener"><span class="rp-news-src">marktechpost</span><span class="rp-item-title">A Coding Guide to Asynchronous Web Data Extraction Using Crawl4AI: An Open-Source Web Crawling and Scraping Toolkit Designed for LLM Workflows</span><span class="rp-item-extra">2025-04-22</span></a><details class="rp-news-more"><summary>5 more</summary><a class="rp-item" href="https://note.com/life_to_ai/n/nd44732147fb3?hl=ko" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">️ Crawl4AI로 웹 크롤링을 초고속 자동화해 보세요!</span><span class="rp-item-extra">2024-08-15</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE5hTXQtcUJYcGphT1BZMzd1WEZZTFVzWDRKTHFCRmU3WE5Cc0UwSVJYdFVJOG0xOS13c19BZG5WaHJCZ2x1MlBSRnI5ajBNX252ZHk5cE8zeGduR0pp?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">YouTube</span><span class="rp-item-title">8 GitHub Repos That Automate Your Work With AI Agents (All Free) ← I recommend this one</span><span class="rp-item-extra">2026-11-06</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPMWZEd05SYXh2UUhNa2I4S2JBZjRfVktYUnhTV1FBdW5JMFgxRGVqWXdybGUxUkZyQTZGTGpYTlZNdXhoWTF3Ymd5T1dnTWJORExBdjJNTXpoQmQ3UnNQaVREMVRHMnZZWjdtTDZFcVllb3hISjVuVkN0VGY4NUV0RE50cWdDR0NR?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">10 GitHub Repos for Scraping the Internet in 2026 (Real Stars)</span><span class="rp-item-extra">2026-06-30</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMihwFBVV95cUxOY0tHV0NBYmIyQTRZV05wNDdBd1ZkOU9CSjk4QkU4TXptdGF6ZzNnRjZ5cTRNMlhfOUZrQUNmbFZYMUpudXoxVV9wVFlvLWMwMFEyem5HWG1zS3pyN2xqUUotSUJSRTgxTUt0WUtxODdhd0NuZU5QaUdNemNkemdTWXk0aXU2R3M?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Step Security</span><span class="rp-item-title">litellm: Credential Stealer Hidden in PyPI Wheel</span><span class="rp-item-extra">2026-03-24</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiY0FVX3lxTE13Vlp3Sm0yWGRCMm82V3RsY1laTlFqbHRWNGJEMEQwMWQxRDItTjVxNGlfdXBGcnZmREs5UDI1ay1kb1FRaVU3enAyZVV4YmJETXJVYXhncy13aGUxVXZhNEZkSQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">KDnuggets</span><span class="rp-item-title">Top 7 AI Web Scraping Tools</span><span class="rp-item-extra">2025-09-08</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/unclecode__crawl4ai.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

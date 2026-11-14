@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>bm-qihengzhi/BmScriptsBox · GitHub Trending Rank Radar</title>
+<meta name="description" content="BmScriptsBox（不忙脚本盒子）是一款面向 Windows 的跨语言脚本管理器：无需命令行，像用 App 一样查找、安装并一键运行自动化脚本。内置脚本社区，支持定时任务、全局热键与右键菜单。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="BmScriptsBox, bm-qihengzhi, bm-qihengzhi/BmScriptsBox, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/bm-qihengzhi__BmScriptsBox">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="bm-qihengzhi/BmScriptsBox · GitHub Trending Rank Radar">
+<meta property="og:description" content="BmScriptsBox（不忙脚本盒子）是一款面向 Windows 的跨语言脚本管理器：无需命令行，像用 App 一样查找、安装并一键运行自动化脚本。内置脚本社区，支持定时任务、全局热键与右键菜单。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/bm-qihengzhi__BmScriptsBox">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "bm-qihengzhi/BmScriptsBox", "codeRepository": "https://github.com/bm-qihengzhi/BmScriptsBox", "url": "https://zhuikan.com/repos/bm-qihengzhi__BmScriptsBox", "description": "BmScriptsBox（不忙脚本盒子）是一款面向 Windows 的跨语言脚本管理器：无需命令行，像用 App 一样查找、安装并一键运行自动化脚本。内置脚本社区，支持定时任务、全局热键与右键菜单。", "author": {"@type": "Organization", "name": "bm-qihengzhi", "url": "https://github.com/bm-qihengzhi"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Python", "dateCreated": "2026-07-14"}</script>
+</head>
+<body data-repo="bm-qihengzhi/BmScriptsBox" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">bm-qihengzhi/BmScriptsBox</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="bm-qihengzhi__BmScriptsBox"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/32895989?u=ac5305cb55d4e02082a9169d8600e9b3b1cfc024&amp;v=4&s=300" width="300" height="300" alt="bm-qihengzhi avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">BmScriptsBox</div>
+      <a class="rp-side-owner" href="https://github.com/bm-qihengzhi">bm-qihengzhi</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/bm-qihengzhi">bm-qihengzhi</a>
+        <span class="rp-sep">/</span><span class="rp-name">BmScriptsBox</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">BmScriptsBox（不忙脚本盒子）是一款面向 Windows 的跨语言脚本管理器：无需命令行，像用 App 一样查找、安装并一键运行自动化脚本。内置脚本社区，支持定时任务、全局热键与右键菜单。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>39</b></span><span class="rp-stat" title="forks">⑂ <b>2</b></span><span class="rp-stat" title="watchers">👁 <b>0</b></span><span class="rp-stat" title="releases">▤ <b>9</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Created 2026-07-14</span><a class="rp-meta-bit rp-home" href="https://www.bm-box.cn" rel="noopener">www.bm-box.cn</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/bm-qihengzhi/BmScriptsBox">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num">39</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">9</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">不忙脚本盒子 · BmScriptsBox
+
+
+
+
+  
+  
+  
+  
+
+
+
+
+  官方网站 ·
+  脚本社区 ·
+  开发者文档 
+
+
+
+
+ 关于
+
+
+
+BmScriptsBox（不忙脚本盒子）是一款面向 Windows 的跨语言脚本管理器：让普通用户无需接触命令行，也能像使用手机 App 一样查找、安装并一键运行自动化脚本。
+
+内置脚本库覆盖办公效率、音视频处理、AI 应用、系统工具等分类，目前已收录上百个实用脚本。支持运行 Python、JavaScript、PowerShell、AutoHotkey、Batch 等脚本，并兼容 HTML 应用与 EXE 程序。
+
+如果你熟悉 Tampermonkey（油猴），可以把它理解为面向 Windows 桌面自动化的“桌面版油猴”：同样以“找脚本、用脚本”为核心，但管理的是跨语言桌面脚本，而不是浏览器用户脚本。
+
+如果你觉得有用，请给我们一颗星⭐。这是我们最大的支持！
+
+ 📸 预览
+
+
+
+
+  
+
+
+
+
+ ✨ 核心功能
+
+
+ 给普通用户：像管理手机 App 一样使用脚本
+
+- 全图形化：脚本安装、启动、管理、卸载均可视化操作，点击脚本卡片即可运行，零基础也能上手。
+- 内置脚本社区：一键检索、安装优质脚本；已安装脚本支持自动检测与更新。
+- 快速唤醒：鼠标中键单击或双击 Ctrl，均可快速唤醒脚本面板。
+- 右键菜单启动：脚本可挂载到系统右键菜单，选中文件或文件夹即可启动，并自动带入路径参数。
+- 全局快捷键启动：为脚本配置全局快捷键后，在任意窗口按预设快捷键即可启动，并自动带入路径参数。
+- 超级复制启动：选中任意文字，连按两次 Ctrl+C 唤出超级复制面板，选择对应脚本即可启动，并自动带入选中文本参数。
+- 定时任务：支持一次性、每日、每周、每月循环执行，设置后自动运行，无需值守。
+- 开源免费：完全开源，核心功能不设限，不限脚本安装数量，可自由扩展实用工具。
+
+ 给脚本开发者：一份 TOML 声明接入盒子
+
+- 零侵入接入：仅需一份 TOML 声明，无需改造原命令行脚本。
+- 环境依赖自动配置：自动创建虚拟环境、安装依赖；支持 FFmpeg、Pandoc 等工具自动下载注入，HuggingFace、ModelScope 模型按需拉取与跨脚本复用。
+- 命令行脚本一键生成 GUI：TOML 声明自动渲染界面，无需学习 UI 框架或编写 GUI 代码。
+- 声明式定时调度：配置即托管定时触发，参数自动映射到可视化面板，开发者无需编写调度底层代码。
+- 多场景参数注入：右键菜单、全局快捷键、剪贴板、选中文件路径等可自动作为参数传入脚本；提供统一参数、返回和错误码契约。
+- 脚本协作：脚本可同步调用其他脚本，内置友好 HTTP 调用接口，无需额外开发服务代码。
+- 脚本分发：支持本地 ZIP、GitHub 仓库、脚本社区三种安装源，并可通过 GitHub Webhook 自动更新社区脚本。
+
+
+
+
+ 快速入门
+
+
+ 安装软件
+- 普通用户（推荐）：从 Releases 下载安装包，支持 Windows 10 / 11。安装包已内置运行时与依赖，开箱即用。
+- 技术用户：源码仓库仅含主程序本体，需自行准备脚本运行时、依赖与右键菜单扩展。
+
+ 使用指南
+1. 从脚本商店安装脚本：在软件中进入「脚本商店」窗口，选择脚本并点击安装。
+2. 安装本地私有脚本：在脚本目录中添加 toml 声明文件，打包成 zip 后，通过本地安装将脚本装进盒子。
+3. 分发脚本（开发者）：完成盒子适配后，将脚本提交到 GitHub 仓库，再把仓库地址提交给盒子，即可发布到社区。
+
+
+ 脚本开发
+
+
+BmScriptsBox 是一个高自由度、低侵入的脚本运行底座：不绑定特定语言，没有 SDK，也无需 import 盒子的任何库。使用 Python、JavaScript、PowerShell、AutoHotkey、Batch 等语言编写的脚本，只需一份 TOML 声明即可接入，自动获得图形界面、参数注入、定时调度与分发能力，无需编写 GUI 或打包成 exe。
+
+盒子覆盖开发、分发与更新全流程，帮助开发者用尽量少的代码获得完整的使用体验。
+
+查看开发文档，了解盒子的运行机制与 TOML 声明文件的基本规范。
+
+
+
+
+ 贡献
+
+
+- 脚本：写好脚本和声明文件，提交 GitHub 仓库地址即可发布到社区；
+- 代码：建议先开 Issue 说明场景，再提 PR，分支命名 feat/xxx、fix/xxx、docs/xxx；
+- 文档与翻译：使用说明、开发文档、错误提示的措辞都可以改。
+
+提 Issue 时请附上：系统版本、盒子版本、相关脚本、复现步骤，以及日志或截图。
+
+
+ 许可证
+
+
+MIT License + Commons Clause，属于 source-available，不属于 OSI 定义的开源许可。
+
+- 个人与组织内部使用免费；
+- 可以阅读、修改、自行编译；
+- 商业用途（售卖、打包收费、对外收费服务等）需作者书面授权。
+
+完整条款见 LICENSE。商业授权请联系：bmscriptsbox@163.com
+
+Copyright © 2026 綦恒智 (Qi Hengzhi)</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/bm-qihengzhi__BmScriptsBox.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

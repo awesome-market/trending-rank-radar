@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>julienschmidt/httprouter · GitHub Trending Rank Radar</title>
+<meta name="description" content="A high performance HTTP request router that scales well">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="httprouter, julienschmidt, julienschmidt/httprouter, github stars, github trending, star growth, star history, 开源项目, 星标增长, go, router, http, mux, httprouter, golang">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/julienschmidt__httprouter">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="julienschmidt/httprouter · GitHub Trending Rank Radar">
+<meta property="og:description" content="A high performance HTTP request router that scales well">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/julienschmidt__httprouter">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "julienschmidt/httprouter", "codeRepository": "https://github.com/julienschmidt/httprouter", "url": "https://zhuikan.com/repos/julienschmidt__httprouter", "description": "A high performance HTTP request router that scales well", "author": {"@type": "Organization", "name": "julienschmidt", "url": "https://github.com/julienschmidt"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/BSD-3-Clause.html", "programmingLanguage": "Go", "dateCreated": "2013-12-05", "keywords": "go,router,http,mux,httprouter,golang"}</script>
+</head>
+<body data-repo="julienschmidt/httprouter" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">julienschmidt/httprouter</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="julienschmidt__httprouter"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/944947?u=d89b2fb0f9341390f25aa1e3c988337ba81efb8f&amp;v=4&s=300" width="300" height="300" alt="julienschmidt avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">httprouter</div>
+      <a class="rp-side-owner" href="https://github.com/julienschmidt">julienschmidt</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/julienschmidt">julienschmidt</a>
+        <span class="rp-sep">/</span><span class="rp-name">httprouter</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A high performance HTTP request router that scales well</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>17,138</b></span><span class="rp-stat" title="forks">⑂ <b>1,467</b></span><span class="rp-stat" title="watchers">👁 <b>303</b></span><span class="rp-stat" title="prs">⑃ <b>147</b></span><span class="rp-stat" title="issues">● <b>237</b></span><span class="rp-stat" title="releases">▤ <b>4</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/go">go</a><a class="rp-topic" href="https://github.com/topics/router">router</a><a class="rp-topic" href="../tags/http">http</a><a class="rp-topic" href="https://github.com/topics/mux">mux</a><a class="rp-topic" href="https://github.com/topics/httprouter">httprouter</a><a class="rp-topic" href="../tags/golang">golang</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Go</span><span class="rp-meta-bit">BSD-3-Clause</span><span class="rp-meta-bit">Created 2013-12-05</span><a class="rp-meta-bit rp-home" href="https://pkg.go.dev/github.com/julienschmidt/httprouter" rel="noopener">pkg.go.dev/github.com/julienschmidt/httprouter</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/julienschmidt/httprouter">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.3</span><a class="rp-dl-a" href="https://github.com/julienschmidt/httprouter/releases/tag/v1.3.0">v1.3-1.3.0 ↓</a><span class="rp-dl-ver">1.3.0</span><span class="rp-dl-date">2019-09-30</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+3</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+5</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">17,138</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,467</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">303</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">147</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">237</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">4</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">HttpRouter  
+
+HttpRouter is a lightweight high performance HTTP request router (also called multiplexer or just mux for short) for Go.
+
+In contrast to the default mux of Go&#x27;s net/http package, this router supports variables in the routing pattern and matches against the request method. It also scales better.
+
+The router is optimized for high performance and a small memory footprint. It scales well even with very long paths and a large number of routes. A compressing dynamic trie (radix tree) structure is used for efficient matching.
+
+ Features
+
+Only explicit matches: With other routers, like http.ServeMux, a requested URL path could match multiple patterns. Therefore they have some awkward pattern priority rules, like longest match or first registered, first matched. By design of this router, a request can only match exactly one or no route. As a result, there are also no unintended matches, which makes it great for SEO and improves the user experience.
+
+Stop caring about trailing slashes: Choose the URL style you like, the router automatically redirects the client if a trailing slash is missing or if there is one extra. Of course it only does so, if the new path has a handler. If you don&#x27;t like it, you can turn off this behavior.
+
+Path auto-correction: Besides detecting the missing or additional trailing slash at no extra cost, the router can also fix wrong cases and remove superfluous path elements (like ../ or //). Is CAPTAIN CAPS LOCK one of your users? HttpRouter can help him by making a case-insensitive look-up and redirecting him to the correct URL.
+
+Parameters in your routing pattern: Stop parsing the requested URL path, just give the path segment a name and the router delivers the dynamic value to you. Because of the design of the router, path parameters are very cheap.
+
+Zero Garbage: The matching and dispatching process generates zero bytes of garbage. The only heap allocations that are made are building the slice of the key-value pairs for path parameters, and building new context and request objects (the latter only in the standard Handler/HandlerFunc API). In the 3-argument API, if the request path contains no parameters not a single heap allocation is necessary.
+
+Best Performance: Benchmarks speak for themselves. See below for technical details of the implementation.
+
+No more server crashes: You can set a Panic handler to deal with panics occurring during handling a HTTP request. The router then recovers and lets the PanicHandler log what happened and deliver a nice error page.
+
+Perfect for APIs: The router design encourages to build sensible, hierarchical RESTful APIs. Moreover it has built-in native support for OPTIONS requests and 405 Method Not Allowed replies.
+
+Of course you can also set custom NotFound and  MethodNotAllowed handlers and serve static files.
+
+ Usage
+
+This is just a quick introduction, view the Docs for details.
+
+    $ go get github.com/julienschmidt/httprouter
+
+and use it, like in this trivial example:
+
+go
+packa</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/julienschmidt/httprouter/issues/40"><span class="rp-item-num">#40</span><span class="rp-item-title">Cache-Control headers for static files using ServeFiles</span><span class="rp-item-extra">35 comments · 2014-10-17</span></a><a class="rp-item" href="https://github.com/julienschmidt/httprouter/issues/10"><span class="rp-item-num">#10</span><span class="rp-item-title">Routes with name</span><span class="rp-item-extra">12 comments · 2014-06-13</span></a><a class="rp-item" href="https://github.com/julienschmidt/httprouter/issues/183"><span class="rp-item-num">#183</span><span class="rp-item-title">static segment conflicts with wildcard segment</span><span class="rp-item-extra">11 comments · 2017-02-07</span></a><a class="rp-item" href="https://github.com/julienschmidt/httprouter/issues/344"><span class="rp-item-num">#344</span><span class="rp-item-title">is it possible to get the registered path?</span><span class="rp-item-extra">10 comments · 2022-03-09</span></a><a class="rp-item" href="https://github.com/julienschmidt/httprouter/issues/73"><span class="rp-item-num">#73</span><span class="rp-item-title">Non-wildcard routes that share a prefix with a wildcard route should take priority over the wildcard route</span><span class="rp-item-extra">9 comments · 2015-04-02</span></a><a class="rp-item" href="https://github.com/julienschmidt/httprouter/issues/117"><span class="rp-item-num">#117</span><span class="rp-item-title">Add support for fasthttp</span><span class="rp-item-extra">8 comments · 2015-11-29</span></a><a class="rp-item" href="https://github.com/julienschmidt/httprouter/issues/39"><span class="rp-item-num">#39</span><span class="rp-item-title">Flexible Handle Type</span><span class="rp-item-extra">8 comments · 2014-10-14</span></a><a class="rp-item" href="https://github.com/julienschmidt/httprouter/issues/303"><span class="rp-item-num">#303</span><span class="rp-item-title">Any plan to release next version v1.4?</span><span class="rp-item-extra">7 comments · 2020-03-02</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/julienschmidt/httprouter/releases"><b>v1.3</b> <span class="rp-rel-tag">v1.3.0</span> <span class="rp-item-extra">2019-09-30</span></a><pre class="rp-pre">- Fixed license wording to be properly detected as the BSD 3-Clause License
+- Fixed case-insensitive path lookup for multibyte runes (263)
+- Fixed a bug in the calculation of the maximum number of parameters (261)
+- Added a check preventing adding handlers for an empty path, avoid a out-of-range panic (204)
+- Fixed a wildcard conflict check (172)
+- The methods in Allowed headers are now sorted (248)
+- Added an option to add a global handler for automatic responses to OPTIONS requests (156, 200, 214, 260)
+- Minor performance optimizations and documentation fixes
+
+The required minimum G</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/julienschmidt__httprouter.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

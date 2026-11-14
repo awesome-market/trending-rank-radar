@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>gzc/CLRS · GitHub Trending Rank Radar</title>
+<meta name="description" content=":notebook:Solutions to Introduction to Algorithms">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="CLRS, gzc, gzc/CLRS, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/gzc__CLRS">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="gzc/CLRS · GitHub Trending Rank Radar">
+<meta property="og:description" content=":notebook:Solutions to Introduction to Algorithms">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/gzc__CLRS">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "gzc/CLRS", "codeRepository": "https://github.com/gzc/CLRS", "url": "https://zhuikan.com/repos/gzc__CLRS", "description": ":notebook:Solutions to Introduction to Algorithms", "author": {"@type": "Organization", "name": "gzc", "url": "https://github.com/gzc"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "C++", "dateCreated": "2013-12-03"}</script>
+</head>
+<body data-repo="gzc/CLRS" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">gzc/CLRS</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="gzc__CLRS"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/3725560?u=6e68e21880278ea5e2be8f8ac93550a7b5363d60&amp;v=4&s=300" width="300" height="300" alt="gzc avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">CLRS</div>
+      <a class="rp-side-owner" href="https://github.com/gzc">gzc</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/gzc">gzc</a>
+        <span class="rp-sep">/</span><span class="rp-name">CLRS</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">:notebook:Solutions to Introduction to Algorithms</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,594</b></span><span class="rp-stat" title="forks">⑂ <b>2,696</b></span><span class="rp-stat" title="watchers">👁 <b>372</b></span><span class="rp-stat" title="prs">⑃ <b>220</b></span><span class="rp-stat" title="issues">● <b>130</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C++</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2013-12-03</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/gzc/CLRS">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">9,594</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,696</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">372</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">220</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">130</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Solutions to CLRS.
+Solutions to Introduction to Algorithms by Charles E. Leiserson, Clifford Stein, Ronald Rivest, and Thomas H. Cormen (CLRS).
+
+!
+
+ Contributor
+1. Soyn
+2. idf
+3. W4anD0eR96
+4. knight42
+5. ajinkyakolhe112
+6. an-yun
+7. y1y
+8. RepapLataf
+9. Ghost---Shadow
+10. wonjunetai
+11. suensky
+12. xwu64
+13. ryuxin
+14. Puriney
+15. wild-flame
+16. zhangysh1995
+17. DarthUjj
+18. VMatrix1900
+19. Jingru
+20. prasook-jain
+21. Mundhey
+22. Cokile
+23. wuchichung
+24. saurabhvyas
+25. codemukul95
+26. JasonQSY
+27. imbrobits
+28. zhanglanqing
+29. tushar-rishav
+30. ravgill
+31. Mad_Kingu
+32. kotoz
+
+If I miss your name here, please pull a request to me to fix.
+
+You maybe interested in another repo gitstats which generates repo contribution of CLRS.
+
+ This repo needs your help.
+If you are interested in this project, you could complete problems which are marked &quot;UNSOLVED&quot; in the following list. Or if you are interested in certain chapters that have not been completed, you could fork this project and issue a pull request to this repo. Appreciate your efforts.
+
+如果你感兴趣,可以完成没有完成的题(下面有个UNSOLVED列表),或者如果你对某章节感兴趣想要完成,可以fork这个项目然后pull request进这个repo。
+
+In order to speed up this project, we will ignore any hard problems (for instance, problems in the very end of each chapter) and review them when finishing mediocre problems. Moreover, we will only focus on sections that are interesting. You could also help to finish these hard problems.
+
+If a problem is too easy to solve, we&#x27;ll mark it as straightforward in order to speed up the progress.
+
+
+
+
+    
+        Chapter
+	    Section
+    
+     Part I: Foundations
+       
+    	I
+		1
+		2
+		p
+    
+          
+    	II
+		1
+		2
+		3
+		p
+    
+    
+    	III
+		1
+		2
+		p
+    
+              
+    	IV
+		1
+		2
+		3
+		4
+		p
+    
+    
+    	V
+		1
+		2
+		3
+		4
+		p
+    
+    
+		 Part II: Sorting and Order Statistics
+    
+    
+    	VI
+		1
+		2
+		3
+		4
+		5
+		p
+    
+    
+    	VII
+		1
+		2
+		3
+		4
+		p
+    
+    
+    	VIII
+		1
+		2
+		3
+		4
+		p
+    
+    
+    	IX
+		1
+		2
+		3
+		p
+    
+        
+		Part III: Data Structures
+    
+    
+    	X
+		1
+		2
+		3
+		4
+		p
+    
+    
+    	XI
+		1
+		2
+		3
+		4
+		5
+		p
+    
+            
+    	XII
+		1
+		2
+		3
+		
+        
+    	XIII
+		1
+		2
+		3
+		4
+		p
+		
+    	XIV
+		1
+		2
+		3
+		p
+		
+	
+	Part IV: Advanced Design and Analysis Techniques
+	
+    	XV
+		1
+		2
+		3
+		4
+		5
+		
+	
+    	XVI
+		1
+		2
+		3
+		
+	
+    	XVII
+		1
+		2
+		
+	
+	Part V: Advanced Data Structures
+	
+    	XVIII
+		1
+		2
+		3
+		
+		
+    	XIX
+		1
+		2
+		
+		
+    	XXI
+		1
+		2
+		3
+		
+	
+	Part VI: Graph Algorithms
+		
+    	XXII
+		1
+		2
+		3
+		4
+		5
+		p
+		
+		
+    	XXIII
+		1
+		2
+		
+		
+    	XXIV
+		1
+		2
+		3
+		4
+		
+		
+    	XXV
+		1
+		2
+		3
+		
+		
+    	XXVI
+		1
+		2
+		3
+		
+		
+	Part VII: Selected Topics
+	XXXI
+		1
+		2
+		
+	
+    	XXXII
+		1
+		2
+		3
+		4
+		
+		XXXIII
+		1
+		
+		XXXV
+		1
+		
+
+
+
+
+
+ Data Structure&amp;algorithm implementation
+
+ BASIC
+ Heap
+ Priority Queue
+ Quicksort
+ Radixsort
+ Counting Sort
+ K-th Finding
+ Deque(py) Deque(c++)
+
+ DIVIDE and CONQUER
+ Karatsuba
+
+
+ TREE/ADVANCED
+ BST
+ RBT
+ Btree
+ BinomialHeap  Driver
+ S</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/gzc/CLRS/issues/222"><span class="rp-item-num">#222</span><span class="rp-item-title">22.1-4 solution has no proof of algorithm complexity</span><span class="rp-item-extra">7 comments · 2018-04-26</span></a><a class="rp-item" href="https://github.com/gzc/CLRS/issues/215"><span class="rp-item-num">#215</span><span class="rp-item-title">Exercise 4.1–2 is wrong</span><span class="rp-item-extra">4 comments · 2018-03-15</span></a><a class="rp-item" href="https://github.com/gzc/CLRS/issues/265"><span class="rp-item-num">#265</span><span class="rp-item-title">What is the deal with Chinese characters?</span><span class="rp-item-extra">3 comments · 2018-09-09</span></a><a class="rp-item" href="https://github.com/gzc/CLRS/issues/227"><span class="rp-item-num">#227</span><span class="rp-item-title">why omit one condition in Exercises 2.3-2?</span><span class="rp-item-extra">3 comments · 2018-05-11</span></a><a class="rp-item" href="https://github.com/gzc/CLRS/issues/122"><span class="rp-item-num">#122</span><span class="rp-item-title">Excercise 16.1-1</span><span class="rp-item-extra">3 comments · 2017-01-06</span></a><a class="rp-item" href="https://github.com/gzc/CLRS/issues/233"><span class="rp-item-num">#233</span><span class="rp-item-title">Exercise 17.3 Missing</span><span class="rp-item-extra">2 comments · 2018-05-22</span></a><a class="rp-item" href="https://github.com/gzc/CLRS/issues/348"><span class="rp-item-num">#348</span><span class="rp-item-title"> 15.4-6 The code is maybe not right.It outputs the error answer</span><span class="rp-item-extra">1 comments · 2023-01-29</span></a><a class="rp-item" href="https://github.com/gzc/CLRS/issues/341"><span class="rp-item-num">#341</span><span class="rp-item-title">Exercise 22.1-1, out degree</span><span class="rp-item-extra">1 comments · 2021-12-17</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/gzc__CLRS.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

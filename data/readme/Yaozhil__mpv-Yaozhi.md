@@ -1,0 +1,323 @@
+<div align="center">
+
+<h1>mpv-Yaozhi</h1>
+
+<p>
+  <a href="https://github.com/Yaozhil/mpv-Yaozhi/releases/latest"><img src="https://img.shields.io/badge/Platform-Windows%2010%20%2F%2011-0078D4?logo=windows11&amp;logoColor=white" alt="Platform: Windows 10 / 11" height="20"></a>
+  <a href="https://github.com/Yaozhil/mpv-Yaozhi/releases/latest"><img src="https://img.shields.io/badge/Architecture-x86--64-4C8BF5" alt="Architecture: x86-64" height="20"></a>
+  <a href="https://github.com/mpv-player/mpv"><img src="https://img.shields.io/badge/mpv-Custom%20Build-691B9A?logo=mpv&amp;logoColor=white" alt="mpv: Custom Build" height="20"></a>
+  <a href="https://github.com/Yaozhil/mpv-Yaozhi/tree/codex/hdr-pgs-core-fix"><img src="https://img.shields.io/badge/Core-Yaozhi%20Custom-7C3AED" alt="Core: Yaozhi Custom" height="20"></a>
+  <a href="#来源与许可"><img src="https://img.shields.io/badge/License-See%20details-2EA44F" alt="License: See details" height="20"></a>
+</p>
+
+### 让每一次播放，都值得期待
+
+**Dolby Vision / HDR · 蓝光原盘菜单 · 沉浸声 · AI 超分补帧**
+
+从蓝光原盘到在线追剧，将画面增强、沉浸声与顺手的中文操作融于一体，打造开箱即用的 Windows 观影体验
+
+<br>
+
+<p>
+<a href="https://github.com/Yaozhil/mpv-Yaozhi/releases/latest"><img src="docs/images/download-player.svg" alt="下载播放器" width="200"></a> &nbsp; <a href="https://github.com/Yaozhil/mpv-Yaozhi/releases/tag/mpv-Yaozhi-%E8%B6%85%E5%88%86%E8%A1%A5%E5%B8%A7%E5%AE%8C%E6%95%B4%E4%BE%9D%E8%B5%96%E5%8C%85"><img src="docs/images/download-visionpack.svg" alt="下载超分补帧完整依赖包" width="280"></a>
+</p>
+
+<br>
+
+</div>
+
+[![mpv-Yaozhi 主界面](docs/images/ui-annotated.png)](https://yaozhil.github.io/mpv-Yaozhi/gallery/#ui-annotated)
+
+### 播放界面
+
+[![mpv-Yaozhi 播放界面](docs/images/startup-format-badges-playback.png)](https://yaozhil.github.io/mpv-Yaozhi/gallery/#startup-format-badges-playback)
+
+### 杳知功能菜单
+
+[![杳知功能菜单](docs/images/功能界面展示111.png)](https://yaozhil.github.io/mpv-Yaozhi/gallery/#player-menu)
+
+<details>
+<summary>查看杳知配置助手 7.1</summary>
+
+[![杳知 MPV 配置助手 7.1：基础设置、账号与 Cookie、弹幕源及旧配置迁移](docs/images/config-assistant-7.1.png)](https://yaozhil.github.io/mpv-Yaozhi/gallery/#config-assistant-7.1)
+
+</details>
+
+## 近期精选
+
+> 以下包含近期内测与工作版进展；公开下载版本所含功能以对应发行说明为准。
+
+- **Emby 片库，更有影院感（内测）**：海报选片、影院式详情、按季选集与继续观看，选好影片就交给播放器。
+- **IPTV，像电视一样顺手**：保存多个频道源，分组搜索、收藏常看频道，用方向键或底栏切台；列表可定时更新。
+- **B站追剧，字幕与章节都跟上**：合集自动加入播放列表，章节显示在进度条；平台已有字幕可自动加载，切换画质保留字幕选择。
+- **HDR 影片，普通屏幕也能按喜好看**：新增 HDR→SDR 自然、明亮、更亮与原始映射四档，即时调整并记住选择。
+
+## Emby 媒体库（内测）
+
+### 把片库变成影院，选好就开播
+
+连接已有的 Emby 服务器与账号，用海报与影院式详情浏览片库；从选片、选集到继续观看，衔接熟悉的播放器。
+
+<p align="center">
+  <a href="https://yaozhil.github.io/mpv-Yaozhi/gallery/#emby-home" title="点击全屏查看，右上角可关闭"><img src="docs/images/emby-cinema-home.png" alt="Emby 媒体库首页：影片横幅、简介与分类入口" width="960"></a>
+</p>
+
+<p align="center"><strong>从首页发现想看的故事</strong><br><sub>影院式横幅 · 分类浏览 · 继续观看</sub></p>
+
+<br>
+
+<p align="center">
+  <a href="https://yaozhil.github.io/mpv-Yaozhi/gallery/#emby-library" title="点击全屏查看，右上角可关闭"><img src="docs/images/emby-poster-library.png" alt="Emby 国产剧媒体库：海报墙、片名与分类切换" width="400"></a> &nbsp;
+  <a href="https://yaozhil.github.io/mpv-Yaozhi/gallery/#emby-details" title="点击全屏查看，右上角可关闭"><img src="docs/images/emby-cinema-details.png" alt="Emby 影院式剧集详情：片名、简介、播放与按季选集" width="400"></a>
+</p>
+
+<p align="center">海报墙浏览 · 影院式详情与选集<br><sub>点击图片可全屏查看，按 Esc 或点右上角关闭。</sub></p>
+
+- **选片更直观**：分类、搜索与筛选结合海报浏览，查看服务器提供的评分、简介和演员资料。
+- **追剧更连贯**：继续观看、按季选集、海报／数字选集切换，支持快速跳集与定位当前集。
+- **版本看得清**：展示实际分辨率、动态范围与编码，可选择版本，并记住本剧的音轨与字幕偏好。
+- **喜欢的先收好**：Emby 收藏与本机待看分开管理；还支持音乐库的专辑、歌曲浏览与专辑连播。
+
+> Emby 媒体库为内测功能，需自行准备有效的服务器与账号；影片、评分及演员等资料由服务器提供，可用内容以账号权限为准。
+
+## AI 超分与补帧
+
+“杳知 > 超分与补帧”统一管理画面增强与运动平滑，两项功能默认关闭，可独立启用并保存选择。自动模式根据显卡、片源分辨率、帧率、输出负载与画面格式选择方案，菜单可查看实际运行状态。
+
+- **画面增强**：通用方案以 SSim 与 FSRCNNX 为主；Anime4K、NNEDI3、RAVU 等可手动选择。
+- **AI 补帧**：RIFE v4.6 提供 Vulkan 后端；安装完整依赖包后，兼容的 NVIDIA RTX 显卡可按需使用 TensorRT FP16 扩展。
+- **自动保护**：默认优先以片源原分辨率建立 AI 2× 链路，保留已有超分质量；无法实时运行或条件不满足时自动回退。
+- **4K 流畅优先**：可主动选择降低处理负载以优先补帧。SDR 使用降分辨率的流畅方案；HDR 基底路径仅降低运动推理尺寸，原始帧与最终输出仍保持片源尺寸。
+- **HDR 处理**：HDR10 / HDR10+ 可使用保留 PQ、BT.2020 与逐帧信息的路径。HDR Vivid 默认保持原有处理；近期内测可主动允许普通 HDR 基底兼容补帧，此时保留 10-bit / PQ / BT.2020，不应用 Vivid 专属动态映射。
+- **格式适配**：Dolby Vision、HLG、光盘和 VFR 等场景保持原始色彩链与原生平滑。暂停、跳转和播放恢复时优先复用现有滤镜图，减少重复初始化与等待。
+
+[![RTX 5090 D v2 实机播放：4K 输入 25 fps，输出 50 fps](docs/images/ai-interpolation-hdr-4k.png)](https://yaozhil.github.io/mpv-Yaozhi/gallery/#ai-interpolation-hdr-4k)
+
+*实机示例：RTX 5090 D v2 · 4K HDR 片源 · RIFE TensorRT · 25 → 50 FPS。实际处理方式与推理尺寸以播放器统计为准，性能随设备及片源变化。*
+
+[下载超分补帧完整依赖包](https://github.com/Yaozhil/mpv-Yaozhi/releases/tag/mpv-Yaozhi-%E8%B6%85%E5%88%86%E8%A1%A5%E5%B8%A7%E5%AE%8C%E6%95%B4%E4%BE%9D%E8%B5%96%E5%8C%85)：RTX 40 / 50 系列用户如需高端扩展，可按需安装；其他显卡先使用播放器主包提供的通用方案。
+
+## 主要功能
+
+mpv-Yaozhi 基于 [mpv](https://github.com/mpv-player/mpv) 与 [dyphire/mpv-config](https://github.com/dyphire/mpv-config) 持续维护，集成自编译播放核心、Windows 便携配置与中文交互体验，提供开箱即用的完整懒人包。
+
+项目重点覆盖 HDR / Dolby Vision、蓝光与 DVD 原盘菜单、图形字幕、AV3A / Audio Vivid、Dolby Atmos 源码直通、多声道 PCM、AI 超分与补帧、AList/OpenList 以及日常播放体验。
+
+> 本项目是社区维护的第三方发行方案，并非 mpv 官方版本。
+
+| 分类 | 支持内容 |
+| --- | --- |
+| 播放核心 | 自维护 Windows x86-64 mpv；D3D11、`gpu-next`、Schannel/libcurl 与定制补丁链 |
+| 画面格式 | HDR10、HDR10+、HLG、Dolby Vision P5 / P7 MEL/FEL / P8.1 / P8.4、HDR Vivid 元数据识别 |
+| 视频解码 | H.264、HEVC、AV1、VVC / H.266、AVS2、AVS3、Animated WebP 等 |
+| 图形字幕 | UHD HDR/DV 内封 PGS 与 SDR 图形字幕分别处理；支持手动色彩覆盖及 150–400 nits 独立亮度 |
+| 原盘导航 | 本地蓝光 / DVD / ISO 自动进入原盘导航；支持 HDMV、BD-J Java 菜单与中文操作入口 |
+| 沉浸声音频 | AV3A / Audio Vivid / AVS3 Audio 解码，对象与 HOA 双耳渲染，可选标准声床与点对象 7.1.4 渲染，5.1.4 至 9.1.6 PCM 高度声道 |
+| 音频源码直通 | AC-3、E-AC-3、Dolby TrueHD、DTS、DTS-HD HRA/MA，以及相应载荷中的 Dolby Atmos / DTS:X |
+| 超分与补帧 | FSRCNNX、SSim、RIFE v4.6 Vulkan，可选 NVIDIA TensorRT FP16 扩展与实时安全回退 |
+| 交互与字幕 | 深度定制 uosc，中英文界面切换、媒体信息、轨道选择、弹幕、片头片尾、播放历史与格式标签；三源字幕聚合搜索，近期工作版新增 B站平台字幕 |
+| 网络播放 | YouTube、B站视频与番剧，以及 B站、抖音、斗鱼、虎牙直播；AList/OpenList、WebDAV、SMB、SFTP、HTTPS 媒体直链、ZIP/RAR 内视频与远程蓝光 ISO 主标题模式；近期工作版新增 IPTV 多订阅管理 |
+| Emby 媒体库（内测） | 海报墙、影院式详情、搜索筛选、继续观看、按季选集、版本选择、收藏与本机待看，以及音乐库 |
+| 手机遥控（内测） | 同一局域网内浏览影片、控制播放、发送链接，以及弹幕、搜索与选集界面 |
+
+## 蓝光 / DVD 原盘菜单
+
+本地蓝光目录、光驱与 ISO 会在建立播放链时启用光盘导航；如果 First Play 直接进入正片，播放器会在合适时机请求一次原盘主菜单。普通用户无需预先安装 Java，也不需要手动修改环境变量。
+
+- 支持蓝光 HDMV 菜单、BD-J Java 动态菜单与 DVD 菜单。
+- `杳知 > 蓝光圆盘菜单` 提供返回菜单根目录、标题菜单、播放快捷菜单和上一级等中文入口。
+- 正片或分段播放时可使用 `Home` / `Ctrl+m` 返回蓝光菜单根目录，`Ctrl+M` 显示或隐藏弹出菜单。
+- AList/OpenList 远程蓝光 ISO 继续使用主标题模式，不启动菜单 VM，避免额外的网络随机读取和起播等待。
+
+<p align="center">
+  <a href="https://yaozhil.github.io/mpv-Yaozhi/gallery/#bluray-menu-showcase-1" title="点击全屏查看，右上角可关闭"><img src="docs/images/bluray-menu-showcase-1.png" alt="蓝光原盘菜单播放展示" width="960"></a>
+</p>
+
+<details>
+<summary>查看另一种原盘菜单效果</summary>
+
+<p align="center">
+  <a href="https://yaozhil.github.io/mpv-Yaozhi/gallery/#bluray-menu-showcase-2" title="点击全屏查看，右上角可关闭"><img src="docs/images/bluray-menu-showcase-2.png" alt="蓝光原盘菜单播放展示" width="960"></a>
+</p>
+
+</details>
+
+> 菜单画面、语言、动画、弹出菜单和可选项目由原盘自身决定；没有制作菜单的镜像不会由播放器生成菜单。
+
+## 专业起播格式标签
+
+播放器会在画面信息就绪时识别当前画面标准与选中音轨，并在真实视频画面的安全区短暂显示。多音轨切换后会自动刷新，编码黑边识别在后台完成，不阻塞首个可呈现画面。
+
+- **画面标签：** Dolby Vision、HDR Vivid、HDR10+、HDR10、HLG、SDR
+- **音频标签：** Audio Vivid、Dolby Atmos、DTS:X、TrueHD、DTS-HD、AC-4、MPEG-H、DRA、APE、FLAC、PCM、AAC 等
+- **显示样式：** 彩色徽章或透明白图标
+- **菜单路径：** `杳知 > 起播格式标签`
+
+[![HDR Vivid 与 Audio Vivid 起播格式标签](docs/images/startup-format-badges-vivid-dual.png)](https://yaozhil.github.io/mpv-Yaozhi/gallery/#startup-format-badges-vivid-dual)
+[![双杜比起播格式标签](docs/images/startup-format-badges-opening.png)](https://yaozhil.github.io/mpv-Yaozhi/gallery/#startup-format-badges-opening)
+
+<details>
+<summary>查看完整起播格式标签</summary>
+
+<br>
+
+[![彩色版起播格式标签](docs/images/startup-format-badges-color-overview.png)](https://yaozhil.github.io/mpv-Yaozhi/gallery/#startup-format-badges-color-overview)
+
+[![透明白色版起播格式标签](docs/images/startup-format-badges-white-overview.png)](https://yaozhil.github.io/mpv-Yaozhi/gallery/#startup-format-badges-white-overview)
+
+</details>
+
+## Dolby Vision、HDR 与图形字幕
+
+- Dolby Vision 支持 P5、P7 MEL/FEL、P8.1 与 P8.4，由播放器内部完成解码、重塑和显示适配。
+- P7/FEL 播放会保留基础层、增强层与 RPU 的关联；快速精确跳转时会过滤已损坏的增强层恢复帧，避免短暂叠入正常画面。
+- `gpu-next` 路径会区分 UHD HDR/DV 内封 PGS 与外置或 SDR 图形字幕：前者可随视频进入 HDR 映射链，后者保守按 SDR/sRGB 处理。
+- `杳知 > HDR 图形字幕色彩与亮度` 提供自动判断、随视频、SDR·sRGB 三种模式，以及 150 / 203 / 250 / 300 / 400 nits 图形字幕亮度。
+- 图形字幕设置不改变视频、ASS/文本字幕和 OSD 的色彩处理。
+- 近期工作版新增 `杳知 > HDR 输出与峰值亮度 > HDR→SDR 映射`，提供自然、明亮、更亮与原始映射四档，首次默认明亮；选择即时应用并保存，已有有效设置继续保留。
+
+## 沉浸声与多声道音频
+
+### AV3A / Audio Vivid
+
+- 支持 AV3A（Audio Vivid / AVS3 Audio）常规多声道、对象音频和 HOA 内容。
+- 默认将对象与 HOA 内容渲染为双耳立体声，普通声道音轨保留原布局；原生输出可保留可用的传输 PCM。
+- 近期版本加入可手动选择的 **7.1.4 输出（12CH）**，用于标准声床与点对象渲染，并支持内容预选；输出设备须支持且正确映射对应布局，尚不支持的空间特性不会强行转换。
+- AV3A / Audio Vivid 是播放器解码后的 PCM 输出，不属于 S/PDIF 源码直通格式。
+
+### 高度声道 PCM
+
+| 布局 | 声道顺序 |
+| --- | --- |
+| 5.1.4（10ch） | `FL-FR-FC-LFE-SL-SR-TFL-TFR-TBL-TBR` |
+| 7.1.4（12ch） | `FL-FR-FC-LFE-BL-BR-SL-SR-TFL-TFR-TBL-TBR` |
+| 9.1.4（14ch） | `FL-FR-FC-LFE-BL-BR-SL-SR-TFL-TFR-TBL-TBR-TSL-TSR` |
+| 9.1.6（16ch） | `FL-FR-FC-LFE-BL-BR-SL-SR-TFL-TFR-TBL-TBR-TSL-TSR-WL-WR` |
+
+播放器会为 Windows 输出具名扬声器布局与匹配的 speaker mask，避免高度声道退化为未知通道。5.1.4 / 7.1.4 已覆盖 Windows 设备打开与实机声道路由，9.1.4 / 9.1.6 已覆盖软件声道顺序与 PCM 保序；最终扬声器输出仍取决于声卡、驱动、Windows 音频接口、HDMI/eARC 链路和终端设备。
+
+近期工作版可在右键 `音频 > 设备声道布局` 按具体 WASAPI／ASIO 设备保存布局，适配不同物理端口顺序与补静音槽位；实际输出以所用核心、音轨和设备能力为准。
+
+### 音频源码直通
+
+- 支持 Dolby Digital、Dolby Digital Plus、Dolby TrueHD、DTS 与 DTS-HD HRA/MA。
+- Dolby Atmos 可随 E-AC-3 / TrueHD 载荷传输，DTS:X 可随 DTS-HD 载荷传输。
+- 提供全部直通、仅 Dolby、仅 DTS、关闭直通四种模式。
+- 设备拒绝当前码流时会退出不兼容状态并恢复 PCM，避免后续播放持续无声或卡住。
+- **菜单路径：** `杳知 > 音频直通`
+
+随包提供的 Atmos 实验入口用于尝试对象音频软件解码与状态展示；它与日常播放入口保持独立，组件不可用时会回到普通播放路径。
+
+## 手机家庭影院（内测）
+
+手机与电脑在同一局域网内，即可浏览影片、控制播放和发送链接。把选片与操作留在手边，让大屏专心播放。
+
+<p align="center"><strong>影片在大屏，操作在手边。</strong></p>
+
+<p align="center">
+  <a href="https://yaozhil.github.io/mpv-Yaozhi/gallery/#cinema-remote-library" title="点击全屏查看，右上角可关闭"><img src="docs/images/cinema-remote-library.png" alt="手机选片：浏览本地目录与剧集" width="240"></a>
+  <a href="https://yaozhil.github.io/mpv-Yaozhi/gallery/#cinema-remote-controls" title="点击全屏查看，右上角可关闭"><img src="docs/images/cinema-remote-controls.png" alt="播放遥控：暂停、进度、音量、字幕与音轨" width="240"></a>
+  <a href="https://yaozhil.github.io/mpv-Yaozhi/gallery/#cinema-remote-link" title="点击全屏查看，右上角可关闭"><img src="docs/images/cinema-remote-link.png" alt="链接播放：识别分享内容并在电脑播放" width="240"></a>
+</p>
+
+<p align="center">手机选片 · 播放遥控 · 链接播放<br><sub>真实手机截图，点击可全屏查看，右上角可关闭。</sub></p>
+
+浏览本地与网盘目录，暂停或跳转当前影片，调整音量、字幕与音轨；也可以粘贴支持的视频分享链接，让电脑继续播放。
+
+<details>
+<summary>查看更多遥控界面：弹幕、搜索与选集</summary>
+
+<p align="center">
+  <a href="https://yaozhil.github.io/mpv-Yaozhi/gallery/#cinema-remote-danmaku" title="点击全屏查看，右上角可关闭"><img src="docs/images/cinema-remote-danmaku.png" alt="弹幕搜索与加载：在手机上查找并控制大屏弹幕" width="240"></a>
+  <a href="https://yaozhil.github.io/mpv-Yaozhi/gallery/#cinema-remote-search" title="点击全屏查看，右上角可关闭"><img src="docs/images/cinema-remote-search.png" alt="目录搜索与剧集浏览：按关键词查找影片" width="240"></a>
+  <a href="https://yaozhil.github.io/mpv-Yaozhi/gallery/#cinema-remote-playlist" title="点击全屏查看，右上角可关闭"><img src="docs/images/cinema-remote-playlist.png" alt="播放列表与选集：查看剧集并选择播放" width="240"></a>
+</p>
+
+<p align="center">弹幕搜索与加载 · 目录搜索与剧集浏览 · 播放列表与选集<br><sub>展开即可查看；点击全屏大图，右上角可关闭。</sub></p>
+
+</details>
+
+## 中文播放与网络体验
+
+- 使用统一的 uosc 主菜单、右键菜单、播放列表、轨道列表和字幕内容搜索；播放器常用界面可切换简体中文与 English，Emby 与手机遥控界面目前为中文。
+- 底栏直接显示解码方式、画面规格、编码、音频、码率和网络状态。
+- 支持中文弹幕搜索与加载、片头片尾查询/手动标记、章节显示和自动跳过。
+- 音乐模式提供列表循环、单曲循环、随机防重复以及最小化继续播放。
+- 最近播放支持本地文件、网盘和签名 URL；临时离线不会批量清除历史记录。
+- AList/OpenList 浏览支持刷新、排序、长路径适配及 ZIP/RAR 内视频直接播放，不在界面中展示账号、密码和签名参数。
+- 在启动页按 `Ctrl+V` 粘贴链接，可解析 B站视频与番剧（ep / ss / md）、YouTube 视频，以及 B站、抖音、斗鱼、虎牙直播网页链接。
+- 在线播放自动选择可用的最高画质，也可手动切换清晰度与线路；B站、斗鱼、虎牙直播支持弹幕，斗鱼登录后可使用账号开放的高码率档位。
+- 可定位的网络视频与 AList/OpenList/WebDAV 文件支持进度条画面预览。
+- 字幕按钮右键或 `Ctrl+F` 进入 Assrt、迅雷、字幕猫三源聚合搜索：可修改片名，先返回的结果先显示，也可单独换源查找；字幕猫查找已有字幕，服务额度以站点为准。
+- B站番剧可按集号或标题查找；近期工作版加入普通视频合集列表与分 P 章节，已有的平台上传字幕／AI 字幕可自动加入字幕轨，并支持独立重试。
+- 近期工作版支持 IPTV 订阅与本地 M3U，多来源保存、分组搜索、收藏、底栏／方向键切台、备用线路和定时更新；更新频道列表不打断当前播放。
+- 近期工作版的工具菜单新增缓存清理面板，显示可清理容量、一键清理与自动开关；播放中发起的清理等待空闲后执行，保留账号、播放记录与个人设置。
+
+## 快速开始
+
+### 系统要求
+
+- Windows 10 / 11 64 位
+- 支持 Direct3D 11 的显卡与较新的显卡驱动
+- HDR、源码直通和 5.1.4 至 9.1.6 输出需要相应显示器、声卡、Windows 音频接口、HDMI/eARC 设备或功放支持
+
+### 安装
+
+1. 前往 [播放器下载页](https://github.com/Yaozhil/mpv-Yaozhi/releases/latest) 选择便携包或安装包。
+2. 安装版运行安装程序；便携版将压缩包完整解压到可写目录，不要直接在压缩软件中运行。
+3. 从桌面快捷方式或解压目录中的播放器主程序启动，也可将媒体文件拖入播放器。
+4. 按需打开随包提供的“杳知配置助手”，识别硬件并选择适合的配置。
+5. 如需双击媒体文件直接播放，可通过安装器或随包提供的文件关联工具设置。
+6. RTX 40 / 50 系列用户如需 TensorRT 扩展，可按需下载上方的完整依赖包，并按包内教程安装。
+
+> 完整整合包已包含播放器核心、便携配置与 BD-J Java 运行环境。普通用户无需另外安装 mpv 或 Java。
+
+## 兼容性说明
+
+| 功能 | 当前边界 |
+| --- | --- |
+| Dolby Vision | 常规路径在播放器内部处理并输出适合显示设备的 HDR10/PQ 或 SDR；TV-led DV 为独立实验功能，需兼容的 NVIDIA 显卡与 HDMI 电视，默认关闭，仍在实体设备验证中 |
+| HDR Vivid | 支持帧元数据识别与界面标识；当前不包含专用动态色调映射或显示端透传。近期内测允许可选普通 HDR 基底兼容补帧，该路径不应用 Vivid 专属动态映射 |
+| Dolby Atmos / DTS:X | 普通入口支持源码直通，依赖原始音轨、Windows 默认输出设备及回音壁或功放；Atmos 对象音频软件解码属于独立实验功能 |
+| AV3A / Audio Vivid | 支持解码与 PCM 输出；对象与 HOA 默认双耳输出，标准声床与点对象可手动选择 7.1.4 渲染；不承诺所有空间特性或未知设备端口的自动适配 |
+| 5.1.4 至 9.1.6 PCM | 5.1.4 / 7.1.4 已验证 Windows 设备打开与实机声道路由；9.1.4 / 9.1.6 已验证软件声道顺序与 PCM 保序，终端设备仍须支持对应布局 |
+| 蓝光 / DVD 菜单 | 本地介质由原盘自身导航数据驱动；远程蓝光 ISO 使用主标题模式，不进入菜单 VM |
+| AI 超分与补帧 | 依据硬件与片源条件启用，触发保护后自动回退；默认优先保留片源原分辨率。主动选择“4K 流畅优先”会降低运动推理分辨率，HDR 基底路径的原始帧及最终输出仍保持源尺寸 |
+| Emby 媒体库 | 内测功能，需有效服务器与账号；资料、版本及兼容 HLS／转码能力依服务器与权限，播放器不提供影片资源 |
+| 手机家庭影院 | 当前属于内测功能，需在同一局域网使用；公开下载版本所含功能以对应发行说明为准 |
+
+## 问题反馈
+
+提交 [Issue](https://github.com/Yaozhil/mpv-Yaozhi/issues) 时，建议提供：
+
+- Windows 版本、显卡型号与驱动版本
+- 播放器版本，以及使用安装版还是便携版
+- 音频设备、连接方式及 Windows 扬声器布局
+- 可复现的文件格式、音视频编码和操作步骤
+- `portable_config/files/mpv.log` 中与问题相关的片段
+
+请勿公开包含网盘账号、签名 URL、访问令牌或私人文件路径的完整日志。
+
+**交流群：** [Telegram · mpv_Yaozhi](https://t.me/mpv_Yaozhi)
+
+## 支持项目
+
+如果 mpv-Yaozhi 有幸改善了你的播放体验，非常欢迎在能力范围内支持。
+
+你的支持将帮助我持续维护与开发本项目，感谢每一份支持。
+
+<p align="center">
+  <a href="https://yaozhil.github.io/mpv-Yaozhi/gallery/#support" title="点击全屏查看，右上角可关闭"><img src="docs/images/赞赏码.png" alt="支持 mpv-Yaozhi" width="760"></a>
+</p>
+
+## 来源与许可
+
+本项目参考或集成了以下项目及社区成果：
+
+- [mpv-player/mpv](https://github.com/mpv-player/mpv)
+- [dyphire/mpv-config](https://github.com/dyphire/mpv-config)
+- [yosh-wang/mpv-stats.lua-zh-chinese-translation-](https://github.com/yosh-wang/mpv-stats.lua-zh-chinese-translation-)
+- [yosh-wang/auto_bluray-ISO-](https://github.com/yosh-wang/auto_bluray-ISO-)
+- uosc、FFmpeg、libplacebo、SDL2、libbluray 及其他随项目保留来源说明的开源组件
+
+公开仓库中由 Yaozhi 独立创作并由仓库许可证明确覆盖的代码与文档采用 [MIT License](https://github.com/Yaozhil/mpv-Yaozhi/blob/main/LICENSE.md)。

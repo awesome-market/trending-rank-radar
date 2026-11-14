@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>alsotang/node-lessons · GitHub Trending Rank Radar</title>
+<meta name="description" content=":closed_book:《Node.js 包教不包会》 by alsotang">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="node-lessons, alsotang, alsotang/node-lessons, github stars, github trending, star growth, star history, 开源项目, 星标增长, javascript, nodejs">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/alsotang__node-lessons">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="alsotang/node-lessons · GitHub Trending Rank Radar">
+<meta property="og:description" content=":closed_book:《Node.js 包教不包会》 by alsotang">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/alsotang__node-lessons">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "alsotang/node-lessons", "codeRepository": "https://github.com/alsotang/node-lessons", "url": "https://zhuikan.com/repos/alsotang__node-lessons", "description": ":closed_book:《Node.js 包教不包会》 by alsotang", "author": {"@type": "Organization", "name": "alsotang", "url": "https://github.com/alsotang"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "JavaScript", "dateCreated": "2014-10-05", "keywords": "javascript,nodejs"}</script>
+</head>
+<body data-repo="alsotang/node-lessons" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">alsotang/node-lessons</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="alsotang__node-lessons"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/1147375?u=90d8bdbad51946eafd35ec74be14606fe034fbdc&amp;v=4&s=300" width="300" height="300" alt="alsotang avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">node-lessons</div>
+      <a class="rp-side-owner" href="https://github.com/alsotang">alsotang</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/alsotang">alsotang</a>
+        <span class="rp-sep">/</span><span class="rp-name">node-lessons</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">:closed_book:《Node.js 包教不包会》 by alsotang</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>16,402</b></span><span class="rp-stat" title="forks">⑂ <b>4,578</b></span><span class="rp-stat" title="watchers">👁 <b>1,089</b></span><span class="rp-stat" title="prs">⑃ <b>46</b></span><span class="rp-stat" title="issues">● <b>131</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/javascript">javascript</a><a class="rp-topic" href="../tags/nodejs">nodejs</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">Created 2014-10-05</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/alsotang/node-lessons">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">16,402</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">4,578</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">1,089</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">46</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">131</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">《Node.js 包教不包会》 -- by alsotang
+
+ 注意
+
+本书写成于 2015 年，其中的某些最佳实践或许已经发生变化。比如异步处理应更多使用 Promise 与 await/async，但本书未有提及。由于 js 一直向后兼容，所以本书中的内容仍然可以正常在生产环境中使用。
+
+ 为何写作此课程
+
+
+在 CNode(https://cnodejs.org/) 混了那么久，解答了不少 Node.js 初学者们的问题。回头想想，那些问题所需要的思路都不难，但大部分人由于练手机会少，所以在遇到问题的时候很无措。国内唯一一本排的上号的 Node.js 书是 @朴灵(https://github.com/JacksonTian) 的 《深入浅出Node.js》(http://book.douban.com/subject/25768396/ )，但这本书离实战还是比较远的。
+
+这个课程是希望提供更多的 Node.js 实战机会，通过每一节精心安排的课程目标，让 Node.js 的初学者们可以循序渐进地，有目的有挑战地开展 Node.js 的学习。
+
+ 广告
+
+需要内推腾讯的同学请参照此贴： https://cnodejs.org/topic/58351689bde2b59e06141e9f
+
+更多 Node.js 入门资料请前往：https://cnodejs.org/getstart
+
+新手搭建 Node.js 云主机，推荐使用无需备案的 DigitalOcean(https://www.digitalocean.com/)
+
+ 课程列表
+
+ Lesson 0: 《搭建 Node.js 开发环境》
+ Lesson 1: 《一个最简单的 express 应用》
+ Lesson 2: 《学习使用外部模块》
+ Lesson 3: 《使用 superagent 与 cheerio 完成简单爬虫》
+ Lesson 4: 《使用 eventproxy 控制并发》
+ Lesson 5: 《使用 async 控制并发》
+ Lesson 6: 《测试用例：mocha，should，istanbul》
+ Lesson 7: 《浏览器端测试：mocha，chai，phantomjs》 -- by @elrrrrrrr
+ Lesson 8: 《测试用例：supertest》
+ Lesson 9: 《正则表达式》
+ Lesson 10: 《benchmark 怎么写》
+ Lesson 11: 《作用域与闭包：this，var，(function () {})》 -- by @Ricardo-Li
+ Lesson 12: 《线上部署：heroku》
+ Lesson 13: 《持续集成平台：travis》
+ Lesson 14: 《js 中的那些最佳实践》
+ Lesson 15: 《Mongodb 与 Mongoose 的使用》
+ Lesson 16: 《cookie 与 session》 -- by @Ricardo-Li
+ Lesson 17: 《使用 promise 替代回调函数》 -- by @eeandrew
+ Lesson 18: 《何为 connect 中间件》 -- by @albin3
+
+ 计划
+
+ 《http 中各个 header 的含义》
+ 《操作 mysql》
+ 《在全新的 vps 上搭建 node.js、mongodb、nginx》
+ 《一个简单的 blog 程序》
+
+ 本课程特点
+
+ 每一课的课程挑战如果有能力完成，则可考虑放弃阅读课程内容
+ 对 web 开发初学者不友好，对 Windows 用户不友好，对 ruby on rails 开发者友好
+ 内容笼统，课程重点随心所欲
+
+ License
+
+MIT</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/alsotang/node-lessons/issues/35"><span class="rp-item-num">#35</span><span class="rp-item-title">lesson 3里面的抓取作者只能抓取一部分。</span><span class="rp-item-extra">13 comments · 2015-05-08</span></a><a class="rp-item" href="https://github.com/alsotang/node-lessons/issues/57"><span class="rp-item-num">#57</span><span class="rp-item-title">Lesson3爬虫问题</span><span class="rp-item-extra">9 comments · 2015-08-30</span></a><a class="rp-item" href="https://github.com/alsotang/node-lessons/issues/29"><span class="rp-item-num">#29</span><span class="rp-item-title">Lessons4 中挑战部分获取积分疑问</span><span class="rp-item-extra">9 comments · 2015-02-05</span></a><a class="rp-item" href="https://github.com/alsotang/node-lessons/issues/136"><span class="rp-item-num">#136</span><span class="rp-item-title">lesson5中callback求解</span><span class="rp-item-extra">6 comments · 2017-06-01</span></a><a class="rp-item" href="https://github.com/alsotang/node-lessons/issues/106"><span class="rp-item-num">#106</span><span class="rp-item-title">关于 正则表达式 lesson-9</span><span class="rp-item-extra">6 comments · 2016-08-03</span></a><a class="rp-item" href="https://github.com/alsotang/node-lessons/issues/165"><span class="rp-item-num">#165</span><span class="rp-item-title">关于lesson3抓取首页，链接和作者的问题</span><span class="rp-item-extra">5 comments · 2019-04-09</span></a><a class="rp-item" href="https://github.com/alsotang/node-lessons/issues/154"><span class="rp-item-num">#154</span><span class="rp-item-title">发现一个错别字</span><span class="rp-item-extra">5 comments · 2018-02-24</span></a><a class="rp-item" href="https://github.com/alsotang/node-lessons/issues/122"><span class="rp-item-num">#122</span><span class="rp-item-title">lesson16,session cookie 安全问题</span><span class="rp-item-extra">5 comments · 2017-02-12</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/alsotang__node-lessons.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

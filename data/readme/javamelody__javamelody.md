@@ -1,0 +1,15 @@
+﻿JavaMelody
+=========================
+
+The goal of JavaMelody is to monitor Java or Java EE applications in QA and production environments.
+
+See the [Project Home](../../wiki), [Screenshots](../../wiki/Screenshots#charts), [User's guide](../../wiki/UserGuide) and [Release notes](../../wiki/ReleaseNotes) in the wiki,
+or see downloads in [Releases](../../releases), [Issues](../../issues) and [Pull requests](../../pulls).
+
+License [Apache-2.0](http://www.apache.org/licenses/LICENSE-2.0)
+
+[![Maven Central Version](https://img.shields.io/maven-central/v/net.bull.javamelody/javamelody-core)](https://central.sonatype.com/namespace/net.bull.javamelody)
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/javamelody/javamelody.svg)](http://isitmaintained.com/project/javamelody/javamelody "Percentage of issues still open")
+[![build](https://github.com/javamelody/javamelody/actions/workflows/maven.yml/badge.svg)](https://github.com/javamelody/javamelody/actions/workflows/maven.yml)
+![GitHub stars](https://img.shields.io/github/stars/javamelody/javamelody?style=social)
+![Twitter Follow](https://img.shields.io/twitter/follow/java_melody?label=Follow&style=social)

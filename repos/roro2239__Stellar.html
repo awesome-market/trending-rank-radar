@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>roro2239/Stellar · GitHub Trending Rank Radar</title>
+<meta name="description" content="Another Shizuku impl">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Stellar, roro2239, roro2239/Stellar, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/roro2239__Stellar">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="roro2239/Stellar · GitHub Trending Rank Radar">
+<meta property="og:description" content="Another Shizuku impl">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/roro2239__Stellar">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "roro2239/Stellar", "codeRepository": "https://github.com/roro2239/Stellar", "url": "https://zhuikan.com/repos/roro2239__Stellar", "description": "Another Shizuku impl", "author": {"@type": "Organization", "name": "roro2239", "url": "https://github.com/roro2239"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MPL-2.0.html", "programmingLanguage": "Kotlin", "dateCreated": "2025-11-12"}</script>
+</head>
+<body data-repo="roro2239/Stellar" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">roro2239/Stellar</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="roro2239__Stellar"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/150583268?u=5bf9557165a1934a6d5d39b28d166663f648d878&amp;v=4&s=300" width="300" height="300" alt="roro2239 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Stellar</div>
+      <a class="rp-side-owner" href="https://github.com/roro2239">roro2239</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/roro2239">roro2239</a>
+        <span class="rp-sep">/</span><span class="rp-name">Stellar</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Another Shizuku impl</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>1,861</b></span><span class="rp-stat" title="forks">⑂ <b>72</b></span><span class="rp-stat" title="watchers">👁 <b>8</b></span><span class="rp-stat" title="prs">⑃ <b>8</b></span><span class="rp-stat" title="issues">● <b>102</b></span><span class="rp-stat" title="releases">▤ <b>12</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Kotlin</span><span class="rp-meta-bit">MPL-2.0</span><span class="rp-meta-bit">Created 2025-11-12</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/roro2239/Stellar">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.1</span><a class="rp-dl-a" href="https://github.com/roro2239/Stellar/releases/tag/v1.1%28101000%29">v1.1(101000) ↓</a><span class="rp-dl-ver">v1.1(101000)</span><span class="rp-dl-date">2026-08-22</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">1,861</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">72</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">8</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">8</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">102</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">12</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Stellar
+一个基于 Shizuku 的深度定制分支，让应用通过 ADB 或 Root 权限使用系统级 API
+
+
+
+
+
+
+---
+官方交流群组：
+
+
+Language: English | 中文
+
+
+
+ 项目简介
+
+Stellar 是 Shizuku 的深度定制版本，专为开发者提供更灵活、更强大的特权 API 框架。通过 ADB 无线调试或 Root 权限启动服务后，应用程序可以调用需要系统级权限的 API，而无需应用本身拥有 Root 权限。
+
+Tip：我们鼓励贡献者为稳定性高的代码提交 PR，而不是仅将修改保留在自己的 Fork 仓库中。
+ 核心特性
+
+Stellar 相比原版 Shizuku 进行了以下核心改进：
+
+ 权限系统增强
+
+- 全新权限架构 - 摒弃单一权限模式，引入精细化的多维度权限管理体系
+- 分级权限控制：
+  - stellar - 核心 API 访问权限，授予基础服务调用能力
+  - follow_stellar_startup - 服务伴随启动权限，实现应用与 Stellar 服务的生命周期绑定
+- 智能权限回调 - 增强回调机制，客户端可精准感知授权类型（永久授权/一次性授权）
+- 完整权限管理 API - 提供全套权限查询、申请、撤销接口，满足复杂业务场景需求
+
+ 启动与服务优化
+
+- 开机启动 - 应用可尝试通过开机广播、无障碍权限和 Root 权限实现开机自启，还可预热以便于无网启动
+- 服务伴随启动 - 应用可注册为 Stellar 服务的伴随进程，实现服务启动时自动唤醒
+- 双进程互守 - 可开启守护进程，Stellar 服务与守护进程相互监测异常关闭并重新启动
+
+ 架构重构
+
+- 服务层重构 - 重新设计核心服务架构，优化模块间通信机制，提升整体性能与响应速度
+- UserService 重写 - 全面重构用户服务层，优化服务架构设计，提升代码可维护性与扩展性
+- Shizuku 兼容性修复 - 修复原 Shizuku 遗留的已知问题，增强框架稳定性
+
+ UI/UX 改进
+
+Stellar 对用户界面进行了全面重构，带来更现代、更直观的使用体验：
+
+- 全新授权管理界面 - 采用 Material Design 3 设计语言，打造简洁优雅的授权管理中心
+- 授权页面焕新 - 重新设计授权交互流程，操作更加流畅自然
+- 权限可视化展示 - 授权页清晰呈现各项细分权限，用户一目了然
+- 应用列表优化 - 改进已授权应用列表，权限状态一览无余
+- 引导流程升级 - 重新设计启动引导页面，新用户上手更轻松
+
+ 与 Shizuku 的主要区别
+
+ 移除的功能
+- rish - 移除 Shizuku 内置的 root shell 工具
+- Sui - 移除了 API 对 Zygisk-Sui 的支持
+
+ 新增的功能
+- 跟随启动机制 - 应用可跟随 Stellar 服务自动启动
+- 细分权限系统 - 支持多种权限类型的精细化管理
+- 权限回调增强 - 支持一次性授权感知
+- 降权激活 - Root 启动后可降权到 Shell 用户运行，提高安全性
+- 联发科支持：修复了原版 v13.6.0 中一个导致 Shizuku 无法在联发科设备上运行的关键漏洞
+- 应用内更新：可从 Github 获取更新详情并在应用内更新 Stellar
+- TCP功能：在连接 WiFi 时启动或预热 Stellar，下次无 WiFi 重启前可免 WiFi 启动
+
+ 重新启用的功能
+
+Stellar 重新启用了 Shizuku 最新版本中已标记为弃用的功能：
+
+- newProcess() API - 直接创建特权进程的方法，Shizuku 已弃用但 Stellar 保留支持
+- 运行时权限授予/撤销 - 通过 grantRuntimePermission() 和 revokeRuntimePermission() 为其他应用授予或撤销 Android 运行时权限
+
+这些功能在某些场景下仍然非常实用，Stellar 选择继续支持以提供更完整的 API。
+
+ 架构优化
+- 100% Kotlin 代码
+- 精简模块结构
+- 规范化命名
+
+ Shizuku 兼容层
+
+Stellar 内置了 Shizuku 兼容层，允许使用 Shizuku API 的应用无需修改代码即可使用 Stellar 服务。
+
+ 工作原理
+
+兼容层通过以下方式实现无缝兼容：
+
+1. 客户端兼容 - ShizukuProvider 接收 Stellar 服务发送的 Binder，并通过 ShizukuCompat 管理连接状态
+2. 服务端拦截 - ShizukuServiceIntercept 实现完整的 IShizukuService 接口，将 Shizuku API 调用转发到 Stellar 服务
+3. 权限映射 - 自动将 Shizuku 权限请求映射到 Stellar 的 shizuku 权限
+
+ 支持的 API
+
+兼容层支持 Shizuku 的核心 API：
+
+- pingBinder() / getVersion() / getUid() - 服务状态查询
+- checkSelfPermission() / requestPermission() - 权限管理
+- newProcess() - 创建特权进程
+- addUserService() / removeUserService() - 用户服务管理
+- transactRemote() - Binder 事务转发
+
+ 启用/禁用
+
+Shizuku 兼容层默认启用。如需禁用，可在 Stellar 管理器的设置页面中关闭「Shizuku 兼容层」开关。
+
+ 注意事项
+
+- 兼容层会自动拒绝来自 Shizuku Manager 的请求，避免冲突
+- 使用 Shizuku API 的应用需要在 AndroidManifest.xml 中配置 ShizukuProvider
+
+ 降权激活
+
+降权激活功能允许以 Root 权限启动 Stellar 服务后，自动降权到 Shell 用户（uid=2000）运行，提高安全性。
+
+ 启用方式
+
+在 Stellar 管理器的设置页面中，开启「降权激活」开关即可。
+
+ 工作原理
+
+启用降权激活后，启动流程如下：
+
+
+su (root) → libchid.so 2000 → libstellar.so --apk=...
+
+
+1. 使用 Root 权限执行 libchid.so
+2. libchid.so 将进程身份切换到 uid=2000（Shell 用户）
+3. 以 Shell 身份执行 libstellar.so 启动服务
+
+ 注意事项
+
+- 降权激活仅在 Root 启动模式下生效
+- ADB 启动模式本身就是 uid=2000，无需降权
+- 降权后服务将失去 Root 特有的能力（如写入系统属性、访问受保护目录等）
+
+ 快速开始
+
+ 集成 Stellar 到你的应用
+
+查看完整的集成指南和 API 文档：
+
+- API 集成指南 - 完整的集成步骤、API 参考和代码示例
+- 从 Shizuku 迁移 </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/roro2239/Stellar/issues/24"><span class="rp-item-num">#24</span><span class="rp-item-title">希望加入rish</span><span class="rp-item-extra">12 comments · 2026-03-01</span></a><a class="rp-item" href="https://github.com/roro2239/Stellar/issues/60"><span class="rp-item-num">#60</span><span class="rp-item-title">使用清浊/ SD maid SE时shizuku服务异常</span><span class="rp-item-extra">9 comments · 2026-05-10</span></a><a class="rp-item" href="https://github.com/roro2239/Stellar/issues/93"><span class="rp-item-num">#93</span><span class="rp-item-title">MT管理器无法请求Shell</span><span class="rp-item-extra">4 comments · 2026-08-27</span></a><a class="rp-item" href="https://github.com/roro2239/Stellar/issues/95"><span class="rp-item-num">#95</span><span class="rp-item-title">Question</span><span class="rp-item-extra">3 comments · 2026-08-31</span></a><a class="rp-item" href="https://github.com/roro2239/Stellar/issues/78"><span class="rp-item-num">#78</span><span class="rp-item-title">The app does not enable Wireless ADB and USB Debugging automatically</span><span class="rp-item-extra">3 comments · 2026-07-15</span></a><a class="rp-item" href="https://github.com/roro2239/Stellar/issues/113"><span class="rp-item-num">#113</span><span class="rp-item-title">[功能请求]为App界面风格添加Miuix</span><span class="rp-item-extra">2 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/roro2239/Stellar/issues/100"><span class="rp-item-num">#100</span><span class="rp-item-title">必须重复关闭软件再重复打开软件才正常</span><span class="rp-item-extra">2 comments · 2026-09-16</span></a><a class="rp-item" href="https://github.com/roro2239/Stellar/issues/96"><span class="rp-item-num">#96</span><span class="rp-item-title">Question</span><span class="rp-item-extra">2 comments · 2026-08-31</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/roro2239/Stellar/releases"><b>v1.1</b> <span class="rp-rel-tag">v1.1(101000)</span> <span class="rp-item-extra">2026-08-22</span></a><pre class="rp-pre">特殊调整
+- compileSdk 和 targetSdk 升至 37
+
+ 修复
+
+- 修复在 Android 17 设备上无法获取授权应用列表的问题
+- 修复在 Android 17 设备上重启 Stellar 可能需要重新为应用授权的问题
+- 修复其他更新 Android 17 的设备可能出现的部分问题</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/roro2239__Stellar.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

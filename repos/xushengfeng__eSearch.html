@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>xushengfeng/eSearch · GitHub Trending Rank Radar</title>
+<meta name="description" content="截屏 离线OCR 搜索翻译 以图搜图 贴图 录屏 万向滚动截屏 屏幕翻译   Screenshot  Offline OCR   Search   Translate   Search for picture   Paste the picture on the screen   Screen recorder   Omnidirectional scrolling screenshot   Sc">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="eSearch, xushengfeng, xushengfeng/eSearch, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/xushengfeng__eSearch">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="xushengfeng/eSearch · GitHub Trending Rank Radar">
+<meta property="og:description" content="截屏 离线OCR 搜索翻译 以图搜图 贴图 录屏 万向滚动截屏 屏幕翻译   Screenshot  Offline OCR   Search   Translate   Search for picture   Paste the picture on the screen   Screen recorder   Omnidirectional scrolling screenshot   Sc">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/xushengfeng__eSearch">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "xushengfeng/eSearch", "codeRepository": "https://github.com/xushengfeng/eSearch", "url": "https://zhuikan.com/repos/xushengfeng__eSearch", "description": "截屏 离线OCR 搜索翻译 以图搜图 贴图 录屏 万向滚动截屏 屏幕翻译   Screenshot  Offline OCR   Search   Translate   Search for picture   Paste the picture on the screen   Screen recorder   Omnidirectional scrolling screenshot   Sc", "author": {"@type": "Organization", "name": "xushengfeng", "url": "https://github.com/xushengfeng"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "TypeScript", "dateCreated": "2021-10-06"}</script>
+</head>
+<body data-repo="xushengfeng/eSearch" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">xushengfeng/eSearch</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="xushengfeng__eSearch"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/28475549?u=5e51bef2fe0c6000952888689254177de7d2c907&amp;v=4&s=300" width="300" height="300" alt="xushengfeng avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">eSearch</div>
+      <a class="rp-side-owner" href="https://github.com/xushengfeng">xushengfeng</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/xushengfeng">xushengfeng</a>
+        <span class="rp-sep">/</span><span class="rp-name">eSearch</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">截屏 离线OCR 搜索翻译 以图搜图 贴图 录屏 万向滚动截屏 屏幕翻译   Screenshot  Offline OCR   Search   Translate   Search for picture   Paste the picture on the screen   Screen recorder   Omnidirectional scrolling screenshot   Screen translator  支持Windows Linux macOS</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>7,389</b></span><span class="rp-stat" title="forks">⑂ <b>529</b></span><span class="rp-stat" title="watchers">👁 <b>36</b></span><span class="rp-stat" title="releases">▤ <b>172</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">Created 2021-10-06</span><a class="rp-meta-bit rp-home" href="https://esearch-app.netlify.app/" rel="noopener">esearch-app.netlify.app/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/xushengfeng/eSearch">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+96</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">7,389</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">529</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">36</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">172</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">eSearch
+
+(中文 | English)
+
+!LOGO
+
+!platform
+!commit-activity
+
+
+
+
+
+
+
+linux.do
+
+ 简介
+
+eSearch 是Information-portal的:electron:重写版(顺便加了亿些功能)
+
+主要是想在 Linux 上(win 和 mac 上也能用)实现锤子大爆炸或小米传送门这样的屏幕搜索功能，当然也是一款方便的截屏软件。
+
+经过数次版本迭代，eSearch 的功能愈加丰富
+
+即拥有 截屏+OCR+搜索+翻译+贴图+屏幕翻译+以图搜图+滚动截屏+录屏
+
+!截屏界面
+
+ 字体是FiraCode，字体可在设置里设置
+
+!识别文字主页面
+
+ 下载安装
+
+到网站eSearch下载
+
+或在右侧 releases 打开标签，选择符合你系统的包并下载安装
+
+国内可以用GitHub 镜像加速下载
+
+ArchLinux 可在 AUR 查找安装 e-search或e-search-git
+
+winget winget install esearch
+
+暂时没有 Homebrew 包，欢迎有志愿的维护者提供支持
+
+ 启动
+
+在你的启动器打开 eSearch，他将出现在托盘。
+
+默认快捷键为 Alt+C(你也可以在设置里设置快捷键)
+
+ 功能
+
+更多介绍见文档
+
+ 截屏
+
+框选裁切、取色器、自由画笔、几何、马赛克、模糊
+
+框选除了通过方向键调节，还支持输入四则运算式调整
+
+支持自定义框选后立马执行操作，如框选后自动 OCR
+
+还支持滚动截屏，横向、竖向、任意方向都可以拼接
+
+ 截屏美化
+
+可为截屏设置背景（渐变、图片）、圆角、阴影
+
+改变图像分辨率导出
+
+抹除物体并修补图像
+
+ 录屏
+
+录制屏幕、自定义大小、摄像头
+
+可提示光标位置和键盘击键
+
+可设置虚拟背景
+
+ 超级录屏
+
+自动缩放聚焦到鼠标位置，录屏更生动
+
+加速、删除，操作每个帧
+
+ 屏幕贴图
+
+滚轮缩放、透明度、自动归位、鼠标穿透
+
+支持放大图像且不改变窗口大小，防止遮挡其他内容
+
+可通过 CSS 设置滤镜、变换（如镜像）
+
+ OCR（文字识别）
+
+开箱即用的离线 OCR（eSearch-OCR，基于PaddleOCR），框选文字后按下回车键即可
+
+大字符集，支持生僻字、特殊符号（需要在设置下载 v5 模型）
+
+离线 OCR 支持段落识别，也可以使用基于标点符号的分段算法
+
+支持竖排文本，支持图片旋转识别
+
+同时也支持百度、有道的在线 OCR
+
+可后期编辑文字，在图片上选择文字，同步选区到编辑区，方便校对
+
+支持多语言：中文、英文、韩文、日文、泰卢固文、卡纳达文、泰米尔文、拉丁文、阿拉伯字母、斯拉夫字母、梵文字母（需要在设置额外下载）
+
+ 以图搜图
+
+谷歌、百度、Yandex 的以图搜图引擎
+
+可自定义多模态大模型接口，与 AI 交流图片
+
+ 翻译
+
+OCR 后可调用翻译，支持选词翻译
+
+支持免费的翻译引擎，如谷歌翻译等，也可以自己设置其他翻译引擎的 API，如 DeepL、百度等，可以使用 ChatGPT 等 AI 翻译，甚至可以自定义本地 AI 翻译
+
+可多个引擎同时翻译，择其善者
+
+可以保存翻译结果到本地文件或通过网络保存到 Anki 等记忆软件
+
+ 屏幕翻译
+
+生成一个贴图窗口，并把图片文字替换成翻译后的文本
+
+可设置定时翻译，适合视频、游戏等
+
+ 其他
+
+二维码识别
+
+ 展示
+
+https://user-images.githubusercontent.com/28475549/155870834-34ffa59f-9eac-4eea-9d82-135681d7dfa9.mp4
+
+ 截屏，自由调整框选大小（视频约 2.6MB）
+
+https://user-images.githubusercontent.com/28475549/155870857-99c7d6d0-a90b-4558-872a-85f2603225d6.mp4
+
+ 取色器（视频约 1MB）
+
+https://user-images.githubusercontent.com/28475549/155870867-fb0d31f0-2e06-431c-9ae9-ee3af5a5c08e.mp4
+
+ Ding 在屏幕上，透明度调节、归位以及鼠标操作（视频约 1.8MB）
+
+!3
+
+ 绘图界面
+
+https://user-images.githubusercontent.com/28475549/155870881-9b2fc1b3-77de-4a99-8076-ed49b7b5c4c0.mp4
+
+ 主页面搜索和其他应用编辑（视频约 1.6MB）
+
+!3
+
+ 主页面查找替换（支持正则）
+
+ 国际化
+
+大多数按钮使用图标，简少了不必要的翻译
+
++添加新语言
+
+- [x] 简体中文
+- [x] 繁体中文
+- [x] 世界语（Esperanto）
+- [x] 西班牙语（Español）
+- [x] 阿拉伯语（عربي）
+- [x] 英语（English）
+- [x] 法语（Français）
+- [x] 俄语（Русский）
+
+ 源码运行&amp;编译
+
+shell
+git clone https://github.com/xushengfeng/eSearch.git
+cd eSearch
+npm install
+ 编译
+npm run dist
+ 将在build目录产生安装包和解压的目录
+
+
+shell
+ 运行
+npm run start
+ 调试
+npm run dev
+
+
+具体技术说明
+
+ 测试
+
+在 ArchLinux,KDE plasma,Xorg 下测试通过
+
+Windows10 和 Windows11 测试通过
+
+macOS Catalina 测试通过
+
+ Q&amp;A
+
+ 不再支持 Win7、Win8
+
+Electron 官方不再支持 Win7、Win8，所以 eSearch 也不再支持。
+
+但可以自己编译，见文档，部分功能可能无法使用。
+
+ 下载依赖库
+
+大部分 Windows 在安装后会提示下载依赖库，这是因为截屏库需要，点击下载，将自动打开微软官网下载，安装完成后可能需要重启。
+
+ Gnome 点击后无响应
+
+Gnome 用户需要安装appindicator插件来使用托盘。
+
+ mac 提示文件已损坏
+
+mac 对互联网下载的 dmg 做了部分限制。
+
+可以在互联网上搜索“mac”、“文件损坏”等关键词。不同版本的系统适用的方法也不同。
+
+ 为什么选择 electron
+
+- 跨平台需要，本来我是想在 Linux 上也能体验 Windows 下优秀的截屏工具，Linux 独占也不好，所以选择跨平台。
+- qt 依赖 c++，学习成本太高。flutter 桌面版还不太成熟。我更擅长 js 开发。
+- 截屏依赖本地系统，这是目前浏览器做不到的。
+- 最后只有 js 类跨平台方案，我选择了较为成熟，使用最多的 electron。
+
+在其他平台没有类似 Arch Linux 单独打包作为库的情况下，软件占用的存储空间是比较多的，但几十行 js 脚本的增加不多，带来的功能却显著地感知到，所以我会尽力发挥其潜力，</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/xushengfeng__eSearch.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

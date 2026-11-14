@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>xpzouying/xiaohongshu-mcp · GitHub Trending Rank Radar</title>
+<meta name="description" content="MCP for xiaohongshu.com">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="xiaohongshu-mcp, xpzouying, xpzouying/xiaohongshu-mcp, github stars, github trending, star growth, star history, 开源项目, 星标增长, mcp, mcp-server, xiaohongshu-mcp">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/xpzouying__xiaohongshu-mcp">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="xpzouying/xiaohongshu-mcp · GitHub Trending Rank Radar">
+<meta property="og:description" content="MCP for xiaohongshu.com">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/xpzouying__xiaohongshu-mcp">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "xpzouying/xiaohongshu-mcp", "codeRepository": "https://github.com/xpzouying/xiaohongshu-mcp", "url": "https://zhuikan.com/repos/xpzouying__xiaohongshu-mcp", "description": "MCP for xiaohongshu.com", "author": {"@type": "Organization", "name": "xpzouying", "url": "https://github.com/xpzouying"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Go", "dateCreated": "2025-08-03", "keywords": "mcp,mcp-server,xiaohongshu-mcp"}</script>
+</head>
+<body data-repo="xpzouying/xiaohongshu-mcp" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">xpzouying/xiaohongshu-mcp</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="xpzouying__xiaohongshu-mcp"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/3946563?u=ac2185b7fa9b9f9c956fd1a764175305d97a1823&amp;v=4&s=300" width="300" height="300" alt="xpzouying avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">xiaohongshu-mcp</div>
+      <a class="rp-side-owner" href="https://github.com/xpzouying">xpzouying</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/xpzouying">xpzouying</a>
+        <span class="rp-sep">/</span><span class="rp-name">xiaohongshu-mcp</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">MCP for xiaohongshu.com</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>17,113</b></span><span class="rp-stat" title="forks">⑂ <b>2,521</b></span><span class="rp-stat" title="watchers">👁 <b>37</b></span><span class="rp-stat" title="prs">⑃ <b>466</b></span><span class="rp-stat" title="issues">● <b>438</b></span><span class="rp-stat" title="releases">▤ <b>142</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/mcp">mcp</a><a class="rp-topic" href="../tags/mcp-server">mcp-server</a><a class="rp-topic" href="https://github.com/topics/xiaohongshu-mcp">xiaohongshu-mcp</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Go</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2025-08-03</span><a class="rp-meta-bit rp-home" href="https://www.haha.ai/xiaohongshu-mcp" rel="noopener">www.haha.ai/xiaohongshu-mcp</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/xpzouying/xiaohongshu-mcp">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Release v2.7.4</span><a class="rp-dl-a" href="https://github.com/xpzouying/xiaohongshu-mcp/releases/tag/v2.7.4">Release-2.7.4 ↓</a><span class="rp-dl-ver">2.7.4</span><span class="rp-dl-date">2026-11-10</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+15</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+254</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num">17,113</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,521</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">37</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">466</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">438</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">142</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">xiaohongshu-mcp
+
+
+
+
+
+
+
+
+
+MCP for 小红书 / xiaohongshu.com。让你的 AI 助手直接访问小红书数据。
+
+ 🚀 快速开始：选择最适合你的版本
+
+ [!IMPORTANT]
+  🔥 方案 A：Openclaw 深度集成 (推荐给开发者)
+ - Openclaw 太火啦 🔥🔥🔥 ，新增 Openclaw 支持，分为两种，请各位按需使用：
+ - xiaohongshu-mcp-skills（适用于已部署完本项目的用户）
+ - xiaohongshu-skills（开箱即用版）
+
+ [!TIP]
+  ✨ 方案 B：x-mcp 浏览器插件版 (推荐给非技术同学 / 追求极简的用户)
+ - 不想折腾 Docker 或部署环境？试试：xpzouying/x-mcp
+ - 零配置：安装插件即用，无需任何代码、代理或复杂的环境配置。
+ - 安全稳定：直接在常用浏览器 (Chrome/Edge) 及本地网络运行，无服务器 IP 风险，且能解决 90% 的部署报错。
+
+ 📖 相关资源
+
+- 我的博客文章：haha.ai/xiaohongshu-mcp
+- 贡献指南：Contributing Guide
+
+ 🛠️ 疑难杂症
+
+如果您在部署传统 Docker 版本时遇到问题，务必先查看：各种疑难杂症 (Issues 56)。
+
+ 提示：如果环境排查太耗时，切换到 x-mcp 插件版 通常是更高效的选择。
+
+ Star History
+
+
+
+  
+    
+    
+  
+
+
+ 赞赏支持
+
+本项目所有的赞赏都会用于慈善捐赠。所有的慈善捐赠记录，请参考 DONATIONS.md。
+
+捐赠时，请备注 MCP 以及名字。
+如需更正/撤回署名，请开 Issue 或通过邮箱联系。
+
+支付宝（不展示二维码）：
+
+通过支付宝向 xpzouying@gmail.com 赞赏。
+
+微信：
+
+
+
+ 项目简介
+
+主要功能
+
+ 💡 提示： 点击下方功能标题可展开查看视频演示
+
+
+1. 登录和检查登录状态
+
+第一步必须，小红书需要进行登录。可以检查当前登录状态。
+
+登录演示：
+
+https://github.com/user-attachments/assets/8b05eb42-d437-41b7-9235-e2143f19e8b7
+
+检查登录状态演示：
+
+https://github.com/user-attachments/assets/bd9a9a4a-58cb-4421-b8f3-015f703ce1f9
+
+
+
+
+2. 发布图文内容
+
+支持发布图文内容到小红书，包括标题、内容描述和图片。
+
+图片支持方式：
+
+支持两种图片输入方式：
+
+1. HTTP/HTTPS 图片链接
+
+   
+   [&quot;https://example.com/image1.jpg&quot;, &quot;https://example.com/image2.png&quot;]
+   
+
+2. 本地图片绝对路径（推荐）
+   
+   [&quot;/Users/username/Pictures/image1.jpg&quot;, &quot;/home/user/images/image2.png&quot;]
+   
+
+为什么推荐使用本地路径：
+
+- ✅ 稳定性更好，不依赖网络
+- ✅ 上传速度更快
+- ✅ 避免图片链接失效问题
+- ✅ 支持更多图片格式
+
+发布图文帖子演示：
+
+https://github.com/user-attachments/assets/8aee0814-eb96-40af-b871-e66e6bbb6b06
+
+
+
+
+3. 发布视频内容
+
+支持发布视频内容到小红书，包括标题、内容描述和本地视频文件。
+
+视频支持方式：
+
+仅支持本地视频文件绝对路径：
+
+
+&quot;/Users/username/Videos/video.mp4&quot;
+
+
+功能特点：
+
+- ✅ 支持本地视频文件上传
+- ✅ 自动处理视频格式转换
+- ✅ 支持标题、内容描述和标签
+- ✅ 等待视频处理完成后自动发布
+
+注意事项：
+
+- 仅支持本地视频文件，不支持 HTTP 链接
+- 视频处理时间较长，请耐心等待
+- 建议视频文件大小不超过 1GB
+
+
+
+
+4. 搜索内容
+
+根据关键词搜索小红书内容。
+
+搜索帖子演示：
+
+https://github.com/user-attachments/assets/03c5077d-6160-4b18-b629-2e40933a1fd3
+
+
+
+
+5. 获取推荐列表
+
+获取小红书首页推荐内容列表。
+
+获取推荐列表演示：
+
+https://github.com/user-attachments/assets/110fc15d-46f2-4cca-bdad-9de5b5b8cc28
+
+
+
+
+6. 获取帖子详情（包括互动数据和评论）
+
+获取小红书帖子的完整详情，包括：
+
+- 帖子内容（标题、描述、图片等）
+- 用户信息
+- 互动数据（点赞、收藏、分享、评论数）
+- 评论列表及子评论
+
+⚠️ 重要提示：
+
+- 需要提供帖子 ID 和 xsec_token（两个参数缺一不可）
+- 这两个参数可以从 Feed 列表或搜索结果中获取
+- 必须先登录才能使用此功能
+
+获取帖子详情演示：
+
+https://github.com/user-attachments/assets/76a26130-a216-4371-a6b3-937b8fda092a
+
+
+
+
+7. 发表评论到帖子
+
+支持自动发表评论到小红书帖子。
+
+功能说明：
+
+- 自动定位评论输入框
+- 输入评论内容并发布
+- 支持 HTTP API 和 MCP 工具调用
+
+⚠️ 重要提示：
+
+- 需要先登录才能使用此功能
+- 需要提供帖子 ID、xsec_token 和评论内容
+- 这些参数可以从 Feed 列表或搜索结果中获取
+
+发表评论演示：
+
+https://github.com/user-attachments/assets/cc385b6c-422c-489b-a5fc-63e92c695b80
+
+
+
+
+8. 获取用户个人主页
+
+获取小红书用户的个人主页信息，包括用户基本信息和笔记内容。
+
+功能说明：
+
+- 获取用户基本信息（昵称、简介、头像等）
+- 获取关注数、粉丝数、获赞量统计
+- 获取用户发布的笔记内容列表
+- 支持 HTTP API 和 MCP 工具调用
+
+⚠️ 重要提示：
+
+- 需要先登录才能使用此功能
+- 需要提供用户 ID 和 xsec_token
+- 这些参数可以从 Feed 列表或搜索结果中获取
+
+返回信息包括：
+
+- 用户基本信息：昵称、简介、头像、认证状态
+- 统计数据：关注数、粉丝数、获赞量、笔记数
+- 笔记列表：用户发布的所有公开笔记
+
+
+
+
+9. 回复评论
+
+回复笔记下的指定评论，支持精准回复特定用户的评论。
+
+功能说明：
+
+- 回复指定笔记下的特定评论
+- 支持通过评论 ID 或用户 ID 定位目标评论
+- 需要提供 feed_id、xsec_token、comment_id/user_id 和回复内容
+
+⚠️ 重要提示：
+
+- 需要先登录才能使用此功能
+- comment_id 和 use</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/xpzouying/xiaohongshu-mcp/issues/56"><span class="rp-item-num">#56</span><span class="rp-item-title">疑难杂症 先看这里👀</span><span class="rp-item-extra">135 comments · 2025-09-10</span></a><a class="rp-item" href="https://github.com/xpzouying/xiaohongshu-mcp/issues/31"><span class="rp-item-num">#31</span><span class="rp-item-title">演示视频 Demo Videos</span><span class="rp-item-extra">16 comments · 2025-09-06</span></a><a class="rp-item" href="https://github.com/xpzouying/xiaohongshu-mcp/issues/476"><span class="rp-item-num">#476</span><span class="rp-item-title">👍 网友们的 ShowCase</span><span class="rp-item-extra">11 comments · 2026-02-28</span></a><a class="rp-item" href="https://github.com/xpzouying/xiaohongshu-mcp/issues/782"><span class="rp-item-num">#782</span><span class="rp-item-title">小红书网页端新增了消息页面，看起来似乎可以做自动发消息和回复了</span><span class="rp-item-extra">6 comments · 2026-07-31</span></a><a class="rp-item" href="https://github.com/xpzouying/xiaohongshu-mcp/issues/73"><span class="rp-item-num">#73</span><span class="rp-item-title">希望可以携带POI定位信息</span><span class="rp-item-extra">5 comments · 2025-09-15</span></a><a class="rp-item" href="https://github.com/xpzouying/xiaohongshu-mcp/issues/653"><span class="rp-item-num">#653</span><span class="rp-item-title">feat: get_feed_detail 支持返回图片内容，解决 LLM 无法读取图片帖子的问题</span><span class="rp-item-extra">3 comments · 2026-04-12</span></a><a class="rp-item" href="https://github.com/xpzouying/xiaohongshu-mcp/issues/609"><span class="rp-item-num">#609</span><span class="rp-item-title">海外用户如何注册小红书（非rednote）账号？求助</span><span class="rp-item-extra">3 comments · 2026-03-25</span></a><a class="rp-item" href="https://github.com/xpzouying/xiaohongshu-mcp/issues/348"><span class="rp-item-num">#348</span><span class="rp-item-title">期待能新增发布到草稿的选项</span><span class="rp-item-extra">3 comments · 2025-12-24</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/xpzouying/xiaohongshu-mcp/releases"><b>Release v2.7.4</b> <span class="rp-rel-tag">v2.7.4</span> <span class="rp-item-extra">2026-11-10</span></a><pre class="rp-pre">🚀 新版本发布: v2.7.4
+
+
+
+ 📋 更新内容
+
+- Merge pull request 912 from xpzouying/all-contributors/add-kalivid (bb6fa2e)
+- docs: update .all-contributorsrc [skip ci] (6ea38f3)
+- docs: update README_EN.md [skip ci] (91e1abe)
+- docs: update README.md [skip ci] (674e55e)
+- Merge pull request 910 from kalivid/feat/publish-at-users (dde1e5b)
+- fix(publish): validate mentions and preserve content on retry (375f1e3)
+- docs: 统一 Agent 开发规范并明确测试提交要求 (911) (2e91b44)
+- feat: support @ mentioning users in image publishing (at_users) (20d6b69)
+
+---
+
+ 📦 下载说明
+
+主程序（MCP 服务）：
+- macOS Apple Silicon: xiaohongshu-mcp-darwin-arm6</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (5)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/gitblog_00158/article/details/151593929" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">无桌面服务器如何部署 xiaohongshu-mcp 接入 Agent Reach？下载 binary、启动 18060 服务与 --timeout 120000 调用</span><span class="rp-item-extra">2026-09-08</span></a><a class="rp-item" href="https://blog.csdn.net/j8267643/article/details/151781628" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">【GitHub项目推荐--xiaohongshu-mcp：小红书AI自动化运营工具完全指南】</span><span class="rp-item-extra">2025-09-17</span></a><a class="rp-item" href="https://www.chinaz.com/ainews/20955.shtml" target="_blank" rel="noopener"><span class="rp-news-src">站长之家</span><span class="rp-item-title">小红书自动化神器xiaohongshu-mcp上线！AI助力内容创作，解放你的双手！</span><span class="rp-item-extra">2025-09-01</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE9IN3pQUEJaWmx4bFBUYmZCUW5XanB2b2xVbWJHR3E2QmlsN1VnbzdJX2xEUk9NbElrUTJRalF3WEZtcXQzemNybHU3Vm9sQ3J0cks2Z2hR?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">QQ News</span><span class="rp-item-title">想用“龙虾”玩转小红书的人，已经被封号</span><span class="rp-item-extra">2026-03-12</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiakFVX3lxTE12RzNRTkZIRHFpSkRCMFRONjNERFprbFZnZjUxX2p2UUFqakxYTFdZRVNablRyQzhQcUFNMmFjdWRyZ0h2dHg3VDdoUWxQb0doX3FudlQ2NGJkSUphV2JFNEwzU1JjQ3dUOHc?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">53AI</span><span class="rp-item-title">Kimi K2 + Claude Code 接入 3 个神级开源 MCP，相当丝滑。</span><span class="rp-item-extra">2025-09-22</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (2)</h3><div class="rp-list"><a class="rp-item" href="https://opentools.ai/mcp/xiaohongshu-mcp" target="_blank" rel="noopener"><span class="rp-news-src">opentools.ai</span><span class="rp-item-title">xiaohongshu-mcp</span><span class="rp-item-extra">2026-06-07</span></a><a class="rp-item" href="https://www.binance.com/en/square/post/300316942917810" target="_blank" rel="noopener"><span class="rp-news-src">binance</span><span class="rp-item-title">OpenClaw Practical: Two Real Usable Skills Xiaohongshu Auto Operation · Polymarket Market Analysis</span><span class="rp-item-extra">2026-03-13</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/xpzouying__xiaohongshu-mcp.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

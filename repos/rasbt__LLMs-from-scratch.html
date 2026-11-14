@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rasbt/LLMs-from-scratch · GitHub Trending Rank Radar</title>
+<meta name="description" content="Implement a ChatGPT-like LLM in PyTorch from scratch, step by step">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="LLMs-from-scratch, rasbt, rasbt/LLMs-from-scratch, github stars, github trending, star growth, star history, 开源项目, 星标增长, gpt, large-language-models, llm, python, pytorch, ai">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/rasbt__LLMs-from-scratch">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="rasbt/LLMs-from-scratch · GitHub Trending Rank Radar">
+<meta property="og:description" content="Implement a ChatGPT-like LLM in PyTorch from scratch, step by step">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/rasbt__LLMs-from-scratch">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "rasbt/LLMs-from-scratch", "codeRepository": "https://github.com/rasbt/LLMs-from-scratch", "url": "https://zhuikan.com/repos/rasbt__LLMs-from-scratch", "description": "Implement a ChatGPT-like LLM in PyTorch from scratch, step by step", "author": {"@type": "Organization", "name": "rasbt", "url": "https://github.com/rasbt"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "Jupyter Notebook", "dateCreated": "2023-07-23", "keywords": "gpt,large-language-models,llm,python,pytorch,ai,artificial-intelligence,language-model,deep-learning,machine-learning"}</script>
+</head>
+<body data-repo="rasbt/LLMs-from-scratch" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">rasbt/LLMs-from-scratch</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="rasbt__LLMs-from-scratch"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/5618407?u=fb6135afa4c7095d0f94c4c0e0eee37d1979a764&amp;v=4&s=300" width="300" height="300" alt="rasbt avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">LLMs-from-scratch</div>
+      <a class="rp-side-owner" href="https://github.com/rasbt">rasbt</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/rasbt">rasbt</a>
+        <span class="rp-sep">/</span><span class="rp-name">LLMs-from-scratch</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=total">total <b>#128</b></a></div>
+    </div>
+    <p class="rp-desc">Implement a ChatGPT-like LLM in PyTorch from scratch, step by step</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>108,361</b></span><span class="rp-stat" title="forks">⑂ <b>16,763</b></span><span class="rp-stat" title="watchers">👁 <b>869</b></span><span class="rp-stat" title="prs">⑃ <b>625</b></span><span class="rp-stat" title="issues">● <b>253</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/gpt">gpt</a><a class="rp-topic" href="../tags/large-language-models">large-language-models</a><a class="rp-topic" href="../tags/llm">llm</a><a class="rp-topic" href="../tags/python">python</a><a class="rp-topic" href="../tags/pytorch">pytorch</a><a class="rp-topic" href="../tags/ai">ai</a><a class="rp-topic" href="../tags/artificial-intelligence">artificial-intelligence</a><a class="rp-topic" href="https://github.com/topics/language-model">language-model</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Jupyter Notebook</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2023-07-23</span><a class="rp-meta-bit rp-home" href="https://amzn.to/4fqvn0D" rel="noopener">amzn.to/4fqvn0D</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="rasbt__deeplearning-models"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/5618407?u=fb6135afa4c7095d0f94c4c0e0eee37d1979a764&amp;v=4" alt="" loading="lazy">deeplearning-models</a><a class="rp-same-link" href="rasbt__reasoning-from-scratch"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/5618407?u=fb6135afa4c7095d0f94c4c0e0eee37d1979a764&amp;v=4" alt="" loading="lazy">reasoning-from-scratch</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/rasbt/LLMs-from-scratch">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+53</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+601</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1,831</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">108,361</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">16,763</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">869</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">625</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">253</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Build a Large Language Model (From Scratch)
+
+This repository contains the code for developing, pretraining, and finetuning a GPT-like LLM and is the official code repository for the book Build a Large Language Model (From Scratch).
+
+
+
+
+
+
+
+
+In Build a Large Language Model (From Scratch), you&#x27;ll learn and understand how large language models (LLMs) work from the inside out by coding them from the ground up, step by step. In this book, I&#x27;ll guide you through creating your own LLM, explaining each stage with clear text, diagrams, and examples.
+
+The method described in this book for training and developing your own small-but-functional model for educational purposes mirrors the approach used in creating large-scale foundational models such as those behind ChatGPT. In addition, this book includes code for loading the weights of larger pretrained models for finetuning.
+
+- Link to the official source code repository
+- Link to the book at Manning (the publisher&#x27;s website)
+- Link to the book page on Amazon.com
+- ISBN 9781633437166
+
+
+
+
+
+
+
+To download a copy of this repository, click on the Download ZIP button or execute the following command in your terminal:
+
+bash
+git clone --depth 1 https://github.com/rasbt/LLMs-from-scratch.git
+
+
+
+
+(If you downloaded the code bundle from the Manning website, please consider visiting the official code repository on GitHub at https://github.com/rasbt/LLMs-from-scratch for the latest updates.)
+
+
+
+
+
+ Table of Contents
+
+Please note that this README.md file is a Markdown (.md) file. If you have downloaded this code bundle from the Manning website and are viewing it on your local computer, I recommend using a Markdown editor or previewer for proper viewing. If you haven&#x27;t installed a Markdown editor yet, Ghostwriter is a good free option.
+
+You can alternatively view this and other files on GitHub at https://github.com/rasbt/LLMs-from-scratch in your browser, which renders Markdown automatically.
+
+
+
+
+
+ Tip:
+ If you&#x27;re seeking guidance on installing Python and Python packages and setting up your code environment, I suggest reading the README.md file located in the setup directory.
+
+
+
+
+
+
+
+
+- Troubleshooting Guide
+
+
+| Chapter Title                                              | Main Code (for Quick Access)                                                                                                    | All Code + Supplementary      |
+|------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|-------------------------------|
+| Setup recommendations How to best read this book                            | -                                                                                                                               | -                             |
+| Ch 1: Understanding Large Language Models                  | No code                                                                     </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/rasbt/LLMs-from-scratch/issues/977"><span class="rp-item-num">#977</span><span class="rp-item-title">Add Apple M-series (MPS) device support to Python scripts</span><span class="rp-item-extra">6 comments · 2026-03-09</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/rasbt/LLMs-from-scratch/discussions/1120"><span class="rp-item-num">#1120</span><span class="rp-item-title">loraspectra: Visualizing &amp; profiling LoRA singular value spectra, effective rank (erank), and QR-core SVD compression</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/rasbt/LLMs-from-scratch/discussions/1115"><span class="rp-item-num">#1115</span><span class="rp-item-title">Is Qwen3 Next 80B-A3B actually correct?</span><span class="rp-item-extra">1 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/rasbt/LLMs-from-scratch/discussions/1081"><span class="rp-item-num">#1081</span><span class="rp-item-title">Nanbeige 4.2 3b &quot;from scratch&quot; implementation</span><span class="rp-item-extra">1 comments · 2026-09-14</span></a><a class="rp-item" href="https://github.com/rasbt/LLMs-from-scratch/discussions/1067"><span class="rp-item-num">#1067</span><span class="rp-item-title">Data transfer in collate v.s. during training loop</span><span class="rp-item-extra">1 comments · 2026-08-15</span></a><a class="rp-item" href="https://github.com/rasbt/LLMs-from-scratch/discussions/1066"><span class="rp-item-num">#1066</span><span class="rp-item-title">Questions on variable length input data construction</span><span class="rp-item-extra">1 comments · 2026-08-11</span></a><a class="rp-item" href="https://github.com/rasbt/LLMs-from-scratch/discussions/1065"><span class="rp-item-num">#1065</span><span class="rp-item-title">Question on output dim in Figure 4.4</span><span class="rp-item-extra">1 comments · 2026-08-10</span></a><a class="rp-item" href="https://github.com/rasbt/LLMs-from-scratch/discussions/1059"><span class="rp-item-num">#1059</span><span class="rp-item-title">100k stars!</span><span class="rp-item-extra">0 comments · 2026-08-07</span></a><a class="rp-item" href="https://github.com/rasbt/LLMs-from-scratch/discussions/1051"><span class="rp-item-num">#1051</span><span class="rp-item-title">[chapter3] Buffer usage in PyTorch</span><span class="rp-item-extra">1 comments · 2026-07-31</span></a></div></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (6)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/j8267643/article/details/151872935" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">【GitHub项目推荐--LLMs-from-scratch：从零实现大语言模型完全指南】</span><span class="rp-item-extra">2025-09-19</span></a><a class="rp-item" href="https://blog.csdn.net/2301_81888214/article/details/146609162" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">大模型项目推荐 | LLMs-from-scratch中文项目 - 从零构建大模型（附教程）</span><span class="rp-item-extra">2025-03-28</span></a><a class="rp-item" href="https://note.com/panda_lab/n/n52d23c882aa3" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">「LLMs-from-scratch」で学ぶLLMの基礎から応用まで</span><span class="rp-item-extra">2024-08-01</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiY0FVX3lxTE1ta1RlVkVTbVhYbUxGTktOcWNENFBrSDBBSGFzWTJUY2djVkFoeGpYbnlEcUtxczRJN2lBanRrR3lzRktlT0c0U1BiV1NSY0J4X0Vadmw4RjFoc3dsVE1hWkhNcw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">新浪网</span><span class="rp-item-title">6.7 秒训练大模型：不靠硬背权重，靠检索兜底|Herman Brunborg|NanoGPT|n-gram 检索_新浪新闻</span><span class="rp-item-extra">2026-10-29</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiakFVX3lxTE42aU5jbDRWWkVuNURFRlpOTDFsSTNwSHlSZHV0bDV2VkpXU1RPUHZfeFRzd1VLS0ZYQzkzUlZtNDFqRks3UUNYbi1ISjJzLTBhcktaSUxGU3RhYWFORjRiSl9JLWpTWjg2Y1E?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">53AI</span><span class="rp-item-title">大神带你从零开始构建大语言模型，然来不过如此，清晰易懂但也确实牛皮</span><span class="rp-item-extra">2024-09-01</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE9nTEdQYlRxeURrVWhQeVU2TGE3ZHAxVXlPYlpLaVNkb0JoRWlDU1RmRGpMdzE0dGs5R3JwQTFqbGwzNTBma01BUVYwRjZmOURlbWI4?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">51CTO</span><span class="rp-item-title">《Python 机器学习》作者新作：从头开始构建大型语言模型，代码已开源</span><span class="rp-item-extra">2024-06-24</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (16)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=39156778" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Implementing a ChatGPT-like LLM from scratch, step by step</span><span class="rp-item-extra">▲ 739 · 98 comments · 2024-01-27</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=44962059" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Gemma 3 270M re-implemented in pure PyTorch for local tinkering</span><span class="rp-item-extra">▲ 417 · 57 comments · 2025-08-20</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=40328436" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Finetuning an LLM-Based Spam Classifier with LoRA from Scratch</span><span class="rp-item-extra">▲ 14 · 0 comments · 2024-05-11</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=41749613" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Implementing the Llama 3.2 1B and 3B Architectures from Scratch</span><span class="rp-item-extra">▲ 5 · 0 comments · 2024-10-05</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=45801296" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Explanation of Gated DeltaNet (Qwen3-Next and Kimi Linear)</span><span class="rp-item-extra">▲ 3 · 0 comments · 2025-11-03</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=44767032" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Qwen3 from Scratch</span><span class="rp-item-extra">▲ 3 · 0 comments · 2025-08-02</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=44327054" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Qwen3 Implemented from Scratch</span><span class="rp-item-extra">▲ 3 · 0 comments · 2025-06-20</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=43742639" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Day 1 of trying to fit a Chatbot into a QR Code</span><span class="rp-item-extra">▲ 1 · 2 comments · 2025-04-20</span></a><a class="rp-item" href="https://opentools.ai/resources/llms-from-scratch" target="_blank" rel="noopener"><span class="rp-news-src">opentools.ai</span><span class="rp-item-title">LLMs-from-scratch: Build an LLM in PyTorch</span><span class="rp-item-extra">2026-05-13</span></a><a class="rp-item" href="https://note.com/panda_lab/n/n52d23c882aa3?hl=ko" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">「LLMs-from-scratch」로 배우는 LLM의 기초부터 응용까지</span><span class="rp-item-extra">2024-07-31</span></a><details class="rp-news-more"><summary>6 more</summary><a class="rp-item" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQOXc3dDhVekcxcElEc29NODBYeDVwbWJtTEZMS1Y4WlZxN0Q3SHhmS2J0WkUwd3ZXaDcxZHBBMGVlTkNPUmJpblZQbEYzSDlCbWNubnRfRVdhNnhHRFRtc2NDbWxEQkVUNUNnUGkxOU9hazQxQWlaNDgzalpqMnZCXzM3MnFhRTFMdzVodU5Yb3REdTBzSDlna3k5VG9uSWpSeS1DZHo2RldKdw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Towards Data Science</span><span class="rp-item-title">6 Things I Learned Building LLMs From Scratch That No Tutorial Teaches You</span><span class="rp-item-extra">2026-04-17</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMilAFBVV95cUxPUUxTVG5qWTU1UldVaHRTdzZfeE9kdDR6eDhWdUs2dmd3SVZ4aFJDN2tZaXhza0J0MU9tOTFDTk10R2g3U05rdVRldmwwODdfWTd3RndubTFGbDY0NmdaNTBCQ21WenVnMUZmZnlOZnR4ZUhzSkVCY1hPeThZR3hZVjlDTnhfa3BPaVluTmpqenVzT05w?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Towards Data Science</span><span class="rp-item-title">How to Build Your Own Custom LLM Memory Layer from Scratch</span><span class="rp-item-extra">2026-02-04</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMigwFBVV95cUxNSWdwTTkyZDhDd20tckhuQWktc09DSGNfNnlSWFU5TnZtR2J3Q0hGVkctdVZxZnBYRldzRFBrSVJmODV4Sk44dVJUbzYtdU1sZWFuMTlnSE5mS3V6RW5QVm9wRzEzeUt4QVZfdWN5eVlFck96QmdQV3FNUWFHc0o1WmZGWQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">KDnuggets</span><span class="rp-item-title">10 Most Popular GitHub Repositories for Learning AI</span><span class="rp-item-extra">2026-01-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxNM2hZRk9QVVlRWl9ZUzFMci1KZGtkdk1OQzI5aUhxTnpocXdlNEpVR09hT1paSHBOQ0dqakllVnNYY1pXLVZEV1FvaDFpNEI0Tlo1Z3p4U3p1MXpjbnZ1VkVVTFFJMnlVZnkzeDk1TTdGUXhyQjFFeVpmR1dLNm43c2NNYk5sSXBWVXBtRXFTNXp6ZU5HX0pqNnk1UjFrY2p1UHhYclpOYWYzMUk?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">VentureBeat</span><span class="rp-item-title">ASU study: CoT in LLMs a brittle mirage</span><span class="rp-item-extra">2025-08-19</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMihwFBVV95cUxNOUowY25qVENENGM2aVUxcTNrVWstcEttbEZxbWRfQkJZczlsUEZMWmZQZlJab0VTMXdKY050SW9MZENiY2hiSV80c1hjU09zWXZuVldaRjh3WEN1QldTc1NaYWpISTlRRHBXbEpYQVBsWUd2akhROFJYc2RmRlNfS2tMcVBnajA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">KDnuggets</span><span class="rp-item-title">10 GitHub Repositories to Master Large Language Models</span><span class="rp-item-extra">2025-05-12</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMivgFBVV95cUxPaW1mUWdOMFI4Q1d3Q3F3cnF0OTFsWnhfeDA3b1NOZ0Y2RGRWcWM3UnRELTNTT05xc3RaVnROb29NelBjQmFQdS1ZajJ6WXVvLUxDaXp4RzVqQzJETTNIdnpPZXNTTVlyaGJDRHRZWHRoampZTlNWd1AzY2RfcC1hNTJKekFfWVZNVXdHQlFQcVVEV21UdlhiZVFZOTJTZXhMZVMxQ2hGQW5fYXBiYkF3SEF1WXFhRm5oanpMQnV3?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Becoming Human: Artificial Intelligence Magazine</span><span class="rp-item-title">Building a Seq2Seq Transformer Model for Language Translation: A Comprehensive Guide</span><span class="rp-item-extra">2025-01-15</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/rasbt__LLMs-from-scratch.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

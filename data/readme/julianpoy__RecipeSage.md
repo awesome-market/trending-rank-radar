@@ -1,0 +1,131 @@
+<a href="https://recipesage.com"><img align="left" width="100" height="100" src="packages/frontend/src/assets/imgs/logo_green.png"></img></a>
+
+# RecipeSage - A Collaborative Recipe Keeper, Meal Planner, and Shopping List Organizer
+
+Share and collaborate on recipes, manage household shopping lists and meal planning, and import recipes from anywhere on the web instantly.
+
+<a href="https://docs.recipesage.com">Documentation</a> | <a href="https://recipesage.com">Hosted Version</a> | <a href="https://github.com/julianpoy/recipesage-selfhost">Selfhost Resources</a>
+
+## :fork_and_knife: What can RecipeSage do?
+
+- **Import from any URL, Image, PDF, or Text**: Create recipes quickly and automatically from pretty much any source
+- **Nutrition tracking**: Track calories, macros, vitamins, and minerals per serving, with auto-fill by pasting a nutrition label
+- **Cooking assistant**: Ask the built-in AI cooking assistant for substitutions, techniques, conversions, and recipe ideas
+- **Works offline**: Your recipe collection stays searchable even without internet, and syncs automatically across all of your devices
+- **Drag and drop meal planning**: Schedule your meals interactively, print the plan, and collaborate with family
+- **Smart shopping lists**: Automatically categorized and intelligently grouped - add your recipes directly to a shopping list and similar items will be combined
+- **Recipe scaling and unit conversion**: Scale recipes up or down and convert between metric and imperial units, including within instructions
+- **Powerful search**: Search every field within your recipes including misspellings and similar words
+- **Labelling/categorization system**: Tag your recipes and filter by tags
+- **Rich text in ingredients, instructions, and notes**: Bold, italic, underline, tables, and embedded images
+- **Sharing and public profiles**: Share your recipe collection and collaborate on meal plans/shopping lists with your family or friends
+- **Import**: Supports Paprika, Mela, Crouton, Recipe Keeper, CopyMeThat, Cookmate, CookBookManager, Flavorish, Pepperplate, Living Cookbook, Plan to Eat, MyRecipeBox, Evernote, and Tandoor, plus notes apps and documents (Apple Notes, Google Keep, Google Docs, Microsoft Word, Obsidian, Notion, Joplin, Bear, Logseq, Simplenote), JSON-LD, and CSV
+- **Export**: Back up your recipes to PDF, JSON-LD, or text for data portability
+- **Dark mode**: Never blind yourself at night again! _(or leave dark mode enabled all the time like I do)_
+
+You can access the hosted version of RecipeSage here: https://recipesage.com
+
+You can also selfhost your own copy or RecipeSage (see https://github.com/julianpoy/recipesage#ramen-self-hosting)
+
+# :hamburger: GIFs
+
+### Store your recipes
+
+All of your recipes in one place, and access them from any device.
+
+<img src="Assets/myrecipes.gif"></img>
+
+### Mobile Apps
+
+Feels native on every device, with apps on the [App Store](https://apps.apple.com/app/id6529549272) and [Google Play](https://play.google.com/store/apps/details?id=com.recipesage.app).
+
+<img src="Assets/recipe-mobile.gif"></img>
+
+### Automatically import from any URL
+
+Import recipes from any website out there _(see [RecipeClipper](https://github.com/julianpoy/recipeclipper) for more info on how it does this)_.
+
+<img src="Assets/automatic-import.gif"></img>
+
+### Plan your meals and shopping
+
+A built-in meal planner makes it easy to plan your meals. Meal plans and shopping lists can be shared between multiple people!
+
+Meal plans support drag and drop, shopping lists support automatic item categorization.
+
+<img src="Assets/mealplan.gif"></img>
+
+# :globe_with_meridians: Supported Languages
+
+<a href="https://weblate.recipesage.com/engage/recipesage-app/">
+<img src="https://weblate.recipesage.com/widget/recipesage-app/app-frontend/horizontal-auto.svg" alt="Translation status" />
+</a>
+
+See the [translations section](#Translations) below if you'd like to contribute!
+
+# :ramen: Self Hosting
+
+To selfhost RecipeSage, I recommend that you use the preconfigured docker compose files available here: https://github.com/julianpoy/recipesage-selfhost
+
+You're welcome to configure or set up your own selfhost config based on this repository, but you may run into complications. The selfhost repository is setup to be easy to spin up, while this repository is oriented towards development.
+
+# :bread: License
+
+For **personal use**, RecipeSage is available under the terms of the [AGPL-3.0 license](https://www.gnu.org/licenses/agpl-3.0.en.html). See [LICENSE.md](LICENSE.md) for the full terms, including what personal use means.
+
+All other use, including all **commercial use**, requires a separate license. You may contact me at julian@recipesage.com to request a license.
+Pricing for these licenses will depend on usage, and all associated fees/proceeds are intended to support the project and community as a whole.
+
+# :doughnut: CLA
+
+Contributor license agreement.
+
+This allows RecipeSage to continue to provide the hosted instance, as well as license the API to other projects that may not have compatible licenses with AGPL.
+
+When contributing or suggesting code for RecipeSage, you grant RecipeSage and recipients of software distributed by RecipeSage a perpetual, irrevocable, non-exclusive license to that code, and you keep all other rights to it. See the [CLA file](docs/CLA.md) in the repo for the complete CLA.
+
+# 🐤 Contributing
+
+## Translations
+
+Translations can be contributed via the RecipeSage Weblate instance at [https://weblate.recipesage.com](https://weblate.recipesage.com) which automatically syncs to this repository. You can login there with a Github account and get started translating.
+
+Entirely AI-generated translations are not currently accepted, since they very frequently produce low-quality and inaccurate results. When using AI to assist in your translation efforts, please use [DeepL](https://www.deepl.com/) or [Google Translate](https://translate.google.com/) - do not translate using ChatGPT.
+
+## Code
+
+Code contributions are always very, very welcome. I'm very open to collaborating, and if there's a feature you'd like to see come to RecipeSage I'd love to help you facilitate that.
+
+Although you don't have to reach out before starting work and contributing a PR, either opening an issue and tagging me (@julianpoy), or commenting on an existing issue is a good idea. I may have suggestions for how to approach the problem, where one might look to implement a feature, or general guidance of how to "fit" the RecipeSage UX.
+
+### Contributions with AI Content
+
+I must note that I do not accept any AI-assisted code or PRs. I won't dive deep into explaining why here, but here are a few of my main reasons:
+
+1. It takes me quite a lot of time since AI-generated PRs almost always require significant changes
+2. AI-generated PRs effectively cause me to act _through you_ as a "proxy" for prompting, as you feed my comments back through your AI prompt
+3. If I haven't tackled something yet, it's probably because it's not trivial and/or requires some thought and design, both of which AI is not great at
+
+Again, as I said above I'm very open to collaborating -- just no AI-generated code please :)
+
+### Development
+
+Below are some notes for getting setup to contribute code.
+
+#### Setting-up your development environment
+
+1. Install [Docker](https://docs.docker.com/get-docker/) and [Node](https://nodejs.org/en/)
+2. Clone this repo
+3. Create a `.env` file in the root of the repository using `example.env` as a template. These can be left as placeholders, but the dependent functionality will not work without a real key in place.
+4. Install and enable corepack so the pinned pnpm version is picked up: `npm install -g corepack@0.36.0 && corepack enable`
+5. Install dependencies by running `pnpm install` at the root of the repo.
+6. Start the Docker containers by running `docker compose up -d` in the cloned repo
+7. Run database migrations `docker compose exec backend pnpm exec prisma migrate dev`
+8. RecipeSage should be running on `localhost` on port `80`
+
+#### Notes about the repo
+
+1. The repo uses the monorepo management tool [nx](https://nx.dev/nx-api). You'll find things divided up in the `packages` directory.
+2. I'm currently migrating to Prisma & TRPC, so any new functionality should be added within the `trpc` package rather than the `backend` package, unless it's an update to an existing behavior that does not merit moving.
+
+Backend API tests can be run via `docker compose exec backend env NODE_ENV=test POSTGRES_LOGGING=false pnpm exec nx test backend`.

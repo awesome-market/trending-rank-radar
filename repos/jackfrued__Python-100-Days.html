@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jackfrued/Python-100-Days · GitHub Trending Rank Radar</title>
+<meta name="description" content="Python - 100天从新手到大师">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Python-100-Days, jackfrued, jackfrued/Python-100-Days, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/jackfrued__Python-100-Days">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="jackfrued/Python-100-Days · GitHub Trending Rank Radar">
+<meta property="og:description" content="Python - 100天从新手到大师">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/jackfrued__Python-100-Days">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "jackfrued/Python-100-Days", "codeRepository": "https://github.com/jackfrued/Python-100-Days", "url": "https://zhuikan.com/repos/jackfrued__Python-100-Days", "description": "Python - 100天从新手到大师", "author": {"@type": "Organization", "name": "jackfrued", "url": "https://github.com/jackfrued"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Jupyter Notebook", "dateCreated": "2018-03-01"}</script>
+</head>
+<body data-repo="jackfrued/Python-100-Days" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">jackfrued/Python-100-Days</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="jackfrued__Python-100-Days"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/7474657?u=902200c2389c203cf2139888e10314845edd2a2a&amp;v=4&s=300" width="300" height="300" alt="jackfrued avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Python-100-Days</div>
+      <a class="rp-side-owner" href="https://github.com/jackfrued">jackfrued</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/jackfrued">jackfrued</a>
+        <span class="rp-sep">/</span><span class="rp-name">Python-100-Days</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily_rate">daily_rate <b>#191</b></a><a class="rp-board-chip" href="../?board=total">total <b>#45</b></a></div>
+    </div>
+    <p class="rp-desc">Python - 100天从新手到大师</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>187,826</b></span><span class="rp-stat" title="forks">⑂ <b>55,722</b></span><span class="rp-stat" title="watchers">👁 <b>6,020</b></span><span class="rp-stat" title="prs">⑃ <b>396</b></span><span class="rp-stat" title="issues">● <b>743</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Jupyter Notebook</span><span class="rp-meta-bit">Created 2018-03-01</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/jackfrued/Python-100-Days">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+5</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">187,826</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">55,722</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">6,020</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">396</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">743</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Python - 100天从新手到大师
+
+ 作者：骆昊
+
+ 说明1：最近有一个非常火的岗位叫做 FDE（前沿部署工程师），国内首套 FDE 实战课已经为大家准备好了，请点击传送门。
+
+ 说明2：如果访问 GitHub 比较慢的话，可以关注我的知乎账号（Python-Jack），上面的“从零开始学Python”专栏比较适合初学者，其他的专栏如“数据思维和统计思维”、“基于Python的数据分析”、“说走就走的AI之旅”、“AI智能体开发”等也在持续创作和更新中，欢迎大家关注、点赞和评论。如果有一起打卡学习或付费咨询的需求，可以加入付费交流群，新用户可以通过下方二维码付费之后添加我的私人微信（微信号：jackfrued），然后邀请大家进入付费学习打卡群，添加微信时请备注好自己的称呼和需求，我会为大家提供力所能及的帮助。
+
+ 
+
+ 说明3：本项目对应的部分视频已经同步到 Bilibili，有兴趣的小伙伴可以点赞、投币、关注，一键三连支持一下！
+
+ Python应用领域和职业发展分析
+
+简单的说，Python是一个“优雅”、“明确”、“简单”的编程语言。
+
+ - 学习曲线低，非专业人士也能上手
+ - 开源系统，拥有强大的生态圈
+ - 解释型语言，完美的平台可移植性
+ - 动态类型语言，支持面向对象和函数式编程
+ - 代码规范程度高，可读性强
+
+Python在以下领域都有用武之地。
+
+ - 后端开发 - Python / Java / Go / PHP
+ - DevOps - Python / Shell / Ruby
+ - 数据采集 - Python / C++ / Java
+ - 量化交易 - Python / C++ / R
+ - 数据科学 - Python / R / Julia / Matlab
+ - 机器学习 - Python / R / C++ / Julia
+ - 自动化测试 - Python / Shell
+
+作为一名Python开发者，根据个人的喜好和职业规划，可以选择的就业领域也非常多。
+
+- Python后端开发工程师（服务器、云平台、数据接口）
+- Python运维工程师（自动化运维、SRE、DevOps）
+- Python数据分析师（数据分析、商业智能、数字化运营）
+- Python数据科学家（机器学习、深度学习、算法专家）
+- Python爬虫工程师（不推荐此赛道！！！）
+- Python测试工程师（自动化测试、测试开发）
+
+ 说明：目前，数据科学赛道是非常热门的方向，因为不管是互联网行业还是传统行业都已经积累了大量的数据，各行各业都需要数据科学家从已有的数据中发现更多的商业价值，从而为企业的决策提供数据的支撑，这就是所谓的数据驱动决策。
+
+给初学者的几个建议：
+
+- Make English as your working language. （让英语成为你的工作语言）
+- Practice makes perfect. （熟能生巧）
+- All experience comes from the mistakes you&#x27;ve made. （所有的经验都源于犯过的错误）
+- Don&#x27;t be a freeloader. （学会分享，不要只当伸手党）
+- Embrace AI to boost your productivity.（拥抱AI，提升效率）
+
+ Day01~20 - Python语言基础
+
+ Day01 - 初识Python
+
+1. Python简介
+    - Python编年史
+    - Python优缺点
+    - Python应用领域
+2. 安装Python环境
+    - Windows环境
+    - macOS环境
+
+ Day02 - 第一个Python程序
+
+1. 编写代码的工具
+2. 你好世界
+3. 注释你的代码
+
+ Day03 - Python语言中的变量
+
+1. 一些常识
+2. 变量和类型
+3. 变量命名
+4. 变量的使用
+
+ Day04 - Python语言中的运算符
+
+1. 算术运算符
+2. 赋值运算符
+3. 比较运算符和逻辑运算符
+4. 运算符和表达式应用
+    - 华氏和摄氏温度转换
+    - 计算圆的周长和面积
+    - 判断闰年
+
+ Day05 - 分支结构
+
+1. 使用if和else构造分支结构
+2. 使用match和case构造分支结构
+3. 分支结构的应用
+    - 分段函数求值
+    - 百分制成绩转换成等级
+    - 计算三角形的周长和面积
+
+ Day06 - 循环结构
+
+1. for-in循环
+2. while循环
+3. break和continue
+4. 嵌套的循环结构
+5. 循环结构的应用
+    - 判断素数
+    - 最大公约数
+    - 猜数字游戏
+
+ Day07 - 分支和循环结构实战
+
+1. 例子1：100以内的素数
+2. 例子2：斐波那契数列
+3. 例子3：寻找水仙花数
+4. 例子4：百钱百鸡问题
+5. 例子5：CRAPS赌博游戏
+
+ Day08 - 常用数据结构之列表-1
+
+1. 创建列表
+2. 列表的运算
+3. 元素的遍历
+
+ Day09 - 常用数据结构之列表-2
+
+1. 列表的方法
+    - 添加和删除元素
+    - 元素位置和频次
+    - 元素排序和反转
+2. 列表生成式
+3. 嵌套列表
+4. 列表的应用
+
+ Day10 - 常用数据结构之元组
+
+1. 元组的定义和运算
+2. 打包和解包操作
+3. 交换变量的值
+4. 元组和列表的比较
+
+ Day11 - 常用数据结构之字符串
+
+1. 字符串的定义
+    - 转义字符
+    - 原始字符串
+    - 字符的特殊表示
+2. 字符串的运算
+    - 拼接和重复
+    - 比较运算
+    - 成员运算
+    - 获取字符串长度
+    - 索引和切片
+3. 字符的遍历
+4. 字符串的方法
+    - 大小写相关操作
+    - 查找操作
+    - 性质判断
+    - 格式化
+    - 修剪操作
+    - 替换操作
+    - 拆分与合并
+    - 编码与解码
+    - 其他方法
+
+ Day12 - 常用数据结构之集合
+
+1. 创建集合
+2. 元素的变量
+3. 集合的运算
+    - 成员运算
+    - 二元运算
+    - 比较运算
+4. 集合的方法
+5. 不可变集合
+
+ Day13 - 常用数据结构之字典
+
+1. 创建和使用字典
+2. 字典的运算
+3. 字典的方法
+4. 字典的应用
+
+ Day14 - 函数和模块
+
+1. 定义函数
+2. 函数的参数
+    - 位置参数和关键字参数
+    - 参数的默认值
+    - 可变参数
+3. 用模块管理函数
+4. 标准库中的模块和函数
+
+ Day15 - 函数应用实战
+
+1. 例子1：随机验证码
+2. 例子2：判断素数
+3. 例子3：最大公约数和最小公倍数
+4. 例子4：数据统计
+5. 例子5：双色球随机选号
+
+ Day16 - 函数使用进阶
+
+1. 高阶函数
+2. Lambda函数
+3. 偏函数
+
+ Day17 - 函数高级应用
+
+1. </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/jackfrued/Python-100-Days/issues/144"><span class="rp-item-num">#144</span><span class="rp-item-title">你们真的star 了之后会看吗？</span><span class="rp-item-extra">29 comments · 2019-05-21</span></a><a class="rp-item" href="https://github.com/jackfrued/Python-100-Days/issues/452"><span class="rp-item-num">#452</span><span class="rp-item-title">Day1:练习2代码运行之后怎么报错了阿？</span><span class="rp-item-extra">26 comments · 2020-02-17</span></a><a class="rp-item" href="https://github.com/jackfrued/Python-100-Days/issues/30"><span class="rp-item-num">#30</span><span class="rp-item-title">English Please</span><span class="rp-item-extra">22 comments · 2019-04-23</span></a><a class="rp-item" href="https://github.com/jackfrued/Python-100-Days/issues/1099"><span class="rp-item-num">#1099</span><span class="rp-item-title">感谢大佬的分享，用 vitepress 搭了个网站方便阅读</span><span class="rp-item-extra">20 comments · 2025-04-15</span></a><a class="rp-item" href="https://github.com/jackfrued/Python-100-Days/issues/1008"><span class="rp-item-num">#1008</span><span class="rp-item-title">Day13最后一个例子感觉计时部分不太对啊。。计时前是不是线程就已经开始启动了？</span><span class="rp-item-extra">14 comments · 2024-01-24</span></a><a class="rp-item" href="https://github.com/jackfrued/Python-100-Days/issues/967"><span class="rp-item-num">#967</span><span class="rp-item-title">还是卖课的  大家散了吧  欺骗我感情 我都学到第40天了</span><span class="rp-item-extra">13 comments · 2023-04-21</span></a><a class="rp-item" href="https://github.com/jackfrued/Python-100-Days/issues/868"><span class="rp-item-num">#868</span><span class="rp-item-title">100</span><span class="rp-item-extra">13 comments · 2022-03-04</span></a><a class="rp-item" href="https://github.com/jackfrued/Python-100-Days/issues/449"><span class="rp-item-num">#449</span><span class="rp-item-title">关于类、继承、函数、属性的综合性问题</span><span class="rp-item-extra">12 comments · 2020-02-06</span></a></div></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (3)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/j8267643/article/details/153556316" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">【GitHub项目推荐--Python-100-Days：Python百天从新手到大师】⭐⭐⭐⭐⭐</span><span class="rp-item-extra">2025-10-18</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_01160/article/details/150616224" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">Python-100-Days项目部署与运维实战</span><span class="rp-item-extra">2025-08-22</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE5SNF9LdnlPZ2VpZG0xaDJHTndqa1ZJMXMxeHlqclZoZEpjZGdfQUpQU0JxZ3lKakxEQk90MXlSRVNGZm5kaEM4QmhmU2tkdndPNEE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">量子位</span><span class="rp-item-title">GitHub标星7700：Python从新手到大师，只要100天</span><span class="rp-item-extra">2019-05-02</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (2)</h3><div class="rp-list"><a class="rp-item" href="https://news.google.com/rss/articles/CBMirgFBVV95cUxPcmtxR19oTko4N0Q0SmF6UlpPVU1Tb3FYSzluRXdmRWNxWThIZDN3a0Jxcng3LVhtTzVaVmRuRjR6WkNtWV9DX1dwZzZRTEJDdWxaZGRuRUF1Y29DTHd4bFoyTXlUVDR5TlRKSzF0dkhEWU45UWdBN3N2alVCSzJmT1VXNHBLck1RU2w0QXk3YnBBNWowTFVaOXJqYW4ycGMxLVlOOXFTSzJ2RnBiWVE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Towards Data Science</span><span class="rp-item-title">Most Starred and Forked GitHub Repos for Data Science and Python</span><span class="rp-item-extra">2025-02-04</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMisAFBVV95cUxNVDkzTlpCOWxBbEpfVkVKX2x0Ym5iS3JtWmdlMDluZjBIR0dCVEg2M1ViVkxFWG0wOVBLQTBrdmpmWmo5RXE4U09OQ1dlZ0tyNXp6Sll3eXpodmx4RHd4ZFNGbDRnMFdCNWdMVnhtdWR5cXJPX1ZHdUZaNGpIODdTNTVpRExIUlpNSEVRNWFhOUV3RGo3VkZ2TG9uVUJuRmVFcVhFaUpseUpQYnZTcE5SOA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">HackerNoon</span><span class="rp-item-title">How to Learn Web Development: HTML, CSS, MERN, and Python - 22 GitHub Repositories to Help You</span><span class="rp-item-extra">2024-11-15</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/jackfrued__Python-100-Days.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

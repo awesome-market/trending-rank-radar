@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mvanhorn/last30days-skill · GitHub Trending Rank Radar</title>
+<meta name="description" content="AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="last30days-skill, mvanhorn, mvanhorn/last30days-skill, github stars, github trending, star growth, star history, 开源项目, 星标增长, ai-prompts, claude, claude-code, reddit, twitter, hackernews">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/mvanhorn__last30days-skill">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="mvanhorn/last30days-skill · GitHub Trending Rank Radar">
+<meta property="og:description" content="AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/mvanhorn__last30days-skill">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "mvanhorn/last30days-skill", "codeRepository": "https://github.com/mvanhorn/last30days-skill", "url": "https://zhuikan.com/repos/mvanhorn__last30days-skill", "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary", "author": {"@type": "Organization", "name": "mvanhorn", "url": "https://github.com/mvanhorn"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Python", "dateCreated": "2026-01-23", "keywords": "ai-prompts,claude,claude-code,reddit,twitter,hackernews,polymarket,research,youtube,ai-skill"}</script>
+</head>
+<body data-repo="mvanhorn/last30days-skill" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">mvanhorn/last30days-skill</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="mvanhorn__last30days-skill"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/455140?u=ca70dc656c8256c47d6739e4347937bf139c28e7&amp;v=4&s=300" width="300" height="300" alt="mvanhorn avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">last30days-skill</div>
+      <a class="rp-side-owner" href="https://github.com/mvanhorn">mvanhorn</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/mvanhorn">mvanhorn</a>
+        <span class="rp-sep">/</span><span class="rp-name">last30days-skill</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=monthly">monthly <b>#149</b></a></div>
+    </div>
+    <p class="rp-desc">AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>67,589</b></span><span class="rp-stat" title="forks">⑂ <b>5,942</b></span><span class="rp-stat" title="watchers">👁 <b>216</b></span><span class="rp-stat" title="prs">⑃ <b>1,097</b></span><span class="rp-stat" title="issues">● <b>295</b></span><span class="rp-stat" title="releases">▤ <b>69</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/ai-prompts">ai-prompts</a><a class="rp-topic" href="../tags/claude">claude</a><a class="rp-topic" href="../tags/claude-code">claude-code</a><a class="rp-topic" href="https://github.com/topics/reddit">reddit</a><a class="rp-topic" href="https://github.com/topics/twitter">twitter</a><a class="rp-topic" href="https://github.com/topics/hackernews">hackernews</a><a class="rp-topic" href="https://github.com/topics/polymarket">polymarket</a><a class="rp-topic" href="https://github.com/topics/research">research</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-01-23</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="mvanhorn__cli-printing-press"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/455140?u=ca70dc656c8256c47d6739e4347937bf139c28e7&amp;v=4" alt="" loading="lazy">cli-printing-press</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/mvanhorn/last30days-skill">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v3.38.1</span><a class="rp-dl-a" href="https://github.com/mvanhorn/last30days-skill/releases/tag/v3.38.1">v3.38.1 ↓</a><span class="rp-dl-ver">3.38.1</span><span class="rp-dl-date">2026-11-12</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+109</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1,126</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+3,754</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">67,589</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">5,942</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">216</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,097</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">295</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">69</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">/last30days
+
+English | Français | Deutsch | Español | Português (Brasil) | 日本語 | 简体中文 | العربية
+
+
+  
+
+
+
+  
+    
+  
+  
+  
+    
+  
+  
+  
+    
+  
+
+
+一个由 AI 智能体驱动的搜索引擎：按赞同票、点赞和真金白银评分，而不是由编辑决定。
+
+本文档对应当前的 v3 流水线。运行时 Skill 规范位于 skills/last30days/SKILL.md，最新命令与配置行为以该文件为准。
+
+Claude Code（推荐——通过 marketplace 自动更新）：
+
+
+/plugin marketplace add mvanhorn/last30days-skill
+/plugin install last30days
+
+
+Codex、Cursor、Copilot、Gemini CLI，或其他 50 多个支持 Agent Skills 的宿主：
+
+
+npx skills add mvanhorn/last30days-skill -g
+
+
+（-g 会安装到当前用户的全局环境，所有项目均可使用；去掉该参数则仅安装到当前项目。）
+
+更多安装方式（claude.ai 网页版、OpenClaw、手动安装）见下方安装章节。
+
+开箱即用。Reddit、Hacker News、Polymarket 和 GitHub 无需配置即可搜索。首次运行时，配置向导会在 30 秒内帮你解锁 X、YouTube、TikTok、arXiv、Techmeme 等更多来源。
+
+---
+
+Reddit 的赞同票、X 的点赞、YouTube 的完整字幕、TikTok 的互动数据，以及由真金白银和内幕信息支撑的 Polymarket 概率——每天都有数百万人用注意力和钱包投票。/last30days 会并行搜索这些平台，按照真实用户的参与度评分，再由 AI 智能体裁判综合成一份简报。
+
+Google 聚合编辑选出的内容，/last30days 搜索真实的人。
+
+你无法从别的单一搜索产品获得这些结果，因为没有哪个 AI 天生能访问所有平台。Google 搜不到 Reddit 评论和 X 帖子；ChatGPT 虽然与 Reddit 合作，却无法搜索 X 或 TikTok；Gemini 能访问 YouTube，却没有 Reddit；Claude 原生不具备这些能力。每个平台都是一座围墙花园，有自己的 API、令牌和认证机制。但只要接入你自己的密钥和浏览器会话，AI 智能体就能同时搜索所有平台、横向比较信号，并告诉你真正值得关注的内容。
+
+这才是关键：不是再造一个更好的搜索引擎，而是让一个智能体把十几个彼此割裂的平台连接起来。
+
+
+/last30days Peter Steinberger
+
+
+假设你明天要和一个人开会。用 Google 搜他，你看到的可能还是 2023 年的 LinkedIn 页面；/last30days 告诉你的则是他这个月真正做了什么：加入 OpenAI 参与 Codex、反对 Anthropic 禁止第三方智能体、提交 23 个 PR 且合并率达到 85%、打造用于跨设备智能体控制的 “LobsterOS”，以及 r/ClaudeCode 上一场获得 569 个赞同票的争论——他究竟是英雄，还是“令人难以忍受”。这些信息散落在 X 帖子、Reddit 讨论、YouTube 字幕和 GitHub 提交中，Google 上根本没有。
+
+ 为什么要做这个项目
+
+最初，我做它是为了跟上 AI 的变化。这个领域每天都在变，而 Reddit 和 X 上的极客通常最先发现新东西。我需要更好的提示词，但模型训练数据总比社区已经摸索出的经验慢几个月。
+
+后来，它变成了更大的东西。现在，销售通话前，我用它了解一家公司过去 30 天的真实动态；开会前，我用它读完对方最近的推文和播客字幕；去迪士尼世界前，我用它确认哪些项目停运、社区怎么看 Genie+；开始做任何产品前，我用它找出人们真正遇到的问题。
+
+如果你要见一位 CEO，你读过他过去 30 天的所有推文和 YouTube 字幕吗？我读过。
+
+ 由真实用户评分的信息源
+
+| 来源 | 人们会告诉你什么 |
+|------|------------------|
+| Reddit | 未经过滤的真实看法。免费获取带实际赞同数的热门评论，无需 API 密钥；那些常被 Google 埋没的真实意见。 |
+| X / Twitter | 犀利观点、专家长帖和突发事件的第一反应。最早知道，也最早争论。 |
+| YouTube | 45 分钟的深度内容。搜索完整字幕，只提取真正值得引用的 5 句话。 |
+| TikTok | 一个触达 360 万人的创作者观点——你永远不会在 Google 上搜到。 |
+| Instagram Reels | 带口播字幕的影响者视角，反映视觉文化的信号。 |
+| Hacker News | 开发者共识：825 分、899 条评论，技术从业者真正交锋的地方。 |
+| Polymarket | 不是观点，而是由真金白银支撑的概率：专辑销量 96%，收购概率 4%。 |
+| GitHub | 搜人时查看 PR 速度、按 Star 排名的热门仓库和发行说明；搜主题时查看 Issue 与 Discussion。 |
+| Digg | 来自 Digg 全部话题（AI、科技、国际与商业、体育、科学、游戏、娱乐）的话题聚类，按 Digg Score 排序，包含可追溯的 X 行内引用，无需 X 认证。当 PATH 中存在 digg-pp-cli 时自动启用。旧版 digg-pp-cli 仍可使用，但只覆盖 AI 与科技，且不带评分。 |
+| arXiv | 热点背后的论文。免费查找时间窗口内的新研究，无需 API 密钥。当 PATH 中存在 arxiv-pp-cli 时自动启用（首次配置会安装）。 |
+| Techmeme | 科技新闻的编辑视角，并按你设定的 30 天窗口筛选。免费且无需 API 密钥。当 PATH 中存在 techmeme-pp-cli 时自动启用（首次配置会安装）。 |
+| Yahoo Finance | 市场对一家公司的看法。显示 30 天窗口内的股价涨跌，美股上市公司还会对比标普 500。免费且无需 API 密钥。当主题是上市公司或其掌舵人，且 PATH 中存在 yahoo-finance-pp-cli 时显示（首次配置会安装）。 |
+| LinkedIn | 职业领域的信号。搜索帖子和文章，其中文章被视为高价值信号。 |
+| Meta Ads | 品牌花钱在说什么。本月新投放的 Meta 广告创意，包含文案、优惠码和语音转写。 |
+| StockTwits | 交易者情绪。当主题是股票代码或加密货币时自动启用。 |
+| Threads | 后 Twitter 时代的文字内容层，汇集创作者和品牌的讨论。 |
+| Pinterest | 视觉发现：围绕产品和创意的 Pin、收藏与评论。 |
+| 小红书（RED） | 来</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/mvanhorn/last30days-skill/issues/989"><span class="rp-item-num">#989</span><span class="rp-item-title">Feature request: Instagram Posts (feed/carousel) as a source + WhisperX local transcription fallback for Reels + deep comment sentiment analysis</span><span class="rp-item-extra">2 comments · 2026-08-13</span></a><a class="rp-item" href="https://github.com/mvanhorn/last30days-skill/issues/861"><span class="rp-item-num">#861</span><span class="rp-item-title">Feature request: add Trendshift as a source (trending repo momentum signal)</span><span class="rp-item-extra">2 comments · 2026-07-23</span></a><a class="rp-item" href="https://github.com/mvanhorn/last30days-skill/issues/1367"><span class="rp-item-num">#1367</span><span class="rp-item-title">Optional SCRAPECREATORS_BASE_URL to point the ScrapeCreators calls at another host</span><span class="rp-item-extra">1 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/mvanhorn/last30days-skill/issues/570"><span class="rp-item-num">#570</span><span class="rp-item-title">Web Search with kagi.com</span><span class="rp-item-extra">1 comments · 2026-06-15</span></a><a class="rp-item" href="https://github.com/mvanhorn/last30days-skill/issues/1380"><span class="rp-item-num">#1380</span><span class="rp-item-title">Cookie readers skip host-only `x.com` cookies; standalone `auto` mode stops at a partial pair</span><span class="rp-item-extra">0 comments · 2026-11-08</span></a><a class="rp-item" href="https://github.com/mvanhorn/last30days-skill/issues/1351"><span class="rp-item-num">#1351</span><span class="rp-item-title">ChatGPT Work installation blocked: “skill did not pass the safety scan” (v3.31.0)</span><span class="rp-item-extra">0 comments · 2026-10-31</span></a><a class="rp-item" href="https://github.com/mvanhorn/last30days-skill/issues/1305"><span class="rp-item-num">#1305</span><span class="rp-item-title">Diffbot Coverage vs. Serper/Brave (follow-up to #627)</span><span class="rp-item-extra">0 comments · 2026-10-19</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/mvanhorn/last30days-skill/releases"><b>v3.38.1</b> <span class="rp-rel-tag">v3.38.1</span> <span class="rp-item-extra">2026-11-12</span></a><pre class="rp-pre">What&#x27;s Changed
+ fix(digg): end the score search before the run deadline and keep the prominent copy by @mvanhorn in https://github.com/mvanhorn/last30days-skill/pull/1421
+ chore(release): bump version to 3.38.1 by @github-actions[bot] in https://github.com/mvanhorn/last30days-skill/pull/1422
+
+
+Full Changelog: https://github.com/mvanhorn/last30days-skill/compare/v3.38.0...v3.38.1</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (5)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/qq_52949075/article/details/162015889" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">【GitHub每周热点解析】第2期：last30days-skill</span><span class="rp-item-extra">2026-06-15</span></a><a class="rp-item" href="https://www.bilibili.com/video/BV1YmJ36BE7j/" target="_blank" rel="noopener"><span class="rp-news-src">bilibili</span><span class="rp-item-title">GitHub一周万星爆款AI神器last30days-skill！专属AI全网调研插件</span><span class="rp-item-extra">2026-06-14</span></a><a class="rp-item" href="https://blog.csdn.net/yanceyxin/article/details/161924033" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">【GitHub】last30days-skill 深度技术解析</span><span class="rp-item-extra">2026-06-11</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMibkFVX3lxTE0tSU9yQ1FpN0I3dUUwcER5RE1MZ0Y3ckhFVHNERTM0RzdWT2xTeG9EMVRxRndPR3d6WHpkRFQxMG1zYW5zTzFIbnppUnNTLW5JN2Q0S3BlRnVOQ0ZiVzhJSjJIWHFmSnM2NUFraUhR?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN博客</span><span class="rp-item-title">GitHub最热架构图Agent，开发者故事看哭了</span><span class="rp-item-extra">2026-09-05</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMidEFVX3lxTE9DeUM1S3B1cTEzZ1BabGMzMjQxMjFUOGhYTzlsYUhNUVdTUk1GNDRXVE5kSUk4dEdUa0M1dEZ1dTZ5MEtFZFdBNS1EQ09sSW5KUW0taWo0RktZYTRaLWZOTVZYYTN3OVJzeFJVWWh3UWtmQ1Nf?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">新浪财经</span><span class="rp-item-title">最值得安装的20个Skills</span><span class="rp-item-extra">2026-04-20</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (5)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=49130905" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Last 30 Days (Skill) – AI Agent for Reddit, X, YT, HN, Web and Polymarket</span><span class="rp-item-extra">▲ 3 · 0 comments · 2026-08-01</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=48440334" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">last30days-skill</span><span class="rp-item-extra">▲ 2 · 0 comments · 2026-06-08</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=46764597" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Claude skill that researches any topic across Reddit and X from the last 30 days</span><span class="rp-item-extra">▲ 2 · 0 comments · 2026-01-26</span></a><a class="rp-item" href="https://note.com/shali_note/n/nac88b0ee519d?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">How &#x27;last30days-skill&#x27; Works and How to Use It: AI-Powered 30-Day Web Trend Research</span><span class="rp-item-extra">2026-06-15</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMikgFBVV95cUxNc0pUU0t3aXA2eElIRzJLYWRIaGFvbmdOR0EtQnNFNHJ1UFQ1b3FORFlOa2FQRmVEVjBpUFJzR0lScXZudHdmUjl4TmhrbVZxZ1JrZDJzZU1XN1BvUWYySnV4NG1uWVVrTUU4cGU1QmkzZFE4YXdrUDNHRkFKVktYLTFpYXljajVOb1lYYVFGZ3BIZw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">https://ascendants.in/</span><span class="rp-item-title">Free GitHub Skills Now Let Claude AI Script, Clip and Caption Content for Instagram and YouTube Creators</span><span class="rp-item-extra">2026-10-24</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/mvanhorn__last30days-skill.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

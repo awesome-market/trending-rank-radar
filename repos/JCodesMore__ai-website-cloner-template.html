@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JCodesMore/ai-website-cloner-template · GitHub Trending Rank Radar</title>
+<meta name="description" content="Clone any website with one command using AI coding agents">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="ai-website-cloner-template, JCodesMore, JCodesMore/ai-website-cloner-template, github stars, github trending, star growth, star history, 开源项目, 星标增长, ai, ai-agents, ai-tools, automation, boilerplate, claude">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/JCodesMore__ai-website-cloner-template">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="JCodesMore/ai-website-cloner-template · GitHub Trending Rank Radar">
+<meta property="og:description" content="Clone any website with one command using AI coding agents">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/JCodesMore__ai-website-cloner-template">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "JCodesMore/ai-website-cloner-template", "codeRepository": "https://github.com/JCodesMore/ai-website-cloner-template", "url": "https://zhuikan.com/repos/JCodesMore__ai-website-cloner-template", "description": "Clone any website with one command using AI coding agents", "author": {"@type": "Organization", "name": "JCodesMore", "url": "https://github.com/JCodesMore"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2026-03-13", "keywords": "ai,ai-agents,ai-tools,automation,boilerplate,claude,claude-code,clone,developer-tools,nextjs"}</script>
+</head>
+<body data-repo="JCodesMore/ai-website-cloner-template" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">JCodesMore/ai-website-cloner-template</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="JCodesMore__ai-website-cloner-template"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/182581310?u=8d1d1fb9d21cea09b6a8e87f70d3354ce571ae95&amp;v=4&s=300" width="300" height="300" alt="JCodesMore avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">ai-website-cloner-template</div>
+      <a class="rp-side-owner" href="https://github.com/JCodesMore">JCodesMore</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/JCodesMore">JCodesMore</a>
+        <span class="rp-sep">/</span><span class="rp-name">ai-website-cloner-template</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=monthly">monthly <b>#189</b></a></div>
+    </div>
+    <p class="rp-desc">Clone any website with one command using AI coding agents</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>39,115</b></span><span class="rp-stat" title="forks">⑂ <b>5,813</b></span><span class="rp-stat" title="watchers">👁 <b>170</b></span><span class="rp-stat" title="prs">⑃ <b>102</b></span><span class="rp-stat" title="issues">● <b>32</b></span><span class="rp-stat" title="releases">▤ <b>10</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/ai">ai</a><a class="rp-topic" href="../tags/ai-agents">ai-agents</a><a class="rp-topic" href="https://github.com/topics/ai-tools">ai-tools</a><a class="rp-topic" href="../tags/automation">automation</a><a class="rp-topic" href="https://github.com/topics/boilerplate">boilerplate</a><a class="rp-topic" href="../tags/claude">claude</a><a class="rp-topic" href="../tags/claude-code">claude-code</a><a class="rp-topic" href="https://github.com/topics/clone">clone</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-03-13</span><a class="rp-meta-bit rp-home" href="https://dsc.gg/jcodesmore" rel="noopener">dsc.gg/jcodesmore</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/JCodesMore/ai-website-cloner-template">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.6.1 - Rule-based fidelity guidance</span><a class="rp-dl-a" href="https://github.com/JCodesMore/ai-website-cloner-template/releases/tag/v0.6.1">v0.6.1 ↓</a><span class="rp-dl-ver">0.6.1</span><span class="rp-dl-date">2026-10-05</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+48</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+603</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+2,770</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">39,115</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">5,813</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">170</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">102</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">32</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">10</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">AI Website Cloner Template
+
+ Clone any website with one command
+
+Give your AI coding agent a URL and watch it recreate the website as a clean Next.js app.
+
+Best results with Claude Code + Opus 5.5. Also supports Codex, Cursor, and OpenCode.
+
+ 
+
+Quick Start · Watch Demo · Supported Platforms
+
+  
+
+   
+
+
+SPONSORED BY
+
+
+
+Inspect and compare websites from any region with rotating or static residential IPs in 195+ locations, over HTTP(S) and SOCKS5. Free testing, plus 10% off with code PROXY90. Try&amp;nbsp;Swiftproxy&amp;nbsp;→
+
+
+
+---
+
+ Demo
+
+
+
+ Click the image above to watch the full demo on YouTube.
+
+ Quick Start
+
+ 1. Set up your project
+
+Recommended: ask your agent. Paste this into Codex, Claude Code, or your coding agent:
+
+text
+Set up https://github.com/JCodesMore/ai-website-cloner-template
+as a standalone project in a new folder on my computer.
+Ask me where to put it. Clone the repository, remove its origin remote,
+install dependencies, and run npm run check. Leave it ready for me
+to clone a website.
+
+
+Or create your own GitHub repository:
+
+
+
+Give it a name and click Create repository. Then give your agent the new repository&#x27;s link and ask it to clone it onto your computer, install dependencies, and run npm run check.
+
+ 2. Clone a website
+
+Open the project in your agent with browser access enabled. In Claude Code or Cursor, run:
+
+text
+/clone-website https://example.com
+
+
+Replace the URL with the website you want to recreate. Once it&#x27;s built, ask your agent for any changes you want.
+
+ Supported Platforms
+
+| Agent                                                         | Status                     |
+| ------------------------------------------------------------- | -------------------------- |
+| Claude Code | Recommended — Opus 5.5 |
+| Codex CLI                  | Supported                  |
+| OpenCode                              | Supported                  |
+| Cursor                                 | Supported                  |
+
+ Prerequisites
+
+- Node.js 24+
+- An AI coding agent (see Supported Platforms)
+
+ Tech Stack
+
+- Next.js 16 — App Router, React 19, TypeScript strict
+- shadcn/ui — Base UI primitives + Tailwind CSS v4
+- Tailwind CSS v4 — oklch design tokens
+- Lucide React — default icons (replaced by extracted SVGs during cloning)
+
+ How It Works
+
+The /clone-website skill follows four steps:
+
+1. Map — map source URLs to local routes and preserve existing work.
+2. Observe — inspect desktop/mobile pages, extract real assets and fonts, and exercise alternate states.
+3. Build — implement editable components and working interactions; delegate independent sections when useful.
+4. Compare — review source and local pages at matched sizes/states, repair visible differences, and run the production check.
+
+Framer pages and animated sites have focused inspection guidance for responsive variants, media, sticky scenes, and scroll/time-driven motion. Direct HTTP or asset tools handle extraction where practical; browser comparisons establish appearance and behavior</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/JCodesMore/ai-website-cloner-template/issues/132"><span class="rp-item-num">#132</span><span class="rp-item-title">Cant clone on personal sites</span><span class="rp-item-extra">0 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/JCodesMore/ai-website-cloner-template/issues/129"><span class="rp-item-num">#129</span><span class="rp-item-title">[Feature]: Set cloned website stored output folder</span><span class="rp-item-extra">0 comments · 2026-10-30</span></a><a class="rp-item" href="https://github.com/JCodesMore/ai-website-cloner-template/issues/128"><span class="rp-item-num">#128</span><span class="rp-item-title">[Feature]: 项目添加请求</span><span class="rp-item-extra">0 comments · 2026-10-24</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/JCodesMore/ai-website-cloner-template/releases"><b>v0.6.1 - Rule-based fidelity guidance</b> <span class="rp-rel-tag">v0.6.1</span> <span class="rp-item-extra">2026-10-05</span></a><pre class="rp-pre">Sharper cloning guidance that catches more fidelity drift with fewer, more general directives.
+
+- Treat each observation as a sample of a rule: read declared values and vary viewport width (including wider than the design), height, input, and state.
+- Use the files the source actually loads, and build shared components and page-wide behavior, such as smooth scrolling, from every observed state.
+- Compare beyond the design width and judge scroll and pointer behavior with real input.
+
+Full changelog: https://github.com/JCodesMore/ai-website-cloner-template/compare/v0.6.0...v0.6.1</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (5)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/gitblog_00323/article/details/159905244" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">AI Website Cloner Template+GitHub Copilot使用指南：Copilot如何启用网站克隆技能</span><span class="rp-item-extra">2026-08-30</span></a><a class="rp-item" href="https://www.sohu.com/a/1003978900_121924584" target="_blank" rel="noopener"><span class="rp-news-src">搜狐</span><span class="rp-item-title">AI一键克隆网站：ai-website-cloner-template 开启逆向工程新范式</span><span class="rp-item-extra">2026-04-01</span></a><a class="rp-item" href="https://www.sohu.com/a/1003979289_122004016" target="_blank" rel="noopener"><span class="rp-news-src">搜狐</span><span class="rp-item-title">一键克隆网站，ai-website-cloner-template评测与应用分析</span><span class="rp-item-extra">2026-04-01</span></a><a class="rp-item" href="https://blog.csdn.net/j8267643/article/details/159695264" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">【GitHub项目推荐--AI Website Cloner Template：一键将任何网站“逆向”为 Next.js 代码】</span><span class="rp-item-extra">2026-03-31</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMimgFBVV95cUxPVmQ5RzY4U1RENlpaYVNKbXRqU05uT1Q5NXFpMFlqS1ZrX016VnRxVS11YnRNcGhSNGZmSFllaEdsSUJ0Sl92ekFYQ29rckVyLUg4Rk5UcFFYeFl0WTRlWVhjdHpxLVdQNDZSSTlIM1Y2akNjWGVpVGprRXRMdmh4Tkwta2htdnNZdmJ5aVdnLVdaNzBJRVVyWTBR?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">AI Website Cloner: 拥有 13,000 颗星的 Claude Code 技能,一个提示克隆任何网站 (2026)</span><span class="rp-item-extra">2026-04-28</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (4)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=48669537" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">AI-website-cloner-template: Clone any website using AI coding agents</span><span class="rp-item-extra">▲ 5 · 0 comments · 2026-06-25</span></a><a class="rp-item" href="https://note.com/fuma_ai_lab/n/n052771b6fc2d?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">[Claude Code Skills] Turning websites into Next.js just by passing a URL? &quot;ai-website-cloner-template&quot; is insane</span><span class="rp-item-extra">2026-04-29</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNMGo4TUdFUUotcTNkeEo5bnBlU0QzR1NBY2pwbWViT3FhajIwLUIzNDNob0dJUm9SeFpXdDdGRU9pdHl2X1JfODFQbkFEeEU0UHRnTGNrR0ZQWm5LQ096cGFyd1pOb1JUc3JSXzRRWjhNclV3SG1QWi10UUotdi1hNmpfd1JHNG9lRU84dE9QU1l1c1VvdXBUNUt3SQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">AI Website Cloner: the 13,000-Star Claude Code Skill that Clones Any Website with a Single Prompt (2026)</span><span class="rp-item-extra">2026-04-28</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE9fbkxlYXZZWFlRdC11MWU1aXpzNkVfNS1fb01PQ0VmU2RWYzdMTmFzbEE2aWk2c1FIOHp5b3dtODA3bm1BeGFleEtoT2dlZm93QVR6a0U2QUdESWlBN0E?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Incrypted</span><span class="rp-item-title">AI Development: How to Clone Any Website With a Single Command</span><span class="rp-item-extra">2026-04-07</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/JCodesMore__ai-website-cloner-template.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

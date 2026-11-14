@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>openai/skills · GitHub Trending Rank Radar</title>
+<meta name="description" content="Skills Catalog for Codex">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="skills, openai, openai/skills, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/openai__skills">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="openai/skills · GitHub Trending Rank Radar">
+<meta property="og:description" content="Skills Catalog for Codex">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/openai__skills">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "openai/skills", "codeRepository": "https://github.com/openai/skills", "url": "https://zhuikan.com/repos/openai__skills", "description": "Skills Catalog for Codex", "author": {"@type": "Organization", "name": "openai", "url": "https://github.com/openai"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Python", "dateCreated": "2025-11-25"}</script>
+</head>
+<body data-repo="openai/skills" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">openai/skills</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="openai__skills"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/14957082?v=4&s=300" width="300" height="300" alt="openai avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">skills</div>
+      <a class="rp-side-owner" href="https://github.com/openai">openai</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/openai">openai</a>
+        <span class="rp-sep">/</span><span class="rp-name">skills</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Skills Catalog for Codex</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>28,723</b></span><span class="rp-stat" title="forks">⑂ <b>2,008</b></span><span class="rp-stat" title="watchers">👁 <b>162</b></span><span class="rp-stat" title="prs">⑃ <b>0</b></span><span class="rp-stat" title="issues">● <b>109</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Created 2025-11-25</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="openai__codex"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">codex</a><a class="rp-same-link" href="openai__whisper"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">whisper</a><a class="rp-same-link" href="openai__CLIP"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">CLIP</a><a class="rp-same-link" href="openai__baselines"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">baselines</a><a class="rp-same-link" href="openai__chatgpt-retrieval-plugin"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">chatgpt-retrieval-plugin</a><a class="rp-same-link" href="openai__codex-plugin-cc"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">codex-plugin-cc</a><a class="rp-same-link" href="openai__codex-security"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">codex-security</a><a class="rp-same-link" href="openai__evals"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">evals</a><a class="rp-same-link" href="openai__gpt-3"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">gpt-3</a><a class="rp-same-link" href="openai__gym"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">gym</a><a class="rp-same-link" href="openai__math"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">math</a><a class="rp-same-link" href="openai__openai-cookbook"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">openai-cookbook</a><a class="rp-same-link" href="openai__parameter-golf"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">parameter-golf</a><a class="rp-same-link" href="openai__shap-e"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">shap-e</a><a class="rp-same-link" href="openai__tart"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">tart</a><a class="rp-same-link" href="openai__tiktoken"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/14957082?v=4" alt="" loading="lazy">tiktoken</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/openai/skills">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+13</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+231</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+781</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">28,723</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,008</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">162</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">109</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">[!IMPORTANT]
+ This repository is deprecated. For current Codex skill and plugin examples, use the OpenAI Plugins repository. If you want to add your own skills to Codex, follow the Build plugins guide, which includes instructions for creating a skill-only plugin.
+
+ Agent Skills
+
+Agent Skills are folders of instructions, scripts, and resources that AI agents can discover and use to perform at specific tasks. Write once, use everywhere.
+
+Codex uses skills to help package capabilities that teams and individuals can use to complete specific tasks in a repeatable way. This repository catalogs skills for use and distribution with Codex.
+
+Learn more:
+- Using skills in Codex
+- Create custom skills in Codex
+- Agent Skills open standard
+
+ Installing a skill
+
+Skills in .system are automatically installed in the latest version of Codex.
+
+To install curated or experimental skills, you can use the $skill-installer inside Codex.
+
+Curated skills can be installed by name (defaults to skills/.curated):
+
+
+$skill-installer gh-address-comments
+
+
+For experimental skills, specify the skill folder. For example:
+
+
+$skill-installer install the create-plan skill from the .experimental folder
+
+
+Or provide the GitHub directory URL:
+
+
+$skill-installer install https://github.com/openai/skills/tree/main/skills/.experimental/create-plan
+
+
+After installing a skill, restart Codex to pick up new skills.
+
+ License
+
+The license of an individual skill can be found directly inside the skill&#x27;s directory inside the LICENSE.txt file.</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/openai/skills/issues/153"><span class="rp-item-num">#153</span><span class="rp-item-title">Experimental skills not found</span><span class="rp-item-extra">4 comments · 2026-02-11</span></a><a class="rp-item" href="https://github.com/openai/skills/issues/127"><span class="rp-item-num">#127</span><span class="rp-item-title">Skill installer: no update/reinstall path when destination already exists</span><span class="rp-item-extra">3 comments · 2026-02-08</span></a><a class="rp-item" href="https://github.com/openai/skills/issues/543"><span class="rp-item-num">#543</span><span class="rp-item-title">183c237a4da6353a803954a98947fdb80a24338f</span><span class="rp-item-extra">2 comments · 2026-09-27</span></a><a class="rp-item" href="https://github.com/openai/skills/issues/538"><span class="rp-item-num">#538</span><span class="rp-item-title">Update imagegen skill and fallback CLI for GPT Image 2.5</span><span class="rp-item-extra">2 comments · 2026-09-09</span></a><a class="rp-item" href="https://github.com/openai/skills/issues/536"><span class="rp-item-num">#536</span><span class="rp-item-title">☠️ I BUILT A BENCHMARK WHERE CODING AGENTS COME TO DIE</span><span class="rp-item-extra">2 comments · 2026-09-08</span></a><a class="rp-item" href="https://github.com/openai/skills/issues/528"><span class="rp-item-num">#528</span><span class="rp-item-title">[plugin-creator] Keep custom plugin and marketplace roots consistent</span><span class="rp-item-extra">2 comments · 2026-08-15</span></a><a class="rp-item" href="https://github.com/openai/skills/issues/519"><span class="rp-item-num">#519</span><span class="rp-item-title">quick_validate.py fails on UTF-8 SKILL.md under Windows CP949</span><span class="rp-item-extra">2 comments · 2026-08-04</span></a><a class="rp-item" href="https://github.com/openai/skills/issues/495"><span class="rp-item-num">#495</span><span class="rp-item-title">gh-address-comments fetch_comments.py resolves fork PRs against the head repo</span><span class="rp-item-extra">2 comments · 2026-06-16</span></a></div></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (7)</h3><div class="rp-list"><a class="rp-item" href="https://grenade.tw/blog/claude-skills-github-2026/" target="_blank" rel="noopener"><span class="rp-news-src">grenade</span><span class="rp-item-title">【2026】Claude Skills 怎麼選？精選 60 個工作流程與 GitHub 開源專案清單</span><span class="rp-item-extra">2026-03-31</span></a><a class="rp-item" href="https://www.soft4fun.net/tech/ai/github-claude-skills.htm" target="_blank" rel="noopener"><span class="rp-news-src">硬是要學SOFT4FUN</span><span class="rp-item-title">GitHub 破4,000星！史上最強 Agent Skills 技能包，讓 AI 助理瞬間變身頂尖開發與行銷團隊</span><span class="rp-item-extra">2026-03-10</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiTkFVX3lxTFBuUXlmanBFQ2ZQSU5UaG44QjJTOFVfajlFdklsdmZ1VUpMbGxaakxKcDI2cXNhdHhUWlR1ODRTck83b29FQXA1T3FNNDJ1dw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">36氪</span><span class="rp-item-title">狂揽2.4万星标：一行命令，AI会自己找技能了</span><span class="rp-item-extra">2026-07-05</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE5GZnlKYUU2aUVpdFVaQzdMN21xa1NWcy10dGhUQjc5dGdQZ3U0aXJqYkdNV0lDMDlFSHZQZUVjNGJaUDduWTNtb3A2YnRmZjFIS1FF?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">51CTO</span><span class="rp-item-title">Codex中必装的11个Skills</span><span class="rp-item-extra">2026-06-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTFBlSUFJUlUyX1J6bm5uZ2dCVXJLX3hTZlI1cnNwSnEtdHlKMmI3MHZjS1hwTXNUekFfMjRYNG9TcmlUclRXNzJqRFN5M3pjVkttWmh1SmpHOEhNT3diMHc?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">InfoQ.cn</span><span class="rp-item-title">谷歌开源“Agent Skill 超级工具箱”，云、库、引擎、AI 全线打通，开发者狂喜</span><span class="rp-item-extra">2026-04-30</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiSEFVX3lxTE5WMWVvYnlhX2ZnZEQwVjhmTFZfdFlnQThyeUpWa2gxQlhhUGswVDZXYVVWa1p0WWFZRlg4UTllQURLRWhYWE5taA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">智源社区</span><span class="rp-item-title">一个CLAUDE.md霸榜GitHub第一！蒸馏自Karpathy，6万码农抄作业</span><span class="rp-item-extra">2026-04-21</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMidEFVX3lxTE9DeUM1S3B1cTEzZ1BabGMzMjQxMjFUOGhYTzlsYUhNUVdTUk1GNDRXVE5kSUk4dEdUa0M1dEZ1dTZ5MEtFZFdBNS1EQ09sSW5KUW0taWo0RktZYTRaLWZOTVZYYTN3OVJzeFJVWWh3UWtmQ1Nf?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">新浪财经</span><span class="rp-item-title">最值得安装的20个Skills</span><span class="rp-item-extra">2026-04-20</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (14)</h3><div class="rp-list"><a class="rp-item" href="https://note.com/happy_hound3166/n/n90d822488a74?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">Syncing multiple AI agent skills with one npx skills command — Read 18 out of 18 times by Claude Code, Codex, and OpenCode</span><span class="rp-item-extra">2026-11-09</span></a><a class="rp-item" href="https://note.com/happy_hound3166/n/n5a5d6775d57d?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">Where do Claude Code, Codex, and OpenCode read skills from? — A diagram of how npx skills add lets all three read the same skill at once</span><span class="rp-item-extra">2026-11-09</span></a><a class="rp-item" href="https://www.unite.ai/cloudsmith-puts-ai-agent-skills-under-artifact-registry-controls/" target="_blank" rel="noopener"><span class="rp-news-src">Unite.AI</span><span class="rp-item-title">Cloudsmith Puts AI Agent Skills Under Artifact Registry Controls</span><span class="rp-item-extra">2026-11-09</span></a><a class="rp-item" href="https://finance.biggo.com/news/b51602e8-7606-47a0-bd91-2d33d7cfa0b2" target="_blank" rel="noopener"><span class="rp-news-src">finance.biggo</span><span class="rp-item-title">Microsoft Launches No-Exam &quot;Pro Badge,&quot; Certifying Skills via GitHub Usage History</span><span class="rp-item-extra">2026-11-04</span></a><a class="rp-item" href="https://devblogs.microsoft.com/dotnet/delivering-skills-in-nuget-packages/" target="_blank" rel="noopener"><span class="rp-news-src">devblogs</span><span class="rp-item-title">Delivering Skills in NuGet packages</span><span class="rp-item-extra">2026-11-03</span></a><a class="rp-item" href="https://indianexpress.com/article/technology/tech-news-technology/github-coo-kyle-daigle-interview-2026-10940849/" target="_blank" rel="noopener"><span class="rp-news-src">The Indian Express</span><span class="rp-item-title">‘We see more developers building and pushing way more projects’: GitHub COO Kyle Daigle</span><span class="rp-item-extra">2026-10-29</span></a><a class="rp-item" href="https://visualstudiomagazine.com/articles/2026/10/28/github-copilot-usage-metrics-now-identify-custom-skills-agents-and-mcp-servers.aspx" target="_blank" rel="noopener"><span class="rp-news-src">Visual Studio Magazine</span><span class="rp-item-title">GitHub Copilot Usage Metrics Now Identify Custom Skills, Agents and MCP Servers</span><span class="rp-item-extra">2026-10-27</span></a><a class="rp-item" href="https://www.i-scoop.eu/agent-skills-agentic-ai-foundation/" target="_blank" rel="noopener"><span class="rp-news-src">i-SCOOP</span><span class="rp-item-title">Agent Skills gets a neutral home, and your organisation’s know-how becomes portable</span><span class="rp-item-extra">2026-10-24</span></a><a class="rp-item" href="https://visualstudiomagazine.com/articles/2026/01/11/hand-on-with-new-github-copilot-agent-skills-in-vs-code.aspx" target="_blank" rel="noopener"><span class="rp-news-src">Visual Studio Magazine</span><span class="rp-item-title">Hands On with New Experimental GitHub Copilot &#x27;Agent Skills&#x27; in VS Code</span><span class="rp-item-extra">2026-01-10</span></a><a class="rp-item" href="https://github.blog/changelog/2025-12-18-github-copilot-now-supports-agent-skills/" target="_blank" rel="noopener"><span class="rp-news-src">github</span><span class="rp-item-title">GitHub Copilot now supports Agent Skills</span><span class="rp-item-extra">2025-12-18</span></a><details class="rp-news-more"><summary>4 more</summary><a class="rp-item" href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxOTGNVYVFmUmwtNmZVRFpITHZPdFVWUFVvR253VkRoMTBvanhRTTZTZVJQemtpcEROSmZLdFh1bENramdGTGp6Ym9BMGoySlZKNkFyeHN1NWZVdGJzdjd2eWRPc01hTmJ0UXMwajV5SEJiSm9ldVROUEY3YVNoeldqSEp5WmVHV3NUREtlNVlRV0tJdXd2SGFkZzlZX2d1Z3ZuaW1KbW42SFRnUDB4V0l3SGpKS21xdzhOWUUyR1hZYnN1YW5QMUppMXJidzVDdE00ZThwQg?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The Register</span><span class="rp-item-title">Microsoft admits certifications can be a drag, launches creds that recognize skills</span><span class="rp-item-extra">2026-11-05</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMifEFVX3lxTFBTN09RQ2FIUmZDOWxiMDVwcWNYSUdXWUxZbUo1cEM0SldBeGdheGhLZnl4c09tanNjRWZnRGlFNTU0eTI0RlpkbVEzQWtMa2VldWpNa3hDWUp1Y1VndFR1Qm9KQjdnNDJTQVAyS3I2b1RqYldxVmFNTW93eEQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">KDnuggets</span><span class="rp-item-title">5 Best GitHub Repositories for AI Agent Skills</span><span class="rp-item-extra">2026-10-21</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMizAFBVV95cUxPMldmbWdsTHhaSVY1ZDM3YzRoN2NxTnpVNU5SaXFXUC0zYW9GS2pBbnlDVWw3SEM5SUE1RU1IV25nZVRjemczQjFmS251bERxbUVhRlhQUDRmb00xWktneVFPMEUyV0d4YWZ6ZVdrdUtCV0dtWXFMT0tNRkFramRpaUtGOUZlYWxMMkp3M19DdGx4a1c3ODFCYWh6RVBDajlndndWSnM3cGVkLTRWd1FLVURCZ1Z1MzU0NGg5SXdWcGRCWGxqSXlYOF9nWnU?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Microsoft</span><span class="rp-item-title">New and improved: GitHub Copilot harness, agent skills, and richer context</span><span class="rp-item-extra">2026-09-02</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxPUk5Hc0xPMmdNTjFFM0NfNkFvd0sxNVZaLVYzS2RqZGVpSHNpVW00bGFOZmFhNjlYMWhpeUZYWGRlZUVPUk1CVnY5Q2lscVVaeDZnYnR1X3Q5QnFyeVpnWGtGaHZyTXJZNDdjNUo0MUE2dDBTV3B0SjEtUkQ0N1pnbkEyMllreEo0dmtNU1lsZ3Fta3hDWGtVZzJFc0ltR3BpaUJyU2NRSkZidw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The GitHub Blog</span><span class="rp-item-title">Copilot code review: Agent skills and MCP now generally available</span><span class="rp-item-extra">2026-07-29</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/openai__skills.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>czy0729/Bangumi · GitHub Trending Rank Radar</title>
+<meta name="description" content=":electron: An unofficial https://bgm.tv ui first app client for Android and iOS, built with React Native. 一个无广告、以爱好为驱动、不以盈利为目的、专门做 ACG 的类似豆瓣的追番记录，bgm.tv 第三方客户端。为移动端重新设计，内置大量加强的网页端难以实现的功能，且提供了相当的自定义选项。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Bangumi, czy0729, czy0729/Bangumi, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/czy0729__Bangumi">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="czy0729/Bangumi · GitHub Trending Rank Radar">
+<meta property="og:description" content=":electron: An unofficial https://bgm.tv ui first app client for Android and iOS, built with React Native. 一个无广告、以爱好为驱动、不以盈利为目的、专门做 ACG 的类似豆瓣的追番记录，bgm.tv 第三方客户端。为移动端重新设计，内置大量加强的网页端难以实现的功能，且提供了相当的自定义选项。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/czy0729__Bangumi">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "czy0729/Bangumi", "codeRepository": "https://github.com/czy0729/Bangumi", "url": "https://zhuikan.com/repos/czy0729__Bangumi", "description": ":electron: An unofficial https://bgm.tv ui first app client for Android and iOS, built with React Native. 一个无广告、以爱好为驱动、不以盈利为目的、专门做 ACG 的类似豆瓣的追番记录，bgm.tv 第三方客户端。为移动端重新设计，内置大量加强的网页端难以实现的功能，且提供了相当的自定义选项。", "author": {"@type": "Organization", "name": "czy0729", "url": "https://github.com/czy0729"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "TypeScript", "dateCreated": "2019-05-08"}</script>
+</head>
+<body data-repo="czy0729/Bangumi" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">czy0729/Bangumi</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="czy0729__Bangumi"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/13514316?u=7e27962f47a93feb7020be44ca7801be3ba9e543&amp;v=4&s=300" width="300" height="300" alt="czy0729 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Bangumi</div>
+      <a class="rp-side-owner" href="https://github.com/czy0729">czy0729</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/czy0729">czy0729</a>
+        <span class="rp-sep">/</span><span class="rp-name">Bangumi</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">:electron: An unofficial https://bgm.tv ui first app client for Android and iOS, built with React Native. 一个无广告、以爱好为驱动、不以盈利为目的、专门做 ACG 的类似豆瓣的追番记录，bgm.tv 第三方客户端。为移动端重新设计，内置大量加强的网页端难以实现的功能，且提供了相当的自定义选项。 目前已适配 iOS / Android。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>6,214</b></span><span class="rp-stat" title="forks">⑂ <b>169</b></span><span class="rp-stat" title="watchers">👁 <b>22</b></span><span class="rp-stat" title="prs">⑃ <b>16</b></span><span class="rp-stat" title="issues">● <b>318</b></span><span class="rp-stat" title="releases">▤ <b>248</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">Created 2019-05-08</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/czy0729/Bangumi">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+121</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">6,214</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">169</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">22</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">16</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">318</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">248</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">!header
+
+
+  
+  
+  
+  
+  
+  
+
+
+ Bangumi
+
+一个基于 react-native 的 Bangumi 第三方客户端
+
+Bangumi 是一个用于管理追番进度（不限于动漫、音乐、日剧、游戏、AVG），发现和讨论番组的网站
+
+iOS 和安卓都做了兼容，并最大限度保持一致
+
+目前已开发不少于 100 个页面，基于移动端重新设计布局，几乎涵盖网站所有页面
+
+本人并没有原生开发经验，用于练手 react-native，希望通过这个平台去学习更多
+
+更多涉及到本项目的说明，可前往 语雀 查看
+
+ENGLISH
+
+ 下载
+
+安卓 APK 下载 | AltStore 侧载 | AltStore 直接添加源 | iOS 上当前能使用的方法 | Expo 主页
+
+- Google Play 被举报下架，暂搁置
+
+- iOS 付费开发者账号已过期，期间没能过审，因涉及到社区、版权敏感、备案等问题，不考虑再送审了
+
+ 功能
+
+ 基本功能（网站原有功能）
+
+带链接的支持网页预览（只能看不能操作）
+
+- 番组进度管理
+- 条目、角色详情
+- 时间线
+- 超展开、帖子
+- 时光机、用户空间
+- 不限于 每日放送、搜索、排行榜、新番、目录、年鉴、标签、日志、小组
+
+ 扩展功能
+
+- 其他站点（bilibili、豆瓣）有限同步到 bgm.tv 功能
+- 封面图片和大部分脱敏静态数据覆盖到自费 CDN 中间层，能更稳定快速地展示数据（尽管网页版遇到很慢或者挂掉客户端也能正常获取数据）
+- 照片墙、猜你喜欢、AI 推荐、关联系列、优质目录、评分月刊、分类排行
+- 词云：条目、人物、帖子
+- ~~当季番剧精准到单集网络播放源~~、源头自定义管理，找番剧、书籍、游戏
+- 番剧截屏、游戏截图预览
+- 多规则超展开屏蔽、用户拉黑功能
+- 本地文件夹条目管理（支持文件夹罗马音刮削）
+- 小圣杯（角色交易空气游戏，客户端独立设计 UI 和交互）
+
+ 预览
+
+以下为 2025 年 6 月份，一些 UI 相对不重复的页面截屏。图片无法正常加载也可以前往 语雀 查看。
+
+!00
+!10
+!20
+!30
+!40
+!60
+!70
+!80
+!90
+!100
+!110
+!120
+
+ 版本
+
+当前版本图文说明
+
+所有更新 CHANGELOG
+
+ 在线
+
+基于 @storybook/react-native 6.5 生成的 iframe.html，尽量少入侵原项目的基础上，补全了一个完整的单页面流程（当然这样是不考虑性能问题的，不可能与正常开发的，例如使用 Next.js 的相提并论）。
+
+关键代码实现：navigate | window popstate
+
+因现在 expo 在网页上面已经很成熟，若以后有空再考虑使用同一套方案补全网页端。
+
+SPA 应用预览（网页收藏管理条目相关功能不定期开发中，已支持基本的信息展示，移动端最佳）
+
+Storybook 组件面板预览
+
+ 开发心得
+
+从 react-native@0.37 就开始持续开发，当年并没有今天如此多简单而且优秀的方案和第三方库，比如 react hooks、react-native-reanimated、expo libraries，甚至连 Pressable、color scheme 这些概念都没有。至于 TypeScript 是最近两三年才开始慢慢补充的，所以很多最初的设计并没考虑过类型问题。最近还涌现了很多一站式解决方案，比如 expo-router，ones 都能在客户端和网页端上直出高性能构建。现在代码上会存在大量老旧的又或者与你现在了解到的 react-native 很多雷同的实现，都已经很难通过使用新的方案迭代过来。
+
+使用 react-native 开发客户端，想做到流畅是需要下很大的功夫的，写法没问题的话一样流畅够用。其实跟开发网页应用没多大区别，无非就是多了一些概念而且还需要转变思路。几年开发下来，关键影响到流畅度，无非就几个点：
+
+- 尽可能不要渲染过大的图片（是所有里面最影响流畅性的）
+- 尽量减少同时请求数、慢请求（包括图片的请求）
+- 尽量缓存计算过的结果
+- 对不可见区域延迟渲染（不像浏览器有现成的）
+- 多写函数式编程、异步逻辑，少用 this、循环
+- 如果可以，减少嵌套层数（网页影响更大）
+
+ 本地开发
+
+ 关于环境
+
+
+详细
+
+本人一直在 mac 环境下开发，iOS 使用 expo 客户端调试，安卓跑真机 usb 调试。
+
+由于 4 年的迭代，不管是对于本项目，还是最初使用的 expo 来说，都已经大相径庭。iOS 目前只能跑在 expo 上，而安卓只能跑在 metro 上。
+
+在 iOS 上想充分使用 expo 客户端简化调试流程，所以不会引入 expo 不支持的第三方库。而安卓上面想要最高的性能，所以后期已经从 expo 上面 eject 出来了，用上了很多第三方的性能优化库替代了原来的组件。
+
+若你想在本地调试，不要在根目录安装包，而请先到 ./packages/[目标环境]/ 下使用 yarn 安装包，然后使用命令 yarn env [xxx] 来切换到目标开发环境，最后请参考这个时候根目录的 package.json 中的命令开发。通常预置的本地调试命令是 yarn dev。多环境切换与补丁管理的详细说明见 packages/README.md。
+
+遇到跑不起来，不要太过折腾，推荐在运行本项目之前，就应该使用官方提供的工作流预先把所有环境需要的库都安装好了。window 和 mac 的环境差异还是比较大的，可以查阅 Expo 官方文档。
+
+
+
+ 关于 NPM
+
+
+详细
+
+不要使用 taobao 源头，可能会在跑环境时提示不允许代理。
+
+bash
+npm config set registry https://registry.npmjs.org
+
+
+国内环境，首次下载包有可能会异常地慢。因用了很多旧的依赖包，里面的包版本依赖混乱，为了不出错请使用 yarn 安装。
+
+bash
+git clone https://github.com/czy0729/Bangumi
+cd ./Bangumi
+yarn
+
+
+
+
+ 安卓真机 usb 调试遇到的问题
+
+
+详细
+
+不能安装请尝试在命令前添加 sudo。
+
+安卓系统请打开开发者调试模式，需要至少进行一次打开 Android Studio 的同时连接 usb 允许添加调试。
+
+调试请保证给应用安装权限，允许悬浮窗权限。
+
+遇到 spawnSync adb ENOENT，参考 stackoverflow。
+
+第一次就遇到打包失败，看看是不是遇到 read timeout 等问题，表示需要科学上网。明明前一天还能打包成功，后一天就失败，也可能是依赖包无法获取的问题，因为 gradlew 依赖包只有 24 小时的缓存时间，尝试使用 --offline 命令。
+
+
+
+ 常见错误，包括 mac M1
+
+
+详细
+
+已在 mac M1 上调试成功，最近购入了 M1，尝试实用新环境，iOS expo 运行一路顺风，但是打包 apk 遇到很多问题，总结如下：
+
+- 一定要使用正确的 JAVA </pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/czy0729__Bangumi.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>qinguoyi/TinyWebServer · GitHub Trending Rank Radar</title>
+<meta name="description" content=":fire: Linux下C++轻量级WebServer服务器">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="TinyWebServer, qinguoyi, qinguoyi/TinyWebServer, github stars, github trending, star growth, star history, 开源项目, 星标增长, webserver, http-server, tinywebserver, cpp, webbench">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/qinguoyi__TinyWebServer">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="qinguoyi/TinyWebServer · GitHub Trending Rank Radar">
+<meta property="og:description" content=":fire: Linux下C++轻量级WebServer服务器">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/qinguoyi__TinyWebServer">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "qinguoyi/TinyWebServer", "codeRepository": "https://github.com/qinguoyi/TinyWebServer", "url": "https://zhuikan.com/repos/qinguoyi__TinyWebServer", "description": ":fire: Linux下C++轻量级WebServer服务器", "author": {"@type": "Organization", "name": "qinguoyi", "url": "https://github.com/qinguoyi"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "C++", "dateCreated": "2019-05-29", "keywords": "webserver,http-server,tinywebserver,cpp,webbench"}</script>
+</head>
+<body data-repo="qinguoyi/TinyWebServer" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">qinguoyi/TinyWebServer</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="qinguoyi__TinyWebServer"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/25760295?u=a4474a249cca515146041e4b6bfaf5f448d9a113&amp;v=4&s=300" width="300" height="300" alt="qinguoyi avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">TinyWebServer</div>
+      <a class="rp-side-owner" href="https://github.com/qinguoyi">qinguoyi</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/qinguoyi">qinguoyi</a>
+        <span class="rp-sep">/</span><span class="rp-name">TinyWebServer</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">:fire: Linux下C++轻量级WebServer服务器</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>19,763</b></span><span class="rp-stat" title="forks">⑂ <b>4,254</b></span><span class="rp-stat" title="watchers">👁 <b>97</b></span><span class="rp-stat" title="prs">⑃ <b>49</b></span><span class="rp-stat" title="issues">● <b>268</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/webserver">webserver</a><a class="rp-topic" href="https://github.com/topics/http-server">http-server</a><a class="rp-topic" href="https://github.com/topics/tinywebserver">tinywebserver</a><a class="rp-topic" href="../tags/cpp">cpp</a><a class="rp-topic" href="https://github.com/topics/webbench">webbench</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C++</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2019-05-29</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/qinguoyi/TinyWebServer">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">19,763</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">4,254</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">97</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">49</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">268</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">TinyWebServer
+===============
+Linux下C++轻量级Web服务器，助力初学者快速实践网络编程，搭建属于自己的服务器.
+
+ 使用 线程池 + 非阻塞socket + epoll(ET和LT均实现) + 事件处理(Reactor和模拟Proactor均实现) 的并发模型
+ 使用状态机解析HTTP请求报文，支持解析GET和POST请求
+ 访问服务器数据库实现web端用户注册、登录功能，可以请求服务器图片和视频文件
+ 实现同步/异步日志系统，记录服务器运行状态
+ 经Webbench压力测试可以实现上万的并发连接数据交换
+
+
+写在前面
+----
+ 本项目开发维护过程中，很多童鞋曾发红包支持，我都一一谢绝。我现在不会，将来也不会将本项目包装成任何课程售卖，更不会开通任何支持通道。
+ 目前网络上有人或对本项目，或对游双大佬的项目包装成课程售卖。请各位童鞋擦亮眼，辨识各大学习/求职网站的C++服务器项目，不要盲目付费。
+ 有面试官大佬通过项目信息在公司内找到我，发现很多童鞋简历上都用了这个项目。但，在面试过程中发现很多童鞋通过本项目入门了，但是对于一些东西还是属于知其然不知其所以然的状态，需要加强下基础知识的学习，推荐认真阅读下
+     《unix环境高级编程》
+     《unix网络编程》
+ 感谢各位大佬，各位朋友，各位童鞋的认可和支持。如果本项目能带你入门，将是我莫大的荣幸。
+
+
+目录
+-----
+
+| 概述 | 框架 | Demo演示 | 压力测试 |更新日志 |源码下载 | 快速运行 | 个性化运行 | 庖丁解牛 | CPP11实现 |致谢 |
+|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+
+
+概述
+----------
+
+  C/C++
+  B/S模型
+  线程同步机制包装类
+  http连接请求处理类
+  半同步/半反应堆线程池
+  定时器处理非活动连接
+  同步/异步日志系统   
+  数据库连接池 
+  同步线程注册和登录校验 
+  简易服务器压力测试
+
+
+框架
+-------------
+ 
+
+Demo演示
+----------
+  注册演示
+
+ 
+
+  登录演示
+
+ 
+
+  请求图片文件演示(6M)
+
+ 
+
+  请求视频文件演示(39M)
+
+ 
+
+
+压力测试
+-------------
+在关闭日志后，使用Webbench对服务器进行压力测试，对listenfd和connfd分别采用ET和LT模式，均可实现上万的并发连接，下面列出的是两者组合后的测试结果. 
+
+  Proactor，LT + LT，93251 QPS
+
+ 
+
+  Proactor，LT + ET，97459 QPS
+
+ 
+
+  Proactor，ET + LT，80498 QPS
+
+ 
+
+  Proactor，ET + ET，92167 QPS
+
+ 
+
+  Reactor，LT + ET，69175 QPS
+
+ 
+
+  并发连接总数：10500
+  访问服务器时间：5s
+  所有访问均成功
+
+注意： 使用本项目的webbench进行压测时，若报错显示webbench命令找不到，将可执行文件webbench删除后，重新编译即可。
+
+更新日志
+-------
+- [x] 解决请求服务器上大文件的Bug
+- [x] 增加请求视频文件的页面
+- [x] 解决数据库同步校验内存泄漏
+- [x] 实现非阻塞模式下的ET和LT触发，并完成压力测试
+- [x] 完善lock.h中的封装类，统一使用该同步机制
+- [x] 改进代码结构，更新局部变量懒汉单例模式
+- [x] 优化数据库连接池信号量与代码结构
+- [x] 使用RAII机制优化数据库连接的获取与释放
+- [x] 优化代码结构，封装工具类以减少全局变量
+- [x] 编译一次即可，命令行进行个性化测试更加友好
+- [x] main函数封装重构
+- [x] 新增命令行日志开关，关闭日志后更新压力测试结果
+- [x] 改进编译方式，只配置一次SQL信息即可
+- [x] 新增Reactor模式，并完成压力测试
+
+源码下载
+-------
+目前有两个版本，版本间的代码结构有较大改动，文档和代码运行方法也不一致。重构版本更简洁，原始版本(raw_version)更大保留游双代码的原汁原味，从原始版本更容易入手.
+
+如果遇到github代码下载失败，或访问太慢，可以从以下链接下载，与Github最新提交同步.
+
+ 重构版本下载地址 : BaiduYun
+      提取码 : vsqq
+ 原始版本(raw_version)下载地址 : BaiduYun
+     提取码 : 9wye
+     原始版本运行请参考原始文档
+
+快速运行
+------------
+ 服务器测试环境
+	 Ubuntu版本16.04
+	 MySQL版本5.7.29
+ 浏览器测试环境
+	 Windows、Linux均可
+	 Chrome
+	 FireFox
+	 其他浏览器暂无测试
+
+ 测试前确认已安装MySQL数据库
+
+    C++
+    // 建立yourdb库
+    create database yourdb;
+
+    // 创建user表
+    USE yourdb;
+    CREATE TABLE user(
+        username char(50) NULL,
+        passwd char(50) NULL
+    )ENGINE=InnoDB;
+
+    // 添加数据
+    INSERT INTO user(username, passwd) VALUES(&#x27;name&#x27;, &#x27;passwd&#x27;);
+    
+
+ 修改main.cpp中的数据库初始化信息
+
+    C++
+    //数据库登录名,密码,库名
+    string user = &quot;root&quot;;
+    string passwd = &quot;root&quot;;
+    string databasename = &quot;yourdb&quot;;
+    
+
+ build
+
+    C++
+    sh ./build.sh
+    
+
+ 启动server
+
+    C++
+    ./server
+    
+
+ 浏览器端
+
+    C++
+    ip:9006
+    
+
+个性化运行
+------
+
+C++
+./server [-p port] [-l LOGWrite] [-m TRIGMode] [-o OPT_LINGER] [-s sql_num] [-t thread_num] [-c close_log] [-a actor_model]
+
+
+温馨提示:以上参数不是非必须，不用全部使用，根据个人情况搭配选用即可.
+
+ -p，自定义端口号
+	 默认9006
+ -l，选择日志写入方式，默认同步写入
+	 0，同步写入
+	 1，异步写入
+ -m，listenfd和connfd的模式组合，默认使用L</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/qinguoyi/TinyWebServer/issues/8"><span class="rp-item-num">#8</span><span class="rp-item-title">常见问题与解决方案</span><span class="rp-item-extra">126 comments · 2020-04-08</span></a><a class="rp-item" href="https://github.com/qinguoyi/TinyWebServer/issues/170"><span class="rp-item-num">#170</span><span class="rp-item-title">网页打不开</span><span class="rp-item-extra">13 comments · 2022-08-26</span></a><a class="rp-item" href="https://github.com/qinguoyi/TinyWebServer/issues/222"><span class="rp-item-num">#222</span><span class="rp-item-title">执行最后一步  ./server  出现了 段错误 (核心已转储) 的错误</span><span class="rp-item-extra">9 comments · 2023-04-24</span></a><a class="rp-item" href="https://github.com/qinguoyi/TinyWebServer/issues/274"><span class="rp-item-num">#274</span><span class="rp-item-title">已解决！运行成功但是网页无法连接</span><span class="rp-item-extra">8 comments · 2024-04-29</span></a><a class="rp-item" href="https://github.com/qinguoyi/TinyWebServer/issues/230"><span class="rp-item-num">#230</span><span class="rp-item-title">我感觉代码有点问题。</span><span class="rp-item-extra">7 comments · 2023-06-03</span></a><a class="rp-item" href="https://github.com/qinguoyi/TinyWebServer/issues/80"><span class="rp-item-num">#80</span><span class="rp-item-title">使用 MySQL 8.0 执行 ./server 日志出现 MySQL Error</span><span class="rp-item-extra">6 comments · 2021-11-10</span></a><a class="rp-item" href="https://github.com/qinguoyi/TinyWebServer/issues/266"><span class="rp-item-num">#266</span><span class="rp-item-title">为什么我执行完 ./server 直接断开了，没有进入循环</span><span class="rp-item-extra">5 comments · 2024-03-19</span></a><a class="rp-item" href="https://github.com/qinguoyi/TinyWebServer/issues/219"><span class="rp-item-num">#219</span><span class="rp-item-title">oop!unknow header</span><span class="rp-item-extra">6 comments · 2023-04-10</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/qinguoyi__TinyWebServer.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

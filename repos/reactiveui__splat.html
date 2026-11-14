@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>reactiveui/splat · GitHub Trending Rank Radar</title>
+<meta name="description" content="Cross-platform building blocks for .NET applications. Provides service location and dependency resolution, logging, platform-neutral images, colours and geometry, and unit test and design mode detecti">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="splat, reactiveui, reactiveui/splat, github stars, github trending, star growth, star history, 开源项目, 星标增长, nlog, logging, cross-platform, hacktoberfest, splat-locators, ioc">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/reactiveui__splat">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="reactiveui/splat · GitHub Trending Rank Radar">
+<meta property="og:description" content="Cross-platform building blocks for .NET applications. Provides service location and dependency resolution, logging, platform-neutral images, colours and geometry, and unit test and design mode detecti">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/reactiveui__splat">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "reactiveui/splat", "codeRepository": "https://github.com/reactiveui/splat", "url": "https://zhuikan.com/repos/reactiveui__splat", "description": "Cross-platform building blocks for .NET applications. Provides service location and dependency resolution, logging, platform-neutral images, colours and geometry, and unit test and design mode detecti", "author": {"@type": "Organization", "name": "reactiveui", "url": "https://github.com/reactiveui"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "C#", "dateCreated": "2013-06-30", "keywords": "nlog,logging,cross-platform,hacktoberfest,splat-locators,ioc"}</script>
+</head>
+<body data-repo="reactiveui/splat" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">reactiveui/splat</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="reactiveui__splat"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/2327577?v=4&s=300" width="300" height="300" alt="reactiveui avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">splat</div>
+      <a class="rp-side-owner" href="https://github.com/reactiveui">reactiveui</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/reactiveui">reactiveui</a>
+        <span class="rp-sep">/</span><span class="rp-name">splat</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Cross-platform building blocks for .NET applications. Provides service location and dependency resolution, logging, platform-neutral images, colours and geometry, and unit test and design mode detection.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>991</b></span><span class="rp-stat" title="forks">⑂ <b>138</b></span><span class="rp-stat" title="watchers">👁 <b>50</b></span><span class="rp-stat" title="prs">⑃ <b>1,511</b></span><span class="rp-stat" title="issues">● <b>205</b></span><span class="rp-stat" title="releases">▤ <b>130</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/nlog">nlog</a><a class="rp-topic" href="https://github.com/topics/logging">logging</a><a class="rp-topic" href="../tags/cross-platform">cross-platform</a><a class="rp-topic" href="../tags/hacktoberfest">hacktoberfest</a><a class="rp-topic" href="https://github.com/topics/splat-locators">splat-locators</a><a class="rp-topic" href="https://github.com/topics/ioc">ioc</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C#</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2013-06-30</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="reactiveui__refit"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/2327577?v=4" alt="" loading="lazy">refit</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/reactiveui/splat">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">21.0.0</span><a class="rp-dl-a" href="https://github.com/reactiveui/splat/releases/tag/v21.0.0">21.0.0 ↓</a><span class="rp-dl-ver">21.0.0</span><span class="rp-dl-date">2026-08-03</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">991</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">138</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">50</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,511</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">205</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">130</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">!Build 
+
+
+        
+
+
+        
+
+
+
+
+ Splat
+
+ Table of Contents
+
+- What does it do?
+- How do I install?
+- Detecting whether you&#x27;re in a unit test runner
+- Service Location
+  - The Default Dependency Resolver (v19+)
+  - AppBuilder and IModule
+- Logging
+- Cross platform drawing
+- Cross-platform Image Loading
+- Detecting if you&#x27;re in design mode
+- Application Performance Monitoring
+- Dependency Resolver Performance Benchmarks
+- Contribute
+
+Certain types of things are basically impossible to do in cross-platform
+mobile code today, yet there&#x27;s no reason why. Writing a ViewModel that handles
+loading a gallery of pictures from disk will be completely riddled with
+ifdefs and basically unreadable.
+
+Splat aims to fix that, by providing a usable leaky abstraction above platform
+code. It is leaky, because it always provides an extension method ToNative()
+and FromNative(), which converts the abstraction to the platform-specific
+version. Load the image in the cross-platform code, then call ToNative() in
+your view to actually display it.
+
+ What does it do?
+
+Splat currently supports:
+
+ Cross-platform image loading/saving
+ A port of System.Drawing.Color for portable libraries
+ Cross-platform geometry primitives (PointF, SizeF, RectangleF), as well as a bunch of
+  additional extension methods to make using them easier.
+ A way to detect whether you&#x27;re in a Unit Test runner / Design Mode
+ A cross-platform logging framework
+ Simple yet flexible Service Location
+
+ Core Team
+
+
+  
+    
+      
+        
+        
+        Glenn Watson
+        Melbourne, Australia
+      
+      
+        
+        
+        Rodney Littles II
+        Texas, USA
+      
+    
+    
+      
+        
+        
+        David Vreony
+        UK
+      
+      
+        
+        
+        Chris Pulman
+        UK
+      
+    
+  
+
+
+ How do I install?
+
+Always Be NuGetting. Package contains binaries for:
+
+ .NET Framework 4.6.2, .NET Framework 4.7.2, .NET Standard 2.0, .NET 6.0, and .NET 8.0
+- Works with:
+   WPF
+   Windows Forms
+   WinUI 3
+   Maui (WinUI, Android, iOS and Mac)
+   Avalonia
+
+ Detecting whether you&#x27;re in a unit test runner
+
+cs
+// If true, we are running unit tests
+ModeDetector.InUnitTestRunner();  
+
+
+ Service Location
+
+Splat provides a simple service location implementation that is optimized for
+Desktop and Mobile applications, while still remaining reasonably flexible.
+
+There are 2 parts to the locator design:
+
+ AppLocator.Current The property to use to retrieve services. AppLocator.Current is a static variable that can be set on startup, to adapt Splat to other DI/IoC frameworks. We&#x27;re currently working from v7 onward to make it easier to use your DI/IoC framework of choice. (see below)
+ AppLocator.CurrentMutable The property to use to register services
+
+To get a service:
+
+cs
+// To get a single service registration
+var toaster = AppLocator.Current.GetService();
+
+// To get all service registrations
+var allToasterImpls = AppLocator.Current.GetServices();
+
+
+Locator.Current is a static variable that can be se</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/reactiveui/splat/issues/1079"><span class="rp-item-num">#1079</span><span class="rp-item-title">Dependency Dashboard</span><span class="rp-item-extra">0 comments · 2024-02-16</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/reactiveui/splat/discussions/1729"><span class="rp-item-num">#1729</span><span class="rp-item-title">How to integrate with Microsoft.Extensions.DependencyInjection and WPF before Application object is created</span><span class="rp-item-extra">2 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/reactiveui/splat/discussions/1070"><span class="rp-item-num">#1070</span><span class="rp-item-title">How to do scoped registrations?</span><span class="rp-item-extra">2 comments · 2024-01-19</span></a><a class="rp-item" href="https://github.com/reactiveui/splat/discussions/984"><span class="rp-item-num">#984</span><span class="rp-item-title">Is the locator thread safe？</span><span class="rp-item-extra">1 comments · 2023-01-11</span></a><a class="rp-item" href="https://github.com/reactiveui/splat/discussions/769"><span class="rp-item-num">#769</span><span class="rp-item-title">Welcome to splat Discussions!</span><span class="rp-item-extra">0 comments · 2021-09-14</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/reactiveui/splat/releases"><b>21.0.0</b> <span class="rp-rel-tag">v21.0.0</span> <span class="rp-item-extra">2026-08-03</span></a><pre class="rp-pre">🗞️ What&#x27;s Changed
+
+ ✨ Features
+  reactiveui/splat@8cfe76a7b7023f4c1be72113a20cff2b7d77ee96 feat(skiasharp): add a Skia bitmap loader package (1674) @glennawatson
+
+ 🐛 Fixes
+  reactiveui/splat@4639f7b7d7594b4c3bbb1b81ca027dac15ea0224 fix(drawing): honour the requested size when decoding on Android and Cocoa (1673) @glennawatson
+  reactiveui/splat@f110782f393e8c02621b6307cf64876be30a2c2d fix(drawing): keep the aspect ratio when a decode size is requested (1669) @glennawatson
+  reactiveui/splat@9e63cc0bdbabb8b90bea06f5d0730eb054de0f7d fix(simpleinjector): key registrations by contract and stop dro</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/reactiveui__splat.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

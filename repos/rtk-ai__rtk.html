@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rtk-ai/rtk · GitHub Trending Rank Radar</title>
+<meta name="description" content="CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="rtk, rtk-ai, rtk-ai/rtk, github stars, github trending, star growth, star history, 开源项目, 星标增长, agentic-coding, ai-coding, anthropic, claude-code, cli, command-line-tool">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/rtk-ai__rtk">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="rtk-ai/rtk · GitHub Trending Rank Radar">
+<meta property="og:description" content="CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/rtk-ai__rtk">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "rtk-ai/rtk", "codeRepository": "https://github.com/rtk-ai/rtk", "url": "https://zhuikan.com/repos/rtk-ai__rtk", "description": "CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies", "author": {"@type": "Organization", "name": "rtk-ai", "url": "https://github.com/rtk-ai"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Rust", "dateCreated": "2026-01-22", "keywords": "agentic-coding,ai-coding,anthropic,claude-code,cli,command-line-tool,cost-reduction,developer-tools,llm,open-source"}</script>
+</head>
+<body data-repo="rtk-ai/rtk" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">rtk-ai/rtk</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="rtk-ai__rtk"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/258253854?v=4&s=300" width="300" height="300" alt="rtk-ai avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">rtk</div>
+      <a class="rp-side-owner" href="https://github.com/rtk-ai">rtk-ai</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/rtk-ai">rtk-ai</a>
+        <span class="rp-sep">/</span><span class="rp-name">rtk</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily">daily <b>#144</b></a><a class="rp-board-chip" href="../?board=monthly">monthly <b>#160</b></a><a class="rp-board-chip" href="../?board=total">total <b>#196</b></a></div>
+    </div>
+    <p class="rp-desc">CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>86,534</b></span><span class="rp-stat" title="forks">⑂ <b>5,546</b></span><span class="rp-stat" title="watchers">👁 <b>215</b></span><span class="rp-stat" title="prs">⑃ <b>2,965</b></span><span class="rp-stat" title="issues">● <b>2,000</b></span><span class="rp-stat" title="releases">▤ <b>481</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/agentic-coding">agentic-coding</a><a class="rp-topic" href="https://github.com/topics/ai-coding">ai-coding</a><a class="rp-topic" href="../tags/anthropic">anthropic</a><a class="rp-topic" href="../tags/claude-code">claude-code</a><a class="rp-topic" href="../tags/cli">cli</a><a class="rp-topic" href="https://github.com/topics/command-line-tool">command-line-tool</a><a class="rp-topic" href="https://github.com/topics/cost-reduction">cost-reduction</a><a class="rp-topic" href="../tags/developer-tools">developer-tools</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2026-01-22</span><a class="rp-meta-bit rp-home" href="https://www.rtk-ai.app" rel="noopener">www.rtk-ai.app</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/rtk-ai/rtk">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.2.0</span><a class="rp-dl-a" href="https://github.com/rtk-ai/rtk/releases/tag/v1.2.0">v1.2.0 ↓</a><span class="rp-dl-ver">1.2.0</span><span class="rp-dl-date">2026-11-08</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+166</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1,088</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num">86,534</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">5,546</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">215</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">2,965</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">2,000</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">481</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">高性能 CLI 代理，为你的智能体削减多达 90% 的 bash 输出
+
+
+
+  
+  
+  
+  
+  
+
+
+
+  官网 &amp;bull;
+  安装 &amp;bull;
+  故障排除 &amp;bull;
+  架构 &amp;bull;
+  Discord
+
+
+
+  English &amp;bull;
+  Francais &amp;bull;
+  中文 &amp;bull;
+  日本語 &amp;bull;
+  한국어 &amp;bull;
+  Espanol
+
+
+---
+
+rtk 在命令输出到达 LLM 上下文之前进行过滤和压缩。单一 Rust 二进制文件，零依赖， 完整说明：RTK 的节省是如何计算的
+
+ 安装
+
+ Homebrew（推荐）
+
+bash
+brew install rtk
+
+
+ winget（Windows）
+
+Windows 上最简单的安装方式 — 一条命令，无需配置 PATH：
+
+powershell
+winget install rtk-ai.rtk
+
+
+ 快速安装（Linux/macOS）
+
+bash
+curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh
+
+
+ Cargo
+
+bash
+cargo install --git https://github.com/rtk-ai/rtk rtk
+
+
+ Apache-2.0 版本（仅开源，允许商业使用）
+
+同一个 rtk 二进制文件，构建时不包含 BUSL-1.1 压缩引擎：钩子重写系统和所有命令过滤器，仅遵循 Apache-2.0。
+
+bash
+curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | RTK_EDITION=oss sh
+brew install rtk-ai/tap/rtk-oss
+cargo install --git https://github.com/rtk-ai/rtk rtk --no-default-features
+
+
+ 验证
+
+bash
+rtk --version    应显示 &quot;rtk 0.27.x&quot;
+rtk gain         应显示 token 节省统计
+
+
+ 快速开始
+
+bash
+ 1. 为对应的 AI 工具安装 hook
+rtk init --global                Claude Code（默认）
+rtk init --agent trae            Trae（项目级）
+rtk init --global --agent trae   Trae（全局）
+
+ 2. 重启相应的 AI 工具，然后测试
+git status   自动重写为 rtk git status
+
+
+ 工作原理
+
+
+  没有 rtk：                                      使用 rtk：
+
+  Claude  --git status--  shell  --  git         Claude  --git status--  RTK  --  git
+    ^                                   |            ^                      |          |
+    |        ~2,000 tokens（原始）       |            |   ~200 tokens        | 过滤     |
+    +-----------------------------------+            +------- （已过滤）-----+----------+
+
+
+四种策略：
+
+1. 智能过滤 - 去除噪音（注释、空白、样板代码）
+2. 分组 - 聚合相似项（按目录分文件，按类型分错误）
+3. 截断 - 保留相关上下文，删除冗余
+4. 去重 - 合并重复日志行并计数
+
+ 命令
+
+ 下列百分比是 bash 输出字节数的削减比例，由 RTK 的 字节数 / 4 估算器测得。参见节省是如何计算的。
+
+ 文件
+bash
+rtk ls .                         优化的目录树
+rtk read file.rs                 智能文件读取
+rtk find &quot;.rs&quot; .                紧凑的查找结果
+rtk grep &quot;pattern&quot; .             按文件分组的搜索结果
+
+
+ Git
+bash
+rtk git status                   紧凑状态
+rtk git log -n 10                单行提交
+rtk git diff                     精简 diff
+rtk git push                     - &quot;ok main&quot;
+
+
+ 测试
+bash
+rtk jest                         Jest 紧凑输出
+rtk vitest                       Vitest 紧凑输出
+rtk pytest                       Python 测试（-90%）
+rtk go test                      Go 测试（-90%）
+rtk test  [args...]         仅显示失败（-90%），直接执行 argv
+
+
+ 构建 &amp; 检查
+bash
+rtk lint                         ESLint 按规则分组
+rtk tsc                          TypeScript 错误分组
+rtk cargo build                  Cargo 构建（-80%）
+rtk ruff check                   Python lint（-80%）
+
+
+ 容器
+bash
+rtk docker ps                    紧凑容器列表
+rtk docker logs       去重日志
+rtk kubectl pods                 紧凑 Pod 列表
+
+
+ 分析
+bash
+rtk gain                         节省统计
+rtk gain --graph                 ASCII 图表（30 天）
+rtk discover                     发现遗漏的节省机会
+
+
+ 文档
+
+- TROUBLESHOOTING.md - 解决常见问题
+- INSTALL.md - 详细安装指南
+- ARCHITECTURE.md - 技术架构
+
+ 贡献
+
+欢迎贡献！请在 GitHub 上提交 issue 或 PR。
+
+加入 Discord 社区。
+
+ </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/rtk-ai/rtk/issues/845"><span class="rp-item-num">#845</span><span class="rp-item-title">Feature: add support for kiro-cli</span><span class="rp-item-extra">29 comments · 2026-03-26</span></a><a class="rp-item" href="https://github.com/rtk-ai/rtk/issues/1313"><span class="rp-item-num">#1313</span><span class="rp-item-title">Feature request: lossless-only mode + honest account of silent failures truncation causes in agent contexts</span><span class="rp-item-extra">18 comments · 2026-04-14</span></a><a class="rp-item" href="https://github.com/rtk-ai/rtk/issues/2317"><span class="rp-item-num">#2317</span><span class="rp-item-title">Tool filters mask hard failures with benign summaries (pytest collection error -&gt; &quot;No tests collected&quot;)</span><span class="rp-item-extra">13 comments · 2026-06-07</span></a><a class="rp-item" href="https://github.com/rtk-ai/rtk/issues/996"><span class="rp-item-num">#996</span><span class="rp-item-title">[Codex MacOS App] : RTK.md is not opened automatically</span><span class="rp-item-extra">10 comments · 2026-04-03</span></a><a class="rp-item" href="https://github.com/rtk-ai/rtk/issues/2898"><span class="rp-item-num">#2898</span><span class="rp-item-title">Feature Request: Add support for ZCode (Z.ai Agentic Development Environment)</span><span class="rp-item-extra">9 comments · 2026-07-08</span></a><a class="rp-item" href="https://github.com/rtk-ai/rtk/issues/2805"><span class="rp-item-num">#2805</span><span class="rp-item-title">Savings accounting credits rtk with the agent&#x27;s own head/tail filtering — repro: 2.1M tokens claimed &#x27;100% saved&#x27; vs ~195 real (&gt;10,000×); likely root cause of #2762</span><span class="rp-item-extra">9 comments · 2026-07-03</span></a><a class="rp-item" href="https://github.com/rtk-ai/rtk/issues/2436"><span class="rp-item-num">#2436</span><span class="rp-item-title">[grep] header reports raw match counts even when --max caps output</span><span class="rp-item-extra">9 comments · 2026-06-14</span></a><a class="rp-item" href="https://github.com/rtk-ai/rtk/issues/1098"><span class="rp-item-num">#1098</span><span class="rp-item-title">Support for Flutter &amp; Dart commands (flutter pub, flutter analyze, dart analyze)</span><span class="rp-item-extra">9 comments · 2026-04-09</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/rtk-ai/rtk/discussions/5054"><span class="rp-item-num">#5054</span><span class="rp-item-title">RTK 1.x: what changed, and how to get the most out of it</span><span class="rp-item-extra">0 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/rtk-ai/rtk/discussions/5027"><span class="rp-item-num">#5027</span><span class="rp-item-title">PHP version, return just the semver version</span><span class="rp-item-extra">1 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/rtk-ai/rtk/discussions/4972"><span class="rp-item-num">#4972</span><span class="rp-item-title">rtk-mcp: a Rust MCP server that runs commands through RTK</span><span class="rp-item-extra">0 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/rtk-ai/rtk/discussions/4946"><span class="rp-item-num">#4946</span><span class="rp-item-title">Would an opt-in Texio recipe complement RTK on named Markdown tasks?</span><span class="rp-item-extra">0 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/rtk-ai/rtk/discussions/4633"><span class="rp-item-num">#4633</span><span class="rp-item-title">Grep and RG optimizations.</span><span class="rp-item-extra">0 comments · 2026-10-17</span></a><a class="rp-item" href="https://github.com/rtk-ai/rtk/discussions/4598"><span class="rp-item-num">#4598</span><span class="rp-item-title">How we verify RTK&#x27;s output stays transparent, on every release</span><span class="rp-item-extra">0 comments · 2026-10-16</span></a><a class="rp-item" href="https://github.com/rtk-ai/rtk/discussions/4592"><span class="rp-item-num">#4592</span><span class="rp-item-title">rtk is included in the AgentManager tool catalog</span><span class="rp-item-extra">0 comments · 2026-10-16</span></a><a class="rp-item" href="https://github.com/rtk-ai/rtk/discussions/4511"><span class="rp-item-num">#4511</span><span class="rp-item-title">Request: review of RTK setup for a public benchmark</span><span class="rp-item-extra">1 comments · 2026-10-11</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/rtk-ai/rtk/releases"><b>v1.2.0</b> <span class="rp-rel-tag">v1.2.0</span> <span class="rp-item-extra">2026-11-08</span></a><pre class="rp-pre">1.2.0 (2026-11-08)
+
+
+ Features
+
+ git: fold ls-tree path listings by directory (1816)
+
+
+ Bug Fixes
+
+ analytics: sum per-project ccusage rows in monthly economics (4771)
+ cargo: keep nextest timeouts and retried failures (4697)
+ cicd: build the deb, rpm and aarch64 Linux binaries as static musl (5017)
+ dotnet: preserve discovery and classic TRX reports (4628)
+ gain: distinguish filtered timings from passthrough lifetimes (4677)
+ git: announce the cap on the filtered git log path (4152)
+ hermes: close the rewrite&#x27;s stdin and make its timeout configurable (3833)
+ hook: honour opt-outs inside a quo</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (6)</h3><div class="rp-list"><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVEFVX3lxTFB0MXNodGJNV09vVXExU1U3UTR0RHVKSzl1QWxaSUNhMlQ4SU9rUC1mQUxTdU1MSnVDZU5DT3lYS2R2Ny0ySTFVU0Q3OURBRGJGNW8xNw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">虎嗅</span><span class="rp-item-title">Ponytail插件通过少写代码策略节省Token消耗，实测成本降低47-77%</span><span class="rp-item-extra">2026-06-28</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE9TelV5dXppQXh5SHc4NG9laDRTaGhzM1JzSWZjY2E2c1J2a3VIYjliQ295emtHcXpycG1FVzE1WExsa01KbWk5NjRwaHA4V3RRdTBVYThkNEVhWUswN3c?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">InfoQ.cn</span><span class="rp-item-title">砍掉 90% 冗余词元，省下 70 万美元：Netflix 开源工具狙击 AI 账单黑洞</span><span class="rp-item-extra">2026-06-18</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5EdVdoTUVaaE9IeDFxcjFVR2pIRWtJVVpkcmJZaWY2NjhPTzF4VUhDRjRHVE03MFNzSGtQQlU2cjRqTVRZamdDSXBnX1h3YjRoOGU4NlNNZkxVMHhUdHlTMUtQeHRvSGs?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN博客</span><span class="rp-item-title">5个月“救回”2000亿Token！被AI账单吓到，Netflix大佬开源「Token瘦身器」：砍掉90%无效Token</span><span class="rp-item-extra">2026-06-05</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMijAFBVV95cUxPeUZZU1pKTWgtakwzN0NURURQREdBVVdhd2lFWGpVWG5idDZqLWFwQUd4WWtHVjJ1blJHak9MbXNYMzJkaHBDd19XRmZyOXBvLWhRVnFGdlk5amhTRWlSRUdRWlBlRC13Yk9aZmthOWtjZnY4b0xHN1U5Zm1BRHR5c0J6eVJuQi02OFdlVg?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">Claude Code 令牌: 节省高达 90% 的 10 个 GitHub 仓库</span><span class="rp-item-extra">2026-04-21</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMia0FVX3lxTFBxR0UtUUVnZmwwZEQ5OEl1Mk5keVZGdWV3aXFmMC02Q1ZlLXQwRmhDRlhMZ3llb3ZJbGM1V0dtc2Q2eXVESFlDYUZ4UWZ5aUZzRVRwdU1ZNUVjdzhONFlUS3V3RlBUWnhmX0RF?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">80aj.com</span><span class="rp-item-title">GitHub获2.6万星标：RTK工具宣称能削减LLM高达90%的Token消耗</span><span class="rp-item-extra">2026-04-15</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE5yQy1tNTBVc2JtMFZPaHlESlZWVUV2OV9lQVZuR2xVTlQ3cl9VS0tIeDVtVmk0ZVZ3NzBSeU12T2JNZzlsVDF1cEZNMWRCYVlCTHpaN2Fn?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">QQ News</span><span class="rp-item-title">省下89%的Token，这个代理工具让AI编程成本骤降</span><span class="rp-item-extra">2026-02-14</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (18)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=47189599" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Rtk – reduce Claude Code token usage</span><span class="rp-item-extra">▲ 18 · 3 comments · 2026-02-28</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47714995" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">CLI proxy that reduces LLM token consumption by 60-90% on common dev commands</span><span class="rp-item-extra">▲ 5 · 2 comments · 2026-04-10</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47065892" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Rtk – High-performance CLI proxy to minimize LLM token consumption</span><span class="rp-item-extra">▲ 4 · 0 comments · 2026-02-18</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=46974740" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: RTK – Wrap your CLI commands, save 60-90% of tokens in AI coding agents</span><span class="rp-item-extra">▲ 4 · 4 comments · 2026-02-11</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47410540" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Rtk – CLI proxy that reduces LLM token consumption by 60-90%</span><span class="rp-item-extra">▲ 3 · 0 comments · 2026-03-17</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47081527" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Rust Token Killer – High-performance CLI proxy to minimize LLM token consumption</span><span class="rp-item-extra">▲ 3 · 1 comments · 2026-02-19</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=48201102" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">RTK: Rust Token Killer</span><span class="rp-item-extra">▲ 2 · 2 comments · 2026-05-19</span></a><a class="rp-item" href="https://www.lefigaro.fr/economie/rtk-ai-la-start-up-francaise-qui-remet-de-l-ordre-dans-l-ia-des-entreprises-20261027" target="_blank" rel="noopener"><span class="rp-news-src">Le Figaro</span><span class="rp-item-title">RTK AI : la start-up française qui remet de l’ordre dans l’IA des entreprises</span><span class="rp-item-extra">2026-10-27</span></a><a class="rp-item" href="https://labs.sogeti.com/the-hidden-cost-of-ai-coding-how-rtk-helps-developers-reduce-the-token-tax-part-1/" target="_blank" rel="noopener"><span class="rp-news-src">labs.sogeti</span><span class="rp-item-title">THE HIDDEN COST OF AI CODING: HOW RTK HELPS DEVELOPERS REDUCE THE “TOKEN TAX” – PART 1</span><span class="rp-item-extra">2026-07-15</span></a><a class="rp-item" href="https://note.com/biwakonbu/n/n9de69d81c402?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">rtk: A CLI Proxy That Drastically Reduces Token Consumption for Claude Code</span><span class="rp-item-extra">2026-05-13</span></a><details class="rp-news-more"><summary>8 more</summary><a class="rp-item" href="https://korben.info/en/rtk-rust-proxy-token-savings.html" target="_blank" rel="noopener"><span class="rp-news-src">korben</span><span class="rp-item-title">RTK - The Rust proxy that saves you up to 90% of tokens</span><span class="rp-item-extra">2026-05-04</span></a><a class="rp-item" href="https://x.com/wbancer/status/2044088073680502985" target="_blank" rel="noopener"><span class="rp-news-src">x</span><span class="rp-item-title">RTK is a local tool that seamlessly supports Claude Code, Copilot, Cursor and others. It minimizes LLM token usage by compressing the results of various popular commands (ls ...</span><span class="rp-item-extra">2026-04-14</span></a><a class="rp-item" href="https://note.com/hacklog_stealth/n/n58e601ea871c?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">I Tried &#x27;RTK&#x27;, a Tool That Reduces Claude Code Token Consumption by 90%</span><span class="rp-item-extra">2026-04-09</span></a><a class="rp-item" href="https://note.com/hacklog_stealth/n/n58e601ea871c?hl=ko" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">Claude Code의 토큰 소비를 90% 줄여주는 도구 &#x27;RTK&#x27;를 사용해 보았다</span><span class="rp-item-extra">2026-04-09</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMidkFVX3lxTE1ReWxBdkhpcU5BNlB2b0o5Y2YyZTByZVlvN01VVG0xaHgyeTFKR240WTQyelRWVlEtR3VvYnNzNHVNY2tJSTBJNGw1YXNWVHVFU3lGeFRWNmVXazNrS0ZiT1l6eGFXUWQtVFJKT2JNYk5SUE01dGc?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">GIGAZINE</span><span class="rp-item-title">GitHub has published a case study showing that shortening the output of AI agents to reduce costs can actually increase costs. How can we effectively improve cost efficiency?</span><span class="rp-item-extra">2026-09-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMivAFBVV95cUxPYUtsUUpMR3NFUFFPOEZxcGZJZl9YdGVYV3RxeFlGQ2lpcmNzWmtVV0p3UE5DN1hIYkJHOEJwNHhsU2hPb3BacF9QbUlRWEpwZXVtWWxtSzFaNjU3UDNzZ3hiNTY3RlhEdHVDTDNHb3BnSFBPV2l3WjFpU3J6Q3lITmZ0OE9idUh5RFdUTUliQlJfaWdqY1l2TWttRlFsdmRSTU1IT2dNRnRTRkhVeWdNU3p1OWZ1Q0Y2M0czcQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The GitHub Blog</span><span class="rp-item-title">How we make AI coding more cost efficient without sacrificing task quality</span><span class="rp-item-extra">2026-09-02</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMisAFBVV95cUxPZDQzb1VQR0NWemwtZDF4RjVnbkExbThDUDNVcjJUQlZUUFpxMkhiRDhlRDEzMmtBNHdYdWJZVlVTc21hWGxxWkhwUFJBOGhFY2dnb1NjV2lKRnlma09FSTdma1MwNUloYWp0ZU1zc2xrN3FFaFhCVXV0R0ZkS0ZQWjNiQjJrZXlBVEExZFlKb1VZSm5JR2Rmd29uaVUxWW5KcmlXU18tM0RWMWlnQ19YMw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">DataDrivenInvestor</span><span class="rp-item-title">How I Cut My LLM Token Usage by 70% With One Open-Source Tool</span><span class="rp-item-extra">2026-07-16</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMijAFBVV95cUxOSHRMRzNaOHN4ejZ0QncxU2lBUnlpOG9ETVdLTkNCaXB0T2k5ZFhQZ1dyUlp1SnFHZ3htdVpDQ054SDJHMlBLV1dsZnFXZEc0ZGJrVlNMcVJqZGUzV3BJb2lGTWFLb0xNZEZSWDdHMkZPdUhmajJ5RGctbXNNN2JsLW1xZGVHOGk4Z0VTcA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">Claude Code Token: 10 GitHub Repos That Cut Up to 90%</span><span class="rp-item-extra">2026-04-21</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/rtk-ai__rtk.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>freeok/so-novel · GitHub Trending Rank Radar</title>
+<meta name="description" content="小说下载｜网文下载 | 网络小说">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="so-novel, freeok, freeok/so-novel, github stars, github trending, star growth, star history, 开源项目, 星标增长, content-export, document-parser, ebook, offline-reader, cli, tui">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/freeok__so-novel">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="freeok/so-novel · GitHub Trending Rank Radar">
+<meta property="og:description" content="小说下载｜网文下载 | 网络小说">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/freeok__so-novel">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "freeok/so-novel", "codeRepository": "https://github.com/freeok/so-novel", "url": "https://zhuikan.com/repos/freeok__so-novel", "description": "小说下载｜网文下载 | 网络小说", "author": {"@type": "Organization", "name": "freeok", "url": "https://github.com/freeok"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/AGPL-3.0.html", "programmingLanguage": "Java", "dateCreated": "2022-05-23", "keywords": "content-export,document-parser,ebook,offline-reader,cli,tui,novel"}</script>
+</head>
+<body data-repo="freeok/so-novel" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">freeok/so-novel</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="freeok__so-novel"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/51998152?u=6158ae22d998ef14fbb2cd278b54d311fd18e7c2&amp;v=4&s=300" width="300" height="300" alt="freeok avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">so-novel</div>
+      <a class="rp-side-owner" href="https://github.com/freeok">freeok</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/freeok">freeok</a>
+        <span class="rp-sep">/</span><span class="rp-name">so-novel</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">小说下载｜网文下载 | 网络小说</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,001</b></span><span class="rp-stat" title="forks">⑂ <b>761</b></span><span class="rp-stat" title="watchers">👁 <b>37</b></span><span class="rp-stat" title="prs">⑃ <b>29</b></span><span class="rp-stat" title="issues">● <b>234</b></span><span class="rp-stat" title="releases">▤ <b>58</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/content-export">content-export</a><a class="rp-topic" href="https://github.com/topics/document-parser">document-parser</a><a class="rp-topic" href="https://github.com/topics/ebook">ebook</a><a class="rp-topic" href="https://github.com/topics/offline-reader">offline-reader</a><a class="rp-topic" href="../tags/cli">cli</a><a class="rp-topic" href="../tags/tui">tui</a><a class="rp-topic" href="https://github.com/topics/novel">novel</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Java</span><span class="rp-meta-bit">AGPL-3.0</span><span class="rp-meta-bit">Created 2022-05-23</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/freeok/so-novel">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.12.0</span><a class="rp-dl-a" href="https://github.com/freeok/so-novel/releases/tag/v1.12.0">v1.12.0 ↓</a><span class="rp-dl-ver">1.12.0</span><span class="rp-dl-date">2026-10-26</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+11</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">9,001</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">761</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">37</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">29</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">234</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">58</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">So Novel
+  
+
+
+
+
+
+
+
+
+
+
+
+ 概述
+
+So Novel 是一款通用的网页内容处理与导出工具，它致力于帮助用户高效地从网页中提取结构化信息，并将其灵活导出为
+EPUB、TXT、PDF 等多种标准电子文档格式。适用于学习采集、格式转换、电子书制作等场景。
+
+ 预览
+
+
+  点击查看图片
+
+ TUI 预览 (Text-based User Interface)
+
+!preview-tui.png
+
+ WebUI 预览 (网页版)
+
+!preview-webui.jpg
+
+ CLI 预览 (Command Line Interface)
+
+!preview-cli.png
+
+
+
+ 安装
+
+ 📦 手动下载压缩包
+
+
+
+ 🪟 Windows
+
+ 1. PowerShell
+
+powershell
+ powershell
+irm https://raw.githubusercontent.com/freeok/so-novel/main/bin/windows-install.ps1 | iex
+
+
+ 2. CMD (命令提示符)
+
+cmd
+powershell -NoProfile -ExecutionPolicy Bypass -Command &quot;irm https://raw.githubusercontent.com/freeok/so-novel/main/bin/windows-install.ps1 | iex&quot;
+
+
+ 🐧 Linux
+
+bash
+bash  [!TIP]
+
+ 为获得最佳阅读体验，建议使用以下电子书阅读器：
+
+ 桌面端
+
+ - Readest
+ - Koodo Reader
+ - Calibre
+ - Neat Reader（网页版）
+
+ 移动端
+
+ - Readest
+ - Apple Books
+ - Moon+ Reader（静读天下）
+ - Kindle
+
+ 如需转换为其它电子书格式，可使用：
+
+ - FreeConvert
+ - Calibre
+
+ 修复 WPS、掌阅等软件无法打开 so-novel 下载的 EPUB：https://github.com/freeok/so-novel/discussions/199
+
+ 自定义 JVM 系统属性
+
+| 参数            | 说明                     | 默认值          |
+|---------------|------------------------|--------------|
+| -Dmode        | 启动模式，可选值：tui\|cli\|web | tui          |
+| -Dconfig.file | 配置文件路径                 | ./config.ini |
+
+用法
+
+ [!NOTE]
+
+ Windows 修改 sonovel.l4j.ini
+
+ Linux 修改  run-linux.sh
+
+ macOS 修改  run-macos.sh
+
+ 使用本地 JDK / JRE 启动
+
+如果你不想使用内置 JRE（runtime 目录），可以通过本地 JDK / JRE 启动程序
+
+Windows 使用脚本 start-custom-jre.cmd：
+
+cmd
+REM --------------------------------------------------
+REM 高级用户使用自定义 JRE 启动程序
+REM 将 &quot;your_path\java.exe&quot; 替换为你的 JRE 路径，例如：
+REM &quot;C:\Java\jdk-21\bin\java.exe&quot;
+REM --------------------------------------------------
+@echo off
+your_path\java.exe ^
+  -XX:+UseZGC ^
+  -XX:+ZGenerational ^
+  -Dconfig.file=config.ini ^
+  -Dmode=tui ^
+  -Dfile.encoding=GBK|Big5 ^
+  -jar app.jar
+
+
+Linux / macOS：run-linux.sh / run-macos.sh 修改 java 路径
+
+ 常见问题
+
+https://github.com/freeok/so-novel/issues?q=label%3A%22usage%20question%22
+
+ 讨论
+
+https://github.com/freeok/so-novel/discussions?discussions_q=
+
+ 支持 &amp; 赞助
+
+如果觉得有所帮助，欢迎扫码赞助☕、点击项目主页顶部的⭐Star 按钮支持！
+
+🚀这将是我们持续更新的动力源泉！同时，你也能第一时间获取到最新的更新动态。💡❤️
+
+| 支付宝赞助                                                           | 微信赞助                                                           |
+|-----------------------------------------------------------------|----------------------------------------------------------------|
+|  |  |
+
+项目赞助者列表
+
+ 免责声明
+
+在使用本工具前，请务必仔细阅读我们的法律免责声明。使用本工具即表示您已阅读、理解并同意遵守所有条款。
+
+ Star History</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/freeok/so-novel/issues/298"><span class="rp-item-num">#298</span><span class="rp-item-title">[功能请求] 支持增量下载以补全多次重试仍失败的章节，避免重复下载全本</span><span class="rp-item-extra">5 comments · 2026-01-03</span></a><a class="rp-item" href="https://github.com/freeok/so-novel/issues/347"><span class="rp-item-num">#347</span><span class="rp-item-title">[问题反馈] 飞牛NAS安装后容器启动失败</span><span class="rp-item-extra">2 comments · 2026-07-25</span></a><a class="rp-item" href="https://github.com/freeok/so-novel/issues/313"><span class="rp-item-num">#313</span><span class="rp-item-title">[推荐书源] https://www.biquge.tw/</span><span class="rp-item-extra">2 comments · 2026-03-11</span></a><a class="rp-item" href="https://github.com/freeok/so-novel/issues/305"><span class="rp-item-num">#305</span><span class="rp-item-title">[推荐书源] https://www.shuhaoxs.com/</span><span class="rp-item-extra">2 comments · 2026-02-23</span></a><a class="rp-item" href="https://github.com/freeok/so-novel/issues/232"><span class="rp-item-num">#232</span><span class="rp-item-title">[推荐书源] https://www.fsuzw.com/</span><span class="rp-item-extra">2 comments · 2025-08-09</span></a><a class="rp-item" href="https://github.com/freeok/so-novel/issues/354"><span class="rp-item-num">#354</span><span class="rp-item-title">sonovel  | Error: Unable to access jarfile app.jar</span><span class="rp-item-extra">1 comments · 2026-09-09</span></a><a class="rp-item" href="https://github.com/freeok/so-novel/issues/349"><span class="rp-item-num">#349</span><span class="rp-item-title">[问题反馈] 网页版是否支持详情页链接下载？</span><span class="rp-item-extra">1 comments · 2026-07-26</span></a><a class="rp-item" href="https://github.com/freeok/so-novel/issues/341"><span class="rp-item-num">#341</span><span class="rp-item-title">[推荐书源] https://czbooks.net/</span><span class="rp-item-extra">1 comments · 2026-07-03</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/freeok/so-novel/discussions/367"><span class="rp-item-num">#367</span><span class="rp-item-title">求起点中文网书源</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/freeok/so-novel/discussions/363"><span class="rp-item-num">#363</span><span class="rp-item-title">用workbuddy跑通了2个Issues中推荐的书源</span><span class="rp-item-extra">0 comments · 2026-10-26</span></a><a class="rp-item" href="https://github.com/freeok/so-novel/discussions/361"><span class="rp-item-num">#361</span><span class="rp-item-title">您好，打开后全部字符被问号替代</span><span class="rp-item-extra">1 comments · 2026-10-16</span></a><a class="rp-item" href="https://github.com/freeok/so-novel/discussions/356"><span class="rp-item-num">#356</span><span class="rp-item-title">自己做了一个安卓app</span><span class="rp-item-extra">0 comments · 2026-09-25</span></a><a class="rp-item" href="https://github.com/freeok/so-novel/discussions/350"><span class="rp-item-num">#350</span><span class="rp-item-title">mac系统运行web页面，404</span><span class="rp-item-extra">1 comments · 2026-08-08</span></a><a class="rp-item" href="https://github.com/freeok/so-novel/discussions/346"><span class="rp-item-num">#346</span><span class="rp-item-title">你好，请问搜索书名出现乱码该怎么解决</span><span class="rp-item-extra">1 comments · 2026-07-19</span></a><a class="rp-item" href="https://github.com/freeok/so-novel/discussions/342"><span class="rp-item-num">#342</span><span class="rp-item-title">你好，怎样制作以一个书院文件？</span><span class="rp-item-extra">1 comments · 2026-07-07</span></a><a class="rp-item" href="https://github.com/freeok/so-novel/discussions/337"><span class="rp-item-num">#337</span><span class="rp-item-title">改了一个Rust的桌面软件</span><span class="rp-item-extra">0 comments · 2026-06-20</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/freeok/so-novel/releases"><b>v1.12.0</b> <span class="rp-rel-tag">v1.12.0</span> <span class="rp-item-extra">2026-10-26</span></a><pre class="rp-pre">v1.12.0 (2026-10-26)
+
+ ✨ Features
+
+- 新增 8 个书源并更新书源文档 357
+
+ 🐛 Bug Fixes
+
+- 修复 Javet 初始化时可能出现的 SIGSEGV 错误，通过在主线程强制初始化 V8，无需设置环境变量 JAVET_DISABLE_PKU=1 343
+- 兼容服务端拒绝 Referer 尾部斜杠的问题 345
+
+ ♻️ Refactor
+
+- 引入 DSL 执行引擎，重构 HTML 提取逻辑
+- 将 BookParser.getContentType() 迁移到 HtmlExtractor.java
+- 优化 SearchParser.java
+- 优化 BookParser.java
+- 重构 TocParser.java
+- 重构 ChapterParser.java
+- 改进项目结构
+- 增强 SearchResultsHandler.java 代码健壮性
+
+ ⚡ Performance
+
+- 优化分页目录解析速度
+
+ 🔧 Maintenance
+
+- 整理 main.json、rate-limit.json 书源配置
+- 清理 main.json 失效书源并更新域名
+- 更新书源规则域名
+- 更新 Homebrew 安装步骤 340
+- 新增终端输入编码不匹配</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/freeok__so-novel.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

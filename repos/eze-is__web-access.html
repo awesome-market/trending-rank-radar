@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eze-is/web-access · GitHub Trending Rank Radar</title>
+<meta name="description" content="给你的本机 Agent（如 Claude Code、Grok Bot 等）装上完整联网能力的 Skill：三层通道调度 + 浏览器 CDP + 并行分治，自动积累站点经验，不断优化联网效率">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="web-access, eze-is, eze-is/web-access, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/eze-is__web-access">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="eze-is/web-access · GitHub Trending Rank Radar">
+<meta property="og:description" content="给你的本机 Agent（如 Claude Code、Grok Bot 等）装上完整联网能力的 Skill：三层通道调度 + 浏览器 CDP + 并行分治，自动积累站点经验，不断优化联网效率">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/eze-is__web-access">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "eze-is/web-access", "codeRepository": "https://github.com/eze-is/web-access", "url": "https://zhuikan.com/repos/eze-is__web-access", "description": "给你的本机 Agent（如 Claude Code、Grok Bot 等）装上完整联网能力的 Skill：三层通道调度 + 浏览器 CDP + 并行分治，自动积累站点经验，不断优化联网效率", "author": {"@type": "Organization", "name": "eze-is", "url": "https://github.com/eze-is"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "JavaScript", "dateCreated": "2026-03-18"}</script>
+</head>
+<body data-repo="eze-is/web-access" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">eze-is/web-access</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="eze-is__web-access"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/53331888?u=4a110e0440939031054fd939b1d106855e9d9004&amp;v=4&s=300" width="300" height="300" alt="eze-is avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">web-access</div>
+      <a class="rp-side-owner" href="https://github.com/eze-is">eze-is</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/eze-is">eze-is</a>
+        <span class="rp-sep">/</span><span class="rp-name">web-access</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">给你的本机 Agent（如 Claude Code、Grok Bot 等）装上完整联网能力的 Skill：三层通道调度 + 浏览器 CDP + 并行分治，自动积累站点经验，不断优化联网效率</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,413</b></span><span class="rp-stat" title="forks">⑂ <b>664</b></span><span class="rp-stat" title="watchers">👁 <b>17</b></span><span class="rp-stat" title="prs">⑃ <b>66</b></span><span class="rp-stat" title="issues">● <b>65</b></span><span class="rp-stat" title="releases">▤ <b>3</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">Created 2026-03-18</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/eze-is/web-access">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v2.6.0</span><a class="rp-dl-a" href="https://github.com/eze-is/web-access/releases/tag/v2.6.0">v2.6.0 ↓</a><span class="rp-dl-ver">2.6.0</span><span class="rp-dl-date">2026-10-14</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+5</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">9,413</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">664</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">17</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">66</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">65</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">3</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">🌐 Language
+    
+      
+        English
+        | 简体中文
+        | 繁體中文
+        | 日本語
+        | 한국어
+        | Français
+        | Deutsch
+        | Español
+        | Português
+        | Русский
+      
+    
+  
+
+
+
+
+
+  给 AI Agent 装上完整联网能力的 Skill。
+  🌐 官网 · 📖 设计详解 · ⚡ 快速安装
+
+
+AI Agent 原本的联网能力（WebSearch、WebFetch）缺少调度策略和浏览器自动化能力。这个 Agent Skill 补上的是：联网策略 + CDP 浏览器操作 + 站点经验积累。兼容所有支持 SKILL.md 的 Agent（Claude Code、Cursor、Gemini CLI、Codex CLI 等）。
+
+ 推荐必读：Web Access：一个 Skill，拉满 Agent 联网和浏览器能力 ，完整介绍了 Web-Access Skill 的开发细节与 Agent Skill 设计哲学，帮助你也能写出类似通用、高上限的 Skill
+
+
+ [!IMPORTANT]
+ 从旧版本升级到 v2.6 之前，请把下面这段话发给你的 Agent（浏览器偏好和站点经验从 v2.6 起改放在 ~/.web-access/，npx skills update 会先删除旧目录，不先搬就会丢）：
+
+ text
+ 我要把 web-access 升级到 v2.6。升级前请先迁移我的数据：找到当前 web-access skill 的安装目录，把其中的 config.env 复制到 ~/.web-access/config.env，把 references/site-patterns/ 整个文件夹（含子文件夹）复制到 ~/.web-access/site-patterns/（Windows 上 ~ 指 %USERPROFILE%），已存在的文件不要覆盖；确认复制成功后再按 https://github.com/eze-is/web-access 的说明升级，升级后运行一次 check-deps.mjs，确认浏览器配置和站点经验都还在。
+ 
+
+ 用 git 或 Claude Code 插件安装的，升级后也会自动迁移；照着这段话做一遍同样安全（只复制、不覆盖）。详见 references/migration-2.6.md。
+
+---
+
+ v2.6.0 能力
+
+| 能力 | 说明 |
+|------|------|
+| 联网工具自动选择 | WebSearch / WebFetch / curl / Jina / CDP，按场景自主判断，可任意组合 |
+| CDP Proxy 浏览器操作 | 直连用户日常浏览器（Chrome / Edge / Brave / Arc / Dia 等任意 Chromium 内核浏览器），天然携带登录态，支持动态页面、交互操作、视频截帧 |
+| 点击与 iframe | /click（JS click）、/clickAt（CDP 真实鼠标事件）、/clickXY（坐标点击，可点进跨站 iframe、不激活标签页）、/setFiles（文件上传）；/frames + /eval?frame= 读取跨站 iframe 内容 |
+| 本地浏览器书签/历史检索 | find-url.mjs 跨 Chrome / Edge 查询公网搜不到的目标（内部系统）或用户访问过的页面，支持关键词/时间窗/访问频度排序 |
+| 并行分治 | 多目标时分发子 Agent 并行执行，共享一个 Proxy，tab 级隔离 |
+| 站点经验积累 | 按域名存储操作经验（URL 模式、平台特征、已知陷阱），跨 session 复用 |
+| 媒体提取 | 从 DOM 直取图片/视频 URL，或对视频任意时间点截帧分析 |
+
+v2.6.0 更新：
+- 升级必读：用户数据移到 ~/.web-access/ — 浏览器偏好和站点经验不再放在 Skill 目录里，之后任何方式升级都不会被覆盖。用 npx skills 从旧版本升级的，升级前按 references/migration-2.6.md 先备份；git 与 Claude Code 插件安装会自动迁移
+- 任意 Chromium 内核浏览器可用 — WEB_ACCESS_BROWSER 改填浏览器的用户数据目录，Brave、Arc、Dia、Vivaldi、Opera 等都能用；旧值 chrome / edge 继续有效。首次配置时 Agent 只看应用数据目录最外层的文件夹名认出浏览器，再用 browser-probe.mjs 只进入认出的文件夹确认（思路来自 173，感谢 @zhangweijian97）
+- 跨站 iframe — GET /frames 列出页面 iframe，/eval?frame= 在其中执行；GET /clickXY 按坐标真实点击，可点中跨站 iframe 且不激活标签页
+- 不再扫描 9222 等固定端口；/health 的 browser.id 改为数据目录真实路径
+- 修复 — proxy-maintenance.mjs stop/restart 对真实服务报错、restart 不拉起新服务；并发维护误报；探测遇到无权限目录崩溃；迁移失败重试丢偏好
+
+v2.5.4 更新
+
+- 修复新标签页空白竞态 — /new 先创建 about:blank 并完成 CDP attach，再显式导航；不再把浏览器初始空白文档误判为目标页面
+- 目标内容就绪契约 — 导航成功或 readyState 完成不等于任务完成；遇到验证页、登录跳转和异步渲染时继续观察，直到目标内容出现或确认受阻
+- 完整 URL 安全传输 — /new 和 /navigate 从 v2.5.3 起使用 POST body 传 URL，查询参数中的 &amp; 不再被错误切分
+
+
+v2.5.2 更新
+
+- Microsoft Edge 支持 — CDP Proxy 不再绑定 Chrome，新增 Edge 适配（及 Chromium、Chrome Canary 等 Chromium 系，通过同一套自动发现机制接入）。在 edge://inspect/remote-debugging 勾选 &quot;Allow remote debugging for this browser instance&quot; 即可
+- 浏览器偏好持久化 — 新增 config.env（gitignored，首次运行从模板创建），通过 WEB_ACCESS_BROWSER 固定默认浏览器；多浏览器同时开启 toggle 时 Agent 会询问偏好。也支持单次覆盖 --browser 
+- 不擅自降级 — 偏好/指定的浏览器没启动或没开 toggle 时硬错并给出明确处理步骤，不会悄悄连到别的浏览器；proxy 首次成功连接后 pin 住浏览器 id，避免运行中漂移
+- find-ur</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/eze-is/web-access/issues/33"><span class="rp-item-num">#33</span><span class="rp-item-title">基于 Chromium 的 ARC 浏览器，在打开 remote-debugging 时没有弹窗</span><span class="rp-item-extra">3 comments · 2026-03-30</span></a><a class="rp-item" href="https://github.com/eze-is/web-access/issues/58"><span class="rp-item-num">#58</span><span class="rp-item-title">与ccr端口冲突，该如何解决呢？</span><span class="rp-item-extra">2 comments · 2026-04-15</span></a><a class="rp-item" href="https://github.com/eze-is/web-access/issues/54"><span class="rp-item-num">#54</span><span class="rp-item-title">CDP代理正常，但是访问 arm.com 触发了网络代理限制。</span><span class="rp-item-extra">3 comments · 2026-04-10</span></a><a class="rp-item" href="https://github.com/eze-is/web-access/issues/129"><span class="rp-item-num">#129</span><span class="rp-item-title">Windows + Edge 环境使用反馈：Proxy 稳定性 / API 功能补充 / 路径兼容</span><span class="rp-item-extra">1 comments · 2026-06-10</span></a><a class="rp-item" href="https://github.com/eze-is/web-access/issues/117"><span class="rp-item-num">#117</span><span class="rp-item-title">帮 web-access 做了在线试玩入口——粉丝点链接就能直接让 Agent 联网抓页面</span><span class="rp-item-extra">1 comments · 2026-05-24</span></a><a class="rp-item" href="https://github.com/eze-is/web-access/issues/40"><span class="rp-item-num">#40</span><span class="rp-item-title">boss直聘怎么访问</span><span class="rp-item-extra">2 comments · 2026-04-02</span></a><a class="rp-item" href="https://github.com/eze-is/web-access/issues/109"><span class="rp-item-num">#109</span><span class="rp-item-title">macbook 调用skill的时候工具报错，导致大模型超时</span><span class="rp-item-extra">0 comments · 2026-05-09</span></a><a class="rp-item" href="https://github.com/eze-is/web-access/issues/53"><span class="rp-item-num">#53</span><span class="rp-item-title">CDP Proxy fails to connect in WSL2: missing UUID in WebSocket path</span><span class="rp-item-extra">1 comments · 2026-04-09</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/eze-is/web-access/releases"><b>v2.6.0</b> <span class="rp-rel-tag">v2.6.0</span> <span class="rp-item-extra">2026-10-14</span></a><pre class="rp-pre">升级必读
+
+- 升级前把 README 顶部那段提示词发给你的 Agent，它会先把数据搬到 ~/.web-access/ 再升级。
+- 用户数据（config.env、站点经验）移到 ~/.web-access/（Windows 为 %USERPROFILE%\.web-access\），之后任何方式升级都不会再被覆盖。
+  - 用 npx skills update 升级的，升级前先备份，做法见 references/migration-2.6.md。
+  - git clone 和 Claude Code 插件安装，升级后由前置检查自动复制旧数据。
+- 升级后等共享服务空闲时运行一次 proxy-maintenance.mjs restart。
+
+ 任意 Chromium 内核浏览器可用
+
+- WEB_ACCESS_BROWSER 改为填浏览器的用户数据目录，Brave、Arc、Dia、Vivaldi、Opera 等都能用。
+- 旧值 chrome / chrome-canary / chromium / edge 仍然有效，老配置不用改。
+- 首次配置：前置检查只列出应用数据目录最外层的文件夹名（Linux 含 ~/.config、~/snap、~/.var/app），Agent 认出浏览器后用 browser-probe.mjs 只进入认出的文件夹确认，再询问用户。
+- </pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/eze-is__web-access.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

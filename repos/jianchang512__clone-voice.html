@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jianchang512/clone-voice · GitHub Trending Rank Radar</title>
+<meta name="description" content="A sound cloning tool with a web interface, using your voice or any sound to record audio / 一个带web界面的声音克隆工具，使用你的音色或任意声音来录制音频">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="clone-voice, jianchang512, jianchang512/clone-voice, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/jianchang512__clone-voice">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="jianchang512/clone-voice · GitHub Trending Rank Radar">
+<meta property="og:description" content="A sound cloning tool with a web interface, using your voice or any sound to record audio / 一个带web界面的声音克隆工具，使用你的音色或任意声音来录制音频">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/jianchang512__clone-voice">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "jianchang512/clone-voice", "codeRepository": "https://github.com/jianchang512/clone-voice", "url": "https://zhuikan.com/repos/jianchang512__clone-voice", "description": "A sound cloning tool with a web interface, using your voice or any sound to record audio / 一个带web界面的声音克隆工具，使用你的音色或任意声音来录制音频", "author": {"@type": "Organization", "name": "jianchang512", "url": "https://github.com/jianchang512"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Python", "dateCreated": "2023-11-20"}</script>
+</head>
+<body data-repo="jianchang512/clone-voice" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">jianchang512/clone-voice</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="jianchang512__clone-voice"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/3378335?u=adc6504fe417784164e64a857edd4256b56dd84d&amp;v=4&s=300" width="300" height="300" alt="jianchang512 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">clone-voice</div>
+      <a class="rp-side-owner" href="https://github.com/jianchang512">jianchang512</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/jianchang512">jianchang512</a>
+        <span class="rp-sep">/</span><span class="rp-name">clone-voice</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A sound cloning tool with a web interface, using your voice or any sound to record audio / 一个带web界面的声音克隆工具，使用你的音色或任意声音来录制音频</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>8,964</b></span><span class="rp-stat" title="forks">⑂ <b>984</b></span><span class="rp-stat" title="watchers">👁 <b>2</b></span><span class="rp-stat" title="prs">⑃ <b>4</b></span><span class="rp-stat" title="issues">● <b>149</b></span><span class="rp-stat" title="releases">▤ <b>4</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Created 2023-11-20</span><a class="rp-meta-bit rp-home" href="https://pyvideotrans.com" rel="noopener">pyvideotrans.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="jianchang512__pyvideotrans"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/3378335?u=adc6504fe417784164e64a857edd4256b56dd84d&amp;v=4" alt="" loading="lazy">pyvideotrans</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/jianchang512/clone-voice">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-3</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">8,964</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">984</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">2</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">4</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">149</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">4</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">English README  / 捐助项目 / Discord
+
+ CV声音克隆工具
+
+ 本项目所用模型为coqui.ai出品的xtts_v2，模型开源协议为Coqui Public Model License 1.0.0,使用本项目请遵循该协议，协议全文见 https://coqui.ai/cpml.txt
+
+
+ 这是一个声音克隆工具，可使用任何人类音色，将一段文字合成为使用该音色说话的声音，或者将一个声音使用该音色转换为另一个声音。
+ 
+ 使用非常简单，没有N卡GPU也可以使用，下载预编译版本，双击 app.exe 打开一个web界面，鼠标点点就能用。
+ 
+ 支持 中、英、日、韩、法、德、意等16种语言，可在线从麦克风录制声音。
+ 
+ 为保证合成效果，建议录制时长5秒到20秒，发音清晰准确，不要存在背景噪声。
+ 
+ 英文效果很棒，中文效果还凑合。
+
+
+
+ 视频演示
+
+
+https://github.com/jianchang512/clone-voice/assets/3378335/4e63f2ac-cc68-4324-a4d9-ecf4d4f81acd
+
+
+
+!image
+
+
+
+
+ window预编译版使用方法(其他系统可源码部署)
+
+1. 点击此处打开Releases下载页面，下载预编译版主文件(1.7G) 和 模型(3G)
+
+2. 下载后解压到某处，比如 E:/clone-voice 下
+
+3. 双击 app.exe ，等待自动打开web窗口，请仔细阅读cmd窗口的文字提示,如有错误，均会在此显示
+
+4. 模型下载后解压到软件目录下的 tts 文件夹内，解压后效果如图 
+
+!image
+
+5. 转换操作步骤
+	
+	- 选择【文字-声音】按钮，在文本框中输入文字、或点击导入srt字幕文件，然后点击“立即开始”。
+	
+	- 选择【声音-声音】按钮，点击或拖拽要转换的音频文件(mp3/wav/flac)，然后从“要使用的声音文件”下拉框中选择要克隆的音色，如果没有满意的，也可以点击“本地上传”按钮，选择已录制好的5-20s的wav/mp3/flac声音文件。或者点击“开始录制”按钮，在线录制你自己的声音5-20s，录制完成点击使用。然后点击“立即开始”按钮
+	
+6. 如果机器拥有N卡GPU，并正确配置了CUDA环境，将自动使用CUDA加速
+
+
+
+ 源码部署(linux mac window)
+
+源码版需要在 .env 中 HTTP_PROXY=设置代理(比如http://127.0.0.1:7890)，要从 https://huggingface.co https://github.com 下载模型，而这个网址国内无法访问，必须保证代理稳定可靠，否则大模型下载可能中途失败
+
+0. 要求 python 3.9-3.11, 并且提前安装好 git-cmd 工具，下载地址
+1. 创建空目录，比如 E:/clone-voice, 在这个目录下打开 cmd 窗口，方法是地址栏中输入 cmd, 然后回车。
+使用git拉取源码到当前目录  git clone git@github.com:jianchang512/clone-voice.git . 
+2. 创建虚拟环境 python -m venv venv
+3. 激活环境，win下 E:/clone-voice/venv/scripts/activate，
+4. 安装依赖: pip install -r requirements.txt --no-deps, 
+windows 和 linux 如果要启用cuda加速，继续执行 pip uninstall -y torch 卸载，然后执行pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu121。(必须有N卡并且配置好CUDA环境)
+5. win下解压 ffmpeg.7z，将其中的ffmpeg.exe和app.py在同一目录下, linux和mac 到 ffmpeg官网下载对应版本ffmpeg，解压其中的ffmpeg程序到根目录下，必须将可执行二进制文件 ffmpeg 和app.py放在同一目录下。
+
+   !image
+
+6. 首先运行  python  code_dev.py ，在提示同意协议时，输入 y，然后等待模型下载完毕。
+   !
+   !
+   
+	下载模型需要挂全局代理，模型非常大，如果代理不够稳定可靠，可能会遇到很多错误，大部分的错误均是代理问题导致。
+	
+	如果显示下载多个模型均成功了，但最后还是提示“Downloading WavLM model”错误，则需要修改库包文件 \venv\Lib\site-packages\aiohttp\client.py, 在大约535行附近，if proxy is not None: 上面一行添加你的代理地址，比如 proxy=&quot;http://127.0.0.1:10809&quot;.
+
+7. 下载完毕后，再启动 python app.py
+
+8. 【训练说明】 如果想训练，执行 python train.py, 训练参数在 param.json中调整，调整后重新执行训练脚本python train.py
+
+8. 每次启动都会连接墙外检测或更新模型，请耐心等待。如果不想每次启动都检测或更新，需手动修改依赖包下文件，打开 \venv\Lib\site-packages\TTS\utils\manage.py ,大约 389 行附近，def download_model 方法中，注释掉如下代码
+
+
+if md5sum is not None:
+	md5sum_file = os.path.join(output_path, &quot;hash.md5&quot;)
+	if os.path.isfile(md5sum_file):
+	    with open(md5sum_file, mode=&quot;r&quot;) as f:
+		if not f.read() == md5sum:
+		    print(f&quot;  {model_name} has been updated, clearing model cache...&quot;)
+		    self.create_dir_and_download_model(model_name, model_item, output_path)
+		else:
+		    print(f&quot;  {model_name} is already downloaded.&quot;)
+	else:
+	    print(f&quot;  {model_name} has been updated, clearing model cache...&quot;)
+	    self.create_dir_and_download_model(model_name, model_item, output_path)
+
+
+9. 源码版启动时可能频繁遇到错误，基本都是代理问题导致无法从墙外下载模型或下载中断不完整。建议使用稳定的代理，全局开启。如果始终无法完整下载，建议使用预编译版。
+
+
+
+</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/jianchang512__clone-voice.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

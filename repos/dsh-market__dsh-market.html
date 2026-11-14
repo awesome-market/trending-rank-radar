@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dsh-market/dsh-market · GitHub Trending Rank Radar</title>
+<meta name="description" content="The plugin market inside DeepSeek Harness — browse, search, one-click install · DSH 可视化插件市场">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="dsh-market, dsh-market, dsh-market/dsh-market, github stars, github trending, star growth, star history, 开源项目, 星标增长, deepseek-harness, dsh-plugin, marketplace">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/dsh-market__dsh-market">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="dsh-market/dsh-market · GitHub Trending Rank Radar">
+<meta property="og:description" content="The plugin market inside DeepSeek Harness — browse, search, one-click install · DSH 可视化插件市场">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/dsh-market__dsh-market">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "dsh-market/dsh-market", "codeRepository": "https://github.com/dsh-market/dsh-market", "url": "https://zhuikan.com/repos/dsh-market__dsh-market", "description": "The plugin market inside DeepSeek Harness — browse, search, one-click install · DSH 可视化插件市场", "author": {"@type": "Organization", "name": "dsh-market", "url": "https://github.com/dsh-market"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2026-08-14", "keywords": "deepseek-harness,dsh-plugin,marketplace"}</script>
+</head>
+<body data-repo="dsh-market/dsh-market" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">dsh-market/dsh-market</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="dsh-market__dsh-market"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/316826596?v=4&s=300" width="300" height="300" alt="dsh-market avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">dsh-market</div>
+      <a class="rp-side-owner" href="https://github.com/dsh-market">dsh-market</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/dsh-market">dsh-market</a>
+        <span class="rp-sep">/</span><span class="rp-name">dsh-market</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily">daily <b>#170</b></a><a class="rp-board-chip" href="../?board=daily_rate">daily_rate <b>#94</b></a><a class="rp-board-chip" href="../?board=weekly_rate">weekly_rate <b>#130</b></a></div>
+    </div>
+    <p class="rp-desc">The plugin market inside DeepSeek Harness — browse, search, one-click install · DSH 可视化插件市场</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>12,307</b></span><span class="rp-stat" title="forks">⑂ <b>470</b></span><span class="rp-stat" title="watchers">👁 <b>15</b></span><span class="rp-stat" title="prs">⑃ <b>561</b></span><span class="rp-stat" title="issues">● <b>621</b></span><span class="rp-stat" title="releases">▤ <b>206</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/deepseek-harness">deepseek-harness</a><a class="rp-topic" href="../tags/dsh-plugin">dsh-plugin</a><a class="rp-topic" href="https://github.com/topics/marketplace">marketplace</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-08-14</span><a class="rp-meta-bit rp-home" href="https://dshmarket.com" rel="noopener">dshmarket.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/dsh-market/dsh-market">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">dshmarket 1.73.19</span><a class="rp-dl-a" href="https://github.com/dsh-market/dsh-market/releases/tag/v1.73.19">dshmarket-1.73.19 ↓</a><span class="rp-dl-ver">1.73.19</span><span class="rp-dl-date">2026-11-12</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+137</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">12,307</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">470</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">15</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">561</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">621</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">206</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">dsh-market
+
+English | 中文
+
+
+
+
+The plugin market inside DeepSeek Harness. On dsh 0.2.1+ it is a tab on the Plugins page, right next to Installed; on older hosts open Settings → Plugin Market. Browse, search, one-click install.
+
+ 📡 The same catalog is also a plugin market index. On dsh 0.2.1+, open Plugins → Discover → Index sources and add https://cdn.jsdelivr.net/npm/dsh-plugin-catalog/index.json. That is this list as a format-1 index, served from npm so it loads quickly everywhere — dsh gives a source 15 seconds, and the GitHub Pages copies (https://awesome-dsh-plugin.com/index.json and https://dshmarket.com/index.json) can exceed that from some networks. The host&#x27;s Discover tab and the plugin_market agent tool then search it.
+
+!dsh-market
+
+One-click themes: install, switch live, no restart.
+
+ Install
+
+- Official DSH Desktop: Open Settings → Plugins in the app, search for
+  dshmarket, and install it through the app&#x27;s plugin manager. No command line
+  is needed.
+- Regular dsh web: Run this command, then restart dsh web:
+
+  sh
+  dsh plugin --profile web add dshmarket
+  
+
+- Custom profile: Replace web in that command with your host&#x27;s actual
+  profile name: dsh plugin --profile  add dshmarket. Follow your
+  host&#x27;s restart instructions.
+
+- From the GitHub source (no build): add github:dsh-market/dsh-market
+  makes pnpm ask before running the package&#x27;s build scripts. The prebuilt
+  tarball attached to the same release installs without that step:
+
+  sh
+  dsh plugin --profile  add https://github.com/dsh-market/dsh-market/releases/download/v/dshmarket-.tgz
+  
+
+On a machine with DSH Desktop, running dsh plugin --profile web add dshmarket
+may report success but installs the market into profiles/web, not the
+profile used by the Desktop app. It will not appear in Desktop. Install through
+the app&#x27;s Settings → Plugins instead; Desktop&#x27;s profile is managed by the app.
+
+Once it is installed, open the Plugins page and pick the Plugin Market
+tab next to Installed (dsh 0.2.1 and newer — plain dsh web included, no
+desktop app needed). The market is also still a section of Settings → Plugin
+Market: on dsh 0.2.0 and older that is the only way in, and from 0.2.1 the
+Settings dialog lives in the account menu. If you would rather reach it in one
+click from anywhere, the market can also put its own Plugin Market row in
+the sidebar; turn it on from the market&#x27;s card under Plugins. All three
+entries can be switched individually under Advanced in that card, and the
+market refuses to close the last one. Going the
+other way, an installed plugin&#x27;s ··· menu offers View in Plugins on
+dsh 0.2.1+: it opens the host&#x27;s own page for that plugin, which is the only
+place its individual rows can be switched one by one.
+
+Requires dsh web 0.1.0-rc.6 or newer. On an older host the market
+disables itself and says so in the browser console rather than rendering
+against primitives that are not there — if the Plugin Market entry never
+appears, that is usually why. Worth checking when a desktop b</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/dsh-market/dsh-market/issues/992"><span class="rp-item-num">#992</span><span class="rp-item-title">插件列表用瀑布流参差不齐，边界不明显，看的眼花</span><span class="rp-item-extra">14 comments · 2026-10-23</span></a><a class="rp-item" href="https://github.com/dsh-market/dsh-market/issues/1097"><span class="rp-item-num">#1097</span><span class="rp-item-title">安装插件过多，插件市场会比较卡顿</span><span class="rp-item-extra">13 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/dsh-market/dsh-market/issues/401"><span class="rp-item-num">#401</span><span class="rp-item-title">插件卡片上直接显示「它要什么能力」—— 只陈列事实，让用户自己判断</span><span class="rp-item-extra">12 comments · 2026-08-28</span></a><a class="rp-item" href="https://github.com/dsh-market/dsh-market/issues/928"><span class="rp-item-num">#928</span><span class="rp-item-title">[Bug] remove 之后进程被终止：插件从 profile 消失，且没有 update/uninstall/brokenPlugins 记录可查</span><span class="rp-item-extra">11 comments · 2026-10-19</span></a><a class="rp-item" href="https://github.com/dsh-market/dsh-market/issues/741"><span class="rp-item-num">#741</span><span class="rp-item-title">【桌面端启动故障】安装 dshmarket 1.66.2 后无法启动，提示 Web RPC failed</span><span class="rp-item-extra">11 comments · 2026-09-27</span></a><a class="rp-item" href="https://github.com/dsh-market/dsh-market/issues/900"><span class="rp-item-num">#900</span><span class="rp-item-title">[Bug][Desktop] 自更新会把 dshmarket 自己卸载掉：removeBundle 后 installBundle 未执行，市场从 profile 消失（1.66.33 / 1.66.34 实证）</span><span class="rp-item-extra">10 comments · 2026-10-17</span></a><a class="rp-item" href="https://github.com/dsh-market/dsh-market/issues/1093"><span class="rp-item-num">#1093</span><span class="rp-item-title">[Bug] 卸载插件后 minimumReleaseAgeExclude 留下已卸载包的孤儿条目</span><span class="rp-item-extra">9 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/dsh-market/dsh-market/issues/1056"><span class="rp-item-num">#1056</span><span class="rp-item-title">[Bug][Desktop] 安装/卸载插件时市场自己被卸载：路由 404 或后续永久 409（DSH 0.2.1-rc.4 / 0.2.2-alpha.2）</span><span class="rp-item-extra">9 comments · 2026-10-30</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/dsh-market/dsh-market/releases"><b>dshmarket 1.73.19</b> <span class="rp-rel-tag">v1.73.19</span> <span class="rp-item-extra">2026-11-12</span></a><pre class="rp-pre">npm: https://www.npmjs.com/package/dshmarket/v/1.73.19 · dist-tag: latest
+
+ What&#x27;s Changed
+ test: keep npm test off the network and green on Windows by @BBleae in https://github.com/dsh-market/dsh-market/pull/1178
+
+
+Full Changelog: https://github.com/dsh-market/dsh-market/compare/v1.73.18...v1.73.19</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (10)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/weixin_30607125/article/details/170163121" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">DeepSeek Harness 插件市场 dsh-market 腾讯云部署教程</span><span class="rp-item-extra">2026-11-05</span></a><a class="rp-item" href="https://www.bilibili.com/video/BV1SgnS63EoH/" target="_blank" rel="noopener"><span class="rp-news-src">bilibili</span><span class="rp-item-title">超详细的DSH安装和插件整合视频，从零带你玩转DSH</span><span class="rp-item-extra">2026-10-25</span></a><a class="rp-item" href="https://news.qq.com/rain/a/20261021A0DUAD00" target="_blank" rel="noopener"><span class="rp-news-src">腾讯网</span><span class="rp-item-title">DeepSeek Harness不可错过的12款神器！还有崔添翼推荐的</span><span class="rp-item-extra">2026-10-21</span></a><a class="rp-item" href="https://blog.csdn.net/weixin_31528001/article/details/166395504" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">腾讯云上搭建DeepSeek Harness插件市场dsh-market完整教程</span><span class="rp-item-extra">2026-09-22</span></a><a class="rp-item" href="https://blog.csdn.net/weixin_29043895/article/details/165833052" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">DeepSeek Harness与dsh-market插件市场安装配置实战：从环境准备到调用</span><span class="rp-item-extra">2026-09-17</span></a><a class="rp-item" href="https://www.msn.cn/zh-cn/news/other/github%E6%8E%A8%E8%8D%90-awesome-dsh-plugin/ar-AA2atq3f" target="_blank" rel="noopener"><span class="rp-news-src">煎蛋 on MSN</span><span class="rp-item-title">Github推荐：Awesome DSH plugin</span><span class="rp-item-extra">2026-08-19</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiYkFVX3lxTE4yT1FrZVNNd25kT3BkYWZ5UDVta2VaWDBKR0hDM0VUMS1VSF9Na2JKY0t3eldHWnZlbkYxZEZaWFRLV3hPWE4yZksyTHpyakJlLWNxZG1XWlltMHEtYUREczRn?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">https://www.80aj.com/</span><span class="rp-item-title">开发者开源 AI Agent 可照做的插件开发全流程，从编码到发布全程自动化</span><span class="rp-item-extra">2026-09-24</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTFBTaklXbTdXaER5RE43NFhsX2pMYmM0OVY2c3dEdTJjSHdRTHN4d3RzUXdOOG41WEstaWJ5SzZsNE5GM1pJT1lIS3dtVVRvVDVSRnB3?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">电子工程专辑EE Times China</span><span class="rp-item-title">DeepSeek Harness必装的10个插件</span><span class="rp-item-extra">2026-08-25</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiV0FVX3lxTE82WGVDRF9aanFZckhzRUxMUE1tQXV1NDhuV3BnRzB6cGktNWFQNjRtVm1LbVp0TUkzQmJkVVlLckM1amhONE5zNENWSm1PbzExd0c2dTQ5WQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">QQ News</span><span class="rp-item-title">16 个超火的 DeepSeek Harness 插件，大肥鱼已经落后 2 个版本了</span><span class="rp-item-extra">2026-08-21</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiQ0FVX3lxTE1ycHdmcVBTZWdqX3JYVjhUbEI1ZEFFZmtPeEJ0WnAxMEVsZVIyNDV5X3NtN1hSU2xMMVlFam8zSkpySjQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">爱范儿</span><span class="rp-item-title">网友把DeepSeek Harness玩成了赛博乐高，我们挑出了最有意思的11 个插件</span><span class="rp-item-extra">2026-08-18</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/dsh-market__dsh-market.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

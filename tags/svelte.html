@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#svelte · GitHub Trending Rank Radar</title>
+<meta name="description" content="GitHub 标签 svelte 下的开源项目趋势榜 · 21 repos tagged svelte on GitHub · 独立采集 GitHub 仓库数据的开源趋势榜单">
+<meta name="keywords" content="GitHub trending, GitHub ranking, GitHub 排行榜, 开源榜单, trending repos, star growth, star history, 星标增长, github stars, open data, github pages, github actions, 开源项目, open source rankings">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/tags/svelte">
+<!-- bilingual content lives on ONE url — no per-lang alternates to declare -->
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="GitHub Trending Rank Radar" href="../feed.xml">
+<meta property="og:title" content="GitHub Trending Rank Radar">
+<meta property="og:description" content="GitHub 开源项目趋势榜单 · 每日双快照 · 十一榜单 · 历史回看 | Independent GitHub trend radar · twice-daily snapshots · 11 boards · bilingual">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zhuikan.com/tags/svelte">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zhuikan.com/assets/og.png">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "GitHub Trending Rank Radar",
+      "alternateName": "GitHub 开源项目趋势榜单",
+      "url": "https://zhuikan.com/",
+      "description": "Independent open-source GitHub trend radar: daily/weekly/monthly star growth & rate boards, new-repo and all-time charts, browsable by day, month and year. 独立采集 GitHub 仓库数据的开源趋势榜单。",
+      "inLanguage": ["zh-CN", "en"],
+      "isAccessibleForFree": true,
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "publisher": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "name": "GitHub Trending Rankings Dataset",
+      "description": "Twice-daily snapshots of tracked GitHub repositories with stars, forks, watchers, issues, PRs and releases; precomputed daily/weekly/monthly/new/all-time leaderboard JSON.",
+      "url": "https://zhuikan.com/data/index.json",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "isAccessibleForFree": true,
+      "temporalCoverage": "2026-11-09/..",
+      "creator": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      },
+      "distribution": [
+        {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://zhuikan.com/data/index.json"}
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body data-base="../" data-tag="svelte" data-tag-name="svelte">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到榜单</a>
+
+<noscript>
+  <div style="max-width:760px;margin:64px auto;padding:0 24px;font-family:system-ui,sans-serif;line-height:1.7;color:#333">
+    <h1>GitHub Trending Rank Radar</h1>
+    <p>独立采集 GitHub 仓库数据的开源趋势榜单：新星榜、日 / 周 / 月飙升榜与增速榜、总榜，支持按日 / 月 / 年回看历史。每日两次快照（UTC 02:00 / 14:00），榜单由快照差值计算。</p>
+    <p>An independent open-source GitHub trending radar: new repos, daily / weekly / monthly star-growth and rate boards, an all-time chart, and day / month / year history — snapshots taken twice daily (UTC 02:00 &amp; 14:00).</p>
+    <p>Machine-readable open data:
+      <a href="https://api-site.zhuikan.com/data/index.json">api-site/data/index.json</a> ·
+      <a href="../llms.txt">llms.txt</a> ·
+      <a href="../sitemap.xml">sitemap.xml</a> ·
+      <a href="https://github.com/awesome-market/trending-rank-radar">Source on GitHub</a>
+    </p>
+    <p><strong>榜单交互需要启用 JavaScript。This site requires JavaScript for the interactive boards.</strong></p>
+  </div>
+</noscript>
+
+<!-- shared svg gradient defs for sparklines -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <a class="hero-brand brand-home" href="../">
+      <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+        <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+        <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+        <g class="radar-sweep">
+          <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+        </g>
+      </svg>
+      <div>
+        <h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1>
+        <p class="hero-sub" data-i18n="hero.sub">GitHub 开源项目趋势榜单 · 每日双快照 · 八种榜单 · 日 / 月 / 年历史回看</p>
+      </div>
+    </a>
+    <div class="hero-meta">
+      <div class="search-wrap" id="searchWrap">
+        <select id="searchScope" class="search-scope" data-i18n-aria="search.scope.aria" aria-label="搜索范围">
+          <option value="repo" data-i18n="search.scope.repo">仓库</option>
+          <option value="news" data-i18n="search.scope.news">新闻</option>
+        </select>
+        <div class="search-box">
+          <svg class="search-ico" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"/></svg>
+          <input id="searchInput" class="search-input" type="search" autocomplete="off" spellcheck="false" data-i18n-ph="search.ph.repo" data-i18n-aria="search.ph.repo" aria-label="搜索" enterkeyhint="search">
+        </div>
+        <div class="search-drop" id="searchDrop" hidden></div>
+      </div>
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06-1.06a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.06l1.06-1.061a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero-viz" id="heroViz" data-enter>
+    <div class="hv-copy">
+      <p class="hv-kicker" data-i18n="hv.kicker">独立采集 · 开源数据</p>
+      <h2 class="hv-title" data-i18n="hv.title">独立追踪 GitHub 星标的每一次脉动</h2>
+      <p class="hv-sub" data-i18n="hv.sub">每日两次快照，用差值还原真实增长——不是又一份热榜镜像。</p>
+      <a class="hv-cta" href="#boardTabs" data-i18n="hv.cta">浏览今日榜单 →</a>
+    </div>
+    <div class="hv-side">
+      <div class="hv-chart" id="hvChart" aria-hidden="true"></div>
+      <div class="hv-cap" id="hvCap"></div>
+    </div>
+  </section>
+
+  <div class="controls" id="controls">
+    <div class="ctrl-row">
+      <nav class="board-tabs" id="boardTabs" data-i18n-aria="boards.aria" aria-label="榜单"></nav>
+    </div>
+    <div class="ctrl-row ctrl-sub">
+      <div class="seg" id="periodSeg" role="tablist" data-i18n-aria="period.aria" aria-label="时间维度">
+        <button data-period="day" class="seg-btn active" data-i18n="period.day">日</button>
+        <button data-period="month" class="seg-btn" data-i18n="period.month">月</button>
+        <button data-period="year" class="seg-btn" data-i18n="period.year">年</button>
+      </div>
+      <label class="sf-label" for="selDate" data-i18n="date.label">榜单日期</label>
+      <select id="selDate" class="sel" data-i18n-aria="date.aria" aria-label="日期"></select>
+      <div class="star-filter" role="group" data-i18n-aria="star.range" aria-label="Star 范围筛选">
+        <span class="sf-label" data-i18n="star.range">Star 范围</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="min">下限</span>
+          <input id="minK" type="number" min="0" step="1" value="1" class="sf-input" data-i18n-aria="minK.aria" aria-label="最小 Star 千数">
+        </label>
+        <span class="sf-sep">–</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="max">上限</span>
+          <input id="maxK" type="number" min="0" step="1" value="500" class="sf-input" data-i18n-aria="maxK.aria" aria-label="最大 Star 千数">
+        </label>
+        <span class="sf-unit">k</span>
+        <button id="applyFilter" class="sf-btn" data-i18n="apply">筛选</button>
+      </div>
+      <span class="window-info" id="windowInfo"></span>
+    </div>
+  </div>
+
+  <section id="content">
+    <div class="empty-state" id="emptyState" hidden>
+      <div class="empty-main">
+        <svg class="radar-big" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.4"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.3"/>
+          <g class="radar-sweep radar-sweep-lg">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <h2 data-i18n="empty.title">榜单积累中</h2>
+        <p id="emptyText" data-i18n="empty.text">快照数据正在积累，增长榜需要至少 2 个有效快照日。</p>
+        <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+        <p class="progress-hint" id="progressHint"></p>
+        <div class="empty-actions" id="emptyActions"></div>
+      </div>
+      <div class="empty-preview" id="emptyPreview"></div>
+    </div>
+
+    <div id="podiumWrap"></div>
+    <div id="listWrap"><!--SSR--><p style="color:var(--muted,#8b949e);font-size:13px;margin:0 4px 10px">2026-11-14 · #svelte · 21 <span class="i18n-zh">个仓库 · 按 star 排序</span><span class="i18n-en">repos · by stars</span></p><div class="rank-list"><div class="rank-row" data-fn="immich-app/immich"><span class="row-rank top">1</span><a class="row-avatar" href="../repos/immich-app__immich"><img src="https://avatars.githubusercontent.com/u/109746326?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/immich-app__immich"><span class="row-owner">immich-app</span><span class="row-sep">/</span><span class="row-repo">immich</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 119,106</span><span class="m" title="forks">⑂ 7,590</span><span class="m" title="watchers">👁 358</span><span class="m" title="issues">● 9,766</span><span class="m" title="prs">⑃ 13,547</span><span class="m" title="releases">▤ 326</span></div><div class="row-desc">High performance self-hosted photo and video management solution.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/backup-tool">backup-tool</a><a class="row-tag" href="https://github.com/topics/mobile-app">mobile-app</a><a class="row-tag" href="https://github.com/topics/photo-gallery">photo-gallery</a><a class="row-tag" href="https://github.com/topics/photos">photos</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 119,106</div></div></div><div class="rank-row" data-fn="storybookjs/storybook"><span class="row-rank top">2</span><a class="row-avatar" href="../repos/storybookjs__storybook"><img src="https://avatars.githubusercontent.com/u/22632046?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/storybookjs__storybook"><span class="row-owner">storybookjs</span><span class="row-sep">/</span><span class="row-repo">storybook</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 91,557</span><span class="m" title="forks">⑂ 10,517</span><span class="m" title="watchers">👁 939</span><span class="m" title="issues">● 14,786</span><span class="m" title="prs">⑃ 17,941</span><span class="m" title="releases">▤ 1,868</span></div><div class="row-desc">Storybook is the industry standard workshop for building, documenting, and testing UI components in isolation</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/storybook">storybook</a><a class="row-tag" href="https://github.com/topics/styleguide">styleguide</a><a class="row-tag" href="../tags/testing">testing</a><a class="row-tag" href="https://github.com/topics/components">components</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 91,557</div></div></div><div class="rank-row" data-fn="unionlabs/union"><span class="row-rank top">3</span><a class="row-avatar" href="../repos/unionlabs__union"><img src="https://avatars.githubusercontent.com/u/129756567?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/unionlabs__union"><span class="row-owner">unionlabs</span><span class="row-sep">/</span><span class="row-repo">union</span></a></div><div class="row-meta"><span class="lang-tag">Rust</span><span class="m" title="stars">★ 73,715</span><span class="m" title="forks">⑂ 3,910</span><span class="m" title="watchers">👁 1,600</span><span class="m" title="issues">● 1,845</span><span class="m" title="prs">⑃ 3,529</span><span class="m" title="releases">▤ 113</span></div><div class="row-desc">The trust-minimized, zero-knowledge bridging protocol, designed for censorship resistance, extremely high security, and usage in decentralized finance.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/blockchain">blockchain</a><a class="row-tag" href="https://github.com/topics/cosmos">cosmos</a><a class="row-tag" href="https://github.com/topics/evm">evm</a><a class="row-tag" href="../tags/golang">golang</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 73,715</div></div></div><div class="rank-row" data-fn="coollabsio/coolify"><span class="row-rank">4</span><a class="row-avatar" href="../repos/coollabsio__coolify"><img src="https://avatars.githubusercontent.com/u/60715044?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/coollabsio__coolify"><span class="row-owner">coollabsio</span><span class="row-sep">/</span><span class="row-repo">coolify</span></a></div><div class="row-meta"><span class="lang-tag">PHP</span><span class="m" title="stars">★ 66,049</span><span class="m" title="forks">⑂ 5,987</span><span class="m" title="watchers">👁 198</span><span class="m" title="issues">● 4,323</span><span class="m" title="prs">⑃ 5,761</span><span class="m" title="releases">▤ 729</span></div><div class="row-desc">An open-source, self-hostable PaaS alternative to Vercel, Heroku &amp; Netlify that lets you easily deploy static sites, databases, full-stack applications and 360+ one-click services on your own servers.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/nodejs">nodejs</a><a class="row-tag" href="../tags/mysql">mysql</a><a class="row-tag" href="../tags/php">php</a><a class="row-tag" href="../tags/docker">docker</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 66,049</div></div></div><div class="rank-row" data-fn="TanStack/query"><span class="row-rank">5</span><a class="row-avatar" href="../repos/TanStack__query"><img src="https://avatars.githubusercontent.com/u/72518640?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/TanStack__query"><span class="row-owner">TanStack</span><span class="row-sep">/</span><span class="row-repo">query</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 50,563</span><span class="m" title="forks">⑂ 4,218</span><span class="m" title="watchers">👁 247</span><span class="m" title="issues">● 2,410</span><span class="m" title="prs">⑃ 6,075</span><span class="m" title="releases">▤ 3,001</span></div><div class="row-desc">🤖 Powerful asynchronous state management, server-state utilities and data fetching for the web. TS/JS, React Query, Solid Query, Svelte Query and Vue Query.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/react">react</a><a class="row-tag" href="https://github.com/topics/hooks">hooks</a><a class="row-tag" href="https://github.com/topics/fetch">fetch</a><a class="row-tag" href="https://github.com/topics/cache">cache</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 50,563</div></div></div><div class="rank-row" data-fn="imputnet/cobalt"><span class="row-rank">6</span><a class="row-avatar" href="../repos/imputnet__cobalt"><img src="https://avatars.githubusercontent.com/u/152056268?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/imputnet__cobalt"><span class="row-owner">imputnet</span><span class="row-sep">/</span><span class="row-repo">cobalt</span></a></div><div class="row-meta"><span class="lang-tag">Svelte</span><span class="m" title="stars">★ 46,212</span><span class="m" title="forks">⑂ 4,115</span><span class="m" title="watchers">👁 196</span><span class="m" title="issues">● 1,047</span><span class="m" title="prs">⑃ 507</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">best way to save what you love</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/downloader">downloader</a><a class="row-tag" href="https://github.com/topics/reddit">reddit</a><a class="row-tag" href="https://github.com/topics/social-media">social-media</a><a class="row-tag" href="https://github.com/topics/twitter">twitter</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 46,212</div></div></div><div class="rank-row" data-fn="videojs/video.js"><span class="row-rank">7</span><a class="row-avatar" href="../repos/videojs__video.js"><img src="https://avatars.githubusercontent.com/u/3287189?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/videojs__video.js"><span class="row-owner">videojs</span><span class="row-sep">/</span><span class="row-repo">video.js</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 40,180</span><span class="m" title="forks">⑂ 7,496</span><span class="m" title="watchers">👁 1,232</span><span class="m" title="issues">● 5,450</span><span class="m" title="prs">⑃ 3,551</span><span class="m" title="releases">▤ 524</span></div><div class="row-desc">Video.js v10 - open source media player framework for HTML and React.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/video">video</a><a class="row-tag" href="https://github.com/topics/player">player</a><a class="row-tag" href="https://github.com/topics/hls">hls</a><a class="row-tag" href="../tags/javascript">javascript</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 40,180</div></div></div><div class="rank-row" data-fn="xyflow/xyflow"><span class="row-rank">8</span><a class="row-avatar" href="../repos/xyflow__xyflow"><img src="https://avatars.githubusercontent.com/u/7106853?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/xyflow__xyflow"><span class="row-owner">xyflow</span><span class="row-sep">/</span><span class="row-repo">xyflow</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 39,009</span><span class="m" title="forks">⑂ 2,578</span><span class="m" title="watchers">👁 134</span><span class="m" title="issues">● 2,436</span><span class="m" title="prs">⑃ 2,154</span><span class="m" title="releases">▤ 398</span></div><div class="row-desc">React Flow | Svelte Flow - Powerful open source libraries for building node-based UIs with React (https://reactflow.dev) or Svelte (https://svelteflow.dev). Ready out-of-the-box and infinitely customizable.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/flowchart">flowchart</a><a class="row-tag" href="https://github.com/topics/graph">graph</a><a class="row-tag" href="https://github.com/topics/typescript-library">typescript-library</a><a class="row-tag" href="../tags/react">react</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 39,009</div></div></div><div class="rank-row" data-fn="wailsapp/wails"><span class="row-rank">9</span><a class="row-avatar" href="../repos/wailsapp__wails"><img src="https://avatars.githubusercontent.com/u/39746503?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/wailsapp__wails"><span class="row-owner">wailsapp</span><span class="row-sep">/</span><span class="row-repo">wails</span></a></div><div class="row-meta"><span class="lang-tag">Go</span><span class="m" title="stars">★ 37,095</span><span class="m" title="forks">⑂ 1,936</span><span class="m" title="watchers">👁 161</span><span class="m" title="issues">● 2,666</span><span class="m" title="prs">⑃ 3,248</span><span class="m" title="releases">▤ 389</span></div><div class="row-desc">Create beautiful applications using Go</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/go">go</a><a class="row-tag" href="../tags/golang">golang</a><a class="row-tag" href="../tags/vuejs">vuejs</a><a class="row-tag" href="https://github.com/topics/desktop-application">desktop-application</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 37,095</div></div></div><div class="rank-row" data-fn="tabler/tabler-icons"><span class="row-rank">10</span><a class="row-avatar" href="../repos/tabler__tabler-icons"><img src="https://avatars.githubusercontent.com/u/35471246?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/tabler__tabler-icons"><span class="row-owner">tabler</span><span class="row-sep">/</span><span class="row-repo">tabler-icons</span></a></div><div class="row-meta"><span class="lang-tag">JavaScript</span><span class="m" title="stars">★ 22,647</span><span class="m" title="forks">⑂ 1,276</span><span class="m" title="watchers">👁 107</span><span class="m" title="issues">● 1,142</span><span class="m" title="prs">⑃ 485</span><span class="m" title="releases">▤ 260</span></div><div class="row-desc">A set of over 6200 free MIT-licensed high-quality SVG icons for you to use in your web projects.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/icons">icons</a><a class="row-tag" href="https://github.com/topics/iconset">iconset</a><a class="row-tag" href="https://github.com/topics/svg-icons">svg-icons</a><a class="row-tag" href="../tags/svg">svg</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 22,647</div></div></div><div class="rank-row" data-fn="Automattic/harper"><span class="row-rank">11</span><a class="row-avatar" href="../repos/Automattic__harper"><img src="https://avatars.githubusercontent.com/u/887802?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/Automattic__harper"><span class="row-owner">Automattic</span><span class="row-sep">/</span><span class="row-repo">harper</span></a></div><div class="row-meta"><span class="lang-tag">Rust</span><span class="m" title="stars">★ 17,680</span><span class="m" title="forks">⑂ 828</span><span class="m" title="watchers">👁 49</span><span class="m" title="issues">● 1,951</span><span class="m" title="prs">⑃ 2,870</span><span class="m" title="releases">▤ 120</span></div><div class="row-desc">Offline, privacy-first grammar checker. Fast, open-source, Rust-powered</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/developer-tools">developer-tools</a><a class="row-tag" href="https://github.com/topics/english-language">english-language</a><a class="row-tag" href="https://github.com/topics/grammar-checker">grammar-checker</a><a class="row-tag" href="../tags/rust">rust</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 17,680</div></div></div><div class="rank-row" data-fn="VERT-sh/VERT"><span class="row-rank">12</span><a class="row-avatar" href="../repos/VERT-sh__VERT"><img src="https://avatars.githubusercontent.com/u/198117259?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/VERT-sh__VERT"><span class="row-owner">VERT-sh</span><span class="row-sep">/</span><span class="row-repo">VERT</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 16,251</span><span class="m" title="forks">⑂ 867</span><span class="m" title="watchers">👁 44</span><span class="m" title="issues">● 131</span><span class="m" title="prs">⑃ 146</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">The next-generation file converter. Open source, fully local* and free forever.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/conversion">conversion</a><a class="row-tag" href="../tags/ffmpeg">ffmpeg</a><a class="row-tag" href="../tags/wasm">wasm</a><a class="row-tag" href="../tags/svelte">svelte</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 16,251</div></div></div><div class="rank-row" data-fn="Abdenasser/neohtop"><span class="row-rank">13</span><a class="row-avatar" href="../repos/Abdenasser__neohtop"><img src="https://avatars.githubusercontent.com/u/8364240?u=39045299b8b8cca9d9613a6b39d591b2092ca82e&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/Abdenasser__neohtop"><span class="row-owner">Abdenasser</span><span class="row-sep">/</span><span class="row-repo">neohtop</span></a></div><div class="row-meta"><span class="lang-tag">Svelte</span><span class="m" title="stars">★ 9,510</span><span class="m" title="forks">⑂ 318</span><span class="m" title="watchers">👁 20</span><span class="m" title="issues">● 92</span><span class="m" title="prs">⑃ 76</span><span class="m" title="releases">▤ 14</span></div><div class="row-desc">💪🏻 Blazing-fast system monitoring for your desktop (built with Rust, Tauri &amp; Svelte)</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/activity">activity</a><a class="row-tag" href="https://github.com/topics/btop">btop</a><a class="row-tag" href="../tags/cross-platform">cross-platform</a><a class="row-tag" href="https://github.com/topics/htop">htop</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 9,510</div></div></div><div class="rank-row" data-fn="huntabyte/shadcn-svelte"><span class="row-rank">14</span><a class="row-avatar" href="../repos/huntabyte__shadcn-svelte"><img src="https://avatars.githubusercontent.com/u/64506580?u=3c8e55af5eabf037fd8750868b0d7808df53bc07&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/huntabyte__shadcn-svelte"><span class="row-owner">huntabyte</span><span class="row-sep">/</span><span class="row-repo">shadcn-svelte</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 9,258</span><span class="m" title="forks">⑂ 577</span><span class="m" title="watchers">👁 42</span><span class="m" title="issues">● 1,126</span><span class="m" title="prs">⑃ 1,389</span><span class="m" title="releases">▤ 120</span></div><div class="row-desc">shadcn/ui, but for Svelte. ✨</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/bits-ui">bits-ui</a><a class="row-tag" href="https://github.com/topics/shadcn-svelte">shadcn-svelte</a><a class="row-tag" href="https://github.com/topics/shadcn-ui">shadcn-ui</a><a class="row-tag" href="../tags/svelte">svelte</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 9,258</div></div></div><div class="rank-row" data-fn="davidjerleke/embla-carousel"><span class="row-rank">15</span><a class="row-avatar" href="../repos/davidjerleke__embla-carousel"><img src="https://avatars.githubusercontent.com/u/11529148?u=94446866c576d620cbd33e62834c480091fedcf0&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/davidjerleke__embla-carousel"><span class="row-owner">davidjerleke</span><span class="row-sep">/</span><span class="row-repo">embla-carousel</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 8,473</span><span class="m" title="forks">⑂ 267</span><span class="m" title="watchers">👁 23</span><span class="m" title="issues">● 489</span><span class="m" title="prs">⑃ 340</span><span class="m" title="releases">▤ 143</span></div><div class="row-desc">A lightweight carousel library with fluid motion and great swipe precision.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/carousel">carousel</a><a class="row-tag" href="https://github.com/topics/slider">slider</a><a class="row-tag" href="../tags/typescript">typescript</a><a class="row-tag" href="../tags/javascript">javascript</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 8,473</div></div></div><div class="rank-row" data-fn="shader-effects-inc/shaders"><span class="row-rank">16</span><a class="row-avatar" href="../repos/shader-effects-inc__shaders"><img src="https://avatars.githubusercontent.com/u/265144305?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/shader-effects-inc__shaders"><span class="row-owner">shader-effects-inc</span><span class="row-sep">/</span><span class="row-repo">shaders</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 5,933</span><span class="m" title="forks">⑂ 279</span><span class="m" title="watchers">👁 9</span><span class="m" title="issues">● 4</span><span class="m" title="prs">⑃ 29</span><span class="m" title="releases">▤ 8</span></div><div class="row-desc">WebGPU components for React, Vue, Svelte, Solid, JS &amp; Framer</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/shaders">shaders</a><a class="row-tag" href="../tags/cli">cli</a><a class="row-tag" href="../tags/javascript">javascript</a><a class="row-tag" href="../tags/mcp">mcp</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,933</div></div></div><div class="rank-row" data-fn="middleapi/orpc"><span class="row-rank">17</span><a class="row-avatar" href="../repos/middleapi__orpc"><img src="https://avatars.githubusercontent.com/u/173978236?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/middleapi__orpc"><span class="row-owner">middleapi</span><span class="row-sep">/</span><span class="row-repo">orpc</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 5,764</span><span class="m" title="forks">⑂ 176</span><span class="m" title="watchers">👁 11</span><span class="m" title="issues">● 333</span><span class="m" title="prs">⑃ 2,000</span><span class="m" title="releases">▤ 271</span></div><div class="row-desc">Typesafe APIs Made Simple 🪄</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/api">api</a><a class="row-tag" href="https://github.com/topics/bunjs">bunjs</a><a class="row-tag" href="https://github.com/topics/cloudflare-worker">cloudflare-worker</a><a class="row-tag" href="https://github.com/topics/contract-first">contract-first</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,764</div></div></div><div class="rank-row" data-fn="serge-chat/serge"><span class="row-rank">18</span><a class="row-avatar" href="../repos/serge-chat__serge"><img src="https://avatars.githubusercontent.com/u/135821135?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/serge-chat__serge"><span class="row-owner">serge-chat</span><span class="row-sep">/</span><span class="row-repo">serge</span></a></div><div class="row-meta"><span class="lang-tag">Svelte</span><span class="m" title="stars">★ 5,693</span><span class="m" title="forks">⑂ 385</span><span class="m" title="watchers">👁 47</span><span class="m" title="issues">● 180</span><span class="m" title="prs">⑃ 1,617</span><span class="m" title="releases">▤ 27</span></div><div class="row-desc">A web interface for chatting with Alpaca through llama.cpp. Fully dockerized, with an easy to use API.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/llama">llama</a><a class="row-tag" href="https://github.com/topics/alpaca">alpaca</a><a class="row-tag" href="../tags/docker">docker</a><a class="row-tag" href="https://github.com/topics/fastapi">fastapi</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,693</div></div></div><div class="rank-row" data-fn="Splode/pomotroid"><span class="row-rank">19</span><a class="row-avatar" href="../repos/Splode__pomotroid"><img src="https://avatars.githubusercontent.com/u/13758438?u=b91def1f39a535dd261161bba616c4ce25f3b3e3&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/Splode__pomotroid"><span class="row-owner">Splode</span><span class="row-sep">/</span><span class="row-repo">pomotroid</span></a></div><div class="row-meta"><span class="lang-tag">Rust</span><span class="m" title="stars">★ 5,611</span><span class="m" title="forks">⑂ 494</span><span class="m" title="watchers">👁 38</span><span class="m" title="issues">● 237</span><span class="m" title="prs">⑃ 255</span><span class="m" title="releases">▤ 31</span></div><div class="row-desc">:tomato: Simple and visually-pleasing Pomodoro timer</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/pomodoro">pomodoro</a><a class="row-tag" href="https://github.com/topics/pomodoro-timer">pomodoro-timer</a><a class="row-tag" href="../tags/productivity">productivity</a><a class="row-tag" href="https://github.com/topics/time-management">time-management</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,611</div></div></div><div class="rank-row" data-fn="livebud/bud"><span class="row-rank">20</span><a class="row-avatar" href="../repos/livebud__bud"><img src="https://avatars.githubusercontent.com/u/93525642?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/livebud__bud"><span class="row-owner">livebud</span><span class="row-sep">/</span><span class="row-repo">bud</span></a></div><div class="row-meta"><span class="lang-tag">JavaScript</span><span class="m" title="stars">★ 5,586</span><span class="m" title="forks">⑂ 175</span><span class="m" title="watchers">👁 61</span><span class="m" title="issues">● 130</span><span class="m" title="prs">⑃ 221</span><span class="m" title="releases">▤ 30</span></div><div class="row-desc">The Full-Stack Web Framework for Go</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/framework">framework</a><a class="row-tag" href="https://github.com/topics/full-stack">full-stack</a><a class="row-tag" href="https://github.com/topics/fullstack">fullstack</a><a class="row-tag" href="../tags/go">go</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,586</div></div></div><div class="rank-row" data-fn="vercel-labs/ui"><span class="row-rank">21</span><a class="row-avatar" href="../repos/vercel-labs__ui"><img src="https://avatars.githubusercontent.com/u/108547162?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/vercel-labs__ui"><span class="row-owner">vercel-labs</span><span class="row-sep">/</span><span class="row-repo">ui</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 4,076</span><span class="m" title="forks">⑂ 107</span><span class="m" title="watchers">👁 6</span><span class="m" title="issues">● 30</span><span class="m" title="prs">⑃ 451</span><span class="m" title="releases">▤ 6</span></div><div class="row-desc">A library of behaviors for agents to build the next generation of user interfaces.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/agent">agent</a><a class="row-tag" href="https://github.com/topics/component">component</a><a class="row-tag" href="https://github.com/topics/component-library">component-library</a><a class="row-tag" href="https://github.com/topics/headless">headless</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 4,076</div></div></div></div><!--/SSR--></div>
+
+    <details class="month-detail" id="monthDetail">
+      <summary data-i18n="month.top10">当月每日飙升 Top10 摘要</summary>
+      <div id="monthTop10"><!--SSRMT--><!--/SSRMT--></div>
+    </details>
+  </section>
+
+  <section id="yearWrap">
+    <h2 class="section-title" data-i18n="year.entry">年度月度榜入口</h2>
+    <div class="month-grid" id="monthGrid"><!--SSRMG--><!--/SSRMG--></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/app.js?v=d2fbeca0"></script>
+</body>
+</html>

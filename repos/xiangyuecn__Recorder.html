@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>xiangyuecn/Recorder · GitHub Trending Rank Radar</title>
+<meta name="description" content="html5 js 录音 mp3 wav ogg webm amr g711a g711u 格式，支持pc和Android、iOS部分Web浏览器、Hybrid App（提供Android iOS App源码）、微信，提供ASR语音识别转文字 H5版语音通话聊天示例 DTMF编码解码">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Recorder, xiangyuecn, xiangyuecn/Recorder, github stars, github trending, star growth, star history, 开源项目, 星标增长, recorder, record, javascript, html5, h5, luyin">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/xiangyuecn__Recorder">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="xiangyuecn/Recorder · GitHub Trending Rank Radar">
+<meta property="og:description" content="html5 js 录音 mp3 wav ogg webm amr g711a g711u 格式，支持pc和Android、iOS部分Web浏览器、Hybrid App（提供Android iOS App源码）、微信，提供ASR语音识别转文字 H5版语音通话聊天示例 DTMF编码解码">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/xiangyuecn__Recorder">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "xiangyuecn/Recorder", "codeRepository": "https://github.com/xiangyuecn/Recorder", "url": "https://zhuikan.com/repos/xiangyuecn__Recorder", "description": "html5 js 录音 mp3 wav ogg webm amr g711a g711u 格式，支持pc和Android、iOS部分Web浏览器、Hybrid App（提供Android iOS App源码）、微信，提供ASR语音识别转文字 H5版语音通话聊天示例 DTMF编码解码", "author": {"@type": "Organization", "name": "xiangyuecn", "url": "https://github.com/xiangyuecn"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2018-05-16", "keywords": "recorder,record,javascript,html5,h5,luyin,mp3,wav,amr,ogg"}</script>
+</head>
+<body data-repo="xiangyuecn/Recorder" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">xiangyuecn/Recorder</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="xiangyuecn__Recorder"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/13175029?u=c34c17d66736681ad787ca64ae1e77cf1f0cf59e&amp;v=4&s=300" width="300" height="300" alt="xiangyuecn avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Recorder</div>
+      <a class="rp-side-owner" href="https://github.com/xiangyuecn">xiangyuecn</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/xiangyuecn">xiangyuecn</a>
+        <span class="rp-sep">/</span><span class="rp-name">Recorder</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">html5 js 录音 mp3 wav ogg webm amr g711a g711u 格式，支持pc和Android、iOS部分Web浏览器、Hybrid App（提供Android iOS App源码）、微信，提供ASR语音识别转文字 H5版语音通话聊天示例 DTMF编码解码</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,641</b></span><span class="rp-stat" title="forks">⑂ <b>1,093</b></span><span class="rp-stat" title="watchers">👁 <b>82</b></span><span class="rp-stat" title="prs">⑃ <b>5</b></span><span class="rp-stat" title="issues">● <b>290</b></span><span class="rp-stat" title="releases">▤ <b>46</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/recorder">recorder</a><a class="rp-topic" href="https://github.com/topics/record">record</a><a class="rp-topic" href="../tags/javascript">javascript</a><a class="rp-topic" href="https://github.com/topics/html5">html5</a><a class="rp-topic" href="https://github.com/topics/h5">h5</a><a class="rp-topic" href="https://github.com/topics/luyin">luyin</a><a class="rp-topic" href="https://github.com/topics/mp3">mp3</a><a class="rp-topic" href="https://github.com/topics/wav">wav</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2018-05-16</span><a class="rp-meta-bit rp-home" href="https://xiangyuecn.github.io/Recorder/" rel="noopener">xiangyuecn.github.io/Recorder/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/xiangyuecn/Recorder">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">1.3.26070800</span><a class="rp-dl-a" href="https://github.com/xiangyuecn/Recorder/releases/tag/1.3.26070800">1.3.26070800 ↓</a><span class="rp-dl-ver">1.3.26070800</span><span class="rp-dl-date">2026-07-08</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,641</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,093</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">82</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">5</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">290</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">46</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">【源GitHub仓库】 | 【Gitee镜像库】本文档中默认使用github.io部署的链接，如果无法访问，请直接下载仓库源码到本地然后双击打开html文件访问。
+
+
+ :open_book:Recorder用于html5录音
+
+支持在大部分已实现getUserMedia的移动端、PC端浏览器麦克风录音、实时处理，主要包括：Chrome、Firefox、Safari、iOS 14.3+、Android WebView、腾讯Android X5内核(QQ、微信、小程序WebView)、Electron、大部分2021年后更新的Android手机自带浏览器、2024年后更新的Android版UC内核(UC、支付宝、钉钉)；不支持：~~老旧国产手机自带浏览器、老旧iOS(11.0-14.2)上除Safari外的其他任何形式的浏览器~~。
+
+支持在非浏览器环境中使用部分功能（如nodejs、各种使用js来构建的程序），使用RecordApp可在微信小程序、uni-app中直接录音。
+
+支持对任意MediaStream进行音频录制、实时处理，包括：getUserMedia返回的流、WebRTC中的remote流、audio、video标签的captureStream方法返回的流、自己创建的流 等等。
+
+提供多个插件功能支持，拥有丰富的音频可视化、变速变调处理、语音识别、音频流播放等；搭配上强大的实时处理支持，可用于各种网页应用：从简单的录音，到复杂的实时语音识别（ASR），甚至音频相关的游戏，都能从容应对；提供转码支持，允许将录制的buffers数据或任意pcm数据转码成你需要的格式（参考rec.mock方法）。
+
+主要用于语音录制，因此仅对单声道进行支持（未适配双声道），支持超长时间录音（参考onProcess实时清理释放内存）；默认输出mp3格式，另外可选wav、pcm、g711a、g711u、ogg、amr、webm(beta)格式，支持任意格式扩展（前提有相应编码器）；使用recorder.mp3.min.js（150kb）即可录制mp3，使用recorder.wav.min.js（25kb）即可录制wav；均支持实时转码和实时传输。
+
+音频文件的上传和播放：可直接使用常规的Audio HTML标签来播放完整的音频文件，参考文档下面的【快速使用】部分，有上传和播放例子；上传了的录音直接将音频链接赋值给audio.src即可播放；本地的blob音频文件可通过URL.createObjectURL来生成本地链接赋值给audio.src即可播放，或者将blob对象直接赋值给audio.srcObject（兼容性没有src高）。实时的音频片段文件播放，可以使用本库自带的BufferStreamPlayer插件来播放，简单高效，或者采用别的途径播放。
+
+如需录音功能定制开发，网站、App、小程序、前端后端开发等需求，请加本文档下面的QQ群，联系群主（即作者），谢谢~
+
+
+​
+
+Recorder H5 ：
+ [H5在线测试 ]
+ [H5 QuickStart ]
+ [H5 vue ]
+ [H5 ts ]
+ [H5 es module ]
+ [旧版本测试 ]
+
+
+Recorder App ：
+ [RecordApp测试 ]
+ [App QuickStart ]
+ [App vue ]
+ [Android、iOS App源码 ]
+ [微信小程序源码 ]
+ [uni-app源码 ]
+
+
+
+工具集 ：
+ [Recorder代码运行和静态分发 ]
+ [PCM转WAV播放测试和转码 ]
+ [无用户操作测试 ]
+ [Can I Use查看浏览器支持情况 ]
+
+
+
+  手机浏览器扫一扫在线测试
+
+
+
+​
+
+ Demo片段列表
+
+1. 【教程】【PCM基础】buffers转pcm、转采样率、改音量、pcm合并转mp3等格式
+1. 【教程】【音频流】【上传】实时转码上传-实时帧回调版
+1. 【教程】【音频流】【上传】实时转码上传-pcm固定帧大小
+1. 【教程】【音频流】【上传】实时转码上传-通用转码旧版
+1. 【教程】【音频流】【播放】实时解码播放音频片段
+1. 【教程】【播放】【可视化】实时录制处理audio、video播放流
+1. 【教程】【ASR】实时语音识别、音频文件转文字-阿里云版
+1. 【Demo库】【格式转换】-mp3等格式解码转成其他格式
+1. 【Demo库】【格式转换】-wav格式转成其他格式
+1. 【Demo库】【格式转换】-amr格式转成其他格式
+1. 【Demo库】【文件合并】-mp3多个片段文件合并
+1. 【Demo库】【文件合并】-wav多个片段文件合并
+1. 【教程】实时多路音频混音
+1. 【教程】变速变调音频转换
+1. 【教程】新录音从老录音接续、或录制中途插入音频
+1. 【教程】DTMF（电话拨号按键信号）解码、编码
+1. 【测试】PCM采样率转换测试
+1. 【Demo库】【信号处理】IIR低通、高通滤波
+1. 【测试】【信号处理】FFT频域分析ECharts频谱曲线图
+1. 【测试】WebM格式解析并提取音频
+1. 【测试】G711、G72X编码和解码播放
+1. 【Demo库】js二进制转换、基础知识-Base64/Hex/Int16Array/ArrayBuffer/Blob
+1. 【测试】音乐合成-用波形函数将歌曲简谱文本转成PCM
+1. 【测试】音频可视化相关插件测试
+
+
+ App Demo
+Android Demo App ：
+下载APK（40kb，删除.zip后缀，
+源码）
+
+iOS Demo App ：下载源码 自行编译
+
+
+
+
+​
+
+ 【QQ群】交流与支持
+
+欢迎加QQ群：①群 781036591、②群 748359095、③群 450721519、④群 1027243616，纯小写口令：recorder
+
+
+
+
+
+
+
+
+​
+
+​
+
+​
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+​
+
+ :open_book:快速使用
+
+你可以通过阅读和运行QuickStart.html文件来快速入门学习，直接将QuickStart.htmlcopy到你的(https、localhost)网站中，无需其他文件，就能正常开始测试了；注意：需要在https、localhost等安全环境下才能进行录音。
+
+ https环境搭建最佳实践：建议给自己的域名申请一个泛域名通配符证书（.xxx.com），然后线上、本地开发均可使用此证书；本地开发环境直接分配一个三级域名（dev.xxx.com、local.xxx.com、192-168-1-123.xxx.com）解析A记录到电脑局域网的IP地址（192.168.1.123、127.0.0.1），方便本地开发跨端调试（本地如何配置https请针对自己的开发环境自行搜索，很容易）。
+ 
+ 获取泛域名通配符证书推荐：在线免费申请（ZeroSSL、Let’s Encrypt）；不建议自己生成根证书来签发域名证书，一个是流程复杂，每个设备均要导入根证书，致命的是很多现代浏览器不再信任用户目录下导入的根证书（Android）。
+ 
+ 如</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/xiangyuecn/Recorder/issues/52"><span class="rp-item-num">#52</span><span class="rp-item-title">ios 13 Safari 不能连续录音，经常会录不进去</span><span class="rp-item-extra">13 comments · 2019-10-10</span></a><a class="rp-item" href="https://github.com/xiangyuecn/Recorder/issues/166"><span class="rp-item-num">#166</span><span class="rp-item-title">录音结束后 调用了close方法    使用audio标签播放别的音频文件  音频播放声音变小是什么原因造成的 </span><span class="rp-item-extra">12 comments · 2022-08-09</span></a><a class="rp-item" href="https://github.com/xiangyuecn/Recorder/issues/34"><span class="rp-item-num">#34</span><span class="rp-item-title">录制时长不对</span><span class="rp-item-extra">12 comments · 2019-07-16</span></a><a class="rp-item" href="https://github.com/xiangyuecn/Recorder/issues/248"><span class="rp-item-num">#248</span><span class="rp-item-title">微信小程序webView嵌H5，有出现录音丢帧的情况</span><span class="rp-item-extra">10 comments · 2024-09-21</span></a><a class="rp-item" href="https://github.com/xiangyuecn/Recorder/issues/204"><span class="rp-item-num">#204</span><span class="rp-item-title">以base64编码的PCM音频流转成wav播放后都是噪音</span><span class="rp-item-extra">9 comments · 2023-12-21</span></a><a class="rp-item" href="https://github.com/xiangyuecn/Recorder/issues/284"><span class="rp-item-num">#284</span><span class="rp-item-title">录音保存失败，提示“未开始录音”</span><span class="rp-item-extra">8 comments · 2025-06-27</span></a><a class="rp-item" href="https://github.com/xiangyuecn/Recorder/issues/230"><span class="rp-item-num">#230</span><span class="rp-item-title">126.0.6478.127 chrome desktop，M1 mac 机型静音问题</span><span class="rp-item-extra">8 comments · 2024-06-27</span></a><a class="rp-item" href="https://github.com/xiangyuecn/Recorder/issues/164"><span class="rp-item-num">#164</span><span class="rp-item-title">生成的音频是真实录音的4倍时长，且生成的录音时慢倍速播放</span><span class="rp-item-extra">8 comments · 2022-06-13</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/xiangyuecn/Recorder/releases"><b>1.3.26070800</b> <span class="rp-rel-tag">1.3.26070800</span> <span class="rp-item-extra">2026-07-08</span></a><pre class="rp-pre">follow npm version 【重要】修正Recorder.SampleData采样率转换缺陷导致的杂音</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/xiangyuecn__Recorder.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

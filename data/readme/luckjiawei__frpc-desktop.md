@@ -1,0 +1,213 @@
+<a name="readme-top"></a>
+
+<!-- PROJECT SHIELDS -->
+[![Downloads][downloads-shield]][downloads-url]
+[![Release][release-shield]][releases-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/luckjiawei/frpc-desktop">
+    <img src="public/logo/pack/1024x1024.png" alt="Logo" width="140">
+  </a>
+
+<h3 align="center">Frpc-Desktop</h3>
+
+  <p align="center">
+    🎉 Cross-platform desktop client for FRP, visual configuration, easily achieve intranet penetration!
+    <br />
+    All frp versions / Multiple instances / Cloudflare Tunnel / Light &amp; dark theme / Free and open source
+  </p>
+
+  <p>🎊 <strong>10,000+ Downloads Milestone!</strong> Thank you for your support!</p>
+
+  <p><a href="https://jwinks.com/p/frp/">📖 Docs</a> &nbsp; <a href="README.zh_CN.md">中文</a></p>
+
+<a href="https://trendshift.io/repositories/12489" target="_blank"><img src="https://trendshift.io/api/badge/repositories/12489" alt="luckjiawei%2Ffrpc-desktop | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+<a href="https://hellogithub.com/repository/b0dc116e9f2e4b8188da5a6d3e1bd8a4" target="_blank"><img src="https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=b0dc116e9f2e4b8188da5a6d3e1bd8a4&claim_uid=8ZMOhz30mGJAHpa" alt="Featured｜HelloGitHub" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+</div>
+
+> 💡 If you prefer a **web UI**, try [Podux](https://github.com/luckjiawei/podux) —
+> the browser-based frpc manager from the same author.
+
+## Download
+
+Get the latest installer from [Releases](https://github.com/luckjiawei/frpc-desktop/releases/latest):
+
+| Platform | Packages |
+| --- | --- |
+| Windows | `.msi` and `.exe` installers |
+| macOS | `.dmg` (Apple Silicon and Intel) |
+| Linux | `.AppImage`, `.deb`, `.rpm` |
+
+> 2.0 is a full rebuild on Tauri 2 — installers are much smaller than the 1.x Electron builds.
+
+## What's New in 2.0
+
+- **Rebuilt on Tauri 2** — smaller downloads and lower memory usage than the Electron version.
+- **Multiple instances** — run several frpc tunnels to different frps servers at the same time.
+- **Cloudflare Tunnel** — manage cloudflared instances next to your frpc instances.
+- **New dashboard** — a read-only overview of running instances, proxies, connection errors, and bulk start/stop.
+- **Refreshed UI** — light, dark, and system themes, collapsible sidebar, and copyable addresses.
+- **Drawer configuration** — edit each instance's config and view its logs in a side drawer without leaving the page.
+- **SQLite storage** — automatic, backup-safe import of existing 1.x data.
+
+## TODO
+
+- [x] Auto-start on boot
+- [x] Support multiple users with user & meta_token
+- [x] Portable version
+- [x] Add UDP proxy type
+- [x] Support quick sharing of frps
+- [x] Add quick local port selection
+- [x] Support STCP proxy type
+- [x] Download frp through mirror sites
+- [x] Support import/export of all configurations
+- [x] One-click clear all configurations
+- [x] Support importing and recognizing frpc.toml
+- [x] TCP and UDP protocols support batch ports
+- [x] Support multiple languages
+- [x] Fast proxy search with card/list pagination
+- [x] Light, dark, and system appearance
+- [x] Run multiple frpc instances (different frps servers) at the same time
+- [x] Cloudflare Tunnel (cloudflared) instances alongside frpc
+
+## Development
+
+Requirements: Node.js 22.12+, npm, and a stable Rust toolchain ([Tauri prerequisites](https://v2.tauri.app/start/prerequisites/)).
+
+```sh
+npm ci
+npm run tauri:dev    # run the desktop app in development mode
+npm run tauri:build  # build installers for the current platform
+```
+
+## Resource usage
+
+The sidebar reports the combined CPU and resident memory of Frpc-Desktop and its descendant processes, including frpc and cloudflared instances started by the app. Values refresh every three seconds. CPU usage is normalized to total machine capacity (0–100%); memory is the sum of process resident memory, so shared pages may be counted more than once. On macOS, WebKit helper processes hosted by system services are outside this process tree and are not included.
+
+## Common Issues
+
+### Upgrading from 1.x
+
+Version 2.0 is rebuilt on Tauri and upgrades the 1.x Electron app in place. Your server settings, proxies, desktop settings, and downloaded frpc versions are kept automatically; data still stored in the older NeDB format (1.2.6 and earlier) is imported on first launch and the original files are kept as `*.bak`.
+
+Multi-instance support migrates your existing single server into a default instance (`id = "1"`) that cannot be deleted. All existing proxies belong to it, so nothing changes unless you create additional instances.
+
+### Using Cloudflare Tunnel
+
+1. In the Cloudflare dashboard, go to Zero Trust → Networks → Tunnels, create a tunnel with the "cloudflared" connector, and add its public hostnames there.
+2. In Frpc-Desktop, open Instances → New Instance → Cloudflare Tunnel, then paste the token (or the whole install command shown in the dashboard) into the instance config.
+3. Download cloudflared on the Download page (switch to "Cloudflare Tunnel"), or pick a locally installed binary. If no version is selected, a cloudflared found in `PATH` is used.
+
+The app runs cloudflared with its own minimal config, so your `~/.cloudflared/config.yml` is never used by these instances.
+
+### Mac shows app is damaged
+
+Run command: `sudo xattr -cr Frpc-Desktop.app`
+
+## Milestones
+
+- 2026-11-13: Released v2.0.1 Redesigned log viewer with level filtering, search and copy, refreshed toast styling and process resource fixes
+- 2026-11-11: Released v2.0.0 Rebuilt on Tauri 2, multiple instances, Cloudflare Tunnel, dashboard and dark mode
+- 2026-09-04: Released v1.2.7 SQLite storage, pagination and performance improvements
+- 2026-05-21: Released v1.2.6 Added download proxy selection
+- 2026-03-26: Released v1.2.5 Fixed known bugs
+- 2025-09-10: Released v1.2.3 Fixed known bugs, Supports proxy protocol, Optimize performance
+- 2025-04-22: Released v1.2.2 Fixed known bugs, Supports HTTP Locations
+- 2025-03-25: Released v1.2.1 Fixed known bugs, Supports english
+- 2025-03-06: Released v1.2.0 Underlying reconstruction, improved stability
+- 2025-01-09: Released v1.1.6
+- 2024-12-04: Released v1.1.5 Optimized experience, support modifying webport, solved GitHub rate limit issues, log optimization
+- 2024-11-08: Released v1.1.4 Fixed known bugs
+- 2024-10-14: Released v1.1.3 Support XTCP protocol, optimized experience
+- 2024-09-25: Released v1.1.2 Support HTTP basic auth, subdomains
+- 2024-09-07: Released v1.1.0 Support batch ports, single proxy switch control
+- 2024-08-24: Released v1.0.9 Support mirror downloads, config import/export
+- 2024-08-17: Released v1.0.8 Support STCP proxy
+- 2024-08-11: Released v1.0.7
+- 2024-08-09: Released v1.0.6
+- 2024-08-06: Released v1.0.5
+- 2024-08-06: Released v1.0.4 Adapted to support multi-user plugin
+- 2024-07-17: Released v1.0.3 Fixed known bugs, added auto-start, added frp version deletion
+- 2024-01-29: Released v1.0.2 Added Linux client and proxy mode
+- 2023-12-01: Released v1.0.1
+- 2023-11-28: Released v1.0
+
+## Community
+
+No advertisements allowed!!!
+
+### Telegram
+
+[https://t.me/+4kziSBL3LxVmYzVl](https://t.me/+4kziSBL3LxVmYzVl)
+
+### WeChat Group
+
+**~~Scan WeChat QR code to join open source project discussion group~~ WeChat group exceeds 200 people, cannot scan code to join. Follow official account to join group**
+
+<img src="screenshots/wechat-qr.png" alt="QR Code" width="200"><img src="screenshots/mp_qr.jpg" alt="Official Account QR Code" width="200">
+
+## Screenshot
+
+![launch](https://github.com/luckjiawei/frpc-desktop/blob/main/screenshots/en/launch.png?raw=true)
+
+![proxys manager](https://github.com/luckjiawei/frpc-desktop/blob/main/screenshots/en/proxy.png?raw=true)
+
+![frp download](https://github.com/luckjiawei/frpc-desktop/blob/main/screenshots/en/download.png?raw=true)
+
+![config](https://github.com/luckjiawei/frpc-desktop/blob/main/screenshots/en/config.png?raw=true)
+
+![logger](https://github.com/luckjiawei/frpc-desktop/blob/main/screenshots/en/logger.png?raw=true)
+
+![about](https://github.com/luckjiawei/frpc-desktop/blob/main/screenshots/en/about.png?raw=true)
+
+## Donate
+
+👉👉👉[Click to donate](https://jwinks.com/donate/)👈👈👈
+
+
+
+## Contributors
+
+<a href="https://github.com/luckjiawei/frpc-desktop/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=luckjiawei/frpc-desktop" />
+</a>
+
+## License
+
+[MIT](LICENSE)
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=luckjiawei/frpc-desktop&type=Date)](https://www.star-history.com/#luckjiawei/frpc-desktop&Date)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[downloads-shield]: https://img.shields.io/github/downloads/luckjiawei/frpc-desktop/total.svg?style=for-the-badge
+
+[downloads-url]: https://github.com/luckjiawei/frpc-desktop/releases
+
+[release-shield]: https://img.shields.io/github/v/release/luckjiawei/frpc-desktop.svg?style=for-the-badge
+
+[releases-url]: https://github.com/luckjiawei/frpc-desktop/releases
+
+[forks-shield]: https://img.shields.io/github/forks/luckjiawei/frpc-desktop.svg?style=for-the-badge
+
+[forks-url]: https://github.com/luckjiawei/frpc-desktop/network/members
+
+[stars-shield]: https://img.shields.io/github/stars/luckjiawei/frpc-desktop.svg?style=for-the-badge
+
+[stars-url]: https://github.com/luckjiawei/frpc-desktop/stargazers
+
+[issues-shield]: https://img.shields.io/github/issues/luckjiawei/frpc-desktop.svg?style=for-the-badge
+
+[issues-url]: https://github.com/luckjiawei/frpc-desktop/issues
+
+[license-shield]: https://img.shields.io/github/license/luckjiawei/frpc-desktop.svg?style=for-the-badge
+
+[license-url]: https://github.com/luckjiawei/frpc-desktop/blob/master/LICENSE

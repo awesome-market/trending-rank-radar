@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>t4t5/owly · GitHub Trending Rank Radar</title>
+<meta name="description" content="airdrop for non-apple devices">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="owly, t4t5, t4t5/owly, github stars, github trending, star growth, star history, 开源项目, 星标增长, airdrop, omarchy, awdl, owl">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/t4t5__owly">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="t4t5/owly · GitHub Trending Rank Radar">
+<meta property="og:description" content="airdrop for non-apple devices">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/t4t5__owly">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "t4t5/owly", "codeRepository": "https://github.com/t4t5/owly", "url": "https://zhuikan.com/repos/t4t5__owly", "description": "airdrop for non-apple devices", "author": {"@type": "Organization", "name": "t4t5", "url": "https://github.com/t4t5"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Rust", "dateCreated": "2026-10-08", "keywords": "airdrop,omarchy,awdl,owl"}</script>
+</head>
+<body data-repo="t4t5/owly" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">t4t5/owly</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="t4t5__owly"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/2598660?u=ec33a8dd8148b010f32d1b8c4793ab47beb3c4cc&amp;v=4&s=300" width="300" height="300" alt="t4t5 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">owly</div>
+      <a class="rp-side-owner" href="https://github.com/t4t5">t4t5</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/t4t5">t4t5</a>
+        <span class="rp-sep">/</span><span class="rp-name">owly</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">airdrop for non-apple devices</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>3,339</b></span><span class="rp-stat" title="forks">⑂ <b>259</b></span><span class="rp-stat" title="watchers">👁 <b>7</b></span><span class="rp-stat" title="prs">⑃ <b>69</b></span><span class="rp-stat" title="issues">● <b>51</b></span><span class="rp-stat" title="releases">▤ <b>8</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/airdrop">airdrop</a><a class="rp-topic" href="https://github.com/topics/omarchy">omarchy</a><a class="rp-topic" href="https://github.com/topics/awdl">awdl</a><a class="rp-topic" href="https://github.com/topics/owl">owl</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-10-08</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="t4t5__omdrop-owl"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/2598660?u=ec33a8dd8148b010f32d1b8c4793ab47beb3c4cc&amp;v=4" alt="" loading="lazy">omdrop-owl</a><a class="rp-same-link" href="t4t5__sweetalert"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/2598660?u=ec33a8dd8148b010f32d1b8c4793ab47beb3c4cc&amp;v=4" alt="" loading="lazy">sweetalert</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/t4t5/owly">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">0.4.3</span><a class="rp-dl-a" href="https://github.com/t4t5/owly/releases/tag/v0.4.3">0.4.3 ↓</a><span class="rp-dl-ver">0.4.3</span><span class="rp-dl-date">2026-11-11</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+7</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">3,339</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">259</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">7</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">69</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">51</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">8</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Owly
+
+https://github.com/user-attachments/assets/b195ce4c-e078-49be-bc13-44a72b6dc189
+
+AirDrop between iPhones and Linux devices whose Wi-Fi isn&#x27;t Apple&#x27;s Broadcom chip.
+
+See supported hardware.
+
+ Install
+
+
+Arch/Omarchy
+
+If using Omarchy, you can install Owly together with omdrop to get it in your bar:
+
+sh
+ Install Omdrop:
+omarchy plugin add https://github.com/netmojo-systems/omdrop-plugin.git
+
+ Install Owly (omdrop-owl):
+yay -S omdrop-owl
+
+
+If you&#x27;re just using Arch, or don&#x27;t want the UI, you can just install the CLI:
+
+sh
+yay -S owly
+
+
+
+
+
+NixOS
+
+nix
+inputs.owly.url = &quot;github:t4t5/owly&quot;;
+
+
+nix
+imports = [ inputs.owly.nixosModules.default ];
+services.owly.enable = true;
+services.owly.settings = { allow_untested = true; };
+
+
+
+
+
+Debian/Ubuntu
+
+Download the .deb from the releases page and run:
+
+sh
+sudo apt install ./owly__amd64.deb      Debian 12, Ubuntu 22.04 and newer
+
+
+
+
+
+Fedora
+
+Download the .rpm from the releases page and run:
+
+sh
+sudo dnf install ./owly-.x86_64.rpm     Fedora 44 and newer
+
+
+
+
+
+From source
+
+Requires Rust 1.88 or newer:
+
+sh
+cargo build --release --locked -p owlyd -p owly-cli
+sudo packaging/install.sh owly
+sudo systemctl daemon-reload &amp;&amp; sudo nmcli general reload conf
+
+
+
+
+ Usage
+
+Start the radio in your terminal:
+
+sh
+owly radio up
+
+
+Then, in another terminal:
+
+sh
+ To receive files:
+owly receive --dir ~/Downloads
+
+ To send files:
+owly browse     (find nearby AirDrop receivers)
+owly send --to &quot;Jane&#x27;s iPhone&quot; photo.jpg
+
+
+Make sure you set your phone&#x27;s Airdrop setting to &quot;Everyone for 10 minutes&quot;.
+
+ Supported hardware
+
+Status: ✅ both directions work, ⚠️ unreliable (see known issues), ❌ fails, ❓ untested
+
+Modes: Shared keeps Wi-Fi connected; Exclusive and Active monitor turn it off while the radio is up (see why?)
+
+
+
+
+| Card | Driver | Status | Tested on |
+|---|---|---|---|
+| MediaTek MT7925 | mt7925e | ✅ Shared | Framework 13, 14c3:0717, Omarchy 4.0.4 (kernel 7.2.5) |
+| MediaTek MT7612U (USB) | mt76x2u | ✅ Exclusive | 0e8d:7612 (kernel 7.2.9) |
+| Realtek RTL8822BE | rtw88_8822be | ✅ Exclusive; shared untested | Crosshair VII Hero, 10ec:b822, NixOS 26.11 (kernel 7.2.9) |
+| Realtek RTL8851BE | rtw89_8851be | ✅ Shared | ASUSTeK COMPUTER INC. ASUS Vivobook 14 X1404VAPBF_X1404VA, 10ec:b851, openSUSE Tumbleweed (kernel 7.3.0) |
+| Realtek RTL8852AE | rtw89_8852ae | ✅ Shared | • ThinkPad P14s Gen 2a, 10ec:8852, Ubuntu 26.04.1 (kernel 7.0)• LENOVO ThinkPad T14 Gen 2a, 10ec:8852, Omarchy (kernel 7.2.8) |
+| Realtek RTL8852BE | rtw89_8852be | ✅ Shared | ASUS PRIME B550M-A WIFI II, 10ec:b852, CachyOS (kernel 7.2.9) |
+| Realtek RTL8852CE | rtw89_8852ce | ✅ Shared and exclusive | • Legion Slim 5 16AHP9, 10ec:c852, Omarchy 4.0.4 (kernel 7.2.5)• ThinkBook 16 G7 IML, 10ec:c852, Ubuntu 24.04.5 (kernel 7.0) |
+| Realtek RTL8922AE | rtw89_8922ae | ✅ Exclusive | ASUS System Version, 10ec:8922, CachyOS (kernel 7.3.0) |
+| Realtek RTL8852BU (USB) | rtw89_8852bu | ✅ Exclusive (opt-in), as a second card | USB adapter, 35bc:0108, NixOS 26.05 (kernel 7.2.9) |
+| Re</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/t4t5/owly/issues/14"><span class="rp-item-num">#14</span><span class="rp-item-title">MT7921 (mt7921e): exclusive mode fails, no IBSS support; shared mode untested</span><span class="rp-item-extra">24 comments · 2026-10-11</span></a><a class="rp-item" href="https://github.com/t4t5/owly/issues/40"><span class="rp-item-num">#40</span><span class="rp-item-title">ath12k_wifi7_pci not visible both sides</span><span class="rp-item-extra">6 comments · 2026-10-13</span></a><a class="rp-item" href="https://github.com/t4t5/owly/issues/72"><span class="rp-item-num">#72</span><span class="rp-item-title">HowlDrop: omdrop-owl as a Windows app (WSL 2) and a Home Assistant add-on</span><span class="rp-item-extra">4 comments · 2026-10-19</span></a><a class="rp-item" href="https://github.com/t4t5/owly/issues/70"><span class="rp-item-num">#70</span><span class="rp-item-title">RTL8822CE (rtw88_8822ce): AWDL syncs and IBSS cell starts on 149, but the iPhone never lists the computer</span><span class="rp-item-extra">3 comments · 2026-10-18</span></a><a class="rp-item" href="https://github.com/t4t5/owly/issues/90"><span class="rp-item-num">#90</span><span class="rp-item-title">Support for TP-Link Archer T2U Plus (RTL8821AU) USB Wi-Fi adapter</span><span class="rp-item-extra">2 comments · 2026-10-24</span></a><a class="rp-item" href="https://github.com/t4t5/owly/issues/60"><span class="rp-item-num">#60</span><span class="rp-item-title">Realtek RTL8821CE (rtw88_8821ce): OWL syncs in shared mode but the phone never connects; exclusive receives nothing</span><span class="rp-item-extra">2 comments · 2026-10-14</span></a><a class="rp-item" href="https://github.com/t4t5/owly/issues/110"><span class="rp-item-num">#110</span><span class="rp-item-title">test-card: Raspberry Pi Zero 2 W onboard brcmfmac (Nexmon) — phone heard, but no unicast completes (/Discover times out)</span><span class="rp-item-extra">1 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/t4t5/owly/issues/119"><span class="rp-item-num">#119</span><span class="rp-item-title">TS101 release v2.24-rc1 display &quot;corrupt&quot;</span><span class="rp-item-extra">0 comments · 2026-11-07</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/t4t5/owly/releases"><b>0.4.3</b> <span class="rp-rel-tag">v0.4.3</span> <span class="rp-item-extra">2026-11-11</span></a><pre class="rp-pre">What&#x27;s Changed
+ Fix receiving multiple photos from iOS Photos by @motixo in https://github.com/t4t5/owly/pull/111
+ Specify client certificates and link shares, and fix two transfer bugs by @t4t5 in https://github.com/t4t5/owly/pull/113
+ Specify upload, timeout and BLE details seen from an iPhone by @t4t5 in https://github.com/t4t5/owly/pull/114
+ Let owly-airdrop&#x27;s tests build and run on Windows by @chaaruze in https://github.com/t4t5/owly/pull/108
+ List AWDL peers in owly browse, as owly send finds them by @LeandroLP23 in https://github.com/t4t5/owly/pull/118
+ Record the Realtek RTL8812BU work</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/t4t5__owly.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

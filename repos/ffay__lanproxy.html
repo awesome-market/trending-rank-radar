@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ffay/lanproxy · GitHub Trending Rank Radar</title>
+<meta name="description" content="lanproxy是一个将局域网个人电脑、服务器代理到公网的内网穿透工具，支持tcp流量转发，可支持任何tcp上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面、http代理、https代理、socks5代理...）。技术交流QQ群 736294209">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="lanproxy, ffay, ffay/lanproxy, github stars, github trending, star growth, star history, 开源项目, 星标增长, lanproxy, nat, firewall, reverse-proxy, tunnel, ngrok">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/ffay__lanproxy">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="ffay/lanproxy · GitHub Trending Rank Radar">
+<meta property="og:description" content="lanproxy是一个将局域网个人电脑、服务器代理到公网的内网穿透工具，支持tcp流量转发，可支持任何tcp上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面、http代理、https代理、socks5代理...）。技术交流QQ群 736294209">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/ffay__lanproxy">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ffay/lanproxy", "codeRepository": "https://github.com/ffay/lanproxy", "url": "https://zhuikan.com/repos/ffay__lanproxy", "description": "lanproxy是一个将局域网个人电脑、服务器代理到公网的内网穿透工具，支持tcp流量转发，可支持任何tcp上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面、http代理、https代理、socks5代理...）。技术交流QQ群 736294209", "author": {"@type": "Organization", "name": "ffay", "url": "https://github.com/ffay"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Java", "dateCreated": "2016-11-20", "keywords": "lanproxy,nat,firewall,reverse-proxy,tunnel,ngrok,frp,proxy,java"}</script>
+</head>
+<body data-repo="ffay/lanproxy" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">ffay/lanproxy</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="ffay__lanproxy"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/2667623?v=4&s=300" width="300" height="300" alt="ffay avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">lanproxy</div>
+      <a class="rp-side-owner" href="https://github.com/ffay">ffay</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/ffay">ffay</a>
+        <span class="rp-sep">/</span><span class="rp-name">lanproxy</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">lanproxy是一个将局域网个人电脑、服务器代理到公网的内网穿透工具，支持tcp流量转发，可支持任何tcp上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面、http代理、https代理、socks5代理...）。技术交流QQ群 736294209</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,846</b></span><span class="rp-stat" title="forks">⑂ <b>1,539</b></span><span class="rp-stat" title="watchers">👁 <b>207</b></span><span class="rp-stat" title="prs">⑃ <b>20</b></span><span class="rp-stat" title="issues">● <b>169</b></span><span class="rp-stat" title="releases">▤ <b>1</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/lanproxy">lanproxy</a><a class="rp-topic" href="https://github.com/topics/nat">nat</a><a class="rp-topic" href="https://github.com/topics/firewall">firewall</a><a class="rp-topic" href="https://github.com/topics/reverse-proxy">reverse-proxy</a><a class="rp-topic" href="https://github.com/topics/tunnel">tunnel</a><a class="rp-topic" href="https://github.com/topics/ngrok">ngrok</a><a class="rp-topic" href="https://github.com/topics/frp">frp</a><a class="rp-topic" href="../tags/proxy">proxy</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Java</span><span class="rp-meta-bit">Created 2016-11-20</span><a class="rp-meta-bit rp-home" href="https://nat.nioee.com" rel="noopener">nat.nioee.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/ffay/lanproxy">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.1-20171128</span><a class="rp-dl-a" href="https://github.com/ffay/lanproxy/releases/tag/v0.1">v0.1-20171128 ↓</a><span class="rp-dl-ver">0.1</span><span class="rp-dl-date">2018-01-28</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,846</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,539</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">207</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">20</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">169</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">1</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">AI智能体智能应用构建平台
+
+我的新开源项目，智能体智能应用一站式搭建平台，无需编程基础，可以一句话生成智能应用，AI时代的WordPress，从想法到实现只差3分钟。欢迎大家star后使用，安装后内置顶级AI模型给大家免费使用
+https://github.com/nuwax-ai/nuwax
+
+ 技术交流QQ群 736294209
+
+ Lanproxy运营版上线，欢迎体验
+
+https://nat.nioee.com
+
+
+ Lanproxy个人升级版
+
+核心功能：
+
+- 穿透基础功能，同开源版本，高性能，可同时支持数万穿透连接
+- 全新界面UI，操作简单，部署简单（java+mysql）
+- 自定义域名绑定，为你穿透端口绑定域名，不再是IP+端口裸奔访问
+- 自定义域名ssl证书，也可为你绑定的域名开启ssl证书自动申请与续期，无需人工干涉
+- 自定义客户端离线展示页面，可以利用该功能展示一些html单页
+- 支持http/https/socks5多种模式使用客户端网络代理上网，家里轻松访问公司网络
+- 多用户支持，同时满足多人日常穿透需求
+
+体验地址 https://lanp.nioee.com (测试用户名密码 test/123456)
+
+!panel
+
+ Lanproxy开源免费版
+
+README | 中文文档
+
+lanproxy是一个将局域网个人电脑、服务器代理到公网的内网穿透工具，支持tcp流量转发，可支持任何tcp上层协议（访问内网网站、本地支付接口调试、ssh访问、远程桌面...）。目前市面上提供类似服务的有花生壳、TeamView、GoToMyCloud等等，但要使用第三方的公网服务器就必须为第三方付费，并且这些服务都有各种各样的限制，此外，由于数据包会流经第三方，因此对数据安全也是一大隐患。
+
+ 相关地址
+
+- 主页 https://nat.nioee.com
+- lanproxy-go-client https://github.com/ffay/lanproxy-go-client
+- 发布包下载地址 https://github.com/ffay/lanproxy/releases
+
+ 使用
+
+ 获取发布包
+
+-	拉取源码，运行 mvn package，打包后的资源放在distribution目录中，包括client和server
+-	或直接下载发布包  https://github.com/ffay/lanproxy/releases
+
+ 配置
+
+ server配置
+
+server的配置文件放置在conf目录中，配置 config.properties
+
+properties
+server.bind=0.0.0.0
+
+与代理客户端通信端口
+server.port=4900
+
+ssl相关配置
+server.ssl.enable=true
+server.ssl.bind=0.0.0.0
+server.ssl.port=4993
+server.ssl.jksPath=test.jks
+server.ssl.keyStorePassword=123456
+server.ssl.keyManagerPassword=123456
+
+这个配置可以忽略
+server.ssl.needsClientAuth=false
+
+WEB在线配置管理相关信息
+config.server.bind=0.0.0.0
+config.server.port=8090
+config.admin.username=admin
+config.admin.password=admin
+
+
+代理配置，打开地址 http://ip:8090 ，使用上面配置中配置的用户名密码登录，进入如下代理配置界面
+
+!webconfig
+
+!webconfig
+
+!webconfig
+
+ 一个server可以支持多个客户端连接
+ 配置数据存放在 ~/.lanproxy/config.json 文件中
+
+ Java 客户端配置
+
+ Java client的配置文件放置在conf目录中，配置 config.properties
+
+properties
+
+与在proxy-server配置后台创建客户端时填写的秘钥保持一致；
+client.key=
+ssl.enable=true
+ssl.jksPath=test.jks
+ssl.keyStorePassword=123456
+
+这里填写实际的proxy-server地址；没有服务器默认即可，自己有服务器的更换为自己的proxy-server（IP）地址
+server.host=lp.thingsglobal.org
+
+proxy-server ssl默认端口4993，默认普通端口4900
+ssl.enable=true时这里填写ssl端口，ssl.enable=false时这里填写普通端口
+server.port=4993
+
+
+- 安装java1.7或以上环境
+- linux（mac）环境中运行bin目录下的 startup.sh
+- windows环境中运行bin目录下的 startup.bat
+
+ 其他平台客户端
+
+ 不用java客户端的可以使用下面提供的各个平台的客户端，省去安装java运行环境
+
+ 源码地址
+
+https://github.com/ffay/lanproxy-go-client
+
+ 发布包
+
+https://github.com/ffay/lanproxy-go-client/releases
+
+ 普通端口连接
+
+shell
+ mac 64位
+nohup ./client_darwin_amd64 -s SERVER_IP -p SERVER_PORT -k CLIENT_KEY &amp;
+
+ linux 64位
+nohup ./client_linux_amd64 -s SERVER_IP -p SERVER_PORT -k CLIENT_KEY &amp;
+
+ windows 64 位
+./client_windows_amd64.exe -s SERVER_IP -p SERVER_PORT -k CLIENT_KEY
+
+
+ SSL端口连接
+
+shell
+ mac 64位
+nohup ./client_darwin_amd64 -s SERVER_IP -p SERVER_SSL_PORT -k CLIENT_KEY -ssl true &amp;
+
+ linux 64位
+nohup ./client_linux_amd64 -s SERVER_IP -p SERVER_SSL_PORT -k CLIENT_KEY -ssl true &amp;
+
+ windows 64 位
+./client_windows_amd64.exe -s SERVER_IP -p SERVER_SSL_PORT -k CLIENT_KEY -ssl true
+
+
+ 其他
+
+- 在家里使用公司的网络，可以和 https://github.com/ffay/http-proxy-server 这个http代理项目配合使用（个人升级版已经内置代理上网功能，详细资料 https://file.nioe</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ffay/lanproxy/issues/112"><span class="rp-item-num">#112</span><span class="rp-item-title">现在https://lanproxy.io2c.com/收费了吗</span><span class="rp-item-extra">11 comments · 2019-06-17</span></a><a class="rp-item" href="https://github.com/ffay/lanproxy/issues/39"><span class="rp-item-num">#39</span><span class="rp-item-title">怎么都启动不起来  ！！我保证我没有犯低级错误！</span><span class="rp-item-extra">9 comments · 2017-11-28</span></a><a class="rp-item" href="https://github.com/ffay/lanproxy/issues/156"><span class="rp-item-num">#156</span><span class="rp-item-title">目录遍历漏洞似乎并未修复</span><span class="rp-item-extra">8 comments · 2021-02-26</span></a><a class="rp-item" href="https://github.com/ffay/lanproxy/issues/37"><span class="rp-item-num">#37</span><span class="rp-item-title">使用一段时间就会断开</span><span class="rp-item-extra">7 comments · 2017-11-15</span></a><a class="rp-item" href="https://github.com/ffay/lanproxy/issues/101"><span class="rp-item-num">#101</span><span class="rp-item-title">http连接数 超过6个 就阻塞了 换了几个服务器都是这样 </span><span class="rp-item-extra">6 comments · 2019-01-06</span></a><a class="rp-item" href="https://github.com/ffay/lanproxy/issues/91"><span class="rp-item-num">#91</span><span class="rp-item-title">用go客户端怎么通过ssl连接java服务端</span><span class="rp-item-extra">6 comments · 2018-11-12</span></a><a class="rp-item" href="https://github.com/ffay/lanproxy/issues/42"><span class="rp-item-num">#42</span><span class="rp-item-title">本地80端口服务，做到外网2200端口映射，页面里面的地址不能转发</span><span class="rp-item-extra">6 comments · 2017-12-04</span></a><a class="rp-item" href="https://github.com/ffay/lanproxy/issues/2"><span class="rp-item-num">#2</span><span class="rp-item-title">流量稍大应用失败</span><span class="rp-item-extra">6 comments · 2017-04-20</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/ffay/lanproxy/releases"><b>v0.1-20171128</b> <span class="rp-rel-tag">v0.1</span> <span class="rp-item-extra">2018-01-28</span></a><pre class="rp-pre">发布包下载地址 https://file.nioee.com/d/2e81550ebdbd416c933f/</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/ffay__lanproxy.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

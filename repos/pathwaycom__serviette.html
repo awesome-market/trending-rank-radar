@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>pathwaycom/serviette · GitHub Trending Rank Radar</title>
+<meta name="description" content="A no-code RAG server that keeps answers in sync with your documents. Works with 8 vector databases. Built on Pathway.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="serviette, pathwaycom, pathwaycom/serviette, github stars, github trending, star growth, star history, 开源项目, 星标增长, pathway, vector-database, retrieval-augmented-generation, rag, chromadb, document-qa">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/pathwaycom__serviette">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="pathwaycom/serviette · GitHub Trending Rank Radar">
+<meta property="og:description" content="A no-code RAG server that keeps answers in sync with your documents. Works with 8 vector databases. Built on Pathway.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/pathwaycom__serviette">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "pathwaycom/serviette", "codeRepository": "https://github.com/pathwaycom/serviette", "url": "https://zhuikan.com/repos/pathwaycom__serviette", "description": "A no-code RAG server that keeps answers in sync with your documents. Works with 8 vector databases. Built on Pathway.", "author": {"@type": "Organization", "name": "pathwaycom", "url": "https://github.com/pathwaycom"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Python", "dateCreated": "2023-07-19", "keywords": "pathway,vector-database,retrieval-augmented-generation,rag,chromadb,document-qa,duckdb,live-data,milvus,mongodb"}</script>
+</head>
+<body data-repo="pathwaycom/serviette" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">pathwaycom/serviette</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="pathwaycom__serviette"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/25750857?v=4&s=300" width="300" height="300" alt="pathwaycom avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">serviette</div>
+      <a class="rp-side-owner" href="https://github.com/pathwaycom">pathwaycom</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/pathwaycom">pathwaycom</a>
+        <span class="rp-sep">/</span><span class="rp-name">serviette</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A no-code RAG server that keeps answers in sync with your documents. Works with 8 vector databases. Built on Pathway.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>58,710</b></span><span class="rp-stat" title="forks">⑂ <b>1,549</b></span><span class="rp-stat" title="watchers">👁 <b>89</b></span><span class="rp-stat" title="prs">⑃ <b>75</b></span><span class="rp-stat" title="issues">● <b>21</b></span><span class="rp-stat" title="releases">▤ <b>1</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/pathway">pathway</a><a class="rp-topic" href="https://github.com/topics/vector-database">vector-database</a><a class="rp-topic" href="https://github.com/topics/retrieval-augmented-generation">retrieval-augmented-generation</a><a class="rp-topic" href="../tags/rag">rag</a><a class="rp-topic" href="https://github.com/topics/chromadb">chromadb</a><a class="rp-topic" href="https://github.com/topics/document-qa">document-qa</a><a class="rp-topic" href="https://github.com/topics/duckdb">duckdb</a><a class="rp-topic" href="https://github.com/topics/live-data">live-data</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2023-07-19</span><a class="rp-meta-bit rp-home" href="https://github.com/pathwaycom/serviette/blob/main/docs/README.md" rel="noopener">github.com/pathwaycom/serviette/blob/main/docs/README.md</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="pathwaycom__pathway"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/25750857?v=4" alt="" loading="lazy">pathway</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/pathwaycom/serviette">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">serviette 0.1.8 — llm-app is now serviette</span><a class="rp-dl-a" href="https://github.com/pathwaycom/serviette/releases/tag/v0.1.8">serviette-0.1.8 ↓</a><span class="rp-dl-ver">0.1.8</span><span class="rp-dl-date">2026-11-02</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+4</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">58,710</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,549</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">89</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">75</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">21</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">1</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">serviette
+
+ Looking for llm-app templates? All templates, cookbooks and examples
+ are still available in full in the
+ Pathway repository under examples/llm-app.
+
+
+  
+  
+  
+  
+
+
+A no-code, always up-to-date RAG server for any vector database — built on
+the Pathway Live Data Framework.
+
+Point serviette at a folder of documents, pick a vector database and an
+embedder in one YAML file, and run two commands: you get a chat and a REST API
+that answer from those documents and cite their sources. From then on, any
+change to the documents — an edit, a new file, a deletion — is reflected in
+the answers within seconds.
+
+serviette runs on Pathway, which needs a free license key — one click at
+ (GitHub or LinkedIn sign-in). Every
+command below expects it in PATHWAY_LICENSE_KEY.
+
+Try it in four commands:
+
+bash
+pip install serviette
+export PATHWAY_LICENSE_KEY=...         free: https://pathway.com/framework/get-license
+export OPENAI_API_KEY=sk-...
+serviette demo --embedder openai       → chat at http://localhost:8989
+
+
+Use pip 23.1 or newer (python -m pip install -U pip first): older pip lacks
+the resolver improvements this dependency tree needs and can take hours.
+
+This indexes a small bundled corpus (a fictional
+coffee-machine company) into ./serviette-demo/docs and opens a chat over
+it. Edit or drop files into that folder while it runs — the answers
+follow within seconds.
+
+
+  
+
+One command to a live RAG stack — then edit a document and watch the answer change.
+
+ Who is it for
+
+What you get. A question-answering assistant over your organisation&#x27;s
+documents, with sources cited and answers that follow the documents: an edit,
+a new file or a deletion is reflected within seconds, with no re-upload or
+re-indexing step for anyone to run or forget.
+
+What it costs to run. Two processes (an indexer and a server) and one YAML
+file. Embeddings can be computed locally for free; the Pathway license is
+free; the only metered component is the optional model API that writes the
+answer text, billed per question rather than per document.
+
+Where your data goes. Nowhere by default. With the default local
+embedder, documents, their embeddings and the index stay on the machine or in
+the database you choose; the only thing that leaves is the handful of passages
+retrieved for a question, sent to the model API that writes the answer — and
+only if you configure one. (Choosing an API embedder instead sends the
+document text through that API as well.)
+
+How mature it is. serviette is a thin layer over the
+Pathway Live Data Framework — the
+open-source engine that does the watching, parsing, embedding and writing: in
+development since 2022, 60 000+ GitHub stars, in production use at
+organisations such as
+DB Schenker,
+Intel,
+NATO,
+La Poste,
+Transdev and
+CMA CGM.
+serviette&#x27;s benchmarks cover indexing up to 50 GB of text (26 million pages,
+17 million files), with indexer memory measured throughout the run, and
+retrieval accuracy on a public benchmark (FRAMES). Eight vector databases
+are under </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/pathwaycom/serviette/issues/124"><span class="rp-item-num">#124</span><span class="rp-item-title">Getting Started instructions are fragmented across templates, making initial setup unclear</span><span class="rp-item-extra">2 comments · 2025-12-15</span></a><a class="rp-item" href="https://github.com/pathwaycom/serviette/issues/81"><span class="rp-item-num">#81</span><span class="rp-item-title">[Question]: Could it be An APP in cellphone ？</span><span class="rp-item-extra">2 comments · 2024-09-05</span></a><a class="rp-item" href="https://github.com/pathwaycom/serviette/issues/53"><span class="rp-item-num">#53</span><span class="rp-item-title">Pathway&#x27;s connector issue in Jsonlines</span><span class="rp-item-extra">2 comments · 2023-08-15</span></a><a class="rp-item" href="https://github.com/pathwaycom/serviette/issues/46"><span class="rp-item-num">#46</span><span class="rp-item-title">[FEATURE] OpenAI Chat Completion response streaming support</span><span class="rp-item-extra">1 comments · 2023-08-08</span></a><a class="rp-item" href="https://github.com/pathwaycom/serviette/issues/15"><span class="rp-item-num">#15</span><span class="rp-item-title">Question: LLM app for production</span><span class="rp-item-extra">1 comments · 2023-07-23</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/pathwaycom/serviette/discussions/140"><span class="rp-item-num">#140</span><span class="rp-item-title">Chopper: a small open model that cuts only the needed sentences out of retrieved text</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/pathwaycom/serviette/discussions/128"><span class="rp-item-num">#128</span><span class="rp-item-title">Real-time investment analysis with LLM-App — options flow scanner + price alerts (open source)</span><span class="rp-item-extra">0 comments · 2026-05-13</span></a><a class="rp-item" href="https://github.com/pathwaycom/serviette/discussions/122"><span class="rp-item-num">#122</span><span class="rp-item-title">Best practices for deploying and scaling Pathway LLM app templates on Kubernetes clusters</span><span class="rp-item-extra">4 comments · 2025-11-17</span></a><a class="rp-item" href="https://github.com/pathwaycom/serviette/discussions/117"><span class="rp-item-num">#117</span><span class="rp-item-title">Streaming responses</span><span class="rp-item-extra">2 comments · 2025-03-19</span></a><a class="rp-item" href="https://github.com/pathwaycom/serviette/discussions/116"><span class="rp-item-num">#116</span><span class="rp-item-title">How to show document fragments/snippets in Q&amp;A RAG app?</span><span class="rp-item-extra">1 comments · 2025-03-18</span></a><a class="rp-item" href="https://github.com/pathwaycom/serviette/discussions/115"><span class="rp-item-num">#115</span><span class="rp-item-title">How to implement AzureOpenAI instead of OpenAI?</span><span class="rp-item-extra">2 comments · 2025-02-17</span></a><a class="rp-item" href="https://github.com/pathwaycom/serviette/discussions/78"><span class="rp-item-num">#78</span><span class="rp-item-title">CPU usage is max even when no ingestion is taking place and with small amount of data</span><span class="rp-item-extra">2 comments · 2024-06-28</span></a><a class="rp-item" href="https://github.com/pathwaycom/serviette/discussions/73"><span class="rp-item-num">#73</span><span class="rp-item-title">Build and run the app using Docker</span><span class="rp-item-extra">1 comments · 2023-11-28</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/pathwaycom/serviette/releases"><b>serviette 0.1.8 — llm-app is now serviette</b> <span class="rp-rel-tag">v0.1.8</span> <span class="rp-item-extra">2026-11-02</span></a><pre class="rp-pre">llm-app is now serviette. This repository used to host Pathway&#x27;s LLM app templates. They are all still available, unchanged, in pathway/examples/llm-app. The repository itself now hosts serviette, a no-code RAG server built from what we learned from those templates.
+
+serviette is a no-code RAG server that keeps its answers in sync with your documents. Point it at a folder, pick a vector database and an embedder in one YAML file, and you get a chat UI and a REST API that answer from those documents and cite their sources. Edits, new files and deletions show up in the answers within seconds, w</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/pathwaycom__serviette.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

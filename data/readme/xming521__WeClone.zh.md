@@ -1,0 +1,216 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://docs.weclone.love/img/banner-dark.webp">
+  <img alt="WeClone" src="https://docs.weclone.love/img/banner-light.webp">
+</picture>
+<h3 align="center">绘制你的人生画像，让助手懂你，让分身像你</h3>
+
+
+<div align="center">
+
+[![GitHub stars](https://img.shields.io/github/stars/xming521/WeClone?style=for-the-badge&logo=github&label=Stars&logoColor=white&color=ffda65)](https://github.com/xming521/WeClone/stargazers)
+[![GitHub release](https://img.shields.io/github/v/release/xming521/WeClone?style=for-the-badge&logo=github&label=Release&logoColor=white&color=06d094)](https://github.com/xming521/WeClone/releases)
+<a href="https://qm.qq.com/cgi-bin/qm/qr?k=wNdgbOVT6oFOJ2wlMLsolUXErW9ESLpk&jump_from=webapi&authKey=z/reOp6YLyvR4Tl2k2nYMsLoMC3w9/99ucgKMX0oRGlxDV/WbYnvq2QxODoIkfxn" target="_blank" style="text-decoration: none;">
+  <img src="https://img.shields.io/badge/QQ群-708067078-12B7F5?style=for-the-badge&logo=qq&logoColor=white" alt="WeClone①" title="WeClone①">
+</a>
+[![小红书](https://img.shields.io/badge/WeClone-FE2C55?style=for-the-badge&logo=xiaohongshu&logoColor=white)](https://www.xiaohongshu.com/user/profile/628109730000000021029de4)
+[![Twitter](https://img.shields.io/badge/Twitter-@weclone567-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/weclone567)
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/+JEdak4m0XEQ3NGNl)
+
+<a href="https://hellogithub.com/repository/12ab209b56cb4cfd885c8cfd4cfdd53e" target="_blank"><img src="https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=12ab209b56cb4cfd885c8cfd4cfdd53e&claim_uid=RThlPDoGrFvdMY5" alt="Featured｜HelloGitHub" style="width: 150px; height: 28px;" /></a>
+<a href="https://trendshift.io/repositories/13759" target="_blank"><img src="https://trendshift.io/api/badge/repositories/13759" alt="xming521%2FWeClone | Trendshift" style="width: 220px; height: 50px;" /></a>
+</div>
+
+<p align="center">
+简体中文｜
+  <a href="https://github.com/xming521/WeClone/blob/master/README.md" target="_blank">English</a>｜
+  <a href="https://www.weclone.love/" target="_blank"> 项目主页 </a> ｜
+  <a href="https://docs.weclone.love/zh/docs/introduce/what-is-weclone" target="_blank"> 项目文档 </a>
+</p>
+
+WeClone 从你的数字生活中提炼身份、目标、偏好、近况，按工作、家庭、健康等板块整理成可审核、追溯、授权的人生画像。画像可以作为个人助手的长期记忆，也将驱动具有你个人风格的数字分身。
+
+<a href="https://docs.weclone.love/img/screenshots/atlas-light.webp">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://docs.weclone.love/img/screenshots/atlas-dark.webp">
+    <img alt="人生画像网页" src="https://docs.weclone.love/img/screenshots/atlas-light.webp">
+  </picture>
+</a>
+
+## ✨ 核心功能
+
+- 🗺️ **交互式人生画像**：画像按板块与主题逐层组织，每条事实均可追溯原文，支持逐条审核与修改。可通过 Codex 或任意 OpenAI 兼容 API 抽取画像。
+- 🎭 **专属数字分身**：基于聊天记录微调开源模型，并通过 AstrBot、LangBot 部署至 Telegram、Discord、Slack、飞书等平台。训练数据经过隐私信息过滤。
+- 🧠 **接入个人助手**：Claude Code、Codex、dots、Muse、Grok Bot 等个人助手可以通过 MCP 或记忆使用你的画像。提供哪些板块、到哪个隐私级别由你决定。
+- 🗣️ **语言风格分析**：覆盖词汇、句式、语气、情绪、修辞、互动节奏等十大类、179 项风格特征。
+- 🤖 **Agent 分身**（开发中）：无需训练，由大模型结合画像、记忆与语言风格实时驱动。
+- 🔒 **隐私优先**：默认本地加密存储，每条事实标注隐私级别，导出与授权范围由你决定。
+
+<a href="https://docs.weclone.love/img/architecture/overview-light.webp">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://docs.weclone.love/img/architecture/overview-compact-dark.webp">
+    <img alt="WeClone 功能概览" src="https://docs.weclone.love/img/architecture/overview-compact-light.webp">
+  </picture>
+</a>
+
+> [!NOTE]
+> WeClone 现在不只做微调分身。原有的微调流程完整保留，见[微调分身](docs/zh/finetune.md)。
+
+## 📰 近期更新
+
+- [26/11/03] 人生画像：`build-profile` 一条命令完成画像抽取、整理与板块总结，并在网页上逐条审核
+- [26/11/03] 助手接入：通过 MCP 向 Claude Code、Codex 等个人助手提供人生画像
+- [26/11/03] 数据默认加密存储，聊天机器人通过令牌调用分身
+- [25/07/10] 数据源增加 Telegram
+- [25/06/05] 支持图片模态数据微调
+
+## 📥 数据源平台适配
+
+人生画像只读取文字消息，下表是微调分身支持的消息类型。导出和配置方法见[准备数据](docs/zh/data.md)。
+
+| 平台 | 文字 | 图片 | 语音 | 视频 | 动画表情 | 链接（分享） | 引用 | 转发 | 位置 | 文件 |
+|------|------|------|------|------|----------|-----------|------|------|------|------|
+| Telegram | ✅ | ✅ | ❌ | ❌ | ⚠️ 转为 Emoji | ❌ | ❌ | ✅ | ✅ | ❌ |
+| WhatsApp | 🚧 | 🚧 | 🚧 | 🚧 | 🚧 | 🚧 | 🚧 | 🚧 | 🚧 | 🚧 |
+| Discord | 🚧 | 🚧 | 🚧 | 🚧 | 🚧 | 🚧 | 🚧 | 🚧 | 🚧 | 🚧 |
+| Slack | 🚧 | 🚧 | 🚧 | 🚧 | 🚧 | 🚧 | 🚧 | 🚧 | 🚧 | 🚧 |
+
+其他平台的聊天记录可以转换成 WeClone 的通用 CSV 格式，放进 `dataset/csv/` 使用，格式见文档站的[准备数据](https://docs.weclone.love/zh/docs/deploy/export-chat-history#%E9%80%9A%E7%94%A8-csv-%E6%A0%BC%E5%BC%8F)。
+
+## 🚀 快速开始
+
+### 1. 安装
+
+需要 Python 3.12，推荐使用 [uv](https://docs.astral.sh/uv/)：
+
+```bash
+git clone https://github.com/xming521/WeClone.git && cd WeClone
+uv venv .venv --python=3.12
+source .venv/bin/activate   # Windows 下执行 .venv\Scripts\activate
+uv pip install -e .         # 国内镜像：-i https://pypi.tuna.tsinghua.edu.cn/simple/
+cp settings.template.jsonc settings.jsonc
+```
+
+所有配置都在 `settings.jsonc` 中。基础安装即可绘制人生画像和接入个人助手。画像默认通过 [Codex CLI](https://github.com/openai/codex) 调用模型，需要先安装并登录，也可以改用任意 OpenAI 兼容 API，见[安装与配置](docs/zh/installation.md)。
+
+### 2. 准备数据
+
+目前支持 Telegram 聊天记录：用 Telegram Desktop 以 JSON 格式导出，把 `ChatExport_*` 文件夹放进 `dataset/telegram/`，在 `settings.jsonc` 中把 `platform` 设为 `telegram`，并在 `telegram_args.my_id` 填写你的用户 ID。其他平台的聊天记录可以转换成通用 CSV 格式，放进 `dataset/csv/`。详见[准备数据](docs/zh/data.md)。
+
+### 3. 绘制人生画像，接入个人助手
+
+```bash
+weclone-cli server
+```
+
+打开 http://127.0.0.1:5175 ，设置密码后在「构建画像」页构建画像，页面会先检查配置并显示进度。完成后逐条审核画像，在「画像总结」页确认总结，再到「助手接入」页生成令牌，按页面上的命令配置 Claude Code 或 Codex。也可以在「画像总结」页复制导出文本，存入助手的记忆。详见[人生画像与助手接入](docs/zh/profile.md)。
+
+### 4. 微调数字分身
+
+需要 NVIDIA GPU，默认的 Qwen2.5-7B-Instruct 以 LoRA 微调约需 16GB 显存。按[微调分身](docs/zh/finetune.md)安装依赖、下载模型后执行：
+
+```bash
+weclone-cli make-dataset                     # 生成训练数据，同时过滤隐私信息
+weclone-cli train-sft                        # LoRA 微调
+weclone-cli server --inference --port 8005   # 启动 OpenAI 兼容接口
+```
+
+训练好的分身可以通过 AstrBot、LangBot 接入聊天平台，见[接入聊天机器人](docs/zh/chatbot.md)。
+
+> [!TIP]
+> **社群内有部署好的 Qwen2.5-VL 32B Bot，可以体验微调效果。**
+
+## 🔒 隐私与数据安全
+
+- **抽取时调用模型服务**：绘制画像时，聊天内容会发送给你配置的模型服务，开始前会请你确认。已抽取过的内容读取本地缓存，不会再次发送。
+- **默认加密存储**：聊天快照、画像、训练数据和微调模型加密保存在本地，网页和命令行共用一个密码。
+- **按需授权**：每条事实带有隐私级别（公开、普通、私密、敏感），助手能读取哪些板块、到哪个级别由你在网页上设定。
+- **训练数据去敏**：微调前通过 Microsoft Presidio 和自定义禁用词过滤隐私信息，但不能保证 100% 识别。
+
+详见[数据安全](docs/zh/security.md)。
+
+## 🏗️ 架构
+
+<details>
+<summary>展开架构图：各模块、数据流和每一步输出的文件，点击图片可查看大图</summary>
+
+<a href="https://docs.weclone.love/img/architecture/architecture-light.webp">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://docs.weclone.love/img/architecture/architecture-dark.webp">
+    <img alt="WeClone 架构与实现" src="https://docs.weclone.love/img/architecture/architecture-light.webp">
+  </picture>
+</a>
+
+</details>
+
+## 📚 文档
+
+| 文档 | 内容 |
+|---|---|
+| [安装与配置](docs/zh/installation.md) | 按用途安装、模型后端、语言风格与微调依赖 |
+| [准备数据](docs/zh/data.md) | 支持的数据源、Telegram 导出、通用 CSV 格式 |
+| [人生画像与助手接入](docs/zh/profile.md) | build-profile、网页审核、画像总结、MCP |
+| [微调分身](docs/zh/finetune.md) | 硬件、模型下载、训练数据、训练与推理 |
+| [接入聊天机器人](docs/zh/chatbot.md) | 机器人令牌、AstrBot、LangBot |
+| [数据安全](docs/zh/security.md) | 存储模式、密码、密钥与令牌、请求日志 |
+
+更完整的教程、配置说明和常见问题见[文档站](https://docs.weclone.love/zh/)。
+
+## 📌 路线图
+
+- [x] 人生画像：画像抽取、审核与画像总结
+- [x] 通过 MCP 和画像总结为个人助手提供长期记忆
+- [ ] Agent 分身：结合画像、记忆与语言风格驱动分身
+- [ ] 支持更多数据源
+- [ ] 更丰富的上下文：包括上下文对话、聊天对象信息、时间等
+- [ ] 支持多模态：已支持图片
+- [ ] 数据增强
+
+## 💬 问题解决
+
+- 先查阅[官方文档 FAQ](https://docs.weclone.love/zh/docs/introduce/FAQ)，也可以使用 [DeepWiki](https://deepwiki.com/xming521/WeClone) 解决问题。
+- 欢迎加入页面顶部的 QQ 群和 Telegram 群交流。
+
+## ❤️ 贡献代码
+
+欢迎提交 Issue 和 Pull Request，也欢迎帮助审核 PR。新功能请先通过 Issue 讨论。开发环境、测试和前端构建见[贡献指南](docs/CONTRIBUTING.md)。
+
+## 🙏 致谢
+感谢 BUPT VCIS Lab 的支持，以及以下代码贡献者和社区其他成员的贡献。
+
+<a href="https://github.com/xming521/WeClone/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=xming521/WeClone" />
+</a>
+
+同时本项目受益于[LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory)、[AstrBot](https://github.com/AstrBotDevs/AstrBot)、[LangBot](https://github.com/RockChinQ/LangBot)等优秀开源项目。
+
+## ⚠️ 免责声明
+> [!IMPORTANT]
+> 本项目主要面向学习与研究。用于生产环境或对外提供服务前，请自行评估风险。
+
+<details>
+<summary>点击查看免责条款</summary>
+
+- **按现状提供**：本项目不附带任何明示或暗示的保证，作者不对使用本项目造成的直接或间接损失负责，也不承诺持续维护或技术支持。
+- **数据与授权**：聊天记录包含他人的消息。请确保数据的收集和使用符合当地法律法规，并取得相关人员的授权。
+- **大模型抽取画像**：绘制人生画像时，聊天内容（包括对方的消息）会发送给你配置的模型服务，并按该服务的数据政策处理。请选择可信的服务商，了解其数据保留和训练使用条款。不希望发送的聊天，请勿放入数据目录。
+- **画像内容**：画像会汇总和推断与你相关的个人信息，也会涉及你身边的人，可能包含健康、情感等敏感内容。请妥善保管结果目录和导出文件，授权给助手前先审核。
+- **模型输出**：画像、总结和分身的回复均由模型生成，可能不准确，不代表本人或他人的真实观点。
+- **身份标识**：数字分身与他人对话时，建议明确标识为 AI，避免对方误以为在与真人交流。
+- **合法使用**：请勿将本项目用于任何违法用途。
+
+本声明可能随项目更新而修订。
+
+</details>
+
+## ⭐ Star History
+> [!TIP] 
+> 如果本项目对您有帮助，或者您关注本项目的未来发展，请给项目 Star，谢谢 
+
+<div align="center">
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=xming521/WeClone&type=Date)](https://star-history.dera.page/#xming521/WeClone&Date)
+
+</div>
+
+
+<div align="center"> 克隆我们，保留灵魂的芬芳 </div>

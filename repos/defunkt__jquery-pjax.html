@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>defunkt/jquery-pjax · GitHub Trending Rank Radar</title>
+<meta name="description" content="pushState + ajax = pjax">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="jquery-pjax, defunkt, defunkt/jquery-pjax, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/defunkt__jquery-pjax">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="defunkt/jquery-pjax · GitHub Trending Rank Radar">
+<meta property="og:description" content="pushState + ajax = pjax">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/defunkt__jquery-pjax">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "defunkt/jquery-pjax", "codeRepository": "https://github.com/defunkt/jquery-pjax", "url": "https://zhuikan.com/repos/defunkt__jquery-pjax", "description": "pushState + ajax = pjax", "author": {"@type": "Organization", "name": "defunkt", "url": "https://github.com/defunkt"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2011-02-26"}</script>
+</head>
+<body data-repo="defunkt/jquery-pjax" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">defunkt/jquery-pjax</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="defunkt__jquery-pjax"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/2?u=7675c0370b7876d71d1ee9b250b540fe1be28f23&amp;v=4&s=300" width="300" height="300" alt="defunkt avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">jquery-pjax</div>
+      <a class="rp-side-owner" href="https://github.com/defunkt">defunkt</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/defunkt">defunkt</a>
+        <span class="rp-sep">/</span><span class="rp-name">jquery-pjax</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">pushState + ajax = pjax</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>16,623</b></span><span class="rp-stat" title="forks">⑂ <b>1,914</b></span><span class="rp-stat" title="watchers">👁 <b>536</b></span><span class="rp-stat" title="prs">⑃ <b>280</b></span><span class="rp-stat" title="issues">● <b>452</b></span><span class="rp-stat" title="releases">▤ <b>11</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2011-02-26</span><a class="rp-meta-bit rp-home" href="https://pjax.herokuapp.com" rel="noopener">pjax.herokuapp.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/defunkt/jquery-pjax">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">jquery-pjax 2.0.1</span><a class="rp-dl-a" href="https://github.com/defunkt/jquery-pjax/releases/tag/v2.0.1">jquery-pjax-2.0.1 ↓</a><span class="rp-dl-ver">2.0.1</span><span class="rp-dl-date">2017-05-20</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">16,623</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,914</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">536</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">280</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">452</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">11</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">pjax = pushState + ajax
+
+pjax is a jQuery plugin that uses ajax and pushState to deliver a fast browsing experience with real permalinks, page titles, and a working back button.
+
+pjax works by fetching HTML from your server via ajax and replacing the content
+of a container element on your page with the loaded HTML. It then updates the
+current URL in the browser using pushState. This results in faster page
+navigation for two reasons:
+
+ No page resources (JS, CSS) get re-executed or re-applied;
+ If the server is configured for pjax, it can render only partial page
+  contents and thus avoid the potentially costly full layout render.
+
+ Status of this project
+
+jquery-pjax is largely unmaintained at this point. It might continue to
+receive important bug fixes, but _its feature set is frozen_ and it&#x27;s unlikely
+that it will get new features or enhancements.
+
+ Installation
+
+pjax depends on jQuery 1.8 or higher.
+
+ npm
+
+
+$ npm install jquery-pjax
+
+
+ standalone script
+
+Download and include jquery.pjax.js in your web page:
+
+
+curl -LO https://raw.github.com/defunkt/jquery-pjax/master/jquery.pjax.js
+
+
+ Usage
+
+ $.fn.pjax
+
+The simplest and most common use of pjax looks like this:
+
+ javascript
+$(document).pjax(&#x27;a&#x27;, &#x27;pjax-container&#x27;)
+
+
+This will enable pjax on all links on the page and designate the container as pjax-container.
+
+If you are migrating an existing site, you probably don&#x27;t want to enable pjax
+everywhere just yet. Instead of using a global selector like a, try annotating
+pjaxable links with data-pjax, then use &#x27;a[data-pjax]&#x27; as your selector. Or,
+try this selector that matches any  links inside a  container:
+
+ javascript
+$(document).pjax(&#x27;[data-pjax] a, a[data-pjax]&#x27;, &#x27;pjax-container&#x27;)
+
+
+ Server-side configuration
+
+Ideally, your server should detect pjax requests by looking at the special
+X-PJAX HTTP header, and render only the HTML meant to replace the contents of
+the container element (pjax-container in our example) without the rest of
+the page layout. Here is an example of how this might be done in Ruby on Rails:
+
+ ruby
+def index
+  if request.headers[&#x27;X-PJAX&#x27;]
+    render :layout = false
+  end
+end
+
+
+If you&#x27;d like a more automatic solution than pjax for Rails check out [Turbolinks][].
+
+[Check if there is a pjax plugin][plugins] for your favorite server framework.
+
+Also check out [RailsCasts 294: Playing with PJAX][railscasts].
+
+ Arguments
+
+The synopsis for the $.fn.pjax function is:
+
+ javascript
+$(document).pjax(selector, [container], options)
+
+
+1. selector is a string to be used for click [event delegation][$.fn.on].
+2. container is a string selector that uniquely identifies the pjax container.
+3. options is an object with keys described below.
+
+ pjax options
+
+key | default | description
+----|---------|------------
+timeout | 650 | ajax timeout in milliseconds after which a full refresh is forced
+push | true | use [pushState][] to add a browser history entry upon navigation
+replace | false | replace URL without adding browser history entry
+maxCacheLeng</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/defunkt/jquery-pjax/issues/331"><span class="rp-item-num">#331</span><span class="rp-item-title">External scripts are evaluated async</span><span class="rp-item-extra">43 comments · 2013-11-06</span></a><a class="rp-item" href="https://github.com/defunkt/jquery-pjax/issues/498"><span class="rp-item-num">#498</span><span class="rp-item-title">Calling pjax only after CSS transition out has ended?</span><span class="rp-item-extra">23 comments · 2015-03-08</span></a><a class="rp-item" href="https://github.com/defunkt/jquery-pjax/issues/451"><span class="rp-item-num">#451</span><span class="rp-item-title">No event is fired before current contents are cached</span><span class="rp-item-extra">14 comments · 2014-11-04</span></a><a class="rp-item" href="https://github.com/defunkt/jquery-pjax/issues/321"><span class="rp-item-num">#321</span><span class="rp-item-title">Back and forward bug</span><span class="rp-item-extra">13 comments · 2013-10-01</span></a><a class="rp-item" href="https://github.com/defunkt/jquery-pjax/issues/453"><span class="rp-item-num">#453</span><span class="rp-item-title">HTML5 video reload</span><span class="rp-item-extra">10 comments · 2014-11-06</span></a><a class="rp-item" href="https://github.com/defunkt/jquery-pjax/issues/493"><span class="rp-item-num">#493</span><span class="rp-item-title">Question: Is it possible to get data attribute from fragment or fragment&#x27;s parent?</span><span class="rp-item-extra">7 comments · 2015-02-25</span></a><a class="rp-item" href="https://github.com/defunkt/jquery-pjax/issues/596"><span class="rp-item-num">#596</span><span class="rp-item-title">Can&#x27;t back to #hashed state</span><span class="rp-item-extra">6 comments · 2015-11-23</span></a><a class="rp-item" href="https://github.com/defunkt/jquery-pjax/issues/520"><span class="rp-item-num">#520</span><span class="rp-item-title">No request on back button</span><span class="rp-item-extra">6 comments · 2015-04-14</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/defunkt/jquery-pjax/releases"><b>jquery-pjax 2.0.1</b> <span class="rp-rel-tag">v2.0.1</span> <span class="rp-item-extra">2017-05-20</span></a><pre class="rp-pre">Fix blurring current active element within pjax container
+ Remove extra &amp; after stripping internal query params
+ Handle documents with no or empty  tag
+ Fix npm warnings about package.json
+ Add eslint to project</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/defunkt__jquery-pjax.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

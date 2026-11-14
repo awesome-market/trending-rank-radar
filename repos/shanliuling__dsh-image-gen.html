@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>shanliuling/dsh-image-gen · GitHub Trending Rank Radar</title>
+<meta name="description" content=" 可在对话内生成、编辑、对比图像；内置 500 + 提示词、图库、多模型工作流，支持 ComfyUI。AI image studio for DeepSeek Harness — generate, edit &amp; compare images in chat, with 500+ prompts, gallery, multi-model workflows and ComfyUI.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="dsh-image-gen, shanliuling, shanliuling/dsh-image-gen, github stars, github trending, star growth, star history, 开源项目, 星标增长, ai-agent, deepseek, deepseek-harness, dsh-plugin, gemini, image-generation">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/shanliuling__dsh-image-gen">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="shanliuling/dsh-image-gen · GitHub Trending Rank Radar">
+<meta property="og:description" content=" 可在对话内生成、编辑、对比图像；内置 500 + 提示词、图库、多模型工作流，支持 ComfyUI。AI image studio for DeepSeek Harness — generate, edit &amp; compare images in chat, with 500+ prompts, gallery, multi-model workflows and ComfyUI.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/shanliuling__dsh-image-gen">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "shanliuling/dsh-image-gen", "codeRepository": "https://github.com/shanliuling/dsh-image-gen", "url": "https://zhuikan.com/repos/shanliuling__dsh-image-gen", "description": " 可在对话内生成、编辑、对比图像；内置 500 + 提示词、图库、多模型工作流，支持 ComfyUI。AI image studio for DeepSeek Harness — generate, edit & compare images in chat, with 500+ prompts, gallery, multi-model workflows and ComfyUI.", "author": {"@type": "Organization", "name": "shanliuling", "url": "https://github.com/shanliuling"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "TypeScript", "dateCreated": "2026-08-17", "keywords": "ai-agent,deepseek,deepseek-harness,dsh-plugin,gemini,image-generation,openai,seedream,ai-image-generation-api,comfyui"}</script>
+</head>
+<body data-repo="shanliuling/dsh-image-gen" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">shanliuling/dsh-image-gen</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="shanliuling__dsh-image-gen"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/83563400?u=e5e42ae211db0277887bbf8b8e600dd32b04d48a&amp;v=4&s=300" width="300" height="300" alt="shanliuling avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">dsh-image-gen</div>
+      <a class="rp-side-owner" href="https://github.com/shanliuling">shanliuling</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/shanliuling">shanliuling</a>
+        <span class="rp-sep">/</span><span class="rp-name">dsh-image-gen</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily_rate">daily_rate <b>#22</b></a><a class="rp-board-chip" href="../?board=weekly_rate">weekly_rate <b>#97</b></a></div>
+    </div>
+    <p class="rp-desc"> 可在对话内生成、编辑、对比图像；内置 500 + 提示词、图库、多模型工作流，支持 ComfyUI。AI image studio for DeepSeek Harness — generate, edit &amp; compare images in chat, with 500+ prompts, gallery, multi-model workflows and ComfyUI.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>1,489</b></span><span class="rp-stat" title="forks">⑂ <b>126</b></span><span class="rp-stat" title="watchers">👁 <b>11</b></span><span class="rp-stat" title="prs">⑃ <b>42</b></span><span class="rp-stat" title="issues">● <b>91</b></span><span class="rp-stat" title="releases">▤ <b>42</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/ai-agent">ai-agent</a><a class="rp-topic" href="../tags/deepseek">deepseek</a><a class="rp-topic" href="../tags/deepseek-harness">deepseek-harness</a><a class="rp-topic" href="../tags/dsh-plugin">dsh-plugin</a><a class="rp-topic" href="../tags/gemini">gemini</a><a class="rp-topic" href="https://github.com/topics/image-generation">image-generation</a><a class="rp-topic" href="../tags/openai">openai</a><a class="rp-topic" href="https://github.com/topics/seedream">seedream</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2026-08-17</span><a class="rp-meta-bit rp-home" href="https://github.com/shanliuling/dsh-image-gen#readme" rel="noopener">github.com/shanliuling/dsh-image-gen#readme</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/shanliuling/dsh-image-gen">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.11.2</span><a class="rp-dl-a" href="https://github.com/shanliuling/dsh-image-gen/releases/tag/v0.11.2">v0.11.2 ↓</a><span class="rp-dl-ver">0.11.2</span><span class="rp-dl-date">2026-11-12</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+72</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">1,489</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">126</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">11</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">42</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">91</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">42</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">简体中文 · English
+
+ 🎨 dsh-image-gen
+
+ 在 DeepSeek Harness 里，用说话的方式画图
+
+对话批量生图 · GIF 动图 · 看得懂草图的 AI 画布 · Agent 自动套用 500+ Prompt 灵感 · 订阅账号免 Key
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+  
+
+
+
+  一句话就能做到 ·
+  快速开始 ·
+  核心能力 ·
+  Provider 支持 ·
+  常见问题
+
+
+
+
+
+  
+    🔁 一句话，一整组图一条消息Agent 批量生成几十张图片
+    ✏️ 画个草图、圈个地方，AI 就懂圈出剑 → 换成斧头 · 火柴人 → 成图
+  
+  
+    
+    
+  
+
+
+
+
+
+
+dsh-image-gen 是 DeepSeek Harness 的原生图像创作插件。它不是在对话框里塞一个生图按钮，而是让 Agent 本身学会画图：它能一次规划并生成一整组图，能看懂你在画布上的涂鸦和圈选，能自己去灵感库里找合适的风格模板。需要精细控制时，还有 Studio 工作台、多模型对比和图库。
+
+ 已有 ChatGPT、Grok 或 Google 订阅？直接登录即可生图，无需额外购买 API Key。
+
+支持：Gemini · OpenAI / Compatible · Seedream · DashScope · Grok Imagine · GLM-Image · 本地 ComfyUI
+
+bash
+pnpm dsh plugin --profile web add dsh-image-gen@latest
+
+
+ 每个版本的更新内容见 Releases。
+
+---
+
+ 一句话就能做到
+
+不用学参数，也不用切页面，直接在 DSH 对话里说：
+
+| 你在对话里说                                                  | 插件会做什么                                                                   |
+| :------------------------------------------------------------ | :----------------------------------------------------------------------------- |
+| 「给《咖啡店开业》这篇文章配 4 张插图，统一扁平插画风，16:9」 | 🔁 对话批量生图：Agent 把需求拆成 4 个 Prompt 逐张生成，一条消息收齐整组图 |
+| 「用手绘风格 123 画一张咖啡店菜单」                          | ✨ 自动套用灵感：Agent 先在 500+ 案例库里检索对应风格，再套用模板出图      |
+| 「把我在画布上画的草图变成正式插画」                          | ✏️ 看懂画布：Agent 读取画布选区，把草稿变成成图                            |
+| 「把我圈出来的剑换成斧头，其他不变」                          | 🎯 圈哪改哪：只改你标出的局部                                              |
+| 「保持这个角色不变，换到雪地场景」                            | 🎭 角色一致性：图生图时保持同一个人物或物体，不会换成长得相似的另一个      |
+| 「同一个 Prompt，GPT 和 Gemini 各出一张对比」                 | ⚖️ 多模型对比：并发调用多个模型，放在同一张画布上比较                      |
+| 「把这个角色做成一段挥手的 GIF 动图」                          | 🎞️ GIF 动图：直接生成循环动画，卡片里播放、调倍速，还能按帧写评论修改      |
+
+
+
+---
+
+ 快速开始
+
+ 加固下载（可选）
+
+两条可选设置加固离开本机的网络路径，默认全部关闭：
+
+- strictImageDownloads：结果 URL 必须是公网 HTTPS 443。DNS 解析结果会校验并固定用于本次请求，不跟随 provider 结果中的重定向，响应遵守图片字节上限。
+- requireHostAdmission：宿主 connection admission 服务缺失或异常时，插件 Web 路由一律 503 拒绝，而不是裸奔。
+
+默认关闭是因为 TUN 代理或自定义企业解析器可能故意返回内网地址；开启任一设置即假定你的出口是直连。
+
+ 1. 安装插件
+
+环境要求：DeepSeek Harness 稳定版本，Node.js ^22.19.0 或 = 24.0.0。
+
+在你的 DeepSeek Harness 项目根目录下运行：
+
+bash
+pnpm dsh plugin --profile web add dsh-image-gen@latest
+
+
+ 💬 极客提示：你也可以直接把这句话发送给 DSH 对话中的 Agent：
+ 帮我安装生图插件，在终端执行：pnpm dsh plugin --profile web add dsh-image-gen@latest
+
+
+其他安装方式（全局 / GitHub 直装 / 本地调试）
+
+bash
+ 若已将 dsh 安装为系统全局命令：
+dsh plugin --profile web add dsh-image-gen@latest
+
+ 从 GitHub 仓库直接安装最新代码：
+pnpm dsh plugin --profile web add git+https://github.com/shanliuling/dsh-image-gen.git
+
+ 本地克隆源码开发安装：
+git clone https://github.com/shanliuling/dsh-image-gen.git
+pnpm dsh plugin --profile web add ./dsh-image-gen
+
+
+
+
+ 2. 配置 Provider
+
+重启 DSH 后，点击左侧边栏的 「插件」 图标打开插件面板，在 「已安装」 分区点击 dsh-image-gen，进入插件详情页即可看到「图像生成」配置表单：
+
+插件面板 → 已安装 → dsh-image-gen
+
+ DSH 0.1.5 及更早版本没有插件面板，入口仍为「设置 → 插件 → 插件配置 → 图像生成」；插件已同时兼容两种入口。
+
+选择 Provider，填写自己的 API Key，并按需调整模型、Endpoint / Base URL 与工作区保存选项。填好 Key 后可点击「测试连接」验证可用性，或点击「拉取模型」一键获取该厂商支持的全部生图模型，无需手动查文档。使用 ComfyUI 时，请填写 DSH Host 可访问的服务地址，并导</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/shanliuling/dsh-image-gen/issues/69"><span class="rp-item-num">#69</span><span class="rp-item-title">一点小期待</span><span class="rp-item-extra">4 comments · 2026-10-05</span></a><a class="rp-item" href="https://github.com/shanliuling/dsh-image-gen/issues/128"><span class="rp-item-num">#128</span><span class="rp-item-title">Feature request: provider registration extension point for plugin-owned image models</span><span class="rp-item-extra">2 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/shanliuling/dsh-image-gen/issues/130"><span class="rp-item-num">#130</span><span class="rp-item-title">画廊-工作台-无限画布-左侧功能区长期悬停时的解释位置错误</span><span class="rp-item-extra">1 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/shanliuling/dsh-image-gen/issues/109"><span class="rp-item-num">#109</span><span class="rp-item-title">关于界面与UI调整建议</span><span class="rp-item-extra">1 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/shanliuling/dsh-image-gen/issues/106"><span class="rp-item-num">#106</span><span class="rp-item-title">[Feature] 希望支持 Seedream 5.0 的图层拆分（layer_decomposition）</span><span class="rp-item-extra">1 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/shanliuling/dsh-image-gen/issues/95"><span class="rp-item-num">#95</span><span class="rp-item-title">希望新增一些小功能</span><span class="rp-item-extra">1 comments · 2026-10-29</span></a><a class="rp-item" href="https://github.com/shanliuling/dsh-image-gen/issues/127"><span class="rp-item-num">#127</span><span class="rp-item-title">建议：画廊工作台增加「动图（GIF）」开关与帧数/帧时长配置</span><span class="rp-item-extra">0 comments · 2026-11-09</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/shanliuling/dsh-image-gen/discussions/76"><span class="rp-item-num">#76</span><span class="rp-item-title">Support Openrouter API Key ?</span><span class="rp-item-extra">1 comments · 2026-10-10</span></a><a class="rp-item" href="https://github.com/shanliuling/dsh-image-gen/discussions/20"><span class="rp-item-num">#20</span><span class="rp-item-title">Welcome to dsh-image-gen Discussions!</span><span class="rp-item-extra">1 comments · 2026-08-30</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/shanliuling/dsh-image-gen/releases"><b>v0.11.2</b> <span class="rp-rel-tag">v0.11.2</span> <span class="rp-item-extra">2026-11-12</span></a><pre class="rp-pre">新功能
+
+- SVG 矢量图输出（131，感谢 @Cross2pro）：generate_image 支持 output_format: svg（OpenAI / OpenAI 兼容渠道，仅文生图）。结果直接显示在对话图卡里，可复制源码、下载 .svg，并存入工作区。渠道没按 SVG 出图时，会如实说明返回的是位图。注意：同一个中转的不同线路对 SVG 的支持不一样，出不来时可以换一条线路试试。
+- GIF 逐帧修改体验改进（129，感谢 @thisTom）：发送后画面上显示遮罩、当前步骤、预估进度和已等秒数，可以随时取消；改好后大图不关闭，新版本在原处出现，可以直接「继续修改」。
+- 工作台自动发现模型（126，感谢 @Chsw-CC）：工作台会在后台向已配置的渠道拉取它实际支持的生图模型，追加到模型下拉列表里，不用再手动填写模型名。
+- 可选的下载安全加固（111，感谢 @evgyur）：新增两个默认关闭的配置项 strictImageDownloads、requireHostAdmission，适合对安全有要求的自部署环境。使用代理（如 Clash TUN / Fake-IP）的用户请不要开启，详见 README。
+
+ 修复
+
+- 只配置了命名的 OpenAI 兼容渠道时，插件告诉对话模型「生图模型未配置」，导致部分模型不调用生图工具、改用代码画图。现在会显示当前渠道的实际模</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/shanliuling__dsh-image-gen.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

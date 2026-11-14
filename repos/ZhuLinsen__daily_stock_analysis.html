@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZhuLinsen/daily_stock_analysis · GitHub Trending Rank Radar</title>
+<meta name="description" content="LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-f">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="daily_stock_analysis, ZhuLinsen, ZhuLinsen/daily_stock_analysis, github stars, github trending, star growth, star history, 开源项目, 星标增长, aigc, llm, quant, quantitative-trading, a-stock, ai-agent">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/ZhuLinsen__daily_stock_analysis">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="ZhuLinsen/daily_stock_analysis · GitHub Trending Rank Radar">
+<meta property="og:description" content="LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-f">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/ZhuLinsen__daily_stock_analysis">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ZhuLinsen/daily_stock_analysis", "codeRepository": "https://github.com/ZhuLinsen/daily_stock_analysis", "url": "https://zhuikan.com/repos/ZhuLinsen__daily_stock_analysis", "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-f", "author": {"@type": "Organization", "name": "ZhuLinsen", "url": "https://github.com/ZhuLinsen"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Python", "dateCreated": "2026-01-10", "keywords": "aigc,llm,quant,quantitative-trading,a-stock,ai-agent,quantitative-finance"}</script>
+</head>
+<body data-repo="ZhuLinsen/daily_stock_analysis" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">ZhuLinsen/daily_stock_analysis</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="ZhuLinsen__daily_stock_analysis"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/42829555?u=d8c2535ab7d7b9b8524f8e50dd41aae5d84793c7&amp;v=4&s=300" width="300" height="300" alt="ZhuLinsen avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">daily_stock_analysis</div>
+      <a class="rp-side-owner" href="https://github.com/ZhuLinsen">ZhuLinsen</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/ZhuLinsen">ZhuLinsen</a>
+        <span class="rp-sep">/</span><span class="rp-name">daily_stock_analysis</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily">daily <b>#15</b></a><a class="rp-board-chip" href="../?board=daily_rate">daily_rate <b>#79</b></a><a class="rp-board-chip" href="../?board=weekly">weekly <b>#23</b></a><a class="rp-board-chip" href="../?board=weekly_rate">weekly_rate <b>#146</b></a><a class="rp-board-chip" href="../?board=monthly">monthly <b>#99</b></a></div>
+    </div>
+    <p class="rp-desc">LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。  LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>71,949</b></span><span class="rp-stat" title="forks">⑂ <b>57,380</b></span><span class="rp-stat" title="watchers">👁 <b>282</b></span><span class="rp-stat" title="prs">⑃ <b>1,579</b></span><span class="rp-stat" title="issues">● <b>868</b></span><span class="rp-stat" title="releases">▤ <b>38</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/aigc">aigc</a><a class="rp-topic" href="../tags/llm">llm</a><a class="rp-topic" href="https://github.com/topics/quant">quant</a><a class="rp-topic" href="https://github.com/topics/quantitative-trading">quantitative-trading</a><a class="rp-topic" href="https://github.com/topics/a-stock">a-stock</a><a class="rp-topic" href="../tags/ai-agent">ai-agent</a><a class="rp-topic" href="https://github.com/topics/quantitative-finance">quantitative-finance</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-01-10</span><a class="rp-meta-bit rp-home" href="https://dsa.zhulinsen.tech" rel="noopener">dsa.zhulinsen.tech</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/ZhuLinsen/daily_stock_analysis">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v3.34.0</span><a class="rp-dl-a" href="https://github.com/ZhuLinsen/daily_stock_analysis/releases/tag/v3.34.0">v3.34.0 ↓</a><span class="rp-dl-ver">3.34.0</span><span class="rp-dl-date">2026-11-09</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+778</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+4,447</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+5,853</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">71,949</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">57,380</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">282</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,579</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">868</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">38</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">📈 股票智能分析系统
+
+
+
+
+
+
+
+
+
+
+  &amp;nbsp;
+
+
+ 🤖 基于 AI 大模型的 A股/港股/美股/日股/韩股/台股自选股智能分析系统，每日自动分析并推送「决策仪表盘」到企业微信/飞书/Telegram/Discord/Slack/邮箱
+
+产品预览 · 功能特性 · 快速开始 · 推送效果 · 文档中心 · 完整指南
+
+简体中文 | English | 繁體中文
+
+
+
+
+💖 赞助商 (Sponsors)
+
+
+  感谢 Modelflare 赞助本项目！由美国 Havenbyte LLC 运营，满血稳定不掺水，低成本接入 GPT、Claude、Gemini、Grok 及 40+ 图片/视频模型。指定 OpenAI 分组提供 65% / 75% / 85% 每日缓存命中率保障；单笔充值 US$20 解锁 GPT 0.015x，US$50 解锁 Claude 0.03x。专属链接注册
+  
+  
+    
+  
+
+
+
+
+ 🖥️ 产品预览
+
+
+  
+  点击动图查看完整演示
+
+
+ ✨ 功能特性
+
+| 能力 | 覆盖内容 |
+|------|------|
+| AI 决策报告 | 核心结论、评分、趋势、买卖点位、风险警报、催化因素、操作检查清单 |
+| 多市场数据聚合 | 覆盖 A股、港股、美股、日股、韩股、台股和 ETF，支持行情、K 线、技术指标、新闻、公告、基本面与报告辅助数据；不同市场的数据源和能力边界见 市场支持边界 |
+| Web / 桌面工作台 | 手动分析、任务进度、历史报告、完整 Markdown、回测、持仓、配置管理、浅色 / 深色主题 |
+| Agent 策略问股 | 多轮追问，支持均线、缠论、波浪、趋势、热点、事件、成长、预期等 15 种内置策略，覆盖 Web/Bot/API |
+| 智能导入与补全 | 图片、CSV/Excel、剪贴板导入；股票代码/名称/拼音/别名补全 |
+| 自动化与推送 | GitHub Actions、Docker、本地定时任务、FastAPI 服务和企业微信/飞书/Telegram/Discord/Slack/邮件推送 |
+
+ 功能细节、字段契约、基本面 P0 超时语义、交易纪律、数据源优先级、Web/API 行为请看 完整配置与部署指南。
+
+ 技术栈与数据来源
+
+| 类型 | 支持 |
+|------|------|
+| AI 模型 | Modelflare、AIHubMix、Gemini、OpenAI 兼容、DeepSeek、通义千问、Claude、Ollama 本地模型等 |
+| 行情数据 | TickPlus（推荐）、AkShare、Tushare、Pytdx、Baostock、YFinance、Longbridge |
+| 新闻搜索 | SerpAPI、Anspire、Tavily、Bocha、Brave、MiniMax、SearXNG |
+| 社交舆情 | Stock Sentiment API（Reddit / X / Polymarket，仅美股，可选） |
+
+ 项目默认内置 AkShare、Baostock、YFinance 等免费行情源，可零配置运行；免费源受上游限流、接口变动和网络波动影响，稳定性不保证。长期定时、批量分析或更稳定行情建议配置 Tushare、Longbridge 等 token 型数据源，适用市场、Actions 映射和 fallback 规则见 数据源配置。
+
+ 🚀 快速开始
+
+ 方式一：GitHub Actions（推荐）
+
+ 5 分钟完成部署，零成本，无需服务器。
+
+
+ 1. Fork 本仓库
+
+点击右上角 Fork 按钮（顺便点个 Star⭐ 支持一下）
+
+ 2. 配置 Secrets
+
+Settings → Secrets and variables → Actions → New repository secret
+
+AI 模型配置（至少配置一个）
+
+默认先选一个模型服务商并填写 API Key；需要多模型、图片识别、本地模型或高级路由时，再参考 LLM 配置指南。
+
+| Secret 名称 | 说明 | 必填 |
+|------------|------|:----:|
+| MODELFLARE_KEY | Modelflare API Key，低成本接入全球热门大模型 | 推荐 |
+| AIHUBMIX_KEY | AIHubMix API Key，一Key切换使用全系模型，无需科学上网，本项目可享 10% 优惠 | 推荐 |
+| GEMINI_API_KEY | Google Gemini API Key | 可选 |
+| ANTHROPIC_API_KEY | Anthropic Claude API Key | 可选 |
+| OPENAI_API_KEY | OpenAI 兼容 API Key（支持 DeepSeek、通义千问等） | 可选 |
+| OPENAI_BASE_URL / OPENAI_MODEL | 使用 OpenAI 兼容服务时填写 | 可选 |
+
+ Ollama 更适合本地 / Docker 部署，GitHub Actions 推荐使用云端 API。
+
+通知渠道配置（至少配置一个）
+
+| Secret 名称 | 说明 |
+|------------|------|
+| WECHAT_WEBHOOK_URL | 企业微信机器人 |
+| FEISHU_WEBHOOK_URL | 飞书机器人 |
+| TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID | Telegram |
+| DISCORD_WEBHOOK_URL | Discord Webhook |
+| SLACK_BOT_TOKEN + SLACK_CHANNEL_ID | Slack Bot |
+| EMAIL_SENDER + EMAIL_PASSWORD | 邮件推送 |
+
+更多渠道、签名校验、分组邮件、Markdown 转图片等配置见 通知渠道详细配置。
+
+自选股配置（必填）
+
+| Secret 名称 | 说明 | 必填 |
+|------------|------|:----:|
+| STOCK_LIST | 自选股代码，如 600519,hk00700,AAPL,7203.T,005930.KS,2330.TW；已登记指数显式代码（如 sh000016、930606.CSI）经一次性 --stocks 或 GitHub Actions 入口支持，规则见 指数自选股配置 | ✅ |
+
+新闻源配置（推荐）
+
+新闻源会显著影响舆情、公告、事件和催化因素质量，建议至少配置一个搜索服务。
+
+| Secret 名称 | 说明 | 必填 |
+|------------|------|:----:|
+| SERPAPI_API_KEYS | SerpAPI：搜索引擎结果补强，适合实时金融新闻 | 推荐 |
+| ANSPIRE_API_KEYS | Anspire 搜索 API Key，可与其模型网关共用 | 可选 |
+| TAVILY_API_KEYS | Tavily：通用新闻搜索</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ZhuLinsen/daily_stock_analysis/issues/1903"><span class="rp-item-num">#1903</span><span class="rp-item-title">feat: 增强 DecisionSignal 后验复盘并反馈到 Agent 记忆</span><span class="rp-item-extra">9 comments · 2026-07-03</span></a><a class="rp-item" href="https://github.com/ZhuLinsen/daily_stock_analysis/issues/1743"><span class="rp-item-num">#1743</span><span class="rp-item-title">roadmap: Codex / Claude Code / OpenCode / Hermes 本地生成与 Agent Backend</span><span class="rp-item-extra">9 comments · 2026-06-21</span></a><a class="rp-item" href="https://github.com/ZhuLinsen/daily_stock_analysis/issues/1595"><span class="rp-item-num">#1595</span><span class="rp-item-title">perf: 提高 LLM 分析输入的 prompt cache 利用率</span><span class="rp-item-extra">9 comments · 2026-06-04</span></a><a class="rp-item" href="https://github.com/ZhuLinsen/daily_stock_analysis/issues/1733"><span class="rp-item-num">#1733</span><span class="rp-item-title">长期开发规划：AI 投研系统、AlphaSift 深度融合、本地 Agent 能力复用与跨资产分析</span><span class="rp-item-extra">8 comments · 2026-06-20</span></a><a class="rp-item" href="https://github.com/ZhuLinsen/daily_stock_analysis/issues/2411"><span class="rp-item-num">#2411</span><span class="rp-item-title">feat(llm): 官方账号授权与模型接入（先调研与规划，待审查）</span><span class="rp-item-extra">5 comments · 2026-10-14</span></a><a class="rp-item" href="https://github.com/ZhuLinsen/daily_stock_analysis/issues/1939"><span class="rp-item-num">#1939</span><span class="rp-item-title">feat: 设计收盘后 A 股情绪复盘能力</span><span class="rp-item-extra">5 comments · 2026-07-05</span></a><a class="rp-item" href="https://github.com/ZhuLinsen/daily_stock_analysis/issues/1584"><span class="rp-item-num">#1584</span><span class="rp-item-title">[Feature] 完善大盘复盘报告的分化与催化消化分析</span><span class="rp-item-extra">4 comments · 2026-06-03</span></a><a class="rp-item" href="https://github.com/ZhuLinsen/daily_stock_analysis/issues/2497"><span class="rp-item-num">#2497</span><span class="rp-item-title">[Feature] 软件是不是不可以运行的ARM架构的设备中？</span><span class="rp-item-extra">3 comments · 2026-11-12</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/ZhuLinsen/daily_stock_analysis/releases"><b>v3.34.0</b> <span class="rp-rel-tag">v3.34.0</span> <span class="rp-item-extra">2026-11-09</span></a><pre class="rp-pre">v3.34.0
+
+ 发布亮点
+
+- feat: 新增可选 FastAPI 安全中间件；定时模式支持跳过重复的启动分析；离线 Agent 轨迹评估新增讨论股票范围偏移诊断。
+- fix: 更新 Claude、Gemini、OpenAI、DeepSeek 默认模型，并为新建文本渠道优先选择 MiniMax M3.1 Flash，减少旧模型退役导致的配置失败。
+- fix: 修复研究任务报告合成阶段预算过短的问题，保留超时阶段、原因与已知 token 用量；Market Light 评分排除 VIX 涨跌幅，避免将波动率上涨当作市场上涨。
+- fix: 修复自选股保存被无关 LLM 配置错误阻断、数据库单例切换地址后仍使用旧连接、Telegram 消息长度计算不符合 UTF-16 限制等问题。
+- improve: 持仓风险板块查询增加按股票代码跨请求缓存；富途 OpenD 连接增加等待边界与失败降级；更新 Adanos 个股 Reddit 接口，固定存在兼容问题的依赖版本。
+- improve: 统一数据源设置展示顺序与中英文标签，改善启动和数据源日志，修复中文文档乱码；移除实验性 Codex App Server 后端，并撤回误合入的 API Route / Opper 集成。
+
+ What&#x27;s Changed
+
+- Added optional FastAPI security m</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (4)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/gitblog_00180/article/details/153090682" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">GitHub Actions定时运行教程：让daily_stock_analysis自动生成股票分析报告</span><span class="rp-item-extra">2026-07-23</span></a><a class="rp-item" href="https://blog.csdn.net/weixin_29997223/article/details/158312104" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">AI股票分析师daily_stock_analysis与GitHub Actions自动化工作流</span><span class="rp-item-extra">2026-02-22</span></a><a class="rp-item" href="https://www.sohu.com/a/980206149_121124359" target="_blank" rel="noopener"><span class="rp-news-src">搜狐</span><span class="rp-item-title">Github上开源的AI股票分析神器，已经突破5.5K+ Star!</span><span class="rp-item-extra">2026-01-26</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBidWxJa1J3YXBwb0pBSmo2aEpIQnFtOS1yZ01OeUZFNjFCSVN0REFTZExhN2d5a2RQTU1ZU2ZSSjdST25XcS0tY3NJeXZzSWRkYm00TFp6RzhxMmh1bGZpY2tzd183WW8?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">80aj.com</span><span class="rp-item-title">LLM驱动的股票分析架构与风险</span><span class="rp-item-extra">2026-01-19</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (2)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=48619147" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Daily_stock_analysis: LLM-powered multi-market stock analysis system</span><span class="rp-item-extra">▲ 9 · 0 comments · 2026-06-21</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=48682687" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Daily Stock Analysis</span><span class="rp-item-extra">▲ 2 · 0 comments · 2026-06-26</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/ZhuLinsen__daily_stock_analysis.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

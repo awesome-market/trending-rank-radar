@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#music · GitHub Trending Rank Radar</title>
+<meta name="description" content="GitHub 标签 music 下的开源项目趋势榜 · 24 repos tagged music on GitHub · 独立采集 GitHub 仓库数据的开源趋势榜单">
+<meta name="keywords" content="GitHub trending, GitHub ranking, GitHub 排行榜, 开源榜单, trending repos, star growth, star history, 星标增长, github stars, open data, github pages, github actions, 开源项目, open source rankings">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/tags/music">
+<!-- bilingual content lives on ONE url — no per-lang alternates to declare -->
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="GitHub Trending Rank Radar" href="../feed.xml">
+<meta property="og:title" content="GitHub Trending Rank Radar">
+<meta property="og:description" content="GitHub 开源项目趋势榜单 · 每日双快照 · 十一榜单 · 历史回看 | Independent GitHub trend radar · twice-daily snapshots · 11 boards · bilingual">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zhuikan.com/tags/music">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zhuikan.com/assets/og.png">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "GitHub Trending Rank Radar",
+      "alternateName": "GitHub 开源项目趋势榜单",
+      "url": "https://zhuikan.com/",
+      "description": "Independent open-source GitHub trend radar: daily/weekly/monthly star growth & rate boards, new-repo and all-time charts, browsable by day, month and year. 独立采集 GitHub 仓库数据的开源趋势榜单。",
+      "inLanguage": ["zh-CN", "en"],
+      "isAccessibleForFree": true,
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "publisher": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "name": "GitHub Trending Rankings Dataset",
+      "description": "Twice-daily snapshots of tracked GitHub repositories with stars, forks, watchers, issues, PRs and releases; precomputed daily/weekly/monthly/new/all-time leaderboard JSON.",
+      "url": "https://zhuikan.com/data/index.json",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "isAccessibleForFree": true,
+      "temporalCoverage": "2026-11-09/..",
+      "creator": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      },
+      "distribution": [
+        {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://zhuikan.com/data/index.json"}
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body data-base="../" data-tag="music" data-tag-name="music">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到榜单</a>
+
+<noscript>
+  <div style="max-width:760px;margin:64px auto;padding:0 24px;font-family:system-ui,sans-serif;line-height:1.7;color:#333">
+    <h1>GitHub Trending Rank Radar</h1>
+    <p>独立采集 GitHub 仓库数据的开源趋势榜单：新星榜、日 / 周 / 月飙升榜与增速榜、总榜，支持按日 / 月 / 年回看历史。每日两次快照（UTC 02:00 / 14:00），榜单由快照差值计算。</p>
+    <p>An independent open-source GitHub trending radar: new repos, daily / weekly / monthly star-growth and rate boards, an all-time chart, and day / month / year history — snapshots taken twice daily (UTC 02:00 &amp; 14:00).</p>
+    <p>Machine-readable open data:
+      <a href="https://api-site.zhuikan.com/data/index.json">api-site/data/index.json</a> ·
+      <a href="../llms.txt">llms.txt</a> ·
+      <a href="../sitemap.xml">sitemap.xml</a> ·
+      <a href="https://github.com/awesome-market/trending-rank-radar">Source on GitHub</a>
+    </p>
+    <p><strong>榜单交互需要启用 JavaScript。This site requires JavaScript for the interactive boards.</strong></p>
+  </div>
+</noscript>
+
+<!-- shared svg gradient defs for sparklines -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <a class="hero-brand brand-home" href="../">
+      <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+        <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+        <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+        <g class="radar-sweep">
+          <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+        </g>
+      </svg>
+      <div>
+        <h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1>
+        <p class="hero-sub" data-i18n="hero.sub">GitHub 开源项目趋势榜单 · 每日双快照 · 八种榜单 · 日 / 月 / 年历史回看</p>
+      </div>
+    </a>
+    <div class="hero-meta">
+      <div class="search-wrap" id="searchWrap">
+        <select id="searchScope" class="search-scope" data-i18n-aria="search.scope.aria" aria-label="搜索范围">
+          <option value="repo" data-i18n="search.scope.repo">仓库</option>
+          <option value="news" data-i18n="search.scope.news">新闻</option>
+        </select>
+        <div class="search-box">
+          <svg class="search-ico" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"/></svg>
+          <input id="searchInput" class="search-input" type="search" autocomplete="off" spellcheck="false" data-i18n-ph="search.ph.repo" data-i18n-aria="search.ph.repo" aria-label="搜索" enterkeyhint="search">
+        </div>
+        <div class="search-drop" id="searchDrop" hidden></div>
+      </div>
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06-1.06a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.06l1.06-1.061a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero-viz" id="heroViz" data-enter>
+    <div class="hv-copy">
+      <p class="hv-kicker" data-i18n="hv.kicker">独立采集 · 开源数据</p>
+      <h2 class="hv-title" data-i18n="hv.title">独立追踪 GitHub 星标的每一次脉动</h2>
+      <p class="hv-sub" data-i18n="hv.sub">每日两次快照，用差值还原真实增长——不是又一份热榜镜像。</p>
+      <a class="hv-cta" href="#boardTabs" data-i18n="hv.cta">浏览今日榜单 →</a>
+    </div>
+    <div class="hv-side">
+      <div class="hv-chart" id="hvChart" aria-hidden="true"></div>
+      <div class="hv-cap" id="hvCap"></div>
+    </div>
+  </section>
+
+  <div class="controls" id="controls">
+    <div class="ctrl-row">
+      <nav class="board-tabs" id="boardTabs" data-i18n-aria="boards.aria" aria-label="榜单"></nav>
+    </div>
+    <div class="ctrl-row ctrl-sub">
+      <div class="seg" id="periodSeg" role="tablist" data-i18n-aria="period.aria" aria-label="时间维度">
+        <button data-period="day" class="seg-btn active" data-i18n="period.day">日</button>
+        <button data-period="month" class="seg-btn" data-i18n="period.month">月</button>
+        <button data-period="year" class="seg-btn" data-i18n="period.year">年</button>
+      </div>
+      <label class="sf-label" for="selDate" data-i18n="date.label">榜单日期</label>
+      <select id="selDate" class="sel" data-i18n-aria="date.aria" aria-label="日期"></select>
+      <div class="star-filter" role="group" data-i18n-aria="star.range" aria-label="Star 范围筛选">
+        <span class="sf-label" data-i18n="star.range">Star 范围</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="min">下限</span>
+          <input id="minK" type="number" min="0" step="1" value="1" class="sf-input" data-i18n-aria="minK.aria" aria-label="最小 Star 千数">
+        </label>
+        <span class="sf-sep">–</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="max">上限</span>
+          <input id="maxK" type="number" min="0" step="1" value="500" class="sf-input" data-i18n-aria="maxK.aria" aria-label="最大 Star 千数">
+        </label>
+        <span class="sf-unit">k</span>
+        <button id="applyFilter" class="sf-btn" data-i18n="apply">筛选</button>
+      </div>
+      <span class="window-info" id="windowInfo"></span>
+    </div>
+  </div>
+
+  <section id="content">
+    <div class="empty-state" id="emptyState" hidden>
+      <div class="empty-main">
+        <svg class="radar-big" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.4"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.3"/>
+          <g class="radar-sweep radar-sweep-lg">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <h2 data-i18n="empty.title">榜单积累中</h2>
+        <p id="emptyText" data-i18n="empty.text">快照数据正在积累，增长榜需要至少 2 个有效快照日。</p>
+        <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+        <p class="progress-hint" id="progressHint"></p>
+        <div class="empty-actions" id="emptyActions"></div>
+      </div>
+      <div class="empty-preview" id="emptyPreview"></div>
+    </div>
+
+    <div id="podiumWrap"></div>
+    <div id="listWrap"><!--SSR--><p style="color:var(--muted,#8b949e);font-size:13px;margin:0 4px 10px">2026-11-14 · #music · 24 <span class="i18n-zh">个仓库 · 按 star 排序</span><span class="i18n-en">repos · by stars</span></p><div class="rank-list"><div class="rank-row" data-fn="KRTirtho/spotube"><span class="row-rank top">1</span><a class="row-avatar" href="../repos/KRTirtho__spotube"><img src="https://avatars.githubusercontent.com/u/263316120?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/KRTirtho__spotube"><span class="row-owner">KRTirtho</span><span class="row-sep">/</span><span class="row-repo">spotube</span></a></div><div class="row-meta"><span class="lang-tag">Kotlin</span><span class="m" title="stars">★ 50,751</span><span class="m" title="forks">⑂ 2,401</span><span class="m" title="watchers">👁 287</span><span class="m" title="issues">● 2,190</span><span class="m" title="prs">⑃ 479</span><span class="m" title="releases">▤ 46</span></div><div class="row-desc">🎧 Open source music streaming app! Available for both desktop &amp; mobile!</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/youtube">youtube</a><a class="row-tag" href="https://github.com/topics/desktop-client">desktop-client</a><a class="row-tag" href="https://github.com/topics/music-player">music-player</a><a class="row-tag" href="../tags/music">music</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 50,751</div></div></div><div class="rank-row" data-fn="team-spotube/spotube"><span class="row-rank top">2</span><a class="row-avatar" href="../repos/team-spotube__spotube"><img src="https://avatars.githubusercontent.com/u/263316120?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/team-spotube__spotube"><span class="row-owner">team-spotube</span><span class="row-sep">/</span><span class="row-repo">spotube</span></a></div><div class="row-meta"><span class="lang-tag">Kotlin</span><span class="m" title="stars">★ 50,751</span><span class="m" title="forks">⑂ 2,401</span><span class="m" title="watchers">👁 287</span><span class="m" title="issues">● 2,190</span><span class="m" title="prs">⑃ 479</span><span class="m" title="releases">▤ 46</span></div><div class="row-desc">🎧 Open source music streaming app! Available for both desktop &amp; mobile!</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/youtube">youtube</a><a class="row-tag" href="https://github.com/topics/desktop-client">desktop-client</a><a class="row-tag" href="https://github.com/topics/music-player">music-player</a><a class="row-tag" href="../tags/music">music</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 50,751</div></div></div><div class="rank-row" data-fn="imputnet/cobalt"><span class="row-rank top">3</span><a class="row-avatar" href="../repos/imputnet__cobalt"><img src="https://avatars.githubusercontent.com/u/152056268?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/imputnet__cobalt"><span class="row-owner">imputnet</span><span class="row-sep">/</span><span class="row-repo">cobalt</span></a></div><div class="row-meta"><span class="lang-tag">Svelte</span><span class="m" title="stars">★ 46,212</span><span class="m" title="forks">⑂ 4,115</span><span class="m" title="watchers">👁 196</span><span class="m" title="issues">● 1,047</span><span class="m" title="prs">⑃ 507</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">best way to save what you love</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/downloader">downloader</a><a class="row-tag" href="https://github.com/topics/reddit">reddit</a><a class="row-tag" href="https://github.com/topics/social-media">social-media</a><a class="row-tag" href="https://github.com/topics/twitter">twitter</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 46,212</div></div></div><div class="rank-row" data-fn="th-ch/youtube-music"><span class="row-rank">4</span><a class="row-avatar" href="../repos/th-ch__youtube-music"><img src="https://avatars.githubusercontent.com/u/232770603?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/th-ch__youtube-music"><span class="row-owner">th-ch</span><span class="row-sep">/</span><span class="row-repo">youtube-music</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 34,033</span><span class="m" title="forks">⑂ 2,046</span><span class="m" title="watchers">👁 176</span><span class="m" title="issues">● 2,146</span><span class="m" title="prs">⑃ 2,112</span><span class="m" title="releases">▤ 88</span></div><div class="row-desc">Pear 🍐 is extension for music player</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/music">music</a><a class="row-tag" href="../tags/desktop-app">desktop-app</a><a class="row-tag" href="../tags/electron">electron</a><a class="row-tag" href="../tags/node">node</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 34,033</div></div></div><div class="rank-row" data-fn="navidrome/navidrome"><span class="row-rank">5</span><a class="row-avatar" href="../repos/navidrome__navidrome"><img src="https://avatars.githubusercontent.com/u/26692192?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/navidrome__navidrome"><span class="row-owner">navidrome</span><span class="row-sep">/</span><span class="row-repo">navidrome</span></a></div><div class="row-meta"><span class="lang-tag">Go</span><span class="m" title="stars">★ 24,703</span><span class="m" title="forks">⑂ 1,815</span><span class="m" title="watchers">👁 93</span><span class="m" title="issues">● 1,906</span><span class="m" title="prs">⑃ 3,373</span><span class="m" title="releases">▤ 121</span></div><div class="row-desc">🎧 Your Personal Streaming Service</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/music">music</a><a class="row-tag" href="https://github.com/topics/subsonic-server">subsonic-server</a><a class="row-tag" href="https://github.com/topics/subsonic">subsonic</a><a class="row-tag" href="https://github.com/topics/music-server">music-server</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 24,703</div></div></div><div class="rank-row" data-fn="nukeop/nuclear"><span class="row-rank">6</span><a class="row-avatar" href="../repos/nukeop__nuclear"><img src="https://avatars.githubusercontent.com/u/12746779?u=cc56761cd6c3d6c48b22555bcb8d34308922a5ac&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/nukeop__nuclear"><span class="row-owner">nukeop</span><span class="row-sep">/</span><span class="row-repo">nuclear</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 18,936</span><span class="m" title="forks">⑂ 1,357</span><span class="m" title="watchers">👁 164</span><span class="m" title="issues">● 1,073</span><span class="m" title="prs">⑃ 1,023</span><span class="m" title="releases">▤ 92</span></div><div class="row-desc">Streaming music player that finds free music for you</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/music-player">music-player</a><a class="row-tag" href="../tags/music">music</a><a class="row-tag" href="../tags/linux">linux</a><a class="row-tag" href="../tags/windows">windows</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 18,936</div></div></div><div class="rank-row" data-fn="algerkong/AlgerMusicPlayer"><span class="row-rank">7</span><a class="row-avatar" href="../repos/algerkong__AlgerMusicPlayer"><img src="https://avatars.githubusercontent.com/u/45055748?u=6f5982237ed8aaabf442b35b59cf0b5df0512c89&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/algerkong__AlgerMusicPlayer"><span class="row-owner">algerkong</span><span class="row-sep">/</span><span class="row-repo">AlgerMusicPlayer</span></a></div><div class="row-meta"><span class="lang-tag">Vue</span><span class="m" title="stars">★ 17,581</span><span class="m" title="forks">⑂ 1,456</span><span class="m" title="watchers">👁 58</span><span class="m" title="issues">● 594</span><span class="m" title="prs">⑃ 155</span><span class="m" title="releases">▤ 39</span></div><div class="row-desc">一个第三方音乐播放器、本地服务、桌面歌词、音乐下载、远程控制</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/alger">alger</a><a class="row-tag" href="../tags/music">music</a><a class="row-tag" href="https://github.com/topics/music-player">music-player</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 17,581</div></div></div><div class="rank-row" data-fn="koel/koel"><span class="row-rank">8</span><a class="row-avatar" href="../repos/koel__koel"><img src="https://avatars.githubusercontent.com/u/20983373?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/koel__koel"><span class="row-owner">koel</span><span class="row-sep">/</span><span class="row-repo">koel</span></a></div><div class="row-meta"><span class="lang-tag">PHP</span><span class="m" title="stars">★ 17,346</span><span class="m" title="forks">⑂ 2,118</span><span class="m" title="watchers">👁 300</span><span class="m" title="issues">● 1,173</span><span class="m" title="prs">⑃ 1,859</span><span class="m" title="releases">▤ 176</span></div><div class="row-desc">Music streaming solution that works.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/laravel">laravel</a><a class="row-tag" href="../tags/vue">vue</a><a class="row-tag" href="../tags/audio">audio</a><a class="row-tag" href="https://github.com/topics/streaming">streaming</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 17,346</div></div></div><div class="rank-row" data-fn="beetbox/beets"><span class="row-rank">9</span><a class="row-avatar" href="../repos/beetbox__beets"><img src="https://avatars.githubusercontent.com/u/15920313?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/beetbox__beets"><span class="row-owner">beetbox</span><span class="row-sep">/</span><span class="row-repo">beets</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 15,937</span><span class="m" title="forks">⑂ 2,194</span><span class="m" title="watchers">👁 375</span><span class="m" title="issues">● 3,252</span><span class="m" title="prs">⑃ 2,917</span><span class="m" title="releases">▤ 55</span></div><div class="row-desc">music library manager and MusicBrainz tagger</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/music">music</a><a class="row-tag" href="https://github.com/topics/musicbrainz">musicbrainz</a><a class="row-tag" href="../tags/python">python</a><a class="row-tag" href="https://github.com/topics/music-library">music-library</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 15,937</div></div></div><div class="rank-row" data-fn="neutraltone/awesome-stock-resources"><span class="row-rank">10</span><a class="row-avatar" href="../repos/neutraltone__awesome-stock-resources"><img src="https://avatars.githubusercontent.com/u/1080928?u=6be244280ddf9ad5236fbd8f020086368aa80106&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/neutraltone__awesome-stock-resources"><span class="row-owner">neutraltone</span><span class="row-sep">/</span><span class="row-repo">awesome-stock-resources</span></a></div><div class="row-meta"><span class="lang-tag">Ruby</span><span class="m" title="stars">★ 14,832</span><span class="m" title="forks">⑂ 836</span><span class="m" title="watchers">👁 271</span><span class="m" title="issues">● 100</span><span class="m" title="prs">⑃ 338</span><span class="m" title="releases">▤ 4</span></div><div class="row-desc">:city_sunrise: A collection of links for free stock photography, video and Illustration websites</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/stock-photos">stock-photos</a><a class="row-tag" href="https://github.com/topics/free-photos">free-photos</a><a class="row-tag" href="https://github.com/topics/icon-font">icon-font</a><a class="row-tag" href="https://github.com/topics/stock-photography">stock-photography</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 14,832</div></div></div><div class="rank-row" data-fn="maxrave-dev/SimpMusic"><span class="row-rank">11</span><a class="row-avatar" href="../repos/maxrave-dev__SimpMusic"><img src="https://avatars.githubusercontent.com/u/113747128?u=deecc30b5dc87bd3f5641f8c0bec4bb01f745703&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/maxrave-dev__SimpMusic"><span class="row-owner">maxrave-dev</span><span class="row-sep">/</span><span class="row-repo">SimpMusic</span></a></div><div class="row-meta"><span class="lang-tag">Kotlin</span><span class="m" title="stars">★ 13,308</span><span class="m" title="forks">⑂ 763</span><span class="m" title="watchers">👁 112</span><span class="m" title="issues">● 2,343</span><span class="m" title="prs">⑃ 289</span><span class="m" title="releases">▤ 61</span></div><div class="row-desc">A cross-platform music app using YouTube Music for backend</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/android">android</a><a class="row-tag" href="https://github.com/topics/android-application">android-application</a><a class="row-tag" href="../tags/kotlin">kotlin</a><a class="row-tag" href="https://github.com/topics/media3">media3</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 13,308</div></div></div><div class="rank-row" data-fn="crmne/spotifast"><span class="row-rank">12</span><a class="row-avatar" href="../repos/crmne__spotifast"><img src="https://avatars.githubusercontent.com/u/106617?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/crmne__spotifast"><span class="row-owner">crmne</span><span class="row-sep">/</span><span class="row-repo">spotifast</span></a></div><div class="row-meta"><span class="lang-tag">Rust</span><span class="m" title="stars">★ 10,313</span><span class="m" title="forks">⑂ 611</span><span class="m" title="watchers">👁 28</span><span class="m" title="issues">● 666</span><span class="m" title="prs">⑃ 485</span><span class="m" title="releases">▤ 40</span></div><div class="row-desc">Spotify, native and fast. One lightweight Rust app for your whole library, local playback, and Spotify Connect on Linux, macOS, and Windows.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/audio">audio</a><a class="row-tag" href="../tags/cross-platform">cross-platform</a><a class="row-tag" href="../tags/desktop-app">desktop-app</a><a class="row-tag" href="https://github.com/topics/egui">egui</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 10,313</div></div></div><div class="rank-row" data-fn="vfsfitvnm/ViMusic"><span class="row-rank">13</span><a class="row-avatar" href="../repos/vfsfitvnm__ViMusic"><img src="https://avatars.githubusercontent.com/u/46219656?u=8ec15d25699ee005906017aa6e329429f43e692a&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/vfsfitvnm__ViMusic"><span class="row-owner">vfsfitvnm</span><span class="row-sep">/</span><span class="row-repo">ViMusic</span></a></div><div class="row-meta"><span class="lang-tag">Kotlin</span><span class="m" title="stars">★ 9,475</span><span class="m" title="forks">⑂ 1,350</span><span class="m" title="watchers">👁 0</span><span class="m" title="issues">● 1,180</span><span class="m" title="prs">⑃ 43</span><span class="m" title="releases">▤ 20</span></div><div class="row-desc">An Android application for streaming music from YouTube Music</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/android">android</a><a class="row-tag" href="https://github.com/topics/jetpack-compose">jetpack-compose</a><a class="row-tag" href="https://github.com/topics/music-player">music-player</a><a class="row-tag" href="../tags/youtube">youtube</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 9,475</div></div></div><div class="rank-row" data-fn="maotoumao/MusicFreeDesktop"><span class="row-rank">14</span><a class="row-avatar" href="../repos/maotoumao__MusicFreeDesktop"><img src="https://avatars.githubusercontent.com/u/31655147?u=72dc03b528a0f965b35fa41d48bf47eaff33f0af&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/maotoumao__MusicFreeDesktop"><span class="row-owner">maotoumao</span><span class="row-sep">/</span><span class="row-repo">MusicFreeDesktop</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 9,151</span><span class="m" title="forks">⑂ 891</span><span class="m" title="watchers">👁 45</span><span class="m" title="issues">● 374</span><span class="m" title="prs">⑃ 50</span><span class="m" title="releases">▤ 12</span></div><div class="row-desc">插件化、定制化、无广告的免费音乐播放器</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/electron">electron</a><a class="row-tag" href="../tags/free">free</a><a class="row-tag" href="../tags/music">music</a><a class="row-tag" href="https://github.com/topics/music-player">music-player</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 9,151</div></div></div><div class="rank-row" data-fn="librosa/librosa"><span class="row-rank">15</span><a class="row-avatar" href="../repos/librosa__librosa"><img src="https://avatars.githubusercontent.com/u/18124827?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/librosa__librosa"><span class="row-owner">librosa</span><span class="row-sep">/</span><span class="row-repo">librosa</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 8,928</span><span class="m" title="forks">⑂ 1,118</span><span class="m" title="watchers">👁 133</span><span class="m" title="issues">● 1,316</span><span class="m" title="prs">⑃ 807</span><span class="m" title="releases">▤ 49</span></div><div class="row-desc">Python library for audio and music analysis</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/audio">audio</a><a class="row-tag" href="../tags/python">python</a><a class="row-tag" href="../tags/music">music</a><a class="row-tag" href="https://github.com/topics/dsp">dsp</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 8,928</div></div></div><div class="rank-row" data-fn="MoeKoeMusic/MoeKoeMusic"><span class="row-rank">16</span><a class="row-avatar" href="../repos/MoeKoeMusic__MoeKoeMusic"><img src="https://avatars.githubusercontent.com/u/229047587?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/MoeKoeMusic__MoeKoeMusic"><span class="row-owner">MoeKoeMusic</span><span class="row-sep">/</span><span class="row-repo">MoeKoeMusic</span></a></div><div class="row-meta"><span class="lang-tag">Vue</span><span class="m" title="stars">★ 7,167</span><span class="m" title="forks">⑂ 452</span><span class="m" title="watchers">👁 19</span><span class="m" title="issues">● 1,030</span><span class="m" title="prs">⑃ 114</span><span class="m" title="releases">▤ 73</span></div><div class="row-desc">一款开源简洁高颜值的酷狗第三方客户端 An open-source, concise, and aesthetically pleasing third-party client for KuGou that supports  Windows / macOS / Linux / Web :electron:</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/kugou">kugou</a><a class="row-tag" href="../tags/music">music</a><a class="row-tag" href="../tags/linux">linux</a><a class="row-tag" href="../tags/macos">macos</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 7,167</div></div></div><div class="rank-row" data-fn="alda-lang/alda"><span class="row-rank">17</span><a class="row-avatar" href="../repos/alda-lang__alda"><img src="https://avatars.githubusercontent.com/u/10534187?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/alda-lang__alda"><span class="row-owner">alda-lang</span><span class="row-sep">/</span><span class="row-repo">alda</span></a></div><div class="row-meta"><span class="lang-tag">Go</span><span class="m" title="stars">★ 5,961</span><span class="m" title="forks">⑂ 315</span><span class="m" title="watchers">👁 124</span><span class="m" title="issues">● 323</span><span class="m" title="prs">⑃ 153</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">A music programming language for musicians. :notes:</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/music">music</a><a class="row-tag" href="https://github.com/topics/programming-language">programming-language</a><a class="row-tag" href="https://github.com/topics/music-programming-language">music-programming-language</a><a class="row-tag" href="https://github.com/topics/music-composition">music-composition</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,961</div></div></div><div class="rank-row" data-fn="Lidarr/Lidarr"><span class="row-rank">18</span><a class="row-avatar" href="../repos/Lidarr__Lidarr"><img src="https://avatars.githubusercontent.com/u/28475832?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/Lidarr__Lidarr"><span class="row-owner">Lidarr</span><span class="row-sep">/</span><span class="row-repo">Lidarr</span></a></div><div class="row-meta"><span class="lang-tag">C#</span><span class="m" title="stars">★ 5,823</span><span class="m" title="forks">⑂ 404</span><span class="m" title="watchers">👁 100</span><span class="m" title="issues">● 4,549</span><span class="m" title="prs">⑃ 1,604</span><span class="m" title="releases">▤ 134</span></div><div class="row-desc">Looks and smells like Sonarr but made for music.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/hacktoberfest">hacktoberfest</a><a class="row-tag" href="../tags/music">music</a><a class="row-tag" href="https://github.com/topics/nzb">nzb</a><a class="row-tag" href="https://github.com/topics/torrent">torrent</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,823</div></div></div><div class="rank-row" data-fn="jagrosh/MusicBot"><span class="row-rank">19</span><a class="row-avatar" href="../repos/jagrosh__MusicBot"><img src="https://avatars.githubusercontent.com/u/12754382?u=315b7c5410cebfed56df872108307853b31c189c&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/jagrosh__MusicBot"><span class="row-owner">jagrosh</span><span class="row-sep">/</span><span class="row-repo">MusicBot</span></a></div><div class="row-meta"><span class="lang-tag">Java</span><span class="m" title="stars">★ 5,807</span><span class="m" title="forks">⑂ 2,820</span><span class="m" title="watchers">👁 118</span><span class="m" title="issues">● 1,053</span><span class="m" title="prs">⑃ 254</span><span class="m" title="releases">▤ 38</span></div><div class="row-desc">🎶 A Discord music bot that&#x27;s easy to set up and run yourself!</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/discord-bot">discord-bot</a><a class="row-tag" href="../tags/music">music</a><a class="row-tag" href="../tags/youtube">youtube</a><a class="row-tag" href="https://github.com/topics/soundcloud">soundcloud</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,807</div></div></div><div class="rank-row" data-fn="Cog-Creators/Red-DiscordBot"><span class="row-rank">20</span><a class="row-avatar" href="../repos/Cog-Creators__Red-DiscordBot"><img src="https://avatars.githubusercontent.com/u/23690422?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/Cog-Creators__Red-DiscordBot"><span class="row-owner">Cog-Creators</span><span class="row-sep">/</span><span class="row-repo">Red-DiscordBot</span></a></div><div class="row-meta"><span class="lang-tag">Python</span><span class="m" title="stars">★ 5,763</span><span class="m" title="forks">⑂ 2,540</span><span class="m" title="watchers">👁 201</span><span class="m" title="issues">● 2,174</span><span class="m" title="prs">⑃ 4,398</span><span class="m" title="releases">▤ 94</span></div><div class="row-desc">A multi-function Discord bot</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/discord">discord</a><a class="row-tag" href="../tags/bot">bot</a><a class="row-tag" href="https://github.com/topics/trivia">trivia</a><a class="row-tag" href="../tags/music">music</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,763</div></div></div><div class="rank-row" data-fn="unchihugo/FluentFlyout"><span class="row-rank">21</span><a class="row-avatar" href="../repos/unchihugo__FluentFlyout"><img src="https://avatars.githubusercontent.com/u/43926158?u=090aaae675afc9aacf4a65481f5c1575dfa0de66&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/unchihugo__FluentFlyout"><span class="row-owner">unchihugo</span><span class="row-sep">/</span><span class="row-repo">FluentFlyout</span></a></div><div class="row-meta"><span class="lang-tag">C#</span><span class="m" title="stars">★ 4,910</span><span class="m" title="forks">⑂ 250</span><span class="m" title="watchers">👁 15</span><span class="m" title="issues">● 820</span><span class="m" title="prs">⑃ 385</span><span class="m" title="releases">▤ 45</span></div><div class="row-desc">The modern Flyout app for Windows 11, built with Fluent 2 Design principles. Media Flyouts, Taskbar Widgets and more.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/audio">audio</a><a class="row-tag" href="https://github.com/topics/fluent">fluent</a><a class="row-tag" href="https://github.com/topics/flyout">flyout</a><a class="row-tag" href="https://github.com/topics/media">media</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 4,910</div></div></div><div class="rank-row" data-fn="vivizzz007/vivi-music"><span class="row-rank">22</span><a class="row-avatar" href="../repos/vivizzz007__vivi-music"><img src="https://avatars.githubusercontent.com/u/208284282?u=5c397c67c8ff646f7077adb0a43093652ce86b18&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/vivizzz007__vivi-music"><span class="row-owner">vivizzz007</span><span class="row-sep">/</span><span class="row-repo">vivi-music</span></a></div><div class="row-meta"><span class="lang-tag">Kotlin</span><span class="m" title="stars">★ 4,159</span><span class="m" title="forks">⑂ 154</span><span class="m" title="watchers">👁 23</span><span class="m" title="issues">● 909</span><span class="m" title="prs">⑃ 135</span><span class="m" title="releases">▤ 62</span></div><div class="row-desc">Vivi-Music is an expressive Material 3–based YouTube Music client for Android.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/material-3-expressive">material-3-expressive</a><a class="row-tag" href="https://github.com/topics/ytmusic">ytmusic</a><a class="row-tag" href="../tags/android">android</a><a class="row-tag" href="https://github.com/topics/android-app">android-app</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 4,159</div></div></div><div class="rank-row" data-fn="tranxuanthang/lrcget"><span class="row-rank">23</span><a class="row-avatar" href="../repos/tranxuanthang__lrcget"><img src="https://avatars.githubusercontent.com/u/15942946?u=4664d3d57240c0f928a3edb50bed065990e2baee&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/tranxuanthang__lrcget"><span class="row-owner">tranxuanthang</span><span class="row-sep">/</span><span class="row-repo">lrcget</span></a></div><div class="row-meta"><span class="lang-tag">Vue</span><span class="m" title="stars">★ 3,361</span><span class="m" title="forks">⑂ 127</span><span class="m" title="watchers">👁 18</span><span class="m" title="issues">● 318</span><span class="m" title="prs">⑃ 66</span><span class="m" title="releases">▤ 26</span></div><div class="row-desc">Utility for mass-downloading LRC synced lyrics for your offline music library.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/synced-lyrics">synced-lyrics</a><a class="row-tag" href="https://github.com/topics/lyrics">lyrics</a><a class="row-tag" href="../tags/javascript">javascript</a><a class="row-tag" href="../tags/linux">linux</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 3,361</div></div></div><div class="rank-row" data-fn="sozercan/kaset"><span class="row-rank">24</span><a class="row-avatar" href="../repos/sozercan__kaset"><img src="https://avatars.githubusercontent.com/u/852750?u=22ec0c526ed284ad87c5a51d5fae86317e7c0f5d&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/sozercan__kaset"><span class="row-owner">sozercan</span><span class="row-sep">/</span><span class="row-repo">kaset</span></a></div><div class="row-meta"><span class="lang-tag">Swift</span><span class="m" title="stars">★ 2,593</span><span class="m" title="forks">⑂ 198</span><span class="m" title="watchers">👁 5</span><span class="m" title="issues">● 221</span><span class="m" title="prs">⑃ 359</span><span class="m" title="releases">▤ 21</span></div><div class="row-desc">📼 The missing YouTube and YouTube Music macOS app</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/macos">macos</a><a class="row-tag" href="../tags/swift">swift</a><a class="row-tag" href="https://github.com/topics/swiftui">swiftui</a><a class="row-tag" href="https://github.com/topics/youtube-api">youtube-api</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 2,593</div></div></div></div><!--/SSR--></div>
+
+    <details class="month-detail" id="monthDetail">
+      <summary data-i18n="month.top10">当月每日飙升 Top10 摘要</summary>
+      <div id="monthTop10"><!--SSRMT--><!--/SSRMT--></div>
+    </details>
+  </section>
+
+  <section id="yearWrap">
+    <h2 class="section-title" data-i18n="year.entry">年度月度榜入口</h2>
+    <div class="month-grid" id="monthGrid"><!--SSRMG--><!--/SSRMG--></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/app.js?v=d2fbeca0"></script>
+</body>
+</html>

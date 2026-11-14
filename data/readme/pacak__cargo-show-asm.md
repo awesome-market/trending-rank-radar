@@ -1,0 +1,350 @@
+# cargo-show-asm
+
+A cargo subcommand that displays the Assembly, LLVM-IR, MIR and WASM generated for Rust source code.
+
+# Install
+
+```console
+$ cargo install cargo-show-asm
+```
+
+# Features
+
+- Platform support:
+
+  - OS: Linux and macOS. Limited support for Windows
+  - Rust: nightly and stable.
+  - Architectures: `x86`, `x86_64`, `aarch64`, etc.
+  - Cross-compilation support.
+
+- Displaying:
+
+  - Assembly in Intel or AT&T syntax.
+  - Corresponding Rust source code alongside assembly.
+  - llvm-ir.
+  - rustc MIR
+  - Wasm code
+  - llvm-mca analysis
+
+# cargo asm
+
+Show the code rustc generates for any function
+
+**Usage**: **`cargo asm`** \[**`-p`**=_`SPEC`_\] \[_`ARTIFACT`_\] \[**`-M`**=_`ARG`_\]... \[_`TARGET-CPU`_\] \[**`--rust`**\] \[**`-c`**=_`COUNT`_\] \[**`--simplify`**\] \[**`--include-constants`**\] \[**`--json`**\] \[**`--this-workspace`** | **`--all-crates`** | **`--all-sources`**\] _`OUTPUT-FORMAT`_ \[**`--callers-of`** _`REGEX`_ \[_`DEPTH`_\]\] (**`--everything`** | \[_`FUNCTION`_\]... \[_`INDEX`_\])
+
+ Usage:
+ 1. Focus on a single assembly producing target:
+
+  ```text
+   % cargo asm -p isin --lib   # here we are targeting lib in isin crate
+
+
+  ```
+ 2. Narrow down a function:
+
+  ```text
+   % cargo asm -p isin --lib from_ # here "from_" is part of the function you are interested intel
+
+
+  ```
+ 3. Get the full results:
+
+  ```text
+   % cargo asm -p isin --lib isin::base36::from_alphanum
+  ```
+
+
+**Pick artifact for analysis:**
+- **`    --lib`** &mdash; 
+  Show results from library code
+- **`    --test`**=_`TEST`_ &mdash; 
+  Show results from an integration test
+- **`    --bench`**=_`BENCH`_ &mdash; 
+  Show results from a benchmark
+- **`    --example`**=_`EXAMPLE`_ &mdash; 
+  Show results from an example
+- **`    --bin`**=_`BIN`_ &mdash; 
+  Show results from a binary
+
+
+
+**Cargo options**
+- **`    --manifest-path`**=_`PATH`_ &mdash; 
+  Path to Cargo.toml, defaults to one in current folder
+- **`    --config`**=_`<KEY=VALUE>`_ &mdash; 
+  Override a cargo configuration value
+- **`    --target-dir`**=_`DIR`_ &mdash; 
+  Use custom target directory for generated artifacts, create if missing
+   
+  Uses environment variable **`CARGO_TARGET_DIR`**
+- **`    --dry`** &mdash; 
+  Produce a build plan instead of actually building
+- **`    --frozen`** &mdash; 
+  Requires Cargo.lock and cache to be up-to-date
+- **`    --locked`** &mdash; 
+  Requires Cargo.lock to be up-to-date
+- **`    --offline`** &mdash; 
+  Run without accessing the network
+- **`-q`**, **`--quiet`** &mdash; 
+  Do not print cargo log messages
+- **`    --no-default-features`** &mdash; 
+  Do not activate `default` feature
+- **`    --all-features`** &mdash; 
+  Activate all available features
+- **`-F`**, **`--features`**=_`FEATURE`_ &mdash; 
+  A feature to activate, can be used multiple times
+- **`    --release`** &mdash; 
+  Compile in release mode (default)
+- **`    --dev`** &mdash; 
+  Compile in dev mode
+- **`    --profile`**=_`PROFILE`_ &mdash; 
+  Build for this specific profile, you can also use `dev` and `release` here
+   
+  Uses environment variable **`CARGO_SHOW_ASM_PROFILE`**
+- **`    --target`**=_`TRIPLE`_ &mdash; 
+  Build for the target triple
+- **`-C`**=_`FLAG`_ &mdash; 
+  Codegen flags to rustc, see 'rustc -C help' for details
+- **`-Z`**=_`FLAG`_ &mdash; 
+  Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
+
+
+
+**Postprocessing options:**
+- **`    --rust`** &mdash; 
+  Print interleaved Rust code
+- **`-c`**, **`--context`**=_`COUNT`_ &mdash; 
+  Include other called functions, recursively, up to COUNT depth
+   
+  [default: 0]
+- **`    --color`** &mdash; 
+  Enable color highlighting
+- **`    --no-color`** &mdash; 
+  Disable color highlighting
+- **`    --full-name`** &mdash; 
+  Include full demangled name instead of just prefix
+- **`    --short-name`** &mdash; 
+  Include demangled names without hash suffix (default)
+- **`    --keep-mangled`** &mdash; 
+  Do not demangle symbol names
+- **`-K`**, **`--keep-labels`** &mdash; 
+  Keep all the original labels
+- **`-B`**, **`--keep-blanks`** &mdash; 
+  Strip redundant labels, but keep spaces in their place
+- **`-R`**, **`--reduce-labels`** &mdash; 
+  Strip redundant labels entirely
+- **`-v`**, **`--verbose`** &mdash; 
+  more verbose output, can be specified multiple times
+- **`-s`**, **`--silent`** &mdash; 
+  print less user-forward information to make consumption by tools easier
+- **`    --simplify`** &mdash; 
+  Try to strip some of the non-assembly instruction information
+- **`    --include-constants`** &mdash; 
+  Include sections containing string literals and other constants
+- **`-b`**, **`--keep-blank`** &mdash; 
+  Keep blank lines
+- **`    --json`** &mdash; 
+  Output item list as JSON instead of human-readable format
+- **`    --this-workspace`** &mdash; 
+  Show rust sources from current workspace only
+- **`    --all-crates`** &mdash; 
+  Show rust sources from current workspace and from rust registry
+- **`    --all-sources`** &mdash; 
+  Show all the rust sources including stdlib and compiler
+
+
+
+**Pick output type:**
+- **`    --asm`** &mdash; 
+  Show assembly
+- **`    --disasm`** &mdash; 
+  Disassembly binaries or object files
+- **`    --llvm`** &mdash; 
+  Show llvm-ir
+- **`    --llvm-input`** &mdash; 
+  Show llvm-ir before any LLVM passes
+- **`    --mir`** &mdash; 
+  Show MIR
+- **`    --wasm`** &mdash; 
+  Show WASM, needs wasm32-unknown-unknown target installed
+- **`    --mca`** &mdash; 
+  Show llvm-mca anasysis
+- **`    --intel`** &mdash; 
+  Use Intel style for assembly
+- **`    --att`** &mdash; 
+  Use AT&T style for assembly
+
+
+
+**Filter by call graph**
+- **`--callers-of`** _`REGEX`_ \[_`DEPTH`_\]
+- **`    --callers-of`** &mdash; 
+  List functions that call something matching this regex
+- _`REGEX`_ &mdash; 
+  Callee regex to match
+- _`DEPTH`_ &mdash; 
+  Up to this depth
+
+
+
+
+
+**Pick item to display from the artifact**
+- **`    --everything`** &mdash; 
+  Dump the whole file
+- _`FUNCTION`_ &mdash; 
+  Dump a function with a given name, filter functions by name, multiple filters can be specified, all must match
+- _`INDEX`_ &mdash; 
+  Select specific function when there's several with the same name
+
+
+
+**Available options:**
+- **`-p`**, **`--package`**=_`SPEC`_ &mdash; 
+  Package to use, defaults to a current one,
+
+  required for workspace projects, can also point to a dependency
+- **`    --file`**=_`PATH`_ &mdash; 
+  Disassemble or process this file instead of calling cargo, requires cargo-show-asm to be compiled with disasm feature
+
+  You can specify executable, rlib or an object file
+- **`-M`**, **`--mca-arg`**=_`ARG`_ &mdash; 
+  Pass parameter to llvm-mca for mca targets
+- **`    --native`** &mdash; 
+  Optimize for the CPU running the compiler
+- **`    --target-cpu`**=_`CPU`_ &mdash; 
+  Optimize code for a specific CPU, see 'rustc --print target-cpus'
+- **`-h`**, **`--help`** &mdash; 
+  Prints help information
+- **`-V`**, **`--version`** &mdash; 
+  Prints version information
+
+
+
+
+You can start by running `cargo asm` with no parameters - it will suggest how to narrow the
+search scope - for workspace crates you need to specify a crate to work with, for crates
+defining several targets (lib, binaries, examples) you need to specify exactly which target to
+use. In a workspace `cargo asm` lists only workspace members as suggestions but any crate from
+workspace tree is available.
+
+Once `cargo asm` focuses on a single target it will run rustc producing assembly file and will
+try to list of available public functions:
+
+```console,ignore
+$ cargo asm --lib
+Try one of those
+"<&T as core::fmt::Display>::fmt" [17, 12, 12, 12, 12, 19, 19, 12]
+"<&mut W as core::fmt::Write>::write_char" [20]
+"<&mut W as core::fmt::Write>::write_fmt" [38]
+"<&mut W as core::fmt::Write>::write_str" [90]
+"<F as nom::internal::Parser<I,O,E>>::parse" [263]
+# ...
+```
+
+Name in quotes is demangled rust name, numbers in square brackets represent number of lines
+in asm file. Function with the same name can be present in several instances.
+
+Specifying exact function name or a uniquely identifying part of it will print its assembly code
+
+```console,ignore
+$ cargo asm --lib "cargo_show_asm::opts::focus::{{closure}}"
+```
+To pick between different alternatives you can either specify the index
+
+```console,ignore
+$ cargo asm --lib "cargo_show_asm::opts::focus::{{closure}}" 2
+```
+Or start using full names with hex included:
+
+```console,ignore
+$ cargo asm --lib --full-name
+# ...
+$ cargo asm --lib "once_cell::imp::OnceCell<T>::initialize::h9c5c7d5bd745000b"
+```
+
+`cargo-show-asm` comes with a built-in search function. Just pass partial name
+instead of a full one and only matching functions will be listed
+
+```console
+$ cargo asm --lib Debug
+```
+
+# call graph filtering
+
+By default cargo-show-asm lists all the functions. You can limit it to all the functions that
+call some other function - by name pattern. Can be useful if you find to list all the functions
+that can panic you can type something like this:
+
+```console,ignore
+cargo asm --lib --callers-of panic
+```
+
+`--callers-of` takes one required parameter - a regexp pattern of a function
+and one optional - how deep that call might be:
+
+- `--callers-of panic 0` - will list only functions that have "panic" in their
+  own name.
+
+- `--callers-of panic 1` - this adds any functions that call functions with
+  "panic" in their name (this includes any panics from `core`).
+
+# JSON output
+
+`--json` is an alternative way to list all found functions. Can be useful in CI
+or for integrations.
+
+# My function isn't there!
+
+`rustc` will only generate the code for your function if it knows what type it is, including
+generic parameters and if it is exported (in case of a library) and not inlined (in case of a
+binary, example, test, etc.). If your function takes a generic parameter - try making a monomorphic
+wrapper around it and make it `pub` and `#[inline(never)]`.
+
+Alternatively if your function is too small - `rustc` might decide to inline it automatically
+with the same result. Marking it with `#[inline(never)]` fixes this problem.
+See https://github.com/rust-lang/rust/pull/116505 for more details
+
+# Include related functions?
+
+So suppose you have a function `foo` that calls some other function - `bar`. With `--context N`
+or it's short variant `-c N` you can ask cargo-show-asm to include body of bar to the input.
+This is done recursively up to N steps. See https://github.com/pacak/cargo-show-asm/issues/247
+
+
+# Shell completion
+
+`cargo-asm` comes with shell completion generated by [`bpaf`](https://crates.io/crates/bpaf),
+use one of the lines below and place it into the place right for your shell.
+
+```console
+$ cargo-asm --bpaf-complete-style-bash
+$ cargo-asm --bpaf-complete-style-zsh
+$ cargo-asm --bpaf-complete-style-fish
+$ cargo-asm --bpaf-complete-style-elvish
+```
+
+You'll need to use it as `cargo-asm` command rather than `cargo asm` to take advantage of it.
+
+
+# Colorful line parser output
+
+You can install `cargo-show-asm` with one of two features to get prettier command line
+```console
+cargo install cargo-show-asm -F bright-color
+cargo install cargo-show-asm -F dull-color
+```
+
+# License
+This project is licensed under either of
+
+* Apache License, Version 2.0, (LICENSE-APACHE or <http://www.apache.org/licenses/LICENSE-2.0>)
+* MIT license (LICENSE-MIT or <http://opensource.org/licenses/MIT>)
+
+at your option.
+
+# Contribution
+
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in this project by you, as defined in the Apache-2.0 license,
+shall be dual licensed as above, without any additional terms or conditions.

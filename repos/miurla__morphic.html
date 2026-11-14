@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>miurla/morphic · GitHub Trending Rank Radar</title>
+<meta name="description" content="An AI-powered search engine with a generative UI">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="morphic, miurla, miurla/morphic, github stars, github trending, star growth, star history, 开源项目, 星标增长, generative-ai, generative-ui, nextjs, react, tailwindcss, typescript">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/miurla__morphic">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="miurla/morphic · GitHub Trending Rank Radar">
+<meta property="og:description" content="An AI-powered search engine with a generative UI">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/miurla__morphic">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "miurla/morphic", "codeRepository": "https://github.com/miurla/morphic", "url": "https://zhuikan.com/repos/miurla__morphic", "description": "An AI-powered search engine with a generative UI", "author": {"@type": "Organization", "name": "miurla", "url": "https://github.com/miurla"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "TypeScript", "dateCreated": "2024-04-05", "keywords": "generative-ai,generative-ui,nextjs,react,tailwindcss,typescript,shadcn-ui,vercel-ai-sdk,searxng,tavily"}</script>
+</head>
+<body data-repo="miurla/morphic" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">miurla/morphic</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="miurla__morphic"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/3412179?u=6b7897666cc12c97243c3e07f0ec7a4d714e5e6c&amp;v=4&s=300" width="300" height="300" alt="miurla avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">morphic</div>
+      <a class="rp-side-owner" href="https://github.com/miurla">miurla</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/miurla">miurla</a>
+        <span class="rp-sep">/</span><span class="rp-name">morphic</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">An AI-powered search engine with a generative UI</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,328</b></span><span class="rp-stat" title="forks">⑂ <b>2,375</b></span><span class="rp-stat" title="watchers">👁 <b>64</b></span><span class="rp-stat" title="prs">⑃ <b>798</b></span><span class="rp-stat" title="issues">● <b>310</b></span><span class="rp-stat" title="releases">▤ <b>86</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/generative-ai">generative-ai</a><a class="rp-topic" href="https://github.com/topics/generative-ui">generative-ui</a><a class="rp-topic" href="../tags/nextjs">nextjs</a><a class="rp-topic" href="../tags/react">react</a><a class="rp-topic" href="../tags/tailwindcss">tailwindcss</a><a class="rp-topic" href="../tags/typescript">typescript</a><a class="rp-topic" href="https://github.com/topics/shadcn-ui">shadcn-ui</a><a class="rp-topic" href="https://github.com/topics/vercel-ai-sdk">vercel-ai-sdk</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2024-04-05</span><a class="rp-meta-bit rp-home" href="https://chat.morphic.sh" rel="noopener">chat.morphic.sh</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/miurla/morphic">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.10.0</span><a class="rp-dl-a" href="https://github.com/miurla/morphic/releases/tag/v1.10.0">v1.10.0 ↓</a><span class="rp-dl-ver">1.10.0</span><span class="rp-dl-date">2026-11-09</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+4</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">9,328</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,375</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">64</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">798</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">310</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">86</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Morphic
+
+An AI-powered search engine with a generative UI.
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+ Features
+
+- AI-powered search with grounded, cited answers
+- Generative UI — answers render rich inline components (source-credited images, grids, headings) live from a streamed JSON spec, beyond plain markdown
+- Search modes: Quick and Adaptive
+- Model selector with dynamic provider detection (OpenAI, Anthropic, Google, Ollama, Vercel AI Gateway, OpenAI-compatible providers)
+- Multiple search providers (Tavily, SearXNG, Brave, Exa)
+- Chat history stored in PostgreSQL
+- Share search results with unique URLs
+- File upload support
+- User authentication with built-in accounts (Better Auth) or Supabase Auth
+- Guest mode for anonymous usage
+- Docker deployment ready
+
+ Installation
+
+ Docker (Recommended)
+
+The quickest way to run Morphic locally:
+
+bash
+docker pull ghcr.io/miurla/morphic:latest
+
+
+Then set up with Docker Compose:
+
+1. Clone the repository and configure environment:
+
+bash
+git clone https://github.com/miurla/morphic.git
+cd morphic
+cp .env.local.example .env.local
+
+
+2. Edit .env.local and set at least one AI provider API key:
+
+bash
+OPENAI_API_KEY=your_openai_key
+
+
+See supported providers for other options (Anthropic, Google, Ollama, Vercel AI Gateway, OpenAI-compatible providers).
+
+3. Start all services:
+
+bash
+docker compose up -d
+
+
+4. Visit http://localhost:3000 and select your model from the model selector.
+
+Docker Compose starts PostgreSQL, Redis, SearXNG, and Morphic automatically. No additional search API key is needed — SearXNG is included.
+
+See the Docker Guide for more options including building from source and file upload configuration.
+
+ Local Development
+
+1. Clone and install:
+
+bash
+git clone https://github.com/miurla/morphic.git
+cd morphic
+bun install
+
+
+2. Configure environment:
+
+bash
+cp .env.local.example .env.local
+
+
+Edit .env.local and set your API keys:
+
+bash
+OPENAI_API_KEY=your_openai_key
+TAVILY_API_KEY=your_tavily_key
+
+
+To enable chat history, authentication, file upload, and other features, see CONFIGURATION.md.
+
+For what a self-hosted instance sends outbound, and what is off by default, see PRIVACY.md.
+
+3. Start the dev server:
+
+bash
+bun dev
+
+
+Visit http://localhost:3000.
+
+ Deploy
+
+ Vercel
+
+
+
+ Contributing
+
+We welcome contributions! Please see our Contributing Guide for details on how to get started, including local development setup.
+
+ License
+
+This project is licensed under the Apache License 2.0 - see the LICENSE file for details.</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/miurla/morphic/issues/526"><span class="rp-item-num">#526</span><span class="rp-item-title">issue</span><span class="rp-item-extra">0 comments · 2025-05-10</span></a><a class="rp-item" href="https://github.com/miurla/morphic/issues/570"><span class="rp-item-num">#570</span><span class="rp-item-title">[BUG] Docker instance does not allow creating new user</span><span class="rp-item-extra">6 comments · 2025-07-09</span></a><a class="rp-item" href="https://github.com/miurla/morphic/issues/333"><span class="rp-item-num">#333</span><span class="rp-item-title">Perplexity Style API</span><span class="rp-item-extra">6 comments · 2024-09-04</span></a><a class="rp-item" href="https://github.com/miurla/morphic/issues/308"><span class="rp-item-num">#308</span><span class="rp-item-title">[BUG] I&#x27;ve been getting errors after deploying with Vercel.</span><span class="rp-item-extra">5 comments · 2024-08-13</span></a><a class="rp-item" href="https://github.com/miurla/morphic/issues/114"><span class="rp-item-num">#114</span><span class="rp-item-title">Cloudflare Pages build error</span><span class="rp-item-extra">5 comments · 2024-05-06</span></a><a class="rp-item" href="https://github.com/miurla/morphic/issues/280"><span class="rp-item-num">#280</span><span class="rp-item-title">Wrong source number used in answer</span><span class="rp-item-extra">4 comments · 2024-07-28</span></a><a class="rp-item" href="https://github.com/miurla/morphic/issues/542"><span class="rp-item-num">#542</span><span class="rp-item-title">Chatbox Quality vs Models</span><span class="rp-item-extra">3 comments · 2025-05-17</span></a><a class="rp-item" href="https://github.com/miurla/morphic/issues/204"><span class="rp-item-num">#204</span><span class="rp-item-title">Share functionlay has changed ?</span><span class="rp-item-extra">3 comments · 2024-06-03</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/miurla/morphic/releases"><b>v1.10.0</b> <span class="rp-rel-tag">v1.10.0</span> <span class="rp-item-extra">2026-11-09</span></a><pre class="rp-pre">What&#x27;s Changed
+ fix(draft): keep editDraft off the draft for unrelated requests by @miurla in https://github.com/miurla/morphic/pull/1100
+ feat(draft): merge the panel headers and move actions to a footer by @miurla in https://github.com/miurla/morphic/pull/1101
+ fix(draft): keep the attached draft out of the moving prompt tail by @miurla in https://github.com/miurla/morphic/pull/1103
+ chore: guard against vendor provider PRs by @miurla in https://github.com/miurla/morphic/pull/1105
+ fix(deps): bump katex to 0.18 to resolve prototype pollution advisory by @miurla in https://github.com/miurla/m</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/miurla__morphic.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

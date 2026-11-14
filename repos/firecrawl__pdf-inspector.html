@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>firecrawl/pdf-inspector · GitHub Trending Rank Radar</title>
+<meta name="description" content="Fast Rust library for PDF inspection, classification, and text extraction. Intelligently detects scanned vs text-based PDFs to enable smart routing decisions.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="pdf-inspector, firecrawl, firecrawl/pdf-inspector, github stars, github trending, star growth, star history, 开源项目, 星标增长, markdown, nodejs, pdf, pdf-extraction, pdf-parser, python">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/firecrawl__pdf-inspector">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="firecrawl/pdf-inspector · GitHub Trending Rank Radar">
+<meta property="og:description" content="Fast Rust library for PDF inspection, classification, and text extraction. Intelligently detects scanned vs text-based PDFs to enable smart routing decisions.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/firecrawl__pdf-inspector">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "firecrawl/pdf-inspector", "codeRepository": "https://github.com/firecrawl/pdf-inspector", "url": "https://zhuikan.com/repos/firecrawl__pdf-inspector", "description": "Fast Rust library for PDF inspection, classification, and text extraction. Intelligently detects scanned vs text-based PDFs to enable smart routing decisions.", "author": {"@type": "Organization", "name": "firecrawl", "url": "https://github.com/firecrawl"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Rust", "dateCreated": "2026-02-06", "keywords": "markdown,nodejs,pdf,pdf-extraction,pdf-parser,python,rust,text-extraction,ocr-routing,pdf-classification"}</script>
+</head>
+<body data-repo="firecrawl/pdf-inspector" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">firecrawl/pdf-inspector</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="firecrawl__pdf-inspector"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/135057108?v=4&s=300" width="300" height="300" alt="firecrawl avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">pdf-inspector</div>
+      <a class="rp-side-owner" href="https://github.com/firecrawl">firecrawl</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/firecrawl">firecrawl</a>
+        <span class="rp-sep">/</span><span class="rp-name">pdf-inspector</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Fast Rust library for PDF inspection, classification, and text extraction. Intelligently detects scanned vs text-based PDFs to enable smart routing decisions.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>20,016</b></span><span class="rp-stat" title="forks">⑂ <b>1,364</b></span><span class="rp-stat" title="watchers">👁 <b>51</b></span><span class="rp-stat" title="prs">⑃ <b>494</b></span><span class="rp-stat" title="issues">● <b>153</b></span><span class="rp-stat" title="releases">▤ <b>14</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/markdown">markdown</a><a class="rp-topic" href="../tags/nodejs">nodejs</a><a class="rp-topic" href="../tags/pdf">pdf</a><a class="rp-topic" href="https://github.com/topics/pdf-extraction">pdf-extraction</a><a class="rp-topic" href="https://github.com/topics/pdf-parser">pdf-parser</a><a class="rp-topic" href="../tags/python">python</a><a class="rp-topic" href="../tags/rust">rust</a><a class="rp-topic" href="https://github.com/topics/text-extraction">text-extraction</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-02-06</span><a class="rp-meta-bit rp-home" href="https://firecrawl.github.io/pdf-inspector/" rel="noopener">firecrawl.github.io/pdf-inspector/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="firecrawl__firecrawl"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/135057108?v=4" alt="" loading="lazy">firecrawl</a><a class="rp-same-link" href="firecrawl__anydoc"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/135057108?v=4" alt="" loading="lazy">anydoc</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/firecrawl/pdf-inspector">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">1.25.2 — Script sizes and ToUnicode repair checks</span><a class="rp-dl-a" href="https://github.com/firecrawl/pdf-inspector/releases/tag/v1.25.2">1.25.2 ↓</a><span class="rp-dl-ver">1.25.2</span><span class="rp-dl-date">2026-09-28</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+7</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+199</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+457</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">20,016</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,364</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">51</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">494</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">153</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">14</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">pdf-inspector
+
+
+
+
+
+
+Fast Rust library for PDF classification and text extraction. By default it detects whether a PDF is text-based or scanned, extracts text with position awareness, and converts to clean Markdown without OCR. Native Rust and CLI consumers can opt into selective OCR. Includes bindings for Python, Node.js, and browser WebAssembly.
+
+Built by Firecrawl to handle text-based PDFs locally in under 200ms, skipping expensive OCR services for the ~54% of PDFs that don&#x27;t need them.
+
+ Features
+
+- Smart classification — Detect TextBased, Scanned, ImageBased, or Mixed PDFs in ~10-50ms by sampling content streams. Returns a confidence score (0.0-1.0) and per-page OCR routing.
+- Text extraction — Position-aware extraction with font info, X/Y coordinates, and automatic multi-column reading order. Rotated runs (margin stamps, chart axis titles) keep a true axis-aligned box and report their rotation angle instead of collapsing to zero width.
+- Markdown conversion — Headings (H1-H4 via font size ratios), bullet/numbered/letter lists, code blocks (monospace font detection), tables (rectangle-based and heuristic), bold/italic formatting, URL linking, and page breaks.
+- Table detection — Dual-mode: rectangle-based detection from PDF drawing ops, plus heuristic detection from text alignment. Handles financial tables, footnotes, and continuation tables across pages.
+- CID font support — ToUnicode CMap decoding for Type0/Identity-H fonts, UTF-16BE, UTF-8, and Latin-1 encodings.
+- Multi-column layout — Automatic detection of newspaper-style columns, sequential reading order, and RTL text support.
+- Encoding issue detection — Automatically flags broken font encodings so callers can fall back to OCR.
+- Selective OCR — Rust, CLI, Python, and Node can render only pages that need OCR, run PP-OCRv6 Small locally, and preserve per-page provenance and hosted-fallback recommendations.
+- Single document load — The document is parsed once and shared between detection and extraction, avoiding redundant I/O.
+- Browser WebAssembly — Run the same Rust parser locally in browsers and Web Workers, with embedded CMaps and no server round trip.
+- Lightweight by default — The default Rust and browser builds remain pure extraction. Native Python and Node packages include the OCR integration, but PDFium, ONNX Runtime, and model files remain external and are touched only when a page is routed to OCR.
+
+ Benchmark
+
+Evaluated on the opendataloader-bench corpus (200 PDFs). Only local engines without model-based PDF parsing are shown; OCR was disabled. Scores are 0-1, higher is better.
+
+| Engine | Overall | Reading Order (NID) | Tables (TEDS) | Headings (MHS) | Speed (200 docs) |
+|---|---|---|---|---|---|
+| pdf-inspector | 0.875 | 0.915 | 0.814 | 0.788 | 0.470s |
+| liteparse | 0.873 | 0.913 | 0.693 | 0.811 | 0.750s |
+| opendataloader | 0.831 | 0.902 | 0.489 | 0.739 | 2.569s |
+| pymupdf4llm | 0.735 | 0.886 | 0.401 | 0.424 | 17.117s |
+| markitdown | 0.589 | 0.844 | 0.273 | 0.000 | 16.1</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/firecrawl/pdf-inspector/issues/246"><span class="rp-item-num">#246</span><span class="rp-item-title">Partial CJK corruption on CIDFontType2 subsets whose ToUnicode is a full-range identity bfrange (dompdf)</span><span class="rp-item-extra">0 comments · 2026-08-04</span></a><a class="rp-item" href="https://github.com/firecrawl/pdf-inspector/issues/252"><span class="rp-item-num">#252</span><span class="rp-item-title">extract_pages_markdown_bytes() flags every page as needs_ocr on a plain text-based PDF, contradicting detect_pdf_bytes()</span><span class="rp-item-extra">0 comments · 2026-08-04</span></a><a class="rp-item" href="https://github.com/firecrawl/pdf-inspector/issues/212"><span class="rp-item-num">#212</span><span class="rp-item-title">Arabic (RTL) text is returned in visual order, not logical order</span><span class="rp-item-extra">9 comments · 2026-08-02</span></a><a class="rp-item" href="https://github.com/firecrawl/pdf-inspector/issues/286"><span class="rp-item-num">#286</span><span class="rp-item-title">Valid PDF rejected as `malformed document: invalid PDF structure` when more than 506 trailing bytes follow `%%EOF`</span><span class="rp-item-extra">0 comments · 2026-08-06</span></a><a class="rp-item" href="https://github.com/firecrawl/pdf-inspector/issues/270"><span class="rp-item-num">#270</span><span class="rp-item-title">Ruled table splits into multiple tables when a single cell wraps to more than one line</span><span class="rp-item-extra">2 comments · 2026-08-05</span></a><a class="rp-item" href="https://github.com/firecrawl/pdf-inspector/issues/220"><span class="rp-item-num">#220</span><span class="rp-item-title">Feature: distinct-n self-check to catch duplicated output (well-encoded but repeated text)</span><span class="rp-item-extra">2 comments · 2026-08-02</span></a><a class="rp-item" href="https://github.com/firecrawl/pdf-inspector/issues/290"><span class="rp-item-num">#290</span><span class="rp-item-title">Making V2RAY Proxies</span><span class="rp-item-extra">0 comments · 2026-08-06</span></a><a class="rp-item" href="https://github.com/firecrawl/pdf-inspector/issues/276"><span class="rp-item-num">#276</span><span class="rp-item-title">Scanned/ImageBased page_signals empty case untested</span><span class="rp-item-extra">1 comments · 2026-08-05</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/firecrawl/pdf-inspector/discussions/472"><span class="rp-item-num">#472</span><span class="rp-item-title">lazy evaluation</span><span class="rp-item-extra">0 comments · 2026-08-30</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/firecrawl/pdf-inspector/releases"><b>1.25.2 — Script sizes and ToUnicode repair checks</b> <span class="rp-rel-tag">v1.25.2</span> <span class="rp-item-extra">2026-09-28</span></a><pre class="rp-pre">Changes since 1.25.1:
+
+- Size a super- or subscript run by its letters and digits: an exponent whose minus sign a symbol font sets a design size above its digits (as TeX does) keeps its  markup; a run of signs alone, or with signs more than a quarter larger than its letters and digits, is still sized by its largest glyph (603).
+- Skip a subset font&#x27;s ToUnicode repairs where the font itself shows the CMap is right: the repair through a /CIDToGIDMap for a CMap keyed by code, and the renumbering of a subset that kept its glyph indexes (605).
+
+No API changes.
+
+Release preparation: 606.
+
+Full chang</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (4)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/weixin_28836507/article/details/166033302" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">GitHub开源项目静态工程审阅：用Valhalla思维解析pdf-inspector源码</span><span class="rp-item-extra">2026-09-19</span></a><a class="rp-item" href="https://x.com/github_trendjp/status/2095096705649868927" target="_blank" rel="noopener"><span class="rp-news-src">x</span><span class="rp-item-title">Githubトレンド on X: &quot;9/2 19:28 JST｜GitHub Trendingから2件：pdf-inspector / patent-disclosure-skill。中身はスレッドで紹介します。&quot;</span><span class="rp-item-extra">2026-09-02</span></a><a class="rp-item" href="https://blog.csdn.net/TunerT_TQ/article/details/163636105" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">GitHub每日热评｜Valhalla 静态工程审阅 ｜pdf-inspector 源码证据驱动评测</span><span class="rp-item-extra">2026-08-09</span></a><a class="rp-item" href="https://note.com/obataka123/n/nea4a09f68a6c" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">pdf-inspectorとは？RAGのコストを削減するPDF解析ライブラリの使い方をエンジニア向けに解説</span><span class="rp-item-extra">2026-08-03</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (4)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=49143467" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Pdf-inspector: Rust lib for PDF inspection, classification, and text extraction</span><span class="rp-item-extra">▲ 5 · 1 comments · 2026-08-02</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=49131615" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Fast Rust Library for PDF text extraction</span><span class="rp-item-extra">▲ 5 · 0 comments · 2026-08-01</span></a><a class="rp-item" href="https://note.com/obataka123/n/nea4a09f68a6c?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">What is pdf-inspector? An Engineer&#x27;s Guide to a PDF Parsing Library That Reduces RAG Costs</span><span class="rp-item-extra">2026-08-03</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPdFhiR1pfSEFiTFJ2N0ZoVmMtUERYTVJ2dEpzTkZZUC1ZT1o5cG5CRWlJb19MN1ZfNVlGZjYwdEtuX0ZkV0ZTclNqS3F0bVFzNFdHZzFOaUY2bGoyZk9kQ2dlRFlIWFEwa2hYZzVqNGQ3R3lFdjk4bE9Ba3FncG85b3hSQW1WSm9K?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">www.linuxuprising.com</span><span class="rp-item-title">How To Edit PDF Metadata Tags On Linux Using A GUI Or Command Line</span><span class="rp-item-extra">2021-01-25</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/firecrawl__pdf-inspector.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

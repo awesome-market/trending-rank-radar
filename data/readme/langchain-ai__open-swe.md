@@ -1,0 +1,95 @@
+# Robin
+
+<div align="center">
+  <h3>An open-source software factory built on Deep Agents by LangChain.</h3>
+</div>
+
+<div align="center">
+  <a href="https://opensource.org/licenses/MIT" target="_blank"><img src="https://img.shields.io/github/license/langchain-ai/open-swe" alt="License"></a>
+  <a href="https://github.com/langchain-ai/open-swe" target="_blank"><img src="https://img.shields.io/github/stars/langchain-ai/open-swe" alt="GitHub Stars"></a>
+  <a href="https://github.com/langchain-ai/deepagents" target="_blank"><img src="https://img.shields.io/badge/Built%20on-Deep%20Agents-blue" alt="Built on Deep Agents"></a>
+  <a href="https://github.com/langchain-ai/langgraph" target="_blank"><img src="https://img.shields.io/badge/Powered%20by-LangGraph-blue" alt="Powered by LangGraph"></a>
+  <a href="https://x.com/langchain" target="_blank"><img src="https://img.shields.io/twitter/url/https/twitter.com/langchain.svg?style=social&label=Follow%20%40LangChain" alt="Twitter / X"></a>
+</div>
+
+<br>
+
+Robin turns engineering work into a repeatable system: investigate a codebase, implement changes, validate them, and deliver a pull request.
+It also reviews pull requests, learns repository-specific review preferences, monitors CI, and responds to feedback.
+Built by LangChain, it is open source and deployable in your infrastructure.
+
+> [!NOTE]
+> **Under active development.**
+> Expect breaking changes and rough edges.
+> We’re not accepting issues or external contributions at this time.
+> You’re welcome to explore and fork the code, but correctness, stability, and compatibility are not guaranteed.
+>
+> If you really want to deploy it yourself, follow the [installation guide](docs/INSTALLATION.md).
+> Deploying it as is requires [Managed Deep Agents](https://docs.langchain.com/langsmith/python/managed-deep-agents-overview), which runs its agent; without it, we recommend forking and adapting the code to your own runtime.
+
+## What Robin does
+
+```mermaid
+flowchart LR
+    A[Issues, conversations, PRs, schedules] --> B[Plan and investigate]
+    B --> C[Implement in an isolated sandbox]
+    C --> D[Validate and deliver a PR]
+    D --> E[Review, CI, and feedback]
+    E -->|Follow-up work| B
+```
+
+- **Build:** Investigate repositories, edit code, run focused validation, and open or update pull requests.
+- **Parallelize:** Use subagents for research and independent work.
+- **Review:** Run on-demand or opt-in automatic reviews, publish findings to GitHub, and learn from historical feedback.
+- **Investigate:** Use read-only PR chat to understand a change without implementing changes.
+- **Operate:** Schedule recurring tasks and monitor opted-in PRs with `/baby-sit`, diagnosing failures and rerunning only evidence-backed flaky jobs.
+- **Customize:** Choose models, reasoning effort, instructions, skills, integrations, and sandbox providers.
+
+Start and continue work from the **dashboard**, **GitHub issues and PR conversations**, or **Slack**.
+In [Linear](docs/INSTALLATION.md#linear), mention or delegate an issue to the Robin app to open an agent session.
+Cloud coding follow-ups reuse the thread’s context and sandbox; independent threads can run in parallel.
+
+## How it works
+
+[Deep Agents](https://github.com/langchain-ai/deepagents) supplies planning, filesystem, shell, skills, and subagent primitives.
+[LangGraph](https://github.com/langchain-ai/langgraph) provides durable execution and thread state.
+Robin adds engineering tools, integrations, authorization, and user interfaces.
+The graph entrypoints are declared in [`langgraph.json`](langgraph.json), with an [architecture inventory](AGENTS.md#architecture).
+
+Cloud coding runs in persistent, per-thread Linux sandboxes with tooling supplied by workspace scripts or snapshots.
+An unreachable coding sandbox is not silently replaced.
+[LangSmith](https://smith.langchain.com/) is the default sandbox and tracing provider; [other providers and local execution](docs/CUSTOMIZATION.md#1-sandbox) are configurable.
+PR chat does not need a sandbox.
+
+## Control and safety
+
+- **GitHub access:** Coding sandboxes normally receive installation-wide GitHub App access; selected workflows use narrower repository scopes.
+  Workspace repository bindings control routing and preloaded checkouts, not a separate credential boundary.
+  See [GitHub access](docs/reference/workspaces.md#github-access-and-the-sandbox-image).
+- **Integrations:** MCP connections layer instance-wide, workspace-specific, and personal tools.
+  Configure their scope and credentials in the [customization guide](docs/CUSTOMIZATION.md#workspace-mcp-servers).
+- **Approvals:** Workflow-file approval prompts guard detected Git pushes, not every possible shell or API write.
+  Reviewers are instructed not to commit or push; PR chat excludes mutation tools.
+
+Sandboxes have powerful tools and may have network access.
+Use least-privilege credentials, restrict repositories and integrations, and tailor approval policies to your deployment.
+Local execution does not provide cloud sandbox isolation.
+
+## Documentation
+
+- [Robin rollout checklist](docs/ROBIN_ROLLOUT.md) — External integration updates, desktop upgrade checks, and compatibility boundaries
+- [Customization guide](docs/CUSTOMIZATION.md) — Models, sandboxes, tools, skills, prompts, triggers, and middleware
+- [Plugin guide](docs/PLUGINS.md) — Build web apps: sandboxed single-file plugins people add to their sidebar
+- [Workspaces reference](docs/reference/workspaces.md) — Routing, settings, images, and access
+- [Human review in Slack](docs/reference/human-review.md) — Review requests in a repository's Slack channel, merged once reviewers approve
+- [Expedited Slack review](docs/reference/expedited-slack-review.md) — Human approval for small pull requests
+- [Backend API documentation](docs/DEVELOPMENT.md#backend-api-documentation) — Live API docs and the generated [OpenAPI schema](swagger.json)
+- [Original announcement](https://blog.langchain.com/open-swe-an-open-source-framework-for-internal-coding-agents/) — Background on the internal coding-agent framework
+- [Security policy](SECURITY.md) — Report security concerns privately
+
+## License
+
+Robin is licensed under the [MIT License](LICENSE).
+
+That license covers Robin's own code only.
+It does not cover anything under [`vendor/`](vendor/README.md), which is not licensed by this repository at all.

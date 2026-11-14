@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>karpathy/nn-zero-to-hero · GitHub Trending Rank Radar</title>
+<meta name="description" content="Neural Networks: Zero to Hero">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="nn-zero-to-hero, karpathy, karpathy/nn-zero-to-hero, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/karpathy__nn-zero-to-hero">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="karpathy/nn-zero-to-hero · GitHub Trending Rank Radar">
+<meta property="og:description" content="Neural Networks: Zero to Hero">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/karpathy__nn-zero-to-hero">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "karpathy/nn-zero-to-hero", "codeRepository": "https://github.com/karpathy/nn-zero-to-hero", "url": "https://zhuikan.com/repos/karpathy__nn-zero-to-hero", "description": "Neural Networks: Zero to Hero", "author": {"@type": "Organization", "name": "karpathy", "url": "https://github.com/karpathy"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Jupyter Notebook", "dateCreated": "2022-09-08"}</script>
+</head>
+<body data-repo="karpathy/nn-zero-to-hero" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">karpathy/nn-zero-to-hero</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="karpathy__nn-zero-to-hero"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/241138?u=05376db54475c3d23b3a409f4c47d14c4855dc28&amp;v=4&s=300" width="300" height="300" alt="karpathy avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">nn-zero-to-hero</div>
+      <a class="rp-side-owner" href="https://github.com/karpathy">karpathy</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/karpathy">karpathy</a>
+        <span class="rp-sep">/</span><span class="rp-name">nn-zero-to-hero</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Neural Networks: Zero to Hero</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>25,629</b></span><span class="rp-stat" title="forks">⑂ <b>3,724</b></span><span class="rp-stat" title="watchers">👁 <b>392</b></span><span class="rp-stat" title="prs">⑃ <b>45</b></span><span class="rp-stat" title="issues">● <b>43</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Jupyter Notebook</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2022-09-08</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="karpathy__autoresearch"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/241138?u=05376db54475c3d23b3a409f4c47d14c4855dc28&amp;v=4" alt="" loading="lazy">autoresearch</a><a class="rp-same-link" href="karpathy__LLM101n"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/241138?u=05376db54475c3d23b3a409f4c47d14c4855dc28&amp;v=4" alt="" loading="lazy">LLM101n</a><a class="rp-same-link" href="karpathy__arxiv-sanity-preserver"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/241138?u=05376db54475c3d23b3a409f4c47d14c4855dc28&amp;v=4" alt="" loading="lazy">arxiv-sanity-preserver</a><a class="rp-same-link" href="karpathy__build-nanogpt"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/241138?u=05376db54475c3d23b3a409f4c47d14c4855dc28&amp;v=4" alt="" loading="lazy">build-nanogpt</a><a class="rp-same-link" href="karpathy__llama2.c"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/241138?u=05376db54475c3d23b3a409f4c47d14c4855dc28&amp;v=4" alt="" loading="lazy">llama2.c</a><a class="rp-same-link" href="karpathy__micrograd"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/241138?u=05376db54475c3d23b3a409f4c47d14c4855dc28&amp;v=4" alt="" loading="lazy">micrograd</a><a class="rp-same-link" href="karpathy__nanoGPT"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/241138?u=05376db54475c3d23b3a409f4c47d14c4855dc28&amp;v=4" alt="" loading="lazy">nanoGPT</a><a class="rp-same-link" href="karpathy__nanochat"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/241138?u=05376db54475c3d23b3a409f4c47d14c4855dc28&amp;v=4" alt="" loading="lazy">nanochat</a><a class="rp-same-link" href="karpathy__neuraltalk2"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/241138?u=05376db54475c3d23b3a409f4c47d14c4855dc28&amp;v=4" alt="" loading="lazy">neuraltalk2</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/karpathy/nn-zero-to-hero">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+30</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+365</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+918</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">25,629</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">3,724</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">392</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">45</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">43</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Neural Networks: Zero to Hero
+
+A course on neural networks that starts all the way at the basics. The course is a series of YouTube videos where we code and train neural networks together. The Jupyter notebooks we build in the videos are then captured here inside the lectures directory. Every lecture also has a set of exercises included in the video description. (This may grow into something more respectable).
+
+---
+
+Lecture 1: The spelled-out intro to neural networks and backpropagation: building micrograd
+
+Backpropagation and training of neural networks. Assumes basic knowledge of Python and a vague recollection of calculus from high school.
+
+- YouTube video lecture
+- Jupyter notebook files
+- micrograd Github repo
+
+---
+
+Lecture 2: The spelled-out intro to language modeling: building makemore
+
+We implement a bigram character-level language model, which we will further complexify in followup videos into a modern Transformer language model, like GPT. In this video, the focus is on (1) introducing torch.Tensor and its subtleties and use in efficiently evaluating neural networks and (2) the overall framework of language modeling that includes model training, sampling, and the evaluation of a loss (e.g. the negative log likelihood for classification).
+
+- YouTube video lecture
+- Jupyter notebook files
+- makemore Github repo
+
+---
+
+Lecture 3: Building makemore Part 2: MLP
+
+We implement a multilayer perceptron (MLP) character-level language model. In this video we also introduce many basics of machine learning (e.g. model training, learning rate tuning, hyperparameters, evaluation, train/dev/test splits, under/overfitting, etc.).
+
+- YouTube video lecture
+- Jupyter notebook files
+- makemore Github repo
+
+---
+
+Lecture 4: Building makemore Part 3: Activations &amp; Gradients, BatchNorm
+
+We dive into some of the internals of MLPs with multiple layers and scrutinize the statistics of the forward pass activations, backward pass gradients, and some of the pitfalls when they are improperly scaled. We also look at the typical diagnostic tools and visualizations you&#x27;d want to use to understand the health of your deep network. We learn why training deep neural nets can be fragile and introduce the first modern innovation that made doing so much easier: Batch Normalization. Residual connections and the Adam optimizer remain notable todos for later video.
+
+- YouTube video lecture
+- Jupyter notebook files
+- makemore Github repo
+
+---
+
+Lecture 5: Building makemore Part 4: Becoming a Backprop Ninja
+
+We take the 2-layer MLP (with BatchNorm) from the previous video and backpropagate through it manually without using PyTorch autograd&#x27;s loss.backward(). That is, we backprop through the cross entropy loss, 2nd linear layer, tanh, batchnorm, 1st linear layer, and the embedding table. Along the way, we get an intuitive understanding about how gradients flow backwards through the compute graph and on the level of efficient Tensors, not just individual scalars like in micrograd. This h</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/karpathy/nn-zero-to-hero/issues/13"><span class="rp-item-num">#13</span><span class="rp-item-title">Numerical instability in Google Colab - Part 4 of Makemore</span><span class="rp-item-extra">8 comments · 2022-10-13</span></a><a class="rp-item" href="https://github.com/karpathy/nn-zero-to-hero/issues/8"><span class="rp-item-num">#8</span><span class="rp-item-title">Not bug, just curiosity </span><span class="rp-item-extra">3 comments · 2022-10-02</span></a><a class="rp-item" href="https://github.com/karpathy/nn-zero-to-hero/issues/86"><span class="rp-item-num">#86</span><span class="rp-item-title">Created an interactive learning website</span><span class="rp-item-extra">2 comments · 2026-03-23</span></a><a class="rp-item" href="https://github.com/karpathy/nn-zero-to-hero/issues/72"><span class="rp-item-num">#72</span><span class="rp-item-title">Create AI</span><span class="rp-item-extra">2 comments · 2025-08-26</span></a><a class="rp-item" href="https://github.com/karpathy/nn-zero-to-hero/issues/61"><span class="rp-item-num">#61</span><span class="rp-item-title">flash attention: simplified</span><span class="rp-item-extra">2 comments · 2024-09-22</span></a><a class="rp-item" href="https://github.com/karpathy/nn-zero-to-hero/issues/57"><span class="rp-item-num">#57</span><span class="rp-item-title">makemore/lecture4/backprop/dC</span><span class="rp-item-extra">2 comments · 2024-06-26</span></a><a class="rp-item" href="https://github.com/karpathy/nn-zero-to-hero/issues/55"><span class="rp-item-num">#55</span><span class="rp-item-title">a new way of backprob of C[Xb] instead of for loop</span><span class="rp-item-extra">2 comments · 2024-06-13</span></a><a class="rp-item" href="https://github.com/karpathy/nn-zero-to-hero/issues/45"><span class="rp-item-num">#45</span><span class="rp-item-title">makemore_part4_backprop dhpreact exact part is False.</span><span class="rp-item-extra">2 comments · 2024-03-03</span></a></div></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (3)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/j8267643/article/details/151406463" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">【GitHub项目推荐-- nn-zero-to-hero：从零构建神经网络的终极指南】</span><span class="rp-item-extra">2025-09-10</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiY0FVX3lxTE1ta1RlVkVTbVhYbUxGTktOcWNENFBrSDBBSGFzWTJUY2djVkFoeGpYbnlEcUtxczRJN2lBanRrR3lzRktlT0c0U1BiV1NSY0J4X0Vadmw4RjFoc3dsVE1hWkhNcw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">新浪网</span><span class="rp-item-title">6.7 秒训练大模型：不靠硬背权重，靠检索兜底|Herman Brunborg|NanoGPT|n-gram 检索_新浪新闻</span><span class="rp-item-extra">2026-10-29</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiY0FVX3lxTFA0NHRoZ1VlUnpwa2hPQU9yVkdMVE5XY0dETjBLbDJ1YkRSTFdMYzdQLXNDNWNTSkxjY2xZUmt4ajRrd1EwYVJrNFl2YktZTjFjNVF4WVNWc25aSl9DNjNrQnVWaw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">新浪网</span><span class="rp-item-title">新浪网· - 新浪网</span><span class="rp-item-extra">2026-10-21</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (2)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=32808347" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Neural Networks: Zero to Hero</span><span class="rp-item-extra">▲ 3 · 0 comments · 2022-09-12</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMif0FVX3lxTE1teEx3dUFITFBETnRNZlh5a1lOTkRDX1Y4VUtHWU9LVEZiU1VhSzdXVlRRa0wzRmRqSUlSaHRScG5aVHZrUmN1bHR3Z1RnTXRlLVZib1ZyUTNZdTNHUld0amYyVDNBQ2t3U2UyY1FERDh6OXFWZ2FFdHhxQ3hxeEk?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">The Best GitHub Repos to Learn Artificial Intelligence (Free)</span><span class="rp-item-extra">2026-07-04</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/karpathy__nn-zero-to-hero.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

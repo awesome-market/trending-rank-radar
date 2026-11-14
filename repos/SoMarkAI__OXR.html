@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SoMarkAI/OXR · GitHub Trending Rank Radar</title>
+<meta name="description" content="An open-source document parsing model with SOTA accuracy and speed, using an RSI loop during post-training.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="OXR, SoMarkAI, SoMarkAI/OXR, github stars, github trending, star growth, star history, 开源项目, 星标增长, agent, llm-tools, ocr, vlm, vlm-ocr, rsi">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/SoMarkAI__OXR">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="SoMarkAI/OXR · GitHub Trending Rank Radar">
+<meta property="og:description" content="An open-source document parsing model with SOTA accuracy and speed, using an RSI loop during post-training.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/SoMarkAI__OXR">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "SoMarkAI/OXR", "codeRepository": "https://github.com/SoMarkAI/OXR", "url": "https://zhuikan.com/repos/SoMarkAI__OXR", "description": "An open-source document parsing model with SOTA accuracy and speed, using an RSI loop during post-training.", "author": {"@type": "Organization", "name": "SoMarkAI", "url": "https://github.com/SoMarkAI"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "Python", "dateCreated": "2026-10-05", "keywords": "agent,llm-tools,ocr,vlm,vlm-ocr,rsi,oxr"}</script>
+</head>
+<body data-repo="SoMarkAI/OXR" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">SoMarkAI/OXR</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="SoMarkAI__OXR"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/250654786?v=4&s=300" width="300" height="300" alt="SoMarkAI avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">OXR</div>
+      <a class="rp-side-owner" href="https://github.com/SoMarkAI">SoMarkAI</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/SoMarkAI">SoMarkAI</a>
+        <span class="rp-sep">/</span><span class="rp-name">OXR</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=new">new <b>#181</b></a></div>
+    </div>
+    <p class="rp-desc">An open-source document parsing model with SOTA accuracy and speed, using an RSI loop during post-training.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>3,821</b></span><span class="rp-stat" title="forks">⑂ <b>258</b></span><span class="rp-stat" title="watchers">👁 <b>51</b></span><span class="rp-stat" title="prs">⑃ <b>9</b></span><span class="rp-stat" title="issues">● <b>24</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/agent">agent</a><a class="rp-topic" href="https://github.com/topics/llm-tools">llm-tools</a><a class="rp-topic" href="../tags/ocr">ocr</a><a class="rp-topic" href="https://github.com/topics/vlm">vlm</a><a class="rp-topic" href="https://github.com/topics/vlm-ocr">vlm-ocr</a><a class="rp-topic" href="https://github.com/topics/rsi">rsi</a><a class="rp-topic" href="https://github.com/topics/oxr">oxr</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2026-10-05</span><a class="rp-meta-bit rp-home" href="https://somark.ai/oxr" rel="noopener">somark.ai/oxr</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/SoMarkAI/OXR">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+16</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">3,821</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">258</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">51</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">9</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">24</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">SoMark｜OXR
+
+采用RSI训练，精度与速度双 SOTA 的开源文档解析模型
+
+---
+
+让文档成为 Agent-Friendly 数据
+
+🌐 Online Demo ｜ 🔥 🆓 Free API ｜ ❓ 常见问题
+
+         !arXiv | Coming Soon
+
+English · 简体中文
+
+
+
+OXR（Optical Everything Recognition）是 SoMark 团队开源的SOTA文档解析模型，参数量1.3B，可将 PDF 和文档图片解析为 Agent-Friendly 数据（Markdown / JSON），并提供版面分析结果。
+
+OXR从零开始预训练（Pretrained from Scratch），并在后训练阶段首次引入面向文档解析的递归自我改进（RSI）训练范式。在全球三大基准 OmniDocBench、olmOCR-Bench 和 DocParsingBench 测试中，OXR 均位列第一，同时解析速度也达到业内领先水平。
+
+在架构设计上，OXR 首次将版面分析模块设计为独立、可插拔模块。在提升解析效率的同时，也让业务适配更加灵活。用户可根据业务对文档结构的要求，用自有模型替换内置的版面分析模型，以最小成本实现多场景适配。
+
+!
+
+!
+
+---
+
+ 如果这个项目对你有帮助，请点击右上角 ⭐ Star 支持一下，这是对开发者最大的鼓励！
+
+
+
+ Why OXR？
+
+- 🎯 高精度解析，全球三榜第一
+
+  - 在全球三大基准 OmniDocBench、olmOCR-Bench 和 DocParsingBench 测试中，OXR 均位列第一🏆，其中表格解析子项的优势尤为突出。
+  - OXR 可识别公式、表格、化学方程式、化学结构式和代码块等 13 类文档元素，并提供对应的版面坐标；面对 A3 试卷、报纸等复杂版面，以及竖排文字和手写内容，也能保持良好解析效果。
+  - 可前往 docs/benchmark.md 中查阅完整数值并复现评测结果。
+- 🚀 1.3B 参数，解析速度领先
+
+  - OXR 仅 1.3B 参数，在 RTX PRO 6000 上的速度测试中位居开源文档解析模型第一🏆。
+  - OXR 在任务层面重构了工作架构，实现在保持精度的同时解析速度的提升。
+  - 可前往 docs/benchmark.md 中查阅完整数值并复现评测结果。
+- 🧩 可插拔版面分析模块，按业务需求灵活替换
+
+  - 版面分析一直是各个领域文档发生差异最大的模块。即使是同一份文档，不同业务对于元素类别、区域边界、内容分组的定义都会有所差异。
+  - OXR 首次将版面分析设计为独立、可插拔模块。用户可以直接使用内置模型，也可以根据业务要求接入自有模型，再继续使用 OXR 的内容识别与阅读顺序判断能力，以最小成本实现多场景适配。
+  - 可在下方“How it works”章节了解详情
+
+
+
+展开查看13种组件
+
+| 中文名称 | 英文名称 | JSON 类别值（type） | 内容或输出格式 |
+|-|-|-|-|
+| 图注／表注 | Caption | Caption | 纯文本 |
+| 脚注 | Footnote | Footnote | 纯文本 |
+| 公式 | Formula | Formula | LaTeX |
+| 正文文本 | Text | Text | 纯文本 |
+| 页脚 | Footer | Page-footer | 纯文本（默认过滤） |
+| 页眉 | Header | Page-header | 纯文本（默认过滤） |
+| 图片／图形 | Figure | Picture | 图片 |
+| 标题 | Title | Title | 纯文本 |
+| 表格 | Table | Table | HTML／Markdown |
+| 印章 | Stamp | Stamp | 纯文本／图片 |
+| 化学方程式 | Chemical Equation | Chemical Equation | LaTeX（以 \ce 开头，mhchem 语法） |
+| 代码块 | Code Block | Code Block | Markdown 代码块 |
+| 化学结构式 | Chemical Structure | Chemical Structure | SMILES／图片 |
+
+
+
+
+
+ 效果展示
+
+动图展示了 OXR 的解析过程。
+
+!OXR解析动图示例
+
+下方展示不同文档类型的 OXR 解析示例，点击图片可查看原图。
+
+
+  
+    A3试卷
+    中文手写
+    代码块
+  
+  
+    化学方程式
+    化学结构式
+    复杂公式
+  
+  
+    复杂表格
+    学术论文
+    报纸
+  
+  
+    研报
+    简历
+    英文手写
+  
+
+
+ How it works
+
+
+
+ 技术架构
+
+本系统分为Layout Analysis模型和OXR两个模型，我们将Reading Order并入了Recognition阶段，并且发生在同一个模型上。这样的设计对于速度、效果都更加有效。
+
+且如此设计还有一个特别的目的，方便定制。我们发现Layout Analysis一直是各个领域文档发生差异最大的模块，文档解析服务商通常在提供服务时，这一部分是最需要定制开发的。而现在的文档解析工具要么将其交给Recognition模型承担，要么设计特殊模型带上Reading Order任务。我们如此设计实现了最简洁的Layout Analysis接入方式，任何Layout Analysis模型都可以和OXR模型工作的很好。
+
+!
+
+
+
+ RSI 闭环提升
+
+对于文档解析这样一个有“标准答案”的任务，我们一直期待有一套工程系统能够帮助核心模型自我提升。OXR的RSI方案如下图所示。对于错样本、弱样本，这套RSI方案可以针对性的进行优化和提升，无需人类参与标注，这让我们的迭代速度空前的快。
+
+!
+
+
+
+ Quick Start
+
+
+
+ 0. 🔥 🆓 Free API
+
+OXR 提供免费 API，无需注册或申请 API 密钥，即可用自己的文档测试解析效果。
+
+我们将持续提供免费API服务，直至我们的服务器顶不住压力。
+
+⚠️ 注意：不建议将 Free OXR API 用于线上环境，我们没有稳定性保证，也设置了排队机制，速率略有浮动
+
+| Online Demo | https://free-oxr.somark.ai | https://free-oxr.somark.cn |
+|-|-|-|
+| API地址 | https://free-oxr.somark.ai/api/v1 | https://free-oxr.somark.cn/api/v1 |
+| 对接文档 | https://docs.somark.ai/api-reference | https://docs.somark.cn/api-reference |
+
+ somark.cn是somark.ai的镜像源地址，可以根据所在地区自行选择
+
+OXR 系统的 文档解析 AP</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/SoMarkAI/OXR/issues/19"><span class="rp-item-num">#19</span><span class="rp-item-title">示例中的gup是nvidia，可以支持amd么</span><span class="rp-item-extra">3 comments · 2026-10-28</span></a><a class="rp-item" href="https://github.com/SoMarkAI/OXR/issues/12"><span class="rp-item-num">#12</span><span class="rp-item-title">一些奇怪的文档无法解析</span><span class="rp-item-extra">2 comments · 2026-10-27</span></a><a class="rp-item" href="https://github.com/SoMarkAI/OXR/issues/27"><span class="rp-item-num">#27</span><span class="rp-item-title">Question: Is vLLM supported for OXR inference deployment?</span><span class="rp-item-extra">1 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/SoMarkAI/OXR/issues/24"><span class="rp-item-num">#24</span><span class="rp-item-title">Formula postprocess leaves nested math delimiters when equation numbering follows `$...$`</span><span class="rp-item-extra">1 comments · 2026-10-29</span></a><a class="rp-item" href="https://github.com/SoMarkAI/OXR/issues/23"><span class="rp-item-num">#23</span><span class="rp-item-title">有没有办法关闭化学结构解析</span><span class="rp-item-extra">1 comments · 2026-10-29</span></a><a class="rp-item" href="https://github.com/SoMarkAI/OXR/issues/22"><span class="rp-item-num">#22</span><span class="rp-item-title">部署GPU问题</span><span class="rp-item-extra">1 comments · 2026-10-29</span></a><a class="rp-item" href="https://github.com/SoMarkAI/OXR/issues/21"><span class="rp-item-num">#21</span><span class="rp-item-title">结果文件缓存</span><span class="rp-item-extra">1 comments · 2026-10-29</span></a><a class="rp-item" href="https://github.com/SoMarkAI/OXR/issues/20"><span class="rp-item-num">#20</span><span class="rp-item-title">能不能针对汉字的生僻字做专门训练？</span><span class="rp-item-extra">1 comments · 2026-10-28</span></a></div></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (5)</h3><div class="rp-list"><a class="rp-item" href="https://news.qq.com/rain/a/20261102A09UEM00" target="_blank" rel="noopener"><span class="rp-news-src">腾讯网</span><span class="rp-item-title">RSI立大功！国产开源登顶全球第一，1.3B OXR重塑OCR</span><span class="rp-item-extra">2026-11-02</span></a><a class="rp-item" href="https://news.qq.com/rain/a/20261028A031J400" target="_blank" rel="noopener"><span class="rp-news-src">腾讯网</span><span class="rp-item-title">最强开源 1.3B OCR模型，本地Agent、知识库都有救了～</span><span class="rp-item-extra">2026-10-28</span></a><a class="rp-item" href="https://news.sina.cn/ai/2026-10-27/detail-iniwrzhw7073337.d.html?vt=4" target="_blank" rel="noopener"><span class="rp-news-src">新浪新闻</span><span class="rp-item-title">OXR强势开源！1.3B横扫全球三榜第一，速度快过Paddle、MinerU，RSI让它卷出新高度</span><span class="rp-item-extra">2026-10-27</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiRkFVX3lxTE4xaXRCOVdtSW1QM1dJRHliYi1jRnVmU0NaV3ROQ3JTUU0xV0E0TUlhUk1VdjdQdDRva3RBOFVVNUF6ZG1JeFE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">茉莉花新闻网</span><span class="rp-item-title">OXR开源，团队称1.3B模型三项文档解析基准全部第一</span><span class="rp-item-extra">2026-10-27</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMilAFBVV95cUxNQXFEZVN0S3NHNHlBNDZyTUtaWlBJMEhJUmZPUVlUX2RfNmQyT2lWRmtYU05RSTY3d2JmV09rV045NV9oY3dYV092UXpUNkFlSWs5Nm1Nc3l0WVVCWktaNXViYTRGU0Jhbi1veXZqZFNFT3ZKMVZUOVBJY3NvSkIwbXRZNGJkbEk0a1lCWXhnUkVtVjRT?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">FourWeekMBA</span><span class="rp-item-title">Open 1.3B OXR 在 3 项解析测试中名列前茅，并附带价值 2 万美元的授权条款</span><span class="rp-item-extra">2026-10-24</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (7)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=50183506" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">OXR – An RSI-trained 1.3B open-source SOTA document parsing model</span><span class="rp-item-extra">▲ 4 · 2 comments · 2026-10-21</span></a><a class="rp-item" href="https://letsdatascience.com/news/somark-open-sources-13b-oxr-10-document-parser-with-benchmar-903f39c6" target="_blank" rel="noopener"><span class="rp-news-src">letsdatascience</span><span class="rp-item-title">SoMark Open-Sources 1.3B OXR-1.0 Document Parser With Benchmark Claims</span><span class="rp-item-extra">2026-10-27</span></a><a class="rp-item" href="https://pandaily.com/somark-open-sources-oxr-1-0-1-3b-document-parsing-model-omnidocbench-olmocr-docparsingbench" target="_blank" rel="noopener"><span class="rp-news-src">pandaily</span><span class="rp-item-title">SoMark Open-Sources OXR-1.0, a 1.3B Document Parser That Leads Three Public Benchmarks</span><span class="rp-item-extra">2026-10-26</span></a><a class="rp-item" href="https://huggingface.co/bxespinozar/OXR-1.0-mlx-bf16" target="_blank" rel="noopener"><span class="rp-news-src">huggingface</span><span class="rp-item-title">OXR-1.0 — MLX (bf16)</span><span class="rp-item-extra">2026-10-20</span></a><a class="rp-item" href="https://huggingface.co/bxespinozar/OXR-1.0-mlx-8bit" target="_blank" rel="noopener"><span class="rp-news-src">huggingface</span><span class="rp-item-title">OXR-1.0-mlx-8bit</span><span class="rp-item-extra">2026-10-20</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMijAFBVV95cUxQUk5GaXZRWmFFQ3I5eXhCLXhBME0yaExsQTducjVhV21DMmtiZlk1aXlrZGRfcmFmYVhCRDdaYkVBeTFCYnNxVENsU3J1TmN6LWdXTkFBNUlIUXFwM3RZNXlNam9WUS1DS3V4SUpBV0F0MHpuSzhYbWIyajBTa1ZPeVN2d3RBYUQ3ZllnVQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">FourWeekMBA</span><span class="rp-item-title">Open 1.3B OXR Tops 3 Parsing Tests, With $2M Licence Terms</span><span class="rp-item-extra">2026-10-24</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMizAFBVV95cUxPSEx2WmVKY0JOTEFoQVJieHBHb1dfV2I4WE13cjQwVERjb2tyU1dxSElPYUI0bERZbzZWODg0WkdnSEZUYW9SMTJRa3pBU0otU01QRGxGYXM1aFdQemtEemE2NDV1REZNUzE5dFo4NDVRT2ZYblhWNW9xT1ZtVndudTJ0ZVNBNElFaldQcGR3MGIzS3JMcHlVV2xLeERZUEZPQ2U0QWZZRE5xNEpVdVJldXZna3RmUk4yblBWYkJvUGdleVFFRGRzZ0RsbTA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">PR Underground</span><span class="rp-item-title">OXR Goes Open Source: #1 on 3 Benchmarks, SOTA Accuracy &amp; Speed—the First Document Parser with RSI</span><span class="rp-item-extra">2026-10-20</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/SoMarkAI__OXR.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

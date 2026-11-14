@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>crmne/spotifast · GitHub Trending Rank Radar</title>
+<meta name="description" content="Spotify, native and fast. One lightweight Rust app for your whole library, local playback, and Spotify Connect on Linux, macOS, and Windows.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="spotifast, crmne, crmne/spotifast, github stars, github trending, star growth, star history, 开源项目, 星标增长, audio, cross-platform, desktop-app, egui, gui, librespot">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/crmne__spotifast">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="crmne/spotifast · GitHub Trending Rank Radar">
+<meta property="og:description" content="Spotify, native and fast. One lightweight Rust app for your whole library, local playback, and Spotify Connect on Linux, macOS, and Windows.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/crmne__spotifast">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "crmne/spotifast", "codeRepository": "https://github.com/crmne/spotifast", "url": "https://zhuikan.com/repos/crmne__spotifast", "description": "Spotify, native and fast. One lightweight Rust app for your whole library, local playback, and Spotify Connect on Linux, macOS, and Windows.", "author": {"@type": "Organization", "name": "crmne", "url": "https://github.com/crmne"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Rust", "dateCreated": "2026-08-27", "keywords": "audio,cross-platform,desktop-app,egui,gui,librespot,linux,macos,mpris,music"}</script>
+</head>
+<body data-repo="crmne/spotifast" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">crmne/spotifast</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="crmne__spotifast"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/106617?v=4&s=300" width="300" height="300" alt="crmne avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">spotifast</div>
+      <a class="rp-side-owner" href="https://github.com/crmne">crmne</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/crmne">crmne</a>
+        <span class="rp-sep">/</span><span class="rp-name">spotifast</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=new">new <b>#40</b></a></div>
+    </div>
+    <p class="rp-desc">Spotify, native and fast. One lightweight Rust app for your whole library, local playback, and Spotify Connect on Linux, macOS, and Windows.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>10,313</b></span><span class="rp-stat" title="forks">⑂ <b>611</b></span><span class="rp-stat" title="watchers">👁 <b>28</b></span><span class="rp-stat" title="prs">⑃ <b>485</b></span><span class="rp-stat" title="issues">● <b>666</b></span><span class="rp-stat" title="releases">▤ <b>40</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/audio">audio</a><a class="rp-topic" href="../tags/cross-platform">cross-platform</a><a class="rp-topic" href="../tags/desktop-app">desktop-app</a><a class="rp-topic" href="https://github.com/topics/egui">egui</a><a class="rp-topic" href="../tags/gui">gui</a><a class="rp-topic" href="https://github.com/topics/librespot">librespot</a><a class="rp-topic" href="../tags/linux">linux</a><a class="rp-topic" href="../tags/macos">macos</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-08-27</span><a class="rp-meta-bit rp-home" href="https://spotifast.rocks/" rel="noopener">spotifast.rocks/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="crmne__ruby_llm"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/106617?v=4" alt="" loading="lazy">ruby_llm</a><a class="rp-same-link" href="crmne__zapfast"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/106617?v=4" alt="" loading="lazy">zapfast</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/crmne/spotifast">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Spotifast v0.17.1</span><a class="rp-dl-a" href="https://github.com/crmne/spotifast/releases/tag/v0.17.1">Spotifast-0.17.1 ↓</a><span class="rp-dl-ver">0.17.1</span><span class="rp-dl-date">2026-11-03</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+29</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">10,313</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">611</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">28</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">485</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">666</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">40</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Spotifast
+
+Spotify, native and fast.A lightweight music app for Linux, macOS, and Windows.
+
+
+  Download ·
+  Getting started ·
+  User guide ·
+  Contribute
+
+
+
+  
+  
+  
+
+
+Spotifast is a Spotify client written in Rust with
+egui and fastframe, the
+framework behind a family of native desktop apps. It plays music through
+Spotify Soloist or the built-in
+librespot player, and has no browser engine.
+
+The interface includes complete
+translations for all supported languages.
+
+Playback needs Spotify Premium. Free accounts can browse and search, but
+cannot play music through Spotifast.
+
+!Spotifast Home with the playlist library, recommendations, queue, and player visible
+
+
+Watch Spotifast in action
+
+https://github.com/user-attachments/assets/a5f669ce-b3b7-4f8e-9933-976a78876c7e
+
+
+
+Features · Install · First playback · Mini player · MilkDrop · Help
+
+Since 0.15, setup leads with Spotify&#x27;s
+Soloist player, with guided key setup,
+one-time pairing and automatic renewal of expiring builds. New listeners and
+people updating see this choice once after sign-in on supported platforms.
+Use the built-in player keeps librespot, with Spotifast&#x27;s EQ, visualizers,
+local files and full queue editing. The choice is remembered.
+On Linux with PipeWire, Soloist also supports Spotifast’s EQ and visualizers
+through a private audio route. Native audio support
+adds EQ and visualizers on macOS 14.2 or newer, and visualizers on Windows 11,
+including MilkDrop. Windows Soloist playback does not support audible EQ.
+The Mac route keeps Soloist at full volume after redirecting its output,
+then applies Spotifast’s volume after the visualizers, including mute. Phone
+volume changes adjust that output level; Spotify’s indicator returns to 100%.
+Windows visuals keep their level as Soloist’s volume falls and stop only when it is muted.
+When enabled, Soloist appears as This computer; settings show the controls
+that apply to it. Turning it off restores the built-in player&#x27;s preferences.
+While Soloist starts and its account is verified, the Spotify loading screen shows
+Verifying Soloist… and waits to accept playback commands. Setup takes three
+steps, and ends with choosing the named device in Spotify, with the built-in
+player available as a quiet alternative below the card. If Soloist stops later,
+a banner over the app says so while Spotifast restarts it, and offers Try
+again if that does not work. Settings → Spotify Soloist → Spotify access
+connects the separate Spotify session for Made for you, listening activity and
+Spotify lyrics without changing players.
+
+ Your music, on your desktop
+
+| Feature | What you can do |
+|---|---|
+| Library and search | Browse playlists, Liked Songs, albums, artists, and podcasts. Discover upcoming albums on artist pages and open their countdown to pre-save. Search the catalogue and edit playlists you own. Copy a song&#x27;s link, title, or artists from its menu. |
+| Local files | Play the local files your playlists list from a folder you choose in Settings, at any sample ra</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/crmne/spotifast/issues/763"><span class="rp-item-num">#763</span><span class="rp-item-title">Audio Quality at &quot;Very high 320kbps&quot; frequently cuts out despite 200Mbps WiFi (Spotify doesn&#x27;t)</span><span class="rp-item-extra">18 comments · 2026-10-07</span></a><a class="rp-item" href="https://github.com/crmne/spotifast/issues/1142"><span class="rp-item-num">#1142</span><span class="rp-item-title">(0.15.0) Soloist doesn&#x27;t wanna be shown in spotify device choice menu</span><span class="rp-item-extra">17 comments · 2026-10-31</span></a><a class="rp-item" href="https://github.com/crmne/spotifast/issues/656"><span class="rp-item-num">#656</span><span class="rp-item-title">Black frame flicker.</span><span class="rp-item-extra">12 comments · 2026-10-03</span></a><a class="rp-item" href="https://github.com/crmne/spotifast/issues/918"><span class="rp-item-num">#918</span><span class="rp-item-title">New update keeps triggering my windows defender</span><span class="rp-item-extra">11 comments · 2026-10-15</span></a><a class="rp-item" href="https://github.com/crmne/spotifast/issues/954"><span class="rp-item-num">#954</span><span class="rp-item-title">Memory Leak</span><span class="rp-item-extra">10 comments · 2026-10-16</span></a><a class="rp-item" href="https://github.com/crmne/spotifast/issues/898"><span class="rp-item-num">#898</span><span class="rp-item-title">Support native macOS shuffle commands from external Now Playing controls</span><span class="rp-item-extra">8 comments · 2026-10-14</span></a><a class="rp-item" href="https://github.com/crmne/spotifast/issues/885"><span class="rp-item-num">#885</span><span class="rp-item-title">Milkdrop not working</span><span class="rp-item-extra">8 comments · 2026-10-13</span></a><a class="rp-item" href="https://github.com/crmne/spotifast/issues/1053"><span class="rp-item-num">#1053</span><span class="rp-item-title">option to turn off lyrics in fullscreen view</span><span class="rp-item-extra">7 comments · 2026-10-24</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/crmne/spotifast/discussions/1268"><span class="rp-item-num">#1268</span><span class="rp-item-title">the EQ doesn’t work</span><span class="rp-item-extra">2 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/crmne/spotifast/discussions/1267"><span class="rp-item-num">#1267</span><span class="rp-item-title">Control the UI with VIM shortcuts</span><span class="rp-item-extra">1 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/crmne/spotifast/discussions/1255"><span class="rp-item-num">#1255</span><span class="rp-item-title">Cant see top tracks</span><span class="rp-item-extra">3 comments · 2026-11-05</span></a><a class="rp-item" href="https://github.com/crmne/spotifast/discussions/1243"><span class="rp-item-num">#1243</span><span class="rp-item-title">Lyrics translation to romaji or english</span><span class="rp-item-extra">1 comments · 2026-11-05</span></a><a class="rp-item" href="https://github.com/crmne/spotifast/discussions/1238"><span class="rp-item-num">#1238</span><span class="rp-item-title">Media Keys on MacOS</span><span class="rp-item-extra">1 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/crmne/spotifast/discussions/1237"><span class="rp-item-num">#1237</span><span class="rp-item-title">Soloist - but why? 🤔</span><span class="rp-item-extra">3 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/crmne/spotifast/discussions/1224"><span class="rp-item-num">#1224</span><span class="rp-item-title">SongDNA implementation</span><span class="rp-item-extra">0 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/crmne/spotifast/discussions/1223"><span class="rp-item-num">#1223</span><span class="rp-item-title">repository for fedora</span><span class="rp-item-extra">1 comments · 2026-11-03</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/crmne/spotifast/releases"><b>Spotifast v0.17.1</b> <span class="rp-rel-tag">v0.17.1</span> <span class="rp-item-extra">2026-11-03</span></a><pre class="rp-pre">Spotifast 0.17.1 opens the mini player in Spotifast Wide on a new install, and takes away a haze that Hyprland drew round skins. If you missed 0.17, it brought Windows Media Player skins that really run, two skins of our own and MilkDrop inside them: see the 0.17.0 notes and the film.
+
+Download Spotifast: Mac · Windows · Windows ARM · Linux · Linux ARM · Flatpak · AppImage · AppImage ARM
+
+https://github.com/user-attachments/assets/78bbfddd-decf-4ee5-bfe9-1a7cd2a8fe48
+
+ Changed
+
+- New installs open the mini player in Spotifast Wide, our own skin. A skin you already chose, the classic one includ</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (1)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/gitblog_00117/article/details/166598975" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">Spotifast源码编译完整指南：Linux、macOS、Windows跨平台构建与Nix开发环境</span><span class="rp-item-extra">2026-09-24</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (9)</h3><div class="rp-list"><a class="rp-item" href="https://note.com/coderadar/n/n46d7bc27883f?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">[GitHub Daily] Rust-based Spotify client spotifast debuts, agent-desktop tops for 3 consecutive days — 2026-11-05</span><span class="rp-item-extra">2026-11-04</span></a><a class="rp-item" href="https://note.com/coderadar/n/n46d7bc27883f?hl=ko" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">[GitHub 일일 보고]Rust 기반 Spotify 클라이언트 spotifast 첫 등장, agent-desktop 3일 연속 1위 — 2026-11-05</span><span class="rp-item-extra">2026-11-04</span></a><a class="rp-item" href="https://www.msn.com/en-us/technology/software/i-found-a-free-spotify-alternative-for-linux-that-s-way-better-than-the-official-app/ar-AA2gjhJv" target="_blank" rel="noopener"><span class="rp-news-src">ZDNET on MSN</span><span class="rp-item-title">I found a free Spotify alternative for Linux that’s way better than the official app</span><span class="rp-item-extra">2026-10-28</span></a><a class="rp-item" href="https://www.msn.com/en-us/entertainment/general/spotifast-offers-a-speedier-spotify-experience-for-windows-macos-and-linux/ar-AA2dUHWl" target="_blank" rel="noopener"><span class="rp-news-src">MSN</span><span class="rp-item-title">Spotifast offers a speedier Spotify experience for Windows, macOS, and Linux</span><span class="rp-item-extra">2026-10-09</span></a><a class="rp-item" href="https://www.pcgameshardware.de/RAM-Hardware-154108/News/Spotify-Alternative-Spotifast-RAM-Verbrauch-Premium-Download-1556271/" target="_blank" rel="noopener"><span class="rp-news-src">PCGH</span><span class="rp-item-title">Spotifast statt Spotify: Neuer Client verspricht geringeren RAM-Verbrauch</span><span class="rp-item-extra">2026-10-09</span></a><a class="rp-item" href="https://www.hwupgrade.it/news/web/spotifast-sfida-spotify-il-client-open-source-usa-appena-100-250-mb-di-ram_160372.html" target="_blank" rel="noopener"><span class="rp-news-src">Hardware Upgrade</span><span class="rp-item-title">Spotifast sfida Spotify: il client open source usa appena 100-250 MB di RAM</span><span class="rp-item-extra">2026-10-08</span></a><a class="rp-item" href="https://x.com/marinevren/status/2107582403531178090" target="_blank" rel="noopener"><span class="rp-news-src">x</span><span class="rp-item-title">Marin on X: &quot;Spotifast https://t.co/52anOBwmqQ&quot;</span><span class="rp-item-extra">2026-10-06</span></a><a class="rp-item" href="https://x.com/GOTFAITHBIH/status/2106888805861200313" target="_blank" rel="noopener"><span class="rp-news-src">x</span><span class="rp-item-title">1udor on X: &quot;@paolino @grok is it safe , or a rat ?&quot;</span><span class="rp-item-extra">2026-10-03</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiYEFVX3lxTFBCUDVOUnhDR1JLeTNsbVZGck4xWEVxOUEtcE5jUnlJazRUeGxpVjk0U0k1NTh2MjZZQWZabWZnN3FfUlE4SlkwN25RQzliVHBlb2pudXpPSDFPY01NdE1WRA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pocket-lint</span><span class="rp-item-title">Unleash Spotify’s Retro Side With This RAM-Saving Desktop App</span><span class="rp-item-extra">2026-10-17</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/crmne__spotifast.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

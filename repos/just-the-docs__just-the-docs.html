@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>just-the-docs/just-the-docs · GitHub Trending Rank Radar</title>
+<meta name="description" content="A modern, high customizable, responsive Jekyll theme for documentation with built-in search.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="just-the-docs, just-the-docs, just-the-docs/just-the-docs, github stars, github trending, star growth, star history, 开源项目, 星标增长, jekyll, jekyll-theme, documentation, github-pages">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/just-the-docs__just-the-docs">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="just-the-docs/just-the-docs · GitHub Trending Rank Radar">
+<meta property="og:description" content="A modern, high customizable, responsive Jekyll theme for documentation with built-in search.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/just-the-docs__just-the-docs">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "just-the-docs/just-the-docs", "codeRepository": "https://github.com/just-the-docs/just-the-docs", "url": "https://zhuikan.com/repos/just-the-docs__just-the-docs", "description": "A modern, high customizable, responsive Jekyll theme for documentation with built-in search.", "author": {"@type": "Organization", "name": "just-the-docs", "url": "https://github.com/just-the-docs"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "SCSS", "dateCreated": "2017-11-08", "keywords": "jekyll,jekyll-theme,documentation,github-pages"}</script>
+</head>
+<body data-repo="just-the-docs/just-the-docs" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">just-the-docs/just-the-docs</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="just-the-docs__just-the-docs"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/99273587?v=4&s=300" width="300" height="300" alt="just-the-docs avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">just-the-docs</div>
+      <a class="rp-side-owner" href="https://github.com/just-the-docs">just-the-docs</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/just-the-docs">just-the-docs</a>
+        <span class="rp-sep">/</span><span class="rp-name">just-the-docs</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A modern, high customizable, responsive Jekyll theme for documentation with built-in search.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,241</b></span><span class="rp-stat" title="forks">⑂ <b>3,776</b></span><span class="rp-stat" title="watchers">👁 <b>83</b></span><span class="rp-stat" title="prs">⑃ <b>1,004</b></span><span class="rp-stat" title="issues">● <b>506</b></span><span class="rp-stat" title="releases">▤ <b>52</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/jekyll">jekyll</a><a class="rp-topic" href="https://github.com/topics/jekyll-theme">jekyll-theme</a><a class="rp-topic" href="../tags/documentation">documentation</a><a class="rp-topic" href="https://github.com/topics/github-pages">github-pages</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">SCSS</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2017-11-08</span><a class="rp-meta-bit rp-home" href="https://just-the-docs.com" rel="noopener">just-the-docs.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/just-the-docs/just-the-docs">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.12.0</span><a class="rp-dl-a" href="https://github.com/just-the-docs/just-the-docs/releases/tag/v0.12.0">v0.12.0 ↓</a><span class="rp-dl-ver">0.12.0</span><span class="rp-dl-date">2026-01-23</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">9,241</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">3,776</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">83</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,004</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">506</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">52</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Just the Docs
+    A modern, highly customizable, and responsive Jekyll theme for documentation with built-in search.Easily hosted on GitHub Pages with few dependencies.
+    See it in action!
+    
+
+
+A video walkthrough of various Just the Docs features
+
+https://user-images.githubusercontent.com/85418632/211225192-7e5d1116-2f4f-4305-bb9b-437fe47df071.mp4
+
+ Installation
+
+ Use the template
+
+The [Just the Docs Template] provides the simplest, quickest, and easiest way to create a new website that uses the Just the Docs theme. To get started with creating a site, just click &quot;[use the template]&quot;!
+
+Note: To use the theme, you do not need to clone or fork the [Just the Docs repo]! You should do that only if you intend to browse the theme docs locally, contribute to the development of the theme, or develop a new theme based on Just the Docs.
+
+You can easily set the site created by the template to be published on [GitHub Pages] – the [template README] file explains how to do that, along with other details.
+
+If [Jekyll] is installed on your computer, you can also build and preview the created site locally. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^2] And you will be able to deploy your local build to a different platform than GitHub Pages.
+
+More specifically, the created site:
+
+- uses a gem-based approach, i.e. uses a Gemfile and loads the just-the-docs gem
+- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
+
+Other than that, you&#x27;re free to customize sites that you create with the template, however you like. You can easily change the versions of just-the-docs and Jekyll it uses, as well as adding further plugins.
+
+ Use as a Ruby Gem
+
+Alternatively, you can install the theme as a Ruby Gem, without creating a new site.
+
+Add this line to your Jekyll site&#x27;s Gemfile:
+
+ruby
+gem &quot;just-the-docs&quot;
+
+
+And add this line to your Jekyll site&#x27;s _config.yml:
+
+yaml
+theme: just-the-docs
+
+
+And then install all relevant dependencies:
+
+shell
+$ bundle
+
+
+ Usage
+
+[View the documentation][Just the Docs] for usage information.
+
+ Contributing
+
+Bug reports, proposals of new features, and pull requests are welcome on GitHub at https://github.com/just-the-docs/just-the-docs. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
+
+ Submitting code changes:
+
+- Submit an Issue that motivates the changes, using the appropriate template
+- Discuss the proposed changes with other users and the maintainers
+- Open a Pull Request
+- Ensure all CI tests pass
+- Provide instructions to check the effect of the changes
+- Await code review
+
+ Design and development principles of this theme:
+
+1. As few dependencies as possible
+2. No build script needed
+3. First class mobile experience
+4. Make the content shine
+
+ Development
+
+To set up your environment to develop this theme: fork this repo, then run bundle install from th</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/just-the-docs/just-the-docs/issues/234"><span class="rp-item-num">#234</span><span class="rp-item-title">Support system-/browser-level dark mode</span><span class="rp-item-extra">23 comments · 2019-10-10</span></a><a class="rp-item" href="https://github.com/just-the-docs/just-the-docs/issues/728"><span class="rp-item-num">#728</span><span class="rp-item-title">Support versioning of documentation</span><span class="rp-item-extra">21 comments · 2021-10-22</span></a><a class="rp-item" href="https://github.com/just-the-docs/just-the-docs/issues/1223"><span class="rp-item-num">#1223</span><span class="rp-item-title">Theme Switching Button</span><span class="rp-item-extra">14 comments · 2023-04-14</span></a><a class="rp-item" href="https://github.com/just-the-docs/just-the-docs/issues/59"><span class="rp-item-num">#59</span><span class="rp-item-title">Multi Language Support</span><span class="rp-item-extra">13 comments · 2019-01-03</span></a><a class="rp-item" href="https://github.com/just-the-docs/just-the-docs/issues/648"><span class="rp-item-num">#648</span><span class="rp-item-title">Feature request: add an option for making table headers sticky (so they don&#x27;t scroll past the top)</span><span class="rp-item-extra">11 comments · 2021-05-12</span></a><a class="rp-item" href="https://github.com/just-the-docs/just-the-docs/issues/1300"><span class="rp-item-num">#1300</span><span class="rp-item-title">List popular sites that use Just the Docs </span><span class="rp-item-extra">9 comments · 2023-07-26</span></a><a class="rp-item" href="https://github.com/just-the-docs/just-the-docs/issues/1151"><span class="rp-item-num">#1151</span><span class="rp-item-title">Generate offline website or PDF version</span><span class="rp-item-extra">9 comments · 2023-02-01</span></a><a class="rp-item" href="https://github.com/just-the-docs/just-the-docs/issues/938"><span class="rp-item-num">#938</span><span class="rp-item-title">Title Logo and Text</span><span class="rp-item-extra">9 comments · 2022-08-24</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/just-the-docs/just-the-docs/discussions/1835"><span class="rp-item-num">#1835</span><span class="rp-item-title">Is there a new version release planned?</span><span class="rp-item-extra">1 comments · 2026-07-04</span></a><a class="rp-item" href="https://github.com/just-the-docs/just-the-docs/discussions/1799"><span class="rp-item-num">#1799</span><span class="rp-item-title">Internal links validator script</span><span class="rp-item-extra">1 comments · 2026-04-10</span></a><a class="rp-item" href="https://github.com/just-the-docs/just-the-docs/discussions/1763"><span class="rp-item-num">#1763</span><span class="rp-item-title">Add support for hierarchical sitemaps</span><span class="rp-item-extra">0 comments · 2026-01-09</span></a><a class="rp-item" href="https://github.com/just-the-docs/just-the-docs/discussions/1743"><span class="rp-item-num">#1743</span><span class="rp-item-title">Convert site to ebook</span><span class="rp-item-extra">1 comments · 2025-12-23</span></a><a class="rp-item" href="https://github.com/just-the-docs/just-the-docs/discussions/1728"><span class="rp-item-num">#1728</span><span class="rp-item-title">Gf</span><span class="rp-item-extra">0 comments · 2025-11-16</span></a><a class="rp-item" href="https://github.com/just-the-docs/just-the-docs/discussions/1720"><span class="rp-item-num">#1720</span><span class="rp-item-title">“Config-Only Customization for Sidebar Footer Text”</span><span class="rp-item-extra">2 comments · 2025-10-27</span></a><a class="rp-item" href="https://github.com/just-the-docs/just-the-docs/discussions/1712"><span class="rp-item-num">#1712</span><span class="rp-item-title">Mobile search box is not usable</span><span class="rp-item-extra">0 comments · 2025-10-01</span></a><a class="rp-item" href="https://github.com/just-the-docs/just-the-docs/discussions/1706"><span class="rp-item-num">#1706</span><span class="rp-item-title">Is it possible to override the existing .scss?</span><span class="rp-item-extra">1 comments · 2025-09-16</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/just-the-docs/just-the-docs/releases"><b>v0.12.0</b> <span class="rp-rel-tag">v0.12.0</span> <span class="rp-item-extra">2026-01-23</span></a><pre class="rp-pre">Release v0.12.0
+
+Hi folks,
+
+This minor release actually should fix all relevant issues with the placement of .site-footer, first introduced in v0.11.0. I apologize greatly for the delay and the confusion around this issue - the interactions between this component and the many different ways that users overrode different components were more complex than I expected. I&#x27;ve done some more thorough tests and am much more confident that this set of fixes resolves the issue, once necessary migration steps are made.
+
+I&#x27;ve written up migration instructions, which may be relevant for
+
+- all user</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/just-the-docs__just-the-docs.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

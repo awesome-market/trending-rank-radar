@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScottSloan/Bili23-Downloader · GitHub Trending Rank Radar</title>
+<meta name="description" content="开源、免费、跨平台的 B 站视频下载工具，支持多线程加速、音视频分离、弹幕元数据获取、自定义命名与分类等功能。Open Source, Free, Cross-Platform Bilibili Video Downloader.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Bili23-Downloader, ScottSloan, ScottSloan/Bili23-Downloader, github stars, github trending, star growth, star history, 开源项目, 星标增长, bilibili, wxpython, python, linux, macos, windows">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/ScottSloan__Bili23-Downloader">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="ScottSloan/Bili23-Downloader · GitHub Trending Rank Radar">
+<meta property="og:description" content="开源、免费、跨平台的 B 站视频下载工具，支持多线程加速、音视频分离、弹幕元数据获取、自定义命名与分类等功能。Open Source, Free, Cross-Platform Bilibili Video Downloader.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/ScottSloan__Bili23-Downloader">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ScottSloan/Bili23-Downloader", "codeRepository": "https://github.com/ScottSloan/Bili23-Downloader", "url": "https://zhuikan.com/repos/ScottSloan__Bili23-Downloader", "description": "开源、免费、跨平台的 B 站视频下载工具，支持多线程加速、音视频分离、弹幕元数据获取、自定义命名与分类等功能。Open Source, Free, Cross-Platform Bilibili Video Downloader.", "author": {"@type": "Organization", "name": "ScottSloan", "url": "https://github.com/ScottSloan"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-3.0.html", "programmingLanguage": "Python", "dateCreated": "2022-03-05", "keywords": "bilibili,wxpython,python,linux,macos,windows,bilibili-downloader,bili23,pyside6,downloader"}</script>
+</head>
+<body data-repo="ScottSloan/Bili23-Downloader" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">ScottSloan/Bili23-Downloader</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="ScottSloan__Bili23-Downloader"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/90490067?v=4&s=300" width="300" height="300" alt="ScottSloan avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Bili23-Downloader</div>
+      <a class="rp-side-owner" href="https://github.com/ScottSloan">ScottSloan</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/ScottSloan">ScottSloan</a>
+        <span class="rp-sep">/</span><span class="rp-name">Bili23-Downloader</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">开源、免费、跨平台的 B 站视频下载工具，支持多线程加速、音视频分离、弹幕元数据获取、自定义命名与分类等功能。Open Source, Free, Cross-Platform Bilibili Video Downloader.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,112</b></span><span class="rp-stat" title="forks">⑂ <b>654</b></span><span class="rp-stat" title="watchers">👁 <b>33</b></span><span class="rp-stat" title="prs">⑃ <b>144</b></span><span class="rp-stat" title="issues">● <b>285</b></span><span class="rp-stat" title="releases">▤ <b>68</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/bilibili">bilibili</a><a class="rp-topic" href="https://github.com/topics/wxpython">wxpython</a><a class="rp-topic" href="../tags/python">python</a><a class="rp-topic" href="../tags/linux">linux</a><a class="rp-topic" href="../tags/macos">macos</a><a class="rp-topic" href="../tags/windows">windows</a><a class="rp-topic" href="https://github.com/topics/bilibili-downloader">bilibili-downloader</a><a class="rp-topic" href="https://github.com/topics/bili23">bili23</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">GPL-3.0</span><span class="rp-meta-bit">Created 2022-03-05</span><a class="rp-meta-bit rp-home" href="https://bili23.scott-sloan.cn/" rel="noopener">bili23.scott-sloan.cn/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/ScottSloan/Bili23-Downloader">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v2.21.0</span><a class="rp-dl-a" href="https://github.com/ScottSloan/Bili23-Downloader/releases/tag/v2.21.0">v2.21.0 ↓</a><span class="rp-dl-ver">2.21.0</span><span class="rp-dl-date">2026-10-22</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+37</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">9,112</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">654</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">33</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">144</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">285</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">68</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Bili23-Downloader
+
+
+    🌐&amp;nbsp;&amp;nbsp;简体中文&amp;nbsp;&amp;nbsp;English
+
+
+
+    
+    
+    
+    
+    
+
+
+
+    
+        项目官网
+         • 
+        说明文档
+         • 
+        下载地址
+    
+
+
+
+    开源、免费、跨平台的 B 站视频下载工具
+
+
+
+
+ ⚡ 程序特性
+
+| 特性 | 详细说明 |
+| :--- | :--- |
+| 🖥️ 跨平台支持 | 完美兼容 Windows（含 Win 7）、Linux 和 macOS 三大桌面操作系统。 |
+| 🎨 现代 UI 设计 | 基于 Fluent Design 设计语言，支持浅色 / 深色主题无缝切换，原生适配高分屏，并会记住窗口位置与大小，下次启动自动恢复。 | 
+| 🚀 多线程与加速| 原生集成多线程并行下载、断点续传及网络异常自动重试机制，提供极致的下载速率，同时支持全局下载限速。因网络错误失败的任务会自动重新排队重试，间隔逐次延长并显示重试倒计时，可在设置中关闭或调整次数。 |
+| 🔗 多类型解析 | 全面支持：投稿视频、番剧、电影、课程、会员购课程、互动视频、音乐（au/am）、UP主空间、收藏夹、每周必看、订阅合集、追番追剧、稍后再看、历史记录等。 |
+| 🔍 批量与检索 | 支持一次粘贴多条投稿视频链接批量解析；个人空间、收藏夹、历史记录与稍后再看支持关键词搜索（可选择只筛选当前页或搜索全部内容）；解析完成后还可按预设条件自动勾选下载项；解析记录支持按标题、链接搜索，并可按内容类型筛选。 |
+| ⚙️ 音视频自定义| 画质：8K、4K、4K SDR 增强、HDR、杜比视界等 音质：Hi-Res 无损、杜比全景声等 编码：AVC、HEVC、AV1下载前可实时预览本次将要下载的媒体内容，所选编码不存在时会醒目提示实际下载的编码；这些选项也可直接在设置界面中调整并随配置保存。 |
+| 💬 弹幕与字幕 | 弹幕：xml、ass、json字幕：srt、lrc、txt、ass、json支持自定义弹幕与字幕样式、指定字幕语言，并可将 ass 格式的弹幕和字幕嵌入 mkv 容器中。 |
+| 🖼️ 封面与章节| 无损保存原图质量（jpg、png、avif、webp），原生支持将封面嵌入最终的视频文件（可选嵌入后删除原图），并支持写入视频的章节信息。 |
+| 🧩 NFO 元数据 | 自动刮削并生成符合 Kodi、Jellyfin、Emby 等媒体中心标准格式的本地媒体元数据。 |
+| 📁 分类与命名 | 内置强大规则引擎，可为投稿视频、番剧、课程、互动视频、收藏夹、个人空间、历史记录、稍后再看、每周必看、音乐等类型分别设置命名模板与多级目录分类存储模式。命名规则采用可视化编辑，一条规则即可同时适配单P与多P视频。 |
+| 📦 封装格式转化| 智能音视频流混合提取，支持封装输出为 mp4 或 mkv，充分满足不同播放设备的兼容需求，合并与转换过程实时显示进度。 |
+| 📊 下载管理 | 下载列表显示进度百分比与预计剩余时间，以标签展示画质、编码、音质、格式与附加内容；支持按标题、文件名、UP 主、合集名、BV 号搜索，并可按状态与媒体类型筛选，批量操作只作用于当前显示的任务。 |
+| 🚫 重复下载检测| 自动记录下载历史，再次下载相同内容时给出提示并可直接跳过，避免重复占用带宽与磁盘空间；解析列表中已下载过的条目会以绿色对勾标出。 |
+| 🌐 网络与代理 | 支持不使用代理、使用系统代理、手动设置三种代理模式，首次启动自动检测出口地区以选择合适的 CDN 节点，并支持自定义 User-Agent 与 Host。 |
+| 📋 剪贴板监控 | 自动识别复制到剪贴板中的 B 站链接（包括启动前就已复制的链接），确认后即可直接进入解析下载流程。 |
+| 🤖 AI 客户端接入 | 内置 MCP 服务器（默认关闭），支持 HTTP 直连与 stdio 桥接，可让 AI 客户端解析链接、创建和管理下载任务，并为单次任务指定画质、音质、编码等下载选项。 |
+| 🌍 国际化支持 | 内置多语言界面，开箱可用：简体中文、繁体中文、English。 |
+| 🔒 账号安全登录| 支持快捷安全的扫码登录、短信验证登录与 Cookie 登录。 |
+| 📖 完全开源免费| 基于 GPL-3.0 协议发布，代码完全开源、无内购、无广告，拥抱社区共建。 |
+
+ 📥 下载地址
+
+当前提供两种下载方式，可按使用场景选择：
+
+- GitHub Releases - 适合访问 GitHub 较稳定的用户，获取最新发布版本。
+- 官网下载（国内用户推荐） - 适合国内用户，通常访问更快、更稳定。
+
+ 🪧 使用协议
+本项目仅供个人学习与研究用途，下载内容仅限于个人非商业使用，严禁用于任何形式的商业目的、公开传播或分发。  
+本软件仅基于用户账号的合法访问权限操作，不会绕过任何付费墙或平台知识产权保护措施。请勿将本软件用于批量抓取或任何违反目标平台服务条款的行为。  
+
+免责声明：用户需完全自行承担使用本项目可能带来的所有风险（包括但不限于账号封禁、版权纠纷等）。项目开发者不对任何人因使用或无法使用本软件所引发的任何直接或间接法律纠纷、损害承担责任。  
+
+继续使用即表示您已充分理解并同意遵守上述全部条款。
+
+ 🔑 开源许可
+本项目在 GPLv3 License 许可协议下进行发布。
+
+wbi 签名、部分接口以及 buvid3 等参数生成参考 SocialSisterYi/bilibili-API-collect  
+
+Windows 端启动器（launcher/ 目录）fork 自 skywind3000/PyStand（MIT 协议），并在此基础上做了应用源码内嵌、完整性校验等定制，详见 launcher/README.md  
+
+ 🛠️ 参与贡献
+欢迎提出新的点子~
+
+
+    
+
+
+Made with contrib.rocks.
+
+ 🌟 社区交流
+加入社区，获取项目最新动态、问题答疑和技术交流。
+
+- QQ 交流群
+- QQ 频道
+
+ 如需提问，请提供问题描述、完整日志，以便我们更好地提供帮助。
+
+ 💪 支持作者
+
+本项目由开发者 Scott Sloan 利用业余时间独立开发与维护，初衷是为大家提供纯粹、无广告且高效的 B 站本地下载工具。
+
+ ⭐️ 点亮星标  
+ 如果这款工具为你节省了宝贵的时间，欢迎在项目右上角为其点亮一颗 Star！  
+ 你的支持能让更多有需要的人看到这个项目，这也会成为作者持续更新的最大动力。
+
+ ☕️ 请作者喝杯咖啡
+
+除了日常的代码维护外，处理复杂的跨平台环境以及重构发布都耗费了大量的时间与精力。如果软件确实帮你解决了不少麻烦，欢迎通过下方的赞助码请作者喝杯咖啡。这是对“为爱发电”最实在的认可！</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ScottSloan/Bili23-Downloader/issues/266"><span class="rp-item-num">#266</span><span class="rp-item-title">[Feature] 功能建议：Bili23 Downloader 能支持下载动态区的图片、文字和视频内容</span><span class="rp-item-extra">2 comments · 2025-11-29</span></a><a class="rp-item" href="https://github.com/ScottSloan/Bili23-Downloader/issues/494"><span class="rp-item-num">#494</span><span class="rp-item-title">[Feature] 希望能在元数据中添加标签的类别</span><span class="rp-item-extra">1 comments · 2026-11-05</span></a><a class="rp-item" href="https://github.com/ScottSloan/Bili23-Downloader/issues/489"><span class="rp-item-num">#489</span><span class="rp-item-title">[Feature] 💓可以鼠标拖拽多选吗？</span><span class="rp-item-extra">1 comments · 2026-10-27</span></a><a class="rp-item" href="https://github.com/ScottSloan/Bili23-Downloader/issues/495"><span class="rp-item-num">#495</span><span class="rp-item-title">[Feature] 支持 UP 主投稿与番剧更新的订阅自动下载（含固定更新时间与拖更重试）</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/ScottSloan/Bili23-Downloader/issues/493"><span class="rp-item-num">#493</span><span class="rp-item-title">[Bug] MKV 封面被封装为独立视频轨道，导致播放器出现额外视频流</span><span class="rp-item-extra">0 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/ScottSloan/Bili23-Downloader/issues/490"><span class="rp-item-num">#490</span><span class="rp-item-title">[Feature]添加设置最大FFmepg并行处理功能</span><span class="rp-item-extra">0 comments · 2026-10-29</span></a><a class="rp-item" href="https://github.com/ScottSloan/Bili23-Downloader/issues/488"><span class="rp-item-num">#488</span><span class="rp-item-title">[Bug] 下载失败：Client error &#x27;412 Precondition Failed&#x27; for url &#x27;...&#x27;</span><span class="rp-item-extra">0 comments · 2026-10-27</span></a><a class="rp-item" href="https://github.com/ScottSloan/Bili23-Downloader/issues/487"><span class="rp-item-num">#487</span><span class="rp-item-title">[Feature] 希望能做docker的版本</span><span class="rp-item-extra">0 comments · 2026-10-26</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ScottSloan/Bili23-Downloader/discussions/481"><span class="rp-item-num">#481</span><span class="rp-item-title">v2.21.0</span><span class="rp-item-extra">0 comments · 2026-10-22</span></a><a class="rp-item" href="https://github.com/ScottSloan/Bili23-Downloader/discussions/475"><span class="rp-item-num">#475</span><span class="rp-item-title">v2.20.0</span><span class="rp-item-extra">0 comments · 2026-09-27</span></a><a class="rp-item" href="https://github.com/ScottSloan/Bili23-Downloader/discussions/444"><span class="rp-item-num">#444</span><span class="rp-item-title">v2.15.0</span><span class="rp-item-extra">2 comments · 2026-08-19</span></a><a class="rp-item" href="https://github.com/ScottSloan/Bili23-Downloader/discussions/439"><span class="rp-item-num">#439</span><span class="rp-item-title">v2.14.0</span><span class="rp-item-extra">0 comments · 2026-08-14</span></a><a class="rp-item" href="https://github.com/ScottSloan/Bili23-Downloader/discussions/434"><span class="rp-item-num">#434</span><span class="rp-item-title">v2.13.0</span><span class="rp-item-extra">0 comments · 2026-08-12</span></a><a class="rp-item" href="https://github.com/ScottSloan/Bili23-Downloader/discussions/427"><span class="rp-item-num">#427</span><span class="rp-item-title">如何合并视频文件和字幕文件？</span><span class="rp-item-extra">0 comments · 2026-08-05</span></a><a class="rp-item" href="https://github.com/ScottSloan/Bili23-Downloader/discussions/425"><span class="rp-item-num">#425</span><span class="rp-item-title">v2.12.1</span><span class="rp-item-extra">1 comments · 2026-08-04</span></a><a class="rp-item" href="https://github.com/ScottSloan/Bili23-Downloader/discussions/422"><span class="rp-item-num">#422</span><span class="rp-item-title">v2.12.0</span><span class="rp-item-extra">0 comments · 2026-08-04</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/ScottSloan/Bili23-Downloader/releases"><b>v2.21.0</b> <span class="rp-rel-tag">v2.21.0</span> <span class="rp-item-extra">2026-10-22</span></a><pre class="rp-pre">2.21.0 (2026-10-22)
+ 新增
+- 解析记录支持按标题、链接搜索，并可按内容类型筛选
+- 解析列表中下载记录里已有的项目以绿色对勾标出，可在解析列表设置中关闭
+- 下载列表显示下载进度百分比与预计剩余时间
+- 下载列表以标签显示画质、编码、音质、格式与附加内容，封面角标标明媒体类型与时长
+- 下载列表支持按标题、文件名、UP 主、合集名、BV 号搜索，并可按状态与媒体类型筛选；筛选时顶栏的批量操作只作用于当前显示的任务
+
+ 优化
+- 优化下载列表显示效果
+- 文件大小按单位调整显示精度：KB 取整，MB 保留一位小数，GB 保留两位小数
+
+ 修复
+- 修复使用附带的 FFmpeg 时，仅下载音频无法输出 m4a 文件的问题
+- 修复 macOS 上退出程序时崩溃的问题
+- 修复从源码运行时检查更新报错的问题
+- 修复下载列表中新加入的任务不按所选排序方式排列的问题
+- 修复部分 CDN 节点返回错误数据区间，导致下载的视频花屏、音画不同步的问题
+- 修复 ASS 弹幕样式中的滚动时长与静止时长设置不生效的问题
+ [!CAUTION]
+ 强烈建议仅通过官方 GitHub 链接（即本页面下方的链接）下载本软件。 从第三方网站、网盘论坛或他人私下分享渠道获取的安装包，极有可能被二次篡改或植入病毒/木马。对于因下载、运行非官方渠道安装包所导致的任何设备损坏、隐私泄露或财产损</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/ScottSloan__Bili23-Downloader.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

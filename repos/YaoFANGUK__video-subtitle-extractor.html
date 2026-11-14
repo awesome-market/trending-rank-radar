@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YaoFANGUK/video-subtitle-extractor · GitHub Trending Rank Radar</title>
+<meta name="description" content="视频硬字幕提取，生成srt文件。无需申请第三方API，本地实现文本识别。基于深度学习的视频字幕提取框架，包含字幕区域检测、字幕内容提取。A GUI tool for extracting hard-coded subtitle (hardsub) from videos and generating srt files. ">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="video-subtitle-extractor, YaoFANGUK, YaoFANGUK/video-subtitle-extractor, github stars, github trending, star growth, star history, 开源项目, 星标增长, deep-learning, ocr, subtitles, srt, hardsub, extract">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/YaoFANGUK__video-subtitle-extractor">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="YaoFANGUK/video-subtitle-extractor · GitHub Trending Rank Radar">
+<meta property="og:description" content="视频硬字幕提取，生成srt文件。无需申请第三方API，本地实现文本识别。基于深度学习的视频字幕提取框架，包含字幕区域检测、字幕内容提取。A GUI tool for extracting hard-coded subtitle (hardsub) from videos and generating srt files. ">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/YaoFANGUK__video-subtitle-extractor">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "YaoFANGUK/video-subtitle-extractor", "codeRepository": "https://github.com/YaoFANGUK/video-subtitle-extractor", "url": "https://zhuikan.com/repos/YaoFANGUK__video-subtitle-extractor", "description": "视频硬字幕提取，生成srt文件。无需申请第三方API，本地实现文本识别。基于深度学习的视频字幕提取框架，包含字幕区域检测、字幕内容提取。A GUI tool for extracting hard-coded subtitle (hardsub) from videos and generating srt files. ", "author": {"@type": "Organization", "name": "YaoFANGUK", "url": "https://github.com/YaoFANGUK"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Python", "dateCreated": "2020-10-04", "keywords": "deep-learning,ocr,subtitles,srt,hardsub,extract,ripper,subrip"}</script>
+</head>
+<body data-repo="YaoFANGUK/video-subtitle-extractor" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">YaoFANGUK/video-subtitle-extractor</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="YaoFANGUK__video-subtitle-extractor"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/50165320?u=a970bfd2e92589dbf33d8a35afa0ec97054dd2fb&amp;v=4&s=300" width="300" height="300" alt="YaoFANGUK avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">video-subtitle-extractor</div>
+      <a class="rp-side-owner" href="https://github.com/YaoFANGUK">YaoFANGUK</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/YaoFANGUK">YaoFANGUK</a>
+        <span class="rp-sep">/</span><span class="rp-name">video-subtitle-extractor</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">视频硬字幕提取，生成srt文件。无需申请第三方API，本地实现文本识别。基于深度学习的视频字幕提取框架，包含字幕区域检测、字幕内容提取。A GUI tool for extracting hard-coded subtitle (hardsub) from videos and generating srt files. </p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,726</b></span><span class="rp-stat" title="forks">⑂ <b>987</b></span><span class="rp-stat" title="watchers">👁 <b>57</b></span><span class="rp-stat" title="prs">⑃ <b>68</b></span><span class="rp-stat" title="issues">● <b>372</b></span><span class="rp-stat" title="releases">▤ <b>5</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/deep-learning">deep-learning</a><a class="rp-topic" href="../tags/ocr">ocr</a><a class="rp-topic" href="https://github.com/topics/subtitles">subtitles</a><a class="rp-topic" href="https://github.com/topics/srt">srt</a><a class="rp-topic" href="https://github.com/topics/hardsub">hardsub</a><a class="rp-topic" href="https://github.com/topics/extract">extract</a><a class="rp-topic" href="https://github.com/topics/ripper">ripper</a><a class="rp-topic" href="https://github.com/topics/subrip">subrip</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2020-10-04</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/YaoFANGUK/video-subtitle-extractor">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">硬字幕提取器 2.2.0</span><a class="rp-dl-a" href="https://github.com/YaoFANGUK/video-subtitle-extractor/releases/tag/2.2.0">硬字幕提取器-2.2.0 ↓</a><span class="rp-dl-ver">2.2.0</span><span class="rp-dl-date">2026-04-04</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">9,726</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">987</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">57</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">68</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">372</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">5</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">简体中文 | English
+
+
+
+ 项目简介
+
+!License
+!python version
+!support os  
+
+Video-subtitle-extractor (VSE) 是一款将视频中的硬字幕提取为外挂字幕文件(srt格式)的软件
+主要实现了以下功能：
+
+- 提取视频中的关键帧
+- 检测视频帧中文本的所在位置
+- 识别视频帧中文本的内容
+- 过滤非字幕区域的文本
+- 去除水印、台标文本、原视频硬字幕，可配合：video-subtitle-remover (VSR) 
+- 去除重复字幕行，生成srt字幕文件/txt文本文件
+- 支持视频字幕批量提取
+- 多语言：支持简体中文（中英双语）、繁体中文、英文、日语、韩语、越南语、阿拉伯语、法语、德语、俄语、西班牙语、葡萄牙语、意大利语等87种语言的字幕提取
+- 多模式：
+  - 快速：（推荐）使用轻量模型，快速提取字幕，可能丢少量字幕、存在少量错别字
+  - 自动：（推荐）自动判断模型，CPU下使用轻量模型；GPU下使用精准模型，提取字幕速度较慢，可能丢少量字幕、几乎不存在错别字
+  - 精准：（不推荐）使用精准模型，GPU下逐帧检测，不丢字幕，几乎不存在错别字，但速度非常慢
+
+ 请优先使用快速/自动模式，如果前两种模式存在较多丢字幕轴情况时，再使用精准模式
+ 
+
+
+项目特色：
+
+- 采用本地进行OCR识别，无需设置调用任何API，不需要接入百度、阿里等在线OCR服务即可本地完成文本识别
+- 支持GPU加速，GPU加速后可以获得更高的准确率与更快的提取速度
+
+使用说明：
+
+- 有使用问题请加群讨论，QQ群：210150985（已满）、806152575（已满）、816881808（已满）、295894827
+
+- 点击【打开】后选择视频文件，调整字幕区域，点击【运行】
+  - 单文件提取：打开文件的时候选择单个视频
+  - 批量提取：打开文件的时候选择多个视频，确保每个视频的分辨率、字幕区域保持一致
+
+- 去除水印文本/替换特定文本：
+ 如果视频中出现特定的文本需要删除，或者特定的文本需要替换，可以编辑 backend/configs/typoMap.json文件，加入你要替换或去除的内容
+
+json
+{
+	&quot;l&#x27;m&quot;: &quot;I&#x27;m&quot;,
+	&quot;l just&quot;: &quot;I just&quot;,
+	&quot;Let&#x27;sqo&quot;: &quot;Let&#x27;s go&quot;,
+	&quot;Iife&quot;: &quot;life&quot;,
+	&quot;威筋&quot;: &quot;威胁&quot;,
+  	&quot;性感荷官在线发牌&quot;: &quot;&quot;
+}
+
+
+ 这样就可以把文本中出现的所有“威筋”替换为“威胁”，所有的“性感荷官在线发牌”文本删除
+
+- 视频以及程序路径请不要带中文和空格，否则可能出现未知错误！！！
+
+  如：以下存放视频和代码的路径都不行
+ 
+  D:\下载\vse\运行程序.exe（路径含中文）
+ 
+  E:\study\kaoyan\sanshang youya.mp4 （路径含空格） 
+
+- 直接下载压缩包解压运行，如果不能运行再按照下面的教程，尝试源码安装conda环境运行
+
+下载地址： Release 
+
+ 有任何改进意见请在ISSUES和DISCUSSION中提出
+
+ NVIDIA官方提供了各GPU型号的计算能力列表，您可以参考链接: CUDA GPUs 查看你的GPU适合哪个CUDA版本
+
+ NVIDIA 50系显卡需要使用cuda12.8.0及以上版本, 但Paddle3.3.1目前仍未支持，所以建议使用Directml通用版本
+
+识别模式选择说明：
+|    模式名称    | GPU | OCR模型尺寸 | 字幕检测引擎 | 备注 |
+|---------------|-----|---------|------|------|
+|    快速        | 有/无 | 迷你  | VideoSubFinder | |
+|    自动  | 有| 大  | VideoSubFinder |  推荐   |
+|    自动  | 无| 迷你  | VideoSubFinder |  推荐   |
+|    精准        | 有/无| 大  | VSE | 非常慢 |
+ Windows/Linux/MacOS环境下字幕检测引擎都是VideoSubFinder
+
+ 演示
+
+- GUI版：点击查看GPU版本源码运行的安装教程 👈
+
+
+
+
+ 源码使用说明
+
+ 1. 安装 Python
+
+请确保您已经安装了 Python 3.12+
+
+- Windows 用户可以前往 Python 官网 下载并安装 Python
+- MacOS 用户可以使用 Homebrew 安装：
+  shell
+  brew install python@3.12
+  
+- Linux 用户可以使用包管理器安装，例如 Ubuntu/Debian：
+  shell
+  sudo apt update &amp;&amp; sudo apt install python3.12 python3.12-venv python3.12-dev
+  
+
+ 2. 安装依赖文件
+
+请使用虚拟环境来管理项目依赖，避免与系统环境冲突
+
+（1）创建虚拟环境并激活
+shell
+python -m venv videoEnv
+
+
+- Windows：
+shell
+videoEnv\\Scripts\\activate
+
+- MacOS/Linux：
+shell
+source videoEnv/bin/activate
+
+
+ 3. 创建并激活项目目录
+
+切换到源码所在目录：
+shell
+cd 
+
+ 例如：如果您的源代码放在 D 盘的 tools 文件夹下，并且源代码的文件夹名为 video-subtitle-extractor，则输入：
+ shell
+ cd D:/tools/video-subtitle-extractor-main
+ 
+
+ 4. 安装合适的运行环境
+
+本项目支持 CUDA（NVIDIA显卡加速）、CPU（无 GPU）、DirectML（AMD、Intel等GPU/APU加速）、ONNX四种运行模式
+
+ (1) CUDA（NVIDIA 显卡用户）
+
+ 请确保您的 NVIDIA 显卡驱动支持所选 CUDA 版本
+
+- 推荐 CUDA 11.8，对应 cuDNN 8.6.0
+
+- 安装 CUDA：
+  - Windows：CUDA 11.8 下载
+  - Linux：
+    shell
+    wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda_11.8.0_520.61.05_linux.run
+    sudo sh cuda_11.8.0_520.61.05_linux.run
+    
+  - MacOS 不支持 CUDA
+
+- 安装 cuDNN（CUDA 11.8 对应 cuDNN 8.6.0）：
+  - Windows cuDNN 8.6.0 下载
+  - Linux cuDNN 8.6.0 下载
+  - 安装方法请参考 NVIDIA 官方文档
+
+</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/YaoFANGUK/video-subtitle-extractor/issues/243"><span class="rp-item-num">#243</span><span class="rp-item-title">代码逻辑疑问</span><span class="rp-item-extra">19 comments · 2023-10-19</span></a><a class="rp-item" href="https://github.com/YaoFANGUK/video-subtitle-extractor/issues/246"><span class="rp-item-num">#246</span><span class="rp-item-title">帧号到时间戳的耗时</span><span class="rp-item-extra">12 comments · 2023-10-20</span></a><a class="rp-item" href="https://github.com/YaoFANGUK/video-subtitle-extractor/issues/465"><span class="rp-item-num">#465</span><span class="rp-item-title">进度始终卡在94%无法完成</span><span class="rp-item-extra">11 comments · 2026-08-12</span></a><a class="rp-item" href="https://github.com/YaoFANGUK/video-subtitle-extractor/issues/130"><span class="rp-item-num">#130</span><span class="rp-item-title">mac版有问题</span><span class="rp-item-extra">10 comments · 2022-05-28</span></a><a class="rp-item" href="https://github.com/YaoFANGUK/video-subtitle-extractor/issues/58"><span class="rp-item-num">#58</span><span class="rp-item-title">ES support</span><span class="rp-item-extra">10 comments · 2021-12-18</span></a><a class="rp-item" href="https://github.com/YaoFANGUK/video-subtitle-extractor/issues/443"><span class="rp-item-num">#443</span><span class="rp-item-title">一直停留在94%</span><span class="rp-item-extra">9 comments · 2026-06-02</span></a><a class="rp-item" href="https://github.com/YaoFANGUK/video-subtitle-extractor/issues/432"><span class="rp-item-num">#432</span><span class="rp-item-title">50系显卡不支持吗</span><span class="rp-item-extra">9 comments · 2026-04-10</span></a><a class="rp-item" href="https://github.com/YaoFANGUK/video-subtitle-extractor/issues/367"><span class="rp-item-num">#367</span><span class="rp-item-title">bro,你这个视频识别怎么只有七分钟啊？cpu版和gpu版都是？</span><span class="rp-item-extra">8 comments · 2024-12-29</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/YaoFANGUK/video-subtitle-extractor/discussions/466"><span class="rp-item-num">#466</span><span class="rp-item-title">It stopped at 94%</span><span class="rp-item-extra">1 comments · 2026-08-17</span></a><a class="rp-item" href="https://github.com/YaoFANGUK/video-subtitle-extractor/discussions/436"><span class="rp-item-num">#436</span><span class="rp-item-title">I would like to suggest ways to improve the software&#x27;s Vietnamese language recognition accuracy.</span><span class="rp-item-extra">0 comments · 2026-05-07</span></a><a class="rp-item" href="https://github.com/YaoFANGUK/video-subtitle-extractor/discussions/435"><span class="rp-item-num">#435</span><span class="rp-item-title">Several suggestions</span><span class="rp-item-extra">3 comments · 2026-04-29</span></a><a class="rp-item" href="https://github.com/YaoFANGUK/video-subtitle-extractor/discussions/434"><span class="rp-item-num">#434</span><span class="rp-item-title">生成的.srt文件总是0字节，能不能跳过isa和ila图片处理，直接对rgb图片做OCR识别呢？isa和ila图片总是一片白色</span><span class="rp-item-extra">0 comments · 2026-04-22</span></a><a class="rp-item" href="https://github.com/YaoFANGUK/video-subtitle-extractor/discussions/433"><span class="rp-item-num">#433</span><span class="rp-item-title">I only need to output subtitles, not render the video, so where do I install it?</span><span class="rp-item-extra">0 comments · 2026-04-21</span></a><a class="rp-item" href="https://github.com/YaoFANGUK/video-subtitle-extractor/discussions/424"><span class="rp-item-num">#424</span><span class="rp-item-title">Tutorial unavailable</span><span class="rp-item-extra">0 comments · 2026-01-07</span></a><a class="rp-item" href="https://github.com/YaoFANGUK/video-subtitle-extractor/discussions/394"><span class="rp-item-num">#394</span><span class="rp-item-title">gui.py无法批量处理</span><span class="rp-item-extra">2 comments · 2025-05-18</span></a><a class="rp-item" href="https://github.com/YaoFANGUK/video-subtitle-extractor/discussions/347"><span class="rp-item-num">#347</span><span class="rp-item-title">Error with Chinese caracter</span><span class="rp-item-extra">2 comments · 2024-09-29</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/YaoFANGUK/video-subtitle-extractor/releases"><b>硬字幕提取器 2.2.0</b> <span class="rp-rel-tag">2.2.0</span> <span class="rp-item-extra">2026-04-04</span></a><pre class="rp-pre">🚀 VSE v2.2.0 正式版发布✨
+🎉 新特性
+· ⚡ 支持同步时间轴
+· 🗂️ 支持设置字幕保存路径
+· 🌐 添加土耳其语翻译
+· 🧹界面优化
+· 🐍 Python 3.13 + 升级PaddleOCRv5 准确率更高
+· 💎 支持MacOS M系列芯片</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/YaoFANGUK__video-subtitle-extractor.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

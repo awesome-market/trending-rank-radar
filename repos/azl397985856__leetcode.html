@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>azl397985856/leetcode · GitHub Trending Rank Radar</title>
+<meta name="description" content="LeetCode Solutions: A Record of My Problem Solving Journey.( leetcode题解，记录自己的leetcode解题之路。)">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="leetcode, azl397985856, azl397985856/leetcode, github stars, github trending, star growth, star history, 开源项目, 星标增长, algorithm, leetcode, interview, computer-science, cpp, javascript">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/azl397985856__leetcode">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="azl397985856/leetcode · GitHub Trending Rank Radar">
+<meta property="og:description" content="LeetCode Solutions: A Record of My Problem Solving Journey.( leetcode题解，记录自己的leetcode解题之路。)">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/azl397985856__leetcode">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "azl397985856/leetcode", "codeRepository": "https://github.com/azl397985856/leetcode", "url": "https://zhuikan.com/repos/azl397985856__leetcode", "description": "LeetCode Solutions: A Record of My Problem Solving Journey.( leetcode题解，记录自己的leetcode解题之路。)", "author": {"@type": "Organization", "name": "azl397985856", "url": "https://github.com/azl397985856"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "JavaScript", "dateCreated": "2018-03-30", "keywords": "algorithm,leetcode,interview,computer-science,cpp,javascript,python,java,data-structures,tree"}</script>
+</head>
+<body data-repo="azl397985856/leetcode" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">azl397985856/leetcode</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="azl397985856__leetcode"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/12479470?u=442571e44cbd0b67e3503e9551d4445c78f593f8&amp;v=4&s=300" width="300" height="300" alt="azl397985856 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">leetcode</div>
+      <a class="rp-side-owner" href="https://github.com/azl397985856">azl397985856</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/azl397985856">azl397985856</a>
+        <span class="rp-sep">/</span><span class="rp-name">leetcode</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">LeetCode Solutions: A Record of My Problem Solving Journey.( leetcode题解，记录自己的leetcode解题之路。)</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>55,705</b></span><span class="rp-stat" title="forks">⑂ <b>9,332</b></span><span class="rp-stat" title="watchers">👁 <b>1,307</b></span><span class="rp-stat" title="prs">⑃ <b>317</b></span><span class="rp-stat" title="issues">● <b>258</b></span><span class="rp-stat" title="releases">▤ <b>40</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/algorithm">algorithm</a><a class="rp-topic" href="https://github.com/topics/leetcode">leetcode</a><a class="rp-topic" href="../tags/interview">interview</a><a class="rp-topic" href="../tags/computer-science">computer-science</a><a class="rp-topic" href="../tags/cpp">cpp</a><a class="rp-topic" href="../tags/javascript">javascript</a><a class="rp-topic" href="../tags/python">python</a><a class="rp-topic" href="../tags/java">java</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2018-03-30</span><a class="rp-meta-bit rp-home" href="https://leetcode-solution-leetcode-pp.gitbook.io/leetcode-solution/" rel="noopener">leetcode-solution-leetcode-pp.gitbook.io/leetcode-solution/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/azl397985856/leetcode">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">English Version Of thinkings(增加英文版专题翻译)</span><a class="rp-dl-a" href="https://github.com/azl397985856/leetcode/releases/tag/v0.39">English-0.39 ↓</a><span class="rp-dl-ver">0.39</span><span class="rp-dl-date">2022-04-16</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">55,705</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">9,332</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">1,307</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">317</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">258</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">40</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">LeetCode
+
+     
+
+    
+
+简体中文 | English
+
+---
+
+我们的 slogan 是： 只有熟练掌握基础的数据结构与算法，才能对复杂问题迎刃有余。
+
+
+
+ 🔥🔥🔥 我的《算法通关之路》出版了 🔥🔥🔥
+
+我的新书《算法通关之路》出版了。
+
+
+
+- 实体版购书链接 1
+
+- 实体版购书链接 2
+
+- 电子版购书链接
+
+ 图片加载不出来如何解决？
+
+
+ 力扣专属折扣
+
+力扣免费题目已经有了很多经典的了，也覆盖了所有的题型，只是很多公司的真题都是锁定的。个人觉得如果你准备找工作的时候，可以买一个会员。另外会员很多leetbook 也可以看，结合学习计划，效率还是蛮高的。
+
+现在力扣在每日一题基础上还搞了一个 plus 会员挑战，每天刷题可以获得积分，积分可以兑换力扣周边。
+
+
+
+如果你要买力扣会员的话，这里有我的专属力扣折扣：https://leetcode.cn/premium/?promoChannel=lucifer (年度会员多送两个月会员，季度会员多送两周会员)
+ :calendar:《91 天学算法》限时活动
+
+很多教育机构宣传的 7 天，一个月搞定算法面试的，我大概都了解了下，不怎么靠谱。学习算法这东西，还是要靠积累，没有量变是不可能有质变的。还有的人选择看书，这是一个不错的选择。但是很多人选了过时的或者质量差的书，又或者不会去写书中给的练习题，导致效果很差。
+
+基于这几个原因，我组织了一个 91 天刷题活动，通过一个相对比较长的时间（91 天）给出最新的学习路径，并强制大家打卡这种高强度练习来让大家在 91 天后遇见更好的自己。详细活动介绍可以点下方链接查看。另外往期的讲义也在下面了，大家可以看看合不合你的口味。
+
+最后送给大家一句话： 坚持下去，会有突然间成长的一天。
+
+点此参与
+
+- 🔥🔥🔥🔥 活动首页 🔥🔥🔥🔥
+- 91 第三期讲义 - 二分专题（上）
+- 91 第三期讲义 - 二分专题（下）
+
+ 1V1 辅导
+
+如果大家觉得上面的集体活动效率比较低，我目前也接受 1v1 算法辅导，价格根据你的算法基础以及想要学习的内容而定感兴趣的可以加我微信，备注“算法辅导”，微信号 DevelopeEngineer。
+
+
+ :octocat: 仓库介绍
+
+leetcode 题解，记录自己的 leetcode 解题之路。
+
+本仓库目前分为五个部分：
+
+- 第一个部分是 leetcode 经典题目的解析，包括思路，关键点和具体的代码实现。
+
+- 第二部分是对于数据结构与算法的总结
+
+- 第三部分是 anki 卡片， 将 leetcode 题目按照一定的方式记录在 anki 中，方便大家记忆。
+
+- 第四部分是每日一题，每日一题是在交流群（包括微信和 qq）里进行的一种活动，大家一起 解一道题，这样讨论问题更加集中，会得到更多的反馈。而且 这些题目可以被记录下来，日后会进行筛选添加到仓库的题解模块。
+
+- 第五部分是计划， 这里会记录将来要加入到以上三个部分内容
+
+ :blue_book: 电子书
+
+注意：这里的电子书并不是《算法通关之路》的电子版，而是本仓库内容的电子版！
+
+在线阅读地址
+
+限时免费下载！后期随时可能收费
+
+可以去我的公众号《力扣加加》后台回复电子书获取！
+
+
+
+ epub 还是有动图的
+
+另外有些内容只在公众号发布，因此大家觉得内容不错的话，可以关注一下。如果再给 ➕ 个星标就更棒啦！
+
+ :meat_on_bone: 仓库食用指南
+
+- 这里有一张互联网公司面试中经常考察的问题类型总结的思维导图，我们可以结合图片中的信息分析一下。
+
+!leetcode-zhihu
+
+（图片来自 leetcode)
+
+其中算法，主要是以下几种：
+
+- 基础技巧：分治、二分、贪心
+- 排序算法：快速排序、归并排序、计数排序
+- 搜索算法：回溯、递归、深度优先遍历，广度优先遍历，二叉搜索树等
+- 图论：最短路径、最小生成树
+- 动态规划：背包问题、最长子序列
+
+数据结构，主要有如下几种：
+
+- 数组与链表：单 / 双向链表
+- 栈与队列
+- 哈希表
+- 堆：最大堆 ／ 最小堆
+- 树与图：最近公共祖先、并查集
+- 字符串：前缀树（字典树） ／ 后缀树
+
+我在网上找到一份 《Interview Cheat Sheet》，这个 PDF 列举了面试的模板步骤。，详细指示了如何一步步完成面试。
+
+这个 pdf 开头就提到了好的代码三个标准：
+
+1. 可读性
+2. 时间复杂度
+3. 空间复杂度
+
+这写的太好了。
+
+紧接着，列举了 15 算法面试的步骤。比如步骤一：当面试官提问完后，你需要先下来关键点（之后再下面写注释和代码） 看完我的感受就是，面试只要按照这个来做，成功率蹭蹭提升
+
+ 数据结构与算法的总结
+
+- 数据结构总览
+- 链表专题
+- 树专题
+- 堆专题（上）
+- 堆专题（下）
+- 二分专题（上）
+- 二分专题（下）
+
+
+
+- 动态规划（重置版）
+- 大话搜索
+- 二叉树的遍历
+- 回溯
+- 哈夫曼编码和游程编码
+- 布隆过滤器🖊
+- 前缀树🖊
+- 《日程安排》专题
+- 《构造二叉树》专题
+- 滑动窗口（思路 + 模板）
+- 位运算
+- 小岛问题🖊
+- 最大公约数
+- 并查集
+- 平衡二叉树专题
+- 蓄水池抽样
+- 单调栈
+
+ :exclamation: 怎么刷 LeetCode？
+
+- 我是如何刷 LeetCode 的
+- 算法小白如何高效、快速刷 leetcode？
+- 刷题效率低？或许你就差这么一个插件
+- 力扣刷题插件
+
+ :computer: 插件
+
+或许是一个可以改变你刷题效率的浏览器扩展插件。
+
+插件地址：。
+
+ 不能访问谷歌商店的朋友可以去我的公众号回复插件获取离线版。强烈推荐大家使用谷歌商店安装， 这样如果有更新可以自动安装，毕竟咱们的插件更新还是蛮快的。
+
+另外大家也可以使用 zerotrac 开发的用于计算力扣中题目分数的网站。这里的分数指的是竞赛分，大家可以根据自己的竞赛分选择稍微比自己竞赛分高一点的题目进行练习，注意这个只是根据通过人数等计算的一个预估分数。地址：https://zerotrac.github.io/leetcode_problem_rating/
+
+ 精选题解
+
+- 字典序列删除
+- 一次搞定前缀和
+- 字节跳动的算法面试题是什么难度？
+- 字节跳动的算法面试题是什么难度？（第二弹）
+- 《我是你的妈妈呀》 - 第一期
+- 一文带你看懂二叉树的序列化
+- 穿上衣服我就不认识你了？来聊聊最长上升子序列
+- 你的衣服我扒了 - 《最长公共子序列》
+- 一文看懂《最大子序列和问题》
+
+ leetcode 经典题目的解析（200 多道）
+
+ 这里仅列举具有代表性题目，并不是全部题目
+
+目前更新了 200 多道题解，加上专题涉及的题目，差不多有 300 道。
+
+ 简单难度题目合集
+
+这里的题目难度比较小， 大多是模拟题，或者是很容易看出解法的题目，另外简单题目一般使用暴力法都是可以解决的。 这个时候只有看一下数据范围，思考下你的算法复杂度就行了。
+
+当然也不排除很多 hard 题目也可以暴力模拟，大家平时多注意数据范围即可。
+
+以下</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/azl397985856/leetcode/issues/382"><span class="rp-item-num">#382</span><span class="rp-item-title">【刷题小助手】贡献公司标签（面试遇到leetcode原题或类似题），成为开源项目的贡献者😘</span><span class="rp-item-extra">14 comments · 2020-06-09</span></a><a class="rp-item" href="https://github.com/azl397985856/leetcode/issues/171"><span class="rp-item-num">#171</span><span class="rp-item-title">【每日一题】- 2019-09-12 - 药不能停</span><span class="rp-item-extra">12 comments · 2019-09-12</span></a><a class="rp-item" href="https://github.com/azl397985856/leetcode/issues/219"><span class="rp-item-num">#219</span><span class="rp-item-title">1168. optimize water distribution in a village python解法超出时间限制</span><span class="rp-item-extra">10 comments · 2019-10-30</span></a><a class="rp-item" href="https://github.com/azl397985856/leetcode/issues/622"><span class="rp-item-num">#622</span><span class="rp-item-title">https://github.com/azzouzabdelhak68-ship-it/omni-lang</span><span class="rp-item-extra">3 comments · 2026-08-20</span></a><a class="rp-item" href="https://github.com/azl397985856/leetcode/issues/608"><span class="rp-item-num">#608</span><span class="rp-item-title">a</span><span class="rp-item-extra">3 comments · 2024-10-21</span></a><a class="rp-item" href="https://github.com/azl397985856/leetcode/issues/572"><span class="rp-item-num">#572</span><span class="rp-item-title">【专题】 反向思考</span><span class="rp-item-extra">3 comments · 2022-11-14</span></a><a class="rp-item" href="https://github.com/azl397985856/leetcode/issues/621"><span class="rp-item-num">#621</span><span class="rp-item-title">【每日一题】- 2020-xx-xx - xxx</span><span class="rp-item-extra">0 comments · 2026-07-06</span></a><a class="rp-item" href="https://github.com/azl397985856/leetcode/issues/605"><span class="rp-item-num">#605</span><span class="rp-item-title">feat(translation): xxxxxxx</span><span class="rp-item-extra">0 comments · 2024-09-29</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/azl397985856/leetcode/discussions/596"><span class="rp-item-num">#596</span><span class="rp-item-title">Hfbfbfbfb</span><span class="rp-item-extra">0 comments · 2023-11-10</span></a><a class="rp-item" href="https://github.com/azl397985856/leetcode/discussions/581"><span class="rp-item-num">#581</span><span class="rp-item-title">cpp code</span><span class="rp-item-extra">6 comments · 2023-03-29</span></a><a class="rp-item" href="https://github.com/azl397985856/leetcode/discussions/576"><span class="rp-item-num">#576</span><span class="rp-item-title">Leetcode question for JR Dev</span><span class="rp-item-extra">1 comments · 2022-11-29</span></a><a class="rp-item" href="https://github.com/azl397985856/leetcode/discussions/575"><span class="rp-item-num">#575</span><span class="rp-item-title">Companies without leetcode interview</span><span class="rp-item-extra">1 comments · 2022-11-29</span></a><a class="rp-item" href="https://github.com/azl397985856/leetcode/discussions/542"><span class="rp-item-num">#542</span><span class="rp-item-title">test for q&amp;a</span><span class="rp-item-extra">1 comments · 2022-04-13</span></a><a class="rp-item" href="https://github.com/azl397985856/leetcode/discussions/532"><span class="rp-item-num">#532</span><span class="rp-item-title">91 天学算法</span><span class="rp-item-extra">14 comments · 2022-03-19</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/azl397985856/leetcode/releases"><b>English Version Of thinkings(增加英文版专题翻译)</b> <span class="rp-rel-tag">v0.39</span> <span class="rp-item-extra">2022-04-16</span></a></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/azl397985856__leetcode.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

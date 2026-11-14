@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>aymericdamien/TensorFlow-Examples · GitHub Trending Rank Radar</title>
+<meta name="description" content="TensorFlow Tutorial and Examples for Beginners (support TF v1 &amp; v2)">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="TensorFlow-Examples, aymericdamien, aymericdamien/TensorFlow-Examples, github stars, github trending, star growth, star history, 开源项目, 星标增长, tensorflow, tutorial, examples, deep-learning, python, machine-learning">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/aymericdamien__TensorFlow-Examples">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="aymericdamien/TensorFlow-Examples · GitHub Trending Rank Radar">
+<meta property="og:description" content="TensorFlow Tutorial and Examples for Beginners (support TF v1 &amp; v2)">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/aymericdamien__TensorFlow-Examples">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "aymericdamien/TensorFlow-Examples", "codeRepository": "https://github.com/aymericdamien/TensorFlow-Examples", "url": "https://zhuikan.com/repos/aymericdamien__TensorFlow-Examples", "description": "TensorFlow Tutorial and Examples for Beginners (support TF v1 & v2)", "author": {"@type": "Organization", "name": "aymericdamien", "url": "https://github.com/aymericdamien"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "Jupyter Notebook", "dateCreated": "2015-11-11", "keywords": "tensorflow,tutorial,examples,deep-learning,python,machine-learning"}</script>
+</head>
+<body data-repo="aymericdamien/TensorFlow-Examples" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">aymericdamien/TensorFlow-Examples</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="aymericdamien__TensorFlow-Examples"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/10386605?u=b6fdf4ba142ed7528a75446af0f5fa477e8d2ce1&amp;v=4&s=300" width="300" height="300" alt="aymericdamien avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">TensorFlow-Examples</div>
+      <a class="rp-side-owner" href="https://github.com/aymericdamien">aymericdamien</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/aymericdamien">aymericdamien</a>
+        <span class="rp-sep">/</span><span class="rp-name">TensorFlow-Examples</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">TensorFlow Tutorial and Examples for Beginners (support TF v1 &amp; v2)</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>43,733</b></span><span class="rp-stat" title="forks">⑂ <b>14,605</b></span><span class="rp-stat" title="watchers">👁 <b>1,998</b></span><span class="rp-stat" title="prs">⑃ <b>175</b></span><span class="rp-stat" title="issues">● <b>239</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/tensorflow">tensorflow</a><a class="rp-topic" href="../tags/tutorial">tutorial</a><a class="rp-topic" href="https://github.com/topics/examples">examples</a><a class="rp-topic" href="../tags/deep-learning">deep-learning</a><a class="rp-topic" href="../tags/python">python</a><a class="rp-topic" href="../tags/machine-learning">machine-learning</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Jupyter Notebook</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2015-11-11</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/aymericdamien/TensorFlow-Examples">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">43,733</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">14,605</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">1,998</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">175</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">239</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">TensorFlow Examples
+
+This tutorial was designed for easily diving into TensorFlow, through examples. For readability, it includes both notebooks and source codes with explanation, for both TF v1 &amp; v2.
+
+It is suitable for beginners who want to find clear and concise examples about TensorFlow. Besides the traditional &#x27;raw&#x27; TensorFlow implementations, you can also find the latest TensorFlow API practices (such as layers, estimator, dataset, ...).
+
+Update (11/13/2026): JAX Examples Available: check here.
+
+Update (05/16/2020): Moving all default examples to TF2. For TF v1 examples: check here.
+
+ Tutorial index
+
+ 0 - Prerequisite
+- Introduction to Machine Learning.
+- Introduction to MNIST Dataset.
+
+ 1 - Introduction
+- Hello World (notebook). Very simple example to learn how to print &quot;hello world&quot; using TensorFlow 2.0+.
+- Basic Operations (notebook). A simple example that cover TensorFlow 2.0+ basic operations.
+
+ 2 - Basic Models
+- Linear Regression (notebook). Implement a Linear Regression with TensorFlow 2.0+.
+- Logistic Regression (notebook). Implement a Logistic Regression with TensorFlow 2.0+.
+- Word2Vec (Word Embedding) (notebook). Build a Word Embedding Model (Word2Vec) from Wikipedia data, with TensorFlow 2.0+.
+- GBDT (Gradient Boosted Decision Trees) (notebooks). Implement a Gradient Boosted Decision Trees with TensorFlow 2.0+ to predict house value using Boston Housing dataset.
+
+ 3 - Neural Networks
+ Supervised
+
+- Simple Neural Network (notebook). Use TensorFlow 2.0 &#x27;layers&#x27; and &#x27;model&#x27; API to build a simple neural network to classify MNIST digits dataset.
+- Simple Neural Network (low-level) (notebook). Raw implementation of a simple neural network to classify MNIST digits dataset.
+- Convolutional Neural Network (notebook). Use TensorFlow 2.0+ &#x27;layers&#x27; and &#x27;model&#x27; API to build a convolutional neural network to classify MNIST digits dataset.
+- Convolutional Neural Network (low-level) (notebook). Raw implementation of a convolutional neural network to classify MNIST digits dataset.
+- Recurrent Neural Network (LSTM) (notebook). Build a recurrent neural network (LSTM) to classify MNIST digits dataset, using TensorFlow 2.0 &#x27;layers&#x27; and &#x27;model&#x27; API.
+- Bi-directional Recurrent Neural Network (LSTM) (notebook). Build a bi-directional recurrent neural network (LSTM) to classify MNIST digits dataset, using TensorFlow 2.0+ &#x27;layers&#x27; and &#x27;model&#x27; API.
+- Dynamic Recurrent Neural Network (LSTM) (notebook). Build a recurrent neural network (LSTM) that performs dynamic calculation to classify sequences of variable length, using TensorFlow 2.0+ &#x27;layers&#x27; and &#x27;model&#x27; API.
+
+ Unsupervised
+- Auto-Encoder (notebook). Build an auto-encoder to encode an image to a lower dimension and re-construct it.
+- DCGAN (Deep Convolutional Generative Adversarial Networks) (notebook). Build a Deep Convolutional Generative Adversarial Network (DCGAN) to generate images from noise.
+
+ 4 - Utilities
+- Save and Restore a model (notebook). Save and Restore a model with TensorFlow 2.0+.
+- </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/aymericdamien/TensorFlow-Examples/issues/38"><span class="rp-item-num">#38</span><span class="rp-item-title">Dst tensor is not initialized</span><span class="rp-item-extra">37 comments · 2016-06-05</span></a><a class="rp-item" href="https://github.com/aymericdamien/TensorFlow-Examples/issues/219"><span class="rp-item-num">#219</span><span class="rp-item-title">Can&#x27;t freeze random forest to generate .pb</span><span class="rp-item-extra">10 comments · 2018-01-02</span></a><a class="rp-item" href="https://github.com/aymericdamien/TensorFlow-Examples/issues/22"><span class="rp-item-num">#22</span><span class="rp-item-title">confused about sess.run() function</span><span class="rp-item-extra">9 comments · 2016-03-29</span></a><a class="rp-item" href="https://github.com/aymericdamien/TensorFlow-Examples/issues/216"><span class="rp-item-num">#216</span><span class="rp-item-title">tensorflow.python.framework.errors_impl.NotFoundError: Op type not registered &#x27;FertileStatsResourceHandleOp&#x27; in binary running on NS80011718.</span><span class="rp-item-extra">8 comments · 2017-12-20</span></a><a class="rp-item" href="https://github.com/aymericdamien/TensorFlow-Examples/issues/406"><span class="rp-item-num">#406</span><span class="rp-item-title">possible issue at: tensorflow_v2/notebooks/3_NeuralNetworks/autoencoder.ipynb</span><span class="rp-item-extra">6 comments · 2022-03-13</span></a><a class="rp-item" href="https://github.com/aymericdamien/TensorFlow-Examples/issues/25"><span class="rp-item-num">#25</span><span class="rp-item-title">bidirectional RNN states never updated? </span><span class="rp-item-extra">6 comments · 2016-04-28</span></a><a class="rp-item" href="https://github.com/aymericdamien/TensorFlow-Examples/issues/331"><span class="rp-item-num">#331</span><span class="rp-item-title">import tensorflow.contrib.eager as tfe error</span><span class="rp-item-extra">5 comments · 2019-10-16</span></a><a class="rp-item" href="https://github.com/aymericdamien/TensorFlow-Examples/issues/214"><span class="rp-item-num">#214</span><span class="rp-item-title">Numpy input error - list object has no attribute shape when running mnist example</span><span class="rp-item-extra">5 comments · 2017-12-17</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/aymericdamien__TensorFlow-Examples.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

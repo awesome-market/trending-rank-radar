@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jundot/omlx · GitHub Trending Rank Radar</title>
+<meta name="description" content="LLM inference server with continuous batching &amp; SSD caching for Apple Silicon — managed from the macOS menu bar">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="omlx, jundot, jundot/omlx, github stars, github trending, star growth, star history, 开源项目, 星标增长, apple-silicon, inference-server, llm, macos, mlx, openai-api">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/jundot__omlx">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="jundot/omlx · GitHub Trending Rank Radar">
+<meta property="og:description" content="LLM inference server with continuous batching &amp; SSD caching for Apple Silicon — managed from the macOS menu bar">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/jundot__omlx">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "jundot/omlx", "codeRepository": "https://github.com/jundot/omlx", "url": "https://zhuikan.com/repos/jundot__omlx", "description": "LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar", "author": {"@type": "Organization", "name": "jundot", "url": "https://github.com/jundot"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Python", "dateCreated": "2026-02-13", "keywords": "apple-silicon,inference-server,llm,macos,mlx,openai-api"}</script>
+</head>
+<body data-repo="jundot/omlx" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">jundot/omlx</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="jundot__omlx"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/64250138?u=e95cca863622c88961c53f9b3fffe2d5982c8a6f&amp;v=4&s=300" width="300" height="300" alt="jundot avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">omlx</div>
+      <a class="rp-side-owner" href="https://github.com/jundot">jundot</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/jundot">jundot</a>
+        <span class="rp-sep">/</span><span class="rp-name">omlx</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">LLM inference server with continuous batching &amp; SSD caching for Apple Silicon — managed from the macOS menu bar</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>23,605</b></span><span class="rp-stat" title="forks">⑂ <b>2,126</b></span><span class="rp-stat" title="watchers">👁 <b>113</b></span><span class="rp-stat" title="prs">⑃ <b>2,535</b></span><span class="rp-stat" title="issues">● <b>2,372</b></span><span class="rp-stat" title="releases">▤ <b>138</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/apple-silicon">apple-silicon</a><a class="rp-topic" href="https://github.com/topics/inference-server">inference-server</a><a class="rp-topic" href="../tags/llm">llm</a><a class="rp-topic" href="../tags/macos">macos</a><a class="rp-topic" href="https://github.com/topics/mlx">mlx</a><a class="rp-topic" href="https://github.com/topics/openai-api">openai-api</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2026-02-13</span><a class="rp-meta-bit rp-home" href="https://omlx.ai" rel="noopener">omlx.ai</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/jundot/omlx">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">0.8.0rc1</span><a class="rp-dl-a" href="https://github.com/jundot/omlx/releases/tag/v0.8.0rc1">v0.8.0rc1 ↓</a><span class="rp-dl-ver">1</span><span class="rp-dl-date">2026-11-12</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+29</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+277</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+805</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">23,605</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,126</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">113</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">2,535</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">2,372</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">138</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">oMLX
+LLM inference, optimized for your MacContinuous batching and tiered KV caching, managed directly from your menu bar.
+
+
+  
+  
+  
+
+
+
+  junkim.dot@gmail.com · https://omlx.ai/me
+
+
+
+  Install ·
+  Quickstart ·
+  Features ·
+  Models ·
+  CLI Configuration ·
+  Benchmarks ·
+  oMLX.ai
+
+
+
+  English ·
+  中文 ·
+  한국어 ·
+  日本語
+
+
+---
+
+
+  
+
+
+ Every LLM server I tried made me choose between convenience and control. I wanted to pin everyday models in memory, auto-swap heavier ones on demand, set context limits - and manage it all from a menu bar.
+
+ oMLX persists KV cache across a hot in-memory tier and cold SSD tier - even when context changes mid-conversation, all past context stays cached and reusable across requests, making local LLMs practical for real coding work with tools like Claude Code. That&#x27;s why I built it.
+
+ Install
+
+ macOS App
+
+Download the .dmg from Releases, drag to Applications, done. The app includes in-app auto-update, so future upgrades are just one click. The macOS app also installs a lightweight ~/.omlx/bin/omlx CLI shim so terminal commands and Apple Shortcuts can control the app-managed server.
+
+ Homebrew
+
+bash
+brew tap jundot/omlx https://github.com/jundot/omlx
+brew install jundot/omlx/omlx --with-custom-kernel    With native custom kernels (needs full Xcode)
+ No full Xcode? brew install jundot/omlx/omlx installs without the kernels
+
+ Upgrade to the latest version
+brew update &amp;&amp; brew upgrade omlx
+
+ Run as a background service (auto-restarts on crash)
+omlx start
+
+ Optional: MCP (Model Context Protocol) support, then restart to load it
+/opt/homebrew/opt/omlx/libexec/bin/pip install mcp
+omlx restart
+
+
+ From Source
+
+bash
+git clone https://github.com/jundot/omlx.git
+cd omlx
+make install                 Editable install with the web UI and native custom kernels
+ No full Xcode? make install-no-kernels installs without the kernels
+make mcp                     Optional: MCP support, restart omlx serve to load it
+
+
+Requires macOS 15.0+ (Sequoia), Python 3.11–3.13, and Apple Silicon (M1/M2/M3/M4/M5).
+
+ Note on native custom kernels: GLM-5.2, MiniMax M3, and Qwen3.5 need them.
+ Without them those families silently fall back to much slower generic paths --
+ for GLM-5.2 the fused DSA prefill is roughly 30x faster with the kernels
+ (measured 845 vs ~29 tok/s on an M3 Ultra), and the fallback also uses more
+ memory (2137). make install builds them and checks that each one loads. That
+ needs full Xcode with the Metal toolchain (xcodebuild -downloadComponent
+ MetalToolchain); Command Line Tools alone do not provide it (xcrun: error:
+ unable to find utility &quot;metal&quot;). Without Xcode, use the official DMG, which
+ ships the kernels precompiled, or make install-no-kernels. A plain
+ pip install -e . also skips them. make kernels rebuilds only the kernels
+ from scratch. Homebrew builds them with --with-custom-kernel, which also needs
+ full Xcode. To verify any install:
+
+ bash
+ python -c &quot;from omlx.custom_kernels import native_kernel_status; print(native_kernel_st</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/jundot/omlx/issues/114"><span class="rp-item-num">#114</span><span class="rp-item-title">m5 运行很慢</span><span class="rp-item-extra">27 comments · 2026-03-10</span></a><a class="rp-item" href="https://github.com/jundot/omlx/issues/1835"><span class="rp-item-num">#1835</span><span class="rp-item-title">macOS 27: long-context inference 10x slower than macOS 26.6 (even after HOST_VM_INFO64 fix)</span><span class="rp-item-extra">16 comments · 2026-06-11</span></a><a class="rp-item" href="https://github.com/jundot/omlx/issues/1550"><span class="rp-item-num">#1550</span><span class="rp-item-title">Qwen 3.6 MTP + batch of 2 = huge slowdown and corruption</span><span class="rp-item-extra">14 comments · 2026-05-30</span></a><a class="rp-item" href="https://github.com/jundot/omlx/issues/4213"><span class="rp-item-num">#4213</span><span class="rp-item-title">0.7.0 release: Memory Guard dynamic ceiling issue killing workflow</span><span class="rp-item-extra">13 comments · 2026-10-02</span></a><a class="rp-item" href="https://github.com/jundot/omlx/issues/3697"><span class="rp-item-num">#3697</span><span class="rp-item-title">Can mlx-lm/mlx-vlm be kept up-to-date?</span><span class="rp-item-extra">10 comments · 2026-09-16</span></a><a class="rp-item" href="https://github.com/jundot/omlx/issues/3117"><span class="rp-item-num">#3117</span><span class="rp-item-title">Qwen3.8 with ANE enabled produces 0 tokens</span><span class="rp-item-extra">10 comments · 2026-08-24</span></a><a class="rp-item" href="https://github.com/jundot/omlx/issues/3069"><span class="rp-item-num">#3069</span><span class="rp-item-title">ANE prefill (approximate INT8 path) causes behavioral divergence on out-of-distribution prompts: agent descends into memorized training trajectories (0.6.3rc2)</span><span class="rp-item-extra">10 comments · 2026-08-23</span></a><a class="rp-item" href="https://github.com/jundot/omlx/issues/2876"><span class="rp-item-num">#2876</span><span class="rp-item-title">Paged prefix cache: 33% of shareable tokens lost at reload on PoolingCache models (systematic trailing-block walk-back × 2048-token blocks)</span><span class="rp-item-extra">10 comments · 2026-08-19</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/jundot/omlx/discussions/5249"><span class="rp-item-num">#5249</span><span class="rp-item-title">Prefill Accelerator Mac Upgrade Help</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/jundot/omlx/discussions/5231"><span class="rp-item-num">#5231</span><span class="rp-item-title">Parallel requests for decision model</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/jundot/omlx/discussions/5220"><span class="rp-item-num">#5220</span><span class="rp-item-title">LeapQuant support</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/jundot/omlx/discussions/5217"><span class="rp-item-num">#5217</span><span class="rp-item-title">Cross-instance prefix cache transfer for load-balanced oMLX replicas</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/jundot/omlx/discussions/5215"><span class="rp-item-num">#5215</span><span class="rp-item-title">Try same-prompt prefill across two CUDA helper hosts</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/jundot/omlx/discussions/5214"><span class="rp-item-num">#5214</span><span class="rp-item-title">Support discrete CUDA VRAM monitoring for mixed clusters</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/jundot/omlx/discussions/5213"><span class="rp-item-num">#5213</span><span class="rp-item-title">Show why Prefill Accelerator Auto kept a request on the Mac</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/jundot/omlx/discussions/5192"><span class="rp-item-num">#5192</span><span class="rp-item-title">Can oMLX use two Macs&#x27; unified memory to run a model that does not fit on either Mac individually?</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/jundot/omlx/releases"><b>0.8.0rc1</b> <span class="rp-rel-tag">v0.8.0rc1</span> <span class="rp-item-extra">2026-11-12</span></a><pre class="rp-pre">oMLX 0.8.0rc1
+
+ This is a release candidate. Please report any bugs through GitHub Issues. If you need a stable release, please use oMLX 0.7.3.
+
+The release candidate for oMLX 0.8.0 adds the Prefill Accelerator, which lets a PC with NVIDIA GPUs or a second Mac speed up prefill for a big model on your Mac, and makes DeepSeek V4.1 faster with many requests and on clusters.
+
+Download: macOS 26 / 27 | macOS 15 Sequoia
+ If you downloaded build 3727 right after release, the Cluster tab may not find a DGX Spark or NVIDIA PC, so please download it again.
+
+
+
+ Prefill Accelerator with NVIDIA </pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (5)</h3><div class="rp-list"><a class="rp-item" href="https://tw.news.yahoo.com/mac-%E6%9C%AC%E6%A9%9F-ai-%E7%B7%A8%E7%A2%BC-agent-230807301.html" target="_blank" rel="noopener"><span class="rp-news-src">Yahoo奇摩新聞</span><span class="rp-item-title">Mac 本機 AI 編碼 agent 搭建指南：oMLX + OpenCode + Qwen 3.6 完整設定教學</span><span class="rp-item-extra">2026-05-18</span></a><a class="rp-item" href="https://news.qq.com/rain/a/20260408A03GLU00" target="_blank" rel="noopener"><span class="rp-news-src">腾讯网</span><span class="rp-item-title">Mac用户可以在oMLX中使用TurboQuant了，搭配Gemma-4-31B，谷歌全家桶实测很能打！</span><span class="rp-item-extra">2026-04-08</span></a><a class="rp-item" href="https://cyberq.tw/2026/03/10/omlx-local-large-language-model-server/" target="_blank" rel="noopener"><span class="rp-news-src">cyberq</span><span class="rp-item-title">oMLX 本地大語言模型伺服器 MacOS 平台地端 LLM 部署實作</span><span class="rp-item-extra">2026-03-09</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMia0FVX3lxTE1WdGZsWXh6ZEJLejVKVW9Ea2tFRUVmNnlZTHdhdXR5T25hZ1hJck14SFNtWlplT3RTQW5NSXRFNjVxYlJGZ1B0VkdZS0tlSDQ2UHlwRFhOTElxV09lWjNiVG1SNy1LalY5OXpz?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN博客</span><span class="rp-item-title">DFlash 2 发布：解码速度近自回归 3 倍，多模型平均接受长度显著提升！</span><span class="rp-item-extra">2026-08-20</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiYkFVX3lxTE1FX25Ba053YWNUOXFFV0tkeE1qUGZzWHJpOWdJVFZUQWw4ZU1qRlRfNElfdHYwdXlrLU9kRVFKTHE0emNra2pPWVNBWVJEeGJwUkJtclRkZ2E0UWNfcDFiNHB3?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN</span><span class="rp-item-title">oMLX：为 Mac 优化的大语言模型推理工具，多特性助力高效开发与应用_IT界那些事儿</span><span class="rp-item-extra">2026-05-11</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (12)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=48093410" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">OMLX: Local LLM Server for Apple Silicon Macs</span><span class="rp-item-extra">▲ 4 · 0 comments · 2026-05-11</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47247294" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: oMLX – SSD-backed KV cache cuts coding agent TTFT from 90s to 1s on Mac</span><span class="rp-item-extra">▲ 4 · 1 comments · 2026-03-04</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47139158" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: oMLX – coding agents on local LLMs without the painful reprefill</span><span class="rp-item-extra">▲ 3 · 0 comments · 2026-02-24</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47005152" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">OMLX – LLM Inference Server for Apple Silicon (Ollama for MLX)</span><span class="rp-item-extra">▲ 3 · 0 comments · 2026-02-13</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=48232765" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">OMLX v0.3.9 Stable Merges Native MTP (Multi-Token Prediction)</span><span class="rp-item-extra">▲ 2 · 0 comments · 2026-05-22</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47024470" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">OMLX – Ollama for MLX (LLM Inference Server for Apple Silicon)</span><span class="rp-item-extra">▲ 2 · 0 comments · 2026-02-15</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=50403212" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">OMLX: Use a second Mac to speed up local LLM prefill 2.9x</span><span class="rp-item-extra">▲ 1 · 0 comments · 2026-11-07</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47080277" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: oMLX – Native Mac inference server that persists KV cache to SSD</span><span class="rp-item-extra">▲ 1 · 0 comments · 2026-02-19</span></a><a class="rp-item" href="https://note.com/opensourcelab/n/na952cb406af0?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">How to use oMLX: Keep models resident on your Mac and stop recalculating conversation continuations</span><span class="rp-item-extra">2026-09-07</span></a><a class="rp-item" href="https://note.com/aighost_log/n/nc6c80c85a19b?hl=ko" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">TTL이라는 답을 찾아 아날로그로 속도를 측정한 이야기 (oMLX 편)</span><span class="rp-item-extra">2026-08-16</span></a><details class="rp-news-more"><summary>2 more</summary><a class="rp-item" href="https://note.com/zephel01/n/ncf2b8b652c01?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">[May 2026 Latest] Which one is truly the fastest for local LLMs on Mac? A thorough comparison of mlx-lm / vllm-mlx / oMLX / Ollama / LM Studio (M3 Max 64GB actual measurements)</span><span class="rp-item-extra">2026-05-13</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiQkFVX3lxTE41akZQSUs1R01YTzV6bjZyR3VnWHVJLWI3dWR1VlhoRWE1em5xa1R6TTZZbzh2azl5c3lPNTF0d2p5UQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">YouTube</span><span class="rp-item-title">Run LLMs on a Mac — 81× Faster Context Switching with oMLX</span><span class="rp-item-extra">2026-09-17</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/jundot__omlx.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

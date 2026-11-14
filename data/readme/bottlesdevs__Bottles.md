@@ -1,0 +1,123 @@
+<div align="center">
+  <img src="https://raw.githubusercontent.com/bottlesdevs/Bottles/main/data/icons/hicolor/scalable/apps/com.usebottles.bottles.svg" width="64">
+  <h1 align="center">Bottles</h1>
+  <p align="center">Run Windows Software on Linux</p>
+</div>
+
+<br/>
+
+<div align="center">
+  <a href="https://flathub.org/apps/com.usebottles.bottles"><img alt="Flathub" src="https://img.shields.io/flathub/downloads/com.usebottles.bottles" /></a>
+  <a href="https://hosted.weblate.org/engage/bottles"><img src="https://hosted.weblate.org/widgets/bottles/-/bottles/svg-badge.svg" /></a>
+  <a href="https://www.codefactor.io/repository/github/bottlesdevs/bottles/overview/main"><img src="https://www.codefactor.io/repository/github/bottlesdevs/bottles/badge/main" /></a>
+  <a href="https://github.com/bottlesdevs/Bottles/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-GPL--3.0-blue.svg"></a>
+  <br>
+  <a href="https://stopthemingmy.app" title="Please do not theme this app"><img src="https://stopthemingmy.app/badge.svg"></a>
+
+  <hr />
+
+  <a href="https://docs.usebottles.com">Documentation</a> ·
+  <a href="https://github.com/orgs/bottlesdevs/discussions">Forums</a> ·
+  <a href="https://discord.gg/wF4JAdYrTR">Discord</a> ·
+  <a href="https://usebottles.com/funding">Funding</a>
+</div>
+
+<br/>
+
+![Bottles Dark](docs/screenshot-dark.png#gh-dark-mode-only)![Bottles Light](docs/screenshot-light.png#gh-light-mode-only)
+
+## Installation
+
+<a href='https://flathub.org/apps/com.usebottles.bottles'><img width='240' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png'/></a>
+<a href='https://cpak.it/store/Utilities/github.com/bottlesdevs/bottles'><img width='240' alt='Get it with cpak' src='https://cpak.it/badges/get-it-with-cpak.svg'/></a>
+
+## Contributing
+
+Refer to the [Contributing](CONTRIBUTING.md) page.
+
+## Building
+
+⚠️ Be sure to backup all your data before testing experimental builds of Bottles!
+
+Use the development manifest in this repository when working on Bottles. To build a stable release locally, use the manifest maintained by Flathub.
+
+### Development Flatpak
+
+1. Install [`org.flatpak.Builder`](https://github.com/flathub/org.flatpak.Builder) from Flathub
+2. Clone `https://github.com/bottlesdevs/Bottles.git` (or your fork)
+3. Run `flatpak run org.flatpak.Builder --install --install-deps-from=flathub --default-branch=master --force-clean build-dir build-aux/com.usebottles.bottles.Devel.json` in the terminal from the root of the repository (use `--user` if necessary)
+4. Run `flatpak run com.usebottles.bottles.Devel` to launch it
+
+### Release Flatpak
+
+The authoritative manifest for the stable package is maintained in the [Flathub repository](https://github.com/flathub/com.usebottles.bottles). It defines the Bottles source, dependencies, runtime, and permissions used for each release.
+
+1. Install [`org.flatpak.Builder`](https://github.com/flathub/org.flatpak.Builder) from Flathub
+2. Clone `https://github.com/flathub/com.usebottles.bottles.git`
+3. Run the following command from the root of the cloned repository:
+
+   ```shell
+   flatpak run org.flatpak.Builder \
+     --user \
+     --install \
+     --install-deps-from=flathub \
+     --default-branch=local \
+     --force-clean \
+     build-dir \
+     com.usebottles.bottles.yml
+   ```
+
+4. Run `flatpak run com.usebottles.bottles//local` to launch it
+
+The `local` branch is installed alongside the Flathub branch. Both use the same application ID and Bottles data directory, so changes made by either build affect the other. To build an older release, use `git log -- com.usebottles.bottles.src.yaml` to find and check out its Flathub commit before running the build command.
+
+### Meson
+
+Since Bottles is primarily and officially distributed as a Flatpak, we only provide instructions to directly build it inside a Flatpak environment:
+
+1. Download and install the latest build of Bottles: [bottles-x86_64.zip](https://nightly.link/bottlesdevs/Bottles/workflows/build_flatpak/main/bottles-x86_64.zip). Unzip it, and run `flatpak install bottles.flatpak` (use `--user` if necessary)
+2. Run `flatpak run -d --filesystem=$PWD --command=bash com.usebottles.bottles.Devel` from the root of the repository, followed by `./build-aux/install.sh`. This will build Bottles and install it under the `build/` directory.
+3. Run `./build/bin/bottles` to launch Bottles
+
+Due to GNOME Builder limitations, Builder cannot build Bottles for the time being; see [GNOME/gnome-builder#2061](https://gitlab.gnome.org/GNOME/gnome-builder/-/issues/2061) for more context. This is the best workaround we can provide.
+
+## Code of Conduct
+This project follows the [GNOME Code of Conduct](https://conduct.gnome.org/). You are expected to follow it in all Bottles spaces, such as this repository, the project's social media, messenger chats and forums. Bigotry and harassment will not be tolerated.
+
+## Use of Generative AI
+Some maintainers use generative AI tools as assistants while working in Bottles, in the spirit of Open Source, we want to be transparent about how, specifically:
+
+- Code comments and documentation
+- Boilerplate and repetitive code
+- Issue triage (spotting duplicates, outdated reports, grouping similar issues)
+
+Tools vary between contributors (currently mostly Claude and Codex): each AI-assisted commit states the tool and model used in its `Assisted-by` trailer.
+
+### What we don't use it for
+Architecture, complex logic, the security and sandboxing model and user experience are designed and written by the maintainers, manually.
+
+### Human review
+Every line of generated code, documentation and comments are reviewed by a maintainer before it is merged.
+
+Also, starting from the 10th Sep 2026, the following commit pattern must be used for contributions made with or helped with the AI:
+
+```plain
+feat: add support for X
+
+Assisted-by: <tool>:<model-version>
+AI-Scope: what the AI generated in this commit, and the prompt used (or a short summary of it)
+```
+
+Trivial completions (single lines, renames, formatting) don't need to be marked.
+
+Not following this layout will lead to a closed Pull Request.
+
+Coding agents must also follow [AGENTS.md](AGENTS.md) before changing files,
+creating commits, or opening pull requests.
+
+## Sponsors
+<a href="https://www.jetbrains.com/?from=bottles"><img height="55" src="https://unifiedban.solutions/static/images/jetbrains-logos/jetbrains.png" /></a>&nbsp;&nbsp;&nbsp;
+<a href="https://www.gitbook.com/?ref=bottles"><img height="55" src="https://www.gitbook.com/cdn-cgi/image/height=55,fit=contain,dpr=1,format=auto/https%3A%2F%2F2775338190-files.gitbook.io%2F~%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FNkEGS7hzeqa35sMXQZ4X%252Flogo%252FTO5E3RjWKeaJmYYWMGWV%252Fspaces_gitbook_avatar-rectangle.png%3Falt%3Dmedia%26token%3Da34e957e-f044-4bee-abee-23946d2e9cfb" /></a>&nbsp;&nbsp;&nbsp;
+<a href="https://www.linode.com/?from=bottles"><img height="48" src="https://usebottles.com/uploads/linode-brand.png" /></a>&nbsp;&nbsp;&nbsp;
+<a href="https://appwrite.io?from=bottles"><img height="48" src="https://usebottles.com/uploads/built-with-appwrite.svg" /></a>
+<a href="https://hyperbit.it?from=bottles"><img height="48" src="https://hyperbit.it-mil-1.linodeobjects.com/assets/full_dark_logo/HyperBit_Dark_Extended_Logo.png"/></a>

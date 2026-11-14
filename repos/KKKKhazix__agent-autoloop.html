@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KKKKhazix/agent-autoloop · GitHub Trending Rank Radar</title>
+<meta name="description" content="让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="agent-autoloop, KKKKhazix, KKKKhazix/agent-autoloop, github stars, github trending, star growth, star history, 开源项目, 星标增长, ai-agents, automation, claude-code, cli, codex, event-driven">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/KKKKhazix__agent-autoloop">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="KKKKhazix/agent-autoloop · GitHub Trending Rank Radar">
+<meta property="og:description" content="让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/KKKKhazix__agent-autoloop">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "KKKKhazix/agent-autoloop", "codeRepository": "https://github.com/KKKKhazix/agent-autoloop", "url": "https://zhuikan.com/repos/KKKKhazix__agent-autoloop", "description": "让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。", "author": {"@type": "Organization", "name": "KKKKhazix", "url": "https://github.com/KKKKhazix"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2026-11-03", "keywords": "ai-agents,automation,claude-code,cli,codex,event-driven,mcp,nodejs,self-hosted,typescript"}</script>
+</head>
+<body data-repo="KKKKhazix/agent-autoloop" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">KKKKhazix/agent-autoloop</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="KKKKhazix__agent-autoloop"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/239590580?u=e36ff439fc89c0ec6eff33f6d1d5e869ce0b214f&amp;v=4&s=300" width="300" height="300" alt="KKKKhazix avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">agent-autoloop</div>
+      <a class="rp-side-owner" href="https://github.com/KKKKhazix">KKKKhazix</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/KKKKhazix">KKKKhazix</a>
+        <span class="rp-sep">/</span><span class="rp-name">agent-autoloop</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=new">new <b>#127</b></a><a class="rp-board-chip" href="../?board=daily">daily <b>#99</b></a><a class="rp-board-chip" href="../?board=daily_rate">daily_rate <b>#32</b></a><a class="rp-board-chip" href="../?board=weekly">weekly <b>#38</b></a><a class="rp-board-chip" href="../?board=weekly_rate">weekly_rate <b>#5</b></a><a class="rp-board-chip" href="../?board=monthly">monthly <b>#188</b></a><a class="rp-board-chip" href="../?board=monthly_rate">monthly_rate <b>#36</b></a></div>
+    </div>
+    <p class="rp-desc">让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,223</b></span><span class="rp-stat" title="forks">⑂ <b>952</b></span><span class="rp-stat" title="watchers">👁 <b>9</b></span><span class="rp-stat" title="prs">⑃ <b>230</b></span><span class="rp-stat" title="issues">● <b>55</b></span><span class="rp-stat" title="releases">▤ <b>20</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/ai-agents">ai-agents</a><a class="rp-topic" href="../tags/automation">automation</a><a class="rp-topic" href="../tags/claude-code">claude-code</a><a class="rp-topic" href="../tags/cli">cli</a><a class="rp-topic" href="../tags/codex">codex</a><a class="rp-topic" href="https://github.com/topics/event-driven">event-driven</a><a class="rp-topic" href="../tags/mcp">mcp</a><a class="rp-topic" href="../tags/nodejs">nodejs</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-11-03</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="KKKKhazix__AIHOT"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/239590580?u=e36ff439fc89c0ec6eff33f6d1d5e869ce0b214f&amp;v=4" alt="" loading="lazy">AIHOT</a><a class="rp-same-link" href="KKKKhazix__human-writing"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/239590580?u=e36ff439fc89c0ec6eff33f6d1d5e869ce0b214f&amp;v=4" alt="" loading="lazy">human-writing</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/KKKKhazix/agent-autoloop">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Agent Autoloop 1.8.3</span><a class="rp-dl-a" href="https://github.com/KKKKhazix/agent-autoloop/releases/tag/v1.8.3">Agent-1.8.3 ↓</a><span class="rp-dl-ver">1.8.3</span><span class="rp-dl-date">2026-11-13</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+216</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+2,800</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,223</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">952</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">9</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">230</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">55</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">20</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Agent Autoloop
+
+让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。
+
+中文 | English
+
+上手 · 场景模板 · 插件 · 内核 · 文档
+
+!架构图
+
+ 它解决什么问题？
+
+平时我们用 Claude Code、Codex 这类命令行 Agent，大多是“人守着终端用”：你输一句话，盯着它跑，等它问你下一步；一旦关掉窗口或者人走开，事情就断了。
+
+Agent Autoloop 是一个极轻量的自动化中台。它把任务调度做成一个零外部依赖的内核，把事件来源、Agent、通知通道，甚至代码上线流水线全部拆成可随时插拔的插件。
+
+- 一台电脑、一条命令就能跑。 装在你的 Windows、Mac 或 Linux 上，不用买云服务器，也不用开放公网端口。
+- 一行配置接新 Agent。 不需要 SDK，也不需要改 Agent 源码，能接收提示词并打印最后一条回复的命令行工具都能接。
+- 没有后台界面。 需要你拍板时把卡片推到飞书、钉钉、企微、Slack、Discord 或桌面通知；想看全局进展，敲一行命令。
+
+ 上手
+
+支持 Windows、macOS 和 Linux。需要 Node 24 或更新、Git，以及一个已经登录的命令行 Agent；macOS/Linux 还需要 curl，不需要 GitHub 账号。也可以把安装说明交给你的 Agent。
+
+Windows PowerShell：
+
+powershell
+irm https://raw.githubusercontent.com/KKKKhazix/agent-autoloop/main/install.ps1 | iex
+
+
+macOS / Linux：
+
+bash
+curl -fsSL https://raw.githubusercontent.com/KKKKhazix/agent-autoloop/main/install.sh | sh
+
+
+安装和 agent-autoloop update 都装最新的 Release，那是通过了全部检查的版本。
+
+装好后用你本机的 Agent 真实走一遍“提问 → 退出等回复 → 拍板 → 接着干完”：
+
+bash
+agent-autoloop try
+
+
+下面是在终端里的真实输出：
+
+text
+事件发出去了，Agent 开始干活……
+
+Agent 结束了这一轮，问了你一个问题。它现在不占进程、不花 Token。
+
+【等你决定】1 试跑：选一个颜色
+这是一次试跑，选哪个都行。
+  1. 蓝色
+  2. 绿色
+回答：agent-autoloop answer 1 
+答完运行 agent-autoloop status，能看到它接着把活干完。
+
+
+交互终端里直接输入数字回车；非交互终端运行 agent-autoloop answer 1 2 选择“绿色”。再跑 agent-autoloop status，就能看到它接上刚才的会话并显示“你选了绿色，试跑通过”，还有今天和最近 7 天的轮数、Token 和费用（统计口径）。
+
+ 一件事怎么转起来
+
+编号和上面的架构图一一对应：
+
+1. 新事件进来。 早上 9 点的定时任务、GitHub 上新提的 Issue、业务系统报的错，都变成一条标准事件送进内核。
+2. 按规则派活。 内核照你写的规则，决定交给哪个 Agent、去哪个目录干。同一件事排队时又来的消息，会合并成一轮处理。
+3. 干完一轮就退出。 Agent 把结果写在最后一条回复里，进程直接退出。
+4. 拿不准才问你。 碰到删数据、重启服务、花钱、对外发消息这类事，内核通过飞书或桌面通知发一张卡片给你。等你回复期间，它不占后台进程，也不消耗 Token。
+5. 点一下，接着干。 你选完，它接上原来的对话，把剩下的活干完。
+
+能自己搞定的事走图上方的自动闭环：直接办完，或者约个时间（比如半小时后）再醒来复查，全程不打扰你。
+
+ 日常怎么配？
+
+ 写一份规则（rules.json）
+
+不需要写胶水代码。打开 ~/.agent-autoloop/rules.json，在 rules 里写清楚什么事、交给谁、在哪个目录干。to 填 agents 里已有的名字。比如每天早上 9 点写早报：
+
+json
+{
+  &quot;name&quot;: &quot;早报&quot;,
+  &quot;when&quot;: { &quot;cron&quot;: &quot;0 9   &quot; },
+  &quot;to&quot;: &quot;codex&quot;,
+  &quot;cwd&quot;: &quot;~/notes&quot;,
+  &quot;prompt&quot;: &quot;整理昨天的笔记和提交，写今天的早报。&quot;
+}
+
+
+外部事件写法一样，只是要先接好来源。比如有人提新 Issue 时交给 Codex，先按说明在 sources 里登记 github：
+
+json
+{
+  &quot;name&quot;: &quot;处理 issue&quot;,
+  &quot;when&quot;: { &quot;source&quot;: &quot;github&quot;, &quot;types&quot;: [&quot;issues.opened&quot;] },
+  &quot;to&quot;: &quot;codex&quot;,
+  &quot;cwd&quot;: &quot;~/code/app&quot;,
+  &quot;skill&quot;: &quot;handle-issue&quot;,
+  &quot;parallel&quot;: 3
+}
+
+
+agent-autoloop pause 、resume  暂停和恢复一条规则，暂停期间到点不跑、来事件不接也不排队，恢复后不自动补跑；恢复时会列出暂停期间跳过的事件，照着给出的 agent-autoloop replay  --since  一次补跑，每条只补一次。agent-autoloop run  立即跑一轮。这些记在中台的日志里，不改 rules.json。agent-autoloop runs [规则] 列出做完的轮次，--before  往前翻，拿到编号再用 agent-autoloop why  看来龙去脉。
+
+保存后几秒内自动生效，可以运行 agent-autoloop check 检查，agent-autoloop check  检查一份草稿，不碰正在跑的中台；agent-autoloop rules explain [文件] 看生效的规则和下次定时（也可以指定一份草稿），agent-autoloop emit  --dry-run 预演一条事件会派给谁（不连接中台、不写日志）。就算改错了，或者文件被删、读不到，系统也会继续按旧规则跑，并发卡片提醒你。
+
+ Agent 怎么跟中台配合？
+
+中台对 Agent 只有一个约定：在最后一条回复里交代结果。事情办完了，正常输出一句结论就行。需要向你请示时，在回复末尾附一段 agent-autoloop 代码块：
+
+text
+订单已经核对完毕，库存充足。
+
+agent-autoloop
+{
+  &quot;ask&quot;: [{
+    &quot;title&quot;: &quot;怎么发货？&quot;,
+    &quot;text&quot;: &quot;两种方式今天都能发出。&quot;,
+    &quot;options&quot;: [&quot;快递&quot;, &quot;自提&quot;],
+    &quot;key&quot;: &quot;shipping&quot;
+  }]
+}
+
+
+
+除了提问（ask），还能发通知（notice）、关闭已解决的卡片（resolve）、预约复查（later）和触发新事件（eve</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/KKKKhazix/agent-autoloop/issues/285"><span class="rp-item-num">#285</span><span class="rp-item-title">[Agent 接入] 建议支持 Antigravity：agy 自带 ACP server 和 --conversation 续接</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/KKKKhazix/agent-autoloop/issues/283"><span class="rp-item-num">#283</span><span class="rp-item-title">功能建议：让新任务复用用户明确要求记住的卡片反馈</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/KKKKhazix/agent-autoloop/discussions/136"><span class="rp-item-num">#136</span><span class="rp-item-title">Chinese deep-dive review: agent-autoloop — recoverable CLI task loops</span><span class="rp-item-extra">0 comments · 2026-11-05</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/KKKKhazix/agent-autoloop/releases"><b>Agent Autoloop 1.8.3</b> <span class="rp-rel-tag">v1.8.3</span> <span class="rp-item-extra">2026-11-13</span></a><pre class="rp-pre">更新内容
+
+- 卡片写明来源：飞书卡片、桌面通知、所有 Webhook 平台、卡片网页和 status 的待决定列表，都在标题下写出是哪条规则问的；标题本身就是规则名时不重复。
+- Token 统计口径统一：各家 Agent 的输入都算上缓存，status 写出其中缓存占多少（如“1.3 亿 Token（其中缓存 96%）”），/v1/state 的 spending 多一个 cached。升级前记下的 Claude、DSH 轮次仍是旧口径，一周后自然对齐。
+- 规则的 elsewhere 登记项可以写可选的 model 和 effort，随 /v1/state 带出，显示别处定时任务的客户端不必再借用 Agent 的设置。退回旧版本前先把这两个字段从规则里去掉。
+- 飞书：兼容旧版 lark-cli（如 1.0.66），首次发送卡片不再一直失败。
+- GitLab：评论事件沿用所属 Issue / MR 的事项编号，不同对象的评论不再混进同一事项。
+- 接单程序：找不到某个 Agent 程序时不再记住这个结果，程序装回来后不用重启就能用。
+
+感谢 16bh、loodeer、落尘（luochen211）、argszero 的贡献。
+
+ What&#x27;s changed
+
+- Cards now say where they come from: Feishu cards, deskto</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (6)</h3><div class="rp-list"><a class="rp-item" href="https://note.com/coinearn/n/n5a4f0df36a31" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">SNSのノイズを消す。直近7日間で世界のエンジニアが支持した「一次情報・CUI回帰」ツール4選（実数値データ）</span><span class="rp-item-extra">2026-11-09</span></a><a class="rp-item" href="https://note.com/s_kashiwakura/n/nfb1b2858b394" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">agent-autoloop の注意点は？ 入れる前に見る4つ</span><span class="rp-item-extra">2026-11-05</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00979/article/details/170140701" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">别再守着终端了：Agent Autoloop 让 Claude Code、Codex 在后台自己接活、跟进到底的完整入门指南</span><span class="rp-item-extra">2026-11-05</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00857/article/details/170137939" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">一条命令装完就能跑：Agent Autoloop 快速上手教程，10分钟完成第一次提问、拍板到干完</span><span class="rp-item-extra">2026-11-05</span></a><a class="rp-item" href="https://www.sohu.com/a/1096878075_122066678" target="_blank" rel="noopener"><span class="rp-news-src">搜狐</span><span class="rp-item-title">卡兹克开源一年成果Agent-Autoloop自动化系统</span><span class="rp-item-extra">2026-11-04</span></a><a class="rp-item" href="https://news.qq.com/rain/a/20261104A03C5F00" target="_blank" rel="noopener"><span class="rp-news-src">腾讯网</span><span class="rp-item-title">开源我这折腾了1年的「Agent自动化系统」，愿所有人都能感受Agent的魅力</span><span class="rp-item-extra">2026-11-04</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (3)</h3><div class="rp-list"><a class="rp-item" href="https://x.com/ai_algoit/status/2118158231252115638" target="_blank" rel="noopener"><span class="rp-news-src">x</span><span class="rp-item-title">ALGOIT | AI News &amp; How-Tos</span><span class="rp-item-extra">2026-11-04</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMizwFBVV95cUxPYU1udks2NTd4THNVWHVvNzZ2ZktyVklTNmNwckdfRzJ1Z1UxcnhHYVpOVWRTTE1TaEdqc2NSdEx4RFBBbUJtaFNNRHRKcVdJT213VGRiV0V5Y1gzUGFTVUZDY1lYeEFkeHhUbENPVDlwZUxvUVk5S0ZSdFJ5UWMtSWlmME5tbmtuLVhCUy04dUlmNmxZdmgwTDlibllvZTJqT3lvRTdIZVdIaWNjU1RwZ0ZIZTctZ093VFJFekRyVVk2T2VTdzJ4N0p4a0hrbzQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">news.lavx.hu</span><span class="rp-item-title">KKKKhazix/agent-autoloop: keeps command-line agents working in the background (open source, 10 November 2026)</span><span class="rp-item-extra">2026-11-10</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiswFBVV95cUxONDNWUEJJaG1GOWk4Ui02aUhCcUZhdEZXVXlFUUNaY181SHZvU25YVU14ZEtheWt3Rml0ZjdnTDMwal9zXzJ2SUlseTlBVV9BU0tJamliZmFXTUFtWVdraU03VDFxV2d4Mk1QM0xITzkwckp1MmRRbkt4TXpXbUJyb0ZZTmY3SmQ1aHVfRDAwTG1hQlRGM2duQVRlVGhHY3pBN2U4MkU2UlpzLVhnbGdaaW0xVQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">news.lavx.hu</span><span class="rp-item-title">Open source daily, AI and machine learning, 10 November 2026: agent-autoloop and 3 more</span><span class="rp-item-extra">2026-11-10</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/KKKKhazix__agent-autoloop.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

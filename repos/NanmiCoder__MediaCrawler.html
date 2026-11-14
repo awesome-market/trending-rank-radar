@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NanmiCoder/MediaCrawler · GitHub Trending Rank Radar</title>
+<meta name="description" content="小红书笔记 | 评论爬虫、抖音视频 | 评论爬虫、快手视频 | 评论爬虫、B 站视频 ｜ 评论爬虫、微博帖子 ｜ 评论爬虫、百度贴吧帖子 ｜ 百度贴吧评论回复爬虫  | 知乎问答文章｜评论爬虫">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="MediaCrawler, NanmiCoder, NanmiCoder/MediaCrawler, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/NanmiCoder__MediaCrawler">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="NanmiCoder/MediaCrawler · GitHub Trending Rank Radar">
+<meta property="og:description" content="小红书笔记 | 评论爬虫、抖音视频 | 评论爬虫、快手视频 | 评论爬虫、B 站视频 ｜ 评论爬虫、微博帖子 ｜ 评论爬虫、百度贴吧帖子 ｜ 百度贴吧评论回复爬虫  | 知乎问答文章｜评论爬虫">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/NanmiCoder__MediaCrawler">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "NanmiCoder/MediaCrawler", "codeRepository": "https://github.com/NanmiCoder/MediaCrawler", "url": "https://zhuikan.com/repos/NanmiCoder__MediaCrawler", "description": "小红书笔记 | 评论爬虫、抖音视频 | 评论爬虫、快手视频 | 评论爬虫、B 站视频 ｜ 评论爬虫、微博帖子 ｜ 评论爬虫、百度贴吧帖子 ｜ 百度贴吧评论回复爬虫  | 知乎问答文章｜评论爬虫", "author": {"@type": "Organization", "name": "NanmiCoder", "url": "https://github.com/NanmiCoder"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "Python", "dateCreated": "2023-06-09"}</script>
+</head>
+<body data-repo="NanmiCoder/MediaCrawler" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">NanmiCoder/MediaCrawler</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="NanmiCoder__MediaCrawler"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/47178017?u=9ede4e056bc911665ade24d830ac24b5c1122c8b&amp;v=4&s=300" width="300" height="300" alt="NanmiCoder avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">MediaCrawler</div>
+      <a class="rp-side-owner" href="https://github.com/NanmiCoder">NanmiCoder</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/NanmiCoder">NanmiCoder</a>
+        <span class="rp-sep">/</span><span class="rp-name">MediaCrawler</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=monthly">monthly <b>#131</b></a></div>
+    </div>
+    <p class="rp-desc">小红书笔记 | 评论爬虫、抖音视频 | 评论爬虫、快手视频 | 评论爬虫、B 站视频 ｜ 评论爬虫、微博帖子 ｜ 评论爬虫、百度贴吧帖子 ｜ 百度贴吧评论回复爬虫  | 知乎问答文章｜评论爬虫</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>71,093</b></span><span class="rp-stat" title="forks">⑂ <b>13,430</b></span><span class="rp-stat" title="watchers">👁 <b>264</b></span><span class="rp-stat" title="prs">⑃ <b>294</b></span><span class="rp-stat" title="issues">● <b>635</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2023-06-09</span><a class="rp-meta-bit rp-home" href="https://nanmicoder.github.io/MediaCrawler/" rel="noopener">nanmicoder.github.io/MediaCrawler/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="NanmiCoder__cc-haha"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/47178017?u=9ede4e056bc911665ade24d830ac24b5c1122c8b&amp;v=4" alt="" loading="lazy">cc-haha</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/NanmiCoder/MediaCrawler">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+56</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1,012</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+4,228</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">71,093</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">13,430</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">264</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">294</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">635</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">🔥 MediaCrawler - 自媒体平台爬虫 🕷️
+
+
+
+📢 首页赞助位虚位以待 · 合作请联系 relakkes@gmail.com
+
+
+
+---
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 免责声明：
+ 
+ 大家请以学习为目的使用本仓库⚠️⚠️⚠️⚠️，爬虫违法违规的案件  
+
+本仓库的所有内容仅供学习和参考之用，禁止用于商业用途。任何人或组织不得将本仓库的内容用于非法用途或侵犯他人合法权益。本仓库所涉及的爬虫技术仅用于学习和研究，不得用于对其他平台进行大规模爬虫或其他非法行为。对于因使用本仓库内容而引起的任何法律责任，本仓库不承担任何责任。使用本仓库的内容即表示您同意本免责声明的所有条款和条件。
+
+ 点击查看更为详细的免责声明。点击跳转
+
+
+
+
+ 📖 项目简介
+
+一个功能强大的多平台自媒体数据采集工具，支持小红书、抖音、快手、B站、微博、贴吧、知乎等主流平台的公开信息抓取。
+
+ 🔧 技术原理
+
+- 核心技术：基于 Playwright 浏览器自动化框架登录保存登录态
+- 无需JS逆向：利用保留登录态的浏览器上下文环境，通过 JS 表达式获取签名参数
+- 优势特点：无需逆向复杂的加密算法，大幅降低技术门槛
+
+
+ ✨ 功能特性
+| 平台   | 关键词搜索 | 指定帖子ID爬取 | 二级评论 | 指定创作者主页 | 登录态缓存 | IP代理池 | 生成评论词云图 |
+| ------ | ---------- | -------------- | -------- | -------------- | ---------- | -------- | -------------- |
+| 小红书 | ✅          | ✅              | ✅        | ✅              | ✅          | ✅        | ✅              |
+| 抖音   | ✅          | ✅              | ✅        | ✅              | ✅          | ✅        | ✅              |
+| 快手   | ✅          | ✅              | ✅        | ✅              | ✅          | ✅        | ✅              |
+| B 站   | ✅          | ✅              | ✅        | ✅              | ✅          | ✅        | ✅              |
+| 微博   | ✅          | ✅              | ✅        | ✅              | ✅          | ✅        | ✅              |
+| 贴吧   | ✅          | ✅              | ✅        | ✅              | ✅          | ✅        | ✅              |
+| 知乎   | ✅          | ✅              | ✅        | ✅              | ✅          | ✅        | ✅              |
+
+
+
+
+🚀 开源版不够用？看看 MediaCrawlerPro 多了什么：断点续爬 · 多账号 + IP 代理池 · 去掉 Playwright · 多个 AI Agent 项目源码（点击展开）
+
+
+
+ 专注于学习成熟项目的架构设计，不仅仅是爬虫技术，Pro 版本的代码设计思路同样值得深入学习！
+
+MediaCrawlerPro 相较于开源版本的核心优势：
+
+ 🎯 核心功能升级
+- ✅ 断点续爬功能（重点特性）
+- ✅ 多账号 + IP代理池支持（重点特性）
+- ✅ 去除 Playwright 依赖，使用更简单
+- ✅ 完整 Linux 环境支持
+
+ 🏗️ 架构设计优化
+- ✅ 代码重构优化，更易读易维护（解耦 JS 签名逻辑）
+- ✅ 企业级代码质量，适合构建大型爬虫项目
+- ✅ 完美架构设计，高扩展性，源码学习价值更大
+
+ 🎁 额外功能
+- ✅ AI Agent Skill 支持（Codex / OpenClaw 🦞 / Hermes / Claude Code / DeepSeek Harness / cc-haha / WorkBuddy / 豆包 / Trae / Qoder / Cursor 一键安装，让 Agent 自动爬取数据）
+- ✅ 评论分析 Agent（🆕 新上线）：输入关键词或链接，自动采集评论并生成研究报告
+- ✅ 自媒体内容拆解 Agent：解析内容、视频转文字、拆解爆款元素
+- ✅ 多平台首页信息流推荐（HomeFeed）和热搜榜单
+- ✅ 自媒体视频下载器桌面端（适合学习全栈开发）
+- ✅ AI 图片生成 Agent：多轮迭代自动优化，内置精选模板库
+
+开源不易，欢迎订阅支持！点击查看：MediaCrawlerPro 项目主页 更多介绍
+
+
+
+
+
+ 🚀 快速开始
+
+ 💡 如果这个项目对您有帮助，请给个 ⭐ Star 支持一下！
+
+ 📋 前置依赖
+
+ 🚀 uv 安装（推荐）
+
+在进行下一步操作之前，请确保电脑上已经安装了 uv：
+
+- 安装地址：uv 官方安装指南
+- 验证安装：终端输入命令 uv --version，如果正常显示版本号，证明已经安装成功
+- 推荐理由：uv 是目前最强的 Python 包管理工具，速度快、依赖解析准确
+
+ 🟢 Node.js 安装
+
+项目依赖 Node.js，请前往官网下载安装：
+
+- 下载地址：https://nodejs.org/en/download/
+- 版本要求：= 16.0.0
+
+ 📦 Python 包安装
+
+shell
+ 进入项目目录
+cd MediaCrawler
+
+ 使用 uv sync 命令来保证 python 版本和相关依赖包的一致性
+uv sync
+
+
+ 🌐 浏览器驱动安装（可选）
+
+ 如果使用默认的 CDP 模式（连接已有 Chrome 浏览器），无需安装浏览器驱动。仅在使用标准 Playwright 模式时需要安装。
+
+shell
+ 仅在标准 Playwright 模式下需要安装浏览器驱动
+uv run playwright install
+
+
+ 🌍 Chrome 浏览器配置（推荐）
+
+项目默认使用 CDP 模式连接用户已有的 Chrome 浏览器，可以复用浏览器已有的登录状态、Cookie、扩展等，大幅降低平台风控检测风险。
+
+使用前需要：
+
+1. 安装最新版 Chrome 浏览器（版本 = 144），下载地址
+2. 开启远程调试功能：在 Chrome 地址栏输入 chrome://inspect/remote-debugging，勾选 &quot;Allow remote debugging for this browser ins</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/NanmiCoder/MediaCrawler/issues/199"><span class="rp-item-num">#199</span><span class="rp-item-title">恢复项目，气死了，有的人拿着的项目去招摇撞骗。。。。。。。。。。。。</span><span class="rp-item-extra">14 comments · 2024-03-28</span></a><a class="rp-item" href="https://github.com/NanmiCoder/MediaCrawler/issues/191"><span class="rp-item-num">#191</span><span class="rp-item-title">有的人，操作真的太6了，大家注意甄别，请勿上当受骗。</span><span class="rp-item-extra">14 comments · 2024-03-21</span></a><a class="rp-item" href="https://github.com/NanmiCoder/MediaCrawler/issues/702"><span class="rp-item-num">#702</span><span class="rp-item-title">[问题] 爬取失败</span><span class="rp-item-extra">11 comments · 2025-08-09</span></a><a class="rp-item" href="https://github.com/NanmiCoder/MediaCrawler/issues/915"><span class="rp-item-num">#915</span><span class="rp-item-title">[风控] 只是在小红书上查看帖子和下载视频，被系统提示检查到AI操作</span><span class="rp-item-extra">10 comments · 2026-06-12</span></a><a class="rp-item" href="https://github.com/NanmiCoder/MediaCrawler/issues/666"><span class="rp-item-num">#666</span><span class="rp-item-title">[问题] 程序运行扫码登陆完成后自动关闭了页面</span><span class="rp-item-extra">9 comments · 2025-07-20</span></a><a class="rp-item" href="https://github.com/NanmiCoder/MediaCrawler/issues/660"><span class="rp-item-num">#660</span><span class="rp-item-title">[BUG] dy二级评论，无法获取用户定位</span><span class="rp-item-extra">8 comments · 2025-07-15</span></a><a class="rp-item" href="https://github.com/NanmiCoder/MediaCrawler/issues/544"><span class="rp-item-num">#544</span><span class="rp-item-title">小红书用户主页爬取是否支持从上一次中断的地方继续爬取？</span><span class="rp-item-extra">8 comments · 2025-01-21</span></a><a class="rp-item" href="https://github.com/NanmiCoder/MediaCrawler/issues/612"><span class="rp-item-num">#612</span><span class="rp-item-title">第一次采集抖音没问题，再运行一次就采集为空了</span><span class="rp-item-extra">7 comments · 2025-05-29</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/NanmiCoder/MediaCrawler/discussions/1001"><span class="rp-item-num">#1001</span><span class="rp-item-title">抖音商品评价、晒单有没有好的解决方案</span><span class="rp-item-extra">2 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/NanmiCoder/MediaCrawler/discussions/922"><span class="rp-item-num">#922</span><span class="rp-item-title">浏览量是无法爬取的吗？</span><span class="rp-item-extra">2 comments · 2026-06-24</span></a><a class="rp-item" href="https://github.com/NanmiCoder/MediaCrawler/discussions/904"><span class="rp-item-num">#904</span><span class="rp-item-title">Firefox-based stealth option (interest check)</span><span class="rp-item-extra">0 comments · 2026-05-27</span></a><a class="rp-item" href="https://github.com/NanmiCoder/MediaCrawler/discussions/856"><span class="rp-item-num">#856</span><span class="rp-item-title">爬取技巧求助</span><span class="rp-item-extra">1 comments · 2026-03-30</span></a><a class="rp-item" href="https://github.com/NanmiCoder/MediaCrawler/discussions/832"><span class="rp-item-num">#832</span><span class="rp-item-title">请问各路大佬：词云图=True后，在哪里可以看到生成的词云图？（标题、评论保存格式为csv，在data文件夹下）</span><span class="rp-item-extra">1 comments · 2026-02-13</span></a><a class="rp-item" href="https://github.com/NanmiCoder/MediaCrawler/discussions/806"><span class="rp-item-num">#806</span><span class="rp-item-title">请问不能在小红书搜索特定tag以及不能设置帖子时间吗？</span><span class="rp-item-extra">1 comments · 2026-01-07</span></a><a class="rp-item" href="https://github.com/NanmiCoder/MediaCrawler/discussions/804"><span class="rp-item-num">#804</span><span class="rp-item-title">使用小红书webui 爬取的是否发现二维码登录后，登录状态判断有问题。下面贴一下自己修复的patch</span><span class="rp-item-extra">0 comments · 2026-01-06</span></a><a class="rp-item" href="https://github.com/NanmiCoder/MediaCrawler/discussions/797"><span class="rp-item-num">#797</span><span class="rp-item-title">稳定爬取不被风控的速度上限是多少？</span><span class="rp-item-extra">2 comments · 2025-12-11</span></a></div></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (6)</h3><div class="rp-list"><a class="rp-item" href="https://www.techritual.com/2026/07/31/529054/" target="_blank" rel="noopener"><span class="rp-news-src">techritual</span><span class="rp-item-title">MediaCrawler：一鍵爬取小紅書抖音 B 站等多平台評論與內容</span><span class="rp-item-extra">2026-07-31</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00834/article/details/158911972" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">7天解锁MediaCrawler全攻略：从入门到精通的数据采集实战指南</span><span class="rp-item-extra">2026-03-10</span></a><a class="rp-item" href="https://www.bilibili.com/ru/video/BV1RG33zPEof/" target="_blank" rel="noopener"><span class="rp-news-src">bilibili</span><span class="rp-item-title">霸榜github！我的开源项目 MediaCrawler 又冲上热门第一了？？</span><span class="rp-item-extra">2025-07-04</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00348/article/details/147137587" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">【免费下载】 MediaCrawler开源项目安装与配置指南</span><span class="rp-item-extra">2025-04-11</span></a><a class="rp-item" href="https://news.qq.com/rain/a/20240506A04CZF00" target="_blank" rel="noopener"><span class="rp-news-src">腾讯网</span><span class="rp-item-title">MediaCrawler，轻松爬取抖音小红书评论数据！</span><span class="rp-item-extra">2024-05-06</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE1DQktjWWpMSUpyV05aYWFjak9OUEY2M0ZMWkFEYWxPczI0NzU4NTkzaF9QaFhaVGJYZzdTMlVITHdHZDlEMW8xQUNjYV80MG1CQ1hjMW1n?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">QQ News</span><span class="rp-item-title">该死，这糟糕的心动感，AI杀疯了！</span><span class="rp-item-extra">2024-04-07</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (1)</h3><div class="rp-list"><a class="rp-item" href="https://note.com/panda_lab/n/n6fd0d315dd72?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">You&#x27;ll miss out if you only follow X. MediaCrawler, which aggregates 7 major Chinese SNS, has 63k stars on GitHub. Cross-platform collection of posts and comments from ...</span><span class="rp-item-extra">2026-08-21</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/NanmiCoder__MediaCrawler.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

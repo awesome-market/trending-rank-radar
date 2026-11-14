@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raphire/Win11Debloat · GitHub Trending Rank Radar</title>
+<meta name="description" content="A simple, lightweight PowerShell script that allows you to remove pre-installed apps, disable telemetry, as well as perform various other changes to declutter and customize your Windows experience. Wi">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Win11Debloat, Raphire, Raphire/Win11Debloat, github stars, github trending, star growth, star history, 开源项目, 星标增长, windows, windows-10, windows10, powershell, ps1, bloatware">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Raphire__Win11Debloat">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Raphire/Win11Debloat · GitHub Trending Rank Radar">
+<meta property="og:description" content="A simple, lightweight PowerShell script that allows you to remove pre-installed apps, disable telemetry, as well as perform various other changes to declutter and customize your Windows experience. Wi">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Raphire__Win11Debloat">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Raphire/Win11Debloat", "codeRepository": "https://github.com/Raphire/Win11Debloat", "url": "https://zhuikan.com/repos/Raphire__Win11Debloat", "description": "A simple, lightweight PowerShell script that allows you to remove pre-installed apps, disable telemetry, as well as perform various other changes to declutter and customize your Windows experience. Wi", "author": {"@type": "Organization", "name": "Raphire", "url": "https://github.com/Raphire"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "PowerShell", "dateCreated": "2020-10-27", "keywords": "windows,windows-10,windows10,powershell,ps1,bloatware,bloatware-removal,debloat,powershell-script,windows11"}</script>
+</head>
+<body data-repo="Raphire/Win11Debloat" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Raphire/Win11Debloat</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Raphire__Win11Debloat"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/9938813?u=36a2d1fc354e7314f167dee34ff90e9f2add52dc&amp;v=4&s=300" width="300" height="300" alt="Raphire avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Win11Debloat</div>
+      <a class="rp-side-owner" href="https://github.com/Raphire">Raphire</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Raphire">Raphire</a>
+        <span class="rp-sep">/</span><span class="rp-name">Win11Debloat</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=monthly">monthly <b>#154</b></a></div>
+    </div>
+    <p class="rp-desc">A simple, lightweight PowerShell script that allows you to remove pre-installed apps, disable telemetry, as well as perform various other changes to declutter and customize your Windows experience. Win11Debloat works for both Windows 10 and Windows 11.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>62,569</b></span><span class="rp-stat" title="forks">⑂ <b>2,786</b></span><span class="rp-stat" title="watchers">👁 <b>254</b></span><span class="rp-stat" title="prs">⑃ <b>290</b></span><span class="rp-stat" title="issues">● <b>431</b></span><span class="rp-stat" title="releases">▤ <b>39</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/windows">windows</a><a class="rp-topic" href="../tags/windows-10">windows-10</a><a class="rp-topic" href="https://github.com/topics/windows10">windows10</a><a class="rp-topic" href="https://github.com/topics/powershell">powershell</a><a class="rp-topic" href="https://github.com/topics/ps1">ps1</a><a class="rp-topic" href="https://github.com/topics/bloatware">bloatware</a><a class="rp-topic" href="https://github.com/topics/bloatware-removal">bloatware-removal</a><a class="rp-topic" href="https://github.com/topics/debloat">debloat</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">PowerShell</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2020-10-27</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Raphire/Win11Debloat">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Release 2026.10.30</span><a class="rp-dl-a" href="https://github.com/Raphire/Win11Debloat/releases/tag/2026.10.30">Release-2026.10.30 ↓</a><span class="rp-dl-ver">2026.10.30</span><span class="rp-dl-date">2026-10-31</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+107</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+959</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+3,670</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">62,569</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,786</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">254</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">290</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">431</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">39</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Win11Debloat
+
+
+
+
+
+ Win11Debloat is a lightweight, easy to use PowerShell script that allows you to quickly declutter and customize your Windows experience, no installation required! You can use it to remove pre-installed apps, disable telemetry, remove intrusive interface elements and much more. No need to painstakingly go through all the settings yourself or remove apps one by one. Win11Debloat makes the process quick and easy!
+
+The script also includes many features that system administrators and power users will enjoy. Such as a powerful command-line interface, support for Windows Audit mode and the ability to make changes to other Windows users. You can also easily export &amp; import your preferred settings, allowing you to quickly apply the same settings on all your systems. Please refer to our wiki for more details.
+
+!Win11Debloat Menu
+
+ Did this script help you? Please consider buying me a cup of coffee to support my work
+
+
+
+ Usage
+
+ [!Warning]
+ Great care went into making sure this script does not unintentionally break any OS functionality, but use at your own risk! If you run into any issues, please report them here.
+
+ Quick method
+
+Download &amp; run the script automatically via PowerShell.
+
+1. Open PowerShell or Terminal.
+2. Copy and paste the command below into PowerShell:
+
+PowerShell
+&amp; ([scriptblock]::Create((irm &quot;https://debloat.raphi.re/&quot;)))
+
+
+3. Wait for the script to automatically download and launch Win11Debloat.
+4. Carefully read through and follow the on-screen instructions.
+
+This method supports command-line parameters to customize the behaviour of the script. Please click here for more information.
+
+ Traditional method
+
+
+  Manually download &amp; run the script.
+
+  1. Download the latest version of the script, and extract the .ZIP file to your desired location.
+  2. Navigate to the Win11Debloat folder
+  3. Double click the Run.bat file to start the script. NOTE: If the console window immediately closes and nothing happens, try the advanced method below.
+  4. Accept the Windows UAC prompt to run the script as administrator, this is required for the script to function.
+  5. Carefully read through and follow the on-screen instructions.
+
+
+ Advanced method
+
+
+  Manually download the script &amp; run the script via PowerShell. Recommended for advanced users.
+
+  1. Download the latest version of the script, and extract the .ZIP file to your desired location.
+  2. Open PowerShell or Terminal as an administrator.
+  3. Temporarily enable PowerShell execution by entering the following command:
+
+  PowerShell
+  Set-ExecutionPolicy Bypass -Scope Process -Force
+  
+
+  4. In PowerShell, navigate to the directory where the files were extracted. Example: cd c:\Win11Debloat
+  5. Now run the script by entering the following command:
+
+  PowerShell
+  .\Win11Debloat.ps1
+  
+
+  6. Carefully read through and follow the on-screen instructions.
+
+  This method supports command-line parameters to customize the behaviour of the script. Please click here for more informati</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Raphire/Win11Debloat/issues/41"><span class="rp-item-num">#41</span><span class="rp-item-title">Option to remove individual pinned apps from the startmenu (ie. Grammarly and Spotify) </span><span class="rp-item-extra">13 comments · 2024-03-18</span></a><a class="rp-item" href="https://github.com/Raphire/Win11Debloat/issues/9"><span class="rp-item-num">#9</span><span class="rp-item-title">Add option to disable OneDrive sync</span><span class="rp-item-extra">13 comments · 2023-10-23</span></a><a class="rp-item" href="https://github.com/Raphire/Win11Debloat/issues/830"><span class="rp-item-num">#830</span><span class="rp-item-title">Windows Search not working</span><span class="rp-item-extra">6 comments · 2026-10-16</span></a><a class="rp-item" href="https://github.com/Raphire/Win11Debloat/issues/877"><span class="rp-item-num">#877</span><span class="rp-item-title">Optional switches for newer Windows AI and sign-in policies (Settings agentic search, agent connectors, Get Started, Copilot setup screen)</span><span class="rp-item-extra">5 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/Raphire/Win11Debloat/issues/822"><span class="rp-item-num">#822</span><span class="rp-item-title">Windows 10: WinGet uninstall of Microsoft Copilot (XP9CXNGPPJ97XX) times out after 120 s, the app stays installed and the summary does not say which app failed</span><span class="rp-item-extra">4 comments · 2026-10-13</span></a><a class="rp-item" href="https://github.com/Raphire/Win11Debloat/issues/767"><span class="rp-item-num">#767</span><span class="rp-item-title">Explorer File</span><span class="rp-item-extra">4 comments · 2026-09-21</span></a><a class="rp-item" href="https://github.com/Raphire/Win11Debloat/issues/862"><span class="rp-item-num">#862</span><span class="rp-item-title">Brave browser: Your settings were changed by an unknown app</span><span class="rp-item-extra">3 comments · 2026-10-24</span></a><a class="rp-item" href="https://github.com/Raphire/Win11Debloat/issues/806"><span class="rp-item-num">#806</span><span class="rp-item-title">-SomeFeature:$false applies the feature in an elevated session but is dropped when the script relaunches itself</span><span class="rp-item-extra">2 comments · 2026-10-08</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Raphire/Win11Debloat/discussions/880"><span class="rp-item-num">#880</span><span class="rp-item-title">After applying the tweaks, the run command history is cleared</span><span class="rp-item-extra">1 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/Raphire/Win11Debloat/discussions/876"><span class="rp-item-num">#876</span><span class="rp-item-title">One Drive Bug</span><span class="rp-item-extra">1 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/Raphire/Win11Debloat/discussions/873"><span class="rp-item-num">#873</span><span class="rp-item-title">Difference between downloads &quot;Get.ps1&quot; and &quot;Win11Debloat.zip&quot;?</span><span class="rp-item-extra">1 comments · 2026-10-31</span></a><a class="rp-item" href="https://github.com/Raphire/Win11Debloat/discussions/872"><span class="rp-item-num">#872</span><span class="rp-item-title">Contributing: Should I install Git for Windows or continue using WSL?</span><span class="rp-item-extra">1 comments · 2026-10-30</span></a><a class="rp-item" href="https://github.com/Raphire/Win11Debloat/discussions/867"><span class="rp-item-num">#867</span><span class="rp-item-title">Avast AV Flags as IDP.Generic</span><span class="rp-item-extra">1 comments · 2026-10-28</span></a><a class="rp-item" href="https://github.com/Raphire/Win11Debloat/discussions/823"><span class="rp-item-num">#823</span><span class="rp-item-title">Unable to load list of installed apps via winget</span><span class="rp-item-extra">1 comments · 2026-10-13</span></a><a class="rp-item" href="https://github.com/Raphire/Win11Debloat/discussions/804"><span class="rp-item-num">#804</span><span class="rp-item-title">isnt this a direct copy of windows utility?</span><span class="rp-item-extra">1 comments · 2026-10-08</span></a><a class="rp-item" href="https://github.com/Raphire/Win11Debloat/discussions/790"><span class="rp-item-num">#790</span><span class="rp-item-title">Quick-install GUI breaks when Schemas\MessageBox.xaml disappears / Review Selected Changes freezes GUI</span><span class="rp-item-extra">0 comments · 2026-10-07</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/Raphire/Win11Debloat/releases"><b>Release 2026.10.30</b> <span class="rp-rel-tag">2026.10.30</span> <span class="rp-item-extra">2026-10-31</span></a><pre class="rp-pre">[!NOTE]
+ Win11Debloat now stores user data, including your last used settings, preferences, and logs, in %LOCALAPPDATA%\Win11Debloat instead of the script directory. The script will still fall back to the script directory when it is run in system context.
+
+This release introduces one of the most requested features for Win11Debloat: localization support! Made possible by contributions from the community, the GUI now supports 13 languages. Special thanks to @SashankBhamidi for laying the foundation for this!
+
+Beyond localization, this update brings several new features, expanded app removal</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (6)</h3><div class="rp-list"><a class="rp-item" href="https://www.msn.com/zh-cn/%E6%8A%80%E6%9C%AF/%E8%BD%AF%E4%BB%B6/windows-%E6%83%B3%E6%B8%85%E7%88%BD%E4%B8%80%E7%82%B9-%E8%AF%95%E8%AF%95-win11debloat-%E5%8A%9F%E8%83%BD-%E7%94%A8%E6%B3%95%E4%B8%8E%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97/ar-AA2fT67n" target="_blank" rel="noopener"><span class="rp-news-src">红板报 on MSN</span><span class="rp-item-title">Windows 想清爽一点? 试试 Win11Debloat：功能、用法与避坑指南</span><span class="rp-item-extra">2026-10-22</span></a><a class="rp-item" href="https://www.hkepc.com/26904/Win11Debloat_%E9%96%8B%E6%BA%90%E6%9C%80%E4%BD%B3%E5%8C%96%E5%B7%A5%E5%85%B7_%E7%8D%B2%E9%80%BE_5.8_%E8%90%AC%E6%98%9F___%E5%BF%AB%E9%80%9F%E6%B8%85%E7%90%86%E7%B3%BB%E7%B5%B1%E9%9D%9E%E5%BF%85%E8%A6%81%E5%85%83%E4%BB%B6" target="_blank" rel="noopener"><span class="rp-news-src">電腦領域HKEPC Hardware</span><span class="rp-item-title">Win11Debloat 開源最佳化工具</span><span class="rp-item-extra">2026-10-08</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00968/article/details/161800267" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">Windows 11终极优化指南：使用Win11Debloat打造纯净高效系统</span><span class="rp-item-extra">2026-07-14</span></a><a class="rp-item" href="https://www.techritual.com/2026/05/22/525878/" target="_blank" rel="noopener"><span class="rp-news-src">techritual</span><span class="rp-item-title">Win11Debloat 2025.06.12 版本：一鍵清除 Windows 預裝 App 同 Telemetry</span><span class="rp-item-extra">2026-05-22</span></a><a class="rp-item" href="https://unikoshardware.com/2025/09/win11debloat-2025-09-13.html" target="_blank" rel="noopener"><span class="rp-news-src">unikoshardware</span><span class="rp-item-title">Win11Debloat 幫你去除多餘系統 APP 並關閉隱私監控</span><span class="rp-item-extra">2025-09-23</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00151/article/details/151210641" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">Win11Debloat安装使用教程：三步完成Windows系统深度清理</span><span class="rp-item-extra">2025-09-05</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (12)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=36969022" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Win11Debloat is a simple script that removes pre-installed windows bloatware</span><span class="rp-item-extra">▲ 123 · 186 comments · 2023-08-02</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=45799287" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Win11Debloat – declutter and improve your Windows experience</span><span class="rp-item-extra">▲ 72 · 44 comments · 2025-11-03</span></a><a class="rp-item" href="https://www.msn.com/en-us/technology/software/i-debloated-windows-11-without-breaking-anything-and-here-s-what-i-deliberately-left-alone/ar-AA2bUeV9" target="_blank" rel="noopener"><span class="rp-news-src">MSN</span><span class="rp-item-title">I debloated Windows 11 without breaking anything, and here&#x27;s what I deliberately left alone</span><span class="rp-item-extra">2026-09-09</span></a><a class="rp-item" href="https://www.connect.de/ratgeber/win11debloat-anleitung-windows-11-schneller-machen-aufraeumen-3213132.html" target="_blank" rel="noopener"><span class="rp-news-src">Connect</span><span class="rp-item-title">Win11Debloat: Windows 11 mit der PowerShell aufräumen</span><span class="rp-item-extra">2026-08-17</span></a><a class="rp-item" href="https://www.programmez.com/actualites/win11debloat-retirer-les-apps-et-faire-le-menage-dans-windows-38495" target="_blank" rel="noopener"><span class="rp-news-src">Programmez</span><span class="rp-item-title">Win11Debloat : retirer les apps et faire le ménage dans Windows</span><span class="rp-item-extra">2025-11-05</span></a><a class="rp-item" href="https://www.slashgear.com/1875296/windows-11-tool-win11debloat-remove-programs-run-faster/" target="_blank" rel="noopener"><span class="rp-news-src">SlashGear</span><span class="rp-item-title">The One Tool You Need To Make Windows 11 Run Faster (And Remove Bloatware)</span><span class="rp-item-extra">2025-06-07</span></a><a class="rp-item" href="https://www.thurrott.com/windows/windows-11/307557/hands-on-with-win11debloat" target="_blank" rel="noopener"><span class="rp-news-src">Thurrott</span><span class="rp-item-title">Hands-On with Win11Debloat</span><span class="rp-item-extra">2024-08-26</span></a><a class="rp-item" href="https://windowsreport.com/win11debloat-an-easy-way-to-get-rid-of-windows-11-intrusive-ads/" target="_blank" rel="noopener"><span class="rp-news-src">Windows Report</span><span class="rp-item-title">Win11Debloat: An easy way to get rid of Windows 11 intrusive ads</span><span class="rp-item-extra">2024-05-21</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiZEFVX3lxTE14ZXZrSjhuN1M5ODFIbFFIRUpBbkhsMGYzZ2d3ZFBTMEZibTBxdTQwMkRpVVhuOUJMcTZsNlBuc3FwTGlsYldCZmJ2MzhobXJEcWlPT2xSQ1pGUmduZlZ2MkVlYWQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Neowin</span><span class="rp-item-title">Win11Debloat 08.24.2026</span><span class="rp-item-extra">2026-08-24</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxQTm5VSDZvTTBTZmdlenBPaU5icmU2T1ZqMXhtekFqU0YwelQyLURRV0s0bllobEs1S1hWVFQ3RXlKeER1X0VFUjBWQVo4NHJrWnVjaXFPeS10S2tyXzlLY1pwV0RvVGJaemRsMnhDMmJzemJWcTB3b0t0bndBcEkzWkdPQ3BTY3k4ZFFGUjhSU212dFFVeW9hMnMySkV4dEctRkRyajcyeEFuenc?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">PCMag</span><span class="rp-item-title">I Put 4 Windows Debloating Tools to the Test. The Results Were Embarrassing</span><span class="rp-item-extra">2026-04-13</span></a><details class="rp-news-more"><summary>2 more</summary><a class="rp-item" href="https://news.google.com/rss/articles/CBMiggFBVV95cUxPWlo3ZlcyV0Exci1xMDRuQWlhdUlITFYwdTFIQ3VscEkyVlRxeEtrSzNOWWYzb0EyakNOVDFIbWR5VEh4VkJZeG9CRHVTQ2JYWThzYVRRNjJrSWlYRnExRW53blhuT3FReTZzaXBiMmpyd2RqVnN0ZVlPNkpCN3FBeE53?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">MakeUseOf</span><span class="rp-item-title">This free Windows 11 debloating script makes every PC better</span><span class="rp-item-extra">2026-02-12</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxOVndMRk1tVXg3RXZYaDdBY1ViMmVKbVc2X2hva2JoRFVacnNzLUE0YkZiY2lBNmlpdmJQVW5kQ09RYVE3ZDdPaXY5a19KMUtSc2NlVTJWUWxsdllWc0xkZy1QYWlWYjd5Qjc2bWhtbVFvam5YWG5WS3NrUllFdG5MeFRGMkI?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Make Tech Easier</span><span class="rp-item-title">Why Windows Debloat Scripts Might Do More Harm Than Good</span><span class="rp-item-extra">2025-03-25</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Raphire__Win11Debloat.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

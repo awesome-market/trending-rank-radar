@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ggml-org/llama.cpp · GitHub Trending Rank Radar</title>
+<meta name="description" content="LLM inference in C/C++">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="llama.cpp, ggml-org, ggml-org/llama.cpp, github stars, github trending, star growth, star history, 开源项目, 星标增长, ggml">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/ggml-org__llama.cpp">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="ggml-org/llama.cpp · GitHub Trending Rank Radar">
+<meta property="og:description" content="LLM inference in C/C++">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/ggml-org__llama.cpp">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ggml-org/llama.cpp", "codeRepository": "https://github.com/ggml-org/llama.cpp", "url": "https://zhuikan.com/repos/ggml-org__llama.cpp", "description": "LLM inference in C/C++", "author": {"@type": "Organization", "name": "ggml-org", "url": "https://github.com/ggml-org"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "C++", "dateCreated": "2023-03-10", "keywords": "ggml"}</script>
+</head>
+<body data-repo="ggml-org/llama.cpp" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">ggml-org/llama.cpp</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="ggml-org__llama.cpp"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/134263123?v=4&s=300" width="300" height="300" alt="ggml-org avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">llama.cpp</div>
+      <a class="rp-side-owner" href="https://github.com/ggml-org">ggml-org</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/ggml-org">ggml-org</a>
+        <span class="rp-sep">/</span><span class="rp-name">llama.cpp</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=weekly">weekly <b>#129</b></a><a class="rp-board-chip" href="../?board=total">total <b>#86</b></a></div>
+    </div>
+    <p class="rp-desc">LLM inference in C/C++</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>134,862</b></span><span class="rp-stat" title="forks">⑂ <b>25,566</b></span><span class="rp-stat" title="watchers">👁 <b>926</b></span><span class="rp-stat" title="prs">⑃ <b>17,180</b></span><span class="rp-stat" title="issues">● <b>10,832</b></span><span class="rp-stat" title="releases">▤ <b>8,121</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/ggml">ggml</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C++</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2023-03-10</span><a class="rp-meta-bit rp-home" href="https://llama.app" rel="noopener">llama.app</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="ggml-org__Llama-macOS"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/134263123?v=4" alt="" loading="lazy">Llama-macOS</a><a class="rp-same-link" href="ggml-org__ggml"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/134263123?v=4" alt="" loading="lazy">ggml</a><a class="rp-same-link" href="ggml-org__whisper.cpp"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/134263123?v=4" alt="" loading="lazy">whisper.cpp</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/ggml-org/llama.cpp">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.0.0</span><a class="rp-dl-a" href="https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0">v1.0.0 ↓</a><span class="rp-dl-ver">1.0.0</span><span class="rp-dl-date">2026-11-13</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+88</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">134,862</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">25,566</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">926</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">17,180</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">10,832</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">8,121</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">llama.cpp
+
+!llama.cpp
+
+
+
+LLM inference in C/C++
+
+
+
+
+
+
+
+
+ggml / ops / maintainer PRs%20sort%3Aupdated-desc) / dev stats / lib llama API / llama-server REST API
+
+
+
+ Quick start
+
+A few options to get llama.cpp installed on your machine:
+
+bash
+ curl
+curl -LsSf https://llama.app/install.sh | sh
+
+ powershell
+irm https://llama.app/install.ps1 | iex
+
+
+- Visit https://llama.app and follow the instructions
+- Run with Docker - see our Docker documentation
+- Download pre-built binaries from the releases page
+- Build from source by cloning this repository - check out our build guide
+
+Once installed:
+
+sh
+ Download and run a model directly from Hugging Face
+llama cli -hf ggml-org/Qwen3.5-0.8B-GGUF
+
+ Launch OpenAI-compatible API server
+llama serve -hf ggml-org/Qwen3.5-0.8B-GGUF
+
+
+
+    
+        
+            
+            VLM session with llama cli
+        
+        
+            
+            Built-in web UI against llama serve
+        
+    
+
+
+ Description
+
+The main goal of llama.cpp is to enable LLM (and VLM) inference with minimal setup and state-of-the-art performance on
+a wide range of hardware - locally and in the cloud.
+
+- Plain C/C++ implementation without any dependencies
+- Apple silicon is a first-class citizen - optimized via ARM NEON, Accelerate and Metal frameworks
+- AVX, AVX2, AVX512 and AMX support for x86 architectures
+- RVV, ZVFH, ZFH, ZICBOP and ZIHINTPAUSE support for RISC-V architectures
+- 1.5-bit, 2-bit, 3-bit, 4-bit, 5-bit, 6-bit, and 8-bit integer quantization for faster inference and reduced memory use
+- Custom CUDA kernels for running LLMs on NVIDIA GPUs (support for AMD GPUs via HIP and Moore Threads GPUs via MUSA)
+- Vulkan and SYCL backend support
+- CPU+GPU hybrid inference to partially accelerate models larger than the total VRAM capacity
+
+The llama.cpp project is build on top of the ggml library.
+
+ Supported backends
+
+| Backend | Target devices |
+| --- | --- |
+| BLAS | All |
+| BLIS | All |
+| CANN | Huawei Ascend NPU |
+| CUDA | Nvidia GPU |
+| HIP | AMD GPU |
+| Hexagon | Snapdragon |
+| IBM zDNN | IBM Z &amp; LinuxONE |
+| MUSA | Moore Threads GPU |
+| Metal | Apple Silicon |
+| OpenCL | Adreno GPU |
+| [OpenVINO [In Progress]](docs/backend/OPENVINO.md) | Intel CPUs, GPUs, and NPUs |
+| RPC | All |
+| SYCL | Intel GPU |
+| VirtGPU | VirtGPU APIR |
+| Vulkan | GPU |
+| WebGPU | All |
+| ZenDNN | AMD CPU |
+
+ Documentation
+
+ Tools
+
+- cli
+- completion
+- server
+- GBNF grammars
+
+ Development
+
+- How to build
+- Running on Docker
+- Build on Android
+- Multi-GPU usage
+- Performance troubleshooting
+- GGML tips &amp; tricks
+- XCFramework
+- Completions
+- Models
+- Release process
+
+ Contributing
+
+- Contributors can open PRs
+- Collaborators will be invited based on contributions
+- Maintainers can push to branches in the llama.cpp repo and merge PRs into the master branch
+- Any help with managing issues, PRs and projects is very appreciated!
+- Read the CONTRIBUTING.md for more information
+
+ Acknowledgements
+
+- yhirose/cpp-httplib - Single-header HTTP server, used by llama-serve</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ggml-org/llama.cpp/issues/10528"><span class="rp-item-num">#10528</span><span class="rp-item-title">Misc. bug: Inconsistent Vulkan segfault</span><span class="rp-item-extra">83 comments · 2024-11-26</span></a><a class="rp-item" href="https://github.com/ggml-org/llama.cpp/issues/20837"><span class="rp-item-num">#20837</span><span class="rp-item-title">Eval bug: Qwen3.5 9B often prints tool calls in XML and stops when thinking is enabled - tool calls inside thinking block</span><span class="rp-item-extra">60 comments · 2026-03-21</span></a><a class="rp-item" href="https://github.com/ggml-org/llama.cpp/issues/10982"><span class="rp-item-num">#10982</span><span class="rp-item-title">Research: Performance differences between Metal (macOS) and Vulkan (Linux)</span><span class="rp-item-extra">58 comments · 2024-12-26</span></a><a class="rp-item" href="https://github.com/ggml-org/llama.cpp/issues/14909"><span class="rp-item-num">#14909</span><span class="rp-item-title">Feature Request: Implement missing ops from backends</span><span class="rp-item-extra">56 comments · 2025-07-28</span></a><a class="rp-item" href="https://github.com/ggml-org/llama.cpp/issues/2164"><span class="rp-item-num">#2164</span><span class="rp-item-title">mpi : attempt inference of 65B LLaMA on a cluster of Raspberry Pis</span><span class="rp-item-extra">54 comments · 2023-07-10</span></a><a class="rp-item" href="https://github.com/ggml-org/llama.cpp/issues/11970"><span class="rp-item-num">#11970</span><span class="rp-item-title">Misc. bug: The KV cache is sometimes truncated incorrectly when making v1/chat/completions API calls</span><span class="rp-item-extra">50 comments · 2025-02-20</span></a><a class="rp-item" href="https://github.com/ggml-org/llama.cpp/issues/24066"><span class="rp-item-num">#24066</span><span class="rp-item-title">Eval bug: Vulkan: performance drop in recent builds</span><span class="rp-item-extra">49 comments · 2026-06-03</span></a><a class="rp-item" href="https://github.com/ggml-org/llama.cpp/issues/25618"><span class="rp-item-num">#25618</span><span class="rp-item-title">Eval bug: Speculative decoding (draft-mtp / draft-dspark): greedy output diverges from vanilla on quantized targets</span><span class="rp-item-extra">43 comments · 2026-07-13</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ggml-org/llama.cpp/discussions/32226"><span class="rp-item-num">#32226</span><span class="rp-item-title">Quantized KV + --kv-unified is much slower than f16 KV on long context, and a PR proposal for its improvement</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/ggml-org/llama.cpp/discussions/32211"><span class="rp-item-num">#32211</span><span class="rp-item-title">Fusion: a cloud or local planner driving llama-server parallel slots as a pool of agent workers</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/ggml-org/llama.cpp/discussions/32180"><span class="rp-item-num">#32180</span><span class="rp-item-title">Reduce Grammar Reliance for Tool Calling</span><span class="rp-item-extra">1 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/ggml-org/llama.cpp/discussions/32171"><span class="rp-item-num">#32171</span><span class="rp-item-title">Lossless Speculative Decoding for Looped Models (Ouro Family): Draft with 1 Loop, no Draft Model</span><span class="rp-item-extra">1 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/ggml-org/llama.cpp/discussions/32165"><span class="rp-item-num">#32165</span><span class="rp-item-title">Ryzen 7 255, Radeon 780M benchmarking Vulkan versus ROCm (7.2)</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/ggml-org/llama.cpp/discussions/32161"><span class="rp-item-num">#32161</span><span class="rp-item-title">Chopper: a small open model that cuts only the needed sentences out of retrieved text</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/ggml-org/llama.cpp/discussions/32153"><span class="rp-item-num">#32153</span><span class="rp-item-title">Does /v1/chat/completions sends &#x27;timings&#x27; only at the end of assistant&#x27;s answers?</span><span class="rp-item-extra">1 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/ggml-org/llama.cpp/discussions/32145"><span class="rp-item-num">#32145</span><span class="rp-item-title">CUDA: sync inside block_reduce instead of at call sites?</span><span class="rp-item-extra">1 comments · 2026-11-12</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/ggml-org/llama.cpp/releases"><b>v1.0.0</b> <span class="rp-rel-tag">v1.0.0</span> <span class="rp-item-extra">2026-11-13</span></a><pre class="rp-pre">Blog post: https://huggingface.co/blog/ggml-org/llama-cpp-v1
+
+ Overview
+
+llama.cpp v1.0.0 removes the deprecated public API and promotes the NextN/speculative API to llama.h, adds OCP FP8 KV caches, a host-memory MoE expert cache with a configurable CPU share, and loading of external PLE shards. It adds three text architectures (Kimi-K3.1-Pro, Ripple and xing4_0), drama-3 TTS, and MageVL-Cowork and Kimi-K3.1 vision, hardens llama-server (SSRF, CORS, DNS rebinding, MCP tool cancellation) and adds a /v1/audio/speech endpoint, ships a redesigned web UI with chat groups and a markdown editor, </pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (6)</h3><div class="rp-list"><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVEFVX3lxTFB2R0ZVQldrYkVVSVdoN21iQUZHYnRJeGpBVG1IVlNrbTF0OGtzV0R0LVQ0QVJQRHhEbkZFdHhBM3Y5YnJkWWI0aHg3TFY2TTBQY0hYaw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">alphaXiv</span><span class="rp-item-title">BaseRT: 在 Apple 芯片上通过原生 Metal 实现同类最佳的 LLM 推理</span><span class="rp-item-extra">2026-09-02</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiW0FVX3lxTE5tSTkyR0hoYXVZME5VcHV0cXpHWnRLS1NqR2Q0cGVITDZYSGx0VTh5d21VdHRUb2ozRUxkM09OTThvWm9SUUVMUktDSHVqMEd5dnEtd2hNNDdrdTg?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">blog.upx8.com</span><span class="rp-item-title">Windows本地AI升级，llama.cpp支持多后端，一键跑GGUF无审查模型</span><span class="rp-item-extra">2026-04-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE1DcmJWMGplVXdCVDA0b0xSVG1iQWY3M1ZIRzN1bkc3NDUzY2QyTVhOVWV5eWVUdEZCcWJtX0NlX1ZhaWpDeGZBekhZYzNOcXBPMTBqc0Rsc2xuZlJDelE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN</span><span class="rp-item-title">在llama.cpp中为高通Adreno GPU引入全新的OpenCLTM GPU后端</span><span class="rp-item-extra">2024-12-11</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiSEFVX3lxTE5lUUdFeUo2bHZWMDBrTngyN1QydUo4eFpIcExBWlNOTGllT2Z3TXJsT3lQbzRoM3I1UDF0NUxHaUd3bzBoQ0Zfbw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">品玩</span><span class="rp-item-title">研究完llama.cpp，我发现手机跑大模型竟这么简单</span><span class="rp-item-extra">2023-08-17</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiSEFVX3lxTFBxVkJDbi1NemxMWHdOZ2hQazAtNS1kNkQ0TGVjbWZXcWRXT0ZGeHd4aUhoeUhMWWlHN2xmbGVZeTJjOWZobWcycQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">智源社区</span><span class="rp-item-title">Llama 2本地运行指南和工具Ollama，已4k星</span><span class="rp-item-extra">2023-08-03</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE5hVnJ5TkFBYTBRQ2UyVWl6eEJrVm55Qmw4emVsRUlRVTdkMi1tb1hLQkpXbGRFUnVQSlozSmxIRGxmaGwtMEU2UGZ1VDNxT05jOHJTSkln?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">QQ News</span><span class="rp-item-title">3w＋星标项目大佬创业：树莓派就可运行大模型，获GitHub前CEO投资</span><span class="rp-item-extra">2023-06-25</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (20)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=47088037" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ggml.ai joins Hugging Face to ensure the long-term progress of Local AI</span><span class="rp-item-extra">▲ 839 · 223 comments · 2026-02-20</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=43943047" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Vision Now Available in Llama.cpp</span><span class="rp-item-extra">▲ 550 · 104 comments · 2025-05-10</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=44862583" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Mistral Integration Improved in Llama.cpp</span><span class="rp-item-extra">▲ 95 · 15 comments · 2025-08-11</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=44799218" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Llama.cpp: Add GPT-OSS</span><span class="rp-item-extra">▲ 35 · 0 comments · 2025-08-05</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=48844268" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">LLama.cpp Got Screwd</span><span class="rp-item-extra">▲ 11 · 5 comments · 2026-07-09</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47510953" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Tell HN: Llamacpp now supports unified system RAM offloading on Linux</span><span class="rp-item-extra">▲ 6 · 0 comments · 2026-03-24</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=46895014" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Yet another reminder why you should not use Ollama</span><span class="rp-item-extra">▲ 6 · 5 comments · 2026-02-05</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=44303056" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Is GitHub Releases Down?</span><span class="rp-item-extra">▲ 5 · 3 comments · 2025-06-17</span></a><a class="rp-item" href="https://note.com/ai_gyaru_lab/n/n98a992874ad4?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">What&#x27;s easier in llama.cpp v0.8.0? Finding models, long conversations, and things to watch out for after upgrading</span><span class="rp-item-extra">2026-10-29</span></a><a class="rp-item" href="https://x.com/analogalok/status/2092181751363936543" target="_blank" rel="noopener"><span class="rp-news-src">x</span><span class="rp-item-title">Build llama.cpp with DFlash 2 support (PR #27342): git clone</span><span class="rp-item-extra">2026-08-25</span></a><details class="rp-news-more"><summary>10 more</summary><a class="rp-item" href="https://www.amd.com/en/developer/resources/technical-articles/2026/llama-cpp-on-amd-epyc.html" target="_blank" rel="noopener"><span class="rp-news-src">amd</span><span class="rp-item-title">Accelerate llama.cpp on AMD EPYC: ZenDNN Delivers Up to 4.5x the Prompt Processing</span><span class="rp-item-extra">2026-08-18</span></a><a class="rp-item" href="https://www.xda-developers.com/ditched-lm-studio-for-llama-cpp-and-local-llm-doesnt-feel-like-downgrade-anymore/" target="_blank" rel="noopener"><span class="rp-news-src">XDA Developers</span><span class="rp-item-title">I ditched LM Studio for llama.cpp, and my local LLM doesn&#x27;t feel like a downgrade anymore</span><span class="rp-item-extra">2026-05-23</span></a><a class="rp-item" href="https://gigazine.net/gsc_news/en/20250512-llama-cpp--multimodal-vision-support/" target="_blank" rel="noopener"><span class="rp-news-src">GIGAZINE</span><span class="rp-item-title">Free software &#x27;llama.cpp&#x27; that can run various AI models locally supports multimodal input and enables image explanations, etc.</span><span class="rp-item-extra">2025-05-12</span></a><a class="rp-item" href="https://gigazine.net/gsc_news/en/20250309-run-llama-portable-zip" target="_blank" rel="noopener"><span class="rp-news-src">GIGAZINE</span><span class="rp-item-title">Intel announces that &#x27;Run llama.cpp Portable Zip on Intel GPU with IPEX-LLM&#x27;, which allows various AIs to run on a local Windows PC, also supports DeepSeek</span><span class="rp-item-extra">2025-03-09</span></a><a class="rp-item" href="https://gigazine.net/gsc_news/en/20230403-llama-cpp-ram" target="_blank" rel="noopener"><span class="rp-news-src">GIGAZINE</span><span class="rp-item-title">``llama.cpp&#x27;&#x27;, which made Meta&#x27;s large-scale language model ``LLaMA&#x27;&#x27; executable on a Mac with M1, can be executed with less than 6 GB of memory usage by updating</span><span class="rp-item-extra">2023-04-03</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMimAFBVV95cUxOaEowQkR4YTljaVN1bUk1Z1BNTlRWNzVPY2xTa21Wc3d6S21XVVdyWjdYMDFBdGdhTVlONHVGc0x3TGhUM2M3LUlaWG8wVmdrenJjVk4tWDZDRGZDYUFfajRISF9ncjFqLVpBODl5YWxTbWN1UFVpclBsTmlLOVozaWVmVy1mM2xUN0pQVkNoWE5vclFabmdGcg?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">KDnuggets</span><span class="rp-item-title">Run Muse Glimmer for Local Vibe Coding with llama.cpp, DFlash, and Pi</span><span class="rp-item-extra">2026-08-21</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTFBpVnVtRTVaYkV1TEFuNFV5aW1LaV9kYmFhUlBnS3RudHcxOHA4ekc1d1lhTG9QVXpFdFVSaWUyU2s0MGZqZ09CbFJLaEMzMTd5NjAxblF6T0lPaUl2TUE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">SitePoint</span><span class="rp-item-title">Running LLMs on Raspberry Pi and Edge Devices: A Practical Guide</span><span class="rp-item-extra">2026-02-25</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMimwFBVV95cUxNc0VZdEE0SnlBTnF6bERlVjNXWV9mUW1Va2pVODU3X3VsN0JkdjQ1bnRsczkySnl0MkxHY0J2SE1tS21GLUVsMnFNcG85TWRhbTVPbHkwMktIcU1HZFhiSU5RR2lNOUxaNHhwSFpaeFUzMXBpTjh3cDh4QldrQUI4Wm43ZXN3NDVBT2NMZlllVUF0SUJzTEpkZkg3NA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">SitePoint</span><span class="rp-item-title">GGML Joins Hugging Face: What This Means for Local Model Optimization</span><span class="rp-item-extra">2026-02-22</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxPbHh2dFU3bDh6d0NoOW5rYkFnblhFVHhNMl8zR3FyUjU1dDlGcTdZWml5b1R3dDUtdi1EZXB1Y2x1MF81M3N2YmZ3Q1JTWjJ5eUxVMmFpZVpXandtYUNybURTbXpsS3o5SV9pS3ZCU09vMmJ2MVhXX2JjMWVqMUNxcWhTbGVweHdTdHZvc0c4OGJTbklVaUlCRTFSR04yTFhP?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The Register</span><span class="rp-item-title">How to run LLMs on PC at home using Llama.cpp</span><span class="rp-item-extra">2025-08-24</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMijgFBVV95cUxOUldOYmNTRXlDM01naE4yVnNuS01Hc3B0VS04SE5HaXJyUTlQREhtLWg4VVE0Um9aWHdfMmZtNUo0UG8xWkNBNi1BX2dXYThBYUlVLU5zREgxdHoyaXhHWG9MSkhyZ3BoSjdkU294WTFDSkt2UU9tTmNMc1BnM1pvVlZuaXBWZ2pWWEI3QThn?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">NVIDIA Developer</span><span class="rp-item-title">Optimizing llama.cpp AI Inference with CUDA Graphs</span><span class="rp-item-extra">2024-08-07</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/ggml-org__llama.cpp.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+# rust-mavlink
+
+[![Crate info](https://img.shields.io/crates/v/mavlink.svg)](https://crates.io/crates/mavlink)
+[![Crate downloads](https://img.shields.io/crates/d/mavlink.svg)](https://crates.io/crates/mavlink)
+[![MSRV](https://img.shields.io/crates/msrv/mavlink)](https://github.com/mavlink/rust-mavlink/blob/master/Cargo.toml)
+[![License](https://img.shields.io/crates/l/mavlink.svg)](https://github.com/mavlink/rust-mavlink#license)
+[![Build status](https://github.com/mavlink/rust-mavlink/actions/workflows/test.yml/badge.svg)](https://github.com/mavlink/rust-mavlink/actions/workflows/test.yml)
+[![Documentation](https://docs.rs/mavlink/badge.svg)](https://docs.rs/mavlink)
+
+Pure Rust implementation of the [MAVLink](https://mavlink.io/en) UAV messaging protocol.
+Provides strongly typed message bindings, frame encode/decode and connection APIs for serial,
+UDP, TCP, file connection protocols with a rich set of features.
+
+## What rust-mavlink provides
+
+- Rust bindings for MAVLink dialects
+- Read/write support for MAVLink v1 and v2
+- TCP, UDP, Serial and File connection support. 
+- Signing support.
+- Blocking and async support.
+- std and embedded support.
+- Codegen tool mavlink-bindgen for creating Rust bindings from MAVLink XML dialect definitions.
+
+## Workspace crates
+
+| Crate | Purpose |
+| --- | --- |
+| [`mavlink`](https://crates.io/crates/mavlink) | Main crate with generated dialect modules and high-level APIs |
+| [`mavlink-core`](https://crates.io/crates/mavlink-core) | Core protocol types, parser/serializer, and connection traits |
+| [`mavlink-bindgen`](https://crates.io/crates/mavlink-bindgen) | XML-to-Rust code generator used by `mavlink` |
+
+## Quick start
+
+Add the crate:
+
+```toml
+[dependencies]
+mavlink = "0.21"
+```
+
+Simple code example:
+
+```rust
+use mavlink::{dialects::ardupilotmega, MavConnection};
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let conn = mavlink::connect::<ardupilotmega::MavMessage>("udpin:0.0.0.0:14550")?;
+
+    let heartbeat = ardupilotmega::MavMessage::HEARTBEAT(ardupilotmega::HEARTBEAT_DATA {
+        custom_mode: 0,
+        mavtype: ardupilotmega::MavType::MAV_TYPE_QUADROTOR,
+        autopilot: ardupilotmega::MavAutopilot::MAV_AUTOPILOT_ARDUPILOTMEGA,
+        base_mode: ardupilotmega::MavModeFlag::empty(),
+        system_status: ardupilotmega::MavState::MAV_STATE_STANDBY,
+        mavlink_version: 3,
+    });
+
+    conn.send(&mavlink::MavHeader::default(), &heartbeat)?;
+    let (header, message) = conn.recv()?;
+
+    println!(
+        "received from sys={}, comp={}: {message:?}",
+        header.system_id, header.component_id
+    );
+
+    Ok(())
+}
+```
+
+## Supported address formats
+
+- `tcpin:<addr>:<port>`: TCP server
+- `tcpout:<addr>:<port>`: TCP client
+- `udpin:<addr>:<port>`: UDP listener
+- `udpout:<addr>:<port>`: UDP sender
+- `udpbcast:<addr>:<port>`: UDP broadcast sender
+- `serial:<port>:<baudrate>`: serial port connection
+- `file:<path>`: read MAVLink frames from a file
+
+## Dialects
+
+### Compile-time dialects
+
+Features such as `dialect-ardupilotmega` and `dialect-common` generate strongly
+typed Rust messages from XML definitions during the build. Use these when the
+message set is known at compile time. Changing the definitions requires rebuilding
+the application.
+
+### Runtime dialects
+
+The `dialect-dynamic` feature loads dialect XML definitions at runtime.
+
+Runtime dialects are required when an application takes its dialect at runtime
+(e.g. from user configuration) and rebuilding the application for each custom
+dialect is not possible.
+
+See the [`runtime-dialect` example](mavlink/examples/runtime-dialect/src/main.rs)
+for usage and testing it.
+
+## Feature flags
+
+Transport and runtime:
+
+- `embedded`
+- `std`
+- `tokio`
+- `transport-direct-serial`
+- `transport-tcp`
+- `transport-udp`
+
+Protocol and code generation:
+
+- `arbitrary`
+- `format-generated-code`
+- `mav2-message-extensions`
+- `mav2-message-signing`
+- `serde`
+- `ts-rs`
+- `wip-messages`
+
+Dialects:
+
+- `dialect-all`
+- `dialect-ardupilotmega`
+- `dialect-asluav`
+- `dialect-avssuas`
+- `dialect-common`
+- `dialect-csairlink`
+- `dialect-cubepilot`
+- `dialect-development`
+- `dialect-dynamic` (unlike the generated dialects, loads dialects at runtime)
+- `dialect-icarous`
+- `dialect-loweheiser`
+- `dialect-marsh`
+- `dialect-minimal`
+- `dialect-paparazzi`
+- `dialect-python_array_test`
+- `dialect-standard`
+- `dialect-stemstudios`
+- `dialect-storm32`
+- `dialect-test`
+- `dialect-ualberta`
+- `dialect-uavionix`
+
+Note that `std` and `embedded` features are mutually exclusive.
+
+## Examples
+
+See [`mavlink/examples/`](mavlink/examples/) for runnable examples.
+
+## Maintainers
+
+See [MAINTAINERS.md](MAINTAINERS.md) for active maintainers, release managers and contact details.
+
+## License
+
+Licensed under either of:
+
+- Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
+- MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT) at your option.

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>krahets/hello-algo · GitHub Trending Rank Radar</title>
+<meta name="description" content="《Hello 算法》：动画图解、一键运行的数据结构与算法教程。支持简中、繁中、English、日本語，提供 Python, Java, C++, C, C#, JS, Go, Swift, Rust, Ruby, Kotlin, TS, Dart 等代码实现">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="hello-algo, krahets, krahets/hello-algo, github stars, github trending, star growth, star history, 开源项目, 星标增长, algorithms, data-structures, data-structures-and-algorithms, dsa, leetcode, algo">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/krahets__hello-algo">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="krahets/hello-algo · GitHub Trending Rank Radar">
+<meta property="og:description" content="《Hello 算法》：动画图解、一键运行的数据结构与算法教程。支持简中、繁中、English、日本語，提供 Python, Java, C++, C, C#, JS, Go, Swift, Rust, Ruby, Kotlin, TS, Dart 等代码实现">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/krahets__hello-algo">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "krahets/hello-algo", "codeRepository": "https://github.com/krahets/hello-algo", "url": "https://zhuikan.com/repos/krahets__hello-algo", "description": "《Hello 算法》：动画图解、一键运行的数据结构与算法教程。支持简中、繁中、English、日本語，提供 Python, Java, C++, C, C#, JS, Go, Swift, Rust, Ruby, Kotlin, TS, Dart 等代码实现", "author": {"@type": "Organization", "name": "krahets", "url": "https://github.com/krahets"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "Python", "dateCreated": "2022-11-04", "keywords": "algorithms,data-structures,data-structures-and-algorithms,dsa,leetcode,algo,algorithm,data-structure,book,education"}</script>
+</head>
+<body data-repo="krahets/hello-algo" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">krahets/hello-algo</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="krahets__hello-algo"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/26993056?u=12c6a8ef18768abc773c64a56a56c0fd67241ed2&amp;v=4&s=300" width="300" height="300" alt="krahets avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">hello-algo</div>
+      <a class="rp-side-owner" href="https://github.com/krahets">krahets</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/krahets">krahets</a>
+        <span class="rp-sep">/</span><span class="rp-name">hello-algo</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=total">total <b>#87</b></a></div>
+    </div>
+    <p class="rp-desc">《Hello 算法》：动画图解、一键运行的数据结构与算法教程。支持简中、繁中、English、日本語，提供 Python, Java, C++, C, C#, JS, Go, Swift, Rust, Ruby, Kotlin, TS, Dart 等代码实现</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>132,302</b></span><span class="rp-stat" title="forks">⑂ <b>15,615</b></span><span class="rp-stat" title="watchers">👁 <b>684</b></span><span class="rp-stat" title="prs">⑃ <b>1,313</b></span><span class="rp-stat" title="issues">● <b>296</b></span><span class="rp-stat" title="releases">▤ <b>10</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/algorithms">algorithms</a><a class="rp-topic" href="https://github.com/topics/data-structures">data-structures</a><a class="rp-topic" href="https://github.com/topics/data-structures-and-algorithms">data-structures-and-algorithms</a><a class="rp-topic" href="https://github.com/topics/dsa">dsa</a><a class="rp-topic" href="https://github.com/topics/leetcode">leetcode</a><a class="rp-topic" href="https://github.com/topics/algo">algo</a><a class="rp-topic" href="../tags/algorithm">algorithm</a><a class="rp-topic" href="https://github.com/topics/data-structure">data-structure</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2022-11-04</span><a class="rp-meta-bit rp-home" href="https://www.hello-algo.com" rel="noopener">www.hello-algo.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/krahets/hello-algo">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Hello 算法 1.3.0</span><a class="rp-dl-a" href="https://github.com/krahets/hello-algo/releases/tag/1.3.0">Hello-1.3.0 ↓</a><span class="rp-dl-ver">1.3.0</span><span class="rp-dl-date">2026-01-01</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+30</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+393</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1,606</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">132,302</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">15,615</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">684</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,313</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">296</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">10</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">动画图解、一键运行的数据结构与算法教程
+
+
+
+  
+    
+  
+    
+
+
+
+  
+  
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+  简体中文
+  ｜
+  繁體中文
+  ｜
+  English
+  ｜
+  日本語
+  ｜
+  Русский
+  ｜
+  한국어
+
+
+ 关于本书
+
+本项目旨在打造一本开源免费、新手友好的数据结构与算法入门教程。
+
+- 全书采用动画图解，内容清晰易懂、学习曲线平滑，引导初学者探索数据结构与算法的知识地图。
+- 源代码可一键运行，帮助读者在练习中提升编程技能，了解算法工作原理和数据结构底层实现。
+- 提倡读者互助学习，欢迎大家在评论区提出问题与分享见解，在交流讨论中共同进步。
+
+若本书对您有所帮助，请在页面右上角点个 Star :star: 支持一下，谢谢！
+
+ 推荐语
+
+ “一本通俗易懂的数据结构与算法入门书，引导读者手脑并用地学习，强烈推荐算法初学者阅读。”
+
+ —— 邓俊辉，清华大学计算机系教授
+
+ “如果我当年学数据结构与算法的时候有《Hello 算法》，学起来应该会简单 10 倍！”
+
+ —— 李沐，亚马逊资深首席科学家
+
+ 贡献
+
+本开源书仍在持续更新之中，欢迎您参与本项目，一同为读者提供更优质的学习内容。
+
+- 内容修正：请您协助修正或在评论区指出语法错误、内容缺失、文字歧义、无效链接或代码 bug 等问题。
+- 代码转译：期待您贡献各种语言代码，已支持 Python、Java、C++、Go、JavaScript 等 12 门编程语言。
+- 翻译审阅：欢迎您参与本项目的多语言翻译与校对工作，帮助更多读者用母语学习数据结构与算法。
+
+欢迎您提出宝贵意见和建议，如有任何问题请提交 Issues 或微信联系 krahets-jyd 。
+
+感谢本开源书的每一位撰稿人，是他们的无私奉献让这本书变得更好，他们是：
+
+
+    
+        
+    
+
+
+ License
+
+The texts, code, images, photos, and videos in this repository are licensed under CC BY-NC-SA 4.0.</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/krahets/hello-algo/issues/15"><span class="rp-item-num">#15</span><span class="rp-item-title">Code Transpilation to multiple progamming languages (Help Wanted)</span><span class="rp-item-extra">73 comments · 2022-11-25</span></a><a class="rp-item" href="https://github.com/krahets/hello-algo/issues/914"><span class="rp-item-num">#914</span><span class="rp-item-title">Chinese-to-English (Help Wanted)</span><span class="rp-item-extra">31 comments · 2023-11-02</span></a><a class="rp-item" href="https://github.com/krahets/hello-algo/issues/1171"><span class="rp-item-num">#1171</span><span class="rp-item-title">繁體中文版勘誤（Help Wanted）</span><span class="rp-item-extra">20 comments · 2024-03-24</span></a><a class="rp-item" href="https://github.com/krahets/hello-algo/issues/1086"><span class="rp-item-num">#1086</span><span class="rp-item-title">Will the book continue to add new content chapters?</span><span class="rp-item-extra">18 comments · 2024-02-18</span></a><a class="rp-item" href="https://github.com/krahets/hello-algo/issues/1928"><span class="rp-item-num">#1928</span><span class="rp-item-title">Vibe coding这么流行，这些东西还有用吗？</span><span class="rp-item-extra">8 comments · 2026-06-16</span></a><a class="rp-item" href="https://github.com/krahets/hello-algo/issues/2018"><span class="rp-item-num">#2018</span><span class="rp-item-title">about sk-learn and deeplearning</span><span class="rp-item-extra">0 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/krahets/hello-algo/issues/1996"><span class="rp-item-num">#1996</span><span class="rp-item-title">docs: fix typo algoritm_A in time_complexity.md</span><span class="rp-item-extra">0 comments · 2026-10-24</span></a><a class="rp-item" href="https://github.com/krahets/hello-algo/issues/1855"><span class="rp-item-num">#1855</span><span class="rp-item-title">I made hello algo in Nim and Haxe</span><span class="rp-item-extra">0 comments · 2026-02-09</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/krahets/hello-algo/discussions/2003"><span class="rp-item-num">#2003</span><span class="rp-item-title">en/chapter_array_and_linkedlist/exercises/</span><span class="rp-item-extra">0 comments · 2026-10-26</span></a><a class="rp-item" href="https://github.com/krahets/hello-algo/discussions/1971"><span class="rp-item-num">#1971</span><span class="rp-item-title">en/chapter_computational_complexity/exercises/</span><span class="rp-item-extra">0 comments · 2026-10-08</span></a><a class="rp-item" href="https://github.com/krahets/hello-algo/discussions/1962"><span class="rp-item-num">#1962</span><span class="rp-item-title">chapter_greedy/exercises/</span><span class="rp-item-extra">0 comments · 2026-08-24</span></a><a class="rp-item" href="https://github.com/krahets/hello-algo/discussions/1960"><span class="rp-item-num">#1960</span><span class="rp-item-title">chapter_tree/exercises/</span><span class="rp-item-extra">1 comments · 2026-08-18</span></a><a class="rp-item" href="https://github.com/krahets/hello-algo/discussions/1957"><span class="rp-item-num">#1957</span><span class="rp-item-title">ru/chapter_introduction/</span><span class="rp-item-extra">0 comments · 2026-08-17</span></a><a class="rp-item" href="https://github.com/krahets/hello-algo/discussions/1956"><span class="rp-item-num">#1956</span><span class="rp-item-title">chapter_hashing/exercises/</span><span class="rp-item-extra">5 comments · 2026-08-15</span></a><a class="rp-item" href="https://github.com/krahets/hello-algo/discussions/1952"><span class="rp-item-num">#1952</span><span class="rp-item-title">en/chapter_stack_and_queue/exercises/</span><span class="rp-item-extra">0 comments · 2026-07-22</span></a><a class="rp-item" href="https://github.com/krahets/hello-algo/discussions/1950"><span class="rp-item-num">#1950</span><span class="rp-item-title">chapter_heap/exercises/</span><span class="rp-item-extra">1 comments · 2026-07-21</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/krahets/hello-algo/releases"><b>Hello 算法 1.3.0</b> <span class="rp-rel-tag">1.3.0</span> <span class="rp-item-extra">2026-01-01</span></a><pre class="rp-pre">《Hello 算法》1.3.0 版本的 PDF 与 ePub 电子书请见下方附件。
+
+The PDF and ePub editions of Hello Algorithms version 1.3.0 are available in the attachments below.
+
+ 主要改动
+
+- 排序、动态规划、回溯、分治、图、哈希、堆等章节修订与补充（@krahets）。
+- 新增 EPUB 生成器（@zhongfq），优化 PDF、在线版视觉呈现（@krahets）。
+- 新增日文版本（@eltociear），优化英文翻译（@magentaqin、@yuelinxin），同步中文版与英文版内容（@krahets）。
+
+ 贡献者
+
+感谢 @Asa0oo0o0o, @Asashishi, @Chieko-Seren, @CreatorMetaSky, @Dr-XYZ, @K3v123, @KNChiu, @KawaiiAsh, @PXG-XPG, @Phoenix0415, @QiLOL, @RafaelCaso, @SamJin98, @Shyam-Chen, @Transmigration-zhou, @Umer-Jahangir, @Urbaner3, @beatrix-chan, @danny900714, @eltociear, @krah</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (2)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/weixin_42575505/article/details/169926906" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">源码推荐：hello-algo @ github，用 TaoToken 统一 Key 跑通示例代码</span><span class="rp-item-extra">2026-11-03</span></a><a class="rp-item" href="https://www.bilibili.com/video/BV1XbSKBhEzW/" target="_blank" rel="noopener"><span class="rp-news-src">bilibili</span><span class="rp-item-title">Hello, Algo: 你的第一堂算法课</span><span class="rp-item-extra">2025-11-30</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/krahets__hello-algo.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

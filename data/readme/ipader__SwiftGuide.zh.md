@@ -1,0 +1,37 @@
+Language: 中文 · [English](README.md)
+
+### Swift 开源生态盘点
+>《Swift 语言指南》(SwiftGuide) 自上次大规模更新至今，已经静静走过了六七年的时光。在移动开发领域，七年堪称沧海桑田。从 Swift 3 的探索期到如今 2026 年 Swift 6 的全面成熟，我们见证了底层开发范式的深刻重塑。曾经百家争鸣的第三方 JSON 解析库被原生的 Codable 终结；沉重的 Core Data 逐渐让位给了现代化的 SwiftData；Async/Await 与 Actor 模型的落地彻底扫除了回调地狱；而 SwiftUI 的成熟，更是将声明式 UI 与极简的交互美学推向了绝对的主流。
+
+> 当苹果原生 API 变得空前强大，第三方开源生态也必然经历从“野蛮生长”到“少即是多”的残酷洗牌。今天的软件工程正加速迈向 Local-first（本地优先）架构，强调数据主权的回归与端到端的绝对安全；而独立开发者们也更倾向于用最少的依赖，去构建干净、轻盈、乃至带有吉卜力般呼吸感的现代应用。
+
+> 为此，我们拂去历史的尘埃，在 2026 年的今天对 SwiftGuide 中经典的开源库与开发者进行了一次全景式的重新盘点。这既是对那些曾推动历史车轮的开源先驱们的致敬，也是为了给当下的独立创作者们，提供一份穿越技术周期、历久弥新的现代选型指南。
+
+* [2026 深度洞察：Swift 开源生态演进报告 (100 项目 & 20 开发者)](2026/Swift_open-source_ecosystem_report.zh-CN.md)
+
+---
+### 以下内容已存档
+Swift 开源精选
+> 本文为 SwiftGuide / Swift 开源精选的原中文说明文档。当前英文 README 作为项目新的主入口，用于重新介绍该项目作为结构化知识资产的历史与延续。
+
+　　自 2014年 WWDC 发布 Swift 语言以来，[本项目](https://github.com/ipader/SwiftGuide/blob/master/2014%20letter.md) 一直致力于将主流 Swift 中文学习、开发资源汇集于此，并且尽力紧密地跟踪、甄选优秀 Swift 开源项目，以方便开发者快速获得并使用。考虑 Swift 已经正式发布超过四年半（更无力管理维护海量的 Swift 学习资源），因此，后续本项目将专注于 Swift 开源精选资源方向（项目及应用架构，开发方法和工具）进行维护、更新，内容的呈现或展示形式将着重于思维导图。而相对偏重于 Swift 初学者的旧有文档 [Swift 语言指南](https://github.com/ipader/SwiftGuide/blob/master/README20181213.md) 将不再进一步更新、维护。项目名称变更为 Swift 开源精选，库名由原先的 SwiftGuide 改为 awesome-swift。后续更新、维护的文档如下：
+
+* Swift 开源项目精选导图
+> 这份文档主要基于微博 @SwiftLanguage 跟踪过活跃于 Swift 语言领域的那些 GitHub 开源项目，顺便也是对于过去几年关注的开源项目进行一次系统化梳理。尝试整理出一份相对结构化且精练的 Swift 开源项目参考知识库，它将主要以思维导图形式呈现。[详见……](2019/OpenSourceforSwift-Classification.md)　　
+
+![](2019/OpenSourceforSwift-Classification.png?raw=true)
+
+* Swift 开源项目精选 - 应用架构角度
+> 基于[Swift 开源项目精选导图](2019/OpenSourceforSwift-Classification.md)，以应用架构角度出发继续甄选并“精分”。筛选、介定方法更偏重于构建应用时，项目在分类中起到的作用权重，可持续性权重，并部分算上开发者影响力。尝试持续地完善一份不那么杂乱无章（也许还比较好用）的 Swift 开源子集。[详见……](2019/OpenSourceforSwift-ApplicationArchitecture.md)　
+
+![](2019/OpenSourceforSwift-ApplicationArchitecture.png?raw=true)
+
+* Swift 开源项目团队介绍
+> 介绍活跃于开源社区优秀的项目团队以及参与到 Swift 项目的公司或组织。[详见……](2019/SwiftDevelopmentTeam.md)　
+
+* Swift 知名开发者介绍
+> 介绍活跃于开源社区知名的开发者及其作品。[详见……](2019/SwiftDevelopers.md)　
+
+* 近期分享和收录 Markdown Programming in Swift
+
+![](2021/MarkdownProgramminginSwift.png?raw=true)

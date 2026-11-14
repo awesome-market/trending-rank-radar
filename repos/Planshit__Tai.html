@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planshit/Tai · GitHub Trending Rank Radar</title>
+<meta name="description" content="👻 在Windows上统计软件使用时长和网站浏览时长">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Tai, Planshit, Planshit/Tai, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Planshit__Tai">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Planshit/Tai · GitHub Trending Rank Radar">
+<meta property="og:description" content="👻 在Windows上统计软件使用时长和网站浏览时长">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Planshit__Tai">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Planshit/Tai", "codeRepository": "https://github.com/Planshit/Tai", "url": "https://zhuikan.com/repos/Planshit__Tai", "description": "👻 在Windows上统计软件使用时长和网站浏览时长", "author": {"@type": "Organization", "name": "Planshit", "url": "https://github.com/Planshit"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "C#", "dateCreated": "2021-11-19"}</script>
+</head>
+<body data-repo="Planshit/Tai" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Planshit/Tai</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Planshit__Tai"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/49083611?v=4&s=300" width="300" height="300" alt="Planshit avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Tai</div>
+      <a class="rp-side-owner" href="https://github.com/Planshit">Planshit</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Planshit">Planshit</a>
+        <span class="rp-sep">/</span><span class="rp-name">Tai</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">👻 在Windows上统计软件使用时长和网站浏览时长</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,103</b></span><span class="rp-stat" title="forks">⑂ <b>248</b></span><span class="rp-stat" title="watchers">👁 <b>13</b></span><span class="rp-stat" title="prs">⑃ <b>25</b></span><span class="rp-stat" title="issues">● <b>269</b></span><span class="rp-stat" title="releases">▤ <b>12</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C#</span><span class="rp-meta-bit">Created 2021-11-19</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Planshit/Tai">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+6</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,103</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">248</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">13</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">25</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">269</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">12</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Tai
+👻 在 Windows 上统计 软件 使用时长和 网站 浏览时长
+
+
+
+广告位出售，联系方式：bmFjYXQ0YjEx （ base64 添加请备注来意
+
+ 开始使用
+
+ 环境
+
+使用之前，你的电脑可能需要安装 .NET Framework 4.8 或更高的版本（一般Win10以上的系统不需要安装）。如果在启动 Tai 时没反应，请点击左侧链接下载安装。
+
+ 使用
+
+1. 在 releases 中可以下载已经编译好的 exe 可执行文件压缩包。建议优选选择标记有 Latest 的版本，划到下方的 Assets 找到 Taix.x.x.x.zip 点击下载；
+2. 下载压缩包后解压到合适的位置（建议不要解压到桌面、系统盘），进入解压后的文件夹内，找到 👻Tai.exe ，启动程序，成功启动后你将在状态栏看到 👻 图标；
+3. 使用 网站浏览统计 功能需要安装相应的浏览器拓展并且在 设置  常规  功能中启用。下载安装浏览器插件说明;
+4. 请以管理员身份运行 Tai ，否则无法统计部分软件。
+
+ 卸载
+
+1. 在设置中停用开机自启动（如果启用了）；
+2. 删除所有文件即可完成卸载。
+
+ 基本操作
+
+鼠标双击图标进入程序主界面，右击显示菜单。
+
+ 了解更多
+
+ 为什么使用 Tai？
+
+帮助你了解自己把时间花在了什么地方，从而更好地做一些计划。或者，为了每周回顾自己的摸鱼成果。~~工作只是换取薪酬，摸鱼才是赚钱。~~
+
+ 应用白名单
+
+支持仅统计白名单内的软件，在设置  行为中可以启用此功能。
+
+ 关联进程
+
+如果你希望在多屏工作时将其他屏幕所使用的软件同时记录使用时长，可以在设置中将相应的软件进程添加到一个关联列表中。添加完成后，只要使用了关联列表的其中一个软件，就会同步更新使用时长到列表里的其他软件上，但前提是其他软件需要正处于运行中（即使在后台或者没有焦点都行）。一个软件只能关联一次，不能重复与其他软件关联。
+
+ 过滤应用和网站
+
+可以在设置  行为中通过进程名称/URL或者正则表达式对不需要统计的软件/网站进行过滤。
+
+ 数据储存和导出
+
+Tai 使用不加密 SQLite 数据库将统计数据存储在本地 运行目录\Data\data.db 中。可以在设置中将统计的数据以 .xlsx 和 .csv 两种文件格式导出。
+
+ 睡眠监测
+
+Tai 能够一定程度地发现用户离开电脑从而停止统计，也可以在设置  行为中停用此功能以实现不间断统计。
+
+ 自动分类
+
+可以根据运行目录自动归类，在分类管理中添加/编辑分类时可以启用或关闭目录匹配。比如在 分类A 中启用并添加了一个目录 C:\ ，那么C盘下所有软件都会被自动归类到 分类A 中。
+
+ 联网和隐私
+
+除了检查更新/升级软件时（需要主动在设置中检查更新）之外完全没有其他网络请求。Tai 并不会收集和上传你的任何信息。
+
+  ❤️ + 👻
+
+开源软件的更新动力来源于用户的支持，无论是精神还是经济上，如果 Tai 给你带去了帮助请给开发者一些鼓励吧~
+
+ 来杯☕
+
+ 
+
+关于&amp;联系 →</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/Planshit__Tai.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

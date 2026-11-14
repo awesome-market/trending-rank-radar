@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>soybeanjs/soybean-admin · GitHub Trending Rank Radar</title>
+<meta name="description" content="A clean, elegant, beautiful and powerful admin template, based on Vue3, Vite7, TypeScript, Pinia, NaiveUI and UnoCSS. 一个清新优雅、高颜值且功能强大的后台管理模板，基于最新的前端技术栈，包括 Vue3, Vite8, TypeScript, Pinia, NaiveUI 和 Uno">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="soybean-admin, soybeanjs, soybeanjs/soybean-admin, github stars, github trending, star growth, star history, 开源项目, 星标增长, vue3, admin-template, naive-ui, vue-admin, typescript, naive-ui-admin">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/soybeanjs__soybean-admin">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="soybeanjs/soybean-admin · GitHub Trending Rank Radar">
+<meta property="og:description" content="A clean, elegant, beautiful and powerful admin template, based on Vue3, Vite7, TypeScript, Pinia, NaiveUI and UnoCSS. 一个清新优雅、高颜值且功能强大的后台管理模板，基于最新的前端技术栈，包括 Vue3, Vite8, TypeScript, Pinia, NaiveUI 和 Uno">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/soybeanjs__soybean-admin">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "soybeanjs/soybean-admin", "codeRepository": "https://github.com/soybeanjs/soybean-admin", "url": "https://zhuikan.com/repos/soybeanjs__soybean-admin", "description": "A clean, elegant, beautiful and powerful admin template, based on Vue3, Vite7, TypeScript, Pinia, NaiveUI and UnoCSS. 一个清新优雅、高颜值且功能强大的后台管理模板，基于最新的前端技术栈，包括 Vue3, Vite8, TypeScript, Pinia, NaiveUI 和 Uno", "author": {"@type": "Organization", "name": "soybeanjs", "url": "https://github.com/soybeanjs"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2021-09-08", "keywords": "vue3,admin-template,naive-ui,vue-admin,typescript,naive-ui-admin,pinia,unocss,admin,vue"}</script>
+</head>
+<body data-repo="soybeanjs/soybean-admin" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">soybeanjs/soybean-admin</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="soybeanjs__soybean-admin"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/119996361?v=4&s=300" width="300" height="300" alt="soybeanjs avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">soybean-admin</div>
+      <a class="rp-side-owner" href="https://github.com/soybeanjs">soybeanjs</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/soybeanjs">soybeanjs</a>
+        <span class="rp-sep">/</span><span class="rp-name">soybean-admin</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A clean, elegant, beautiful and powerful admin template, based on Vue3, Vite7, TypeScript, Pinia, NaiveUI and UnoCSS. 一个清新优雅、高颜值且功能强大的后台管理模板，基于最新的前端技术栈，包括 Vue3, Vite8, TypeScript, Pinia, NaiveUI 和 UnoCSS。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>15,333</b></span><span class="rp-stat" title="forks">⑂ <b>2,549</b></span><span class="rp-stat" title="watchers">👁 <b>101</b></span><span class="rp-stat" title="prs">⑃ <b>409</b></span><span class="rp-stat" title="issues">● <b>514</b></span><span class="rp-stat" title="releases">▤ <b>65</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/vue3">vue3</a><a class="rp-topic" href="https://github.com/topics/admin-template">admin-template</a><a class="rp-topic" href="https://github.com/topics/naive-ui">naive-ui</a><a class="rp-topic" href="https://github.com/topics/vue-admin">vue-admin</a><a class="rp-topic" href="../tags/typescript">typescript</a><a class="rp-topic" href="https://github.com/topics/naive-ui-admin">naive-ui-admin</a><a class="rp-topic" href="https://github.com/topics/pinia">pinia</a><a class="rp-topic" href="https://github.com/topics/unocss">unocss</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2021-09-08</span><a class="rp-meta-bit rp-home" href="https://soybeanjs.cn" rel="noopener">soybeanjs.cn</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/soybeanjs/soybean-admin">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v2.3.0</span><a class="rp-dl-a" href="https://github.com/soybeanjs/soybean-admin/releases/tag/v2.3.0">v2.3.0 ↓</a><span class="rp-dl-ver">2.3.0</span><span class="rp-dl-date">2026-10-09</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+12</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+81</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+243</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">15,333</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,549</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">101</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">409</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">514</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">65</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">SoybeanAdmin
+  中文 | English
+
+
+---
+
+
+
+
+
+
+
+
+  
+  
+
+
+ [!NOTE]
+ 如果您觉得 SoybeanAdmin对您有所帮助，或者您喜欢我们的项目，请在 GitHub 上给我们一个 ⭐️。您的支持是我们持续改进和增加新功能的动力！感谢您的支持！
+
+ [!NOTE]
+ SoybeanAdmin 快速上手系列视频已在 Bilibili 上线 点击这里 前往查看
+
+ [!IMPORTANT]
+ SoybeanAdmin 3.0 版本正在开发中，将基于 ubean 全栈框架与 VeanUI 组件库进行整体重构，进展与方案请查看 Roadmap Issue 941。
+
+ [!WARNING]
+ 2.3 将是 2.x 系列最后一个维护的大版本。2.x 后续只在该版本上提供维护更新，新特性将集中在 3.0 中实现，建议新项目关注 3.0 进展。
+
+
+  
+    
+      
+        
+          
+            
+              
+                
+              
+            
+            
+              
+                
+              
+            
+          
+        
+        面向 Vue 3 的强大而优雅的组件系统，提供 Aria 层交互能力与开箱即用的样式封装。
+        采用 Aria + UI 两层架构，复用底层交互能力，统一上层界面表达。
+        
+        
+        
+        
+      
+      
+        
+          
+        
+      
+    
+  
+
+
+ 简介
+
+SoybeanAdmin 是一个清新优雅、高颜值且功能强大的后台管理模板，基于最新的前端技术栈，包括 Vue3, Vite8, TypeScript, Pinia 和 UnoCSS。它内置了丰富的主题配置和组件，代码规范严谨，实现了自动化的文件路由系统。此外，它还采用了基于 ApiFox 的在线Mock数据方案。SoybeanAdmin 为您提供了一站式的后台管理解决方案，无需额外配置，开箱即用。同样是一个快速学习前沿技术的最佳实践。
+
+ 特性
+
+- 前沿技术应用：采用 Vue3, Vite8, TypeScript, Pinia 和 UnoCSS 等最新流行的技术栈。
+- 清晰的项目架构：采用 pnpm monorepo 架构，结构清晰，优雅易懂。
+- 严格的代码规范：遵循 SoybeanJS 规范，集成了eslint、oxlint、oxfmt 和 vp hooks，保证代码的规范性。
+- TypeScript： 支持严格的类型检查，提高代码的可维护性。
+- 丰富的主题配置：内置多样的主题配置，与 UnoCSS 完美结合。
+- 内置国际化方案：轻松实现多语言支持。
+- 自动化文件路由系统：自动生成路由导入、声明和类型。更多细节请查看 Elegant Router。
+- 灵活的权限路由：同时支持前端静态路由和后端动态路由。
+- 丰富的页面组件：内置多样页面和组件，包括403、404、500页面，以及布局组件、标签组件、主题配置组件等。
+- 命令行工具：内置高效的命令行工具，git提交、删除文件、发布等。
+- 移动端适配：完美支持移动端，实现自适应布局。
+
+ 版本
+
+ [!IMPORTANT]
+ 3.0 版本正在开发中（Roadmap Issue 941）；2.3 是 2.x 系列最后一个维护的大版本。
+
+- NaiveUI 版本:
+  - 预览地址
+  - Github 仓库
+  - Gitee 仓库
+  - Gitcode 仓库
+- AntDesignVue 版本:
+  - 预览地址
+  - Github 仓库
+  - Gitee 仓库
+  - Gitcode 仓库
+- ElementPlus 版本:
+  - 预览地址
+  - Github 仓库
+  - Gitee 仓库
+  - Gitcode 仓库
+- 旧版:
+  - 预览地址
+  - Github 仓库
+  - Gitee 仓库
+  - Gitcode 仓库
+
+ 文档
+
+- 地址
+- 旧版文档
+
+ 合作事项
+
+我们非常感谢大家对 SoybeanAdmin 的支持！为了进一步回馈社区，并助力企业和开发者实现个性化需求，我们现提供多种合作服务，期待与您携手共赢。
+
+ 1、定制化管理后台开发
+
+针对企业和开发者的特定业务需求，我们提供基于 SoybeanAdmin 的定制化管理后台开发服务。我们的团队具备丰富的行业经验，能够迅速理解并实现您的需求，打造高效、灵活且安全的定制化解决方案。
+
+- 定制开发：我们将根据您的具体需求，提供从需求分析、UI设计到功能实现的全方位服务，确保项目高效交付。
+- 功能扩展：在 SoybeanAdmin 基础上，扩展您所需的特定功能模块，提升管理后台的功能和用户体验。
+
+ 2、企业外包服务
+
+我们承接各类企业级外包项目，特别是在管理后台系统的开发、集成与运维方面。我们以精益求精的态度，确保项目的质量和进度，为您的业务提供强有力的技术支持。
+
+- 项目开发：无论是全新的项目，还是现有系统的优化与集成，我们都将为您量身打造高效可靠的解决方案。
+- 系统集成与维护：我们也提供基于 SoybeanAdmin 的系统集成与长期维护服务，确保您的系统稳定、安全地运行。
+
+ 3、联系方式
+
+如有合作意向或项目咨询，请通过以下方式与我们联系：
+
+- Email: soybeanjs@outlook.com
+- GitHub Issues: 欢迎通过 GitHub Issues 联系我们，进行初步的合作洽谈。
+- 商务合作微信: honghuangdc
+
+期待与您开展深入合作，共同推动 SoybeanAdmin 项目及其在更多领域的成功应用！
+
+ 示例图片
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+ 使用
+
+环境准备
+
+确保你的环境满足以下要求：
+
+- git: 你需要git来克隆和管理项目版本。
+- NodeJS: =20.19.0，推荐 20.19.0 或更高。
+- pnpm: = 10.5.0，推荐 10.5.0 或更高。
+
+克隆项目
+
+bash
+ github
+git clone https://github.com/soybeanjs/soybean-admin.git
+ gitee
+git clone https://gitee.com/honghuangdc/soybean-admin.git
+ gitcode
+git clone https://gitcode.com/soybeanjs/soybean-admin.git
+
+
+安装依赖
+
+bash
+pnpm i
+
+
+ 由于本项目采用了 pnpm monorepo 的管理方式，因此请不要使用 npm 或 yarn 来安装依赖。
+
+启动项目
+
+bash
+pnpm dev
+
+
+构建项目
+
+bas</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/soybeanjs/soybean-admin/issues/941"><span class="rp-item-num">#941</span><span class="rp-item-title">SoybeanAdmin v3.0 计划</span><span class="rp-item-extra">13 comments · 2026-08-20</span></a><a class="rp-item" href="https://github.com/soybeanjs/soybean-admin/issues/902"><span class="rp-item-num">#902</span><span class="rp-item-title">[功能]: 引入 vite+</span><span class="rp-item-extra">5 comments · 2026-03-16</span></a><a class="rp-item" href="https://github.com/soybeanjs/soybean-admin/issues/939"><span class="rp-item-num">#939</span><span class="rp-item-title">[功能]: 希望为标签页（Tabs）增加拖拽排序功能，用户可以通过鼠标拖拽调整标签页的顺序</span><span class="rp-item-extra">2 comments · 2026-08-17</span></a><a class="rp-item" href="https://github.com/soybeanjs/soybean-admin/issues/940"><span class="rp-item-num">#940</span><span class="rp-item-title">[功能]: 自动生成路由，可以按照一级目录拆分成多个路由文件吗？</span><span class="rp-item-extra">1 comments · 2026-08-20</span></a><a class="rp-item" href="https://github.com/soybeanjs/soybean-admin/issues/935"><span class="rp-item-num">#935</span><span class="rp-item-title">[Bug]: 2K显示器下输入框无法正常显示下划线</span><span class="rp-item-extra">1 comments · 2026-07-25</span></a><a class="rp-item" href="https://github.com/soybeanjs/soybean-admin/issues/934"><span class="rp-item-num">#934</span><span class="rp-item-title">[功能]: 为原生 Fetch 请求提供统一的 Service URL 构造能力</span><span class="rp-item-extra">1 comments · 2026-07-25</span></a><a class="rp-item" href="https://github.com/soybeanjs/soybean-admin/issues/943"><span class="rp-item-num">#943</span><span class="rp-item-title">[Feature] 支持将同一动态路由（不同 params）合并为单个标签页，且该配置需能在 dynamic（后端下发）路由模式下生效</span><span class="rp-item-extra">0 comments · 2026-09-17</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/soybeanjs/soybean-admin/discussions/928"><span class="rp-item-num">#928</span><span class="rp-item-title">分享一个匹配多个前端的后台系统</span><span class="rp-item-extra">1 comments · 2026-05-31</span></a><a class="rp-item" href="https://github.com/soybeanjs/soybean-admin/discussions/795"><span class="rp-item-num">#795</span><span class="rp-item-title">关于自动计算表格横向滚动宽度的提议</span><span class="rp-item-extra">1 comments · 2025-08-04</span></a><a class="rp-item" href="https://github.com/soybeanjs/soybean-admin/discussions/774"><span class="rp-item-num">#774</span><span class="rp-item-title">How to invoke the cancelRequest func in the flatRequest?</span><span class="rp-item-extra">3 comments · 2025-06-26</span></a><a class="rp-item" href="https://github.com/soybeanjs/soybean-admin/discussions/588"><span class="rp-item-num">#588</span><span class="rp-item-title">是否有配套的后端</span><span class="rp-item-extra">1 comments · 2024-08-06</span></a><a class="rp-item" href="https://github.com/soybeanjs/soybean-admin/discussions/536"><span class="rp-item-num">#536</span><span class="rp-item-title">Adding OAuth2 support</span><span class="rp-item-extra">1 comments · 2024-07-10</span></a><a class="rp-item" href="https://github.com/soybeanjs/soybean-admin/discussions/520"><span class="rp-item-num">#520</span><span class="rp-item-title">设置多语言的开关</span><span class="rp-item-extra">2 comments · 2024-06-21</span></a><a class="rp-item" href="https://github.com/soybeanjs/soybean-admin/discussions/397"><span class="rp-item-num">#397</span><span class="rp-item-title">How to dockerize a soybean-admin application</span><span class="rp-item-extra">1 comments · 2024-04-24</span></a><a class="rp-item" href="https://github.com/soybeanjs/soybean-admin/discussions/383"><span class="rp-item-num">#383</span><span class="rp-item-title">retrive tab info such as tabID, tab label name, directly from component</span><span class="rp-item-extra">1 comments · 2024-04-08</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/soybeanjs/soybean-admin/releases"><b>v2.3.0</b> <span class="rp-rel-tag">v2.3.0</span> <span class="rp-item-extra">2026-10-09</span></a><pre class="rp-pre">&amp;nbsp;&amp;nbsp;&amp;nbsp;🚀 Features
+
+- constants:
+  - export isDev environment flag &amp;nbsp;-&amp;nbsp; by @Azir-11 (dcbc5)
+- docs:
+  - update Vite version from 7 to 8 in README and package.json &amp;nbsp;-&amp;nbsp; by @soybeanjs (788d8)
+  - update communication group details to FeiShu in README &amp;nbsp;-&amp;nbsp; by @soybeanjs (da09f)
+- layout:
+  - support mouse wheel horizontal scroll on global tab &amp;nbsp;-&amp;nbsp; by @lvlvkeeper (3d361)
+- packages:
+  - check git staging area before showing commit prompts &amp;nbsp;-&amp;nbsp; by @Azir-11 (7b809)
+- router:
+  - support isDev meta to load routes only in development &amp;nbsp;-&amp;nbsp;</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/soybeanjs__soybean-admin.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

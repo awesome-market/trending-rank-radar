@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>xai-org/x-algorithm · GitHub Trending Rank Radar</title>
+<meta name="description" content="Algorithm powering the For You feed on X">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="x-algorithm, xai-org, xai-org/x-algorithm, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/xai-org__x-algorithm">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="xai-org/x-algorithm · GitHub Trending Rank Radar">
+<meta property="og:description" content="Algorithm powering the For You feed on X">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/xai-org__x-algorithm">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "xai-org/x-algorithm", "codeRepository": "https://github.com/xai-org/x-algorithm", "url": "https://zhuikan.com/repos/xai-org__x-algorithm", "description": "Algorithm powering the For You feed on X", "author": {"@type": "Organization", "name": "xai-org", "url": "https://github.com/xai-org"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Rust", "dateCreated": "2026-01-19"}</script>
+</head>
+<body data-repo="xai-org/x-algorithm" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">xai-org/x-algorithm</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="xai-org__x-algorithm"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/130314967?v=4&s=300" width="300" height="300" alt="xai-org avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">x-algorithm</div>
+      <a class="rp-side-owner" href="https://github.com/xai-org">xai-org</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/xai-org">xai-org</a>
+        <span class="rp-sep">/</span><span class="rp-name">x-algorithm</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Algorithm powering the For You feed on X</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>34,207</b></span><span class="rp-stat" title="forks">⑂ <b>5,516</b></span><span class="rp-stat" title="watchers">👁 <b>322</b></span><span class="rp-stat" title="issues">● <b>171</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">Created 2026-01-19</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="xai-org__grok-1"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/130314967?v=4" alt="" loading="lazy">grok-1</a><a class="rp-same-link" href="xai-org__grok-build"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/130314967?v=4" alt="" loading="lazy">grok-build</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/xai-org/x-algorithm">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+7</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+169</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+659</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">34,207</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">5,516</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">322</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">171</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">X For You Feed Algorithm
+
+This repository contains the core code that determines which posts a viewer sees in the For You feed on X. It combines in-network content (from accounts the viewer follows) with out-of-network content (discovered through ML-based retrieval and other mechanisms), filters content based on a variety of inputs, and ranks posts using a transformer model.
+
+ Table of Contents
+
+- Notable Updates
+  - October 26th, 2026
+  - October 13th, 2026
+  - October 8th, 2026
+  - September 18th, 2026
+  - August 14th, 2026
+  - August 13th, 2026
+- Overview
+- System Architecture
+  - Request Path
+  - Labeling Path
+- Components
+- How It Works
+  - Scoring and Ranking
+  - Filtering
+- Experiments and Configuration
+- What&#x27;s not in this repo?
+- Under the Hood Label Transparency Tool
+- Key Design Decisions
+- License
+
+---
+
+
+
+ Notable Updates
+
+ October 26th, 2026
+
+- Brazil 2026 Elections filter removed. With the 2026 Brazilian elections over, we have removed Brazil2026ElectionFilter from For You. Posts from the accounts it covered are no longer filtered out because of it. See the August 14th, 2026 update for what the filter did.
+
+ October 13th, 2026
+
+- Retrieval trained to surface posts people read all the way through. Phoenix retrieval is now also trained to surface posts that people read all the way through.
+
+ October 8th, 2026
+
+- Ranking predicts time spent much better. The Phoenix ranking model now does a better job of estimating how long you&#x27;ll spend on each post: see the code.
+
+ September 18th, 2026
+
+- Under the Hood. Reports now include information about whether one&#x27;s account or posts have had their visibility limited because of required compliance with law(s). For example, you&#x27;ll be able to see if any of your posts were withheld from showing in a country following a legal demand — and which country.
+
+ August 14th, 2026
+
+Notable updates:
+
+- How weights work. There&#x27;s a common misconception about how weights related to actions (e.g. Like, Share, Block, Report, etc) work in ranking. The weights scale the predicted probabilities of such actions (or predicted continuous values, e.g. dwell time) — they do not scale the raw engagement counts, so e.g. it&#x27;d be incorrect to see that a report has 468 times higher weight than a like and conclude that e.g. &quot;1 report cancels out 468 likes&quot;. The weights are a multiple on your own predicted probability of Liking, Reporting, etc, which is substantially driven by your own behavior. We&#x27;ve added comments to the code so that LLMs or people reading it are more likely to understand it correctly.
+- Brazil 2026 Elections. As announced by X, in accordance with Brazilian electoral law, For You began running Brazil2026ElectionFilter, which removed posts from accounts reported to Brazil&#x27;s Electoral Court for the 2026 election, unless the viewer explicitly follows the account. (Removed after the election; see the October 26th, 2026 update.)
+
+ August 13th, 2026
+
+This release:
+
+- Adds key configuration parameters (including weigh</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (5)</h3><div class="rp-list"><a class="rp-item" href="https://news.google.com/rss/articles/CBMiSEFVX3lxTFA4a0NYdVk4M2lKaVVjcGVzM2dxT1R5cjlBWHFZVHZyUmVaWXFlU3pwME9zc3ZzZ1BzWlByMDV5Nm1TWHVsZEhxdg?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">品玩</span><span class="rp-item-title">X公开&quot;For You&quot;推荐算法源代码</span><span class="rp-item-extra">2026-08-14</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiekFVX3lxTFBDUTV6QVVxVDg0WWpsTWlVNmNqemVKa3l5bzNPM3g0aHJyTVZIUFk5NGhSYm5kd19EM3NWQlE0LVZEUHpjUnZObmZJUzdqZ2tXQmRlb28zWDhTWF8yQjg3REVaMmF2cm4zcWc0NTV6WHl1dnEySVpiRk1n?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">X 算法开源:2026 年 5 月 15 日重大更新带来端到端推理 pipeline 和可下载的 Phoenix 模型</span><span class="rp-item-extra">2026-05-15</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE5UTkNua0tCWkFVX2s4MktiVUJ0c2prRVBRX0ltTFNJbjc5N25jN1J0cl9HdnNaWm1IbXB0WjlCY2NySjYtdTBtcFZRR1JldFp3S3Uw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">36Kr</span><span class="rp-item-title">马斯克放大招！X平台推荐算法重磅开源，6小时获1.6k Star，豪言：对手无人敢做</span><span class="rp-item-extra">2026-01-20</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiQ0FVX3lxTE15ellTek1XN2UwREpiMHYwTnFoWW1sckFjcUJlU2VPMENMR2JtR0ZJTktvemxOUC15emw5dkp4LUU2UHM?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">爱范儿</span><span class="rp-item-title">刚刚，马斯克开源 𝕏 平台推荐算法</span><span class="rp-item-extra">2026-01-20</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiTkFVX3lxTE5hLVNxczEwQWJBd285blJlV2FJS0NzWXpEZVZKQ3YwTUpLQU52QkNqREZ6UGJnTXJvci14VVJXRHBmVDhBeFBoSDNBWWZLUQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">36Kr</span><span class="rp-item-title">马斯克兑现承诺，开源X推荐算法，100% AI驱动，0人工规则</span><span class="rp-item-extra">2026-01-20</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (15)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=46688173" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">X For You Feed Algorithm</span><span class="rp-item-extra">▲ 125 · 65 comments · 2026-01-20</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=49310291" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Brazilian election filter in X For You timeline</span><span class="rp-item-extra">▲ 48 · 59 comments · 2026-08-15</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=49531195" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Open Source X Algorithm Integrates First Public Contribution</span><span class="rp-item-extra">▲ 4 · 1 comments · 2026-09-02</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=48148656" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">X for You Feed Algorithm (Updated May 15th)</span><span class="rp-item-extra">▲ 3 · 0 comments · 2026-05-15</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=48150133" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">X Algorithm open source updated</span><span class="rp-item-extra">▲ 2 · 0 comments · 2026-05-15</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=49307120" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Brazil2026ElectionFilter</span><span class="rp-item-extra">▲ 1 · 0 comments · 2026-08-15</span></a><a class="rp-item" href="https://runtimewire.com/article/elon-musk-says-latest-x-algorithm-published-to-github" target="_blank" rel="noopener"><span class="rp-news-src">runtimewire.com</span><span class="rp-item-title">Elon Musk: latest X algorithm published on GitHub</span><span class="rp-item-extra">2026-05-15</span></a><a class="rp-item" href="https://coinedition.com/what-x-algorithm-transparency-gaps-mean-for-crypto-users/" target="_blank" rel="noopener"><span class="rp-news-src">coinedition</span><span class="rp-item-title">What X Algorithm Transparency Gaps Mean for Crypto Users</span><span class="rp-item-extra">2026-05-15</span></a><a class="rp-item" href="https://x.com/iHarnoorSingh/status/2055346568069624149" target="_blank" rel="noopener"><span class="rp-news-src">x</span><span class="rp-item-title">let&#x27;s visualize the X algorithm!!</span><span class="rp-item-extra">2026-05-15</span></a><a class="rp-item" href="https://www.theverge.com/news/860294/elon-musk-open-source-x-algorithm" target="_blank" rel="noopener"><span class="rp-news-src">The Verge</span><span class="rp-item-title">Musk says he’s going to open-source the new X algorithm next week</span><span class="rp-item-extra">2026-01-10</span></a><details class="rp-news-more"><summary>5 more</summary><a class="rp-item" href="https://news.google.com/rss/articles/CBMijgFBVV95cUxQdnFER2YyUGhmdHRhUVdMcGxPOU1nT2lIN19fWnI1cDVJRGpoOGxVRmpyQzAzelZueHBJTzA4YVU0Q21xRFpqZEZFblRSTkZhY0Y2RHZlemh5Nmo5ZHNkTElabC1BYUw4cmRudkhlN3dRTnpoRllLcHVFaGtuemdvOXpZbm1tU2FmR2NzM3hn?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Dataconomy</span><span class="rp-item-title">X Will Open-source Its For You Algorithm On GitHub</span><span class="rp-item-extra">2026-08-14</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiuAFBVV95cUxOU3ItWEpwbHl1WXJsMWY3R1J5MzFOcDNJOEZnODF0Wkx0UWlSRG1rdll4eHRyRU9nSzVHM1dncUpaRGpEMzExRlJaSnlOakRuTDNnUnVRQ2s5NDVteTM3WkJrQURNazBqaVh5WVFmaWdsWkdwWi03UXUteEZYdkxtNzNMRWhMdkRZUFV6QnIxQldSc3plQS1HSFNhSFlMUzk2M3hTNHhQUmhaclYtMVpaZEdoY0pxNXI0?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">TechCrunch</span><span class="rp-item-title">X open sources its ranking algorithm, letting users see if they’ve been ‘shadowbanned’</span><span class="rp-item-extra">2026-08-13</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPWkdOT2s2M3lhQWRGV0QxZGF0MTV1X3FBWjh6cmttUG5jX1M4RFJrNXdWWFRYVUdRMTlZdnk4TFNPVWxNRG9DazBMWWpJbDZzSUc5VEdwR1BPWDZPZmROdnZNV1FtZnNSOU9IeXlCai1JNU5MZUVOUDZRT2UwZC15OE9NYUduNi00VHBPQ3lWNXNMYk1Zck9RRkp3aV9VS00zT0E?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">BASENOR - Tesla Accessories</span><span class="rp-item-title">X Recommendation Algorithm Gets Major Update — And Goes Open Source</span><span class="rp-item-extra">2026-03-19</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNZWpOdXpGV3pmUzBodDVxMWhwZ2g0U19HU0hVWW9hZGFQSlVGREtvVHFwdUNVb2VDS011aUJGLWVhNVVoN3NyNGNNNEU4bkNOWEl6X21saGdPMnY4bk5nenFjX0dIdWZ1OXBYaFNuRUNmVFp3ekZsdklMb2s0TzNWekNldEVabWNnZS1sOFBGeWNUSHBSZ2V1WjZlbmVGeWdDWWc?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Social Media Today</span><span class="rp-item-title">X Publishes AI-Powered Algorithm Code</span><span class="rp-item-extra">2026-01-20</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTFA5SWFVZS05MFl5UGVfUWZBQU9PRXl6MURhQzJObUZBQ1ZMX0ZRMU90QnJZSGpwQ191ekthYVJsN1pQSWZ6cGxuMUN0ZEdyNTY1RVVj?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">36Kr</span><span class="rp-item-title">Elon Musk Shocks with X&#x27;s Open-Sourced Recommendation Algorithm: 1,600 GitHub Stars in Six Hours, Boasts No Competitor Match</span><span class="rp-item-extra">2026-01-20</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/xai-org__x-algorithm.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LizardByte/Sunshine · GitHub Trending Rank Radar</title>
+<meta name="description" content="Self-hosted game stream host for Moonlight.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Sunshine, LizardByte, LizardByte/Sunshine, github stars, github trending, star growth, star history, 开源项目, 星标增长, game-streaming-server, game-stream, game-streaming, remote-desktop, moonlight, geforce-experience">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/LizardByte__Sunshine">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="LizardByte/Sunshine · GitHub Trending Rank Radar">
+<meta property="og:description" content="Self-hosted game stream host for Moonlight.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/LizardByte__Sunshine">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "LizardByte/Sunshine", "codeRepository": "https://github.com/LizardByte/Sunshine", "url": "https://zhuikan.com/repos/LizardByte__Sunshine", "description": "Self-hosted game stream host for Moonlight.", "author": {"@type": "Organization", "name": "LizardByte", "url": "https://github.com/LizardByte"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-3.0.html", "programmingLanguage": "C++", "dateCreated": "2021-12-15", "keywords": "game-streaming-server,game-stream,game-streaming,remote-desktop,moonlight,geforce-experience"}</script>
+</head>
+<body data-repo="LizardByte/Sunshine" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">LizardByte/Sunshine</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="LizardByte__Sunshine"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/96252163?v=4&s=300" width="300" height="300" alt="LizardByte avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Sunshine</div>
+      <a class="rp-side-owner" href="https://github.com/LizardByte">LizardByte</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/LizardByte">LizardByte</a>
+        <span class="rp-sep">/</span><span class="rp-name">Sunshine</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Self-hosted game stream host for Moonlight.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>43,357</b></span><span class="rp-stat" title="forks">⑂ <b>2,384</b></span><span class="rp-stat" title="watchers">👁 <b>158</b></span><span class="rp-stat" title="prs">⑃ <b>3,832</b></span><span class="rp-stat" title="issues">● <b>1,473</b></span><span class="rp-stat" title="releases">▤ <b>48</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/game-streaming-server">game-streaming-server</a><a class="rp-topic" href="https://github.com/topics/game-stream">game-stream</a><a class="rp-topic" href="https://github.com/topics/game-streaming">game-streaming</a><a class="rp-topic" href="https://github.com/topics/remote-desktop">remote-desktop</a><a class="rp-topic" href="https://github.com/topics/moonlight">moonlight</a><a class="rp-topic" href="https://github.com/topics/geforce-experience">geforce-experience</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C++</span><span class="rp-meta-bit">GPL-3.0</span><span class="rp-meta-bit">Created 2021-12-15</span><a class="rp-meta-bit rp-home" href="https://sunshine.lizardbyte.dev" rel="noopener">sunshine.lizardbyte.dev</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/LizardByte/Sunshine">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v2026.914.233613</span><a class="rp-dl-a" href="https://github.com/LizardByte/Sunshine/releases/tag/v2026.914.233613">v2026.914.233613 ↓</a><span class="rp-dl-ver">2026.914.233613</span><span class="rp-dl-date">2026-09-15</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+54</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+396</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1,323</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">43,357</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,384</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">158</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">3,832</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,473</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">48</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Sunshine
+  Self-hosted game stream host for Moonlight.
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+ ℹ️ About
+
+Sunshine is a self-hosted game stream host for Moonlight.
+Offering low-latency, cloud gaming server capabilities with support for AMD, Intel, and Nvidia GPUs for hardware
+encoding. Software encoding is also available. You can connect to Sunshine from any Moonlight client on a variety of
+devices. A web UI is provided to allow configuration, and client pairing, from your favorite web browser. Pair from
+the local server or any mobile device.
+
+Visit the Sunshine website for downloads and an overview.
+
+LizardByte has the full documentation hosted on Read the Docs
+
+ Stable Docs
+ Beta Docs
+
+ 🎮 Feature Compatibility
+
+
+    Gamepad Emulation
+    
+        Feature
+        FreeBSD
+        Linux
+        macOS
+        Windows
+    
+    
+        
+        What type of gamepads can be emulated on the host.
+        Clients may support other gamepads.
+        
+    
+    
+        Generic
+        🟡1
+        ✅
+        ✅2
+        ✅3
+    
+    
+        DualShock / DS4 (PlayStation 4)
+        🟡1
+        ✅
+        ✅2
+        ✅3
+    
+    
+        DualSense / DS5 (PlayStation 5)
+        🟡1
+        ✅
+        ✅2
+        ✅3
+    
+    
+        Nintendo Switch Pro
+        🟡1
+        ✅
+        ✅2
+        ✅3
+    
+    
+        Xbox 360
+        🟡1
+        ✅
+        ✅2
+        ✅3
+    
+    
+        Xbox One
+        🟡1
+        ✅
+        ✅2
+        ✅3
+    
+    
+        Xbox Series
+        🟡1
+        ✅
+        ✅2
+        ✅3
+    
+
+
+ [!NOTE]
+ 1 Missing motion, touchpad input, battery state, RGB LEDs, adaptive triggers, and raw HID output reports.
+ 2 Requires the separately installed and licensed Virtual HID Broker.
+ 3 All profiles are available through the separately installed and licensed Virtual HID Broker. Xbox 360 and DualShock 4 can also use ViGEmBus.
+
+
+    Encoding API
+    
+        Encoding API
+        GPU Vendor
+        FreeBSD
+        Linux
+        macOS
+        Windows
+    
+    
+        AMF
+        AMD
+        ➖
+        ➖
+        ➖
+        ✅
+    
+    
+        Media Foundation
+        Qualcomm
+        ➖
+        ➖
+        ➖
+        ✅
+    
+    
+        NVENC
+        NVIDIA
+        ➖
+        ✅
+        ➖
+        ✅
+    
+    
+        QuickSync
+        Intel
+        ➖
+        ➖
+        ➖
+        ✅
+    
+    
+        VAAPI
+        AMD
+        ✅
+        ✅
+        ➖
+        ➖
+    
+    
+        Intel
+        ✅
+        ✅
+        ➖
+        ➖
+    
+    
+        NVIDIA
+        ➖
+        ✅
+        ➖
+        ➖
+    
+    
+        Video Toolbox
+        Apple
+        ➖
+        ➖
+        ✅
+        ➖
+    
+    
+        Intel
+        ➖
+        ➖
+        ✅
+        ➖
+    
+    
+        Vulkan Video
+        AMD
+        🟡
+        ✅
+        ➖
+        ➖
+    
+    
+        Intel
+        🟡
+        🟡
+        ➖
+        ➖
+    
+    
+        NVIDIA
+        ➖
+        🟡
+        ➖
+        ➖
+    
+    
+        Software
+        Any
+        ✅
+        ✅
+        ✅
+        ✅
+    
+
+
+
+    Screen Capture
+    
+        Cap</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/LizardByte/Sunshine/issues/3203"><span class="rp-item-num">#3203</span><span class="rp-item-title">Portrait screens in landscape orientation are seen as portrait with KMS</span><span class="rp-item-extra">48 comments · 2024-09-19</span></a><a class="rp-item" href="https://github.com/LizardByte/Sunshine/issues/2250"><span class="rp-item-num">#2250</span><span class="rp-item-title">KMS + Headless + Nvidia: `Unknown Monitor connector type [Meta]`</span><span class="rp-item-extra">44 comments · 2024-03-13</span></a><a class="rp-item" href="https://github.com/LizardByte/Sunshine/issues/2044"><span class="rp-item-num">#2044</span><span class="rp-item-title">GL Error when trying to stream virtual monitor</span><span class="rp-item-extra">29 comments · 2024-01-20</span></a><a class="rp-item" href="https://github.com/LizardByte/Sunshine/issues/2472"><span class="rp-item-num">#2472</span><span class="rp-item-title">NvFBC retrieves slightly outdated images.</span><span class="rp-item-extra">28 comments · 2024-04-26</span></a><a class="rp-item" href="https://github.com/LizardByte/Sunshine/issues/2745"><span class="rp-item-num">#2745</span><span class="rp-item-title">[macOS] Stream artificially limited to 90fps when set to 120fps in Moonlight</span><span class="rp-item-extra">26 comments · 2024-06-23</span></a><a class="rp-item" href="https://github.com/LizardByte/Sunshine/issues/5241"><span class="rp-item-num">#5241</span><span class="rp-item-title">XDG Portal and Kwingrab screen freezing</span><span class="rp-item-extra">25 comments · 2026-06-03</span></a><a class="rp-item" href="https://github.com/LizardByte/Sunshine/issues/2107"><span class="rp-item-num">#2107</span><span class="rp-item-title">Sunshine does not find Intel GPU hardware encoders in Win 10 VM though it is present and usable to other programs</span><span class="rp-item-extra">25 comments · 2024-02-05</span></a><a class="rp-item" href="https://github.com/LizardByte/Sunshine/issues/4461"><span class="rp-item-num">#4461</span><span class="rp-item-title">Using Do/Undo Command makes connection impossible</span><span class="rp-item-extra">20 comments · 2025-11-29</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/LizardByte/Sunshine/releases"><b>v2026.914.233613</b> <span class="rp-rel-tag">v2026.914.233613</span> <span class="rp-item-extra">2026-09-15</span></a><pre class="rp-pre">‼️ Attention
+
+This release contains a high-severity security update for Linux hosts. For more information, see:
+
+- GHSA-fp6g-27w5-489j
+
+Linux users should update as soon as possible!
+
+ ⚠️ Breaking changes and migration notes
+
+- Windows hosts using Virtual HID Driver must update to version 2026.914.1218.10 or newer. Earlier driver versions are not supported by this Sunshine release.
+
+ ✨ Highlights
+
+- Clearer Windows virtual-input choices. A new gamepad_driver setting lets users choose all available drivers, only Virtual HID Driver, or only ViGEmBus. Selecting ViGEmBus also suppres</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (3)</h3><div class="rp-list"><a class="rp-item" href="https://www.bilibili.com/video/BV1z4421c7CH/" target="_blank" rel="noopener"><span class="rp-news-src">bilibili</span><span class="rp-item-title">【sunshine串流】sunshine下载安装以及基本用法p1</span><span class="rp-item-extra">2024-02-05</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMisgFBVV95cUxQUThYb0FMRlJBRTM3MGRYQUtLQWQwMTY0c0stelJmS2Yza1Y3NWgyT2xEZl8zalRTblFpY09tM2NFYWJFUUhZRTdiaV81VWlfamdHX1lDYnpZTFVHUFZhSGJNX3VmZ3ZBRTNZVG15WHVULWdSRlpodE5IN3RzekJ3c0VoM1hScWhpdG11QkI4ajNQQzdjVVlNNVhLbU9kRnNEcmNvNEVhUW5YZW1mX3BKUVh3?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">games.gg</span><span class="rp-item-title">如何在 Nintendo Switch OLED 上实现 DLSS 5</span><span class="rp-item-extra">2026-10-09</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMifEFVX3lxTE5mWm1oV3pxQTRWNXpoZHlvYzZVUkJqS21IakY1MmxESm9ueG93UmdWRVAyRXlvd0EtZm5rdTREWkVCMGVIaXpOWEl3U29BYU44WjZ6R1BTZ3VjLXFZT1o5UWpGeGhIR25LeEpfbVZGYlVZaW5FdmNLSm0wWlM?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Notebookcheck CN</span><span class="rp-item-title">基于 Arch 的 Omarchy 3.7.0 面向 Linux 游戏玩家</span><span class="rp-item-extra">2026-05-05</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (7)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=41345329" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Sunshine: Self-hosted game stream host for Moonlight</span><span class="rp-item-extra">▲ 1 · 0 comments · 2024-08-25</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=37695420" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">LizardByte/Sunshine: Self-hosted game stream host for Moonlight</span><span class="rp-item-extra">▲ 1 · 0 comments · 2023-09-28</span></a><a class="rp-item" href="https://shattered.io/sunshine-moonlight-setup-guide/" target="_blank" rel="noopener"><span class="rp-news-src">shattered.io</span><span class="rp-item-title">Sunshine + Moonlight Setup: 41K Stars, 12 Steps [2026]</span><span class="rp-item-extra">2026-10-21</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxPZnRnX1BmR1dscnNTVFJuOERZVG5MS0dwaWFPUk4tcFp2amZ4VEtDMmdDYTM5T0V1OHV3WVlaV2xlU3kzV1VTazJtN3FkRTQ0UjdQZnNtUGJ6WVR4STE3UVI2RjIyMFFEbDNYbDhVNi1hajRYOWwzczNaSU5fa1VsS01xZUNIX0VsVWFLUlRrU1ZzU083Z2JjQkk2TURPMnN5RzdYUmg4SQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">XDA</span><span class="rp-item-title">I spent $10 to turn my PC into a wireless console, and it&#x27;s the best couch gaming upgrade possible</span><span class="rp-item-extra">2026-04-18</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMie0FVX3lxTFBsaGtKbnUtaDJsZTNITW9nUVpJTGd0cjhKM0tLOGVRZmQyLWR4SU5HVUNCRlVfT2FEV0MwLTFyNXFTY1JBa0pPVHJmYXg0d0pzRmFBZC1FU05SNkNVT3FJOHVDN21xNGt0WExTcVpjLUNGOE4wTWNDdHJOcw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Retro Handhelds</span><span class="rp-item-title">Lazuli Is A New Rust-Based GameCube Emulator</span><span class="rp-item-extra">2026-02-16</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMijAFBVV95cUxOSHhGZG9IeG1kN0dvNmRidUtsRjB0dGlCUk1mbDlCVzZMQWt6UnZaeHdndEd2dWg3NkthQ0J5dmRjRndmaURhVmtsaHlSTEhJbDRqVWVtaDdHc1p3OU5wMkhIcThxdlZBbml3UmNlVTR0SlVvcEZ3OEdWSDRfMVc1LV9zb3ZoREIwRzdRNg?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Linuxiac</span><span class="rp-item-title">Debian Officially Welcomes Loong64 as a Supported Architecture</span><span class="rp-item-extra">2025-12-27</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMif0FVX3lxTFB1QWF2OWs5TXFxX2NGaUlfX2NuTDlrVWNyVGEwTHJCazJFVi1sUWdDTnVjSXZpcDhET0pOS1hOUzVxR3VGOE9hcjJab09zOW5uY1JLMks0cmNHMllkZHIxS2twR3ZscWdtaDRDMGJhN1NnR005TXE0OUx6Wi1LNnM?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Fossbytes</span><span class="rp-item-title">How To Set Up A Remote Game Streaming Server using Moonlight?</span><span class="rp-item-extra">2024-03-16</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/LizardByte__Sunshine.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

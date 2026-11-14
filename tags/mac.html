@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#mac · GitHub Trending Rank Radar</title>
+<meta name="description" content="GitHub 标签 mac 下的开源项目趋势榜 · 22 repos tagged mac on GitHub · 独立采集 GitHub 仓库数据的开源趋势榜单">
+<meta name="keywords" content="GitHub trending, GitHub ranking, GitHub 排行榜, 开源榜单, trending repos, star growth, star history, 星标增长, github stars, open data, github pages, github actions, 开源项目, open source rankings">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/tags/mac">
+<!-- bilingual content lives on ONE url — no per-lang alternates to declare -->
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="alternate" type="application/atom+xml" title="GitHub Trending Rank Radar" href="../feed.xml">
+<meta property="og:title" content="GitHub Trending Rank Radar">
+<meta property="og:description" content="GitHub 开源项目趋势榜单 · 每日双快照 · 十一榜单 · 历史回看 | Independent GitHub trend radar · twice-daily snapshots · 11 boards · bilingual">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://zhuikan.com/tags/mac">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://zhuikan.com/assets/og.png">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "GitHub Trending Rank Radar",
+      "alternateName": "GitHub 开源项目趋势榜单",
+      "url": "https://zhuikan.com/",
+      "description": "Independent open-source GitHub trend radar: daily/weekly/monthly star growth & rate boards, new-repo and all-time charts, browsable by day, month and year. 独立采集 GitHub 仓库数据的开源趋势榜单。",
+      "inLanguage": ["zh-CN", "en"],
+      "isAccessibleForFree": true,
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "publisher": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      }
+    },
+    {
+      "@type": "Dataset",
+      "name": "GitHub Trending Rankings Dataset",
+      "description": "Twice-daily snapshots of tracked GitHub repositories with stars, forks, watchers, issues, PRs and releases; precomputed daily/weekly/monthly/new/all-time leaderboard JSON.",
+      "url": "https://zhuikan.com/data/index.json",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "isAccessibleForFree": true,
+      "temporalCoverage": "2026-11-09/..",
+      "creator": {
+        "@type": "Organization",
+        "name": "awesome-market",
+        "url": "https://github.com/awesome-market"
+      },
+      "distribution": [
+        {"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://zhuikan.com/data/index.json"}
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body data-base="../" data-tag="mac" data-tag-name="mac">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到榜单</a>
+
+<noscript>
+  <div style="max-width:760px;margin:64px auto;padding:0 24px;font-family:system-ui,sans-serif;line-height:1.7;color:#333">
+    <h1>GitHub Trending Rank Radar</h1>
+    <p>独立采集 GitHub 仓库数据的开源趋势榜单：新星榜、日 / 周 / 月飙升榜与增速榜、总榜，支持按日 / 月 / 年回看历史。每日两次快照（UTC 02:00 / 14:00），榜单由快照差值计算。</p>
+    <p>An independent open-source GitHub trending radar: new repos, daily / weekly / monthly star-growth and rate boards, an all-time chart, and day / month / year history — snapshots taken twice daily (UTC 02:00 &amp; 14:00).</p>
+    <p>Machine-readable open data:
+      <a href="https://api-site.zhuikan.com/data/index.json">api-site/data/index.json</a> ·
+      <a href="../llms.txt">llms.txt</a> ·
+      <a href="../sitemap.xml">sitemap.xml</a> ·
+      <a href="https://github.com/awesome-market/trending-rank-radar">Source on GitHub</a>
+    </p>
+    <p><strong>榜单交互需要启用 JavaScript。This site requires JavaScript for the interactive boards.</strong></p>
+  </div>
+</noscript>
+
+<!-- shared svg gradient defs for sparklines -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <a class="hero-brand brand-home" href="../">
+      <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+        <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+        <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+        <g class="radar-sweep">
+          <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+        </g>
+      </svg>
+      <div>
+        <h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1>
+        <p class="hero-sub" data-i18n="hero.sub">GitHub 开源项目趋势榜单 · 每日双快照 · 八种榜单 · 日 / 月 / 年历史回看</p>
+      </div>
+    </a>
+    <div class="hero-meta">
+      <div class="search-wrap" id="searchWrap">
+        <select id="searchScope" class="search-scope" data-i18n-aria="search.scope.aria" aria-label="搜索范围">
+          <option value="repo" data-i18n="search.scope.repo">仓库</option>
+          <option value="news" data-i18n="search.scope.news">新闻</option>
+        </select>
+        <div class="search-box">
+          <svg class="search-ico" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"/></svg>
+          <input id="searchInput" class="search-input" type="search" autocomplete="off" spellcheck="false" data-i18n-ph="search.ph.repo" data-i18n-aria="search.ph.repo" aria-label="搜索" enterkeyhint="search">
+        </div>
+        <div class="search-drop" id="searchDrop" hidden></div>
+      </div>
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06-1.06a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.06l1.06-1.061a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero-viz" id="heroViz" data-enter>
+    <div class="hv-copy">
+      <p class="hv-kicker" data-i18n="hv.kicker">独立采集 · 开源数据</p>
+      <h2 class="hv-title" data-i18n="hv.title">独立追踪 GitHub 星标的每一次脉动</h2>
+      <p class="hv-sub" data-i18n="hv.sub">每日两次快照，用差值还原真实增长——不是又一份热榜镜像。</p>
+      <a class="hv-cta" href="#boardTabs" data-i18n="hv.cta">浏览今日榜单 →</a>
+    </div>
+    <div class="hv-side">
+      <div class="hv-chart" id="hvChart" aria-hidden="true"></div>
+      <div class="hv-cap" id="hvCap"></div>
+    </div>
+  </section>
+
+  <div class="controls" id="controls">
+    <div class="ctrl-row">
+      <nav class="board-tabs" id="boardTabs" data-i18n-aria="boards.aria" aria-label="榜单"></nav>
+    </div>
+    <div class="ctrl-row ctrl-sub">
+      <div class="seg" id="periodSeg" role="tablist" data-i18n-aria="period.aria" aria-label="时间维度">
+        <button data-period="day" class="seg-btn active" data-i18n="period.day">日</button>
+        <button data-period="month" class="seg-btn" data-i18n="period.month">月</button>
+        <button data-period="year" class="seg-btn" data-i18n="period.year">年</button>
+      </div>
+      <label class="sf-label" for="selDate" data-i18n="date.label">榜单日期</label>
+      <select id="selDate" class="sel" data-i18n-aria="date.aria" aria-label="日期"></select>
+      <div class="star-filter" role="group" data-i18n-aria="star.range" aria-label="Star 范围筛选">
+        <span class="sf-label" data-i18n="star.range">Star 范围</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="min">下限</span>
+          <input id="minK" type="number" min="0" step="1" value="1" class="sf-input" data-i18n-aria="minK.aria" aria-label="最小 Star 千数">
+        </label>
+        <span class="sf-sep">–</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="max">上限</span>
+          <input id="maxK" type="number" min="0" step="1" value="500" class="sf-input" data-i18n-aria="maxK.aria" aria-label="最大 Star 千数">
+        </label>
+        <span class="sf-unit">k</span>
+        <button id="applyFilter" class="sf-btn" data-i18n="apply">筛选</button>
+      </div>
+      <span class="window-info" id="windowInfo"></span>
+    </div>
+  </div>
+
+  <section id="content">
+    <div class="empty-state" id="emptyState" hidden>
+      <div class="empty-main">
+        <svg class="radar-big" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.4"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.3"/>
+          <g class="radar-sweep radar-sweep-lg">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <h2 data-i18n="empty.title">榜单积累中</h2>
+        <p id="emptyText" data-i18n="empty.text">快照数据正在积累，增长榜需要至少 2 个有效快照日。</p>
+        <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+        <p class="progress-hint" id="progressHint"></p>
+        <div class="empty-actions" id="emptyActions"></div>
+      </div>
+      <div class="empty-preview" id="emptyPreview"></div>
+    </div>
+
+    <div id="podiumWrap"></div>
+    <div id="listWrap"><!--SSR--><p style="color:var(--muted,#8b949e);font-size:13px;margin:0 4px 10px">2026-11-14 · #mac · 22 <span class="i18n-zh">个仓库 · 按 star 排序</span><span class="i18n-en">repos · by stars</span></p><div class="rank-list"><div class="rank-row" data-fn="clash-verge-rev/clash-verge-rev"><span class="row-rank top">1</span><a class="row-avatar" href="../repos/clash-verge-rev__clash-verge-rev"><img src="https://avatars.githubusercontent.com/u/152534467?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/clash-verge-rev__clash-verge-rev"><span class="row-owner">clash-verge-rev</span><span class="row-sep">/</span><span class="row-repo">clash-verge-rev</span></a></div><div class="row-meta"><span class="lang-tag">Rust</span><span class="m" title="stars">★ 158,243</span><span class="m" title="forks">⑂ 11,390</span><span class="m" title="watchers">👁 397</span><span class="m" title="issues">● 6,277</span><span class="m" title="prs">⑃ 1,667</span><span class="m" title="releases">▤ 75</span></div><div class="row-desc">A modern GUI client based on Tauri, designed to run in Windows, macOS and Linux for tailored proxy experience</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/clash">clash</a><a class="row-tag" href="https://github.com/topics/clash-meta">clash-meta</a><a class="row-tag" href="https://github.com/topics/clash-verge">clash-verge</a><a class="row-tag" href="../tags/linux">linux</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 158,243</div></div></div><div class="rank-row" data-fn="jaywcjlove/awesome-mac"><span class="row-rank top">2</span><a class="row-avatar" href="../repos/jaywcjlove__awesome-mac"><img src="https://avatars.githubusercontent.com/u/1680273?u=4471b74deb9973096418a93960c664c5ea3bd159&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/jaywcjlove__awesome-mac"><span class="row-owner">jaywcjlove</span><span class="row-sep">/</span><span class="row-repo">awesome-mac</span></a></div><div class="row-meta"><span class="lang-tag">Swift</span><span class="m" title="stars">★ 118,492</span><span class="m" title="forks">⑂ 10,294</span><span class="m" title="watchers">👁 1,504</span><span class="m" title="issues">● 632</span><span class="m" title="prs">⑃ 3,853</span><span class="m" title="releases">▤ 15</span></div><div class="row-desc"> This project is dedicated to collecting high-quality macOS software and organizing them systematically by different categories for easy search and use.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/macos">macos</a><a class="row-tag" href="https://github.com/topics/software">software</a><a class="row-tag" href="../tags/mac">mac</a><a class="row-tag" href="https://github.com/topics/mac-osx">mac-osx</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 118,492</div></div></div><div class="rank-row" data-fn="marktext/marktext"><span class="row-rank top">3</span><a class="row-avatar" href="../repos/marktext__marktext"><img src="https://avatars.githubusercontent.com/u/36623013?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/marktext__marktext"><span class="row-owner">marktext</span><span class="row-sep">/</span><span class="row-repo">marktext</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 63,954</span><span class="m" title="forks">⑂ 4,748</span><span class="m" title="watchers">👁 438</span><span class="m" title="issues">● 3,883</span><span class="m" title="prs">⑃ 2,074</span><span class="m" title="releases">▤ 61</span></div><div class="row-desc">📝A simple and elegant markdown editor, available for Linux, macOS and Windows.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/macos">macos</a><a class="row-tag" href="https://github.com/topics/typewriter-mode">typewriter-mode</a><a class="row-tag" href="../tags/electron">electron</a><a class="row-tag" href="../tags/markdown">markdown</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 63,954</div></div></div><div class="rank-row" data-fn="agalwood/Motrix"><span class="row-rank">4</span><a class="row-avatar" href="../repos/agalwood__Motrix"><img src="https://avatars.githubusercontent.com/u/1032175?u=43298a3d7c931db356f6f08e357ebe142bb29f89&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/agalwood__Motrix"><span class="row-owner">agalwood</span><span class="row-sep">/</span><span class="row-repo">Motrix</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 58,230</span><span class="m" title="forks">⑂ 5,150</span><span class="m" title="watchers">👁 484</span><span class="m" title="issues">● 1,641</span><span class="m" title="prs">⑃ 693</span><span class="m" title="releases">▤ 66</span></div><div class="row-desc">A full-featured download manager.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/motrix">motrix</a><a class="row-tag" href="https://github.com/topics/aria2">aria2</a><a class="row-tag" href="../tags/macos">macos</a><a class="row-tag" href="../tags/windows">windows</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 58,230</div></div></div><div class="rank-row" data-fn="serhii-londar/open-source-mac-os-apps"><span class="row-rank">5</span><a class="row-avatar" href="../repos/serhii-londar__open-source-mac-os-apps"><img src="https://avatars.githubusercontent.com/u/15808174?u=910f868b94d0172237672c5e6e098392d32e02d5&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/serhii-londar__open-source-mac-os-apps"><span class="row-owner">serhii-londar</span><span class="row-sep">/</span><span class="row-repo">open-source-mac-os-apps</span></a></div><div class="row-meta"><span class="m" title="stars">★ 51,364</span><span class="m" title="forks">⑂ 3,346</span><span class="m" title="watchers">👁 914</span><span class="m" title="issues">● 241</span><span class="m" title="prs">⑃ 1,815</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">🚀 Awesome list of open source applications for macOS. https://t.me/s/opensourcemacosapps</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/macos">macos</a><a class="row-tag" href="../tags/mac">mac</a><a class="row-tag" href="https://github.com/topics/macosx">macosx</a><a class="row-tag" href="https://github.com/topics/apps">apps</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 51,364</div></div></div><div class="rank-row" data-fn="th-ch/youtube-music"><span class="row-rank">6</span><a class="row-avatar" href="../repos/th-ch__youtube-music"><img src="https://avatars.githubusercontent.com/u/232770603?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/th-ch__youtube-music"><span class="row-owner">th-ch</span><span class="row-sep">/</span><span class="row-repo">youtube-music</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 34,033</span><span class="m" title="forks">⑂ 2,046</span><span class="m" title="watchers">👁 176</span><span class="m" title="issues">● 2,146</span><span class="m" title="prs">⑃ 2,112</span><span class="m" title="releases">▤ 88</span></div><div class="row-desc">Pear 🍐 is extension for music player</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/music">music</a><a class="row-tag" href="../tags/desktop-app">desktop-app</a><a class="row-tag" href="../tags/electron">electron</a><a class="row-tag" href="../tags/node">node</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 34,033</div></div></div><div class="rank-row" data-fn="Zackriya-Solutions/meetily"><span class="row-rank">7</span><a class="row-avatar" href="../repos/Zackriya-Solutions__meetily"><img src="https://avatars.githubusercontent.com/u/82556810?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/Zackriya-Solutions__meetily"><span class="row-owner">Zackriya-Solutions</span><span class="row-sep">/</span><span class="row-repo">meetily</span></a></div><div class="row-meta"><span class="lang-tag">Rust</span><span class="m" title="stars">★ 32,678</span><span class="m" title="forks">⑂ 3,615</span><span class="m" title="watchers">👁 128</span><span class="m" title="issues">● 376</span><span class="m" title="prs">⑃ 465</span><span class="m" title="releases">▤ 12</span></div><div class="row-desc">Privacy-first AI meeting note taker for Windows and macOS. Free, open source (MIT). On-device Whisper/Parakeet transcription and speaker diarization, no meeting bot. Open-source alternative to Granola, Otter and Fireflies. https://meetily.ai</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/meeting-minutes">meeting-minutes</a><a class="row-tag" href="https://github.com/topics/meeting-notes">meeting-notes</a><a class="row-tag" href="../tags/llm">llm</a><a class="row-tag" href="../tags/mac">mac</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 32,678</div></div></div><div class="rank-row" data-fn="CapSoftware/Cap"><span class="row-rank">8</span><a class="row-avatar" href="../repos/CapSoftware__Cap"><img src="https://avatars.githubusercontent.com/u/151241629?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/CapSoftware__Cap"><span class="row-owner">CapSoftware</span><span class="row-sep">/</span><span class="row-repo">Cap</span></a></div><div class="row-meta"><span class="lang-tag">Rust</span><span class="m" title="stars">★ 24,981</span><span class="m" title="forks">⑂ 2,345</span><span class="m" title="watchers">👁 56</span><span class="m" title="issues">● 944</span><span class="m" title="prs">⑃ 3,274</span><span class="m" title="releases">▤ 86</span></div><div class="row-desc">Open source Loom alternative. Beautiful, shareable screen recordings.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/app">app</a><a class="row-tag" href="https://github.com/topics/cap">cap</a><a class="row-tag" href="https://github.com/topics/coss">coss</a><a class="row-tag" href="../tags/mac">mac</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 24,981</div></div></div><div class="rank-row" data-fn="CodeEditApp/CodeEdit"><span class="row-rank">9</span><a class="row-avatar" href="../repos/CodeEditApp__CodeEdit"><img src="https://avatars.githubusercontent.com/u/101493338?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/CodeEditApp__CodeEdit"><span class="row-owner">CodeEditApp</span><span class="row-sep">/</span><span class="row-repo">CodeEdit</span></a></div><div class="row-meta"><span class="lang-tag">Swift</span><span class="m" title="stars">★ 23,119</span><span class="m" title="forks">⑂ 1,197</span><span class="m" title="watchers">👁 228</span><span class="m" title="issues">● 854</span><span class="m" title="prs">⑃ 1,160</span><span class="m" title="releases">▤ 38</span></div><div class="row-desc">📝 CodeEdit App for macOS – Elevate your code editing experience. Open source, free forever.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/macos">macos</a><a class="row-tag" href="https://github.com/topics/apple">apple</a><a class="row-tag" href="https://github.com/topics/code-edit">code-edit</a><a class="row-tag" href="../tags/swift">swift</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 23,119</div></div></div><div class="rank-row" data-fn="yanue/V2rayU"><span class="row-rank">10</span><a class="row-avatar" href="../repos/yanue__V2rayU"><img src="https://avatars.githubusercontent.com/u/1435250?u=ba5edeb168945f24f0ec64becf09be35e5dc68f0&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/yanue__V2rayU"><span class="row-owner">yanue</span><span class="row-sep">/</span><span class="row-repo">V2rayU</span></a></div><div class="row-meta"><span class="m" title="stars">★ 20,193</span><span class="m" title="forks">⑂ 2,962</span><span class="m" title="watchers">👁 274</span><span class="m" title="issues">● 1,557</span><span class="m" title="prs">⑃ 62</span><span class="m" title="releases">▤ 59</span></div><div class="row-desc">V2rayU,基于v2ray核心的mac版客户端,用于科学上网,使用swift编写,支持trojan,vmess,shadowsocks,socks5等服务协议,支持订阅, 支持二维码,剪贴板导入,手动配置,二维码分享等</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/v2ray">v2ray</a><a class="row-tag" href="https://github.com/topics/v2rayu">v2rayu</a><a class="row-tag" href="https://github.com/topics/vmess">vmess</a><a class="row-tag" href="https://github.com/topics/anytls">anytls</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 20,193</div></div></div><div class="rank-row" data-fn="iCHAIT/awesome-macOS"><span class="row-rank">11</span><a class="row-avatar" href="../repos/iCHAIT__awesome-macOS"><img src="https://avatars.githubusercontent.com/u/8472314?u=3e6f37e42518322643eea0404d23b7d8e9dbb895&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/iCHAIT__awesome-macOS"><span class="row-owner">iCHAIT</span><span class="row-sep">/</span><span class="row-repo">awesome-macOS</span></a></div><div class="row-meta"><span class="m" title="stars">★ 19,487</span><span class="m" title="forks">⑂ 1,786</span><span class="m" title="watchers">👁 376</span><span class="m" title="issues">● 112</span><span class="m" title="prs">⑃ 1,218</span><span class="m" title="releases">▤ 1</span></div><div class="row-desc"> A curated list of awesome applications, softwares, tools and shiny things for macOS.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/macos">macos</a><a class="row-tag" href="../tags/mac">mac</a><a class="row-tag" href="../tags/awesome-list">awesome-list</a><a class="row-tag" href="https://github.com/topics/apple">apple</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 19,487</div></div></div><div class="rank-row" data-fn="wulkano/Kap"><span class="row-rank">12</span><a class="row-avatar" href="../repos/wulkano__Kap"><img src="https://avatars.githubusercontent.com/u/16321113?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/wulkano__Kap"><span class="row-owner">wulkano</span><span class="row-sep">/</span><span class="row-repo">Kap</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 19,427</span><span class="m" title="forks">⑂ 901</span><span class="m" title="watchers">👁 173</span><span class="m" title="issues">● 840</span><span class="m" title="prs">⑃ 447</span><span class="m" title="releases">▤ 43</span></div><div class="row-desc">An open-source screen recorder built with web technology</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/screen-recorder">screen-recorder</a><a class="row-tag" href="../tags/javascript">javascript</a><a class="row-tag" href="../tags/electron">electron</a><a class="row-tag" href="../tags/mac">mac</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 19,427</div></div></div><div class="rank-row" data-fn="nukeop/nuclear"><span class="row-rank">13</span><a class="row-avatar" href="../repos/nukeop__nuclear"><img src="https://avatars.githubusercontent.com/u/12746779?u=cc56761cd6c3d6c48b22555bcb8d34308922a5ac&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/nukeop__nuclear"><span class="row-owner">nukeop</span><span class="row-sep">/</span><span class="row-repo">nuclear</span></a></div><div class="row-meta"><span class="lang-tag">TypeScript</span><span class="m" title="stars">★ 18,936</span><span class="m" title="forks">⑂ 1,357</span><span class="m" title="watchers">👁 164</span><span class="m" title="issues">● 1,073</span><span class="m" title="prs">⑃ 1,023</span><span class="m" title="releases">▤ 92</span></div><div class="row-desc">Streaming music player that finds free music for you</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/music-player">music-player</a><a class="row-tag" href="../tags/music">music</a><a class="row-tag" href="../tags/linux">linux</a><a class="row-tag" href="../tags/windows">windows</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 18,936</div></div></div><div class="rank-row" data-fn="matryer/xbar"><span class="row-rank">14</span><a class="row-avatar" href="../repos/matryer__xbar"><img src="https://avatars.githubusercontent.com/u/101659?u=03382a41e9f7a37ccf8a4f8ce3ca62f524ff25ed&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/matryer__xbar"><span class="row-owner">matryer</span><span class="row-sep">/</span><span class="row-repo">xbar</span></a></div><div class="row-meta"><span class="lang-tag">Go</span><span class="m" title="stars">★ 18,085</span><span class="m" title="forks">⑂ 651</span><span class="m" title="watchers">👁 167</span><span class="m" title="issues">● 705</span><span class="m" title="prs">⑃ 239</span><span class="m" title="releases">▤ 69</span></div><div class="row-desc">Put the output from any script or program into your macOS Menu Bar (the BitBar reboot)</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/mac">mac</a><a class="row-tag" href="https://github.com/topics/macosx">macosx</a><a class="row-tag" href="https://github.com/topics/bitbar">bitbar</a><a class="row-tag" href="https://github.com/topics/menubar">menubar</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 18,085</div></div></div><div class="rank-row" data-fn="hzlzh/Best-App"><span class="row-rank">15</span><a class="row-avatar" href="../repos/hzlzh__Best-App"><img src="https://avatars.githubusercontent.com/u/1049575?u=c7ff8a78d09c0ffa2743d926557077a5e4e9c52b&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/hzlzh__Best-App"><span class="row-owner">hzlzh</span><span class="row-sep">/</span><span class="row-repo">Best-App</span></a></div><div class="row-meta"><span class="m" title="stars">★ 17,578</span><span class="m" title="forks">⑂ 1,801</span><span class="m" title="watchers">👁 1,170</span><span class="m" title="issues">● 331</span><span class="m" title="prs">⑃ 72</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">收集&amp;推荐优秀的 Apps/硬件/技巧/周边等</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/mac">mac</a><a class="row-tag" href="../tags/macos">macos</a><a class="row-tag" href="https://github.com/topics/app">app</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 17,578</div></div></div><div class="rank-row" data-fn="ianyh/Amethyst"><span class="row-rank">16</span><a class="row-avatar" href="../repos/ianyh__Amethyst"><img src="https://avatars.githubusercontent.com/u/212270?u=3c22af5ed6d18d2bd7f57a99a30c3c70202db41a&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/ianyh__Amethyst"><span class="row-owner">ianyh</span><span class="row-sep">/</span><span class="row-repo">Amethyst</span></a></div><div class="row-meta"><span class="lang-tag">Swift</span><span class="m" title="stars">★ 16,327</span><span class="m" title="forks">⑂ 542</span><span class="m" title="watchers">👁 102</span><span class="m" title="issues">● 1,180</span><span class="m" title="prs">⑃ 611</span><span class="m" title="releases">▤ 109</span></div><div class="row-desc">Automatic tiling window manager for macOS à la xmonad.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/window-manager">window-manager</a><a class="row-tag" href="https://github.com/topics/xmonad">xmonad</a><a class="row-tag" href="../tags/macos">macos</a><a class="row-tag" href="../tags/mac">mac</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 16,327</div></div></div><div class="rank-row" data-fn="pystardust/ani-cli"><span class="row-rank">17</span><a class="row-avatar" href="../repos/pystardust__ani-cli"><img src="https://avatars.githubusercontent.com/u/79201151?u=fb584506dd724f48d56b6dc85a1c8bccb401fc90&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/pystardust__ani-cli"><span class="row-owner">pystardust</span><span class="row-sep">/</span><span class="row-repo">ani-cli</span></a></div><div class="row-meta"><span class="lang-tag">Shell</span><span class="m" title="stars">★ 14,127</span><span class="m" title="forks">⑂ 901</span><span class="m" title="watchers">👁 76</span><span class="m" title="issues">● 1,066</span><span class="m" title="prs">⑃ 690</span><span class="m" title="releases">▤ 30</span></div><div class="row-desc">A cli tool to browse and play anime</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/shell">shell</a><a class="row-tag" href="../tags/cli">cli</a><a class="row-tag" href="https://github.com/topics/anime">anime</a><a class="row-tag" href="https://github.com/topics/posix">posix</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 14,127</div></div></div><div class="rank-row" data-fn="orbstack/orbstack"><span class="row-rank">18</span><a class="row-avatar" href="../repos/orbstack__orbstack"><img src="https://avatars.githubusercontent.com/u/125163402?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/orbstack__orbstack"><span class="row-owner">orbstack</span><span class="row-sep">/</span><span class="row-repo">orbstack</span></a></div><div class="row-meta"><span class="lang-tag">Shell</span><span class="m" title="stars">★ 9,536</span><span class="m" title="forks">⑂ 110</span><span class="m" title="watchers">👁 28</span><span class="m" title="issues">● 2,545</span><span class="m" title="prs">⑃ 5</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">Fast, light, simple Docker containers &amp; Linux machines</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/mac">mac</a><a class="row-tag" href="../tags/docker">docker</a><a class="row-tag" href="../tags/linux">linux</a><a class="row-tag" href="../tags/macos">macos</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 9,536</div></div></div><div class="rank-row" data-fn="maxgoedjen/secretive"><span class="row-rank">19</span><a class="row-avatar" href="../repos/maxgoedjen__secretive"><img src="https://avatars.githubusercontent.com/u/342665?u=eb319b7ea15ceea2e2b6aaf33a0bff78b24c44b6&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/maxgoedjen__secretive"><span class="row-owner">maxgoedjen</span><span class="row-sep">/</span><span class="row-repo">secretive</span></a></div><div class="row-meta"><span class="lang-tag">Swift</span><span class="m" title="stars">★ 9,391</span><span class="m" title="forks">⑂ 237</span><span class="m" title="watchers">👁 53</span><span class="m" title="issues">● 445</span><span class="m" title="prs">⑃ 391</span><span class="m" title="releases">▤ 27</span></div><div class="row-desc">Protect your SSH keys with your Mac&#x27;s Secure Enclave</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/ssh">ssh</a><a class="row-tag" href="../tags/mac">mac</a><a class="row-tag" href="https://github.com/topics/secure-enclave">secure-enclave</a><a class="row-tag" href="../tags/security">security</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 9,391</div></div></div><div class="rank-row" data-fn="MarkEdit-app/MarkEdit"><span class="row-rank">20</span><a class="row-avatar" href="../repos/MarkEdit-app__MarkEdit"><img src="https://avatars.githubusercontent.com/u/120696842?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/MarkEdit-app__MarkEdit"><span class="row-owner">MarkEdit-app</span><span class="row-sep">/</span><span class="row-repo">MarkEdit</span></a></div><div class="row-meta"><span class="lang-tag">Swift</span><span class="m" title="stars">★ 5,987</span><span class="m" title="forks">⑂ 260</span><span class="m" title="watchers">👁 20</span><span class="m" title="issues">● 348</span><span class="m" title="prs">⑃ 1,526</span><span class="m" title="releases">▤ 97</span></div><div class="row-desc">Just like TextEdit on Mac but dedicated to Markdown.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/codemirror">codemirror</a><a class="row-tag" href="https://github.com/topics/codemirror6">codemirror6</a><a class="row-tag" href="../tags/mac">mac</a><a class="row-tag" href="../tags/macos">macos</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,987</div></div></div><div class="rank-row" data-fn="you-dont-need/You-Dont-Need-GUI"><span class="row-rank">21</span><a class="row-avatar" href="../repos/you-dont-need__You-Dont-Need-GUI"><img src="https://avatars.githubusercontent.com/u/21141794?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/you-dont-need__You-Dont-Need-GUI"><span class="row-owner">you-dont-need</span><span class="row-sep">/</span><span class="row-repo">You-Dont-Need-GUI</span></a></div><div class="row-meta"><span class="m" title="stars">★ 5,913</span><span class="m" title="forks">⑂ 247</span><span class="m" title="watchers">👁 57</span><span class="m" title="issues">● 28</span><span class="m" title="prs">⑃ 56</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">Stop relying on GUI; CLI **ROCKS**</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="../tags/gui">gui</a><a class="row-tag" href="../tags/cli">cli</a><a class="row-tag" href="https://github.com/topics/lists">lists</a><a class="row-tag" href="https://github.com/topics/resources">resources</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,913</div></div></div><div class="rank-row" data-fn="jhaizhou-ops/d2r-mobile"><span class="row-rank">22</span><a class="row-avatar" href="../repos/jhaizhou-ops__d2r-mobile"><img src="https://avatars.githubusercontent.com/u/258432107?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="../repos/jhaizhou-ops__d2r-mobile"><span class="row-owner">jhaizhou-ops</span><span class="row-sep">/</span><span class="row-repo">d2r-mobile</span></a></div><div class="row-meta"><span class="lang-tag">C</span><span class="m" title="stars">★ 5,298</span><span class="m" title="forks">⑂ 1,336</span><span class="m" title="watchers">👁 31</span><span class="m" title="issues">● 134</span><span class="m" title="prs">⑃ 135</span><span class="m" title="releases">▤ 32</span></div><div class="row-desc">Open-source compatibility layer for Diablo II: Resurrected with the Reign of the Warlock expansion. Runs your own Switch copy natively on iPhone, iPad, Mac, Android and HarmonyOS — full touch controls, 60 fps, new endgame modes. Bring your own game files. 开源的《暗黑破坏神 II：狱火重生》术士君临 iOS / macOS / 安卓 / 鸿蒙兼容层</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/compatibility-layer">compatibility-layer</a><a class="row-tag" href="https://github.com/topics/diablo-2-resurrected">diablo-2-resurrected</a><a class="row-tag" href="https://github.com/topics/diablo2">diablo2</a><a class="row-tag" href="https://github.com/topics/game-port">game-port</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,298</div></div></div></div><!--/SSR--></div>
+
+    <details class="month-detail" id="monthDetail">
+      <summary data-i18n="month.top10">当月每日飙升 Top10 摘要</summary>
+      <div id="monthTop10"><!--SSRMT--><!--/SSRMT--></div>
+    </details>
+  </section>
+
+  <section id="yearWrap">
+    <h2 class="section-title" data-i18n="year.entry">年度月度榜入口</h2>
+    <div class="month-grid" id="monthGrid"><!--SSRMG--><!--/SSRMG--></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/app.js?v=d2fbeca0"></script>
+</body>
+</html>

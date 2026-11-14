@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>xbtlin/ai-berkshire · GitHub Trending Rank Radar</title>
+<meta name="description" content="AI 时代的伯克希尔：基于 Claude Code / Codex 的价值投资研究框架。巴菲特·芒格·段永平·李录四大师方法论 + 多Agent并行研究。| AI-era Berkshire: a value investing research framework built for Claude Code / Codex. 4 masters&#x27; methodologies + multi-ag">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="ai-berkshire, xbtlin, xbtlin/ai-berkshire, github stars, github trending, star growth, star history, 开源项目, 星标增长, ai, ai-agent, anthropic, berkshire-hathaway, charlie-munger, china-stock">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/xbtlin__ai-berkshire">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="xbtlin/ai-berkshire · GitHub Trending Rank Radar">
+<meta property="og:description" content="AI 时代的伯克希尔：基于 Claude Code / Codex 的价值投资研究框架。巴菲特·芒格·段永平·李录四大师方法论 + 多Agent并行研究。| AI-era Berkshire: a value investing research framework built for Claude Code / Codex. 4 masters&#x27; methodologies + multi-ag">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/xbtlin__ai-berkshire">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "xbtlin/ai-berkshire", "codeRepository": "https://github.com/xbtlin/ai-berkshire", "url": "https://zhuikan.com/repos/xbtlin__ai-berkshire", "description": "AI 时代的伯克希尔：基于 Claude Code / Codex 的价值投资研究框架。巴菲特·芒格·段永平·李录四大师方法论 + 多Agent并行研究。| AI-era Berkshire: a value investing research framework built for Claude Code / Codex. 4 masters' methodologies + multi-ag", "author": {"@type": "Organization", "name": "xbtlin", "url": "https://github.com/xbtlin"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "HTML", "dateCreated": "2026-04-07", "keywords": "ai,ai-agent,anthropic,berkshire-hathaway,charlie-munger,china-stock,claude,claude-code,financial-analysis,fintech"}</script>
+</head>
+<body data-repo="xbtlin/ai-berkshire" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">xbtlin/ai-berkshire</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="xbtlin__ai-berkshire"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/6993203?u=505bfe357656f354dc028362611ad708adfd1280&amp;v=4&s=300" width="300" height="300" alt="xbtlin avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">ai-berkshire</div>
+      <a class="rp-side-owner" href="https://github.com/xbtlin">xbtlin</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/xbtlin">xbtlin</a>
+        <span class="rp-sep">/</span><span class="rp-name">ai-berkshire</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">AI 时代的伯克希尔：基于 Claude Code / Codex 的价值投资研究框架。巴菲特·芒格·段永平·李录四大师方法论 + 多Agent并行研究。| AI-era Berkshire: a value investing research framework built for Claude Code / Codex. 4 masters&#x27; methodologies + multi-agent adversarial analysis.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>17,116</b></span><span class="rp-stat" title="forks">⑂ <b>2,513</b></span><span class="rp-stat" title="watchers">👁 <b>85</b></span><span class="rp-stat" title="prs">⑃ <b>69</b></span><span class="rp-stat" title="issues">● <b>56</b></span><span class="rp-stat" title="releases">▤ <b>1</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/ai">ai</a><a class="rp-topic" href="../tags/ai-agent">ai-agent</a><a class="rp-topic" href="../tags/anthropic">anthropic</a><a class="rp-topic" href="https://github.com/topics/berkshire-hathaway">berkshire-hathaway</a><a class="rp-topic" href="https://github.com/topics/charlie-munger">charlie-munger</a><a class="rp-topic" href="https://github.com/topics/china-stock">china-stock</a><a class="rp-topic" href="../tags/claude">claude</a><a class="rp-topic" href="../tags/claude-code">claude-code</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">HTML</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-04-07</span><a class="rp-meta-bit rp-home" href="https://xbtlin.github.io/ai-berkshire/" rel="noopener">xbtlin.github.io/ai-berkshire/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/xbtlin/ai-berkshire">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.0.0 - AI Berkshire 首发</span><a class="rp-dl-a" href="https://github.com/xbtlin/ai-berkshire/releases/tag/v1.0.0">v1.0.0 ↓</a><span class="rp-dl-ver">1.0.0</span><span class="rp-dl-date">2026-04-07</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+7</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+116</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+443</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">17,116</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,513</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">85</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">69</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">56</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">1</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">中文 | English | 日本語
+
+
+
+ AI Berkshire - AI 时代的价值投资研究框架
+
+ &quot;Price is what you pay, value is what you get.&quot; — Warren Buffett
+
+ 用 AI 重新定义投资研究的深度与效率。
+
+AI Berkshire 是一套同时兼容 Claude Code 与 Codex 的投资研究 Skill 合集，将巴菲特、芒格、段永平、李录四位价值投资大师的方法论系统化、结构化，通过 AI Agent 实现专业级投资研究。
+
+一个人 + Claude Code / Codex = 一个投研团队。
+
+ 📮 仓库是全量框架，公众号是精选。 真正值得深研的公司，加上报告之外我自己的判断与取舍，都在微信公众号「复利炼丹炉」——扫码关注 ↓
+
+
+
+ 📖 想读报告，用 阅读站：成品报告按公司、专题、时间整理，电脑和手机都好读，可搜索、记住阅读进度。
+
+ 📊 全部 2282 份报告（含底稿）· 114 家公司 · 29 个专题，GitHub 上的完整目录见 研究报告索引，更新至 2026-11-12。
+
+
+
+📖 阅读站 · 实盘业绩 · 为什么不能直接问AI · Skills 一览 · 快速开始 · 实战报告 · 研究索引 · 设计理念 · 公众号
+
+---
+
+ Real Track Record
+
+ 不是纸上谈兵。这套框架背后是真金白银验证的投资体系。
+
+ 2024 全年收益：+69.29%
+
+
+
+ 2025 全年收益：+66.38%
+
+
+
+ 与主要指数对比
+
+| 指标 | 2024 全年 | 2025 全年 |
+|------|----------|----------|
+| 本框架实盘 | +69.29% | +66.38% |
+| 恒生指数 | +17.67% | +27.77% |
+| 标普500 | +23.31% | +16.39% |
+| 沪深300 | +14.68% | +17.66% |
+| 纳斯达克 | +28.64% | +20.36% |
+
+2024 年超额收益：跑赢标普500 46个百分点，跑赢恒生指数 52个百分点
+
+2025 年超额收益：跑赢标普500 50个百分点，跑赢恒生指数 39个百分点
+
+两年累计实盘收益超 146万元，连续两年大幅跑赢全球主要指数。
+
+ 免责声明：历史收益不代表未来表现。截图来自富途证券真实账户。
+
+ 精选研究首发于公众号
+
+仓库里是完整的框架和全量报告，公众号里是精选——真正值得深研的公司，加上报告之外我自己的判断与取舍：
+
+
+
+复利炼丹炉 —— 用 AI 炼投研这颗丹。
+
+ ⚠️ 官方渠道只有三个：本仓库、阅读站、公众号「复利炼丹炉」。不收费、不荐股、不带单、不建投资群，也不以任何形式收款。ai-berkshire.com、aiberkshire.com 等域名由他人注册，与本项目无关；凡以 AI Berkshire 名义拉群、收费、推荐个股的都不是本人。
+
+已发表文章按公司归档在 投资炼丹/，每篇附对应的研究原稿。
+
+---
+
+ 为什么不能直接问 AI？
+
+你当然可以直接问 Claude：&quot;帮我分析拼多多值不值得买&quot;。你会得到一篇&quot;一方面...另一方面...&quot;的平衡分析，最后以&quot;投资有风险，请自行判断&quot;收尾。
+
+这种分析看起来对，但没法拿来做决策。
+
+AI Berkshire 解决的不是&quot;能不能分析&quot;的问题，而是分析质量和决策纪律的问题。以下是核心差异：
+
+ 1. 强制给结论，不打太极
+
+直接问AI，你得到的是两面讨好的&quot;分析&quot;。AI Berkshire 强制输出：通过/不通过/灰色地带，带具体价格区间和分层建议。
+
+ 普通AI回答：&quot;拼多多有增长潜力但也面临竞争压力，投资者需要权衡...&quot;
+
+ AI Berkshire 输出：
+
+ | 策略 | 建议 | 价格区间 |
+ |------|------|---------|
+ | 激进型 | 当前价位可建仓20% | $95-105 |
+ | 稳健型 | 等回购政策明确后建仓 | $85-95 |
+ | 保守型 | 不符合10年确定性标准，观望 | — |
+
+ 镜子测试：5句话说不完整 = 不买，没有例外。
+
+ 2. 四大师视角对抗，而非单一分析
+
+不是&quot;用巴菲特方法分析一下&quot;这么简单。四个视角会产生真实的矛盾和张力——
+
+以拼多多为例：
+- 段永平（商业模式）：好生意，C2M模式难以复制 → 评分 3.7/5
+- 巴菲特（财务估值）：扣现金PE仅6.3x，印钞机 → 评分 4.4/5
+- 芒格（逆向思考）：护城河比想象中浅，抖音3年做到4万亿GMV → 评分 3.5/5
+- 李录（长期确定性）：管理层文化有隐患，10年后不确定 → 评分 2.0/5
+
+巴菲特说&quot;真便宜&quot;，李录说&quot;不确定就不买&quot;——这种冲突才是投资决策的真实状态。单一prompt无法制造这种多视角对抗，而这恰恰是避免盲点的关键。
+
+ 3. 结构化反偏见机制
+
+AI最危险的不是给错答案，而是给一个看起来很对但经不起推敲的答案。AI Berkshire 在流程中内置了多层&quot;防骗&quot;机制：
+
+| 机制 | 解决什么问题 | 举例 |
+|------|------------|------|
+| 信息丰富度评级（A/B/C） | 防止&quot;资料多=确定性高&quot;的幻觉 | 泡泡玛特评为B级：数据有限，推算指标标注置信度 |
+| 芒格式逆向检验 | 强制思考失败场景 | &quot;什么情况下拼多多会死？&quot;→ 列出5大情景及概率 |
+| 快速否决清单 | 8条红线一票否决 | 管理层诚信污点 → 直接否决，不管估值多便宜 |
+| 反共识检查 | 避免和市场想法一样 | &quot;聪明人为什么在做空？&quot;→ 发现被忽视的风险 |
+| 留白原则 | 宁可说&quot;不知道&quot; | 数据不足时标注&quot;灰色地带&quot;，不用推测伪装确定性 |
+
+ 4. 金融数据的精确性
+
+LLM心算不可靠。PE算错一个小数点、市值单位搞混港币和人民币，就可能导致错误的投资决策。
+
+真实案例：分析腾讯时，不同来源的市值数据有&quot;港币亿&quot;和&quot;人民币亿&quot;两种单位。AI Berkshire 的处理方式：
+
+bash
+ 市值手算校验：股价 × 总股本，与报告数据对比
+python3 tools/financial_rigor.py verify-market-cap \
+  --price 510 --shares 9.11e9 --reported 4.65e12 --currency HKD
+ ✅ 验证通过, 偏差仅 0.08%
+
+
+所有计算使用 Python decimal.Decimal（精确十进制），不用 float。关键数据至少2个独立来源交叉验证。
+
+ 5. 可复现的研究流程
+
+直接问AI，每次输出的格式、深度、覆盖面都不一样——今天分析腾讯有护城河评分，明天分析美团可能就忘了。
+
+AI Berkshire 确保：同样的输入 → 结构一致、深度一致的输出。这意味着你可以：
+- 7家公司横向对比，评分标准完全一致
+- 同一家公司半年后重新分析，直接对比变化
+- 团队成员之间的研究结果可以对齐
+
+ 真实输出——7家公司</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/xbtlin/ai-berkshire/issues/56"><span class="rp-item-num">#56</span><span class="rp-item-title">在claude code 中调用 /investment-research 腾讯 出错</span><span class="rp-item-extra">4 comments · 2026-07-07</span></a><a class="rp-item" href="https://github.com/xbtlin/ai-berkshire/issues/38"><span class="rp-item-num">#38</span><span class="rp-item-title">作者大大您看看能不能新增一下对opencode的支持？</span><span class="rp-item-extra">4 comments · 2026-07-02</span></a><a class="rp-item" href="https://github.com/xbtlin/ai-berkshire/issues/20"><span class="rp-item-num">#20</span><span class="rp-item-title">[交流] 同方向项目 afactorlab，想和作者聊聊多-agent 投研</span><span class="rp-item-extra">3 comments · 2026-06-26</span></a><a class="rp-item" href="https://github.com/xbtlin/ai-berkshire/issues/8"><span class="rp-item-num">#8</span><span class="rp-item-title">作者你好，对你的投资分析agent很感兴趣</span><span class="rp-item-extra">3 comments · 2026-06-23</span></a><a class="rp-item" href="https://github.com/xbtlin/ai-berkshire/issues/114"><span class="rp-item-num">#114</span><span class="rp-item-title">[讨论] investment research对于 99%的股票（美股）都是当前价格太贵，即便是近期被杀估值杀得很狠的标的，大家有研究出什么能买的美股吗？</span><span class="rp-item-extra">2 comments · 2026-10-04</span></a><a class="rp-item" href="https://github.com/xbtlin/ai-berkshire/issues/77"><span class="rp-item-num">#77</span><span class="rp-item-title">[讨论] 能否增加对 workbuddy 的支持？</span><span class="rp-item-extra">2 comments · 2026-07-17</span></a><a class="rp-item" href="https://github.com/xbtlin/ai-berkshire/issues/53"><span class="rp-item-num">#53</span><span class="rp-item-title">以你的能力，帮我整理出中国Q股 目前低估值，半年内能看到业绩走强的ai类公司</span><span class="rp-item-extra">2 comments · 2026-07-06</span></a><a class="rp-item" href="https://github.com/xbtlin/ai-berkshire/issues/91"><span class="rp-item-num">#91</span><span class="rp-item-title">这些skills在其他项目不能用吗</span><span class="rp-item-extra">1 comments · 2026-08-12</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/xbtlin/ai-berkshire/releases"><b>v1.0.0 - AI Berkshire 首发</b> <span class="rp-rel-tag">v1.0.0</span> <span class="rp-item-extra">2026-04-07</span></a><pre class="rp-pre">AI Berkshire v1.0.0
+
+AI 时代的伯克希尔 — 基于 Claude Code 的价值投资研究框架。
+
+ 包含 5 个投资研究 Skill
+
+| Skill | 用途 |
+|-------|------|
+| /investment-research | 巴菲特-芒格-段永平-李录 四大师综合分析 |
+| /investment-team | 4个AI Agent并行投研团队 |
+| /investment-checklist | 巴菲特买入前六关 Checklist |
+| /industry-research | 产业链全景扫描 + 全球标的筛选 |
+| /private-company-research | 未上市公司侦探式深度研究 |
+
+ 快速安装
+
+bash
+git clone https://github.com/xbtlin/ai-berkshire.git
+cp ai-berkshire/skills/.md ~/.claude/commands/
+
+
+然后在 Claude Code 中使用 /investment-research 腾讯 即可开始研究。</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/xbtlin__ai-berkshire.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

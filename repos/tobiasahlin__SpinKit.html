@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tobiasahlin/SpinKit · GitHub Trending Rank Radar</title>
+<meta name="description" content="A collection of loading indicators animated with CSS">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="SpinKit, tobiasahlin, tobiasahlin/SpinKit, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/tobiasahlin__SpinKit">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="tobiasahlin/SpinKit · GitHub Trending Rank Radar">
+<meta property="og:description" content="A collection of loading indicators animated with CSS">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/tobiasahlin__SpinKit">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "tobiasahlin/SpinKit", "codeRepository": "https://github.com/tobiasahlin/SpinKit", "url": "https://zhuikan.com/repos/tobiasahlin__SpinKit", "description": "A collection of loading indicators animated with CSS", "author": {"@type": "Organization", "name": "tobiasahlin", "url": "https://github.com/tobiasahlin"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "CSS", "dateCreated": "2013-12-12"}</script>
+</head>
+<body data-repo="tobiasahlin/SpinKit" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">tobiasahlin/SpinKit</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="tobiasahlin__SpinKit"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/211284?u=9673e9709b6ce46ba66a402cf0e10c1c8e8f73d6&amp;v=4&s=300" width="300" height="300" alt="tobiasahlin avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">SpinKit</div>
+      <a class="rp-side-owner" href="https://github.com/tobiasahlin">tobiasahlin</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/tobiasahlin">tobiasahlin</a>
+        <span class="rp-sep">/</span><span class="rp-name">SpinKit</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A collection of loading indicators animated with CSS</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>19,309</b></span><span class="rp-stat" title="forks">⑂ <b>1,752</b></span><span class="rp-stat" title="watchers">👁 <b>439</b></span><span class="rp-stat" title="prs">⑃ <b>94</b></span><span class="rp-stat" title="issues">● <b>59</b></span><span class="rp-stat" title="releases">▤ <b>9</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">CSS</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2013-12-12</span><a class="rp-meta-bit rp-home" href="http://tobiasahlin.com/spinkit/" rel="noopener">tobiasahlin.com/spinkit/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/tobiasahlin/SpinKit">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v2.0.1</span><a class="rp-dl-a" href="https://github.com/tobiasahlin/SpinKit/releases/tag/v2.0.1">v2.0.1 ↓</a><span class="rp-dl-ver">2.0.1</span><span class="rp-dl-date">2019-10-30</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+4</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-11</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">19,309</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,752</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">439</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">94</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">59</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">9</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">SpinKit
+
+Simple loading spinners animated with CSS. See demo. SpinKit only uses (transform and opacity) CSS animations to create smooth and easily customizable animations.
+
+ Usage
+
+- Add spinkit.css or spinkit.min.css to your project (or copy-paste the CSS that you need for your spinner—there are no dependencies between spinners, no shared classes, and no shared animations, etc, so it should be fairly straight-forward to extract only the code that you need)
+- Add a spinner to your project by copy-pasting HTML from spinkit.css or examples.html
+- Add the sk-center utility class to the spinner to center it (it sets margin to auto)
+- By default, the width and height of all spinners are set to 40px. background-color is set to 333.
+- Configure the spinner by overwriting the CSS variables, primarily --sk-size (spinner width &amp; height) and --sk-color (spinner color). If you need broader browser support, remove the CSS variables.
+
+You can include SpinKit to your project with bower:
+
+bash
+$ bower install spinkit
+
+
+or npm:
+
+bash
+$ npm install spinkit
+
+
+ Spinners
+
+Given that you have included spinkit.min.css in your project, these snippets will produce the different spinners:
+
+ Plane
+
+html
+
+
+
+ Chase
+
+html
+
+  
+  
+  
+  
+  
+  
+
+
+
+ Bounce
+
+html
+
+  
+  
+
+
+
+ Wave
+
+html
+
+  
+  
+  
+  
+  
+
+ 
+
+ Pulse
+
+html
+
+
+
+ Flow
+
+html
+
+  
+  
+  
+
+
+
+ Swing
+
+html
+
+  
+  
+
+
+
+ Circle
+
+html
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+ Circle Fade
+
+html
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+ Grid
+
+html
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+ Fold
+
+html
+
+  
+  
+  
+  
+
+
+
+ Wander
+
+html
+
+  
+  
+  
+
+
+
+ Web browser compatibility
+
+SpinKit uses CSS animations and variables:
+
+- CSS keyframes animations are at +96.5% global support
+- CSS variables are at +91.8% global support
+
+ Implementing a fallback spinner
+
+How do you know if you need to provide a fallback? You can check for animation support with Modernizr, or manually check for the animation property, and replace the spinner with a GIF if it&#x27;s not supported:
+
+javascript
+function browserSupportsCSSProperty(propertyName) {
+  var elm = document.createElement(&#x27;div&#x27;);
+  propertyName = propertyName.toLowerCase();
+
+  if (elm.style[propertyName] != undefined)
+    return true;
+
+  var propertyNameCapital = propertyName.charAt(0).toUpperCase() + propertyName.substr(1),
+    domPrefixes = &#x27;Webkit Moz ms O&#x27;.split(&#x27; &#x27;);
+
+  for (var i = 0; i &lt; domPrefixes.length; i++) {
+    if (elm.style[domPrefixes[i] + propertyNameCapital] != undefined)
+      return true;
+  }
+
+  return false;
+}
+
+
+Use it to check for animation support:
+
+javascript
+if (!browserSupportsCSSProperty(&#x27;animation&#x27;)) {
+  // fallback…
+}</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/tobiasahlin/SpinKit/issues/136"><span class="rp-item-num">#136</span><span class="rp-item-title">Flashing artifact when reducing the circle spinner size</span><span class="rp-item-extra">5 comments · 2017-08-09</span></a><a class="rp-item" href="https://github.com/tobiasahlin/SpinKit/issues/160"><span class="rp-item-num">#160</span><span class="rp-item-title">Blurry animation</span><span class="rp-item-extra">1 comments · 2020-09-23</span></a><a class="rp-item" href="https://github.com/tobiasahlin/SpinKit/issues/151"><span class="rp-item-num">#151</span><span class="rp-item-title">Old Browser-Support</span><span class="rp-item-extra">1 comments · 2020-01-16</span></a><a class="rp-item" href="https://github.com/tobiasahlin/SpinKit/issues/150"><span class="rp-item-num">#150</span><span class="rp-item-title">Reintroduce SCSS and modular structure</span><span class="rp-item-extra">1 comments · 2020-01-16</span></a><a class="rp-item" href="https://github.com/tobiasahlin/SpinKit/issues/166"><span class="rp-item-num">#166</span><span class="rp-item-title">Feature Request: Can this work for Dashboard-2 for Node-RED ?</span><span class="rp-item-extra">0 comments · 2025-06-07</span></a><a class="rp-item" href="https://github.com/tobiasahlin/SpinKit/issues/161"><span class="rp-item-num">#161</span><span class="rp-item-title">[Feature Request] Add a diamond shaped loader</span><span class="rp-item-extra">0 comments · 2021-04-01</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/tobiasahlin/SpinKit/releases"><b>v2.0.1</b> <span class="rp-rel-tag">v2.0.1</span> <span class="rp-item-extra">2019-10-30</span></a><pre class="rp-pre">Fixes Chase HTML snippet containing too many child elements</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/tobiasahlin__SpinKit.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

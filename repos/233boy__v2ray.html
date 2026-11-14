@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>233boy/v2ray · GitHub Trending Rank Radar</title>
+<meta name="description" content="最好用的 V2Ray 一键安装脚本 &amp; 管理脚本">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="v2ray, 233boy, 233boy/v2ray, github stars, github trending, star growth, star history, 开源项目, 星标增长, v2ray, shell-script, vmess">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/233boy__v2ray">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="233boy/v2ray · GitHub Trending Rank Radar">
+<meta property="og:description" content="最好用的 V2Ray 一键安装脚本 &amp; 管理脚本">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/233boy__v2ray">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "233boy/v2ray", "codeRepository": "https://github.com/233boy/v2ray", "url": "https://zhuikan.com/repos/233boy__v2ray", "description": "最好用的 V2Ray 一键安装脚本 & 管理脚本", "author": {"@type": "Organization", "name": "233boy", "url": "https://github.com/233boy"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-3.0.html", "programmingLanguage": "Shell", "dateCreated": "2017-11-18", "keywords": "v2ray,shell-script,vmess"}</script>
+</head>
+<body data-repo="233boy/v2ray" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">233boy/v2ray</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="233boy__v2ray"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/31657650?u=463f9d54800dc9925a1ac64bfb6ccef1b78ad97a&amp;v=4&s=300" width="300" height="300" alt="233boy avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">v2ray</div>
+      <a class="rp-side-owner" href="https://github.com/233boy">233boy</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/233boy">233boy</a>
+        <span class="rp-sep">/</span><span class="rp-name">v2ray</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">最好用的 V2Ray 一键安装脚本 &amp; 管理脚本</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>29,872</b></span><span class="rp-stat" title="forks">⑂ <b>16,506</b></span><span class="rp-stat" title="watchers">👁 <b>448</b></span><span class="rp-stat" title="prs">⑃ <b>95</b></span><span class="rp-stat" title="issues">● <b>1,345</b></span><span class="rp-stat" title="releases">▤ <b>35</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/v2ray">v2ray</a><a class="rp-topic" href="https://github.com/topics/shell-script">shell-script</a><a class="rp-topic" href="https://github.com/topics/vmess">vmess</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Shell</span><span class="rp-meta-bit">GPL-3.0</span><span class="rp-meta-bit">Created 2017-11-18</span><a class="rp-meta-bit rp-home" href="https://233boy.com/v2ray/v2ray-script/" rel="noopener">233boy.com/v2ray/v2ray-script/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="233boy__sing-box"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/31657650?u=463f9d54800dc9925a1ac64bfb6ccef1b78ad97a&amp;v=4" alt="" loading="lazy">sing-box</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/233boy/v2ray">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v4.27</span><a class="rp-dl-a" href="https://github.com/233boy/v2ray/releases/tag/v4.27">v4.27 ↓</a><span class="rp-dl-ver">4.27</span><span class="rp-dl-date">2026-01-15</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+3</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">29,872</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">16,506</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">448</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">95</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,345</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">35</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">介绍
+
+最好用的 V2Ray 一键安装脚本 &amp;amp; 管理脚本
+
+ 特点
+
+- 快速安装
+- 超级好用
+- 零学习成本
+- 自动化 TLS
+- 简化所有流程
+- 屏蔽 BT
+- 屏蔽中国 IP
+- 使用 API 操作
+- 兼容 V2Ray 命令
+- 强大的快捷参数
+- 支持所有常用协议
+- 一键添加 Shadowsocks
+- 一键添加 VMess-(TCP/mKCP/QUIC)
+- 一键添加 VMess-(WS/H2/gRPC)-TLS
+- 一键添加 VLESS-(WS/H2/gRPC)-TLS
+- 一键添加 Trojan-(WS/H2/gRPC)-TLS
+- 一键添加 VMess-(TCP/mKCP/QUIC) 动态端口
+- 一键启用 BBR
+- 一键更改伪装网站
+- 一键更改 (端口/UUID/密码/域名/路径/加密方式/SNI/动态端口/等...)
+- 还有更多...
+
+ 设计理念
+
+设计理念为：高效率，超快速，极易用
+
+脚本基于作者的自身使用需求，以 多配置同时运行 为核心设计
+
+并且专门优化了，添加、更改、查看、删除、这四项常用功能
+
+你只需要一条命令即可完成 添加、更改、查看、删除、等操作
+
+例如，添加一个配置仅需不到 1 秒！瞬间完成添加！其他操作亦是如此！
+
+脚本的参数非常高效率并且超级易用，请掌握参数的使用
+
+ 脚本说明
+
+V2Ray 一键安装脚本
+
+ 搭建教程
+
+V2Ray搭建详细图文教程
+
+ 帮助
+
+使用: v2ray help
+
+
+V2Ray script v4.21 by 233boy
+Usage: v2ray [options]... [args]...
+
+基本:
+   v, version                                      显示当前版本
+   ip                                              返回当前主机的 IP
+   get-port                                        返回一个可用的端口
+
+一般:
+   a, add [protocol] [args... | auto]              添加配置
+   c, change [name] [option] [args... | auto]      更改配置
+   d, del [name]                                   删除配置
+   i, info [name]                                  查看配置
+   qr [name]                                       二维码信息
+   url [name]                                      URL 信息
+   log                                             查看日志
+   logerr                                          查看错误日志
+
+更改:
+   dp, dynamicport [name] [start | auto] [end]     更改动态端口
+   full [name] [...]                               更改多个参数
+   id [name] [uuid | auto]                         更改 UUID
+   host [name] [domain]                            更改域名
+   port [name] [port | auto]                       更改端口
+   path [name] [path | auto]                       更改路径
+   passwd [name] [password | auto]                 更改密码
+   type [name] [type | auto]                       更改伪装类型
+   method [name] [method | auto]                   更改加密方式
+   seed [name] [seed | auto]                       更改 mKCP seed
+   new [name] [...]                                更改协议
+   web [name] [domain]                             更改伪装网站
+
+进阶:
+   dns [...]                                       设置 DNS
+   dd, ddel [name...]                              删除多个配置
+   fix [name]                                      修复一个配置
+   fix-all                                         修复全部配置
+   fix-caddyfile                                   修复 Caddyfile
+   fix-config.json                                 修复 config.json
+
+管理:
+   un, uninstall                                   卸载
+   u, update [core | sh | dat | caddy] [ver]       更新
+   U, update.sh                                    更新脚本
+   s, status                                       运行状态
+   start, stop, restart [caddy]                    启动, 停止, 重启
+   t, test                                         测试运行
+   reinstall                                       重装脚本
+
+测试:
+   client [name]                                   显示用于客户端 JSON, 仅供参考
+   debug [name]                                    显示一些 debug 信息, 仅供参考
+   gen [...]                             </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/233boy/v2ray/issues/1326"><span class="rp-item-num">#1326</span><span class="rp-item-title">大佬，我手机是华为的，咱们这个后期有没有做鸿蒙版的计划？</span><span class="rp-item-extra">131 comments · 2024-06-21</span></a><a class="rp-item" href="https://github.com/233boy/v2ray/issues/1101"><span class="rp-item-num">#1101</span><span class="rp-item-title">全新 V2Ray 脚本帮助</span><span class="rp-item-extra">34 comments · 2023-05-13</span></a><a class="rp-item" href="https://github.com/233boy/v2ray/issues/1444"><span class="rp-item-num">#1444</span><span class="rp-item-title">URGENT! -安装后在命令行界面配置的参数竟没有一个成功存入config.json</span><span class="rp-item-extra">23 comments · 2025-08-08</span></a><a class="rp-item" href="https://github.com/233boy/v2ray/issues/1126"><span class="rp-item-num">#1126</span><span class="rp-item-title">启动失败</span><span class="rp-item-extra">21 comments · 2023-05-16</span></a><a class="rp-item" href="https://github.com/233boy/v2ray/issues/1458"><span class="rp-item-num">#1458</span><span class="rp-item-title">有挖矿脚本，建议大家用原版</span><span class="rp-item-extra">16 comments · 2025-12-16</span></a><a class="rp-item" href="https://github.com/233boy/v2ray/issues/1318"><span class="rp-item-num">#1318</span><span class="rp-item-title">一键脚本如何生成Linux客户端可使用的json格式配置文件</span><span class="rp-item-extra">15 comments · 2024-05-30</span></a><a class="rp-item" href="https://github.com/233boy/v2ray/issues/1294"><span class="rp-item-num">#1294</span><span class="rp-item-title">从3月27日开始突然无法使用了</span><span class="rp-item-extra">15 comments · 2024-03-28</span></a><a class="rp-item" href="https://github.com/233boy/v2ray/issues/1412"><span class="rp-item-num">#1412</span><span class="rp-item-title">VMess-WS-TLS安装后无法连接</span><span class="rp-item-extra">14 comments · 2025-02-20</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/233boy/v2ray/releases"><b>v4.27</b> <span class="rp-rel-tag">v4.27</span> <span class="rp-item-extra">2026-01-15</span></a><pre class="rp-pre">更新
+
+v2ray up sh
+
+
+ 变化
+
+- 修复卸载的时候没把 alias 指向删除
+
+ 关注我们
+
+网站: https://233boy.com
+
+群组: https://t.me/tg233boy
+
+频道: https://t.me/tg2333</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/233boy__v2ray.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

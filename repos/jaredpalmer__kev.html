@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jaredpalmer/kev · GitHub Trending Rank Radar</title>
+<meta name="description" content="Jev-like family of decision models built on top of Qwen3.5/3.8 you can train and run on your own">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="kev, jaredpalmer, jaredpalmer/kev, github stars, github trending, star growth, star history, 开源项目, 星标增长, decision-model, jev, qwen3">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/jaredpalmer__kev">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="jaredpalmer/kev · GitHub Trending Rank Radar">
+<meta property="og:description" content="Jev-like family of decision models built on top of Qwen3.5/3.8 you can train and run on your own">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/jaredpalmer__kev">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "jaredpalmer/kev", "codeRepository": "https://github.com/jaredpalmer/kev", "url": "https://zhuikan.com/repos/jaredpalmer__kev", "description": "Jev-like family of decision models built on top of Qwen3.5/3.8 you can train and run on your own", "author": {"@type": "Organization", "name": "jaredpalmer", "url": "https://github.com/jaredpalmer"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Python", "dateCreated": "2026-09-17", "keywords": "decision-model,jev,qwen3"}</script>
+</head>
+<body data-repo="jaredpalmer/kev" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">jaredpalmer/kev</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="jaredpalmer__kev"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/4060187?u=97bb33a7ca5081fcf173c14207e04cbc6c650650&amp;v=4&s=300" width="300" height="300" alt="jaredpalmer avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">kev</div>
+      <a class="rp-side-owner" href="https://github.com/jaredpalmer">jaredpalmer</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/jaredpalmer">jaredpalmer</a>
+        <span class="rp-sep">/</span><span class="rp-name">kev</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=new">new <b>#43</b></a><a class="rp-board-chip" href="../?board=monthly_rate">monthly_rate <b>#180</b></a></div>
+    </div>
+    <p class="rp-desc">Jev-like family of decision models built on top of Qwen3.5/3.8 you can train and run on your own</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,979</b></span><span class="rp-stat" title="forks">⑂ <b>683</b></span><span class="rp-stat" title="watchers">👁 <b>33</b></span><span class="rp-stat" title="prs">⑃ <b>233</b></span><span class="rp-stat" title="issues">● <b>48</b></span><span class="rp-stat" title="releases">▤ <b>3</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/decision-model">decision-model</a><a class="rp-topic" href="https://github.com/topics/jev">jev</a><a class="rp-topic" href="https://github.com/topics/qwen3">qwen3</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2026-09-17</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/jaredpalmer/kev">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Kev 1.0</span><a class="rp-dl-a" href="https://github.com/jaredpalmer/kev/releases/tag/kev-1.0">kev-1.0 ↓</a><span class="rp-dl-ver">1.0</span><span class="rp-dl-date">2026-10-01</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+7</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+183</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1,155</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">9,979</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">683</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">33</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">233</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">48</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">3</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Kev
+
+Small Jev-like decision models you can train and run yourself.
+
+
+  
+  
+  
+  
+  
+
+
+Kev is a family of small decision models built on Qwen3.5 and Qwen3.8 and based on the architecture described in Jev&#x27;s Architecture Unmasked. You can use the pretrained weights or train your own. The API matches TypeSafe&#x27;s System One, so you can point their Python SDK at your local server.
+
+ Highlights
+
+- Yes/no (noul), multiple-choice (choice) and rating (score) questions in one request. The questions share the text but can&#x27;t read each other.
+- Calibrated probabilities by default: each checkpoint ships with a fitted temperature.
+- Drop-in for Jev: the TypeSafe Python SDK works against a Kev server unchanged.
+- Four sizes, versioned together as Kev 1.0: from a 0.8B that runs on a laptop to a 27B for a single data-centre GPU.
+- Documents of up to 65,536 tokens, on CUDA and on Apple Silicon through MLX. Each model card says how long a document can get before accuracy drops.
+- Fine-tune on your own labelled examples. A coding-agent skill runs the whole loop on Modal, from finding your questions to serving the result.
+- Deploy your own HTTPS endpoint with one command. It scales to zero when idle.
+- Try it in the browser first: huggingface.co/spaces/jaredpalmer/kev.
+
+ Models
+
+Start with Kev-4B. Move to Kev-9B if you have a bigger GPU, or to Kev-27B if you have an 80 GB GPU and want the most accurate Kev. Use Kev-0.8B when size matters more than accuracy.
+
+| Model | Base (license) | Runs on: CUDA | Runs on: Mac (MLX) | Validated context | Held-out datasets: index | Card |
+|---|---|---|---|---|---|---|
+| Kev-0.8B | Qwen3.5-0.8B-Base (Apache-2.0) | L4, any 4 GB GPU | Any Apple Silicon Mac; measured to 65k tokens | 8,192 | 23.3 | Details |
+| Kev-4B | Qwen3.5-4B-Base (Apache-2.0) | L40S, H100 | 32 GB Mac; measured to 65k tokens | 8,192 | 38.0 | Details |
+| Kev-9B | Qwen3.5-9B-Base (Apache-2.0) | L40S, H100 | 32 GB Mac or larger (expected, not measured) | 8,192 | 41.0 | Details |
+| Kev-27B | Qwen3.8-27B, post-trained (Apache-2.0) | B200, H200, H100 80 GB | 96–128 GB Mac (expected, not measured) | 65,536 | 52.3 | Details |
+| Jev | Hosted | TypeSafe&#x27;s API | – | – | 54.0 | – |
+
+&quot;Held-out datasets&quot; is the chance-corrected index of the community Decision Index, scored on the test split of breadth-v1: 14 public datasets in five areas that no Kev trained on. &quot;Validated context&quot; is the longest document, in tokens, for which accuracy on real contracts (CUAD) stays within 3 points of the same model&#x27;s accuracy at 8k tokens, at the 95 % lower bound; each model card has the measurement by length.
+
+| Model | Accuracy: New Sources | Accuracy: Trained Sources | Brier: New Sources |
+|---|---|---|---|
+| Kev-0.8B | 0.648 / 0.697 | 0.827 / 0.838 | 0.481 / 0.416 |
+| Kev-4B | 0.817 / 0.838 | 0.873 / 0.865 | 0.269 / 0.242 |
+| Kev-9B | 0.820 / 0.852 | 0.874 / 0.873 | 0.289 / 0.217 |
+| Kev-27B | 0.851 / 0.889 | 0.865 / 0.866 | 0.225 / 0.156 |
+| Jev | 0.857 / – | 0.845 / – | 0.211 / – |
+
+Each cell</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/jaredpalmer/kev/issues/71"><span class="rp-item-num">#71</span><span class="rp-item-title">Embedded Device Support (Jetson) and Profiling</span><span class="rp-item-extra">6 comments · 2026-09-23</span></a><a class="rp-item" href="https://github.com/jaredpalmer/kev/issues/107"><span class="rp-item-num">#107</span><span class="rp-item-title">Serving: remaining work after batching and fused kernels (#93, #97)</span><span class="rp-item-extra">4 comments · 2026-09-24</span></a><a class="rp-item" href="https://github.com/jaredpalmer/kev/issues/28"><span class="rp-item-num">#28</span><span class="rp-item-title">Getting kev to work with images ?</span><span class="rp-item-extra">3 comments · 2026-09-22</span></a><a class="rp-item" href="https://github.com/jaredpalmer/kev/issues/67"><span class="rp-item-num">#67</span><span class="rp-item-title">LiteRT / Android export for Kev-0.8B</span><span class="rp-item-extra">2 comments · 2026-09-22</span></a><a class="rp-item" href="https://github.com/jaredpalmer/kev/issues/48"><span class="rp-item-num">#48</span><span class="rp-item-title">Long-context recipe (v10): Kev loses accuracy on documents longer than its 384-token training context</span><span class="rp-item-extra">2 comments · 2026-09-22</span></a><a class="rp-item" href="https://github.com/jaredpalmer/kev/issues/42"><span class="rp-item-num">#42</span><span class="rp-item-title">Have you considered using OpenBMB&#x27;s MiniCPM5-2B model to train kev?</span><span class="rp-item-extra">2 comments · 2026-09-22</span></a><a class="rp-item" href="https://github.com/jaredpalmer/kev/issues/255"><span class="rp-item-num">#255</span><span class="rp-item-title">`--device auto` on Apple Silicon runs the same MPS probe twice before falling back to CPU</span><span class="rp-item-extra">1 comments · 2026-10-22</span></a><a class="rp-item" href="https://github.com/jaredpalmer/kev/issues/155"><span class="rp-item-num">#155</span><span class="rp-item-title">Community Kev-2B on Qwen3.5-2B-Base: Kev-0.8B release recipe, test results and two small findings</span><span class="rp-item-extra">1 comments · 2026-09-26</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/jaredpalmer/kev/releases"><b>Kev 1.0</b> <span class="rp-rel-tag">kev-1.0</span> <span class="rp-item-extra">2026-10-01</span></a><pre class="rp-pre">Kev 1.0 is the first versioned release of the whole Kev family: four decision models that read a document and a set of typed questions and return calibrated probabilities over the options, in one forward pass, behind TypeSafe&#x27;s System One API. Nothing in it is newly trained. It pins the checkpoints, model cards, evaluation suites and serving code that the next generation of Kev is measured against, with the same tag (v1.0) on every Hub repo.
+
+ What&#x27;s in 1.0
+
+| Model | Hub repo | Weights revision | Form | Base | Temperature | Validated context |
+|---|---|---|---|---|---|---|
+| Kev-0.8B | jaredp</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (4)</h3><div class="rp-list"><a class="rp-item" href="https://news.google.com/rss/articles/CBMiY0FVX3lxTFBEQ0NKMFJuemFQY3lKWDB5SGQwT2JyN25lRGp4c3JWeGJrMHUwQTRUVlFHTEc4QXUzTjBybDNweldXUmNDcHRQQVBaUEdROWN6S0VONVhnZUdDbFVWYkc5UUppNA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">OrcaRouter</span><span class="rp-item-title">Nimble v3 与 Kev：一个自带配方，一个则没有</span><span class="rp-item-extra">2026-10-13</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXEFVX3lxTFBBZUhUSzZWSUF3VFJjbW9peGRZOXVSVU5naEE5WTNzR2JjOTBqWlBGaEJTbWhVRkJ2NlVxVnFFRlp3Z3FRWHdJWm5nQ05BYXhReVQwN0RPMGRjV0JV?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">OrcaRouter</span><span class="rp-item-title">Laya vs Kev：以检查点对比训练配方</span><span class="rp-item-extra">2026-09-23</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTFBRa0NFVUJuSTAydEdYOWNMMy1xaUg5RnZtdDlTcnFOMGEtVGk0dUVmWVcxb08xY29IYjF4Q09VSjc2U2dNRmE4dTk1VXJrWnZBZHI5eGJR?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">腾讯新闻</span><span class="rp-item-title">Jev模型：又快又便宜，消灭幻觉，轻松打败顶流LLM</span><span class="rp-item-extra">2026-09-19</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiTkFVX3lxTE9sU0dPWmdrbFNTb1FLOFF5cHBOLXc4UkhTZUJNTTVRdkV5S01IWmRnUnl1QUs3LXJacWE5UWZoY3JyYkk0QUJlU2VrbVNIQQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">安全内参</span><span class="rp-item-title">盘点：20个大幅提高效率的开源网络安全工具</span><span class="rp-item-extra">2024-03-26</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (9)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=49783999" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Kev: Tiny Jev-like family of decision models built on top of Qwen3.5</span><span class="rp-item-extra">▲ 463 · 210 comments · 2026-09-21</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=49766295" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">kev: Jev-like model built on Qwen2.5-0.5B</span><span class="rp-item-extra">▲ 3 · 0 comments · 2026-09-19</span></a><a class="rp-item" href="https://aiweekly.co/alerts/jared-palmer-ports-kev-to-qwen35-for-roughly-95-in-h100" target="_blank" rel="noopener"><span class="rp-news-src">aiweekly</span><span class="rp-item-title">Jared Palmer Ports Kev to Qwen3.5 for Roughly $95 in H100</span><span class="rp-item-extra">2026-09-21</span></a><a class="rp-item" href="https://www.darkreading.com/vulnerabilities-threats/exploited-vulnerabilities-can-take-months-to-make-kev-list" target="_blank" rel="noopener"><span class="rp-news-src">Dark Reading</span><span class="rp-item-title">Exploited Vulnerabilities Can Take Months to Make KEV List</span><span class="rp-item-extra">2023-11-19</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMijwFBVV95cUxOOGFRRjNjbEFxMWRhRmlhX25wSS02Y1dISVRaRXJaTGJKbDdMZW5yRTF3bE9RRGhrVVNqNE9kZjloeGhaV3Q2ZXVRS1F3bFNqQ1hnM1l0TDc2SFE0Y0FxVW5sc3VjajYzem9JU0d3LXJNSWlUS1lNc0F3Z1dqRjNFWDZjRHdBMkw0bkFUeEE5Yw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Rescana</span><span class="rp-item-title">Node2Shell: Node.js Brotli Flaw CVE-2026-111497 Added to CISA KEV, Upgrade to 22.23.4, 24.22.1 or 26.12.1</span><span class="rp-item-extra">2026-10-23</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMifkFVX3lxTE9GVllVUG5uR3RfUDNiTHJQUU03TUl0OU0yeHNUcEFzU2E3SnUyR3pwQTU3ZEhPdlBDX1VVWGtIQUk5OXVKVmJfN2FtLXVaZUlRdnF2ckdiRnB5TmVrZHNQOWRxa2lGb0pReXd6Yl9tOUJsMTdMd0xJNWtzSklyZw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The Hacker News</span><span class="rp-item-title">ownCloud Flaw Exploited to Steal Nuclear Records From Philippine Research Body</span><span class="rp-item-extra">2026-08-28</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMi3wFBVV95cUxOcnItTGtOYjRoMzczRDJPYldiNWxGelowVXVRenYzdERDQTRuNFh0OFVjMlJfNHM5VHFHUk1xM1d5MWNtSnl6bjR4bGZPeVZfWklaaFVzbkh3V0l5anhyVHY4NUVSZGhfRDdpRXJWX3p3dWpUSV9MMHlOWGRENUhIX2dEbzdVN2hxOFNlRnZEeDZIUjAwdVl4eWtTVU1JVkFTeEpheFE4TjdWaTVDZVg5YmJCN0MtdFFPMlRST2pIYmJYZGJOenBmYnlVUXZ1WFNNQmpkdWZBSlg3TGsxS1Jv?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Rescana</span><span class="rp-item-title">Critical Command Injection Vulnerability in Snowflake snowflake-connector-net GitHub Actions Exposes Jira Credentials</span><span class="rp-item-extra">2026-08-18</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxQdUh0Yjc1bTBYbVExRzhWbHFRZmw0WmpodW42STFOYWdXcVZMMWgzcXhuaTR1T3FIbnNZeXZlOGlteUk5VktlX2RiaENuVDAtZWxGNU1aYTdZT0VVMHV3b0tHZ2dYLTUxUWFITE0wRWtPTHg5Rjk4dklNWUJaRXhxazJmclBNa0pvYy1haGFLZmliRlQ4LUNIaFVQY2x6UmN4NFdpV1VTb9IBrAFBVV95cUxNQTQxSWtENk9BdnMtQ19uYjJjZzAyVU9DQlc5Yll1aDgwM1ZCbENGQ2pGSUpNa1E4Sm5qNEhLOHZJYUlHZWliM0RrNTJVV2lCTkhjMnZiT25nanBDYVZsRDE2Z2pPMTV1eEpuME5XQ3NySTZYY3JrZFRIb0g4aExCdEpnbE5KUk5NYTJwRE9iejlmYjViMlZXRVJhb0d2Wl9QM0RBSjljenZQSHRX?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">BleepingComputer</span><span class="rp-item-title">CISA warns of actively exploited Git code execution flaw</span><span class="rp-item-extra">2025-08-26</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiggFBVV95cUxNYU5mTDk0ZDNINTZMcGFlV0FHU0RlcDlBRC1NSC1ObmxUZmF6aEdEeWVGTjZ3SWVsSzloVFVyRDMtQ1UtR2lTYUpFMk5YME41a2pJR01vRWpNZFN5M2V1Q09sM0lWLS1DR0N0Y1o4a1Y3bjkyNUNMY1Jkd3kxSFZ4VTZ3?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Infosecurity Magazine</span><span class="rp-item-title">CISA Shifts Alert Distribution Strategy to Email, Social Media</span><span class="rp-item-extra">2025-05-13</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/jaredpalmer__kev.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

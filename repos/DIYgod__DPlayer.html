@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIYgod/DPlayer · GitHub Trending Rank Radar</title>
+<meta name="description" content=":lollipop: Wow, such a lovely HTML5 danmaku video player">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="DPlayer, DIYgod, DIYgod/DPlayer, github stars, github trending, star growth, star history, 开源项目, 星标增长, dplayer, video, player, danmaku, hls, flv">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/DIYgod__DPlayer">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="DIYgod/DPlayer · GitHub Trending Rank Radar">
+<meta property="og:description" content=":lollipop: Wow, such a lovely HTML5 danmaku video player">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/DIYgod__DPlayer">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "DIYgod/DPlayer", "codeRepository": "https://github.com/DIYgod/DPlayer", "url": "https://zhuikan.com/repos/DIYgod__DPlayer", "description": ":lollipop: Wow, such a lovely HTML5 danmaku video player", "author": {"@type": "Organization", "name": "DIYgod", "url": "https://github.com/DIYgod"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2016-05-03", "keywords": "dplayer,video,player,danmaku,hls,flv,dash,webtorrent"}</script>
+</head>
+<body data-repo="DIYgod/DPlayer" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">DIYgod/DPlayer</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="DIYgod__DPlayer"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/8266075?u=9de49c9b3eaf4db02e685458cb64b64c172034bf&amp;v=4&s=300" width="300" height="300" alt="DIYgod avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">DPlayer</div>
+      <a class="rp-side-owner" href="https://github.com/DIYgod">DIYgod</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/DIYgod">DIYgod</a>
+        <span class="rp-sep">/</span><span class="rp-name">DPlayer</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">:lollipop: Wow, such a lovely HTML5 danmaku video player</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>16,536</b></span><span class="rp-stat" title="forks">⑂ <b>2,483</b></span><span class="rp-stat" title="watchers">👁 <b>415</b></span><span class="rp-stat" title="prs">⑃ <b>493</b></span><span class="rp-stat" title="issues">● <b>0</b></span><span class="rp-stat" title="releases">▤ <b>42</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/dplayer">dplayer</a><a class="rp-topic" href="../tags/video">video</a><a class="rp-topic" href="https://github.com/topics/player">player</a><a class="rp-topic" href="https://github.com/topics/danmaku">danmaku</a><a class="rp-topic" href="https://github.com/topics/hls">hls</a><a class="rp-topic" href="https://github.com/topics/flv">flv</a><a class="rp-topic" href="https://github.com/topics/dash">dash</a><a class="rp-topic" href="https://github.com/topics/webtorrent">webtorrent</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2016-05-03</span><a class="rp-meta-bit rp-home" href="https://dplayer.diygod.dev" rel="noopener">dplayer.diygod.dev</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="DIYgod__RSSHub"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/8266075?u=9de49c9b3eaf4db02e685458cb64b64c172034bf&amp;v=4" alt="" loading="lazy">RSSHub</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/DIYgod/DPlayer">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.27.0</span><a class="rp-dl-a" href="https://github.com/DIYgod/DPlayer/releases/tag/v1.27.0">v1.27.0 ↓</a><span class="rp-dl-ver">1.27.0</span><span class="rp-dl-date">2022-08-16</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">16,536</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,483</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">415</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">493</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">42</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">DPlayer
+
+ 🍭 Wow, such a lovely HTML5 danmaku video player
+
+
+
+
+
+
+ Introduction
+
+!image
+
+DPlayer is a lovely HTML5 danmaku video player to help people build video and danmaku easily.
+
+DPlayer supports:
+
+-   Streaming formats
+    -   HLS
+    -   FLV
+    -   MPEG DASH
+    -   WebTorrent
+    -   Any other custom streaming formats
+-   Media formats
+    -   MP4 H.264
+    -   WebM
+    -   Ogg Theora Vorbis
+-   Features
+    -   Danmaku
+    -   Screenshot
+    -   Hotkeys
+    -   Quality switching
+    -   Thumbnails
+    -   Subtitle
+
+Using DPlayer on your project? Let me know!
+
+Docs
+
+中文文档
+
+ Thanks
+
+ Sponsors
+
+
+
+    
+
+
+
+ Contributors
+
+
+
+ Related Projects
+
+Feel free to submit yours in Let me know!
+
+ Tooling
+
+-   DPlayer-thumbnails: generate video thumbnails
+
+ Danmaku api
+
+-   DPlayer-node: Node.js
+-   laravel-danmaku: PHP
+-   dplayer-live-backend: Node.js, WebSocket live backend
+-   RailsGun: Ruby
+
+ Plugins
+
+-   DPlayer-for-typecho: Typecho
+-   Hexo-tag-dplayer: Hexo
+-   DPlayer_for_Z-BlogPHP: Z-BlogPHP
+-   DPlayer for Discuz!: Discuz!
+-   DPlayer for WordPress: WordPress
+-   DPlayerHandle: WordPress
+-   Selection: WordPress
+-   Vue-DPlayer: Vue
+-   react-dplayer: React
+-   rc-dplayer: React
+
+ Other
+
+-   DPlayer-Lite: lite version
+-   hlsjs-p2p-engine: Let your viewers become your unlimitedly scalable CDN
+-   CBPlayer: Dplayer with CDNBye P2P plugin built in, supporting HLS, MP4 and MPEG-DASH P2P streaming.
+-   Feel free to submit yours in Let me know!
+
+ Who use DPlayer?
+
+-   学习强国: “学习强国”学习平台精心打造的手机客户端
+-   小红书: 中国最大的生活社区分享平台，同时也是发现全球好物的电商平台
+-   极客时间: 极客邦科技出品的一款 IT 内容知识服务 App
+-   嘀哩嘀哩: 兴趣使然的无名小站（D 站）
+-   银色子弹: 银色子弹，简称银弹，由多数柯南热爱者聚集在一起的组织
+-   浙江大学 CC98 论坛: 浙江大学校网内规模最大的论坛，中国各大学中较活跃的 BBS 之一
+-   纸飞机南航青年网络社区: 南京航空航天大学门户网站
+-   otomads: 专注于音 MAD 的视频弹幕网站
+-   Cloudreve: 基于 ThinkPHP 构建的网盘系统
+-   oneindex: Onedrive Directory Index
+-   arozos: General purposed Web Desktop Operating Platform / OS for Raspberry Pis
+-   新东方云教室
+-   BBHouse: A Bilibili Cross-Platform Desktop Client Powered By Tauri
+-   Tampermonkey 阿里云盘
+-   arozos
+-   GBCLStudio/fof-upload-qcloud
+-   Feel free to submit yours in Let me know!
+
+ Donate
+
+DPlayer is an MIT licensed open source project and completely free to use. However, the amount of effort needed to maintain and develop new features for the project is not sustainable without proper financial backing.
+
+You can support DPlayer via donations.
+
+ Recurring Donation
+
+-   Become a Sponser on GitHub
+-   Become a Sponser on Patreon
+-   Become a Sponser on 爱发电
+-   Contact us directly: i@diygod.me
+
+ One-time Donation
+
+We accept donations via the following ways:
+
+-   WeChat Pay
+-   Alipay
+-   Paypal
+
+ Author
+
+DPlayer © DIYgod, Released under the MIT License.
+Authored and maintained by DIYgod with help from contributors (list).
+
+ Blog · GitHub @DIYgod · Twitter @DIYgod · Telegram Channel @awesomeDIYgod</pre><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/DIYgod/DPlayer/releases"><b>v1.27.0</b> <span class="rp-rel-tag">v1.27.0</span> <span class="rp-item-extra">2022-08-16</span></a><pre class="rp-pre">Features
+
+- Support German and Korean translation ef273ec42a895482afa6252d774fe921e0c42997 c162fcc0450a73b83ce825b9fdae7b6256275b17
+- New options preventClickToggle b429b9a5b7e4875c12ef7d25581924453ec3df0e
+- Support multiple subtitles b974065ea4ca69014f73d0a673985bd0a9937cfc
+- Support multiple notices 281334b7d9aa90ba8cfa3c8208946786f9aec45b
+- Support Chromecast 44a3cd923dba0755f832b6b25af883c5002aee3a
+- Support danmaku speed control 6d7d9f34f1e0b00c751ce41d45bd815a90ed1445
+
+ Bug Fixes
+
+- Multiple bug fixes ...</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/DIYgod__DPlayer.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

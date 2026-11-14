@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eugeny/tabby · GitHub Trending Rank Radar</title>
+<meta name="description" content="A terminal for a more modern age">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="tabby, Eugeny, Eugeny/tabby, github stars, github trending, star growth, star history, 开源项目, 星标增长, terminal-emulators, terminal, serial, ssh-client, telnet-client">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Eugeny__tabby">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Eugeny/tabby · GitHub Trending Rank Radar">
+<meta property="og:description" content="A terminal for a more modern age">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Eugeny__tabby">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Eugeny/tabby", "codeRepository": "https://github.com/Eugeny/tabby", "url": "https://zhuikan.com/repos/Eugeny__tabby", "description": "A terminal for a more modern age", "author": {"@type": "Organization", "name": "Eugeny", "url": "https://github.com/Eugeny"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2016-12-23", "keywords": "terminal-emulators,terminal,serial,ssh-client,telnet-client"}</script>
+</head>
+<body data-repo="Eugeny/tabby" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Eugeny/tabby</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Eugeny__tabby"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/161476?u=4604ee9193de2a5d7ec842bff0e1bce408d63a0a&amp;v=4&s=300" width="300" height="300" alt="Eugeny avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">tabby</div>
+      <a class="rp-side-owner" href="https://github.com/Eugeny">Eugeny</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Eugeny">Eugeny</a>
+        <span class="rp-sep">/</span><span class="rp-name">tabby</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A terminal for a more modern age</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>75,430</b></span><span class="rp-stat" title="forks">⑂ <b>4,345</b></span><span class="rp-stat" title="watchers">👁 <b>445</b></span><span class="rp-stat" title="prs">⑃ <b>4,447</b></span><span class="rp-stat" title="issues">● <b>6,414</b></span><span class="rp-stat" title="releases">▤ <b>212</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/terminal-emulators">terminal-emulators</a><a class="rp-topic" href="../tags/terminal">terminal</a><a class="rp-topic" href="https://github.com/topics/serial">serial</a><a class="rp-topic" href="https://github.com/topics/ssh-client">ssh-client</a><a class="rp-topic" href="https://github.com/topics/telnet-client">telnet-client</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2016-12-23</span><a class="rp-meta-bit rp-home" href="https://tabby.sh" rel="noopener">tabby.sh</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Eugeny/tabby">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.0.238</span><a class="rp-dl-a" href="https://github.com/Eugeny/tabby/releases/tag/v1.0.238">v1.0.238 ↓</a><span class="rp-dl-ver">1.0.238</span><span class="rp-dl-date">2026-10-07</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+25</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">75,430</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">4,345</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">445</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">4,447</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">6,414</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">212</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">&amp;nbsp;  &amp;nbsp;  &amp;nbsp  &amp;nbsp; 
+
+
+
+  
+    
+  
+
+
+----
+
+ 下载
+
+ Latest release
+ Repositories: Debian/Ubuntu-based, RPM-based
+ Latest nightly build
+
+
+
+本 README 还适用于以下语言: :gb: English · :es: Spanish · :ru: Русский · :kr: 한국어 · :it: Italiano · :de: Deutsch · :jp: 日本語 · :id: Bahasa Indonesia · :brazil: Português · :poland: Polski
+
+
+----
+
+Tabby (前身是 Terminus) 是一个可高度配置的终端模拟器和 SSH 或串口客户端，支持 Windows，macOS 和 Linux
+
+ 集成 SSH，Telnet 客户端和连接管理器
+ 集成串行终端
+ 定制主题和配色方案
+ 完全可配置的快捷键和多键快捷键
+ 分体式窗格
+ 自动保存标签页
+ 支持 PowerShell（和 PS Core）、WSL、Git-Bash、Cygwin、MSYS2、Cmder 和 CMD
+ 在 SSH 会话中通过 Zmodem 进行直接文件传输
+ 完整的 Unicode 支持，包括双角字符
+ 不会因快速的输出而卡住
+ Windows 上舒适的 shell 体验，包括 tab 自动补全（通过 Clink）
+ 为 SSH secrets 和设置集成了加密容器
+ SSH、SFTP 和 Telnet 客户端可用作 Web 应用（也可托管）
+
+ 目录 
+
+- Tabby是什么
+- 终端特性
+- SSH 客户端
+- 串行终端
+- 便携式应用
+- 插件
+- 主题
+- 贡献
+
+
+
+ Tabby是什么
+
+ Tabby 是 Windows 标准终端 (conhost)、PowerShell ISE、PuTTY、macOS Terminal.app 和 iTerm 的替代品
+
+ Tabby 不是一个全新的 shell，也不是 MinGW 或 Cygwin 的替代品。它也不是轻量级的 - 如果你对内存的占用很敏感，请考虑 Conemu 或 Alacritty
+
+
+ 终端特性
+
+!
+
+ 一个 VT220 终端 + 各种插件
+ 多个嵌套的拆分窗格
+ 可以将标签页设置在窗口的任意一侧
+ 带有全局生成热键的可选可停靠窗口（“Quake console”）
+ 进度检测
+ 流程完成通知
+ 带括号的粘贴，多行粘贴提示
+ 连体字
+ 自定义 shell 配置文件
+ 可选的 RMB 粘贴和复制选择（PuTTY 风格）
+
+
+ SSH 客户端
+
+!
+
+ 带有连接管理器的 SSH2 客户端
+ X11和端口转发
+ 自动跳转主机管理
+ 代理转发（包括 Pageant 和 Windows 原生 OpenSSH 代理）
+ 登录脚本
+
+
+ 串行终端
+
+ 保存连接
+ 逐行读取的输入支持
+ 可选的十六进制逐字节输入和十六进制转储输出
+ 换行转换
+ 自动重连
+
+
+ 便携式应用
+
+如果在 Tabby.exe 所在的目录创建一个名为data文件夹，Tabby 将可以在 Windows 上作为便携式的应用程序运行。
+
+
+ 插件
+
+插件和主题可以直接在 Tabby 设置中安装。
+
+ clickable-links - 使终端中的路径和 URL 可点击
+ docker - 连接 Docker 容器
+ title-control - 允许通过提供要删除的前缀、后缀和/或字符串来修改标签页的标题
+ quick-cmds - 快速向一个或所有标签页发送命令
+ save-output - 将终端输出记录到文件中
+ sync-config - 将配置同步到 Gist 或 Gitee
+ clippy - 一个可以一直烦你的示例插件
+ workspace-manager - 允许根据给定的配置创建自定义工作区配置文件
+ search-in-browser - 从 Tabby 标签页带有选中的文本来打开系统默认浏览器
+ sftp-tab - 为ssh连接打开类似SecureCRT的sftp标签页
+ web-auth-handler - 应用内网页认证弹出窗口（主要为warpgate浏览器认证而建）
+ mcp-server - 为 Tabby 提供强大的模型上下文协议服务器集成，可通过 Cursor 和 Windsurf 等 MCP 客户端无缝连接 AI 助手，利用智能 AI 功能增强您的终端工作流程。
+
+ 主题
+
+ hype - 受 Hyper 启发的主题
+ relaxed - 为 Tabby 打造的 Relaxed 主题
+ gruvbox
+ windows10
+ altair
+
+ Sponsors 
+
+
+
+packagecloud 提供了免费的 Debian/RPM 存储库托管
+
+
+ 贡献
+
+欢迎提交 PR 和插件！
+
+请参阅 HACKING.md 和 API 文档 以获取有关项目布局的信息以及非常简短的插件开发教程。
+
+---
+
+
+感谢这些人，他们棒极了！(emoji key):
+
+
+
+
+
+  
+    
+      Russell Myers💻
+      Austin Warren💻
+      Felicia Hummel💻
+      Mike MacCana⚠️ 🎨
+      Yacine Kanzari💻
+      BBJip💻
+      Futagirl🎨
+    
+    
+      Levin Rickert💻
+      OJ Kwon💻
+      domain🔌 💻
+      James Brumond🔌
+      Daniel Imms💻 🔌 ⚠️
+      Florian Bachmann💻
+      Michael Kühnel💻 🎨
+    
+    
+      Tilmann Meyer💻
+      PM Extra🐛
+      Jonathan💻
+      Hans Koch💻
+      Dak Smyth💻
+      Wang Zhi💻
+      jack1142💻
+    
+    
+      Howie Douglas💻
+      Chris Kaczor💻
+      Johannes Kadak💻
+      LeSeulArtichaut💻
+      Cyril Taylor💻
+      nstefanou💻 🔌
+      orin220444💻
+    
+    
+      Gobius Dolhain💻
+      Gwilherm Folliot💻
+      Dmitry Pronin💻
+      Jonathan Beverley💻
+      Zenghai Liang💻
+      Mateusz Tracz💻
+      pinpin💻
+    
+    
+      Takuro Onoda💻
+      frauhottelmann💻
+      Piotr Patalong🎨</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Eugeny/tabby/issues/960"><span class="rp-item-num">#960</span><span class="rp-item-title">sudo not working on Linux</span><span class="rp-item-extra">96 comments · 2019-05-27</span></a><a class="rp-item" href="https://github.com/Eugeny/tabby/issues/832"><span class="rp-item-num">#832</span><span class="rp-item-title">transparency doesn&#x27;t work [LINUX]</span><span class="rp-item-extra">61 comments · 2019-05-22</span></a><a class="rp-item" href="https://github.com/Eugeny/tabby/issues/5482"><span class="rp-item-num">#5482</span><span class="rp-item-title">Allow program to run after specific amount of idle time</span><span class="rp-item-extra">47 comments · 2022-01-16</span></a><a class="rp-item" href="https://github.com/Eugeny/tabby/issues/10347"><span class="rp-item-num">#10347</span><span class="rp-item-title">SSH connection fires the error &quot;Authentication failed&quot; with version 1.0.222. Works with 1.0.221</span><span class="rp-item-extra">42 comments · 2025-03-06</span></a><a class="rp-item" href="https://github.com/Eugeny/tabby/issues/632"><span class="rp-item-num">#632</span><span class="rp-item-title">Keyword highlighting</span><span class="rp-item-extra">40 comments · 2019-01-28</span></a><a class="rp-item" href="https://github.com/Eugeny/tabby/issues/6233"><span class="rp-item-num">#6233</span><span class="rp-item-title"> X  Timed out while waiting for handshake</span><span class="rp-item-extra">36 comments · 2022-04-21</span></a><a class="rp-item" href="https://github.com/Eugeny/tabby/issues/10358"><span class="rp-item-num">#10358</span><span class="rp-item-title">mac tabby login jumpersever 2222 session closed</span><span class="rp-item-extra">31 comments · 2025-03-11</span></a><a class="rp-item" href="https://github.com/Eugeny/tabby/issues/9787"><span class="rp-item-num">#9787</span><span class="rp-item-title">Upgrade to v1.0.209 (I can&#x27;t click on anything)</span><span class="rp-item-extra">31 comments · 2024-07-13</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Eugeny/tabby/discussions/11906"><span class="rp-item-num">#11906</span><span class="rp-item-title">Tiny fonts after restart</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/Eugeny/tabby/discussions/11901"><span class="rp-item-num">#11901</span><span class="rp-item-title">Tappy is now available on FreeBSD too</span><span class="rp-item-extra">0 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/Eugeny/tabby/discussions/11864"><span class="rp-item-num">#11864</span><span class="rp-item-title">Feature request: cross search through all tabs</span><span class="rp-item-extra">0 comments · 2026-10-31</span></a><a class="rp-item" href="https://github.com/Eugeny/tabby/discussions/11847"><span class="rp-item-num">#11847</span><span class="rp-item-title">[Plugin] Tabby Profile Bridge v0.2.3 — Import/Export MobaXterm &amp; CSV Sessions</span><span class="rp-item-extra">0 comments · 2026-10-26</span></a><a class="rp-item" href="https://github.com/Eugeny/tabby/discussions/11845"><span class="rp-item-num">#11845</span><span class="rp-item-title">[Plugin] cctabs: allow Claude Code and Codex to create, name, sort and drive fleets of coding agents/sessions in Tabby</span><span class="rp-item-extra">1 comments · 2026-10-25</span></a><a class="rp-item" href="https://github.com/Eugeny/tabby/discussions/11841"><span class="rp-item-num">#11841</span><span class="rp-item-title">[Plugin] Tabby Profile Share — Export, Import &amp; Share SSH Profiles Safely</span><span class="rp-item-extra">0 comments · 2026-10-24</span></a><a class="rp-item" href="https://github.com/Eugeny/tabby/discussions/11839"><span class="rp-item-num">#11839</span><span class="rp-item-title">Greek translation</span><span class="rp-item-extra">0 comments · 2026-10-24</span></a><a class="rp-item" href="https://github.com/Eugeny/tabby/discussions/11835"><span class="rp-item-num">#11835</span><span class="rp-item-title">How do I get ssh debug info from Tabby when trying to connect?</span><span class="rp-item-extra">1 comments · 2026-10-23</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/Eugeny/tabby/releases"><b>v1.0.238</b> <span class="rp-rel-tag">v1.0.238</span> <span class="rp-item-extra">2026-10-07</span></a><pre class="rp-pre">Features
+
+ feat(settings): label a plugin&#x27;s vault secret by its key&#x27;s description by @meanaverage in https://github.com/Eugeny/tabby/pull/11765
+
+ Fixes
+
+ fix(terminal): unbounded O(n²) output buffer for tabs that were never focused by @meanaverage in https://github.com/Eugeny/tabby/pull/11722
+ fix(terminal): every closed tab leaks its terminal (WebGL cursor blink timer never disposed) by @meanaverage in https://github.com/Eugeny/tabby/pull/11720
+ fix(terminal): closed sessions leak via PTY IPC listeners (destroy() re-entrancy) by @meanaverage in https://github.com/Eugeny/tabby/pull/117</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Eugeny__tabby.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

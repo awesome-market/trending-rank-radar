@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AlistGo/alist · GitHub Trending Rank Radar</title>
+<meta name="description" content="🗂️A file list/WebDAV program that supports multiple storages, powered by Gin and Solidjs. / 一个支持多存储的文件列表/WebDAV程序，使用 Gin 和 Solidjs。">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="alist, AlistGo, AlistGo/alist, github stars, github trending, star growth, star history, 开源项目, 星标增长, golang, gin, webdav, solidjs, file-server, onedrive">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/AlistGo__alist">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="AlistGo/alist · GitHub Trending Rank Radar">
+<meta property="og:description" content="🗂️A file list/WebDAV program that supports multiple storages, powered by Gin and Solidjs. / 一个支持多存储的文件列表/WebDAV程序，使用 Gin 和 Solidjs。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/AlistGo__alist">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "AlistGo/alist", "codeRepository": "https://github.com/AlistGo/alist", "url": "https://zhuikan.com/repos/AlistGo__alist", "description": "🗂️A file list/WebDAV program that supports multiple storages, powered by Gin and Solidjs. / 一个支持多存储的文件列表/WebDAV程序，使用 Gin 和 Solidjs。", "author": {"@type": "Organization", "name": "AlistGo", "url": "https://github.com/AlistGo"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/AGPL-3.0.html", "programmingLanguage": "Go", "dateCreated": "2020-12-23", "keywords": "golang,gin,webdav,solidjs,file-server,onedrive"}</script>
+</head>
+<body data-repo="AlistGo/alist" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">AlistGo/alist</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="AlistGo__alist"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/184931308?v=4&s=300" width="300" height="300" alt="AlistGo avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">alist</div>
+      <a class="rp-side-owner" href="https://github.com/AlistGo">AlistGo</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/AlistGo">AlistGo</a>
+        <span class="rp-sep">/</span><span class="rp-name">alist</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">🗂️A file list/WebDAV program that supports multiple storages, powered by Gin and Solidjs. / 一个支持多存储的文件列表/WebDAV程序，使用 Gin 和 Solidjs。</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>50,453</b></span><span class="rp-stat" title="forks">⑂ <b>7,894</b></span><span class="rp-stat" title="watchers">👁 <b>217</b></span><span class="rp-stat" title="prs">⑃ <b>1,253</b></span><span class="rp-stat" title="issues">● <b>4,506</b></span><span class="rp-stat" title="releases">▤ <b>152</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/golang">golang</a><a class="rp-topic" href="https://github.com/topics/gin">gin</a><a class="rp-topic" href="https://github.com/topics/webdav">webdav</a><a class="rp-topic" href="https://github.com/topics/solidjs">solidjs</a><a class="rp-topic" href="https://github.com/topics/file-server">file-server</a><a class="rp-topic" href="https://github.com/topics/onedrive">onedrive</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Go</span><span class="rp-meta-bit">AGPL-3.0</span><span class="rp-meta-bit">Created 2020-12-23</span><a class="rp-meta-bit rp-home" href="https://alistgo.com" rel="noopener">alistgo.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/AlistGo/alist">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v3.66.0</span><a class="rp-dl-a" href="https://github.com/AlistGo/alist/releases/tag/v3.66.0">v3.66.0 ↓</a><span class="rp-dl-ver">3.66.0</span><span class="rp-dl-date">2026-10-21</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">50,453</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">7,894</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">217</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,253</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">4,506</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">152</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">🗂️A file list program that supports multiple storages, powered by Gin and Solidjs.
+
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+
+
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+
+
+
+---
+
+English | 中文 | 日本語 | Contributing | CODE_OF_CONDUCT
+
+ Features
+
+- [x] Multiple storages
+    - [x] Local storage
+    - [x] Aliyundrive
+    - [x] OneDrive / Sharepoint (global, cn,de,us)
+    - [x] 189cloud (Personal, Family)
+    - [x] GoogleDrive
+    - [x] 123pan
+    - [x] FTP / SFTP
+    - [x] PikPak
+    - [x] S3
+    - [x] Seafile
+    - [x] UPYUN Storage Service
+    - [x] WebDav(Support OneDrive/SharePoint without API)
+    - [x] Teambition(China,International)
+    - [x] MediaFire
+    - [x] Mediatrack
+    - [x] ProtonDrive
+    - [x] 139yun (Personal, Family, Group)
+    - [x] YandexDisk
+    - [x] BaiduNetdisk
+    - [x] Terabox
+    - [x] UC
+    - [x] Quark
+    - [x] Thunder
+    - [x] Lanzou
+    - [x] ILanzou
+    - [x] Aliyundrive share
+    - [x] Google photo
+    - [x] Mega.nz
+    - [x] Baidu photo
+    - [x] SMB
+    - [x] 115
+    - [X] Cloudreve
+    - [x] Dropbox
+    - [x] FeijiPan
+    - [x] dogecloud
+    - [x] Azure Blob Storage
+- [x] Easy to deploy and out-of-the-box
+- [x] File preview (PDF, markdown, code, plain text, ...)
+- [x] Image preview in gallery mode
+- [x] Video and audio preview, support lyrics and subtitles
+- [x] Office documents preview (docx, pptx, xlsx, ...)
+- [x] README.md preview rendering
+- [x] File permalink copy and direct file download
+- [x] Dark mode
+- [x] I18n
+- [x] Protected routes (password protection and authentication)
+- [x] WebDav (see https://alistgo.com/guide/webdav.html for details)
+- [x] Docker Deploy
+- [x] Cloudflare Workers proxy
+- [x] File/Folder package download
+- [x] Web upload(Can allow visitors to upload), delete, mkdir, rename, move and copy
+- [x] Offline download
+- [x] Copy files between two storage
+- [x] Multi-thread downloading acceleration for single-thread download/stream
+
+ Document
+
+
+
+ API Documentation (via Apifox):
+
+
+
+ Demo
+
+
+
+ Discussion
+
+Please go to our discussion forum for general questions, issues are for bug reports and feature requests only.
+
+ Sponsor
+
+AList is an open-source software, if you happen to like this project and want me to keep going, please consider sponsoring me or providing a single donation! Thanks for all the love and support:
+https://alistgo.com/guide/sponsor.html
+
+ Special sponsors
+
+- VidHub - An elegant cloud video player within the Apple ecosystem. Support for iPhone, iPad, Mac, and Apple TV.
+
+ Contributors
+
+Thanks goes to these wonderful people:
+
+
+
+ License
+
+The AList is open-source software licensed under the AGPL-3.0 license.
+
+ Disclaimer
+- This program is a free and open source project. It is designed to share files on the network disk, which is convenient for downloading and learning Golang. Please abide by relevant laws and regulations when using it, and do not abuse it;
+- This program is implemented by calling the official sdk/interface, without destroying the official </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/AlistGo/alist/issues/7016"><span class="rp-item-num">#7016</span><span class="rp-item-title">pikpak能挂载上alist，但是在alist点不开pikpak对应的文件夹，提示错误</span><span class="rp-item-extra">120 comments · 2024-08-15</span></a><a class="rp-item" href="https://github.com/AlistGo/alist/issues/7468"><span class="rp-item-num">#7468</span><span class="rp-item-title">115网盘挂载 无法访问</span><span class="rp-item-extra">62 comments · 2024-11-05</span></a><a class="rp-item" href="https://github.com/AlistGo/alist/issues/7712"><span class="rp-item-num">#7712</span><span class="rp-item-title">115成功挂载，可以读取目录。抓取cookie的浏览器可以正常下载，但是alist无法查看和下载文件</span><span class="rp-item-extra">57 comments · 2024-12-26</span></a><a class="rp-item" href="https://github.com/AlistGo/alist/issues/7127"><span class="rp-item-num">#7127</span><span class="rp-item-title">115 网盘上传文件存在内存泄露的问题</span><span class="rp-item-extra">34 comments · 2024-09-05</span></a><a class="rp-item" href="https://github.com/AlistGo/alist/issues/7936"><span class="rp-item-num">#7936</span><span class="rp-item-title">中国移动云盘曾经为旧个人云的账号通过新个人云方式挂载无法正常使用</span><span class="rp-item-extra">33 comments · 2025-02-04</span></a><a class="rp-item" href="https://github.com/AlistGo/alist/issues/8338"><span class="rp-item-num">#8338</span><span class="rp-item-title">豆包：与Alist的兼容性存在小问题（期望优化）</span><span class="rp-item-extra">28 comments · 2025-04-10</span></a><a class="rp-item" href="https://github.com/AlistGo/alist/issues/7641"><span class="rp-item-num">#7641</span><span class="rp-item-title">群晖使用Alist v3套件挂载夸克网盘，再使用网易爆米花观看网盘资源，但是alist不会自动释放内存，每点开一个视频内存占用率就会上升，即使是同一个视频，直到98%，且一直不会被释放，除非重启套件或者是重启系统</span><span class="rp-item-extra">28 comments · 2024-12-11</span></a><a class="rp-item" href="https://github.com/AlistGo/alist/issues/5448"><span class="rp-item-num">#5448</span><span class="rp-item-title">是否可以集成WPS云盘</span><span class="rp-item-extra">25 comments · 2023-10-30</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/AlistGo/alist/discussions/9687"><span class="rp-item-num">#9687</span><span class="rp-item-title">我刚下载，然后出现了一些问题，求助大佬们</span><span class="rp-item-extra">1 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/AlistGo/alist/discussions/9685"><span class="rp-item-num">#9685</span><span class="rp-item-title">迅雷网盘在对应网址上点击获取验证码获取不了</span><span class="rp-item-extra">0 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/AlistGo/alist/discussions/9675"><span class="rp-item-num">#9675</span><span class="rp-item-title">联通云盘不能挂载了</span><span class="rp-item-extra">1 comments · 2026-10-21</span></a><a class="rp-item" href="https://github.com/AlistGo/alist/discussions/9671"><span class="rp-item-num">#9671</span><span class="rp-item-title">视频播放问题（同一个视频外网下载速度40m/s，播放加载几分钟都不能播放，加载的时候很多的分片）</span><span class="rp-item-extra">0 comments · 2026-10-17</span></a><a class="rp-item" href="https://github.com/AlistGo/alist/discussions/9658"><span class="rp-item-num">#9658</span><span class="rp-item-title">是否能添加对中国移动云盘的支持？</span><span class="rp-item-extra">1 comments · 2026-09-25</span></a><a class="rp-item" href="https://github.com/AlistGo/alist/discussions/9634"><span class="rp-item-num">#9634</span><span class="rp-item-title">对象存储如何分片上传</span><span class="rp-item-extra">0 comments · 2026-08-30</span></a><a class="rp-item" href="https://github.com/AlistGo/alist/discussions/9633"><span class="rp-item-num">#9633</span><span class="rp-item-title">为什么根本就没有客服跟进啊</span><span class="rp-item-extra">0 comments · 2026-08-29</span></a><a class="rp-item" href="https://github.com/AlistGo/alist/discussions/9623"><span class="rp-item-num">#9623</span><span class="rp-item-title">阿里云盘 从昨天起（2026-08-17）连接失败</span><span class="rp-item-extra">1 comments · 2026-08-18</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/AlistGo/alist/releases"><b>v3.66.0</b> <span class="rp-rel-tag">v3.66.0</span> <span class="rp-item-extra">2026-10-21</span></a><pre class="rp-pre">&amp;nbsp;&amp;nbsp;&amp;nbsp;🐞 Bug Fixes
+
+- ci:
+  - Cover stable release builders and reject missing artifacts &amp;nbsp;-&amp;nbsp; by @okatu-loli (6ed3d)
+  - Exclude checksum files from release manifests &amp;nbsp;-&amp;nbsp; by @okatu-loli (5bb1b)
+- lanzou:
+  - Preserve absolute download endpoint &amp;nbsp;-&amp;nbsp; by @okatu-loli (f4b91)
+- ldap:
+  - Reactivate device session on LDAP login &amp;nbsp;-&amp;nbsp; by @xuelei9300 (d7bfd)
+- wopan:
+  - Initialize tokens before cloud requests &amp;nbsp;-&amp;nbsp; by @okatu-loli (90ce4)
+
+ &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;View changes on GitHub</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/AlistGo__alist.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>github/spec-kit · GitHub Trending Rank Radar</title>
+<meta name="description" content="💫 Toolkit to help you get started with SDD or any other process!">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="spec-kit, github, github/spec-kit, github stars, github trending, star growth, star history, 开源项目, 星标增长, ai, copilot, development, engineering, prd, spec">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/github__spec-kit">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="github/spec-kit · GitHub Trending Rank Radar">
+<meta property="og:description" content="💫 Toolkit to help you get started with SDD or any other process!">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/github__spec-kit">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "github/spec-kit", "codeRepository": "https://github.com/github/spec-kit", "url": "https://zhuikan.com/repos/github__spec-kit", "description": "💫 Toolkit to help you get started with SDD or any other process!", "author": {"@type": "Organization", "name": "github", "url": "https://github.com/github"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Python", "dateCreated": "2025-08-21", "keywords": "ai,copilot,development,engineering,prd,spec,spec-driven"}</script>
+</head>
+<body data-repo="github/spec-kit" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">github/spec-kit</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="github__spec-kit"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/9919?v=4&s=300" width="300" height="300" alt="github avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">spec-kit</div>
+      <a class="rp-side-owner" href="https://github.com/github">github</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/github">github</a>
+        <span class="rp-sep">/</span><span class="rp-name">spec-kit</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily">daily <b>#156</b></a><a class="rp-board-chip" href="../?board=weekly">weekly <b>#174</b></a><a class="rp-board-chip" href="../?board=monthly">monthly <b>#66</b></a><a class="rp-board-chip" href="../?board=total">total <b>#66</b></a></div>
+    </div>
+    <p class="rp-desc">💫 Toolkit to help you get started with SDD or any other process!</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>149,678</b></span><span class="rp-stat" title="forks">⑂ <b>13,445</b></span><span class="rp-stat" title="watchers">👁 <b>746</b></span><span class="rp-stat" title="prs">⑃ <b>2,918</b></span><span class="rp-stat" title="issues">● <b>1,925</b></span><span class="rp-stat" title="releases">▤ <b>243</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/ai">ai</a><a class="rp-topic" href="https://github.com/topics/copilot">copilot</a><a class="rp-topic" href="https://github.com/topics/development">development</a><a class="rp-topic" href="https://github.com/topics/engineering">engineering</a><a class="rp-topic" href="https://github.com/topics/prd">prd</a><a class="rp-topic" href="https://github.com/topics/spec">spec</a><a class="rp-topic" href="https://github.com/topics/spec-driven">spec-driven</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2025-08-21</span><a class="rp-meta-bit rp-home" href="https://github.github.com/spec-kit/" rel="noopener">github.github.com/spec-kit/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="github__gitignore"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/9919?v=4" alt="" loading="lazy">gitignore</a><a class="rp-same-link" href="github__CopilotForXcode"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/9919?v=4" alt="" loading="lazy">CopilotForXcode</a><a class="rp-same-link" href="github__awesome-copilot"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/9919?v=4" alt="" loading="lazy">awesome-copilot</a><a class="rp-same-link" href="github__docs"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/9919?v=4" alt="" loading="lazy">docs</a><a class="rp-same-link" href="github__explore"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/9919?v=4" alt="" loading="lazy">explore</a><a class="rp-same-link" href="github__gh-aw"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/9919?v=4" alt="" loading="lazy">gh-aw</a><a class="rp-same-link" href="github__github-mcp-server"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/9919?v=4" alt="" loading="lazy">github-mcp-server</a><a class="rp-same-link" href="github__opensource.guide"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/9919?v=4" alt="" loading="lazy">opensource.guide</a><a class="rp-same-link" href="github__roadmap"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/9919?v=4" alt="" loading="lazy">roadmap</a><a class="rp-same-link" href="github__semantic"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/9919?v=4" alt="" loading="lazy">semantic</a><a class="rp-same-link" href="github__training-kit"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/9919?v=4" alt="" loading="lazy">training-kit</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/github/spec-kit">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Spec Kit - 1.4.0</span><a class="rp-dl-a" href="https://github.com/github/spec-kit/releases/tag/v1.4.0">Spec-1.4.0 ↓</a><span class="rp-dl-ver">1.4.0</span><span class="rp-dl-date">2026-11-10</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+151</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+3,149</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+9,085</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">149,678</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">13,445</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">746</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">2,918</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,925</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">243</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">🌱 Spec Kit
+    与你的编码助手一起，依据规范开发、修复缺陷，或评估想法。
+
+
+
+    
+    
+    
+    
+
+
+
+    English ·
+    简体中文 ·
+    日本語 ·
+    한국어
+
+
+Spec Kit 是一个开源工具套件，为 AI 编码助手提供结构化流程、可复用模板和有据可查的成果。
+你可以从以下三种流程中任选一种开始，按需定制，也可以引入自己的流程。
+
+ 选择你的流程
+
+| 你的需求 | 流程 | 产出 |
+| --- | --- | --- |
+| 构建功能或应用 | 规范驱动开发 | 从规范出发，完成规划、实现与收敛 |
+| 排查并修复异常行为 | 缺陷修复 | 经评估的原因、范围明确的修复与验证记录 |
+| 判断一个想法是否值得投入 | 想法评估 | 基于证据决定推进、澄清或停止 |
+
+这三种流程是彼此独立的入口，不是必须依次完成的三个阶段。
+SDD 内置于核心；缺陷修复和想法评估由随工具提供的扩展实现，需要时再安装。
+
+
+
+
+
+
+ 快速开始
+
+你需要 Python 3.11+、uv
+以及受支持的 AI 编码助手，可在 Linux、macOS 或 Windows 上使用。
+仅 CLI 配置步骤在终端中执行：从 PyPI 安装 Spec Kit 并创建项目：
+
+bash
+uv tool install specify-cli
+specify init my-project --integration copilot
+cd my-project
+
+
+CLI 只需安装一次，项目只需初始化一次；以下三种流程共用这套准备步骤。
+
+
+
+示例采用 GitHub Copilot 默认的技能（skills）模式。
+如需使用其他助手，将 copilot 替换为对应的
+集成标识。
+
+已有代码？请参阅现有项目指南。
+锁定版本、其他安装方式、CI 与故障排查见安装指南；
+更新已安装的 CLI 和项目文件见升级指南。
+
+现在，在项目目录中启动编码助手，选择以下一种流程。
+在助手的聊天界面中逐个调用 /speckit- 技能，检查结果后再继续。
+这些是助手技能，不是终端命令。其他助手或模式可能采用不同的调用语法。
+
+
+
+
+
+
+
+
+ 规范驱动开发
+
+先明确做什么、为什么做，再决定怎么实现。
+规范驱动开发（SDD）将需求转化为规范、技术方案和可执行任务，再依据这些制品指导实现。
+
+每个项目先确立一次准则；每个功能依次完成：规范 → 方案 → 任务 → 实现 → 收敛。
+
+在助手的聊天界面中调用以下技能：
+
+text
+/speckit-constitution Create principles focused on code quality, testing, and maintainability.
+/speckit-specify Build a photo organizer with albums grouped by date and a tile preview of each album.
+/speckit-plan Use Vite with vanilla JavaScript. Keep images local and store metadata in SQLite.
+/speckit-tasks
+/speckit-implement
+/speckit-converge
+
+
+反复执行 implement → converge，直到收敛报告给出 Converged。
+需要额外的质量把关时，可加入需求澄清、检查清单和一致性分析。
+
+SDD 实战指南 ·
+命令参考
+
+ 缺陷修复
+
+将诊断、修复和验证分开，让助手针对评估出的原因修复，并检查最初出现的症状。
+无需先走一遍 SDD 功能开发流程。
+
+CLI 配置（终端）：在项目目录下安装这个可选扩展：
+
+bash
+specify extension add bug
+
+
+然后在助手的聊天界面中依次调用 assess → fix → test（评估 → 修复 → 测试）技能：
+
+text
+/speckit-bug-assess &quot;Submitting an empty password crashes the login form.&quot; slug=login-crash
+/speckit-bug-fix slug=login-crash
+/speckit-bug-test slug=login-crash
+
+
+报告保存在 .specify/bugs/login-crash/。请检查最终结论：
+verified（已验证）、partial（部分验证）或 failed（失败）。缺少验证不算修复成功。
+
+缺陷修复指南 ·
+命令参考
+
+ 想法评估
+
+在投入之前先收集证据，无论这个想法最终是否会成为软件。
+这是一个独立流程，也适用于非软件类想法，即使项目中没有源代码也能使用。
+
+CLI 配置（终端）：在项目目录下安装这个可选扩展：
+
+bash
+specify extension add assess
+
+
+然后在助手的聊天界面中依次调用 intake → research → define → shape → decide
+（收集想法 → 调研 → 定义问题 → 形成方案 → 决策）技能：
+
+text
+/speckit-assess-intake &quot;Let users work offline and sync when they reconnect.&quot; slug=offline-mode
+/speckit-assess-research slug=offline-mode
+/speckit-assess-define slug=offline-mode
+/speckit-assess-shape slug=offline-mode
+/speckit-assess-decide slug=offline-mode
+
+
+制品保存在 .specify/assessments/offline-mode/，最终给出
+go / needs-clarification / kill（推进 / 需要澄清 / 停止）的决策。
+遇到待澄清问题时，直接完善已有的 Markdown 制品，或请助手协助修改，而不是重新生成整个阶段。
+如果决定开发，可将 go 的评估结果交给 /speckit-specify；记录理由后停止，同样是有价值的结果。
+
+想法评估指南 ·
+命令参考
+
+
+
+
+
+ 定制或引入自己的流程
+
+扩展新增能力，预设调整现有行为，工作流自动执行步骤，捆绑包打包面向角色的配置。
+单个项目的一次性模板调整可使用项目本地覆盖；流程或术语的本地化可使用预设。
+
+定制指南 ·
+社区扩展、预设、捆绑包与实战演练
+
+
+
+
+
+
+
+
+
+ 文档
+
+以下链接指向英文指南。工具升级与功能规范演进是两件事：升级时更新工具文件，需求变化时更新 specs/ 制品。
+
+- CLI 参考与流程命令
+- SDD 理念、完整方法论与现有规范演进
+- 项目历史
+- Spec Kit 如何使用 Spec Kit
+
+
+
+ 支持与贡献
+
+报告缺陷或提出功能建议 ·
+贡献指南 · </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/github/spec-kit/issues/4065"><span class="rp-item-num">#4065</span><span class="rp-item-title">[Feature]: Stable, block-allocated identifiers (FR/SC/T/CHK) so edits never force a renumber</span><span class="rp-item-extra">15 comments · 2026-08-12</span></a><a class="rp-item" href="https://github.com/github/spec-kit/issues/4913"><span class="rp-item-num">#4913</span><span class="rp-item-title">[Feature]: Add explicit MCP inventory parity for workflow CLI commands</span><span class="rp-item-extra">12 comments · 2026-10-10</span></a><a class="rp-item" href="https://github.com/github/spec-kit/issues/4213"><span class="rp-item-num">#4213</span><span class="rp-item-title">[Feature]: Add --json output to preset info and extension info with fully-expanded per-contribution detail (per-pack detail view; complements list --json summary counts)</span><span class="rp-item-extra">12 comments · 2026-08-19</span></a><a class="rp-item" href="https://github.com/github/spec-kit/issues/4200"><span class="rp-item-num">#4200</span><span class="rp-item-title">[Feature]: Let extensions contribute always-on instructions (not just on-demand commands + hooks)</span><span class="rp-item-extra">12 comments · 2026-08-19</span></a><a class="rp-item" href="https://github.com/github/spec-kit/issues/4106"><span class="rp-item-num">#4106</span><span class="rp-item-title">[Feature]: /speckit.analyze should flag closed vocabularies that are enumerated differently in different artifacts</span><span class="rp-item-extra">12 comments · 2026-08-13</span></a><a class="rp-item" href="https://github.com/github/spec-kit/issues/4210"><span class="rp-item-num">#4210</span><span class="rp-item-title">[Feature]: Add deterministic contribution IDs and stack lookup IDs for resolved artifacts</span><span class="rp-item-extra">11 comments · 2026-08-19</span></a><a class="rp-item" href="https://github.com/github/spec-kit/issues/4551"><span class="rp-item-num">#4551</span><span class="rp-item-title">[Bug]: preset-provided scripts are never resolved — `type: script` and `$CORE_SCRIPT` have no effect</span><span class="rp-item-extra">9 comments · 2026-09-12</span></a><a class="rp-item" href="https://github.com/github/spec-kit/issues/4695"><span class="rp-item-num">#4695</span><span class="rp-item-title">[Feature]: Add local (--dev) installation for custom workflow step types</span><span class="rp-item-extra">8 comments · 2026-09-23</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/github/spec-kit/discussions/5405"><span class="rp-item-num">#5405</span><span class="rp-item-title">Turkish video about spec-kit (with English subtitles)</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/github/spec-kit/discussions/5400"><span class="rp-item-num">#5400</span><span class="rp-item-title">Record the Spec Kit version in generated SKILL.md (metadata.version)</span><span class="rp-item-extra">1 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/github/spec-kit/discussions/5376"><span class="rp-item-num">#5376</span><span class="rp-item-title">Running the Spec Kit flow as a gated pipeline across Claude Code, Codex and Pi</span><span class="rp-item-extra">0 comments · 2026-11-10</span></a><a class="rp-item" href="https://github.com/github/spec-kit/discussions/5327"><span class="rp-item-num">#5327</span><span class="rp-item-title">Knowing when a catalog extension stops working with a new spec-kit release</span><span class="rp-item-extra">1 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/github/spec-kit/discussions/5326"><span class="rp-item-num">#5326</span><span class="rp-item-title">Section-level preset composition: replace one `##` section of a template</span><span class="rp-item-extra">2 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/github/spec-kit/discussions/5320"><span class="rp-item-num">#5320</span><span class="rp-item-title">Adapting Spec-Kit for Quality Engineering / QA Workflows: Best Practices &amp; Real-World Examples?</span><span class="rp-item-extra">1 comments · 2026-11-08</span></a><a class="rp-item" href="https://github.com/github/spec-kit/discussions/5294"><span class="rp-item-num">#5294</span><span class="rp-item-title">Should we really retain all the generated artifacts indefinitely in version control?</span><span class="rp-item-extra">1 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/github/spec-kit/discussions/5286"><span class="rp-item-num">#5286</span><span class="rp-item-title">I built Project Room to see the running app behind my Spec Kit files</span><span class="rp-item-extra">1 comments · 2026-11-06</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/github/spec-kit/releases"><b>Spec Kit - 1.4.0</b> <span class="rp-rel-tag">v1.4.0</span> <span class="rp-item-extra">2026-11-10</span></a><pre class="rp-pre">Install
+
+bash
+uv tool install specify-cli --from git+https://github.com/github/spec-kit.git@v1.4.0
+specify init my-project
+
+
+ What&#x27;s Changed
+
+- chore: bump version to 1.4.0
+- Use handle-based reads in FileHelper (5351)
+- chore: limit automatic Python 3.11 tests to Linux (5367)
+- Harden initial URL validation in HTTP helpers (5350)
+- Update SpecKit Companion extension to v0.26.0 (5365)
+- Use handle-based text overwrites in FileHelper (5353)
+- Require HTTPS consistently for catalog sources (5355)
+- feat(workflows): workflow functions - project-installed custom pipe filters (5303)
+- feat(integrat</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (10)</h3><div class="rp-list"><a class="rp-item" href="https://learn.microsoft.com/zh-tw/training/modules/spec-driven-development-github-spec-kit-enterprise-developers/" target="_blank" rel="noopener"><span class="rp-news-src">learn</span><span class="rp-item-title">跳到主要內容</span><span class="rp-item-extra">2026-10-28</span></a><a class="rp-item" href="https://note.com/uminami24/n/ndd785fab30d5" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">「手戻り90%減」は本当？ AIにいきなりコードを書かせない、GitHub公式の無料ツール「Spec Kit」をCodexで回す6ステップ。Macで動く ...</span><span class="rp-item-extra">2026-10-17</span></a><a class="rp-item" href="https://gihyo.jp/article/2025/09/github-spec-kit" target="_blank" rel="noopener"><span class="rp-news-src">技術評論社</span><span class="rp-item-title">GitHub、仕様駆動開発ツールキット「Spec Kit」を紹介 ——コーディングエージェントを利用して仕様を解釈し、開発計画・タスク ...</span><span class="rp-item-extra">2025-09-02</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMia0FVX3lxTE92NFdkbkJFTmZ2ajVpQ3lsNE80Vm1hZFZRRXh2RnRIbjJ1MHlHaFAtaThRT0NXZk5keHdSazB6YTRJV0tfclY2cGFBaDVGX1RPYnlvNHVralJyaGNtTWJyT1NGMFdqLWJvRDJn?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN博客</span><span class="rp-item-title">OpenSpec：轻量级软件规范框架，GitHub 获 6.8 万星，每两秒创建一新规范！</span><span class="rp-item-extra">2026-09-17</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE9vYnFrTjh0NGQ3Z0w0ZlJoYkc0ek5paHk2YmUwS0FZbVVnTW1rYUlxbWF5U00wdEJxclluaEktQXNUVFcxWFh5cllBaGRMSkwzVjFOekVR?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">QQ News</span><span class="rp-item-title">spec-kit - 规范驱动开发的开源工具包，GitHub 推出的开源工具包，将软件规范从“废弃的脚手架”变为“可执行的蓝图”，让 AI 编码代理在规范约束下生成高质量代码</span><span class="rp-item-extra">2026-07-15</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMimgFBVV95cUxOeEw0SmNpcURBQ0lQZ2RqRHN0blJFT0lVNXUyQVBMZ0xlN0hQVFZISXFpdXJVemdHWWZUZUUwRU5XeDFsWDRoc25jSnBPTnlJTHdhUzU5b0FWRTExUFBSYThTVGt0dVA1QkpOZHE1NDF2SExZUllxbjlsWmhoNEZZYko4MkFvVkJLOUZmeklYckhEbkpSUzFMOVZB?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">AIDD 对比 Vibe Coding 对比 Spec-Driven Development:2026 年用 AI 开发软件的三种方式</span><span class="rp-item-extra">2026-05-25</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTFB5Y1c2NDdCSXhkNnV3X0ktYUlEUVJ0N0F3SlFwZGlIVzQ1enlQSFFuSEFNclVKUGFleTlZcVJadFhfNl9EbnpPN1JpRm95MzFVS3BTMldDdWtlTVFkdFE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">InfoQ.cn</span><span class="rp-item-title">当国产模型追上闭源旗舰，企业 AI 编程的真正障碍才浮出水面</span><span class="rp-item-extra">2026-05-01</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE81X2JJTnhsbVVGYmlKeUpkdTMwS2R5d0ZHMXR6U0Z4TlQ5TVRnTHdTTE5iX0U3enc5Ulc5eWc2QnlQc1hXRWN2V2hucGU5dHNCT213?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">BlockBeats</span><span class="rp-item-title">60个精选Skills、工作流与开源项目，最全Claude进阶清单</span><span class="rp-item-extra">2026-03-30</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiTkFVX3lxTFBwQnV6YXdKc0dGTnlZTFpNSGZZcUp0QjZDcHNsVjUwcl9zRWI1WXR5VTgzWGU4SnotYTFsb2V0ZGtUMV9Kc0xSSGV6UnY0UQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">36Kr</span><span class="rp-item-title">拆解GitHub 2500个案例后：我们总结出编写AI Agent规范的“六大军规”</span><span class="rp-item-extra">2026-03-23</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiakFVX3lxTFBtR1BOTDVOSUFrYWZRTkZHNHF1bTUtTTF1aXU4R2VwdmEyeUpycUt5b0pYbnBiSGlfNTN5YWd1MzZWUE1vYkM2QTZfbU9NUklUREh0QnQwWVdPRnlydm9aZjBnaU95UmEzSHc?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">53AI</span><span class="rp-item-title">Spec Kit 实践：从 Prompt 工程到规范驱动开发</span><span class="rp-item-extra">2025-12-02</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (20)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=45798473" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Toolkit to help you get started with Spec-Driven Development</span><span class="rp-item-extra">▲ 84 · 42 comments · 2025-11-03</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=45125190" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Spec-Driven Development Toolkit from GitHub</span><span class="rp-item-extra">▲ 15 · 4 comments · 2025-09-04</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=45306765" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">GitHub/spec-kit – Toolkit to help you get started with Spec-Driven Development</span><span class="rp-item-extra">▲ 7 · 1 comments · 2025-09-19</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=45141725" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">GitHub Spec Kit</span><span class="rp-item-extra">▲ 4 · 0 comments · 2025-09-05</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=45167803" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Spec-kit, game-changing tool by GitHub for AI coding</span><span class="rp-item-extra">▲ 3 · 1 comments · 2025-09-08</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=45154355" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">GitHub/spec-kit: Get started with Spec-Driven Development</span><span class="rp-item-extra">▲ 3 · 1 comments · 2025-09-07</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=45663896" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Spec Kit – Build High-Quality Software Faster</span><span class="rp-item-extra">▲ 2 · 0 comments · 2025-10-22</span></a><a class="rp-item" href="https://cryptobriefing.com/github-spec-kit-ai-coding/" target="_blank" rel="noopener"><span class="rp-news-src">Crypto Briefing</span><span class="rp-item-title">GitHub unveils Spec Kit to enhance AI coding with spec-first approach</span><span class="rp-item-extra">2026-06-07</span></a><a class="rp-item" href="https://visualstudiomagazine.com/articles/2026/05/12/github-spec-kit-takes-off-as-antidote-to-piecemeal-vibe-coding.aspx" target="_blank" rel="noopener"><span class="rp-news-src">Visual Studio Magazine</span><span class="rp-item-title">GitHub Spec Kit Takes Off as Antidote to Piecemeal &#x27;Vibe Coding&#x27;</span><span class="rp-item-extra">2026-05-11</span></a><a class="rp-item" href="https://winbuzzer.com/2026/05/11/meet-github-spec-kit-an-open-source-toolkit-for-sp-xcxwbn/" target="_blank" rel="noopener"><span class="rp-news-src">winbuzzer.com</span><span class="rp-item-title">GitHub Open Sources Spec-Kit for Structured AI Coding</span><span class="rp-item-extra">2026-05-11</span></a><details class="rp-news-more"><summary>10 more</summary><a class="rp-item" href="https://www.marktechpost.com/2026/05/08/meet-github-spec-kit-an-open-source-toolkit-for-spec-driven-development-with-ai-coding-agents/" target="_blank" rel="noopener"><span class="rp-news-src">marktechpost</span><span class="rp-item-title">Meet GitHub Spec-Kit: An Open Source Toolkit for Spec-Driven Development with AI Coding Agents</span><span class="rp-item-extra">2026-05-07</span></a><a class="rp-item" href="https://www.geeky-gadgets.com/github-spec-kit-checklists-update-2025/" target="_blank" rel="noopener"><span class="rp-news-src">Geeky Gadgets</span><span class="rp-item-title">GitHub Spec Kit 2025 Update : Checklists, Improve Project Planning &amp; More</span><span class="rp-item-extra">2025-10-14</span></a><a class="rp-item" href="https://www.geeky-gadgets.com/github-spec-kit-dynamic-project-templates/" target="_blank" rel="noopener"><span class="rp-news-src">Geeky Gadgets</span><span class="rp-item-title">GitHub Spec Kit Updates : The Secret to Smarter, Faster AI Development Workflows</span><span class="rp-item-extra">2025-09-22</span></a><a class="rp-item" href="https://www.geeky-gadgets.com/how-to-use-github-spec-kit/" target="_blank" rel="noopener"><span class="rp-news-src">Geeky Gadgets</span><span class="rp-item-title">How to use GitHub Spec Kit : Easily Build Scalable, Maintainable Software</span><span class="rp-item-extra">2025-09-15</span></a><a class="rp-item" href="https://visualstudiomagazine.com/articles/2025/09/16/github-spec-kit-experiment-a-lot-of-questions.aspx" target="_blank" rel="noopener"><span class="rp-news-src">Visual Studio Magazine</span><span class="rp-item-title">GitHub Spec Kit Experiment: &#x27;A Lot of Questions&#x27;</span><span class="rp-item-extra">2025-09-15</span></a><a class="rp-item" href="https://www.geeky-gadgets.com/github-spec-kit-specification-driven-development-framework/" target="_blank" rel="noopener"><span class="rp-news-src">Geeky Gadgets</span><span class="rp-item-title">How to Use GitHub Spec Kit : The Secret to Flawless AI Coding Projects</span><span class="rp-item-extra">2025-09-10</span></a><a class="rp-item" href="https://note.com/taku_sid/n/nbe5b8444f695?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">GitHub Spec Kit for Dummies - Building High-Quality Software Fast with AI and Spec-Driven Development</span><span class="rp-item-extra">2025-09-03</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMisAFBVV95cUxOR3dISXRZWUdXYWRVVVR5b2lMY3E3SzBvTG9RdnpRd3d4dnlabUdpdTF1Zm5jS3RRZGlVU0pvVy1wYW85d2RMYURGRlAtcHhEXzBUNzhpUzdLMEh4T3lxSEFGRjgzeTQ4dDdTNllnUTU2NFZuVnN5bXRzN3VUYWFmeHRzMkxMVmg5Q0hBOEVxUVRWTURkSjhIREZycndtWThMWTZmWGVnM1R0bUU4djFVNA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">HackerNoon</span><span class="rp-item-title">8 Best Spec-Driven Development Tools for Software Engineers in Regulated Industries (2026)</span><span class="rp-item-extra">2026-10-18</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMihgFBVV95cUxNbTlJdUR3cmp0NGhyUzdjU1dYU2xmVG1sNDFDWkVrUktMZ3NuVkJmVENRNEszM3lRcDRPdXpNZkg0ZGZ1aDJlNUJhVVFNdU9HVlNTb2RQbGNrVlpVZUVQS1VkUUQybGdTRGZxMmpBdGdYOThrUjI3UnFQR2F3anJMVmRpcWYxQQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Augment Code</span><span class="rp-item-title">GitHub Spec Kit: A Practical Guide and Where It Fits Your SDD Workflow</span><span class="rp-item-extra">2026-09-14</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxQUk5rVTdkd1VBVmRkSFR5WTVWU0lzNUVvbTVFbUFMazU0N1NpSlItM0J3VzByRFdkU2VPX282VlRzaU1GUDdvdzB6Y2s3aG5JR1BxVUZZQ1k2RVRVLU9jYTE3SnFBeWVsYjlTN3l2Z3g1RVlyMENQRzc5TDdRLWFUZ1oyZzI?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">DevOps.com</span><span class="rp-item-title">GitHub’s Spec Kit Puts the Spec Back in Software Development</span><span class="rp-item-extra">2026-05-11</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/github__spec-kit.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

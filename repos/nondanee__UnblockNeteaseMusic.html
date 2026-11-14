@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>nondanee/UnblockNeteaseMusic · GitHub Trending Rank Radar</title>
+<meta name="description" content="Revive unavailable songs for Netease Cloud Music">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="UnblockNeteaseMusic, nondanee, nondanee/UnblockNeteaseMusic, github stars, github trending, star growth, star history, 开源项目, 星标增长, netease-cloud-music, unblocker, proxy-server">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/nondanee__UnblockNeteaseMusic">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="nondanee/UnblockNeteaseMusic · GitHub Trending Rank Radar">
+<meta property="og:description" content="Revive unavailable songs for Netease Cloud Music">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/nondanee__UnblockNeteaseMusic">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "nondanee/UnblockNeteaseMusic", "codeRepository": "https://github.com/nondanee/UnblockNeteaseMusic", "url": "https://zhuikan.com/repos/nondanee__UnblockNeteaseMusic", "description": "Revive unavailable songs for Netease Cloud Music", "author": {"@type": "Organization", "name": "nondanee", "url": "https://github.com/nondanee"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2018-06-19", "keywords": "netease-cloud-music,unblocker,proxy-server"}</script>
+</head>
+<body data-repo="nondanee/UnblockNeteaseMusic" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">nondanee/UnblockNeteaseMusic</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="nondanee__UnblockNeteaseMusic"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/26399680?u=a7d53bdf298ff937f03efcef2c1ab527b9b38609&amp;v=4&s=300" width="300" height="300" alt="nondanee avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">UnblockNeteaseMusic</div>
+      <a class="rp-side-owner" href="https://github.com/nondanee">nondanee</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/nondanee">nondanee</a>
+        <span class="rp-sep">/</span><span class="rp-name">UnblockNeteaseMusic</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Revive unavailable songs for Netease Cloud Music</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>17,328</b></span><span class="rp-stat" title="forks">⑂ <b>2,431</b></span><span class="rp-stat" title="watchers">👁 <b>230</b></span><span class="rp-stat" title="prs">⑃ <b>47</b></span><span class="rp-stat" title="issues">● <b>791</b></span><span class="rp-stat" title="releases">▤ <b>57</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/netease-cloud-music">netease-cloud-music</a><a class="rp-topic" href="https://github.com/topics/unblocker">unblocker</a><a class="rp-topic" href="https://github.com/topics/proxy-server">proxy-server</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2018-06-19</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/nondanee/UnblockNeteaseMusic">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">0.25.3</span><a class="rp-dl-a" href="https://github.com/nondanee/UnblockNeteaseMusic/releases/tag/v0.25.3">0.25.3 ↓</a><span class="rp-dl-ver">0.25.3</span><span class="rp-dl-date">2020-05-16</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-4</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">17,328</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,431</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">230</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">47</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">791</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">57</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">UnblockNeteaseMusic
+
+解锁网易云音乐客户端变灰歌曲
+
+ 特性
+
+- 使用 QQ / 虾米 / 百度 / 酷狗 / 酷我 / 咪咕 / JOOX 音源替换变灰歌曲链接 (默认仅启用一、五、六)
+- 为请求增加 X-Real-IP 参数解锁海外限制，支持指定网易云服务器 IP，支持设置上游 HTTP / HTTPS 代理
+- 完整的流量代理功能 (HTTP / HTTPS)，可直接作为系统代理 (同时支持 PAC)
+
+ 运行
+
+使用 npx
+
+
+$ npx @nondanee/unblockneteasemusic
+
+
+或使用 Docker
+
+
+$ docker run nondanee/unblockneteasemusic
+
+
+
+$ docker-compose up
+
+
+ 配置参数
+
+
+$ unblockneteasemusic -h
+usage: unblockneteasemusic [-v] [-p port] [-a address] [-u url] [-f host]
+                           [-o source [source ...]] [-t token] [-e url] [-s]
+                           [-h]
+
+optional arguments:
+  -v, --version                   output the version number
+  -p port, --port port            specify server port
+  -a address, --address address   specify server host
+  -u url, --proxy-url url         request through upstream proxy
+  -f host, --force-host host      force the netease server ip
+  -o source [source ...], --match-order source [source ...]
+                                  set priority of sources
+  -t token, --token token         set up proxy authentication
+  -e url, --endpoint url          replace virtual endpoint with public host
+  -s, --strict                    enable proxy limitation
+  -h, --help                      output usage information
+
+
+ 使用
+
+警告：本项目不提供线上 demo，请不要轻易信任使用他人提供的公开代理服务，以免发生安全问题
+
+若将服务部署到公网，强烈建议使用严格模式 (此模式下仅放行网易云音乐所属域名的请求) -s  限制代理范围 (需使用 PAC 或 hosts)，~~或启用 Proxy Authentication -t : 设置代理用户名密码~~ (目前密码认证在 Windows 客户端设置和 macOS 系统设置都无法生效，请不要使用)，以防代理被他人滥用
+
+支持 Windows 客户端，UWP 客户端，Android 客户端，Linux 客户端 (1.2 版本以上需要自签证书 MITM，启动客户端需要增加 --ignore-certificate-errors 参数)，macOS 客户端 (726 版本以上需要自签证书)，iOS 客户端 (配置 https endpoint 或使用自签证书) 和网页版 (需要自签证书，需要脚本配合)
+
+目前除 UWP 外其它客户端均优先请求 HTTPS 接口，默认配置下本代理对网易云所有 HTTPS API 连接返回空数据，促使客户端降级使用 HTTP 接口 (新版 Linux 客户端和 macOS 客户端已无法降级)
+
+因 UWP 应用存在网络隔离，限制流量发送到本机，若使用的代理在 localhost，或修改的 hosts 指向 localhost，需为 &quot;网易云音乐 UWP&quot; 手动开启 loopback 才能使用，请以管理员身份执行命令
+
+powershell
+checknetisolation loopbackexempt -a -n=&quot;1F8B0F94.122165AE053F_j2p0p5q0044a6&quot;
+
+
+ 方法 1. 修改 hosts
+
+向 hosts 文件添加两条规则
+
+
+ music.163.com
+ interface.music.163.com
+
+
+ 使用此方法必须监听 80 端口 -p 80 
+
+ 若在本机运行程序，请指定网易云服务器 IP -f xxx.xxx.xxx.xxx (可在修改 hosts 前通过 ping music.163.com 获得) 或 使用代理 -u http(s)://xxx.xxx.xxx.xxx:xxx，以防请求死循环
+
+ Android 客户端下修改 hosts 无法直接使用，原因和解决方法详见云音乐安卓又搞事啦，安卓免 root 绕过网易云音乐 IP 限制
+
+ 方法 2. 设置代理
+
+PAC 自动代理脚本地址 http:///proxy.pac
+
+全局代理地址填写服务器地址和端口号即可
+
+| 平台    | 基础设置 |
+| :------ | :------------------------------- |
+| Windows | 设置  工具  自定义代理 (客户端内) |
+| UWP     | Windows 设置  网络和 Internet  代理 |
+| Linux   | 系统设置  网络  网络代理 |
+| macOS   | 系统偏好设置  网络  高级  代理 |
+| Android | WLAN  修改网络  高级选项  代理 |
+| iOS     | 无线局域网  HTTP 代理  配置代理 |
+
+ 代理工具和方法有很多请自行探索，欢迎在 issues 讨论
+
+ ✳方法 3. 调用接口
+
+作为依赖库使用
+
+
+$ npm install @nondanee/unblockneteasemusic
+
+
+javascript
+const match = require(&#x27;@nondanee/unblockneteasemusic&#x27;)
+
+/ 
+  Set proxy or hosts if needed
+ /
+global.proxy = require(&#x27;url&#x27;).parse(&#x27;http://127.0.0.1:1080&#x27;)
+global.hosts = {&#x27;i.y.qq.com&#x27;: &#x27;59.37.96.220&#x27;}
+
+/
+  Find matching song from other platforms
+  </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/nondanee/UnblockNeteaseMusic/issues/22"><span class="rp-item-num">#22</span><span class="rp-item-title">食用指南</span><span class="rp-item-extra">445 comments · 2018-10-13</span></a><a class="rp-item" href="https://github.com/nondanee/UnblockNeteaseMusic/issues/65"><span class="rp-item-num">#65</span><span class="rp-item-title">iOS 食用指南</span><span class="rp-item-extra">166 comments · 2019-05-01</span></a><a class="rp-item" href="https://github.com/nondanee/UnblockNeteaseMusic/issues/48"><span class="rp-item-num">#48</span><span class="rp-item-title">进阶配置</span><span class="rp-item-extra">116 comments · 2019-03-29</span></a><a class="rp-item" href="https://github.com/nondanee/UnblockNeteaseMusic/issues/56"><span class="rp-item-num">#56</span><span class="rp-item-title">配合 Surge 或 Clash 食用</span><span class="rp-item-extra">84 comments · 2019-04-25</span></a><a class="rp-item" href="https://github.com/nondanee/UnblockNeteaseMusic/issues/444"><span class="rp-item-num">#444</span><span class="rp-item-title">一个可以使用的教程</span><span class="rp-item-extra">77 comments · 2020-03-18</span></a><a class="rp-item" href="https://github.com/nondanee/UnblockNeteaseMusic/issues/746"><span class="rp-item-num">#746</span><span class="rp-item-title">教學：如何修正 UnblockNeteaseMusic 的「播放失敗」問題（酷我、QQ、周杰倫）</span><span class="rp-item-extra">61 comments · 2021-05-01</span></a><a class="rp-item" href="https://github.com/nondanee/UnblockNeteaseMusic/issues/801"><span class="rp-item-num">#801</span><span class="rp-item-title">同，2.9.6不能用，2.9.5可以</span><span class="rp-item-extra">32 comments · 2021-12-17</span></a><a class="rp-item" href="https://github.com/nondanee/UnblockNeteaseMusic/issues/521"><span class="rp-item-num">#521</span><span class="rp-item-title">最最简单的宝塔配置UnblockNeteaseMusic教程 全端可用</span><span class="rp-item-extra">27 comments · 2020-04-30</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/nondanee/UnblockNeteaseMusic/releases"><b>0.25.3</b> <span class="rp-rel-tag">v0.25.3</span> <span class="rp-item-extra">2020-05-16</span></a><pre class="rp-pre">- 续签服务器证书 (server.crt)</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/nondanee__UnblockNeteaseMusic.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

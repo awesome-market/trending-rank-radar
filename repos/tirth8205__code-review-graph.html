@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tirth8205/code-review-graph · GitHub Trending Rank Radar</title>
+<meta name="description" content="Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo w">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="code-review-graph, tirth8205, tirth8205/code-review-graph, github stars, github trending, star growth, star history, 开源项目, 星标增长, ai-coding, claude, claude-code, code-review, graphrag, incremental">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/tirth8205__code-review-graph">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="tirth8205/code-review-graph · GitHub Trending Rank Radar">
+<meta property="og:description" content="Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo w">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/tirth8205__code-review-graph">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "tirth8205/code-review-graph", "codeRepository": "https://github.com/tirth8205/code-review-graph", "url": "https://zhuikan.com/repos/tirth8205__code-review-graph", "description": "Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo w", "author": {"@type": "Organization", "name": "tirth8205", "url": "https://github.com/tirth8205"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Python", "dateCreated": "2026-02-26", "keywords": "ai-coding,claude,claude-code,code-review,graphrag,incremental,knowledge-graph,llm,mcp,python"}</script>
+</head>
+<body data-repo="tirth8205/code-review-graph" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">tirth8205/code-review-graph</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="tirth8205__code-review-graph"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/68604113?u=08f875cd62d60b59efce0afed5b144467f34e16b&amp;v=4&s=300" width="300" height="300" alt="tirth8205 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">code-review-graph</div>
+      <a class="rp-side-owner" href="https://github.com/tirth8205">tirth8205</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/tirth8205">tirth8205</a>
+        <span class="rp-sep">/</span><span class="rp-name">code-review-graph</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>32,752</b></span><span class="rp-stat" title="forks">⑂ <b>2,978</b></span><span class="rp-stat" title="watchers">👁 <b>92</b></span><span class="rp-stat" title="prs">⑃ <b>764</b></span><span class="rp-stat" title="issues">● <b>400</b></span><span class="rp-stat" title="releases">▤ <b>31</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/ai-coding">ai-coding</a><a class="rp-topic" href="../tags/claude">claude</a><a class="rp-topic" href="../tags/claude-code">claude-code</a><a class="rp-topic" href="https://github.com/topics/code-review">code-review</a><a class="rp-topic" href="https://github.com/topics/graphrag">graphrag</a><a class="rp-topic" href="https://github.com/topics/incremental">incremental</a><a class="rp-topic" href="https://github.com/topics/knowledge-graph">knowledge-graph</a><a class="rp-topic" href="../tags/llm">llm</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-02-26</span><a class="rp-meta-bit rp-home" href="https://code-review-graph.com" rel="noopener">code-review-graph.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/tirth8205/code-review-graph">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v2.4.0</span><a class="rp-dl-a" href="https://github.com/tirth8205/code-review-graph/releases/tag/v2.4.0">v2.4.0 ↓</a><span class="rp-dl-ver">2.4.0</span><span class="rp-dl-date">2026-11-11</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+16</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+171</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+749</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">32,752</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,978</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">92</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">764</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">400</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">31</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">code-review-graph
+
+
+  
+    
+  
+
+
+
+  本地代码知识图谱，通过 MCP 为 AI 编码工具提供精准的审查上下文。
+
+
+  English |
+  简体中文 |
+  日本語 |
+  한국어 |
+  हिन्दी
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+  使用说明 ·
+  命令 ·
+  常见问题 ·
+  故障排查 ·
+  新功能 ·
+  更新日志 ·
+  GitHub Action ·
+  复现基准测试 ·
+  路线图 ·
+  全部文档
+
+
+
+
+AI 编码工具为了审查一次改动，常常要重新读取代码库的大部分内容。code-review-graph 用 Tree-sitter 构建代码的结构图，增量保持更新，并通过 MCP 提供紧凑的上下文，让助手只读取改动涉及的文件。
+
+
+  
+
+
+它能做什么
+
+- 为你的代码建图。 函数、类、导入、调用和测试组成一张图谱。
+- 指出一次改动可能弄坏什么。 它能波及的调用者、依赖方和测试，并附带风险评分。
+- 保持最新。 钩子和 watch 模式只重新解析变更的文件。
+- 配合你的 AI 工具。 一次 install 就能配置它找到的每个工具。
+- 留在你的机器上。 一个 SQLite 文件，没有云服务；云端嵌入需要主动开启。
+
+---
+
+ 快速开始
+
+需要 Python 3.10+。
+
+bash
+uv tool install code-review-graph       or: pipx install / pip install code-review-graph
+code-review-graph install               set up the AI coding tools found on this machine
+code-review-graph build                 parse the codebase
+code-review-graph detect-changes --brief   see what your last change touches
+
+
+重启编辑器或工具，然后打开项目，对助手说：
+
+
+Review my changes
+
+
+用 code-review-graph uninstall 可以全部撤销（加 --dry-run 先预览）。如果有问题，运行 code-review-graph doctor：它检查当前设置，不做任何改动。
+
+
+install 会改动什么，以及如何先预览
+
+
+install 会查找这台机器上的 AI 编码工具，只配置找到的那些。它为每个工具写入一条 MCP 服务器配置，在工具支持的地方安装钩子和技能，并把图谱说明加入它的规则文件。之后它会列出没有找到的工具；仍想配置某个工具，用 install --platform NAME。
+
+install 会先列出要改动的文件，并在你回答它关于说明文件的问题之后才写入任何内容。没有终端时（例如由 AI 智能体运行），它采用默认答案“是”，并会说明这一点；--no-instructions 可跳过这些文件。install --dry-run 把每处改动显示为 diff，什么都不写。安装后请重启编辑器或工具。
+
+MCP 配置和每个钩子都运行执行 install 的那一份 code-review-graph。在 Poetry 或 uv 项目中，MCP 配置使用 poetry run 或 uv run；当 install 本身由 uvx 或 uv tool install 运行时使用 uvx；否则使用运行 install 的那个 Python。钩子写明这个 Python（或 uvx），它不在了时就运行 PATH 上的 code-review-graph。升级之后请再运行一次 install。
+
+install 写入的文件（例如 .claude/ 和 .mcp.json）对 git 仍然可见，以便你的团队提交它们。在 git 跟踪它们之前，build 和审查都会跳过它们，所以你的第一次审查只显示你自己的改动；install 把它们记在 .code-review-graph/install-manifest.json 中。install --gitignore 会把本次运行新建的文件加入 .gitignore 中一个带标记的块；uninstall 会移除这个块。
+
+对于 Codex，安装程序还会在 $CODEX_HOME/skills/code-review-graph/（默认：
+~/.codex/skills/code-review-graph/）放置一个全局的 code-review-graph Skill。它优先使用 CRG MCP 工具，
+MCP 不可用时回退到随包提供的只读 CLI（read-only CLI）；图谱缺失、为空或过期时，绝不会隐式触发构建或更新。
+WSL 和 Windows 上的 Codex 运行环境各有自己的 CODEX_HOME 目录和工具清单，
+所以请在实际执行任务的那个运行环境中安装和刷新。
+
+
+
+
+所有支持的平台，以及如何只配置其中一个
+
+
+
+  
+
+
+只配置一个平台时，给 --platform 传入 codex、claude-code、cursor、windsurf、zed、continue、opencode、mimo、antigravity、gemini-cli、qwen、kiro、qoder、copilot、copilot-cli、codebuddy、hermes 或 dsh 之一：
+
+bash
+code-review-graph install --platform cursor
+code-review-graph install --platform codebuddy
+
+
+这样指定的平台即使 install 没有找到也会被配置。配置文件的位置列在 docs/USAGE.md 中。
+
+
+
+
+uninstall 的更多用法
+
+
+uninstall 会从 Git 或 SVN 工作树中移除 CRG 自己写入的文件和配置项，不动其他 MCP 服务器、钩子、技能和 JSONC 注释。在工作树内的任意位置运行即可。共享配置文件采用原子替换，写入失败时原文件保持完整。install 创建的配置文件如果 git 没有跟踪、里面也没有别的内容，会连同 install 创建的空文件夹一起被删除。没有终端时，它采用默认答案“否”，并提示你加上 --yes。
+
+bash
+code-review-graph uninstall --dry-run     preview only
+code-review-graph uninstall               preview, confirm, apply
+code-review-graph uninstall --yes         apply without prompting
+code-review-graph uninstall --all-repos   also clean every</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/tirth8205/code-review-graph/issues/262"><span class="rp-item-num">#262</span><span class="rp-item-title">Windows 11: MCP-based review is extremely slow while CLI graph operations are fast</span><span class="rp-item-extra">10 comments · 2026-04-13</span></a><a class="rp-item" href="https://github.com/tirth8205/code-review-graph/issues/1042"><span class="rp-item-num">#1042</span><span class="rp-item-title">Promotion gate: testing to main</span><span class="rp-item-extra">7 comments · 2026-09-18</span></a><a class="rp-item" href="https://github.com/tirth8205/code-review-graph/issues/436"><span class="rp-item-num">#436</span><span class="rp-item-title">[Feature]: Add JSON &amp; YAML for AST parser</span><span class="rp-item-extra">1 comments · 2026-05-06</span></a><a class="rp-item" href="https://github.com/tirth8205/code-review-graph/issues/63"><span class="rp-item-num">#63</span><span class="rp-item-title">better-sqlite3 ABI mismatch crashes extension on WSL 2 — NODE_MODULE_VERSION 137 vs 127</span><span class="rp-item-extra">6 comments · 2026-03-25</span></a><a class="rp-item" href="https://github.com/tirth8205/code-review-graph/issues/721"><span class="rp-item-num">#721</span><span class="rp-item-title">[Bug]: Hang at &quot;INFO: Spring event resolver: indexed 0 events and emitted 0 CALLS edges&quot;</span><span class="rp-item-extra">5 comments · 2026-07-23</span></a><a class="rp-item" href="https://github.com/tirth8205/code-review-graph/issues/620"><span class="rp-item-num">#620</span><span class="rp-item-title">Bug: Codex installer generates Unix-only hooks on Windows</span><span class="rp-item-extra">4 comments · 2026-07-14</span></a><a class="rp-item" href="https://github.com/tirth8205/code-review-graph/issues/311"><span class="rp-item-num">#311</span><span class="rp-item-title">How to configure code-review-graph for a workspace of sibling repos + worktrees (Claude Code in VS Code)?</span><span class="rp-item-extra">4 comments · 2026-04-17</span></a><a class="rp-item" href="https://github.com/tirth8205/code-review-graph/issues/209"><span class="rp-item-num">#209</span><span class="rp-item-title"># Code-Review-Graph MCP Issue with Windsurf</span><span class="rp-item-extra">4 comments · 2026-04-10</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/tirth8205/code-review-graph/discussions/1169"><span class="rp-item-num">#1169</span><span class="rp-item-title">New release date?</span><span class="rp-item-extra">0 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/tirth8205/code-review-graph/discussions/1136"><span class="rp-item-num">#1136</span><span class="rp-item-title">Can I use code-review-graph against a sub-repo?</span><span class="rp-item-extra">1 comments · 2026-10-26</span></a><a class="rp-item" href="https://github.com/tirth8205/code-review-graph/discussions/1091"><span class="rp-item-num">#1091</span><span class="rp-item-title">Slow build ~40 minutes for 5000 files</span><span class="rp-item-extra">1 comments · 2026-10-05</span></a><a class="rp-item" href="https://github.com/tirth8205/code-review-graph/discussions/965"><span class="rp-item-num">#965</span><span class="rp-item-title">Move from Claude to Codex: will CRG still work?</span><span class="rp-item-extra">1 comments · 2026-09-09</span></a><a class="rp-item" href="https://github.com/tirth8205/code-review-graph/discussions/732"><span class="rp-item-num">#732</span><span class="rp-item-title">Claude Code - better instructions</span><span class="rp-item-extra">1 comments · 2026-07-24</span></a><a class="rp-item" href="https://github.com/tirth8205/code-review-graph/discussions/724"><span class="rp-item-num">#724</span><span class="rp-item-title">Differences from codegraph</span><span class="rp-item-extra">2 comments · 2026-07-23</span></a><a class="rp-item" href="https://github.com/tirth8205/code-review-graph/discussions/719"><span class="rp-item-num">#719</span><span class="rp-item-title">Is it working for team work?</span><span class="rp-item-extra">1 comments · 2026-07-23</span></a><a class="rp-item" href="https://github.com/tirth8205/code-review-graph/discussions/695"><span class="rp-item-num">#695</span><span class="rp-item-title">Proposal: a phased approach to improving JavaScript/TypeScript flow detection</span><span class="rp-item-extra">1 comments · 2026-07-21</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/tirth8205/code-review-graph/releases"><b>v2.4.0</b> <span class="rp-rel-tag">v2.4.0</span> <span class="rp-item-extra">2026-11-11</span></a><pre class="rp-pre">[2.4.0] - 2026-11-10
+
+Two new platforms, MiMo Code and DeepSeek Harness, so install now supports
+18. HTML, XSLT, Liquid, JSON and plain YAML files are indexed, and so are
+.cjs and .kts files, which every build used to skip. The graph links calls,
+imports and tests more carefully: a call it could not check no longer looks
+like a real link, every call edge says how sure it is, calls to inherited
+methods and imports of workspace packages are followed, and tests_for finds
+Java, Ruby and PHP tests. The graph schema moves from 13 to 15. Several new
+settings are off unless you turn them on. </pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/tirth8205__code-review-graph.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,1722 @@
+[English](./README.md) | 简体中文 | [Español](./README_ES.md)
+
+<p align="center">
+<img src="./logo.png" width="300px">
+ </p>
+
+<p align="center">
+  <img src="./badges/version.svg" alt="version">
+  <img src="./badges/license.svg" alt="license">
+ <img src="./badges/scanners-count.svg" alt="scanners">
+ <a href="https://we5ter.github.io/ai-tools/"><img src="./badges/daily-ai-picks.svg" alt="每日 AI 工具推荐"></a>
+ <a href="https://github.com/We5ter/ScanCodex"><img src="./badges/scancodex.svg" alt="ScanCodex MCP Server"></a>
+</p>
+
+## 简介
+
+- **EN** The Ultimate Open-Source Security Arsenal for Hackers, Enterprises, and AI Agents
+- **中文** 面向极客、企业与 AI 智能体的全域开源网络安全工具矩阵
+- **ES** El arsenal definitivo de seguridad de código abierto para hackers, empresas y agentes de IA
+
+> [!TIP]
+> **📅 不想满世界找 AI Agent 工具？→ [Scanners-Box 每日 AI 工具推荐](https://we5ter.github.io/ai-tools/)**
+
+## 支持者
+
+| 赞助商 | 介绍 |
+|:---:|---|
+| <a href="https://www.aiwts.com/" target="_blank"><img src="https://www.aiwts.com/vitas/vitas-logo-transparent.webp" alt="维塔斯AI聚合"></a> | <a href="https://www.aiwts.com/" target="_blank"><b>维塔斯AI聚合</b></a> 是企业级 AI 大模型 API 聚合服务：开发者只需一个 Key，即可统一调用 GPT、Claude、DeepSeek、Gemini 等 200+ 模型（文本/生图/视频），完全兼容 OpenAI 协议，无需海外账号与信用卡 [https://www.aiwts.com/](https://www.aiwts.com/) |
+
+> [!NOTE]
+> **想成为下一位赞助商？** 欢迎开 [GitHub Issue](https://github.com/We5ter/Scanners-Box/issues) 或发邮件至 [wester0x01@qq.com](mailto:wester0x01@qq.com)，个人赞助同样欢迎。
+
+<p align="center">
+  <a href="https://www.paypal.com/paypalme/zhiyangzeng" target="_blank"><img src="badges/blue.svg" width="200" alt="通过 PayPal 赞助"></a>
+  <br><br>
+  <img src="badges/wechat-donate.jpg" width="200" alt="微信赞赏码">
+</p>
+
+## 目录
+
+> [!IMPORTANT]
+> **🤖 AI 安全 & 安全 AI**
+>
+> - [AI红队测试框架与Agent](#AI红队测试框架与Agent)
+> - [LLM驱动的漏洞扫描器](#LLM驱动的漏洞扫描器)
+> - [AI Agent 与应用安全审计](#ai-agent-与应用安全审计)
+> - [AI基础设施攻击面发现](#AI基础设施攻击面发现)
+> - [AI Agent运行时管控](#AI-Agent运行时管控)
+> - [Agent技能安全审计](#Agent技能安全审计)
+> - [Agent技能：漏洞发现与修复](#Agent技能漏洞发现与修复)
+> - [面向 Agentic 工作流的安全工具集](#面向-agentic-工作流的安全工具集)
+> - [AI安全基准与评测](#AI安全基准与评测)
+> - [AI安全验证标准与规范](#AI安全验证标准与规范)
+
+- [智能合约漏洞扫描器](#智能合约漏洞扫描器)
+- [红蓝对抗](#红蓝对抗)
+- [移动应用包文件分析](#移动应用包文件分析)
+- [二进制可执行文件分析](#二进制可执行文件分析)
+- [隐私合规](#隐私合规)
+- [子域名爆破枚举或接管](#子域名爆破枚举或接管)
+- [数据库注入漏洞或认证爆破](#数据库注入漏洞或认证爆破)
+- [网站弱用户名或弱口令枚举爆破](#网站弱用户名或弱口令枚举爆破)
+- [IoT设备审计](#IoT设备审计)
+- [多类型跨站脚本漏洞检测](#多类型跨站脚本漏洞检测)
+- [企业敏感信息泄露检测](#企业敏感信息泄露检测)
+- [木马检测](#木马检测)
+- [中间件漏洞评估](#中间件漏洞评估)
+- [特定Web漏洞类型扫描器](#特定Web漏洞类型扫描器)
+- [动态或静态代码审计](#动态或静态代码审计)
+- [模块化设计扫描器或漏洞评估框架](#模块化设计扫描器或漏洞评估框架)
+- [定向APT攻击检测](#定向APT攻击检测)
+
+***
+
+### AI红队测试框架与Agent
+
+*既有成熟的自主 Agent，也有可二次改造的基础框架。*
+
+- https://github.com/confident-ai/deepteam - **面向 LLM 系统的开源红队测试框架——「LLM 世界的渗透测试」：50+ 开箱即用的漏洞用例，本地 LLM-as-a-Judge 打分，模拟越狱、提示注入、多轮利用，覆盖 AI Agent、RAG 管线与聊天机器人，另附生产环境护栏**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/confident-ai/deepteam?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/confident-ai/deepteam.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/confident-ai/deepteam?style=for-the-badge&label=开源协议)
+
+- https://github.com/vxcontrol/pentagi - **Go 编写的全自主多智能体渗透测试系统——任务在隔离 Docker 沙箱内端到端执行，内置 nmap、metasploit、sqlmap 等 20+ 专业工具，配长期记忆、可选 Neo4j 知识图谱与可视化 Web 控制台，支持人工介入监控**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/vxcontrol/pentagi?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/vxcontrol/pentagi.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/vxcontrol/pentagi?style=for-the-badge&label=开源协议)
+
+- https://github.com/oritera/Cairn - **通用状态空间搜索引擎，率先在自主渗透测试上验证——无角色限制，无工作流约束，给定起终点后自主寻路**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/oritera/Cairn?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/oritera/Cairn.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/oritera/Cairn?style=for-the-badge&label=开源协议)
+
+- https://github.com/KeygraphHQ/shannon - **面向 Web 应用与 API 的自主白盒 AI 渗透测试工具，分析源代码、识别攻击向量并自动执行真实漏洞利用**
+
+> ![](https://img.shields.io/badge/主语言-TypeScript-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/KeygraphHQ/shannon?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/KeygraphHQ/shannon.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/KeygraphHQ/shannon?style=for-the-badge&label=开源协议)
+
+- https://github.com/SickHackPark/SickHackShark - **AI 多智能体 CTF 全流程自动化平台，覆盖信息收集、扫描、漏洞利用与 flag 获取**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/SickHackPark/SickHackShark?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/SickHackPark/SickHackShark.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/SickHackPark/SickHackShark?style=for-the-badge&label=开源协议)
+
+- https://github.com/SanMuzZzZz/LuaN1aoAgent - **LuaN1ao（鸾鸟）—— 新一代基于 LLM 的自主渗透测试 Agent，创新融合 P-E-R Agent 协作框架与因果图推理，模拟安全专家攻防思维**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/SanMuzZzZz/LuaN1aoAgent?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/SanMuzZzZz/LuaN1aoAgent.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/SanMuzZzZz/LuaN1aoAgent?style=for-the-badge&label=开源协议)
+
+- https://github.com/Ed1s0nZ/CyberStrikeAI - **AI 原生安全测试平台（Go 实现），集成 100+ 安全工具、智能编排引擎、角色化测试、技能系统与全生命周期管理，内置轻量级 C2 框架，通过 MCP 协议与 AI Agent 实现端到端自动化安全测试**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Ed1s0nZ/CyberStrikeAI?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Ed1s0nZ/CyberStrikeAI.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/Ed1s0nZ/CyberStrikeAI?style=for-the-badge&label=开源协议)
+
+- https://github.com/ASCIT31/Dark-Moon - **自主 AI 渗透测试引擎，持续对 Web、云、AD 和 Kubernetes 执行攻击面安全测试，运用智能体推理、真实漏洞利用执行和攻击路径分析提供基于证据的漏洞发现**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/ASCIT31/Dark-Moon?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/ASCIT31/Dark-Moon.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/ASCIT31/Dark-Moon?style=for-the-badge&label=开源协议)
+
+- https://github.com/utkusen/promptmap - **LLM 应用自动化 Prompt 注入扫描器——双 LLM 架构（目标模型 + 控制模型），内置 50+ 攻击规则，覆盖越狱、偏见和提示词窃取，支持白盒与黑盒测试**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/utkusen/promptmap?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/utkusen/promptmap.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/utkusen/promptmap?style=for-the-badge&label=开源协议)
+
+
+### LLM驱动的漏洞扫描器
+*让 LLM 来找出漏洞的扫描器——不止于签名匹配。*
+
+
+- https://github.com/weareaisle/nano-analyzer - **AISLE 开发的基于LLM的极简0day漏洞扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/weareaisle/nano-analyzer?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/weareaisle/nano-analyzer.svg?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/weareaisle/nano-analyzer?style=for-the-badge&label=开源协议)
+
+- https://github.com/vercel-labs/deepsec - **基于 Agent 的漏洞扫描器，针对大规模代码仓库进行按需审查，发现长期潜伏在应用中的深层次安全问题**
+
+> ![](https://img.shields.io/badge/主语言-Node.js-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/vercel-labs/deepsec?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/vercel-labs/deepsec.svg?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/vercel-labs/deepsec?style=for-the-badge&label=开源协议)
+
+- https://github.com/vigolium/vigolium - **融合 Agentic AI 与原生速度、模块化和精准度的高保真漏洞扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/vigolium/vigolium?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/vigolium/vigolium.svg?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/vigolium/vigolium?style=for-the-badge&label=开源协议)
+
+
+### AI Agent 与应用安全审计
+*指向 AI 系统本身的安全扫描：大模型、Agent 及其应用。*
+
+
+- https://github.com/leondz/garak - **用于监测大模型数据泄露、提示注入、错误信息、投毒、越狱和许多其他风险的扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/leondz/garak?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/leondz/garak.svg?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/leondz/garak?style=for-the-badge&label=开源协议)
+
+- https://github.com/protectai/rebuff - **保护 AI 应用程序免受即时注入 (PI) 攻击**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/protectai/rebuff?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/protectai/rebuff.svg?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/protectai/rebuff?style=for-the-badge&label=开源协议)
+
+- https://github.com/mnns/LLMFuzzer - **大模型模糊测试框架**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/mnns/LLMFuzzer?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/mnns/LLMFuzzer.svg?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/mnns/LLMFuzzer?style=for-the-badge&label=开源协议)
+
+- https://github.com/affaan-m/agentshield - **AI Agent 配置安全审计器——扫描 Claude Code 配置中的硬编码密钥、权限错误配置、Hook 注入、MCP Server 风险与提示注入面；268 条规则覆盖 15 个模块，0-100 评分，支持自动修复、CI 门禁与合规映射（SOC 2 / PCI DSS / ISO 27001）**
+
+> ![](https://img.shields.io/badge/主语言-TypeScript-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/affaan-m/agentshield?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/affaan-m/agentshield.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/affaan-m/agentshield?style=for-the-badge&label=开源协议)
+
+### AI基础设施攻击面发现
+*发现并评估公网暴露的 AI 基础设施——模型服务、MCP 端点与推理服务。*
+
+
+- https://github.com/BishopFox/aimap - **发现公网暴露的 AI 服务——通过 Shodan + Nuclei 对 MCP Server、Ollama 等 AI 基础设施进行指纹识别，配合基于 WebSocket 的安全测试并输出风险评分**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/BishopFox/aimap?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/BishopFox/aimap.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/BishopFox/aimap?style=for-the-badge&label=开源协议)
+
+
+- https://github.com/Tencent/AI-Infra-Guard - **AI红队平台，集成了AI基础设施漏洞扫描、MCP Server风险检测、LLM安全评估等功能**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Tencent/AI-Infra-Guard?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Tencent/AI-Infra-Guard.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/Tencent/AI-Infra-Guard?style=for-the-badge&label=开源协议)
+
+
+- https://github.com/cisco-ai-defense/mcp-scanner - **MCP（Model Context Protocol）服务器安全扫描器——结合 YARA 规则、LLM 分析与 Cisco AI Defense 检测能力，识别恶意 MCP 工具、工具投毒、提示注入等 MCP 生态安全威胁**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/cisco-ai-defense/mcp-scanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/cisco-ai-defense/mcp-scanner.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/cisco-ai-defense/mcp-scanner?style=for-the-badge&label=开源协议)
+
+
+### AI Agent运行时管控
+*沙箱、策略引擎与审批门禁，圈定 Agent 能做什么。*
+
+
+- https://github.com/NVIDIA/OpenShell - **面向自主 AI Agent 的安全私有运行时——用声明式 YAML 策略在文件系统、网络、进程与凭证四个维度设界，阻断数据外泄与越权出站，凭证只在策略放行后按授权端点注入，可在 Docker、Podman、MicroVM、Kubernetes 上为 Claude Code、Codex、OpenCode、Copilot CLI 等 Agent 提供隔离容器**
+
+> ![](https://img.shields.io/badge/主语言-Rust-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/NVIDIA/OpenShell?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/NVIDIA/OpenShell.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/NVIDIA/OpenShell?style=for-the-badge&label=开源协议)
+
+- https://github.com/microsoft/agent-governance-toolkit - **微软出品的自主 AI Agent 治理工具包——策略引擎负责工具与动作的授权，零信任身份配发短期受限凭证，OS 级执行沙箱做隔离，另有可靠性工程（熔断、预算上限、审计留痕）；自带映射到 OWASP Agentic Top 10 全部 10 个类别的参考策略集**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/microsoft/agent-governance-toolkit?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/microsoft/agent-governance-toolkit.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/microsoft/agent-governance-toolkit?style=for-the-badge&label=开源协议)
+
+- https://github.com/agentkitai/agentgate - **AI Agent 行为审批工作流引擎——通过策略自动放行安全操作、拦截危险操作，其余路由给人工通过 Dashboard、Slack、Discord 或 Email 审批**
+
+> ![](https://img.shields.io/badge/主语言-TypeScript-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/agentkitai/agentgate?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/agentkitai/agentgate.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/agentkitai/agentgate?style=for-the-badge&label=开源协议)
+
+- https://github.com/kubernetes-sigs/agent-sandbox - **Kubernetes 原生 AI Agent 沙箱——Sandbox CRD 管理隔离、有状态、单实例的 Pod，提供稳定身份与持久化存储，支持 gVisor/Kata 安全运行时、深度休眠与自动恢复，附带 SandboxTemplate/SandboxClaim/SandboxWarmPool 扩展及 Go/Python SDK**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/kubernetes-sigs/agent-sandbox?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/kubernetes-sigs/agent-sandbox.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/kubernetes-sigs/agent-sandbox?style=for-the-badge&label=开源协议)
+
+
+### Agent技能安全审计
+*安装前扫描 Agent 技能包里的恶意模式。*
+
+
+- https://github.com/NVIDIA/SkillSpector - **AI Agent 技能安全扫描器——在安装 Agent 技能（Claude Code、Codex CLI、Gemini CLI 等）之前检测漏洞、恶意模式与安全风险**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/NVIDIA/SkillSpector?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/NVIDIA/SkillSpector.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/NVIDIA/SkillSpector?style=for-the-badge&label=开源协议)
+
+- https://github.com/cisco-ai-defense/skill-scanner - **AI Agent 技能安全扫描器（尽力而为）——检测提示注入、数据泄露和恶意代码模式，结合模式匹配（YAML+YARA）、LLM 评审与行为数据流分析。支持 OpenAI Codex Skills、Cursor Agent Skills 及 Claude Code 命令格式。**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/cisco-ai-defense/skill-scanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/cisco-ai-defense/skill-scanner.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/cisco-ai-defense/skill-scanner?style=for-the-badge&label=开源协议)
+
+
+### Agent技能：漏洞发现与修复
+*教会编码 Agent 端到端发现并修复漏洞的技能包。*
+
+
+- https://github.com/anthropics/defending-code-reference-harness - **威胁建模、扫描、分类、修复一体化技能集，提供可自定义的自主扫描框架，实现端到端漏洞生命周期管理**
+
+> ![](https://img.shields.io/badge/主语言-Markdown-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/anthropics/defending-code-reference-harness?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/anthropics/defending-code-reference-harness.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/anthropics/defending-code-reference-harness?style=for-the-badge&label=开源协议)
+
+- https://github.com/cloudflare/security-audit-skill - **多阶段安全审计的编码 Agent 技能——侦察、狩猎、对抗性验证、报告生成、结构化输出与独立验证，产出机器可读的发现报告**
+
+> ![](https://img.shields.io/badge/主语言-Markdown-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/cloudflare/security-audit-skill?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/cloudflare/security-audit-skill.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/cloudflare/security-audit-skill?style=for-the-badge&label=开源协议)
+
+
+### 面向 Agentic 工作流的安全工具集
+*为 Agent 配备专业安全能力的一体化工具。*
+
+
+- https://github.com/h5i-dev/h5i - **面向 Agent 的原生 Web 安全工作台——给 AI Agent 一套统一工具（浏览器自动化、HTTP 流量抓取/改包/重放、侦察爬取）在可配置沙箱里对 Web 应用做红队测试，已确认的攻击流可回放到 CI/CD 做安全回归，还能把 Rust 业务逻辑翻译成 Lean 4 做形式化验证**
+
+> ![](https://img.shields.io/badge/主语言-Rust-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/h5i-dev/h5i?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/h5i-dev/h5i.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/h5i-dev/h5i?style=for-the-badge&label=开源协议)
+
+
+### AI安全基准与评测
+*用基准与排行榜量化 AI 系统及 AI 生成代码的安全性。*
+
+
+- https://github.com/Tencent/AICGSecEval - **A.S.E——腾讯悟空代码安全团队的仓库级 AI 生成代码安全评测基准：题目取自真实 GitHub 项目与 CVE 补丁，自动抽取项目级上下文模拟真实 AI 编程场景，静态分析 + 测试用例/漏洞 PoC 动态验证混合打分，覆盖 C/C++、Java、Python、PHP、JS 的 29 种 CWE；支持评测裸模型与 Claude Code 等 Agent 编程工具，官网带排行榜**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Tencent/AICGSecEval?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Tencent/AICGSecEval.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/Tencent/AICGSecEval?style=for-the-badge&label=开源协议)
+
+
+### AI安全验证标准与规范
+*可测试、可验证的 AI 安全要求与清单。*
+
+
+- https://github.com/OWASP/AISVS - **OWASP 人工智能安全验证标准——12 个控制域、44 个小节、213 条以 Verify that 开头的可验证要求，按 L1/L2/L3 三级分级，覆盖训练数据、模型供应链、RAG 记忆、Agent 与 MCP 安全，需与 ASVS 同级搭配验证，当前稳定版 1.01**
+
+> ![](https://img.shields.io/badge/主语言-Markdown-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/OWASP/AISVS?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/OWASP/AISVS.svg?style=for-the-badge&label=star数量)  ![GitHub](https://img.shields.io/github/license/OWASP/AISVS?style=for-the-badge&label=开源协议)
+
+
+### 智能合约漏洞扫描器
+
+- https://github.com/ConsenSys/mythril - **EVM字节码审计工具，使用符号执行、污点分析来检测以太坊、Hedera等区块链的安全漏洞**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/ConsenSys/mythril?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/ConsenSys/mythril.svg?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/ConsenSys/mythril?style=for-the-badge&label=开源协议)
+
+- https://github.com/enzymefinance/oyente - **EVM字节码审计工具，用于检测智能合约中的安全漏洞**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/enzymefinance/oyente?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/enzymefinance/oyente.svg?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/enzymefinance/oyente?style=for-the-badge&label=开源协议)
+
+- https://github.com/eth-sri/securify2 - **由以太坊官方组织认证的智能合约安全扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/eth-sri/securify2?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/eth-sri/securify2.svg?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/eth-sri/securify2?style=for-the-badge&label=开源协议)
+
+- https://github.com/smartdec/smartcheck - **针对Solidity程序的静态代码分析工具**
+
+> ![](https://img.shields.io/badge/%E4%B8%BB%E8%AF%AD%E8%A8%80-Java--or--Node-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/smartdec/smartcheck?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/smartdec/smartcheck.svg?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/smartdec/smartcheck?style=for-the-badge&label=开源协议)
+
+
+- https://github.com/ivicanikolicsg/MAIAN - **用于在以太坊智能合约中查找漏洞的工具**
+
+> ![](https://img.shields.io/badge/%E4%B8%BB%E8%AF%AD%E8%A8%80-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/ivicanikolicsg/MAIAN?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/ivicanikolicsg/MAIAN.svg?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/ivicanikolicsg/MAIAN?style=for-the-badge&label=开源协议)
+
+
+### 红蓝对抗
+
+#### 软件供应链分析
+
+- https://github.com/murphysecurity/murphysec - **软件供应链攻击分析工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/murphysecurity/murphysec?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/murphysecurity/murphysec.svg?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/murphysecurity/murphysec?style=for-the-badge&label=开源协议)
+
+#### 容器和集群
+
+- https://github.com/cdk-team/CDK - **容器/集群信息收集工具及漏洞利用工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/cdk-team/CDK?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/cdk-team/CDK.svg?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/cdk-team/CDK?style=for-the-badge&label=开源协议)
+
+- https://github.com/cr0hn/dockerscan - **Docker容器集群安全评估及利用工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/cr0hn/dockerscan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/cr0hn/dockerscan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/cr0hn/dockerscan?style=for-the-badge&label=开源协议)
+
+- https://github.com/armosec/kubescape - **第一款用于测试k8s是否按照NSA和CISA的Kubernetes安全指南部署的工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/armosec/kubescape?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/armosec/kubescape?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/armosec/kubescape?style=for-the-badge&label=开源协议)
+
+- https://github.com/chaitin/veinmind-tools - **容器安全扫描工具，针对弱口令、恶意文件、后门、敏感信息等问题**
+
+> ![](https://img.shields.io/badge/主语言-Go/Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/chaitin/veinmind-tools?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/chaitin/veinmind-tools?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/chaitin/veinmind-tools?style=for-the-badge&label=开源协议)
+
+- https://github.com/deepfence/ThreatMapper - **云原生(k8s/AWS/GKE等)漏洞扫描和攻击面枚举**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge) ![GitHub last commit](https://img.shields.io/github/last-commit/deepfence/ThreatMapper?style=for-the-badge&label=上次提交) ![GitHub stars](https://img.shields.io/github/stars/deepfence/ThreatMapper?style=for-the-badge&label=start数量) ![GitHub](https://img.shields.io/github/license/deepfence/ThreatMapper?style=for-the-badge&label=开源协议)
+
+- https://github.com/deepfence/SecretScanner - **扫描容器和主机文件系统以检测未受保护的密钥、API令牌和密码**
+
+> ![](https://img.shields.io/badge/MainLanguage-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/deepfence/SecretScanner?style=for-the-badge) ![GitHub stars](https://img.shields.io/github/stars/deepfence/SecretScanner?style=for-the-badge)  ![GitHub](https://img.shields.io/github/license/deepfence/SecretScanner?style=for-the-badge)
+
+- https://github.com/cyberark/KubiScan - **k8s集群错误权限配置扫描检查工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/cyberark/KubiScan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/cyberark/KubiScan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/cyberark/KubiScan?style=for-the-badge&label=开源协议)
+
+- https://github.com/kvesta/vesta - **集容器扫描，Docker和Kubernetes配置基线检查于一身的工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/kvesta/vesta?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/kvesta/vesta?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/kvesta/vesta?style=for-the-badge&label=开源协议)
+
+- https://github.com/anchore/grype - **针对容器镜像和文件系统的漏洞扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/anchore/grype?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/anchore/grype?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/anchore/grype?style=for-the-badge&label=开源协议)
+
+
+#### 服务指纹探测
+
+- https://github.com/EdgeSecurityTeam/EHole - **红队重点攻击系统指纹探测工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/EdgeSecurityTeam/EHole?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/EdgeSecurityTeam/EHole.svg?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/EdgeSecurityTeam/EHole?style=for-the-badge&label=开源协议)
+
+- https://github.com/opabravo/mass-bruter - **红队端口协议和默认口令探测工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/opabravo/mass-bruter?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/opabravo/mass-bruter.svg?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/opabravo/mass-bruter?style=for-the-badge&label=开源协议)
+
+
+#### 中间人劫持
+
+- https://github.com/niloofarkheirkhah/nili - **网络扫描，中间人攻击，协议检测与逆向**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/niloofarkheirkhah/nili?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/niloofarkheirkhah/nili.svg?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/niloofarkheirkhah/nili?style=for-the-badge&label=开源协议)
+
+#### 框架类
+
+- https://github.com/m4n3dw0lf/PytheM - **支持ARP欺骗、中间人攻击等多种攻击的网络渗透测试套件**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/m4n3dw0lf/PytheM?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/m4n3dw0lf/PytheM?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/m4n3dw0lf/PytheM?style=for-the-badge&label=开源协议)
+
+- https://github.com/FunnyWolf/Viper  - **图形化、武器化以及模块化的内网渗透工具**
+
+> ![](https://img.shields.io/badge/主语言-Ruby-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/FunnyWolf/Viper?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/FunnyWolf/Viper?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/FunnyWolf/Viper?style=for-the-badge&label=开源协议)
+
+- https://github.com/P1-Team/AlliN  - **多用于渗透前资产收集和渗透后内网横向渗透**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/P1-Team/AlliN?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/P1-Team/AlliN?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/P1-Team/AlliN?style=for-the-badge&label=开源协议)
+
+- https://github.com/k8gege/LadonGo  - **适用于Windows/Linux/Mac内网环境的渗透工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/k8gege/LadonGo?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/k8gege/LadonGo?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/k8gege/LadonGo?style=for-the-badge&label=开源协议)
+
+- https://github.com/shmilylty/netspy  - **快速探测内网可达网段工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/shmilylty/netspy?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/shmilylty/netspy?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/shmilylty/netspy?style=for-the-badge&label=开源协议)
+
+- https://github.com/byt3bl33d3r/CrackMapExec  - **针对windows-AD域的后渗透的工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/byt3bl33d3r/CrackMapExec?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/byt3bl33d3r/CrackMapExec?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/byt3bl33d3r/CrackMapExec?style=for-the-badge&label=开源协议)
+
+- https://github.com/u21h2/nacs  - **事件驱动的内网渗透测试扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/u21h2/nacs?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/u21h2/nacs?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/u21h2/nacs?style=for-the-badge&label=开源协议)
+
+- https://github.com/h4wkst3r/SCMKit  - **针对GitHub Enterprise, GitLab Enterprise and Bitbucket Server的源代码平台攻击工具**
+
+> ![](https://img.shields.io/badge/主语言-CSharp-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/h4wkst3r/SCMKit?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/h4wkst3r/SCMKit?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/h4wkst3r/SCMKit?style=for-the-badge&label=开源协议)
+
+- https://github.com/lijiejie/MisConfig_HTTP_Proxy_Scanner  - **用于扫描企业错误配置的直通内网的反向代理服务器和错误配置的正向代理服务器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/lijiejie/MisConfig_HTTP_Proxy_Scanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/lijiejie/MisConfig_HTTP_Proxy_Scanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/lijiejie/MisConfig_HTTP_Proxy_Scanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/chainreactors/gogo  - **面向红队的, 高度可控可拓展的自动化引擎**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/chainreactors/gogo?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/chainreactors/gogo?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/chainreactors/gogo?style=for-the-badge&label=开源协议)
+
+- https://github.com/freelabz/secator  - **一款方便渗透测试的工具，集成了数十种知名的安全工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/freelabz/secator?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/freelabz/secator?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/freelabz/secator?style=for-the-badge&label=开源协议)
+
+
+#### 无线网络渗透
+
+- https://github.com/savio-code/fern-wifi-cracker - **无线安全审计工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/savio-code/fern-wifi-cracker?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/savio-code/fern-wifi-cracker?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/savio-code/fern-wifi-cracker?style=for-the-badge&label=开源协议)
+
+- https://github.com/P0cL4bs/WiFi-Pumpkin - **无线安全渗透测试套件**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/P0cL4bs/WiFi-Pumpkin?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/P0cL4bs/WiFi-Pumpkin?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/P0cL4bs/WiFi-Pumpkin?style=for-the-badge&label=开源协议)
+
+- https://github.com/MisterBianco/BoopSuite - **无线网络审计工具，支持2-5GHZ频段**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/MisterBianco/BoopSuite?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/MisterBianco/BoopSuite?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/MisterBianco/BoopSuite?style=for-the-badge&label=开源协议)
+
+- https://github.com/besimaltnok/PiFinger - **检查WIFI是否是"大菠萝"所开放的热点，并给予网络评分**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/besimaltnok/PiFinger?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/besimaltnok/PiFinger?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/besimaltnok/PiFinger?style=for-the-badge&label=开源协议)
+
+- https://github.com/derv82/wifite2 - **自动化无线网络攻击工具Wifite的重构版本**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/derv82/wifite2?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/derv82/wifite2?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/derv82/wifite2?style=for-the-badge&label=开源协议)
+
+- https://github.com/D3Ext/WEF - **支持2.4GHz以及5GHz的WI-FI攻击框架**
+
+> ![](https://img.shields.io/badge/主语言-Bash-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/D3Ext/WEF?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/D3Ext/WEF?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/D3Ext/WEF?style=for-the-badge&label=开源协议)
+
+- https://github.com/pinecone-wifi/pinecone - **红队WLAN渗透框架**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/pinecone-wifi/pinecone?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/pinecone-wifi/pinecone?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/pinecone-wifi/pinecone?style=for-the-badge&label=开源协议)
+
+
+### 移动应用包文件分析
+
+- https://github.com/dwisiswant0/apkleaks - **扫描APK文件中的URL、接口与密钥泄露等风险**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/dwisiswant0/apkleaks?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/dwisiswant0/apkleaks?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/dwisiswant0/apkleaks?style=for-the-badge&label=开源协议)
+
+- https://github.com/kelvinBen/AppInfoScanner - **APK文件信息搜集工具，支持自定义规则**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/kelvinBen/AppInfoScanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/kelvinBen/AppInfoScanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/kelvinBen/AppInfoScanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/maaaaz/androwarn - **安卓应用静态代码扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/maaaaz/androwarn?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/maaaaz/androwarn?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/maaaaz/androwarn?style=for-the-badge&label=开源协议)
+
+- https://github.com/quark-engine/quark-engine - **安卓恶意分析扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/quark-engine/quark-engine?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/quark-engine/quark-engine?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/quark-engine/quark-engine?style=for-the-badge&label=开源协议)
+
+- https://github.com/droidefense/engine - **高级安卓木马病毒分析框架**
+
+> ![](https://img.shields.io/badge/主语言-Java-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/droidefense/engine?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/droidefense/engine?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/droidefense/engine?style=for-the-badge&label=开源协议)
+
+- https://github.com/abhi-r3v0/Adhrit - **安卓安全套件，基于Ghera benchmarks进行静态字节码分析**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/abhi-r3v0/Adhrit?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/abhi-r3v0/Adhrit?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/abhi-r3v0/Adhrit?style=for-the-badge&label=开源协议) <img alt="BlackHatUSA-arsenal-2022" src="./badges/BlackHatUSA--arsenal-2022-blue.svg">
+
+- https://github.com/pascal-lab/Tai-e - **“易学易用” 同时 “性能出色” 的通用型Java静态分析框架,比较适用于安卓代码分析**
+
+> ![](https://img.shields.io/badge/主语言-Java-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/pascal-lab/Tai-e?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/pascal-lab/Tai-e?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/pascal-lab/Tai-e?style=for-the-badge&label=开源协议)
+
+- https://github.com/Cyber-Buddy/APKHunt - **基于OWASP MASVS框架的Android应用静态代码分析工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Cyber-Buddy/APKHunt?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Cyber-Buddy/APKHunt?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Cyber-Buddy/APKHunt?style=for-the-badge&label=开源协议)
+
+- https://github.com/cryptax/droidlysis - **Android 应用程序的预分析工具：用于通常在逆向工程开始时执行的重复且无聊的任务**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/cryptax/droidlysis?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/cryptax/droidlysis?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/cryptax/droidlysis?style=for-the-badge&label=开源协议)
+
+
+### 二进制可执行文件分析
+
+- https://github.com/m4rco-/dorothy2 - **一款木马、僵尸网络分析框架**
+
+> ![](https://img.shields.io/badge/主语言-Ruby-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/m4rco-/dorothy2?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/m4rco-/dorothy2?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/m4rco-/dorothy2?style=for-the-badge&label=开源协议)
+
+- https://github.com/Tencent/HaboMalHunter  - **哈勃分析系统，Linux系统病毒分析及安全检测**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Tencent/HaboMalHunter?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Tencent/HaboMalHunter?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Tencent/HaboMalHunter?style=for-the-badge&label=开源协议)
+
+- https://github.com/KeenSecurityLab/BinAbsInspector  - **科恩出品，用于自动逆向工程和二进制文件漏洞扫描**
+
+> ![](https://img.shields.io/badge/主语言-Java-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/KeenSecurityLab/BinAbsInspector?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/KeenSecurityLab/BinAbsInspector?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/KeenSecurityLab/BinAbsInspector?style=for-the-badge&label=开源协议)
+
+- https://github.com/fkie-cad/cwe_checker  - **二进制文件常见漏洞扫描(CWEs)**
+
+> ![](https://img.shields.io/badge/主语言-Rust-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/fkie-cad/cwe_checker?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/fkie-cad/cwe_checker?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/fkie-cad/cwe_checker?style=for-the-badge&label=开源协议)
+
+- https://github.com/airbus-seclab/bincat  - **基于污点分析的二进制代码静态分析器，可作为IDA插件使用**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/airbus-seclab/bincat?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/airbus-seclab/bincat?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/airbus-seclab/bincat?style=for-the-badge&label=开源协议)
+
+
+### 隐私合规
+
+- https://github.com/riskscanner/riskscanner - **RiskScanner 是开源的多云安全合规扫描平台，通过 Cloud Custodian 的 YAML DSL 定义扫描规则**
+
+> ![](https://img.shields.io/badge/主语言-Java-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/riskscanner/riskscanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/riskscanner/riskscanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/riskscanner/riskscanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/momosecurity/bombus - **企业安全与隐私合规审计平台**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/momosecurity/bombus?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/momosecurity/bombus?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/momosecurity/bombus?style=for-the-badge&label=开源协议)
+
+
+### 子域名爆破枚举或接管
+
+- https://github.com/lijiejie/subDomainsBrute - **Lijiejie开发的一款使用广泛的子域名爆破枚举工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/lijiejie/subDomainsBrute?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/lijiejie/subDomainsBrute?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/lijiejie/subDomainsBrute?style=for-the-badge&label=开源协议)
+
+- https://github.com/ring04h/wydomain - **猪猪侠开发的一款域名收集全面、精准的子域名枚举工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/ring04h/wydomain?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/ring04h/wydomain?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/ring04h/wydomain?style=for-the-badge&label=开源协议)
+
+- https://github.com/le4f/dnsmaper - **子域名枚举爆破工具以及地图位置标记**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/le4f/dnsmaper?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/le4f/dnsmaper?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/le4f/dnsmaper?style=for-the-badge&label=开源协议)
+
+- https://github.com/TheRook/subbrute - **高效精准的子域名爆破工具,同时也是扫描器中最常用的子域名API库**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/TheRook/subbrute?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/TheRook/subbrute?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/TheRook/subbrute?style=for-the-badge&label=开源协议)
+
+- https://github.com/We5ter/GSDF - **基于谷歌SSL透明证书的子域名查询脚本**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/We5ter/GSDF?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/We5ter/GSDF?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/We5ter/GSDF?style=for-the-badge&label=开源协议)
+
+- https://github.com/mandatoryprogrammer/cloudflare_enum  - **使用CloudFlare进行子域名枚举的脚本**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/mandatoryprogrammer/cloudflare_enum?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/mandatoryprogrammer/cloudflare_enum?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/mandatoryprogrammer/cloudflare_enum?style=for-the-badge&label=开源协议)
+
+- https://github.com/guelfoweb/knock - **Knock子域名获取，可用于查找子域名接管漏洞**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/guelfoweb/knock?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/guelfoweb/knock?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/guelfoweb/knock?style=for-the-badge&label=开源协议)
+
+- https://github.com/exp-db/PythonPool/tree/master/Tools/DomainSeeker - **多方式收集目标子域名信息**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/exp-db/PythonPool?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/exp-db/PythonPool?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/exp-db/PythonPool?style=for-the-badge&label=开源协议)
+
+- https://github.com/code-scan/BroDomain - **兄弟域名查询**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/code-scan/BroDomain?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/code-scan/BroDomain?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/code-scan/BroDomain?style=for-the-badge&label=开源协议)
+
+- https://github.com/chuhades/dnsbrute - **高效的子域名爆破工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/chuhades/dnsbrute?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/chuhades/dnsbrute?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/chuhades/dnsbrute?style=for-the-badge&label=开源协议)
+
+- https://github.com/yanxiu0614/subdomain3 - **一款便捷高效的子域名爆破工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/yanxiu0614/subdomain3?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/yanxiu0614/subdomain3?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/yanxiu0614/subdomain3?style=for-the-badge&label=开源协议)
+
+- https://github.com/michenriksen/aquatone - **子域名枚举、探测工具。可用于子域名接管漏洞探测**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/michenriksen/aquatone?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/michenriksen/aquatone?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/michenriksen/aquatone?style=for-the-badge&label=开源协议)
+
+- https://github.com/evilsocket/dnssearch - **一款子域名爆破工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/evilsocket/dnssearch?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/evilsocket/dnssearch?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/evilsocket/dnssearch?style=for-the-badge&label=开源协议)
+
+- https://github.com/reconned/domained - **可用于子域名收集的一款工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/reconned/domained?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/reconned/domained?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/reconned/domained?style=for-the-badge&label=开源协议)
+
+- https://github.com/bit4woo/Teemo - **域名邮箱等信息收集及枚举工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/bit4woo/Teemo?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/bit4woo/Teemo?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/bit4woo/Teemo?style=for-the-badge&label=开源协议)
+
+- https://github.com/laramies/theHarvester - **邮箱、服务器信息收集及子域名枚举工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/laramies/theHarvester?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/laramies/theHarvester?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/laramies/theHarvester?style=for-the-badge&label=开源协议)
+
+- https://github.com/nmalcolm/Inventus - **通过爬虫实现的子域名收集工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/nmalcolm/Inventus?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/nmalcolm/Inventus?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/nmalcolm/Inventus?style=for-the-badge&label=开源协议)
+
+- https://github.com/aboul3la/Sublist3r - **强大的快速子域枚举工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/aboul3la/Sublist3r?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/aboul3la/Sublist3r?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/aboul3la/Sublist3r?style=for-the-badge&label=开源协议)
+
+- https://github.com/jonluca/Anubis - **子域名枚举及信息搜集工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/jonluca/Anubis?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/jonluca/Anubis?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/jonluca/Anubis?style=for-the-badge&label=开源协议)
+
+- https://github.com/n4xh4ck5/N4xD0rk - **子域名查询工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/n4xh4ck5/N4xD0rk?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/n4xh4ck5/N4xD0rk?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/n4xh4ck5/N4xD0rk?style=for-the-badge&label=开源协议)
+
+- https://github.com/infosec-au/altdns - **通过字符串组合排列的高效子域名爆破工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/infosec-au/altdns?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/infosec-au/altdns?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/infosec-au/altdns?style=for-the-badge&label=开源协议)
+
+- https://github.com/FeeiCN/ESD - **基于AsyncIO协程以及非重复字典的子域名爆破工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/FeeiCN/ESD?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/FeeiCN/ESD?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/FeeiCN/ESD?style=for-the-badge&label=开源协议)
+
+- https://github.com/UnaPibaGeek/ctfr - **通过域名透明证书记录获取子域名**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/UnaPibaGeek/ctfr?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/UnaPibaGeek/ctfr?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/UnaPibaGeek/ctfr?style=for-the-badge&label=开源协议)
+
+- https://github.com/giovanifss/Dumb - **灵活扩展的子域名爆破工具**
+
+> ![](https://img.shields.io/badge/主语言-Haskell-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/giovanifss/Dumb?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/giovanifss/Dumb?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/giovanifss/Dumb?style=for-the-badge&label=开源协议)
+
+- https://github.com/OWASP/Amass - **Go语言攻击面与域名资产发现**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/OWASP/Amass?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/OWASP/Amass?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/OWASP/Amass?style=for-the-badge&label=开源协议)
+
+- https://github.com/Ice3man543/subfinder - **继承于Sublist3r项目的模块化体系结构，一个强劲的子域名枚举工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Ice3man543/subfinder?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Ice3man543/subfinder?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Ice3man543/subfinder?style=for-the-badge&label=开源协议)
+
+- https://github.com/Ice3man543/SubOver - **一款精准的子域名结构检测工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Ice3man543/SubOver?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Ice3man543/SubOver?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Ice3man543/SubOver?style=for-the-badge&label=开源协议)
+
+- https://github.com/janniskirschner/horn3t - **带有网页截图功能的子可视化域名枚举工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/janniskirschner/horn3t?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/janniskirschner/horn3t?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/janniskirschner/horn3t?style=for-the-badge&label=开源协议)
+
+- https://github.com/yunxu1/dnsub - **基于Go语言的高并发和跨平台子域名扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/yunxu1/dnsub?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/yunxu1/dnsub?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/yunxu1/dnsub?style=for-the-badge&label=开源协议)
+
+- https://github.com/shmilylty/OneForAll - **集成了多款子域名扫描工具的终极版子域名扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/shmilylty/OneForAll?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/shmilylty/OneForAll?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/shmilylty/OneForAll?style=for-the-badge&label=开源协议)
+
+- https://github.com/knownsec/ksubdomain - **一款跨平台且无状态子域名爆破工具，Mac和Windows上理论最大发包速度在30w/s,linux上为160w/s**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/knownsec/ksubdomain?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/knownsec/ksubdomain?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/knownsec/ksubdomain?style=for-the-badge&label=开源协议)
+
+- https://github.com/gwen001/github-subdomains - **在Github上搜索目标子域名**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/gwen001/github-subdomains?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/gwen001/github-subdomains?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/gwen001/github-subdomains?style=for-the-badge&label=开源协议)
+
+- https://github.com/bit4woo/domain_hunter_pro - **目标管理、自动化的信息收集、与burp无缝衔接**
+
+> ![](https://img.shields.io/badge/主语言-Java-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/bit4woo/domain_hunter_pro?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/bit4woo/domain_hunter_pro?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/bit4woo/domain_hunter_pro?style=for-the-badge&label=开源协议)
+
+- https://github.com/m4ll0k/takeover - **子域名劫持扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/m4ll0k/takeover?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/m4ll0k/takeover?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/m4ll0k/takeover?style=for-the-badge&label=开源协议)
+
+- https://github.com/v4d1/Dome - **主动与被动扫描相结合的子域名扫描，也支持开放端口检测**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/v4d1/Dome?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/v4d1/Dome?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/v4d1/Dome?style=for-the-badge&label=开源协议)
+
+- https://github.com/cramppet/regulator - **通过自学习正则表达式在被动DNS中获得子域名**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/cramppet/regulator?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/cramppet/regulator?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/cramppet/regulator?style=for-the-badge&label=开源协议)
+
+- https://github.com/hadriansecurity/subwiz - **轻量级 GPT 模型,用于发现子域名**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/hadriansecurity/subwiz?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/hadriansecurity/subwiz?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/hadriansecurity/subwiz?style=for-the-badge&label=开源协议)
+
+
+### 数据库注入漏洞或认证爆破
+
+- https://github.com/0xbug/SQLiScanner - **一款基于SQLMAP和Charles的被动SQL注入漏洞扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/0xbug/SQLiScanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/0xbug/SQLiScanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/0xbug/SQLiScanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/stamparm/DSSS - **99行代码实现的sql注入漏洞扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/stamparm/DSSS?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/stamparm/DSSS?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/stamparm/DSSS?style=for-the-badge&label=开源协议)
+
+- https://github.com/youngyangyang04/NoSQLAttack  - **一款针对mongoDB的攻击工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/youngyangyang04/NoSQLAttack?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/youngyangyang04/NoSQLAttack?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/youngyangyang04/NoSQLAttack?style=for-the-badge&label=开源协议)
+
+- https://github.com/Neohapsis/bbqsql - **SQL盲注利用框架**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Neohapsis/bbqsql?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Neohapsis/bbqsql?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Neohapsis/bbqsql?style=for-the-badge&label=开源协议)
+
+- https://github.com/NetSPI/PowerUpSQL - **攻击SQLSERVER的Powershell脚本框架**
+
+> ![](https://img.shields.io/badge/主语言-PowerShell-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/NetSPI/PowerUpSQL?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/NetSPI/PowerUpSQL?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/NetSPI/PowerUpSQL?style=for-the-badge&label=开源协议)
+
+- https://github.com/WhitewidowScanner/whitewidow - **一款数据库扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Ruby-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/WhitewidowScanner/whitewidow?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/WhitewidowScanner/whitewidow?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/WhitewidowScanner/whitewidow?style=for-the-badge&label=开源协议)
+
+- https://github.com/stampery/mongoaudit - **MongoDB审计及渗透工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/stampery/mongoaudit?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/stampery/mongoaudit?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/stampery/mongoaudit?style=for-the-badge&label=开源协议)
+
+- https://github.com/torque59/Nosql-Exploitation-Framework - **NoSQL扫描、爆破工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/stampery/mongoaudit?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/stampery/mongoaudit?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/stampery/mongoaudit?style=for-the-badge&label=开源协议)
+
+- https://github.com/missDronio/blindy - **MySQL盲注爆破工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/missDronio/blindy?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/missDronio/blindy?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/missDronio/blindy?style=for-the-badge&label=开源协议)
+
+- https://github.com/fengxuangit/Fox-scan - **基于SQLMAP的主动和被动资源发现的漏洞扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/fengxuangit/Fox-scan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/fengxuangit/Fox-scan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/fengxuangit/Fox-scan?style=for-the-badge&label=开源协议)
+
+- https://github.com/JohnTroony/Blisqy - **用于http header中的时间盲注爆破工具，仅针对MySQL/MariaDB**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/JohnTroony/Blisqy?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/JohnTroony/Blisqy?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/JohnTroony/Blisqy?style=for-the-badge&label=开源协议)
+
+- https://github.com/ron190/jsql-injection - **Java 编写的SQL注入工具**
+
+> ![](https://img.shields.io/badge/主语言-Java-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/ron190/jsql-injection?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/ron190/jsql-injection?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/ron190/jsql-injection?style=for-the-badge&label=开源协议)
+
+- https://github.com/Hadesy2k/sqliv - **基于搜索引擎的批量SQL注入漏洞扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Hadesy2k/sqliv?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Hadesy2k/sqliv?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Hadesy2k/sqliv?style=for-the-badge&label=开源协议)
+
+- https://github.com/s0md3v/sqlmate - **在SQLMAP基础上变SQLMAP得更加易用和便捷**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/s0md3v/sqlmate?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/s0md3v/sqlmate?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/s0md3v/sqlmate?style=for-the-badge&label=开源协议)
+
+- https://github.com/m8r0wn/enumdb  - **MySQL以及MSSQL爆破脱裤工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/m8r0wn/enumdb?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/m8r0wn/enumdb?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/m8r0wn/enumdb?style=for-the-badge&label=开源协议)
+
+- https://github.com/tariqhawis/injectbot  - **一个基于Web的SQL注入扫描程序和漏洞利用工具**
+
+> ![](https://img.shields.io/badge/主语言-PHP-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/tariqhawis/injectbot?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/tariqhawis/injectbot?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/tariqhawis/injectbot?style=for-the-badge&label=开源协议)
+
+
+### 网站弱用户名或弱口令枚举爆破
+
+- https://github.com/lijiejie/htpwdScan  - **一个简单的HTTP暴力破解、撞库攻击脚本**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/lijiejie/htpwdScan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/lijiejie/htpwdScan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/lijiejie/htpwdScan?style=for-the-badge&label=开源协议)
+
+- https://github.com/netxfly/crack_ssh - **Go写的协程版的SSH、Redis、mongoDB弱口令破解工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/netxfly/crack_ssh?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/netxfly/crack_ssh?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/netxfly/crack_ssh?style=for-the-badge&label=开源协议)
+
+- https://github.com/shengqi158/weak_password_detect - **多线程探测弱口令**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/shengqi158/weak_password_detect?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/shengqi158/weak_password_detect?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/shengqi158/weak_password_detect?style=for-the-badge&label=开源协议)
+
+- https://github.com/s0md3v/Blazy - **支持测试 CSRF, Clickjacking, Cloudflare 和 WAF识别的弱口令探测器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/s0md3v/Blazy?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/s0md3v/Blazy?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/s0md3v/Blazy?style=for-the-badge&label=开源协议)
+
+- https://github.com/MooseDojo/myBFF - **对CiscoVPN、Citrix Gateway等各类服务进行弱口令检测的脚本**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/MooseDojo/myBFF?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/MooseDojo/myBFF?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/MooseDojo/myBFF?style=for-the-badge&label=开源协议)
+
+- https://github.com/TideSec/web_pwd_common_crack - **一款通用的web弱口令破解脚本，可批量检测没有验证码的管理后台。**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/TideSec/web_pwd_common_crack?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/TideSec/web_pwd_common_crack?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/TideSec/web_pwd_common_crack?style=for-the-badge&label=开源协议)
+
+
+### IoT设备审计
+
+- https://github.com/rapid7/IoTSeeker - **物联网设备默认密码扫描检测工具**
+
+> ![](https://img.shields.io/badge/主语言-Perl-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/rapid7/IoTSeeker?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/rapid7/IoTSeeker?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/rapid7/IoTSeeker?style=for-the-badge&label=开源协议)
+
+- https://github.com/shodan-labs/iotdb - **使用nmap扫描IoT设备**
+
+> ![](https://img.shields.io/badge/主语言-XML-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/shodan-labs/iotdb?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/shodan-labs/iotdb?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/shodan-labs/iotdb?style=for-the-badge&label=开源协议)
+
+- https://github.com/googleinurl/RouterHunterBR - **路由器设备漏洞扫描利用**
+
+> ![](https://img.shields.io/badge/主语言-PHP-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/googleinurl/RouterHunterBR?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/googleinurl/RouterHunterBR?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/googleinurl/RouterHunterBR?style=for-the-badge&label=开源协议)
+
+- https://github.com/scu-igroup/telnet-scanner - **Telnet服务密码撞库**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/scu-igroup/telnet-scanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/scu-igroup/telnet-scanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/scu-igroup/telnet-scanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/viraintel/OWASP-Nettacker - **自动化信息搜集及渗透测试工具，比较适用于IoT扫描**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/viraintel/OWASP-Nettacker?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/viraintel/OWASP-Nettacker?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/viraintel/OWASP-Nettacker?style=for-the-badge&label=开源协议)
+
+- https://github.com/threat9/routersploit - **嵌入式设备漏洞扫描及利用工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/threat9/routersploit?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/threat9/routersploit?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/threat9/routersploit?style=for-the-badge&label=开源协议)
+
+- https://github.com/w3h/icsmaster/tree/master/nse - **数字化工控设备认证爆破工具**
+
+> ![](https://img.shields.io/badge/主语言-NSE-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/w3h/icsmaster?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/w3h/icsmaster?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/w3h/icsmaster?style=for-the-badge&label=开源协议)
+
+- https://github.com/firmianay/firmeye - **IDA 插件，基于敏感函数参数回溯来辅助漏洞挖掘**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/firmianay/firmeye?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/firmianay/firmeye?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/firmianay/firmeye?style=for-the-badge&label=开源协议)
+
+- https://github.com/bahaabdelwahed/st - **用于审查和检测 IoT（物联网）设备使用的复杂协议中的威胁**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/bahaabdelwahed/st?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/bahaabdelwahed/st?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/bahaabdelwahed/st?style=for-the-badge&label=开源协议)
+
+- https://github.com/vulmon/Vulmap - **Linux以及Windows服务器本地漏洞扫描**
+
+> ![](https://img.shields.io/badge/主语言-PowerShell-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/vulmon/Vulmap?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/vulmon/Vulmap?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/vulmon/Vulmap?style=for-the-badge&label=开源协议)
+
+- https://github.com/0x4D31/salt-scanner - **基于Salt Open以及Vulners Linux Audit API的linux漏洞扫描器，支持与JIRA、slack平台结合使用**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/0x4D31/salt-scanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/0x4D31/salt-scanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/0x4D31/salt-scanner?style=for-the-badge&label=开源协议)
+
+
+### 多类型跨站脚本漏洞检测
+
+- https://github.com/0x584A/fuzzXssPHP - **PHP版本的反射型XSS扫描**
+
+> ![](https://img.shields.io/badge/主语言-PHP-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/0x584A/fuzzXssPHP?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/0x584A/fuzzXssPHP?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/0x584A/fuzzXssPHP?style=for-the-badge&label=开源协议)
+
+- https://github.com/chuhades/xss_scan - **批量扫描XSS的Python脚本**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/chuhades/xss_scan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/chuhades/xss_scan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/chuhades/xss_scan?style=for-the-badge&label=开源协议)
+
+- https://github.com/BlackHole1/autoFindXssAndCsrf - **自动化检测页面是否存在XSS和CSRF漏洞的浏览器插件**
+
+> ![](https://img.shields.io/badge/主语言-JavaScript-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/BlackHole1/autoFindXssAndCsrf?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/BlackHole1/autoFindXssAndCsrf?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/BlackHole1/autoFindXssAndCsrf?style=for-the-badge&label=开源协议)
+
+- https://github.com/shogunlab/shuriken - **使用命令行进行XSS批量检测**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/shogunlab/shuriken?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/shogunlab/shuriken?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/shogunlab/shuriken?style=for-the-badge&label=开源协议)
+
+- https://github.com/s0md3v/XSStrike - **可识别并绕过WAF的XSS扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/s0md3v/XSStrike?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/s0md3v/XSStrike?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/s0md3v/XSStrike?style=for-the-badge&label=开源协议)
+
+- https://github.com/stamparm/DSXS - **支持GET、POST方式的高效XSS扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/stamparm/DSXS?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/stamparm/DSXS?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/stamparm/DSXS?style=for-the-badge&label=开源协议)
+
+- https://github.com/fcavallarin/domdig - **基于Chrome headless的DOM-XSS扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Node.js-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/fcavallarin/domdig?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/fcavallarin/domdig?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/fcavallarin/domdig?style=for-the-badge&label=开源协议)
+
+- https://github.com/lwzSoviet/NoXss - **基于Phantomjs的DOM-XSS和反射型XSS扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/lwzSoviet/NoXss?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/lwzSoviet/NoXss?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/lwzSoviet/NoXss?style=for-the-badge&label=开源协议)
+
+- https://github.com/pwn0sec/PwnXSS - **基于Python 3.7的多线程XSS扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/pwn0sec/PwnXSS?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/pwn0sec/PwnXSS?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/pwn0sec/PwnXSS?style=for-the-badge&label=开源协议)
+
+- https://github.com/hahwul/dalfox - **基于golang的参数分析和XSS扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/hahwul/dalfox?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/hahwul/dalfox?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/hahwul/dalfox?style=for-the-badge&label=开源协议)
+
+
+### 企业敏感信息泄露检测
+
+
+- https://github.com/x0day/Multisearch-v2 - **Bing、Google、360、Zoomeye等搜索引擎聚合搜索，可用于发现企业被搜索引擎收录的敏感资产信息**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/x0day/Multisearch-v2?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/x0day/Multisearch-v2?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/x0day/Multisearch-v2?style=for-the-badge&label=开源协议)
+
+- https://github.com/Ekultek/Zeus-Scanner - **集成化的综合搜索引擎，能够抓取被搜索引擎隐藏的url,并交由sqlmap、nmap扫描**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Ekultek/Zeus-Scanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Ekultek/Zeus-Scanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Ekultek/Zeus-Scanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/metac0rtex/GitHarvester - **Github repos信息搜集工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/metac0rtex/GitHarvester?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/metac0rtex/GitHarvester?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/metac0rtex/GitHarvester?style=for-the-badge&label=开源协议)
+
+- https://github.com/repoog/GitPrey - **GitHub敏感信息扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/repoog/GitPrey?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/repoog/GitPrey?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/repoog/GitPrey?style=for-the-badge&label=开源协议)
+
+- https://github.com/0xbug/Hawkeye - **企业资产、敏感信息GitHub泄露监控系统**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/0xbug/Hawkeye?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/0xbug/Hawkeye?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/0xbug/Hawkeye?style=for-the-badge&label=开源协议)
+
+- https://github.com/UnkL4b/GitMiner - **Github敏感信息搜索工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/UnkL4b/GitMiner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/UnkL4b/GitMiner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/UnkL4b/GitMiner?style=for-the-badge&label=开源协议)
+
+- https://github.com/dxa4481/truffleHog - **GitHub敏感信息扫描工具,包括检测commit等**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/dxa4481/truffleHog?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/dxa4481/truffleHog?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/dxa4481/truffleHog?style=for-the-badge&label=开源协议)
+
+- https://github.com/1N3/Goohak - **自动化对指定域名进行Google hacking搜索并收集信息**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/1N3/Goohak?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/1N3/Goohak?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/1N3/Goohak?style=for-the-badge&label=开源协议)
+
+- https://github.com/UKHomeOffice/repo-security-scanner - **用于搜索git commit中的敏感信息，例如密码、私钥等的客户端工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/UKHomeOffice/repo-security-scanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/UKHomeOffice/repo-security-scanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/UKHomeOffice/repo-security-scanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/FeeiCN/GSIL - **Github敏感信息泄露扫描**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/FeeiCN/GSIL?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/FeeiCN/GSIL?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/FeeiCN/GSIL?style=for-the-badge&label=开源协议)
+
+- https://github.com/MiSecurity/x-patrol - **Github泄露检测巡航工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/MiSecurity/x-patrol?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/MiSecurity/x-patrol?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/MiSecurity/x-patrol?style=for-the-badge&label=开源协议)
+
+- https://github.com/anshumanbh/git-all-secrets - **集合多个开源GitHub敏感信息扫描的企业信息泄露巡航工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/anshumanbh/git-all-secrets?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/anshumanbh/git-all-secrets?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/anshumanbh/git-all-secrets?style=for-the-badge&label=开源协议)
+
+- https://github.com/VKSRC/Github-Monitor - **由vipkid SRC开发的Github信息泄漏监控系统**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/FeeiCN/GSIL?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/FeeiCN/GSIL?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/FeeiCN/GSIL?style=for-the-badge&label=开源协议)
+
+- https://github.com/eth0izzle/shhgit - **基于Docker和Web的Github敏感信息泄漏监控系统**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/eth0izzle/shhgit?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/eth0izzle/shhgit?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/eth0izzle/shhgit?style=for-the-badge&label=开源协议)
+
+- https://github.com/SAP/credential-digger - **基于机器学习去除误报的Github敏感信息泄漏扫描系统**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/SAP/credential-digger?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/SAP/credential-digger?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/SAP/credential-digger?style=for-the-badge&label=开源协议)
+
+
+- https://github.com/sdushantha/dora - **基于RegEx查找暴露的API密钥，如Facebook Access Token/AWS key等，并获取找到的某些密钥的利用方法**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/sdushantha/dora?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/sdushantha/dora?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/sdushantha/dora?style=for-the-badge&label=开源协议)
+
+
+### 木马检测
+
+- https://github.com/he1m4n6a/findWebshell  - **一款简单的webshell检测工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/he1m4n6a/findWebshell?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/he1m4n6a/findWebshell?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/he1m4n6a/findWebshell?style=for-the-badge&label=开源协议)
+
+- https://github.com/nbs-system/php-malware-finder - **一款高效率PHP-webshell扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-PHP-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/nbs-system/php-malware-finder?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/nbs-system/php-malware-finder?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/nbs-system/php-malware-finder?style=for-the-badge&label=开源协议)
+
+- https://github.com/emposha/PHP-Shell-Detector - **测试效率高达99%的webshell检测工具**
+
+> ![](https://img.shields.io/badge/主语言-PHP-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/emposha/PHP-Shell-Detector?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/emposha/PHP-Shell-Detector?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/emposha/PHP-Shell-Detector?style=for-the-badge&label=开源协议)
+
+- https://github.com/erevus-cn/scan_webshell - **一款基础的基于正则的webshell扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/erevus-cn/scan_webshell?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/erevus-cn/scan_webshell?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/erevus-cn/scan_webshell?style=for-the-badge&label=开源协议)
+
+- https://github.com/emposha/Shell-Detector - **Webshell扫描工具，支持PHP/Perl/ASP/ASPX webshell扫描**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/emposha/Shell-Detector?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/emposha/Shell-Detector?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/emposha/Shell-Detector?style=for-the-badge&label=开源协议)
+
+
+### 中间件漏洞评估
+
+- https://github.com/ring04h/wyportmap - **目标端口扫描、系统服务指纹识别**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/ring04h/wyportmap?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/ring04h/wyportmap?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/ring04h/wyportmap?style=for-the-badge&label=开源协议)
+
+- https://github.com/ring04h/weakfilescan - **动态多线程敏感信息泄露检测工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/ring04h/wyportmap?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/ring04h/wyportmap?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/ring04h/wyportmap?style=for-the-badge&label=开源协议)
+
+- https://github.com/EnableSecurity/wafw00f - **WAF产品指纹识别**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/ring04h/weakfilescan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/ring04h/weakfilescan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/ring04h/weakfilescan?style=for-the-badge&label=开源协议)
+
+- https://github.com/rbsec/sslscan - **SSL/TLS服务安全评估**
+
+> ![](https://img.shields.io/badge/主语言-C-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/rbsec/sslscan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/rbsec/sslscan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/rbsec/sslscan?style=for-the-badge&label=开源协议)
+
+- https://github.com/TideSec/TideFinger - **Web指纹识别工具，整合多个指纹库结合多种指纹检测方法，检测高效准确**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/TideSec/TideFinger?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/TideSec/TideFinger?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/TideSec/TideFinger?style=for-the-badge&label=开源协议)
+
+- https://github.com/TideSec/FuzzScanner - **综合型web信息搜集平台，部署方便，功能多样且实用**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/TideSec/FuzzScanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/TideSec/FuzzScanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/TideSec/FuzzScanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/urbanadventurer/whatweb - **Web指纹识别**
+
+> ![](https://img.shields.io/badge/主语言-Ruby-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/urbanadventurer/whatweb?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/urbanadventurer/whatweb?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/urbanadventurer/whatweb?style=for-the-badge&label=开源协议)
+
+- https://github.com/tanjiti/FingerPrint - **Web应用指纹识别**
+
+> ![](https://img.shields.io/badge/主语言-Perl-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/tanjiti/FingerPrint?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/tanjiti/FingerPrint?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/tanjiti/FingerPrint?style=for-the-badge&label=开源协议)
+
+- https://github.com/nanshihui/Scan-T - **网络爬虫式指纹识别**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/nanshihui/Scan-T?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/nanshihui/Scan-T?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/nanshihui/Scan-T?style=for-the-badge&label=开源协议)
+
+- https://github.com/OffensivePython/Nscan - **基于Masscan和Zmap的网络扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/OffensivePython/Nscan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/OffensivePython/Nscan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/OffensivePython/Nscan?style=for-the-badge&label=开源协议)
+
+- https://github.com/ywolf/F-NAScan - **网络资产信息扫描, ICMP存活探测,端口扫描，端口指纹服务识别**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/ywolf/F-NAScan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/ywolf/F-NAScan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/ywolf/F-NAScan?style=for-the-badge&label=开源协议)
+
+- https://github.com/maurosoria/dirsearch - **web路径收集与扫描**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/maurosoria/dirsearch?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/maurosoria/dirsearch?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/maurosoria/dirsearch?style=for-the-badge&label=开源协议)
+
+- https://github.com/x0day/bannerscan - **C段Banner与路径扫描**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/x0day/bannerscan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/x0day/bannerscan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/x0day/bannerscan?style=for-the-badge&label=开源协议)
+
+- https://github.com/RASSec/RASscan - **端口服务扫描**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/RASSec/RASscan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/RASSec/RASscan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/RASSec/RASscan?style=for-the-badge&label=开源协议)
+
+- https://github.com/3xp10it/bypass_waf - **waf自动暴破绕过**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/3xp10it/bypass_waf?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/3xp10it/bypass_waf?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/3xp10it/bypass_waf?style=for-the-badge&label=开源协议)
+
+- https://github.com/3xp10it/xcdn - **尝试找出cdn背后的真实ip**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/3xp10it/xcdn?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/3xp10it/xcdn?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/3xp10it/xcdn?style=for-the-badge&label=开源协议)
+
+- https://github.com/Xyntax/BingC - **基于Bing搜索引擎的C段、旁站查询，多线程，支持API**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Xyntax/BingC?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Xyntax/BingC?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Xyntax/BingC?style=for-the-badge&label=开源协议)
+
+- https://github.com/Xyntax/DirBrute - **多线程WEB目录爆破工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Xyntax/DirBrute?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Xyntax/DirBrute?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Xyntax/DirBrute?style=for-the-badge&label=开源协议)
+
+- https://github.com/zer0h/httpscan - **一个爬虫式的网段Web主机发现小工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/zer0h/httpscan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/zer0h/httpscan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/zer0h/httpscan?style=for-the-badge&label=开源协议)
+
+- https://github.com/lietdai/doom  - **Thorn上实现的分布式任务分发的ip端口漏洞扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/lietdai/doom?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/lietdai/doom?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/lietdai/doom?style=for-the-badge&label=开源协议)
+
+- https://github.com/chichou/grab.js  - **类似 zgrab 的快速 TCP 指纹抓取解析工具，支持更多协议**
+
+> ![](https://img.shields.io/badge/主语言-Node.js-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/chichou/grab.js?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/chichou/grab.js?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/chichou/grab.js?style=for-the-badge&label=开源协议)
+
+- https://github.com/Nitr4x/whichCDN - **CDN识别、检测**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Nitr4x/whichCDN?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Nitr4x/whichCDN?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Nitr4x/whichCDN?style=for-the-badge&label=开源协议)
+
+- https://github.com/secfree/bcrpscan - **基于爬虫的web路径扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/secfree/bcrpscan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/secfree/bcrpscan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/secfree/bcrpscan?style=for-the-badge&label=开源协议)
+
+- https://github.com/mozilla/ssh_scan - **服务器SSH配置信息扫描**
+
+> ![](https://img.shields.io/badge/主语言-Ruby-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/mozilla/ssh_scan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/mozilla/ssh_scan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/mozilla/ssh_scan?style=for-the-badge&label=开源协议)
+
+- https://github.com/18F/domain-scan - **针对域名及其子域名的资产数据检测／扫描，包括http/https检测等**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/18F/domain-scan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/18F/domain-scan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/18F/domain-scan?style=for-the-badge&label=开源协议)
+
+- https://github.com/ggusoft/inforfinder - **域名资产收集及指纹识别工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/ggusoft/inforfinder?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/ggusoft/inforfinder?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/ggusoft/inforfinder?style=for-the-badge&label=开源协议)
+
+- https://github.com/boy-hack/gwhatweb - **CMS识别, python gevent实现**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/boy-hack/gwhatweb?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/boy-hack/gwhatweb?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/boy-hack/gwhatweb?style=for-the-badge&label=开源协议)
+
+- https://github.com/Mosuan/FileScan - **敏感文件扫描、二次判断降低误报率、扫描内容规则化、多目录扫描**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Mosuan/FileScan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Mosuan/FileScan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Mosuan/FileScan?style=for-the-badge&label=开源协议)
+
+- https://github.com/Xyntax/FileSensor - **基于爬虫的动态敏感文件探测工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Xyntax/FileSensor?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Xyntax/FileSensor?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Xyntax/FileSensor?style=for-the-badge&label=开源协议)
+
+- https://github.com/deibit/cansina - **web路径扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/deibit/cansina?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/deibit/cansina?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/deibit/cansina?style=for-the-badge&label=开源协议)
+
+- https://github.com/mozilla/cipherscan - **目标主机服务SSL类型识别**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/mozilla/cipherscan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/mozilla/cipherscan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/mozilla/cipherscan?style=for-the-badge&label=开源协议)
+
+- https://github.com/xmendez/wfuzz - **Web应用fuzz工具、框架，同时可用于web路径、服务扫描**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/xmendez/wfuzz?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/xmendez/wfuzz?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/xmendez/wfuzz?style=for-the-badge&label=开源协议)
+
+- https://github.com/s0md3v/Breacher - **多线程的后台路径扫描器，也可用于发现Execution After Redirect漏洞f**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/s0md3v/Breacher?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/s0md3v/Breacher?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/s0md3v/Breacher?style=for-the-badge&label=开源协议)
+
+- https://github.com/ztgrace/changeme - **弱口令扫描器，不仅支持普通登录页，也支持ssh、mongodb等组件**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/ztgrace/changeme?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/ztgrace/changeme?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/ztgrace/changeme?style=for-the-badge&label=开源协议)
+
+- https://github.com/medbenali/CyberScan - **渗透测试辅助工具，支持分析数据包、解码、端口扫描、IP地址分析等**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/medbenali/CyberScan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/medbenali/CyberScan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/medbenali/CyberScan?style=for-the-badge&label=开源协议)
+
+- https://github.com/m0nad/HellRaiser - **基于nmap的扫描器，与cve漏洞关联**
+
+> ![](https://img.shields.io/badge/主语言-Ruby-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/m0nad/HellRaiser?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/m0nad/HellRaiser?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/m0nad/HellRaiser?style=for-the-badge&label=开源协议)
+
+- https://github.com/scipag/vulscan - **基于Nmap的高级漏洞扫描器，命令行环境使用**
+
+> ![](https://img.shields.io/badge/主语言-NSE-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/scipag/vulscan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/scipag/vulscan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/scipag/vulscan?style=for-the-badge&label=开源协议)
+
+- https://github.com/jekyc/wig - **Web应用信息搜集工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/jekyc/wig?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/jekyc/wig?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/jekyc/wig?style=for-the-badge&label=开源协议)
+
+- https://github.com/eldraco/domain_analyzer - **围绕web服务的域名进行信息收集和"域传送"等漏洞扫描，也支持针对背后的服务器端口扫描等**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/eldraco/domain_analyzer?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/eldraco/domain_analyzer?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/eldraco/domain_analyzer?style=for-the-badge&label=开源协议)
+
+- https://github.com/cloudtracer/paskto - **基于Nikto扫描规则的被动式路径扫描以及信息爬虫**
+
+> ![](https://img.shields.io/badge/主语言-Node.js-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/cloudtracer/paskto?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/cloudtracer/paskto?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/cloudtracer/paskto?style=for-the-badge&label=开源协议)
+
+- https://github.com/zerokeeper/WebEye - **快速识别web服务器类型、CMS类型、WAF类型、WHOIS信息、以及语言框架**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/zerokeeper/WebEye?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/zerokeeper/WebEye?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/zerokeeper/WebEye?style=for-the-badge&label=开源协议)
+
+- https://github.com/m3liot/shcheck - **用于检查web服务的http header的安全性**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/m3liot/shcheck?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/m3liot/shcheck?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/m3liot/shcheck?style=for-the-badge&label=开源协议)
+
+- https://github.com/aipengjie/sensitivefilescan - **一款高效快捷的敏感文件扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/aipengjie/sensitivefilescan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/aipengjie/sensitivefilescan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/aipengjie/sensitivefilescan?style=for-the-badge&label=开源协议)
+
+- https://github.com/fnk0c/cangibrina - **通过字典穷举、google、robots.txt等途径的跨平台后台管理路径扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/aipengjie/sensitivefilescan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/fnk0c/cangibrina?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/fnk0c/cangibrina?style=for-the-badge&label=开源协议)
+
+- https://github.com/n4xh4ck5/CMSsc4n - **常规CMS指纹识别**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/n4xh4ck5/CMSsc4n?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/n4xh4ck5/CMSsc4n?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/n4xh4ck5/CMSsc4n?style=for-the-badge&label=开源协议)
+
+- https://github.com/Ekultek/WhatWaf - **WAF指纹识别及自动化bypass工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Ekultek/WhatWaf?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Ekultek/WhatWaf?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Ekultek/WhatWaf?style=for-the-badge&label=开源协议)
+
+- https://github.com/dzonerzy/goWAPT - **Web应用fuzz工具、框架，同时可用于web路径/服务扫描**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/dzonerzy/goWAPT?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/dzonerzy/goWAPT?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/dzonerzy/goWAPT?style=for-the-badge&label=开源协议)
+
+- https://github.com/blackye/webdirdig - **web敏感目录、信息泄漏扫描脚本**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/blackye/webdirdig?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/blackye/webdirdig?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/blackye/webdirdig?style=for-the-badge&label=开源协议)
+
+- https://github.com/boy-hack/w8fuckcdn - **通过扫描全网获得真实IP的自动化程序**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/boy-hack/w8fuckcdn?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/boy-hack/w8fuckcdn?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/boy-hack/w8fuckcdn?style=for-the-badge&label=开源协议)
+
+- https://github.com/boy-hack/w11scan - **分布式web指纹识别平台**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/boy-hack/w11scan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/boy-hack/w11scan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/boy-hack/w11scan?style=for-the-badge&label=开源协议)
+
+- https://github.com/Nekmo/dirhunt - **爬虫式web目录扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Nekmo/dirhunt?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Nekmo/dirhunt?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Nekmo/dirhunt?style=for-the-badge&label=开源协议)
+
+- https://github.com/H4ckForJob/dirmap - **一个高级web目录扫描工具，功能将会强于DirBuster、Dirsearch、cansina、御剑**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/H4ckForJob/dirmap?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/H4ckForJob/dirmap?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/H4ckForJob/dirmap?style=for-the-badge&label=开源协议)
+
+- https://github.com/s0md3v/Photon - **可以提取网址，电子邮件，文件，网站帐户等的高速爬虫**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/s0md3v/Photon?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/s0md3v/Photon?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/s0md3v/Photon?style=for-the-badge&label=开源协议)
+
+- https://github.com/1N3/BlackWidow - **Web站点信息搜集工具，包括邮箱、电话等信息**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/1N3/BlackWidow?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/1N3/BlackWidow?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/1N3/BlackWidow?style=for-the-badge&label=开源协议)
+
+- https://github.com/saeeddhqan/Maryam - **基于Recon-ng的开源情报（OSINT）收集和Web指纹识别的模块化框架**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/saeeddhqan/Maryam?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/saeeddhqan/Maryam?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/saeeddhqan/Maryam?style=for-the-badge&label=开源协议)
+
+- https://github.com/lcatro/network_backdoor_scanner - **基于网络流量的内网探测框架**
+
+> ![](https://img.shields.io/badge/主语言-C++-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/lcatro/network_backdoor_scanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/lcatro/network_backdoor_scanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/lcatro/network_backdoor_scanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/Tib3rius/AutoRecon - **多线程目标网段探测工具，适用于大型内网探测扫描**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Tib3rius/AutoRecon?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Tib3rius/AutoRecon?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Tib3rius/AutoRecon?style=for-the-badge&label=开源协议)
+
+
+- https://github.com/sowish/LNScan  - **基于BBScan via.lijiejie的本地网络扫描**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/sowish/LNScan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/sowish/LNScan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/sowish/LNScan?style=for-the-badge&label=开源协议)
+
+- https://github.com/shadow1ng/fscan  - **内网综合扫描工具，方便一键自动化、全方位漏扫扫描**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/shadow1ng/fscan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/shadow1ng/fscan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/shadow1ng/fscan?style=for-the-badge&label=开源协议)
+
+- https://github.com/b1gcat/DarkEye  - **端口扫描与存活主机发现**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/b1gcat/DarkEye?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/b1gcat/DarkEye?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/b1gcat/DarkEye?style=for-the-badge&label=开源协议)
+
+- https://github.com/v-byte-cpu/sx  - **比nmap快30倍的轻量化网络扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/v-byte-cpu/sx?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/v-byte-cpu/sx?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/v-byte-cpu/sx?style=for-the-badge&label=开源协议)
+
+- https://github.com/nullt3r/jfscan  - **基于nmap以及Masscan的大规模网络扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/nullt3r/jfscan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/nullt3r/jfscan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/nullt3r/jfscan?style=for-the-badge&label=开源协议)
+
+- https://github.com/lcvvvv/kscan  - **具备端口扫描、协议检测、指纹识别，暴力破解等功能。支持协议1200+，协议指纹10000+，应用指纹2000+，暴力破解协议10余种**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/lcvvvv/kscan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/lcvvvv/kscan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/lcvvvv/kscan?style=for-the-badge&label=开源协议)
+
+- https://github.com/OJ/gobuster  - **域名、文件、url等fuzz工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/OJ/gobuster?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/OJ/gobuster?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/OJ/gobuster?style=for-the-badge&label=开源协议)
+
+
+### 特定Web漏洞类型扫描器
+
+- https://github.com/1N3/XSSTracer  - **用于检测跨站跟踪, 点击劫持等问题的工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/1N3/XSSTracer?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/1N3/XSSTracer?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/1N3/XSSTracer?style=for-the-badge&label=开源协议)
+
+- https://github.com/0xHJK/dumpall - **`.git` / `.svn` / `.DS_Store`等信息泄露集成利用工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/0xHJK/dumpall?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/0xHJK/dumpall?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/0xHJK/dumpall?style=for-the-badge&label=开源协议)
+
+- https://github.com/shengqi158/svnhack - **`.svn` 文件夹泄露利用工具**
+
+> ![](https://img.shields.io/badge/主语言-NSE-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/shengqi158/svnhack?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/shengqi158/svnhack?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/shengqi158/svnhack?style=for-the-badge&label=开源协议)
+
+- https://github.com/lijiejie/GitHack - **`.git` 文件夹泄露利用工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/lijiejie/GitHack?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/lijiejie/GitHack?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/lijiejie/GitHack?style=for-the-badge&label=开源协议)
+
+- https://github.com/blackye/Jenkins - **Jenkins漏洞探测、用户抓取爆破**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/blackye/Jenkins?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/blackye/Jenkins?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/blackye/Jenkins?style=for-the-badge&label=开源协议)
+
+- https://github.com/code-scan/dzscan - **首款集成化的Discuz扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/code-scan/dzscan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/code-scan/dzscan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/code-scan/dzscan?style=for-the-badge&label=开源协议)
+
+- https://github.com/chuhades/CMS-Exploit-Framework  - **内容管理系统CMS扫描及利用框架**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/chuhades/CMS-Exploit-Framework?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/chuhades/CMS-Exploit-Framework?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/chuhades/CMS-Exploit-Framework?style=for-the-badge&label=开源协议)
+
+- https://github.com/lijiejie/IIS_shortname_Scanner - **IIS短文件名暴力枚举漏洞利用工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/lijiejie/IIS_shortname_Scanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/lijiejie/IIS_shortname_Scanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/lijiejie/IIS_shortname_Scanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/riusksk/FlashScanner - **Flash-XSS扫描(Flash已被抛弃)**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/riusksk/FlashScanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/riusksk/FlashScanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/riusksk/FlashScanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/epinna/tplmap - **服务器端模板注入漏洞检测与利用工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/epinna/tplmap?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/epinna/tplmap?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/epinna/tplmap?style=for-the-badge&label=开源协议)
+
+- https://github.com/rastating/wordpress-exploit-framework - **集成化wordpress漏洞利用框架**
+
+> ![](https://img.shields.io/badge/主语言-Ruby-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/rastating/wordpress-exploit-framework?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/rastating/wordpress-exploit-framework?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/rastating/wordpress-exploit-framework?style=for-the-badge&label=开源协议)
+
+- https://github.com/ilmila/J2EEScan - **用于扫描J2EE应用的一款burpsuite插件**
+
+> ![](https://img.shields.io/badge/主语言-Java-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/ilmila/J2EEScan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/ilmila/J2EEScan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/ilmila/J2EEScan?style=for-the-badge&label=开源协议)
+
+- https://github.com/riusksk/StrutScan - **一款基于Perl的Strut2的历史漏洞扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/riusksk/StrutScan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/riusksk/StrutScan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/riusksk/StrutScan?style=for-the-badge&label=开源协议)
+
+- https://github.com/D35m0nd142/LFISuite - **本地文件包含漏洞利用及扫描工具，支持反弹shell**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/D35m0nd142/LFISuite?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/D35m0nd142/LFISuite?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/D35m0nd142/LFISuite?style=for-the-badge&label=开源协议)
+
+- https://github.com/tijme/angularjs-csti-scanner - **自动化探测客户端AngularJS模板注入漏洞工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/tijme/angularjs-csti-scanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/tijme/angularjs-csti-scanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/tijme/angularjs-csti-scanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/irsdl/IIS-ShortName-Scanner - **Java编写的IIS短文件名暴力枚举漏洞利用工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/irsdl/IIS-ShortName-Scanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/irsdl/IIS-ShortName-Scanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/irsdl/IIS-ShortName-Scanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/swisskyrepo/Wordpresscan - **基于WPScan以及WPSeku的优化版wordpress扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/swisskyrepo/Wordpresscan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/swisskyrepo/Wordpresscan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/swisskyrepo/Wordpresscan?style=for-the-badge&label=开源协议)
+
+- https://github.com/CHYbeta/cmsPoc - **内容管理系统CMS渗透测试框架**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/CHYbeta/cmsPoc?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/CHYbeta/cmsPoc?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/CHYbeta/cmsPoc?style=for-the-badge&label=开源协议)
+
+- https://github.com/3gstudent/Smbtouch-Scanner - **自动化扫描内网中存在的由shadow brokers泄露的ETERNAL系列漏洞**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/3gstudent/Smbtouch-Scanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/3gstudent/Smbtouch-Scanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/3gstudent/Smbtouch-Scanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/OsandaMalith/LFiFreak - **本地文件包含漏洞利用及扫描工具，支持反弹shell**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/OsandaMalith/LFiFreak?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/OsandaMalith/LFiFreak?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/OsandaMalith/LFiFreak?style=for-the-badge&label=开源协议)
+
+- https://github.com/mak-/parameth - **用于枚举脚本的GET/POST未知参数字段**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/mak-/parameth?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/mak-/parameth?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/mak-/parameth?style=for-the-badge&label=开源协议)
+
+- https://github.com/Lucifer1993/struts-scan - **struts2漏洞全版本检测和利用工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Lucifer1993/struts-scan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Lucifer1993/struts-scan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Lucifer1993/struts-scan?style=for-the-badge&label=开源协议)
+
+- https://github.com/hahwul/a2sv - **SSL漏洞扫描，例如心脏滴血漏洞等**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/hahwul/a2sv?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/hahwul/a2sv?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/hahwul/a2sv?style=for-the-badge&label=开源协议)
+
+- https://github.com/NickstaDB/BaRMIe - **用于攻击爆破Java Remote Method Invocation服务的工具**
+
+> ![](https://img.shields.io/badge/主语言-Java-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/NickstaDB/BaRMIe?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/NickstaDB/BaRMIe?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/NickstaDB/BaRMIe?style=for-the-badge&label=开源协议)
+
+- https://github.com/RetireJS/grunt-retire - **扫描Node.js扩展库的常见漏洞**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/RetireJS/grunt-retire?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/RetireJS/grunt-retire?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/RetireJS/grunt-retire?style=for-the-badge&label=开源协议)
+
+- https://github.com/kotobukki/BDA - **针对Hadoop、Spark等大数据平台的的漏洞探测工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/kotobukki/BDA?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/kotobukki/BDA?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/kotobukki/BDA?style=for-the-badge&label=开源协议)
+
+- https://github.com/jagracey/Regex-DoS - **Node.js库RegEx 拒绝服务扫描**
+
+> ![](https://img.shields.io/badge/主语言-Node.js-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/jagracey/Regex-DoS?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/jagracey/Regex-DoS?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/jagracey/Regex-DoS?style=for-the-badge&label=开源协议)
+
+- https://github.com/milesrichardson/docker-onion-nmap - **使用nmap扫描Tor网络上隐藏的"onion"服务**
+
+> ![](https://img.shields.io/badge/主语言-Bash-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/milesrichardson/docker-onion-nmap?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/milesrichardson/docker-onion-nmap?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/milesrichardson/docker-onion-nmap?style=for-the-badge&label=开源协议)
+
+- https://github.com/Moham3dRiahi/XAttacker - **Web CMS exploit 工具,包含针对主流 CMS 的 66 个不同的 exploits**
+
+> ![](https://img.shields.io/badge/主语言-Perl-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Moham3dRiahi/XAttacker?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Moham3dRiahi/XAttacker?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Moham3dRiahi/XAttacker?style=for-the-badge&label=开源协议)
+
+- https://github.com/lijiejie/BBScan - **通用信息泄漏批量扫描**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/lijiejie/BBScan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/lijiejie/BBScan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/lijiejie/BBScan?style=for-the-badge&label=开源协议)
+
+- https://github.com/almandin/fuxploider - **文件上传漏洞扫描器及利用工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/almandin/fuxploider?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/almandin/fuxploider?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/almandin/fuxploider?style=for-the-badge&label=开源协议)
+
+- https://github.com/Jamalc0m/wphunter - **Wordpress漏洞扫描器,同时也支持敏感文件泄露扫描**
+
+> ![](https://img.shields.io/badge/主语言-PHP-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Jamalc0m/wphunter?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Jamalc0m/wphunter?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Jamalc0m/wphunter?style=for-the-badge&label=开源协议)
+
+- https://github.com/retirejs/retire.js - **检测网站依赖的Javascript库中存在的已知通用漏洞**
+
+> ![](https://img.shields.io/badge/主语言-Node.js-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/retirejs/retire.js?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/retirejs/retire.js?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/retirejs/retire.js?style=for-the-badge&label=开源协议)
+
+- https://github.com/3xp10it/xupload - **自动检测上传功能是否可上传webshell**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/3xp10it/xupload?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/3xp10it/xupload?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/3xp10it/xupload?style=for-the-badge&label=开源协议)
+
+- https://github.com/rezasp/vbscan - **论坛框架vBulletin黑盒漏洞扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Perl-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/rezasp/vbscan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/rezasp/vbscan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/rezasp/vbscan?style=for-the-badge&label=开源协议)
+
+- https://github.com/MrSqar-Ye/BadMod - **内容管理系统CMS指纹识别及自动化渗透测试框架**
+
+> ![](https://img.shields.io/badge/主语言-PHP-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/MrSqar-Ye/BadMod?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/MrSqar-Ye/BadMod?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/MrSqar-Ye/BadMod?style=for-the-badge&label=开源协议)
+
+- https://github.com/Tuhinshubhra/CMSeeK - **内容管理系统CMS漏洞检测和利用套件**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Tuhinshubhra/CMSeeK?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Tuhinshubhra/CMSeeK?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Tuhinshubhra/CMSeeK?style=for-the-badge&label=开源协议)
+
+- https://github.com/cloudsploit/scans - **AWS服务器安全审计工具**
+
+> ![](https://img.shields.io/badge/主语言-Node.js-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/cloudsploit/scans?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/cloudsploit/scans?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/cloudsploit/scans?style=for-the-badge&label=开源协议)
+
+- https://github.com/radenvodka/SVScanner - **针对wordpress、magento、joomla等CMS的漏洞扫描器及自动利用工具**
+
+> ![](https://img.shields.io/badge/主语言-Perl-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/radenvodka/SVScanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/radenvodka/SVScanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/radenvodka/SVScanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/rezasp/joomscan - **OWASP旗下Joomla漏洞扫描项目**
+
+> ![](https://img.shields.io/badge/主语言-Perl-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/rezasp/joomscan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/rezasp/joomscan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/rezasp/joomscan?style=for-the-badge&label=开源协议)
+
+- https://github.com/6IX7ine/djangohunter - **用于检测因错误配置导致敏感信息暴露的Django应用程序**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/6IX7ine/djangohunter?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/6IX7ine/djangohunter?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/6IX7ine/djangohunter?style=for-the-badge&label=开源协议)
+
+- https://github.com/seungsoo-lee/DELTA - **SDN网络安全评估及利用框架**
+
+> ![](https://img.shields.io/badge/主语言-Java-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/seungsoo-lee/DELTA?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/seungsoo-lee/DELTA?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/seungsoo-lee/DELTA?style=for-the-badge&label=开源协议)
+
+- https://github.com/anouarbensaad/vulnx - **CMS漏洞扫描利用框架，支持Joomla、WP、drupal等**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/anouarbensaad/vulnx?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/anouarbensaad/vulnx?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/anouarbensaad/vulnx?style=for-the-badge&label=开源协议)
+
+- https://github.com/MrEmpy/Mantra - **用于查找 JS 文件和页面中 API 密钥泄漏**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/MrEmpy/Mantra?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/MrEmpy/Mantra?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/MrEmpy/Mantra?style=for-the-badge&label=开源协议)
+
+
+### 动态或静态代码审计
+
+- https://github.com/wufeifei/cobra - **白盒代码安全审计系统**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/wufeifei/cobra?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/wufeifei/cobra?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/wufeifei/cobra?style=for-the-badge&label=开源协议)
+
+- https://github.com/OneSourceCat/phpvulhunter - **静态PHP代码审计**
+
+> ![](https://img.shields.io/badge/主语言-PHP-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/OneSourceCat/phpvulhunter?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/OneSourceCat/phpvulhunter?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/OneSourceCat/phpvulhunter?style=for-the-badge&label=开源协议)
+
+- https://github.com/Qihoo360/phptrace - **跟踪、分析PHP运行情况的工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Qihoo360/phptrace?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Qihoo360/phptrace?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Qihoo360/phptrace?style=for-the-badge&label=开源协议)
+
+- https://github.com/ajinabraham/NodeJsScan - **NodeJS应用代码审计**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/ajinabraham/NodeJsScan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/ajinabraham/NodeJsScan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/ajinabraham/NodeJsScan?style=for-the-badge&label=开源协议)
+
+- https://github.com/shengqi158/pyvulhunter  - **Python应用审计**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/shengqi158/pyvulhunter?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/shengqi158/pyvulhunter?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/shengqi158/pyvulhunter?style=for-the-badge&label=开源协议)
+
+- https://github.com/python-security/pyt - **Python应用静态代码审计**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/python-security/pyt?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/python-security/pyt?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/python-security/pyt?style=for-the-badge&label=开源协议)
+
+- https://github.com/emanuil/php-reaper - **用于扫描PHP应用程序中可能存在SQL漏洞的ADOdb代码**
+
+> ![](https://img.shields.io/badge/主语言-PHP-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/emanuil/php-reaper?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/emanuil/php-reaper?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/emanuil/php-reaper?style=for-the-badge&label=开源协议)
+
+- https://github.com/lowjoel/phortress - **用于检测潜在安全漏洞的PHP静态代码分析工具**
+
+> ![](https://img.shields.io/badge/主语言-PHP-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/lowjoel/phortress?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/lowjoel/phortress?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/lowjoel/phortress?style=for-the-badge&label=开源协议)
+
+- https://github.com/zsdlove/Hades - **Java静态代码审计工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/zsdlove/Hades?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/zsdlove/Hades?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/zsdlove/Hades?style=for-the-badge&label=开源协议)
+
+- https://github.com/LoRexxar/Kunlun-M - **静态白盒扫描工具，支持PHP、JavaScript的语义扫描，基础安全、组件安全扫描，Chrome Ext\Solidity的基础扫描**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/LoRexxar/Kunlun-M?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/LoRexxar/Kunlun-M?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/LoRexxar/Kunlun-M?style=for-the-badge&label=开源协议)
+
+- https://github.com/PyCQA/bandit - **Python应用源代码扫描工具，可自定义规则拓展**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/PyCQA/bandit?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/PyCQA/bandit?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/PyCQA/bandit?style=for-the-badge&label=开源协议)
+
+- https://github.com/praetorian-inc/gokart - **Go应用源代码扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/praetorian-inc/gokart?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/praetorian-inc/gokart?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/praetorian-inc/gokart?style=for-the-badge&label=开源协议)
+
+- https://github.com/wh1t3p1g/tabby - **Java应用源代码扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Java-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/wh1t3p1g/tabby?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/wh1t3p1g/tabby?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/wh1t3p1g/tabby?style=for-the-badge&label=开源协议)
+
+- https://github.com/CoolerVoid/codecat - **静态正则源代码扫描工具,支持Java、C++、Swift等**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/CoolerVoid/codecat?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/CoolerVoid/codecat?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/CoolerVoid/codecat?style=for-the-badge&label=开源协议)
+
+- https://github.com/qax-os/goreporter - **奇安信出品的国内首款Go语言代码审计工具，支持单元测试以及生成代码质量报告**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/qax-os/goreporter?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/qax-os/goreporter?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/qax-os/goreporter?style=for-the-badge&label=开源协议)
+
+- https://github.com/hudangwei/codemillx - **用于Go程序的CodeQL工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/hudangwei/codemillx?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/hudangwei/codemillx?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/hudangwei/codemillx?style=for-the-badge&label=开源协议)
+
+- https://github.com/securego/gosec - **通过扫描Go AST检查源代码是否存在安全问题**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/securego/gosec?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/securego/gosec?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/securego/gosec?style=for-the-badge&label=开源协议)
+
+
+### 模块化设计扫描器或漏洞评估框架
+
+- https://github.com/infobyte/faraday - **跨平台集成化渗透测试辅助平台及漏洞管理平台**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/infobyte/faraday?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/infobyte/faraday?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/infobyte/faraday?style=for-the-badge&label=开源协议)
+
+- https://github.com/az0ne/AZScanner - **自动漏洞扫描器，子域名爆破，端口扫描，目录爆破，常用框架漏洞检测**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/az0ne/AZScanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/az0ne/AZScanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/az0ne/AZScanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/blackye/lalascan - **集合owasp top10漏洞扫描和边界资产发现能力的分布式web漏洞扫描框架**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/blackye/lalascan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/blackye/lalascan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/blackye/lalascan?style=for-the-badge&label=开源协议)
+
+- https://github.com/blackye/BkScanner - **BkScanner 分布式、插件化web漏洞扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/blackye/BkScanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/blackye/BkScanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/blackye/BkScanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/ysrc/GourdScanV2 - **ysrc出品的被动式漏洞扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/ysrc/GourdScanV2?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/ysrc/GourdScanV2?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/ysrc/GourdScanV2?style=for-the-badge&label=开源协议)
+
+- https://github.com/netxfly/passive_scan - **基于http代理的web漏洞扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/netxfly/passive_scan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/netxfly/passive_scan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/netxfly/passive_scan?style=for-the-badge&label=开源协议)
+
+- https://github.com/1N3/Sn1per - **自动化扫描器，包括中间件扫描以及设备指纹识别**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/1N3/Sn1per?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/1N3/Sn1per?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/1N3/Sn1per?style=for-the-badge&label=开源协议)
+
+- https://github.com/RASSec/pentestEr_Fully-automatic-scanner - **定向全自动化渗透测试工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/RASSec/pentestEr_Fully-automatic-scanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/RASSec/pentestEr_Fully-automatic-scanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/RASSec/pentestEr_Fully-automatic-scanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/Xyntax/POC-T - **渗透测试插件化并发框架**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Xyntax/POC-T?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Xyntax/POC-T?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Xyntax/POC-T?style=for-the-badge&label=开源协议)
+
+- https://github.com/v3n0m-Scanner/V3n0M-Scanner - **支持检测SQLi/XSS/LFI/RFI等漏洞的扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/v3n0m-Scanner/V3n0M-Scanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/v3n0m-Scanner/V3n0M-Scanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/v3n0m-Scanner/V3n0M-Scanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/Skycrab/leakScan - **Web化的的漏洞扫描框架**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Skycrab/leakScan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Skycrab/leakScan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Skycrab/leakScan?style=for-the-badge&label=开源协议)
+
+- https://github.com/zhangzhenfeng/AnyScan - **一款web化的自动化渗透测试框架**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/zhangzhenfeng/AnyScan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/zhangzhenfeng/AnyScan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/zhangzhenfeng/AnyScan?style=for-the-badge&label=开源协议)
+
+- https://github.com/Tuhinshubhra/RED_HAWK - **一款集成信息收集、漏洞扫描、指纹识别等的多合一扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-PHP-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Tuhinshubhra/RED_HAWK?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Tuhinshubhra/RED_HAWK?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Tuhinshubhra/RED_HAWK?style=for-the-badge&label=开源协议)
+
+- https://github.com/swisskyrepo/DamnWebScanner - **基于Chrome、Opera插件的被动式漏洞扫描**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/swisskyrepo/DamnWebScanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/swisskyrepo/DamnWebScanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/swisskyrepo/DamnWebScanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/anilbaranyelken/tulpar - **支持多种web漏洞扫描，仅命令行环境使用**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/anilbaranyelken/tulpar?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/anilbaranyelken/tulpar?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/anilbaranyelken/tulpar?style=for-the-badge&label=开源协议)
+
+- https://github.com/Yukinoshita47/Yuki-Chan-The-Auto-Pentest - **集成子域名枚举、Nmap、WAF指纹识别等模块的web应用扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Yukinoshita47/Yuki-Chan-The-Auto-Pentest?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Yukinoshita47/Yuki-Chan-The-Auto-Pentest?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Yukinoshita47/Yuki-Chan-The-Auto-Pentest?style=for-the-badge&label=开源协议)
+
+- https://github.com/0xsauby/yasuo - **使用Ruby开发的扫描网络中主机存在的第三方web应用服务漏洞**
+
+> ![](https://img.shields.io/badge/主语言-Ruby-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/0xsauby/yasuo?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/0xsauby/yasuo?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/0xsauby/yasuo?style=for-the-badge&label=开源协议)
+
+- https://github.com/hatRiot/clusterd - **Web应用自动化扫描框架,支持自动化上传webshell**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/hatRiot/clusterd?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/hatRiot/clusterd?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/hatRiot/clusterd?style=for-the-badge&label=开源协议)
+
+- https://github.com/erevus-cn/pocscan - **一款开源 Poc 调用框架,可轻松调用Pocsuite,Tangscan,Beebeeto,Knowsec老版本POC，可使用docker部署**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/erevus-cn/pocscan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/erevus-cn/pocscan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/erevus-cn/pocscan?style=for-the-badge&label=开源协议)
+
+- https://github.com/TophantTechnology/osprey - **斗象能力中心出品并长期维护的开源漏洞检测框架**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/TophantTechnology/osprey?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/TophantTechnology/osprey?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/TophantTechnology/osprey?style=for-the-badge&label=开源协议)
+
+- https://github.com/yangbh/Hammer - **Web应用漏洞扫描框架**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/yangbh/Hammer?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/yangbh/Hammer?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/yangbh/Hammer?style=for-the-badge&label=开源协议)
+
+- https://github.com/Lucifer1993/AngelSword - **被动式漏洞扫描，支持历史cve编号漏洞识别**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Lucifer1993/AngelSword?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Lucifer1993/AngelSword?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Lucifer1993/AngelSword?style=for-the-badge&label=开源协议)
+
+- https://github.com/zaproxy/zaproxy - **The OWASP ZAP core project出品的综合性渗透测试工具**
+
+> ![](https://img.shields.io/badge/主语言-Java-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/zaproxy/zaproxy?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/zaproxy/zaproxy?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/zaproxy/zaproxy?style=for-the-badge&label=开源协议)
+
+- https://github.com/s0md3v/Striker - **一款多方位信息收集、指纹识别及漏洞扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/s0md3v/Striker?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/s0md3v/Striker?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/s0md3v/Striker?style=for-the-badge&label=开源协议)
+
+- https://github.com/dermotblair/webvulscan - **一款web应用漏洞扫描器，支持扫描反射型以及存储型XSS、SQL injection等漏洞，支持输出pdf报告**
+
+> ![](https://img.shields.io/badge/主语言-PHP-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/dermotblair/webvulscan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/dermotblair/webvulscan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/dermotblair/webvulscan?style=for-the-badge&label=开源协议)
+
+- https://github.com/alienwithin/OWASP-mth3l3m3nt-framework - **渗透测试辅助工具，综合利用框架**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/alienwithin/OWASP-mth3l3m3nt-framework?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/alienwithin/OWASP-mth3l3m3nt-framework?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/alienwithin/OWASP-mth3l3m3nt-framework?style=for-the-badge&label=开源协议)
+
+- https://github.com/toyakula/luna - **基于被动式扫描框架的自动化web漏洞扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/toyakula/luna?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/toyakula/luna?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/toyakula/luna?style=for-the-badge&label=开源协议)
+
+- https://github.com/Manisso/fsociety - **渗透测试辅助框架，包含信息搜集、无线渗透、web应用扫描等功能**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Manisso/fsociety?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Manisso/fsociety?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Manisso/fsociety?style=for-the-badge&label=开源协议)
+
+- https://github.com/boy-hack/w9scan - **内置1200+插件的web漏洞扫描框架**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/boy-hack/w9scan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/boy-hack/w9scan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/boy-hack/w9scan?style=for-the-badge&label=开源协议)
+
+- https://github.com/YalcinYolalan/WSSAT - **Web服务安全评估工具,提供基于Windows操作系统的简单.exe应用**
+
+> ![](https://img.shields.io/badge/主语言-CSharp-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/YalcinYolalan/WSSAT?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/YalcinYolalan/WSSAT?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/YalcinYolalan/WSSAT?style=for-the-badge&label=开源协议)
+
+- https://github.com/AmyangXYZ/AssassinGo - **使用Go开发的可扩展以及高并发渗透测试框架**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/AmyangXYZ/AssassinGo?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/AmyangXYZ/AssassinGo?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/AmyangXYZ/AssassinGo?style=for-the-badge&label=开源协议)
+
+- https://github.com/joker25000/Optiva-Framework - **一款web应用漏洞扫描器，支持扫描反射型以及存储型XSS、SQL injection等漏洞**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/joker25000/Optiva-Framework?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/joker25000/Optiva-Framework?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/joker25000/Optiva-Framework?style=for-the-badge&label=开源协议)
+
+- https://github.com/theInfectedDrake/TIDoS-Framework - **集成104个模块的web应用程序渗透测试框架**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/theInfectedDrake/TIDoS-Framework?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/theInfectedDrake/TIDoS-Framework?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/theInfectedDrake/TIDoS-Framework?style=for-the-badge&label=开源协议)
+
+- https://github.com/TideSec/WDScanner - **一款功能完备的企业级漏洞扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/TideSec/WDScanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/TideSec/WDScanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/TideSec/WDScanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/j3ssie/Osmedeus - **一款具备多角度信息收集和漏洞扫描能力的全自动扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/j3ssie/Osmedeus?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/j3ssie/Osmedeus?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/j3ssie/Osmedeus?style=for-the-badge&label=开源协议)
+
+- https://github.com/jeffzh3ng/Fuxi-Scanner - **支持资产探测与管理的一款开源的网络安全检测工具**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/jeffzh3ng/Fuxi-Scanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/jeffzh3ng/Fuxi-Scanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/jeffzh3ng/Fuxi-Scanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/knownsec/Pocsuite - **开源漏洞检测框架**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/knownsec/Pocsuite?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/knownsec/Pocsuite?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/knownsec/Pocsuite?style=for-the-badge&label=开源协议)
+
+- https://github.com/opensec-cn/kunpeng - **Golang编写的开源POC框架/库，以动态链接库的形式提供各种语言调用**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/opensec-cn/kunpeng?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/opensec-cn/kunpeng?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/opensec-cn/kunpeng?style=for-the-badge&label=开源协议)
+
+- https://github.com/jaeles-project/jaeles - **Golang编写的功能强大，灵活且易于扩展的扫描器基础框架**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/jaeles-project/jaeles?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/jaeles-project/jaeles?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/jaeles-project/jaeles?style=for-the-badge&label=开源协议)
+
+- https://github.com/TideSec/Mars - **WDScanner重铸版**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/TideSec/Mars?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/TideSec/Mars?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/TideSec/Mars?style=for-the-badge&label=开源协议)
+
+- https://github.com/knassar702/scant3r - **又一款网友定制扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/knassar702/scant3r?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/knassar702/scant3r?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/knassar702/scant3r?style=for-the-badge&label=开源协议)
+
+- https://github.com/google/tsunami-security-scanner - **谷歌出品的可扩展高效漏洞扫描器**
+
+> ![](https://img.shields.io/badge/主语言-Java-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/google/tsunami-security-scanner?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/google/tsunami-security-scanner?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/google/tsunami-security-scanner?style=for-the-badge&label=开源协议)
+
+- https://github.com/er10yi/MagiCude - **基于Spring Boot微服务架构的扫描器,支持分布式端口（漏洞）扫描、资产安全管理、实时威胁监控与通知、自动漏洞闭环、漏洞wiki、邮件通知等功能**
+
+> ![](https://img.shields.io/badge/主语言-Java-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/er10yi/MagiCude?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/er10yi/MagiCude?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/er10yi/MagiCude?style=for-the-badge&label=开源协议)
+
+- https://github.com/projectdiscovery/nuclei - **基于YAML规则的高扩展性模板化漏洞扫描工具**
+
+> ![](https://img.shields.io/badge/主语言-Go-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/projectdiscovery/nuclei?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/projectdiscovery/nuclei?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/projectdiscovery/nuclei?style=for-the-badge&label=开源协议)
+
+- https://github.com/ysrc/xunfeng - **网络资产识别引擎，漏洞检测引擎**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/ysrc/xunfeng?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/ysrc/xunfeng?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/ysrc/xunfeng?style=for-the-badge&label=开源协议)
+
+- https://github.com/TophantTechnology/ARL - **敏捷资产侦查管理系统**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/TophantTechnology/ARL?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/TophantTechnology/ARL?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/TophantTechnology/ARL?style=for-the-badge&label=开源协议)
+
+- https://github.com/smallcham/sec-admin - **SEC可用于企业对服务器资源安全进行扫描排查，可控性强、支持分布式多节点部署**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/smallcham/sec-admin?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/smallcham/sec-admin?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/smallcham/sec-admin?style=for-the-badge&label=开源协议)
+
+- https://github.com/olacabs/jackhammer - **集成web应用扫描、源代码扫描、移动应用分析、网络扫描等的一体化安全工具平台**
+
+> ![](https://img.shields.io/badge/主语言-Java-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/olacabs/jackhammer?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/olacabs/jackhammer?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/olacabs/jackhammer?style=for-the-badge&label=开源协议)
+
+
+- https://github.com/bigblackhat/oFx - **漏洞验证框架，企业资产评估，1day快速扫描**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/bigblackhat/oFx?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/bigblackhat/oFx?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/bigblackhat/oFx?style=for-the-badge&label=开源协议)
+
+- https://github.com/JiuZero/z0scan - **兼具本地式与分布式优势、针对大类通用型Web漏洞、插件外部动态化导入的轻量级主被动扫描器(GUI版本:https://github.com/JiuZero/Ling)**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/JiuZero/z0scan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/JiuZero/z0scan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/JiuZero/z0scan?style=for-the-badge&label=开源协议)
+
+- https://github.com/xiabai2008/ruoyi-scan - **若依（RuoYi）专项漏洞扫描器：插件化架构、三态判定、WAF 绕过、漏洞利用链、AI POC 生成，兼容 nuclei**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/xiabai2008/ruoyi-scan?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/xiabai2008/ruoyi-scan?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/xiabai2008/ruoyi-scan?style=for-the-badge&label=开源协议)
+
+
+### 定向APT攻击检测
+
+- https://github.com/Neo23x0/Loki - **根据公开情报库里的IOC信息检索本地是否存在相同hash的文件或与恶意C2的网络连接**
+
+> ![](https://img.shields.io/badge/主语言-Python-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Neo23x0/Loki?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Neo23x0/Loki?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Neo23x0/Loki?style=for-the-badge&label=开源协议)
+
+- https://github.com/Neo23x0/Fenrir - **根据公开情报库里的IOC信息检索本地是否存在相同hash、相似文本内容的文件或与恶意C2的网络连接**
+
+> ![](https://img.shields.io/badge/主语言-BashShell-blue?style=for-the-badge)  ![GitHub last commit](https://img.shields.io/github/last-commit/Neo23x0/Fenrir?style=for-the-badge&label=上次提交)  ![GitHub stars](https://img.shields.io/github/stars/Neo23x0/Fenrir?style=for-the-badge&label=start数量)  ![GitHub](https://img.shields.io/github/license/Neo23x0/Fenrir?style=for-the-badge&label=开源协议)
+
+
+***
+
+## 为什么创建这个合辑？
+
+本合辑的初衷是为了向各类企业安全从业者提供在企业信息安全防护体系建设过程中可以参考的开源安全扫描工具，以期望他们能够利用这些扫描器对业务进行自检，从而保障业务的安全
+
+## 作者
+
+**Wester**(sina weibo <a href="http://weibo.com/zzyme/">@Wester的小号</a>) && **Martin**(sina weibo <a href="http://weibo.com/u/1312149403">@Mart1n_ZHOU</a>)
+
+## 提交规范
+
+本项目遵循 [Conventional Commits](https://www.conventionalcommits.org/) 规范：
+
+| 类型 | 说明 |
+|:-----|:-----|
+| `feat(scanner): xxx` | 添加新扫描器 |
+| `fix(scanner): xxx` | 更新扫描器信息 |
+| `remove(scanner): xxx` | 移除扫描器 |
+| `feat(category): xxx` | 新增分类 |
+| `remove(category): xxx` | 删除分类 |
+| `docs(credits): xxx` | 更新致谢榜 |
+| `chore: xxx` | 其他变更 |
+
+## 法律声明
+
+本项目所列举的扫描器仅供各位研究学习目的使用，使用过程中也请严格遵守当地法律法规，如果您是中国公民，请严格遵守《中华人民共和国网络安全法》相关规定，也请勿触犯《中华人民共和国刑法》第286条"破坏计算机系统罪"相关条例，否则造成的严重后果与仓库作者无关，特此声明！
+
+## 如何参与？
+
+非常欢迎大家一起来参与建设,如果你有关于此项目的想法、建议或者发现了一些有价值的扫描器，请记得要告诉我们 :)
+
+## 开源协议
+
+本仓库内容在知识共享[《署名-非商业性使用-禁止演绎 4.0 国际协议》](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh)条款下发布
+
+## 版权
+
+非常开心能够看到这个仓库在安全社区如此广泛的传播，但我也希望大家能够尊重知识，尊重劳动，因此转载的时候请在您的文章里注明来自https://github.com/We5ter/Scanners-Box ,同时也请不要通过二次发表此文章谋取不正当的利益（如原创投稿）
+
+## 致谢
+
+非常感谢下面这些安全研究员为我们提供的宝贵建议和反馈
+
+- **@0c0c0f**     
+- **@藏形匿影**
+- **@Mottoin团队**
+- **@BlackHole**
+- **@CodeColorist**
+- **@3xp10it**
+- **@re4lity**
+- **@s0md3v**
+- **@boy-hack**
+- **@marsII**
+- **@tom0li**
+- **@hksanduo**
+- **@alexlauerman**
+- **@MedivhMT**
+- **@TideSec**
+- **@0xHJK**
+- **@j3ssie**
+- **@Luci-d**
+- **@cnlnn**
+- **@yunxu1**
+- **@saeeddhqan**
+- **@Sofiane Lounici**
+- **Owen Garrett@deepfence**
+
+
+## Star 轨迹
+
+<p align="center">
+  <a href="https://github.com/We5ter/Scanners-Box/stargazers">
+    <img src="https://img.shields.io/github/stars/We5ter/Scanners-Box?style=for-the-badge&logo=github&color=%23a78bfa&label=⭐%20Star" alt="GitHub Stars">
+  </a>
+  <br/><br/>
+  <img src="https://star-history.dera.page/svg?repos=We5ter/Scanners-Box&type=Date&theme=dark" alt="Star History Chart">
+</p>
+
+
+
+&copy;<a href="https://github.com/monsterzer0" target="_blank">Monster Zero Team</a> 2017-2026

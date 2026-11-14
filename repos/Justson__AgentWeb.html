@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Justson/AgentWeb · GitHub Trending Rank Radar</title>
+<meta name="description" content=" AgentWeb is a powerful library based on Android WebView.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="AgentWeb, Justson, Justson/AgentWeb, github stars, github trending, star growth, star history, 开源项目, 星标增长, webview, agentweb-android-webview, webview-agentweb-web, cookie, android-webview, wechat-pay">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Justson__AgentWeb">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Justson/AgentWeb · GitHub Trending Rank Radar">
+<meta property="og:description" content=" AgentWeb is a powerful library based on Android WebView.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Justson__AgentWeb">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Justson/AgentWeb", "codeRepository": "https://github.com/Justson/AgentWeb", "url": "https://zhuikan.com/repos/Justson__AgentWeb", "description": " AgentWeb is a powerful library based on Android WebView.", "author": {"@type": "Organization", "name": "Justson", "url": "https://github.com/Justson"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Java", "dateCreated": "2017-05-12", "keywords": "webview,agentweb-android-webview,webview-agentweb-web,cookie,android-webview,wechat-pay,hybrid"}</script>
+</head>
+<body data-repo="Justson/AgentWeb" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Justson/AgentWeb</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Justson__AgentWeb"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/17163056?u=5011bb9f0cb1055dccc8e3fc2d4ac937954992f2&amp;v=4&s=300" width="300" height="300" alt="Justson avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">AgentWeb</div>
+      <a class="rp-side-owner" href="https://github.com/Justson">Justson</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Justson">Justson</a>
+        <span class="rp-sep">/</span><span class="rp-name">AgentWeb</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc"> AgentWeb is a powerful library based on Android WebView.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,437</b></span><span class="rp-stat" title="forks">⑂ <b>1,661</b></span><span class="rp-stat" title="watchers">👁 <b>163</b></span><span class="rp-stat" title="prs">⑃ <b>28</b></span><span class="rp-stat" title="issues">● <b>1,050</b></span><span class="rp-stat" title="releases">▤ <b>23</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/webview">webview</a><a class="rp-topic" href="https://github.com/topics/agentweb-android-webview">agentweb-android-webview</a><a class="rp-topic" href="https://github.com/topics/webview-agentweb-web">webview-agentweb-web</a><a class="rp-topic" href="https://github.com/topics/cookie">cookie</a><a class="rp-topic" href="https://github.com/topics/android-webview">android-webview</a><a class="rp-topic" href="https://github.com/topics/wechat-pay">wechat-pay</a><a class="rp-topic" href="https://github.com/topics/hybrid">hybrid</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Java</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2017-05-12</span><a class="rp-meta-bit rp-home" href="https://www.jianshu.com/p/fc7909e24178" rel="noopener">www.jianshu.com/p/fc7909e24178</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Justson/AgentWeb">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v5.1.7-androidx</span><a class="rp-dl-a" href="https://github.com/Justson/AgentWeb/releases/tag/v5.1.7-androidx">v5.1.7-androidx ↓</a><span class="rp-dl-ver">v5.1.7-androidx</span><span class="rp-dl-date">2026-09-14</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">9,437</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,661</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">163</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">28</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,050</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">23</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">AgentWeb 介绍
+
+AgentWeb 是一个基于的 Android WebView ，极度容易使用以及功能强大的库，提供了 Android WebView 一系列的问题解决方案 ，并且轻量和极度灵活，详细使用请参照上面的 Sample 。
+	
+
+ Gradle 引入
+
+AgentWeb 通过 JitPack 分发，请先添加 JitPack 仓库：
+
+groovy
+allprojects {
+  repositories {
+    mavenCentral()
+    maven { url &#x27;https://jitpack.io&#x27; }
+  }
+}
+
+
+Gradle 7+ 若使用 settings.gradle 集中管理仓库，则加在 dependencyResolutionManagement 中：
+
+groovy
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven { url &#x27;https://jitpack.io&#x27; }
+    }
+}
+
+
+ Androidx
+
+   groovy
+    implementation &#x27;com.github.Justson.AgentWeb:agentweb-core:5.1.7-androidx&#x27; // (必选)
+    implementation &#x27;com.github.Justson.AgentWeb:agentweb-filechooser:5.1.7-androidx&#x27; // (可选)
+    implementation &#x27;com.github.Justson:Downloader:v5.0.6-androidx&#x27; // (可选)
+   
+   
+
+ 注意版本号不带 v 前缀：Git tag 是 v5.1.7-androidx，而 JitPack 在生成坐标时会去掉前导 v，因此依赖里应写 5.1.7-androidx。
+
+
+ 相关
+ flying-pigeon跨进程IPC组件
+ AgentWebX5
+ WebView 进度条
+ Downloader 一个轻量的文件下载器
+
+	
+
+
+ 注意事项
+ 支付宝使用需要引入支付宝SDK ，并在项目中依赖 ， 微信支付不需要做任何操作。
+ AgentWeb 内部使用了 AlertDialog 需要依赖 AppCompat 主题 。 
+ setAgentWebParent 不支持  ConstraintLayout 。
+ mAgentWeb.getWebLifeCycle().onPause();会暂停应用内所有WebView 。
+ minSdkVersion 低于等于16以下自定义WebView请注意与 JS 之间通信安全。
+ v5.1.2 起 compileSdk / targetSdk 升级到 36（Android 16），Android Gradle Plugin 升级到 8.13.2，请同步升级项目的 Gradle 与 AGP 版本。
+ v5.1.3 起库已随包下发 @JavascriptInterface 的 keep 规则，接入方无需再在自己的 proguard-rules.pro 中重复声明。
+ 不要直接对 WebView 调用 setWebViewClient() / setWebChromeClient()。这会整体替换掉 AgentWeb 内部的实现，进度条、错误页、文件选择等功能都会随之失效。正确做法是使用 AgentWeb.with(...) 的 setWebViewClient() / setWebChromeClient()，或用 MiddlewareWebClientBase / MiddlewareWebChromeBase 中间件叠加。
+ setOpenOtherPageWays(ASK) 只在目标 App 已安装时才会弹窗询问。未安装时系统中没有任何组件能处理该 scheme，不会弹窗，属预期行为。
+ AgentWeb 在处理非 http/https 的 scheme 跳转时会调用 queryIntentActivities 判断能否唤起其他 App，应用市场的隐私检测可能将其识别为「读取已安装应用列表」。若无需唤起外部 App，设置 setOpenOtherPageWays(DefaultWebClient.OpenOtherPageWays.DISALLOW) 即可完全不触发该调用。
+
+
+
+
+ 文档帮助
+ Wiki(不全)
+ Sample(推荐，详细) 
+ 更新日志
+
+
+
+ 有问题或者有更好的建议
+ [![QQ0Group][qq0groupsvg]][qq0group]
+ 欢迎提 Issues
+
+
+ 赞赏
+开源不易，你的支持是我更新的动力。
+
+  
+
+
+[licensesvg]: https://img.shields.io/badge/License-Apache--2.0-brightgreen.svg
+[license]: https://github.com/Justson/AgentWeb/blob/master/LICENSE
+
+[qq0groupsvg]: https://img.shields.io/badge/QQ群-599471474-fba7f9.svg
+[qq0group]: http://qm.qq.com/cgi-bin/qm/qr?k=KpyfInzI2nr-Lh4StG0oh68GpbcD0vMG
+
+ 
+
+[![License][licensesvg]][license]
+
+ License 
+
+Copyright (C)  Justson(https://github.com/Justson/AgentWeb)
+
+Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+
+​	
+
+​</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Justson/AgentWeb/issues/219"><span class="rp-item-num">#219</span><span class="rp-item-title">系统WebView问题，请在该issue下留言讨论。</span><span class="rp-item-extra">21 comments · 2018-01-05</span></a><a class="rp-item" href="https://github.com/Justson/AgentWeb/issues/1030"><span class="rp-item-num">#1030</span><span class="rp-item-title">小米13  重定向 goback失效</span><span class="rp-item-extra">15 comments · 2023-01-06</span></a><a class="rp-item" href="https://github.com/Justson/AgentWeb/issues/302"><span class="rp-item-num">#302</span><span class="rp-item-title">当停留在AgentWeb页面时，返回前台，再回到AgentWeb页面会重新加载一次页面，怎么破？</span><span class="rp-item-extra">13 comments · 2018-04-12</span></a><a class="rp-item" href="https://github.com/Justson/AgentWeb/issues/869"><span class="rp-item-num">#869</span><span class="rp-item-title">OPPO低版本手机加载H5白屏，H5网页已适配ES5与ES6，agentweb:4.1.2，android版本:5.1</span><span class="rp-item-extra">9 comments · 2020-10-16</span></a><a class="rp-item" href="https://github.com/Justson/AgentWeb/issues/307"><span class="rp-item-num">#307</span><span class="rp-item-title">AgentWeb加载H5的上传图片，不弹出选择框，急求指导</span><span class="rp-item-extra">8 comments · 2018-04-17</span></a><a class="rp-item" href="https://github.com/Justson/AgentWeb/issues/241"><span class="rp-item-num">#241</span><span class="rp-item-title">加载网页时候进度条卡在某特定位置</span><span class="rp-item-extra">8 comments · 2018-01-27</span></a><a class="rp-item" href="https://github.com/Justson/AgentWeb/issues/509"><span class="rp-item-num">#509</span><span class="rp-item-title">每次返回都会重新刷新该页面，怎么能够不重新刷新，就是上一个页面回到当前页面，会刷新</span><span class="rp-item-extra">7 comments · 2019-03-07</span></a><a class="rp-item" href="https://github.com/Justson/AgentWeb/issues/332"><span class="rp-item-num">#332</span><span class="rp-item-title">7.0适配问题</span><span class="rp-item-extra">6 comments · 2018-05-09</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/Justson/AgentWeb/releases"><b>v5.1.7-androidx</b> <span class="rp-rel-tag">v5.1.7-androidx</span> <span class="rp-item-extra">2026-09-14</span></a><pre class="rp-pre">⚠️ 本次包含安全修复，影响 5.1.6-androidx 及更早的所有版本，强烈建议升级。
+
+groovy
+implementation &#x27;com.github.Justson.AgentWeb:agentweb-core:5.1.7-androidx&#x27;
+implementation &#x27;com.github.Justson.AgentWeb:agentweb-filechooser:5.1.7-androidx&#x27; // (可选)
+
+
+ 安全修复
+
+ 网页可拉起宿主应用未导出的页面（Intent Redirection） —— DefaultWebClient 会把网页中的 intent URL（intent://...;component=...;end，或任意 scheme 附带 Intent;...;end 片段）原样解析，并以宿主 Activity 的身份启动。由于系统按宿主 uid 做导出检查，网页因此可以越过 android:exported=&quot;false&quot; 的限制拉起宿主内部页面，并携带任意 extras。默认配置即受影响。现已修复：
+   网页指定的组件若属于宿主自身，将被忽略，只能命中宿主声明过 intent-filter 的页面
+   宿主未导出的页面在任何 OpenOtherPageWays 模式下都不会被打开
+   清除网页传入的 selector、嵌套 I</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Justson__AgentWeb.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

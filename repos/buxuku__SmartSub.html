@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>buxuku/SmartSub · GitHub Trending Rank Radar</title>
+<meta name="description" content="视频转字幕、字幕翻译、AI 配音与声音克隆、字幕烧录——免费开源的一站式桌面工具。基于 Whisper / FunASR 等本地模型离线语音转文字，批量处理 + 全平台 GPU 加速，跨 Windows / macOS / Linux。Free, open-source desktop app to generate, translate, dub &amp; burn video subtitles —">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="SmartSub, buxuku, buxuku/SmartSub, github stars, github trending, star growth, star history, 开源项目, 星标增长, subtitle, translate, whisper, whisper-cpp, deepseek, ollama">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/buxuku__SmartSub">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="buxuku/SmartSub · GitHub Trending Rank Radar">
+<meta property="og:description" content="视频转字幕、字幕翻译、AI 配音与声音克隆、字幕烧录——免费开源的一站式桌面工具。基于 Whisper / FunASR 等本地模型离线语音转文字，批量处理 + 全平台 GPU 加速，跨 Windows / macOS / Linux。Free, open-source desktop app to generate, translate, dub &amp; burn video subtitles —">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/buxuku__SmartSub">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "buxuku/SmartSub", "codeRepository": "https://github.com/buxuku/SmartSub", "url": "https://zhuikan.com/repos/buxuku__SmartSub", "description": "视频转字幕、字幕翻译、AI 配音与声音克隆、字幕烧录——免费开源的一站式桌面工具。基于 Whisper / FunASR 等本地模型离线语音转文字，批量处理 + 全平台 GPU 加速，跨 Windows / macOS / Linux。Free, open-source desktop app to generate, translate, dub & burn video subtitles —", "author": {"@type": "Organization", "name": "buxuku", "url": "https://github.com/buxuku"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2024-05-21", "keywords": "subtitle,translate,whisper,whisper-cpp,deepseek,ollama,openai,fireredasr,funasr,qwen3-asr"}</script>
+</head>
+<body data-repo="buxuku/SmartSub" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">buxuku/SmartSub</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="buxuku__SmartSub"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/7866330?v=4&s=300" width="300" height="300" alt="buxuku avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">SmartSub</div>
+      <a class="rp-side-owner" href="https://github.com/buxuku">buxuku</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/buxuku">buxuku</a>
+        <span class="rp-sep">/</span><span class="rp-name">SmartSub</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">视频转字幕、字幕翻译、AI 配音与声音克隆、字幕烧录——免费开源的一站式桌面工具。基于 Whisper / FunASR 等本地模型离线语音转文字，批量处理 + 全平台 GPU 加速，跨 Windows / macOS / Linux。Free, open-source desktop app to generate, translate, dub &amp; burn video subtitles — local Whisper speech-to-text, AI dubbing &amp; voice cloning, offline, GPU-accelerated.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>6,029</b></span><span class="rp-stat" title="forks">⑂ <b>488</b></span><span class="rp-stat" title="watchers">👁 <b>24</b></span><span class="rp-stat" title="prs">⑃ <b>212</b></span><span class="rp-stat" title="issues">● <b>360</b></span><span class="rp-stat" title="releases">▤ <b>69</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/subtitle">subtitle</a><a class="rp-topic" href="https://github.com/topics/translate">translate</a><a class="rp-topic" href="https://github.com/topics/whisper">whisper</a><a class="rp-topic" href="https://github.com/topics/whisper-cpp">whisper-cpp</a><a class="rp-topic" href="../tags/deepseek">deepseek</a><a class="rp-topic" href="https://github.com/topics/ollama">ollama</a><a class="rp-topic" href="../tags/openai">openai</a><a class="rp-topic" href="https://github.com/topics/fireredasr">fireredasr</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2024-05-21</span><a class="rp-meta-bit rp-home" href="https://smartsub.linxiaodong.com/" rel="noopener">smartsub.linxiaodong.com/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/buxuku/SmartSub">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v3.12.2 任务数据更可控，大批次更流畅，转写诊断更完善</span><a class="rp-dl-a" href="https://github.com/buxuku/SmartSub/releases/tag/v3.12.2">v3.12.2 ↓</a><span class="rp-dl-ver">3.12.2</span><span class="rp-dl-date">2026-11-05</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+10</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">6,029</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">488</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">24</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">212</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">360</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">69</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">妙幕 / SmartSub
+
+视频转字幕、字幕翻译、AI 创作助手、AI 配音与声音克隆、字幕烧录、MCP/CLI 自动化——一站式开源桌面工具
+
+让每一帧画面都能美妙地表达
+
+
+
+
+
+
+
+
+
+中文 | English | 日本語
+
+下载安装 · 功能特性 · AI 助手与自动化 · 免费方案 · 常见问题 · 更新日志
+
+
+
+!SmartSub 主界面
+
+ 特别赞助
+
+🤝 想成为赞助商或洽谈合作？请查看 赞助合作说明。
+
+
+
+❤️ 感谢 CrazyToken 对 SmartSub 的赞助支持！
+
+ CrazyToken | 多模型助力字幕翻译，让跨语言表达更自然，倍率低至0.05x，最高省99%
+
+CrazyToken 提供 Claude、GPT、Gemini、Kimi、GLM、DeepSeek、Qwen、Grok 等主流模型 API，为字幕翻译、语境理解、术语统一与校对润色提供模型支持。无论是课程视频、访谈播客，还是多语言内容制作，都能按语言和任务需求选择合适的模型。
+
+- 💰 最低 0.05×，字幕翻译更省成本：模型价格低至官方价格的 5%，Token 级账单透明可查，降低长视频字幕翻译与批量处理的模型调用成本。
+- ✨ 官方原生通道：不掺水、不混模、不压缩长上下文，为理解前后文、统一术语和打磨译文提供模型支持。
+- ⚡ 稳定高速，高并发不限流：为批量字幕翻译与多任务处理提供稳定的 API 服务，减少调用等待。
+- 🎁 新用户注册赠送 $20：通过专属链接注册即送 $20 体验额度，充值额外加赠；提供 1 对 1 远程配置服务，真人协助完成模型 API 配置。
+
+ 妙幕是什么
+
+妙幕（SmartSub）是一款开源的音视频字幕与配音工具，把「语音转文字 → 字幕翻译 → 校对润色 → TTS 配音 → 烧录合成」整条流水线装进一个桌面应用，还内置在线视频下载，粘贴 B 站 / YouTube 等平台链接即可直接取材。转写基于 whisper.cpp、sherpa-onnx 等本地模型完成，文件不出本机；支持批量处理，支持 NVIDIA / AMD / Intel / Apple Silicon 硬件加速，可在 Windows、macOS、Linux 上运行。
+
+妙幕深度融合了现代 AI 协同与 Agentic 自动化能力：
+
+- 内置 AI 创作助手（智能副驾）：随时按快捷键呼出，具备全工作台上下文感知、多模态视觉截图诊断、实时字幕润色与自主工具调用（Agentic Tool-Calling）能力，用自然语言即可驱动复杂操作；
+- MCP 与 CLI 命令行自动化：深度支持 Model Context Protocol（提供 111 个标准工具与对应 CLI 命令），内置 Electron/Node 运行时免配环境，不仅可让 Cursor、Claude Code、Codex 等外部 AI 智能体直接调度，还能在终端脚本与 CI 中全自动化执行流水线。
+
+整条流水线可以完全免费跑通：本地模型转写、内置免费翻译源、本地 TTS 配音（含声音克隆）、本地 ffmpeg 烧录——不需要 API Key，本地环节也没有用量限制。同时可按需接入 20 个翻译服务、9 家云端听写、6 类云端配音服务作为增强。
+
+ 它能帮你做什么
+
+| 你想做的事                                | 妙幕的做法                                                                                    |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------- |
+| 用自然语言搞定字幕编辑与排障              | 随时呼出内置 AI 助手，上下文感知与多模态截图诊断，一句话润色、改口语化或自动下发任务          |
+| 让 Cursor / Claude / 脚本接管音视频流水线 | 借助 111 个 MCP 工具与 CLI 命令，外部 AI Agent 或终端脚本直接全自动批量转写、翻译、配音与合成 |
+| 看无字幕的外语视频、公开课                | 拖入视频，本地转写并翻译，得到双语字幕，播放器直接挂载                                        |
+| 给 B 站 / YouTube 在线视频配字幕          | 粘贴链接应用内直接下载，官方字幕自动配对，无需第三方下载工具                                  |
+| 做视频出海 / 多语言内容                   | 字幕翻译成目标语言，再用 TTS 配成外语音轨，导出成品视频                                       |
+| 用自己的声音给视频配音                    | 录一段参考音频，零样本克隆音色，整条视频用你的声音朗读                                        |
+| 整理播客、网课、会议录音                  | 批量转写成 SRT 字幕文件，供剪辑、检索或存档                                                   |
+| 给成片压制字幕                            | 校对台逐句核对后硬烧或软封装，样式所见即所得                                                  |
+
+ 功能特性
+
+在线视频下载 / 本地音视频 → 转写 → 翻译 → 校对 → 配音 → 合成导出。每一步都可以独立使用，也可以串成流水线批量执行；更能通过内置 AI 创作助手实时对话协作，或通过 MCP / CLI 交由外部 AI 智能体全自动化调度。
+
+ 🌟 AI 创作助手（智能副驾）
+
+- 随时唤起与多轮交互：顶部工具栏一键开启或按快捷键 ⌘J（macOS）/ Ctrl+J（Windows、Linux）随时呼出右侧抽屉面板，支持调整宽度，会话记录自动持久化保存在本地
+- 工作台深度上下文感知：智能感知当前界面状态，自动关联当前视频播放进度、选中的字幕单行、邻近上下文、任务列表运行状态与近期报错日志，无需反复手动交代背景
+- Agentic 自主工具调用：全面打通底层 111 个自动化工具！不仅能答疑解惑，更可根据自然语言指令直接代劳——如「把当前视频转成中英双语字幕并合成」、「查看我安装了哪些模型」、「排查刚才任务失败的原因」
+- 字幕精修与安全编辑：校对时直接说「把当前这句改得更口语化」、「解释这一段的专业术语」、「修正同音错字」，修改实时渲染在编辑器中并自动进入撤销/重做栈（支持快捷键随时撤回）；严格版本</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/buxuku/SmartSub/issues/130"><span class="rp-item-num">#130</span><span class="rp-item-title">关于 CUDA 使用情况，集中反馈</span><span class="rp-item-extra">33 comments · 2025-03-17</span></a><a class="rp-item" href="https://github.com/buxuku/SmartSub/issues/154"><span class="rp-item-num">#154</span><span class="rp-item-title">软件越来越完善了</span><span class="rp-item-extra">14 comments · 2025-04-03</span></a><a class="rp-item" href="https://github.com/buxuku/SmartSub/issues/574"><span class="rp-item-num">#574</span><span class="rp-item-title">Bug: 软件白屏</span><span class="rp-item-extra">13 comments · 2026-10-30</span></a><a class="rp-item" href="https://github.com/buxuku/SmartSub/issues/573"><span class="rp-item-num">#573</span><span class="rp-item-title">【BUG】Windows 3.12.0 任务运行器长路径导致转录失败：TypeError: Failed to read .../tempAudioFile.wav</span><span class="rp-item-extra">4 comments · 2026-10-30</span></a><a class="rp-item" href="https://github.com/buxuku/SmartSub/issues/444"><span class="rp-item-num">#444</span><span class="rp-item-title">一直没法提取，是我操作问题还是其他</span><span class="rp-item-extra">3 comments · 2026-08-15</span></a><a class="rp-item" href="https://github.com/buxuku/SmartSub/issues/378"><span class="rp-item-num">#378</span><span class="rp-item-title">好像一直在用核显</span><span class="rp-item-extra">3 comments · 2026-07-12</span></a><a class="rp-item" href="https://github.com/buxuku/SmartSub/issues/587"><span class="rp-item-num">#587</span><span class="rp-item-title">转写直接闪退</span><span class="rp-item-extra">2 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/buxuku/SmartSub/issues/565"><span class="rp-item-num">#565</span><span class="rp-item-title">闪退反馈</span><span class="rp-item-extra">2 comments · 2026-10-24</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/buxuku/SmartSub/discussions/557"><span class="rp-item-num">#557</span><span class="rp-item-title">88API 非独家赞助与 Provider 生态合作咨询｜SmartSub</span><span class="rp-item-extra">1 comments · 2026-10-20</span></a><a class="rp-item" href="https://github.com/buxuku/SmartSub/discussions/445"><span class="rp-item-num">#445</span><span class="rp-item-title">提案：macOS 原生 IndexTTS2 接入与“下载后自动制作”流水线</span><span class="rp-item-extra">2 comments · 2026-08-15</span></a><a class="rp-item" href="https://github.com/buxuku/SmartSub/discussions/417"><span class="rp-item-num">#417</span><span class="rp-item-title">希望可以添加一个选择哪一张显卡干活</span><span class="rp-item-extra">0 comments · 2026-07-31</span></a><a class="rp-item" href="https://github.com/buxuku/SmartSub/discussions/304"><span class="rp-item-num">#304</span><span class="rp-item-title">竖屏视频嵌入字幕无法修改字体大小</span><span class="rp-item-extra">0 comments · 2026-05-03</span></a><a class="rp-item" href="https://github.com/buxuku/SmartSub/discussions/302"><span class="rp-item-num">#302</span><span class="rp-item-title">SmartSub has a page on Shypd (AI Tool Directory)</span><span class="rp-item-extra">0 comments · 2026-03-30</span></a><a class="rp-item" href="https://github.com/buxuku/SmartSub/discussions/279"><span class="rp-item-num">#279</span><span class="rp-item-title">qwen3-ASR开源了，相信效果比whisper好很多。请求适配</span><span class="rp-item-extra">0 comments · 2026-01-30</span></a><a class="rp-item" href="https://github.com/buxuku/SmartSub/discussions/237"><span class="rp-item-num">#237</span><span class="rp-item-title">关于识别与统计方面的错误</span><span class="rp-item-extra">3 comments · 2025-10-07</span></a><a class="rp-item" href="https://github.com/buxuku/SmartSub/discussions/218"><span class="rp-item-num">#218</span><span class="rp-item-title">Whisper.cpp Node.js Addon &quot;Pause &amp; Stop&quot; function are not implemented?</span><span class="rp-item-extra">1 comments · 2025-08-08</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/buxuku/SmartSub/releases"><b>v3.12.2 任务数据更可控，大批次更流畅，转写诊断更完善</b> <span class="rp-rel-tag">v3.12.2</span> <span class="rp-item-extra">2026-11-05</span></a><pre class="rp-pre">v3.12.2 任务数据更可控，大批次更流畅，转写诊断更完善
+
+ feat
+
+- 诊断包导出窗口新增「Whisper 转写诊断」（Windows / Linux）：用内置短音频在独立进程中单独测试 Vulkan / CPU 后端与 VAD 开关，原生库崩溃也不影响应用；结果和 Windows 显卡驱动版本随诊断包导出，便于定位 GPU 加速闪退
+  Add &quot;Whisper transcription diagnostics&quot; to the diagnostics export dialog (Windows / Linux): test the Vulkan / CPU backend and the VAD switch on a short built-in clip in an isolated process, so a native crash cannot take the app down. Results and the Windows GPU driver version are exported with the diagnostics package to help pin down GPU acceleration crashes
+
+ perf
+
+- 大批次任务更流畅：进度更新合并发布，文件很多时列表只渲染可见部分，日志面板只保留最近 200 条，缓解批量</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/buxuku__SmartSub.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

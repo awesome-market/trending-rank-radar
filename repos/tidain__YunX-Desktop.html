@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tidain/YunX-Desktop · GitHub Trending Rank Radar</title>
+<meta name="description" content="YunX（云析）的官方 windows 桌面端">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="YunX-Desktop, tidain, tidain/YunX-Desktop, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/tidain__YunX-Desktop">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="tidain/YunX-Desktop · GitHub Trending Rank Radar">
+<meta property="og:description" content="YunX（云析）的官方 windows 桌面端">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/tidain__YunX-Desktop">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "tidain/YunX-Desktop", "codeRepository": "https://github.com/tidain/YunX-Desktop", "url": "https://zhuikan.com/repos/tidain__YunX-Desktop", "description": "YunX（云析）的官方 windows 桌面端", "author": {"@type": "Organization", "name": "tidain", "url": "https://github.com/tidain"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/AGPL-3.0.html", "programmingLanguage": "Kotlin", "dateCreated": "2026-09-05"}</script>
+</head>
+<body data-repo="tidain/YunX-Desktop" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">tidain/YunX-Desktop</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="tidain__YunX-Desktop"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/143770458?u=f2e564548dda921ad23b64c47e68eed0a7692b40&amp;v=4&s=300" width="300" height="300" alt="tidain avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">YunX-Desktop</div>
+      <a class="rp-side-owner" href="https://github.com/tidain">tidain</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/tidain">tidain</a>
+        <span class="rp-sep">/</span><span class="rp-name">YunX-Desktop</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=new">new <b>#117</b></a><a class="rp-board-chip" href="../?board=daily">daily <b>#55</b></a><a class="rp-board-chip" href="../?board=daily_rate">daily_rate <b>#13</b></a><a class="rp-board-chip" href="../?board=weekly">weekly <b>#58</b></a><a class="rp-board-chip" href="../?board=weekly_rate">weekly_rate <b>#16</b></a><a class="rp-board-chip" href="../?board=monthly_rate">monthly_rate <b>#65</b></a></div>
+    </div>
+    <p class="rp-desc">YunX（云析）的官方 windows 桌面端</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,753</b></span><span class="rp-stat" title="forks">⑂ <b>444</b></span><span class="rp-stat" title="watchers">👁 <b>14</b></span><span class="rp-stat" title="prs">⑃ <b>11</b></span><span class="rp-stat" title="issues">● <b>75</b></span><span class="rp-stat" title="releases">▤ <b>17</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Kotlin</span><span class="rp-meta-bit">AGPL-3.0</span><span class="rp-meta-bit">Created 2026-09-05</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/tidain/YunX-Desktop">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.3.4</span><a class="rp-dl-a" href="https://github.com/tidain/YunX-Desktop/releases/tag/v1.3.4">v1.3.4 ↓</a><span class="rp-dl-ver">1.3.4</span><span class="rp-dl-date">2026-11-13</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+361</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,753</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">444</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">14</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">11</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">75</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">17</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">云析桌面版 · YunX-Desktop
+
+粘贴分享链接，直接高速下载 —— 云析 YunX 官方 Windows 桌面版
+
+网盘：夸克 / UC / 迅雷 / 百度 / 139 / 123 / 115 / 光鸭 / 蓝奏云 / 蓝奏云优享版；
+视频：哔哩哔哩 / 小红书 / 抖音 / 微博 / 快手 / AcFun / Pixiv；另支持磁力 / BT 种子 / ed2k 等 P2P 链接。
+Range 分片并发 + 断点续传，B 站高清自动合轨。
+
+
+
+
+
+
+
+
+下载最新版 · 功能 · 使用 · 浏览器插件 · 构建 · 常见问题 · 与安卓版差异
+
+
+
+
+
+ 云析永远免费开源。 如果你是在任何地方「花钱买到」的，说明你被骗了，请立即退款。
+ 任何收费版本均为二次打包的诈骗版本，与本项目无关。
+
+ 本项目使用 AGPL-3.0 开源协议。 与安卓版 CYQawa/YunX
+ 同属云析项目；若你使用了本项目的代码，请同样以 AGPL-3.0 开放源代码。
+
+ 简介
+
+云析 YunX 的 官方 Windows 桌面版：粘贴网盘分享链接或视频作品链接，即可浏览内容、在线预览并直接高速下载，全程在电脑上完成；
+也支持磁力 / BT 种子 / ed2k 等 P2P 链接下载。
+网盘与视频平台都支持多账号（主账号 / 备注），登录凭证加密存本机，并可导出加密备份换机恢复。
+提供免安装便携版（整个文件夹拷走即用）与安装版（开始菜单 / 桌面快捷方式，可卸载）两种分发形式。
+
+ 截图
+
+|                                                          |                                                            |
+| :------------------------------------------------------: | :--------------------------------------------------------: |
+|    |    |
+|                           主界面                           |                           网盘登录                           |
+|      |      |
+|                            设置                            |                            关于                            |
+
+ 支持平台
+
+- 夸克网盘
+
+- UC 网盘
+
+- 迅雷网盘
+
+- 百度网盘
+
+- 139 网盘（和彩云）
+
+- 123 云盘
+
+- 115 网盘
+
+- 光鸭云盘
+
+- 蓝奏云 / 蓝奏云优享版
+
+- GitHub（仓库 / 账号 / 文件直链）
+
+- 视频解析：抖音 / 快手 / 微博 / 小红书 / 哔哩哔哩 / AcFun / Pixiv
+
+- 磁力 / BT 种子 / ed2k（P2P 下载，可导入本地种子文件）
+
+ \[!WARNING]
+ 不建议使用百度网盘，可能导致账号被风控！
+
+ 浏览器插件
+
+仓库 browser-extension/ 内含 Chrome / Edge 扩展「云析下载助手」（Manifest V3）—— 让浏览器下载接管到云析的多线程下载。
+
+- 嗅探页面资源：列出当前网页里可下载的媒体与文件，按图片 / 视频 / 音频 / 文档 / 压缩包 / 程序 / 字体分类，图片与视频支持卡片预览。
+- 接管浏览器下载：浏览器开始下载时自动接管（取消浏览器下载并抹掉记录），由云析弹窗询问保存目录与线程数（最高 512，超过 32 需二次确认）。
+- 归还浏览器下载：点「归还浏览器下载」后重新发起浏览器原生下载，并对该页面网站（根域名及其子域名）写入 5 分钟冷却；冷却期内打开插件可看到「还有 X 分 YY 秒」倒计时，并可点「立即重新开始」单独解除当前网站的冷却。
+- 视频平台卡片：B 站视频页可选清晰度与下载方式；抖音 / 微博 / AcFun 视频页可一键交给云析解析下载。
+- 安全：扩展与云析通过本机回环 HTTP（127.0.0.1，随机 token）通信，网页脚本无法伪造请求；云析没运行时探测不到端口，扩展完全不干预浏览器下载。
+
+安装、开关与工作原理见 浏览器插件说明。
+
+ 功能
+
+- 分享链接解析 —— 识别夸克 / UC / 迅雷 / 百度 / 139 / 123 / 115 / 光鸭 / 蓝奏云 / 蓝奏云优享版 分享链接并自动匹配提取码，另支持 GitHub 仓库 / 账号 / 文件直链
+
+- 视频解析与预览 —— 粘贴抖音 / 快手 / 微博 / 小红书 / B站 / AcFun / Pixiv 作品链接（短链、口令、整段文案均可）即可解析；在线预览优先用 ffplay 直读直链（真·边下边播，HLS 原生支持），本机没装 FFmpeg 时回退内置播放器并可一键下载引擎到应用私有目录（不改系统环境变量）；图集可放大查看，下载支持 DASH 合轨（优先 ffmpeg -c copy）与 Live Photo 动图合成（可存动态照片 / 静图 / 视频）
+
+- 高速下载 —— Range 分片并发 + 断点续传 + 慢连接自动换线 + 全局限速；B 站高清分轨两轨并行下载后自动合轨
+
+- P2P 下载 —— 磁力 / BT 种子 / ed2k 电驴链接交给 Gopeed 引擎下载；支持导入本地 .torrent 种子文件、BT Tracker 服务器二级页管理与 DHT 开关，下载中可查看「种子 / 连接 / 节点」概览
+
+- GitHub 浏览与 README 渲染 —— 浏览仓库文件树 / Releases / 账号仓库列表，README 与更新说明以 GFM Markdown 渲染
+
+- GitHub 下载镜像自动测速 —— 内置五个 gh-proxy 系镜像，下载前并发实测每个镜像的延迟与下载速度，按速度自动选最快（设置页可看 ping / 速度、手动刷新、固定某个或自定义前缀），更新包 / 视频引擎 / Gopeed 内核 / README 图片统一走该镜像
+
+- 通知中心进度 —— 下载进度实时显示为 Windows 通知中心 toast 进度条（多任务聚合 + 实时速度）
+
+- 多种登录方式 —— 内嵌 Chromium 登录 / 一键导入本机浏览器 Cookie / 手动粘贴 Cookie；GitHub 可选 Personal Access Token
+
+- Windows 系统集成 —— 原生托盘菜单（亮暗跟随系统配色）、原生文件对话框、剪贴板分享链接检测
+
+- 多账号与认证备份 —— 网盘与视频平台都支持多账号（主账号 / 备注 / 逐个退出）；「设置 → 认证备份」可加密导出 / 导入全部账号，换机免重登
+
+- 桌面体验 —— 深色模式 + 自定</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/tidain/YunX-Desktop/issues/67"><span class="rp-item-num">#67</span><span class="rp-item-title">作者大大Mac版已经发布，希望能给个友情链接位置</span><span class="rp-item-extra">7 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/tidain/YunX-Desktop/issues/46"><span class="rp-item-num">#46</span><span class="rp-item-title">下载速度爆降</span><span class="rp-item-extra">4 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/tidain/YunX-Desktop/issues/24"><span class="rp-item-num">#24</span><span class="rp-item-title">打开软件卡在页面上,要等很久才有反应</span><span class="rp-item-extra">4 comments · 2026-10-25</span></a><a class="rp-item" href="https://github.com/tidain/YunX-Desktop/issues/56"><span class="rp-item-num">#56</span><span class="rp-item-title">别用BD网盘的功能</span><span class="rp-item-extra">3 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/tidain/YunX-Desktop/issues/43"><span class="rp-item-num">#43</span><span class="rp-item-title">右键任务栏图标不弹出退出按钮</span><span class="rp-item-extra">3 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/tidain/YunX-Desktop/issues/55"><span class="rp-item-num">#55</span><span class="rp-item-title">能出个mac桌面端的吗</span><span class="rp-item-extra">2 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/tidain/YunX-Desktop/issues/38"><span class="rp-item-num">#38</span><span class="rp-item-title">打开程序没有窗口显示</span><span class="rp-item-extra">2 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/tidain/YunX-Desktop/issues/48"><span class="rp-item-num">#48</span><span class="rp-item-title">[BUG] 扫码登录成功后自动检测失效，账号不写入（v1.3.3 / Win11，夸克+百度同时复现）</span><span class="rp-item-extra">1 comments · 2026-11-05</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/tidain/YunX-Desktop/releases"><b>v1.3.4</b> <span class="rp-rel-tag">v1.3.4</span> <span class="rp-item-extra">2026-11-13</span></a><pre class="rp-pre">云析桌面版 v1.3.4
+
+ 发布日期：2026-11-13
+ 安卓版：CYQawa/YunX ｜ 桌面版：tidain/YunX-Desktop
+
+ 强制更新：1
+ 最低强制更新版本：v1.3.3
+
+ ⚠️ 1.3.3 用户必须升级到本版本。
+ 1.3.3 在「迁移储存目录」与「断点续传」上存在可能造成数据异常的问题（目标目录位于源目录内部时会无限嵌套拷贝、把缓存目录设成磁盘根目录会搬走整块盘、续传分片重叠会重复写入），同时缺少崩溃留痕，出问题时无法定位。这些在 1.3.4 中均已修复，因此 1.3.3 及之后的版本打开应用会直接提示必须更新，升级前请先备份重要数据。
+ 更早的版本（≤ 1.3.2）不强制，可自行选择升级。
+
+
+ 新增：下载完成后关机
+
+下载页批量操作栏新增「完成后关机」开关，挂机下载不用再守着。
+
+- 触发条件明确：先有任务真正在跑，再等队列排空（无下载中 / 等待中，且没有被主动暂停的任务）才触发，避免&quot;开着开关但没任务&quot;时误关机。
+
+- 60 秒倒计时可取消：到点前弹出确认框，可「取消关机」或「立即关机」；倒计时期间点遮罩不会误关，只能显式选择。
+
+- 切页面照样生效：判定与倒计时常驻在下载模块，切到其它页面、最小化到托盘等待下载时同样会触发。
+
+ 新增：启动闪屏跟随主题
+
+- 自带启动器的启动闪屏提供深色 </pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (4)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/gitblog_00730/article/details/168772715" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">YunX-Desktop智能解析实战：粘贴分享链接自动匹配提取码的10大网盘支持清单</span><span class="rp-item-extra">2026-10-22</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_01057/article/details/168772784" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">云析YunX-Desktop全景指南：免费开源的Windows多网盘高速下载工具入门</span><span class="rp-item-extra">2026-10-22</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00979/article/details/168742140" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">如何3分钟跑起YunX-Desktop：从安装到下载第一个网盘文件的快速上手教程</span><span class="rp-item-extra">2026-10-22</span></a><a class="rp-item" href="https://www.bilibili.com/zh-Hant/video/BV1B2eQ6aEke/" target="_blank" rel="noopener"><span class="rp-news-src">bilibili</span><span class="rp-item-title">YunX-Desktop（云析桌面版）</span><span class="rp-item-extra">2026-09-19</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (1)</h3><div class="rp-list"><a class="rp-item" href="https://www.bilibili.com/en/video/BV18Unm6qEMz/" target="_blank" rel="noopener"><span class="rp-news-src">bilibili</span><span class="rp-item-title">Say goodbye to a bunch of cloud drive clients — use just one tool to download YunX-Desktop</span><span class="rp-item-extra">2026-10-23</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/tidain__YunX-Desktop.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

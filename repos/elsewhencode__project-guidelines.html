@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>elsewhencode/project-guidelines · GitHub Trending Rank Radar</title>
+<meta name="description" content="A set of best practices for JavaScript projects">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="project-guidelines, elsewhencode, elsewhencode/project-guidelines, github stars, github trending, star growth, star history, 开源项目, 星标增长, best-practices, maintainability, guidelines, javascript, javascript-best-practices, how-to">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/elsewhencode__project-guidelines">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="elsewhencode/project-guidelines · GitHub Trending Rank Radar">
+<meta property="og:description" content="A set of best practices for JavaScript projects">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/elsewhencode__project-guidelines">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "elsewhencode/project-guidelines", "codeRepository": "https://github.com/elsewhencode/project-guidelines", "url": "https://zhuikan.com/repos/elsewhencode__project-guidelines", "description": "A set of best practices for JavaScript projects", "author": {"@type": "Organization", "name": "elsewhencode", "url": "https://github.com/elsewhencode"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2017-06-30", "keywords": "best-practices,maintainability,guidelines,javascript,javascript-best-practices,how-to"}</script>
+</head>
+<body data-repo="elsewhencode/project-guidelines" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">elsewhencode/project-guidelines</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="elsewhencode__project-guidelines"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/7815827?v=4&s=300" width="300" height="300" alt="elsewhencode avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">project-guidelines</div>
+      <a class="rp-side-owner" href="https://github.com/elsewhencode">elsewhencode</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/elsewhencode">elsewhencode</a>
+        <span class="rp-sep">/</span><span class="rp-name">project-guidelines</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A set of best practices for JavaScript projects</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>29,416</b></span><span class="rp-stat" title="forks">⑂ <b>3,116</b></span><span class="rp-stat" title="watchers">👁 <b>612</b></span><span class="rp-stat" title="prs">⑃ <b>134</b></span><span class="rp-stat" title="issues">● <b>39</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/best-practices">best-practices</a><a class="rp-topic" href="https://github.com/topics/maintainability">maintainability</a><a class="rp-topic" href="https://github.com/topics/guidelines">guidelines</a><a class="rp-topic" href="../tags/javascript">javascript</a><a class="rp-topic" href="https://github.com/topics/javascript-best-practices">javascript-best-practices</a><a class="rp-topic" href="https://github.com/topics/how-to">how-to</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2017-06-30</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/elsewhencode/project-guidelines">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">29,416</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">3,116</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">612</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">134</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">39</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">ENGLISH |
+日本語版 |
+한국어 |
+РУССКИЙ |
+Português
+| Persian/فارسی
+
+
+
+ 项目规范 &amp;middot; 
+
+JavaScript 工程项目的一系列最佳实践策略
+
+ 当您在青葱的田野里翻滚一般欢乐（而不受约束）地开发一个新项目，对其他人而言维护这样一个项目简直就是一个潜在的可怕的噩梦。以下列出的指南是我们在elsewhen的大多数 JavaScript 项目中发现，撰写和收集的最佳实践（至少我们是这样认为的）。如果您想分享其他最佳实践，或者认为其中一些指南应该删除。欢迎随时与我们分享。
+
+- Git
+  - 一些 git 规则
+  - Git 工作流
+  - 编写良好的提交备注信息
+- 文档
+- 环境
+  - 一致的开发环境
+  - 一致性的依赖配置
+- 依赖
+- 测试
+- 结构与命名规则
+- 代码风格
+  - 一些代码风格指南
+  - 强制性的代码风格规范
+- 日志
+- API
+  - API 设计
+  - API 安全
+  - API 文档
+- 许可
+
+
+
+ 1. Git
+
+
+
+!git
+
+ 1.1 一些 Git 规则
+
+这里有一套规则要牢记：
+
+- 在功能分支中执行开发工作。
+
+  _为什么：_
+
+   因为这样，所有的工作都是在专用的分支而不是在主分支上隔离完成的。它允许您提交多个 pull request 而不会导致混乱。您可以持续迭代提交，而不会使得那些很可能还不稳定而且还未完成的代码污染 master 分支。更多请阅读...
+
+- 从 develop 独立出分支。
+
+  _为什么：_
+
+   这样，您可以保持 master 分支中的代码稳定性，这样就不会导致构建问题，并且几乎可以直接用于发布（当然，这可能对某些项目来说要求会比较高）。
+
+- 永远也不要将分支（直接）推送到 develop 或者 master ，请使用合并请求（Pull Request）。
+
+  _为什么：_
+
+   通过这种方式，它可以通知整个团队他们已经完成了某个功能的开发。这样开发伙伴就可以更容易对代码进行 code review，同时还可以互相讨论所提交的需求功能。
+
+- 在推送所开发的功能并且发起合并请求前，请更新您本地的develop分支并且完成交互式变基操作（interactive rebase）。
+
+  _为什么：_
+
+   rebase 操作会将（本地开发分支）合并到被请求合并的分支（ master 或 develop ）中，并将您本地进行的提交应用于所有历史提交的最顶端，而不会去创建额外的合并提交（假设没有冲突的话），从而可以保持一个漂亮而干净的历史提交记录。 更多请阅读 ...
+
+- 请确保在变基并发起合并请求之前解决完潜在的冲突。
+
+- 合并分支后删除本地和远程功能分支。
+
+  _为什么：_
+
+   如果不删除需求分支，大量僵尸分支的存在会导致分支列表的混乱。而且该操作还能确保有且仅有一次合并到master 或  develop。只有当这个功能还在开发中时对应的功能分支才存在。
+
+- 在进行合并请求之前，请确保您的功能分支可以成功构建，并已经通过了所有的测试（包括代码规则检查）。
+
+  _为什么：_
+
+   因为您即将将代码提交到这个稳定的分支。而如果您的功能分支测试未通过，那您的目标分支的构建有很大的概率也会失败。此外，确保在进行合并请求之前应用代码规则检查。因为它有助于我们代码的可读性，并减少格式化的代码与实际业务代码更改混合在一起导致的混乱问题。
+
+- 使用 这个 .gitignore 文件。
+
+  _为什么：_
+
+   此文件已经囊括了不应该和您开发的代码一起推送至远程仓库（remote repository）的系统文件列表。另外，此文件还排除了大多数编辑器的设置文件夹和文件，以及最常见的（工程开发）依赖目录。
+
+- 保护您的 develop 和 master 分支。
+
+  _为什么：_
+
+   这样可以保护您的生产分支免受意外情况和不可回退的变更。 更多请阅读... Github 以及  Bitbucket
+
+
+
+ 1.2 Git 工作流
+
+基于以上原因, 我们将 功能分支工作流 ， 交互式变基的使用方法 结合一些 Gitflow中的基础 (比如，命名和使用一个 develop branch)一起使用。 主要步骤如下:
+
+- 针对一个新项目, 在您的项目目录初始化您的项目。 如果是（已有项目）随后的功能开发/代码变动，这一步请忽略。
+
+  sh
+  cd 
+  git init
+  
+
+- 检出（Checkout） 一个新的功能或故障修复（feature/bug-fix）分支。
+
+  sh
+  git checkout -b 
+  
+
+- 新增代码变更。
+
+  sh
+  git add
+  git commit -a
+  
+
+  _为什么：_
+
+   git commit -a 会独立启动一个编辑器用来编辑您的说明信息，这样的好处是可以专注于写这些注释说明。更多请阅读 _章节 1.3_。
+
+- 保持与远程（develop 分支）的同步，以便（使得本地 develop 分支）拿到最新变更。
+
+  sh
+  git checkout develop
+  git pull
+  
+
+  _为什么：_
+
+   当您进行（稍后）变基操作的时候，保持更新会给您一个在您的机器上解决冲突的机会。这比（不同步更新就进行下一步的变基操作并且）发起一个与远程仓库冲突的合并请求要好。
+
+- （切换至功能分支并且）通过交互式变基从您的 develop 分支中获取最新的代码提交，以更新您的功能分支。
+
+  sh
+  git checkout 
+  git rebase -i --autosquash develop
+  
+
+  _为什么：_
+
+   您可以使用 --autosquash 将所有提交压缩到单个提交。没有人会愿意（看到） develop 分支中的单个功能开发就占据如此多的提交历史。 更多请阅读...
+
+- 如果没有冲突请跳过此步骤，如果您有冲突, 就需要解决它们并且继续变基操作。
+  sh
+  git add   ...
+  git rebase --continue
+  
+- 推送您的（功能）分支。变基操作会改变提交历史, 所以您必须使用 -f 强制推送到远程（功能）分支。 如果其他人与您在该分支上进行协同开发，请使用破坏性没那么强的 --force-with-lease 参数。
+
+  sh
+  git push -f
+  
+
+  _为什么:_
+
+   当您进行 rebase 操作时，您会改变功能分支的提交历史。这会导致 Git 拒绝正常的 git push 。那么，您只能使用 -f 或 --force 参数了。更多请阅读...
+
+- 提交一个合并请求（Pull Request）。
+- Pull Request 会被负责代码审查的同事接受，合并和关闭。
+- 如果您完成了开发，请记得删除您的本地分支。
+
+  sh
+  git branch -d 
+  
+
+  （使用以下代码）删除所有已经不在远程仓库维护的分支。
+
+  sh
+  git fetch</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/elsewhencode/project-guidelines/issues/20"><span class="rp-item-num">#20</span><span class="rp-item-title">Include other editors than JetBrains in the .gitignore </span><span class="rp-item-extra">19 comments · 2017-07-06</span></a><a class="rp-item" href="https://github.com/elsewhencode/project-guidelines/issues/124"><span class="rp-item-num">#124</span><span class="rp-item-title">Guidelines too opinionated about squashing commits on develop</span><span class="rp-item-extra">2 comments · 2018-01-31</span></a><a class="rp-item" href="https://github.com/elsewhencode/project-guidelines/issues/108"><span class="rp-item-num">#108</span><span class="rp-item-title">Lots of trailing spaces</span><span class="rp-item-extra">2 comments · 2018-01-24</span></a><a class="rp-item" href="https://github.com/elsewhencode/project-guidelines/issues/176"><span class="rp-item-num">#176</span><span class="rp-item-title">AQUAEDGE PROMOTIONS </span><span class="rp-item-extra">1 comments · 2025-08-28</span></a><a class="rp-item" href="https://github.com/elsewhencode/project-guidelines/issues/111"><span class="rp-item-num">#111</span><span class="rp-item-title">dotenv-safe instead of manual checking a hardcodet whitelist</span><span class="rp-item-extra">1 comments · 2018-01-25</span></a><a class="rp-item" href="https://github.com/elsewhencode/project-guidelines/issues/89"><span class="rp-item-num">#89</span><span class="rp-item-title">Mention supported browsers in doc, also promote browserslistrc</span><span class="rp-item-extra">1 comments · 2017-08-22</span></a><a class="rp-item" href="https://github.com/elsewhencode/project-guidelines/issues/160"><span class="rp-item-num">#160</span><span class="rp-item-title">Refactor the guides to have inclusive language</span><span class="rp-item-extra">0 comments · 2020-10-20</span></a><a class="rp-item" href="https://github.com/elsewhencode/project-guidelines/issues/140"><span class="rp-item-num">#140</span><span class="rp-item-title">Inconsistent verbiage in Coding Styles section</span><span class="rp-item-extra">0 comments · 2019-03-12</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/elsewhencode__project-guidelines.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

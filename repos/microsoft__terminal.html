@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>microsoft/terminal · GitHub Trending Rank Radar</title>
+<meta name="description" content="The new Windows Terminal and the original Windows console host, all in the same place!">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="terminal, microsoft, microsoft/terminal, github stars, github trending, star growth, star history, 开源项目, 星标增长, console, terminal, cmd, wsl, windows-console, command-line">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/microsoft__terminal">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="microsoft/terminal · GitHub Trending Rank Radar">
+<meta property="og:description" content="The new Windows Terminal and the original Windows console host, all in the same place!">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/microsoft__terminal">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "microsoft/terminal", "codeRepository": "https://github.com/microsoft/terminal", "url": "https://zhuikan.com/repos/microsoft__terminal", "description": "The new Windows Terminal and the original Windows console host, all in the same place!", "author": {"@type": "Organization", "name": "microsoft", "url": "https://github.com/microsoft"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "C++", "dateCreated": "2017-08-11", "keywords": "console,terminal,cmd,wsl,windows-console,command-line,windows-terminal,contributions-welcome,good-first-issue,windows"}</script>
+</head>
+<body data-repo="microsoft/terminal" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">microsoft/terminal</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="microsoft__terminal"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/6154722?v=4&s=300" width="300" height="300" alt="microsoft avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">terminal</div>
+      <a class="rp-side-owner" href="https://github.com/microsoft">microsoft</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/microsoft">microsoft</a>
+        <span class="rp-sep">/</span><span class="rp-name">terminal</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=total">total <b>#133</b></a></div>
+    </div>
+    <p class="rp-desc">The new Windows Terminal and the original Windows console host, all in the same place!</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>105,377</b></span><span class="rp-stat" title="forks">⑂ <b>9,742</b></span><span class="rp-stat" title="watchers">👁 <b>1,370</b></span><span class="rp-stat" title="prs">⑃ <b>5,508</b></span><span class="rp-stat" title="issues">● <b>14,220</b></span><span class="rp-stat" title="releases">▤ <b>161</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/console">console</a><a class="rp-topic" href="../tags/terminal">terminal</a><a class="rp-topic" href="https://github.com/topics/cmd">cmd</a><a class="rp-topic" href="https://github.com/topics/wsl">wsl</a><a class="rp-topic" href="https://github.com/topics/windows-console">windows-console</a><a class="rp-topic" href="../tags/command-line">command-line</a><a class="rp-topic" href="https://github.com/topics/windows-terminal">windows-terminal</a><a class="rp-topic" href="https://github.com/topics/contributions-welcome">contributions-welcome</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C++</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2017-08-11</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="microsoft__vscode"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">vscode</a><a class="rp-same-link" href="microsoft__markitdown"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">markitdown</a><a class="rp-same-link" href="microsoft__PowerToys"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">PowerToys</a><a class="rp-same-link" href="microsoft__generative-ai-for-beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">generative-ai-for-beginners</a><a class="rp-same-link" href="microsoft__TypeScript"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">TypeScript</a><a class="rp-same-link" href="microsoft__playwright"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">playwright</a><a class="rp-same-link" href="microsoft__Web-Dev-For-Beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">Web-Dev-For-Beginners</a><a class="rp-same-link" href="microsoft__ML-For-Beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">ML-For-Beginners</a><a class="rp-same-link" href="microsoft__AI-For-Beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">AI-For-Beginners</a><a class="rp-same-link" href="microsoft__AirSim"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">AirSim</a><a class="rp-same-link" href="microsoft__BitNet"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">BitNet</a><a class="rp-same-link" href="microsoft__Bringing-Old-Photos-Back-to-Life"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">Bringing-Old-Photos-Back-to-Life</a><a class="rp-same-link" href="microsoft__CNTK"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">CNTK</a><a class="rp-same-link" href="microsoft__Data-Science-For-Beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">Data-Science-For-Beginners</a><a class="rp-same-link" href="microsoft__FluidFramework"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">FluidFramework</a><a class="rp-same-link" href="microsoft__IoT-For-Beginners"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">IoT-For-Beginners</a><a class="rp-same-link" href="microsoft__MMdnn"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">MMdnn</a><a class="rp-same-link" href="microsoft__Ontology-Playground"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">Ontology-Playground</a><a class="rp-same-link" href="microsoft__Procexp-Mac"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">Procexp-Mac</a><a class="rp-same-link" href="microsoft__RD-Agent"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/6154722?v=4" alt="" loading="lazy">RD-Agent</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/microsoft/terminal">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Windows Terminal v1.25.3131.0</span><a class="rp-dl-a" href="https://github.com/microsoft/terminal/releases/tag/v1.25.3131.0">Windows-1.25.3131.0 ↓</a><span class="rp-dl-ver">1.25.3131.0</span><span class="rp-dl-date">2026-11-11</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">105,377</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">9,742</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">1,370</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">5,508</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">14,220</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">161</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">!Windows Terminal project logos and branding image
+
+
+
+ Welcome to the Windows Terminal, Console and Command-Line repo
+
+
+  Table of Contents
+
+- Installing and running Windows Terminal
+  - [Microsoft Store \[Recommended\]](microsoft-store-recommended)
+  - Other install methods
+    - Via GitHub
+    - Via Windows Package Manager CLI (aka winget)
+    - Via Chocolatey (unofficial)
+    - Via Scoop (unofficial)
+- Installing Windows Terminal Canary
+- Terminal \&amp; Console Overview
+  - Windows Terminal
+  - The Windows Console Host
+  - Shared Components
+  - Creating the new Windows Terminal
+- Resources
+- FAQ
+  - I built and ran the new Terminal, but it looks just like the old console
+- Documentation
+- Contributing
+- Communicating with the Team
+- Developer Guidance
+- Prerequisites
+- Building the Code
+  - Building in PowerShell
+  - Building in Cmd
+- Running \&amp; Debugging
+  - Coding Guidance
+- Code of Conduct
+
+
+
+
+
+This repository contains the source code for:
+
+ Windows Terminal
+ Windows Terminal Preview
+ The Windows console host (conhost.exe)
+ Components shared between the two projects
+ ColorTool
+ Sample projects
+  that show how to consume the Windows Console APIs
+
+Related repositories include:
+
+ Windows Terminal Documentation
+  (Repo: Contribute to the docs)
+ Console API Documentation
+ Cascadia Code Font
+
+ Installing and running Windows Terminal
+
+ [!NOTE]
+ Windows Terminal requires Windows 10 2004 (build 19041) or later
+
+ Microsoft Store [Recommended]
+
+Install the [Windows Terminal from the Microsoft Store][store-install-link].
+This allows you to always be on the latest version when we release new builds
+with automatic upgrades.
+
+This is our preferred method.
+
+ Other install methods
+
+ Via GitHub
+
+For users who are unable to install Windows Terminal from the Microsoft Store,
+released builds can be manually downloaded from this repository&#x27;s Releases
+page.
+
+Download the Microsoft.WindowsTerminal_.msixbundle file from
+the Assets section. To install the app, you can simply double-click on the
+.msixbundle file, and the app installer should automatically run. If that
+fails for any reason, you can try the following command at a PowerShell prompt:
+
+powershell
+ NOTE: If you are using PowerShell 7+, please run
+ Import-Module Appx -UseWindowsPowerShell
+ before using Add-AppxPackage.
+
+Add-AppxPackage Microsoft.WindowsTerminal_.msixbundle
+
+
+ [!NOTE]
+ If you install Terminal manually:
+
+  You may need to install the VC++ v14 Desktop Framework Package.
+   This should only be necessary on older builds of Windows 10 and only if you get an error about missing framework packages.
+  Terminal will not auto-update when new builds are released so you will need
+   to regularly install the latest Terminal release to receive all the latest
+   fixes and improvements!
+
+ Via Windows Package Manager CLI (aka winget)
+
+winget users can download and install
+the latest Terminal release by installing the Microsoft.WindowsTerminal
+package:
+
+powershell
+winget install --id Microsoft.WindowsTerminal -e</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/microsoft/terminal/issues/13388"><span class="rp-item-num">#13388</span><span class="rp-item-title">Cannot type in new pane or tab until focus is manually activated with mouse click</span><span class="rp-item-extra">200 comments · 2022-06-27</span></a><a class="rp-item" href="https://github.com/microsoft/terminal/issues/649"><span class="rp-item-num">#649</span><span class="rp-item-title">GSync/Freesync refresh rate / FPS drops when using Terminal</span><span class="rp-item-extra">198 comments · 2019-05-10</span></a><a class="rp-item" href="https://github.com/microsoft/terminal/issues/1860"><span class="rp-item-num">#1860</span><span class="rp-item-title">Terminal desperately needs a horizontal scrollbar (similar to Command Prompt)</span><span class="rp-item-extra">115 comments · 2019-07-07</span></a><a class="rp-item" href="https://github.com/microsoft/terminal/issues/1040"><span class="rp-item-num">#1040</span><span class="rp-item-title">Feature Request: Clients of terminal need a way to inquire about the capabilities of the terminal</span><span class="rp-item-extra">94 comments · 2019-05-28</span></a><a class="rp-item" href="https://github.com/microsoft/terminal/issues/15689"><span class="rp-item-num">#15689</span><span class="rp-item-title">Windows Terminal crashes when dragging a tab</span><span class="rp-item-extra">78 comments · 2023-07-11</span></a><a class="rp-item" href="https://github.com/microsoft/terminal/issues/1553"><span class="rp-item-num">#1553</span><span class="rp-item-title">Feature Request: Mouse/Touch/Pointer Bindings (like middle-click paste, right-click context menu, etc.)</span><span class="rp-item-extra">71 comments · 2019-06-24</span></a><a class="rp-item" href="https://github.com/microsoft/terminal/issues/217"><span class="rp-item-num">#217</span><span class="rp-item-title">cmd: add environment variable to disable/enable &#x27;Terminate batch job (Y/N)?&#x27; confirmation</span><span class="rp-item-extra">70 comments · 2018-07-07</span></a><a class="rp-item" href="https://github.com/microsoft/terminal/issues/1379"><span class="rp-item-num">#1379</span><span class="rp-item-title">Add support for turning off cursor blink</span><span class="rp-item-extra">69 comments · 2019-06-22</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/microsoft/terminal/discussions/20915"><span class="rp-item-num">#20915</span><span class="rp-item-title">&gt;/&lt; Proposal : Native Arabic Support and RTL Experience for Windows Terminal &gt;/&lt;</span><span class="rp-item-extra">2 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/microsoft/terminal/discussions/20910"><span class="rp-item-num">#20910</span><span class="rp-item-title">Windows Terminal Preview v1.26.3133.0</span><span class="rp-item-extra">1 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/microsoft/terminal/discussions/20909"><span class="rp-item-num">#20909</span><span class="rp-item-title">Windows Terminal v1.25.3131.0</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/microsoft/terminal/discussions/20882"><span class="rp-item-num">#20882</span><span class="rp-item-title">tstyles: preview Windows Terminal themes live from PowerShell</span><span class="rp-item-extra">1 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/microsoft/terminal/discussions/20806"><span class="rp-item-num">#20806</span><span class="rp-item-title">Un-Expand/Shrink word-wise selection and navigation in mark mode</span><span class="rp-item-extra">0 comments · 2026-10-15</span></a><a class="rp-item" href="https://github.com/microsoft/terminal/discussions/20759"><span class="rp-item-num">#20759</span><span class="rp-item-title">Windows Terminal Preview v1.26.2734.0</span><span class="rp-item-extra">0 comments · 2026-10-02</span></a><a class="rp-item" href="https://github.com/microsoft/terminal/discussions/20758"><span class="rp-item-num">#20758</span><span class="rp-item-title">Windows Terminal v1.25.2733.0</span><span class="rp-item-extra">0 comments · 2026-10-02</span></a><a class="rp-item" href="https://github.com/microsoft/terminal/discussions/20757"><span class="rp-item-num">#20757</span><span class="rp-item-title">Windows Terminal v1.24.12741.0</span><span class="rp-item-extra">0 comments · 2026-10-02</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/microsoft/terminal/releases"><b>Windows Terminal v1.25.3131.0</b> <span class="rp-rel-tag">v1.25.3131.0</span> <span class="rp-item-extra">2026-11-11</span></a><pre class="rp-pre">With this release, Terminal 1.25 is being rolled out to General Availability; see the prior version for overall release notes.
+
+ Changes
+
+ (1.26 backport) conhost: we now always use the &quot;cls&quot; detector to prevent screen clearing from committing the entire (virtualized) text buffer (19957)
+
+ Bug Fixes
+ 
+ Accessibility
+ 
+ The &quot;delete&quot; confirmation flyouts will no longer be truncated on higher Text Scaling settings (20868)
+ 
+ Terminal Emulation
+
+ The Kitty Keyboard Protocol mode will now be maintained properly across main/alternate screen buffer switches (20768)
+ LNM line feed mode </pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (7)</h3><div class="rp-list"><a class="rp-item" href="https://news.google.com/rss/articles/CBMif0FVX3lxTE9NSVRZMHB4YW1LZ0pxR3VKd3Zub3kwaWZ4YmVDM3dSTm9xYnRDSEtqYjdyVzRoLUN6aThqRnMwOWFGUGpTSXg0Mnl0SzdVSjE2M0ZuUmdKNmxBUDlmTEpSY0x5bVpXYkx6Nm1qNkpGOE0yLS1hUVY0Q1ZvbDY1aWs?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">新浪财经</span><span class="rp-item-title">「自验证」框架让开源模型反超 Fable 5，冲上 GitHub 热榜</span><span class="rp-item-extra">2026-08-27</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE92VEFyM0dacUN2YmhaR1ZLMkVQYXRCZm5EQl9OaFJxTWwwbXBiN2RpVVUtVDN0YUlPM21FbXBPUTBmUktZTEF3OEZ1R2pKV2tidDNob053?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">QQ News</span><span class="rp-item-title">Github热榜第二：仅靠“自验证”框架让 DeepSeek V4 Flash 反超 Fable 5，成本不到 1/11</span><span class="rp-item-extra">2026-08-20</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiogFBVV95cUxOUHZ3SGtlal9NQ2RwZFN4OC1EM1I1eG10Q0FEeWJTeG11R0l0eWoxdlg5T19xU0U1TUFXdzZxaUZMZFc0VWJJdGRPYmZKdm9pMWVjN0xhaHBNa1RCQ1B2aGtrUy1ETGhxYUhHWEYtQnNmVFZ1Rm04dGV3OEJzNG81b0JrQ2F5YThuSlR3WS1lS0twV3A0bHg4ZmRodnVzd1cwVEE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">Intelligent Terminal 0.1：微软分叉 Windows Terminal 并内置 AI 智能体</span><span class="rp-item-extra">2026-06-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE1RUDIxMXcyME9WYkZIQkVHUjBGcWFSYXgxaXEtcS05SUxsaTFpSy13TXR2cHBhdjQzT1loX19xSGp2SFByOXBYNFlyX0I1TVlOT19V?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">华尔街见闻</span><span class="rp-item-title">和OpenAI分手后，微软彻底疯了</span><span class="rp-item-extra">2026-06-03</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE1qajJzbnNMM2Z0OWFzc0JHd1VPdkl6WFJGX1lxcUc4V1BQRUxJN3BmaVpwVUZrV2h5dFlrNWs3OWcxYTZZakhSOUtpTGZoVzRhY1lr?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">51CTO</span><span class="rp-item-title">OpenAI Codex 新手必读：从入门到上手全指南</span><span class="rp-item-extra">2026-05-13</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiSEFVX3lxTFBWX0hIOUZfVnNZVFFSbVl5TXI4bVctYnBnT3JoOUVPNWVaNjhZRUY5ME0xR0QtbXEtMVl0RG14dTN0b1hHTjVfaQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">智源社区</span><span class="rp-item-title">10000个代码文件，我打几把游戏的功夫就搞成Wiki了！</span><span class="rp-item-extra">2025-11-28</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVEFVX3lxTFBSSXJJMWI3anhFRUx3RFFXOFgweHh5V2VUYjhCQ29SdTNvd1NyWXJxOG1wUnJSV2NzQmN4cHNHYkxNWjEtU2lsYTQxeHdZeldUclJSTg?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">搜狐网</span><span class="rp-item-title">微软Windows Terminal新版探秘：AI助力，终端命令体验大升级</span><span class="rp-item-extra">2024-11-06</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (24)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=21862087" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Typing inside of the default WSL terminal feels amazing (2018)</span><span class="rp-item-extra">▲ 332 · 117 comments · 2019-12-23</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=26991887" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Windows Terminal Quake Mode</span><span class="rp-item-extra">▲ 182 · 88 comments · 2021-04-30</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=31343461" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Windows Terminal Source Code</span><span class="rp-item-extra">▲ 151 · 203 comments · 2022-05-11</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=25963760" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Pixel Shaders in Windows Terminal</span><span class="rp-item-extra">▲ 141 · 54 comments · 2021-01-29</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=34174593" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ask HN: What was the best software that you used during 2022?</span><span class="rp-item-extra">▲ 89 · 138 comments · 2022-12-29</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=40847204" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">The Windows Console gets support for Sixel images</span><span class="rp-item-extra">▲ 53 · 37 comments · 2024-07-01</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=20056833" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Terminal – The New Windows Terminal</span><span class="rp-item-extra">▲ 49 · 12 comments · 2019-05-30</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=38637148" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Should Windows have a default CLI editor?</span><span class="rp-item-extra">▲ 27 · 49 comments · 2023-12-14</span></a><a class="rp-item" href="https://note.com/tech_try_note/n/n0d39e3a4c01f?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">GitHub&#x27;s SSH is changing to counter quantum computers. Check if your PC is affected with 3 commands</span><span class="rp-item-extra">2026-11-09</span></a><a class="rp-item" href="https://devblogs.microsoft.com/commandline/intelligent-terminal-v0-3-a-new-way-to-see-and-manage-your-tabs-and-agents/" target="_blank" rel="noopener"><span class="rp-news-src">devblogs</span><span class="rp-item-title">Intelligent Terminal 0.3: A new way to manage your tabs and agents</span><span class="rp-item-extra">2026-11-04</span></a><details class="rp-news-more"><summary>14 more</summary><a class="rp-item" href="https://note.com/mild_kudu8739/n/n2855ad8f29a5?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">Understand the difference between git and GitHub! A beginner&#x27;s guide to git</span><span class="rp-item-extra">2026-11-03</span></a><a class="rp-item" href="https://note.com/yohaku_dev/n/nbfb328a4fc29?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">What to do when git clone of a public repository stops due to &#x27;authentication required&#x27; | Find and fix places in CI and scripts that are fetching without authentication</span><span class="rp-item-extra">2026-11-03</span></a><a class="rp-item" href="https://gcn.com/github-copilot-lets-approve-own-terminal/22898/" target="_blank" rel="noopener"><span class="rp-news-src">GCN</span><span class="rp-item-title">GitHub Copilot lets AI approve its own terminal commands</span><span class="rp-item-extra">2026-10-31</span></a><a class="rp-item" href="https://blockchain.news/news/github-copilot-app-diff-terminal-browser" target="_blank" rel="noopener"><span class="rp-news-src">blockchain</span><span class="rp-item-title">GitHub Copilot App Adds Integrated Diff, Terminal, Browser Tools</span><span class="rp-item-extra">2026-09-11</span></a><a class="rp-item" href="https://github.blog/changelog/2026-06-23-copilot-cli-new-terminal-interface-is-generally-available/" target="_blank" rel="noopener"><span class="rp-news-src">github</span><span class="rp-item-title">Copilot CLI: New terminal interface is generally available</span><span class="rp-item-extra">2026-06-23</span></a><a class="rp-item" href="https://visualstudiomagazine.com/articles/2026/03/02/github-copilot-cli-reaches-general-availability-bringing-agentic-coding-to-the-terminal.aspx" target="_blank" rel="noopener"><span class="rp-news-src">Visual Studio Magazine</span><span class="rp-item-title">GitHub Copilot CLI Reaches General Availability, Bringing Agentic Coding to the Terminal</span><span class="rp-item-extra">2026-03-01</span></a><a class="rp-item" href="https://techcrunch.com/2025/07/15/ai-coding-tools-are-shifting-to-a-surprising-place-the-terminal/" target="_blank" rel="noopener"><span class="rp-news-src">TechCrunch</span><span class="rp-item-title">AI coding tools are shifting to a surprising place: The terminal</span><span class="rp-item-extra">2025-07-15</span></a><a class="rp-item" href="https://www.infoq.com/news/2025/03/github-copilot-windows-terminal/" target="_blank" rel="noopener"><span class="rp-news-src">InfoQ</span><span class="rp-item-title">GitHub Copilot Can Now Run in Windows Terminal</span><span class="rp-item-extra">2025-03-27</span></a><a class="rp-item" href="https://www.guru3d.com/story/microsoft-integrates-chatgpt-and-github-copilot-into-windows-terminal/" target="_blank" rel="noopener"><span class="rp-news-src">Guru3D.com</span><span class="rp-item-title">Microsoft Integrates ChatGPT and GitHub Copilot into Windows Terminal</span><span class="rp-item-extra">2024-11-07</span></a><a class="rp-item" href="https://www.pcworld.com/article/2512734/windows-terminal-now-supports-ai-chatbots-like-chatgpt-github-copilot.html" target="_blank" rel="noopener"><span class="rp-news-src">PC World</span><span class="rp-item-title">Windows Terminal now supports AI chatbots like ChatGPT, GitHub Copilot</span><span class="rp-item-extra">2024-11-06</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiugFBVV95cUxOdXJuLVRvX1pOcTJNekZ0cFRXVkJISDlpZV9iYTFfYjQxYmU4VnBaMFp3d2ozY1VSRjJEeWhuaDdqZWVEN1pMOFBndC1HVHZ5TUxNS0tQOUx6MU1RM3YtSlRRNWRQZTNzOF90a0k0a1FoNzVnQ3k4dWZ0bThuUG5vNjJwSlFNY0Y3MGJXcUJYdHpCeXdCLUlXTkFTdndncnpSU2dvbDhtMXJUQmh4WWtyMU1FTXg0WEZDSkE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">TheServerSide.com</span><span class="rp-item-title">How to setup SSH in GitHub by example</span><span class="rp-item-extra">2026-07-16</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMie0FVX3lxTE5DRlloRlFrMjJaNmhabVQwelBGUWtaWWxBWXdNcWc1WU56cjcyVzJiVkNldVJITnFveUN3VHdaODFUNm05TC1PR0Z2UGhVYUZjWGYwbFNob2t1ejQzLUd1YmRUWmlqdHBfeHNFLUJCSGVacS1iNDd4Ui12OA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Augment Code</span><span class="rp-item-title">Claude Code Hits 134k GitHub Stars: A Terminal Agent Worth Understanding</span><span class="rp-item-extra">2026-06-23</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMigwFBVV95cUxOeDJGczhNb0g2d19DMGZhMEhwY0VKNE83RjJJSTAwQ1FJMGJRMUZnQjFGS2xmT0p3RGhGZ2w0UmIweEdLVXNFRDlTYVR1R0pVdXFGaDFVRkdxVl9ZMXE2SjdMT0hvdFBON3NXblQ5akJodHpMNUd4VFVNZVBKN2hsV1VRaw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Cybernews</span><span class="rp-item-title">“Free and open-source” Bloomberg Terminal alternative tops GitHub Trending chart: bring your own data</span><span class="rp-item-extra">2026-04-21</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMid0FVX3lxTFBYMmhWR2o3M2hmSjk3U0lkY1JpelFQTENZeGdiRVlRQUp1blBNTE5NZzUwbDQ0NlF4SF9wd3BwejZpN2RYRHFiTFUxQUZwYnhlODVyNWpLU3NOdmJzcXVsSmUzUEp0b2hNYTZ1bHlrU01lM1k1ZmpB?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">wiz.io</span><span class="rp-item-title">Claude Code vs GitHub Copilot: Better Together?</span><span class="rp-item-extra">2026-03-19</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/microsoft__terminal.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

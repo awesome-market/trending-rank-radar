@@ -1,0 +1,209 @@
+<a name="readme-top"></a>
+
+<!-- PROJECT SHIELDS -->
+[![Downloads][downloads-shield]][downloads-url]
+[![Release][release-shield]][releases-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/luckjiawei/frpc-desktop">
+    <img src="public/logo/pack/1024x1024.png" alt="Logo" width="140">
+  </a>
+
+<h3 align="center">Frpc-Desktop</h3>
+
+  <p align="center">
+    🎉 FRP跨平台桌面客户端，可视化配置，轻松实现内网穿透！
+    <br />
+    支持所有frp版本 / 多实例并发 / Cloudflare Tunnel / 浅色与深色主题 / 免费开源
+  </p>
+
+  <p>🎊 <strong>下载量突破 10,000！感谢大家的支持！</strong></p>
+
+  <p><a href="https://jwinks.com/p/frp/">📖 文档</a> &nbsp; <a href="https://jwinks.com/p/frpc-desktop-faq/">常见问题</a> &nbsp; <a href="README.md">English</a></p>
+
+<a href="https://trendshift.io/repositories/12489" target="_blank"><img src="https://trendshift.io/api/badge/repositories/12489" alt="luckjiawei%2Ffrpc-desktop | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+<a href="https://hellogithub.com/repository/b0dc116e9f2e4b8188da5a6d3e1bd8a4" target="_blank"><img src="https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=b0dc116e9f2e4b8188da5a6d3e1bd8a4&claim_uid=8ZMOhz30mGJAHpa" alt="Featured｜HelloGitHub" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+</div>
+
+> 💡 如果你更喜欢 **Web 界面**，试试 [Podux](https://github.com/luckjiawei/podux) —
+> 基于浏览器的 frpc 可视化管理工具。
+
+## 下载
+
+前往 [Releases](https://github.com/luckjiawei/frpc-desktop/releases/latest) 下载最新安装包：
+
+| 平台 | 安装包 |
+| --- | --- |
+| Windows | `.msi` 与 `.exe` 安装包 |
+| macOS | `.dmg`（支持 Apple Silicon 与 Intel） |
+| Linux | `.AppImage`、`.deb`、`.rpm` |
+
+> 2.0 基于 Tauri 2 全面重构，安装包体积比 1.x 的 Electron 版本小很多。
+
+## 2.0 新特性
+
+- **基于 Tauri 2 重构**：安装包更小，内存占用更低。
+- **多实例**：可同时运行多个 frpc 实例，连接不同的 frps 服务端。
+- **Cloudflare Tunnel**：与 frpc 实例一起管理 cloudflared 实例。
+- **全新仪表盘**：只读展示运行中实例、代理数量、连接异常，并支持一键全部启动/停止。
+- **界面焕新**：浅色、深色和跟随系统主题，侧边栏可收起，地址可一键复制。
+- **抽屉式配置**：在实例页以右侧抽屉编辑配置、查看日志，无需跳转页面。
+- **SQLite 存储**：自动安全导入 1.x 的现有数据。
+
+## TODO
+
+- [x] 开机自启动
+- [x] 适配多用户 user & meta_token
+- [x] 便携版
+- [x] 增加udp代理类型
+- [x] 支持快速分享frps
+- [x] 增加快速选择本地端口
+- [x] 支持stcp代理类型
+- [x] 通过镜像站下载frp
+- [x] 支持所有配置的导入导出
+- [x] 一键清空所有配置
+- [x] 支持导入识别frpc.toml
+- [x] tcp、udp协议支持批量端口
+- [x] support multiple languages
+- [x] 支持代理快速搜索及卡片/列表分页
+- [x] 支持浅色、深色和跟随系统外观
+- [x] 支持同时运行多个 frpc 实例（连接不同的 frps）
+- [x] 支持 Cloudflare Tunnel（cloudflared）实例，可与 frpc 同时运行
+
+
+## 开发
+
+环境要求：Node.js 22.12+、npm 和稳定版 Rust 工具链（参见 [Tauri 环境准备](https://v2.tauri.app/zh-cn/start/prerequisites/)）。
+
+```sh
+npm ci
+npm run tauri:dev    # 以开发模式运行桌面应用
+npm run tauri:build  # 为当前平台构建安装包
+```
+
+## 资源占用
+
+侧栏显示 Frpc-Desktop 及其后代进程的 CPU 和驻留内存合计，包括由应用启动的 frpc、cloudflared 实例，每 3 秒刷新一次。CPU 按整机总算力归一化（0–100%）；内存为各进程驻留内存之和，共享内存页可能重复计入。macOS 中由系统服务托管的 WebKit 辅助进程不属于此进程树，暂不计入。
+
+## 常见问题
+
+### 从 1.x 升级
+
+2.0 版本基于 Tauri 重构，可直接覆盖升级 1.x 的 Electron 版本。服务器配置、代理、系统设置和已下载的 frpc 版本会自动保留；仍为旧 NeDB 格式的数据（1.2.6 及更早版本）会在首次启动时导入，原文件以 `*.bak` 保留。
+
+启用多实例后，原有的单个服务端会迁移为默认实例（`id = "1"`），且不可删除。现有代理都归属于该实例，不新建实例时使用方式与之前完全一致。
+
+### 使用 Cloudflare Tunnel
+
+1. 在 Cloudflare 控制台进入 Zero Trust → 网络 → 隧道，创建连接器为 cloudflared 的隧道，并在控制台中添加公共主机名。
+2. 在 Frpc-Desktop 中打开“实例 → 新建实例 → Cloudflare Tunnel”，在实例配置中粘贴令牌（也可以直接粘贴控制台给出的完整安装命令）。
+3. 在“下载”页切换到 Cloudflare Tunnel 下载 cloudflared，或选择本机已安装的文件；未选择版本时会使用 `PATH` 中的 cloudflared。
+
+应用会为 cloudflared 生成独立的最小配置，这些实例不会读取你的 `~/.cloudflared/config.yml`。
+
+## 里程碑
+
+- 2026-11-13: 发布v2.0.1版本 日志查看器支持级别筛选、搜索和复制，优化消息提示样式，修复进程资源统计
+- 2026-11-11: 发布v2.0.0版本 基于 Tauri 2 重构，支持多实例、Cloudflare Tunnel、仪表盘和深色主题
+- 2026-09-04: 发布v1.2.7版本 迁移至 SQLite 存储，增加分页，优化性能
+- 2026-05-21: 发布v1.2.6版本 增加下载代理选择
+- 2026-03-26: 发布v1.2.5版本 修复已知BUG
+- 2025-09-10: 发布v1.2.3版本 修复已知BUG，支持代理协议，优化性能
+- 2025-04-22: 发布v1.2.2版本 修复已知BUG，支持HTTP路径设置
+- 2025-03-25: 发布v1.2.1版本 修复已知BUG，支持英文
+- 2025-03-06: 发布v1.2.0版本 底层重构，提高稳定性
+- 2025-01-09: 发布v1.1.6版本
+- 2024-12-04: 发布v1.1.5版本 优化体验、支持修改webport、解决github限流问题、日志优化
+- 2024-11-08: 发布v1.1.4版本 修复已知BUG
+- 2024-10-14: 发布v1.1.3版本 支持xtcp协议、优化体验
+- 2024-09-25: 发布v1.1.2版本 支持 http basic、子域名
+- 2024-09-07: 发布v1.1.0版本 支持批量端口、支持单条代理开关控制
+- 2024-08-24: 发布v1.0.9版本 支持镜像下载、导出导入配置
+- 2024-08-17: 发布v1.0.8版本 支持stcp代理
+- 2024-08-11: 发布v1.0.7版本
+- 2024-08-09: 发布v1.0.6版本
+- 2024-08-06: 发布v1.0.5版本
+- 2024-08-06: 发布v1.0.4版本 适配支持多用户插件
+- 2024-07-17: 发布v1.0.3版本 修复已知bug 增加开机自启 增加删除frp版本
+- 2024-01-29: 发布v1.0.2版本 增加Linux客户端和代理模式
+- 2023-12-01: 发布v1.0.1版本
+- 2023-11-28: 发布v1.0版本
+
+## 社区
+
+广告勿进！！！
+
+### TG
+
+[https://t.me/+4kziSBL3LxVmYzVl](https://t.me/+4kziSBL3LxVmYzVl)
+
+### 微信群
+
+**~~微信扫描加入开源项目交流群~~ 微信群超过200人无法扫码进群 关注公众号进群**
+
+
+
+ <img src="screenshots/wechat-qr.png" alt="二维码" width="200"><img src="screenshots/mp_qr.jpg" alt="公众号二维码" width="200">
+
+## 演示
+
+![launch](https://github.com/luckjiawei/frpc-desktop/blob/main/screenshots/zh/launch.png?raw=true)
+
+![proxys manager](https://github.com/luckjiawei/frpc-desktop/blob/main/screenshots/zh/proxy.png?raw=true)
+
+![frp download](https://github.com/luckjiawei/frpc-desktop/blob/main/screenshots/zh/download.png?raw=true)
+
+![config](https://github.com/luckjiawei/frpc-desktop/blob/main/screenshots/zh/config.png?raw=true)
+
+![logger](https://github.com/luckjiawei/frpc-desktop/blob/main/screenshots/zh/logger.png?raw=true)
+
+![about](https://github.com/luckjiawei/frpc-desktop/blob/main/screenshots/zh/about.png?raw=true)
+
+## 捐赠
+
+👉👉👉[点击去捐赠](https://jwinks.com/donate/)👈👈👈
+
+## 贡献者
+
+<a href="https://github.com/luckjiawei/frpc-desktop/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=luckjiawei/frpc-desktop" />
+</a>
+
+## License
+
+[MIT](LICENSE)
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=luckjiawei/frpc-desktop&type=Date)](https://star-history.com/#luckjiawei/frpc-desktop&Date)
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[downloads-shield]: https://img.shields.io/github/downloads/luckjiawei/frpc-desktop/total.svg?style=for-the-badge
+
+[downloads-url]: https://github.com/luckjiawei/frpc-desktop/releases
+
+[release-shield]: https://img.shields.io/github/v/release/luckjiawei/frpc-desktop.svg?style=for-the-badge
+
+[releases-url]: https://github.com/luckjiawei/frpc-desktop/releases
+
+[forks-shield]: https://img.shields.io/github/forks/luckjiawei/frpc-desktop.svg?style=for-the-badge
+
+[forks-url]: https://github.com/luckjiawei/frpc-desktop/network/members
+
+[stars-shield]: https://img.shields.io/github/stars/luckjiawei/frpc-desktop.svg?style=for-the-badge
+
+[stars-url]: https://github.com/luckjiawei/frpc-desktop/stargazers
+
+[issues-shield]: https://img.shields.io/github/issues/luckjiawei/frpc-desktop.svg?style=for-the-badge
+
+[issues-url]: https://github.com/luckjiawei/frpc-desktop/issues
+
+[license-shield]: https://img.shields.io/github/license/luckjiawei/frpc-desktop.svg?style=for-the-badge
+
+[license-url]: https://github.com/luckjiawei/frpc-desktop/blob/master/LICENSE

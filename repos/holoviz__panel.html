@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>holoviz/panel · GitHub Trending Rank Radar</title>
+<meta name="description" content="Panel: The powerful data exploration &amp; web app framework for Python">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="panel, holoviz, holoviz/panel, github stars, github trending, star growth, star history, 开源项目, 星标增长, holoviz, panel, dashboards, control-panels, gui, dataapp">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/holoviz__panel">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="holoviz/panel · GitHub Trending Rank Radar">
+<meta property="og:description" content="Panel: The powerful data exploration &amp; web app framework for Python">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/holoviz__panel">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "holoviz/panel", "codeRepository": "https://github.com/holoviz/panel", "url": "https://zhuikan.com/repos/holoviz__panel", "description": "Panel: The powerful data exploration & web app framework for Python", "author": {"@type": "Organization", "name": "holoviz", "url": "https://github.com/holoviz"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/BSD-3-Clause.html", "programmingLanguage": "Python", "dateCreated": "2018-08-23", "keywords": "holoviz,panel,dashboards,control-panels,gui,dataapp,dataviz,bokeh,datascience,holoviews"}</script>
+</head>
+<body data-repo="holoviz/panel" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">holoviz/panel</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="holoviz__panel"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/51678735?v=4&s=300" width="300" height="300" alt="holoviz avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">panel</div>
+      <a class="rp-side-owner" href="https://github.com/holoviz">holoviz</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/holoviz">holoviz</a>
+        <span class="rp-sep">/</span><span class="rp-name">panel</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Panel: The powerful data exploration &amp; web app framework for Python</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,825</b></span><span class="rp-stat" title="forks">⑂ <b>663</b></span><span class="rp-stat" title="watchers">👁 <b>63</b></span><span class="rp-stat" title="prs">⑃ <b>4,832</b></span><span class="rp-stat" title="issues">● <b>4,166</b></span><span class="rp-stat" title="releases">▤ <b>103</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/holoviz">holoviz</a><a class="rp-topic" href="https://github.com/topics/panel">panel</a><a class="rp-topic" href="https://github.com/topics/dashboards">dashboards</a><a class="rp-topic" href="https://github.com/topics/control-panels">control-panels</a><a class="rp-topic" href="../tags/gui">gui</a><a class="rp-topic" href="https://github.com/topics/dataapp">dataapp</a><a class="rp-topic" href="https://github.com/topics/dataviz">dataviz</a><a class="rp-topic" href="https://github.com/topics/bokeh">bokeh</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">BSD-3-Clause</span><span class="rp-meta-bit">Created 2018-08-23</span><a class="rp-meta-bit rp-home" href="https://panel.holoviz.org" rel="noopener">panel.holoviz.org</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/holoviz/panel">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Version 1.10.0</span><a class="rp-dl-a" href="https://github.com/holoviz/panel/releases/tag/v1.10.0">Version-1.10.0 ↓</a><span class="rp-dl-ver">1.10.0</span><span class="rp-dl-date">2026-10-23</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,825</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">663</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">63</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">4,832</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">4,166</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">103</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Build data apps with the Python tools you know
+
+Panel is an open-source library for interactive dashboards and web apps. Widgets, plots and layouts are ordinary Python objects that you connect to your data and models, pass between functions and classes, and test like the rest of your code. There are no string IDs to match up and no script that reruns on every click.
+
+      
+
+Home | Getting started | Components | App gallery | API | Support
+
+bash
+pip install panel
+
+
+or conda install -c conda-forge panel.
+
+
+  
+    
+    
+  
+
+
+Create the controls, define the plot, then connect the controls and arrange the app. The same code renders in a notebook cell and serves as an app with panel serve app.py.
+
+python
+import numpy as np, panel as pn
+import holoviews as hv
+
+pn.extension()
+
+window = pn.ui.IntSlider(label=&quot;Window&quot;, value=30, start=5, end=90)
+sigma  = pn.ui.FloatSlider(label=&quot;Volatility&quot;, value=1.0, start=0.2, end=3)
+ticker = pn.ui.RadioButtonGroup(label=&quot;Series&quot;, options=[&quot;AAPL&quot;, &quot;MSFT&quot;, &quot;NVDA&quot;])
+
+def series(window, sigma, ticker):
+    rng = np.random.default_rng(sum(map(ord, ticker)))
+    walk = np.cumsum(rng.normal(0, sigma, 400))
+    smooth = np.convolve(walk, np.ones(window) / window, &quot;same&quot;)
+    return hv.Curve(walk).opts(alpha=0.4)  hv.Curve(smooth)
+
+plot = pn.bind(series, window, sigma, ticker)
+pn.ui.Row(pn.ui.Column(window, sigma, ticker), plot).servable()
+
+
+ Update only what needs to change
+
+When a user changes a control, Panel runs only the code connected to it. In a small app, rerunning everything is cheap and the difference is hard to notice. In a real application that loads large datasets, fits models and keeps user state, it determines how quickly the app responds and how much caching and state management you have to write to keep it that way.
+
+
+  
+  
+
+
+Compare Panel and Streamlit
+
+ Built with Panel
+
+Explore example apps for science, finance and machine learning. Each includes source code you can run and adapt.
+
+
+  
+    Gaia million star atlasExplore a million stars with linked views of their positions, brightness and color
+    Model serving monitorMonitor model response times, drift and alerts
+    Portfolio analyzerExplore investments with linked tables and price charts
+  
+  
+    Glaciers of the worldFilter and explore data on 200,000 glaciers
+    Penguin crossfilterExplore penguin data across four linked plots
+    Storm surge studioExplore a flood model with interactive controls
+  
+
+
+Browse all examples
+
+ AI tools for developers and users
+
+Use HoloViz skills to help coding assistants work with Panel, and Lumen to add an assistant to your app.
+
+Build with coding assistants. HoloViz skills give coding assistants guidance on building, reviewing, debugging and testing Panel apps with current APIs. Install them for Claude Code, Codex, Copilot, Cursor, Gemini CLI and other supported tools.
+
+bash
+pip install holoviz-skills
+holoviz-skills install
+
+
+Let users explore through chat. Lumen lets users change filters and adjust views through plain-l</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/holoviz/panel/issues/3555"><span class="rp-item-num">#3555</span><span class="rp-item-title">OAuth not working with prefixed app or behind a reverse proxy</span><span class="rp-item-extra">36 comments · 2022-05-25</span></a><a class="rp-item" href="https://github.com/holoviz/panel/issues/2516"><span class="rp-item-num">#2516</span><span class="rp-item-title">Panel Pydantic pane</span><span class="rp-item-extra">25 comments · 2021-07-08</span></a><a class="rp-item" href="https://github.com/holoviz/panel/issues/693"><span class="rp-item-num">#693</span><span class="rp-item-title">Blacken project</span><span class="rp-item-extra">22 comments · 2019-10-12</span></a><a class="rp-item" href="https://github.com/holoviz/panel/issues/5028"><span class="rp-item-num">#5028</span><span class="rp-item-title">List of improvements inspired by Streamlit Migration Guide</span><span class="rp-item-extra">20 comments · 2023-06-03</span></a><a class="rp-item" href="https://github.com/holoviz/panel/issues/8326"><span class="rp-item-num">#8326</span><span class="rp-item-title">Define migration plan for integrating panel-material-ui into core Panel</span><span class="rp-item-extra">19 comments · 2025-12-03</span></a><a class="rp-item" href="https://github.com/holoviz/panel/issues/6611"><span class="rp-item-num">#6611</span><span class="rp-item-title">Panel tutorial Issues</span><span class="rp-item-extra">19 comments · 2024-03-29</span></a><a class="rp-item" href="https://github.com/holoviz/panel/issues/3085"><span class="rp-item-num">#3085</span><span class="rp-item-title">Enable intellisense for arguments to widgets, panes, layouts etc.</span><span class="rp-item-extra">18 comments · 2022-01-10</span></a><a class="rp-item" href="https://github.com/holoviz/panel/issues/6215"><span class="rp-item-num">#6215</span><span class="rp-item-title">Enhance the tutorial</span><span class="rp-item-extra">17 comments · 2024-01-16</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/holoviz/panel/releases"><b>Version 1.10.0</b> <span class="rp-rel-tag">v1.10.0</span> <span class="rp-item-extra">2026-10-23</span></a><pre class="rp-pre">Panel 1.10.0 is a major step towards Panel 2.0. The headline is panel.ui, a single namespace that combines the Material UI components from panel-material-ui with the classic Panel components that have no Material equivalent, together with a panel migrate codemod that rewrites existing apps to use it. Panel now also ships its own native ASGI server, replacing bokeh-fastapi and bokeh-django, so panel serve --server fastapi|asgi works out of the box and OAuth behaves identically across transports.
+
+Components no longer have to be declared up front: a component that wraps a JavaScript library no</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/holoviz__panel.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

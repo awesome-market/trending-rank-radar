@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>luckjiawei/frpc-desktop · GitHub Trending Rank Radar</title>
+<meta name="description" content="Cross-platform desktop client for FRP, visual configuration, easily achieve intranet penetration!">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="frpc-desktop, luckjiawei, luckjiawei/frpc-desktop, github stars, github trending, star growth, star history, 开源项目, 星标增长, frp, frpc, frp-desktop, frp-linux, frp-macos, frp-window">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/luckjiawei__frpc-desktop">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="luckjiawei/frpc-desktop · GitHub Trending Rank Radar">
+<meta property="og:description" content="Cross-platform desktop client for FRP, visual configuration, easily achieve intranet penetration!">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/luckjiawei__frpc-desktop">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "luckjiawei/frpc-desktop", "codeRepository": "https://github.com/luckjiawei/frpc-desktop", "url": "https://zhuikan.com/repos/luckjiawei__frpc-desktop", "description": "Cross-platform desktop client for FRP, visual configuration, easily achieve intranet penetration!", "author": {"@type": "Organization", "name": "luckjiawei", "url": "https://github.com/luckjiawei"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Vue", "dateCreated": "2023-11-27", "keywords": "frp,frpc,frp-desktop,frp-linux,frp-macos,frp-window,desktop,electron,javascript,vue"}</script>
+</head>
+<body data-repo="luckjiawei/frpc-desktop" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">luckjiawei/frpc-desktop</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="luckjiawei__frpc-desktop"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/55422300?u=3b77e41690a34331ee83ebd4c66572fcba573dad&amp;v=4&s=300" width="300" height="300" alt="luckjiawei avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">frpc-desktop</div>
+      <a class="rp-side-owner" href="https://github.com/luckjiawei">luckjiawei</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/luckjiawei">luckjiawei</a>
+        <span class="rp-sep">/</span><span class="rp-name">frpc-desktop</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Cross-platform desktop client for FRP, visual configuration, easily achieve intranet penetration!</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>6,972</b></span><span class="rp-stat" title="forks">⑂ <b>507</b></span><span class="rp-stat" title="watchers">👁 <b>23</b></span><span class="rp-stat" title="prs">⑃ <b>19</b></span><span class="rp-stat" title="issues">● <b>136</b></span><span class="rp-stat" title="releases">▤ <b>27</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/frp">frp</a><a class="rp-topic" href="https://github.com/topics/frpc">frpc</a><a class="rp-topic" href="https://github.com/topics/frp-desktop">frp-desktop</a><a class="rp-topic" href="https://github.com/topics/frp-linux">frp-linux</a><a class="rp-topic" href="https://github.com/topics/frp-macos">frp-macos</a><a class="rp-topic" href="https://github.com/topics/frp-window">frp-window</a><a class="rp-topic" href="../tags/desktop">desktop</a><a class="rp-topic" href="../tags/electron">electron</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Vue</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2023-11-27</span><a class="rp-meta-bit rp-home" href="https://jwinks.com/p/frp/" rel="noopener">jwinks.com/p/frp/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/luckjiawei/frpc-desktop">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v2.0.1</span><a class="rp-dl-a" href="https://github.com/luckjiawei/frpc-desktop/releases/tag/v2.0.1">v2.0.1 ↓</a><span class="rp-dl-ver">2.0.1</span><span class="rp-dl-date">2026-11-13</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num">6,972</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">507</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">23</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">19</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">136</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">27</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">[![Downloads][downloads-shield]][downloads-url]
+[![Release][release-shield]][releases-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+
+
+
+
+  
+    
+  
+
+Frpc-Desktop
+
+  
+    🎉 FRP跨平台桌面客户端，可视化配置，轻松实现内网穿透！
+    
+    支持所有frp版本 / 多实例并发 / Cloudflare Tunnel / 浅色与深色主题 / 免费开源
+  
+
+  🎊 下载量突破 10,000！感谢大家的支持！
+
+  📖 文档 &amp;nbsp; 常见问题 &amp;nbsp; English
+
+
+
+
+
+ 💡 如果你更喜欢 Web 界面，试试 Podux —
+ 基于浏览器的 frpc 可视化管理工具。
+
+ 下载
+
+前往 Releases 下载最新安装包：
+
+| 平台 | 安装包 |
+| --- | --- |
+| Windows | .msi 与 .exe 安装包 |
+| macOS | .dmg（支持 Apple Silicon 与 Intel） |
+| Linux | .AppImage、.deb、.rpm |
+
+ 2.0 基于 Tauri 2 全面重构，安装包体积比 1.x 的 Electron 版本小很多。
+
+ 2.0 新特性
+
+- 基于 Tauri 2 重构：安装包更小，内存占用更低。
+- 多实例：可同时运行多个 frpc 实例，连接不同的 frps 服务端。
+- Cloudflare Tunnel：与 frpc 实例一起管理 cloudflared 实例。
+- 全新仪表盘：只读展示运行中实例、代理数量、连接异常，并支持一键全部启动/停止。
+- 界面焕新：浅色、深色和跟随系统主题，侧边栏可收起，地址可一键复制。
+- 抽屉式配置：在实例页以右侧抽屉编辑配置、查看日志，无需跳转页面。
+- SQLite 存储：自动安全导入 1.x 的现有数据。
+
+ TODO
+
+- [x] 开机自启动
+- [x] 适配多用户 user &amp; meta_token
+- [x] 便携版
+- [x] 增加udp代理类型
+- [x] 支持快速分享frps
+- [x] 增加快速选择本地端口
+- [x] 支持stcp代理类型
+- [x] 通过镜像站下载frp
+- [x] 支持所有配置的导入导出
+- [x] 一键清空所有配置
+- [x] 支持导入识别frpc.toml
+- [x] tcp、udp协议支持批量端口
+- [x] support multiple languages
+- [x] 支持代理快速搜索及卡片/列表分页
+- [x] 支持浅色、深色和跟随系统外观
+- [x] 支持同时运行多个 frpc 实例（连接不同的 frps）
+- [x] 支持 Cloudflare Tunnel（cloudflared）实例，可与 frpc 同时运行
+
+
+ 开发
+
+环境要求：Node.js 22.12+、npm 和稳定版 Rust 工具链（参见 Tauri 环境准备）。
+
+sh
+npm ci
+npm run tauri:dev     以开发模式运行桌面应用
+npm run tauri:build   为当前平台构建安装包
+
+
+ 资源占用
+
+侧栏显示 Frpc-Desktop 及其后代进程的 CPU 和驻留内存合计，包括由应用启动的 frpc、cloudflared 实例，每 3 秒刷新一次。CPU 按整机总算力归一化（0–100%）；内存为各进程驻留内存之和，共享内存页可能重复计入。macOS 中由系统服务托管的 WebKit 辅助进程不属于此进程树，暂不计入。
+
+ 常见问题
+
+ 从 1.x 升级
+
+2.0 版本基于 Tauri 重构，可直接覆盖升级 1.x 的 Electron 版本。服务器配置、代理、系统设置和已下载的 frpc 版本会自动保留；仍为旧 NeDB 格式的数据（1.2.6 及更早版本）会在首次启动时导入，原文件以 .bak 保留。
+
+启用多实例后，原有的单个服务端会迁移为默认实例（id = &quot;1&quot;），且不可删除。现有代理都归属于该实例，不新建实例时使用方式与之前完全一致。
+
+ 使用 Cloudflare Tunnel
+
+1. 在 Cloudflare 控制台进入 Zero Trust → 网络 → 隧道，创建连接器为 cloudflared 的隧道，并在控制台中添加公共主机名。
+2. 在 Frpc-Desktop 中打开“实例 → 新建实例 → Cloudflare Tunnel”，在实例配置中粘贴令牌（也可以直接粘贴控制台给出的完整安装命令）。
+3. 在“下载”页切换到 Cloudflare Tunnel 下载 cloudflared，或选择本机已安装的文件；未选择版本时会使用 PATH 中的 cloudflared。
+
+应用会为 cloudflared 生成独立的最小配置，这些实例不会读取你的 ~/.cloudflared/config.yml。
+
+ 里程碑
+
+- 2026-11-13: 发布v2.0.1版本 日志查看器支持级别筛选、搜索和复制，优化消息提示样式，修复进程资源统计
+- 2026-11-11: 发布v2.0.0版本 基于 Tauri 2 重构，支持多实例、Cloudflare Tunnel、仪表盘和深色主题
+- 2026-09-04: 发布v1.2.7版本 迁移至 SQLite 存储，增加分页，优化性能
+- 2026-05-21: 发布v1.2.6版本 增加下载代理选择
+- 2026-03-26: 发布v1.2.5版本 修复已知BUG
+- 2025-09-10: 发布v1.2.3版本 修复已知BUG，支持代理协议，优化性能
+- 2025-04-22: 发布v1.2.2版本 修复已知BUG，支持HTTP路径设置
+- 2025-03-25: 发布v1.2.1版本 修复已知BUG，支持英文
+- 2025-03-06: 发布v1.2.0版本 底层重构，提高稳定性
+- 2025-01-09: 发布v1.1.6版本
+- 2024-12-04: 发布v1.1.5版本 优化体验、支持修改webport、解决github限流问题、日志优化
+- 2024-11-08: 发布v1.1.4版本 修复已知BUG
+- 2024-10-14: 发布v1.1.3版本 支持xtcp协议、优化体验
+- 2024-09-25: 发布v1.1.2版本 支持 http basic、子域名
+- 2024-09-07: 发布v1.1.0版本 支持批量端口、支持单条代理开关控制
+- 2024-08-24: 发布v1.0.9版本 支持镜像下载、导出导入配置
+- 2024-08-17: 发布v1.0.8版本 支持stcp代理
+- 2024-08-11:</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/luckjiawei/frpc-desktop/issues/48"><span class="rp-item-num">#48</span><span class="rp-item-title">Windows Server 2012R2 无法打开</span><span class="rp-item-extra">3 comments · 2024-12-07</span></a><a class="rp-item" href="https://github.com/luckjiawei/frpc-desktop/issues/40"><span class="rp-item-num">#40</span><span class="rp-item-title">请求增加以服务运行</span><span class="rp-item-extra">3 comments · 2024-11-17</span></a><a class="rp-item" href="https://github.com/luckjiawei/frpc-desktop/issues/157"><span class="rp-item-num">#157</span><span class="rp-item-title">[Bug][macOS] 关闭窗口后无法再次打开主界面（只能强退重启）</span><span class="rp-item-extra">2 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/luckjiawei/frpc-desktop/issues/135"><span class="rp-item-num">#135</span><span class="rp-item-title">通过web面板修改的Config配置文件,重启应用或系统后被重置。</span><span class="rp-item-extra">2 comments · 2026-05-19</span></a><a class="rp-item" href="https://github.com/luckjiawei/frpc-desktop/issues/128"><span class="rp-item-num">#128</span><span class="rp-item-title">windows 25H2 客户端  在Frpc未启用时，出现明显卡顿，启用后卡顿消失</span><span class="rp-item-extra">2 comments · 2026-02-28</span></a><a class="rp-item" href="https://github.com/luckjiawei/frpc-desktop/issues/127"><span class="rp-item-num">#127</span><span class="rp-item-title">在Frpc未启用时，出现明显卡顿，启用后卡顿消失</span><span class="rp-item-extra">2 comments · 2026-02-24</span></a><a class="rp-item" href="https://github.com/luckjiawei/frpc-desktop/issues/125"><span class="rp-item-num">#125</span><span class="rp-item-title">导入frp提示 所选frp架构与系统不符</span><span class="rp-item-extra">2 comments · 2026-01-08</span></a><a class="rp-item" href="https://github.com/luckjiawei/frpc-desktop/issues/126"><span class="rp-item-num">#126</span><span class="rp-item-title">在window server 2012安装后报错，使用的是1.2.4版本</span><span class="rp-item-extra">1 comments · 2026-02-06</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/luckjiawei/frpc-desktop/releases"><b>v2.0.1</b> <span class="rp-rel-tag">v2.0.1</span> <span class="rp-item-extra">2026-11-13</span></a></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/luckjiawei__frpc-desktop.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

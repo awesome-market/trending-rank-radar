@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>unslothai/unsloth · GitHub Trending Rank Radar</title>
+<meta name="description" content="Local UI to run and train LLMs and diffusion models. Supports GGUF, MLX, Qwen3.8, DeepSeek-V4.1, MiniMax-H3, Gemma 4, FLUX and more.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="unsloth, unslothai, unslothai/unsloth, github stars, github trending, star growth, star history, 开源项目, 星标增长, fine-tuning, llama, llms, gemma, unsloth, llm">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/unslothai__unsloth">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="unslothai/unsloth · GitHub Trending Rank Radar">
+<meta property="og:description" content="Local UI to run and train LLMs and diffusion models. Supports GGUF, MLX, Qwen3.8, DeepSeek-V4.1, MiniMax-H3, Gemma 4, FLUX and more.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/unslothai__unsloth">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "unslothai/unsloth", "codeRepository": "https://github.com/unslothai/unsloth", "url": "https://zhuikan.com/repos/unslothai__unsloth", "description": "Local UI to run and train LLMs and diffusion models. Supports GGUF, MLX, Qwen3.8, DeepSeek-V4.1, MiniMax-H3, Gemma 4, FLUX and more.", "author": {"@type": "Organization", "name": "unslothai", "url": "https://github.com/unslothai"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Python", "dateCreated": "2023-11-29", "keywords": "fine-tuning,llama,llms,gemma,unsloth,llm,deepseek,text-to-speech,tts,qwen"}</script>
+</head>
+<body data-repo="unslothai/unsloth" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">unslothai/unsloth</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="unslothai__unsloth"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/150920049?v=4&s=300" width="300" height="300" alt="unslothai avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">unsloth</div>
+      <a class="rp-side-owner" href="https://github.com/unslothai">unslothai</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/unslothai">unslothai</a>
+        <span class="rp-sep">/</span><span class="rp-name">unsloth</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Local UI to run and train LLMs and diffusion models. Supports GGUF, MLX, Qwen3.8, DeepSeek-V4.1, MiniMax-H3, Gemma 4, FLUX and more.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>79,445</b></span><span class="rp-stat" title="forks">⑂ <b>7,407</b></span><span class="rp-stat" title="watchers">👁 <b>377</b></span><span class="rp-stat" title="prs">⑃ <b>12,091</b></span><span class="rp-stat" title="issues">● <b>5,227</b></span><span class="rp-stat" title="releases">▤ <b>87</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/fine-tuning">fine-tuning</a><a class="rp-topic" href="https://github.com/topics/llama">llama</a><a class="rp-topic" href="../tags/llms">llms</a><a class="rp-topic" href="https://github.com/topics/gemma">gemma</a><a class="rp-topic" href="https://github.com/topics/unsloth">unsloth</a><a class="rp-topic" href="../tags/llm">llm</a><a class="rp-topic" href="../tags/deepseek">deepseek</a><a class="rp-topic" href="https://github.com/topics/text-to-speech">text-to-speech</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2023-11-29</span><a class="rp-meta-bit rp-home" href="https://unsloth.ai/docs" rel="noopener">unsloth.ai/docs</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="unslothai__notebooks"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/150920049?v=4" alt="" loading="lazy">notebooks</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/unslothai/unsloth">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Dynamic v3.1 GGUFs + Performance Fixes</span><a class="rp-dl-a" href="https://github.com/unslothai/unsloth/releases/tag/v0.1.917-beta">v0.1.917-beta ↓</a><span class="rp-dl-ver">v0.1.917-beta</span><span class="rp-dl-date">2026-11-11</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+53</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+437</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1,819</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">79,445</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">7,407</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">377</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">12,091</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">5,227</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">87</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Unsloth is the first desktop app to run and train models.
+
+
+
+  Features •
+  Quickstart •
+  Notebooks •
+  Documentation
+
+
+
+  
+    
+  
+
+
+ ⚡ Get started
+Download the native Unsloth Desktop app for your operating system:
+
+  
+    Platform
+    Link
+  
+  
+    Windows
+    Download
+  
+  
+    macOS
+    Download
+  
+  
+    Linux / Ubuntu (deb)
+    Download
+  
+  
+    Linux / Ubuntu (ARM64) (deb)
+    Download
+  
+  
+    Linux (AppImage)
+    Download
+  
+  
+    Windows (ARM64)
+    Download
+  
+
+
+Download from Unsloth or GitHub Releases.
+
+Or if you prefer to install manually:
+
+ macOS, Linux, WSL:
+bash
+curl -fsSL https://unsloth.ai/install.sh | sh
+
+
+ Windows:
+powershell
+irm https://unsloth.ai/install.ps1 | iex
+
+ Docker:
+
+The Unsloth Docker image unsloth/unsloth is available on Docker. Read guide.
+
+ Homebrew:
+bash
+brew install --cask unsloth
+
+
+ Winget (Windows):
+powershell
+winget install --id UnslothAI.Unsloth -e
+
+
+ Community:
+
+- Discord
+- 𝕏 (Twitter)
+- Reddit
+
+ ⭐ Features
+Unsloth works on Windows, Linux, WSL and macOS. We support Multi GPU setups, NVIDIA, AMD, Intel GPUs, CPUs and the Vulkan backend.
+
+ Run &amp; Build with AI
+ Run and train LLMs, MLX, GGUF, diffusion, decision, embedding, audio models: Qwen3.8, GLM-5.3-Flash, Kimi K3, Qwen-Image-2.1, MiniMax-H3, DeepSeek-V4, Gemma 4.
+ Agents &amp; Tools: Use local models with Claude Code, Codex, and MCP, including tool calling and code execution.
+ Browser use: Navigate sites, fill out forms, read PDFs, and edit files beside your chat with a local model.
+ Sandboxing: Restrict which files your model can access when it runs commands in a sandbox.
+ Search &amp; RAG: Use private and unlimited web search, deep research, auto-compaction (rolling context window) and RAG.
+ Image and video: Run and train image and video diffusion or multimodal models
+ Remote &amp; LAN: Access your local models from any device on LAN or remotely through secure Cloudflare HTTPS.
+ Connect: Serve models through an OpenAI compatible API. Also connect your ChatGPT/Codex subscription and cloud providers
+
+
+ Train &amp; Deploy
+ Fine-tuning: Train LLMs, diffusion, decision, TTS, and embedding models 2× faster with 70% less VRAM with no accuracy loss
+ Complete support: Supports reinforcement learning, LoRA, QLoRA, full fine tuning, pretraining, RL, GRPO, DPO, and FP8.
+ Export &amp; Deploy: Export or Deploy models including GGUF, NVFP4, FP8 and more formats.
+ Datasets: Build datasets from PDFs, CSVs, DOCX files, and more with Data Recipes.
+  
+ 🚀 Unsloth Start
+
+Unsloth Start connects Claude Code, Codex and other agents to local models with one command.
+
+bash
+unsloth start claude --model unsloth/Qwen3.8-27B-GGUF:UD-Q4_K_XL
+
+
+| Agent | Command |
+| --- | --- |
+| Claude Code | unsloth start claude |
+| OpenAI Codex | unsloth start codex |
+| Visual Studio Code | unsloth start vscode |
+| DeepSeek Harness | unsloth start dsh |
+| OpenCode | unsloth start opencode |
+| Hermes Agent | unsloth start hermes |
+| Pi | unsloth start pi |
+| OpenClaw | unsloth start openclaw |
+| Mistral Vibe | uns</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/unslothai/unsloth/issues/2755"><span class="rp-item-num">#2755</span><span class="rp-item-title">[FEATURE] TPU Support for Fine Tuning</span><span class="rp-item-extra">13 comments · 2025-06-18</span></a><a class="rp-item" href="https://github.com/unslothai/unsloth/issues/17015"><span class="rp-item-num">#17015</span><span class="rp-item-title">Studio: repeated full prompt processing across turns with Qwen hybrid model after tool use</span><span class="rp-item-extra">6 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/unslothai/unsloth/issues/16317"><span class="rp-item-num">#16317</span><span class="rp-item-title">[Bug] Unsloth North Mini Code giving Stream interrupted error when using Bearer Token and OpenAIAPI with OpenCode</span><span class="rp-item-extra">6 comments · 2026-10-31</span></a><a class="rp-item" href="https://github.com/unslothai/unsloth/issues/9037"><span class="rp-item-num">#9037</span><span class="rp-item-title">[Bug] Unsloth Studio / Desktop: long chats redo the full prefill after a model reload because slot KV is only saved on idle auto-unload</span><span class="rp-item-extra">6 comments · 2026-08-16</span></a><a class="rp-item" href="https://github.com/unslothai/unsloth/issues/5764"><span class="rp-item-num">#5764</span><span class="rp-item-title">[Feature Request] Multi GPU fine tuning via Unsloth Studio</span><span class="rp-item-extra">6 comments · 2026-05-25</span></a><a class="rp-item" href="https://github.com/unslothai/unsloth/issues/4380"><span class="rp-item-num">#4380</span><span class="rp-item-title">[Feature] Flatpak support - Unsloth Studio</span><span class="rp-item-extra">6 comments · 2026-03-17</span></a><a class="rp-item" href="https://github.com/unslothai/unsloth/issues/2739"><span class="rp-item-num">#2739</span><span class="rp-item-title">[Feature] Add ABBA: Highly Expressive Hadamard Product Adaptation for Large Language Models</span><span class="rp-item-extra">6 comments · 2025-06-12</span></a><a class="rp-item" href="https://github.com/unslothai/unsloth/issues/14487"><span class="rp-item-num">#14487</span><span class="rp-item-title">[Bug] potential memory leak Drive C loses 200-400 mb after every use of unsloth with no way to clear residual data</span><span class="rp-item-extra">5 comments · 2026-10-21</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/unslothai/unsloth/discussions/17570"><span class="rp-item-num">#17570</span><span class="rp-item-title">loraspectra: Fast Rust CLI to audit spectral rank, bake rsLoRA scaling, compress, and merge Unsloth LoRA .safetensors</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/unslothai/unsloth/discussions/17412"><span class="rp-item-num">#17412</span><span class="rp-item-title">How do I add third-party decision (systemone) models?</span><span class="rp-item-extra">2 comments · 2026-11-10</span></a><a class="rp-item" href="https://github.com/unslothai/unsloth/discussions/16817"><span class="rp-item-num">#16817</span><span class="rp-item-title">Unsloth Desktop issues with using Qwen 3.8 27B with NVFP4</span><span class="rp-item-extra">4 comments · 2026-11-05</span></a><a class="rp-item" href="https://github.com/unslothai/unsloth/discussions/16779"><span class="rp-item-num">#16779</span><span class="rp-item-title">OpenUI support</span><span class="rp-item-extra">0 comments · 2026-11-05</span></a><a class="rp-item" href="https://github.com/unslothai/unsloth/discussions/16487"><span class="rp-item-num">#16487</span><span class="rp-item-title">When will Unsloth exit Beta state?</span><span class="rp-item-extra">0 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/unslothai/unsloth/discussions/16460"><span class="rp-item-num">#16460</span><span class="rp-item-title">Run big llm-models like Qwen3.8-Flash-Next in q3 or iq4 like on strata/poystrata on 48GB+16GBVRam</span><span class="rp-item-extra">1 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/unslothai/unsloth/discussions/16456"><span class="rp-item-num">#16456</span><span class="rp-item-title">load error</span><span class="rp-item-extra">2 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/unslothai/unsloth/discussions/15852"><span class="rp-item-num">#15852</span><span class="rp-item-title">VRAM &amp; KV-Cache Estimator for GGUF Export &amp; Post-Fine-Tuning Serving (Zero-Dependency CLI &amp; Interactive WebApp)</span><span class="rp-item-extra">0 comments · 2026-10-28</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/unslothai/unsloth/releases"><b>Dynamic v3.1 GGUFs + Performance Fixes</b> <span class="rp-rel-tag">v0.1.917-beta</span> <span class="rp-item-extra">2026-11-11</span></a><pre class="rp-pre">Qwen3.8-27B is here with Dynamic v3.1 GGUFs, ready to run locally with Unsloth. This release also brings major performance improvements, smoother Glass rendering, revamped code blocks and Thinking UI, HTML/PDF chat exports, and new image generation and coding agent features.
+
+ Highlights
+- New Qwen3.8-27B Dynamic v3.1 GGUFs.
+- Faster chats: Major performance improvements to streaming, scrolling, menus and dialogs, especially in long conversations.
+- Smoother Glass: Reduced lag while typing, scrolling and generating.
+- Revamped code blocks and Thinking: Independently scrolling, expandable</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (7)</h3><div class="rp-list"><a class="rp-item" href="https://www.msn.cn/zh-cn/news/other/%E9%80%9A%E4%B9%89%E5%8D%83%E9%97%AE%E6%90%BA%E6%89%8Bunsloth-dynamic-v3-qwen38-27b%E9%87%8F%E5%8C%96%E5%8D%87%E7%BA%A7-%E4%BD%8E%E5%86%85%E5%AD%98%E8%AE%BE%E5%A4%87%E4%B9%9F%E8%83%BD%E7%95%85%E8%B7%91/ar-AA2aAn2L" target="_blank" rel="noopener"><span class="rp-news-src">ITBear科技资讯 on MSN</span><span class="rp-item-title">通义千问携手Unsloth Dynamic V3，Qwen3.8-27B量化升级，低内存设备也能畅跑</span><span class="rp-item-extra">2026-08-20</span></a><a class="rp-item" href="https://gigazine.net/news/20260318-unsloth-studio/" target="_blank" rel="noopener"><span class="rp-news-src">GIGAZINE</span><span class="rp-item-title">無料でローカルAIモデルのメモリ使用量を最大80％削減し処理速度を2倍に向上させる「Unsloth Studio」、Windows・macOS・Linux対応で ...</span><span class="rp-item-extra">2026-03-18</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMilAFBVV95cUxNN0pPMnA1VkpJaU01MkMzOFdFSE5jU1BqUzV5aXVZU0lsZzFNTWVaZ3RSZllkbkpDY0hBSGJ4bktpeE54NndhcWhfTE9SXzdDN19XTXBQVjNsOW1yOHNETEQ3b3dFcXR2RnlqazZDWk55UXA4ZFhpYk5Ld2pKYkpla1ZOOUdiSlhDSERzSUlFaElIc3Vj?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">Unsloth 推出 Browser use，Qwen3.8-27B 在本地操控浏览器</span><span class="rp-item-extra">2026-10-28</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMia0FVX3lxTE56MWV1MFItWUJFMjBwOUhWcVNOOUhZckw0ZEstOUo1eWh4cGtuZHlEcjFqZ244YnVDenplQTBZQjRNSTQ2UDNlcVYwQnhtZ3VhUnZwT0xVQXRoN0RYMjFIYkdMSTRhNEVZOHFn?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN博客</span><span class="rp-item-title">Unsloth Desktop：首款可本地运行训练模型应用，Dynamic 3.0 GGUFs 量化技术重大升级！-CS</span><span class="rp-item-extra">2026-08-20</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE9GZy1WUWVydzdhaXBlbDhSU2huaTNaenprVDdhUWJsMnhlOEE2OEhOUVhYZURoczE4UlRXdVR6UzRZdEdqV3BscWJycWM3RE9CTHc?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">麻省理工科技评论</span><span class="rp-item-title">兄弟俩用开源对抗AI训练垄断，还顺手帮模型们修了一堆Bug</span><span class="rp-item-extra">2025-10-27</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMif0FVX3lxTE5XMmFsQ3JBWTNzbXRidWZ1WUdBajlLS0FhVDN4SHlxYWpnOERNbUk1SlhoT0o3TFZETU56NTJtWVVqdmZ1NzROMjF0VUdEVVRqcVkyLVIxQ195UXFvcWJYTERTTFQwakdOVXp0MmxkaElXOGxFQkNMeFhqNE5IVXM?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">新浪财经</span><span class="rp-item-title">从RLHF、PPO到GRPO再训练推理模型，这是你需要的强化学习入门指南</span><span class="rp-item-extra">2025-06-22</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiSEFVX3lxTFBoSld6S0ZFYU9pb1ozaDlHNk81RDVZRnZvWlNINnZETEZ6ZUNCSGFkVjlLc1plYURKRHBMNXo1U3VUNEFIbmdZVw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">智源社区</span><span class="rp-item-title">社区供稿 | Unsloth 微调 Llama3-8B，提速 44.35%，节省 42.58% 显存，最少仅需 7.75GB</span><span class="rp-item-extra">2024-05-09</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (10)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=38487199" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: 80% faster, 50% less memory, 0% loss of accuracy Llama finetuning</span><span class="rp-item-extra">▲ 385 · 119 comments · 2023-12-01</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=38492652" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Unsloth: 80% faster, 50% less memory, 0% accuracy loss Llama finetuning</span><span class="rp-item-extra">▲ 132 · 3 comments · 2023-12-01</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=41050468" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: Finetune Llama-3.1 2x faster in a Colab</span><span class="rp-item-extra">▲ 16 · 2 comments · 2024-07-23</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=49262440" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Unsloth Desktop: Open-Source App for Local Models</span><span class="rp-item-extra">▲ 10 · 2 comments · 2026-08-11</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=47414372" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: Unsloth Studio - Local Fine-tuning, Chat UI</span><span class="rp-item-extra">▲ 8 · 2 comments · 2026-03-17</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=48983714" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Unsloth: Introducing AMD support</span><span class="rp-item-extra">▲ 7 · 0 comments · 2026-07-20</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=41305917" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: Open-source fine-tuning in a Colab notebook</span><span class="rp-item-extra">▲ 5 · 0 comments · 2024-08-21</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=38474791" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Finetune language models 30x faster</span><span class="rp-item-extra">▲ 2 · 0 comments · 2023-11-30</span></a><a class="rp-item" href="https://www.marktechpost.com/2026/10/07/what-happens-when-a-trusted-model-repo-changes-unsloth-studio-re-checks-before-it-runs/" target="_blank" rel="noopener"><span class="rp-news-src">MarkTechPost</span><span class="rp-item-title">What Happens When a Trusted Model Repo Changes? Unsloth Studio Re-Checks Before It Runs</span><span class="rp-item-extra">2026-10-06</span></a><a class="rp-item" href="https://www.darkreading.com/application-security/unsloth-studio-flaw-model-inspection-code-execution" target="_blank" rel="noopener"><span class="rp-news-src">Dark Reading</span><span class="rp-item-title">Unsloth Studio Flaw Turns Routine Model Inspection Into Code Execution</span><span class="rp-item-extra">2026-09-29</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/unslothai__unsloth.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

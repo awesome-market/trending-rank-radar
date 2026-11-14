@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ruanyf/weekly · GitHub Trending Rank Radar</title>
+<meta name="description" content="科技爱好者周刊，每周五发布">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="weekly, ruanyf, ruanyf/weekly, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/ruanyf__weekly">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="ruanyf/weekly · GitHub Trending Rank Radar">
+<meta property="og:description" content="科技爱好者周刊，每周五发布">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/ruanyf__weekly">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ruanyf/weekly", "codeRepository": "https://github.com/ruanyf/weekly", "url": "https://zhuikan.com/repos/ruanyf__weekly", "description": "科技爱好者周刊，每周五发布", "author": {"@type": "Organization", "name": "ruanyf", "url": "https://github.com/ruanyf"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "dateCreated": "2018-10-13"}</script>
+</head>
+<body data-repo="ruanyf/weekly" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">ruanyf/weekly</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="ruanyf__weekly"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/905434?v=4&s=300" width="300" height="300" alt="ruanyf avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">weekly</div>
+      <a class="rp-side-owner" href="https://github.com/ruanyf">ruanyf</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/ruanyf">ruanyf</a>
+        <span class="rp-sep">/</span><span class="rp-name">weekly</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=total">total <b>#129</b></a></div>
+    </div>
+    <p class="rp-desc">科技爱好者周刊，每周五发布</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>108,012</b></span><span class="rp-stat" title="forks">⑂ <b>4,577</b></span><span class="rp-stat" title="watchers">👁 <b>4,473</b></span><span class="rp-stat" title="prs">⑃ <b>182</b></span><span class="rp-stat" title="issues">● <b>12,421</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Created 2018-10-13</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="ruanyf__free-books"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/905434?v=4" alt="" loading="lazy">free-books</a><a class="rp-same-link" href="ruanyf__react-demos"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/905434?v=4" alt="" loading="lazy">react-demos</a><a class="rp-same-link" href="ruanyf__webpack-demos"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/905434?v=4" alt="" loading="lazy">webpack-demos</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/ruanyf/weekly">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+39</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+494</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+2,444</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">108,012</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">4,577</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">4,473</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">182</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">12,421</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">科技爱好者周刊
+
+记录每周值得分享的科技内容，周五发布。
+
+欢迎投稿文章/软件/资源，请提交 issue 。
+
+ P.S. 讨论区的《谁在招人》，是一个免费的程序员招聘帖，提供大量就业信息，欢迎发布工作/实习岗位。
+
+ 2026
+
+十一月
+
+- 第 419 期：机房来了，写字楼走了
+- 第 418 期：如果科技停止在21世纪初
+
+十月
+
+- 第 417 期：不要让 AI 代表你
+- 第 416 期：编程已经面目全非
+- 第 415 期：3D 版《看不见的城市》
+- 第 414 期：Jev 决策模型有什么用
+
+九月
+
+- 第 413 期：再见了，React Native
+- 第 412 期：禁止 issue，只用 PR
+- 第 411 期：OpenClaw 2.0 是一个缩影
+
+八月
+
+- 第 410 期：你需要知道的 AI 三种机制
+- 第 409 期：程序员的职业未来
+- 第 408 期：你需要知道的 AI 缓存知识
+- 第 407 期：国家为什么需要开源软件？
+
+七月
+
+- 第 406 期：道可，道非，常道
+- 第 405 期：资源，社会公平与算力
+- 第 404 期：你需要知道的 AI 内存知识
+- 第 403 期：为什么 Dropbox 不成功
+- 第 402 期：我在智念 AI 的日子（小说）
+
+六月
+
+- 第 401 期：如何赚到10亿美元
+- 第 400 期：rsync 的争论
+- 第 399 期：中国 AI 大厂访问记
+
+五月
+
+- 第 398 期：Token 费用难以负担
+- 第 397 期：财富正在向 AI 集中
+- 第 396 期：互联网通信的替代方案
+- 第 395 期：软件开发的第三种方式
+
+四月
+
+- 第 394 期：第二次 API 开放浪潮
+- 第 393 期：脑腐状态
+- 第 392 期：axios 投毒与好莱坞式骗术
+- 第 391 期：AI 的贫富分化
+
+三月
+
+- 第 390 期：没有语料，大模型就是智障
+- 第 389 期：未来如何招聘程序员
+- 第 388 期：测试是新的护城河
+- 第 387 期：你是领先的
+
+二月
+
+- 第 386 期：当外卖员接入 AI
+- 第 385 期：马斯克害怕中国车企吗？
+- 第 384 期：为什么软件股下跌
+
+一月
+
+- 第 383 期：你是第几级 AI 编程
+- 第 382 期：独立软件的黄昏
+- 第 381 期：中国 AI 大模型领导者在想什么
+- 第 380 期：为什么人们拥抱“不对称收益”
+
+ 2025
+
+十二月
+
+- 第 379 期：《硅谷钢铁侠》摘录
+- 第 378 期：预测是新的互联网热点
+- 第 377 期：14万美元的贫困线
+- 第 376 期：太空数据中心的争议
+
+十一月
+
+- 第 375 期：一扇门的 Bug
+- 第 374 期：6GHz 的问题
+- 第 373 期：数据模型是新产品的核心
+- 第 372 期：软件界面如何设计
+
+十月
+
+- 第 371 期：一个乐观主义者的专访
+- 第 370 期：正确的代码高亮
+- 第 369 期：Tim 与罗永浩的对谈
+- 第 368 期：不要这样管理软件团队
+
+九月
+
+- 第 367 期：Nano Banana 的几个妙用
+- 第 366 期：旧金山疯狂的 AI 广告
+- 第 365 期：流量变现正在崩塌
+- 第 364 期：最难还原的魔方
+
+八月
+
+- 第 363 期：最好懂的神经网络解释
+- 第 362 期：GitHub 工程师谈系统设计
+- 第 361 期：暗网 Tor 安全吗
+- 第 360 期：Dan Wang 的新书
+- 第 359 期：Palantir 值得关注
+
+七月
+
+- 第 358 期：如何拯救一家濒临倒闭的创业公司
+- 第 357 期：稳定币的博弈
+- 第 356 期：公司强推 AI 编程，我该怎么办
+- 第 355 期：两本《芯片战争》
+
+六月
+
+- 第 354 期：8000mAh 手机电池，说明了什么？
+- 第 353 期：苹果的“液态玻璃”是为了 AR
+- 第 352 期：Bug 追踪系统的正确样子
+- 第 351 期：GitHub Issues（几乎）是最好的笔记应用
+
+五月
+
+- 第 350 期：Java 三十周年
+- 第 349 期：神经网络算法的发明者
+- 第 348 期：李飞飞，从移民到 AI 明星
+- 第 347 期：冷启动的破解之道
+
+四月
+
+- 第 346 期：未来就是永恒感的丧失
+- 第 345 期：HDMI 2.2 影音可能到头了
+- 第 344 期：制造业正在“零工化”
+
+三月
+
+- 第 343 期：如何阻止 AI 爬虫
+- 第 342 期：面试的 AI 作弊——用数字人去面试
+- 第 341 期：低代码编程，恐怕不会成功
+- 第 340 期：技术炒作三十年
+
+二月
+
+- 第 339 期：代币是什么
+- 第 338 期：重新思考 6G
+- 第 337 期：互联网创业几乎没了
+- 第 336 期：面对 AI，互联网正在衰落
+
+一月
+
+- 第 335 期：年底的未来已来
+- 第 334 期：年终笔记四则
+- 第 333 期：一切都要支付两次
+- 第 332 期：西蒙·威利森的年终总结，梁文锋的访谈
+
+ 2024
+
+十二月
+
+- 第 331 期：你可能是一个 NPC
+- 第 330 期：李开复梳理人工智能
+- 第 329 期：示意图利器 D2
+- 第 328 期：AI 模型不是一门好生意
+
+十一月
+
+- 第 327 期：没有链接的互联网
+- 第 326 期：世界没有那么多财富
+- 第 325 期：VS Code 编辑器的下一站是 Zed？
+- 第 324 期：人类已知的最大质数
+- 第 323 期：技术公司的口号比拼
+
+十月
+
+- 第 322 期：内容行业的内幕
+- 第 321 期：傅盛回忆录
+- 第 320 期：乒乓仓
+
+九月
+
+- 第 319 期：如何拍出爆款视频
+- 第 318 期：创业咖啡馆的记忆
+- 第 317 期：驴子，老虎和狮子的寓言
+- 第 316 期：你一生的故事
+
+八月
+
+- 第 315 期：一份谷歌离职报告
+- 第 314 期：《黑神话：悟空》可以产业化吗？
+- 第 313 期：如果新加坡没有空调
+- 第 312 期：从英特尔看“美国制造”
+- 第 311 期：低利率与长期项目
+
+七月
+
+- 第 310 期：内容农场的 AI 赚钱术
+- 第 309 期：无人驾驶出租车的双面刃
+- 第 308 期：工作找不到，博士能读吗？
+- 第 307 期：不要看重 Product Hunt
+
+六月
+
+- 第 306 期：信息就像糖一样上瘾
+- 第 305 期：随机数，这是一个问题
+- 第 304 期：最受欢迎的颜色
+- 第 303 期：技术封建主义
+
+五月
+
+- 第 302 期：创业虽然好，不敢推荐了
+- 第 301 期：OpenAI 的图书馆工位
+- 第 300 期：三十年，解决人生三大问题
+- 第 299 期：AI 的关键是语料
+
+四月
+
+- 第 298 期：轮到硬件工程师吃香了
+- 第 297 期：饮水鸟玩具
+- 第 296 期：xz 后门的作者 Jia Tan 是谁？
+
+三月
+
+- 第 295 </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ruanyf/weekly/issues/798"><span class="rp-item-num">#798</span><span class="rp-item-title">谁在招人？（2019年11月）</span><span class="rp-item-extra">38 comments · 2019-08-23</span></a><a class="rp-item" href="https://github.com/ruanyf/weekly/issues/1593"><span class="rp-item-num">#1593</span><span class="rp-item-title">[自荐][工具] 一款可以本地实时生成字幕的视频播放器 YPlayer</span><span class="rp-item-extra">34 comments · 2021-01-14</span></a><a class="rp-item" href="https://github.com/ruanyf/weekly/issues/3516"><span class="rp-item-num">#3516</span><span class="rp-item-title">程序员在github接活，105.8万元工资被承德公安局定性为“非法收入”罚没</span><span class="rp-item-extra">33 comments · 2023-09-25</span></a><a class="rp-item" href="https://github.com/ruanyf/weekly/issues/128"><span class="rp-item-num">#128</span><span class="rp-item-title">开源项目推荐：HelloGitHub</span><span class="rp-item-extra">33 comments · 2018-12-06</span></a><a class="rp-item" href="https://github.com/ruanyf/weekly/issues/983"><span class="rp-item-num">#983</span><span class="rp-item-title">谁在招人？（2020年2月）</span><span class="rp-item-extra">30 comments · 2019-11-27</span></a><a class="rp-item" href="https://github.com/ruanyf/weekly/issues/5663"><span class="rp-item-num">#5663</span><span class="rp-item-title">【开源自荐】Readest：极简设计的跨平台阅读软件</span><span class="rp-item-extra">26 comments · 2024-12-06</span></a><a class="rp-item" href="https://github.com/ruanyf/weekly/issues/158"><span class="rp-item-num">#158</span><span class="rp-item-title">图片：估值一个亿的代码</span><span class="rp-item-extra">25 comments · 2018-12-14</span></a><a class="rp-item" href="https://github.com/ruanyf/weekly/issues/3338"><span class="rp-item-num">#3338</span><span class="rp-item-title">【项目自荐】Claude 2国内镜像-免翻墙可以访问，和官网体验完全一致</span><span class="rp-item-extra">22 comments · 2023-08-04</span></a></div></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (7)</h3><div class="rp-list"><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE40ZEJaOVQzRU16MTNCUTh3TDJ1dDhUeDFack9iNUtZRWpIV2Ftb2VXVDE4VncwQXJIbjRKUm5qNGJlVzBJYWZxS3duRWVyUnk1eFk4dm5MMFNmTGVmc3c?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN</span><span class="rp-item-title">GitHub周榜权力交接：Skill退烧，大厂接棒定标准</span><span class="rp-item-extra">2026-11-09</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE1STU1EWGdTa3hvVTV0Y1BYSGp1dWtZTHRLU3JxTzJVLWZLZDRpbnlKYU8xREtSUE1VbDV5TTZNeGNIaFFxMlVxdjgzZlV1ODdRanA3Q29GVlpoSnNDamhR?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN</span><span class="rp-item-title">用GitHub Actions自动生成周报：weekly项目实战解析</span><span class="rp-item-extra">2026-11-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE5oTHhuWndHM3ZZQXdPSV9DY2RDQkdsbmk0ZzB2RFhNNGZnS1NVNXptV3N2MWFZVU5WaUt6TWNsNnNnZ0lNak9TRHJCQ0kzRTIzbklibHVPMzZDQzBRVmww?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN</span><span class="rp-item-title">GitHub热榜观察：从AI应用到开发者工具，五个值得深入的开源项目</span><span class="rp-item-extra">2026-11-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE5WU0ljZVhnOG5aQnpvV1pvaWI1M0x3OXZpb2RoNTVCUHBfMzdVb21YQnk1RWF0czRCUDBpTmhMMnUxczYtZFItaWlLenJjdEtJcXlvZXY0MEtrMUlla1Iw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CSDN</span><span class="rp-item-title">用Python和GitHub Actions构建自动化周刊：从RSS采集到发布全流程</span><span class="rp-item-extra">2026-11-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMisAFBVV95cUxQV2dFUXFsWHpsUmJzMEFrQk9yaThIMm1CUEhpb05CT0s3THZYNWZod3pMYVdBbWFJSFJKM3J6ajh2T1JkdHlVWVoxNjhSZzZ3dnE4WGZvZHM4cjdjRFNpcFF0VTNxSXhyanM4MUwxZEt4OUF4SGxOVjkza1hBN1czSGVxUTdsLVVPSUk2TjByTGdxdFBjQjcyTnd1YlZyaTZwNzU4MFhEXzU2V05MSGtvTQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">quasa.io</span><span class="rp-item-title">Dependabot冷却期配置：延后普通升级，保留安全修复</span><span class="rp-item-extra">2026-10-16</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxPWXNyOE1VUlJxQzFKYUU0cjlQV0hSdXV6MDc0SUZUS3RONzdVSnhlQWJzaTRwX0RCSEtVVUZ4VzJlZzZ0eGw4ZFhjUVZPSnljQWJrRGhGTmVuMWJ1a3A5M1Q5STc4dGpjNncxSE1sS0ZBVXZFWmQwb0RHWTdybm5NY29KUTNoMmVpVGZCcDVLeE5SZDcyekxXam5vRzdBVTkxb2JxRWRPeWM4bjkxVWNsWGszS1dDYi0yUEo4UVhWRmVaWUE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">CoinDesk</span><span class="rp-item-title">OpenClaw GitHub 钓鱼骗局利用虚假 5,000 美元代币空投获取钱包访问权限</span><span class="rp-item-extra">2026-03-19</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE5hNE56TVl0eUhfSTF0c3dzOC1sOGlkWURkcm45Vlh2elpzQUtXVGtRRXZLekFSUV9kd3ZxbjVhVEdOSmZzOXBSRmkwQndHQ3hWOUJZ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">51CTO</span><span class="rp-item-title">只会用 2005 年的 Git 老命令？这七个 Git 新命令，很实用！</span><span class="rp-item-extra">2024-12-19</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (12)</h3><div class="rp-list"><a class="rp-item" href="https://note.com/bochibochi_ai/n/nbeaf673df2b5?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">App for controlling local AI agents from your smartphone takes 1st place | Weekly GitHub Trends #2 (11/1–11/7)</span><span class="rp-item-extra">2026-11-07</span></a><a class="rp-item" href="https://note.com/bochibochi_ai/n/n9fcd2ac3e3c0?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">The week where skills to reduce AI-likeness took 1st place | Weekly GitHub Trends #1 (10/25–10/31)</span><span class="rp-item-extra">2026-11-02</span></a><a class="rp-item" href="https://blockchain.news/news/github-replaces-stargazer-scraping-with-privacy-safe-history-api" target="_blank" rel="noopener"><span class="rp-news-src">Blockchain News</span><span class="rp-item-title">GitHub replaces stargazer scraping with privacy-safe history API</span><span class="rp-item-extra">2026-10-14</span></a><a class="rp-item" href="https://gigazine.net/gsc_news/en/20260421-github-copilot-plans-changes/" target="_blank" rel="noopener"><span class="rp-news-src">GIGAZINE</span><span class="rp-item-title">GitHub Copilot restrictions are being implemented, possibly due to a gradual shift to a token-based billing model following a nearly doubling of weekly operating costs starting ...</span><span class="rp-item-extra">2026-04-21</span></a><a class="rp-item" href="https://x.com/i/trending/2040459534498672729" target="_blank" rel="noopener"><span class="rp-news-src">x</span><span class="rp-item-title">GitHub Commits Surge 14-Fold to 275 Million Weekly Amid AI Boom</span><span class="rp-item-extra">2026-04-03</span></a><a class="rp-item" href="https://x.com/i/trending/2040117012081365111" target="_blank" rel="noopener"><span class="rp-news-src">x</span><span class="rp-item-title">GitHub Hits 275 Million Weekly Commits Amid AI Agent Surge</span><span class="rp-item-extra">2026-04-03</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxNLWUwdGpqTmQzWHFCUWlWaE5Ka2ZWQmtrUnREVVR1N1VfY2hYVURxOVBRdUNzZHFnM2N5elFoMWJKbGt5QnAyRFpsOTkxd0J3R0lrMG8xeEtyOUJ1UGZUQWZidHV5MmU4RDh3cW5Tc3NvdEpwUEhNbVJhLVBQeVFac0l4TUdObm9QMmdv?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The GitHub Blog</span><span class="rp-item-title">GitHub Copilot weekly releases — November 2</span><span class="rp-item-extra">2026-11-06</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMijgFBVV95cUxPOHh3MkNwYWgxdVVnb2pfQTBscGNTaC1nU0VKa3VIZjRjci1yZnFKakwyUjlHMmM3UVAxQ0xSd0FEX0JDN3NUb1pUc0FYeE9HODVGdU1Ubm1QN2NnaFlfMlpONFhFTzliX2JCbWpscTdpYmdENUZLbklYanM0NHVBb1FJXzJacS1PWWZxaUF3?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The GitHub Blog</span><span class="rp-item-title">GitHub Copilot weekly releases — September 21</span><span class="rp-item-extra">2026-09-25</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMifkFVX3lxTE1SNElkQXBUUWlBZFBIRFoyclZjVldGUllHYXVOSl8xT09EQVozbEdsVWtjeFgtckc4ZXhjQThVUHB3VEZTcnlYRHdXYTAxYS1EM2FnU2FrdVU0MnJ6MlhCelo0cEN6MHl6Z3FUZ1kxSVNqa005cWwybzk4ZzI0QQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">TechTarget</span><span class="rp-item-title">What repos are trending on GitHub?</span><span class="rp-item-extra">2026-09-21</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxQUEJTYmVxUW1SVnVoVHE3dlllVUNWdXB4S1VYd3ZHSm83RTJ1TUtJY29zbHlhcTVMMmg3ZktMSFc1REtCYlJ4eUl1V1Z4QVNnREJaOERrNXBHbk5ZVklBcVl3RDRGYnY4RmV2UEZzRGNldWdiMm9lQUIxMUViOHV6MGppTXJRdDRMSHl2UktXOUIydlZzNE5xOGZvTmo3NDB6c21hbzhSVnRncXk1TW00NVVRZFBoRXcyNDBoYVdRNTAtakFESjVqRg?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Computer Weekly</span><span class="rp-item-title">Revealed: Cyber spies used malware from GitHub to hack EncroChat cryptophone network</span><span class="rp-item-extra">2026-08-17</span></a><details class="rp-news-more"><summary>2 more</summary><a class="rp-item" href="https://news.google.com/rss/articles/CBMigAFBVV95cUxNeC1zM190ZGYyRVd5Wjc0dFlqcXdjeTFEZldIb0JNTGhNdTdVOURINV9LUVBTNmNCM0Q2SjJMaWlRMnZjaGFsQ3JWVW0tSkJfeVZVNTFxY0dSeUd1YW5iem9pUGJIVjhmY1hsbU45bjEtYWJEbktXNmVrWk5INmFZVw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The Hacker News</span><span class="rp-item-title">⚡ Weekly Recap: Instagram Account Hacks, Android Zero-Day, GitHub Worm and More</span><span class="rp-item-extra">2026-06-08</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMie0FVX3lxTE9KR0trT251VWRUeC1YNW55dHJSZ1RiVTBVZW1LZUJRdzFCajJRUlQ4c29EY3VSckxkY01YTUF3TjhCUnJNak9mb0lWeFRPNlEzZzlLMjl0WnZTQ0JXdjhJM0FWTFZGOXVZV0dJRkVjNTRZa3hxY1R2cTBLaw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The Hacker News</span><span class="rp-item-title">⚡ Weekly Recap: AI-Powered Phishing, Android Spying Tool, Linux Exploit, GitHub RCE &amp; More</span><span class="rp-item-extra">2026-05-04</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/ruanyf__weekly.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ReChronoRain/HyperCeiler · GitHub Trending Rank Radar</title>
+<meta name="description" content="HyperOS enhancement module - Make HyperOS Great Again!">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="HyperCeiler, ReChronoRain, ReChronoRain/HyperCeiler, github stars, github trending, star growth, star history, 开源项目, 星标增长, xposed, xposed-module">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/ReChronoRain__HyperCeiler">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="ReChronoRain/HyperCeiler · GitHub Trending Rank Radar">
+<meta property="og:description" content="HyperOS enhancement module - Make HyperOS Great Again!">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/ReChronoRain__HyperCeiler">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ReChronoRain/HyperCeiler", "codeRepository": "https://github.com/ReChronoRain/HyperCeiler", "url": "https://zhuikan.com/repos/ReChronoRain__HyperCeiler", "description": "HyperOS enhancement module - Make HyperOS Great Again!", "author": {"@type": "Organization", "name": "ReChronoRain", "url": "https://github.com/ReChronoRain"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/AGPL-3.0.html", "programmingLanguage": "Java", "dateCreated": "2023-10-27", "keywords": "xposed,xposed-module"}</script>
+</head>
+<body data-repo="ReChronoRain/HyperCeiler" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">ReChronoRain/HyperCeiler</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="ReChronoRain__HyperCeiler"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/132638304?v=4&s=300" width="300" height="300" alt="ReChronoRain avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">HyperCeiler</div>
+      <a class="rp-side-owner" href="https://github.com/ReChronoRain">ReChronoRain</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/ReChronoRain">ReChronoRain</a>
+        <span class="rp-sep">/</span><span class="rp-name">HyperCeiler</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">HyperOS enhancement module - Make HyperOS Great Again!</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,738</b></span><span class="rp-stat" title="forks">⑂ <b>474</b></span><span class="rp-stat" title="watchers">👁 <b>26</b></span><span class="rp-stat" title="prs">⑃ <b>786</b></span><span class="rp-stat" title="issues">● <b>975</b></span><span class="rp-stat" title="releases">▤ <b>10</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/xposed">xposed</a><a class="rp-topic" href="https://github.com/topics/xposed-module">xposed-module</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Java</span><span class="rp-meta-bit">AGPL-3.0</span><span class="rp-meta-bit">Created 2023-10-27</span><a class="rp-meta-bit rp-home" href="https://hyperceiler.sevtinge.com" rel="noopener">hyperceiler.sevtinge.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/ReChronoRain/HyperCeiler">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">2.10.166</span><a class="rp-dl-a" href="https://github.com/ReChronoRain/HyperCeiler/releases/tag/2.10.166">2.10.166 ↓</a><span class="rp-dl-ver">2.10.166</span><span class="rp-dl-date">2026-03-31</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+12</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,738</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">474</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">26</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">786</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">975</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">10</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">HyperCeiler
+
+ Make HyperOS Great Again!
+
+简体中文&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;繁體中文&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;English&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;Українська&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;Português (Brasil)&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;日本語
+
+
+
+ 当前支持的版本
+
+Android 15-16 的 HyperOS
+
+ 使用前说明
+
+请在 LSPosed 中启用 HyperCeiler，然后在 HyperCeiler 应用内启用对应的功能，重启作用域（需要 Root 权限）。
+
+本模块不支持修改较多的第三方 Xiaomi HyperOS ROM、修改较多的系统软件，以及部分国际 Xiaomi HyperOS ROM。
+
+目前 HyperCeiler 是基于 Android 16 的 Xiaomi HyperOS 3.0 的手机端设备进行适配，覆盖不是很完整，需要不断测试和改进。
+
+提交反馈前请注意是否已有相同反馈，避免给开发者造成困扰。花相同精力看相同反馈是一件很浪费时间的事情。
+
+HyperCeiler 已停止维护 Android 11-13 的 MIUI ROM 和 Android 13/14 的 HyperOS 1.0/2.0 ROM。
+
+ Android 11-12 的 MIUI ROM 请使用此版本。
+
+ Android 13 的 MIUI ROM 和 HyperOS 1.0 ROM 请使用此版本。
+
+ Android 14 的 HyperOS 1.0/2.0 已归档，从 2.6.162 版本开始将移除对 Android 14 的支持。
+
+ 项目规划
+
+Xiaomi HyperOS 3 or 4 将是本项目的一个终点，就目前来说，小米官方有选择性的根据 Xposed 的功能调整了自己的（反人类）功能，模块的功能也随着系统的更新在逐渐减少。
+
+也是一步步看着澎湃从没 Root 不能用到变得差不多能用的样子（小米平板除外）
+
+未来本模块会深度适配 HyperOS 3.0 及以上版本（但不保证功能上都能用），HyperOS 2 会在后续维护中归档（因为变化差距大）
+
+ 作用域包含的应用
+
+
+    点击展开折叠的内容
+
+| 应用名                | 包名                                 |
+|:-------------------|:-----------------------------------|
+| 系统框架               | system                             |
+| 系统界面               | com.android.systemui               |
+| 系统桌面               | com.miui.home                      |
+| 系统更新               | com.android.updater                |
+| Joyose             | com.xiaomi.joyose                  |
+| 小米设置               | com.xiaomi.misettings              |
+| 安全服务 (手机管家、平板管家)   | com.miui.securitycenter            |
+| 壁纸                 | com.miui.miwallpaper               |
+| 传送门                | com.miui.contentextension          |
+| 弹幕通知               | com.xiaomi.barrage                 |
+| 电话                 | com.android.incallui               |
+| 电话服务               | com.android.phone                  |
+| 电量与性能              | com.miui.powerkeeper               |
+| 短信                 | com.android.mms                    |
+| 截屏                 | com.miui.screenshot                |
+| 日历                 | com.android.calendar               |
+| 笔记                 | com.miui.notes                     |
+| 浏览器                | com.android.browser                |
+| 鲁班（MTB）            | com.xiaomi.mtb                     |
+| 屏幕录制               | com.miui.screenrecorder            |
+| 权限管理服务             | com.lbe.security.miui              |
+| 设置                 | com.android.settings               |
+| 搜狗输入法小米版           | com.sohu.inputmethod.sogou.xiaomi  |
+| 天气                 | com.miui.weather2                  |
+| 互联互通服务 (投屏)        | com.milink.service                 |
+| 外部存储设备             | com.android.externalstorage        |
+| 息屏与锁屏编辑 (万象息屏)     | com.miui.aod                       |
+| 文件管理               | com.android.fileexplorer           |
+| 系统服务组件             | com.miui.securityadd               |
+| 下载管理               | com.android.providers.downloads.ui |
+| 下载管理程序             | com.android.providers.downloads    |
+|</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ReChronoRain/HyperCeiler/issues/1238"><span class="rp-item-num">#1238</span><span class="rp-item-title">🐛 [BUG] &lt;问题标题&gt; Launcher gestures not working</span><span class="rp-item-extra">15 comments · 2025-05-11</span></a><a class="rp-item" href="https://github.com/ReChronoRain/HyperCeiler/issues/1619"><span class="rp-item-num">#1619</span><span class="rp-item-title">添加国行/国际机子解锁6ghz频段选项，显示6ghz频段列表，修改国家代码</span><span class="rp-item-extra">11 comments · 2026-06-14</span></a><a class="rp-item" href="https://github.com/ReChronoRain/HyperCeiler/issues/841"><span class="rp-item-num">#841</span><span class="rp-item-title">💡 [需求] &lt;增加禁用5G对应频段&gt;</span><span class="rp-item-extra">10 comments · 2024-08-31</span></a><a class="rp-item" href="https://github.com/ReChronoRain/HyperCeiler/issues/678"><span class="rp-item-num">#678</span><span class="rp-item-title">💡 [需求] 飞行模式下可开启热点</span><span class="rp-item-extra">9 comments · 2024-06-09</span></a><a class="rp-item" href="https://github.com/ReChronoRain/HyperCeiler/issues/1369"><span class="rp-item-num">#1369</span><span class="rp-item-title">🐛 [BUG] &lt;标题&gt; System Launcher Layout and margin issue</span><span class="rp-item-extra">7 comments · 2025-08-23</span></a><a class="rp-item" href="https://github.com/ReChronoRain/HyperCeiler/issues/1597"><span class="rp-item-num">#1597</span><span class="rp-item-title">🐛 [BUG] &lt;引导式访问无法退出&gt;</span><span class="rp-item-extra">6 comments · 2026-05-24</span></a><a class="rp-item" href="https://github.com/ReChronoRain/HyperCeiler/issues/1504"><span class="rp-item-num">#1504</span><span class="rp-item-title">🐛 [BUG] &lt;标题&gt;移除链式启动弹窗无效</span><span class="rp-item-extra">6 comments · 2026-03-15</span></a><a class="rp-item" href="https://github.com/ReChronoRain/HyperCeiler/issues/1194"><span class="rp-item-num">#1194</span><span class="rp-item-title">🐛 [BUG] Redmi K50澎湃2.0冷启动应用时系统界面崩溃</span><span class="rp-item-extra">6 comments · 2025-04-07</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ReChronoRain/HyperCeiler/discussions/1748"><span class="rp-item-num">#1748</span><span class="rp-item-title">hyperceiler无法在澎湃OS4，安卓17上完全工作，原因是systemui相关功能无法使用，开启就崩溃</span><span class="rp-item-extra">0 comments · 2026-10-24</span></a><a class="rp-item" href="https://github.com/ReChronoRain/HyperCeiler/discussions/1624"><span class="rp-item-num">#1624</span><span class="rp-item-title">安卓15版本的hyper3用哪个版本</span><span class="rp-item-extra">0 comments · 2026-06-17</span></a><a class="rp-item" href="https://github.com/ReChronoRain/HyperCeiler/discussions/1416"><span class="rp-item-num">#1416</span><span class="rp-item-title">OS3 未生效反馈</span><span class="rp-item-extra">1 comments · 2025-09-17</span></a><a class="rp-item" href="https://github.com/ReChronoRain/HyperCeiler/discussions/1367"><span class="rp-item-num">#1367</span><span class="rp-item-title">相册备份服务提供商 onedrive点击无效</span><span class="rp-item-extra">0 comments · 2025-08-22</span></a><a class="rp-item" href="https://github.com/ReChronoRain/HyperCeiler/discussions/1227"><span class="rp-item-num">#1227</span><span class="rp-item-title">恢复应用包管理组件 CONFIRM_INSTALL 以及安装分包应用能力的可能方法</span><span class="rp-item-extra">0 comments · 2025-05-05</span></a><a class="rp-item" href="https://github.com/ReChronoRain/HyperCeiler/discussions/950"><span class="rp-item-num">#950</span><span class="rp-item-title">Gesture addon</span><span class="rp-item-extra">0 comments · 2024-11-06</span></a><a class="rp-item" href="https://github.com/ReChronoRain/HyperCeiler/discussions/845"><span class="rp-item-num">#845</span><span class="rp-item-title">Google as a search engine in native browser</span><span class="rp-item-extra">0 comments · 2024-09-02</span></a><a class="rp-item" href="https://github.com/ReChronoRain/HyperCeiler/discussions/842"><span class="rp-item-num">#842</span><span class="rp-item-title">why i cant use this?</span><span class="rp-item-extra">0 comments · 2024-09-01</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/ReChronoRain/HyperCeiler/releases"><b>2.10.166</b> <span class="rp-rel-tag">2.10.166</span> <span class="rp-item-extra">2026-03-31</span></a><pre class="rp-pre">感谢您使用 HyperCeiler。
+
+本次更新优化了 HyperCeiler 的 UI 和视觉效果，新增了许多非常实用的功能，并修复和对 HyperOS 3.0/3.0.300 Android 16 适配了大部分的现有功能。
+
+以下是您可能感兴趣的更新内容：
+- 新增了用户引导页面，更加方便的自定义您的 HyperCeiler；
+- 更新 Miuix，使视觉效果与 HyperOS 3 设计语言语言一致；
+- 优化搜索，现在您可以更加流畅、快速和直观的搜索 HyperCeiler 功能；
+- 部分本地内容改为使用云端内容，减少本地冗杂信息存储；
+- 升级 Xposed API 至 101，现在作用域与首页显示内容布局同步，更实用，更清爽；
+- 舍弃 XSharedPreference 并使用全新的配置存储逻辑；
+- 舍弃使用 prop 存储 HyperCeiler 内容，避免一些过时且无用的检测；
+- 对 HyperOS 3.0/3.0.300 Android 16 适配和优化主动安全模式；
+- 焦点歌词现已支持自定义息屏焦点布局及显示歌词翻译，享受音乐，热爱生活；
+- 修复并优化引导式访问，现在您可以长按电源键以退出引导式访问。
+
+若要了解更多详细更新内容，请前往 Github Commits Compare 。
+
+本次更新的版本存在两个分支：</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/ReChronoRain__HyperCeiler.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>timarney/react-app-rewired · GitHub Trending Rank Radar</title>
+<meta name="description" content="Override create-react-app webpack configs without ejecting">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="react-app-rewired, timarney, timarney/react-app-rewired, github stars, github trending, star growth, star history, 开源项目, 星标增长, react, create-react-app, never, eject, webpack, config">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/timarney__react-app-rewired">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="timarney/react-app-rewired · GitHub Trending Rank Radar">
+<meta property="og:description" content="Override create-react-app webpack configs without ejecting">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/timarney__react-app-rewired">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "timarney/react-app-rewired", "codeRepository": "https://github.com/timarney/react-app-rewired", "url": "https://zhuikan.com/repos/timarney__react-app-rewired", "description": "Override create-react-app webpack configs without ejecting", "author": {"@type": "Organization", "name": "timarney", "url": "https://github.com/timarney"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2016-08-08", "keywords": "react,create-react-app,never,eject,webpack,config"}</script>
+</head>
+<body data-repo="timarney/react-app-rewired" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">timarney/react-app-rewired</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="timarney__react-app-rewired"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/62242?u=f64b885a4bed74c92592f39fdcc1a6ef02c8e02f&amp;v=4&s=300" width="300" height="300" alt="timarney avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">react-app-rewired</div>
+      <a class="rp-side-owner" href="https://github.com/timarney">timarney</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/timarney">timarney</a>
+        <span class="rp-sep">/</span><span class="rp-name">react-app-rewired</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Override create-react-app webpack configs without ejecting</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,837</b></span><span class="rp-stat" title="forks">⑂ <b>418</b></span><span class="rp-stat" title="watchers">👁 <b>85</b></span><span class="rp-stat" title="prs">⑃ <b>254</b></span><span class="rp-stat" title="issues">● <b>418</b></span><span class="rp-stat" title="releases">▤ <b>13</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/react">react</a><a class="rp-topic" href="https://github.com/topics/create-react-app">create-react-app</a><a class="rp-topic" href="https://github.com/topics/never">never</a><a class="rp-topic" href="https://github.com/topics/eject">eject</a><a class="rp-topic" href="https://github.com/topics/webpack">webpack</a><a class="rp-topic" href="https://github.com/topics/config">config</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2016-08-08</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/timarney/react-app-rewired">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">2.2.1</span><a class="rp-dl-a" href="https://github.com/timarney/react-app-rewired/releases/tag/v2.2.1">2.2.1 ↓</a><span class="rp-dl-ver">2.2.1</span><span class="rp-dl-date">2022-02-15</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">9,837</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">418</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">85</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">254</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">418</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">13</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">ℹ️
+请在提 issue 之前确保 issue 是关于项目代码，而不是 我要怎么配置 Webpack。（配置相关的问题可以在 Stack Overflow 或者 Spectrum 上提问）。
+
+- 🚨 2.0版本移除了rewire helper 功能
+
+
+
+
+ 
+
+此工具可以在不 &#x27;eject&#x27; 也不创建额外 react-scripts 的情况下修改 create-react-app 内置的 webpack 配置，然后你将拥有 create-react-app 的一切特性，且可以根据你的需要去配置 webpack 的 plugins, loaders 等。
+
+ Rewire你的应用 ☠
+从 Create React App 2.0开始，这个仓库主要由社区“轻度”维护。
+
+⚠️ 注意
+
+ 使用了 react-app-rewired 之后，等于你得到了项目的配置权，但这表示你的项目将无法得到 CRA 提供的配置“保证”，希望你知道自己要做什么。
+
+&quot;Stuff can break&quot; — Dan Abramov https://twitter.com/dan_abramov/status/1045809734069170176
+
+
+
+注意: 我个人使用next.js 或者 Razzle 都支持开箱即用的自定义 Webpack。
+
+ 备选方案
+
+您可以尝试使用 customize-cra 来获得一组 CRA 2.0兼容的 rewirers，或任何旨在支持2.0的替代项目和分支：
+- Rescripts，用于扩展 CRA 配置的替代框架（支持2.0+）
+- react-scripts-rewired 为该项目的一个分支，旨在支持 CRA 2.0
+- craco
+
+ 如何rewire create-react-app项目
+ 使用 create-react-app 创建您的应用，然后 rewire
+
+ 1) 安装 react-app-rewired
+
+ 对于使用 Webpack 4 的 create-react-app 2.x
+
+bash
+$ npm install react-app-rewired --save-dev
+
+
+ 对于 create-react-app 1.x 或 react-scripts-ts 与 Webpack 3：
+bash
+$ npm install react-app-rewired@1.6.2 --save-dev
+
+
+ 2) 在根目录中创建一个 config-overrides.js 文件
+
+javascript
+/ config-overrides.js /
+module.exports = function override(config, env) {
+  //do stuff with the webpack config...
+  return config;
+}
+
+
+
++-- your-project
+|   +-- config-overrides.js
+|   +-- node_modules
+|   +-- package.json
+|   +-- public
+|   +-- README.md
+|   +-- src
+
+
+  3) 替换 package.json 中 scripts 执行部分
+
+diff
+  / package.json /
+
+  &quot;scripts&quot;: {
+-   &quot;start&quot;: &quot;react-scripts start&quot;,
++   &quot;start&quot;: &quot;react-app-rewired start&quot;,
+-   &quot;build&quot;: &quot;react-scripts build&quot;,
++   &quot;build&quot;: &quot;react-app-rewired build&quot;,
+-   &quot;test&quot;: &quot;react-scripts test --env=jsdom&quot;,
++   &quot;test&quot;: &quot;react-app-rewired test --env=jsdom&quot;,
+    &quot;eject&quot;: &quot;react-scripts eject&quot;
+}
+
+ 注意：不用替换 eject 部分。工具中没有针对 eject 的配置替换，执行了 eject 命令会让工具失去作用（能找到这个插件我也相信你知道 eject 是干嘛的）。
+
+ 4) 启动 Dev Server
+
+bash
+$ npm start
+
+
+ 5) 构建你的应用程序
+
+bash
+$ npm run build
+
+
+ 扩展配置选项
+您可以为其设置自定义路径 config-overrides.js
+ 如果您想要使用在 node_modules 中的第三方 config-overrides.js，您可以将以下内容添加到您的package.json：
+
+
+json
+&quot;config-overrides-path&quot;: &quot;node_modules/some-preconfigured-rewire&quot;
+
+
+默认情况下，该 config-overrides.js 文件导出单个函数，以便在开发或生产模式下自定义 webpack 配置, 方便编译您的 react 应用程序。可以从该文件中导出一个包含最多三个字段的对象，每个字段都是一个函数。这种替代形式允许您自定义用于 Jest（在测试中）和 Webpack Dev Server 本身的配置。
+此示例实现用于演示使用每个对象需要的函数。在此示例中，展示的功能是：
+ 根据 .env 变量有条件地运行一些测试
+ 设置用于 Development Server 的 https 证书，.env 文件变量中指定的文件名。
+
+javascript
+module.exports = {
+  // The Webpack config to use when compiling your react app for development or production.
+  webpack: function(config, env) {
+    // ...add your webpack config
+    return config;
+  },
+  // The Jest config to use when running your jest tests - note that the normal rewires do not
+  // work here.
+  jest: function(config) {
+    // ...add your jest config customisation...
+    // Example: enable/disable some tests based on environment variables in the .env file.
+    if (!config.testPathIgnorePatterns) {
+      config.testPathIgnorePatterns = [];
+    }
+    if (!process.env.RUN_COMPONENT_TESTS) {
+      config.testPat</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/timarney/react-app-rewired/issues/650"><span class="rp-item-num">#650</span><span class="rp-item-title">when I run npm start I got some error its existing project i want to run in my system </span><span class="rp-item-extra">4 comments · 2023-09-03</span></a><a class="rp-item" href="https://github.com/timarney/react-app-rewired/issues/653"><span class="rp-item-num">#653</span><span class="rp-item-title">Stuck on Creating an optimized production build...</span><span class="rp-item-extra">3 comments · 2023-10-30</span></a><a class="rp-item" href="https://github.com/timarney/react-app-rewired/issues/652"><span class="rp-item-num">#652</span><span class="rp-item-title">How to debug react app in VSCode</span><span class="rp-item-extra">3 comments · 2023-10-11</span></a><a class="rp-item" href="https://github.com/timarney/react-app-rewired/issues/644"><span class="rp-item-num">#644</span><span class="rp-item-title">Build Failed using react-app-rewired</span><span class="rp-item-extra">3 comments · 2023-02-22</span></a><a class="rp-item" href="https://github.com/timarney/react-app-rewired/issues/658"><span class="rp-item-num">#658</span><span class="rp-item-title">npm run build doesn&#x27;t exit after successful completion</span><span class="rp-item-extra">2 comments · 2024-07-02</span></a><a class="rp-item" href="https://github.com/timarney/react-app-rewired/issues/632"><span class="rp-item-num">#632</span><span class="rp-item-title">Getting CRA error when trying to run jest test runner after installing recat-app-rewired</span><span class="rp-item-extra">2 comments · 2022-10-04</span></a><a class="rp-item" href="https://github.com/timarney/react-app-rewired/issues/630"><span class="rp-item-num">#630</span><span class="rp-item-title">Trouble to start the dev server</span><span class="rp-item-extra">2 comments · 2022-09-18</span></a><a class="rp-item" href="https://github.com/timarney/react-app-rewired/issues/626"><span class="rp-item-num">#626</span><span class="rp-item-title">Conflicting peer dependency: typescript@3.9.10</span><span class="rp-item-extra">2 comments · 2022-05-27</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/timarney/react-app-rewired/releases"><b>2.2.1</b> <span class="rp-rel-tag">v2.2.1</span> <span class="rp-item-extra">2022-02-15</span></a><pre class="rp-pre">https://github.com/timarney/react-app-rewired/pull/606
+Add /config folder to package.json files array</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/timarney__react-app-rewired.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

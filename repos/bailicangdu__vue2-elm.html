@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>bailicangdu/vue2-elm · GitHub Trending Rank Radar</title>
+<meta name="description" content="Large single page application with 45 pages built on vue2 + vuex. 基于 vue2 + vuex 构建一个具有 45 个页面的大型单页面应用">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="vue2-elm, bailicangdu, bailicangdu/vue2-elm, github stars, github trending, star growth, star history, 开源项目, 星标增长, vue, vuex, webpack, es2015, vue-router, sass">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/bailicangdu__vue2-elm">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="bailicangdu/vue2-elm · GitHub Trending Rank Radar">
+<meta property="og:description" content="Large single page application with 45 pages built on vue2 + vuex. 基于 vue2 + vuex 构建一个具有 45 个页面的大型单页面应用">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/bailicangdu__vue2-elm">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "bailicangdu/vue2-elm", "codeRepository": "https://github.com/bailicangdu/vue2-elm", "url": "https://zhuikan.com/repos/bailicangdu__vue2-elm", "description": "Large single page application with 45 pages built on vue2 + vuex. 基于 vue2 + vuex 构建一个具有 45 个页面的大型单页面应用", "author": {"@type": "Organization", "name": "bailicangdu", "url": "https://github.com/bailicangdu"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-2.0.html", "programmingLanguage": "Vue", "dateCreated": "2016-12-23", "keywords": "vue,vuex,webpack,es2015,vue-router,sass,flex"}</script>
+</head>
+<body data-repo="bailicangdu/vue2-elm" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">bailicangdu/vue2-elm</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="bailicangdu__vue2-elm"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/20297227?u=e242a737826e2e0d44245a9bb1129a0948334004&amp;v=4&s=300" width="300" height="300" alt="bailicangdu avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">vue2-elm</div>
+      <a class="rp-side-owner" href="https://github.com/bailicangdu">bailicangdu</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/bailicangdu">bailicangdu</a>
+        <span class="rp-sep">/</span><span class="rp-name">vue2-elm</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Large single page application with 45 pages built on vue2 + vuex. 基于 vue2 + vuex 构建一个具有 45 个页面的大型单页面应用</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>40,950</b></span><span class="rp-stat" title="forks">⑂ <b>12,190</b></span><span class="rp-stat" title="watchers">👁 <b>1,458</b></span><span class="rp-stat" title="prs">⑃ <b>54</b></span><span class="rp-stat" title="issues">● <b>631</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/vue">vue</a><a class="rp-topic" href="https://github.com/topics/vuex">vuex</a><a class="rp-topic" href="https://github.com/topics/webpack">webpack</a><a class="rp-topic" href="https://github.com/topics/es2015">es2015</a><a class="rp-topic" href="https://github.com/topics/vue-router">vue-router</a><a class="rp-topic" href="https://github.com/topics/sass">sass</a><a class="rp-topic" href="https://github.com/topics/flex">flex</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Vue</span><span class="rp-meta-bit">GPL-2.0</span><span class="rp-meta-bit">Created 2016-12-23</span><a class="rp-meta-bit rp-home" href="https://cangdu.org/elm/" rel="noopener">cangdu.org/elm/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/bailicangdu/vue2-elm">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">40,950</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">12,190</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">1,458</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">54</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">631</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">前言
+
+README in English
+
+初学vue时曾在网上搜索vue的实战项目源码，无奈大部分都是简单的demo，对于深究vue没有太大的帮助，剩下的一些大部分都是像音乐播放器之类的展示型项目，交互没有预期那么复杂。但我们实际在工作中，经常会遇到有购物车的项目，这类项目因为涉及到money，所以对逻辑严谨度要求高，页面之间交互复杂，又会伴随着登录、注册、用户信息等等，常常会让我们很头疼。既然还没人用vue写过这样的项目，那不如我来写，开源出来对能看到的人也会有帮助。
+
+这种功能性的项目很实用但是往往也很枯燥，没有音乐播放器那么看起来绚丽，思来想去发现饿了么是一个不错的素材，一来它足够复杂，开放的外卖平台比一般的公司独有商店更加复杂。二来 见到那么多美食，大家也不会感觉到厌烦。
+
+为啥是饿了么，而不是美团？原因很简单，饿了么的色调和布局是最漂亮的，看起来最舒服。
+
+此项目大大小小共 45 个页面，涉及注册、登录、商品展示、购物车、下单等等，是一个完整的流程。一般公司即便是官网的单页面项目都没这么复杂，如果这个项目能驾驭的了，相信大部分公司的其他单页面应用也就不在话下，即便更复杂，也不会比这个高到哪里去。
+
+因为利用业余时间来做，年前就开始写，又跨个年，周期有点长，项目从零布局到完成共用了2个多月的时间。
+
+另外，这个项目和慕课网视频的那个饿了么没有任何关系，慕课网的项目只有一个页面，我在看完vue的官方文档后直接写了这个项目，没有参照任何人的代码，请大家不要混为一谈。
+
+__注1：此项目纯属个人瞎搞，正常下单请选择饿了么官方客户端。__
+
+__注2：项目预览地址和接口需要使用https访问哦！__
+
+
+ 技术栈
+
+vue2 + vuex + vue-router + webpack + ES6/7 + fetch + sass + flex + svg
+
+
+ 项目运行
+
+ 注意：由于涉及大量的 ES6/7 等新属性，node 需要 6.0 以上版本
+
+
+git clone https://github.com/bailicangdu/vue2-elm.git  
+
+cd vue2-elm
+
+npm install 或 yarn(推荐)
+
+npm run dev
+
+
+ 关于接口数据
+
+此项目的所有接口数据都来源于配套的后台系统，后台项目传送地址。
+
+如果想体验前后台同时开发，可以下载后台系统。
+
+此时启动本项目的命令为：npm run local 而不是 npm run dev。
+
+同时我们也提供了基于element-ui搭建的后台管理页面
+
+如果只做前端开发，请忽略上面这几句话哟～
+
+
+ 说明
+
+  如果对您有帮助，您可以点右上角 &quot;Star&quot; 支持一下 谢谢！ ^_^
+
+  或者您可以 &quot;follow&quot; 一下，我会不断开源更多的有趣的项目
+
+  开发环境 macOS 10.12.3  Chrome 56  nodejs 6.10.0
+
+  特别感谢@bailichen, @iceRao，在百忙之中抽出时间和我一起完成了这个项目，辛苦了🌹
+
+  如有问题请直接在 Issues 中提，或者您发现问题并有非常好的解决方案，欢迎 PR 👍
+
+  项目交流群
+
+  推荐一个 react + redux 开源项目，对react感兴趣的朋友赶紧去看看。地址在这里
+
+  另外一个 vue2 + vuex 的入门项目，比当前的项目简单很多，非常适合入门练习。地址在这里
+
+
+ 效果演示
+
+查看demo请戳这里（请用chrome手机模式预览）
+
+ 移动端扫描下方二维码
+
+
+
+
+
+ 目标功能
+- [x] 定位功能 -- 完成
+- [x] 选择城市 -- 完成
+- [x] 搜索地址 -- 完成
+- [x] 展示所选地址附近商家列表 -- 完成
+- [x] 搜索美食，餐馆 -- 完成
+- [x] 根据距离、销量、评分、特色菜、配送方式等进行排序和筛选 -- 完成
+- [x] 餐馆食品列表页 -- 完成
+- [x] 购物车功能 -- 完成
+- [x] 店铺评价页面 -- 完成
+- [x] 单个食品详情页面 -- 完成
+- [x] 商家详情页 -- 完成
+- [x] 登录、注册 -- 完成
+- [x] 修改密码 -- 完成
+- [x] 个人中心 -- 完成
+- [x] 发送短信、语音验证 -- 完成
+- [x] 下单功能 -- 完成 ✨✨🎉🎉
+- [x] 订单列表 -- 完成
+- [x] 订单详情 -- 完成
+- [x] 下载App -- 完成
+- [x] 添加、删除、修改收货地址 -- 完成
+- [x] 帐户信息 -- 完成
+- [x] 服务中心 -- 完成
+- [x] 红包 -- 完成
+- [x] 上传头像 -- 完成
+- [ ] 付款 -- 臣妾做不到啊~~
+
+
+
+ 总结
+
+1、一般涉及到money的网页逻辑都比较复杂，尤其像饿了么这样一个开放的平台，商家和食品种类繁多，页面与页面之间交互复杂，在写到 购物车 和 下单 功能时众多的数据和逻辑一度让人很头疼，又没有设计和接口api文档，只能一步步摸索。
+
+2、vue因其轻量级的框架在中小型项目中表现亮眼，在大型单页面应用中因为vuex的存在，表现依然出色，在处理复杂交互逻辑的时候，vuex的存在是不可或缺的。所以说利用 vue + vuex 完全可以去做大型的单页面项目。
+
+3、项目写到现在，从 登录注册到、首页、搜索、商家列表、购物车、下单、订单列表、个人中心 一个流程走完之后、不但对vue的理解更深一层，而且对以后掌控大型项目的时候也有非常多的帮助，做一个实际的项目才能对自己有很大的提升。
+
+4、曾一度怀疑，花几个月的时间做这样一个项目到底有没有意义，本来只是想做一个小项目练练手，没想到后来越写越多，不过坚持下来后我相信一切都是值得的。
+
+5、项目已经完成，共45个页面。
+
+
+ 最终目标
+
+1、用node.js构建一个模拟外卖平台的后台系统。地址在这里
+
+2、写出跨 Android 和 IOS 的原生APP版本。地址在这里
+
+3、如果时间来的及，会出一卖家版本。
+
+所以我的目的是构建一个横跨前后端，移动IOS、Android的完整生态圈。
+
+。。。敬请期待
+
+
+
+
+ 部分截图
+
+
+ 商铺列表页
+
+ 
+
+
+ 商铺筛选页
+
+ 
+
+
+
+ 餐馆食品列表与购物车
+
+ 
+
+ 确认订单页
+
+ 
+
+
+ 搜索页
+
+ 
+
+
+ 登录页
+
+ 
+
+
+ 个人中心
+
+ 
+
+
+
+
+
+
+ 项目布局
+
+
+.
+├── build                                       // webpack配置文件
+├── config                                      // 项目打包路径
+├── elm                                         // 上线项目文件，放在服务器即可正常访问
+├── screenshots                                 // 项目截图
+├── src                                         </pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/bailicangdu__vue2-elm.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

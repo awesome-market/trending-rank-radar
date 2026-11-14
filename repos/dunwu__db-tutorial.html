@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dunwu/db-tutorial · GitHub Trending Rank Radar</title>
+<meta name="description" content="📚 后端程序员应该掌握的主流数据库知识">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="db-tutorial, dunwu, dunwu/db-tutorial, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/dunwu__db-tutorial">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="dunwu/db-tutorial · GitHub Trending Rank Radar">
+<meta property="og:description" content="📚 后端程序员应该掌握的主流数据库知识">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/dunwu__db-tutorial">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "dunwu/db-tutorial", "codeRepository": "https://github.com/dunwu/db-tutorial", "url": "https://zhuikan.com/repos/dunwu__db-tutorial", "description": "📚 后端程序员应该掌握的主流数据库知识", "author": {"@type": "Organization", "name": "dunwu", "url": "https://github.com/dunwu"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "Java", "dateCreated": "2017-08-08"}</script>
+</head>
+<body data-repo="dunwu/db-tutorial" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">dunwu/db-tutorial</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="dunwu__db-tutorial"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/19661255?u=5f753e9fd2f9b810c1f54483490112b561ce3c05&amp;v=4&s=300" width="300" height="300" alt="dunwu avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">db-tutorial</div>
+      <a class="rp-side-owner" href="https://github.com/dunwu">dunwu</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/dunwu">dunwu</a>
+        <span class="rp-sep">/</span><span class="rp-name">db-tutorial</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">📚 后端程序员应该掌握的主流数据库知识</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,386</b></span><span class="rp-stat" title="forks">⑂ <b>648</b></span><span class="rp-stat" title="watchers">👁 <b>45</b></span><span class="rp-stat" title="prs">⑃ <b>28</b></span><span class="rp-stat" title="issues">● <b>7</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Java</span><span class="rp-meta-bit">Created 2017-08-08</span><a class="rp-meta-bit rp-home" href="https://dunwu.github.io/db-tutorial/" rel="noopener">dunwu.github.io/db-tutorial/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="dunwu__nginx-tutorial"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/19661255?u=5f753e9fd2f9b810c1f54483490112b561ce3c05&amp;v=4" alt="" loading="lazy">nginx-tutorial</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/dunwu/db-tutorial">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+7</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,386</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">648</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">45</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">28</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">7</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">DB-TUTORIAL
+
+ 💾 db-tutorial 是一个数据库教程。
+
+ - 🔁 项目同步维护：Github | Gitee
+ - 📖 电子书阅读：Github Pages | Gitee Pages
+
+ 数据库综合
+
+ 分布式存储原理
+
+ 分布式理论
+
+- 分布式一致性
+- 深入剖析共识性算法 Paxos
+- 深入剖析共识性算法 Raft
+- 分布式算法 Gossip
+
+ 分布式关键技术
+
+ 流量调度
+
+- 流量控制
+- 负载均衡
+- 服务路由
+- 分布式会话基本原理
+
+ 数据调度
+
+- 缓存基本原理
+- 读写分离基本原理
+- 分库分表基本原理
+- 分布式 ID 基本原理
+- 分布式事务基本原理
+- 分布式锁基本原理
+
+ 其他
+
+- Nosql 技术选型
+- 数据结构与数据库索引
+
+ 数据库中间件
+
+- ShardingSphere 简介
+- ShardingSphere Jdbc
+- 版本管理中间件 Flyway
+
+ 关系型数据库
+
+ 关系型数据库 整理主流关系型数据库知识点。
+
+ 关系型数据库综合
+
+- 关系型数据库面试总结 💯
+- SQL 语法基础特性
+- SQL 语法高级特性
+- 扩展 SQL
+- SQL Cheat Sheet
+
+ Mysql
+
+!img
+
+- Mysql 应用指南 ⚡
+- Mysql 工作流 - 关键词：连接、缓存、语法分析、优化、执行引擎、redo log、bin log、两阶段提交
+- Mysql 事务 - 关键词：ACID、AUTOCOMMIT、事务隔离级别、死锁、分布式事务
+- Mysql 锁 - 关键词：乐观锁、表级锁、行级锁、意向锁、MVCC、Next-key 锁
+- Mysql 索引 - 关键词：Hash、B 树、聚簇索引、回表
+- Mysql 性能优化
+- Mysql 运维 🔨
+- Mysql 配置 🔨
+- Mysql 问题
+
+ 其他
+
+- PostgreSQL 应用指南
+- H2 应用指南
+- SqLite 应用指南
+
+ 文档数据库
+
+ MongoDB
+
+ MongoDB 是一个基于文档的分布式数据库，由 C++ 语言编写。旨在为 WEB 应用提供可扩展的高性能数据存储解决方案。
+
+ MongoDB 是一个介于关系型数据库和非关系型数据库之间的产品。它是非关系数据库当中功能最丰富，最像关系数据库的。它支持的数据结构非常松散，是类似 json 的 bson 格式，因此可以存储比较复杂的数据类型。
+
+ MongoDB 最大的特点是它支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。
+
+- MongoDB 应用指南
+- MongoDB 的 CRUD 操作
+- MongoDB 聚合操作
+- MongoDB 事务
+- MongoDB 建模
+- MongoDB 建模示例
+- MongoDB 索引
+- MongoDB 复制
+- MongoDB 分片
+- MongoDB 运维
+
+ KV 数据库
+
+ Redis
+
+!img
+
+- Redis 面试总结 💯
+- Redis 应用指南 ⚡ - 关键词：内存淘汰、事件、事务、管道、发布与订阅
+- Redis 数据类型和应用 - 关键词：STRING、HASH、LIST、SET、ZSET、BitMap、HyperLogLog、Geo
+- Redis 持久化 - 关键词：RDB、AOF、SAVE、BGSAVE、appendfsync
+- Redis 复制 - 关键词：SLAVEOF、SYNC、PSYNC、REPLCONF ACK
+- Redis 哨兵 - 关键词：Sentinel、PING、INFO、Raft
+- Redis 集群 - 关键词：CLUSTER MEET、Hash slot、MOVED、ASK、SLAVEOF no one、redis-trib
+- Redis 实战 - 关键词：缓存、分布式锁、布隆过滤器
+- Redis 运维 🔨 - 关键词：安装、命令、集群、客户端
+
+ 列式数据库
+
+ HBase
+
+- HBase 快速入门
+- HBase 数据模型
+- HBase Schema 设计
+- HBase 架构
+- HBase Java API 基础特性
+- HBase Java API 高级特性之过滤器
+- HBase Java API 高级特性之协处理器
+- HBase Java API 其他高级特性
+- HBase 运维
+- HBase 命令
+
+ 搜索引擎数据库
+
+ Elasticsearch
+
+ Elasticsearch 是一个基于 Lucene 的搜索和数据分析工具，它提供了一个分布式服务。Elasticsearch 是遵从 Apache 开源条款的一款开源产品，是当前主流的企业级搜索引擎。
+
+- Elasticsearch 面试总结 💯
+- Elasticsearch 快速入门
+- Elasticsearch 简介
+- Elasticsearch 索引
+- Elasticsearch 查询
+- Elasticsearch 高亮
+- Elasticsearch 排序
+- Elasticsearch 聚合
+- Elasticsearch 分析器
+- Elasticsearch 性能优化
+- Elasticsearch Rest API
+- ElasticSearch Java API 之 High Level REST Client
+- Elasticsearch 集群和分片
+- Elasticsearch 运维
+
+ Elastic
+
+- Elastic 快速入门
+- Elastic 技术栈之 Filebeat
+- Filebeat 运维
+- Elastic 技术栈之 Kibana
+- Kibana 运维
+- Elastic 技术栈之 Logstash
+- Logstash 运维
+
+ 资料 📚
+
+ 数据库综合资料
+
+- DB-Engines - 数据库流行度排名
+- 书籍
+  - 《数据密集型应用系统设计》 - 这可能是目前最好的分布式存储书籍，强力推荐【进阶】
+- 教程
+  - CMU 15445 数据库基础课程
+  - CMU 15721 数据库高级课程
+  - 检索技术核心 20 讲 - 极客教程【进阶】
+  - 后端存储实战课 - 极客教程【入门】：讲解存储在电商领域的种种应用和一些基本特性
+- 论文
+  - Efficiency in the Columbia Database Query Optimizer
+  - How Good Are Query Optimizers, Really?
+  - Architecture of a Database System
+  - Data Structures for Databases
+- 文章
+  - Data Structures and Algorithms for Big Databases
+
+ 关系型数据库资料
+
+- 综合资料
+  - 《数据库的索引设计与优化》
+  - 《SQL 必知必会》 - SQL 的基本概念和语法【入门】
+- Or</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/dunwu__db-tutorial.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

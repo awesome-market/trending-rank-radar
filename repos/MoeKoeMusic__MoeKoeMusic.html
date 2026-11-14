@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MoeKoeMusic/MoeKoeMusic · GitHub Trending Rank Radar</title>
+<meta name="description" content="一款开源简洁高颜值的酷狗第三方客户端 An open-source, concise, and aesthetically pleasing third-party client for KuGou that supports  Windows / macOS / Linux / Web :electron:">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="MoeKoeMusic, MoeKoeMusic, MoeKoeMusic/MoeKoeMusic, github stars, github trending, star growth, star history, 开源项目, 星标增长, kugou, music, linux, macos, vue3, windows">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/MoeKoeMusic__MoeKoeMusic">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="MoeKoeMusic/MoeKoeMusic · GitHub Trending Rank Radar">
+<meta property="og:description" content="一款开源简洁高颜值的酷狗第三方客户端 An open-source, concise, and aesthetically pleasing third-party client for KuGou that supports  Windows / macOS / Linux / Web :electron:">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/MoeKoeMusic__MoeKoeMusic">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "MoeKoeMusic/MoeKoeMusic", "codeRepository": "https://github.com/MoeKoeMusic/MoeKoeMusic", "url": "https://zhuikan.com/repos/MoeKoeMusic__MoeKoeMusic", "description": "一款开源简洁高颜值的酷狗第三方客户端 An open-source, concise, and aesthetically pleasing third-party client for KuGou that supports  Windows / macOS / Linux / Web :electron:", "author": {"@type": "Organization", "name": "MoeKoeMusic", "url": "https://github.com/MoeKoeMusic"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-2.0.html", "programmingLanguage": "Vue", "dateCreated": "2024-11-02", "keywords": "kugou,music,linux,macos,vue3,windows,moekoe,electron"}</script>
+</head>
+<body data-repo="MoeKoeMusic/MoeKoeMusic" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">MoeKoeMusic/MoeKoeMusic</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="MoeKoeMusic__MoeKoeMusic"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/229047587?v=4&s=300" width="300" height="300" alt="MoeKoeMusic avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">MoeKoeMusic</div>
+      <a class="rp-side-owner" href="https://github.com/MoeKoeMusic">MoeKoeMusic</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/MoeKoeMusic">MoeKoeMusic</a>
+        <span class="rp-sep">/</span><span class="rp-name">MoeKoeMusic</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">一款开源简洁高颜值的酷狗第三方客户端 An open-source, concise, and aesthetically pleasing third-party client for KuGou that supports  Windows / macOS / Linux / Web :electron:</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>7,167</b></span><span class="rp-stat" title="forks">⑂ <b>452</b></span><span class="rp-stat" title="watchers">👁 <b>19</b></span><span class="rp-stat" title="prs">⑃ <b>114</b></span><span class="rp-stat" title="issues">● <b>1,030</b></span><span class="rp-stat" title="releases">▤ <b>73</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/kugou">kugou</a><a class="rp-topic" href="../tags/music">music</a><a class="rp-topic" href="../tags/linux">linux</a><a class="rp-topic" href="../tags/macos">macos</a><a class="rp-topic" href="../tags/vue3">vue3</a><a class="rp-topic" href="../tags/windows">windows</a><a class="rp-topic" href="https://github.com/topics/moekoe">moekoe</a><a class="rp-topic" href="../tags/electron">electron</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Vue</span><span class="rp-meta-bit">GPL-2.0</span><span class="rp-meta-bit">Created 2024-11-02</span><a class="rp-meta-bit rp-home" href="https://Music.MoeKoe.cn" rel="noopener">Music.MoeKoe.cn</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/MoeKoeMusic/MoeKoeMusic">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Release v1.7.2 Hotfix 2</span><a class="rp-dl-a" href="https://github.com/MoeKoeMusic/MoeKoeMusic/releases/tag/v1.7.2">Release-1.7.2 ↓</a><span class="rp-dl-ver">1.7.2</span><span class="rp-dl-date">2026-11-08</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+11</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">7,167</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">452</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">19</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">114</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,030</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">73</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">MoeKoe Music
+  
+    
+    
+    
+    
+    
+  
+  
+    一款开源简洁高颜值的酷狗第三方客户端
+    
+    🌎 GitHub仓库&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
+    📦️ 下载安装包&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
+    💬 访问博客&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
+    🏠 项目主页
+  
+  
+    🇨🇳 简体中文&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
+    🇨🇳 繁体中文&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
+    🇯🇵 日本語&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
+    🇺🇸 English&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
+    🇰🇷 한국어&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;
+    🇷🇺 Русский
+    
+    
+  
+
+
+!images
+
+ ❤️ 前言
+
+早在10年前后的样子,那会在用网页版QQ的时候我就已经开始使用酷狗音乐了(也是十来年的老粉了),所以这些年收藏的歌曲全部都在上面.后来我也尝试开始使用网易云或QQ音乐,也尝试把酷狗的歌单导入进去,但是效果都不尽人意.我听的大多是日漫OP,好多歌曲都没办法找到.
+
+兜兜转转最后还是回到酷狗,但是在Mac端的酷狗,时常可能会出现不能播放的情况,虽说界面没什么功能,但也挺好的.在网友的安利下,我现在一直是在酷狗的概念版上听歌,并且是市面上为数不多能免费听VIP歌曲的音乐播放软件了,力推.
+
+我在我的个人介绍页面说我特别喜欢听歌,尤其是日漫OP.怎么证明呢?(之前我网页版歌单也年久失修了)那就自己开发一个音乐播放器.
+
+
+ ✨ 特性
+
+- ✅ 使用 Vue.js 全家桶开发
+- 🔴 酷狗账号登录（扫码/手机/账号登录）
+- 📃 支持歌词显示
+- 📻 每日推荐歌曲
+- 🔕 无任何社交功能
+- 🔗 官方服务器直连
+- ✔️ 每日自动领取VIP，登录就是VIP
+- 🎨 主题色切换
+- 👋 启动问候语
+- ⚙️ 多平台支持
+- 🧩 超级插件系统
+- 🧭 布局个性化设置
+- 🥚 隐藏功能与彩蛋系统
+- 🚀 新手引导系统
+- ✨ 更多特性由你来探索
+
+ 📢 Todo List
+- [x] 📺 支持 MV 播放
+- [x] 🌚 Light/Dark Mode 自动切换
+- [x] 👆 支持 Touch Bar
+- [x] 🖥️ 支持 PWA
+- [x] ⌨️ 全局快捷键
+- [x] 🤟 多语言支持
+- [x] 📻 桌面歌词
+- [x] ⚙️ 系统架构优化
+- [x] 🎶 歌曲、歌单/收藏、取消
+
+查看更新日志
+
+ 📦️ 安装
+
+ 1. 客户端安装
+
+访问本项目的 Releases 页面下载安装包。
+
+ 2. WEB端安装（docker）
+
+ 注意：部署后请开放服务器对应端口才可使用，或者使用反向代理实现域名访问。
+
+    1. 方式一：快速启动（推荐）
+
+    
+    git clone --depth=1 https://github.com/MoeKoeMusic/MoeKoeMusic.git
+    cd MoeKoeMusic
+    docker compose up -d &amp;
+    
+
+    2. ~~方式二：使用docker-compose一键安装 （镜像暂未上传官方）~~
+    
+    
+    docker run -d --name MoeKoeMusic -p 8080:8080 -e PORT=6521 -e platform=lite iajue/moekoe-music:latest
+    
+
+    3. 方式三：宝塔容器编排
+
+     远程镜像，版本可能会落后于官方
+    
+    
+    version: &#x27;3.3&#x27;
+    
+    services:
+      moekoe-music:
+         镜像地址
+        image: registry.cn-wulanchabu.aliyuncs.com/youngxj/moekoe-music:latest
+        container_name: moekoe-music  容器名
+        restart: unless-stopped  自动重启
+        build:
+          context: .
+          dockerfile: Dockerfile
+        environment:
+          - PORT=6521
+          - platform=lite
+        ports:  端口映射
+          - &quot;8080:8080&quot;   前端服务
+          - &quot;6521:6521&quot;   接口服务
+    
+    
+    
+    复制内容上面的内容，粘贴到宝塔面板的容器编排里面，编排名称为MoeKoeMusic，点击部署即可。
+
+ 3. 一键部署
+
+
+需在环境变量(VITE_APP_API_URL)中填写自己的API地址
+
+ ⚙️ 开发
+
+1. 克隆本仓库
+
+sh
+git clone --depth=1 https://github.com/MoeKoeMusic/MoeKoeMusic.git
+
+
+2. 进入目录并安装依赖
+
+sh
+cd MoeKoeMusic
+pnpm install --frozen-lockfile
+
+3. 启动开发者模式
+  - 在浏览器里开发
+  sh
+  pnpm run dev
+  
+  - 在客户端开发模式下开发
+  sh
+  pnpm run dev:client
+  
+
+4. 构建前端
+为你的目标平台选择一条命令来构建前端
+sh
+pnpm run build  为网页端或客户端构建前端
+pnpm run build:docker  为 Docker 镜像构建前端
+
+5. 编译项目
+  - Windows: 
+sh
+pnpm run electron:build:win  [默认 NSIS 安装包]
+
+  - Linux: 
+sh
+pnpm run electron:build:linux  [默认 AppImage 格式]
+
+  - macOS: 
+sh
+pnpm run electron:build:macos  [默认 macOS 双架构]
+
+
+
+更多命令请查看 package.json 文件 scripts 
+
+ 👷‍♂️ 编译客户端
+
+如果在 Release 页面没有找到适合你的设备的安装包的话，你可以根据下面的步骤来打包自己的客户端。
+
+1. 安装 Node.js，并确保 Node.js 版本 = 24。
+
+2. 使用 git clone --depth=1 https://github.com/MoeKoeMusic/MoeKoeMusic.git 克隆本仓库到本地。
+
+3. 使用 pnpm install --frozen-lockfile 安装项目依赖。
+
+4. </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/MoeKoeMusic/MoeKoeMusic/issues/1259"><span class="rp-item-num">#1259</span><span class="rp-item-title">[Bug]: 获取音乐URL失败</span><span class="rp-item-extra">5 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/MoeKoeMusic/MoeKoeMusic/issues/1176"><span class="rp-item-num">#1176</span><span class="rp-item-title">[新需求]: MINI播放器模式</span><span class="rp-item-extra">4 comments · 2026-09-20</span></a><a class="rp-item" href="https://github.com/MoeKoeMusic/MoeKoeMusic/issues/1166"><span class="rp-item-num">#1166</span><span class="rp-item-title">[新需求]: 有定时关闭功能吗</span><span class="rp-item-extra">3 comments · 2026-09-14</span></a><a class="rp-item" href="https://github.com/MoeKoeMusic/MoeKoeMusic/issues/1246"><span class="rp-item-num">#1246</span><span class="rp-item-title">electron-builder 依赖项 minimatch 中危漏洞 CVE-2026-118764</span><span class="rp-item-extra">2 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/MoeKoeMusic/MoeKoeMusic/issues/1241"><span class="rp-item-num">#1241</span><span class="rp-item-title">没有原版的“猜你喜欢”电台功能</span><span class="rp-item-extra">1 comments · 2026-10-31</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/MoeKoeMusic/MoeKoeMusic/discussions/1250"><span class="rp-item-num">#1250</span><span class="rp-item-title">无法安装v1.7.2</span><span class="rp-item-extra">1 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/MoeKoeMusic/MoeKoeMusic/discussions/1249"><span class="rp-item-num">#1249</span><span class="rp-item-title">可不可以增加一个歌曲播完之后节奏融合功能，类似EchoMusic那个</span><span class="rp-item-extra">0 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/MoeKoeMusic/MoeKoeMusic/discussions/1244"><span class="rp-item-num">#1244</span><span class="rp-item-title">组队转帖，来吧！</span><span class="rp-item-extra">1 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/MoeKoeMusic/MoeKoeMusic/discussions/1243"><span class="rp-item-num">#1243</span><span class="rp-item-title">&quot;暂无歌词&quot;</span><span class="rp-item-extra">1 comments · 2026-11-01</span></a><a class="rp-item" href="https://github.com/MoeKoeMusic/MoeKoeMusic/discussions/1240"><span class="rp-item-num">#1240</span><span class="rp-item-title">关于我只是做了个功能被广告盯上这件事</span><span class="rp-item-extra">2 comments · 2026-10-30</span></a><a class="rp-item" href="https://github.com/MoeKoeMusic/MoeKoeMusic/discussions/1234"><span class="rp-item-num">#1234</span><span class="rp-item-title">体验，希望检查并恢复</span><span class="rp-item-extra">0 comments · 2026-10-26</span></a><a class="rp-item" href="https://github.com/MoeKoeMusic/MoeKoeMusic/discussions/1230"><span class="rp-item-num">#1230</span><span class="rp-item-title">切换音乐输出设备有bug</span><span class="rp-item-extra">1 comments · 2026-10-24</span></a><a class="rp-item" href="https://github.com/MoeKoeMusic/MoeKoeMusic/discussions/1218"><span class="rp-item-num">#1218</span><span class="rp-item-title">📣 已实现内置 api</span><span class="rp-item-extra">2 comments · 2026-10-18</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/MoeKoeMusic/MoeKoeMusic/releases"><b>Release v1.7.2 Hotfix 2</b> <span class="rp-rel-tag">v1.7.2</span> <span class="rp-item-extra">2026-11-08</span></a><pre class="rp-pre">[!IMPORTANT]  
+ 该版本修改了部分插件接口  
+ 部分插件可能无法正常使用  
+ 如果你介意请等待插件开发者适配后再更新到该版本
+
+ [!TIP]  
+ 如果你是插件开发者可以参阅插件迁移文档
+
+ What&#x27;s Changed
+ feat: realize report and sync listen time by @LateDreamXD in https://github.com/MoeKoeMusic/MoeKoeMusic/pull/1206
+ feat: 实现 macOS 关闭窗口后隐藏 Dock 图标 by @No-World in https://github.com/MoeKoeMusic/MoeKoeMusic/pull/1213
+ feat(api): built api into electron client by @LateDreamXD in https://github.com/MoeKoeMusic/MoeKoeMusic/pull/1217
+ feat(electron/extensions): add apiMode permission to start api service automatically for extensions needs by @LateDreamXD in https://gi</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/MoeKoeMusic__MoeKoeMusic.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

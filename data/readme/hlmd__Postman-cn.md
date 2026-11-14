@@ -1,0 +1,129 @@
+<div align="center">
+
+# ⚠️ 本项目已迁移 / This project has moved
+
+### 👉 新仓库：**[hlmd/postman-chinese-injector](https://github.com/hlmd/postman-chinese-injector)**
+
+本仓库的「替换 `app.zip`」汉化方式自 2022 年起停止维护，只做存档。<br/>
+**无论新旧版本（7.x ～ 12.x）都请用新项目**。新项目一直在更新，同时支持简体中文、繁體中文和网页版。
+
+</div>
+
+---
+
+## Postman 怎么设置成中文？（7.x ～ 12.x 通用）
+
+Postman 官方界面只有 English 和日本語，没有中文。要用中文界面，请使用本仓库的接替项目 **[postman-chinese-injector](https://github.com/hlmd/postman-chinese-injector)**：
+
+1. **完全退出 Postman**；
+2. 任选一种方式运行汉化程序：
+   - 直接下载：到 [新仓库 Release](https://github.com/hlmd/postman-chinese-injector/releases) 下载对应平台的可执行文件，运行即可；
+   - npm：`npx postman-chinese-injector`
+   - Scoop（Windows）：`scoop bucket add hlmd https://github.com/hlmd/scoop-bucket` 后执行 `scoop install hlmd/postman-chinese-injector`
+   - Homebrew（macOS / Linux）：`brew install hlmd/tap/postman-chinese-injector`
+3. 重启 Postman，界面就变成中文了。之后可以在「设置 → 通用 → 语言」里切换简体、繁體或英文。
+
+**网页版**：安装新仓库提供的 Chrome / Edge 扩展。完整说明、常见问题和卸载方法都在 👉 [新仓库 README](https://github.com/hlmd/postman-chinese-injector#readme)。
+
+> 不要再把本仓库的 `app.zip` 放进新版 Postman：新版的程序结构已经变了，放进去不会生效，还可能导致 Postman 启动异常。
+
+---
+
+<details>
+<summary><b>旧版存档：Postman 9.x 及以前的 app.zip 汉化方法（已停止维护，点击展开）</b></summary>
+
+# 旧版汉化包说明（仅 9.12.2 及以前）
+最后一个版本：9.12.2（已停止更新）  
+更新时间：2022-02-06  
+本地部署汉化请看：[本地部署](LOCAL.md)  
+汉化请按照下面[步骤](#步骤)：
+
+## 步骤
+1. [**下载&安装Postman**](#1下载安装postman)
+2. [**安装中文包**](#2安装中文包)  
+   [**Windows**](#Windows)  
+   [**Mac**](#Mac)  
+   [**Linux**](#Linux)
+
+## 帮助
+[Postman官方文档](https://learning.postman.com/docs)  
+QQ群：[494969115](https://jq.qq.com/?_wv=1027&k=WAheqTCx)  
+不使用联网工作区，可以点开右上角设置图标中的便笺(Scratch Pad)模式  
+[**禁用自动更新❗❗❗**](#禁用自动更新)
+
+
+## 1.下载&安装Postman
+### [下载Postman](https://www.postman.com/downloads/)
+|最新版本下载|[官方下载页面](https://www.postman.com/downloads/) 下载链接：[Win64](https://dl.pstmn.io/download/latest/win64)  [Win32](https://dl.pstmn.io/download/latest/win32)  [Mac](https://dl.pstmn.io/download/latest/osx)  [Linux](https://dl.pstmn.io/download/latest/linux)  |
+|---|---|
+|-|**注意** 👇👇👇👇👇 看下面 👇👇👇👇👇 **注意**|
+|**历史版本下载**|请把下面链接的"版本号"替换为指定的版本号，例如：8.8.0|
+|Windows64位|https://dl.pstmn.io/download/version/版本号/win64|
+|Windows32位|https://dl.pstmn.io/download/version/版本号/win32|
+|Mac Intel Chip|https://dl.pstmn.io/download/version/版本号/osx_64|
+|Mac Apple Chip|https://dl.pstmn.io/download/version/版本号/osx_arm64|
+|Linux|https://dl.pstmn.io/download/version/版本号/linux|
+
+### [安装Postman](https://learning.postman.com/docs/getting-started/installation-and-updates/)
+
+
+## 2.安装中文包
+
+### 先决条件
+1. **安装Postman**
+2. **下载对应版本的中文包**
+
+### Windows
+1. **下载对应版本的** [**app.zip**](https://github.com/hlmd/Postman-cn/releases)
+2. **进入**`Postman安装地址/版本/resources`**目录**
+   > 桌面找到Postman应用程序右键 -> 打开文件所在位置 再进入`app-*.*.*/resources`  
+   > 默认安装地址：`C:/Users/用户名/AppData/Local/Postman`  
+   > 示例：`C:/Users/用户名/AppData/Local/Postman/app-8.8.0/resources`  
+   > ![resources目录](https://user-images.githubusercontent.com/45023268/125588720-0ba27b65-26cc-47ce-9c1f-8e456797be09.png)
+3. 复制`app.zip`到`resources`目录
+   > 将`app.zip`解压到当前文件夹 会生成一个`app`目录  
+   > 进入`app`目录看到以下图就可以了  
+   > ![app目录](https://user-images.githubusercontent.com/45023268/125589699-3435c048-fd90-437a-8d74-35a9923ef4be.png)
+4. 重启Postman就可以了
+
+### 操作GIF
+![Postman设置为中文](https://user-images.githubusercontent.com/45023268/119171249-e84aa980-ba96-11eb-8c84-28c65c7d0f6e.gif)
+
+
+### Mac
+1. **下载对应版本的** [**app.zip**](https://github.com/hlmd/Postman-cn/releases)
+2. **解压** `app.zip`
+3. **进入** `访达/应用程序/Postman.app/Contents/Resources/`
+   > 进入`访达/应用程序`找到`Postman.app`右键查看包内容，再进入`Contents/Resources`
+4. **替换`app`文件夹**
+   > 如果目录下没有 `app` 文件夹，那么直接解压 `app.zip` 得到 `app` 文件夹即可  
+   > 将`app.zip`解压出来的`app`文件夹复制到`Resources`目录，替换原本的`app`文件夹  
+   > 可以先删除或重命名原本的`app`文件夹
+5. 重启Postman就可以了
+
+### Linux
+1. **下载对应版本的** [**app.zip**](https://github.com/hlmd/Postman-cn/releases)
+```shell
+# 下方为Github地址 将版本号替换为对应版本号，例如：8.8.0
+wget https://github.com/hlmd/Postman-cn/releases/download/版本号/app.zip
+```
+2. **解压&&替换`app`文件夹**
+```shell
+# Postman安装地址 自行替换
+unzip -o -d Postman安装地址/app/resources app.zip
+```
+
+## 禁用自动更新❗❗❗
+> 这是一项危险操作，将会使你的电脑无法与Postman下载服务器连接，当然这就可以使你的Postman应用程序不再更新  
+> 如果想更新请将此解析注释或移除  
+> Windows 删除安装目录的update.exe即可
+
+将此解析加入你电脑的主机文件hosts
+```
+0.0.0.0         dl.pstmn.io
+```
+**hosts文件在**
+> **Windows**：`C:/Windows/System32/drivers/etc/hosts`  
+> **Linux & Mac**：`/etc/hosts`
+
+</details>

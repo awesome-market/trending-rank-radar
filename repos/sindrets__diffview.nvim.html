@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sindrets/diffview.nvim · GitHub Trending Rank Radar</title>
+<meta name="description" content="Single tabpage interface for easily cycling through diffs for all modified files for any git rev.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="diffview.nvim, sindrets, sindrets/diffview.nvim, github stars, github trending, star growth, star history, 开源项目, 星标增长, neovim, neovim-plugin, neovim-lua, neovim-lua-plugin, git, diff">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/sindrets__diffview.nvim">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="sindrets/diffview.nvim · GitHub Trending Rank Radar">
+<meta property="og:description" content="Single tabpage interface for easily cycling through diffs for all modified files for any git rev.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/sindrets__diffview.nvim">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "sindrets/diffview.nvim", "codeRepository": "https://github.com/sindrets/diffview.nvim", "url": "https://zhuikan.com/repos/sindrets__diffview.nvim", "description": "Single tabpage interface for easily cycling through diffs for all modified files for any git rev.", "author": {"@type": "Organization", "name": "sindrets", "url": "https://github.com/sindrets"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "Lua", "dateCreated": "2021-05-01", "keywords": "neovim,neovim-plugin,neovim-lua,neovim-lua-plugin,git,diff"}</script>
+</head>
+<body data-repo="sindrets/diffview.nvim" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">sindrets/diffview.nvim</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="sindrets__diffview.nvim"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/2786478?v=4&s=300" width="300" height="300" alt="sindrets avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">diffview.nvim</div>
+      <a class="rp-side-owner" href="https://github.com/sindrets">sindrets</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/sindrets">sindrets</a>
+        <span class="rp-sep">/</span><span class="rp-name">diffview.nvim</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Single tabpage interface for easily cycling through diffs for all modified files for any git rev.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,891</b></span><span class="rp-stat" title="forks">⑂ <b>231</b></span><span class="rp-stat" title="watchers">👁 <b>14</b></span><span class="rp-stat" title="prs">⑃ <b>140</b></span><span class="rp-stat" title="issues">● <b>481</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/neovim">neovim</a><a class="rp-topic" href="https://github.com/topics/neovim-plugin">neovim-plugin</a><a class="rp-topic" href="https://github.com/topics/neovim-lua">neovim-lua</a><a class="rp-topic" href="https://github.com/topics/neovim-lua-plugin">neovim-lua-plugin</a><a class="rp-topic" href="../tags/git">git</a><a class="rp-topic" href="https://github.com/topics/diff">diff</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Lua</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2021-05-01</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/sindrets/diffview.nvim">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,891</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">231</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">14</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">140</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">481</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Diffview.nvim
+
+Single tabpage interface for easily cycling through diffs for all modified files
+for any git rev.
+
+!preview
+
+
+ Introduction
+
+Vim&#x27;s diff mode is pretty good, but there is no convenient way to quickly bring
+up all modified files in a diffsplit. This plugin aims to provide a simple,
+unified, single tabpage interface that lets you easily review all changed files
+for any git rev.
+
+ Requirements
+
+- Git ≥ 2.31.0 (for Git support)
+- Mercurial ≥ 5.4.0 (for Mercurial support)
+- Neovim ≥ 0.7.0 (with LuaJIT)
+- nvim-web-devicons (optional) For file icons
+
+ Installation
+
+Install the plugin with your package manager of choice.
+
+vim
+&quot; Plug
+Plug &#x27;sindrets/diffview.nvim&#x27;
+
+
+lua
+-- Packer
+use &quot;sindrets/diffview.nvim&quot; 
+
+
+ Merge Tool
+
+!merge tool showcase
+
+Opening a diff view during a merge or a rebase will list the conflicted files in
+their own section. When opening a conflicted file, it will open in a 3-way diff
+allowing you to resolve the merge conflicts with the context of the target
+branch&#x27;s version, as well as the version from the branch which is being merged.
+
+The 3-way diff is only the default layout for merge conflicts. There are
+multiple variations on this layout, a 4-way diff layout, and a single window
+layout available.
+
+In addition to the normal :h copy-diffs mappings, there are default mappings
+provided for jumping between conflict markers, obtaining a hunk directly from
+any of the diff buffers, and accepting any one, all, or none of the versions of
+a file given by a conflict region.
+
+For more information on the merge tool, mappings, layouts and how to
+configure them, see:
+
+- :h diffview-merge-tool
+- :h diffview-config-view.x.layout
+
+ File History
+
+!file history showcase
+
+The file history view allows you to list all the commits that affected a given
+set of paths, and view the changes made in a diff split. This is a porcelain
+interface for git-log, and supports a good number of its options. Things like:
+
+- Filtering commits by grepping commit messages and commit authors.
+- Tracing the line evolution of a given set of line ranges for multiple files.
+- Only listing changes for a specific commit range, branch, or tag.
+- Following file changes through renames.
+
+Get started by opening file history for:
+
+- The current branch: :DiffviewFileHistory
+- The current file: :DiffviewFileHistory %
+
+For more info, see :h :DiffviewFileHistory.
+
+ Usage
+
+ :DiffviewOpen [git rev] [options] [ -- {paths...}]
+
+Calling :DiffviewOpen with no args opens a new Diffview that compares against
+the current index. You can also provide any valid git rev to view only changes
+for that rev.
+
+Examples:
+
+- :DiffviewOpen
+- :DiffviewOpen HEAD~2
+- :DiffviewOpen HEAD~4..HEAD~2
+- :DiffviewOpen d4a7b0d
+- :DiffviewOpen d4a7b0d^!
+- :DiffviewOpen d4a7b0d..519b30e
+- :DiffviewOpen origin/main...HEAD
+
+You can also provide additional paths to narrow down what files are shown:
+
+- :DiffviewOpen HEAD~2 -- lua/diffview plugin
+
+For information about additional [options], visit the
+documentation.</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/sindrets/diffview.nvim/issues/605"><span class="rp-item-num">#605</span><span class="rp-item-title">Is this repo active ?</span><span class="rp-item-extra">15 comments · 2026-01-14</span></a><a class="rp-item" href="https://github.com/sindrets/diffview.nvim/issues/162"><span class="rp-item-num">#162</span><span class="rp-item-title">Allow DiffviewOpen to switch to already opened diffview tab</span><span class="rp-item-extra">14 comments · 2022-06-21</span></a><a class="rp-item" href="https://github.com/sindrets/diffview.nvim/issues/351"><span class="rp-item-num">#351</span><span class="rp-item-title">Highlights from `diff.vim` may not be loaded</span><span class="rp-item-extra">12 comments · 2023-04-28</span></a><a class="rp-item" href="https://github.com/sindrets/diffview.nvim/issues/279"><span class="rp-item-num">#279</span><span class="rp-item-title">docs: Show example of Telescope integration</span><span class="rp-item-extra">11 comments · 2023-01-02</span></a><a class="rp-item" href="https://github.com/sindrets/diffview.nvim/issues/546"><span class="rp-item-num">#546</span><span class="rp-item-title">How to setup diff view colorscheme like the one in the readme (the screenshot)?</span><span class="rp-item-extra">10 comments · 2024-12-09</span></a><a class="rp-item" href="https://github.com/sindrets/diffview.nvim/issues/39"><span class="rp-item-num">#39</span><span class="rp-item-title">[feature] option for unified- / inline-diff</span><span class="rp-item-extra">10 comments · 2021-07-08</span></a><a class="rp-item" href="https://github.com/sindrets/diffview.nvim/issues/582"><span class="rp-item-num">#582</span><span class="rp-item-title">[Bug] Tree expands on tab switch</span><span class="rp-item-extra">7 comments · 2025-06-25</span></a><a class="rp-item" href="https://github.com/sindrets/diffview.nvim/issues/509"><span class="rp-item-num">#509</span><span class="rp-item-title">[Bug] Diffview flashes current window&#x27;s open buffer when showing file diff or history</span><span class="rp-item-extra">7 comments · 2024-06-07</span></a></div></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/sindrets__diffview.nvim.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

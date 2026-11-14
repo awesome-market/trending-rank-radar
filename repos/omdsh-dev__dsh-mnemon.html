@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>omdsh-dev/dsh-mnemon · GitHub Trending Rank Radar</title>
+<meta name="description" content="Composable, view-based context for DeepSeek Harness. Pluggable sources and strategies, with layered memory and self-evolving skills out of the box.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="dsh-mnemon, omdsh-dev, omdsh-dev/dsh-mnemon, github stars, github trending, star growth, star history, 开源项目, 星标增长, agent-memory, deepseek-harness, local-first, persistent-memory, dsh-plugin, document-search">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/omdsh-dev__dsh-mnemon">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="omdsh-dev/dsh-mnemon · GitHub Trending Rank Radar">
+<meta property="og:description" content="Composable, view-based context for DeepSeek Harness. Pluggable sources and strategies, with layered memory and self-evolving skills out of the box.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/omdsh-dev__dsh-mnemon">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "omdsh-dev/dsh-mnemon", "codeRepository": "https://github.com/omdsh-dev/dsh-mnemon", "url": "https://zhuikan.com/repos/omdsh-dev__dsh-mnemon", "description": "Composable, view-based context for DeepSeek Harness. Pluggable sources and strategies, with layered memory and self-evolving skills out of the box.", "author": {"@type": "Organization", "name": "omdsh-dev", "url": "https://github.com/omdsh-dev"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2026-08-10", "keywords": "agent-memory,deepseek-harness,local-first,persistent-memory,dsh-plugin,document-search,long-term-memory,runtime-memory,semantic-recall,multi-agent-memory"}</script>
+</head>
+<body data-repo="omdsh-dev/dsh-mnemon" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">omdsh-dev/dsh-mnemon</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="omdsh-dev__dsh-mnemon"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/312905287?v=4&s=300" width="300" height="300" alt="omdsh-dev avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">dsh-mnemon</div>
+      <a class="rp-side-owner" href="https://github.com/omdsh-dev">omdsh-dev</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/omdsh-dev">omdsh-dev</a>
+        <span class="rp-sep">/</span><span class="rp-name">dsh-mnemon</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Composable, view-based context for DeepSeek Harness. Pluggable sources and strategies, with layered memory and self-evolving skills out of the box.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>998</b></span><span class="rp-stat" title="forks">⑂ <b>70</b></span><span class="rp-stat" title="watchers">👁 <b>0</b></span><span class="rp-stat" title="prs">⑃ <b>397</b></span><span class="rp-stat" title="issues">● <b>235</b></span><span class="rp-stat" title="releases">▤ <b>86</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/agent-memory">agent-memory</a><a class="rp-topic" href="../tags/deepseek-harness">deepseek-harness</a><a class="rp-topic" href="../tags/local-first">local-first</a><a class="rp-topic" href="https://github.com/topics/persistent-memory">persistent-memory</a><a class="rp-topic" href="../tags/dsh-plugin">dsh-plugin</a><a class="rp-topic" href="https://github.com/topics/document-search">document-search</a><a class="rp-topic" href="https://github.com/topics/long-term-memory">long-term-memory</a><a class="rp-topic" href="https://github.com/topics/runtime-memory">runtime-memory</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-08-10</span><a class="rp-meta-bit rp-home" href="https://mnemon.dev" rel="noopener">mnemon.dev</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/omdsh-dev/dsh-mnemon">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.5.45: Composable Memory Plugins</span><a class="rp-dl-a" href="https://github.com/omdsh-dev/dsh-mnemon/releases/tag/v0.5.45">v0.5.45 ↓</a><span class="rp-dl-ver">0.5.45</span><span class="rp-dl-date">2026-11-12</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+8</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">998</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">70</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">397</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">235</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">86</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">dsh-mnemon
+
+English · 简体中文
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+面向 DeepSeek Harness 的可组合视图上下文。
+来源与策略可插拔，开箱即用提供分层记忆与自进化技能。
+
+
+  
+    
+  
+
+
+
+  安装与启动 ·
+  观看演示 ·
+  文档中心 ·
+  制作插件
+
+
+ 为什么需要 dsh-mnemon
+
+每次会话都从零开始的 Agent，会反复询问你早已说过的事情；把所有内容塞进同一个记忆库也不行，要么每轮都被淹没，要么漏掉真正要紧的信息。dsh-mnemon 为 DeepSeek Harness 提供分层、可见、可组合的记忆，以及越用越好的技能。
+
+- 每一轮都拿到合适的记忆。 偏好和工作中的事实常驻上下文；项目档案与长期证据只在问题需要时才检索。
+- 看得见这一轮用了什么。 每条回复下方的回合记忆栏列出这一轮读到和写入的档案与记忆，点一下就在记忆系统中打开它；记忆系统展示全部已保存的内容，并可直接编辑。
+- 一键存入记忆。 对话里出现值得保留的事实，点击回复下的脑形图标，由任务 Agent 去重、提炼并写入合适的记忆空间，也可以直接存到你选择的位置：工作记忆、用户画像或某个记忆空间。回执写明存到了哪里。
+- 越用越好的技能。 技能管理把 DSH 的技能集中到一处：它能复盘你的真实对话，写出更好的 SKILL.md，先回测再交给你采纳；还能从 skills.sh、GitHub 和发布 Agent Skills 的网站安装更多技能。
+- 在插件页组合。 选择一个主策略和若干可选增强，切换时无需迁移任何数据；每个组件都有自己的设置页。
+- 数据放在你想放的地方。 默认由 Mnemon Native 在本地保存，也可以接入八种第三方 Provider；存储范围可选全局、按工作区、集中存储或你指定的目录，并支持 ZIP 备份。
+- 可以扩展。 Source 与 Strategy 都是基于公开 SDK 的普通 DSH 插件；安装的组件与随附组件拥有同样的页面和开关。
+
+ 看看实际效果
+
+以下录屏来自真实 WebUI，由真实的 DeepSeek 模型作答，项目是预置的虚构项目 Lumen；等待模型的片段加速播放，画面右下角有标记。
+
+把新事实存进记忆。 回复中出现了新的测量结果：点击回复下的脑形图标，把候选内容改成要记住的那一句，交给任务 Agent；回执写明存进了哪个记忆空间，一键即可查看。
+
+
+  
+
+
+在一处查看全部记忆。 状态、运行时记忆、项目档案与记忆空间集中在记忆系统中；图谱按实体把记忆连接起来，Agent 查询给出按内容引用记忆的回答。
+
+
+  
+
+
+在插件页组合记忆。 一个主策略、它的记忆来源与可选增强，每个开关即时生效；每个组件都有自己的页面，存储、备份与界面设置也在这里。
+
+
+  
+
+
+更多画面与每一步的说明见界面指南，全部截图、录屏与采集环境见 v0.5.32 图集。
+
+ 三类记忆
+
+| 记忆 | 适合保存 | 如何进入 Agent 上下文 |
+|---|---|---|
+| 运行时记忆 | 偏好、协作约定、下一轮就需要的事实 | 每轮以紧凑的 USER.md 与 MEMORY.md 注入 |
+| 项目档案 | 设计、调查、流程与交接材料 | 先检索，相关时再阅读全文 |
+| 记忆空间 | 长期事实、决策、实体及其关系 | 按需从已启用的 Provider 召回 |
+
+默认的分层策略让运行时记忆常驻，另外两类按需读取；通用策略在同一份预算内提供全部可用来源，由模型决定如何使用。记忆空间是由 Provider 承载、可以独立命名和激活的长期证据范围，英文界面称 memory space。
+
+ 越用越好的技能
+
+技能管理是一个实验性组件，用来管理 DSH 从项目和用户目录加载的 SKILL.md 技能。它的页面在记忆系统里，也可以作为独立的侧边栏入口。
+
+| 回合复盘提出改进 | 回测之后由你采纳 |
+|---|---|
+|  |  |
+
+- 管理。 让技能不被模型加载或不出现在 / 菜单里，一键在对话中使用，直接编辑，并能回到任意历史版本。
+- 进化。 开启自进化后，对话结束会在后台复盘，寻找多次纠正、“以后都这样做”的指示、工具失败和可复用的流程。每条建议都标出所依据的步骤；任务 Agent 写出新的 SKILL.md，先与当前版本回测对比，再由你采纳。默认仍须手动采纳；可显式开启自动采纳，让新的空闲审查建议在完整回测不退步时落地。
+- 测试。 每个技能都有自己的用例，来自复盘、记录的对话或手写，任意版本都能在这些用例上回测打分。
+- 安装。 市场可以搜索 skills.sh 的开放索引，读取任意 GitHub 仓库、任何按 Agent Skills 发现协议发布技能的网站，以及技能目录；每次安装前都能预览，有安全审核的会一并显示。
+- 对话中。 每个回合下方的一行列出这一回合用到的技能和复盘提出的建议，点一下就能打开。
+
+自进化默认关闭，在插件 → 可组合记忆 → 技能管理中开启。技能管理指南逐一介绍了每个页面。
+
+ 快速开始
+
+DSH 会自动加载包内的 cordis.patch.yml。不要再把其中的 insert 块复制到 Profile：重复的 Mnemon 条目会导致设置无法保存。已经复制过时，请参照手动安装后的恢复步骤。
+
+第一次使用 DSH？安装与启动从一台空白电脑一直带你到第一条记忆，每一步都有截图。简要步骤如下，需要 Node.js 22.19 或更高：
+
+sh
+npm install --global pnpm
+npx @deepseek-ai/dsh web
+
+
+
+  
+
+
+1. 在打开的页面中点击插件 → 添加插件，输入 dsh-mnemon，点击安装，再点击立即启用。
+2. 在侧栏打开记忆系统，“状态”页列出每个记忆组件和 Provider。
+3. 在对话中说一句需要记住的话。回复下方的回合记忆栏列出这一轮读到和写入的记忆，脑形图标可以把回复存入记忆。
+4. 使用记忆空间时，可用 npm install --global @mnemon-dev/mnemon 安装 Mnemon Native 所需的 CLI，或在记忆空间页面启用其他 Provider。
+5. 在插件 → 可组合记忆中选择主策略与增强。
+
+dsh-mnemon 支持已发布的 DSH 0.2.2-rc.1，同时保留对 0.2.1 RC 系列和 0.2.0-rc.2 的支持。RC1 要求 Node.js =24.9.0；旧版宿主遵循其各自的 Node.js 要求。同一个包也用于桌面版的插件页、命令行 dsh plugin --profile web add dsh-mnemon，以及 Headless：dsh plugin --profile headless add dsh-mnemon；更早的宿主请继续使用兼容性与升级为其列出的版本。接下来可以看入门指南，已有安装的升级见兼容性与升级。
+
+ 工作原理
+
+
+
+- Source（记忆来源） 拥有记忆及其操作：运行时记忆、项目档案和记忆空间，Provider 是记忆空间的子模块。
+-</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/omdsh-dev/dsh-mnemon/issues/554"><span class="rp-item-num">#554</span><span class="rp-item-title">[Bug]: 不兼容dsh0.2.2</span><span class="rp-item-extra">5 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/omdsh-dev/dsh-mnemon/issues/431"><span class="rp-item-num">#431</span><span class="rp-item-title">[Issue]: Feature request: lossless compaction archive for context replaced by DSH compaction</span><span class="rp-item-extra">4 comments · 2026-10-17</span></a><a class="rp-item" href="https://github.com/omdsh-dev/dsh-mnemon/issues/629"><span class="rp-item-num">#629</span><span class="rp-item-title">[Bug]: 空闲审查每次都失败：Mnemon review provider did not publish a local child with its scoped tool guard，并留下空的已停止子 Agent</span><span class="rp-item-extra">2 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/omdsh-dev/dsh-mnemon/issues/472"><span class="rp-item-num">#472</span><span class="rp-item-title">[Issue]: 自进化复盘产生的子代理会话无回收机制：一次复盘留两个目录，磁盘持续累积（#435 只修了侧栏可见性，未处理落盘）</span><span class="rp-item-extra">2 comments · 2026-10-25</span></a><a class="rp-item" href="https://github.com/omdsh-dev/dsh-mnemon/issues/334"><span class="rp-item-num">#334</span><span class="rp-item-title">[Feature]: 把 Mnemon 载荷同步到用户自己的 Git 仓库分支（运行时记忆 / 项目档案 / 记忆空间快照）</span><span class="rp-item-extra">2 comments · 2026-10-04</span></a><a class="rp-item" href="https://github.com/omdsh-dev/dsh-mnemon/issues/40"><span class="rp-item-num">#40</span><span class="rp-item-title">Runtime Memory 变化时整块重放 USER.md/MEMORY.md，建议改为增量注入（只注入变化的条目）</span><span class="rp-item-extra">2 comments · 2026-08-18</span></a><a class="rp-item" href="https://github.com/omdsh-dev/dsh-mnemon/issues/635"><span class="rp-item-num">#635</span><span class="rp-item-title">[Bug]: Idle Review stops being scheduled after DSH Desktop restart; persisted attempt watermark never advances</span><span class="rp-item-extra">1 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/omdsh-dev/dsh-mnemon/issues/632"><span class="rp-item-num">#632</span><span class="rp-item-title">Unbounded session-log snapshot reads stall the host and spike memory</span><span class="rp-item-extra">1 comments · 2026-11-13</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/omdsh-dev/dsh-mnemon/releases"><b>v0.5.45: Composable Memory Plugins</b> <span class="rp-rel-tag">v0.5.45</span> <span class="rp-item-extra">2026-11-12</span></a><pre class="rp-pre">v0.5.45: Reliable Idle Review and Clearer Skill Management / 可靠的空闲审查与更清楚的技能管理
+
+- DSH 0.2.2-rc.2: hide empty retired-memory context cards while preserving real memory snapshots, audit history and append-only context behavior (618).
+- Readable memory workers: identify supported Host subagents by operation and a unique suffix, retaining existing task labels and isolation (620; fixes 616).
+- Collapsible skill groups: collapse source directories, see paths and counts, and reveal matching or selected skills automatically (621; closes 617).
+- Optional linked-skill updates: an off-by-default Skills se</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/omdsh-dev__dsh-mnemon.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

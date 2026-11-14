@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freika/dawarich · GitHub Trending Rank Radar</title>
+<meta name="description" content="Your favorite self-hostable alternative to Google Timeline (Google Location History)">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="dawarich, Freika, Freika/dawarich, github stars, github trending, star growth, star history, 开源项目, 星标增长, google-maps, maps, self-hosted, homelab, owntracks, gpslogger">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Freika__dawarich">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Freika/dawarich · GitHub Trending Rank Radar">
+<meta property="og:description" content="Your favorite self-hostable alternative to Google Timeline (Google Location History)">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Freika__dawarich">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Freika/dawarich", "codeRepository": "https://github.com/Freika/dawarich", "url": "https://zhuikan.com/repos/Freika__dawarich", "description": "Your favorite self-hostable alternative to Google Timeline (Google Location History)", "author": {"@type": "Organization", "name": "Freika", "url": "https://github.com/Freika"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/AGPL-3.0.html", "programmingLanguage": "Ruby", "dateCreated": "2024-03-24", "keywords": "google-maps,maps,self-hosted,homelab,owntracks,gpslogger,timeline,memory,hacktoberfest"}</script>
+</head>
+<body data-repo="Freika/dawarich" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Freika/dawarich</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Freika__dawarich"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/3738638?u=a83530fd4051e5999400c6ef6edeb87d053cdb59&amp;v=4&s=300" width="300" height="300" alt="Freika avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">dawarich</div>
+      <a class="rp-side-owner" href="https://github.com/Freika">Freika</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Freika">Freika</a>
+        <span class="rp-sep">/</span><span class="rp-name">dawarich</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Your favorite self-hostable alternative to Google Timeline (Google Location History)</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>10,945</b></span><span class="rp-stat" title="forks">⑂ <b>421</b></span><span class="rp-stat" title="watchers">👁 <b>28</b></span><span class="rp-stat" title="prs">⑃ <b>1,639</b></span><span class="rp-stat" title="issues">● <b>1,621</b></span><span class="rp-stat" title="releases">▤ <b>342</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/google-maps">google-maps</a><a class="rp-topic" href="https://github.com/topics/maps">maps</a><a class="rp-topic" href="../tags/self-hosted">self-hosted</a><a class="rp-topic" href="https://github.com/topics/homelab">homelab</a><a class="rp-topic" href="https://github.com/topics/owntracks">owntracks</a><a class="rp-topic" href="https://github.com/topics/gpslogger">gpslogger</a><a class="rp-topic" href="https://github.com/topics/timeline">timeline</a><a class="rp-topic" href="https://github.com/topics/memory">memory</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Ruby</span><span class="rp-meta-bit">AGPL-3.0</span><span class="rp-meta-bit">Created 2024-03-24</span><a class="rp-meta-bit rp-home" href="https://dawarich.app?utm_source=github&amp;utm_medium=project_description" rel="noopener">dawarich.app?utm_source=github&amp;utm_medium=project_descriptio</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Freika/dawarich">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">1.22.0</span><a class="rp-dl-a" href="https://github.com/Freika/dawarich/releases/tag/1.22.0">1.22.0 ↓</a><span class="rp-dl-ver">1.22.0</span><span class="rp-dl-date">2026-11-07</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+6</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">10,945</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">421</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">28</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,639</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,621</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">342</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">🌍 Dawarich：可自托管的位置历史记录追踪器
+
+English | 简体中文
+
+ 
+
+ |  |  | 
+
+---
+
+ 截图
+
+!地图
+地图视图
+
+!时间线
+时间线视图
+
+!洞察
+洞察页面
+
+!家庭
+家庭页面
+
+!统计
+统计概览
+
+!行程
+行程页面
+
+---
+
+ 关于 Dawarich
+
+如果你在找托管版的 Dawarich Cloud（一切都由官方帮你打理），可以看看 Dawarich Cloud。
+
+Dawarich 是一个可自托管的 Web 应用，用来替代 Google 时间线（即 Google 位置历史记录）。
+它能帮你：
+
+- 追踪你的位置历史记录。
+- 在交互式地图上可视化你的数据。
+- 创建行程并分析你的旅行历史。
+- 与家庭成员共享你的位置。
+- 与 Immich、Photoprism 等照片管理应用集成，可视化带地理信息的照片。
+- 从 Google 地图时间线、OwnTracks、GPX、GeoJSON 等多种来源导入你的位置历史记录。
+- 探索统计数据，比如去过的国家/城市数量、总旅行距离等等！
+- 与家庭成员共享你的位置。
+
+更新日志：查看 CHANGELOG.md 获取最新动态。
+
+参与贡献：查看 CONTRIBUTING.md 了解如何为 Dawarich 做贡献。
+
+---
+
+ ⚠️ 免责声明
+
+ 更新策略
+
+- 请勿自动更新：升级前请先阅读发行说明。自动更新可能会破坏你的现有配置。
+- 项目仍在积极开发中：预计会有频繁的更新、bug 与破坏性变更。
+- 导入 Dawarich 后请勿删除原始数据。
+- 更新前先备份：升级前请务必备份你的数据。
+- 保持更新：为获得最佳体验，请确保运行的是最新版本。
+
+---
+
+ 🧭 支持的位置追踪方式
+
+你可以使用以下应用来追踪你的位置：
+
+- 💫 Dawarich for iOS
+- 🤖 Dawarich for Android
+- 🗺️ Dawarich Community（Android）
+- 🌍 Overland
+- 🛰️ OwnTracks
+- 🧭 GPSLogger
+- 📱 PhoneTrack
+- 🏡 Home Assistant
+
+在你的设备上安装其中一个受支持的应用，并配置它把位置更新发送到你的 Dawarich 实例即可。
+
+---
+
+ 如何在本地启动 Dawarich
+
+1. 克隆本仓库。
+2. 运行以下命令启动应用：
+   bash
+   docker compose -f docker/docker-compose.yml up
+   
+3. 访问 http://localhost:3000 即可打开应用。
+
+停止应用：按下 Ctrl+C。
+
+你可以直接使用默认配置，也可以基于 .env.example 创建 .env 文件来自定义你的配置。
+
+---
+
+ 如何安装 Dawarich
+
+- Docker 部署
+- 群晖 Synology
+
+默认凭据
+- 用户名：demo@dawarich.app
+- 密码：safepassword
+可以随时在账户设置中修改它们。
+
+---
+
+ 功能特性
+
+ 位置追踪
+- 使用受支持的应用追踪你的实时位置。
+
+ 位置历史可视化
+- 在地图上查看你的历史数据，支持多种可自定义图层：
+  - 热力图
+  - 轨迹点
+  - 点与点之间的连线
+  - 战争迷雾
+
+ 家庭共享
+- 与家庭成员共享你的位置。
+- 查看家庭成员的位置（需经过他们同意）。
+- 每位家庭成员都可以单独开启或关闭位置共享。
+
+ 区域
+- 在地图上绘制区域，让 Dawarich 帮你识别在此处的到访记录。
+
+ 到访记录（测试版）
+- Dawarich 能够识别你去过的地点，并让你确认或拒绝这些记录。
+
+ 统计
+- 分析你的旅行历史：按年、按月细分的去过国家/城市数量、旅行距离、花费时间等。
+
+ 洞察
+
+- 获取关于你的位置历史的洞察，比如&quot;你去得最多的地方是家，共到访 120 次&quot;，或&quot;你在 2024 年于巴黎待了 30 天&quot;。
+
+ 在各国停留天数
+
+- 查看你在每个国家停留了多少天。无论是用于税务居民身份判定，还是单纯想知道自己大部分时间待在哪里，都很实用。
+
+ 行程
+- 创建一段行程，可视化你在两个时间点之间的旅行轨迹。你可以查看路线、距离和花费的时间，还能为行程添加备注。如果你集成了 Immich 或 Photoprism，还能看到行程中拍摄的照片！
+
+ 集成
+- 提供 Immich 或 Photoprism（甚至两者都提供！）的凭据后，Dawarich 会自动从你的照片中导入地理数据。
+- 你还可以在地图上可视化你的照片！
+
+ 导入你的数据
+- 支持从多种来源导入：
+  - Google 地图时间线
+  - OwnTracks
+  - Strava
+  - Immich
+  - GPX/GeoJSON 文件
+  - 照片的 EXIF 数据
+
+ 导出你的数据
+- 将你的数据导出为 GeoJSON 或 GPX 格式。
+
+---
+
+ 📚 指南与教程
+
+- 配置反向代理
+- 导入 Google Takeout 数据
+- 使用 Overland 追踪位置
+- 使用 OwnTracks 追踪位置
+- 导出你的数据
+
+更多指南请查看官方文档。
+
+---
+
+ 环境变量
+
+关于环境变量与配置项的详细说明，请查阅官网文档。
+
+---
+
+ Star 历史
+
+你大概也猜到了，我（作者）挺喜欢看统计数据的。
+
+
+ 
+   
+   
+   
+ 
+
+
+---
+
+ 关于简体中文版
+
+Dawarich 通过标准的 Rails I18n 机制内置了简体中文语言包（config/locales/zh.yml 等），无需额外配置。在「设置 → 通用」页面即可将界面切换为中文。
+
+本文档是 README.md 的中文翻译。如果两者内容不一致，请以英文版为准。</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Freika/dawarich/issues/3105"><span class="rp-item-num">#3105</span><span class="rp-item-title">Postgres database dawarich_development is unavailable</span><span class="rp-item-extra">11 comments · 2026-07-10</span></a><a class="rp-item" href="https://github.com/Freika/dawarich/issues/2536"><span class="rp-item-num">#2536</span><span class="rp-item-title">Android app shows current location but does not record tracking points</span><span class="rp-item-extra">11 comments · 2026-04-27</span></a><a class="rp-item" href="https://github.com/Freika/dawarich/issues/2711"><span class="rp-item-num">#2711</span><span class="rp-item-title">Countries flown over are still displayed in trips and Year-End Digests</span><span class="rp-item-extra">10 comments · 2026-05-13</span></a><a class="rp-item" href="https://github.com/Freika/dawarich/issues/3658"><span class="rp-item-num">#3658</span><span class="rp-item-title">App to Server Sync Issue.</span><span class="rp-item-extra">7 comments · 2026-09-17</span></a><a class="rp-item" href="https://github.com/Freika/dawarich/issues/2974"><span class="rp-item-num">#2974</span><span class="rp-item-title">Date-range filtering selects points by the account timezone, not by each point&#x27;s local time</span><span class="rp-item-extra">7 comments · 2026-06-20</span></a><a class="rp-item" href="https://github.com/Freika/dawarich/issues/3986"><span class="rp-item-num">#3986</span><span class="rp-item-title">Exploration::RebuildJob: back-to-back full-history rebuilds</span><span class="rp-item-extra">6 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/Freika/dawarich/issues/3662"><span class="rp-item-num">#3662</span><span class="rp-item-title">Android Mobil App eats the Battery</span><span class="rp-item-extra">5 comments · 2026-09-18</span></a><a class="rp-item" href="https://github.com/Freika/dawarich/issues/3844"><span class="rp-item-num">#3844</span><span class="rp-item-title">Bad map performance after recent update</span><span class="rp-item-extra">4 comments · 2026-10-14</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Freika/dawarich/discussions/4021"><span class="rp-item-num">#4021</span><span class="rp-item-title">Map click to search</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/Freika/dawarich/discussions/4019"><span class="rp-item-num">#4019</span><span class="rp-item-title">Possibility to jump from places to visits</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/Freika/dawarich/discussions/4014"><span class="rp-item-num">#4014</span><span class="rp-item-title">[Feature Request]: More Options for Android automations</span><span class="rp-item-extra">0 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/Freika/dawarich/discussions/4008"><span class="rp-item-num">#4008</span><span class="rp-item-title">[Feature request] Override Android system theme</span><span class="rp-item-extra">0 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/Freika/dawarich/discussions/3998"><span class="rp-item-num">#3998</span><span class="rp-item-title">Track generation issue and other QOL</span><span class="rp-item-extra">0 comments · 2026-11-05</span></a><a class="rp-item" href="https://github.com/Freika/dawarich/discussions/3997"><span class="rp-item-num">#3997</span><span class="rp-item-title">Feature request - A Ready status indicator after the application is fully loaded and finished any migrations</span><span class="rp-item-extra">0 comments · 2026-11-05</span></a><a class="rp-item" href="https://github.com/Freika/dawarich/discussions/3990"><span class="rp-item-num">#3990</span><span class="rp-item-title">Feature Request: Adaptive Zoom and Automatic Viewport Adjustment During Playback</span><span class="rp-item-extra">0 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/Freika/dawarich/discussions/3987"><span class="rp-item-num">#3987</span><span class="rp-item-title">Dawarich app: store recorded points on device</span><span class="rp-item-extra">0 comments · 2026-11-03</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/Freika/dawarich/releases"><b>1.22.0</b> <span class="rp-rel-tag">1.22.0</span> <span class="rp-item-extra">2026-11-07</span></a><pre class="rp-pre">⚠️ Upgrade notes
+
+- With ARCHIVE_RAW_DATA=true, set ARCHIVE_ENCRYPTION_KEY before upgrading: without it, production stops archiving raw data and only logs an error. On an instance that already has archives, use the current SECRET_KEY_BASE value; otherwise generate a key with bin/rails secret. Keep the key safe, because cleared raw data cannot be recovered without it.
+
+ Added
+
+- Split Tracks at midnight in your timezone with a new option in the map&#x27;s Track generation settings, so a night at home with your phone still reporting no longer joins several days into one Track. It is off by defa</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Freika__dawarich.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

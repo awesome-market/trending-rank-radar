@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>upstash/context7 · GitHub Trending Rank Radar</title>
+<meta name="description" content="Context7 Platform -- Up-to-date docs for AI agents">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="context7, upstash, upstash/context7, github stars, github trending, star growth, star history, 开源项目, 星标增长, llm, mcp, mcp-server, vibe-coding">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/upstash__context7">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="upstash/context7 · GitHub Trending Rank Radar">
+<meta property="og:description" content="Context7 Platform -- Up-to-date docs for AI agents">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/upstash__context7">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "upstash/context7", "codeRepository": "https://github.com/upstash/context7", "url": "https://zhuikan.com/repos/upstash__context7", "description": "Context7 Platform -- Up-to-date docs for AI agents", "author": {"@type": "Organization", "name": "upstash", "url": "https://github.com/upstash"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2025-03-26", "keywords": "llm,mcp,mcp-server,vibe-coding"}</script>
+</head>
+<body data-repo="upstash/context7" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">upstash/context7</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="upstash__context7"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/74989412?v=4&s=300" width="300" height="300" alt="upstash avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">context7</div>
+      <a class="rp-side-owner" href="https://github.com/upstash">upstash</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/upstash">upstash</a>
+        <span class="rp-sep">/</span><span class="rp-name">context7</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Context7 Platform -- Up-to-date docs for AI agents</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>64,760</b></span><span class="rp-stat" title="forks">⑂ <b>3,247</b></span><span class="rp-stat" title="watchers">👁 <b>163</b></span><span class="rp-stat" title="prs">⑃ <b>1,201</b></span><span class="rp-stat" title="issues">● <b>2,520</b></span><span class="rp-stat" title="releases">▤ <b>177</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/llm">llm</a><a class="rp-topic" href="../tags/mcp">mcp</a><a class="rp-topic" href="../tags/mcp-server">mcp-server</a><a class="rp-topic" href="https://github.com/topics/vibe-coding">vibe-coding</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2025-03-26</span><a class="rp-meta-bit rp-home" href="https://context7.com" rel="noopener">context7.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/upstash/context7">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">@upstash/context7-tools-ai-sdk@1.0.4</span><a class="rp-dl-a" href="https://github.com/upstash/context7/releases/tag/%40upstash%2Fcontext7-tools-ai-sdk%401.0.4">@upstash/context7-tools-ai-sdk@1.0.4 ↓</a><span class="rp-dl-ver">1.0.4</span><span class="rp-dl-date">2026-11-12</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+59</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">64,760</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">3,247</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">163</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,201</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">2,520</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">177</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">!Cover
+
+   
+
+ Context7 - Up-to-date Docs for AI Agents
+
+  
+
+      ![Documentação em Português (Brasil)-purple)](./i18n/README.pt-BR.md)        
+
+ ❌ Without Context7
+
+LLMs rely on outdated or generic information about the libraries you use. You get:
+
+- ❌ Code examples are outdated and based on year-old training data
+- ❌ Hallucinated APIs that don&#x27;t even exist
+- ❌ Generic answers for old package versions
+
+ ✅ With Context7
+
+Context7 pulls up-to-date, version-specific documentation and code examples straight from the source — and gives them to your coding agent.
+
+txt
+Create a Next.js proxy that checks for a valid JWT in cookies
+and redirects unauthenticated users to /login. use context7
+
+
+txt
+Configure a Cloudflare Worker script to cache
+JSON API responses for five minutes. use context7
+
+
+txt
+Show me the Supabase auth API for email/password sign-up.
+
+
+Context7 fetches up-to-date code examples and documentation right into your coding agent&#x27;s context. No tab-switching, no hallucinated APIs that don&#x27;t exist, no outdated code generation.
+
+Works in two modes:
+
+- CLI + Skills — installs a skill that guides your agent to fetch docs using ctx7 CLI commands (no MCP required)
+- MCP — registers a Context7 MCP server so your agent can call documentation tools natively
+
+ Installation
+
+ [!NOTE]
+ API Key Recommended: Get a free API key at context7.com/dashboard for higher rate limits.
+
+Set up Context7 for your coding agents with a single command. The ctx7 CLI requires Node.js 22.13 or newer.
+
+bash
+npx ctx7 setup
+
+
+Authenticates via OAuth, generates an API key, and installs the appropriate skill. You can choose between CLI + Skills or MCP mode. Use --cursor, --claude, or --opencode to target a specific agent.
+
+To remove the generated setup later, run npx ctx7 remove. If you globally installed the CLI with npm install -g ctx7, remove that package separately with npm uninstall -g ctx7.
+
+To configure manually, use the Context7 server URL https://mcp.context7.com/mcp with your MCP client and pass your API key via the Authorization: Bearer YOUR_API_KEY header. See the link below for client-specific setup instructions.
+
+Manual Installation / Other Clients →
+
+ Important Tips
+
+ Use Library Id
+
+If you already know exactly which library you want to use, add its Context7 ID to your prompt. That way, Context7 can skip the library-matching step and directly retrieve docs.
+
+txt
+Implement basic authentication with Supabase. use library /supabase/supabase for API and docs.
+
+
+The slash syntax tells Context7 exactly which library to load docs for.
+
+ Specify a Version
+
+To get documentation for a specific library version, just mention the version in your prompt:
+
+txt
+How do I set up a Next.js 16 proxy? use context7
+
+
+Context7 will automatically match the appropriate version.
+
+ Add a Rule
+
+If you installed via ctx7 setup, a skill is configured automatically that triggers Context7 for library-related questions. To set up a rule manually instead, add one to your coding agent:
+
+- Cursor: C</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/upstash/context7/issues/339"><span class="rp-item-num">#339</span><span class="rp-item-title">🧹 Help us clean up duplicate (or unnecessary) libraries in Context7</span><span class="rp-item-extra">98 comments · 2025-06-26</span></a><a class="rp-item" href="https://github.com/upstash/context7/issues/214"><span class="rp-item-num">#214</span><span class="rp-item-title">Publish an official docker image</span><span class="rp-item-extra">8 comments · 2025-05-21</span></a><a class="rp-item" href="https://github.com/upstash/context7/issues/2069"><span class="rp-item-num">#2069</span><span class="rp-item-title">[Feature]: Unified repo and docs site documentation</span><span class="rp-item-extra">5 comments · 2026-03-02</span></a><a class="rp-item" href="https://github.com/upstash/context7/issues/2639"><span class="rp-item-num">#2639</span><span class="rp-item-title">[Feature]: Store Credentials in System Keyrings with JSON Fallback</span><span class="rp-item-extra">2 comments · 2026-05-18</span></a><a class="rp-item" href="https://github.com/upstash/context7/issues/1651"><span class="rp-item-num">#1651</span><span class="rp-item-title">[Feature]: Support for git submodules and symlinked documentation in context7.json</span><span class="rp-item-extra">2 comments · 2026-02-02</span></a><a class="rp-item" href="https://github.com/upstash/context7/issues/3807"><span class="rp-item-num">#3807</span><span class="rp-item-title">[Bug]: SDK searchLibrary crashes on mixed-case JSON Content-Type</span><span class="rp-item-extra">1 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/upstash/context7/issues/3219"><span class="rp-item-num">#3219</span><span class="rp-item-title">[Feature]: Make proactive MCP instructions configurable and clarify reuse of resolved library IDs</span><span class="rp-item-extra">1 comments · 2026-09-20</span></a><a class="rp-item" href="https://github.com/upstash/context7/issues/2949"><span class="rp-item-num">#2949</span><span class="rp-item-title">Feature: winget package, memorable `context7` CLI alias, and agent-friendly library submit</span><span class="rp-item-extra">1 comments · 2026-07-28</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/upstash/context7/discussions/3502"><span class="rp-item-num">#3502</span><span class="rp-item-title">Automatic Documentation Refresh via GitHub README Badge</span><span class="rp-item-extra">1 comments · 2026-10-21</span></a><a class="rp-item" href="https://github.com/upstash/context7/discussions/3452"><span class="rp-item-num">#3452</span><span class="rp-item-title">Context7 CLI included in AgentManager&#x27;s tool catalog</span><span class="rp-item-extra">0 comments · 2026-10-18</span></a><a class="rp-item" href="https://github.com/upstash/context7/discussions/3437"><span class="rp-item-num">#3437</span><span class="rp-item-title">How is re-indexing triggered for /websites libraries?</span><span class="rp-item-extra">0 comments · 2026-10-16</span></a><a class="rp-item" href="https://github.com/upstash/context7/discussions/3214"><span class="rp-item-num">#3214</span><span class="rp-item-title">What can an agent actually do with context7, and who decides?</span><span class="rp-item-extra">0 comments · 2026-09-18</span></a><a class="rp-item" href="https://github.com/upstash/context7/discussions/3062"><span class="rp-item-num">#3062</span><span class="rp-item-title">Validating a machine-readable MCP trust/risk decision layer — free assessment for context7-mcp?</span><span class="rp-item-extra">0 comments · 2026-08-23</span></a><a class="rp-item" href="https://github.com/upstash/context7/discussions/2825"><span class="rp-item-num">#2825</span><span class="rp-item-title">ForgeCat profile for Context7</span><span class="rp-item-extra">0 comments · 2026-06-24</span></a><a class="rp-item" href="https://github.com/upstash/context7/discussions/2614"><span class="rp-item-num">#2614</span><span class="rp-item-title">Built Claude Code investment analysis skills — options flow scanner + price alerts (open source)</span><span class="rp-item-extra">0 comments · 2026-05-13</span></a><a class="rp-item" href="https://github.com/upstash/context7/discussions/2510"><span class="rp-item-num">#2510</span><span class="rp-item-title">How does Context7 MCP handle data freshness and source updates?</span><span class="rp-item-extra">3 comments · 2026-04-27</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/upstash/context7/releases"><b>@upstash/context7-tools-ai-sdk@1.0.4</b> <span class="rp-rel-tag">@upstash/context7-tools-ai-sdk@1.0.4</span> <span class="rp-item-extra">2026-11-12</span></a><pre class="rp-pre">Patch Changes
+
+- bdd9bf7: resolveLibraryId returns the SDK&#x27;s &quot;No libraries found&quot; message when nothing matches, and queryDocs returns its &quot;No documentation found&quot; message for an unknown library ID. Other errors no longer end with &quot;.. Check your API key and try again.&quot;</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (9)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/gitblog_01109/article/details/152100656" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">Context7 MCP Server与GitHub集成：实时同步代码库文档</span><span class="rp-item-extra">2026-07-05</span></a><a class="rp-item" href="https://blog.csdn.net/weixin_63132747/article/details/160976339" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">使用技巧（七）：MCP 别再乱装了！GitHub + Context7 起步，四件套按角色挑，两个就够用</span><span class="rp-item-extra">2026-05-11</span></a><a class="rp-item" href="https://note.com/hina_cc_1/n/na25a2b04e691" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">Claude CodeでMCPサーバーを導入してみた！GitHub・Context7・Playwrightの3つで開発効率が劇的に変わった話</span><span class="rp-item-extra">2026-01-18</span></a><a class="rp-item" href="https://note.com/oyaryo/n/ne8800ddb560b" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">Gemini CLIでcontext7のMCPサーバを利用する簡単な方法</span><span class="rp-item-extra">2025-06-29</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMie0FVX3lxTFB4WHFEQUlOTno3Xzc4MFpCQ19aUmNVbkVzaWxjYWRVOVZwREIzdmFHMjd6ZEhFYTdUTmRERmxheUlPc0d2QjFRU282TlpqZjVRZ3VLY2pIYkJUYndQUTJ6Q2l0Z0FUZmctMExpaVFmQlFZOE9kSzVyLTA0SQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">OrcaRouter</span><span class="rp-item-title">CVE-2026-75130：Context7 MCP 提示注入详解</span><span class="rp-item-extra">2026-10-29</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiS0FVX3lxTE1uN3RRbW10X3lCMFF2OWw5bHp2aVVDd2F2c0ZNOV92eXdqY1o5WmFQbWRjcHB2ZFc1RDdLcWJrQXdMTEdENVEtV0dFaw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">OSCHINA</span><span class="rp-item-title">:trophy: 腾讯 APIJSON 8.2 :rocket: StarRocks 🧠 AI Skills, MCP</span><span class="rp-item-extra">2026-07-20</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE0ta0xzZml4VGd1NmJzLUdRNmRYVGR5ZGotQmRlZE1DVDlwWlBtbm5yQlhXUXRfMzY3X0xvRjFORzNVWFd5cjF2bWdJSE9GYzQtTVg4?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">51CTO</span><span class="rp-item-title">十款 2026 必装 Claude 插件，真正能提升效率的就这几个</span><span class="rp-item-extra">2026-04-21</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE81X2JJTnhsbVVGYmlKeUpkdTMwS2R5d0ZHMXR6U0Z4TlQ5TVRnTHdTTE5iX0U3enc5Ulc5eWc2QnlQc1hXRWN2V2hucGU5dHNCT213?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">BlockBeats</span><span class="rp-item-title">60个精选Skills、工作流与开源项目，最全Claude进阶清单</span><span class="rp-item-extra">2026-03-30</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE9IZXpEckliVEFmX1pCMmRSNkFXWkMtTEhrbkpzTGhHYlhUZTZ5QWNQNER4Wm0wQzRLZ3U3dm1JSURKend6X19LM2tXMGg2RGduT3JoYVNR?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">QQ News</span><span class="rp-item-title">关于 AI 编程的一些浅思</span><span class="rp-item-extra">2025-06-27</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (8)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=43763843" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Context7 MCP Server: Up-to-date documentation for LLMs and AI code editors</span><span class="rp-item-extra">▲ 3 · 0 comments · 2025-04-22</span></a><a class="rp-item" href="https://www.bankinfosecurity.com/context7-flaw-let-attackers-slip-commands-to-ai-agents-a-30974" target="_blank" rel="noopener"><span class="rp-news-src">bankinfosecurity</span><span class="rp-item-title">Context7 Flaw Let Attackers Slip Commands to AI Agents</span><span class="rp-item-extra">2026-03-10</span></a><a class="rp-item" href="https://www.xda-developers.com/context7-underrated-mcp-server-local-llm/" target="_blank" rel="noopener"><span class="rp-news-src">XDA Developers</span><span class="rp-item-title">Context7 is the most underrated MCP server you&#x27;re not using for your local LLM</span><span class="rp-item-extra">2025-11-04</span></a><a class="rp-item" href="https://www.geeky-gadgets.com/claude-code-and-context7/" target="_blank" rel="noopener"><span class="rp-news-src">Geeky Gadgets</span><span class="rp-item-title">The Secret Weapon Developers Are Using to Simplify AI Projects : Claude Code and Context7</span><span class="rp-item-extra">2025-06-19</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMijAFBVV95cUxOdGZRNklDaDJQSlBPSFQwcmtmSjR6WkdZeFVfd1R0ZEJOWHQwNlpnLVI5Mm83X21wNVpRMThmZnlyd001NE84SnZRV25sdWhQS0g3eGY0TUZURlRaTFFBaTFJLU4wUlFJZnNBRGFLWGc3bG45SGQ3THFGLTNsclpEZnByOFZQQW15V3RLRA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">KDnuggets</span><span class="rp-item-title">Top 5 MCP Servers for High-Performance Agentic Development</span><span class="rp-item-extra">2026-07-20</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMisAFBVV95cUxOLWZYRmlRTmR1YTh5TXkwTjBKSVdlWnV2aEx4VGQ5eUdmY3AyUXg2dG9sVFVTQnNkUWJ5TE5LTWRQaVN6bkZqdUdUNm5UdHVtenJNUXgwYjdRR19TaF9QNDVrRVl2MVdzLV9NSXk3cFZTT1NBSEhJWWh4YkNVOVNtUHlPeVFvTGVZaHJIbkI4UFY2ZGw0S3g1R3ZZeFltLVlhRkhMWTMzSHRfWVRRdmhnTw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The GitHub Blog</span><span class="rp-item-title">Accelerate developer productivity with these 9 open source AI and MCP projects</span><span class="rp-item-extra">2025-10-17</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE5tLUExQVpUdHBzQW43QTJGWW85aVZ0cVVlTmIxQjVUTmVIRFZMM004VG5qTXRBcFdwbTVodF90RkNpZ2pQc2t2XzNvcWgtYU9GMFlYOUlMdEZuUQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">O&#x27;Reilly Media</span><span class="rp-item-title">MCP in Practice</span><span class="rp-item-extra">2025-09-16</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMia0FVX3lxTE9KQWhQTk5GVGNFajkyV0JoNWtDOHFOWEVENFNJYXhlakk4Wkw5c1pLdnlfNzU5dVNYTzdDcFdJS1dpdkY3cnRkS1hubk9INWFfX2J3MTRGcDJhcGhKVkl0aFBGMUlkdFhweFAw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Snyk</span><span class="rp-item-title">5 Best MCP Servers for Developers</span><span class="rp-item-extra">2025-05-15</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/upstash__context7.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

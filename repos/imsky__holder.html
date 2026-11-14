@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>imsky/holder · GitHub Trending Rank Radar</title>
+<meta name="description" content=":city_sunrise: Client-side image placeholders.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="holder, imsky, imsky/holder, github stars, github trending, star growth, star history, 开源项目, 星标增长, hacktoberfest">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/imsky__holder">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="imsky/holder · GitHub Trending Rank Radar">
+<meta property="og:description" content=":city_sunrise: Client-side image placeholders.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/imsky__holder">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "imsky/holder", "codeRepository": "https://github.com/imsky/holder", "url": "https://zhuikan.com/repos/imsky__holder", "description": ":city_sunrise: Client-side image placeholders.", "author": {"@type": "Organization", "name": "imsky", "url": "https://github.com/imsky"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2012-06-12", "keywords": "hacktoberfest"}</script>
+</head>
+<body data-repo="imsky/holder" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">imsky/holder</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="imsky__holder"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/330895?u=c6a9441a64855f19f4adae5339919da5b13d1e4d&amp;v=4&s=300" width="300" height="300" alt="imsky avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">holder</div>
+      <a class="rp-side-owner" href="https://github.com/imsky">imsky</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/imsky">imsky</a>
+        <span class="rp-sep">/</span><span class="rp-name">holder</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">:city_sunrise: Client-side image placeholders.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,790</b></span><span class="rp-stat" title="forks">⑂ <b>581</b></span><span class="rp-stat" title="watchers">👁 <b>194</b></span><span class="rp-stat" title="prs">⑃ <b>70</b></span><span class="rp-stat" title="issues">● <b>168</b></span><span class="rp-stat" title="releases">▤ <b>4</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/hacktoberfest">hacktoberfest</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2012-06-12</span><a class="rp-meta-bit rp-home" href="http://holderjs.com" rel="noopener">holderjs.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/imsky/holder">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Holder 2.8</span><a class="rp-dl-a" href="https://github.com/imsky/holder/releases/tag/v2.8.0">Holder-2.8.0 ↓</a><span class="rp-dl-ver">2.8.0</span><span class="rp-dl-date">2015-06-02</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,790</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">581</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">194</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">70</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">168</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">4</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Holder
+
+!
+
+Holder renders image placeholders in browser using SVG.
+
+Used by thousands of open source projects (including Bootstrap v3) and many other sites.
+
+No extra requests, small bundle size, highly customizable.
+
+
+
+
+
+
+
+ Installing
+
+ npm: npm install holderjs
+ yarn: yarn add holderjs
+ unpkg: 
+ cdnjs: 
+ jsDelivr: 
+ Bower: bower install holderjs
+ Rails Assets: gem &#x27;rails-assets-holderjs&#x27;
+ Meteor: meteor add imsky:holder
+ Composer: php composer.phar update imsky/holder
+ NuGet: Install-Package Holder.js
+
+ Usage
+
+Include holder.js in your HTML:
+
+html
+
+
+
+Holder will then process all images with a specific src attribute, like this one:
+
+html
+
+
+
+The above tag will render as a placeholder 300 pixels wide and 200 pixels tall.
+
+To avoid console 404 errors, you can use data-src instead of src.
+
+ Programmatic usage
+
+To programmatically insert a placeholder use the run() API:
+
+js
+var myImage = document.getElementById(&#x27;myImage&#x27;);
+
+Holder.run({
+  images: myImage
+});
+
+
+ Placeholder options
+
+Placeholder options are set through URL properties, e.g. holder.js/300x200?x=y&amp;a=b. Multiple options are separated by the &amp; character.
+
+ theme: The theme to use for the placeholder. Example: holder.js/300x200?theme=sky
+ random: Use random theme. Example: holder.js/300x200?random=yes
+ bg: Background color. Example: holder.js/300x200?bg=2a2025
+ fg: Foreground (text) color. Example: holder.js/300x200?fg=ffffff
+ text: Custom text. Example: holder.js/300x200?text=Hello
+ size: Custom text size. Defaults to pt units. Example: holder.js/300x200?size=50
+ font: Custom text font. Example: holder.js/300x200?font=Helvetica
+ align: Custom text alignment (left, right). Example: holder.js/300x200?align=left
+ outline: Draw outline and diagonals for placeholder. Example: holder.js/300x200?outline=yes
+ lineWrap: Maximum line length to image width ratio. Example: holder.js/300x200?lineWrap=0.5
+
+ Themes
+
+!!!
+
+Holder includes support for themes, to help placeholders blend in with your layout.
+
+There are 6 default themes: sky, vine, lava, gray, industrial, and social.
+
+ Customizing themes
+
+Themes have 5 properties: fg, bg, size, font and fontweight. The size property specifies the minimum font size for the theme. The fontweight default value is bold. You can create a sample theme like this:
+
+js
+Holder.addTheme(&quot;dark&quot;, {
+  bg: &quot;000&quot;,
+  fg: &quot;aaa&quot;,
+  size: 11,
+  font: &quot;Monaco&quot;,
+  fontweight: &quot;normal&quot;
+});
+
+
+If you have a group of placeholders where you&#x27;d like to use particular text, you can do so by adding a text property to the theme:
+
+js
+Holder.addTheme(&quot;thumbnail&quot;, { bg: &quot;fff&quot;, text: &quot;Thumbnail&quot; });
+
+
+ Using custom themes
+
+There are two ways to use custom themes with Holder:
+
+ Include theme at runtime to render placeholders already using the theme name
+ Include theme at any point and re-render placeholders that are using the theme name
+
+The first approach is the easiest. After you include holder.js, add a script tag that adds the theme you want:
+
+html
+
+
+Holder.addTheme(&quot;bright&quot;, {
+  bg: &quot;white&quot;, </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/imsky/holder/issues/176"><span class="rp-item-num">#176</span><span class="rp-item-title">RTL support</span><span class="rp-item-extra">8 comments · 2016-01-25</span></a><a class="rp-item" href="https://github.com/imsky/holder/issues/202"><span class="rp-item-num">#202</span><span class="rp-item-title">Holderjs with Material Icons continued </span><span class="rp-item-extra">7 comments · 2016-10-31</span></a><a class="rp-item" href="https://github.com/imsky/holder/issues/181"><span class="rp-item-num">#181</span><span class="rp-item-title">Support for old format</span><span class="rp-item-extra">6 comments · 2016-04-01</span></a><a class="rp-item" href="https://github.com/imsky/holder/issues/196"><span class="rp-item-num">#196</span><span class="rp-item-title">Text vertical alignment</span><span class="rp-item-extra">4 comments · 2016-08-16</span></a><a class="rp-item" href="https://github.com/imsky/holder/issues/195"><span class="rp-item-num">#195</span><span class="rp-item-title">Using holder with &lt;picture&gt; element doesn&#x27;t work ?</span><span class="rp-item-extra">4 comments · 2016-08-13</span></a><a class="rp-item" href="https://github.com/imsky/holder/issues/185"><span class="rp-item-num">#185</span><span class="rp-item-title">Content security policy</span><span class="rp-item-extra">4 comments · 2016-05-18</span></a><a class="rp-item" href="https://github.com/imsky/holder/issues/114"><span class="rp-item-num">#114</span><span class="rp-item-title">Official WordPress plugin</span><span class="rp-item-extra">4 comments · 2014-10-09</span></a><a class="rp-item" href="https://github.com/imsky/holder/issues/234"><span class="rp-item-num">#234</span><span class="rp-item-title">Need to replace `robloach/component-installer`</span><span class="rp-item-extra">3 comments · 2021-01-13</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/imsky/holder/releases"><b>Holder 2.8</b> <span class="rp-rel-tag">v2.8.0</span> <span class="rp-item-extra">2015-06-02</span></a><pre class="rp-pre">- Outlines with diagonals can now be drawn using the outline option.
+- Text color is now automatically set if no foreground color is specified.
+- Text margin can now be controlled using the run-time lineWrapRatio option.
+- addImage now supports a DOM node (or nodes) as argument
+- SVG and DOM functions have been factored out into modules.
+- Scene graph code has been rewritten to use plain JS, augment.js has been removed.
+- Flag processing code has been removed.
+- README has been updated with more documentation of internal options.</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/imsky__holder.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

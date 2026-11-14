@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3b1b/manim · GitHub Trending Rank Radar</title>
+<meta name="description" content="Animation engine for explanatory math videos">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="manim, 3b1b, 3b1b/manim, github stars, github trending, star growth, star history, 开源项目, 星标增长, python, animation, explanatory-math-videos, 3b1b-videos">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/3b1b__manim">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="3b1b/manim · GitHub Trending Rank Radar">
+<meta property="og:description" content="Animation engine for explanatory math videos">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/3b1b__manim">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "3b1b/manim", "codeRepository": "https://github.com/3b1b/manim", "url": "https://zhuikan.com/repos/3b1b__manim", "description": "Animation engine for explanatory math videos", "author": {"@type": "Organization", "name": "3b1b", "url": "https://github.com/3b1b"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Python", "dateCreated": "2015-03-22", "keywords": "python,animation,explanatory-math-videos,3b1b-videos"}</script>
+</head>
+<body data-repo="3b1b/manim" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">3b1b/manim</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="3b1b__manim"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/11601040?u=ccd223915efaad0958c195ce57bf46ab40d67873&amp;v=4&s=300" width="300" height="300" alt="3b1b avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">manim</div>
+      <a class="rp-side-owner" href="https://github.com/3b1b">3b1b</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/3b1b">3b1b</a>
+        <span class="rp-sep">/</span><span class="rp-name">manim</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=total">total <b>#159</b></a></div>
+    </div>
+    <p class="rp-desc">Animation engine for explanatory math videos</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>96,486</b></span><span class="rp-stat" title="forks">⑂ <b>7,927</b></span><span class="rp-stat" title="watchers">👁 <b>958</b></span><span class="rp-stat" title="prs">⑃ <b>1,016</b></span><span class="rp-stat" title="issues">● <b>1,245</b></span><span class="rp-stat" title="releases">▤ <b>13</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/python">python</a><a class="rp-topic" href="../tags/animation">animation</a><a class="rp-topic" href="https://github.com/topics/explanatory-math-videos">explanatory-math-videos</a><a class="rp-topic" href="https://github.com/topics/3b1b-videos">3b1b-videos</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2015-03-22</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/3b1b/manim">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.7.2</span><a class="rp-dl-a" href="https://github.com/3b1b/manim/releases/tag/v1.7.2">v1.7.2 ↓</a><span class="rp-dl-ver">1.7.2</span><span class="rp-dl-date">2024-12-13</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+29</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">96,486</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">7,927</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">958</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,016</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,245</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">13</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Manim is an engine for precise programmatic animations, designed for creating explanatory math videos.
+
+Note, there are two versions of manim.  This repository began as a personal project by the author of 3Blue1Brown for the purpose of animating those videos, with video-specific code available here.  In 2020 a group of developers forked it into what is now the community edition, with a goal of being more stable, better tested, quicker to respond to community contributions, and all around friendlier to get started with. See this page for more details.
+
+ Installation
+ [!Warning]
+ WARNING: These instructions are for ManimGL _only_. Trying to use these instructions to install Manim Community/manim or instructions there to install this version will cause problems. You should first decide which version you wish to install, then only follow the instructions for your desired version.
+
+ [!Note]
+ Note: To install manim directly through pip, please pay attention to the name of the installed package. This repository is ManimGL of 3b1b. The package name is manimgl instead of manim or manimlib. Please use pip install manimgl to install the version in this repository.
+
+Manim runs on Python 3.10 or higher.
+
+System requirements are FFmpeg, OpenGL and LaTeX (optional, if you want to use LaTeX).
+For Linux, Pango along with its development headers are required. See instruction here.
+
+
+ Directly
+
+sh
+ Install manimgl
+pip install manimgl
+
+ Try it out
+manimgl
+
+
+For more options, take a look at the Using manim sections further below.
+
+If you want to hack on manimlib itself, clone this repository and in that directory execute:
+
+sh
+ Install manimgl
+pip install -e .
+
+ Try it out
+manimgl example_scenes.py OpeningManimExample
+ or
+manim-render example_scenes.py OpeningManimExample
+
+
+ Linux (Ubuntu/Debian)
+
+1. Install system dependencies.
+
+sh
+sudo apt update
+
+sudo apt install ffmpeg
+sudo apt install python3-pip
+sudo apt install libpango1.0-dev
+
+
+2. Install a lightweight LaTeX distribution (optional, for LaTeX rendering).
+
+sh
+sudo apt install texlive-science texlive-fonts-extra texlive-latex-extra
+
+
+This lightweight setup is significantly smaller than installing texlive-full
+while still supporting most Manim projects.
+
+3. Clone and install ManimGL.
+
+sh
+git clone https://github.com/3b1b/manim.git
+cd manim
+
+python3 -m pip install -e .
+
+manimgl example_scenes.py OpeningManimExample
+
+
+
+  💡 Optional: Using a virtual environment (venv)
+
+It is recommended to use a virtual environment to avoid conflicts with system packages.
+
+sh
+sudo apt install python3-venv
+
+python3 -m venv venv
+source venv/bin/activate
+
+python3 -m pip install -e .
+
+
+If python3-venv is unavailable on your system, try installing the version-specific package instead:
+
+sh
+sudo apt install python3.12-venv
+
+
+
+
+ Directly (Windows)
+
+1. Install FFmpeg.
+2. Install a LaTeX distribution. MiKTeX is recommended.
+3. Install the remaining Python packages.
+    sh
+    git clone https://github.com/3b1b/manim.git
+    cd manim
+    pip ins</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/3b1b/manim/issues/1276"><span class="rp-item-num">#1276</span><span class="rp-item-title">issue with animations contains text .. throws warnings and list index out of range.</span><span class="rp-item-extra">78 comments · 2020-11-18</span></a><a class="rp-item" href="https://github.com/3b1b/manim/issues/1556"><span class="rp-item-num">#1556</span><span class="rp-item-title">GLib-GIO-WARNING</span><span class="rp-item-extra">54 comments · 2021-06-19</span></a><a class="rp-item" href="https://github.com/3b1b/manim/issues/884"><span class="rp-item-num">#884</span><span class="rp-item-title">How to choose a font with Text object?</span><span class="rp-item-extra">48 comments · 2020-02-13</span></a><a class="rp-item" href="https://github.com/3b1b/manim/issues/936"><span class="rp-item-num">#936</span><span class="rp-item-title">New Manim version that supports GPU</span><span class="rp-item-extra">45 comments · 2020-03-26</span></a><a class="rp-item" href="https://github.com/3b1b/manim/issues/505"><span class="rp-item-num">#505</span><span class="rp-item-title">Exception: Latex error converting to dvi. See log output above...</span><span class="rp-item-extra">34 comments · 2019-04-16</span></a><a class="rp-item" href="https://github.com/3b1b/manim/issues/1152"><span class="rp-item-num">#1152</span><span class="rp-item-title">Sound in Windows refuses to be rendered due to FFMPEG error</span><span class="rp-item-extra">24 comments · 2020-06-30</span></a><a class="rp-item" href="https://github.com/3b1b/manim/issues/1462"><span class="rp-item-num">#1462</span><span class="rp-item-title">lines and graphs are not shown!</span><span class="rp-item-extra">18 comments · 2021-04-07</span></a><a class="rp-item" href="https://github.com/3b1b/manim/issues/990"><span class="rp-item-num">#990</span><span class="rp-item-title">FileNotFoundError: [WinError 2] The system cannot find the file specified</span><span class="rp-item-extra">16 comments · 2020-04-18</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/3b1b/manim/discussions/2498"><span class="rp-item-num">#2498</span><span class="rp-item-title">I&#x27;ve got a bug, and i can&#x27;t properly use ManimGL.</span><span class="rp-item-extra">0 comments · 2026-08-11</span></a><a class="rp-item" href="https://github.com/3b1b/manim/discussions/2442"><span class="rp-item-num">#2442</span><span class="rp-item-title">Rendering to moderngl fbo</span><span class="rp-item-extra">0 comments · 2026-03-24</span></a><a class="rp-item" href="https://github.com/3b1b/manim/discussions/2401"><span class="rp-item-num">#2401</span><span class="rp-item-title">Problems displaying objects in 3D scene</span><span class="rp-item-extra">0 comments · 2025-10-13</span></a><a class="rp-item" href="https://github.com/3b1b/manim/discussions/2400"><span class="rp-item-num">#2400</span><span class="rp-item-title">🛡️ ShieldX — A Vietnamese Student’s Fight to Make Cybersecurity Free for Everyone</span><span class="rp-item-extra">0 comments · 2025-10-07</span></a><a class="rp-item" href="https://github.com/3b1b/manim/discussions/2385"><span class="rp-item-num">#2385</span><span class="rp-item-title">Ported manim-voiceover (A manim CE plugin) to work with manimgl</span><span class="rp-item-extra">2 comments · 2025-08-19</span></a><a class="rp-item" href="https://github.com/3b1b/manim/discussions/2383"><span class="rp-item-num">#2383</span><span class="rp-item-title">AI-powered Voiceover (and more!) now available for ManimGL</span><span class="rp-item-extra">0 comments · 2025-08-18</span></a><a class="rp-item" href="https://github.com/3b1b/manim/discussions/2373"><span class="rp-item-num">#2373</span><span class="rp-item-title">Problems when using Vietnamese</span><span class="rp-item-extra">0 comments · 2025-07-31</span></a><a class="rp-item" href="https://github.com/3b1b/manim/discussions/2371"><span class="rp-item-num">#2371</span><span class="rp-item-title">grant&#x27;s account got hacked?</span><span class="rp-item-extra">0 comments · 2025-07-18</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/3b1b/manim/releases"><b>v1.7.2</b> <span class="rp-rel-tag">v1.7.2</span> <span class="rp-item-extra">2024-12-13</span></a><pre class="rp-pre">- Added reload functionality by @Splines 
+- Updated how configuration is handled
+- Change how Tex (and Text) caches generated svg data
+- Fix incorrect arg injection in Riemann rectangles by @InakiRaba91 
+- Misc. other bug fixes</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (3)</h3><div class="rp-list"><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVEFVX3lxTE85QUI5cU5oOE4zUmJnX0s5ZGpQQ3YySWl6Q0I2ejhlQnBIdjBXZzR3VXkydTlBakZaZi16MVRXQUlDTFFLTENrbnQ0UktFN1kwX2Rjag?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">alphaXiv</span><span class="rp-item-title">自动化技能获取：通过大规模挖掘开源智能体代码库实现的多智能体程序性知识提取框架</span><span class="rp-item-extra">2026-08-21</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMib0FVX3lxTFByZGRkRnkzNVFjcm93UWlkSGdIZWJBbjRWeng3c0diS2wzdFZkVjdibnBCcjQySW5kSk9WSDIteERnSXFNX0tOZGw2Y2RCX05VS2VGNEtKYlNWQ3J0Ym82bjFnbFNDcklhQm9qY0NjWQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">雷峰网</span><span class="rp-item-title">GitHub十大热门Python项目</span><span class="rp-item-extra">2020-11-10</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiUEFVX3lxTE1XaGFjUHlCWUtYQWwwdElpdzRHVUZHUWlLN3lpUnJEb19zU2ZERE51SE9GZUYwd1QxMG5fdm45b25DOXZ5TmtCSjRyRmU1dXg2?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">搜狐网</span><span class="rp-item-title">B站最火数学视频3Blue1Brown是如何制作的</span><span class="rp-item-extra">2019-08-04</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (9)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=19716019" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Manim – 3Blue1Brown&#x27;s animation engine for explanatory math videos</span><span class="rp-item-extra">▲ 669 · 80 comments · 2019-04-22</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=44994071" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Manim: Animation engine for explanatory math videos</span><span class="rp-item-extra">▲ 434 · 68 comments · 2025-08-23</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=14281412" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Animation engine for explanatory math videos</span><span class="rp-item-extra">▲ 3 · 0 comments · 2017-05-06</span></a><a class="rp-item" href="https://archive.org/details/github.com-ManimCommunity-manim_-_2021-08-21_15-53-55" target="_blank" rel="noopener"><span class="rp-news-src">archive</span><span class="rp-item-title">github.com-ManimCommunity-manim_-_2021-08-21_15-53-55</span><span class="rp-item-extra">2021-08-20</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiWEFVX3lxTE5mRnhycV9kZi10TDBmNEpNMmRZME1ydUxiRDEwMGxDeldaSm0wek92ZkhCcTlEV1oxQzBCZUNDeDBjTXVmb2FGSXk2bDgzcWduMHZtaG96SVk?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">YouTube</span><span class="rp-item-title">Differentiation Made Simple</span><span class="rp-item-extra">2026-07-24</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE9iR0ZTUmZZU3hOYVdKNUNlb2VCNDhYUURIOWxNTnV2MlpsWGI0TWZ0c1U0VVloUHNhU2RmNkY1Zk1ZSUU3Y0tLcEt2bm0xS045YlBPczNmWE8tOE5x?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">YouTube</span><span class="rp-item-title">The MRI trade-off triangle among field strength, SNR, resolution, and scan time</span><span class="rp-item-extra">2026-01-16</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxPcWZlbGt6alRJaThEeTZMWlJjeTk3WElyODE4MlZQYXkzUVNWeENjTW53TDhJQjR1QWo3bmlRRzNaYVp0ZW1SaUFQOGkxTWg5QjlNVWxBM2tGQUdTbzRQaXdrQzNQZkFYOHYxUUVEcWVOT3ZhZ2c3OW5KZEZPcDhURktSX1R4bWVkZHo2Z2V4VUxlU0J4S0lfNzhXNmNEUy10?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Towards Data Science</span><span class="rp-item-title">Cross-Entropy, Negative Log-Likelihood, and All That Jazz</span><span class="rp-item-extra">2025-02-04</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMibEFVX3lxTE8zOFlZYVRtS0c2SUtPUndHWlZEbEtDQXlib3JVTmFPQTlpdGpvSWxnbmZnTUY4UWNacjJjeUFVR1lXaWVXcEFvR3pyODNJYUhoZXo5Yks3V1ZrWUVQOUhwOFpKSUJGb05wUGxtSw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">KDnuggets</span><span class="rp-item-title">10 GitHub Repositories to Master Math</span><span class="rp-item-extra">2025-01-03</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE95WnNmcG03azhreDVSbm5kWHU0dnI4Um9rUmtUTWtQRV9NbDZfYTZuWTJvS1g0S2NDSlNFMzVlNUpGTFJ6WDNTZ1B1MzNFN0tTQ2FNUlctQk1oamJWWXNZY0dhTV9Mdw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The GitHub Blog</span><span class="rp-item-title">Release Radar · February 2021 Edition</span><span class="rp-item-extra">2021-03-05</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/3b1b__manim.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

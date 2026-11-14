@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Folkbench/folkbench · GitHub Trending Rank Radar</title>
+<meta name="description" content="AI API 中转站评测排行与切换工具：实测可用率、延迟与价格 · Open-source AI API relay benchmark, rankings &amp; switcher for Claude Code / Codex">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="folkbench, Folkbench, Folkbench/folkbench, github stars, github trending, star growth, star history, 开源项目, 星标增长, ai, api-relay, api-relay-pricing, benchmark, benchmarks, llm">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Folkbench__folkbench">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Folkbench/folkbench · GitHub Trending Rank Radar">
+<meta property="og:description" content="AI API 中转站评测排行与切换工具：实测可用率、延迟与价格 · Open-source AI API relay benchmark, rankings &amp; switcher for Claude Code / Codex">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Folkbench__folkbench">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Folkbench/folkbench", "codeRepository": "https://github.com/Folkbench/folkbench", "url": "https://zhuikan.com/repos/Folkbench__folkbench", "description": "AI API 中转站评测排行与切换工具：实测可用率、延迟与价格 · Open-source AI API relay benchmark, rankings & switcher for Claude Code / Codex", "author": {"@type": "Organization", "name": "Folkbench", "url": "https://github.com/Folkbench"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "Rust", "dateCreated": "2026-10-02", "keywords": "ai,api-relay,api-relay-pricing,benchmark,benchmarks,llm,model-evaluation,reliability,folkbench,claude"}</script>
+</head>
+<body data-repo="Folkbench/folkbench" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Folkbench/folkbench</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Folkbench__folkbench"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/336879625?v=4&s=300" width="300" height="300" alt="Folkbench avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">folkbench</div>
+      <a class="rp-side-owner" href="https://github.com/Folkbench">Folkbench</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Folkbench">Folkbench</a>
+        <span class="rp-sep">/</span><span class="rp-name">folkbench</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=new">new <b>#184</b></a></div>
+    </div>
+    <p class="rp-desc">AI API 中转站评测排行与切换工具：实测可用率、延迟与价格 · Open-source AI API relay benchmark, rankings &amp; switcher for Claude Code / Codex</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>3,765</b></span><span class="rp-stat" title="forks">⑂ <b>18</b></span><span class="rp-stat" title="watchers">👁 <b>32</b></span><span class="rp-stat" title="prs">⑃ <b>2</b></span><span class="rp-stat" title="issues">● <b>1</b></span><span class="rp-stat" title="releases">▤ <b>6</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/ai">ai</a><a class="rp-topic" href="https://github.com/topics/api-relay">api-relay</a><a class="rp-topic" href="https://github.com/topics/api-relay-pricing">api-relay-pricing</a><a class="rp-topic" href="https://github.com/topics/benchmark">benchmark</a><a class="rp-topic" href="https://github.com/topics/benchmarks">benchmarks</a><a class="rp-topic" href="../tags/llm">llm</a><a class="rp-topic" href="https://github.com/topics/model-evaluation">model-evaluation</a><a class="rp-topic" href="https://github.com/topics/reliability">reliability</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2026-10-02</span><a class="rp-meta-bit rp-home" href="https://folkbench.com" rel="noopener">folkbench.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Folkbench/folkbench">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Folkbench Switch 0.1.0-beta.6</span><a class="rp-dl-a" href="https://github.com/Folkbench/folkbench/releases/tag/switch-v0.1.0-beta.6">switch-v0.1.0-beta.6 ↓</a><span class="rp-dl-ver">6</span><span class="rp-dl-date">2026-11-01</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">3,765</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">18</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">32</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">2</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">6</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Folkbench
+
+中转站实测评测，与 Folkbench Switch。
+
+    
+
+🌐 在线评测大盘 · ⚡ Switch 客户端 · 📦 下载安装 · 🔥 热门模型 · 💬 交流群 (TG) · 💬 QQ 群 · English · 日本語 · Español
+
+
+  
+  
+
+
+
+
+
+
+folkbench.com 持续测试各家 AI 中转站，公开可用率、响应耗时和价格。本仓库是配套桌面客户端 Folkbench Switch 的代码，用来把选好的线路写入 Claude Code、Codex 等工具的配置。
+
+---
+
+ 赞助商
+
+以下中转站支持 Folkbench 的持续评测。成为赞助商 →
+
+
+
+
+
+
+
+
+ModelflareModelflare站点是由美国 Havenbyte LLC 运营，支持 GPT、Claude、Gemini、Grok 等主流模型和常用兼容协议，同时也支持 40 多种图片及视频模型。API Key 可以配置有序回退，一把 API Key 可以调用多个模型，Key 还可以设置备用分组，并且从请求日志里能看到状态、延迟、Token 和实际费用。缓存补偿是这个站的另一个亮点：部分 OpenAI 价格优先、稳定和高级分组分别提供每日 65%、75%、85% 的缓存命中率保障，对于符合条件的api请求如果未达到缓存命中率，平台会给予对应补充。站点目前也有首次充值解锁特惠分组的活动，单笔充值 US$20 后可解锁 0.015 倍率 GPT 特惠分组，解锁后 GPT-5.6-Sol 的价格大约是 ¥0.51（输入）/ ¥3.01（输出）/每百万 Token，并且没有使用上限限制。单笔充值 US$50 后可解锁 0.03 倍率 Claude 特惠分组。
+
+
+
+CheapAICheapAI字如其名，主打一个便宜，可以重点看特惠分组，价格确实压得很低。而且还有一个很有意思的动态倍率分组。按客服的介绍，这个分组会根据实时号池情况调整倍率。资源充足的时候价格可以更低，资源紧张时则会相应调整，在价格和可用性之间实时做一个平衡。对于追求性价比的用户可以选择它们家折扣倍率较好的特惠分组，而对于追求稳定的用户可以选择稳定分组或 Pro 分组，站点也提供官 key 分组，能够覆盖不同使用需求。
+
+
+
+IKunCodeIKunCode对于各个编程工具接入的支持比较好，Claude Code、Codex 和 Gemini CLI 都有单独支持，售后以及咨询渠道渠道做得比较全，官网公开了客服邮箱、QQ 群和 Telegram，人工客服服务贴心，很适合新手上路。
+
+
+
+智流 FluxLane智流 FluxLane 是一个面向开发者与团队的 AI API 网关：提供满血且稳定的全球模型，支持 GPT、Claude、Gemini、Deepseek、GLM 等主流模型和全球主流模型厂商协议，平台提供策略路由与多线路容灾，方便国内团队长期接入与成本核算。面向国内企业/高校采购，可签订合同、对公转账，并提供发票、采购单等材料（具体以商务确认为准），公开模型能力检测报告，倍率低至0.1倍率，新人注册可领 2 美元体验额度。
+
+
+
+---
+
+ 中转站榜单
+
+中转站那么多，哪家稳、哪家便宜、哪家不碰你的数据？成功率、响应速度、价格和数据安全等级，一张榜单看清。总榜 · 稳定性榜 · 性价比榜。
+
+
+  
+  
+
+
+ 热门模型
+
+如果你需要了解特定模型在各中转站的实测表现，可以直接查看单模型排行榜：
+
+| 模型 | 实测数据入口 |
+| :--- | :--- |
+| GPT 6 Sol | 查看各站点实测数据 |
+| GPT 6 Astra | 查看各站点实测数据 |
+| Claude Fable 5.1 | 查看各站点实测数据 |
+| Grok 4.7 | 查看各站点实测数据 |
+| DeepSeek V4.1 Flash | 查看各站点实测数据 |
+
+ Folkbench Switch
+
+对新手友好的 AI 编程助手配置工具，Claude Code、Codex、Gemini CLI 等一键配好，简单易用。下载 macOS / Windows 版。
+
+macOS：Apple Silicon / Intel（.dmg）；Windows：x64（.exe）。安装包与 SHA256 校验文件统一在 Releases 下载。
+
+
+  
+  
+
+
+Switch 是 Folkbench 配套的开源桌面客户端（基于 Tauri + Rust 构建）。它的核心价值是：让你在多个中转站和官方线路之间一键切换 Base URL 与 API Key，彻底告别人肉修改配置。
+
+ 🎯 核心功能
+
+- 🔄 一键切换服务商：保存多家服务的 Base URL 与 API Key，点击即可将配置应用到目标工具，支持随时切换与还原。
+- 🛡️ 配置无损与状态保护：修改前提供配置差异预览。切换 Codex 至第三方服务时，会自动安全暂存官方 ChatGPT OAuth 凭据，切回官方时无损恢复。
+- 📈 探针数据集成：在客户端内直接查看各站点的公开实时可用率与延迟，切源前确认线路状态。
+- 🔒 本地存储与隐私：所有 API Key 和配置仅存储在本地设备中，不上传云端，完全离线运行。
+- 📊 本地用量估算：按会话统计 Token 消耗量，并根据公开参考单价提供调用成本估算。
+
+ 🧰 支持的工具
+
+Switch 对各工具的配置路径与字段规范进行了适配，切换时仅覆盖连接参数，保留其余自定义设置：
+
+| 工具 | 配置文件 / 路径 | 说明 |
+| :--- | :--- | :--- |
+| Claude Code | ~/.claude/settings.json | 自动写入 Base URL，智能处理 Token 与 API Key 凭据类型 |
+| Codex | ~/.codex/config.toml | 写入自定义 provider，暂存官方凭据，切回自动恢复 |
+| Gemini CLI | ~/.gemini/.env &amp; settings.json | 同步写入环境变量与验证方式 |
+| Aider | ~/.aider.conf.yml | 写入模型与 API 端点参数 |
+| OpenCode | ~/.config/opencode/ | 快速注入服务映射与认证 Key |
+| Kimi CLI | ~/.kimi-code / ~/.kimi | 自动兼容新老版本目录 |
+| DeepSeek Harness | ~/.dsh/ | 适配官方 CLI 环境 |
+| 其他 | MiniMax Code、Qwen Code、Grok Build、Hermes、Pi 等 | 持续维护适配中 |
+
+---
+
+ 社区与反馈
+
+Bug 与功能建议请提交 GitHub Issues，也欢迎加入 Telegram 或 QQ 群（203286875）。
+
+ 许可证
+
+apps/switch/ 下的 Switch 代码以 Apache-2.0 开源。博客文章、图片与品牌素材不在此范围内，详见 LICENSE.md。</pre><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Folkbench/folkbench/discussions/7"><span class="rp-item-num">#7</span><span class="rp-item-title">测 API 速度时，首字延迟和一轮任务跑完的耗时最好分开看</span><span class="rp-item-extra">0 comments · 2026-11-02</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/Folkbench/folkbench/releases"><b>Folkbench Switch 0.1.0-beta.6</b> <span class="rp-rel-tag">switch-v0.1.0-beta.6</span> <span class="rp-rel-pre">Pre-release</span> <span class="rp-item-extra">2026-11-01</span></a><pre class="rp-pre">0.1.0-beta.6 — Beta
+
+- 拆分 Claude Desktop 独立配置与 Claude Code；支持桌面端角色路由与非 Claude 模型映射。
+- 首页统一「可更新」徽章与悬停详情；Claude Desktop / Codex / OpenCode / DSH 等支持一键打开桌面端。
+- 支持本机配置自动导入；完善可选使用统计与更新器升级结果记录。
+- 加宽添加服务对话框，模型 ID 下拉按内容展示完整名称；移除测评详情入口。
+- Windows 验收：经 Switch 配置后 Claude Desktop 与 Codex 可直达聊天，无登录墙。
+
+提供 macOS Apple Silicon、macOS Intel 与 Windows x64 安装包。macOS 以 Developer ID 签名和 Apple 公证为发布要求；Windows 暂未配置 Authenticode 签名。
+
+此版本为 Beta，尚非 Stable。
+
+macOS：Developer ID 签名并已公证。Windows：未做 Authenticode 签名。</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (1)</h3><div class="rp-list"><a class="rp-item" href="https://x.com/chuanliang/status/2112052541924192439" target="_blank" rel="noopener"><span class="rp-news-src">x</span><span class="rp-item-title">每日佳软推荐2026-10-19 1、AI类佳软 BruteForceAI https://github.com/MorDavid/BruteForceAI 结合 AI 和自动化登录攻击的高级 LLM 驱动暴力破解工具 ...</span><span class="rp-item-extra">2026-10-18</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Folkbench__folkbench.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

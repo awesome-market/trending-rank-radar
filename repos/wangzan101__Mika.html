@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>wangzan101/Mika · GitHub Trending Rank Radar</title>
+<meta name="description" content="An on-device AI agent for Android that operates apps and the web to get things done for you.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Mika, wangzan101, wangzan101/Mika, github stars, github trending, star growth, star history, 开源项目, 星标增长, accessibility, ai-agent, android, automation, jetpack-compose, kotlin">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/wangzan101__Mika">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="wangzan101/Mika · GitHub Trending Rank Radar">
+<meta property="og:description" content="An on-device AI agent for Android that operates apps and the web to get things done for you.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/wangzan101__Mika">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "wangzan101/Mika", "codeRepository": "https://github.com/wangzan101/Mika", "url": "https://zhuikan.com/repos/wangzan101__Mika", "description": "An on-device AI agent for Android that operates apps and the web to get things done for you.", "author": {"@type": "Organization", "name": "wangzan101", "url": "https://github.com/wangzan101"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Kotlin", "dateCreated": "2026-10-29", "keywords": "accessibility,ai-agent,android,automation,jetpack-compose,kotlin,llm,mobile-agent"}</script>
+</head>
+<body data-repo="wangzan101/Mika" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">wangzan101/Mika</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="wangzan101__Mika"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/102038245?u=53345248176abbca9c9f311942bf772c160134e9&amp;v=4&s=300" width="300" height="300" alt="wangzan101 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Mika</div>
+      <a class="rp-side-owner" href="https://github.com/wangzan101">wangzan101</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/wangzan101">wangzan101</a>
+        <span class="rp-sep">/</span><span class="rp-name">Mika</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=new">new <b>#57</b></a><a class="rp-board-chip" href="../?board=weekly">weekly <b>#197</b></a><a class="rp-board-chip" href="../?board=weekly_rate">weekly_rate <b>#96</b></a><a class="rp-board-chip" href="../?board=monthly">monthly <b>#96</b></a><a class="rp-board-chip" href="../?board=monthly_rate">monthly_rate <b>#15</b></a></div>
+    </div>
+    <p class="rp-desc">An on-device AI agent for Android that operates apps and the web to get things done for you.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>8,555</b></span><span class="rp-stat" title="forks">⑂ <b>1,957</b></span><span class="rp-stat" title="watchers">👁 <b>13</b></span><span class="rp-stat" title="prs">⑃ <b>388</b></span><span class="rp-stat" title="issues">● <b>228</b></span><span class="rp-stat" title="releases">▤ <b>44</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/accessibility">accessibility</a><a class="rp-topic" href="../tags/ai-agent">ai-agent</a><a class="rp-topic" href="../tags/android">android</a><a class="rp-topic" href="../tags/automation">automation</a><a class="rp-topic" href="https://github.com/topics/jetpack-compose">jetpack-compose</a><a class="rp-topic" href="../tags/kotlin">kotlin</a><a class="rp-topic" href="../tags/llm">llm</a><a class="rp-topic" href="https://github.com/topics/mobile-agent">mobile-agent</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Kotlin</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2026-10-29</span><a class="rp-meta-bit rp-home" href="https://mikaphone.com" rel="noopener">mikaphone.com</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/wangzan101/Mika">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Mika v0.1.42</span><a class="rp-dl-a" href="https://github.com/wangzan101/Mika/releases/tag/v0.1.42">Mika-0.1.42 ↓</a><span class="rp-dl-ver">0.1.42</span><span class="rp-dl-date">2026-11-13</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+79</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+2,544</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num">8,555</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,957</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">13</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">388</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">228</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">44</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Mika
+
+An AI assistant on your phone: say what you need, and it works your apps and the web until it&#x27;s done.
+
+It works on a hidden background screen, so you can keep using your phone.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+English · 简体中文 · 繁體中文 · 日本語 · 한국어 · Español
+
+
+
+
+
+&quot;Send a message to File Transfer&quot;: Mika&#x27;s chat on the left, each step on its background screen on the right (4× speed; chat list blurred)
+
+
+
+ Get things done with one sentence
+
+
+
+&quot;What did the group talk about today?&quot;Scrolls through the chat in the background, then sums it up
+&quot;A charger under $30, rated 4.5 stars or more&quot;Adds the pick to the cart and stops before checkout
+&quot;What has this creator posted lately?&quot;Opens the app, reads post by post, then sums it up
+
+
+
+
+More demos
+
+
+
+Greets recruiters for 3 jobs on a job site
+Finds the cheapest nonstop from San Francisco to New York
+Reads out the top 5 stories on a news site
+
+
+Finds jobs and greets recruiters
+Watches ads to unlock music perks
+Orders takeout with stacked discounts, asks before paying
+
+
+
+
+
+Several demos use apps popular in China: WeChat is the main messaging app there, and Xiaohongshu (RED) is a lifestyle and social platform. Mika isn&#x27;t tied to them; it works with any app or website on your phone.
+
+ Why Mika
+
+| | |
+|---|---|
+| 📱 Leaves your screen alone | Opens apps, taps, types and scrolls on a separate background screen while you use your phone as usual; tap the small live view whenever you want to watch |
+| 🧩 Works with any app | Looks at the screen and finds buttons the way a person does: no app APIs, no per-app integration |
+| 🌐 Call it from any web page | In the built-in browser, say what you want on the page you&#x27;re reading and it works right there; touch the page and it stops |
+| 🧠 Gets better with use | Remembers the preferences you tell it, and turns tasks it finishes into skills so next time is faster and steadier |
+| 🔒 Your data stays on your phone | There is no Mika server; use your own model API key, or sign in with a ChatGPT, xAI or OpenRouter account |
+| 🆓 Open source and free | Apache-2.0, all code public |
+
+ Get started in three steps
+
+1. Install: download the APK from Releases.
+2. Connect a model: in Settings › Model, pick a provider and enter an API key, or just sign in with an account (models and sign-in).
+3. To operate phone apps: follow the &quot;Set up phone control&quot; wizard in Settings and pair wireless debugging on the phone once (setup guide). Skip this if you only want chat, web and files.
+
+Then try saying: &quot;Set alarms for 9:40 and 10:00 tomorrow morning&quot; or &quot;Check the weather at 8 every morning and tell me only if it will rain&quot;.
+
+ 💡 Have a computer handy? Send this to the AI agent on it and it will set everything up for you:
+ Follow https://github.com/wangzan101/Mika/blob/main/docs/install-with-agent.en.md to install Mika on the Android phone connected over USB.
+
+ What it can do
+
+| | |
+|---|---|
+| Operate apps | Reads long lists and chat histories, taps and types, shares text into apps; hands logins, verification codes and </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/wangzan101/Mika/issues/307"><span class="rp-item-num">#307</span><span class="rp-item-title">荣耀 Magic7（MagicOS 9）远程解锁始终返回 unsupported_keyguard，未识别到锁屏密码页</span><span class="rp-item-extra">12 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/wangzan101/Mika/issues/409"><span class="rp-item-num">#409</span><span class="rp-item-title">无法上传图片和文件（上传失败）</span><span class="rp-item-extra">6 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/wangzan101/Mika/issues/323"><span class="rp-item-num">#323</span><span class="rp-item-title">悬浮胶囊不好用</span><span class="rp-item-extra">6 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/wangzan101/Mika/issues/201"><span class="rp-item-num">#201</span><span class="rp-item-title">调用不了手机的输入法进行文字输入</span><span class="rp-item-extra">6 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/wangzan101/Mika/issues/421"><span class="rp-item-num">#421</span><span class="rp-item-title">【缺陷】Mika 操作 GitHub 官方客户端（com.github.android）时点击注入无效：同一位置手动点击正常</span><span class="rp-item-extra">4 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/wangzan101/Mika/issues/223"><span class="rp-item-num">#223</span><span class="rp-item-title">有一点点耗token</span><span class="rp-item-extra">4 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/wangzan101/Mika/issues/204"><span class="rp-item-num">#204</span><span class="rp-item-title">建议：新增 Shizuku 作为获取内置助手的第二条路（可选，默认仍走无线调试）</span><span class="rp-item-extra">4 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/wangzan101/Mika/issues/533"><span class="rp-item-num">#533</span><span class="rp-item-title">接入微信无法进行搜索</span><span class="rp-item-extra">3 comments · 2026-11-11</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/wangzan101/Mika/releases"><b>Mika v0.1.42</b> <span class="rp-rel-tag">v0.1.42</span> <span class="rp-item-extra">2026-11-13</span></a><pre class="rp-pre">0.1.42
+
+ 兼容性
+- 最低支持版本降到 Android 10（minSdk 30 → 29），Android 10 / 11 也能安装运行。
+
+ 修复
+- 锁屏解锁后任务不再卡在「等你解锁手机」，改用 isDeviceLocked 判定（590）。
+- 试用技能不再一次失败就停用，Token 预算用完不算技能失败（569）。
+- ADB 连接失败时如实上报，不再返回空的设备。
+
+ 新功能
+- 定时任务通知支持免打扰时段。
+- 支持复制定时计划。
+- 文件库支持按类型筛选。
+- 侧栏「个人助手」入口跟随开关显隐。
+
+ 实验功能（默认关闭）
+- 主动能力：读选定 App 的通知并静默判定，胶囊角标提示值得提醒的，逐步归纳话题与联系人。入口在「设置 › 高级 › 开发者选项」。
+
+ 其它
+- 修复多个真机测试，让设备测试套件恢复全绿。</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (2)</h3><div class="rp-list"><a class="rp-item" href="https://news.google.com/rss/articles/CBMiY0FVX3lxTE5ueFpfRDFpQnJhQUw1dl9nZlBqTEJhNGFxa1VqQ1dsc1FMcTh6N0ZsNnVMdnkzVUxNWTA2Y2xPS0ZTUU5vSjZaaG5XdVgxUkgwOXNMb1Vxek1fU3FtV0liQnhCWQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">新浪网</span><span class="rp-item-title">手机里藏了个隐形助手，干活时你照样刷微信|Mika|王赞|安卓|Agent_新浪新闻</span><span class="rp-item-extra">2026-10-31</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiTkFVX3lxTFBHSWhhY3dLR3R6YVU5aExvZ29famlMNkRQUS1jdEc4WTQzTlkxUkRvSmViNGMxZ0RvbFA2RHY5ZVBMT0N1ZkpFTFRfWjY0dw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">36Kr</span><span class="rp-item-title">开门，要源代码，这个网红机械妖姬竟踢爆对方公司总部</span><span class="rp-item-extra">2021-09-01</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (6)</h3><div class="rp-list"><a class="rp-item" href="https://note.com/simizu_note_ai/n/nbf09b1689e83?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">AI requests expand beyond conversation: Mika&#x27;s screen handover and DeepSeek&#x27;s prototype intake rules</span><span class="rp-item-extra">2026-10-31</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMixAFBVV95cUxNeXltS2JNYU5CM1pYaXFIUUZ2ZWpvZTRJWWQtYVRWZkVTanlkSml1TS1LSWlKc1Y4bzFzSkZhUzRCV0dlR2o3VzJFWGNJT1Rvakd3eXlRZnNMQjVVbXhCZURPTXNwQ2JPcXpBREp2Q0FkM2N2Yms5SzBXRDdHbkRDazc3dEJyU1o4Skw5bmF2Y3VsZFFmUU04OXBfdWQxblZpVHZ5SUdJNm1CVjhIbUFRRHgzS21tbUxjLUlXLVRMNk93YnM4?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">UC San Diego Today</span><span class="rp-item-title">UC San Diego Team Launches Free ‘Digital Twin’ for End-to-End Testing of Applications over Wireless</span><span class="rp-item-extra">2026-05-11</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiywFBVV95cUxPdnF3ZVF4aHpweWw5TFdFcHd4cUlTVzNJNEJ6c3hlRnkwZFR3ZmVYaUpCZnNsaDlPZERiSF9sVTZ6VTlvTkhRWlpURk5mNXB2MlFQcVJxNFZ2dmF0ak1SaERLNUVHX1Y1dTZRVFkwQVlZU1AzNVMyNFhNbGtudk5RVGp2TXNveVkzWWFfZUtfN18zaG4tWmlDWUtZY3VxeXN1cWtLQjEyY2I3aWxNS25zd1JHbXIxMW5NRVJWc0tTRFRDRnc5WDJad00tUQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">DevClass</span><span class="rp-item-title">Copilot .Net modernization tool a &#x27;huge downgrade,&#x27; devs say – and no longer free</span><span class="rp-item-extra">2025-11-20</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiZEFVX3lxTFBuNXNheTg5dTB2dGpLcUJDU2t1MGozS2NudEY3X2lGVW9CYUFKTWVpLUxOTHE2eEJSRWZ5a1VoeGJybFdHWnlWN3ZMaDNranZVaHNCTWJOUjRHaG8yM3hpOG1hbFY?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">wiz.io</span><span class="rp-item-title">The MCP Server for Wiz: Smarter AI, Stronger Security | Wiz Blog</span><span class="rp-item-extra">2025-04-21</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxPZjlGU19nN0RON0U5c28yY3F6Y2wxYW44OWp4al90WUtBOUFHZ3dFdmVMVEc0b0d0V0pPSzBFdnkyQ3JELUZlMkxqM2xubmlaR2hBM0h2c3Y1TGZfVWxWN2RpSlJrOUVYc3RpSDZiZ1E5MWVtWWhFQ000bTdIUTZBYmJNTlFNd01QMGtJQW9CeXhrV2JHV0RXMWRIT0hJcmlkRjIxNDNZYUNIXzFCWkNwaURyeC12cFZtNm1qT0lrU1JkZw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Towards Data Science</span><span class="rp-item-title">Industrial Motor Fault Classification using Deep Learning with IoT Implications</span><span class="rp-item-extra">2025-02-04</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMimwFBVV95cUxPNDlMVHJUcW5BemY0WTJBeWo1YlhOQUxvWEhZYWw1LThMaUdiTnlma3pBaklCZy14b3NkTF9RU3NzYjdFdmhBNi1MUW5qTWQ2RWtQbFhVN3U3MU1sT1I2ekFTdGxhVmRzUmVCMnNSSi1KY3FTcmZFWkFtdHk1SF9hS1h5ZENVbGMwa3VuR0tpbXdMRVVCbktfWmtvbw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">SC Media</span><span class="rp-item-title">GitHub developer compromise sought by novel GoIssue phishing tool</span><span class="rp-item-extra">2024-11-13</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/wangzan101__Mika.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

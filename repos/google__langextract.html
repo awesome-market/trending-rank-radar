@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>google/langextract · GitHub Trending Rank Radar</title>
+<meta name="description" content="A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="langextract, google, google/langextract, github stars, github trending, star growth, star history, 开源项目, 星标增长, llm, nlp, python, gemini-ai, information-extration, large-language-models">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/google__langextract">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="google/langextract · GitHub Trending Rank Radar">
+<meta property="og:description" content="A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/google__langextract">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "google/langextract", "codeRepository": "https://github.com/google/langextract", "url": "https://zhuikan.com/repos/google__langextract", "description": "A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization.", "author": {"@type": "Organization", "name": "google", "url": "https://github.com/google"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Python", "dateCreated": "2025-07-08", "keywords": "llm,nlp,python,gemini-ai,information-extration,large-language-models,structured-data,gemini,gemini-api,gemini-flash"}</script>
+</head>
+<body data-repo="google/langextract" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">google/langextract</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="google__langextract"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/1342004?v=4&s=300" width="300" height="300" alt="google avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">langextract</div>
+      <a class="rp-side-owner" href="https://github.com/google">google</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/google">google</a>
+        <span class="rp-sep">/</span><span class="rp-name">langextract</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A Python library for extracting structured information from unstructured text using LLMs with precise source grounding and interactive visualization.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>39,310</b></span><span class="rp-stat" title="forks">⑂ <b>2,751</b></span><span class="rp-stat" title="watchers">👁 <b>167</b></span><span class="rp-stat" title="prs">⑃ <b>330</b></span><span class="rp-stat" title="issues">● <b>222</b></span><span class="rp-stat" title="releases">▤ <b>21</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/llm">llm</a><a class="rp-topic" href="../tags/nlp">nlp</a><a class="rp-topic" href="../tags/python">python</a><a class="rp-topic" href="https://github.com/topics/gemini-ai">gemini-ai</a><a class="rp-topic" href="https://github.com/topics/information-extration">information-extration</a><a class="rp-topic" href="../tags/large-language-models">large-language-models</a><a class="rp-topic" href="https://github.com/topics/structured-data">structured-data</a><a class="rp-topic" href="../tags/gemini">gemini</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2025-07-08</span><a class="rp-meta-bit rp-home" href="https://pypi.org/project/langextract/" rel="noopener">pypi.org/project/langextract/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="google__EarlGrey"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1342004?v=4" alt="" loading="lazy">EarlGrey</a><a class="rp-same-link" href="google__ExoPlayer"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1342004?v=4" alt="" loading="lazy">ExoPlayer</a><a class="rp-same-link" href="google__WebFundamentals"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1342004?v=4" alt="" loading="lazy">WebFundamentals</a><a class="rp-same-link" href="google__adk-go"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1342004?v=4" alt="" loading="lazy">adk-go</a><a class="rp-same-link" href="google__agents-cli"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1342004?v=4" alt="" loading="lazy">agents-cli</a><a class="rp-same-link" href="google__artemis"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1342004?v=4" alt="" loading="lazy">artemis</a><a class="rp-same-link" href="google__ax"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1342004?v=4" alt="" loading="lazy">ax</a><a class="rp-same-link" href="google__bbr"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1342004?v=4" alt="" loading="lazy">bbr</a><a class="rp-same-link" href="google__bigframes"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1342004?v=4" alt="" loading="lazy">bigframes</a><a class="rp-same-link" href="google__bloaty"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1342004?v=4" alt="" loading="lazy">bloaty</a><a class="rp-same-link" href="google__cadvisor"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1342004?v=4" alt="" loading="lazy">cadvisor</a><a class="rp-same-link" href="google__clasp"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1342004?v=4" alt="" loading="lazy">clasp</a><a class="rp-same-link" href="google__clusterfuzz"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1342004?v=4" alt="" loading="lazy">clusterfuzz</a><a class="rp-same-link" href="google__elephant-goldfish-model"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1342004?v=4" alt="" loading="lazy">elephant-goldfish-model</a><a class="rp-same-link" href="google__flatbuffers"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1342004?v=4" alt="" loading="lazy">flatbuffers</a><a class="rp-same-link" href="google__flexbox-layout"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1342004?v=4" alt="" loading="lazy">flexbox-layout</a><a class="rp-same-link" href="google__flutter-mediapipe"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1342004?v=4" alt="" loading="lazy">flutter-mediapipe</a><a class="rp-same-link" href="google__fonts"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1342004?v=4" alt="" loading="lazy">fonts</a><a class="rp-same-link" href="google__gemma_pytorch"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1342004?v=4" alt="" loading="lazy">gemma_pytorch</a><a class="rp-same-link" href="google__go-cloud"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/1342004?v=4" alt="" loading="lazy">go-cloud</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/google/langextract">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.7.2</span><a class="rp-dl-a" href="https://github.com/google/langextract/releases/tag/v1.7.2">v1.7.2 ↓</a><span class="rp-dl-ver">1.7.2</span><span class="rp-dl-date">2026-11-07</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+3</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">39,310</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,751</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">167</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">330</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">222</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">21</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">LangExtract
+
+
+
+!Tests
+
+
+
+ Table of Contents
+
+- Introduction
+- Why LangExtract?
+- Quick Start
+- Installation
+- API Key Setup for Cloud Models
+- Adding Custom Model Providers
+- Using OpenAI Models
+- Using Local LLMs with Ollama
+- More Examples
+  - Romeo and Juliet Full Text Extraction
+  - Medication Extraction
+  - Radiology Report Structuring: RadExtract
+- Community Providers
+- Contributing
+- Testing
+- How to Cite
+- Disclaimer
+
+ Introduction
+
+LangExtract is a Python library that uses LLMs to extract structured information from unstructured text documents based on user-defined instructions. It processes materials such as clinical notes or reports, identifying and organizing key details while ensuring the extracted data corresponds to the source text.
+
+
+  
+    
+    
+  
+
+
+
+  Try the live demo &amp;rarr;
+  Run grounded extraction on Romeo and Juliet in your browser, no install required.
+
+
+ Why LangExtract?
+
+1.  Precise Source Grounding: Maps every extraction to its exact location in the source text, enabling visual highlighting for easy traceability and verification.
+2.  Reliable Structured Outputs: Enforces a consistent output schema based on your few-shot examples, leveraging controlled generation in supported models like Gemini to guarantee robust, structured results.
+3.  Optimized for Long Documents: Overcomes the &quot;needle-in-a-haystack&quot; challenge of large document extraction by using an optimized strategy of text chunking, parallel processing, and multiple passes for higher recall.
+4.  Interactive Visualization: Instantly generates a self-contained, interactive HTML file to visualize and review thousands of extracted entities in their original context.
+5.  Flexible LLM Support: Supports your preferred models, from cloud-based LLMs like the Google Gemini family to local open-source models via the built-in Ollama interface.
+6.  Adaptable to Any Domain: Define extraction tasks for any domain using just a few examples. LangExtract adapts to your needs without requiring any model fine-tuning.
+7.  Leverages LLM World Knowledge: Utilize precise prompt wording and few-shot examples to influence how the extraction task may utilize LLM knowledge. The accuracy of any inferred information and its adherence to the task specification are contingent upon the selected LLM, the complexity of the task, the clarity of the prompt instructions, and the nature of the prompt examples.
+
+ Quick Start
+
+ Note: Using cloud-hosted models like Gemini requires an API key. See the API Key Setup section for instructions on how to get and configure your key.
+
+Extract structured information with just a few lines of code.
+
+ 1. Define Your Extraction Task
+
+First, create a prompt that clearly describes what you want to extract. Then, provide a high-quality example to guide the model.
+
+python
+import langextract as lx
+import textwrap
+
+ 1. Define the prompt and extraction rules
+prompt = textwrap.dedent(&quot;&quot;&quot;\
+    Extract characters, emotions, and relationships in order of appearance.
+    Use ex</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/google/langextract/issues/99"><span class="rp-item-num">#99</span><span class="rp-item-title">Plugin support for custom LLM providers now available</span><span class="rp-item-extra">35 comments · 2025-08-08</span></a><a class="rp-item" href="https://github.com/google/langextract/issues/184"><span class="rp-item-num">#184</span><span class="rp-item-title">Proposal: Add Docling Integration for End-to-End Document Extraction</span><span class="rp-item-extra">10 comments · 2025-08-24</span></a><a class="rp-item" href="https://github.com/google/langextract/issues/258"><span class="rp-item-num">#258</span><span class="rp-item-title">langextract.resolver.ResolverParsingError: Failed to parse JSON content: Expecting value: line 1 column 1 (char 0)</span><span class="rp-item-extra">7 comments · 2025-09-28</span></a><a class="rp-item" href="https://github.com/google/langextract/issues/78"><span class="rp-item-num">#78</span><span class="rp-item-title">tyscript / js port</span><span class="rp-item-extra">6 comments · 2025-08-06</span></a><a class="rp-item" href="https://github.com/google/langextract/issues/20"><span class="rp-item-num">#20</span><span class="rp-item-title">Difference between Gemini Extraction</span><span class="rp-item-extra">5 comments · 2025-08-02</span></a><a class="rp-item" href="https://github.com/google/langextract/issues/125"><span class="rp-item-num">#125</span><span class="rp-item-title">Chinese Support   ?</span><span class="rp-item-extra">4 comments · 2025-08-12</span></a><a class="rp-item" href="https://github.com/google/langextract/issues/95"><span class="rp-item-num">#95</span><span class="rp-item-title">How to ensure reliability</span><span class="rp-item-extra">4 comments · 2025-08-08</span></a><a class="rp-item" href="https://github.com/google/langextract/issues/270"><span class="rp-item-num">#270</span><span class="rp-item-title">Feature Request: Support multimodal extraction (text + image)</span><span class="rp-item-extra">3 comments · 2025-10-28</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/google/langextract/discussions/559"><span class="rp-item-num">#559</span><span class="rp-item-title">RAG / embeddings, bounding boxes, output customization and non-text documents — what is supported (and what is the recommended pattern)?</span><span class="rp-item-extra">2 comments · 2026-10-06</span></a><a class="rp-item" href="https://github.com/google/langextract/discussions/438"><span class="rp-item-num">#438</span><span class="rp-item-title">your-api-key (which api key, how to ask one?)</span><span class="rp-item-extra">1 comments · 2026-04-08</span></a><a class="rp-item" href="https://github.com/google/langextract/discussions/415"><span class="rp-item-num">#415</span><span class="rp-item-title">Missing unit tests for download_text_from_url utility</span><span class="rp-item-extra">0 comments · 2026-03-17</span></a><a class="rp-item" href="https://github.com/google/langextract/discussions/373"><span class="rp-item-num">#373</span><span class="rp-item-title">Langextract vs pydantic + API calls for no char_span use case</span><span class="rp-item-extra">0 comments · 2026-02-14</span></a><a class="rp-item" href="https://github.com/google/langextract/discussions/365"><span class="rp-item-num">#365</span><span class="rp-item-title">Parallelization with Ollama.</span><span class="rp-item-extra">0 comments · 2026-02-12</span></a><a class="rp-item" href="https://github.com/google/langextract/discussions/363"><span class="rp-item-num">#363</span><span class="rp-item-title">2.5 vs 3 comparisons</span><span class="rp-item-extra">0 comments · 2026-02-12</span></a><a class="rp-item" href="https://github.com/google/langextract/discussions/348"><span class="rp-item-num">#348</span><span class="rp-item-title">VLLM Support</span><span class="rp-item-extra">1 comments · 2026-02-09</span></a><a class="rp-item" href="https://github.com/google/langextract/discussions/345"><span class="rp-item-num">#345</span><span class="rp-item-title">What is the next not reasoning model recommended?</span><span class="rp-item-extra">1 comments · 2026-02-07</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/google/langextract/releases"><b>v1.7.2</b> <span class="rp-rel-tag">v1.7.2</span> <span class="rp-item-extra">2026-11-07</span></a><pre class="rp-pre">Highlights
+
+- Support google-genai 3.0, which replaced httpx with httpx2, so Gemini retries transient network errors again (605).
+- Escape extraction data embedded in visualize() output (573) and declare a UTF-8 charset in visualization HTML (466).
+- Route gpt-6 model IDs to the OpenAI provider (599) and send max_output_tokens as max_completion_tokens to OpenAI (600).
+- Stop dict_to_annotated_document from mutating its input (577), load annotated documents saved with null extractions (584), and retokenize a Document after its text changes (583).
+- Preserve literal strings such as NA and NULL w</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/google__langextract.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

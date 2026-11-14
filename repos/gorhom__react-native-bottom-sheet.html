@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>gorhom/react-native-bottom-sheet · GitHub Trending Rank Radar</title>
+<meta name="description" content="A performant interactive bottom sheet with fully configurable options 🚀">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="react-native-bottom-sheet, gorhom, gorhom/react-native-bottom-sheet, github stars, github trending, star growth, star history, 开源项目, 星标增长, bottom-sheet, bottomsheet, sheet, react-native, reanimated, modal">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/gorhom__react-native-bottom-sheet">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="gorhom/react-native-bottom-sheet · GitHub Trending Rank Radar">
+<meta property="og:description" content="A performant interactive bottom sheet with fully configurable options 🚀">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/gorhom__react-native-bottom-sheet">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "gorhom/react-native-bottom-sheet", "codeRepository": "https://github.com/gorhom/react-native-bottom-sheet", "url": "https://zhuikan.com/repos/gorhom__react-native-bottom-sheet", "description": "A performant interactive bottom sheet with fully configurable options 🚀", "author": {"@type": "Organization", "name": "gorhom", "url": "https://github.com/gorhom"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2020-07-31", "keywords": "bottom-sheet,bottomsheet,sheet,react-native,reanimated,modal"}</script>
+</head>
+<body data-repo="gorhom/react-native-bottom-sheet" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">gorhom/react-native-bottom-sheet</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="gorhom__react-native-bottom-sheet"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/4061838?u=a9cd4e6d20a92d8baa564d796551b0f6b20a4317&amp;v=4&s=300" width="300" height="300" alt="gorhom avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">react-native-bottom-sheet</div>
+      <a class="rp-side-owner" href="https://github.com/gorhom">gorhom</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/gorhom">gorhom</a>
+        <span class="rp-sep">/</span><span class="rp-name">react-native-bottom-sheet</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">A performant interactive bottom sheet with fully configurable options 🚀</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,110</b></span><span class="rp-stat" title="forks">⑂ <b>963</b></span><span class="rp-stat" title="watchers">👁 <b>26</b></span><span class="rp-stat" title="prs">⑃ <b>563</b></span><span class="rp-stat" title="issues">● <b>1,999</b></span><span class="rp-stat" title="releases">▤ <b>128</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/bottom-sheet">bottom-sheet</a><a class="rp-topic" href="https://github.com/topics/bottomsheet">bottomsheet</a><a class="rp-topic" href="https://github.com/topics/sheet">sheet</a><a class="rp-topic" href="../tags/react-native">react-native</a><a class="rp-topic" href="https://github.com/topics/reanimated">reanimated</a><a class="rp-topic" href="https://github.com/topics/modal">modal</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2020-07-31</span><a class="rp-meta-bit rp-home" href="https://gorhom.dev/react-native-bottom-sheet/" rel="noopener">gorhom.dev/react-native-bottom-sheet/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/gorhom/react-native-bottom-sheet">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Release 5.2.14</span><a class="rp-dl-a" href="https://github.com/gorhom/react-native-bottom-sheet/releases/tag/v5.2.14">Release-5.2.14 ↓</a><span class="rp-dl-ver">5.2.14</span><span class="rp-dl-date">2026-05-09</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">9,110</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">963</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">26</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">563</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,999</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">128</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">React Native Bottom Sheet
+
+   
+    !NPM Downloads
+
+
+A performant interactive bottom sheet with fully configurable options 🚀
+
+!React Native Bottom Sheet
+
+---
+
+ Features
+- ⭐️ Support React Native Web, read more.
+- ⭐️ Dynamic Sizing, read more.
+- ⭐️ Support FlashList, read more.
+- Modal presentation view, Bottom Sheet Modal.
+- Smooth gesture interactions &amp; snapping animations.
+- Seamless keyboard handling for iOS &amp; Android.
+- Support pull to refresh for scrollables.
+- Support FlatList, SectionList, ScrollView &amp; View scrolling interactions, read more.
+- Support React Navigation Integration, read more.
+- Compatible with Reanimated v1-3.
+- Compatible with Expo.
+- Accessibility support.
+- Written in TypeScript.
+- Read more.
+
+ Getting Started
+
+Check out the documentation website.
+
+ Versioning
+
+This library been written in 3 versions of Reanimated, and kept all implementation in separate branches:
+
+- v5 | branch | changelog : written with Reanimated v3 &amp; Gesture Handler v2.
+
+- v4 (not maintained) | branch | changelog : written with Reanimated v2.
+
+- v2 (not maintained) | branch | changelog : written with Reanimated v1 &amp; compatible with Reanimated v2.
+
+ I highly recommend to use v5 which provides more stability with all latest features.
+
+ Author
+
+- Mo Gorhom
+
+ Sponsor &amp; Support
+
+To keep this library maintained and up-to-date please consider sponsoring it on GitHub. Or if you are looking for a private support or help in customizing the experience, then reach out to me on Twitter @gorhom.
+
+ License
+
+MIT
+
+---</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/gorhom/react-native-bottom-sheet/issues/641"><span class="rp-item-num">#641</span><span class="rp-item-title">[v4] Request: smoother keyboard transition when the bottom sheet is dismissed programmatically</span><span class="rp-item-extra">125 comments · 2021-09-14</span></a><a class="rp-item" href="https://github.com/gorhom/react-native-bottom-sheet/issues/1602"><span class="rp-item-num">#1602</span><span class="rp-item-title">[v4] | Keyboard causing bottom-sheet to close down completely when using enableDynamicSizing (Android only)</span><span class="rp-item-extra">78 comments · 2023-10-30</span></a><a class="rp-item" href="https://github.com/gorhom/react-native-bottom-sheet/issues/618"><span class="rp-item-num">#618</span><span class="rp-item-title">[v4] BottomSheetScrollView causes extra padding to appear</span><span class="rp-item-extra">45 comments · 2021-09-02</span></a><a class="rp-item" href="https://github.com/gorhom/react-native-bottom-sheet/issues/1934"><span class="rp-item-num">#1934</span><span class="rp-item-title">[v4][v5] [Android] | TextInput at the bottom of a scroll view falls behind keyboard</span><span class="rp-item-extra">44 comments · 2024-09-12</span></a><a class="rp-item" href="https://github.com/gorhom/react-native-bottom-sheet/issues/1983"><span class="rp-item-num">#1983</span><span class="rp-item-title">Address reanimated API misuse warnings that pop up starting with reanimated 3.16.0</span><span class="rp-item-extra">40 comments · 2024-10-18</span></a><a class="rp-item" href="https://github.com/gorhom/react-native-bottom-sheet/issues/1024"><span class="rp-item-num">#1024</span><span class="rp-item-title">Auto snap to dynamic content sections</span><span class="rp-item-extra">36 comments · 2022-07-07</span></a><a class="rp-item" href="https://github.com/gorhom/react-native-bottom-sheet/issues/436"><span class="rp-item-num">#436</span><span class="rp-item-title">dynamic snap points cause flickering of backdrop</span><span class="rp-item-extra">24 comments · 2021-05-10</span></a><a class="rp-item" href="https://github.com/gorhom/react-native-bottom-sheet/issues/1824"><span class="rp-item-num">#1824</span><span class="rp-item-title">[v4] app crash in release mode ( IOS &amp; ANDROID ) </span><span class="rp-item-extra">22 comments · 2024-05-03</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/gorhom/react-native-bottom-sheet/discussions/2769"><span class="rp-item-num">#2769</span><span class="rp-item-title">How to disable panning when deep in navigation tree</span><span class="rp-item-extra">1 comments · 2026-10-09</span></a><a class="rp-item" href="https://github.com/gorhom/react-native-bottom-sheet/discussions/2768"><span class="rp-item-num">#2768</span><span class="rp-item-title">sheet-scope: promise-based, typed, lazily-mounted sheet manager built on gorhom v5</span><span class="rp-item-extra">0 comments · 2026-10-06</span></a><a class="rp-item" href="https://github.com/gorhom/react-native-bottom-sheet/discussions/2645"><span class="rp-item-num">#2645</span><span class="rp-item-title">How can we get this library maintained again</span><span class="rp-item-extra">0 comments · 2026-04-08</span></a><a class="rp-item" href="https://github.com/gorhom/react-native-bottom-sheet/discussions/2641"><span class="rp-item-num">#2641</span><span class="rp-item-title">Reanimated v4</span><span class="rp-item-extra">3 comments · 2026-03-27</span></a><a class="rp-item" href="https://github.com/gorhom/react-native-bottom-sheet/discussions/2634"><span class="rp-item-num">#2634</span><span class="rp-item-title">How to create airbnb search result bottom-sheet effect?</span><span class="rp-item-extra">2 comments · 2026-03-16</span></a><a class="rp-item" href="https://github.com/gorhom/react-native-bottom-sheet/discussions/2617"><span class="rp-item-num">#2617</span><span class="rp-item-title">Maximum call stack size exceeded (native stack depth) RangeError: Maximum call stack size exceeded (native stack depth) at gorhom_useScrollEventsHandlersDefaultTs1</span><span class="rp-item-extra">1 comments · 2026-02-25</span></a><a class="rp-item" href="https://github.com/gorhom/react-native-bottom-sheet/discussions/2611"><span class="rp-item-num">#2611</span><span class="rp-item-title">On load not able to touch in screen.</span><span class="rp-item-extra">0 comments · 2026-01-31</span></a><a class="rp-item" href="https://github.com/gorhom/react-native-bottom-sheet/discussions/2587"><span class="rp-item-num">#2587</span><span class="rp-item-title">Can I make the bottom sheet slide in from somewhere that is not the screen edge?</span><span class="rp-item-extra">0 comments · 2025-12-10</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/gorhom/react-native-bottom-sheet/releases"><b>Release 5.2.14</b> <span class="rp-rel-tag">v5.2.14</span> <span class="rp-item-extra">2026-05-09</span></a><pre class="rp-pre">5.2.14 (2026-05-09)
+
+ 🐛 Bug Fixes
+
+ allow mount animation alongside keyboard during initial open (2661) (2665)(by @huextrat) (782e00c), closes 2655
+ read window height from a shared value on ui thread (5853f11)</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/gorhom__react-native-bottom-sheet.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

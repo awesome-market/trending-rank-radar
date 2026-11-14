@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>webadderallorg/Recordly · GitHub Trending Rank Radar</title>
+<meta name="description" content="Create polished demo videos without editing skills. Mac/Windows/Linux">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Recordly, webadderallorg, webadderallorg/Recordly, github stars, github trending, star growth, star history, 开源项目, 星标增长, electron, free, linux, macos, open-source, screen-recorder">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/webadderallorg__Recordly">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="webadderallorg/Recordly · GitHub Trending Rank Radar">
+<meta property="og:description" content="Create polished demo videos without editing skills. Mac/Windows/Linux">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/webadderallorg__Recordly">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "webadderallorg/Recordly", "codeRepository": "https://github.com/webadderallorg/Recordly", "url": "https://zhuikan.com/repos/webadderallorg__Recordly", "description": "Create polished demo videos without editing skills. Mac/Windows/Linux", "author": {"@type": "Organization", "name": "webadderallorg", "url": "https://github.com/webadderallorg"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/AGPL-3.0.html", "programmingLanguage": "TypeScript", "dateCreated": "2026-03-12", "keywords": "electron,free,linux,macos,open-source,screen-recorder,screen-studio,windows"}</script>
+</head>
+<body data-repo="webadderallorg/Recordly" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">webadderallorg/Recordly</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="webadderallorg__Recordly"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/278603407?v=4&s=300" width="300" height="300" alt="webadderallorg avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Recordly</div>
+      <a class="rp-side-owner" href="https://github.com/webadderallorg">webadderallorg</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/webadderallorg">webadderallorg</a>
+        <span class="rp-sep">/</span><span class="rp-name">Recordly</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Create polished demo videos without editing skills. Mac/Windows/Linux</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>36,654</b></span><span class="rp-stat" title="forks">⑂ <b>3,008</b></span><span class="rp-stat" title="watchers">👁 <b>77</b></span><span class="rp-stat" title="prs">⑃ <b>658</b></span><span class="rp-stat" title="issues">● <b>522</b></span><span class="rp-stat" title="releases">▤ <b>48</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/electron">electron</a><a class="rp-topic" href="../tags/free">free</a><a class="rp-topic" href="../tags/linux">linux</a><a class="rp-topic" href="../tags/macos">macos</a><a class="rp-topic" href="../tags/open-source">open-source</a><a class="rp-topic" href="https://github.com/topics/screen-recorder">screen-recorder</a><a class="rp-topic" href="https://github.com/topics/screen-studio">screen-studio</a><a class="rp-topic" href="../tags/windows">windows</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">AGPL-3.0</span><span class="rp-meta-bit">Created 2026-03-12</span><a class="rp-meta-bit rp-home" href="https://recordly.dev" rel="noopener">recordly.dev</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/webadderallorg/Recordly">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Recordly v1.4.0</span><a class="rp-dl-a" href="https://github.com/webadderallorg/Recordly/releases/tag/v1.4.0">Recordly-1.4.0 ↓</a><span class="rp-dl-ver">1.4.0</span><span class="rp-dl-date">2026-09-08</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+59</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">36,654</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">3,008</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">77</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">658</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">522</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">48</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">语言: EN | 简中
+
+
+  
+
+
+
+  
+  
+
+
+ 无需额外剪辑，也能做出精致的屏幕录制。
+Recordly 是一款开源屏幕录制器和编辑器，适合制作操作讲解、演示、产品视频等内容。  
+欢迎提交 PR。 赞助
+
+https://github.com/user-attachments/assets/9b66c71d-ac97-49ff-a0c9-63ac26edf2e4
+
+---
+
+ Recordly 是什么？
+
+Recordly 是一款桌面应用，用于录制并编辑屏幕内容，内置面向演示视频的动态呈现工具。你不需要再把原始素材交给动效设计师去补缩放、光标润色或样式化背景，Recordly 可以在一个地方免费完成整套流程。
+
+Recordly 支持：
+
+- macOS 14.0+
+- Windows 10 Build 19041+
+- Linux 现代发行版
+
+平台说明：
+
+- macOS 使用基于 ScreenCaptureKit 的原生捕获辅助程序。
+- Windows 在支持的系统版本上使用原生 Windows Graphics Capture（WGC）辅助程序，并支持原生 WASAPI 音频。
+- Linux 通过 Electron 捕获 API 录制。目前 Linux 还不支持隐藏真实光标。
+
+---
+
+ 核心功能
+
+ 自动缩放、光标润色与样式化画面
+Recordly 可以根据操作自动强调重点区域，平滑光标运动，添加动态效果，并将最终画面放进带有壁纸、纯色、渐变、模糊、留白和阴影的样式化边框中。
+
+
+  
+
+
+ 动态摄像头气泡叠加
+你可以把摄像头素材作为气泡叠加层加入画面，使用预设位置或自定义坐标摆放，支持镜像、阴影和圆角调节，也可以让它跟随缩放变化，保证动态镜头里整体视觉更协调。
+
+
+  
+
+
+ 为演示设计的时间线编辑
+使用拖拽式时间线工具处理缩放、裁剪、变速区域、注释、额外音频区域以及裁切感知编辑，并将工作保存为 .recordly 项目文件，之后随时回来继续编辑。
+
+
+  
+
+
+ 扩展与市场
+
+Recordly 拥有一个社区驱动的扩展系统。任何人都可以构建和发布扩展来为 Recordly 添加新功能，例如光标点击音效、设备边框、浏览器模拟外壳、壁纸、渲染钩子、设置面板等等。
+
+浏览并安装社区扩展：Recordly 扩展市场。
+
+---
+
+ 全部功能
+
+ 录制
+
+- 录制整个显示器或单个应用窗口
+- 录制完成后直接进入编辑器
+- 录制麦克风音频和系统音频
+- 在支持的平台上使用原生捕获后端
+- 从保存的 .recordly 项目文件继续编辑
+- 可在应用中打开已有录像或已有项目文件
+
+ 时间线与编辑
+
+- 拖拽式时间线编辑
+- 裁掉不需要的片段
+- 添加手动缩放区域
+- 根据光标活动生成自动缩放建议
+- 添加加速和减速区域
+- 添加文本、图片和图形注释
+- 在时间线上添加额外音频区域
+- 裁切录制画面
+- 保存并重新打开项目，保留编辑状态
+
+ 光标控制
+
+- 显示或隐藏渲染后的光标叠加层
+- 调整光标大小
+- 光标平滑
+- 光标运动模糊
+- 点击弹跳效果
+- 光标摆动效果
+- 光标循环模式，方便导出更自然的循环片段
+- 使用 macOS 风格的渲染光标素材
+
+ 摄像头叠加
+
+- 启用或禁用摄像头叠加素材
+- 上传、替换或移除摄像头素材
+- 镜像摄像头画面
+- 调整尺寸
+- 使用预设位置或自定义 X/Y 坐标
+- 调整边距
+- 调整圆角程度
+- 调整阴影强度
+- 可选的缩放联动摄像头缩放效果
+
+ 画面样式与背景
+
+- 内置壁纸
+- 运行时自动发现 wallpapers 目录中的壁纸
+- 上传自定义背景图片
+- 纯色背景
+- 渐变背景
+- 画面留白
+- 圆角
+- 背景模糊
+- 投影阴影
+- 最终画面的宽高比预设
+
+ 导出
+
+- MP4 导出
+- GIF 导出
+- 导出质量选择
+- GIF 帧率选择
+- GIF 循环开关
+- GIF 尺寸预设
+- 宽高比和输出尺寸控制
+- 在系统文件管理器中定位导出文件
+
+ 工作流与易用性
+
+- 可自定义键盘快捷键
+- 应用内快捷键说明
+- 在编辑器中直接打开反馈和问题链接
+- 编辑器偏好设置持久化
+- 导出后更快恢复预览
+
+---
+
+ 截图
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+---
+
+ 安装
+
+ 下载构建版本
+
+预构建发布版本请见：
+
+https://github.com/webadderallorg/Recordly/releases
+
+---
+
+ Arch Linux / Manjaro（yay）
+
+可通过 AUR 安装（recordly-bin）：
+
+bash
+yay -S recordly-bin
+
+
+PKGBUILD、桌面入口、发布同步，以及可选的本地源码打包都维护在 recordly-aur 中，因此这个仓库本身不需要承担 Arch 发布维护工作。关于维护者联系方式和软件包更新方式，请查看该仓库或 AUR 软件包页面。
+
+---
+
+ 从源码构建
+
+ 前置依赖
+
+macOS： 安装 Xcode Command Line Tools（xcode-select --install）。
+
+Linux（Ubuntu / Debian）：
+
+bash
+sudo apt install build-essential cmake libx11-dev libxtst-dev libxrandr-dev libxt-dev
+
+
+Windows： 安装 Visual Studio 2022（或 Build Tools），并勾选 C++ 工作负载和 CMake。
+
+ 步骤
+
+bash
+git clone https://github.com/webadderallorg/Recordly.git recordly
+cd recordly
+npm install
+npm run dev
+
+
+如果需要打包构建：
+
+bash
+npm run build
+
+
+也可以使用平台专用构建命令：
+
+- npm run build:mac
+- npm run build:win
+- npm run build:linux
+
+---
+
+ macOS：“App cannot be opened”
+
+本地构建的应用可能会被 macOS 隔离。
+
+可以用以下命令移除隔离标记：
+
+bash
+xattr -rd com.apple.quarantine /Applications/Recordly.app
+
+
+---
+
+ 系统要求
+
+| 平台 | 最低版本 | 说明 |
+|---|---|---|
+| macOS | macOS 14.0 (Sonoma) | 使用 ScreenCaptureKit 捕获音频和麦克风所必需。 |
+| Windows | Windows 10 20H1（Build 19041，2020 年 5 月） | 原生 Windows Graphics Capture（WGC）辅助程序及最佳光标隐藏行为所必需。 |
+| Linux | 任意现代发行版 | 通过 Electron 捕获录制。系统音频通常需要 PipeWire。 |
+
+ [!IMPORTANT]</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/webadderallorg/Recordly/issues/328"><span class="rp-item-num">#328</span><span class="rp-item-title">[Bug]: Exporting not working</span><span class="rp-item-extra">18 comments · 2026-04-23</span></a><a class="rp-item" href="https://github.com/webadderallorg/Recordly/issues/34"><span class="rp-item-num">#34</span><span class="rp-item-title">[Bug]: Cursor following not working on linux</span><span class="rp-item-extra">15 comments · 2026-03-15</span></a><a class="rp-item" href="https://github.com/webadderallorg/Recordly/issues/375"><span class="rp-item-num">#375</span><span class="rp-item-title">[Bug]: Doesnt save the entire video</span><span class="rp-item-extra">13 comments · 2026-04-28</span></a><a class="rp-item" href="https://github.com/webadderallorg/Recordly/issues/253"><span class="rp-item-num">#253</span><span class="rp-item-title">No microphone audio recorded on macOS 15 Sequoia — openscreen-screencapturekit-helper crashes</span><span class="rp-item-extra">13 comments · 2026-04-17</span></a><a class="rp-item" href="https://github.com/webadderallorg/Recordly/issues/662"><span class="rp-item-num">#662</span><span class="rp-item-title">Audio Recorded is getting echoed</span><span class="rp-item-extra">12 comments · 2026-06-06</span></a><a class="rp-item" href="https://github.com/webadderallorg/Recordly/issues/658"><span class="rp-item-num">#658</span><span class="rp-item-title">Problems with recording audio via Recordly</span><span class="rp-item-extra">12 comments · 2026-06-05</span></a><a class="rp-item" href="https://github.com/webadderallorg/Recordly/issues/331"><span class="rp-item-num">#331</span><span class="rp-item-title">Unable to capture microphone audio and system audio correctly</span><span class="rp-item-extra">12 comments · 2026-04-23</span></a><a class="rp-item" href="https://github.com/webadderallorg/Recordly/issues/220"><span class="rp-item-num">#220</span><span class="rp-item-title">[Bug]: Failed to generate auto captions</span><span class="rp-item-extra">12 comments · 2026-04-11</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/webadderallorg/Recordly/discussions/1193"><span class="rp-item-num">#1193</span><span class="rp-item-title">SuperShare: a Mac recorder built on Recordly, with share links, captions and voice cleanup</span><span class="rp-item-extra">1 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/webadderallorg/Recordly/discussions/1180"><span class="rp-item-num">#1180</span><span class="rp-item-title">Wayland auto-zoom support on Ubuntu (evdev input capture), happy to open a PR</span><span class="rp-item-extra">0 comments · 2026-11-03</span></a><a class="rp-item" href="https://github.com/webadderallorg/Recordly/discussions/1159"><span class="rp-item-num">#1159</span><span class="rp-item-title">Placing annotation over background</span><span class="rp-item-extra">1 comments · 2026-10-24</span></a><a class="rp-item" href="https://github.com/webadderallorg/Recordly/discussions/1148"><span class="rp-item-num">#1148</span><span class="rp-item-title">Marketplace offline https://marketplace.recordly.dev/extensions</span><span class="rp-item-extra">0 comments · 2026-10-18</span></a><a class="rp-item" href="https://github.com/webadderallorg/Recordly/discussions/1097"><span class="rp-item-num">#1097</span><span class="rp-item-title">Bug: Facecam did not appear in the video after a long recording session.</span><span class="rp-item-extra">0 comments · 2026-10-05</span></a><a class="rp-item" href="https://github.com/webadderallorg/Recordly/discussions/1096"><span class="rp-item-num">#1096</span><span class="rp-item-title">Support of 9 :16 ratio format</span><span class="rp-item-extra">0 comments · 2026-10-05</span></a><a class="rp-item" href="https://github.com/webadderallorg/Recordly/discussions/1093"><span class="rp-item-num">#1093</span><span class="rp-item-title">Feature proposal: scripted / AI-agent recordings that re-record themselves when the UI changes</span><span class="rp-item-extra">0 comments · 2026-10-04</span></a><a class="rp-item" href="https://github.com/webadderallorg/Recordly/discussions/1079"><span class="rp-item-num">#1079</span><span class="rp-item-title">Re-record audio within app (re-dub)</span><span class="rp-item-extra">0 comments · 2026-10-02</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/webadderallorg/Recordly/releases"><b>Recordly v1.4.0</b> <span class="rp-rel-tag">v1.4.0</span> <span class="rp-item-extra">2026-09-08</span></a><pre class="rp-pre">copious amounts of bug fixes and improvements across macOS, Windows, and Linux.
+If you are on windows/linux please install this manually as this release contains a fix for invisible update prompts (plus many other fixes)
+
+ Features
+
+- macOS window recordings no longer display a watermark in the corner
+- Window Capture is now available on Windows
+- Added an opt-in channel for automatic experimental updates
+- Windows now supports permanent install locations
+- Added the Windows 10 cursor style
+- Improved motion blur
+- Added in-app announcements and popups
+
+ Bug fixes
+
+- Fixed sligh</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/webadderallorg__Recordly.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

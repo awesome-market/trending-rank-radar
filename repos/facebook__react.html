@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>facebook/react · GitHub Trending Rank Radar</title>
+<meta name="description" content="The library for web and native user interfaces.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="react, facebook, facebook/react, github stars, github trending, star growth, star history, 开源项目, 星标增长, javascript, react, frontend, declarative, ui, library">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/facebook__react">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="facebook/react · GitHub Trending Rank Radar">
+<meta property="og:description" content="The library for web and native user interfaces.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/facebook__react">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "facebook/react", "codeRepository": "https://github.com/facebook/react", "url": "https://zhuikan.com/repos/facebook__react", "description": "The library for web and native user interfaces.", "author": {"@type": "Organization", "name": "facebook", "url": "https://github.com/facebook"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2013-05-24", "keywords": "javascript,react,frontend,declarative,ui,library"}</script>
+</head>
+<body data-repo="facebook/react" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">facebook/react</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="facebook__react"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/102812?v=4&s=300" width="300" height="300" alt="facebook avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">react</div>
+      <a class="rp-side-owner" href="https://github.com/facebook">facebook</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/facebook">facebook</a>
+        <span class="rp-sep">/</span><span class="rp-name">react</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily_rate">daily_rate <b>#171</b></a><a class="rp-board-chip" href="../?board=total">total <b>#22</b></a></div>
+    </div>
+    <p class="rp-desc">The library for web and native user interfaces.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>252,592</b></span><span class="rp-stat" title="forks">⑂ <b>52,608</b></span><span class="rp-stat" title="watchers">👁 <b>6,644</b></span><span class="rp-stat" title="prs">⑃ <b>20,713</b></span><span class="rp-stat" title="issues">● <b>14,842</b></span><span class="rp-stat" title="releases">▤ <b>137</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/javascript">javascript</a><a class="rp-topic" href="../tags/react">react</a><a class="rp-topic" href="../tags/frontend">frontend</a><a class="rp-topic" href="https://github.com/topics/declarative">declarative</a><a class="rp-topic" href="../tags/ui">ui</a><a class="rp-topic" href="../tags/library">library</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2013-05-24</span><a class="rp-meta-bit rp-home" href="https://react.dev" rel="noopener">react.dev</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="facebook__astryx"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/102812?v=4" alt="" loading="lazy">astryx</a><a class="rp-same-link" href="facebook__fresco"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/102812?v=4" alt="" loading="lazy">fresco</a><a class="rp-same-link" href="facebook__zstd"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/102812?v=4" alt="" loading="lazy">zstd</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/facebook/react">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">19.3.1 (October 14th, 2026)</span><a class="rp-dl-a" href="https://github.com/facebook/react/releases/tag/v19.3.1">19.3.1 ↓</a><span class="rp-dl-ver">19.3.1</span><span class="rp-dl-date">2026-10-14</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+39</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+700</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1,519</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">252,592</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">52,608</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">6,644</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">20,713</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">14,842</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">137</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">React &amp;middot;     
+
+React is a JavaScript library for building user interfaces.
+
+ Declarative: React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes. Declarative views make your code more predictable, simpler to understand, and easier to debug.
+ Component-Based: Build encapsulated components that manage their own state, then compose them to make complex UIs. Since component logic is written in JavaScript instead of templates, you can easily pass rich data through your app and keep the state out of the DOM.
+ Learn Once, Write Anywhere: We don&#x27;t make assumptions about the rest of your technology stack, so you can develop new features in React without rewriting existing code. React can also render on the server using Node and power mobile apps using React Native.
+
+Learn how to use React in your project.
+
+ Installation
+
+React has been designed for gradual adoption from the start, and you can use as little or as much React as you need:
+
+ Use Quick Start to get a taste of React.
+ Add React to an Existing Project to use as little or as much React as you need.
+ Create a New React App if you&#x27;re looking for a powerful JavaScript toolchain.
+
+ Documentation
+
+You can find the React documentation on the website.
+
+Check out the Getting Started page for a quick overview.
+
+The documentation is divided into several sections:
+
+ Quick Start
+ Tutorial
+ Thinking in React
+ Installation
+ Describing the UI
+ Adding Interactivity
+ Managing State
+ Advanced Guides
+ API Reference
+ Where to Get Support
+ Contributing Guide
+
+You can improve it by sending pull requests to this repository.
+
+ Examples
+
+We have several examples on the website. Here is the first one to get you started:
+
+jsx
+import { createRoot } from &#x27;react-dom/client&#x27;;
+
+function HelloMessage({ name }) {
+  return Hello {name};
+}
+
+const root = createRoot(document.getElementById(&#x27;container&#x27;));
+root.render();
+
+
+This example will render &quot;Hello Taylor&quot; into a container on the page.
+
+You&#x27;ll notice that we used an HTML-like syntax; we call it JSX. JSX is not required to use React, but it makes code more readable, and writing it feels like writing HTML.
+
+ Contributing
+
+The main purpose of this repository is to continue evolving React core, making it faster and easier to use. Development of React happens in the open on GitHub, and we are grateful to the community for contributing bugfixes and improvements. Read below to learn how you can take part in improving React.
+
+ Code of Conduct
+
+Facebook has adopted a Code of Conduct that we expect project participants to adhere to. Please read the full text so that you can understand what actions will and will not be tolerated.
+
+ Contributing Guide
+
+Read our contributing guide to learn about our development process, how to propose bugfixes and improvements, and how to build and test your changes to React.
+
+ Good First Issues
+
+To help you g</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/facebook/react/issues/13991"><span class="rp-item-num">#13991</span><span class="rp-item-title">Hooks + multiple instances of React</span><span class="rp-item-extra">515 comments · 2018-10-27</span></a><a class="rp-item" href="https://github.com/facebook/react/issues/11347"><span class="rp-item-num">#11347</span><span class="rp-item-title">RFC: Plan for custom element attributes/properties in React 19</span><span class="rp-item-extra">286 comments · 2017-10-24</span></a><a class="rp-item" href="https://github.com/facebook/react/issues/17355"><span class="rp-item-num">#17355</span><span class="rp-item-title">&quot;Should not already be working&quot; in Firefox after a breakpoint/alert</span><span class="rp-item-extra">154 comments · 2019-11-13</span></a><a class="rp-item" href="https://github.com/facebook/react/issues/1739"><span class="rp-item-num">#1739</span><span class="rp-item-title">Support asynchronous server rendering (waiting for data before rendering)</span><span class="rp-item-extra">146 comments · 2014-06-24</span></a><a class="rp-item" href="https://github.com/facebook/react/issues/11503"><span class="rp-item-num">#11503</span><span class="rp-item-title">Formalize top-level ES exports</span><span class="rp-item-extra">134 comments · 2017-11-09</span></a><a class="rp-item" href="https://github.com/facebook/react/issues/11387"><span class="rp-item-num">#11387</span><span class="rp-item-title">createPortal: support option to stop propagation of events in React tree</span><span class="rp-item-extra">129 comments · 2017-10-27</span></a><a class="rp-item" href="https://github.com/facebook/react/issues/13206"><span class="rp-item-num">#13206</span><span class="rp-item-title">[Umbrella] Releasing Suspense</span><span class="rp-item-extra">119 comments · 2018-07-13</span></a><a class="rp-item" href="https://github.com/facebook/react/issues/29034"><span class="rp-item-num">#29034</span><span class="rp-item-title">[React 19] allow opting out of automatic form reset when Form Actions are used</span><span class="rp-item-extra">105 comments · 2024-05-09</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/facebook/react/releases"><b>19.3.1 (October 14th, 2026)</b> <span class="rp-rel-tag">v19.3.1</span> <span class="rp-item-extra">2026-10-14</span></a><pre class="rp-pre">React Server Components
+
+- Improve transport protocol (37845 by @unstubbable and @eps1lon)</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (6)</h3><div class="rp-list"><a class="rp-item" href="https://news.google.com/rss/articles/CBMiigFBVV95cUxQbFNRQk8xYXl6SDZDajN3TlpSanlnR1BOYXZmSGZ0VVBSMTRweHhRN0thSkZudVc1RFVZcGlCb3l0UzljS05lS1IwWUJlQmtNZ1d6WmZSTS1NRzMtVDBlbm83amJfcnJKWXdadzdJQlpwV1NNZE5BT29TeURIV2otRlJMelk1Uk45Q0E?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">移动开发最佳Claude Skills: 2026指南附GitHub星标</span><span class="rp-item-extra">2026-05-03</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiSEFVX3lxTE1qajU1S1RBWVN3eFAtdmEwT1M3b3RRSWNCM21kVmNVYWw3UkdhV2syak1KM1lhajlwT2JVVFd6SGcyUEhMMVFfMA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">智源社区</span><span class="rp-item-title">龙虾再进化！强化飞书表格技能，25.2万星登顶超越React/Linux</span><span class="rp-item-extra">2026-03-04</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMijgFBVV95cUxONXd1NEpsQlY5SlBzY1JmbmtRSUwzZjRDWDcwRXJaYXJ5eGlGQl9CYlkwUnhtdERwSjNNdnpBeUFrUGNKSDJ2OW9KaGVLREhUbFpZUFRpWkhYVXN4alI2SU5oNTJyS1c2TXlUeWZaRU42U3EwNWswUGdiczExaXZUZkNUR05FUThTR3gyQ21n?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">新浪财经</span><span class="rp-item-title">OpenClaw 超越 Linux 和 React 登顶 GitHub 软件星标榜，开通官方微博</span><span class="rp-item-extra">2026-03-03</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiTkFVX3lxTFBzTVRZZE5pSTg0dFdEV1VjUjZHbGJVV3RORVRKVzNzVEhQV3VUWjdhRFN6Q3pfdkw3RklXa093RDlYMmdxMTlMcmZDYnpkZw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">36氪</span><span class="rp-item-title">刚刚，OpenClaw登顶GitHub软件星标历史第一，已超越Linux</span><span class="rp-item-extra">2026-03-02</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE11RXhYWXowTlV6SFZpQzl0WklDZmY4NEpFZ0RYM2NYbDNzbEE5clZKN1VoRHE3RmdpMlZYajFMVXpUZGd4UjNTQUN1dEd3RVNEd3lJ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">51CTO</span><span class="rp-item-title">Vue Skills、React Skills 正式发布，官方力荐！</span><span class="rp-item-extra">2026-01-27</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTFBBUEEyb3lNOHI4TGZCd1FnQnlzc1pKS0xUQThZR1FxU2huRnVUMmpmLWp0QU5UbFJNZ0hyX1FqM3F5VC1VcjN5WlhvdjFfcFNlQTNpZi1R?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">QQ News</span><span class="rp-item-title">开源有国界！GitHub、Node、React等公开站队，微软对俄禁售</span><span class="rp-item-extra">2022-03-05</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (18)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=20556336" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ask HN: What are the “best” codebases that you&#x27;ve encountered?</span><span class="rp-item-extra">▲ 392 · 269 comments · 2019-07-29</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=9111849" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ask HN: Is it safe to use Facebook&#x27;s open source projects?</span><span class="rp-item-extra">▲ 160 · 54 comments · 2015-02-26</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=31648690" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Tell HN: Apple rejecting cross platform apps (React Native, Flutter, Capacitor)</span><span class="rp-item-extra">▲ 90 · 12 comments · 2022-06-07</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=34421816" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ask HN: Is create-react-app no longer maintained?</span><span class="rp-item-extra">▲ 6 · 8 comments · 2023-01-18</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=9949722" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Why does React.js truf other innovations like Cycle.js?</span><span class="rp-item-extra">▲ 6 · 9 comments · 2015-07-26</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=32849255" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: Payitfwd.dev – Redirect donors to your dependencies</span><span class="rp-item-extra">▲ 2 · 0 comments · 2022-09-15</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=15098954" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ask HN: Migrating away from React after license decision?</span><span class="rp-item-extra">▲ 2 · 1 comments · 2017-08-25</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=11415712" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Ask HN: React.js and PATENTS clause. Can I please just stop worrying about this?</span><span class="rp-item-extra">▲ 2 · 5 comments · 2016-04-03</span></a><a class="rp-item" href="https://www.analyticsinsight.net/artificial-intelligence/ai-app-builders-export-code-github" target="_blank" rel="noopener"><span class="rp-news-src">Analytics Insight</span><span class="rp-item-title">7 AI App Builders That Export Code to GitHub in 2026</span><span class="rp-item-extra">2026-10-17</span></a><a class="rp-item" href="https://github.blog/ai-and-ml/github-copilot/github-for-beginners-building-a-react-app-with-github-copilot/" target="_blank" rel="noopener"><span class="rp-news-src">github</span><span class="rp-item-title">GitHub for Beginners: Building a React App with GitHub Copilot</span><span class="rp-item-extra">2025-05-12</span></a><details class="rp-news-more"><summary>8 more</summary><a class="rp-item" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxPb3h3d3p4c1d1Z0trRnY3UzZDZ3VvNXc3NzRIYktYa0prdDZQc2l1TzQ5b2w1TDlMZFFNQWtoODc5ZFVDSzQ3b0VHczNRU1V0SG9nTWVSLVdhLVhQS1FyUUNwUlRpY3EyWGhWdDQtdncwdFRtc3N3S3hoeXZrNkJoeGhVODhzejFaUzk1dHdoSXFlbVBIRENXVWZVZG9xMk13Z3hRZFNuQ0NBUQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The GitHub Blog</span><span class="rp-item-title">Improving site performance by shipping more CSS</span><span class="rp-item-extra">2026-09-25</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMic0FVX3lxTFBnRkZ5N1FnOHk2MnBaZUN6SkZMT1o0U2wxeG9kS3B6UGRvZ3ZUcEZPLTNyQkFPemw4cWhHbGRtal85RjcwTzFkckZJMTk5X0ctMlZRcHVyMlFSMWJFUGN0aHpGNGZCVEpLQkljeHU1bHhTWmc?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Hostinger</span><span class="rp-item-title">15 Most Popular GitHub Repos for Developers in 2026</span><span class="rp-item-extra">2026-09-18</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMipAFBVV95cUxNcmJDTk1LSXl1TEFzaEpiMm5rQTFWVGFuSmVxOGVsWDlkbEFZZXZ2c2FuQkdld1dGeDZKa0RuTThCS2kzUk5rUHVYcDE3MzVHT3VJM0U5RGxlZWdISjZSNFVDcy1ZWEhiaTVDQTV0dEhaLVFtWnJZN1N4bGZNV29IQ29vQklNUnNDblloQ1Z3OVFYVVhrVWlzcW5ydHkxa0ZNOWZ6eA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Step Security</span><span class="rp-item-title">7nohe/openapi-react-query-codegen Compromised Through an Exposed npm Publishing Workflow</span><span class="rp-item-extra">2026-08-28</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxQVUlhTWtON1VPMmRCbTBOSEV2eDd1T0VURi1UV05BUy0xNjhVYWlub2d0aF9zckVCVUhOYUFiSXRYMnZSMzBQSkx3S2dCR2VsYVNCWjNVd1NCX2ZvaENnOWNNUWpJaDMzZkQ4TGxVU0xfczZYOWNidjcwSndLaG85Vzl2NUF3WGlmYWFrYlRpM2pxbk85TXRldXdWbHhFMlFD?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Open Source For You</span><span class="rp-item-title">GitHub-Trending Astryx Brings AI-Ready Open Source To React</span><span class="rp-item-extra">2026-07-17</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMibEFVX3lxTE5CNFNZQWNuanp6NGZXZmlpOGVkY0FITjRPNmp3MUdCWkk5VXpNTVh5cWNyTUJwWUtGb3RzNDk3Qm0xbXJ5LTBJWTJJajhvamZybnJ3YW5GdlRxM1otTkFUVVIwRGN2RUhlZm1HYw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Hostinger</span><span class="rp-item-title">How to deploy a React app in 6 steps</span><span class="rp-item-extra">2026-07-06</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMitAFBVV95cUxNVm1kdW9PMFRRSVFhUHJjMUo1cTBYUU1INklWZFRXUzNpOEVVYk1mMW9wSmhxeHRFUzNvX3RKVDZNY0Vtd1NKNHRZZTNBNUJBVkR0MzFzZkdhb29xOGtJYkh2bDVReGI1TDZVUUFvR0JNTzRmNTVrTnFYZEpHcUoxUUJ6MmI3RW41TDVEaDFMTTE0MWVwbi1GWDZoSG5TbzBybEVpSGV4TnVNdGhhdVdycUFyWUY?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Ars Technica</span><span class="rp-item-title">AI costs how much? GitHub Copilot users react to new usage-based pricing system.</span><span class="rp-item-extra">2026-06-01</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxQb09aRjJ4WDBCSHZhRWRJdTR4b3Z4d1pLSTZ1M2ZPZ3lRNGtHNUxGRWR0S0FiVkozdVJtZGtvMGRmWk9mM2VSRFlGekJxQzJWZmU5al9CcGxKTGdfeTRGOGdpTnNkaUFHc1UtcmROTU5Rc2UwbzVfb256ak9NYUtyYXhmNXNoXzNFdVRYNFVaQ21DNC1yeWZGZHBZSUE2SmloeWZGRGpGZUlJQlk?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">The GitHub Blog</span><span class="rp-item-title">The uphill climb of making diff lines performant</span><span class="rp-item-extra">2026-04-03</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMikgFBVV95cUxPcm5zb2NJOHZjcEk5bVBXc3JTZTRGdUxZOGF3UTZyNTBTSHI2bkI3ZFUxMEQ4TUphXzdyaWJoZW5Ba0ZITWp0V1NfLWtRNTNtcFlaN1RmUlFJeHJ3WkFFczhYS0FwbU1ZZ1dCTF9HeU81Wk5Oc1RTbDYyMGJWQ1IxVHJkeTB4RHVMTzU0UTdsNkFqZw?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Yahoo Finance</span><span class="rp-item-title">OpenClawd Releases Major Platform Update as OpenClaw Surpasses React With 250,000 GitHub Stars</span><span class="rp-item-extra">2026-03-04</span></a></details></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/facebook__react.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

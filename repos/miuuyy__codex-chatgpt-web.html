@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>miuuyy/codex-chatgpt-web · GitHub Trending Rank Radar</title>
+<meta name="description" content="Use ChatGPT Web (including Pro) as a native model in Codex — with context, tools, streaming and images, without using Codex quota.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="codex-chatgpt-web, miuuyy, miuuyy/codex-chatgpt-web, github stars, github trending, star growth, star history, 开源项目, 星标增长, chatgpt, chatgpt-pro, codex, mcp, openai, playwright">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/miuuyy__codex-chatgpt-web">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="miuuyy/codex-chatgpt-web · GitHub Trending Rank Radar">
+<meta property="og:description" content="Use ChatGPT Web (including Pro) as a native model in Codex — with context, tools, streaming and images, without using Codex quota.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/miuuyy__codex-chatgpt-web">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "miuuyy/codex-chatgpt-web", "codeRepository": "https://github.com/miuuyy/codex-chatgpt-web", "url": "https://zhuikan.com/repos/miuuyy__codex-chatgpt-web", "description": "Use ChatGPT Web (including Pro) as a native model in Codex — with context, tools, streaming and images, without using Codex quota.", "author": {"@type": "Organization", "name": "miuuyy", "url": "https://github.com/miuuyy"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2026-07-26", "keywords": "chatgpt,chatgpt-pro,codex,mcp,openai,playwright,responses-api,typescript,free-ai,quickstart"}</script>
+</head>
+<body data-repo="miuuyy/codex-chatgpt-web" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">miuuyy/codex-chatgpt-web</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="miuuyy__codex-chatgpt-web"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/147659719?u=c58af2df3fd9b7c304b663b18a5d10ff54e14cb5&amp;v=4&s=300" width="300" height="300" alt="miuuyy avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">codex-chatgpt-web</div>
+      <a class="rp-side-owner" href="https://github.com/miuuyy">miuuyy</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/miuuyy">miuuyy</a>
+        <span class="rp-sep">/</span><span class="rp-name">codex-chatgpt-web</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=monthly_rate">monthly_rate <b>#178</b></a></div>
+    </div>
+    <p class="rp-desc">Use ChatGPT Web (including Pro) as a native model in Codex — with context, tools, streaming and images, without using Codex quota.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>15,719</b></span><span class="rp-stat" title="forks">⑂ <b>1,226</b></span><span class="rp-stat" title="watchers">👁 <b>44</b></span><span class="rp-stat" title="prs">⑃ <b>324</b></span><span class="rp-stat" title="issues">● <b>535</b></span><span class="rp-stat" title="releases">▤ <b>67</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/chatgpt">chatgpt</a><a class="rp-topic" href="https://github.com/topics/chatgpt-pro">chatgpt-pro</a><a class="rp-topic" href="../tags/codex">codex</a><a class="rp-topic" href="../tags/mcp">mcp</a><a class="rp-topic" href="../tags/openai">openai</a><a class="rp-topic" href="../tags/playwright">playwright</a><a class="rp-topic" href="https://github.com/topics/responses-api">responses-api</a><a class="rp-topic" href="../tags/typescript">typescript</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-07-26</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/miuuyy/codex-chatgpt-web">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v6.1.18</span><a class="rp-dl-a" href="https://github.com/miuuyy/codex-chatgpt-web/releases/tag/v6.1.18">v6.1.18 ↓</a><span class="rp-dl-ver">6.1.18</span><span class="rp-dl-date">2026-11-08</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+23</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+243</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1,906</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">15,719</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,226</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">44</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">324</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">535</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">67</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">&amp;nbsp;
+  &amp;nbsp;
+  
+
+
+
+  macOS Intel · 所有版本
+
+
+
+  English · 简体中文 · 日本語 · 한국어
+
+
+
+  
+
+
+
+  开始使用 · 更新内容 · 架构 · 故障排除
+
+
+在 Codex 原生模型选择器中使用账户可用的 ChatGPT 网页版模型，包括 Pro。消息通过已登录的 ChatGPT 网页会话发送，并受该账户适用的使用限制约束。保留原有的界面、任务、图片和流式输出。
+
+完整 harness 模式通过 MCP 将 ChatGPT 连接到当前任务的文件、终端、工具和审批流程。对话始终关联到你的 Codex 任务，上下文增长时也能继续工作。
+
+
+
+ 开始使用
+
+可用模型： Free/Go → Luna / Think；具有推理控制选项的账户 → Instant–High，并按实际可用状态提供 Extra High 和 Pro。启动器会自动检测账户可用的模型。
+
+1. 安装启动器：点击上方对应系统的下载按钮。
+2. 登录 ChatGPT：在内置浏览器中登录并运行浏览器冒烟测试。
+3. 安装模型：重启一次 Codex。在自动模式下，选择名称以 (Web) 结尾的模型。Pro 版本使用独立条目，Sol 推理等级通过 Effort 选择。Zero Risk 保留专用条目。
+4. 需要使用工具编程时：打开启动器中的 MCP，完成下方的完整 harness 设置。
+
+应用已包含浏览器和运行时，无需另外安装 Chrome、Node 或 Bun。
+
+
+命令行安装、更新与修复
+
+更新前请退出启动器。以下安装脚本会选择正确的平台和架构、验证发布的校验和，并保留 ChatGPT 配置文件和启动器设置。
+
+macOS / Linux
+
+bash
+curl -fsSL https://github.com/miuuyy/codex-chatgpt-web/releases/latest/download/install-launcher.sh | sh
+
+
+Windows PowerShell
+
+powershell
+irm https://github.com/miuuyy/codex-chatgpt-web/releases/latest/download/install-launcher.ps1 | iex
+
+
+
+
+
+模型、模式与 MCP 设置
+
+
+
+自动模式在账户没有推理选择器时提供 Luna/Think；否则提供 Instant–High，并分别按账户实际可用状态显示 Extra High 和 Pro。
+
+| 模式 | 发送消息 | 本地 Codex 工具 |
+| --- | --- | --- |
+| Browser-only | 自动 | 不支持 |
+| Full harness (With Automation) | 自动 | 支持，通过 MCP |
+| Zero Risk | 手动粘贴并发送 | 支持，通过独立 MCP 连接器 |
+
+Zero Risk 不读取或操作 ChatGPT 页面。请自行选择模型和 Codex Zero Risk 连接器，粘贴并发送准备好的提示词，再在启动器中确认 Sent。名称以 (Web) 结尾的自动模型会在 Codex 中提供其支持的 Effort 选项。Instant 和各个 Pro 版本使用独立条目，以保留各自的上下文额度；旧任务中保存的模型条目仍使用原来的固定模式。
+
+
+
+ 完整 harness
+
+完整模式通过官方
+OpenAI tunnel-client
+将 ChatGPT 的工具调用连接回当前 Codex 任务。该隧道为出站连接：不会暴露公网 IP、开放入站端口，
+也不需要配置路由器端口转发。
+
+ 限制
+
+ 有关 GPT-5.6 Sol Pro 和 GPT-6 Astra 当前的 ChatGPT 消息额度，请参阅
+ Limits。Token 上下文上限取决于
+ 账户类型和所选 effort。Plus 的 Medium/High 使用实测的 90,000-token 窗口；启用实验性的
+ 3× context 后最高为 270,000 tokens，并且全程支持原生 Codex compaction。
+
+1. 完成启动器中的必需设置。
+2. 在启动器中打开 MCP。请在将使用 ChatGPT 连接器的同一个 OpenAI 账户中创建 Tunnel
+   和普通 API 密钥；创建密钥本身免费，也不会消耗模型 API 额度。
+3. 粘贴 Tunnel ID 和 API 密钥，然后点击 连接 Harness。
+4. 在 ChatGPT 设置中启用 开发者模式。新建连接器时选择 Tunnel，选择刚创建的
+   Tunnel，将 身份验证 设为 无，并将名称准确设置为 Codex Native2。
+5. 在 Codex Native2 的 权限 中选择 允许所有操作；允许低风险操作 会在命令和
+   补丁到达本地运行时前将其拦截。外层 Codex harness 仍会执行沙箱和审批规则。
+6. 运行 验证运行时，确认 Codex Native2 已连接并可用。
+
+写入/修改操作还需要 ChatGPT 工作区及其管理员政策允许。请参阅
+开发者模式和 MCP 应用。
+除非显式启用 --auto-approve-tool-calls，否则意外的审批提示会直接失败；该选项只会点击
+Allow once，绝不会授予永久权限。
+
+
+
+
+诊断与子代理
+
+
+
+使用 活动 页面查看安全的本地诊断，并通过 设置 → 运行诊断 执行端到端健康检查。设置页还可
+取消保留的浏览器任务，或在卸载前移除 Codex 集成。仅在需要为每个浏览器检查点保存截图时设置
+CODEX_CHATGPT_WEB_BROWSER_DIAGNOSTICS=1。
+
+新安装默认使用 Compatibility V1 以支持跨后端 subagent。Native 会保留 Codex 自身的
+功能设置，并启用明文 Web-to-Web V2 委派。切换协议后，请重启 Codex 并创建新任务：
+
+bash
+codex-chatgpt-web subagents status
+codex-chatgpt-web subagents compatibility-v1
+codex-chatgpt-web subagents native
+
+
+
+
+
+系统要求与安全
+
+
+
+- 这是非官方浏览器自动化，并非 OpenAI API。ChatGPT UI 变更可能破坏选择器；发生变化时会明确
+  失败，而不是静默切换模型或传输方式。
+- 浏览器状态是敏感的登录凭据，loopback 监听器也可被同一本地用户运行的进程访问。切勿共享
+  启动器 profile，并仅在可信工作站上使用。
+- 发布包目前支持 macOS 13+（arm64/x64）、Windows x64 和 Linux x64。运行时、测试和打包会在
+  CI 中对三种系统进行检查；依赖账户的浏览器与 MCP 流程使用单独的
+  发布验证。
+- 构建目前尚未进行平台签名，因此 Gatekeeper 或 SmartS</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/miuuyy/codex-chatgpt-web/issues/622"><span class="rp-item-num">#622</span><span class="rp-item-title">[Tracking] ChatGPT safety blocks and tool/token failures</span><span class="rp-item-extra">32 comments · 2026-09-21</span></a><a class="rp-item" href="https://github.com/miuuyy/codex-chatgpt-web/issues/983"><span class="rp-item-num">#983</span><span class="rp-item-title">Free (Luna-only) account: setup --refresh-account-capabilities fails on effort slider verification</span><span class="rp-item-extra">5 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/miuuyy/codex-chatgpt-web/issues/977"><span class="rp-item-num">#977</span><span class="rp-item-title">[Bug] 6.1.17/6.1.18: ChatGPT now restores saved composer drafts; Bigger Context stages fail &quot;composer did not preserve the complete prompt&quot; (commonPrefixChars=0)</span><span class="rp-item-extra">4 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/miuuyy/codex-chatgpt-web/issues/975"><span class="rp-item-num">#975</span><span class="rp-item-title">[Bug] It returns to the Sign In section</span><span class="rp-item-extra">4 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/miuuyy/codex-chatgpt-web/issues/974"><span class="rp-item-num">#974</span><span class="rp-item-title">[Bug] stream disconnected before completion: ChatGPT final DOM could not be aligned with text already streamed to Codex</span><span class="rp-item-extra">4 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/miuuyy/codex-chatgpt-web/issues/976"><span class="rp-item-num">#976</span><span class="rp-item-title">[Bug] v6.1.18 + Codex Desktop 26.1103: native gpt-6-astra turns fail with &quot;Function &#x27;web.run&#x27; is reserved...&quot; (persisted additional_tools; adaptive retry works)</span><span class="rp-item-extra">3 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/miuuyy/codex-chatgpt-web/issues/982"><span class="rp-item-num">#982</span><span class="rp-item-title">[Bug] 6.1.18 rejects same-turn midnight delta when &lt;subagents&gt; lists plain lines (compaction continuation)</span><span class="rp-item-extra">2 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/miuuyy/codex-chatgpt-web/issues/986"><span class="rp-item-num">#986</span><span class="rp-item-title">[Windows] v6.1.18 fresh Web turns fail with missing trusted cwd after toggling Bigger Context</span><span class="rp-item-extra">1 comments · 2026-11-11</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/miuuyy/codex-chatgpt-web/discussions/990"><span class="rp-item-num">#990</span><span class="rp-item-title">Local execution policy bypass</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/miuuyy/codex-chatgpt-web/discussions/989"><span class="rp-item-num">#989</span><span class="rp-item-title">Add option to send attachments in base64 strings</span><span class="rp-item-extra">0 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/miuuyy/codex-chatgpt-web/discussions/988"><span class="rp-item-num">#988</span><span class="rp-item-title">Помогите не могу настроить</span><span class="rp-item-extra">1 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/miuuyy/codex-chatgpt-web/discussions/980"><span class="rp-item-num">#980</span><span class="rp-item-title">Add Copilot</span><span class="rp-item-extra">0 comments · 2026-11-10</span></a><a class="rp-item" href="https://github.com/miuuyy/codex-chatgpt-web/discussions/972"><span class="rp-item-num">#972</span><span class="rp-item-title">Can&#x27;t add custom MCP server with new account Chat GPT Plus (cre: 4/11/26)</span><span class="rp-item-extra">2 comments · 2026-11-06</span></a><a class="rp-item" href="https://github.com/miuuyy/codex-chatgpt-web/discussions/967"><span class="rp-item-num">#967</span><span class="rp-item-title">Unlimited session</span><span class="rp-item-extra">0 comments · 2026-11-05</span></a><a class="rp-item" href="https://github.com/miuuyy/codex-chatgpt-web/discussions/966"><span class="rp-item-num">#966</span><span class="rp-item-title">Prepare for R.I.P</span><span class="rp-item-extra">1 comments · 2026-11-05</span></a><a class="rp-item" href="https://github.com/miuuyy/codex-chatgpt-web/discussions/962"><span class="rp-item-num">#962</span><span class="rp-item-title">Launcher hardening: a supported Electron line, and the sandbox for managed-chrome</span><span class="rp-item-extra">0 comments · 2026-11-04</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/miuuyy/codex-chatgpt-web/releases"><b>v6.1.18</b> <span class="rp-rel-tag">v6.1.18</span> <span class="rp-item-extra">2026-11-08</span></a><pre class="rp-pre">V6 brings ChatGPT Web models into Codex&#x27;s model and Effort selectors, optional Pro usage estimates, Bigger Context, and control over browser conversations. 6.1.18 improves long-task continuation, preserves goal changes, and fixes macOS passkey-session import.
+
+ [!IMPORTANT]
+ If Codex shows only Luna (Web) despite a paid ChatGPT account, install this update, open Setup → Install into Codex → Reinstall, and fully restart Codex. The update preserves your launcher settings and ChatGPT profile.
+
+ Changes in 6.1.18
+
+- Current workspace folders survive partial updates and compaction. The bridge check</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (2)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/lxx309707872/article/details/169646906" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">ChatGPT的用不完的WEB额度，终于能喂给 Codex 了</span><span class="rp-item-extra">2026-10-31</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE5rSTFiSmktS0ZNbFE3SFJBX3A0anpyeGhrVjFjT1Y0QVp0bG9nZ1BrYnY1YzlGdlM4bzBtTVBLaGFHVkNXMDVISjNTb255TTlUa3VKbzVn?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">QQ News</span><span class="rp-item-title">codex神级skills，每月帮我省40%token</span><span class="rp-item-extra">2026-10-07</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (1)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=49693150" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Open-source project: Use ChatGPT Web models directly in Codex</span><span class="rp-item-extra">▲ 1 · 0 comments · 2026-09-14</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/miuuyy__codex-chatgpt-web.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

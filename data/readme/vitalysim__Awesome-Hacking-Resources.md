@@ -1,0 +1,502 @@
+<h1 align="center">
+ 	<br>
+ 	  <img width="200" src="https://github.com/sindresorhus/awesome/raw/main/media/logo.svg" alt="awesome">
+ 	<br>
+</h1>
+
+<div align="center">
+
+<h1>Awesome Hacking Resources</h1>
+
+<p><strong>A curated collection of hacking, penetration testing, and AI red-teaming resources to make you better.</strong></p>
+
+<p>
+  <a href="https://awesome.re"><img src="https://img.shields.io/badge/awesome-yes-orange?style=flat-square" alt="Awesome"></a>
+  <img src="https://img.shields.io/github/stars/vitalysim/Awesome-Hacking-Resources?style=flat-square" alt="Stars">
+  <img src="https://img.shields.io/github/forks/vitalysim/Awesome-Hacking-Resources?style=flat-square" alt="Forks">
+  <img src="https://img.shields.io/github/contributors/vitalysim/Awesome-Hacking-Resources?style=flat-square" alt="Contributors">
+  <img src="https://img.shields.io/github/last-commit/vitalysim/Awesome-Hacking-Resources?style=flat-square" alt="Last commit">
+  <img src="https://img.shields.io/github/license/vitalysim/Awesome-Hacking-Resources?style=flat-square" alt="License">
+  <a href="contributing.md"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square" alt="PRs welcome"></a>
+</p>
+
+<p>Let's make it the biggest resource repository for our community.<br>
+You are welcome to fork and <a href="contributing.md">contribute</a>.</p>
+
+</div>
+
+We also maintain a companion [tools](tools.md) list — contributions welcome there too.
+
+## Table of Contents
+ * [📚 Learning the Skills](#-learning-the-skills)
+ * [🎥 YouTube Channels](#-youtube-channels)
+   * [Companies](#Companies)
+   * [Conferences](#Conferences)
+   * [NEWS](#NEWS)
+ * [🎯 Sharpening Your Skills](#-sharpening-your-skills)
+ * [🧬 Reverse Engineering, Buffer Overflow and Exploit Development](#-reverse-engineering-buffer-overflow-and-exploit-development)
+ * [⬆️ Privilege Escalation](#️-privilege-escalation)
+ * [🕵️ OSINT](#️-osint)
+ * [🛰️ Network Scanning / Reconnaissance](#️-network-scanning--reconnaissance)
+ * [🦠 Malware Analysis](#-malware-analysis)
+ * [🤖 AI Security / AI Red Teaming](#-ai-security--ai-red-teaming)
+ * [🌐 Vulnerable Web Application](#-vulnerable-web-application)
+ * [🖥️ Vulnerable OS](#️-vulnerable-os)
+ * [💥 Exploits](#-exploits)
+ * [💬 Forums](#-forums)
+ * [🎬 Archived Security Conference Videos](#-archived-security-conference-videos)
+ * [👥 Online Communities](#-online-communities)
+ * [📰 Online News Sources](#-online-news-sources)
+ * [🐧 Linux Penetration Testing OS](#-linux-penetration-testing-os)
+
+### 📚 Learning the Skills
+Name  |  Description
+----  |  ----
+[CS 642: Intro to Computer Security](http://pages.cs.wisc.edu/~ace/cs642-spring-2016.html) | academic content, full semester course, includes assigned readings, homework and github refs for exploit examples. NO VIDEO LECTURES.
+[CyberSec WTF](https://cybersecurity.wtf) | CyberSec WTF Web Hacking Challenges from Bounty write-ups
+[Cybrary](https://www.cybrary.it/) | coursera style website, lots of user-contributed content, account required, content can be filtered by experience level
+[Free Cyber Security Training](https://www.samsclass.info/) | Academic content, 8 full courses with videos from a quirky instructor sam, links to research, defcon materials and other recommended training/learning
+[Hak5](https://www.hak5.org/) | podcast-style videos covering various topics, has a forum, "metasploit-minute" video series could be useful
+[Hopper's Roppers Security Training](https://www.hoppersroppers.org/training.html) | Four free self-paced courses on Computing Fundamentals, Security, Capture the Flags, and a Practical Skills Bootcamp that help beginners build a strong base of foundational knowledge. Designed to prepare for students for whatever they need to learn next.
+[Mind Maps](http://www.amanhardikar.com/mindmaps.html) |   Information Security related Mind Maps
+[MIT OCW 6.858 Computer Systems Security](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-858-computer-systems-security-fall-2014/) | academic content, well organized, full-semester course, includes assigned readings, lectures, videos, required lab files.
+[OWASP top 10 web security risks](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project) | free courseware, requires account
+[Seed Labs](http://www.cis.syr.edu/~wedu/seed/labs.html) | academic content, well organized, featuring lab videos, tasks, needed code files, and recommended readings
+[TryHackMe](https://tryhackme.com/) | Designed prebuilt challenges which include virtual machines (VM) hosted in the cloud ready to be deployed
+
+
+<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+
+### 🎥 YouTube Channels
+Name  |  Description
+----  |  ----
+[0patch by ACROS Security](https://www.youtube.com/channel/UCwlGrzF4on-bjiBhD8lO3QA) | few videos, very short, specific to 0patch
+[BlackHat](https://www.youtube.com/channel/UCJ6q9Ie29ajGqKApbLqfBOg) | features talks from the BlackHat conferences around the world
+[Christiaan008](https://www.youtube.com/channel/UCEPzS1rYsrkqzSLNp76nrcg) | hosts a variety of videos on various security topics, disorganized
+| <td colspan="2" > **Companies** </td>
+[Detectify](https://www.youtube.com/channel/UCm6N84sAaQ-BiNdCaaLT4qg) | very short videos, aimed at showing how to use Detictify scanner
+[Hak5](https://www.youtube.com/user/Hak5Darren) | see Hak5 above
+[Kaspersky Lab](https://www.youtube.com/channel/UCGhEv7BFBWdo0k4UXTm2eZg) | lots of Kaspersky promos, some hidden cybersecurity gems
+[Metasploit](https://www.youtube.com/channel/UCx4d2aRIfxfEUdS_5YIYKPg) | collection of medium length metasploit demos, ~25minutes each, instructional
+[ntop](https://www.youtube.com/channel/UCUYWuYlYKD5Yq5qBz0AIXJw/feed) | network monitoring, packet analysis, instructional
+[nVisium](https://www.youtube.com/channel/UCTE8R-Otq_kVTo08eLsfeyg) | Some nVisum promos, a handful of instructional series on Rails vulns and web hacking
+[OpenNSM](https://www.youtube.com/user/OpenNSM/feed) | network analysis, lots of TCPDUMP videos, instructional,
+[OWASP](https://www.youtube.com/user/OWASPGLOBAL) | see OWASP above
+[Rapid7](https://www.youtube.com/channel/UCnctXOUIeRFu1BR5O0W5e9w) | brief videos, promotional/instructional, ~ 5 minutes
+[Securelist](https://www.youtube.com/user/Securelist/featured) | brief videos, interviews discussing various cyber security topics
+[Segment Security](https://www.youtube.com/channel/UCMCI9TE3-PZ7CgKk7X6Qd_w/featured) | promo videos, non-instructional
+[SocialEngineerOrg](https://www.youtube.com/channel/UCC1vbVVbYdNe-OZRldj-U6g) | podcast-style, instructional, lengthy content ~1 hr each
+[Sonatype](https://www.youtube.com/user/sonatype/featured) | lots of random videos, a good cluster of DevOps related content, large range of lengths, disorganized
+[SophosLabs](https://www.youtube.com/user/SophosLabs/featured) | lots of brief, news-style content, "7 Deadly IT Sins" segment is of note
+[Sourcefire](https://www.youtube.com/user/SourcefireInc/featured) | lots of brief videos covering topics like botnets, DDoS ~5 minutes each
+[Station X](https://www.youtube.com/channel/UC-vWmE-BHcUrYW5zwDijL1g) | handful of brief videos, disorganized, unscheduled content updates
+[Synack](https://www.youtube.com/channel/UCRH0mvESjZ7eKY1LJZDPIbw/featured) | random, news-style videos, disorganized, non-instructional
+[TippingPoint Zero Day Initiative](https://www.youtube.com/channel/UChbH7B5YhXANmlMYJRHpw0g) | very brief videos ~30 sec, somewhat instructional
+[Tripwire, Inc.](https://www.youtube.com/@Tripwire) | some tripwire demos, and random news-style videos, non-instructional
+[Vincent Yiu](https://www.youtube.com/channel/UCFVI3_M1zqFzEok2sTeEP8w/featured) | handful of videos from a single hacker, instructional
+| <td colspan="2"> **Conferences** </td>
+[44contv](https://www.youtube.com/user/44contv) | in
+[MIT OCW 6.858 Computer Systems Security](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science) |Information security con based in London, lengthy instructional videos
+[BruCON Security Conference](https://www.youtube.com/channel/UCqwMU1l90lf9BLersW6eAHw) | security and hacker conference based in b\Belgium, lots of lengthy instructinoal videos
+[BSides Manchester](https://www.youtube.com/channel/UC1mLiimOTqZFK98VwM8Ke4w) | security and hacker con based in Mancheseter, lots of lengthy videos
+[BSidesAugusta](https://www.youtube.com/channel/UC85CvsnrVlD_44eEgzb2OfA) | security con based in Augusta, Georgia, lots of lengthy instructional videos
+[CarolinaCon](https://www.youtube.com/channel/UCTY3Dpz68CyrjwRzqkE4sFw) | security con based in North Carolina, associated with various 2600 chapters, lots of lengthy instructional content
+[Cort Johnson](https://www.youtube.com/channel/UCV9r-yMeARWVCJEesim25Ag) | a handful of lengthy con-style talks from Hack Secure Opensec 2017
+[DevSecCon](https://www.youtube.com/channel/UCgxhfP2Hi8MQYz6ZkwpLA0A) | lenghty con videos covering DevSecOps, making software more secure
+[Garage4Hackers - Information Security](https://www.youtube.com/channel/UCDqagqREZlmJitWco-yPtvw/feed) | a handful of lengthy videos, About section lacks description
+[HACKADAY](https://www.youtube.com/channel/UCnv0gfLQFNGPJ5MHSGuIAkw) | lots of random tech content, not strictly infosec, some instructional
+[Hack In The Box Security Conference](https://www.youtube.com/channel/UC0BJVNTIEbG8CLG-xVVWJnA) | lengthy con-style instructional talks from an international security con
+[Hack in Paris](https://www.youtube.com/channel/UC7xJU9_oqw-vS6OJExS-2iA) | security con based in paris, features lots of instructional talks, slides can be difficult to see.
+[Hacklu](https://www.youtube.com/channel/UCI6B0zYvK-7FdM0Vgh3v3Tg/feed) | lots of lengthy con-style instructional videos
+[Hacktivity](https://www.youtube.com/user/hacktivity/feed) | lots of lengthy con-style instructional videos from a con in central/eastern europe
+[Hardwear.io](https://www.youtube.com/channel/UChwYb9xc9tZXquQxu4G0l_g/featured) | handful of lengthy con-style video, emphasis on hardware hacks
+[IEEE Symposium on Security and Privacy](https://www.youtube.com/channel/UC6pXMS7qre9GZW7A7FVM90Q) | content from the symposium; IEEE is a professional association based in the us, they also publish various journals
+[LASCON](https://www.youtube.com/channel/UCDHsOiMPS-SLppAOAJRD37Q) | lengthy con-style talks from an OWASP con held in Austin, TX
+[leHACK](https://www.youtube.com/channel/UCSxk_CUfES4ly5Sspc0Vorw) | leHACK is the oldest ( 2003 ), leading, security conference in Paris, FR
+[Marcus Niemietz](https://www.youtube.com/channel/UCtThfJl65L04ukWp0XZi3yg/videos) | lots of instructional content, associated with HACKPRA, an offensive security course from an institute in Germany
+[Media.ccc.de](https://www.youtube.com/channel/UC2TXq_t06Hjdr2g_KdKpHQg) | The real official channel of the chaos computer club, operated by the CCC VOC - tons of lengthy con-style vids
+[NorthSec](https://www.youtube.com/channel/UCqVhMzTdQK5VAosAGkMtpJw) | lengthy con-style talks from an applied security conference in Canada
+[Pancake Nopcode](https://www.youtube.com/channel/UC3G6k7XfTgcWD2PJR8qJSkQ) | channel of Radare2 whiz Sergi "pancake" Alvarez, Reverse Engineering Content
+[Psiinon](https://www.youtube.com/channel/UC-3qyzm4f29C12KGp3-12bQ) | medium length instructional videos, for the OWASP Zed Attack Proxy
+[SJSU Infosec](https://www.youtube.com/channel/UCDNzNvZlYK8jZLsUbdiGrsQ/videos) | handful of lengthy instructional videos from San Jose State university Infosec
+[Secappdev.org](https://www.youtube.com/channel/UCSii2fuiLLlGqaR6sR_y0rA) | tons of lengthy instructional lectures on Secure App Development
+[Security Fest](https://www.youtube.com/channel/UCByLDp7r7gHGoO7yYMYFeWQ) | medium length con-style talks from a security festival in Sweden
+[SecurityTubeCons](https://www.youtube.com/channel/UC2wNN-Zqiq4J1PLPnyMBWUg) | an assortment of con-style talks from various cons including BlackHat and Shmoocon
+[ToorCon](https://www.youtube.com/channel/UCnzjmL0xkTBYwFZD7agHGWw) | handful of medium length con videos from con based in San Diego, CA
+[USENIX Enigma Conference](https://www.youtube.com/channel/UCIdV7bE97mSPTH1mOi_yUrw/feed) | medium length "round table discussion with leading experts", content starts in 2016
+[ZeroNights](https://www.youtube.com/channel/UCtQ0fPmP4fCGBkYWMxnjh6A) | a lot of con-style talks from international conference ZeroNights
+| <td colspan = "2"> **News** </td>
+[0x41414141](https://www.youtube.com/channel/UCPqes566OZ3G_fjxL6BngRQ) | Channel with couple challenges, well explained
+[Adrian Crenshaw](https://www.youtube.com/user/irongeek) | lots of lengthy con-style talks
+[Corey Nachreiner](https://www.youtube.com/channel/UC7dUL0FbVPGqzdb2HtWw3Xg) | security newsbites, 2.7K subscribers, 2-3 videos a week, no set schedule
+[BalCCon - Balkan Computer Congress](https://www.youtube.com/channel/UCoHypmu8rxlB5Axh5JxFZsA) | Long con-style talks from the Balkan Computer Congress, doesn't update regularly
+[danooct1](https://www.youtube.com/channel/UCqbkm47qBxDj-P3lI9voIAw) | lots of brief screenshot, how-to vids regarding malware, regular content updates, 186K followerss
+[DedSec](https://www.youtube.com/channel/UCx34ZZW2KgezfUPPeL6m8Dw) | lots of brief screenshot how-to vids based in Kali, no recent posts.
+[DEFCON Conference](https://www.youtube.com/channel/UC6Om9kAkl32dWlDSNlDS9Iw) | lots of lengthy con-style vids from the iconical DEFCON
+[DemmSec](https://www.youtube.com/channel/UCJItQmwUrcW4VdUqWaRUNIg) | lots of pen testing vids, somewhat irregular uploads, 44K followers
+[Derek Rook - CTF/Boot2root/wargames Walkthrough](https://www.youtube.com/channel/UCMACXuWd2w6_IEGog744UaA) | lots of lengthy screenshot instructional vids, with
+[Don Does 30](https://www.youtube.com/channel/UCarxjDjSYsIf50Jm73V1D7g) | amateur pen-tester posting lots of brief screenshot vids regularly, 9K Followers
+[Error 404 Cyber News](https://www.youtube.com/channel/UC4HcNHFKshqj-aeyi6imW7Q) | short screen-shot videos with loud metal, no dialog, bi-weekly
+[Geeks Fort - KIF](https://www.youtube.com/channel/UC09NdTL2hkThGLSab8chJMw) | lots of brief screenshot vids, no recent posts
+[GynvaelEN](https://www.youtube.com/channel/UCCkVMojdBWS-JtH7TliWkVg) | Security streams from Google Researcher. Mainly about CTFs, computer security, programing and similar things.
+[HackerSploit](https://www.youtube.com/channel/UC0ZTPkdxlAKf-V33tqXwi3Q) | regular posts, medium length screenshot vids, with dialog
+[HACKING TUTORIALS](https://www.youtube.com/channel/UCbsn2kQwNxcIzHwbdDjzehA) | handful of brief screenshot vids, no recent posts.
+[iExplo1t](https://www.youtube.com/channel/UCx0HClQ_cv0sLNOVhoO2nxg/videos) | lots of screenshot vids aimed at novices, 5.7K Followers, no recent posts
+[JackkTutorials](https://www.youtube.com/channel/UC64x_rKHxY113KMWmprLBPA) | lots of medium length instructional vids with some AskMe vids from the youtuber
+[John Hammond](https://www.youtube.com/user/RootOfTheNull) | Solves CTF problems. contains penTesting tips and tricks
+[LionSec](https://www.youtube.com/channel/UCCQLBOt_hbGE-b9I696VRow) | lots of brief screenshot instructional vids, no dialog
+[LiveOverflow](https://www.youtube.com/channel/UClcE-kVhqyiHCcjYwcpfj9w) | Lots of brief-to-medium instructional vids, covering things like buffer overflows and exploit writing, regular posts.
+[Metasploitation](https://www.youtube.com/channel/UC9Qa_gXarSmObPX3ooIQZrg) | lots of screenshot vids, little to no dialogue, all about using Metasploit, no recent vids.
+[NetSecNow](https://www.youtube.com/channel/UC6J_GnSAi7F2hY4RmnMcWJw) | channel of pentesteruniversity.org, seems to post once a month, screenshot instructional vids
+[Open SecurityTraining](https://www.youtube.com/channel/UCthV50MozQIfawL9a_g5rdg) | lots of lengthy lecture-style vids, no recent posts, but quality info.
+[Pentester Academy TV](https://www.youtube.com/channel/UChjC1q6Ami7W0E71TzPZELA) | lots of brief videos, very regular posting, up to +8 a week
+[Penetration Testing in Linux](https://www.youtube.com/channel/UC286ntgASMskhPIJQebJVvA) | DELETE
+[rwbnetsec](https://www.youtube.com/channel/UCAJ8Clc3188ek9T_5XTVzZQ) | lots of medium length instructional videos covering tools from Kali 2.0, no recent posts.
+[Samy Kamkar's Applied Hacking](https://www.youtube.com/user/s4myk) | brief to medium length instructional vids from the creator of PoisonTap for the Raspberry Pi Zero, no recent content, last updated in 2016
+[SecureNinjaTV](https://www.youtube.com/channel/UCNxfV4yR0nIlhFmfwcdf3BQ) | brief news bites, irregular posting, 18K followers
+[Security Weekly](https://www.youtube.com/channel/UCg--XBjJ50a9tUhTKXVPiqg) | regular updates, lengthy podcast-style interviews with industry pros
+[Seytonic](https://www.youtube.com/channel/UCW6xlqxSY3gGur4PkGPEUeA) | variety of DIY hacking tutorials, hardware hacks, regular updates
+[Shozab Haxor](https://www.youtube.com/channel/UCBwub2kRoercWQJ2mw82h3A) | lots of screenshot style instructional vids, regular updates, windows CLI tutorial
+[SSTec Tutorials](https://www.youtube.com/channel/UCHvUTfxL_9bNQgqzekPWHtg) | lots of brief screenshot vids, regular updates
+[Tradecraft Security Weekly](https://wiki.securityweekly.com/Tradecraft_Security_Weekly) | Want to learn about all of the latest security tools and techniques?
+[Troy Hunt](https://www.youtube.com/channel/UCD6MWz4A61JaeGrvyoYl-rQ) | lone youtuber, medium length news videos, 16K followers, regular content
+[Waleed Jutt](https://www.youtube.com/channel/UCeN7cOELsyMHrzfMsJUgv3Q) | lots of brief screenshot vids covering web security and game programming
+[webpwnized](https://www.youtube.com/channel/UCPeJcqbi8v46Adk59plaaXg) | lots of brief screenshot vids, some CTF walkthroughs
+[Zer0Mem0ry](https://www.youtube.com/channel/UCDk155eaoariJF2Dn2j5WKA) | lots of brief c++ security videos, programming intensive
+[LionSec](https://www.youtube.com/channel/UCCQLBOt_hbGE-b9I696VRow) | lots of brief screenshot instructional vids, no dialog
+[Adrian Crenshaw](https://www.youtube.com/user/irongeek) | lots of lengthy con-style talks
+[HackerSploit](https://www.youtube.com/channel/UC0ZTPkdxlAKf-V33tqXwi3Q) | regular posts, medium length screenshot vids, with dialog
+[Derek Rook - CTF/Boot2root/wargames Walkthrough](https://www.youtube.com/channel/UCMACXuWd2w6_IEGog744UaA) | lots of lengthy screenshot instructional vids, with
+[Tradecraft Security Weekly](https://wiki.securityweekly.com/Tradecraft_Security_Weekly) | Want to learn about all of the latest security tools and techniques?
+[IPPSec](https://www.youtube.com/channel/UCa6eh7gCkpPo5XXUDfygQQA) | Hackthebox.eu retired machine vulnerable machine walkthroughs to help you learn both basic and advanced processes and techniques
+[The Daily Swig](https://portswigger.net/daily-swig) | Latest Cybersecurity News
+[Awesome Worldwide ITSec Specialists](https://github.com/Cloufish/Awesome-Worldwide-ITSecurity-Specialists) | curated index of non-English-speaking IT security YouTubers and creators
+
+
+<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+
+### 🎯 Sharpening Your Skills
+Name    |    Description
+----    |    ----
+[The cryptopals crypto challenges](http://cryptopals.com/) | A bunch of CTF challenges, all focused on cryptography.
+[Crackmes.one](https://crackmes.one/) | This is a simple place where you can download crackmes to improve your reverse engineering skills.
+[CTFLearn](https://ctflearn.com/) | an account-based ctf site, where users can go in and solve a range of challenges
+[CTFs write-ups](https://github.com/ctfs) | a collection of writeups from various CTFs, organized by
+[CTF365](https://ctf365.com/) | account based ctf site, awarded by Kaspersky, MIT, T-Mobile
+[The enigma group](https://www.enigmagroup.org/) | web application security training, account based, video tutorials
+[Exploit exercises](https://exploit-exercises.com/) | hosts 5 fulnerable virtual machines for you to attack, no account required
+[Google CTF](https://github.com/google/google-ctf) | Source code of Google 2017, 2018 and 2019 CTF
+[Google CTF 2019](https://capturetheflag.withgoogle.com/) | 2019 edition of the Google CTF contest
+[Google's XSS game](https://xss-game.appspot.com/) | XSS challenges, and potentially a chance to get paid!
+[Hack The Box](https://www.hackthebox.com/) | Pen testing labs hosting over 39 vulnerable machines with two additional added every month
+[Hacker test](http://www.hackertest.net/) | similar to "hackthissite", no account required.
+[Hacksplaining](https://www.hacksplaining.com/) | a clickthrough security informational site, very good for beginners.
+[hackburger.ee](http://hackburger.ee/) | hosts a number of web hacking challenges, account required
+[Hack this site!](https://www.hackthissite.org/) | an oldy but goodie, account required, users start at low levels and progress in difficulty
+[Lin.security](https://in.security/lin-security-practise-your-linux-privilege-escalation-foo/) | Practice your Linux privilege escalation
+[Over the wire](http://overthewire.org/wargames/) | A CTF that's based on progressive levels for each lab, the users SSH in, no account recquired
+[Participating Challenge Sites](http://www.wechall.net/active_sites/all/by/site_avg/DESC/page-1) | aims at creating a universal ranking for CTF participants
+[PentesterLab](https://pentesterlab.com/) | hosts a variety of exercises as well as various "bootcamps" focused on specific activities
+[Pentest.training](https://pentest.training) | lots of various labs/VMS for you to try and hack, registry is optional.
+[PicoCTF](https://picoctf.org/) | CTF hosted by Carnegie Mellon, occurs yearly, account required.
+[pwnable.kr](http://pwnable.kr/) | Don't let the cartoon characters fool you, this is a serious CTF site that will teach you a lot, account required
+[pwnable.tw](http://pwnable.tw/) | hosts 27 challenges accompanied with writeups, account required
+[Ringzer0 Team](https://ringzer0team.com/challenges) | an account based CTF site, hosting over 272 challenges
+[ROP Emporium](https://ropemporium.com/) | Return Oriented Programming challenges
+[SmashTheStack](https://www.smashthestack.org/) | hosts various challenges, similar to OverTheWire, users must SSH into the machines and progress in levels
+[Vulnhub](https://www.vulnhub.com/) | site hosts a ton of different vulnerable Virtual Machine images, download and get hacking
+[websec.fr](https://websec.fr/) | Focused on web challenges, registration is optional.
+[tryhackme](https://tryhackme.com) | Awesome platform to start learning cybersecurity, account is needed
+[webhacking.kr](https://webhacking.kr) | lots of web security challenges are available, recommended for beginners. You need to solve a simple challenge to sign up.
+[Stripe CTF 2.0](https://github.com/stripe-ctf) | Past security contest where you can discover and exploit vulnerabilities in mock web applications.
+[Windows / Linux Local Privilege Escalation Workshop](https://github.com/sagishahar/lpeworkshop) | Practice your Linux and Windows privilege escalation
+[Hacking Articles](https://www.hackingarticles.in/category/ctf-challenges/) | CTF Brief Write up collection with a lot of screenshots good for begginers
+[Hacker101 CTF](https://ctf.hacker101.com/) | CTF hosted by HackerOne, always online. You will receive invitations to some private programs on HackerOne platform as a reward.
+[Hacking Lab](https://www.hacking-lab.com/index.html) | European platform hosting lots of riddles, challenges and competitions
+[Portswigger Web Security Academy](https://portswigger.net/web-security) | Best free platform for learning web pentesting, account required
+[CTF 101](https://ctf101.org/) | Intro guide to CTFs covering common categories (crypto, forensics, web, pwn, RE) with worked examples
+[Hopper's Roppers CTF](https://www.hoppersroppers.org/ctf/) | Self-paced CTF course companion to the Hopper's Roppers training
+[HTB Writeups](https://github.com/momenbasel/htb-writeups) | The most comprehensive Hack The Box writeup collection with 500+ machines, 400+ challenges, ProLabs, Sherlocks, CTF events, and cheatsheets
+
+<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+
+### 🧬 Reverse Engineering, Buffer Overflow and Exploit Development
+Name    |     Description
+----    |    ----
+[A Course on Intermediate Level Linux Exploitation](https://github.com/nnamon/linux-exploitation-course) | as the title says, this course isn't for beginners
+[Binary hacking](http://liveoverflow.com/binary_hacking/index.html) | 35 "no bullshit" binary videos along with other info
+[Corelan tutorials](https://www.corelan.be/index.php/2009/07/19/exploit-writing-tutorial-part-1-stack-based-overflows/) | detailed tutorial, lots of good information about memory
+[Exploit tutorials](http://www.primalsecurity.net/tutorials/exploit-tutorials/) | a series of 9 exploit tutorials,also features a podcast
+[Exploit development](https://0x00sec.org/) | links to the forum's exploit dev posts, quality and post style will vary with each poster
+[flAWS challenge](http://flaws.cloud/) | Through a series of levels you'll learn about common mistakes and gotchas when using Amazon Web Services (AWS).
+[Introduction to ARM Assembly Basics](https://azeria-labs.com/writing-arm-assembly-part-1/) | tons of tutorials from infosec pro Azeria, follow her on twitter
+[Introductory Intel x86](http://www.opensecuritytraining.info/IntroX86.html) | 63 days of OS class materials, 29 classes, 24 instructors, no account required
+[Linux (x86) Exploit Development Series](https://sploitfun.wordpress.com/2015/06/26/linux-x86-exploit-development-tutorial-series/) | blog post by sploitfun, has 3 different levels
+[Megabeets journey into Radare2](https://www.megabeets.net/a-journey-into-radare-2-part-1/) | one user's radare2 tutorials
+[Modern Binary Exploitation - CSCI 4968](https://github.com/RPISEC/MBE) | RE challenges, you can download the files or download the VM created by RPISEC specifically for challenges, also links to their home page with tons of infosec lectures
+[Recon.cx - reversing conference](https://recon.cx/) | the conference site contains recordings and slides of all talks!! 
+[Reverse Engineering for Beginners](https://beginners.re/RE4B-EN.pdf) | huge textbook, created by Dennis Yurichev, open-source
+[Reverse engineering reading list](https://github.com/onethawt/reverseengineering-reading-list/blob/master/README.md) | a github collection of RE tools and books
+[Reverse Engineering challenges](https://challenges.re/) | collection of challenges from the writer of RE for Beginners
+[Reverse Engineering for Beginners (book site)](https://beginners.re/) | official site for Dennis Yurichev's book, all formats and source available
+[Reverse Engineering Malware 101](https://malwareunicorn.org/workshops/re101.html) | intro course created by Malware Unicorn, complete with material and two VM's
+[Reverse Engineering Malware 102](https://malwareunicorn.org/workshops/re102.html) | the sequel to RE101
+[reversing.kr challenges](http://www.reversing.kr/challenge.php) | reverse engineering challenges varying in difficulty
+[Shell storm](https://shellstorm.org/) | Blog style collection with organized info about Rev. Engineering.
+[Shellcode Injection](https://dhavalkapil.com/blogs/Shellcode-Injection/) | a blog entry from a grad student at SDS Labs
+[Micro Corruption — Assembly](https://microcorruption.com) | CTF designed to learn Assembly by practicing
+
+
+<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+
+### ⬆️ Privilege Escalation
+Name    |    Description
+----    |    ----
+[A GUIDE TO LINUX PRIVILEGE ESCALATION](https://payatu.com/guide-linux-privilege-escalation/) | Basics of Linux privilege escalation
+[Abusing SUDO (Linux Privilege Escalation)](http://touhidshaikh.com/blog/?p=790) | Abusing SUDO (Linux Privilege Escalation)
+[AutoLocalPrivilegeEscalation](https://github.com/ngalongc/AutoLocalPrivilegeEscalation) | automated scripts that downloads and compiles from exploitdb
+[Basic linux privilege escalation](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/) | basic linux exploitation, also covers Windows
+[Windows Local Privilege Escalation (HackTricks)](https://book.hacktricks.wiki/en/windows-hardening/windows-local-privilege-escalation/index.html) | Comprehensive, up-to-date checklist of Windows privilege escalation vectors
+[Editing /etc/passwd File for Privilege Escalation](http://www.hackingarticles.in/editing-etc-passwd-file-for-privilege-escalation/) | Editing /etc/passwd File for Privilege Escalation
+[Linux Privilege Escalation ](https://securityweekly.com/2017/12/17/linux-privilege-escalation-tradecraft-security-weekly-22/) | Linux Privilege Escalation – Tradecraft Security Weekly (Video)
+[Linux Privilege Escalation Check Script](https://github.com/sleventyeleven/linuxprivchecker) | a simple linux PE check script
+[Linux Privilege Escalation Scripts](http://netsec.ws/?p=309#more-309) | a list of PE checking scripts, some may have already been covered
+[Linux Privilege Escalation Using PATH Variable](http://www.hackingarticles.in/linux-privilege-escalation-using-path-variable/) | Linux Privilege Escalation Using PATH Variable
+[Linux Privilege Escalation using Misconfigured NFS](http://www.hackingarticles.in/linux-privilege-escalation-using-misconfigured-nfs/) | Linux Privilege Escalation using Misconfigured NFS
+[Linux Privilege Escalation via Dynamically Linked Shared Object Library](https://www.contextis.com/blog/linux-privilege-escalation-via-dynamically-linked-shared-object-library) | How RPATH and Weak File Permissions can lead to a system compromise.
+[Local Linux Enumeration & Privilege Escalation Cheatsheet](https://www.rebootuser.com/?p=1623) | good resources that could be compiled into a script
+[PEASS-ng (Privilege Escalation Awesome Scripts)](https://github.com/carlospolop/PEASS-ng) | actively maintained privilege escalation enumeration scripts for Windows, Linux, and macOS
+[Linux Privilege Escalation (HackTricks)](https://book.hacktricks.wiki/en/linux-hardening/privilege-escalation/index.html) | extensive, maintained reference covering common Linux privilege escalation methods with examples
+[RootHelper](https://github.com/NullArray/RootHelper) | a tool that runs various enumeration scripts to check for privilege escalation
+[Unix privesc checker](http://pentestmonkey.net/tools/audit/unix-privesc-check) | a script that checks for PE vulnerabilities on a system
+[Windows exploits, mostly precompiled.](https://github.com/abatchy17/WindowsExploits) | precompiled windows exploits, could be useful for reverse engineering too
+[Windows Privilege Escalation](http://www.bhafsec.com/wiki/index.php/Windows_Privilege_Escalation) | collection of wiki pages covering Windows Privilege escalation
+[Windows privilege escalation checker](https://github.com/netbiosX/Checklists/blob/master/Windows-Privilege-Escalation.md) | a list of topics that link to pentestlab.blog, all related to windows privilege escalation
+[Windows Privilege Escalation Fundamentals](http://www.fuzzysecurity.com/tutorials/16.html) | collection of great info/tutorials, option to contribute to the creator through patreon, creator is an OSCP
+[Windows Privilege Escalation Guide](https://www.sploitspren.com/2018-01-26-Windows-Privilege-Escalation-Guide/) | Windows Privilege Escalation Guide
+[Windows Privilege Escalation Methods for Pentesters](https://pentest.blog/windows-privilege-escalation-methods-for-pentesters/) | Windows Privilege Escalation Methods for Pentesters
+
+
+<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+
+### 🕵️ OSINT
+Name    |    Description
+----    |    ----
+[theHarvester](https://github.com/laramies/theHarvester) | E-mail, subdomain, host and people-name harvester using public sources
+[Maltego CE](https://www.maltego.com/ce-registration/) | Graph-based link-analysis platform for OSINT and forensics; Community Edition is free
+[Recon-ng](https://github.com/lanmaster53/recon-ng) | Full-featured web reconnaissance framework written in Python
+[SpiderFoot](https://github.com/smicallef/spiderfoot) | Automated OSINT collection with 200+ modules and a web UI
+[Intel Techniques Tools](https://inteltechniques.com/tools/) | Michael Bazzell's hosted search tools for people, social, images, geo
+[Google Hacking Database](https://www.exploit-db.com/google-hacking-database/) | Exploit-DB's curated Google dorks database for recon
+[github-dorks](https://github.com/techgaun/github-dorks) | CLI tool to scan GitHub repos/orgs for sensitive information leaks
+[metagoofil](https://github.com/laramies/metagoofil) | Extracts metadata from public documents (PDF, DOC, XLS) belonging to a target
+[Sherlock](https://github.com/sherlock-project/sherlock) | Hunt usernames across 400+ social networks
+[Maigret](https://github.com/soxoj/maigret) | Sherlock-style username enumeration across 3000+ sites with profile-data extraction
+[Holehe](https://github.com/megadose/holehe) | Check if an email is used on 120+ sites via password-reset flows
+[GHunt](https://github.com/mxrch/GHunt) | OSINT toolkit for investigating Google accounts (Gmail, Drive, Calendar exposure)
+[Blackbird](https://github.com/p1ngul1n0/blackbird) | Fast username and email OSINT search across 600+ services
+[h8mail](https://github.com/khast3x/h8mail) | Email OSINT and breach-credential hunting (HIBP, Snusbase, Leak-Lookup integrations)
+[PhoneInfoga](https://github.com/sundowndev/phoneinfoga) | Advanced OSINT framework for scanning international phone numbers
+[Photon](https://github.com/s0md3v/Photon) | Fast web crawler that extracts URLs, emails, secrets, and intel for recon
+[Amass](https://github.com/owasp-amass/amass) | OWASP project for in-depth attack-surface mapping and external asset discovery
+[Subfinder](https://github.com/projectdiscovery/subfinder) | Fast passive subdomain enumeration using public sources
+[cloud_enum](https://github.com/initstring/cloud_enum) | Enumerate public resources in AWS, Azure, and GCP for a target keyword
+[reconFTW](https://github.com/six2dez/reconftw) | End-to-end recon automation chaining 50+ tools for subdomains, vulns, and OSINT
+[IntelOwl](https://github.com/intelowlproject/IntelOwl) | OSINT solution that aggregates 100+ analyzers (threat intel, malware, observables)
+[OSINT Framework](https://osintframework.com/) | Web-based directory of OSINT resources organised by data type
+[Bellingcat Online Investigation Toolkit](https://www.bellingcat.com/resources/) | Bellingcat's curated, regularly updated toolkit and how-to guides
+[Have I Been Pwned](https://haveibeenpwned.com/) | Check whether emails/usernames appear in known data breaches
+[Hunter.io](https://hunter.io/) | Find and verify professional email addresses tied to a domain
+[Carbon14](https://github.com/Lazza/Carbon14) | OSINT tool for estimating the age of web pages from HTTP metadata
+
+<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+
+### 🦠 Malware Analysis
+Name    |    Description
+----    |    ----
+[Malware traffic analysis](http://www.malware-traffic-analysis.net/) | list of traffic analysis exercises
+[Malware Analysis - CSCI 4976](https://github.com/RPISEC/Malware/blob/master/README.md) | another class from the folks at RPISEC, quality content
+
+
+<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+
+### 🤖 AI Security / AI Red Teaming
+
+#### Learning the Skills
+Name    |    Description
+----    |    ----
+[HTB AI Red Teamer Path](https://academy.hackthebox.com/path/preview/ai-red-teamer) | Hack The Box's offensive AI job-role path (built with Google). Modules on prompt injection, model privacy attacks, adversarial AI, supply chain, deployment threats. Hands-on labs against real systems.
+
+#### Offensive Frameworks & Knowledge Bases
+Name    |    Description
+----    |    ----
+[OWASP Top 10 for LLM Applications](https://genai.owasp.org/llm-top-10/) | Canonical attack-class taxonomy: prompt injection, sensitive info disclosure, supply chain, model poisoning, excessive agency, system prompt leakage, and more.
+[OWASP ML Security Top 10](https://owasp.org/www-project-machine-learning-security-top-10/) | Sibling project focused on attacks against ML pipelines.
+[MITRE ATLAS](https://atlas.mitre.org/) | Adversarial threat matrix for AI systems (16 tactics, 84 techniques, real-world case studies). The ATT&CK for AI.
+
+#### Tools (Offensive)
+Name    |    Description
+----    |    ----
+[Garak](https://github.com/leondz/garak) | Most mature open-source LLM vulnerability scanner. Probes for prompt injection, jailbreaks, data leakage, hallucination, toxicity.
+[PyRIT](https://github.com/Azure/PyRIT) | Microsoft's Python Risk Identification Tool for generative AI; supports multi-turn attack orchestration.
+[Promptfoo](https://github.com/promptfoo/promptfoo) | LLM red-team + eval framework with 100+ attack types.
+[DeepTeam](https://github.com/confident-ai/deepteam) | Red-team framework mapped to OWASP LLM Top 10; 50+ vulnerabilities, 20+ adversarial methods.
+[LLMFuzzer](https://github.com/mnns/LLMFuzzer) | Fuzzing framework specifically for LLM integrations.
+[promptmap](https://github.com/utkusen/promptmap) | Prompt-injection vulnerability scanner.
+[Adversarial Robustness Toolbox (ART)](https://github.com/Trusted-AI/adversarial-robustness-toolbox) | Linux Foundation library covering evasion, poisoning, extraction, and inference attacks across all major ML frameworks.
+[CleverHans](https://github.com/cleverhans-lab/cleverhans) | Classic library for crafting adversarial examples against image models.
+[AI Exploits (Protect AI)](https://github.com/protectai/ai-exploits) | Collection of real, working exploits for vulnerabilities found in AI/ML tools and platforms.
+
+#### Sharpening Your Skills
+Name    |    Description
+----    |    ----
+[Gandalf (Lakera)](https://gandalf.lakera.ai/) | 7-level prompt-injection challenge; the "OverTheWire" of LLM hacking.
+[HackAPrompt](https://www.hackaprompt.com/) | Competitive prompt-injection CTF; dataset of 600k+ real jailbreak submissions.
+[Dreadnode Crucible](https://crucible.dreadnode.io/) | Free open AI red-team CTF platform with challenges across many difficulties and domains.
+[0DIN (Mozilla)](https://0din.ai/) | Gamified AI CTF training community on prompt injection and jailbreaking against interactive AI characters.
+[huntr](https://huntr.com/) | Bug bounty platform with an active AI/ML category targeting real models and CVEs.
+
+#### Reading & Research
+Name    |    Description
+----    |    ----
+[Embrace The Red](https://embracethered.com/blog/) | Johann Rehberger's blog; deep, practical write-ups of real-world LLM and agent exploitation.
+[Simon Willison — prompt injection](https://simonwillison.net/tags/prompt-injection/) | Running commentary from the person who coined the term; tracks every novel technique.
+[0DIN Blog](https://0din.ai/blog) | Disclosures and write-ups of real AI vulnerabilities from Mozilla's bug-bounty program.
+[Indirect Prompt Injection (Greshake et al.)](https://github.com/greshake/llm-security) | Canonical research repo for indirect prompt injection.
+[HackerOne x HTB AI Red Team CTF debrief](https://www.hackthebox.com/blog/ai-red-teaming-ctf) | Lessons from 200+ players in a live LLM jailbreak CTF, mapped to OWASP LLM Top 10.
+
+#### Awesome Lists
+Name    |    Description
+----    |    ----
+[corca-ai/awesome-llm-security](https://github.com/corca-ai/awesome-llm-security) | Most-starred LLM security awesome list.
+[PromptLabs/Prompt-Hacking-Resources](https://github.com/PromptLabs/Prompt-Hacking-Resources) | Focused specifically on red teaming, jailbreaks, prompt injection.
+[jiep/offensive-ai-compilation](https://github.com/jiep/offensive-ai-compilation) | Offense-oriented curation: AI-powered attacks, plus attacks against AI.
+
+
+<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+
+### 🛰️ Network Scanning / Reconnaissance
+Name    |    Description
+----    |    ----
+[Foot Printing with WhoIS/DNS records](https://www.sans.org/reading-room/whitepapers/hackers/fundamentals-computer-hacking-956) | a white paper from SANS
+[Google Dorks/Google Hacking](https://d4msec.wordpress.com/2015/09/03/google-dorks-for-finding-emails-admin-users-etc/) | list of commands for google hacks, unleash the power of the world's biggest search engine
+
+
+<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+
+### 🌐 Vulnerable Web Application
+Name    |    Description
+----    |    ----
+[bWAPP](http://www.itsecgames.com/) | common buggy web app for hacking, great for beginners, lots of documentation
+[Damn Small Vulnerable Web](https://github.com/stamparm/DSVW) | written in less than 100 lines of code, this web app has tons of vulns, great for teaching
+[Damn Vulnerable Web Application (DVWA)](http://www.dvwa.co.uk/) | PHP/MySQL web app for testing skills and tools
+[Google Gruyere](https://google-gruyere.appspot.com/) | host of challenges on this cheesy web app
+[OWASP Broken Web Applications Project](https://github.com/chuckfw/owaspbwa/) | hosts a collection of broken web apps
+[OWASP Hackademic Challenges project](https://github.com/Hackademic/hackademic/) | web hacking challenges
+[OWASP Mutillidae II](https://sourceforge.net/projects/mutillidae/files/) | another OWASP vulnerable app, lots of documentation.
+[OWASP Juice Shop](https://github.com/juice-shop/juice-shop) | covers the OWASP top 10 vulns
+[WebGoat: A deliberately insecure Web Application](https://github.com/WebGoat/WebGoat) | maintained by OWASP and designed to to teach web app security
+
+
+<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+
+### 🖥️ Vulnerable OS
+Name    |    Description
+----    |    ----
+[General Test Environment Guidance](https://community.rapid7.com/docs/DOC-2196) | white paper from the pros at rapid7
+[Metasploitable2 (Linux)](https://sourceforge.net/projects/metasploitable/files/Metasploitable2/) | vulnerable OS, great for practicing hacking
+[Metasploitable3](https://github.com/rapid7/metasploitable3) \[[Installation](https://github.com/rapid7/metasploitable3/blob/master/README.md)\] | the third installation of this vulnerable OS
+[Vulnhub](https://www.vulnhub.com/) | collection of tons of different vulnerable OS and challenges
+
+
+<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+
+### 🐧 Linux Penetration Testing OS
+Name    |    Description
+----    |    -----
+[BackBox](https://backbox.org/index) | open source community project, promoting security in IT enivornments
+[BlackArch](https://blackarch.org/index.html) | Arch Linux based pentesting distro, compatible with Arch installs
+[Bugtraq](http://bugtraq-team.com/) | advanced GNU Linux pen-testing technology
+[Docker for pentest](https://github.com/aaaguirrep/pentest) | Image with the more used tools to create a pentest environment easily and quickly.
+[Kali](http://kali.org/) | the infamous pentesting distro from the folks at Offensive Security
+[LionSec Linux](https://lionsec-linux.org/) | pentesting OS based on Ubuntu
+[Parrot ](https://www.parrotsec.org/) | Debian includes full portable lab for security, DFIR, and development
+[Pentoo](https://www.pentoo.ch/) | pentesting OS based on Gentoo
+
+
+<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+
+### 💥 Exploits
+Name    |   Description
+----     |    ----
+[0day.today](http://0day.today/) | Easy to navigate database of exploits
+[Exploit Database](https://www.exploit-db.com/) | database of a wide variety exploits, CVE compliant archive
+[CXsecurity](https://cxsecurity.com/exploit/) | Indie cybersecurity info managed by 1 person
+[Snyk Vulnerability DB](https://snyk.io/vuln/) | detailed info and remediation guidance for known vulns, also allows you to test your code
+
+
+<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+
+### 💬 Forums
+Name    |    Description
+----    |    ----
+[0x00sec](https://0x00sec.org/) | hacker, malware, computer engineering, Reverse engineering
+[CODEBY.NET](https://codeby.net/) | hacker, WAPT, malware, computer engineering, Reverse engineering, forensics - russian based forum
+[Greysec](https://greysec.net) | hacking and security forum
+[Hackforums](https://hackforums.net/) | posting webstite for hacks/exploits/various discussion
+
+
+
+<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+
+### 🎬 Archived Security Conference Videos
+Name    |    Description
+----    |    ----
+[InfoCon.org](https://infocon.org/cons/) | hosts data from hundreds of cons
+[Irongeek](http://www.irongeek.com/) | Website of Adrien Crenshaw, hosts a ton of info.
+[infocondb.org](https://infocondb.org/) | a site that aims to catalog and cross-reference all hacker conferences.
+
+
+<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+
+### 👥 Online Communities
+Name    |    Description
+----    |    -----
+[Hacktoday](https://www.hacktoday.net/) | requires an account, covering all kinds of hacking topics
+[Hack+](http://t.me/hacking_group_channel) | link requires telegram to be used
+[MPGH](http://mpgh.net) | community of MultiPlayerGameHacking
+
+
+
+<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+
+### 📰 Online News Sources
+Name    |    Description
+----    |    ----
+[InfoSec](http://www.infosecurity-magazine.com/) | covers all the latest infosec topics
+[Hashes.com Hash Lookup](https://hashes.com/en/decrypt/hash) | great place to lookup hashes against known cracked/leaked sets
+[Security Intell](https://securityintelligence.com/news/) | covers all kinds of news, great intelligence resources
+[Threatpost](https://threatpost.com/) | covers all the latest threats and breaches
+[Secjuice](secjuice.com)
+[The Hacker News](https://thehackernews.com/) | features a daily stream of hack news, also has an app
+[Infostealers by Hudson Rock](https://www.infostealers.com/) | all-around hub with news and publications about Infostealers
+
+<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+
+---
+
+## Contributors
+
+Thanks to everyone who has contributed resources, fixes, and reviews.
+
+<a href="https://github.com/vitalysim/Awesome-Hacking-Resources/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=vitalysim/Awesome-Hacking-Resources" alt="Contributors" />
+</a>
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=vitalysim/Awesome-Hacking-Resources&type=Date)](https://star-history.com/#vitalysim/Awesome-Hacking-Resources&Date)
+
+## License
+
+Released under [GPL-3.0](LICENSE).

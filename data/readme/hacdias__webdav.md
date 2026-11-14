@@ -1,0 +1,457 @@
+# webdav
+
+[![Version](https://img.shields.io/github/release/hacdias/webdav.svg?style=flat-square)](https://github.com/hacdias/webdav/releases/latest)
+[![Release Downloads](https://img.shields.io/github/downloads/hacdias/webdav/total?style=flat-square&label=release%20downloads)](https://github.com/hacdias/webdav/releases)
+[![GHCR Pulls](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fipitio.github.io%2Fbackage%2Fhacdias%2Fwebdav%2Fwebdav.json&query=%24.downloads&label=ghcr%20pulls&style=flat-square)](https://github.com/hacdias/webdav/pkgs/container/webdav)
+[![Docker Pulls](https://img.shields.io/docker/pulls/hacdias/webdav?style=flat-square)](https://hub.docker.com/r/hacdias/webdav)
+
+A simple and standalone [WebDAV](https://en.wikipedia.org/wiki/WebDAV) server.
+
+## Install
+
+For a manual install, please refer to the [releases](https://github.com/hacdias/webdav/releases) page and download the correct binary for your system. Alternatively, you can build or install it from source using the Go toolchain. You can either clone the repository and execute `go build`, or directly install it, using:
+
+```
+go install github.com/hacdias/webdav/v5@latest
+```
+
+### Homebrew
+
+If you have Homebrew available on your system, you can also install `webdav` using it: 
+
+```
+brew install webdav
+```
+
+### Docker
+
+Docker images are provided on both [GitHub's registry](https://github.com/hacdias/webdav/pkgs/container/webdav) and [Docker Hub](https://hub.docker.com/r/hacdias/webdav). You can pull the images using one of the following two commands. Note that this commands pull the latest released version. You can use specific tags to pin specific versions, or use `main` for the development branch.
+
+```bash
+# GitHub Registry
+docker pull ghcr.io/hacdias/webdav:latest
+
+# Docker Hub
+docker pull hacdias/webdav:latest
+```
+
+## Usage
+
+For usage information regarding the CLI, run `webdav --help`.
+
+### Container
+
+To run the container, you can refer to the `compose.yml` file which provides a minimal setup. Additionally, you also need to create a configuration file, as [explained below](#configuration).
+
+The equivalent Docker command to the aforementioned compose file would be as follows:
+
+```bash
+docker run \
+  -p 6065:6065 \
+  -v ./config.yml:/config.yml:ro \
+  -v ./data:/data \
+  ghcr.io/hacdias/webdav -c /config.yml
+```
+
+If you are using [fail2ban](#fail2ban-setup), it would be helpful to add the parameters listed below. They will assist in analyzing 
+the log.
+
+```bash
+--log-driver journald \
+--name webdav \
+```
+
+### Partial updates
+
+This server supports partial file updates compatible with SabreDAV's `PATCH` extension. This is not an official WebDAV specification. Requests must use the `application/x-sabredav-partialupdate` content type, include `Content-Length`, and provide the target range in `X-Update-Range`.
+
+Supported `X-Update-Range` values are:
+
+- `bytes=start-end`
+- `bytes=start-`
+- `bytes=-N`
+- `append`
+
+For clients that use it, the server also supports partial `PUT` requests with `Content-Range`, for example `Content-Range: bytes 6-8/*`. This is an extra compatibility path and should be treated as a client/server agreement.
+
+## Configuration
+
+The configuration can be provided as a YAML, JSON or TOML file. Below is an example of a YAML configuration file with 
+all the options available, as well as what they mean. Top-level keys use camelCase and keys nested inside a section use snake_case.
+
+```yaml
+address: 0.0.0.0
+port: 6065
+
+# TLS-related settings if you want to enable TLS directly.
+tls: false
+cert: cert.pem
+key: key.pem
+
+# Send a Strict-Transport-Security header on HTTPS responses, so browsers only
+# use HTTPS with this host. Set to true for 'max-age=31536000' (a year), or to
+# the header value, such as 'max-age=31536000; includeSubDomains'. Only applies
+# when this server handles TLS itself: behind a proxy, set the header there.
+# Default is 'false'.
+hsts: false
+
+# Prefix to apply to the WebDAV path-ing. Default is '/'.
+prefix: /
+
+# Enable or disable debug logging. Default is 'false'.
+debug: false
+
+# Disable sniffing the files to detect their content type. Default is 'false'.
+noSniff: false
+
+# Whether the server runs behind a trusted proxy or not. When this is true,
+# the last entry of the X-Forwarded-For header, which the proxy appends, is
+# logged as the remote address (if available).
+behindProxy: false
+
+# The directory that will be able to be accessed by the users when connecting.
+# This directory will be used by users unless they have their own 'directory' defined.
+# By default it points to the working directory. In the case of the compose file above,
+# that is /data.
+directory: /data
+
+# Alternatively, replace 'directory' with 'directories' to expose multiple
+# directories as virtual root entries. This option is mutually exclusive with
+# 'directory' in the same scope. Rules should include the virtual mount name,
+# such as /media/public/access/.
+# directories:
+#   - media: /data/media
+#   - /data/archive
+#   - name: backups
+#     path: /data/backups
+
+# The default permissions for users. This is a case insensitive option. Possible
+# permissions: C (Create), R (Read), U (Update), D (Delete). You can combine multiple
+# permissions. For example, to allow to read and create, set "RC". Default is "R".
+# LOCK counts as a write: it needs U on a path that exists and C on one that does
+# not, since locking a path that does not exist creates it.
+# Being overwritten counts as well: a COPY or MOVE onto an existing file replaces
+# it and needs U, while one onto an existing collection removes everything it
+# holds and needs D, on the collection and on every path under it.
+permissions: R
+
+# The default permissions rules for users. Default is none. Rules are applied
+# from last to first, that is, the first rule that matches the request, starting
+# from the end, will be applied to the request. Rule paths are always relative to
+# the user's directory.
+rules: []
+
+# The behavior of redefining the rules for users. It can be:
+# - overwrite: when a user has rules defined, these will overwrite any global
+#   rules already defined. That is, the global rules are not applicable to the
+#   user.
+# - append: when a user has rules defined, these will be appended to the global
+#   rules already defined. That is, for this user, their own specific rules will
+#   be checked first, and then the global rules.
+# Default is 'overwrite'.
+rulesBehavior: overwrite
+
+# Logging configuration
+log:
+  # Logging format ('console', 'json'). Default is 'console'.
+  format: console
+  # Enable or disable colors. Default is 'true'. Only applied if format is 'console'.
+  colors: true
+  # Logging outputs. You can have more than one output. Default is only 'stderr'.
+  outputs:
+    - stderr
+
+# CORS configuration
+cors:
+  # Whether or not CORS configuration should be applied. Default is 'false'.
+  enabled: true
+  credentials: true
+  # Allow Private Network Access preflight requests. Default is 'false'.
+  allow_private_network: false
+  # The following are the default CORS settings when it is enabled.
+  allowed_hosts:
+    - '*'
+  allowed_headers:
+    - Authorization
+    - Content-Type
+    - Content-Range
+    - Depth
+    - Destination
+    - If
+    - Lock-Token
+    - Overwrite
+    - TimeOut
+    - Translate
+    - X-Update-Range
+  allowed_methods:
+    - COPY
+    - DELETE
+    - GET
+    - HEAD
+    - LOCK
+    - UNLOCK
+    - MKCOL
+    - MOVE
+    - OPTIONS
+    - PATCH
+    - POST
+    - PROPFIND
+    - PROPPATCH
+    - PUT
+  exposed_headers: []
+
+# HTML Directory Listing configuration
+listing:
+  # Serve an HTML listing on GET requests to a collection, instead of the
+  # PROPFIND response. Sort with ?C=N|M|S (name, modified, size) and ?O=A|D
+  # (ascending, descending). Default is 'false'.
+  enabled: true
+  # Hide the parent directory (../) link. Default is 'false'.
+  hide_parent_dir: false
+  # Show the "Index of <path>" title. Ignored with a custom header. Default is 'true'.
+  show_path: true
+  # Custom HTML replacing the page shell: header up to and including <body>,
+  # footer from </body>. Both must be set, inline or from a file.
+  # header: "<!DOCTYPE html><html><head><title>WebDAV</title></head><body>"
+  # header_file: /etc/webdav/header.html
+  # footer: "</body></html>"
+  # footer_file: /etc/webdav/footer.html
+
+# You define here the list of users.
+# Basic authentication is automatically be configured when users are detected 
+# below, else there will be no authentication.
+# Customize to your needs and don't forget to comment out the users you don't need.
+users:
+  # Example 'admin' user with plaintext password.
+  - username: admin
+    password: admin
+
+  # Example 'john' user with bcrypt encrypted password, with custom directory.
+  # Tip: you can generate a bcrypt-encrypted password by using the 'webdav bcrypt'
+  # command lint utility, or htpasswd on Linux.
+  - username: john
+    password: "{bcrypt}$2y$10$zEP6oofmXFeHaeMfBNLnP.DO8m.H.Mwhd24/TOX2MWLxAExXi4qgi"
+    directory: /data/john
+  # Example user whose details will be picked up from the environment.
+  - username: "{env}ENV_USERNAME"
+    password: "{env}ENV_PASSWORD"
+  # Example user with advanced control over his permissions
+  - username: basic
+    password: basic
+    permissions: CRUD # Override default permissions.
+    rules:
+      # With this rule, the user CANNOT access {user directory}/some/files.
+      - path: /some/file
+        permissions: none
+      # With this rule, the user CAN create, read, update and delete within
+      # {user directory}/public/access.
+      - path: /public/access/
+        permissions: CRUD
+      # With this rule, the user CAN read and update all files ending with .js.
+      # It uses a regular expression.
+      - regex: '^.+\.js$'
+        permissions: RU
+  # Example user for android SeedVault backuping
+  - username: android
+    password: "{bcrypt}$2y$10$zEP6oofmXFeHaeMfBNLnP.DO8m.H.Mwhd24/TOX2MWLxAExXi4qgi"
+    directory: /data/android
+    permissions: CRUD
+
+# If you're delegating the authentication to a different service, you can proxy
+# the username using basic authentication, and then disable webdav's password
+# check using the option:
+# noPassword: true
+```
+
+### Rules
+
+Rules are matched against the request path after dot segments have been resolved, so `/public/../secret/file` is matched as `/secret/file`. A `path` rule is cleaned the same way, so `./secret/` means `/secret/`. The last rule that matches wins.
+
+A `path` rule is a prefix match. A rule written with a trailing slash also covers the collection it names, so `path: /secret/` applies to a request for `/secret` as well. Such a rule can only restrict that collection: acting on the collection itself also requires the permissions that apply outside the rule, since the operation takes place in the parent collection.
+
+A `regex` rule is matched literally against the path, and gets none of the above handling. In particular `regex: "^/secret/"` does **not** match a request for `/secret` itself. Write `regex: "^/secret(/|$)"` if you want to cover the collection too.
+
+Rules apply to every path an operation touches, not only the one it names. Collection listings leave out entries the rules deny, copying a collection leaves those entries behind, and a `MOVE` or `DELETE` that would act on a denied descendant is refused outright. A `COPY` or `MOVE` also needs `C` on every path it creates under the destination.
+
+Overwriting a destination is authorized for what it destroys. A `COPY` or `MOVE` onto an existing destination replaces it: RFC4918 has `MOVE` perform a `DELETE` with `Depth: infinity` on the destination first, and requires an overwritten collection to end up with exactly the membership the source had, so either way whatever was there is gone. Replacing a file needs `U` on it, the same permission `PUT` needs. Replacing a collection removes everything it holds, so it needs `D` on that collection and on every path beneath it: a rule withholding `D` anywhere under a destination refuses the overwrite outright, even where it grants `C` and `U`.
+
+Rules follow the case sensitivity of the file system, which each served directory is probed for at startup. Where names are case-insensitive, as on APFS and NTFS, `path: /secret/` also covers `/SECRET/`, a `regex` is matched against the folded path as well as the path as written, and Unicode normal forms count as one name. Elsewhere rules are matched exactly, since `/secret` and `/SECRET` are then different directories.
+
+On Windows, a request for a name that Windows would open as a different file is refused with `400 Bad Request`, since a rule written for the real name would not cover it. That is a name containing `\` or `:`, ending in `.` or a space, a device name such as `CON`, or one shaped like an 8.3 short name such as `SECRET~1` or `REPORT~1.TXT`. Files whose real names look like that cannot be reached on Windows. Short names also resolve on some file systems elsewhere, such as FAT32 drives on Linux and Windows folders bind-mounted into Docker Desktop: don't rely on rules there, or disable 8.3 names on the volume with `fsutil 8dot3name set`.
+
+### CORS
+
+The `allowed_*` properties are optional and default to the values in the example above. `exposed_headers` is optional as well, but is not set if not defined. Setting `allow_private_network` to `true` to allow Private-Network-Access preflight requests. Setting `credentials` to `true`, with specific origins in `allowed_hosts` since browsers refuse credentials when `*` is allowed, will allow you to:
+
+1. Use `withCredentials = true` in javascript.
+2. Use the `username:password@host` syntax.
+
+## Caveats
+
+### Reverse Proxy Service
+
+When using a reverse proxy implementation, like Caddy, Nginx, or Apache, note that you need to forward the correct headers in order to avoid 502 errors.
+
+#### Nginx Configuration Example
+
+```nginx
+location / {
+  proxy_pass http://127.0.0.1:8080;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header REMOTE-HOST $remote_addr;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header Host $host;
+  proxy_redirect off;
+
+  # Ensure COPY and MOVE commands work by rewriting the Destination header to
+  # contain only the path, e.g. /test.txt. Note that the captured group already
+  # includes the leading slash: adding another one would produce a Destination
+  # such as //test.txt, which is parsed as a host name and rejected.
+  set $dest $http_destination;
+  if ($http_destination ~ "^https?://[^/]+(?<path>/.*)$") {
+    set $dest $path;
+  }
+  proxy_set_header Destination $dest;
+}
+```
+
+#### Caddy Configuration Example
+
+```Caddyfile
+example.com {
+    tls internal # for local development
+    # tls name@email.com # so that Caddy gets certs for you via Letsencrypt
+
+    # Rewrites destination to remove host and include only the path e.g. /test.txt
+    @hasDest header_regexp dest ^https?://[^/]+(.*)$
+    header @hasDest Destination {re.dest.1}
+
+    # if running on the same network in docker you can just point to the service name e.g. webdav:6065
+    reverse_proxy 127.0.0.1:6065 {
+        header_up X-Real-IP {remote_host}
+        header_up REMOTE-HOST {remote_host}
+    }
+}
+```
+
+#### Serving Under a Subpath
+
+If the server is not served from the root of the domain, do not strip the subpath in the reverse proxy. The server needs to see it: `PROPFIND` responses contain the full path of each resource, and clients reject the ones that fall outside of the URL they requested. Pass the subpath through and set [`prefix`](#configuration) accordingly, so that the server strips it itself and adds it back to the responses:
+
+```yaml
+prefix: /webdav
+```
+
+With Caddy, that means using `handle` instead of `handle_path`, as the latter strips the matched prefix before proxying:
+
+```Caddyfile
+example.com {
+    @hasDest header_regexp dest ^https?://[^/]+(.*)$
+    header @hasDest Destination {re.dest.1}
+
+    handle /webdav* {
+        reverse_proxy 127.0.0.1:6065 {
+            header_up X-Real-IP {remote_host}
+            header_up REMOTE-HOST {remote_host}
+        }
+    }
+}
+```
+
+With Nginx, use a `location` block for the subpath and keep `proxy_pass` without a trailing path, as a trailing path would replace the prefix:
+
+```nginx
+location /webdav {
+  proxy_pass http://127.0.0.1:6065;
+  # ... the remaining headers, as above.
+}
+```
+
+Both the request path and the `Destination` header must carry the prefix. A request without it is answered with `400 Bad Request`.
+
+## Examples
+
+### Systemd
+
+Example configuration of a [`systemd`](https://en.wikipedia.org/wiki/Systemd) service:
+
+```conf
+[Unit]
+Description=WebDAV
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/webdav --config /opt/webdav.yml
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+### Fail2Ban Setup
+
+To add security against brute-force attacks in your WebDAV server, you can configure Fail2Ban to ban IP addresses after a set number of failed login attempts.
+
+#### Filter Configuration
+
+Create a new filter rule under `filter.d/webdav.conf`:
+
+```ini
+[INCLUDES]
+before = common.conf
+
+[Definition]
+# Failregex to match failed logins and extract remote_address only. With
+# behindProxy, the address is logged without a port.
+failregex = ^.*invalid (?:password|username)\s*\{.*"remote_address":\s*"<HOST>(?::\d+)?"
+
+ignoreregex =
+```
+
+This configuration will capture invalid login attempts and extract the IP address to ban.
+
+#### Jail Configuration
+
+In `jail.d/webdav.conf`, define the jail that monitors your WebDAV log for failed login attempts:
+
+```ini
+[webdav]
+
+enabled = true
+port = [your_port]
+filter = webdav
+logpath = [your_log_path]
+banaction = iptables-allports
+ignoreself = false
+```
+
+- Replace `[your_port]` with the port your WebDAV server is running on.
+- Replace `[your_log_path]` with the path to your WebDAV log file.
+
+If you use it with Docker and `--log-driver journald`, replace `logpath` with `journalmatch = CONTAINER_NAME=[your_container_name]`
+
+#### Final Steps
+
+1. Restart Fail2Ban to apply these configurations:
+
+   ```bash
+   sudo systemctl restart fail2ban
+   ```
+
+2. Verify that Fail2Ban is running and monitoring your WebDAV logs:
+
+   ```bash
+   sudo fail2ban-client status webdav
+   ```
+
+With this setup, Fail2Ban will automatically block IP addresses that exceed the allowed number of failed login attempts.
+
+## Contributing
+
+Feel free to open an issue or a pull request.
+
+## License
+
+[MIT License](LICENSE) © [Henrique Dias](https://hacdias.com)

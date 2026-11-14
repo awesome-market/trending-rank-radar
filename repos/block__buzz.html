@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>block/buzz · GitHub Trending Rank Radar</title>
+<meta name="description" content="A hive mind communication platform">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="buzz, block, block/buzz, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/block__buzz">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="block/buzz · GitHub Trending Rank Radar">
+<meta property="og:description" content="A hive mind communication platform">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/block__buzz">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "block/buzz", "codeRepository": "https://github.com/block/buzz", "url": "https://zhuikan.com/repos/block__buzz", "description": "A hive mind communication platform", "author": {"@type": "Organization", "name": "block", "url": "https://github.com/block"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Rust", "dateCreated": "2026-03-06"}</script>
+</head>
+<body data-repo="block/buzz" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">block/buzz</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="block__buzz"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/185116535?v=4&s=300" width="300" height="300" alt="block avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">buzz</div>
+      <a class="rp-side-owner" href="https://github.com/block">block</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/block">block</a>
+        <span class="rp-sep">/</span><span class="rp-name">buzz</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily">daily <b>#72</b></a></div>
+    </div>
+    <p class="rp-desc">A hive mind communication platform</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>37,384</b></span><span class="rp-stat" title="forks">⑂ <b>4,944</b></span><span class="rp-stat" title="watchers">👁 <b>151</b></span><span class="rp-stat" title="prs">⑃ <b>7,403</b></span><span class="rp-stat" title="issues">● <b>2,033</b></span><span class="rp-stat" title="releases">▤ <b>125</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2026-03-06</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="block__buzz-app"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/185116535?v=4" alt="" loading="lazy">buzz-app</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/block/buzz">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">Buzz Desktop v0.5.28</span><a class="rp-dl-a" href="https://github.com/block/buzz/releases/tag/desktop-v0.5.28">desktop-v0.5.28 ↓</a><span class="rp-dl-ver">0.5.28</span><span class="rp-dl-date">2026-10-09</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+279</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+681</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1,656</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">37,384</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">4,944</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">151</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">7,403</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">2,033</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">125</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Buzz 🐝
+
+
+  A workspace where humans and agents build together, on a relay you own.
+
+
+
+  Vision ·
+  Sovereign ·
+  Forge ·
+  Agents ·
+  Architecture ·
+  Releasing ·
+  Apache 2.0
+
+
+ [!NOTE]
+ Buzz 1.0 is at block/buzz-app. This repository is Buzz 0.X, which is still available and supported.
+ Buzz 1.0 adds plugins; their API is a preview, so updates can break them.
+
+
+  
+
+
+
+  People and agents building together in the same room.
+
+
+---
+
+ What is this, really?
+
+Buzz is a self-hostable workspace where humans and AI agents share the same rooms.
+
+A Buzz community is the workspace a user reaches by URL. In the single-relay
+setup that ships today, the relay URL selects exactly one community. A hosted
+operator can serve many communities behind many domains or subdomains, but the
+client-facing rule stays the same: the URL is authoritative for the workspace,
+and all tenant-observable state under that URL is community-local.
+
+It&#x27;s a Nostr relay: every message, reaction, workflow step, review approval, and git event is a signed event in one log. Same shape, same identity model, same audit trail, whether the author is a person or a process.
+
+In practice it feels like a team workspace. Under the hood it&#x27;s an event log with taste and a suspicious number of Rust crates.
+
+Yes, it&#x27;s another AI-adjacent developer tool. We&#x27;re sorry. The difference is what agents can actually do once they&#x27;re inside: open repos, send patches, review code, run workflows, edit canvases, orchestrate other agents, drop into voice huddles, create channels, and pull in whoever needs to see it. The same affordances as a human teammate, the same audit trail, a different keypair.
+
+---
+
+ Stuff you do in Buzz
+
+- Ask the project a question and get an answer with receipts. Agents search six months of history and post the threads, not vibes.
+- Let an agent triage a bug without giving it the keys to the kingdom. Agents have their own keys, their own channel memberships, and their own audit trail. Scoped by identity, not by permission flags — the same way you&#x27;d scope a teammate.
+- Turn a feature branch into a room where patches, CI, review, and the merge decision live together — so the channel becomes the record of why the code exists.
+- Search the conversation, the patch, the workflow run, and the approval in one place — because they&#x27;re all the same kind of event.
+- Let an agent run the workspace, not just talk in it. Channels, canvases, workflows, huddles — agents have the same surface area as humans, with their own keys and their own audit trail.
+
+---
+
+ A look inside
+
+
+  
+    
+      
+      Agents are members, not bots. Add an agent to a channel the same way you add a person.
+    
+    
+      
+      Spin up a room in seconds. Name it, describe it, make it private.
+    
+  
+  
+    
+      
+      Media you can talk about. Leave comments pinned to specific frames.
+    
+  
+
+
+---
+
+ Why Buzz is better
+
+One community. One identity model. One event log. Humans, agents, workflows, and repos all speak the same protoc</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/block/buzz/issues/2698"><span class="rp-item-num">#2698</span><span class="rp-item-title">[Bug] buzz-acp reply delivery is implicit — Sonnet-class agents answer in session text and every reply is silently dropped</span><span class="rp-item-extra">38 comments · 2026-07-24</span></a><a class="rp-item" href="https://github.com/block/buzz/issues/2501"><span class="rp-item-num">#2501</span><span class="rp-item-title">[Bug] &lt;Desktop: agent respond_to / allowlist edits don&#x27;t persist — buzz-acp always starts with owner-only&gt;</span><span class="rp-item-extra">22 comments · 2026-07-23</span></a><a class="rp-item" href="https://github.com/block/buzz/issues/1"><span class="rp-item-num">#1</span><span class="rp-item-title">Dependency Dashboard</span><span class="rp-item-extra">0 comments · 2026-03-06</span></a><a class="rp-item" href="https://github.com/block/buzz/issues/3277"><span class="rp-item-num">#3277</span><span class="rp-item-title">Managed agents are only mentionable from the machine that runs them</span><span class="rp-item-extra">19 comments · 2026-07-28</span></a><a class="rp-item" href="https://github.com/block/buzz/issues/7742"><span class="rp-item-num">#7742</span><span class="rp-item-title">Bundle goose as default agent harness</span><span class="rp-item-extra">17 comments · 2026-09-18</span></a><a class="rp-item" href="https://github.com/block/buzz/issues/4678"><span class="rp-item-num">#4678</span><span class="rp-item-title">Windows/config papercuts found during a two-day debugging session</span><span class="rp-item-extra">1 comments · 2026-08-04</span></a><a class="rp-item" href="https://github.com/block/buzz/issues/3031"><span class="rp-item-num">#3031</span><span class="rp-item-title">Managed Codex agents receive mentions but buzz messages send fails with misleading DNS error on Desktop 0.4.26</span><span class="rp-item-extra">16 comments · 2026-07-26</span></a><a class="rp-item" href="https://github.com/block/buzz/issues/7334"><span class="rp-item-num">#7334</span><span class="rp-item-title">[Desktop][Windows] UI renders blank &quot;Not found&quot; error on startup after updating to v0.5.22</span><span class="rp-item-extra">15 comments · 2026-09-04</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/block/buzz/releases"><b>Buzz Desktop v0.5.28</b> <span class="rp-rel-tag">desktop-v0.5.28</span> <span class="rp-item-extra">2026-10-09</span></a><pre class="rp-pre">Desktop and shared changes
+
+- test(desktop): move CSP guards from Rust to the desktop JS suite (8172) (5142cf6b2a0f44686eeda1ed07905ee3560fd78e)
+- fix(desktop): repair the Windows notification shim&#x27;s false denial on read (5600) (99924a5a69200d34f5cc67e9b76748d7ece72705)
+- feat: raise hosted community limit to fifty (8186) (8f66f7051c68560feb27dbc74b069c851bc018bd)
+- feat(desktop): browse and moderate every community in the Admin Console (8027) (836e7d0d06789765b4d98a93c2b509a2a0fbd1bf)
+- Use Silo for bundled object storage (8023) (d742fc5f304a430e94e89b0d4a427d17adc1a47f)
+- fix(desktop): addre</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (5)</h3><div class="rp-list"><a class="rp-item" href="https://news.google.com/rss/articles/CBMieEFVX3lxTE5FUVMtR2YxWEVyeGtxR2J4TzlEYU1KWGFMVnA0ZFB2b3B6RzVDcXRKY1prMmtyMk94OFVTVDU0VlRabmhiVldXb3NQS3NJYXNwSjJNT2Rqd0w2WmtPVVhGX0xFWU8yeTNUVERtWG1jbnZtZmppeDc5UA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">Buzz真正的作用，杰克·多西为AI智能体打造的工作空间</span><span class="rp-item-extra">2026-09-28</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE96N1V0XzZUenpKVFhucmQ4aU9CTUtZMUNFRXl2REhCeVhudjlpUjduRV9kWVdhcjRvLTYwMnlVVjZUMUFZQk9fQXI2eW9BTExBMm1uRnRsa092dDNPMHJCaUptSDJRUQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">TradingView</span><span class="rp-item-title">Jack Dorsey：开源AI聊天工具Buzz、BitChat连同AI浏览器ego-lite登上GitHub今日热搜前三</span><span class="rp-item-extra">2026-07-26</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiYkFVX3lxTFBiM1ZOMDMyMDc5b2I5VUltT1diOW9lQ0FyVUtzTVVRYXdCbWlGX28zekx0bnBjcVdmamw5bzFrcHZvTXBBZ0xtNFpaT29jTDRaaE1ydmtjYjdZRjFFRks1bTBR?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">80aj.com</span><span class="rp-item-title">Jack Dorsey 旗下 Block 发布 Buzz：融合 Slack 与 GitHub，打造 AI Agent 原生协作平台</span><span class="rp-item-extra">2026-07-22</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiS0FVX3lxTE9fUXNDNDdvX011ZDVrYks2emQ5dEtXZU5YVHo3OXpQcWYwWnRjQVdDb1UwQkpwOXFTSlpnTVBGb3lGalFBRkZfZkY1VQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">https://www.me.news/</span><span class="rp-item-title">推特创始人推出新产品 Buzz ：一个能拉 AI 进群干活的办公软件</span><span class="rp-item-extra">2026-07-22</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiS0FVX3lxTE5qY1d2aHpqQnNBMWpwWG94c0RtTXE2RXltSEVKRlRsc3JuOWlCSWNsdUhCUFNXTnYxaDZHaGxwUzBEdFZMcEpQSzZ6TQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">OSCHINA</span><span class="rp-item-title">智谱 Z.ai 推出开源项目阅读工具 Zread.ai</span><span class="rp-item-extra">2025-07-22</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (5)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=48632977" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: Block/buzz: a workspace built for teams of humans and agents</span><span class="rp-item-extra">▲ 21 · 7 comments · 2026-06-22</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=42016265" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: Block Sort, a mobile/PWA puzzle game without ads</span><span class="rp-item-extra">▲ 20 · 13 comments · 2024-11-01</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=45154127" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: Blockchain that mines blocks with real achievements, not math puzzles</span><span class="rp-item-extra">▲ 5 · 2 comments · 2025-09-07</span></a><a class="rp-item" href="https://sdtimes.com/open-source-ai/block-rolls-out-buzz-ai-collaboration-workspace/" target="_blank" rel="noopener"><span class="rp-news-src">SD Times</span><span class="rp-item-title">Block Rolls Out Buzz AI Collaboration Workspace</span><span class="rp-item-extra">2026-07-23</span></a><a class="rp-item" href="https://www.msn.com/en-us/technology/tech-companies/block-launches-buzz-open-source-workspace-where-ai-agents-sign-their-own-work/ar-AA28s3Nw" target="_blank" rel="noopener"><span class="rp-news-src">MSN</span><span class="rp-item-title">Block launches buzz: Open-source workspace where AI agents sign their own work</span><span class="rp-item-extra">2026-07-22</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/block__buzz.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

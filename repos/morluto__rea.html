@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>morluto/rea · GitHub Trending Rank Radar</title>
+<meta name="description" content="Reverse engineer anything with agents, from app behavior down to native binaries.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="rea, morluto, morluto/rea, github stars, github trending, star growth, star history, 开源项目, 星标增长, cli, mcp, agent-skills, dsh-plugin, claude-code, rea">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/morluto__rea">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="morluto/rea · GitHub Trending Rank Radar">
+<meta property="og:description" content="Reverse engineer anything with agents, from app behavior down to native binaries.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/morluto__rea">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "morluto/rea", "codeRepository": "https://github.com/morluto/rea", "url": "https://zhuikan.com/repos/morluto__rea", "description": "Reverse engineer anything with agents, from app behavior down to native binaries.", "author": {"@type": "Organization", "name": "morluto", "url": "https://github.com/morluto"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2026-04-14", "keywords": "cli,mcp,agent-skills,dsh-plugin,claude-code,rea,touhou,android,javascript,python"}</script>
+</head>
+<body data-repo="morluto/rea" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">morluto/rea</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="morluto__rea"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/76467478?u=8a96c1f808f07cd860147ae4b87750aec1437ee4&amp;v=4&s=300" width="300" height="300" alt="morluto avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">rea</div>
+      <a class="rp-side-owner" href="https://github.com/morluto">morluto</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/morluto">morluto</a>
+        <span class="rp-sep">/</span><span class="rp-name">rea</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=daily">daily <b>#1</b></a><a class="rp-board-chip" href="../?board=daily_rate">daily_rate <b>#156</b></a><a class="rp-board-chip" href="../?board=weekly">weekly <b>#2</b></a><a class="rp-board-chip" href="../?board=monthly">monthly <b>#1</b></a><a class="rp-board-chip" href="../?board=monthly_rate">monthly_rate <b>#2</b></a><a class="rp-board-chip" href="../?board=total">total <b>#5</b></a></div>
+    </div>
+    <p class="rp-desc">Reverse engineer anything with agents, from app behavior down to native binaries.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>457,387</b></span><span class="rp-stat" title="forks">⑂ <b>112,257</b></span><span class="rp-stat" title="watchers">👁 <b>1,731</b></span><span class="rp-stat" title="prs">⑃ <b>5,985</b></span><span class="rp-stat" title="issues">● <b>4,220</b></span><span class="rp-stat" title="releases">▤ <b>40</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="../tags/cli">cli</a><a class="rp-topic" href="../tags/mcp">mcp</a><a class="rp-topic" href="../tags/agent-skills">agent-skills</a><a class="rp-topic" href="../tags/dsh-plugin">dsh-plugin</a><a class="rp-topic" href="../tags/claude-code">claude-code</a><a class="rp-topic" href="https://github.com/topics/rea">rea</a><a class="rp-topic" href="https://github.com/topics/touhou">touhou</a><a class="rp-topic" href="../tags/android">android</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-04-14</span><a class="rp-meta-bit rp-home" href="https://rea.tools" rel="noopener">rea.tools</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/morluto/rea">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">rea-agents: v6.9.0</span><a class="rp-dl-a" href="https://github.com/morluto/rea/releases/tag/rea-agents-6.9.0">rea-agents-6.9.0 ↓</a><span class="rp-dl-ver">6.9.0</span><span class="rp-dl-date">2026-11-12</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+2,355</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+31,017</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+415,576</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">457,387</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">112,257</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">1,731</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">5,985</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">4,220</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">40</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">English · 简体中文 · 繁體中文 · 日本語 · 한국어 · Türkçe · Русский · Tiếng Việt · ไทย · Deutsch · Español · Français · Українська · Polski · Português (Brasil) · العربية · فارسی · Bahasa Indonesia · Italiano
+· Ελληνικά · മലയാളം · Roman Urdu · Română · Български
+
+ REA: Reverse Engineer Anything
+
+ One MCP for reverse engineering across binaries, applications, and runtime behavior.
+
+See a feature you like. Understand how it works, down to the binary level.
+
+
+
+
+
+
+
+
+
+
+Website · Guides · Showcases
+
+
+
+Quick start · How REA works · What you can analyze · Showcases · Build RL environments · FAQ · Documentation
+
+npx rea-agents setup
+
+
+
+ [!IMPORTANT]
+ Get REA from morluto/rea,
+ rea.tools, or the rea-agents npm package.
+ Follow the installation and release links from these official sources. A similar
+ repository name or copied README does not establish that a download is official.
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    Join the Reverse Engineering Community
+  
+  Discord · Q&amp;amp;A · Show and Tell
+
+
+
+
+
+
+
+
+---
+
+See a feature in an app that you want in your own product? Ask your agent to investigate it with REA. It can inspect the app without its source code, explain how the feature works, show the evidence, and build a version for your project.
+
+REA connects your agent to tools for inspecting native binaries, JavaScript and Electron apps, .NET assemblies, and websites. You can also use the same tools from your terminal. Analysis runs locally, and results include the evidence and limitations behind each conclusion.
+
+Setup registers REA with your agent and installs matching workflow instructions. Native analysis can use an existing Hopper, Ghidra, IDA or Kuna installation; setup can optionally install Hopper with approval. Static JavaScript analysis needs no native analysis engine.
+
+ Visit the REA website for setup instructions, illustrated guides, and real case studies.
+
+ Quick start
+
+On Linux, Ghidra, JADX, firmware tool launches and static JavaScript/Electron
+analysis require a procps-compatible ps on REA&#x27;s PATH for process ownership
+checks. Recovery steps are in docs/getting-started/installation.md under
+&quot;Linux owned-process prerequisite&quot;.
+
+ Set up your agent
+
+With Node.js and npm installed, run:
+
+bash
+npx rea-agents setup
+
+
+Choose your agents, review the proposed changes, and approve them. Setup adds
+REA&#x27;s MCP server and matching workflow instructions, with backups of existing
+configuration. Restart your agent afterward. Setup records the selected runtime and REA
+entry script directly. If acquired through a package runner, keep its cache entry
+available. Run package acquisition from a trusted directory outside the target
+project. Installation and recovery details are in the setup guide below.
+
+Setup supports Claude Code, Codex, Cursor, Gemini CLI, Grok Build and
+other agents. See
+installation and setup for provider configuration,
+manual MCP registration, Claude Code/Codex plugins, and the Cursor Marketplace
+plugin.
+
+MCP uses compact input schemas by default to reduce context overhead. S</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/morluto/rea/issues/1065"><span class="rp-item-num">#1065</span><span class="rp-item-title">[Feature] Roadmap: improve MCP usability and performance under bounded resources</span><span class="rp-item-extra">47 comments · 2026-10-08</span></a><a class="rp-item" href="https://github.com/morluto/rea/issues/8425"><span class="rp-item-num">#8425</span><span class="rp-item-title">[Bug] Evidence retention refusal discards a completed direct observation</span><span class="rp-item-extra">25 comments · 2026-11-01</span></a><a class="rp-item" href="https://github.com/morluto/rea/issues/4973"><span class="rp-item-num">#4973</span><span class="rp-item-title">[Bug] compare_web_captures / compare_web_screenshots fail in Claude (&quot;problem with that connector&quot;)</span><span class="rp-item-extra">22 comments · 2026-10-18</span></a><a class="rp-item" href="https://github.com/morluto/rea/issues/1701"><span class="rp-item-num">#1701</span><span class="rp-item-title">[Bug] Windows native authority self-test fails on real Windows: &quot;Delete owned object by handle failed&quot; (Win32 5), and leaves probe directories behind</span><span class="rp-item-extra">22 comments · 2026-10-11</span></a><a class="rp-item" href="https://github.com/morluto/rea/issues/740"><span class="rp-item-num">#740</span><span class="rp-item-title">[Design] Roadmap: clarify investigation ownership and modularize REA capability integration</span><span class="rp-item-extra">21 comments · 2026-10-06</span></a><a class="rp-item" href="https://github.com/morluto/rea/issues/3751"><span class="rp-item-num">#3751</span><span class="rp-item-title">Ghidra provider: open an existing analysed project instead of re-importing every session (large native binaries)</span><span class="rp-item-extra">20 comments · 2026-10-14</span></a><a class="rp-item" href="https://github.com/morluto/rea/issues/4227"><span class="rp-item-num">#4227</span><span class="rp-item-title">[Design] Audit lifecycle contracts across REA tools: readiness, cancellation, ownership, cleanup, and recovery</span><span class="rp-item-extra">18 comments · 2026-10-15</span></a><a class="rp-item" href="https://github.com/morluto/rea/issues/8288"><span class="rp-item-num">#8288</span><span class="rp-item-title">[Design] Preserve feature-trace evidence when reference ownership is unavailable</span><span class="rp-item-extra">17 comments · 2026-10-31</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/morluto/rea/discussions/10401"><span class="rp-item-num">#10401</span><span class="rp-item-title">[Tracker] Start here: REA&#x27;s trackers, triage and my Linux test queue (November 2026)</span><span class="rp-item-extra">3 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/morluto/rea/discussions/10308"><span class="rp-item-num">#10308</span><span class="rp-item-title">Sharing a Complete REA-Based Workflow</span><span class="rp-item-extra">0 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/morluto/rea/discussions/10142"><span class="rp-item-num">#10142</span><span class="rp-item-title">Case study: diagnosing macOS keyboard predictions in Herdr with REA and Ghidra</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/morluto/rea/discussions/10121"><span class="rp-item-num">#10121</span><span class="rp-item-title">🏆 rea earned Repocharts Gold: #1 in GitHub AI</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/morluto/rea/discussions/10099"><span class="rp-item-num">#10099</span><span class="rp-item-title">Thank you @morluto! Featured in Universal Reverse Engineering Suite</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/morluto/rea/discussions/9967"><span class="rp-item-num">#9967</span><span class="rp-item-title">Portable bootstrap and launch scripts</span><span class="rp-item-extra">0 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/morluto/rea/discussions/9541"><span class="rp-item-num">#9541</span><span class="rp-item-title">How do i uninstall REA? In Client desktop?</span><span class="rp-item-extra">3 comments · 2026-11-09</span></a><a class="rp-item" href="https://github.com/morluto/rea/discussions/9499"><span class="rp-item-num">#9499</span><span class="rp-item-title">Decompiling Tornado (DOS, 1993): the masm2c + kvikdos differential-verification toolchain</span><span class="rp-item-extra">0 comments · 2026-11-08</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/morluto/rea/releases"><b>rea-agents: v6.9.0</b> <span class="rp-rel-tag">rea-agents-6.9.0</span> <span class="rp-item-extra">2026-11-12</span></a><pre class="rp-pre">6.9.0 (2026-11-11)
+
+ Highlights
+
+- Build and test desktop tasks from recorded application state, including downloaded Linux apps, reusable build computers and multiple tasks per capture.
+- Inspect more shipped artifacts offline: standalone application bundles, embedded firmware, NTFS acquisitions, API contracts and V8 code-cache containers.
+- Keep native and runtime investigations grounded in retained Evidence, with paged results, explicit coverage and recoverable resource limits.
+
+ Changes
+
+- Analyze targets and create private runtimes on fixed local ReFS volumes as well as NTFS, preserving p</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (9)</h3><div class="rp-list"><a class="rp-item" href="https://techorange.com/2026/10/15/rea-ai-agent-reverse-engineer-github/" target="_blank" rel="noopener"><span class="rp-news-src">techorange</span><span class="rp-item-title">GitHub 爆紅的 REA 真能逆向任何軟體？從 51 件實作看 AI Agent 的能力與限制</span><span class="rp-item-extra">2026-10-14</span></a><a class="rp-item" href="https://www.blocktempo.com/rea-reverse-engineer-anything-github-175k-stars-ai-agents-mcp/" target="_blank" rel="noopener"><span class="rp-news-src">動區動趨</span><span class="rp-item-title">AI 逆向工具「REA 」GitHub 十天衝上 17 萬星，真的什麼都能拆嗎？</span><span class="rp-item-extra">2026-10-13</span></a><a class="rp-item" href="https://www.inside.com.tw/article/42615-rea-reverse-engineer-anything-open-source-mcp-ai-agent-github" target="_blank" rel="noopener"><span class="rp-news-src">INSIDE</span><span class="rp-item-title">什麼都能拆！逆向工程開源專案 REA 讓 AI Agent 協助拆解軟體運作，狂掃 GitHub 12 萬星</span><span class="rp-item-extra">2026-10-12</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMif0FVX3lxTE5ucFhlQUZqcjExZGt3TE1McmhvRjdHakFvR3FhTHBOc3QwMFM5V0RqX3JvLUpydnpDTXczejhRMHI3bU95X1U4Z0NhUTNCS085ZlNzUUFuc1doQnNnQkNZWDdWRUtIRDdKa2xHbjQzQjl2XzNYdnFGLUpqclczbmc?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">手机新浪网</span><span class="rp-item-title">比Jev更爆火！逆向灭霸 REA 一天登顶GitHub</span><span class="rp-item-extra">2026-11-07</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiV0FVX3lxTE5DVDFaZnpiSV9uOWN5bzI3amxhSXBxWF9JVTNLMlI1b1dnX2hNejBrajZ4YnRvdG93TXhXZnJDU2FGVGpqa3lmNFVsOGxsT0JOWjFIVWtuNA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">麻省理工科技评论</span><span class="rp-item-title">号称能“逆向一切”的AI工具爆火，狂揽近30万颗Star，软件开发的护城河守得住吗？</span><span class="rp-item-extra">2026-10-17</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiU0FVX3lxTFBtdzd5cm1BQ0w3SVBFWFpsNE93NF9BcDNEeWp1bWJMWlZSYWt0dDJzQzE0RHk1R0NQUWFxWVZMMDZUdUpLUE1WNkxqSWpwZjZEN3U0?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">电子工程专辑EE Times China</span><span class="rp-item-title">玩了一天 REA，我号差点没了。</span><span class="rp-item-extra">2026-10-15</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE14Z3FRZ2dKbmFyQVc0U0NQRlJGNVl4UFd2SEZhYjdLUnk1R1ZWcHNxRlZ4ZUROcUlxNFdHYzgtczkzb1FQNmVuR09YNWYxMk1DbFdaeVAtcTI2NC0xUkE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">DoNews</span><span class="rp-item-title">AI 逆向工具 REA 爆火：上线 GitHub 9 天获 20 万星，多款 3A 游戏被其破解</span><span class="rp-item-extra">2026-10-15</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE1ONnpISnFqY3lKdmJkQU9yMjBJd3IxVUI2SnRCUV9ocXh1TFlTWDhhX0UtbzB0TV9oRk9qTmd5NVF1ZzNxRS1ZdTNkTWNjMzBya3htaGJJSEZvSng0U3c?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">InfoQ.cn</span><span class="rp-item-title">GitHub 新晋顶流 REA：当大模型能逆向一切，软件行业还剩什么？</span><span class="rp-item-extra">2026-10-13</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTE82NFFidXJhbjR1QTJfX2dfSVE0UmJ1WWJFMVp6T1g2QldYUnJtb3JsMjhkVTJWWk9zTXBXblo2cHdUMzJPSURzWDdBTnBWRVNDMGpZOFpn?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">投资界</span><span class="rp-item-title">逆向灭霸 REA 一天登顶GitHub</span><span class="rp-item-extra">2026-10-12</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (16)</h3><div class="rp-list"><a class="rp-item" href="https://news.ycombinator.com/item?id=50058850" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Reverse engineer anything with agents, from app behavior down to native binaries</span><span class="rp-item-extra">▲ 101 · 39 comments · 2026-10-12</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=50012930" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Reverse Engineer Anything</span><span class="rp-item-extra">▲ 4 · 0 comments · 2026-10-08</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=48901763" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">Show HN: A MCP for Agents to reverse engineer binary code</span><span class="rp-item-extra">▲ 3 · 0 comments · 2026-07-14</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=50028294" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">REA: Reverse Engineer Anything is now #1 trending repo on GitHub</span><span class="rp-item-extra">▲ 2 · 2 comments · 2026-10-10</span></a><a class="rp-item" href="https://news.ycombinator.com/item?id=49980896" target="_blank" rel="noopener"><span class="rp-news-src">Hacker News</span><span class="rp-item-title">REA: Reverse Engineer Anything</span><span class="rp-item-extra">▲ 1 · 0 comments · 2026-10-06</span></a><a class="rp-item" href="https://note.com/scweb/n/na1493e7a6e2b?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">&quot;Is the paid app business over?&quot; What is the trending AI tool &quot;REA&quot;? 5 conditions for paid apps to survive in the future</span><span class="rp-item-extra">2026-11-04</span></a><a class="rp-item" href="https://www.msn.com/en-us/news/other/ai-software-clones-are-coming-for-big-name-companies-like-adobe/ar-AA2gxFci" target="_blank" rel="noopener"><span class="rp-news-src">Engadget on MSN</span><span class="rp-item-title">AI software clones are coming for big-name companies like Adobe</span><span class="rp-item-extra">2026-11-01</span></a><a class="rp-item" href="https://www.scientificamerican.com/article/an-exclusive-conversation-with-the-developer-of-rea-the-viral-ai-reverse-engineering-tool/" target="_blank" rel="noopener"><span class="rp-news-src">Scientific American</span><span class="rp-item-title">AI is letting anyone reverse engineer anything. We talked to the developer at the center of it</span><span class="rp-item-extra">2026-10-30</span></a><a class="rp-item" href="https://startupfortune.com/an-ai-tool-called-rea-now-reverse-engineers-software-in-minutes-not-years/" target="_blank" rel="noopener"><span class="rp-news-src">Startup Fortune</span><span class="rp-item-title">An AI tool called REA now reverse engineers software in minutes not years</span><span class="rp-item-extra">2026-10-18</span></a><a class="rp-item" href="https://note.com/hayamamasami/n/ndf11eb6eb32c?hl=en" target="_blank" rel="noopener"><span class="rp-news-src">note</span><span class="rp-item-title">How the AI tool &#x27;REA&#x27; is changing app analysis—The reason a custom game&#x27;s hidden elements were uncovered in 7.5 minutes</span><span class="rp-item-extra">2026-10-18</span></a><details class="rp-news-more"><summary>6 more</summary><a class="rp-item" href="https://hackernoon.com/i-tested-rea-githubs-viral-reverse-engineering-tool-on-a-real-electron-app" target="_blank" rel="noopener"><span class="rp-news-src">HackerNoon</span><span class="rp-item-title">I Tested REA, GitHub’s Viral Reverse Engineering Tool, on a Real Electron App</span><span class="rp-item-extra">2026-10-12</span></a><a class="rp-item" href="https://decrypt.co/380741/gta-v-iphone-free-photoshop-ai-tool-rea-upending-software" target="_blank" rel="noopener"><span class="rp-news-src">Decrypt</span><span class="rp-item-title">From GTA V on iPhone to Free Photoshop: This AI Tool Is Upending Software</span><span class="rp-item-extra">2026-10-12</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMigAFBVV95cUxQcmVmUnQ0UEg3VDZpUU04SG02VlFjd0hiS0tvNVJHSGRzOXNHRVduSndKRy1IYTZVaGNFemV1a3d1WVU0SjAxZEd0eVVYZUFTVld5U0NGeHBDYnlfMmJsWlhGMzRFLVluVHhNc05KSk8zbEV5YTVpVzlOSDd6ZmpHMA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Buttondown</span><span class="rp-item-title">Reverse Engineer Anything (REA) on GitHub: How Far It Goes</span><span class="rp-item-extra">2026-10-29</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMidkFVX3lxTFBGMnJiU1gxeURzS1dLaW56WjRxUWVXdmxnQUxTYVZ1aEVHc3Y1SHVYeVlnWHlVUHc1NTRneFRZeUJ2ZE5ScnAyMzQ4UnJqV1NaU2pLUDlLLW5DZVRxemQ1QVZJclRKWUNZQ2oyYTI5QVZVX1hVbkE?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">BigGo Finance</span><span class="rp-item-title">AI Reverse-Engineering Tool &#x27;REA&#x27; Hits 327,000 GitHub Stars, Rattling Software Industry</span><span class="rp-item-extra">2026-10-19</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMilgFBVV95cUxQdTJ4Y2JHdXlPVVZzcTNOd3lnZWhyZFdPUUpaV1Zma3RqdUtySFlFTmxvWTZ4OWFabXpVRng3bVg3dDBCYUdxaFNzRUt5aklBbXVUNXpER0R0RVV6OHdpbUFNck1LNEZRMm5ZRWNyTS1NMFlfRllPRG1UNFZrZE9fMTZDekNCRC1HdEZ5dENFT0E5UDF1Vnc?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">REA, AI reverse engineering at record pace on GitHub, what is true and what is not</span><span class="rp-item-extra">2026-10-14</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMimAFBVV95cUxNOWRRVkJDSWZCOVBQTDRBNVBDR3dxNXMzUzJxS3FWWi1kM0dLajZzY1g4YjNnNHROWXlzMFYtcEZFRkdDYlVsd09nSThKbjAxNlNjYUVtVWJRNVN1bExvY2xtWjhrNW9YOVJtbTFJSnJGSHJtdlJWS2djV3RVVEEzbHJLQ3dGVHZuY3M2NUtXdjRrUmduRS1KaA?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">KDnuggets</span><span class="rp-item-title">The Rise of AI Software Clones: Why REA and ArtCraft Are Going Viral</span><span class="rp-item-extra">2026-10-12</span></a></details></div></div></section>
+<section class="rp-panel card rp-cm-ssr"><h3 class="rp-ph">评论 (2)</h3><div class="rp-cm-list"><div class="cm-item" data-id="2"><span class="cm-av cm-av-ph"></span><div class="cm-main"><div class="cm-head"><b>test</b><span class="cm-time">2026-11-11</span></div><div class="cm-body">rae is good</div></div></div><div class="cm-item" data-id="1"><span class="cm-av cm-av-ph"></span><div class="cm-main"><div class="cm-head"><b>terry</b><span class="cm-time">2026-11-11</span></div><div class="cm-body">用了挺好</div></div></div></div></section>
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/morluto__rea.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

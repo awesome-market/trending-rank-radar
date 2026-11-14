@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>atom/atom · GitHub Trending Rank Radar</title>
+<meta name="description" content=":atom: The hackable text editor">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="atom, atom, atom/atom, github stars, github trending, star growth, star history, 开源项目, 星标增长, atom, editor, javascript, electron, windows, linux">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/atom__atom">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="atom/atom · GitHub Trending Rank Radar">
+<meta property="og:description" content=":atom: The hackable text editor">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/atom__atom">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "atom/atom", "codeRepository": "https://github.com/atom/atom", "url": "https://zhuikan.com/repos/atom__atom", "description": ":atom: The hackable text editor", "author": {"@type": "Organization", "name": "atom", "url": "https://github.com/atom"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2012-01-20", "keywords": "atom,editor,javascript,electron,windows,linux,macos"}</script>
+</head>
+<body data-repo="atom/atom" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">atom/atom</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="atom__atom"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/1089146?v=4&s=300" width="300" height="300" alt="atom avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">atom</div>
+      <a class="rp-side-owner" href="https://github.com/atom">atom</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/atom">atom</a>
+        <span class="rp-sep">/</span><span class="rp-name">atom</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">:atom: The hackable text editor</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>60,692</b></span><span class="rp-stat" title="forks">⑂ <b>17,165</b></span><span class="rp-stat" title="watchers">👁 <b>4</b></span><span class="rp-stat" title="prs">⑃ <b>5,279</b></span><span class="rp-stat" title="issues">● <b>17,107</b></span><span class="rp-stat" title="releases">▤ <b>538</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/atom">atom</a><a class="rp-topic" href="../tags/editor">editor</a><a class="rp-topic" href="../tags/javascript">javascript</a><a class="rp-topic" href="../tags/electron">electron</a><a class="rp-topic" href="../tags/windows">windows</a><a class="rp-topic" href="../tags/linux">linux</a><a class="rp-topic" href="../tags/macos">macos</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2012-01-20</span><a class="rp-meta-bit rp-home" href="https://atom.io" rel="noopener">atom.io</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/atom/atom">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">1.60.0</span><a class="rp-dl-a" href="https://github.com/atom/atom/releases/tag/v1.60.0">1.60.0 ↓</a><span class="rp-dl-ver">1.60.0</span><span class="rp-dl-date">2022-03-08</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-2</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">60,692</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">17,165</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">4</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">5,279</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">17,107</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">538</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Atom
+
+
+
+ Atom and all repositories under Atom will be archived on December 15, 2022. Learn more in our official announcement
+
+Atom is a hackable text editor for the 21st century, built on Electron, and based on everything we love about our favorite editors. We designed it to be deeply customizable, but still approachable using the default configuration.
+
+!Atom
+
+!Atom Screenshot
+
+Visit atom.io to learn more or visit the Atom forum.
+
+Follow @AtomEditor on Twitter for important
+announcements.
+
+This project adheres to the Contributor Covenant code of conduct.
+By participating, you are expected to uphold this code. Please report unacceptable behavior to atom@github.com.
+
+ Documentation
+
+If you want to read about using Atom or developing packages in Atom, the Atom Flight Manual is free and available online. You can find the source to the manual in atom/flight-manual.atom.io.
+
+The API reference for developing packages is also documented on Atom.io.
+
+ Installing
+
+ Prerequisites
+- Git
+
+ macOS
+
+Download the latest Atom release.
+
+Atom will automatically update when a new release is available.
+
+ Windows
+
+Download the latest Atom installer. AtomSetup.exe is 32-bit. For 64-bit systems, download AtomSetup-x64.exe.
+
+Atom will automatically update when a new release is available.
+
+You can also download atom-windows.zip (32-bit) or atom-x64-windows.zip (64-bit) from the releases page.
+The .zip version will not automatically update.
+
+Using Chocolatey? Run cinst Atom to install the latest version of Atom.
+
+ Linux
+
+Atom is only available for 64-bit Linux systems.
+
+Configure your distribution&#x27;s package manager to install and update Atom by following the Linux installation instructions in the Flight Manual.  You will also find instructions on how to install Atom&#x27;s official Linux packages without using a package repository, though you will not get automatic updates after installing Atom this way.
+
+ Archive extraction
+
+An archive is available for people who don&#x27;t want to install atom as root.
+
+This version enables you to install multiple Atom versions in parallel. It has been built on Ubuntu 64-bit,
+but should be compatible with other Linux distributions.
+
+1. Install dependencies (on Ubuntu):
+sh
+sudo apt install git libasound2 libcurl4 libgbm1 libgcrypt20 libgtk-3-0 libnotify4 libnss3 libglib2.0-bin xdg-utils libx11-xcb1 libxcb-dri3-0 libxss1 libxtst6 libxkbfile1
+
+2. Download atom-amd64.tar.gz from the Atom releases page.
+3. Run tar xf atom-amd64.tar.gz in the directory where you want to extract the Atom folder.
+4. Launch Atom using the installed atom command from the newly extracted directory.
+
+The Linux version does not currently automatically update so you will need to
+repeat these steps to upgrade to future releases.
+
+ Building
+
+ Linux
+ macOS
+ Windows
+
+ Discussion
+
+ Discuss Atom on GitHub Discussions
+
+ License
+
+MIT
+
+When using the Atom or other GitHub logos, be sure to follow the GitHub logo guidelines.</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/atom/atom/issues/11406"><span class="rp-item-num">#11406</span><span class="rp-item-title">Data loss after power outage</span><span class="rp-item-extra">128 comments · 2016-04-08</span></a><a class="rp-item" href="https://github.com/atom/atom/issues/14020"><span class="rp-item-num">#14020</span><span class="rp-item-title">Atom not appearing on Start Menu (or anywhere) on Windows 10 after first install.</span><span class="rp-item-extra">123 comments · 2017-03-17</span></a><a class="rp-item" href="https://github.com/atom/atom/issues/25417"><span class="rp-item-num">#25417</span><span class="rp-item-title">apm package installs are failing... server code 500.</span><span class="rp-item-extra">96 comments · 2022-04-19</span></a><a class="rp-item" href="https://github.com/atom/atom/issues/21688"><span class="rp-item-num">#21688</span><span class="rp-item-title">Apple M1 and Atom — will it work?</span><span class="rp-item-extra">96 comments · 2020-11-11</span></a><a class="rp-item" href="https://github.com/atom/atom/issues/17727"><span class="rp-item-num">#17727</span><span class="rp-item-title">Cannot See Atom Window with macOS 10.13.6  </span><span class="rp-item-extra">80 comments · 2018-07-22</span></a><a class="rp-item" href="https://github.com/atom/atom/issues/3365"><span class="rp-item-num">#3365</span><span class="rp-item-title">Atom can lock files or folders under some circumstances</span><span class="rp-item-extra">74 comments · 2014-08-23</span></a><a class="rp-item" href="https://github.com/atom/atom/issues/5168"><span class="rp-item-num">#5168</span><span class="rp-item-title">Per-project config settings</span><span class="rp-item-extra">71 comments · 2015-01-20</span></a><a class="rp-item" href="https://github.com/atom/atom/issues/14490"><span class="rp-item-num">#14490</span><span class="rp-item-title">Feature Request: Integrated Shell/Terminal Access</span><span class="rp-item-extra">70 comments · 2017-05-18</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/atom/atom/discussions/25227"><span class="rp-item-num">#25227</span><span class="rp-item-title">Linux - right and left panes are small and unreadable</span><span class="rp-item-extra">0 comments · 2022-04-08</span></a><a class="rp-item" href="https://github.com/atom/atom/discussions/25161"><span class="rp-item-num">#25161</span><span class="rp-item-title">Not replacing regex matches with lookbehinds/lookaheads (possible bug?)</span><span class="rp-item-extra">0 comments · 2022-04-06</span></a><a class="rp-item" href="https://github.com/atom/atom/discussions/25159"><span class="rp-item-num">#25159</span><span class="rp-item-title">config file and stylesheet gone</span><span class="rp-item-extra">0 comments · 2022-04-06</span></a><a class="rp-item" href="https://github.com/atom/atom/discussions/24981"><span class="rp-item-num">#24981</span><span class="rp-item-title">pipe %&gt;% keybinding in personal keymap.cson file</span><span class="rp-item-extra">0 comments · 2022-04-02</span></a><a class="rp-item" href="https://github.com/atom/atom/discussions/24962"><span class="rp-item-num">#24962</span><span class="rp-item-title">Grammar in quoted text</span><span class="rp-item-extra">1 comments · 2022-04-01</span></a><a class="rp-item" href="https://github.com/atom/atom/discussions/24936"><span class="rp-item-num">#24936</span><span class="rp-item-title">Text Highlight</span><span class="rp-item-extra">2 comments · 2022-03-31</span></a><a class="rp-item" href="https://github.com/atom/atom/discussions/24851"><span class="rp-item-num">#24851</span><span class="rp-item-title">Escape the &quot;\&quot; in Snippets</span><span class="rp-item-extra">0 comments · 2022-03-30</span></a><a class="rp-item" href="https://github.com/atom/atom/discussions/24814"><span class="rp-item-num">#24814</span><span class="rp-item-title">Developer Tools are getting unresponsive in debugger mode</span><span class="rp-item-extra">1 comments · 2022-03-30</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/atom/atom/releases"><b>1.60.0</b> <span class="rp-rel-tag">v1.60.0</span> <span class="rp-item-extra">2022-03-08</span></a><pre class="rp-pre">Notable Changes
+
+ atom/tabs531 - Activate panes on any click, not just left click
+ https://github.com/atom/atom/pull/13414 - Adds context menu for cinnamon desktop enviroment (Linux)
+ https://github.com/atom/atom/pull/19016 - Allow line endings to be converted when copying and pasting
+
+
+All Changes
+
+ Atom Core
+
+v1.59.0...1.60.0
+
+ atom/atom22769 - Use custom elements on TestPanelContainerItemElement
+ atom/atom22774 - Use customElement for the specs
+ atom/atom22578 - add await to the async isValidGitDirectory
+ atom/atom22779 - Fix linting issues
+ atom/atom22781 - Remove redudant</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/atom__atom.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

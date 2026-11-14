@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>storytold/craft-launcher · GitHub Trending Rank Radar</title>
+<meta name="description" content="The Craft App Launcher">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="craft-launcher, storytold, storytold/craft-launcher, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/storytold__craft-launcher">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="storytold/craft-launcher · GitHub Trending Rank Radar">
+<meta property="og:description" content="The Craft App Launcher">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/storytold__craft-launcher">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "storytold/craft-launcher", "codeRepository": "https://github.com/storytold/craft-launcher", "url": "https://zhuikan.com/repos/storytold__craft-launcher", "description": "The Craft App Launcher", "author": {"@type": "Organization", "name": "storytold", "url": "https://github.com/storytold"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Rust", "dateCreated": "2026-10-09"}</script>
+</head>
+<body data-repo="storytold/craft-launcher" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">storytold/craft-launcher</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="storytold__craft-launcher"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/76897702?v=4&s=300" width="300" height="300" alt="storytold avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">craft-launcher</div>
+      <a class="rp-side-owner" href="https://github.com/storytold">storytold</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/storytold">storytold</a>
+        <span class="rp-sep">/</span><span class="rp-name">craft-launcher</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=new">new <b>#123</b></a><a class="rp-board-chip" href="../?board=monthly_rate">monthly_rate <b>#100</b></a></div>
+    </div>
+    <p class="rp-desc">The Craft App Launcher</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,326</b></span><span class="rp-stat" title="forks">⑂ <b>1,504</b></span><span class="rp-stat" title="watchers">👁 <b>41</b></span><span class="rp-stat" title="prs">⑃ <b>561</b></span><span class="rp-stat" title="issues">● <b>891</b></span><span class="rp-stat" title="releases">▤ <b>28</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2026-10-09</span></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="storytold__artcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">artcraft</a><a class="rp-same-link" href="storytold__cadcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">cadcraft</a><a class="rp-same-link" href="storytold__craft-anything"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">craft-anything</a><a class="rp-same-link" href="storytold__deckcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">deckcraft</a><a class="rp-same-link" href="storytold__designcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">designcraft</a><a class="rp-same-link" href="storytold__effectcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">effectcraft</a><a class="rp-same-link" href="storytold__figcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">figcraft</a><a class="rp-same-link" href="storytold__filmcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">filmcraft</a><a class="rp-same-link" href="storytold__gridcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">gridcraft</a><a class="rp-same-link" href="storytold__lightcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">lightcraft</a><a class="rp-same-link" href="storytold__pdfcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">pdfcraft</a><a class="rp-same-link" href="storytold__photocraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">photocraft</a><a class="rp-same-link" href="storytold__soundcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">soundcraft</a><a class="rp-same-link" href="storytold__vectorcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">vectorcraft</a><a class="rp-same-link" href="storytold__wordcraft"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/76897702?v=4" alt="" loading="lazy">wordcraft</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/storytold/craft-launcher">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">ArtCraft Launcher v0.19.2</span><a class="rp-dl-a" href="https://github.com/storytold/craft-launcher/releases/tag/v0.19.2">ArtCraft-0.19.2 ↓</a><span class="rp-dl-ver">0.19.2</span><span class="rp-dl-date">2026-11-12</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+28</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+468</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,326</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,504</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">41</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">561</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">891</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">28</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">ArtCraft Launcher
+
+
+  One place to install, update and open every app in the Craft App Suite, rebuilt in pure Rust.
+  PhotoCraft, LightCraft, FilmCraft, DesignCraft, VectorCraft, PdfCraft, EffectCraft, AniCraft, WordCraft,
+  DeckCraft, GridCraft, CADCraft, SoundCraft, FigCraft, Craft Anything, TextureCraft, MaterialCraft and the community apps SolidCraft and MailCraft: the right build for your computer, kept up to date.
+
+
+
+  
+  
+  
+  
+  
+  
+  
+
+
+
+  
+
+
+
+  Download ArtCraft Launcher ·
+  ArtCraft ·
+  The Craft App Suite
+
+
+ [!NOTE]
+ ArtCraft is a community of artists from all walks of life. Painters, photographers,
+ filmmakers, illustrators, designers, animators, hobbyists, and people who picked up a pencil
+ last week. If you make things, you&#x27;re one of us. Come say hi on Discord.
+
+
+  What it does ·
+  Features ·
+  Downloads ·
+  Build from source ·
+  Craft App Suite ·
+  Discord
+
+
+
+  
+
+
+  
+  Switch between the grid and a sortable table.
+
+
+ What it does
+
+The Craft apps each ship their own builds for every platform. ArtCraft Launcher saves you from
+hunting through a dozen release pages: it lists every app in the suite, shows which ones you have
+and which version, installs the right build for your operating system and processor, and tells
+you when an update is out. It is a small native app that can sit in your menu bar or system tray.
+
+ Features
+
+
+  
+    
+      📦 Install in one click
+      Picks the right download for your OS and CPU (DMG, MSI, AppImage, .deb, .rpm and more), checks it against the release&#x27;s SHA-256 checksums and installs it.
+    
+    
+      🔄 Stay up to date
+      Checks each app&#x27;s GitHub releases and updates the ones you have. A notification tells you when there&#x27;s something new.
+    
+    
+      🧭 Always at hand
+      Opens any Craft app from one window, or from the tray and menu-bar icon. Native egui, no Electron, no web view.
+    
+  
+
+
+The web version shows the same catalog in the browser, with the latest download for each app.
+
+ Interface languages
+
+The interface is in English, Brazilian Portuguese (Português (Brasil)), Czech (Čeština), French
+(Français), Georgian (ქართული), German (Deutsch), Hungarian (Magyar), Japanese (日本語), Polish
+(Polski), Russian (Русский), Simplified Chinese (简体中文), Traditional Chinese (繁體中文) or Spanish
+(Español). Auto, the default, follows the system or browser language; Settings → Language
+picks one and switches at once, and the choice is kept between runs. Czech locales (cs-CZ,
+cs_CZ.UTF-8…) select Czech, Georgian ones (ka, ka-GE, ka_GE.UTF-8…) Georgian, German ones
+(de-DE, de-AT, de-CH, de_DE.UTF-8…) German, French ones (fr-FR, fr-CA…) French, Hungarian
+ones (hu, hu-HU, hu_HU.UTF-8…) Hungarian, Japanese ones (ja, ja-JP, ja_JP.UTF-8…)
+Japanese, Polish ones (pl, pl-PL, pl_PL.UTF-8) Polish, Spanish ones (es-ES, es-MX,
+es-419…) Spanish, and Portuguese ones (pt-BR, and pt-PT too, for now) Brazilian Portuguese.
+Simplified Chinese locales (zh-CN, zh-SG, zh-Hans, and POSIX forms such as zh_CN.UTF-8)
+select Simplified</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/storytold/craft-launcher/issues/38"><span class="rp-item-num">#38</span><span class="rp-item-title">[macOS] Crashes on launch with OpenCore Legacy Patcher: &quot;invalid value &#x27;metal3.2&#x27;&quot; (workaround inside)</span><span class="rp-item-extra">27 comments · 2026-10-10</span></a><a class="rp-item" href="https://github.com/storytold/craft-launcher/issues/183"><span class="rp-item-num">#183</span><span class="rp-item-title">[App Proposal] PainterCraft: An open-source Substance 3D Painter alternative in Rust</span><span class="rp-item-extra">20 comments · 2026-10-11</span></a><a class="rp-item" href="https://github.com/storytold/craft-launcher/issues/1384"><span class="rp-item-num">#1384</span><span class="rp-item-title">ArtCraft Launcher is being detected as a virus following the latest update.</span><span class="rp-item-extra">10 comments · 2026-11-11</span></a><a class="rp-item" href="https://github.com/storytold/craft-launcher/issues/165"><span class="rp-item-num">#165</span><span class="rp-item-title">Unable to launch Artcraft Launcher v0.2.1 on Windows 11 25H2</span><span class="rp-item-extra">9 comments · 2026-10-11</span></a><a class="rp-item" href="https://github.com/storytold/craft-launcher/issues/1302"><span class="rp-item-num">#1302</span><span class="rp-item-title">[Bug Report] [App Launcher] ArtCraft Studio installation fails under Windows</span><span class="rp-item-extra">8 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/storytold/craft-launcher/issues/46"><span class="rp-item-num">#46</span><span class="rp-item-title">[Windows] Not opening</span><span class="rp-item-extra">8 comments · 2026-10-10</span></a><a class="rp-item" href="https://github.com/storytold/craft-launcher/issues/964"><span class="rp-item-num">#964</span><span class="rp-item-title">[Bug Report] [App Launcher] Problem with Instalation local</span><span class="rp-item-extra">7 comments · 2026-10-28</span></a><a class="rp-item" href="https://github.com/storytold/craft-launcher/issues/629"><span class="rp-item-num">#629</span><span class="rp-item-title">macOS: let the launcher install an app&#x27;s CLI too</span><span class="rp-item-extra">7 comments · 2026-10-19</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/storytold/craft-launcher/releases"><b>ArtCraft Launcher v0.19.2</b> <span class="rp-rel-tag">v0.19.2</span> <span class="rp-item-extra">2026-11-12</span></a><pre class="rp-pre">What&#x27;s Changed
+ Allow going back to an older version over the launcher&#x27;s own Flatpak; bump to 0.19.2 by @dylanmtaylor in https://github.com/storytold/craft-launcher/pull/1416
+
+
+Full Changelog: https://github.com/storytold/craft-launcher/compare/v0.19.1...v0.19.2</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (4)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/gitblog_00319/article/details/147159289" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">Plain Craft Launcher 2 社区版使用教程</span><span class="rp-item-extra">2026-04-01</span></a><a class="rp-item" href="https://www.bilibili.com/video/BV1uZZVBPEre/" target="_blank" rel="noopener"><span class="rp-news-src">bilibili</span><span class="rp-item-title">[正式版宣传片] Swift Craft Launcher 使用Swift+SwiftUI开发的原生的 macOS 版 Minecraft 启动器</span><span class="rp-item-extra">2026-02-17</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00615/article/details/141047923" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">【亲测免费】 折叠工艺启动器(Fold Craft Launcher): 安卓版Minecraft Java版启动器</span><span class="rp-item-extra">2024-08-09</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMiigFBVV95cUxNRGFpMC1UeDlWYmFEZnQzdWZ3UDdvX1VET0lJV2MzQ25pYUhYTU0xaUFieEtDZTdXdzZfazloOFZvUE10M2NIcHVPWHN4blQ4RHEtY1ZTYjB0Zm1PQ2V4QzZQWGNJWkwyRUtHTTBJb21IaHM0MzZleXF5dkNjUXBXX2pFcUlEY3RzbXc?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">如何在 Mac、Windows 和 Linux 上安装 Craft 应用，打不开时怎么办</span><span class="rp-item-extra">2026-10-14</span></a></div></div><div class="rp-news-block" lang="en" hidden><h3 class="rp-ph">News &amp; coverage (3)</h3><div class="rp-list"><a class="rp-item" href="https://news.google.com/rss/articles/CBMihAFBVV95cUxONER0LU5SQnV2VXZpaWJfRTMzbWp5QzhjOFZ6RXZhUlpRb2VzUTlSYS14ZGtBUWZqUXZqdWs5bi1vSDF3X0xScm5uMFdqLUlnR3JfS2JHdlF2cGJHSUxRVVpXQzl5aGh5UVJRMHFzQzFNMFpFb2V2bjhxTm1iWGVpSVpRUkXSAYoBQVVfeXFMTzFDYzBzREk5eUwwTmlSTWNsMlZ4ZzhqcHFQVWNQd1JvOTlxeUFpOTNoU09jZnlWaXliSnpuLXNHZS1lV08zR21PWjdqekxEb1g0am1QRElkbkhRN2J1akhHbURVa2RaVUZjbVdIb2RKOGdRM2ZPVXFxSHJoNkZQZWxFcGhzd1VUSVN3?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">ProVideo Coalition</span><span class="rp-item-title">I tried the ArtCraft video editor, FilmCraft, so you don’t have to by Scott Simmons</span><span class="rp-item-extra">2026-10-23</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMikAFBVV95cUxNcE5DeGd6bUlwQlNINmhrTVBwXzZRQ3lFa2h0aWdJQkpzS2lwY0FGN2RJQkl1VjhVMTNoZEg0QnQwN05OQVM4T0YxZU1YVkJSOUxhSTY2R0dLVUVfdkVWSmZrbVJleW9LWkpHblpoY2hxbVczQ2RuVlhVVUhYSmV3d0ZDNi1LU2Mzc0QxMW5PZms?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">ZDNET</span><span class="rp-item-title">I tried the free Adobe Acrobat clone – and finally have a pro PDF editor on Linux</span><span class="rp-item-extra">2026-10-19</span></a><a class="rp-item" href="https://news.google.com/rss/articles/CBMimwFBVV95cUxPd3FoZnlCbF9zUHIxLTBwUG1uQkJrb1ZfRm9yR2ROLWFrOUpMZDc0NUNBb0hQZHBoMThnLXYybEpQT093X0NNQ2Q0d0hxdURpOUhFQVZnZ1FSS0hkbDUxNEpEWVQ2LWZFeFNfaXp1WjN5VlltR2RJcDlScTNGRldkSkVObVNoQTVXTlI5Rmh1amRmdk1PUGQtUkFJQQ?oc=5" target="_blank" rel="noopener"><span class="rp-news-src">Pasquale Pillitteri</span><span class="rp-item-title">How to install Craft apps on Mac, Windows and Linux, and what to do if they won&#x27;t open</span><span class="rp-item-extra">2026-10-14</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/storytold__craft-launcher.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

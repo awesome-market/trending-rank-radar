@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evil0ctal/Douyin_TikTok_Download_API · GitHub Trending Rank Radar</title>
+<meta name="description" content="🚀 自托管的抖音、TikTok、B 站数据采集与无水印视频下载 API，支持 AI agent 通过 MCP 调用与离线语音转文字，Docker 一键部署。| Self-hosted TikTok, Douyin &amp; Bilibili scraper and no-watermark video downloader — async REST API, MCP server for AI agen">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Douyin_TikTok_Download_API, Evil0ctal, Evil0ctal/Douyin_TikTok_Download_API, github stars, github trending, star growth, star history, 开源项目, 星标增长, tiktok, douyin, scraper, crawler, web-scraping, tiktok-scraper">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/Evil0ctal__Douyin_TikTok_Download_API">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="Evil0ctal/Douyin_TikTok_Download_API · GitHub Trending Rank Radar">
+<meta property="og:description" content="🚀 自托管的抖音、TikTok、B 站数据采集与无水印视频下载 API，支持 AI agent 通过 MCP 调用与离线语音转文字，Docker 一键部署。| Self-hosted TikTok, Douyin &amp; Bilibili scraper and no-watermark video downloader — async REST API, MCP server for AI agen">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/Evil0ctal__Douyin_TikTok_Download_API">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "Evil0ctal/Douyin_TikTok_Download_API", "codeRepository": "https://github.com/Evil0ctal/Douyin_TikTok_Download_API", "url": "https://zhuikan.com/repos/Evil0ctal__Douyin_TikTok_Download_API", "description": "🚀 自托管的抖音、TikTok、B 站数据采集与无水印视频下载 API，支持 AI agent 通过 MCP 调用与离线语音转文字，Docker 一键部署。| Self-hosted TikTok, Douyin & Bilibili scraper and no-watermark video downloader — async REST API, MCP server for AI agen", "author": {"@type": "Organization", "name": "Evil0ctal", "url": "https://github.com/Evil0ctal"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/Apache-2.0.html", "programmingLanguage": "Python", "dateCreated": "2021-11-07", "keywords": "tiktok,douyin,scraper,crawler,web-scraping,tiktok-scraper,douyin-api,tiktok-api,data-collection,downloader"}</script>
+</head>
+<body data-repo="Evil0ctal/Douyin_TikTok_Download_API" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">Evil0ctal/Douyin_TikTok_Download_API</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="Evil0ctal__Douyin_TikTok_Download_API"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/20760448?u=a80b6fc7fa5d4b020ecb0e159efb53739cc5ebf3&amp;v=4&s=300" width="300" height="300" alt="Evil0ctal avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Douyin_TikTok_Download_API</div>
+      <a class="rp-side-owner" href="https://github.com/Evil0ctal">Evil0ctal</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/Evil0ctal">Evil0ctal</a>
+        <span class="rp-sep">/</span><span class="rp-name">Douyin_TikTok_Download_API</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">🚀 自托管的抖音、TikTok、B 站数据采集与无水印视频下载 API，支持 AI agent 通过 MCP 调用与离线语音转文字，Docker 一键部署。| Self-hosted TikTok, Douyin &amp; Bilibili scraper and no-watermark video downloader — async REST API, MCP server for AI agents, CLI and web console, plus offline speech-to-text for downloaded videos. Self-healing identity pool, PostgreSQL archive, one docker compose up.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>21,386</b></span><span class="rp-stat" title="forks">⑂ <b>2,968</b></span><span class="rp-stat" title="watchers">👁 <b>107</b></span><span class="rp-stat" title="prs">⑃ <b>108</b></span><span class="rp-stat" title="issues">● <b>657</b></span><span class="rp-stat" title="releases">▤ <b>68</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/tiktok">tiktok</a><a class="rp-topic" href="https://github.com/topics/douyin">douyin</a><a class="rp-topic" href="https://github.com/topics/scraper">scraper</a><a class="rp-topic" href="https://github.com/topics/crawler">crawler</a><a class="rp-topic" href="https://github.com/topics/web-scraping">web-scraping</a><a class="rp-topic" href="https://github.com/topics/tiktok-scraper">tiktok-scraper</a><a class="rp-topic" href="https://github.com/topics/douyin-api">douyin-api</a><a class="rp-topic" href="https://github.com/topics/tiktok-api">tiktok-api</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2021-11-07</span><a class="rp-meta-bit rp-home" href="https://douyin.wtf" rel="noopener">douyin.wtf</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/Evil0ctal/Douyin_TikTok_Download_API">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v5.1.11</span><a class="rp-dl-a" href="https://github.com/Evil0ctal/Douyin_TikTok_Download_API/releases/tag/v5.1.11">v5.1.11 ↓</a><span class="rp-dl-ver">5.1.11</span><span class="rp-dl-date">2026-11-08</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+16</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+253</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+748</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">21,386</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">2,968</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">107</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">108</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">657</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">68</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Douyin_TikTok_Download_API
+
+
+
+English | 简体中文
+
+🚀 自部署的抖音 / TikTok / B 站（哔哩哔哩）数据接口服务。一条 docker compose up，自动维护身份池，对外提供 REST API、MCP 与 Web 控制台。
+
+开源、免费、跑在你自己的机器上 —— 不用注册、没有配额、链路上没有第三方。它能取作品、作者和评论，音乐、话题、直播间、热榜和搜索结果，下载视频和图集时拿到的是无水印的流（它挑的是平台本来就提供的那条干净流，而不是「去掉」了什么），采集到的内容存在你自己的 PostgreSQL 里。下载下来的视频可以在同一台机器上离线转成文字，AI agent 也能通过 MCP 直接调用这一切。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 💖 赞助商
+
+这些赞助商已付费放置在这里，Douyin_TikTok_Download_API 项目将永远免费且开源。如果您希望成为该项目的赞助商，请查看我的 GitHub 赞助商页面。
+
+
+    
+        
+    
+    
+        TikHub.io
+    
+    你的一站式社交媒体数据与 API 市场
+    
+        为抖音、小红书、TikTok、Instagram、YouTube、Twitter 等平台提供专业数据方案。
+        实时数据 · 灵活接口 · 无缝集成 · 有竞争力的价格与折扣
+    
+    
+        在 TikHub.io 市场买卖定制 API、服务与社交媒体解决方案，
+        加入一个由开发者、企业与内容创作者组成的活跃生态。
+    
+    多家全球领先的红人营销与社交媒体情报平台正在使用
+    
+        → 前往 TikHub.io
+        &amp;nbsp;·&amp;nbsp;
+        API 文档
+    
+
+
+ 🧩 REER —— 逆向工程交流论坛
+
+
+    
+        
+    
+    reer.dev
+
+
+一个放东西的地方。这个项目之所以存在，是因为有人把「某个签名是怎么构造出来的」写了下来；
+论坛是为了下一轮这种事 —— 签名、协议、加壳，凡是被拆开过的都算。
+
+免费、无广告，除了显而易见的那几条之外基本没有条款限制。中英双语，注册即可发布，不设门槛。
+
+ 🎬 长这样
+
+
+    
+
+
+一次真实的调用：粘链接、发请求、拿到归一化后的结果，途中经过的身份池、调度器和接口文档都在同一个控制台里。
+界面跟着浏览器语言走，中英文都是手写的，不是机翻。English UI
+
+ 不用装任何东西就能试
+
+ 是一个对所有人开放的在线实例。登录进去即可 —— 登录页会替你
+填好演示账号 —— 然后随便用：调试台、调度器、资料库、接口文档。同一个账号还带一把
+API Key，可以直接调爬虫接口，在 API Key 页面上是明文显示的。
+
+它是只读的。演示请求不写入请求日志和归档库，所以一个公开实例的数据库不会被陌生人撑爆；
+关掉演示模式，所有演示会话立即失效，那把 Key 也立刻作废。
+
+限流：每 10 秒 30 次请求。 超了会进入 10 秒冷却，期间你的任何请求都会被拒绝。
+这是一台共用的实例，它背后的身份池是所有人同时使用时的上限。
+
+演示站的用途是帮你判断要不要自己部署一套。它不是一个可以拿来对接的服务 —— 它可能挂、
+可能被重置、也可能被关掉，而且不会提前通知。
+
+ 🚀 v4 与 v5
+
+v5 是一次重写，从空分支起步，没有继承 v4 的任何代码。
+
+v4 最大的问题从来不是功能少，而是接口会悄悄死掉，而你不知道。Cookie 过期、签名算法变更、
+某个接口被风控，通常都要等到有人来提 issue 才发现。v5 把&quot;看得见&quot;和&quot;能自愈&quot;排在功能前面。
+
+| | v4 | v5 |
+|---|---|---|
+| 身份从哪来 | 从浏览器里抠 Cookie，粘进 config.yaml | 无头浏览器自动铸造游客身份，可用数不够时自己补 |
+| 请求怎么发 | 有请求就发出去 | 健康度分层、量化 LRU 轮换、每身份独占锁、每（身份，接口）令牌桶、接口级熔断 |
+| 出了问题 | 等别人报错 | 每次请求一条结构化记录，身份和接口都有实时健康度，控制台上看得见 |
+| 调用方式 | 同步，发出去等着 | 默认异步（202 + task_id），加 ?wait= 就退回同步 |
+| 数据留存 | 解析完即弃 | PostgreSQL + Redis；解析过的内容自动归档，平台删了这里还在 |
+| 访问控制 | 没有，谁都能调 | API Key + 作用域 + 角色，控制台里管 |
+| 界面 | PyWebIO 单页 | React 控制台：身份池、调度器、资料库、下载、日志、诊断 |
+| 接入方式 | REST | REST + MCP + CLI，共用同一个 service 层 |
+| 签名 | X-Bogus、A_Bogus | a_bogus、X-Bogus、X-Gnarly、X-Dynosaur 和 B 站的 WBI，纯 Python 实现，另有浏览器兜底 |
+| 部署 | pip install -r requirements.txt + python start.py | docker compose up，三个镜像 |
+| 平台 | 抖音、TikTok、哔哩哔哩 | 抖音、TikTok、B 站 |
+
+B 站曾经是 5.0 唯一退步的一项，因为它和抖音 / TikTok 不共用签名和身份体系。5.1.6
+把它加了回来，也补上了它自己需要的两样东西：纯 Python 的 WBI 签名，以及通过普通 HTTP
+铸造的游客身份——所以 B 站的身份池不需要浏览器容器。
+
+ 还在用 v4？
+
+v4 的代码保留在 v4 分支，
+镜像也还在推，一条命令就能起：
+
+bash
+docker run -d --name dtk-v4 --restart unless-stopped \
+  -p 8080:80 evil0ctal/douyin_tiktok_download_api:V4.1.2
+
+
+然后打开 ，接口文档在 /docs。端口特意错开成 8080，v5 占的是
+8000，两个版本可以在同一台机器上一起跑。
+
+用之前先把抖音 cookie 换掉。 v4 没有身份池，镜像里那份 cookie 是打包时带的，早就
+过期了，不换的话抖音那边一律返回 400：
+
+bash
+docker cp dtk-v4:/app/crawlers/douyin/web/config.yaml ./douyin-web.yaml
+ 把文件里的 Cookie 换成浏览器里的，保存
+docker rm -f dtk-v4
+docker run -d --name dtk-v4 --restart unless-stopped -p 8080:80 \
+  -v &quot;$PWD/douyin-web.yaml:/app/crawlers/douyin/web/config.yaml&quot; \
+  evi</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Evil0ctal/Douyin_TikTok_Download_API/issues/805"><span class="rp-item-num">#805</span><span class="rp-item-title">[Bug] 视频地址403应该与域名有关</span><span class="rp-item-extra">5 comments · 2026-10-31</span></a><a class="rp-item" href="https://github.com/Evil0ctal/Douyin_TikTok_Download_API/issues/815"><span class="rp-item-num">#815</span><span class="rp-item-title">💡 功能建议与反馈请发到 Discussions / Feature ideas and feedback go to Discussions</span><span class="rp-item-extra">0 comments · 2026-11-02</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/Evil0ctal/Douyin_TikTok_Download_API/discussions/818"><span class="rp-item-num">#818</span><span class="rp-item-title">加一个接口，接收 cookie 推送</span><span class="rp-item-extra">0 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/Evil0ctal/Douyin_TikTok_Download_API/discussions/816"><span class="rp-item-num">#816</span><span class="rp-item-title">build 构建阶段卡默认官方源</span><span class="rp-item-extra">1 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/Evil0ctal/Douyin_TikTok_Download_API/discussions/814"><span class="rp-item-num">#814</span><span class="rp-item-title">💡 功能建议与反馈从这里开始 / Feature ideas and feedback start here</span><span class="rp-item-extra">0 comments · 2026-11-02</span></a><a class="rp-item" href="https://github.com/Evil0ctal/Douyin_TikTok_Download_API/discussions/806"><span class="rp-item-num">#806</span><span class="rp-item-title">容器都正常启动，在开发者，锻造身份那里能正常请求返回cookie，但是在资源池-身份池那里锻造douyin 的身份，就会提示铸造失败 浏览器容器没有响应，这是什么原因？</span><span class="rp-item-extra">1 comments · 2026-10-31</span></a><a class="rp-item" href="https://github.com/Evil0ctal/Douyin_TikTok_Download_API/discussions/802"><span class="rp-item-num">#802</span><span class="rp-item-title">DTK 5.1.7 获取 TikTok 作品列表失败，如何获取视频播放量？</span><span class="rp-item-extra">2 comments · 2026-10-28</span></a><a class="rp-item" href="https://github.com/Evil0ctal/Douyin_TikTok_Download_API/discussions/765"><span class="rp-item-num">#765</span><span class="rp-item-title">下载列表中的内容，删除不了啊？根本没用啊</span><span class="rp-item-extra">1 comments · 2026-09-24</span></a><a class="rp-item" href="https://github.com/Evil0ctal/Douyin_TikTok_Download_API/discussions/764"><span class="rp-item-num">#764</span><span class="rp-item-title">限时日常是不是没有接口解析</span><span class="rp-item-extra">1 comments · 2026-09-22</span></a><a class="rp-item" href="https://github.com/Evil0ctal/Douyin_TikTok_Download_API/discussions/760"><span class="rp-item-num">#760</span><span class="rp-item-title">关注列表采集不全</span><span class="rp-item-extra">1 comments · 2026-09-17</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/Evil0ctal/Douyin_TikTok_Download_API/releases"><b>v5.1.11</b> <span class="rp-rel-tag">v5.1.11</span> <span class="rp-item-extra">2026-11-08</span></a><pre class="rp-pre">What&#x27;s new
+
+TikTok lists and search that get past the posts TikTok will not play. One
+post sent without a media address used to turn a whole page of an author&#x27;s posts
+or a search into a 502. Those posts are TikTok Shop videos, whose media TikTok&#x27;s
+web API gives to nobody, guest or signed in; they now come back with their
+details and no streams, and asking for one directly says so with its own error
+code. Page two of a TikTok post search, empty until now, pages again. Also: the
+console&#x27;s single-post form takes the share text the apps copy, retention stops
+rewriting the same finished tasks on ev</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (2)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/gitblog_01160/article/details/141011032" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">Douyin_TikTok_Download_API 使用指南</span><span class="rp-item-extra">2026-04-01</span></a><a class="rp-item" href="https://blog.csdn.net/weixin_44002151/article/details/135349550" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">github短视频去除水印项目Douyin_TikTok_Download_API介绍</span><span class="rp-item-extra">2024-01-02</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/Evil0ctal__Douyin_TikTok_Download_API.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

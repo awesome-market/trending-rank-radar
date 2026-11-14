@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>linguo2625469/workbuddy2api-panel · GitHub Trending Rank Radar</title>
+<meta name="description" content="把腾讯WorkBuddy账号变成 OpenAI 兼容 API 的多账号网关，同时自动完成任务中心全部任务，附 Web 管理面板（账号池可视化 / 积分任务 / 配置热更新）。基于 Sliverkiss/workbuddy2api 的增强分支">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="workbuddy2api-panel, linguo2625469, linguo2625469/workbuddy2api-panel, github stars, github trending, star growth, star history, 开源项目, 星标增长, admin-panel, codebuddy, gateway, golang, openai-api, reverse-proxy">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/linguo2625469__workbuddy2api-panel">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="linguo2625469/workbuddy2api-panel · GitHub Trending Rank Radar">
+<meta property="og:description" content="把腾讯WorkBuddy账号变成 OpenAI 兼容 API 的多账号网关，同时自动完成任务中心全部任务，附 Web 管理面板（账号池可视化 / 积分任务 / 配置热更新）。基于 Sliverkiss/workbuddy2api 的增强分支">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/linguo2625469__workbuddy2api-panel">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "linguo2625469/workbuddy2api-panel", "codeRepository": "https://github.com/linguo2625469/workbuddy2api-panel", "url": "https://zhuikan.com/repos/linguo2625469__workbuddy2api-panel", "description": "把腾讯WorkBuddy账号变成 OpenAI 兼容 API 的多账号网关，同时自动完成任务中心全部任务，附 Web 管理面板（账号池可视化 / 积分任务 / 配置热更新）。基于 Sliverkiss/workbuddy2api 的增强分支", "author": {"@type": "Organization", "name": "linguo2625469", "url": "https://github.com/linguo2625469"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Go", "dateCreated": "2026-09-12", "keywords": "admin-panel,codebuddy,gateway,golang,openai-api,reverse-proxy,workbuddy"}</script>
+</head>
+<body data-repo="linguo2625469/workbuddy2api-panel" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">linguo2625469/workbuddy2api-panel</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="linguo2625469__workbuddy2api-panel"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/49717738?u=3b01623c29039aa863bfe957c29b1405448a443a&amp;v=4&s=300" width="300" height="300" alt="linguo2625469 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">workbuddy2api-panel</div>
+      <a class="rp-side-owner" href="https://github.com/linguo2625469">linguo2625469</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/linguo2625469">linguo2625469</a>
+        <span class="rp-sep">/</span><span class="rp-name">workbuddy2api-panel</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="../?board=new">new <b>#140</b></a></div>
+    </div>
+    <p class="rp-desc">把腾讯WorkBuddy账号变成 OpenAI 兼容 API 的多账号网关，同时自动完成任务中心全部任务，附 Web 管理面板（账号池可视化 / 积分任务 / 配置热更新）。基于 Sliverkiss/workbuddy2api 的增强分支</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>4,844</b></span><span class="rp-stat" title="forks">⑂ <b>1,734</b></span><span class="rp-stat" title="watchers">👁 <b>6</b></span><span class="rp-stat" title="prs">⑃ <b>107</b></span><span class="rp-stat" title="issues">● <b>148</b></span><span class="rp-stat" title="releases">▤ <b>31</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/admin-panel">admin-panel</a><a class="rp-topic" href="https://github.com/topics/codebuddy">codebuddy</a><a class="rp-topic" href="https://github.com/topics/gateway">gateway</a><a class="rp-topic" href="../tags/golang">golang</a><a class="rp-topic" href="https://github.com/topics/openai-api">openai-api</a><a class="rp-topic" href="https://github.com/topics/reverse-proxy">reverse-proxy</a><a class="rp-topic" href="https://github.com/topics/workbuddy">workbuddy</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Go</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-09-12</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/linguo2625469/workbuddy2api-panel">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.13.0-panel</span><a class="rp-dl-a" href="https://github.com/linguo2625469/workbuddy2api-panel/releases/tag/v1.13.0">v1.13.0-panel ↓</a><span class="rp-dl-ver">1.13.0</span><span class="rp-dl-date">2026-10-08</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+22</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">4,844</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,734</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">6</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">107</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">148</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">31</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">WorkBuddy2API Panel
+
+
+  把腾讯 CodeBuddy 账号变成 OpenAI 兼容 API 的多账号网关 · 附 Web 管理面板
+  Web 面板 · OAuth 浏览器登录 · 账号池轮转 · 熔断与冷却 · 会话粘性 · 定时签到 / 活跃 / 旅行 / 保活 · 成长任务一键完成（17/18） · 流式 / 非流式
+
+
+
+  
+  
+  
+  
+
+
+---
+
+ [!IMPORTANT]
+ 项目已停止维护（2026-10-21）：后续不再更新代码、不跟进上游变化、不再处理新的 issue / PR。
+
+ 原因有三：
+ 1. 上游已开始禁用反代——WorkBuddy 对非官方客户端的识别与拦截正在收紧（通道校验、账号限制等），反代通道的稳定性与存活周期已不可控，继续做适配意义有限；
+ 2. 个人精力有限——本项目本就是个人自用工具，无力长期跟进协议变化与风控对抗；
+ 3. 非法转卖泛滥——发现大量批量注册小号、对外售卖额度、二次加壳 / 卡密分发的滥用行为，与本项目初衷完全相悖。
+
+ 仓库保持现状可用（已合入的修复不会回退），但请自行评估风险：上游随时可能彻底收紧导致不可用；因使用非官方客户端导致的账号风控 / 封禁，由使用者自行承担。
+
+ 维护方式披露：本仓库近期的 issue / PR 处置、代码审查、测试与修复实现大量由 AI 辅助完成（自动化编码 agent），合并与发布决策由维护者作出。请知悉后再使用或参与贡献。
+
+ 本项目是 Sliverkiss/workbuddy2api 的增强分支（fork）。
+ 上游仓库现已删除；本项目已同步至上游删库前的最后一次更新（ea8b1e5），此后由本分支独立维护演进。
+ 在上游基础上重构了可视化运维层；差异概览见 与上游的差异，上游设计的精巧之处（账号池调度、错误分类、提示词体系）原样保留，详见下文。
+
+ ⚠️ 本项目仅限自用账号（签到 / 保活 / 个人工具接入），不支持同时也是禁止批量小号分发额度、二次打包或收费售卖。 详见 使用声明（必读）。
+
+ 使用声明（必读）
+
+本项目（含上游 Sliverkiss/workbuddy2api，下同）的开发初衷只有一个：方便个人管理自己的 CodeBuddy 账号——自动签到、保活、给自己的本地工具提供一个 OpenAI 兼容入口。它是免费、开源、按「原样」提供的个人自用工具。
+
+近期我们发现有人将本项目用于以下行为：
+
+- 批量注册小号 / 收购账号，对外提供付费 API、共享池、代充等业务；
+- 二次加壳、捆绑卡密（授权码）售卖，或以「公益服」「低价中转」等名义变相收费分发。
+
+我们对上述行为表达最强烈的反对，并声明如下：
+
+1. 一切商用 / 售卖行为与本项目及作者无关。 本项目不授权、不支持、不参与任何面向公众的 API 售卖、账号池出租、卡密收费分发；行为人由此产生的一切后果（包括但不限于账号封禁、条款违约与法律风险）由其自行承担，与作者和贡献者无任何关系。
+2. 批量注册与转售接口配额违反目标平台服务条款。 CodeBuddy / 腾讯系服务条款禁止批量注册账号及商业转售接口。上游仓库已删除、停止公开维护——我们无法断定具体原因，但此类滥用行为正在毁掉所有正常使用者的环境，请勿再消耗社区的善意。
+3. 请勿购买任何「收费版」「卡密版」「公益中转版」。 本项目永远免费开源。任何加壳、加密、捆绑收费的「版本」都是他人篡改的产物，与本项目无关；且此类分发无法审计，存在被植入后门、回传并窃取你 CodeBuddy 凭证的风险（auths/ 中保存的是明文 accessToken / refreshToken）。你付钱买到的不是本项目，而是把自己账号交给陌生人的机会。
+4. 关于开源协议的诚实说明。 本项目基于 MIT 协议开源，协议允许自由使用与修改源码——这是开源的本意，我们不会收回；但 MIT 赋予的是代码层面的自由，不赋予以本项目名义宣传、售卖、捆绑分发，或要求作者提供支持与背书的权利。作者不为任何第三方分发版本提供支持、更新承诺或安全保证。
+5. 作者保留止损的权利。 若滥用行为持续，作者可能随时停止维护、关闭或删除仓库，且不另行通知。上游的今天可能就是本项目的明天，望自重。
+
+如果你的用途是管理自己的账号，欢迎正常使用、反馈问题与提交 PR。
+
+ 项目简介
+
+WorkBuddy2API 是一个自托管的 OpenAI 兼容反向代理网关，将腾讯 CodeBuddy（copilot.tencent.com）账号包装为统一的 /v1/chat/completions 服务。
+
+- 官方不提供 OpenAI 形态的开放 API，本项目通过 OAuth 设备授权（面板「添加账号」或 login.sh）获取账号凭证，在网关侧做 token 自动刷新、账号池调度与流量治理；
+- 面向 个人多账号 场景：多账号共享、单号故障自动换号、冷却 / 熔断防止雪崩、会话粘性保证多轮上下文不跳号；
+- 对客户端只暴露 OpenAI 兼容接口，现有 SDK / 前端 / 工具 零改造接入。
+
+ ⚠️ 合规须知：本项目是非官方网关，使用 CodeBuddy 账号作为上游，仅限本人授权账号、本机 / 私有环境测试。详细边界见安全与合规。
+
+ 核心能力
+
+| 能力 | 说明 |
+|---|---|
+| 🔑 OAuth 一键登录 | login.sh 设备授权流程，自动落盘凭证并重启容器加载新账号 |
+| 🔄 多账号池 | 快过期积分加权 + 成本分层 + 加权随机选号，Top-5 候选 + 防惊群 |
+| 🛡️ 熔断与冷却 | 429 软冷却 600s 起指数退避（封顶 soft_rate_max）、404 固定 60s 短冷却、402 硬冷却至次日 04:00、连续失败熔断、在途租约限流 |
+| 🧲 会话粘性 | 同一会话（conversation_id）尽量绑定同一账号，TTL 滚动续期，失败自动解绑，可镜像 Redis 防重启丢失 |
+| ⏰ 定时任务 | 签到（09/21 点，末尾自动跑连登管家：兑换已解锁档位 + 抽完抽奖次数）+ 活跃上报（10 点，点亮连登 / 解锁领养 + streak 自检）+ 猫猫旅行（09/21 点，独立排程）+ token 保活（22 点），四类独立开关 |
+| ⚡ 流式 + 非流式 | 出站强制 stream:true；SSE 帧按规范白名单重建；非流式由本地聚合为单响应 |
+| 🧠 推理模型兼容 | DeepSeek 思维链注入（thinking.type=enabled + 默认档）、reasoning_content 多轮回填、effort 档位自动降级 |
+| 🔍 联网搜索 | POST /v1/search/messages 把上游 /agenttool/v1/search 包成 Anthropic Messages 兼容形态（DSH 等客户端的搜索 provider 零改动接入）；复用账号池选号 / 在途租约 / token 刷新 / 错误冷却，出站请求头对齐官方客户端 |
+| 💬 系统提示词体系 | 网关自有提示词替换客户端 system</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/linguo2625469/workbuddy2api-panel/issues/243"><span class="rp-item-num">#243</span><span class="rp-item-title">查询失败：upstream client (http 401): &lt;html&gt; &lt;head&gt;&lt;title&gt;401 Authorization Required&lt;/title&gt;&lt;/head&gt; &lt;body&gt; &lt;center&gt;&lt;h1&gt;401 Authorization Required</span><span class="rp-item-extra">9 comments · 2026-10-23</span></a><a class="rp-item" href="https://github.com/linguo2625469/workbuddy2api-panel/issues/245"><span class="rp-item-num">#245</span><span class="rp-item-title">文档缺失：Claude Code 接入方式（网关无 /v1/messages + 模型名需带 cn:/global: 前缀）</span><span class="rp-item-extra">6 comments · 2026-10-24</span></a><a class="rp-item" href="https://github.com/linguo2625469/workbuddy2api-panel/issues/240"><span class="rp-item-num">#240</span><span class="rp-item-title">该账号为企业版/企业切换会话</span><span class="rp-item-extra">6 comments · 2026-10-22</span></a><a class="rp-item" href="https://github.com/linguo2625469/workbuddy2api-panel/issues/239"><span class="rp-item-num">#239</span><span class="rp-item-title">暂停选号，但保留自动签到</span><span class="rp-item-extra">6 comments · 2026-10-22</span></a><a class="rp-item" href="https://github.com/linguo2625469/workbuddy2api-panel/issues/241"><span class="rp-item-num">#241</span><span class="rp-item-title">首页账号池表格整表空白（统计显示「账号总数 3 / 可用 3」，表体零行），模型锁池同时空白</span><span class="rp-item-extra">5 comments · 2026-10-22</span></a><a class="rp-item" href="https://github.com/linguo2625469/workbuddy2api-panel/issues/256"><span class="rp-item-num">#256</span><span class="rp-item-title">[分享] macOS 菜单栏启动器（MIT，独立编写）：一键启停 / 账号池健康指示 / 一键更新</span><span class="rp-item-extra">3 comments · 2026-11-08</span></a><a class="rp-item" href="https://github.com/linguo2625469/workbuddy2api-panel/issues/255"><span class="rp-item-num">#255</span><span class="rp-item-title">疑似账户盗用</span><span class="rp-item-extra">1 comments · 2026-11-05</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/linguo2625469/workbuddy2api-panel/releases"><b>v1.13.0-panel</b> <span class="rp-rel-tag">v1.13.0</span> <span class="rp-item-extra">2026-10-08</span></a><pre class="rp-pre">CI 自动构建发布（五平台二进制 + checksums）。
+
+完整变更：https://github.com/linguo2625469/workbuddy2api-panel/compare/v1.12.0...v1.13.0</pre></section>
+<section class="rp-news card"><div class="rp-news-block" lang="zh-CN"><h3 class="rp-ph">相关报道 (3)</h3><div class="rp-list"><a class="rp-item" href="https://blog.csdn.net/gitblog_00613/article/details/167270462" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">WorkBuddy2API Panel一键完成17个成长任务全解析：行为事件上报链是如何逆向后纯API自动领奖的</span><span class="rp-item-extra">2026-10-08</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00788/article/details/167268921" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">10分钟上手WorkBuddy2API Panel：Docker镜像、GHCR与Windows单文件三种快速部署教程</span><span class="rp-item-extra">2026-10-08</span></a><a class="rp-item" href="https://blog.csdn.net/gitblog_00267/article/details/167275540" target="_blank" rel="noopener"><span class="rp-news-src">blog.csdn</span><span class="rp-item-title">免费变废为宝：WorkBuddy2API Panel 如何把腾讯WorkBuddy账号变成OpenAI兼容API网关</span><span class="rp-item-extra">2026-10-08</span></a></div></div></section>
+
+<p class="rp-meta">Snapshot: 2026-11-14T08:50:43Z · Data license Apache-2.0 ·
+<a href="../data/repos/linguo2625469__workbuddy2api-panel.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>

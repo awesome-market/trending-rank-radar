@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>xfangfang/wiliwili · GitHub Trending Rank Radar</title>
+<meta name="description" content="第三方B站客户端，目前可以运行在PC全平台、PSVita、PS4 、Xbox 和 Nintendo Switch上">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="wiliwili, xfangfang, xfangfang/wiliwili, github stars, github trending, star growth, star history, 开源项目, 星标增长">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zhuikan.com/repos/xfangfang__wiliwili">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="xfangfang/wiliwili · GitHub Trending Rank Radar">
+<meta property="og:description" content="第三方B站客户端，目前可以运行在PC全平台、PSVita、PS4 、Xbox 和 Nintendo Switch上">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zhuikan.com/repos/xfangfang__wiliwili">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=d2fbeca0">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "xfangfang/wiliwili", "codeRepository": "https://github.com/xfangfang/wiliwili", "url": "https://zhuikan.com/repos/xfangfang__wiliwili", "description": "第三方B站客户端，目前可以运行在PC全平台、PSVita、PS4 、Xbox 和 Nintendo Switch上", "author": {"@type": "Organization", "name": "xfangfang", "url": "https://github.com/xfangfang"}, "isAccessibleForFree": true, "license": "https://www.apache.org/licenses/LICENSE-2.0", "programmingLanguage": "C++", "dateCreated": "2021-01-17"}</script>
+</head>
+<body data-repo="xfangfang/wiliwili" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="../" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="../" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="../" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">xfangfang/wiliwili</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="xfangfang__wiliwili"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/16631584?u=61ec67a2a0ef561b2a8e9b01d49833f9906f78ee&amp;v=4&s=300" width="300" height="300" alt="xfangfang avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">wiliwili</div>
+      <a class="rp-side-owner" href="https://github.com/xfangfang">xfangfang</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/xfangfang">xfangfang</a>
+        <span class="rp-sep">/</span><span class="rp-name">wiliwili</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">第三方B站客户端，目前可以运行在PC全平台、PSVita、PS4 、Xbox 和 Nintendo Switch上</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,648</b></span><span class="rp-stat" title="forks">⑂ <b>290</b></span><span class="rp-stat" title="watchers">👁 <b>24</b></span><span class="rp-stat" title="releases">▤ <b>24</b></span></div>
+    <div class="rp-topics"></div>
+    <div class="rp-meta"><span class="rp-meta-bit">C++</span><span class="rp-meta-bit">Created 2021-01-17</span><a class="rp-meta-bit rp-home" href="https://xfangfang.github.io/wiliwili" rel="noopener">xfangfang.github.io/wiliwili</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/xfangfang/wiliwili">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+89</div><div class="rp-metric-label">月增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,648</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">290</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">24</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">–</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">24</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">一个专为手柄用户设计的第三方 B站 客户端
+
+
+特点
+|
+安装
+|
+文档
+|
+开发
+
+
+- - -
+
+
+!GitHub All Releases
+!GitHub stars
+!GitHub forks
+
+!NS
+!PSV
+!PS4
+!MS
+!mac
+!Linux
+
+
+
+
+
+
+
+
+
+ 特点
+
+wiliwili 拥有非常接近官方PC客户端的B站浏览体验  
+同时支持触屏、鼠标、键盘 与 手柄操控  
+无论是电脑还是游戏掌机都能获得全新的使用体验
+
+多语言：简、繁、日、韩、英 ...   
+搜索页：热搜 视频 番剧 影视  
+筛选页：快速找到想看的影视内容  
+动态页：关注的UP主最近视频动态  
+直播页：关注的主播与其他系统推荐  
+播放页：视频 番剧 电影 纪录片 综艺，支持弹幕与评论  
+个人页：扫码登录 历史记录 个人收藏 我的追番 我的追剧  
+主题色：拥有深浅两色主题，跟随系统自动切换
+
+
+
+ 安装
+
+ Nintendo Switch
+
+1. 下载 wiliwili-NintendoSwitch.zip：wiliwili releases
+2. 将 wiliwili.nro 放置在内存卡 switch 目录下。
+3. 在主页 按住 R键打开任意游戏进入 hbmenu，在列表中选择 wiliwili 点击打开即可。
+4. [可选] 在应用内安装桌面图标，入口：设置/实用工具/使用教程
+
+
+
+
+
+桌面图标会优先尝试打开 switch/wiliwili.nro，如果其不存在，则尝试打开 switch/wiliwili/wiliwili.nro，如果这两个路径都不存在，则打开
+hbmenu 自行选择路径。
+
+默认提供的为 OpenGL 版本，最高只能播放 4k@30，你也可以下载到支持原生图形 api
+的 deko3d 版本，可以流畅播放 4k@60，不过可能会偶尔崩溃。
+
+
+
+ PSVita
+
+下载 wiliwili-PSVita.vpk 安装即可：wiliwili releases
+
+开启硬解后可以流畅播放 720P 横屏视频，480P 竖屏视频，部分直播 1080P 原画。
+
+ PS4
+
+下载 wiliwili-PS4.pkg 安装即可：wiliwili releases
+
+只支持软解，如果想播放 4k@60 需要在设置中开启低画质解码。
+
+ PC
+
+PC客户端支持切换硬件解码、秒开流畅适合老电脑、支持鼠标操控（左键点击 右键返回 中键刷新）
+
+下载对应系统的安装包运行即可：wiliwili releases
+
+ [!TIP]
+ 现在 Linux &amp; Steam Deck 用户可以通过系统自带的软件商店（如Discover、GNOME Software）搜索 wiliwili 进行下载。  
+ 更多使用技巧请参考 项目 WIKI  
+
+
+
+ 文档
+
+在各位开发者的帮助下，wiliwili 支持了一系列包管理器，同时 wiliwili 还拥有丰富的自定义选项，包括：使用 Anime4K
+提升观感，自定义字体及图标等等  
+前往 项目 WIKI 查看更多使用技巧
+
+
+
+ TODO list
+
+如果你有其他改进的想法或创意，欢迎在讨论区交流：Discussions
+
+
+
+- [x] 初步完成底层基础组件、首页各类推荐视频、用户视频播放页
+- [x] 微调页面、解决播放器启动速度慢、解决播放页面退出卡顿
+- [x] 临时解决异步加载导致的空指针问题（图片异步加载某些情况还会出现问题，待修复）
+- [x] 添加番剧/影视播放、添加扫码登录、播放历史、用户收藏夹（收藏夹相关部分工作不稳定）
+- [x] 初步添加搜索
+- [x] 播放页新增分集与UP主最新投稿
+- [x] 完善视频播放页用户评论内容
+- [x] 重构图片异步加载逻辑
+- [x] 解决收藏夹、搜索页某些情况导致闪退的问题
+- [x] 完善搜索页：番剧、影视 转为竖图
+- [x] 完善播放页投稿列表：调整结构、自动加载下一页
+- [x] 播放页展示合集与推荐
+- [x] 添加动态页
+- [x] 添加视频检索页
+- [x] 完善设置页
+- [x] 弹幕相关设置
+- [x] 点赞、投币、收藏
+- [x] 拖拽调节进度
+- [x] 增加单手模式使用一个手柄来控制播放器
+- [x] NSP forwarder自动检查多个位置的nro文件，避免无法打开
+- [x] 增加设置使首页无法通过返回退出，避免误触
+- [x] 使用教程添加未指明的快捷键说明
+- [x] 重压摇杆临时快进
+- [x] 支持切换按键图标
+- [x] 应用内多语言切换
+- [x] 重构搜索页面
+- [x] 评论@显示不同颜色
+- [x] 完善评论图片
+- [x] 评论大表情包所在行增加行高
+- [x] 支持webp图片
+- [ ] 搜索支持搜索用户
+- [ ] 长按一键三连
+- [ ] 支持个人主页
+- [ ] 评论跳转进度
+- [ ] 评论跳转搜索
+- [ ] 评论下方的更多信息 (up主点赞等内容)
+- [ ] 投票评论
+- [ ] 互动视频
+
+
+
+
+
+ 反馈问题前要做的事
+
+1. 网络相关的问题附加 网络诊断截图，入口：应用内设置/实用工具/网络诊断
+2. [Switch用户] 要确保 大气层和系统固件 更新到 最新 ，内存卡为 FAT32
+3. [Switch用户] 如果打开应用黑屏时间过长，可以尝试删除内存卡目录 config/wiliwili 重新进入
+4. 确保 系统时间正确、系统网络设置正确（主要是DNS）、如果使用了网络代理请在反馈前关闭并重新测试
+5. 查找有没有其他人出现过类似的问题：Issues
+6. 完整且详细地 描述你的问题，最好附加演示视频、截图。
+7. 尝试复现问题，尽力找到BUG出现的规律
+
+
+
+ 贡献
+
+ 软件移植
+
+本应用基于 nanovg 绘制界面，nanovg 底层可移植切换到任意图形库，已有 OpenGL/Vulkan/Metal 等支持。   
+视频播放部分则使用 FFMPEG + MPV 绘制，默认使用 OpenGL，有 D3D11/Deko3d/Gxm 或软件渲染支持。  
+触摸/按键/输入法等平台相关功能通过 GLFW 或 SDL 来支持，也可以脱离二者直接实现，比如 Gxm 版 PSV。
+
+如果你要移植的设备支持 OpenGL(ES) 那么一般来说，直接编译就能正常运行。  
+如果你要移植的设备使用其他底层图形库，那么首先需要移植 nanovg，这可以确保应用主要界面正常，
+其次为了更好的性能表现需要 ffmpeg 的硬解和 mpv 的渲染支持。  
+
+如果你有想要移植的设备欢迎发一条 issue 讨论，Android / iOS 不在讨论之内。
+
+ 新功能
+
+如果你有想完成的创意，请在开发前发布一个 issue 讨论，避免和别人的创意撞车浪费了时间
+
+ 多语言支持
+
+如果你想为软件添加多语言的翻译支持，或者发现了某些翻译存在问题需要订正，请查看 52
+了解如何贡献翻译
+
+ 代码分支
+
+主分支 yoga 为最新版本的代码  
+开发分支 dev 为正在开发中的代码，任何新的 PR 都需要向 dev 分支提交
+
+
+
+ 开发
+
+</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-04T14:00:00Z · Data license Apache-2.0 ·
+<a href="../data/repos/xfangfang__wiliwili.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/purify.min.js?v=d2fbeca0"></script>
+<script src="../assets/vendor/qrcode.min.js?v=d2fbeca0"></script>
+<script src="../assets/common.js?v=d2fbeca0"></script>
+<script src="../assets/repo.js?v=d2fbeca0"></script>
+</body>
+</html>
