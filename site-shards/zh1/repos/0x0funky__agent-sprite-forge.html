@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>0x0funky/agent-sprite-forge · GitHub Trending Rank Radar</title>
+<meta name="description" content="Agent Skill for generating 2D sprite sheets and map, transparent PNG frames, and animated GIFs from prompts.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="agent-sprite-forge, 0x0funky, 0x0funky/agent-sprite-forge, github stars, github trending, star growth, star history, 开源项目, 星标增长, agent-skills, codex, pixel-art, sprite-generator, claude-code, grok-build">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zh1.zhuikan.com/repos/0x0funky__agent-sprite-forge">
+<link rel="alternate" hreflang="en" href="https://en1.zhuikan.com/repos/0x0funky__agent-sprite-forge">
+<link rel="alternate" hreflang="zh-CN" href="https://zh1.zhuikan.com/repos/0x0funky__agent-sprite-forge">
+<link rel="alternate" hreflang="x-default" href="https://zh1.zhuikan.com/repos/0x0funky__agent-sprite-forge">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="0x0funky/agent-sprite-forge · GitHub Trending Rank Radar">
+<meta property="og:description" content="Agent Skill for generating 2D sprite sheets and map, transparent PNG frames, and animated GIFs from prompts.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zh1.zhuikan.com/repos/0x0funky__agent-sprite-forge">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=73e459b6">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "0x0funky/agent-sprite-forge", "codeRepository": "https://github.com/0x0funky/agent-sprite-forge", "url": "https://zh1.zhuikan.com/repos/0x0funky__agent-sprite-forge", "description": "Agent Skill for generating 2D sprite sheets and map, transparent PNG frames, and animated GIFs from prompts.", "author": {"@type": "Organization", "name": "0x0funky", "url": "https://github.com/0x0funky"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "Python", "dateCreated": "2026-04-23", "keywords": "agent-skills,codex,pixel-art,sprite-generator,claude-code,grok-build"}</script>
+</head>
+<body data-repo="0x0funky/agent-sprite-forge" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="https://zhuikan.com/" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="https://zhuikan.com/" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="https://zhuikan.com/" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="https://zhuikan.com/">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">0x0funky/agent-sprite-forge</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="0x0funky__agent-sprite-forge"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/148287731?u=5a8cb617d33ba74cbd278295ca2cce0c63a62ca8&amp;v=4&s=300" width="300" height="300" alt="0x0funky avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">agent-sprite-forge</div>
+      <a class="rp-side-owner" href="https://github.com/0x0funky">0x0funky</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/0x0funky">0x0funky</a>
+        <span class="rp-sep">/</span><span class="rp-name">agent-sprite-forge</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Agent Skill for generating 2D sprite sheets and map, transparent PNG frames, and animated GIFs from prompts.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,782</b></span><span class="rp-stat" title="forks">⑂ <b>562</b></span><span class="rp-stat" title="watchers">👁 <b>18</b></span><span class="rp-stat" title="prs">⑃ <b>9</b></span><span class="rp-stat" title="issues">● <b>8</b></span><span class="rp-stat" title="releases">▤ <b>2</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://tag1.zhuikan.com/tags/agent-skills">agent-skills</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/codex">codex</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/pixel-art">pixel-art</a><a class="rp-topic" href="https://github.com/topics/sprite-generator">sprite-generator</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/claude-code">claude-code</a><a class="rp-topic" href="https://github.com/topics/grok-build">grok-build</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2026-04-23</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/0x0funky/agent-sprite-forge">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v0.6.0 — Real AI pixel game sprites: pixel looks and hibit</span><a class="rp-dl-a" href="https://github.com/0x0funky/agent-sprite-forge/releases/tag/v0.6.0">v0.6.0 ↓</a><span class="rp-dl-ver">0.6.0</span><span class="rp-dl-date">2026-11-13</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+27</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,782</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">562</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">18</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">9</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">8</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">2</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Agent Sprite Forge
+
+语言：English | 繁體中文 | 简体中文 | 日本語 | 한국어
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  0.4 宣传预告：每一帧都是 ASF 的真实输出。
+
+
+ 本页是与英文版同步的摘要。完整说明以 English README 为准（繁體中文为完整翻译）。
+
+ 一张原画 → 整套可进游戏的 sprite
+
+面向 Claude Code（插件）、Codex 与 Grok 的 agent 技能。Agent 用你手上最好的生图路径做出一张原画（master still），再从这张原画为每个动作各生成一段图生视频（image-to-video），然后由确定性的 Python 工具逐一把关、抠图、对位、挑循环、重新计时、后期处理（finish）并打包，交给 Godot、Aseprite 或网页游戏。
+
+
+  
+  
+  
+  
+  一张原画（本机 Codex CLI 生成）→ 每个动作一段 Grok 图生视频 → 六个动作。每一帧都来自 2026-10-06 的实机运行。
+
+
+ 新功能：pixel looks，照着一张参考图做出 1x 像素小人
+
+
+  
+  
+  这场战斗的角色和动作都是 pixel looks 的产出，以 1x 渲染、2 倍显示：四个 1x 角色（母图 33x55 到 87x86）、14 组动作共 168 张图（从图生视频读回来）。后面的背景是一张生成的图，缩成 384x216、40 色。白色的受击闪光和骷髅骑士的淡出是 demo 加的。
+
+
+让图像模型画“像素画”，它画出来的是一张“长得像像素”的图：方块大小不一（15 到 30 px）、一个小角色就有 88,410 种颜色、边缘发糊；直接缩小到 sprite 的尺寸，还是有 1,033 种颜色。hibit 的做法是根本不让模型画像素；pixel looks 反过来，专门做“照着你喜欢的风格”的经典像素小人：风格不用文字描述，由一张你喜欢的 sprite 作为整组角色的参考，再把模型画的图读回真正的网格：找出图里自己的网格、每个方块取一个平涂色、保留角色比例、把颜色收敛成调色板、按规则封闭描边。结果数得出来：33x55 格、48 色、alpha 只有 0 或 255。
+
+
+  
+  
+  
+  
+  左：模型画的图（1254x1254，角色本身 88,410 色）。中：直接缩成 33x55（1,033 色）。右：pixel_look.py master（33x55、48 色、没有半透明像素）。
+
+
+- pixel_look.py（generate2dsprite）：ask-master / master 做出 1x 母图；ask-cast / cast 让其他角色站在母图旁边画，像素大小与身高一致；ask-pose / pose、ask-view / view 从母图做出姿势与侧面、背面；lineup 核对身高。
+- pixel_motion.py（video2dsprite）：prepare、frames、finish、measure、breath：把图生视频的每一帧读回 sprite 的网格与调色板（攻击：从 145 帧视频挑出 21 张），导出 nearest 采样的 animation.json 3.0。
+- 需要你指定才会运行。其他都不变：HD、像素、hibit 三种后期及其默认值没有改动。参考图只决定风格，角色必须是你自己的。详见 English README 与 references/pixel-looks.md。
+
+ 新功能：hibit，把平涂 AI 图变成真正的像素画
+
+
+  
+  
+  Pip&#x27;s Star Grove：完全用 hibit 产出做的单画面小游戏，自动驾驶实机游玩（原生 480x270，2 倍显示）。特效：Patch 制作的 pixelfx（MIT）。
+
+
+不要让图像模型画“像素画”。hibit 风格让模型画干净的平涂无线稿图，像素在后期才产生：每个角色从原始像素学一套调色板，8x8 多数决缩图（绝不混色），迟滞（hysteresis）压闪烁，保留眼睛，二值 alpha，再加一圈颜色取自角色本身的 1 px 描边（--outline auto，不会固定用橙色）。
+
+
+  
+  
+
+
+- master_still.py --finish hibit：平涂无线稿原画。finish_frames.py hibit / sprite_set.py plan --finish hibit：调色板、多数决缩图、迟滞与描边（80 px、12 fps）。hibit_plate.py：480x270 背景，14 色，附 shade map。
+- 特效两条路径（fx_pixelfx.py check 自动选择，你指定的优先）：A：推荐 Patch 制作的 pixelfx（独立 MIT 项目，请自行 git clone，需要 Node 18+；每个特效 16-91 帧、免费，render 附 CREDITS.txt）；B：生图路径（2x2 特效 sheet → process --scale-strategy registered → hibit_fx.py pixelize，每个特效 4 帧，风格与配色和游戏一致）。
+
+
+  
+  
+  
+  左：A（pixelfx）；右：B（生图）。完整 50 秒游玩：pixelfx 版 MP4 · 生图版 MP4。详见 English README。
+
+
+ 0.4 新功能：大升级
+
+| 实机测量 | 升级前 | 0.4 |
+|---|---:|---:|
+| 像素狐狸（48x64，8 帧）：每帧颜色数 | 594–709 | 16–19 |
+| 像素狐狸：alpha 阶数 / 每帧孤立像素（平均） | 199 / 732 | 2 / 75 |
+| 抠图：紫边（外圈溢色，平均） | 0.704 | 0 |
+| 抠图：145 帧中漏出的 key 像素 / 用时 | 7,780 / 271 秒 | 0 / 44 秒 |
+| 攻击：单次动作长度 | 4.1 秒 | 0.7 秒 |
+| 颜色锁定：每对相邻帧的色相翻转（跑步循环） | 352 | 170 |
+| QC：被误判淘汰的好 take | 24 段中 18 段 | 24 段中 0 段 |
+
+- 生图优先： 所有图片和视频都经过 route_media.py：已配置的 API key（OpenAI、Google Gemini、xAI、BytePlus、fal.ai）→ 你已登录的本机 Codex / Grok CLI → 最后才是代码绘制（codeart2d）。
+- 一张原画： master_still.py 生成候选、用编辑修正、核准为 master.json。
+- 整套动作： sprite_set.py 为每个动作生成一段视频，自动 QC 与重拍、soft matte 抠图（无紫边）、对位、自动挑循环、单次动作自动重新计时、HD 颜色锁定，默认 HD 后期，可选清晰的像素后期，并导出引擎文件。
+- 引擎导出： animation.json 3.0、PNG atlas、We</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/0x0funky/agent-sprite-forge/issues/3"><span class="rp-item-num">#3</span><span class="rp-item-title">我使用的时候发现有透明通道的部分老是有紫色残留，是不是目前只能处理像素图像</span><span class="rp-item-extra">5 comments · 2026-05-03</span></a><a class="rp-item" href="https://github.com/0x0funky/agent-sprite-forge/issues/1"><span class="rp-item-num">#1</span><span class="rp-item-title">大佬我想提交一个demo项目的pr</span><span class="rp-item-extra">4 comments · 2026-04-29</span></a><a class="rp-item" href="https://github.com/0x0funky/agent-sprite-forge/issues/9"><span class="rp-item-num">#9</span><span class="rp-item-title">Optional quick try for generate2dsprite</span><span class="rp-item-extra">1 comments · 2026-07-10</span></a><a class="rp-item" href="https://github.com/0x0funky/agent-sprite-forge/issues/4"><span class="rp-item-num">#4</span><span class="rp-item-title">generate2dsprite 生成图片时 Codex 的 image_gen 工具没有把生成图落到可读的本地 PNG 路径</span><span class="rp-item-extra">1 comments · 2026-06-18</span></a><a class="rp-item" href="https://github.com/0x0funky/agent-sprite-forge/issues/12"><span class="rp-item-num">#12</span><span class="rp-item-title">lots of bugs,how long update version？</span><span class="rp-item-extra">0 comments · 2026-07-28</span></a><a class="rp-item" href="https://github.com/0x0funky/agent-sprite-forge/issues/11"><span class="rp-item-num">#11</span><span class="rp-item-title">$video2dsprite fails</span><span class="rp-item-extra">0 comments · 2026-07-28</span></a><a class="rp-item" href="https://github.com/0x0funky/agent-sprite-forge/issues/8"><span class="rp-item-num">#8</span><span class="rp-item-title">how long update this project version?</span><span class="rp-item-extra">0 comments · 2026-07-05</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/0x0funky/agent-sprite-forge/releases"><b>v0.6.0 — Real AI pixel game sprites: pixel looks and hibit</b> <span class="rp-rel-tag">v0.6.0</span> <span class="rp-item-extra">2026-11-13</span></a><pre class="rp-pre">Real AI pixel game sprites: pixel looks and hibit
+
+Ask an image model for pixel art and it paints a picture of pixels: blocks of uneven size, 88,410 colours in one small figure, soft edges. This release gives your agent two ways to real pixel art, in Claude Code, Codex and Grok:
+
+- Pixel looks (new in 0.6.0): classic small sprites that follow a reference. The picture the model paints is read back onto a real grid.
+- Hibit (0.5.0, announced here for the first time): high-bit pixel art. The model paints only a flat, lineless master and the Forge computes every pixel.
+
+▶ Watch the update video (a</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-16T23:08:42Z · Data license Apache-2.0 ·
+<a href="https://api-site.zhuikan.com/data/repos/0x0funky__agent-sprite-forge.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=73e459b6"></script>
+<script src="../assets/vendor/purify.min.js?v=73e459b6"></script>
+<script src="../assets/vendor/qrcode.min.js?v=73e459b6"></script>
+<script src="../assets/common.js?v=73e459b6"></script>
+<script src="../assets/repo.js?v=73e459b6"></script>
+</body>
+</html>
