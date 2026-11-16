@@ -680,15 +680,19 @@ def _bake_i18n(html: str, lang: str) -> str:
     html = re.sub(r'(data-i18n="([^"]+)"[^>]*>)([^<]*)',
                   lambda m: m.group(1) + _esc(d.get(m.group(2), m.group(3))),
                   html)
-    html = re.sub(r'(data-i18n-aria="([^"]+)"[^>]*?aria-label=")([^"]*)"',
-                  lambda m: m.group(1) + _esc(d.get(m.group(2), m.group(3))),
-                  html)
-    html = re.sub(r'(data-i18n-title="([^"]+)"[^>]*?title=")([^"]*)"',
-                  lambda m: m.group(1) + _esc(d.get(m.group(2), m.group(3))),
-                  html)
-    html = re.sub(r'(data-i18n-ph="([^"]+)"[^>]*?placeholder=")([^"]*)"',
-                  lambda m: m.group(1) + _esc(d.get(m.group(2), m.group(3))),
-                  html)
+    html = re.sub(r'(data-i18n-aria="([^"]+)"[^>]*?aria-label=")([^"]*)(")',
+                  lambda m: m.group(1) + _esc(d.get(m.group(2), m.group(3)))
+                  + '"', html)
+    # some elements put aria-label before the data-i18n-aria marker
+    html = re.sub(r'(aria-label=")([^"]*)("[^>]*?data-i18n-aria="([^"]+)")',
+                  lambda m: m.group(1) + _esc(d.get(m.group(4), m.group(2)))
+                  + m.group(3), html)
+    html = re.sub(r'(data-i18n-title="([^"]+)"[^>]*?title=")([^"]*)(")',
+                  lambda m: m.group(1) + _esc(d.get(m.group(2), m.group(3)))
+                  + '"', html)
+    html = re.sub(r'(data-i18n-ph="([^"]+)"[^>]*?placeholder=")([^"]*)(")',
+                  lambda m: m.group(1) + _esc(d.get(m.group(2), m.group(3)))
+                  + '"', html)
     # placeholder attr may be absent in markup — inject one after the marker
     html = re.sub(r'data-i18n-ph="([^"]+)"(?![^>]*placeholder=)',
                   lambda m: m.group(0)
