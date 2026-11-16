@@ -432,8 +432,13 @@ const I18N = {
 };
 
 let LANG = (() => {
-  // /zh/… mirror pages are the zh variant — the URL wins over stored pref
+  // Content URLs choose their language; storage remains useful for pages
+  // without a language-specific URL (auth/user pages and the bilingual tag host).
   if (location.pathname === '/zh' || location.pathname.startsWith('/zh/')) return 'zh';
+  if (/^zh\d*\.zhuikan\.com$/.test(location.hostname)) return 'zh';
+  if (/^en\d*\.zhuikan\.com$/.test(location.hostname)) return 'en';
+  if (location.hostname === 'zhuikan.com' &&
+      (location.pathname === '/' || /^\/(?:b|langs)(?:\/|$)/.test(location.pathname))) return 'en';
   try {
     const l = localStorage.getItem('lang');
     if (l === 'zh' || l === 'en') return l;
