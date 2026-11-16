@@ -651,6 +651,54 @@ def _bi(zh: str, en: str) -> str:
             f'<span class="i18n-en">{_esc(en)}</span>')
 
 
+_I18N_CACHE: dict[str, dict] = {}
+
+
+def _js_i18n(lang: str) -> dict:
+    """Pull the {lang} dictionary out of assets/common.js so data-i18n chrome
+    can be baked per-language at build time — the JS stays the single source
+    of truth for translations."""
+    if lang in _I18N_CACHE:
+        return _I18N_CACHE[lang]
+    src = (SITE_DIR / "assets" / "common.js").read_text(encoding="utf-8")
+    m = re.search(rf"^\s*{lang}:\s*{{\n(.*?)\n\s*}}", src, re.S | re.M)
+    d = {k: v.replace("\\'", "'").replace("\\n", "\n")
+         for k, v in re.findall(r"'([^']+)':\s*'((?:[^'\\]|\\.)*)'",
+                                m.group(1) if m else "")}
+    _I18N_CACHE[lang] = d
+    return d
+
+
+def _bake_i18n(html: str, lang: str) -> str:
+    """Translate data-i18n chrome for a monolingual page — template defaults
+    are zh, so this only rewrites text/attrs for en."""
+    if lang == "zh":
+        return html
+    d = _js_i18n(lang)
+    if not d:
+        return html
+    html = re.sub(r'(data-i18n="([^"]+)"[^>]*>)([^<]*)',
+                  lambda m: m.group(1) + _esc(d.get(m.group(2), m.group(3))),
+                  html)
+    html = re.sub(r'(data-i18n-aria="([^"]+)"[^>]*?aria-label=")([^"]*)"',
+                  lambda m: m.group(1) + _esc(d.get(m.group(2), m.group(3))),
+                  html)
+    html = re.sub(r'(data-i18n-title="([^"]+)"[^>]*?title=")([^"]*)"',
+                  lambda m: m.group(1) + _esc(d.get(m.group(2), m.group(3))),
+                  html)
+    html = re.sub(r'(data-i18n-ph="([^"]+)"[^>]*?placeholder=")([^"]*)"',
+                  lambda m: m.group(1) + _esc(d.get(m.group(2), m.group(3))),
+                  html)
+    # placeholder attr may be absent in markup — inject one after the marker
+    html = re.sub(r'data-i18n-ph="([^"]+)"(?![^>]*placeholder=)',
+                  lambda m: m.group(0)
+                  + f' placeholder="{_esc(d.get(m.group(1), ""))}"',
+                  html)
+    # lang-toggle label mirrors applyStaticI18n: 'EN' on zh / '中' on en
+    html = re.sub(r'(id="langToggle"[^>]*>)[^<]*', r"\1中", html)
+    return html
+
+
 def _mono(html: str, lang: str) -> str:
     """Reduce a _bi() bilingual DOM to a single language — shell pages emit
     a bare-path (en) + /zh/ (zh) pair so each URL carries one clean language.
@@ -665,7 +713,7 @@ def _mono(html: str, lang: str) -> str:
                   html, count=1)
     if lang == "en":
         html = html.replace("https://zh1.", "https://en1.")
-    return html
+    return _bake_i18n(html, lang)
 
 
 def write_shell_pair(en_html: str, zh_html: str, url_path: str,
@@ -1075,10 +1123,13 @@ def render_repo_page(p: dict, template: str, base: str, lang: str) -> str:
     shard = p.get("shard") or "1"
     canon = repo_url(fn, shard, lang)
     alt_lang = "en" if lang == "zh" else "zh"
+    # hreflang uses zh-CN (matches shell pages + common.js toggle selector)
+    alt_hl = "en" if alt_lang == "en" else "zh-CN"
+    self_hl = "zh-CN" if lang == "zh" else "en"
     alternates = (
-        f'<link rel="alternate" hreflang="{alt_lang}" '
+        f'<link rel="alternate" hreflang="{alt_hl}" '
         f'href="{repo_url(fn, shard, alt_lang)}">\n'
-        f'<link rel="alternate" hreflang="{lang}" href="{canon}">\n'
+        f'<link rel="alternate" hreflang="{self_hl}" href="{canon}">\n'
         f'<link rel="alternate" hreflang="x-default" '
         f'href="{repo_url(fn, shard, "zh")}">')
     desc = ((p.get("description") or "").replace("\n", " ")[:200]
@@ -1142,7 +1193,7 @@ def render_repo_page(p: dict, template: str, base: str, lang: str) -> str:
     out = out.replace('<div id="repoContent" class="repo-page"></div>',
                       f'<div id="repoContent" class="repo-page">'
                       f'{_ssr_repo(p, lang, base)}</div>')
-    return out
+    return _bake_i18n(out, lang)
 
 
 # ------------------------------------------------------------------ boards --
