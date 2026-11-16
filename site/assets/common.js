@@ -432,6 +432,8 @@ const I18N = {
 };
 
 let LANG = (() => {
+  // /zh/… mirror pages are the zh variant — the URL wins over stored pref
+  if (location.pathname === '/zh' || location.pathname.startsWith('/zh/')) return 'zh';
   try {
     const l = localStorage.getItem('lang');
     if (l === 'zh' || l === 'en') return l;

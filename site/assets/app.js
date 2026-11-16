@@ -21,6 +21,9 @@ const DATA = (['localhost', '127.0.0.1'].includes(location.hostname)
 // board/langs/index stay on www. Entry-level links carry `shard` from the
 // build (repo_shards.json); anything missing falls back to shard "1".
 const WWW = 'https://zhuikan.com';
+// shell pages come in a bare (en) + /zh/ pair — in-language links keep the
+// current language's tree so tab/nav clicks don't hop across variants
+const SHELL = WWW + (LANG === 'zh' ? '/zh' : '');
 const TAG_HOST = 'https://tag1.zhuikan.com';
 function repoUrl(e) {
   const fn = e.full_name || e.item_id || `${e.owner}/${e.name}`;
@@ -76,7 +79,7 @@ function langDot(lang) {
   const slug = state.langSlugs && state.langSlugs[lang];
   // link to the language's static page when one exists (index.json "langs")
   return slug
-    ? `<a class="lang-tag" href="${WWW}/langs/${slug}">${inner}</a>`
+    ? `<a class="lang-tag" href="${SHELL}/langs/${slug}">${inner}</a>`
     : `<span class="lang-tag">${inner}</span>`;
 }
 
@@ -440,7 +443,7 @@ function renderTabs() {
   const tabs = boardTabsForPeriod();
   $('#boardTabs').innerHTML = tabs.map(b => {
     const active = state.board === b ? ' active' : '';
-    const href = b === CUM_BOARD ? `${WWW}/b/monthly` : `${WWW}/b/${b}`;
+    const href = b === CUM_BOARD ? `${SHELL}/b/monthly` : `${SHELL}/b/${b}`;
     return `<a class="tab-btn${active}" data-board="${b}" href="${href}">${boardLabel(b)}</a>`;
   }).join('');
   $('#boardTabs').style.display = tabs.length ? 'flex' : 'none';

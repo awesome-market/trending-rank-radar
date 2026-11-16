@@ -651,6 +651,44 @@ def _bi(zh: str, en: str) -> str:
             f'<span class="i18n-en">{_esc(en)}</span>')
 
 
+def _mono(html: str, lang: str) -> str:
+    """Reduce a _bi() bilingual DOM to a single language — shell pages emit
+    a bare-path (en) + /zh/ (zh) pair so each URL carries one clean language.
+    For en, zh1 repo links flip to en1 (same filename on the other shard)."""
+    other = "en" if lang == "zh" else "zh"
+    html = re.sub(r'<span class="i18n-' + other + r'"[^>]*>.*?</span>',
+                  "", html, flags=re.S)
+    html = re.sub(r'<span class="i18n-' + lang + r'"[^>]*>(.*?)</span>',
+                  r"\1", html, flags=re.S)
+    html = re.sub(r'<html lang="[^"]*"',
+                  f'<html lang="{"zh-CN" if lang == "zh" else "en"}"',
+                  html, count=1)
+    if lang == "en":
+        html = html.replace("https://zh1.", "https://en1.")
+    return html
+
+
+def write_shell_pair(en_html: str, zh_html: str, url_path: str,
+                     base: str, en_out: Path) -> None:
+    """Emit a bare-path (en) + /zh/ (zh) pair of the same shell page.
+    `url_path` is the canonical en path ("/", "/b/daily", …); the zh copy
+    mirrors it under site/zh/. Relative links stay inside each language
+    tree automatically — only canonical/og:url and hreflang differ."""
+    en_url = f"{base}{url_path}"
+    zh_url = f"{base}/zh{url_path}"
+    alts = (f'\n    <link rel="alternate" hreflang="en" href="{_esc(en_url)}">'
+            f'\n    <link rel="alternate" hreflang="zh-CN" href="{_esc(zh_url)}">'
+            f'\n    <link rel="alternate" hreflang="x-default" href="{_esc(en_url)}">')
+    zh_html = zh_html.replace(f'"{en_url}"', f'"{zh_url}"')
+    zh_out = (SITE_DIR / "zh" / "index.html") if url_path == "/" \
+        else SITE_DIR / "zh" / (url_path.lstrip("/") + ".html")
+    write_if_changed(en_out, _mono(en_html, "en").replace(
+        "</head>", alts + "\n</head>", 1))
+    zh_out.parent.mkdir(parents=True, exist_ok=True)
+    write_if_changed(zh_out, _mono(zh_html, "zh").replace(
+        "</head>", alts + "\n</head>", 1))
+
+
 def _board_label(board: str) -> tuple[str, str]:
     return SSR_LABELS.get(board, (board, board))
 
@@ -737,10 +775,13 @@ def _ssr_month_cards(months: list) -> str:
 
 
 def inject_index_ssr(board: str, items: list, day: str,
-                     months: list, daily_top10: dict, asset_v: str) -> None:
+                     months: list, daily_top10: dict, asset_v: str,
+                     mlang: str = "zh", rel: str = "") -> str | None:
     """Bake current-data fallbacks into index.html so crawlers (Baidu doesn't
     run JS) and first paint on slow links see real content; app.js overwrites
-    each block on hydrate."""
+    each block on hydrate. Returns the html (None when markers are missing).
+    mlang picks the title/description language; rel prefixes root-relative
+    refs for the /zh/ mirror copy."""
     path = SITE_DIR / "index.html"
     html = path.read_text(encoding="utf-8")
     html = re.sub(r'\.(js|css)\?v=[0-9A-Za-z]+', rf'.\1?v={asset_v}', html)
@@ -766,12 +807,30 @@ def inject_index_ssr(board: str, items: list, day: str,
     if months:
         html, n3 = _inject(html, "SSRMG", _ssr_month_cards(months))
 
-    if n1 + n2 + n3:
-        path.write_text(html, encoding="utf-8")
-        log(f"index SSR: board={board} rows={len(items)} "
-            f"top10_days={bool(n2)} month_cards={bool(n3)}")
-    else:
+    if not (n1 + n2 + n3):
         log("[warn] index.html missing SSR markers; skipped")
+        return None
+    log(f"index SSR[{mlang}]: board={board} rows={len(items)} "
+        f"top10_days={bool(n2)} month_cards={bool(n3)}")
+    if mlang == "en":
+        html = re.sub(r"<title>.*?</title>",
+                      "<title>GitHub Trending Rank Radar · "
+                      "open-source trending boards, twice-daily snapshots</title>",
+                      html, count=1, flags=re.S)
+        html = re.sub(r'<meta name="description" content="[^"]*">',
+                      '<meta name="description" content="Independent open-source '
+                      'GitHub trend radar — twice-daily snapshots, eleven boards, '
+                      'day/month/year replay, per-language and per-topic views.">',
+                      html, count=1)
+    if rel:
+        html = html.replace('"assets/', f'"{rel}assets/')
+        html = html.replace('href="./"', f'href="{rel}"')
+        html = html.replace('href="data/', f'href="{rel}data/')
+        html = html.replace('href="b/', f'href="{rel}b/')
+        for leaf in ("manifest.webmanifest", "feed.xml",
+                     "llms.txt", "sitemap.xml"):
+            html = html.replace(f'href="{leaf}"', f'href="{rel}{leaf}"')
+    return html
 
 
 # ---------------- per-language static pages ----------------
@@ -851,21 +910,25 @@ def render_tag_page(tag: str, slug: str, items: list, day: str,
 
 
 def render_lang_page(lang: str, slug: str, boards: dict, day: str,
-                     template: str, base: str) -> str:
+                     template: str, base: str, rel: str = "../",
+                     mlang: str = "zh") -> str:
     """Static /langs/<slug>.html — reuses the index.html skeleton so tabs,
-    podium, rows, theme and i18n all work via app.js `data-lang` mode."""
+    podium, rows, theme and i18n all work via app.js `data-lang` mode.
+    rel prefixes root-relative refs (zh mirror sits one level deeper)."""
     url = f"{base}/langs/{slug}"
     html = template.replace(
         "<body>",
-        f'<body data-base="../" data-lang="{_esc(slug)}" '
+        f'<body data-base="{rel}" data-lang="{_esc(slug)}" '
         f'data-lang-name="{_esc(lang)}">', 1)
     html = re.sub(r"<title>.*?</title>",
                   lambda _: f"<title>{_esc(lang)} · GitHub Trending Rank Radar</title>",
                   html, count=1, flags=re.S)
+    desc_pfx = (f'{_esc(lang)} trending GitHub repos · ' if mlang == "en"
+                else f'{_esc(lang)} GitHub 开源项目趋势榜单 · '
+                     f'{_esc(lang)} trending GitHub repos · ')
     html = html.replace(
         '<meta name="description" content="',
-        f'<meta name="description" content="{_esc(lang)} GitHub 开源项目趋势榜单 · '
-        f'{_esc(lang)} trending GitHub repos · ', 1)
+        f'<meta name="description" content="{desc_pfx}', 1)
     html = html.replace(
         '<link rel="canonical" href="https://zhuikan.com/">',
         f'<link rel="canonical" href="{_esc(url)}">')
@@ -883,15 +946,15 @@ def render_lang_page(lang: str, slug: str, boards: dict, day: str,
                       + "".join(_ssr_row(e) for e in items) + "</div>")
     html, _ = _inject(html, "SSRMT", "")
     html, _ = _inject(html, "SSRMG", "")
-    # subdirectory page — every root-relative ref needs ../ (repo/tag links
-    # from _ssr_row are already absolute and unaffected)
-    html = html.replace('"assets/', '"../assets/')
-    html = html.replace('href="./"', 'href="../"')
-    html = html.replace('href="data/', 'href="../data/')
+    # subdirectory page — every root-relative ref needs the rel prefix
+    # (repo/tag links from _ssr_row are already absolute and unaffected)
+    html = html.replace('"assets/', f'"{rel}assets/')
+    html = html.replace('href="./"', f'href="{rel}"')
+    html = html.replace('href="data/', f'href="{rel}data/')
     html = html.replace('href="manifest.webmanifest"',
-                        'href="../manifest.webmanifest"')
+                        f'href="{rel}manifest.webmanifest"')
     for leaf in ("feed.xml", "llms.txt", "sitemap.xml"):
-        html = html.replace(f'href="{leaf}"', f'href="../{leaf}"')
+        html = html.replace(f'href="{leaf}"', f'href="{rel}{leaf}"')
     return html
 
 
@@ -902,22 +965,28 @@ def render_lang_page(lang: str, slug: str, boards: dict, day: str,
 
 def render_board_page(board: str, day: str, items: list, days: list,
                       template: str, base: str, rel: str,
-                      dated: bool = True) -> str:
-    """day = content date; dated=False → canonical /b/<board> (latest-day entry)."""
+                      dated: bool = True, mlang: str = "zh") -> str:
+    """day = content date; dated=False → canonical /b/<board> (latest-day entry).
+    mlang picks the title/description language for the zh/en shell pair."""
     zh, en = _board_label(board)
     url = f"{base}/b/{board}" + (f"/{day}" if dated else "")
     html = template.replace(
         "<body>",
         f'<body data-base="{rel}" data-board="{_esc(board)}"'
         f' data-sel="{_esc(day)}">', 1)
-    title = f"{zh} · {day} · GitHub 开源项目趋势榜单 · GitHub Trending Rank Radar"
+    if mlang == "en":
+        title = f"{en} · {day} · GitHub Trending Rank Radar"
+        desc = (f"{day} {en} top {len(items)} trending GitHub repos · "
+                "Independent open-source GitHub trend radar.")
+    else:
+        title = f"{zh} · {day} · GitHub 开源项目趋势榜单 · GitHub Trending Rank Radar"
+        desc = (f"{day} {zh} GitHub 开源项目 Top {len(items)} · "
+                f"{en} top {len(items)} trending GitHub repos · "
+                "独立采集 GitHub 仓库数据的开源趋势榜单 · "
+                "Independent open-source GitHub trend radar.")
     html = re.sub(r"<title>.*?</title>",
                   lambda _: f"<title>{_esc(title)}</title>",
                   html, count=1, flags=re.S)
-    desc = (f"{day} {zh} GitHub 开源项目 Top {len(items)} · "
-            f"{en} top {len(items)} trending GitHub repos · "
-            "独立采集 GitHub 仓库数据的开源趋势榜单 · "
-            "Independent open-source GitHub trend radar.")
     html = re.sub(r'<meta name="description" content="[^"]*">',
                   f'<meta name="description" content="{_esc(desc)}">',
                   html, count=1)
@@ -1472,9 +1541,12 @@ def main() -> int:
             items = (boards.get(b) or {}).get("items") or []
             if items and day >= bcut:
                 (bdir / b).mkdir(parents=True, exist_ok=True)
-                (bdir / b / f"{day}.html").write_text(
+                write_shell_pair(
                     render_board_page(b, day, items, days, tpl_index,
-                                      base_url, "../../"), encoding="utf-8")
+                                      base_url, "../../", mlang="en"),
+                    render_board_page(b, day, items, days, tpl_index,
+                                      base_url, "../../../", mlang="zh"),
+                    f"/b/{b}/{day}", base_url, bdir / b / f"{day}.html")
 
         # collect daily-board top10 for the month summary
         top10 = []
@@ -1547,10 +1619,12 @@ def main() -> int:
     for b in ALL_BOARDS:
         items = (latest_boards.get(b) or {}).get("items") or []
         if items:
-            (bdir / f"{b}.html").write_text(
+            write_shell_pair(
                 render_board_page(b, latest_day, items, days, tpl_index,
-                                  base_url, "../", dated=False),
-                encoding="utf-8")
+                                  base_url, "../", dated=False, mlang="en"),
+                render_board_page(b, latest_day, items, days, tpl_index,
+                                  base_url, "../../", dated=False, mlang="zh"),
+                f"/b/{b}", base_url, bdir / f"{b}.html")
 
     placements: dict[str, dict] = {}
     for b, blk in latest_boards.items():
@@ -1763,8 +1837,15 @@ def main() -> int:
         for b in SSR_BOARDS:
             items = (latest_boards.get(b) or {}).get("items") or []
             if items:
-                inject_index_ssr(b, items[:SSR_TOP], latest_day,
-                                 months_present, daily_top10, asset_v)
+                en_html = inject_index_ssr(b, items[:SSR_TOP], latest_day,
+                                           months_present, daily_top10,
+                                           asset_v, mlang="en")
+                zh_html = inject_index_ssr(b, items[:SSR_TOP], latest_day,
+                                           months_present, daily_top10,
+                                           asset_v, mlang="zh", rel="../")
+                if en_html and zh_html:
+                    write_shell_pair(en_html, zh_html, "/", base_url,
+                                     SITE_DIR / "index.html")
                 break
     except Exception as e:
         log(f"[warn] index SSR failed: {e}")
@@ -1789,11 +1870,17 @@ def main() -> int:
                             "repo_count": lang_count[lang], "boards": lb},
                            ensure_ascii=False, separators=(",", ":")),
                 encoding="utf-8")
-            tpl = (SITE_DIR / "index.html").read_text(encoding="utf-8")
+            # index.html on disk is already the en-mono output — reuse the
+            # pristine bilingual template captured at build start instead
+            tpl = re.sub(r'\.(js|css)\?v=[0-9A-Za-z_-]+',
+                         rf'.\1?v={asset_v}', tpl_index)
             langs_dir.mkdir(exist_ok=True)
-            (langs_dir / f"{slug}.html").write_text(
-                render_lang_page(lang, slug, lb, latest_day, tpl, base_url),
-                encoding="utf-8")
+            write_shell_pair(
+                render_lang_page(lang, slug, lb, latest_day, tpl, base_url,
+                                 rel="../", mlang="en"),
+                render_lang_page(lang, slug, lb, latest_day, tpl, base_url,
+                                 rel="../../", mlang="zh"),
+                f"/langs/{slug}", base_url, langs_dir / f"{slug}.html")
             langs_meta.append({"lang": lang, "slug": slug,
                                "repos": lang_count[lang]})
         except Exception as e:
@@ -1825,7 +1912,8 @@ def main() -> int:
                             "boards": {"daily": {"items": items}}},
                            ensure_ascii=False, separators=(",", ":")))
             tags_dir.mkdir(parents=True, exist_ok=True)
-            tpl = (SITE_DIR / "index.html").read_text(encoding="utf-8")
+            tpl = re.sub(r'\.(js|css)\?v=[0-9A-Za-z_-]+',
+                         rf'.\1?v={asset_v}', tpl_index)
             write_if_changed(
                 tags_dir / f"{slug}.html",
                 render_tag_page(e["tag"], slug, items, latest_day, tpl, base))
@@ -1881,16 +1969,19 @@ def main() -> int:
 
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-               sm_url(f"{base}/", latest_day)]
-    # board entry points — latest-day page + every dated page (real URLs)
+               sm_url(f"{base}/", latest_day), sm_url(f"{base}/zh/", latest_day)]
+    # board entry points — latest-day page + every dated page, both languages
     for b in ALL_BOARDS:
         if (bdir / f"{b}.html").exists():
             sitemap.append(sm_url(f"{base}/b/{b}", latest_day))
+            sitemap.append(sm_url(f"{base}/zh/b/{b}", latest_day))
         for f in sorted((bdir / b).glob("*.html")) if (bdir / b).is_dir() else []:
             sitemap.append(sm_url(f"{base}/b/{b}/{f.stem}", f.stem))
+            sitemap.append(sm_url(f"{base}/zh/b/{b}/{f.stem}", f.stem))
     # per-language static pages
     for lm in langs_meta:
         sitemap.append(sm_url(f"{base}/langs/{lm['slug']}", latest_day))
+        sitemap.append(sm_url(f"{base}/zh/langs/{lm['slug']}", latest_day))
     sitemap.append("</urlset>")
     write_if_changed(SITE_DIR / "sitemap.xml",
                      "\n".join(sitemap) + "\n")
