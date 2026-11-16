@@ -44,6 +44,7 @@ CREATE TABLE search_items (
     forks        INTEGER NOT NULL DEFAULT 0,
     watchers     INTEGER NOT NULL DEFAULT 0,
     news_titles  TEXT,
+    shard        TEXT,
     synced_at    INTEGER,
     PRIMARY KEY (site, item_id)
 );
@@ -88,12 +89,13 @@ def _pack_search(con) -> int:
         owner, _, repo = name.partition("/")
         con.execute(
             "INSERT INTO search_items(site,item_id,name,owner,description,"
-            " lang,stars,forks,watchers,news_titles,synced_at)"
-            " VALUES(?,?,?,?,?,?,?,?,?,?,?)",
+            " lang,stars,forks,watchers,news_titles,shard,synced_at)"
+            " VALUES(?,?,?,?,?,?,?,?,?,?,?,?)",
             ("github", name, repo, owner, e.get("d") or "",
              e.get("l") or "", int(e.get("s") or 0),
              int(e.get("f") or 0), int(e.get("w") or 0),
-             "\n".join(news.get(name, [])), t))
+             "\n".join(news.get(name, [])),
+             str(e.get("sh") or "1"), t))
         n += 1
     return n
 

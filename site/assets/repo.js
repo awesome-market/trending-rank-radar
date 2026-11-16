@@ -25,7 +25,14 @@ const STAT_ICONS = { stars: 'star', forks: 'fork', watchers: 'eye', prs: 'pr', i
 // Static pages under /repos/ set <body data-base="../"> so relative fetches
 // and home links still resolve; repo.html leaves it unset.
 const DB = document.body.dataset.base || '';
-const HOME = DB || './';
+// repo pages live on {lang}{shard}.zhuikan.com; index/boards/tags elsewhere
+const HOME = 'https://zhuikan.com/';
+const TAG_HOST = 'https://tag1.zhuikan.com';
+function repoLink(fn, shard) {
+  const i = (fn || '').indexOf('/');
+  return `https://${LANG}${shard || '1'}.zhuikan.com/repos/`
+    + `${encodeURIComponent(fn.slice(0, i))}__${encodeURIComponent(fn.slice(i + 1))}`;
+}
 // Generated data payloads live behind the API blob store (Cloudflare Pages
 // caps deployments at 20k files); page links keep the relative DB base.
 // The gh-pages mirror keeps its own full data/ tree — fetch it relatively
@@ -72,7 +79,7 @@ function sameOwnerHTML(d) {
   if (!list.length) return '<div class="rp-same"></div>';
   const av = esc(d.avatar || '');
   const links = list.slice(0, 20).map(x =>
-    `<a class="rp-same-link" href="${HOME}repos/${esc(x.full_name.replace('/', '__'))}"><img class="rp-same-av" src="${av}" alt="" loading="lazy" onerror="this.remove()">${esc(x.name)}</a>`).join('');
+    `<a class="rp-same-link" href="${repoLink(x.full_name, x.shard)}"><img class="rp-same-av" src="${av}" alt="" loading="lazy" onerror="this.remove()">${esc(x.name)}</a>`).join('');
   return `<div class="rp-same"><div class="rp-same-label">${t('rp.same')}</div><div class="rp-same-row">${links}</div></div>`;
 }
 
@@ -85,7 +92,7 @@ function topHTML(d) {
   const topics = (d.topics || []).slice(0, 8).map(x => {
     const s = tagSlug(x);
     return TAG_IDX && TAG_IDX[s]
-      ? `<a class="rp-topic" href="${HOME}tags/${encodeURIComponent(s)}">${esc(x)}</a>`
+      ? `<a class="rp-topic" href="${TAG_HOST}/tags/${encodeURIComponent(s)}">${esc(x)}</a>`
       : `<a class="rp-topic" href="https://github.com/topics/${encodeURIComponent(x)}" target="_blank" rel="noopener">${esc(x)}</a>`;
   }).join('');
   const metaBits = [
@@ -96,7 +103,7 @@ function topHTML(d) {
   ].filter(Boolean).join('');
   return `<div class="rp-top">
   <aside class="rp-side">
-    <a href="${HOME}repos/${esc(d.full_name.replace('/', '__'))}"><img class="rp-side-av" src="${esc(avBig)}" alt="${esc(d.owner)} avatar" width="300" height="300" onerror="this.style.visibility='hidden'"></a>
+    <a href="${repoLink(d.full_name, d.shard)}"><img class="rp-side-av" src="${esc(avBig)}" alt="${esc(d.owner)} avatar" width="300" height="300" onerror="this.style.visibility='hidden'"></a>
     <div class="rp-side-body card">
       <div class="rp-side-name">${esc(d.name)}</div>
       <a class="rp-side-owner" href="https://github.com/${esc(d.owner)}" target="_blank" rel="noopener">${esc(d.owner)}</a>
@@ -189,7 +196,7 @@ function trendHTML(d) {
     `<button class="rp-mtab${repo.metric === k ? ' active' : ''}" data-metric="${k}">${gi(ic, 13)} ${t('units.' + k)}</button>`).join('');
   return `<section class="rp-trend card">
     <div class="rp-trend-head">
-      <a href="${HOME}repos/${esc(d.full_name.replace('/', '__'))}"><img class="rp-th-av" src="${esc(avSm)}" alt="" width="34" height="34" onerror="this.style.visibility='hidden'"></a>
+      <a href="${repoLink(d.full_name, d.shard)}"><img class="rp-th-av" src="${esc(avSm)}" alt="" width="34" height="34" onerror="this.style.visibility='hidden'"></a>
       <div class="rp-th-txt">
         <div class="rp-th-name">${esc(d.full_name)}</div>
         <div class="rp-th-sub">${t('rp.subtitle')}</div>
@@ -382,8 +389,8 @@ async function shareCanvas(d) {
   c.fillStyle = '#1f2328'; c.font = F(700, 34);
   c.fillText(fitText(c, `GitHub Trending Rank Radar · ${t('rp.share.slogan')}`, W - 72 - 170 - 182 - 20), 182, fy + 108);
   c.fillStyle = '#6e7781'; c.font = F(400, 26);
-  c.fillText(fitText(c, `zhuikan.com/repos/${d.full_name.replace('/', '__')}`, W - 72 - 170 - 182 - 20), 182, fy + 152);
-  const pageUrl = `https://zhuikan.com/repos/${d.full_name.replace('/', '__')}`;
+  c.fillText(fitText(c, repoLink(d.full_name, d.shard).replace('https://', ''), W - 72 - 170 - 182 - 20), 182, fy + 152);
+  const pageUrl = repoLink(d.full_name, d.shard);
   try {
     drawQr(c, pageUrl, W - 72 - 150, fy + 40, 150);
     c.fillStyle = '#9aa4b0'; c.font = F(400, 20); c.textAlign = 'center';
@@ -1050,7 +1057,7 @@ function syncTabs() {
 async function renderFoot(d) {
   const fresh = ' · ' + t('fresh', { t: timeAgo(d.snapshot_at) });
   try {
-    const idx = await j(DB + 'data/index.json');
+    const idx = await j(DATA + 'index.json');
     $('#footStats').textContent = t('foot.stats', {
       r: fmtFull(idx.repo_count), d: idx.snapshot_days,
       s: (idx.first_day || '').slice(5), e: (idx.latest_day || '').slice(5), g: '—',

@@ -549,7 +549,13 @@ function bindChrome(onLangChange) {
   };
   const lb = document.getElementById('langToggle');
   if (lb) lb.onclick = () => {
-    LANG = LANG === 'zh' ? 'en' : 'zh';
+    const want = LANG === 'zh' ? 'en' : 'zh';
+    // shard pages carry a hreflang <link> to the same page on the other
+    // language host — follow it instead of toggling in place
+    const alt = document.querySelector(
+      `link[rel="alternate"][hreflang="${want === 'zh' ? 'zh-CN' : 'en'}"]`);
+    if (alt && alt.href) { location.href = alt.href; return; }
+    LANG = want;
     try { localStorage.setItem('lang', LANG); } catch { /* private mode */ }
     applyStaticI18n();
     if (typeof renderAuthChip === 'function') renderAuthChip();

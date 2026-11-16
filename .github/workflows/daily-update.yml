@@ -202,6 +202,15 @@ jobs:
         run: |
           rm -rf /tmp/ghp-site
           cp -a site /tmp/ghp-site
+          # data/ 由 api-site 的 blob store 服务；带上会把镜像推过
+          # GitHub Pages ~1GB 站点上限。site-shards/ 含 {zh,en,tag}N
+          # 分片页面，一并进镜像作冷备（不含 data，体积小）。
+          rm -rf /tmp/ghp-site/data
+          cp -a site-shards /tmp/ghp-site/site-shards 2>/dev/null || true
+          for h in zh1 en1 tag1; do
+            [ -d "/tmp/ghp-site/site-shards/$h" ] && \
+              cp -a /tmp/ghp-site/assets "/tmp/ghp-site/site-shards/$h/assets" || true
+          done
           cd /tmp/ghp-site
           # Cloudflare 代理 css/js 静态资源 ~4h——把 ?v=<sha> 戳进所有 html
           # 的资产引用，HTML 本身 DYNAMIC 不缓存，发版即生效
@@ -229,7 +238,19 @@ jobs:
         run: |
           # 上一步失败时 /tmp/ghp-site 可能是半成品——宁可跳过也不发布残缺站点
           test -f /tmp/ghp-site/index.html || { echo "site payload missing; skipping deploy"; exit 1; }
+          # www 壳：site/ 剔除 data/（api-site 服务）与 site-shards/（各自成站）
           rm -rf /tmp/cfp-site && mkdir -p /tmp/cfp-site
-          rsync -a --exclude 'data/' /tmp/ghp-site/ /tmp/cfp-site/
-          echo "deploy payload: $(find /tmp/cfp-site -type f | wc -l) files"
+          rsync -a --exclude 'data/' --exclude 'site-shards/' /tmp/ghp-site/ /tmp/cfp-site/
+          echo "www payload: $(find /tmp/cfp-site -type f | wc -l) files"
           npx -y wrangler@3 pages deploy /tmp/cfp-site --project-name=zhuikan --branch=main
+          # 分片站：site-shards/{h}/ + 共享 assets；各自独立 Pages 项目。
+          # 不拷 _redirects——壳的 /repos/* → zh1 规则会错误劫持 en1/tag1。
+          for h in zh1 en1 tag1; do
+            src="/tmp/ghp-site/site-shards/$h"
+            test -d "$src" || { echo "::error::shard payload $src missing"; exit 1; }
+            rm -rf "/tmp/cfp-$h" && mkdir -p "/tmp/cfp-$h"
+            cp -a "$src/." "/tmp/cfp-$h/"
+            cp -a /tmp/ghp-site/assets "/tmp/cfp-$h/assets"
+            echo "shard $h payload: $(find /tmp/cfp-$h -type f | wc -l) files"
+            npx -y wrangler@3 pages deploy "/tmp/cfp-$h" --project-name="zhuikan-$h" --branch=main
+          done

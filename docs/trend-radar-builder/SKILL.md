@@ -21,7 +21,7 @@ implementation and are adapting it — the pipeline shape is proven, the
 domain-specific parts are what you change.
 
 **Reference implementation**: `git clone https://github.com/awesome-market/trending-rank-radar`
-(tracks GitHub repos; ~3000 tracked entities, twice-daily snapshots, eight
+(tracks GitHub repos; ~6,000 tracked entities, twice-daily snapshots, eleven
 boards, bilingual UI, live at zhuikan.com). Read `docs/02-data-pipeline.md`
 and `docs/03-ranking.md` in it before writing code.
 

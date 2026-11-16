@@ -21,9 +21,11 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
+import shutil
 import sys
 import time
 import urllib.parse
@@ -39,6 +41,8 @@ SNAP_DIR = DATA_DIR / "snapshots"
 REPOS_DIR = DATA_DIR / "repos"
 SITE_DIR = ROOT / "site"
 SITE_DATA = SITE_DIR / "data"
+SHARDS_DIR = ROOT / "site-shards"
+SHARDS_FILE = DATA_DIR / "repo_shards.json"
 
 BEIJING = timezone(timedelta(hours=8))
 UTC = timezone.utc
@@ -71,6 +75,80 @@ GROWTH_MIN_STARS = 100
 RATE_MIN_BASE = 50
 
 DEFAULT_SITE_BASE = "https://zhuikan.com"
+
+# ---------------- sharded deployment (docs/08) ----------------
+# www = shell only; repo pages live on {lang}{shard}.zhuikan.com, tag pages on
+# tag{shard}.zhuikan.com. Repo→shard assignment is sticky in data/repo_shards.json
+# (committed to git by the workflow — reduce is the single writer).
+HOST_DOMAIN = "zhuikan.com"
+SHARD_CAP = 19000            # Pages ~20k-file cap minus headroom
+TAG_SHARD = "tag1"
+TEMPLATE_VER = 1             # bump when SSR/template structure changes → re-render all
+REPO_LANGS = ("zh", "en")
+
+
+def write_if_changed(path: Path, content: str) -> bool:
+    """Write only when bytes differ — unchanged output stays byte-identical so
+    wrangler's content-hash diff and git both see no churn."""
+    try:
+        if path.read_bytes() == content.encode("utf-8"):
+            return False
+    except OSError:
+        pass
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(content, encoding="utf-8")
+    return True
+
+
+def compute_asset_v() -> str:
+    """Version ?v= by asset *content* hash — unchanged assets keep a stable
+    stamp so pages stay byte-identical between builds (was: fresh time.time()
+    every run, which broke all content-diff caching)."""
+    h = hashlib.sha256()
+    assets = SITE_DIR / "assets"
+    for f in sorted(assets.glob("*.*")) if assets.is_dir() else []:
+        if f.suffix in (".js", ".css"):
+            h.update(f.read_bytes())
+    return h.hexdigest()[:8]
+
+
+def load_shard_state() -> dict:
+    """data/repo_shards.json — {active, shards:{id:{count,cap}}, repos:{name:rec}}."""
+    try:
+        j = json.loads(SHARDS_FILE.read_text(encoding="utf-8"))
+        j.setdefault("active", "1")
+        j.setdefault("shards", {})
+        j.setdefault("repos", {})
+        return j
+    except Exception:
+        return {"active": "1", "shards": {"1": {"count": 0, "cap": SHARD_CAP}},
+                "repos": {}}
+
+
+def shard_for(state: dict, name: str) -> str:
+    """Sticky shard assignment — once a repo is placed it never migrates.
+    New repos go to `active`; rolling over `cap` advances `active`."""
+    rec = state["repos"].get(name)
+    if rec is None:
+        rec = {"shard": state["active"]}
+        state["repos"][name] = rec
+        cur = state["shards"].setdefault(
+            state["active"], {"count": 0, "cap": SHARD_CAP})
+        cur["count"] += 1
+        if cur["count"] >= cur["cap"]:
+            state["active"] = str(int(state["active"]) + 1)
+            state["shards"].setdefault(
+                state["active"], {"count": 0, "cap": SHARD_CAP})
+    return rec["shard"]
+
+
+def repo_url(name: str, shard: str, lang: str) -> str:
+    return (f"https://{lang}{shard}.{HOST_DOMAIN}/repos/"
+            f"{name.replace('/', '__')}")
+
+
+def tag_url(slug: str) -> str:
+    return f"https://{TAG_SHARD}.{HOST_DOMAIN}/tags/{slug}"
 
 
 def log(msg: str) -> None:
@@ -200,6 +278,11 @@ def series_for(ridx: dict, name: str, day: str, n: int = SERIES_DAYS) -> list[in
     return [int(v[I_STARS] or 0) for v in vs[start:end]]
 
 
+# populated in main() once shard state is loaded — lets make_entry/_ssr_row
+# stamp every board/search entry with its target shard host
+SHARD_MAP: dict[str, str] = {}
+
+
 def make_entry(name: str, rank: int, cur, meta: dict, *,
                growth=None, rate=None, approx=False, stale=False,
                series=None, tag_pages=None) -> dict:
@@ -213,6 +296,7 @@ def make_entry(name: str, rank: int, cur, meta: dict, *,
         "owner": owner,
         "name": repo,
         "full_name": name,
+        "shard": SHARD_MAP.get(name, "1"),
         "description": m.get("description"),
         "avatar": det.get("avatar"),
         "homepage": m.get("homepage"),
@@ -247,10 +331,33 @@ def _plain(text: str, limit: int) -> str:
     return _esc(re.sub(r"[#*`>]", "", text).strip()[:limit])
 
 
-def _ssr_repo(p: dict) -> str:
+# per-language SSR copy for repo detail pages — zh strings keep the existing
+# mixed zh/en wording; en is a fresh translation (review before ship)
+SSR_REPO_LABELS = {
+    "zh": {"boards": "Boards", "dl": "下载：", "same": "TA的项目",
+           "growth": {"day": "日增长", "week": "周增长", "month": "月增长"},
+           "latest_release": "Latest release", "top_issues": "Top issues",
+           "discussions": "Discussions", "comments_h": "评论",
+           "comments": "comments", "pre": "Pre-release",
+           "snapshot": "Snapshot", "license": "Data license",
+           "created": "Created"},
+    "en": {"boards": "Boards", "dl": "Download: ",
+           "same": "More from this author",
+           "growth": {"day": "Daily", "week": "Weekly", "month": "Monthly"},
+           "latest_release": "Latest release", "top_issues": "Top issues",
+           "discussions": "Discussions", "comments_h": "Comments",
+           "comments": "comments", "pre": "Pre-release",
+           "snapshot": "Snapshot", "license": "Data license",
+           "created": "Created"},
+}
+
+
+def _ssr_repo(p: dict, lang: str, base: str) -> str:
     """Server-rendered repo detail HTML — readable by crawlers and no-JS
     clients, mirroring the layout repo.js produces (side card + info column,
-    then all content sections; tabs aren't needed for crawlers)."""
+    then all content sections; tabs aren't needed for crawlers).
+    `lang` picks the SSR copy + link targets; `base` is the www origin."""
+    L = SSR_REPO_LABELS[lang]
     m = p.get("metrics") or {}
     def num(v): return f"{int(v):,}" if isinstance(v, (int, float)) else "–"
     stat_icons = {"stars": "★", "forks": "⑂", "watchers": "👁", "prs": "⑃",
@@ -261,14 +368,14 @@ def _ssr_repo(p: dict) -> str:
         if m.get(k) is not None)
     _tag_pages = p.get("tag_pages") or frozenset()
     topics = "".join(
-        (f'<a class="rp-topic" href="../tags/{_esc(tag_slug(t))}">{_esc(t)}</a>'
+        (f'<a class="rp-topic" href="{tag_url(tag_slug(t))}">{_esc(t)}</a>'
          if tag_slug(t) in _tag_pages
          else f'<a class="rp-topic" href="https://github.com/topics/{_esc(t)}">{_esc(t)}</a>')
         for t in (p.get("topics") or [])[:8])
     bits = [x for x in [
         f'<span class="rp-meta-bit">{_esc(p["language"])}</span>' if p.get("language") else "",
         f'<span class="rp-meta-bit">{_esc(p["license"])}</span>' if p.get("license") else "",
-        f'<span class="rp-meta-bit">Created {_esc((p.get("created_at") or "")[:10])}</span>'
+        f'<span class="rp-meta-bit">{L["created"]} {_esc((p.get("created_at") or "")[:10])}</span>'
         if p.get("created_at") else "",
         (f'<a class="rp-meta-bit rp-home" href="{_esc(p["homepage"])}" rel="noopener">'
          f'{_esc(re.sub(r"^https?://", "", p["homepage"])[:60])}</a>'
@@ -277,7 +384,7 @@ def _ssr_repo(p: dict) -> str:
     order = ["new", "daily", "daily_rate", "weekly", "weekly_rate",
              "monthly", "monthly_rate", "total", "cumulative"]
     chips = "".join(
-        f'<a class="rp-board-chip" href="../?board={b}">{b} <b>#{(p["boards"] or {})[b]}</b></a>'
+        f'<a class="rp-board-chip" href="{base}/?board={b}">{b} <b>#{(p["boards"] or {})[b]}</b></a>'
         for b in order if (p.get("boards") or {}).get(b) is not None)
     growth = p.get("growth") or {}
     def gcell(k):
@@ -285,10 +392,9 @@ def _ssr_repo(p: dict) -> str:
         if not g or g.get("stars") is None:
             return ""
         up = g["stars"] >= 0
-        lbl = {"day": "日增长", "week": "周增长", "month": "月增长"}[k]
         return (f'<div class="rp-metric"><div class="rp-metric-num '
                 f'{"up" if up else "down"}">{"+" if up else ""}{num(g["stars"])}</div>'
-                f'<div class="rp-metric-label">{lbl}</div></div>')
+                f'<div class="rp-metric-label">{L["growth"][k]}</div></div>')
     growth_mets = gcell("day") + gcell("week") + gcell("month")
     met_keys = ["stars", "forks", "watchers", "prs", "issues", "releases"]
     mets = "".join(
@@ -296,12 +402,12 @@ def _ssr_repo(p: dict) -> str:
         f'<div class="rp-metric-label">{k}</div>'
         + '</div>' for k in met_keys if k in m)
 
-    def lst(items, base):
+    def lst(items, url_base):
         return "".join(
-            f'<a class="rp-item" href="{base}/{i.get("number", "")}">'
+            f'<a class="rp-item" href="{url_base}/{i.get("number", "")}">'
             f'<span class="rp-item-num">#{i.get("number", "")}</span>'
             f'<span class="rp-item-title">{_esc(i.get("title"))}</span>'
-            f'<span class="rp-item-extra">{i.get("comments", 0)} comments · '
+            f'<span class="rp-item-extra">{i.get("comments", 0)} {L["comments"]} · '
             f'{_esc((i.get("created_at") or "")[:10])}</span></a>'
             for i in (items or [])[:8])
 
@@ -309,9 +415,9 @@ def _ssr_repo(p: dict) -> str:
     rel_html = ""
     if rel:
         body = _plain(rel.get("body") or "", 600)
-        pre = ('<span class="rp-rel-pre">Pre-release</span> '
+        pre = (f'<span class="rp-rel-pre">{L["pre"]}</span> '
                if rel.get("is_prerelease") else "")
-        rel_html = (f'<h3 class="rp-ph">Latest release</h3>'
+        rel_html = (f'<h3 class="rp-ph">{L["latest_release"]}</h3>'
                     f'<a class="rp-rel" href="{_esc(p["url"])}/releases">'
                     f'<b>{_esc(rel.get("name") or rel.get("tag") or "")}</b> '
                     f'<span class="rp-rel-tag">{_esc(rel.get("tag") or "")}</span> '
@@ -323,12 +429,12 @@ def _ssr_repo(p: dict) -> str:
         tag = str(rel["tag"])
         vm = re.search(r"(\d[\d.]*)$", tag)
         ver = vm.group(1) if vm else tag
-        base = (re.split(r"[:：\s]+", str(rel.get("name") or p["name"]))[0]
-                or p["name"])
+        base_name = (re.split(r"[:：\s]+", str(rel.get("name") or p["name"]))[0]
+                     or p["name"])
         file = (tag if not re.match(r"^v?\d[\d.]*$", tag, re.I)
-                else (base if ver.lower() in base.lower() else f"{base}-{ver}"))
+                else (base_name if ver.lower() in base_name.lower() else f"{base_name}-{ver}"))
         dl_html = (f'<div class="rp-dl">'
-                   f'<span class="rp-dl-label">下载：</span>'
+                   f'<span class="rp-dl-label">{L["dl"]}</span>'
                    f'<span class="rp-dl-t">{_esc(rel.get("name") or tag)}</span>'
                    f'<a class="rp-dl-a" href="{_esc(p["url"])}/releases/tag/'
                    f'{urllib.parse.quote(tag, safe="")}">{_esc(file)} ↓</a>'
@@ -339,29 +445,29 @@ def _ssr_repo(p: dict) -> str:
     readme_html = (f'<h3 class="rp-ph">README</h3>'
                    f'<pre class="rp-pre rp-readme">{_plain(readme, 3000)}</pre>'
                    if readme else "")
-    sec_i = (f'<h3 class="rp-ph">Top issues</h3>'
+    sec_i = (f'<h3 class="rp-ph">{L["top_issues"]}</h3>'
              f'<div class="rp-list">{lst(p.get("issues"), p["url"] + "/issues")}</div>'
              if p.get("issues") else "")
-    sec_d = (f'<h3 class="rp-ph">Discussions</h3>'
+    sec_d = (f'<h3 class="rp-ph">{L["discussions"]}</h3>'
              f'<div class="rp-list">{lst(p.get("discussions"), p["url"] + "/discussions")}</div>'
              if p.get("discussions") else "")
     av_url = _esc(p.get("avatar") or "")
     same_links = "".join(
-        f'<a class="rp-same-link" href="{_esc(x["full_name"]).replace("/", "__")}">'
+        f'<a class="rp-same-link" href="{repo_url(x["full_name"], x.get("shard") or "1", lang)}">'
         f'<img class="rp-same-av" src="{av_url}" alt="" loading="lazy">{_esc(x["name"])}</a>'
         for x in (p.get("same_owner") or [])[:20])
     if same_links:
-        same_links = (f'<div class="rp-same-label">TA的项目</div>'
+        same_links = (f'<div class="rp-same-label">{L["same"]}</div>'
                       f'<div class="rp-same-row">{same_links}</div>')
     page_fn = _esc(p["full_name"]).replace("/", "__")
-    news_html = _ssr_news(p.get("news") or [])
+    news_html = _ssr_news(p.get("news") or [], lang)
     av_img = (f'<img class="rp-side-av" src="{_esc(p["avatar"])}&s=300" width="300" '
               f'height="300" alt="{_esc(p["owner"])} avatar">' if p.get("avatar")
               else f'<img class="rp-side-av" src="https://github.com/{_esc(p["owner"])}.png?size=300" '
                    f'width="300" height="300" alt="">')
     av = f'<a href="{page_fn}">{av_img}</a>'
     return f"""
-<nav class="rp-crumb"><a href="../">Boards</a><span class="rp-crumb-sep">/</span>
+<nav class="rp-crumb"><a href="{base}/">{L['boards']}</a><span class="rp-crumb-sep">/</span>
 <span class="rp-crumb-cur">{_esc(p['full_name'])}</span></nav>
 <div class="rp-top">
   <aside class="rp-side">
@@ -390,9 +496,9 @@ def _ssr_repo(p: dict) -> str:
 <section class="rp-panel card">{dl_html}<div class="rp-metric-grid">{growth_mets}{mets}</div>
 {readme_html}{sec_i}{sec_d}{rel_html}</section>
 {news_html}
-{_ssr_comments(p.get('cm_items'))}
-<p class="rp-meta">Snapshot: {_esc(p.get('snapshot_at'))} · Data license Apache-2.0 ·
-<a href="../data/repos/{_esc(p['owner'])}__{_esc(p['name'])}.json">JSON</a></p>"""
+{_ssr_comments(p.get('cm_items'), lang)}
+<p class="rp-meta">{L['snapshot']}: {_esc(p.get('snapshot_at'))} · {L['license']} Apache-2.0 ·
+<a href="https://api-site.{HOST_DOMAIN}/data/repos/{_esc(p['owner'])}__{_esc(p['name'])}.json">JSON</a></p>"""
 
 
 def _fetch_comments() -> dict[str, list]:
@@ -412,7 +518,7 @@ def _fetch_comments() -> dict[str, list]:
         return {}
 
 
-def _ssr_comments(items: list) -> str:
+def _ssr_comments(items: list, lang: str = "zh") -> str:
     """Static comment tree mirroring repo.js loadComments(): newest top-level
     first, replies nested under .cm-kids (indent capped at two levels).
     Interactive bits (buttons, pending badges, translations) are omitted —
@@ -460,8 +566,9 @@ def _ssr_comments(items: list) -> str:
                 + f'>{inner}</div>' if inner else row(c))
 
     body = "".join(tree(c, 0) for c in tops)
+    head = "评论" if lang == "zh" else "Comments"
     return (f'<section class="rp-panel card rp-cm-ssr">'
-            f'<h3 class="rp-ph">评论 ({len(items)})</h3>'
+            f'<h3 class="rp-ph">{head} ({len(items)})</h3>'
             f'<div class="rp-cm-list">{body}</div></section>')
 
 
@@ -473,10 +580,11 @@ def _load_news(owner: str, repo: str) -> list:
         return []
 
 
-def _ssr_news(items: list) -> str:
+def _ssr_news(items: list, lang: str = "zh") -> str:
     """Bilingual press block for repo pages. Both languages render into the
     HTML (crawlable); the non-default one carries `hidden`, and repo.js
-    flips visibility on language switch / re-render."""
+    flips visibility on language switch / re-render. `lang` picks which
+    block is visible by default on this page."""
     if not items:
         return ""
     zh = [i for i in items if i.get("lang") == "zh"]
@@ -510,7 +618,9 @@ def _ssr_news(items: list) -> str:
                 f'<div class="rp-list">{"".join(row(i) for i in lst[:10])}'
                 f'{more}</div></div>')
 
-    visible = "zh" if zh else "en"   # SSR default: zh first (site default lang)
+    # SSR default: prefer the page's language when that list exists
+    pool = {"zh": zh, "en": en}
+    visible = lang if pool.get(lang) else ("zh" if zh else "en")
     return ('<section class="rp-news card">'
             + (block(zh, "zh", "相关报道", visible != "zh") if zh else "")
             + (block(en, "en", "News &amp; coverage", visible != "en") if en else "")
@@ -546,9 +656,12 @@ def _board_label(board: str) -> tuple[str, str]:
 
 
 def _ssr_row(e: dict) -> str:
-    """Crawler/first-paint row — mirrors app.js .rank-row markup."""
+    """Crawler/first-paint row — mirrors app.js .rank-row markup. Repo links
+    are absolute zh-shard URLs (www shell is zh-context; hydration swaps to
+    the visitor's language); tag pills point at the tag shard."""
     owner, name = e["owner"], e["name"]
-    href = f"repos/{owner}__{name}"
+    href = repo_url(e.get("full_name") or f"{owner}/{name}",
+                    e.get("shard") or "1", "zh")
     rank = e.get("rank") or 0
     stars = e.get("stars")
     meta = []
@@ -567,7 +680,7 @@ def _ssr_row(e: dict) -> str:
                 if isinstance(stars, int) else "")
     tp = set(e.get("tag_pages") or [])
     pills = "".join(
-        (f'<a class="row-tag" href="tags/{_esc(tag_slug(t))}">{_esc(t)}</a>'
+        (f'<a class="row-tag" href="{tag_url(tag_slug(t))}">{_esc(t)}</a>'
          if tag_slug(t) in tp else
          f'<a class="row-tag" href="https://github.com/topics/{_esc(t)}">{_esc(t)}</a>')
         for t in (e.get("topics") or [])[:4])
@@ -597,7 +710,8 @@ def _ssr_month_top10(days_entries: list) -> str:
     for day in days_entries:
         chips = []
         for e in day.get("items") or []:
-            href = f"repos/{e['owner']}__{e['name']}"
+            fn_ = f"{e['owner']}/{e['name']}"
+            href = repo_url(fn_, e.get("shard") or SHARD_MAP.get(fn_, "1"), "zh")
             g = e.get("growth")
             num = f"+{g:,}" if isinstance(g, int) else (
                 f"★{e['stars']:,}" if isinstance(e.get("stars"), int) else "")
@@ -623,13 +737,13 @@ def _ssr_month_cards(months: list) -> str:
 
 
 def inject_index_ssr(board: str, items: list, day: str,
-                     months: list, daily_top10: dict) -> None:
+                     months: list, daily_top10: dict, asset_v: str) -> None:
     """Bake current-data fallbacks into index.html so crawlers (Baidu doesn't
     run JS) and first paint on slow links see real content; app.js overwrites
     each block on hydrate."""
     path = SITE_DIR / "index.html"
     html = path.read_text(encoding="utf-8")
-    html = re.sub(r'\.(js|css)\?v=\d+', rf'.\1?v={int(time.time())}', html)
+    html = re.sub(r'\.(js|css)\?v=[0-9A-Za-z]+', rf'.\1?v={asset_v}', html)
 
     zh, en = _board_label(board)
     note = (f'<p style="color:var(--muted,#8b949e);font-size:13px;margin:0 4px 10px">'
@@ -681,8 +795,8 @@ def lang_slug(lang: str) -> str:
 # index.html + data-tag attrs, app.js hydrates a single star-sorted list.
 TAG_MIN_REPOS = 3         # a tag page needs at least this many tracked repos
 TAG_TOP = 100             # list cap per tag page
-TAG_MAX_PAGES = 200       # cap total tag pages — the 2-3-repo topic tail is
-                          # thin SEO junk and file count is a hard deploy limit
+TAG_MAX_PAGES = 10000     # tags live on the tag shard (~19k headroom) — cap
+                          # stays only as a runaway-growth safety valve
 
 
 def tag_slug(tag: str) -> str:
@@ -693,8 +807,9 @@ def tag_slug(tag: str) -> str:
 
 def render_tag_page(tag: str, slug: str, items: list, day: str,
                     template: str, base: str) -> str:
-    """Static /tags/<slug>.html — single star-sorted repo list for the tag."""
-    url = f"{base}/tags/{slug}"
+    """Static tags/<slug>.html on the tag shard — single star-sorted repo
+    list. `base` is only used for non-canonical absolute refs."""
+    url = tag_url(slug)
     html = template.replace(
         "<body>",
         f'<body data-base="../" data-tag="{_esc(slug)}" '
@@ -722,15 +837,16 @@ def render_tag_page(tag: str, slug: str, items: list, day: str,
                       + "".join(_ssr_row(e) for e in items[:SSR_TOP]) + "</div>")
     html, _ = _inject(html, "SSRMT", "")
     html, _ = _inject(html, "SSRMG", "")
+    # tag-shard page — repo/tag links already absolute from _ssr_row; the
+    # remaining relative refs point at shard-local assets or www/API hosts
     html = html.replace('"assets/', '"../assets/')
-    html = html.replace('href="./"', 'href="../"')
-    html = html.replace('href="repos/', 'href="../repos/')
-    html = html.replace('href="tags/', 'href="../tags/')
-    html = html.replace('href="data/', 'href="../data/')
+    html = html.replace('href="./"', f'href="{base}/"')
+    html = html.replace('href="data/', 'href="https://api-site.zhuikan.com/data/')
     html = html.replace('href="manifest.webmanifest"',
                         'href="../manifest.webmanifest"')
-    for leaf in ("feed.xml", "llms.txt", "sitemap.xml"):
-        html = html.replace(f'href="{leaf}"', f'href="../{leaf}"')
+    html = html.replace('href="feed.xml"', f'href="{base}/feed.xml"')
+    html = html.replace('href="llms.txt"', f'href="{base}/llms.txt"')
+    html = html.replace('href="sitemap.xml"', 'href="../sitemap.xml"')
     return html
 
 
@@ -767,12 +883,10 @@ def render_lang_page(lang: str, slug: str, boards: dict, day: str,
                       + "".join(_ssr_row(e) for e in items) + "</div>")
     html, _ = _inject(html, "SSRMT", "")
     html, _ = _inject(html, "SSRMG", "")
-    # subdirectory page — every root-relative ref needs ../ (covers the
-    # injected rows' repos/ links too since they were just injected)
+    # subdirectory page — every root-relative ref needs ../ (repo/tag links
+    # from _ssr_row are already absolute and unaffected)
     html = html.replace('"assets/', '"../assets/')
     html = html.replace('href="./"', 'href="../"')
-    html = html.replace('href="repos/', 'href="../repos/')
-    html = html.replace('href="tags/', 'href="../tags/')
     html = html.replace('href="data/', 'href="../data/')
     html = html.replace('href="manifest.webmanifest"',
                         'href="../manifest.webmanifest"')
@@ -837,12 +951,10 @@ def render_board_page(board: str, day: str, items: list, days: list,
                       + "".join(_ssr_row(e) for e in items) + "</div>")
     html, _ = _inject(html, "SSRMT", "")
     html, _ = _inject(html, "SSRMG", "")
-    # prefix every root-relative ref for this page's depth (covers the
-    # injected rows' repos/ links too since they were just injected)
+    # prefix every root-relative ref for this page's depth (repo/tag links
+    # from _ssr_row are already absolute and unaffected)
     html = html.replace('"assets/', f'"{rel}assets/')
     html = html.replace('href="./"', f'href="{rel}"')
-    html = html.replace('href="repos/', f'href="{rel}repos/')
-    html = html.replace('href="tags/', f'href="{rel}tags/')
     html = html.replace('href="data/', f'href="{rel}data/')
     html = html.replace('href="manifest.webmanifest"',
                         f'href="{rel}manifest.webmanifest"')
@@ -865,7 +977,7 @@ def write_feed(latest_day: str, boards: dict, stamp: str, base: str) -> None:
             seen.add(fn)
             g = e.get("growth")
             title = f"[{zh}] {fn}" + (f" +{g:,}★" if isinstance(g, int) else "")
-            link = f"{base}/repos/{fn.replace('/', '__')}"
+            link = repo_url(fn, e.get("shard") or "1", "zh")
             entries.append(
                 "  <entry>\n"
                 f"    <title>{_esc(title)}</title>\n"
@@ -886,12 +998,20 @@ def write_feed(latest_day: str, boards: dict, stamp: str, base: str) -> None:
     (SITE_DIR / "feed.xml").write_text(feed, encoding="utf-8")
 
 
-def render_repo_page(p: dict, template: str, base: str) -> str:
+def render_repo_page(p: dict, template: str, base: str, lang: str) -> str:
     """Patch site/repo.html into a per-repo static page: unique title/meta/
-    canonical, SSR content, and data-base so repo.js fixes relative paths."""
+    canonical + hreflang pair, SSR content, and data-base so repo.js fixes
+    relative paths. `lang` picks SSR copy + canonical host ({lang}{shard})."""
     fn = p["full_name"]
-    fname = f'{p["owner"]}__{p["name"]}'
-    canon = f"{base}/repos/{fname}"
+    shard = p.get("shard") or "1"
+    canon = repo_url(fn, shard, lang)
+    alt_lang = "en" if lang == "zh" else "zh"
+    alternates = (
+        f'<link rel="alternate" hreflang="{alt_lang}" '
+        f'href="{repo_url(fn, shard, alt_lang)}">\n'
+        f'<link rel="alternate" hreflang="{lang}" href="{canon}">\n'
+        f'<link rel="alternate" hreflang="x-default" '
+        f'href="{repo_url(fn, shard, "zh")}">')
     desc = ((p.get("description") or "").replace("\n", " ")[:200]
             or f"{fn} — GitHub stars trend, board ranks, issues and releases")
     title = f"{fn} · GitHub Trending Rank Radar"
@@ -929,8 +1049,11 @@ def render_repo_page(p: dict, template: str, base: str) -> str:
     out = out.replace('<meta name="robots" content="noindex,follow">',
                       f'<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">\n'
                       f'<meta name="keywords" content="{_esc(keywords)}">')
+    if lang == "en":
+        out = out.replace('<html lang="zh-CN">', '<html lang="en">', 1)
     out = re.sub(r'<link rel="canonical" href="[^"]*">',
-                 lambda m: f'<link rel="canonical" href="{_esc(canon)}">', out, count=1)
+                 lambda m: (f'<link rel="canonical" href="{_esc(canon)}">\n'
+                            + alternates), out, count=1)
     out = re.sub(r'<meta property="og:title" content="[^"]*">',
                  lambda m: f'<meta property="og:title" content="{_esc(title)}">', out, count=1)
     out = re.sub(r'<meta property="og:description" content="[^"]*">',
@@ -943,10 +1066,13 @@ def render_repo_page(p: dict, template: str, base: str) -> str:
     out = out.replace('href="assets/', 'href="../assets/')
     out = out.replace('src="assets/', 'src="../assets/')
     out = out.replace('href="manifest.webmanifest"', 'href="../manifest.webmanifest"')
-    out = out.replace('href="./"', 'href="../"')
+    out = out.replace('href="./"', f'href="{base}/"')
+    # home/back links in the shell must reach www — shard hosts have no index
+    out = out.replace('href="../"', f'href="{base}/"')
     out = out.replace("<body>", f'<body data-repo="{_esc(fn)}" data-base="../">', 1)
     out = out.replace('<div id="repoContent" class="repo-page"></div>',
-                      f'<div id="repoContent" class="repo-page">{_ssr_repo(p)}</div>')
+                      f'<div id="repoContent" class="repo-page">'
+                      f'{_ssr_repo(p, lang, base)}</div>')
     return out
 
 
@@ -1163,6 +1289,61 @@ def compute_debut_board(names: set, day: str, days: list[str], ridx: dict,
         for rank, (g, ctup, approx, st, name) in enumerate(rows[:TOPN], 1)]}
 
 
+def material_sig(p: dict, asset_v: str) -> str:
+    """Signature of everything visible in the SSR HTML — if it renders on the
+    page, it's in here. Excluded on purpose: snapshot_at (changes every run),
+    history (hydration-only), board rank numbers, derived growth, stale flags."""
+    rel = p.get("latest_release") or {}
+    h = {
+        "m": {k: (p.get("metrics") or {}).get(k)
+              for k in ("forks", "watchers", "prs", "issues", "releases")},
+        "rel": [rel.get("tag"), rel.get("name"), rel.get("published_at")],
+        # project only the fields SSR actually renders — hidden upstream
+        # fields (reactions, labels, state) must not trigger re-renders
+        "i": [(i.get("number"), i.get("title"), i.get("comments"),
+               str(i.get("created_at"))[:10])
+              for i in (p.get("issues") or [])],
+        "d": [(i.get("number"), i.get("title"), i.get("comments"),
+               str(i.get("created_at"))[:10])
+              for i in (p.get("discussions") or [])],
+        "nw": [(i.get("source"), i.get("title"), i.get("url"), i.get("hn"),
+                i.get("date"), i.get("points"), i.get("comments"))
+               for i in (p.get("news") or [])],
+        "cm": [(c.get("id"), c.get("body"))
+               for c in (p.get("cm_items") or [])],
+        # sha of both readme variants (en page uses original, zh translation)
+        "rm": p.get("readme_sig") or "",
+        # SSR renders only sibling names — boards/rank of siblings must not
+        # trigger re-renders (it churns daily)
+        "so": sorted(x.get("full_name") for x in (p.get("same_owner") or [])),
+        "tp": sorted(p.get("tag_pages") or []),
+        "to": p.get("topics"), "de": p.get("description"),
+        "la": p.get("language"), "li": p.get("license"),
+        "hp": p.get("homepage"), "cr": p.get("created_at"),
+        "av": p.get("avatar"), "tv": TEMPLATE_VER, "v": asset_v,
+    }
+    return hashlib.sha256(json.dumps(h, ensure_ascii=False, sort_keys=True,
+                                     default=str).encode()).hexdigest()
+
+
+def material(p: dict, rec: dict, asset_v: str) -> bool:
+    """Long-tail gate: does this repo's SSR page contain a *material* change
+    worth re-rendering? Board membership transitions are structural; star
+    deltas use a scaled threshold; everything else is signature equality."""
+    boards_now = sorted((p.get("boards") or {}).keys())
+    if boards_now != sorted(rec.get("boards") or []):
+        return True
+    rel = p.get("latest_release") or {}
+    rel_sig = [rel.get("tag"), rel.get("name"), rel.get("published_at")]
+    if rel_sig != rec.get("release_sig"):
+        return True
+    if material_sig(p, asset_v) != rec.get("sig"):
+        return True
+    stars = int((p.get("metrics") or {}).get("stars") or 0)
+    rs = int(rec.get("rendered_stars") or 0)
+    return abs(stars - rs) >= max(50, rs * 0.005)
+
+
 def month_bounds(month: str) -> tuple[str, str]:
     y, m = int(month[:4]), int(month[5:7])
     first = date(y, m, 1)
@@ -1198,10 +1379,10 @@ def main() -> int:
 
     base_url = args.site_base.rstrip("/")
     tpl_index = (SITE_DIR / "index.html").read_text(encoding="utf-8")
-    # bust the browser/CDN cache for versioned assets on every build —
-    # browsers otherwise keep stale app.js/repo.js for max-age=4h
-    asset_v = str(int(time.time()))
-    tpl_index = re.sub(r'\.(js|css)\?v=\d+', rf'.\1?v={asset_v}', tpl_index)
+    # version asset refs by content hash — stable stamp means unchanged
+    # builds produce byte-identical pages (see compute_asset_v)
+    asset_v = compute_asset_v()
+    tpl_index = re.sub(r'\.(js|css)\?v=[0-9A-Za-z_-]+', rf'.\1?v={asset_v}', tpl_index)
     bdir = SITE_DIR / "b"
     # dated board pages only cover recent history — file count is a hard
     # Cloudflare Pages deploy limit and they grow ~11/day otherwise
@@ -1229,6 +1410,17 @@ def main() -> int:
     owner_map: dict[str, list[str]] = {}
     for name in detail_repos:
         owner_map.setdefault(name.split("/")[0], []).append(name)
+
+    # shard assignment — sticky per repo (docs/08); populate SHARD_MAP before
+    # board computation so every entry carries its target shard host
+    shard_state = load_shard_state()
+    for name in detail_repos:
+        SHARD_MAP[name] = shard_for(shard_state, name)
+    n_new = sum(1 for r in shard_state["repos"].values()
+                if set(r.keys()) == {"shard"})
+    if n_new:
+        log(f"shards: {n_new} repos assigned to shard "
+            f"{shard_state['active']}(s) this run")
 
     # Tag index — pre-pass counts repos per topic so repo pages know which
     # tags earn a static page (link) and which stay plain pills.
@@ -1291,6 +1483,7 @@ def main() -> int:
                 "owner": e["owner"], "name": e["name"],
                 "stars": e["stars"], "growth": e["growth"], "rate": e["rate"],
                 "approx": e["approx"], "language": e["language"],
+                "shard": e["shard"],
             })
         daily_top10.setdefault(day[:7], []).append({"date": day, "items": top10})
 
@@ -1368,13 +1561,18 @@ def main() -> int:
     readme_out = SITE_DATA / "readme"
     repos_out.mkdir(parents=True, exist_ok=True)
     readme_out.mkdir(parents=True, exist_ok=True)
-    pages_out = SITE_DIR / "repos"
-    pages_out.mkdir(parents=True, exist_ok=True)
+    # legacy single-host locations — repo/tag pages live on shard hosts now;
+    # wipe stale copies so they can't be deployed (redirects cover the move)
+    for legacy in (SITE_DIR / "repos", SITE_DIR / "tags"):
+        if legacy.is_dir():
+            shutil.rmtree(legacy)
+            log(f"removed legacy {legacy.relative_to(ROOT)}/ (moved to shard)")
     repo_tpl = (SITE_DIR / "repo.html").read_text(encoding="utf-8")
-    repo_tpl = re.sub(r'\.(js|css)\?v=\d+', rf'.\1?v={asset_v}', repo_tpl)
+    repo_tpl = re.sub(r'\.(js|css)\?v=[0-9A-Za-z_-]+', rf'.\1?v={asset_v}', repo_tpl)
     base = args.site_base.rstrip("/")
     cm_map = _fetch_comments()
     detail_count = 0
+    rendered = skipped = 0
     search_idx: list[dict] = []
     news_idx: list[dict] = []
     for name, cur in detail_repos.items():
@@ -1402,6 +1600,7 @@ def main() -> int:
 
         payload = {
             "full_name": name, "owner": owner, "name": repo,
+            "shard": SHARD_MAP.get(name, "1"),
             "url": f"https://github.com/{name}",
             "description": m.get("description"),
             "homepage": m.get("homepage"),
@@ -1436,6 +1635,7 @@ def main() -> int:
             "boards": placements.get(name) or {},
             "same_owner": sorted(
                 ({"full_name": n, "name": n.split("/")[1],
+                  "shard": SHARD_MAP.get(n, "1"),
                   "boards": placements.get(n) or {}}
                  for n in owner_map.get(owner, []) if n != name),
                 key=lambda x: (x["boards"].get("total") or 9999, x["name"]))[:20],
@@ -1449,15 +1649,16 @@ def main() -> int:
             "snapshot_at": run_at[cur_day].astimezone(UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
             "history_start": days[0],
         }
-        (repos_out / f"{owner}__{repo}.json").write_text(
-            json.dumps(payload, ensure_ascii=False, separators=(",", ":")),
-            encoding="utf-8")
+        write_if_changed(
+            repos_out / f"{owner}__{repo}.json",
+            json.dumps(payload, ensure_ascii=False, separators=(",", ":")))
         detail_count += 1
         for t in (m.get("topics") or []):
             s = tag_slug(t)
             if s in tag_pages:
                 tag_map[s]["items"].append({
                     "full_name": name, "owner": owner, "name": repo,
+                    "shard": SHARD_MAP.get(name, "1"),
                     "description": m.get("description"),
                     "homepage": m.get("homepage"),
                     "topics": (m.get("topics") or [])[:6],
@@ -1478,6 +1679,7 @@ def main() -> int:
             "s": int(cur[I_STARS] or 0),
             "f": int(cur[I_FORKS] or 0),
             "w": int(cur[I_WATCHERS] or 0),
+            "sh": SHARD_MAP.get(name, "1"),
         })
         nws = [i["title"] for i in (payload["news"] or [])[:8] if i.get("title")]
         if nws:
@@ -1488,27 +1690,54 @@ def main() -> int:
         if readme_zh_txt:
             (readme_out / f"{owner}__{repo}.zh.md").write_text(
                 readme_zh_txt, encoding="utf-8")
-        # SSR gets the raw text (Chinese preferred — site default lang is zh)
+        # SSR pages — one per language shard. Ranked repos re-render every
+        # run (growth/rank churn is the content); long-tail repos only on
+        # material change (docs/08 §5) — hydration still freshens numbers
+        # from the JSON written unconditionally above.
         ssr_payload = dict(payload, readme_excerpt=readme_zh_txt or readme_txt,
+                           readme_sig=hashlib.sha256(
+                               f"{readme_txt}\x00{readme_zh_txt}".encode()
+                           ).hexdigest() if (readme_txt or readme_zh_txt) else "",
                            cm_items=cm_map.get(name) or [],
                            tag_pages=tag_pages)
-        page_html = render_repo_page(ssr_payload, repo_tpl, base)
-        (pages_out / f"{owner}__{repo}.html").write_text(page_html, encoding="utf-8")
+        rec = shard_state["repos"][name]
+        if payload["boards"] or material(ssr_payload, rec, asset_v):
+            en_payload = dict(ssr_payload,
+                              readme_excerpt=readme_txt or readme_zh_txt)
+            write_if_changed(
+                SHARDS_DIR / f"zh{payload['shard']}" / "repos"
+                / f"{owner}__{repo}.html",
+                render_repo_page(ssr_payload, repo_tpl, base, "zh"))
+            write_if_changed(
+                SHARDS_DIR / f"en{payload['shard']}" / "repos"
+                / f"{owner}__{repo}.html",
+                render_repo_page(en_payload, repo_tpl, base, "en"))
+            rel = ssr_payload.get("latest_release") or {}
+            rec.update({
+                "sig": material_sig(ssr_payload, asset_v),
+                "rendered_stars": int(payload["metrics"]["stars"] or 0),
+                "boards": sorted(payload["boards"].keys()),
+                "release_sig": [rel.get("tag"), rel.get("name"),
+                                rel.get("published_at")],
+            })
+            rendered += 1
+        else:
+            skipped += 1
 
-    # Prune artifacts of repos that fell out of detail_repos (dropped from the
-    # watchlist long enough ago that snapshots stopped). rank no longer writes
-    # these files, so what remains on disk is stale — and file count is a hard
-    # Cloudflare Pages deploy limit.
+    # Prune *data* artifacts of repos that fell out of detail_repos (dropped
+    # from the watchlist long enough ago that snapshots stopped). Repo HTML
+    # pages are NEVER pruned — shard URLs are permanent (docs/08); a stale
+    # page still shows its last SSR snapshot.
     live = {n.replace("/", "__") for n in detail_repos}
     pruned = 0
-    for d_, pat in ((pages_out, "*.html"), (repos_out, "*.json"),
-                    (readme_out, "*.md")):
+    for d_, pat in ((repos_out, "*.json"), (readme_out, "*.md")):
         for f in d_.glob(pat):
             stem = f.stem[:-3] if f.stem.endswith(".zh") else f.stem
             if stem not in live:
                 f.unlink(); pruned += 1
     if pruned:
         log(f"pruned {pruned} stale repo artifacts")
+    log(f"repo pages: rendered={rendered} skipped={skipped}")
 
     # Drop dated board pages written by earlier builds beyond the 45-day
     # window (generation is gated on `bcut` above; this prunes the backlog).
@@ -1535,7 +1764,7 @@ def main() -> int:
             items = (latest_boards.get(b) or {}).get("items") or []
             if items:
                 inject_index_ssr(b, items[:SSR_TOP], latest_day,
-                                 months_present, daily_top10)
+                                 months_present, daily_top10, asset_v)
                 break
     except Exception as e:
         log(f"[warn] index SSR failed: {e}")
@@ -1573,10 +1802,10 @@ def main() -> int:
         log(f"langs: {len(langs_meta)} pages — "
             + ", ".join(l["lang"] for l in langs_meta))
 
-    # ---------------- per-tag static pages ----------------
-    # /tags/<slug> for every GitHub topic shared by ≥TAG_MIN_REPOS tracked
-    # repos — repo-page topic pills link here.
-    tags_dir = SITE_DIR / "tags"
+    # ---------------- per-tag static pages (tag shard) ----------------
+    # tag{N}.zhuikan.com/tags/<slug> for every GitHub topic shared by
+    # ≥TAG_MIN_REPOS tracked repos — repo-page topic pills link here.
+    tags_dir = SHARDS_DIR / TAG_SHARD / "tags"
     tags_data_dir = SITE_DATA / "tags"
     tags_data_dir.mkdir(exist_ok=True)
     tags_meta = []
@@ -1588,18 +1817,18 @@ def main() -> int:
             it["rank"] = i
         try:
             tags_data_dir.mkdir(exist_ok=True)
-            (tags_data_dir / f"{slug}.json").write_text(
+            write_if_changed(
+                tags_data_dir / f"{slug}.json",
                 json.dumps({"tag": e["tag"], "slug": slug,
                             "date": latest_day,
                             "repo_count": len(e["names"]),
                             "boards": {"daily": {"items": items}}},
-                           ensure_ascii=False, separators=(",", ":")),
-                encoding="utf-8")
-            tags_dir.mkdir(exist_ok=True)
+                           ensure_ascii=False, separators=(",", ":")))
+            tags_dir.mkdir(parents=True, exist_ok=True)
             tpl = (SITE_DIR / "index.html").read_text(encoding="utf-8")
-            (tags_dir / f"{slug}.html").write_text(
-                render_tag_page(e["tag"], slug, items, latest_day, tpl, base),
-                encoding="utf-8")
+            write_if_changed(
+                tags_dir / f"{slug}.html",
+                render_tag_page(e["tag"], slug, items, latest_day, tpl, base))
             tags_meta.append({"tag": e["tag"], "slug": slug,
                               "repos": len(e["names"])})
         except Exception as exc:
@@ -1645,41 +1874,66 @@ def main() -> int:
         json.dumps(index, ensure_ascii=False, indent=1), encoding="utf-8")
 
     base = args.site_base.rstrip("/")
+    # sitemap split per host — www carries only shell pages; each shard dir
+    # gets its own sitemap.xml + robots.txt (docs/08)
+    def sm_url(loc: str, lastmod: str) -> str:
+        return f"  <url><loc>{_esc(loc)}</loc><lastmod>{lastmod}</lastmod></url>"
+
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',
                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-               f"  <url><loc>{base}/</loc><lastmod>{latest_day}</lastmod></url>"]
+               sm_url(f"{base}/", latest_day)]
     # board entry points — latest-day page + every dated page (real URLs)
     for b in ALL_BOARDS:
         if (bdir / f"{b}.html").exists():
-            sitemap.append(f"  <url><loc>{base}/b/{b}</loc>"
-                           f"<lastmod>{latest_day}</lastmod></url>")
+            sitemap.append(sm_url(f"{base}/b/{b}", latest_day))
         for f in sorted((bdir / b).glob("*.html")) if (bdir / b).is_dir() else []:
-            sitemap.append(f"  <url><loc>{base}/b/{b}/{f.stem}</loc>"
-                           f"<lastmod>{f.stem}</lastmod></url>")
+            sitemap.append(sm_url(f"{base}/b/{b}/{f.stem}", f.stem))
     # per-language static pages
     for lm in langs_meta:
-        sitemap.append(f"  <url><loc>{base}/langs/{lm['slug']}</loc>"
-                       f"<lastmod>{latest_day}</lastmod></url>")
-    # per-tag static pages
-    for tm in tags_meta:
-        sitemap.append(f"  <url><loc>{base}/tags/{tm['slug']}</loc>"
-                       f"<lastmod>{latest_day}</lastmod></url>")
-    # repo detail pages — one static HTML per tracked repo
-    for name in sorted(detail_repos):
-        sitemap.append(f"  <url><loc>{base}/repos/{name.replace('/', '__')}</loc>"
-                       f"<lastmod>{latest_day}</lastmod></url>")
+        sitemap.append(sm_url(f"{base}/langs/{lm['slug']}", latest_day))
     sitemap.append("</urlset>")
-    (SITE_DIR / "sitemap.xml").write_text("\n".join(sitemap) + "\n", encoding="utf-8")
+    write_if_changed(SITE_DIR / "sitemap.xml",
+                     "\n".join(sitemap) + "\n")
+
     # robots.txt: open-data site — welcome all crawlers incl. AI/LLM ones (GEO)
     ai_bots = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot",
                "Claude-User", "Claude-SearchBot", "PerplexityBot",
                "Perplexity-User", "Google-Extended", "Applebot-Extended",
                "meta-externalagent", "Bytespider", "CCBot"]
-    robots = ["# GitHub Trending Rank Radar — open-data project, all crawlers welcome.",
-              "User-agent: *", "Allow: /", ""]
-    robots += [f"User-agent: {b}\nAllow: /\n" for b in ai_bots]
-    robots.append(f"Sitemap: {base}/sitemap.xml")
-    (SITE_DIR / "robots.txt").write_text("\n".join(robots) + "\n", encoding="utf-8")
+
+    def write_robots(host_dir: Path, host: str) -> None:
+        robots = ["# GitHub Trending Rank Radar — open-data project, all crawlers welcome.",
+                  "User-agent: *", "Allow: /", ""]
+        robots += [f"User-agent: {b}\nAllow: /\n" for b in ai_bots]
+        robots.append(f"Sitemap: {host}/sitemap.xml")
+        write_if_changed(host_dir / "robots.txt", "\n".join(robots) + "\n")
+
+    write_robots(SITE_DIR, base)
+
+    # per-shard sitemap + robots — one repo page per line, lastmod = latest day
+    for host_dir in sorted(SHARDS_DIR.iterdir()) if SHARDS_DIR.is_dir() else []:
+        if not host_dir.is_dir():
+            continue
+        host = f"https://{host_dir.name}.{HOST_DOMAIN}"
+        sm = ['<?xml version="1.0" encoding="UTF-8"?>',
+              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+        rdir = host_dir / "repos"
+        if rdir.is_dir():
+            for f in sorted(rdir.glob("*.html")):
+                sm.append(sm_url(f"{host}/repos/{f.stem}", latest_day))
+        tdir = host_dir / "tags"
+        if tdir.is_dir():
+            for f in sorted(tdir.glob("*.html")):
+                sm.append(sm_url(f"{host}/tags/{f.stem}", latest_day))
+        sm.append("</urlset>")
+        write_if_changed(host_dir / "sitemap.xml", "\n".join(sm) + "\n")
+        write_robots(host_dir, host)
+
+    # sticky shard state — committed by the workflow's `git add -A`
+    write_if_changed(
+        SHARDS_FILE,
+        json.dumps(shard_state, ensure_ascii=False, indent=1,
+                   sort_keys=True) + "\n")
 
     log(f"site/data written: {len(days)} days, {len(months_present)} months, "
         f"{len(years_present)} years, {detail_count} repo details")

@@ -8,8 +8,7 @@ trending-rank-radar/
 ├── scripts/               # Python 3 标准库，零第三方依赖
 │   ├── gh.py              # GitHub API 客户端（trending/search/graphql/rest + 重试）
 │   ├── collect.py         # Discovery + 快照主流程
-│   ├── rank.py            # 快照 → 11 榜 + 日/月/年聚合 → site/data/*.json
-│   └── build.py           # （可选）HTML 模板渲染；v1 可由 rank.py 直接产出
+│   └── rank.py            # 快照 → 11 榜 + 日/月/年聚合 → site/data/*.json
 ├── site/                  # 静态站：源码模板+资产入库；data/repos/langs 等产物
 │                          #   不入库（.gitignore），rank.py 每轮现场重建再发布
 │   ├── index.html

@@ -2,6 +2,13 @@
 # still linger from pre-migration deployments.
 /data/*  https://api-site.zhuikan.com/data/:splat  301
 
+# v4 sharding (docs/08): entity pages live on dedicated Pages hosts.
+# Legacy zh SSR repo URLs forward to the zh shard; English variants are
+# discovered via en1 sitemap + hreflang. Tag pages are single bilingual
+# URLs on tag1.
+/repos/*  https://zh1.zhuikan.com/repos/:splat  301
+/tags/*   https://tag1.zhuikan.com/tags/:splat  301
+
 # Build template is not a page.
 /repo       /  301
 /repo.html  /  301

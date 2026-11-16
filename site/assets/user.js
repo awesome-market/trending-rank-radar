@@ -11,10 +11,11 @@ function ucTabFromURL() {
   return UC_TABS.includes(tb) ? tb : 'fav';
 }
 
-function ucRepoHref(itemId) {          // 'owner/name' → repos/owner__name
+function ucRepoHref(itemId, shard) {   // 'owner/name' → https://{lang}{shard}…/repos/owner__name
   const i = (itemId || '').indexOf('/');
   if (i < 0) return null;
-  return `repos/${encodeURIComponent(itemId.slice(0, i))}__${encodeURIComponent(itemId.slice(i + 1))}`;
+  return `https://${LANG}${shard || '1'}.zhuikan.com/repos/`
+    + `${encodeURIComponent(itemId.slice(0, i))}__${encodeURIComponent(itemId.slice(i + 1))}`;
 }
 
 function ucDate(ts) {
@@ -75,7 +76,7 @@ async function ucLoadItems(el, kind) {
   const whenKey = kind === 'fav' ? 'uc.fav.when' : 'uc.like.when';
   const rmKey = kind === 'fav' ? 'uc.unfav' : 'uc.unlike';
   el.innerHTML = `<div class="uc-list">${items.map(f => {
-    const href = ucRepoHref(f.item_id);
+    const href = ucRepoHref(f.item_id, f.shard);
     return `<div class="uc-row" data-id="${esc(f.item_id)}">
       <div class="uc-main">
         ${href ? `<a class="uc-name" href="${href}">${esc(f.item_id)}</a>` : `<span class="uc-name">${esc(f.item_id)}</span>`}
@@ -112,7 +113,7 @@ async function ucLoadComments(el) {
     return;
   }
   el.innerHTML = `<div class="uc-list">${items.map(c => {
-    const href = ucRepoHref(c.item_id);
+    const href = ucRepoHref(c.item_id, c.shard);
     return `<div class="uc-row uc-cmt" data-cid="${c.id}">
       <div class="uc-main">
         <div class="uc-cmt-body">${esc(c.body)}</div>

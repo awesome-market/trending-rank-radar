@@ -96,7 +96,7 @@ site/                        # GitHub Pages 根目录（或 /docs）
 
 ### 控制区（sticky top）
 
-- **榜单 tabs**：8 个 pill tab，**写全名不写缩写**（新星榜 / 日飙升榜 / 日增速榜 / 周飙升榜 / 周增速榜 / 月飙升榜 / 月增速榜 / 总榜；EN：New Repos / Daily Growth / Daily Rate / Weekly Growth / Weekly Rate / Monthly Growth / Monthly Rate / All-Time），月视图追加"月累计榜"；选中态 = 纯色底；≤768px 折行全展示（不做横向半截滚动）
+- **榜单 tabs**：11 个 pill tab，**写全名不写缩写**（新星榜 / 首登榜 / 日飙升榜 / 日增速榜 / 周飙升榜 / 周增速榜 / 月飙升榜 / 月增速榜 / Fork 日增榜 / Watch 日增榜 / 总榜；EN：New Repos / Debut / Daily Growth / Daily Rate / Weekly Growth / Weekly Rate / Monthly Growth / Monthly Rate / Daily Forks / Daily Watchers / All-Time），月视图追加"月累计榜"，年视图与标签页不渲染 tab，语言页剔除首登榜；选中态 = 纯色底；≤768px 折行全展示（不做横向半截滚动）
 - **时间维度**：`日 | 月 | 年` 三段式 segmented control + 对应日期/月/年选择器（`<select>`，选项来自 `index.json`；月视图进行中的月份标注"进行中"）
 - **统计时间显示**：展示榜单实际窗口区间（如 `10-15 ~ 11-08 · 24天`），窗口回退期用户能看懂口径
 - **Star 范围**：两个 number 输入（k 为单位，默认 1–500）+ 筛选按钮
@@ -172,7 +172,7 @@ site/                        # GitHub Pages 根目录（或 /docs）
 
 `series` = 截至该榜单日期的**最近 30 个有效快照日** Star 序列（与榜单窗口无关，长度统一便于渲染；不足 30 天给已有什么），`rank.py` 输出时附带；`description`/`homepage` 由 `rank.py` 从 `data/repos/*.json` 元数据内联合并。
 
-> **预计算规模**：每榜 Top 200（前端筛选后展示 Top 100），八榜去重后约 300–400 个唯一仓库/日，单日 JSON ~100KB。
+> **预计算规模**：每榜 Top 200（前端筛选后展示 Top 100），十一榜去重后约 300–400 个唯一仓库/日，单日 JSON ~100KB。
 
 `index.json` 示例：
 

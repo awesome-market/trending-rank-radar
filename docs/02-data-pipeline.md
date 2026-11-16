@@ -91,7 +91,7 @@ data/
 
 - 每仓库 5 路免 key 抓取：Hacker News（Algolia `search` 相关性排序，按 `github.com/owner/repo` URL 精确匹配，带 points/评论数）+ Google News RSS 中文区 + 英文区（`"{name}" github` 查询，链接为 Google 跳转壳，`<source>` 为媒体名）+ Bing News RSS 中文（zh-TW 市场，zh-CN 对境外 IP 封锁）+ 英文区（`"{name}" github` 查询，apiclick 跳转链接的 `url=` 参数可解出原文直链，需浏览器 UA）。
 - 落盘 `data/news/{owner}__{repo}.json`（独立目录，与 collect.py 的 repos/ 解耦），无条目不写文件；`items` 按 (直链优先, points, date) 排序、每语言封顶 10 条，`lang` 以标题 CJK 字符为准（纠正聚合器跨区返回），Bing/GN 中指向 github.com 的自引用结果剔除；merge 时旧数据仅被新数据更新、单源失败不清空。
-- 频率分级：每日班 `--board`（当日八榜并集 ~400 仓 ×5 路 ≈ 14 分钟）；周日班 `--all`（全量 watchlist ×5 路 ≈ 40 分钟，回填历史报道）。
+- 频率分级：每日班 `--board`（当日十一榜并集 ~400 仓 ×5 路 ≈ 14 分钟）；周日班 `--all`（全量 watchlist ×5 路 ≈ 40 分钟，回填历史报道）。
 - rank.py 将 `items` 并入 repo detail JSON 的 `news` 字段，repo 页 SSR 双语块（zh/en 各一，非当前语言 `hidden`，爬虫两版可见）；repo.js 重渲染时按当前界面语言显隐。
 
 ## 限流预算（每日两次任务估算）
@@ -112,9 +112,8 @@ scripts/
   gh.py           # GitHub API 客户端：trending 抓取 / search / graphql 批量 / REST 兜底 / 重试
   collect.py      # Discovery + 快照主流程（调用 gh.py）；--role=plan/shard/reduce 三角色分片
   news.py         # 仓库新闻报道抓取：HN Algolia + Google/Bing News RSS（zh/en）→ data/news/
-  rank.py         # 读快照 → 计算八榜 + 日/月/年聚合 → site/data/*.json + 静态页
+  rank.py         # 读快照 → 计算十一榜 + 日/月/年聚合 → site/data/*.json + 静态页
   pack_data.py    # site/data/** → site-data.db（KV blob），CI 推给 api-site
-  build.py        # （可选）HTML 模板渲染；v1 可由 rank.py 直接产出
 ```
 
 - 全部使用标准库：`urllib`（HTTP）+ `html.parser`（Trending 页面解析）+ `json` + `argparse`，CI 零依赖安装。

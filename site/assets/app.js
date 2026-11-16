@@ -17,6 +17,19 @@ const DB = document.body.dataset.base || '';
 const DATA = (['localhost', '127.0.0.1'].includes(location.hostname)
   || location.hostname.endsWith('.github.io'))
   ? `${DB}data/` : 'https://api-site.zhuikan.com/data/';
+// sharded hosts (docs/08): repo pages live on {lang}{shard}, tags on tag1;
+// board/langs/index stay on www. Entry-level links carry `shard` from the
+// build (repo_shards.json); anything missing falls back to shard "1".
+const WWW = 'https://zhuikan.com';
+const TAG_HOST = 'https://tag1.zhuikan.com';
+function repoUrl(e) {
+  const fn = e.full_name || e.item_id || `${e.owner}/${e.name}`;
+  const i = fn.indexOf('/');
+  const o = fn.slice(0, i), n = fn.slice(i + 1);
+  return `https://${LANG}${e.shard || '1'}.zhuikan.com/repos/`
+    + `${encodeURIComponent(o)}__${encodeURIComponent(n)}`;
+}
+function tagUrl(slug) { return `${TAG_HOST}/tags/${slug}`; }
 const LANG_PAGE = document.body.dataset.lang || '';
 const LANG_NAME = document.body.dataset.langName || '';
 const TAG_PAGE = document.body.dataset.tag || '';
@@ -63,7 +76,7 @@ function langDot(lang) {
   const slug = state.langSlugs && state.langSlugs[lang];
   // link to the language's static page when one exists (index.json "langs")
   return slug
-    ? `<a class="lang-tag" href="${DB}langs/${slug}">${inner}</a>`
+    ? `<a class="lang-tag" href="${WWW}/langs/${slug}">${inner}</a>`
     : `<span class="lang-tag">${inner}</span>`;
 }
 
@@ -84,7 +97,7 @@ function rowSideHTML(e) {
 
 function nameLinkHTML(e) {
   const fn = esc(e.full_name);
-  return `<a class="row-link" href="${DB}repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}" title="${esc(t('open.detail', { r: e.full_name }))}">`
+  return `<a class="row-link" href="${repoUrl(e)}" title="${esc(t('open.detail', { r: e.full_name }))}">`
     + `<span class="row-owner">${esc(e.owner)}</span><span class="row-sep">/</span>`
     + `<span class="row-repo">${esc(e.name)}</span></a>`
     + `<a class="ext-link" href="https://github.com/${fn}" target="_blank" rel="noopener" title="${esc(t('open.gh', { r: e.full_name }))}">${icon('ext', 'ext-ico', 12)}</a>`;
@@ -95,7 +108,7 @@ function tagPillsHTML(e) {
   const pills = (e.topics || []).slice(0, 4).map(t => {
     const sl = String(t).toLowerCase();
     const internal = tp.includes(sl);
-    const href = internal ? `${DB}tags/${encodeURIComponent(sl)}`
+    const href = internal ? tagUrl(encodeURIComponent(sl))
                           : `https://github.com/topics/${encodeURIComponent(t)}`;
     return `<a class="row-tag" href="${href}"${internal ? '' : ' target="_blank" rel="noopener"'}>${esc(t)}</a>`;
   }).join('');
@@ -111,7 +124,7 @@ function rowHTML(e, dispRank = e.rank) {
     : '';
   return `<div class="rank-row" data-fn="${esc(e.full_name)}" style="animation-delay:${Math.min(dispRank * 12, 400)}ms">
     <span class="row-rank${dispRank <= 3 ? ' top' : ''}"${dispRank !== e.rank ? ` title="${esc(t('rank.prerank', { n: e.rank }))}"` : ''}>${dispRank}</span>
-    <a class="row-avatar" href="${DB}repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}"><img src="${esc(e.avatar || `https://github.com/${e.owner}.png?size=96`)}" alt="" loading="lazy" width="48" height="48" onerror="this.style.visibility='hidden'"></a>
+    <a class="row-avatar" href="${repoUrl(e)}"><img src="${esc(e.avatar || `https://github.com/${e.owner}.png?size=96`)}" alt="" loading="lazy" width="48" height="48" onerror="this.style.visibility='hidden'"></a>
     <div class="row-body">
       <div class="row-name">
         ${nameLinkHTML(e)}${badges(e)}${ageChip}
@@ -142,7 +155,7 @@ function podiumHTML(e, idx) {
   const rate = e.rate != null ? `<span class="rate-pill${e.rate >= 100 ? ' hot' : ''}">${fmtPct(e.rate)}</span>` : '';
   return `<div class="podium-card p${idx + 1}" data-fn="${esc(e.full_name)}">
     <div class="podium-rank">${medal}</div>
-    <a class="podium-avatar" href="${DB}repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}"><img src="${esc(e.avatar || `https://github.com/${e.owner}.png?size=128`)}" alt="" loading="lazy"></a>
+    <a class="podium-avatar" href="${repoUrl(e)}"><img src="${esc(e.avatar || `https://github.com/${e.owner}.png?size=128`)}" alt="" loading="lazy"></a>
     <div class="podium-name">${nameLinkHTML(e)}${badges(e)}</div>
     <div class="podium-desc">${esc(e.description || '—')}</div>
     <div class="podium-metric" style="color:${e.growth != null ? 'var(--green)' : 'var(--text)'}">${metric}${unit ? ` <span class="unit">${unit}</span>` : ''}</div>
@@ -201,8 +214,7 @@ async function hydrateSocial() {
     if (!s || mount.dataset.done) return;
     mount.dataset.done = '1';
     const sv = s.viewer || {};
-    const [o, n] = el.dataset.fn.split('/');
-    const url = `${DB}repos/${encodeURIComponent(o)}__${encodeURIComponent(n)}`;
+    const url = repoUrl({ full_name: el.dataset.fn });
     mount.innerHTML = `<button class="soc-ic${sv.liked ? ' on' : ''}" data-act="likes" type="button" title="${esc(t('soc.like'))}">♥ <b>${fmt(s.likes)}</b></button>
       <button class="soc-ic${sv.faved ? ' on' : ''}" data-act="favorites" type="button" title="${esc(t('soc.fav'))}">★ <b>${fmt(s.favs)}</b></button>
       <a class="soc-ic" href="${url}#rpCm" title="${esc(t('cm.title'))}">💬 <b>${fmt(s.comments)}</b></a>`;
@@ -258,7 +270,7 @@ function setEmpty(msg, pct, opts = {}) {
   $('#emptyState').classList.toggle('has-preview', rows.length > 0);
   $('#emptyPreview').innerHTML = rows.length
     ? `<div class="empty-preview-title">${esc(t('preview.top', { t: pv.title, n: rows.length }))}</div>`
-      + rows.map(e => `<a class="preview-row" href="${DB}repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}">
+      + rows.map(e => `<a class="preview-row" href="${repoUrl(e)}">
           <span class="preview-rank">${e.rank}</span>
           <span class="preview-name"><span class="row-owner">${esc(e.owner)}</span>/${esc(e.name)}</span>
           <span class="preview-stars">★ ${fmt(e.stars)}</span>
@@ -356,7 +368,7 @@ async function loadView() {
         <div class="top10-day">
           <div class="top10-date">${day.date}</div>
           <div class="top10-items">${day.items.map(e =>
-            `<span class="top10-chip"><a href="${DB}repos/${encodeURIComponent(e.owner)}__${encodeURIComponent(e.name)}"><span class="row-owner">${esc(e.owner)}</span>/${esc(e.name)}</a> <b>+${fmt(e.growth)}</b></span>`).join('')}
+            `<span class="top10-chip"><a href="${repoUrl(e)}"><span class="row-owner">${esc(e.owner)}</span>/${esc(e.name)}</a> <b>+${fmt(e.growth)}</b></span>`).join('')}
           </div>
         </div>`).join('');
     }
@@ -428,7 +440,7 @@ function renderTabs() {
   const tabs = boardTabsForPeriod();
   $('#boardTabs').innerHTML = tabs.map(b => {
     const active = state.board === b ? ' active' : '';
-    const href = b === CUM_BOARD ? `${DB}b/monthly` : `${DB}b/${b}`;
+    const href = b === CUM_BOARD ? `${WWW}/b/monthly` : `${WWW}/b/${b}`;
     return `<a class="tab-btn${active}" data-board="${b}" href="${href}">${boardLabel(b)}</a>`;
   }).join('');
   $('#boardTabs').style.display = tabs.length ? 'flex' : 'none';
@@ -511,7 +523,7 @@ function renderHero() {
   if (top1 && top1.series && top1.series.length > 1) {
     chart.innerHTML = sparkline(top1.series, 620, 150, 6, 'sparkFill', 'sparkStroke');
     const g = top1.growth != null ? `+${fmtFull(top1.growth)}` : fmtFull(top1.stars);
-    cap.innerHTML = `<a href="${DB}repos/${encodeURIComponent(top1.owner)}__${encodeURIComponent(top1.name)}">`
+    cap.innerHTML = `<a href="${repoUrl(top1)}">`
       + `<b>${esc(top1.full_name)}</b> ${g}</a>`
       + `<span class="hv-cap-sub">${t('hv.cap', { n: top1.series.length })}</span>`;
   } else {
@@ -553,7 +565,7 @@ async function renderAll() {
 /* ------------- header search — remote: api-site.zhuikan.com/search ------- */
 const search = { hits: [], active: -1, err: false };
 
-function repoUrl(fn) { return `${DB}repos/${fn.replace('/', '__')}`; }
+// repoUrl() lives near the top of this file — shard-aware host resolution
 
 function mark(text, q) {
   const i = text.toLowerCase().indexOf(q);
@@ -564,7 +576,7 @@ function mark(text, q) {
 
 function searchRow(e, q, i) {
   const sub = e.description ? `<span class="sr-sub">${esc(e.description)}</span>` : '';
-  return `<a class="sr-row${i === search.active ? ' on' : ''}" href="${esc(repoUrl(e.item_id))}">
+  return `<a class="sr-row${i === search.active ? ' on' : ''}" href="${esc(repoUrl(e))}">
     <img class="sr-av" src="https://github.com/${esc(e.owner)}.png?size=64" alt="" loading="lazy" width="30" height="30">
     <span class="sr-main">
       <span class="sr-name">${mark(e.item_id, q)}</span>
@@ -643,7 +655,7 @@ function initSearch() {
       renderSearchDrop(input.value.trim().toLowerCase(), scope());
     } else if (e.key === 'Enter' && search.active >= 0) {
       const h = search.hits[search.active];
-      if (h) location.href = repoUrl(h.item_id);
+      if (h) location.href = repoUrl(h);
     } else if (e.key === 'Escape') {
       drop.hidden = true;
       input.blur();
