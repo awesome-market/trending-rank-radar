@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,10 +80,14 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
+
+    <link rel="alternate" hreflang="en" href="https://zhuikan.com/">
+    <link rel="alternate" hreflang="zh-CN" href="https://zhuikan.com/zh/">
+    <link rel="alternate" hreflang="x-default" href="https://zhuikan.com/">
 </head>
 <body data-base="../" data-tag="springboot" data-tag-name="springboot">
 
-<a class="skip-link" href="#content" data-i18n="skip">跳到榜单</a>
+<a class="skip-link" href="#content" data-i18n="skip">Skip to rankings</a>
 
 <noscript>
   <div style="max-width:760px;margin:64px auto;padding:0 24px;font-family:system-ui,sans-serif;line-height:1.7;color:#333">
@@ -128,23 +132,23 @@ var _hmt = _hmt || [];
       </svg>
       <div>
         <h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1>
-        <p class="hero-sub" data-i18n="hero.sub">GitHub 开源项目趋势榜单 · 每日双快照 · 十一种榜单 · 日 / 月 / 年历史回看</p>
+        <p class="hero-sub" data-i18n="hero.sub">Independent GitHub trend rankings · twice-daily snapshots · 11 boards · day / month / year history</p>
       </div>
     </a>
     <div class="hero-meta">
       <div class="search-wrap" id="searchWrap">
-        <select id="searchScope" class="search-scope" data-i18n-aria="search.scope.aria" aria-label="搜索范围">
-          <option value="repo" data-i18n="search.scope.repo">仓库</option>
-          <option value="news" data-i18n="search.scope.news">新闻</option>
+        <select id="searchScope" class="search-scope" data-i18n-aria="search.scope.aria" aria-label="Search scope">
+          <option value="repo" data-i18n="search.scope.repo">Repos</option>
+          <option value="news" data-i18n="search.scope.news">News</option>
         </select>
         <div class="search-box">
           <svg class="search-ico" viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"/></svg>
-          <input id="searchInput" class="search-input" type="search" autocomplete="off" spellcheck="false" data-i18n-ph="search.ph.repo" data-i18n-aria="search.ph.repo" aria-label="搜索" enterkeyhint="search">
+          <input id="searchInput" class="search-input" type="search" autocomplete="off" spellcheck="false" data-i18n-ph="search.ph.repo" placeholder="Search repos / authors / languages…" data-i18n-aria="search.ph.repo" aria-label="Search repos / authors / languages…" enterkeyhint="search">
         </div>
         <div class="search-drop" id="searchDrop" hidden></div>
       </div>
-      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
-      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="切换到中文" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">中</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="Toggle dark/light theme" title="Toggle dark/light theme">
         <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1 .75-.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06-1.06a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.06l1.06-1.061a.75.75 0 0 1 1.061 1.061l-1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
         <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
       </button>
@@ -160,10 +164,10 @@ var _hmt = _hmt || [];
 
   <section class="hero-viz" id="heroViz" data-enter>
     <div class="hv-copy">
-      <p class="hv-kicker" data-i18n="hv.kicker">独立采集 · 开源数据</p>
-      <h2 class="hv-title" data-i18n="hv.title">独立追踪 GitHub 星标的每一次脉动</h2>
-      <p class="hv-sub" data-i18n="hv.sub">每日两次快照，用差值还原真实增长——不是又一份热榜镜像。</p>
-      <a class="hv-cta" href="#boardTabs" data-i18n="hv.cta">浏览今日榜单 →</a>
+      <p class="hv-kicker" data-i18n="hv.kicker">Independent · Open Data</p>
+      <h2 class="hv-title" data-i18n="hv.title">Tracking every pulse of GitHub stars, independently</h2>
+      <p class="hv-sub" data-i18n="hv.sub">Two snapshots a day; growth computed from real diffs — not another mirror of the hot list.</p>
+      <a class="hv-cta" href="#boardTabs" data-i18n="hv.cta">Browse today\u2019s boards →</a>
     </div>
     <div class="hv-side">
       <div class="hv-chart" id="hvChart" aria-hidden="true"></div>
@@ -173,27 +177,27 @@ var _hmt = _hmt || [];
 
   <div class="controls" id="controls">
     <div class="ctrl-row">
-      <nav class="board-tabs" id="boardTabs" data-i18n-aria="boards.aria" aria-label="榜单"></nav>
+      <nav class="board-tabs" id="boardTabs" data-i18n-aria="boards.aria" aria-label="Boards"></nav>
     </div>
     <div class="ctrl-row ctrl-sub">
-      <div class="seg" id="periodSeg" role="tablist" data-i18n-aria="period.aria" aria-label="时间维度">
-        <button data-period="day" class="seg-btn active" data-i18n="period.day">日</button>
-        <button data-period="month" class="seg-btn" data-i18n="period.month">月</button>
-        <button data-period="year" class="seg-btn" data-i18n="period.year">年</button>
+      <div class="seg" id="periodSeg" role="tablist" data-i18n-aria="period.aria" aria-label="Time period">
+        <button data-period="day" class="seg-btn active" data-i18n="period.day">Day</button>
+        <button data-period="month" class="seg-btn" data-i18n="period.month">Month</button>
+        <button data-period="year" class="seg-btn" data-i18n="period.year">Year</button>
       </div>
-      <label class="sf-label" for="selDate" data-i18n="date.label">榜单日期</label>
-      <select id="selDate" class="sel" data-i18n-aria="date.aria" aria-label="日期"></select>
-      <div class="star-filter" role="group" data-i18n-aria="star.range" aria-label="Star 范围筛选">
-        <span class="sf-label" data-i18n="star.range">Star 范围</span>
-        <label class="sf-field"><span class="sf-in-label" data-i18n="min">下限</span>
-          <input id="minK" type="number" min="0" step="1" value="1" class="sf-input" data-i18n-aria="minK.aria" aria-label="最小 Star 千数">
+      <label class="sf-label" for="selDate" data-i18n="date.label">Board date</label>
+      <select id="selDate" class="sel" data-i18n-aria="date.aria" aria-label="Date"></select>
+      <div class="star-filter" role="group" data-i18n-aria="star.range" aria-label="Star range">
+        <span class="sf-label" data-i18n="star.range">Star range</span>
+        <label class="sf-field"><span class="sf-in-label" data-i18n="min">Min</span>
+          <input id="minK" type="number" min="0" step="1" value="1" class="sf-input" data-i18n-aria="minK.aria" aria-label="Minimum stars (k)">
         </label>
         <span class="sf-sep">–</span>
-        <label class="sf-field"><span class="sf-in-label" data-i18n="max">上限</span>
-          <input id="maxK" type="number" min="0" step="1" value="500" class="sf-input" data-i18n-aria="maxK.aria" aria-label="最大 Star 千数">
+        <label class="sf-field"><span class="sf-in-label" data-i18n="max">Max</span>
+          <input id="maxK" type="number" min="0" step="1" value="500" class="sf-input" data-i18n-aria="maxK.aria" aria-label="Maximum stars (k)">
         </label>
         <span class="sf-unit">k</span>
-        <button id="applyFilter" class="sf-btn" data-i18n="apply">筛选</button>
+        <button id="applyFilter" class="sf-btn" data-i18n="apply">Apply</button>
       </div>
       <span class="window-info" id="windowInfo"></span>
     </div>
@@ -209,8 +213,8 @@ var _hmt = _hmt || [];
             <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
           </g>
         </svg>
-        <h2 data-i18n="empty.title">榜单积累中</h2>
-        <p id="emptyText" data-i18n="empty.text">快照数据正在积累，增长榜需要至少 2 个有效快照日。</p>
+        <h2 data-i18n="empty.title">Rankings warming up</h2>
+        <p id="emptyText" data-i18n="empty.text">Snapshots are still accumulating; growth boards need at least 2 valid snapshot days.</p>
         <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
         <p class="progress-hint" id="progressHint"></p>
         <div class="empty-actions" id="emptyActions"></div>
@@ -222,13 +226,13 @@ var _hmt = _hmt || [];
     <div id="listWrap"><!--SSR--><p style="color:var(--muted,#8b949e);font-size:13px;margin:0 4px 10px">2026-11-17 · #springboot · 11 <span class="i18n-zh">个仓库 · 按 star 排序</span><span class="i18n-en">repos · by stars</span></p><div class="rank-list"><div class="rank-row" data-fn="jeecgboot/JeecgBoot"><span class="row-rank top">1</span><a class="row-avatar" href="https://zh1.zhuikan.com/repos/jeecgboot__JeecgBoot"><img src="https://avatars.githubusercontent.com/u/86360035?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="https://zh1.zhuikan.com/repos/jeecgboot__JeecgBoot"><span class="row-owner">jeecgboot</span><span class="row-sep">/</span><span class="row-repo">JeecgBoot</span></a></div><div class="row-meta"><span class="lang-tag">Java</span><span class="m" title="stars">★ 48,497</span><span class="m" title="forks">⑂ 16,217</span><span class="m" title="watchers">👁 841</span><span class="m" title="issues">● 8,554</span><span class="m" title="prs">⑃ 528</span><span class="m" title="releases">▤ 67</span></div><div class="row-desc">一款免费开源的 AI 低代码平台，也是 AI 时代构建复杂业务系统的开源基座！权限、多租户、工作流、报表、大屏、AI 知识库等通用能力开箱即用，AI 只需生成业务差异部分。AI Skills 一句话生成完整系统——建表、前后端代码、菜单权限、BPM 流程、表单、报表、大屏全自动。内置 AI 应用平台（聊天、知识库、流程编排、MCP），兼容主流大模型</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://tag1.zhuikan.com/tags/antd">antd</a><a class="row-tag" href="https://github.com/topics/activiti">activiti</a><a class="row-tag" href="https://github.com/topics/codegenerator">codegenerator</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/springcloud">springcloud</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 48,497</div></div></div><div class="rank-row" data-fn="YunaiV/ruoyi-vue-pro"><span class="row-rank top">2</span><a class="row-avatar" href="https://zh1.zhuikan.com/repos/YunaiV__ruoyi-vue-pro"><img src="https://avatars.githubusercontent.com/u/2015545?u=cb494dbc67c9004f32a4535f466e75b9f8702627&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="https://zh1.zhuikan.com/repos/YunaiV__ruoyi-vue-pro"><span class="row-owner">YunaiV</span><span class="row-sep">/</span><span class="row-repo">ruoyi-vue-pro</span></a></div><div class="row-meta"><span class="lang-tag">Java</span><span class="m" title="stars">★ 40,452</span><span class="m" title="forks">⑂ 8,680</span><span class="m" title="watchers">👁 270</span><span class="m" title="issues">● 873</span><span class="m" title="prs">⑃ 333</span><span class="m" title="releases">▤ 75</span></div><div class="row-desc">🔥 官方推荐 🔥 RuoYi-Vue 全新 Pro 版本，优化重构所有功能。基于 Spring Boot + MyBatis Plus + Vue &amp; Element 实现的后台管理系统 + 微信小程序，支持 RBAC 动态权限、数据权限、SaaS 多租户、Flowable 工作流、三方登录、支付、短信、商城、CRM、ERP、MES、IM、AI 大模型、IoT 物联网等功能。你的 ⭐️ Star ⭐️，是作者生发的动力！</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://tag1.zhuikan.com/tags/springboot">springboot</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/vue">vue</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/mysql">mysql</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/redis">redis</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 40,452</div></div></div><div class="rank-row" data-fn="YunaiV/yudao-cloud"><span class="row-rank top">3</span><a class="row-avatar" href="https://zh1.zhuikan.com/repos/YunaiV__yudao-cloud"><img src="https://avatars.githubusercontent.com/u/2015545?u=cb494dbc67c9004f32a4535f466e75b9f8702627&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="https://zh1.zhuikan.com/repos/YunaiV__yudao-cloud"><span class="row-owner">YunaiV</span><span class="row-sep">/</span><span class="row-repo">yudao-cloud</span></a></div><div class="row-meta"><span class="lang-tag">Java</span><span class="m" title="stars">★ 19,796</span><span class="m" title="forks">⑂ 4,930</span><span class="m" title="watchers">👁 339</span><span class="m" title="issues">● 189</span><span class="m" title="prs">⑃ 115</span><span class="m" title="releases">▤ 61</span></div><div class="row-desc">ruoyi-vue-pro 全新 Cloud 版本，优化重构所有功能。基于 Spring Cloud Alibaba + MyBatis Plus + Vue &amp; Element 实现的后台管理系统 + 用户小程序，支持 RBAC 动态权限、多租户、数据权限、工作流、三方登录、支付、短信、商城、CRM、ERP、MES、IM、AI 大模型、IoT 物联网等功能。你的 ⭐️ Star ⭐️，是作者生发的动力！</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://tag1.zhuikan.com/tags/dubbo">dubbo</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/springcloud">springcloud</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/springboot">springboot</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/rocketmq">rocketmq</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 19,796</div></div></div><div class="rank-row" data-fn="itwanger/toBeBetterJavaer"><span class="row-rank">4</span><a class="row-avatar" href="https://zh1.zhuikan.com/repos/itwanger__toBeBetterJavaer"><img src="https://avatars.githubusercontent.com/u/6011374?u=8f2f87196c41e42de8f357bddaf07534352c00ee&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="https://zh1.zhuikan.com/repos/itwanger__toBeBetterJavaer"><span class="row-owner">itwanger</span><span class="row-sep">/</span><span class="row-repo">toBeBetterJavaer</span></a></div><div class="row-meta"><span class="lang-tag">Java</span><span class="m" title="stars">★ 17,850</span><span class="m" title="forks">⑂ 2,423</span><span class="m" title="watchers">👁 154</span><span class="m" title="issues">● 119</span><span class="m" title="prs">⑃ 83</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">一份通俗易懂、风趣幽默的Java学习指南，内容涵盖Java基础、Java并发编程、Java虚拟机、Java企业级开发、Java面试等核心知识点。学Java，就认准二哥的Java进阶之路😄</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://tag1.zhuikan.com/tags/java">java</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/jvm">jvm</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/springboot">springboot</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/mysql">mysql</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 17,850</div></div></div><div class="rank-row" data-fn="JeffLi1993/springboot-learning-example"><span class="row-rank">5</span><a class="row-avatar" href="https://zh1.zhuikan.com/repos/JeffLi1993__springboot-learning-example"><img src="https://avatars.githubusercontent.com/u/6890948?u=aa71f7945c94c87215738c21d7bbaabc3c13a04b&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="https://zh1.zhuikan.com/repos/JeffLi1993__springboot-learning-example"><span class="row-owner">JeffLi1993</span><span class="row-sep">/</span><span class="row-repo">springboot-learning-example</span></a></div><div class="row-meta"><span class="lang-tag">Java</span><span class="m" title="stars">★ 16,553</span><span class="m" title="forks">⑂ 7,007</span><span class="m" title="watchers">👁 1,001</span><span class="m" title="issues">● 78</span><span class="m" title="prs">⑃ 67</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">spring boot 实践学习案例，是 spring boot 初学者及核心技术巩固的最佳实践。</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://tag1.zhuikan.com/tags/springboot">springboot</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/redis">redis</a><a class="row-tag" href="https://github.com/topics/jpa">jpa</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/elasticsearch">elasticsearch</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 16,553</div></div></div><div class="rank-row" data-fn="zhoutaoo/SpringCloud"><span class="row-rank">6</span><a class="row-avatar" href="https://zh1.zhuikan.com/repos/zhoutaoo__SpringCloud"><img src="https://avatars.githubusercontent.com/u/3946731?u=5cc2e67a1bae7f3f0da643234a364404f3717b66&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="https://zh1.zhuikan.com/repos/zhoutaoo__SpringCloud"><span class="row-owner">zhoutaoo</span><span class="row-sep">/</span><span class="row-repo">SpringCloud</span></a></div><div class="row-meta"><span class="m" title="stars">★ 8,932</span><span class="m" title="forks">⑂ 3,821</span><span class="m" title="watchers">👁 348</span><span class="m" title="issues">● 129</span><span class="m" title="prs">⑃ 113</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">Opensabre是基于SpringCloud2023的微服务开发平台，整合了Spring Security、Springcloud Alibaba等组件。  包含了基础的RBAC权限管理、授权认证、网关管理、服务治理、审计日志等系统管理基础应用。  定义了相关开发规范、风格并落地在服务框架层，开箱即用，支持Docker、Kubenetes的部署。  让项目开发人员快速进入业务开发，而不需过多时间花费在基础架构搭建和编码风格规范上。  目标是建立一套金融级、高安全性的微服务解决方案。</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://tag1.zhuikan.com/tags/springcloud">springcloud</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/springboot">springboot</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/oauth2">oauth2</a><a class="row-tag" href="https://github.com/topics/feign-client">feign-client</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 8,932</div></div></div><div class="rank-row" data-fn="opengoofy/hippo4j"><span class="row-rank">7</span><a class="row-avatar" href="https://zh1.zhuikan.com/repos/opengoofy__hippo4j"><img src="https://avatars.githubusercontent.com/u/109278603?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="https://zh1.zhuikan.com/repos/opengoofy__hippo4j"><span class="row-owner">opengoofy</span><span class="row-sep">/</span><span class="row-repo">hippo4j</span></a></div><div class="row-meta"><span class="lang-tag">Java</span><span class="m" title="stars">★ 6,000</span><span class="m" title="forks">⑂ 1,235</span><span class="m" title="watchers">👁 75</span><span class="m" title="issues">● 696</span><span class="m" title="prs">⑃ 910</span><span class="m" title="releases">▤ 18</span></div><div class="row-desc">📌 异步线程池框架，支持线程池动态变更&amp;监控&amp;报警，无需修改代码轻松引入。Asynchronous thread pool framework, support Thread Pool Dynamic Change &amp; monitoring &amp; Alarm, no need to modify the code easily introduced.</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://tag1.zhuikan.com/tags/java">java</a><a class="row-tag" href="https://github.com/topics/thread-pool">thread-pool</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/dynamic">dynamic</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/monitor">monitor</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 6,000</div></div></div><div class="rank-row" data-fn="201206030/novel"><span class="row-rank">8</span><a class="row-avatar" href="https://zh1.zhuikan.com/repos/201206030__novel"><img src="https://avatars.githubusercontent.com/u/12478753?u=c862a26d856134a3733f3f90a2a25e4f7dc09684&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="https://zh1.zhuikan.com/repos/201206030__novel"><span class="row-owner">201206030</span><span class="row-sep">/</span><span class="row-repo">novel</span></a></div><div class="row-meta"><span class="lang-tag">Java</span><span class="m" title="stars">★ 5,860</span><span class="m" title="forks">⑂ 1,452</span><span class="m" title="watchers">👁 89</span><span class="m" title="issues">● 0</span><span class="m" title="prs">⑃ 19</span><span class="m" title="releases">▤ 7</span></div><div class="row-desc">novel 是一套基于时下最新 Java 技术栈 Spring Boot 3 + Vue 3 开发的前后端分离学习型小说项目，配备保姆级教程手把手教你从零开始开发上线一套生产级别的 Java 系统，由小说门户系统、作家后台管理系统、平台后台管理系统等多个子系统构成。包括小说推荐、作品检索、小说排行榜、小说阅读、小说评论、会员中心、作家专区、充值订阅、新闻发布等功能。</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://tag1.zhuikan.com/tags/novel">novel</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/book">book</a><a class="row-tag" href="https://github.com/topics/read">read</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/cms">cms</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,860</div></div></div><div class="rank-row" data-fn="ZHENFENG13/spring-boot-projects"><span class="row-rank">9</span><a class="row-avatar" href="https://zh1.zhuikan.com/repos/ZHENFENG13__spring-boot-projects"><img src="https://avatars.githubusercontent.com/u/10935614?u=c3abc918f607e0e47a463d0ee1fd856357117a54&amp;v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="https://zh1.zhuikan.com/repos/ZHENFENG13__spring-boot-projects"><span class="row-owner">ZHENFENG13</span><span class="row-sep">/</span><span class="row-repo">spring-boot-projects</span></a></div><div class="row-meta"><span class="lang-tag">Java</span><span class="m" title="stars">★ 5,768</span><span class="m" title="forks">⑂ 1,627</span><span class="m" title="watchers">👁 194</span><span class="m" title="issues">● 11</span><span class="m" title="prs">⑃ 22</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">:fire: 该仓库中主要是 Spring Boot 的入门学习教程以及一些常用的 Spring Boot 实战项目教程，包括 Spring Boot 使用的各种示例代码，同时也包括一些实战项目的项目源码和效果展示，实战项目包括基本的 web 开发以及目前大家普遍使用的线上博客项目/企业大型商城系统/前后端分离实践项目等，摆脱各种 hello world 入门案例的束缚，真正的掌握 Spring Boot 开发。</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://tag1.zhuikan.com/tags/spring-boot">spring-boot</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/mybatis">mybatis</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/java">java</a><a class="row-tag" href="https://github.com/topics/spring-boot-thymeleaf">spring-boot-thymeleaf</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,768</div></div></div><div class="rank-row" data-fn="dromara/lamp-cloud"><span class="row-rank">10</span><a class="row-avatar" href="https://zh1.zhuikan.com/repos/dromara__lamp-cloud"><img src="https://avatars.githubusercontent.com/u/41095225?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="https://zh1.zhuikan.com/repos/dromara__lamp-cloud"><span class="row-owner">dromara</span><span class="row-sep">/</span><span class="row-repo">lamp-cloud</span></a></div><div class="row-meta"><span class="lang-tag">Java</span><span class="m" title="stars">★ 5,762</span><span class="m" title="forks">⑂ 1,750</span><span class="m" title="watchers">👁 187</span><span class="m" title="issues">● 188</span><span class="m" title="prs">⑃ 11</span><span class="m" title="releases">▤ 0</span></div><div class="row-desc">[灯灯]微服务中后台快速开发平台，支持jdk21、jdk17、jdk8，专注于多租户、开放平台解决方案，亦可作为普通项目（非SaaS架构）的基础开发框架使用，目前已实现插拔式数据库隔离、SCHEMA隔离、字段隔离 等租户隔离方案。</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://tag1.zhuikan.com/tags/springcloud">springcloud</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/springboot">springboot</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/eureka">eureka</a><a class="row-tag" href="https://github.com/topics/zuul">zuul</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,762</div></div></div><div class="rank-row" data-fn="swoft-cloud/swoft"><span class="row-rank">11</span><a class="row-avatar" href="https://zh1.zhuikan.com/repos/swoft-cloud__swoft"><img src="https://avatars.githubusercontent.com/u/31836049?v=4" alt="" loading="lazy" width="48" height="48"></a><div class="row-body"><div class="row-name"><a class="row-link" href="https://zh1.zhuikan.com/repos/swoft-cloud__swoft"><span class="row-owner">swoft-cloud</span><span class="row-sep">/</span><span class="row-repo">swoft</span></a></div><div class="row-meta"><span class="lang-tag">PHP</span><span class="m" title="stars">★ 5,531</span><span class="m" title="forks">⑂ 760</span><span class="m" title="watchers">👁 220</span><span class="m" title="issues">● 1,217</span><span class="m" title="prs">⑃ 282</span><span class="m" title="releases">▤ 26</span></div><div class="row-desc">🚀 PHP Microservice Full Coroutine Framework</div><div class="row-foot"><div class="row-soc"></div><div class="row-tags"><a class="row-tag" href="https://github.com/topics/swoole">swoole</a><a class="row-tag" href="https://github.com/topics/coroutine">coroutine</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/microservice">microservice</a><a class="row-tag" href="https://tag1.zhuikan.com/tags/aop">aop</a></div></div></div><div class="row-side"><div class="row-stars-big">★ 5,531</div></div></div></div><!--/SSR--></div>
 
     <details class="month-detail" id="monthDetail">
-      <summary data-i18n="month.top10">当月每日飙升 Top10 摘要</summary>
+      <summary data-i18n="month.top10">Daily Top 10 summary this month</summary>
       <div id="monthTop10"><!--SSRMT--><!--/SSRMT--></div>
     </details>
   </section>
 
   <section id="yearWrap">
-    <h2 class="section-title" data-i18n="year.entry">年度月度榜入口</h2>
+    <h2 class="section-title" data-i18n="year.entry">Monthly boards</h2>
     <div class="month-grid" id="monthGrid"><!--SSRMG--><!--/SSRMG--></div>
   </section>
 
@@ -237,9 +241,9 @@ var _hmt = _hmt || [];
 <footer class="footer">
   <div class="footer-inner">
     <p id="footStats" class="foot-stats"></p>
-    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
-    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
-    <p class="footer-tag" data-i18n="foot.tag">GitHub Trending Rank Radar — 独立采集 GitHub 数据的开源趋势榜单</p>
+    <p data-i18n="foot.line1">Source: independently collected via the GitHub API · boards computed from snapshot diffs · for reference only</p>
+    <p class="footer-sub" data-i18n="foot.line2">New / All-Time boards rank within our tracked set · rate = growth ÷ star base at window start</p>
+    <p class="footer-tag" data-i18n="foot.tag">GitHub Trending Rank Radar — an independent open-source GitHub trending radar</p>
     <p class="footer-copy" data-i18n="foot.copy">© GitHub Trending Rank Radar</p>
   </div>
 </footer>
