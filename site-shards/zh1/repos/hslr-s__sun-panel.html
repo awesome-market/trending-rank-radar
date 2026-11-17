@@ -112,15 +112,45 @@ var _hmt = _hmt || [];
       <div class="rp-head-chips"></div>
     </div>
     <p class="rp-desc">A server, NAS navigation panel, Homepage, browser homepage. | 一个服务器、NAS导航面板、Homepage、浏览器首页。</p>
-    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,383</b></span><span class="rp-stat" title="forks">⑂ <b>625</b></span><span class="rp-stat" title="watchers">👁 <b>18</b></span><span class="rp-stat" title="prs">⑃ <b>17</b></span><span class="rp-stat" title="issues">● <b>364</b></span><span class="rp-stat" title="releases">▤ <b>42</b></span></div>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,384</b></span><span class="rp-stat" title="forks">⑂ <b>625</b></span><span class="rp-stat" title="watchers">👁 <b>18</b></span><span class="rp-stat" title="prs">⑃ <b>17</b></span><span class="rp-stat" title="issues">● <b>364</b></span><span class="rp-stat" title="releases">▤ <b>36</b></span></div>
     <div class="rp-topics"><a class="rp-topic" href="https://tag1.zhuikan.com/tags/docker">docker</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/golang">golang</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/homepage">homepage</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/nas">nas</a><a class="rp-topic" href="https://github.com/topics/navigationpage">navigationpage</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/raspberry-pi">raspberry-pi</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/synology">synology</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/vue3">vue3</a></div>
     <div class="rp-meta"><span class="rp-meta-bit">Vue</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2023-11-09</span><a class="rp-meta-bit rp-home" href="http://doc.sun-panel.top" rel="noopener">doc.sun-panel.top</a></div>
     <div class="rp-foot-row"><div class="rp-same"></div>
       <div class="rp-actions"><a class="rp-btn" href="https://github.com/hslr-s/sun-panel">GitHub ↗</a></div></div>
   </div>
 </div>
-<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.8.1</span><a class="rp-dl-a" href="https://github.com/hslr-s/sun-panel/releases/tag/v1.8.1">v1.8.1 ↓</a><span class="rp-dl-ver">1.8.1</span><span class="rp-dl-date">2025-12-31</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+3</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+14</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,383</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">625</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">18</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">17</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">364</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">42</div><div class="rp-metric-label">releases</div></div></div>
-<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">[[ 简体中文 ]](https://doc.sun-panel.top/zh_cn/) |
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.8.1</span><a class="rp-dl-a" href="https://github.com/hslr-s/sun-panel/releases/tag/v1.8.1">v1.8.1 ↓</a><span class="rp-dl-ver">1.8.1</span><span class="rp-dl-date">2026-11-17</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+11</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,384</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">625</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">18</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">17</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">364</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">36</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">发布程序的流程说明：
+修改 assets\version 版本号。
+
+
+
+sh
+ 提交代码，打标签
+git tag v1.3.2-beta24-02-02
+
+ 推送到 pro 远程库
+git push pro --tag
+
+ 编译
+ 有新标签docker版本会自动在 github action 编译
+
+
+
+ 二进制版本，需要将代码推到主库，并且在虚拟机中找到项目目录和编译的镜像，并拉取标签，启动容器并进去拉取代码
+
+ 虚拟机编译
+git pull --tag
+
+ 注意切换到分支要编译的分支
+chmod +x ./build &amp;&amp; ./build -r
+
+ 编译成功后下载各种二进制文件上传到github
+
+
+
+
+[[ 简体中文 ]](https://doc.sun-panel.top/zh_cn/) |
 [[ English ]](https://doc.sun-panel.top/)
 
 
@@ -132,6 +162,7 @@ var _hmt = _hmt || [];
 
 
  
+
 
 
 
@@ -221,18 +252,18 @@ QQ交流群，进不去可以点上方连接联系作者
 - Rock.L
 
 
----</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/hslr-s/sun-panel/issues/141"><span class="rp-item-num">#141</span><span class="rp-item-title">[Feature]支持游客模式</span><span class="rp-item-extra">9 comments · 2024-04-02</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/issues/53"><span class="rp-item-num">#53</span><span class="rp-item-title">[Feature]能否支持HTTPS</span><span class="rp-item-extra">6 comments · 2024-01-04</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/issues/430"><span class="rp-item-num">#430</span><span class="rp-item-title">[Feature] 希望可以支持部署在cloudfalre 的workers上面</span><span class="rp-item-extra">5 comments · 2026-04-03</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/issues/394"><span class="rp-item-num">#394</span><span class="rp-item-title">能不能增加一个图标可以跨组拖动？</span><span class="rp-item-extra">5 comments · 2025-11-08</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/issues/343"><span class="rp-item-num">#343</span><span class="rp-item-title">[BUG] 获取docker容器信息耗时超1分钟</span><span class="rp-item-extra">5 comments · 2025-05-19</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/issues/181"><span class="rp-item-num">#181</span><span class="rp-item-title">[Feature] 部署到 koyeb 报错</span><span class="rp-item-extra">5 comments · 2024-05-12</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/issues/176"><span class="rp-item-num">#176</span><span class="rp-item-title">希望增加一键修改局域网IP功能</span><span class="rp-item-extra">5 comments · 2024-05-11</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/issues/145"><span class="rp-item-num">#145</span><span class="rp-item-title">内外网切换的建议</span><span class="rp-item-extra">5 comments · 2024-04-07</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/hslr-s/sun-panel/discussions/454"><span class="rp-item-num">#454</span><span class="rp-item-title">求个账号内容克隆的功能</span><span class="rp-item-extra">0 comments · 2026-10-30</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/discussions/443"><span class="rp-item-num">#443</span><span class="rp-item-title">开源分享：轻量级自托管随机壁纸 API（Go / Docker / Unraid）</span><span class="rp-item-extra">0 comments · 2026-08-09</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/discussions/438"><span class="rp-item-num">#438</span><span class="rp-item-title">translation tool ? german translation?</span><span class="rp-item-extra">1 comments · 2026-05-12</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/discussions/410"><span class="rp-item-num">#410</span><span class="rp-item-title">Add spanish traduction</span><span class="rp-item-extra">0 comments · 2026-01-02</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/discussions/407"><span class="rp-item-num">#407</span><span class="rp-item-title">自定义站点标题，只显示在登陆前页面</span><span class="rp-item-extra">0 comments · 2025-12-31</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/discussions/403"><span class="rp-item-num">#403</span><span class="rp-item-title">希望增加鼠标中键点击图标，后台打开新页面的功能</span><span class="rp-item-extra">0 comments · 2025-12-19</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/discussions/400"><span class="rp-item-num">#400</span><span class="rp-item-title">作者考虑出一个拖动到另外分组的功能吗</span><span class="rp-item-extra">2 comments · 2025-12-06</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/discussions/398"><span class="rp-item-num">#398</span><span class="rp-item-title">建议增加云端书签功能！！</span><span class="rp-item-extra">0 comments · 2025-11-20</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/hslr-s/sun-panel/releases"><b>v1.8.1</b> <span class="rp-rel-tag">v1.8.1</span> <span class="rp-item-extra">2025-12-31</span></a><pre class="rp-pre">[[简体中文]](https://sun-panel-doc.enianteam.com/zh_cn/update/update_log.html) | [English]
+---</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/hslr-s/sun-panel/issues/141"><span class="rp-item-num">#141</span><span class="rp-item-title">[Feature]支持游客模式</span><span class="rp-item-extra">9 comments · 2024-04-02</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/issues/53"><span class="rp-item-num">#53</span><span class="rp-item-title">[Feature]能否支持HTTPS</span><span class="rp-item-extra">6 comments · 2024-01-04</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/issues/430"><span class="rp-item-num">#430</span><span class="rp-item-title">[Feature] 希望可以支持部署在cloudfalre 的workers上面</span><span class="rp-item-extra">5 comments · 2026-04-03</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/issues/394"><span class="rp-item-num">#394</span><span class="rp-item-title">能不能增加一个图标可以跨组拖动？</span><span class="rp-item-extra">5 comments · 2025-11-08</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/issues/343"><span class="rp-item-num">#343</span><span class="rp-item-title">[BUG] 获取docker容器信息耗时超1分钟</span><span class="rp-item-extra">5 comments · 2025-05-19</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/issues/181"><span class="rp-item-num">#181</span><span class="rp-item-title">[Feature] 部署到 koyeb 报错</span><span class="rp-item-extra">5 comments · 2024-05-12</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/issues/176"><span class="rp-item-num">#176</span><span class="rp-item-title">希望增加一键修改局域网IP功能</span><span class="rp-item-extra">5 comments · 2024-05-11</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/issues/145"><span class="rp-item-num">#145</span><span class="rp-item-title">内外网切换的建议</span><span class="rp-item-extra">5 comments · 2024-04-07</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/hslr-s/sun-panel/discussions/454"><span class="rp-item-num">#454</span><span class="rp-item-title">求个账号内容克隆的功能</span><span class="rp-item-extra">0 comments · 2026-10-30</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/discussions/443"><span class="rp-item-num">#443</span><span class="rp-item-title">开源分享：轻量级自托管随机壁纸 API（Go / Docker / Unraid）</span><span class="rp-item-extra">0 comments · 2026-08-09</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/discussions/438"><span class="rp-item-num">#438</span><span class="rp-item-title">translation tool ? german translation?</span><span class="rp-item-extra">1 comments · 2026-05-12</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/discussions/410"><span class="rp-item-num">#410</span><span class="rp-item-title">Add spanish traduction</span><span class="rp-item-extra">0 comments · 2026-01-02</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/discussions/407"><span class="rp-item-num">#407</span><span class="rp-item-title">自定义站点标题，只显示在登陆前页面</span><span class="rp-item-extra">0 comments · 2025-12-31</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/discussions/403"><span class="rp-item-num">#403</span><span class="rp-item-title">希望增加鼠标中键点击图标，后台打开新页面的功能</span><span class="rp-item-extra">0 comments · 2025-12-19</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/discussions/400"><span class="rp-item-num">#400</span><span class="rp-item-title">作者考虑出一个拖动到另外分组的功能吗</span><span class="rp-item-extra">2 comments · 2025-12-06</span></a><a class="rp-item" href="https://github.com/hslr-s/sun-panel/discussions/398"><span class="rp-item-num">#398</span><span class="rp-item-title">建议增加云端书签功能！！</span><span class="rp-item-extra">0 comments · 2025-11-20</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/hslr-s/sun-panel/releases"><b>v1.8.1</b> <span class="rp-rel-tag">v1.8.1</span> <span class="rp-item-extra">2026-11-17</span></a><pre class="rp-pre">[[简体中文]](https://sun-panel-doc.enianteam.com/zh_cn/update/update_log.html) | [English]
 
  [!CAUTION] 
+ 
  1. Before upgrading from the Docker version v1.3.0 or earlier to this version, please read the Update Instructions first.
  2. If you want to view the Docker status in the container, add the following when mounting: -v /var/run/docker.sock:/var/run/docker.sock (Some devices may not support this.)
  3. If any exception occurs after updating, please try to force refresh the page (ctrl+shift+R). If it cannot be solved, you can try clearing the browser cache (ctrl+shift+del).
 
+- Homepage P</pre></section>
 
-- Home Page P</pre></section>
 
-
-<p class="rp-meta">Snapshot: 2026-11-16T23:08:42Z · Data license Apache-2.0 ·
+<p class="rp-meta">Snapshot: 2026-11-17T21:58:29Z · Data license Apache-2.0 ·
 <a href="https://api-site.zhuikan.com/data/repos/hslr-s__sun-panel.json">JSON</a></p></div>
 </main>
 

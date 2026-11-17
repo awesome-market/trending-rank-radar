@@ -112,14 +112,14 @@ var _hmt = _hmt || [];
       <div class="rp-head-chips"></div>
     </div>
     <p class="rp-desc">Production-safe dynamic tracing and diagnostics for Java applications—attach to live JVMs with no restart or recompilation.</p>
-    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,996</b></span><span class="rp-stat" title="forks">⑂ <b>954</b></span><span class="rp-stat" title="watchers">👁 <b>310</b></span><span class="rp-stat" title="prs">⑃ <b>527</b></span><span class="rp-stat" title="issues">● <b>474</b></span><span class="rp-stat" title="releases">▤ <b>33</b></span></div>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,996</b></span><span class="rp-stat" title="forks">⑂ <b>954</b></span><span class="rp-stat" title="watchers">👁 <b>310</b></span><span class="rp-stat" title="prs">⑃ <b>532</b></span><span class="rp-stat" title="issues">● <b>475</b></span><span class="rp-stat" title="releases">▤ <b>34</b></span></div>
     <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/btrace">btrace</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/java">java</a><a class="rp-topic" href="https://github.com/topics/bytecode-instrumentation">bytecode-instrumentation</a><a class="rp-topic" href="https://github.com/topics/diagnostics">diagnostics</a><a class="rp-topic" href="https://github.com/topics/dtrace">dtrace</a><a class="rp-topic" href="https://github.com/topics/java-agent">java-agent</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/jvm">jvm</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/observability">observability</a></div>
     <div class="rp-meta"><span class="rp-meta-bit">Java</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2014-08-28</span></div>
     <div class="rp-foot-row"><div class="rp-same"></div>
       <div class="rp-actions"><a class="rp-btn" href="https://github.com/btraceio/btrace">GitHub ↗</a></div></div>
   </div>
 </div>
-<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">Download: </span><span class="rp-dl-t">v2.2.6</span><a class="rp-dl-a" href="https://github.com/btraceio/btrace/releases/tag/v2.2.6">v2.2.6 ↓</a><span class="rp-dl-ver">2.2.6</span><span class="rp-dl-date">2024-11-09</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">Daily</div></div><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">Weekly</div></div><div class="rp-metric"><div class="rp-metric-num">5,996</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">954</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">310</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">527</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">474</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">33</div><div class="rp-metric-label">releases</div></div></div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">Download: </span><span class="rp-dl-t">v2.2.6</span><a class="rp-dl-a" href="https://github.com/btraceio/btrace/releases/tag/v2.2.6">v2.2.6 ↓</a><span class="rp-dl-ver">2.2.6</span><span class="rp-dl-date">2024-11-09</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">Daily</div></div><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">Weekly</div></div><div class="rp-metric"><div class="rp-metric-num">5,996</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">954</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">310</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">532</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">475</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">34</div><div class="rp-metric-label">releases</div></div></div>
 <h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">BTrace
 
 Safe, dynamic tracing for Java applications
@@ -130,7 +130,7 @@ Safe, dynamic tracing for Java applications
 
 BTrace dynamically instruments running Java applications to inject tracing code at runtime. No restarts. No recompilation. Built for use on production JVMs.
 
- Quick links: Quick Reference · Step-by-Step Tutorial
+ Quick links: Project site · Quick Reference · Step-by-Step Tutorial
 
 ---
 
@@ -152,7 +152,7 @@ BTrace 3.0 runs on Java 8–27+. Running BTrace against a JVM older than Java 17
 
 Method timing:
 sh
-btrace -n &#x27;java.sql.Statement::execute @return { print method, duration }&#x27; 
+btrace -n &#x27;org.postgresql.jdbc.PgStatement::execute @return { print method, duration }&#x27; 
 
 
 Exception tracking:
@@ -163,7 +163,8 @@ btrace -n &#x27;java.lang.Exception:: @return { print self, stack(5) }&#x27;
 Custom probes:
 java
 @BTrace public class Trace {
-    @OnMethod(clazz = &quot;com.example.OrderService&quot;, method = &quot;checkout&quot;)
+    @OnMethod(clazz = &quot;com.example.OrderService&quot;, method = &quot;checkout&quot;,
+              location = @Location(Kind.RETURN))
     public static void onCheckout(@Self Object self, @Duration long ns) {
         println(&quot;checkout: &quot; + str(ns / 1_000_000) + &quot;ms&quot;);
     }
@@ -193,7 +194,7 @@ curl -LO https://github.com/btraceio/btrace/releases/download/v${BTRACE_VERSION}
    FROM ghcr.io/btraceio/btrace:3.0.0 AS btrace
 
 
-With an installed distribution the commands are btrace   (attach), btracec  (compile) and btracer   (launch with the agent).
+With an installed distribution the commands are btrace   (attach), btracec  (compile) and btracer   (launch with the agent;  is what you would pass to java, without the word java).
 
 Details for every option live in one place each:
 - Installation: archives, RPM/DEB packages, JBang, using the agent JAR with -javaagent
@@ -206,17 +207,10 @@ Details for every option live in one place each:
 
 | Resource | Description |
 |----------|-------------|
+| Project site | Overview of BTrace 3.0: one-line probes, coding-agent workflows, AI observability |
 | Quick Reference | Cheat sheet for experienced users |
 | Getting Started | Step-by-step first trace tutorial |
-| Full Tutorial | Complete walkthrough of all features |
-| Oneliners | DTrace-style quick probes |
-| Extensions | StatsD, custom integrations |
-| Documentation Hub | All docs and guides |
-| Wiki | External wiki with additional resources |
-
----
-
- Usin</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/btraceio/btrace/issues/496"><span class="rp-item-num">#496</span><span class="rp-item-title">Dependency Dashboard</span><span class="rp-item-extra">0 comments · 2021-08-30</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/btraceio/btrace/discussions/732"><span class="rp-item-num">#732</span><span class="rp-item-title">Where has com.sun.btrace.api.BTraceSettings gone?</span><span class="rp-item-extra">1 comments · 2025-04-30</span></a><a class="rp-item" href="https://github.com/btraceio/btrace/discussions/728"><span class="rp-item-num">#728</span><span class="rp-item-title">BTrace Roadmap &amp; Call for Feedback</span><span class="rp-item-extra">0 comments · 2025-02-16</span></a><a class="rp-item" href="https://github.com/btraceio/btrace/discussions/626"><span class="rp-item-num">#626</span><span class="rp-item-title">native mothod could be traced by btrace?</span><span class="rp-item-extra">1 comments · 2023-05-18</span></a><a class="rp-item" href="https://github.com/btraceio/btrace/discussions/624"><span class="rp-item-num">#624</span><span class="rp-item-title">Missing some functions when instrument a Spring project</span><span class="rp-item-extra">1 comments · 2023-04-13</span></a><a class="rp-item" href="https://github.com/btraceio/btrace/discussions/622"><span class="rp-item-num">#622</span><span class="rp-item-title">About the OnThrow script in the sample directory</span><span class="rp-item-extra">1 comments · 2023-03-27</span></a><a class="rp-item" href="https://github.com/btraceio/btrace/discussions/606"><span class="rp-item-num">#606</span><span class="rp-item-title">How to Print Array of Objects passed as paramters to method??</span><span class="rp-item-extra">1 comments · 2023-01-06</span></a><a class="rp-item" href="https://github.com/btraceio/btrace/discussions/603"><span class="rp-item-num">#603</span><span class="rp-item-title">v2.2.3</span><span class="rp-item-extra">0 comments · 2022-12-23</span></a><a class="rp-item" href="https://github.com/btraceio/btrace/discussions/570"><span class="rp-item-num">#570</span><span class="rp-item-title">How to determine that Btrace script has successfully intruded into the code？</span><span class="rp-item-extra">1 comments · 2022-08-15</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/btraceio/btrace/releases"><b>v2.2.6</b> <span class="rp-rel-tag">v2.2.6</span> <span class="rp-item-extra">2024-11-09</span></a><pre class="rp-pre">What&#x27;s Changed
+| Full Tutorial </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/btraceio/btrace/issues/1028"><span class="rp-item-num">#1028</span><span class="rp-item-title">Let a handler call another handler (split guarded entry from handler body)</span><span class="rp-item-extra">0 comments · 2026-11-17</span></a><a class="rp-item" href="https://github.com/btraceio/btrace/issues/496"><span class="rp-item-num">#496</span><span class="rp-item-title">Dependency Dashboard</span><span class="rp-item-extra">0 comments · 2021-08-30</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/btraceio/btrace/discussions/732"><span class="rp-item-num">#732</span><span class="rp-item-title">Where has com.sun.btrace.api.BTraceSettings gone?</span><span class="rp-item-extra">1 comments · 2025-04-30</span></a><a class="rp-item" href="https://github.com/btraceio/btrace/discussions/728"><span class="rp-item-num">#728</span><span class="rp-item-title">BTrace Roadmap &amp; Call for Feedback</span><span class="rp-item-extra">0 comments · 2025-02-16</span></a><a class="rp-item" href="https://github.com/btraceio/btrace/discussions/626"><span class="rp-item-num">#626</span><span class="rp-item-title">native mothod could be traced by btrace?</span><span class="rp-item-extra">1 comments · 2023-05-18</span></a><a class="rp-item" href="https://github.com/btraceio/btrace/discussions/624"><span class="rp-item-num">#624</span><span class="rp-item-title">Missing some functions when instrument a Spring project</span><span class="rp-item-extra">1 comments · 2023-04-13</span></a><a class="rp-item" href="https://github.com/btraceio/btrace/discussions/622"><span class="rp-item-num">#622</span><span class="rp-item-title">About the OnThrow script in the sample directory</span><span class="rp-item-extra">1 comments · 2023-03-27</span></a><a class="rp-item" href="https://github.com/btraceio/btrace/discussions/606"><span class="rp-item-num">#606</span><span class="rp-item-title">How to Print Array of Objects passed as paramters to method??</span><span class="rp-item-extra">1 comments · 2023-01-06</span></a><a class="rp-item" href="https://github.com/btraceio/btrace/discussions/603"><span class="rp-item-num">#603</span><span class="rp-item-title">v2.2.3</span><span class="rp-item-extra">0 comments · 2022-12-23</span></a><a class="rp-item" href="https://github.com/btraceio/btrace/discussions/570"><span class="rp-item-num">#570</span><span class="rp-item-title">How to determine that Btrace script has successfully intruded into the code？</span><span class="rp-item-extra">1 comments · 2022-08-15</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/btraceio/btrace/releases"><b>v2.2.6</b> <span class="rp-rel-tag">v2.2.6</span> <span class="rp-item-extra">2024-11-09</span></a><pre class="rp-pre">What&#x27;s Changed
  Workaround functional test failures on JDK 22 by @jbachorik in https://github.com/btraceio/btrace/pull/683
  Correctly set field name for @TargetMethodOrField by @yewton in https://github.com/btraceio/btrace/pull/700
  A bunch of fixes related to Spark 3 on JDK 17 by @jbachorik in https://github.com/btraceio/btrace/pull/703
@@ -227,7 +221,7 @@ Details for every option live in one place each:
 Full Changelog: https://github.com/btraceio/btrace/compare/v2.2.5...v2.2.6</pre></section>
 
 
-<p class="rp-meta">Snapshot: 2026-11-16T23:08:42Z · Data license Apache-2.0 ·
+<p class="rp-meta">Snapshot: 2026-11-17T21:58:29Z · Data license Apache-2.0 ·
 <a href="https://api-site.zhuikan.com/data/repos/btraceio__btrace.json">JSON</a></p></div>
 </main>
 
