@@ -112,14 +112,14 @@ var _hmt = _hmt || [];
       <div class="rp-head-chips"></div>
     </div>
     <p class="rp-desc">Microduck 复刻：飞特 HD-1910 整机已实机验证（站立、行走、前滚翻起身）。镜像、Studio 网页中控、CAD/BOM、装配教程、电路工程与训练平台 | Microduck robot replica with real hardware demos.</p>
-    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>1,739</b></span><span class="rp-stat" title="forks">⑂ <b>299</b></span><span class="rp-stat" title="watchers">👁 <b>23</b></span><span class="rp-stat" title="prs">⑃ <b>13</b></span><span class="rp-stat" title="issues">● <b>47</b></span><span class="rp-stat" title="releases">▤ <b>19</b></span></div>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>1,754</b></span><span class="rp-stat" title="forks">⑂ <b>302</b></span><span class="rp-stat" title="watchers">👁 <b>23</b></span><span class="rp-stat" title="prs">⑃ <b>18</b></span><span class="rp-stat" title="issues">● <b>47</b></span><span class="rp-stat" title="releases">▤ <b>19</b></span></div>
     <div class="rp-topics"></div>
     <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2026-08-28</span></div>
     <div class="rp-foot-row"><div class="rp-same"></div>
       <div class="rp-actions"><a class="rp-btn" href="https://github.com/fanhao375/microduck-replica">GitHub ↗</a></div></div>
   </div>
 </div>
-<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">Download: </span><span class="rp-dl-t">复刻镜像 20261027 · 网页升级与本地坐站语音（实物待验收）</span><a class="rp-dl-a" href="https://github.com/fanhao375/microduck-replica/releases/tag/microduck-replica-image-20261027">microduck-replica-image-20261027 ↓</a><span class="rp-dl-ver">20261027</span><span class="rp-dl-date">2026-10-27</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+13</div><div class="rp-metric-label">Daily</div></div><div class="rp-metric"><div class="rp-metric-num up">+65</div><div class="rp-metric-label">Weekly</div></div><div class="rp-metric"><div class="rp-metric-num">1,739</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">299</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">23</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">13</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">47</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">19</div><div class="rp-metric-label">releases</div></div></div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">Download: </span><span class="rp-dl-t">复刻镜像 20261027 · 网页升级与本地坐站语音（实物待验收）</span><a class="rp-dl-a" href="https://github.com/fanhao375/microduck-replica/releases/tag/microduck-replica-image-20261027">microduck-replica-image-20261027 ↓</a><span class="rp-dl-ver">20261027</span><span class="rp-dl-date">2026-10-27</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+15</div><div class="rp-metric-label">Daily</div></div><div class="rp-metric"><div class="rp-metric-num up">+78</div><div class="rp-metric-label">Weekly</div></div><div class="rp-metric"><div class="rp-metric-num">1,754</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">302</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">23</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">18</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">47</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">19</div><div class="rp-metric-label">releases</div></div></div>
 <h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Microduck 复刻
 
 简体中文 · English
@@ -138,6 +138,8 @@ var _hmt = _hmt || [];
 飞特 HD-1910 版本已完成整机实机验证：站立、行走、前滚翻后起身均已跑通。 主线使用 15 颗飞特 HD-1910 舵机，提供可烧录的复刻镜像和 Microduck Studio 网页中控，通过手机或电脑浏览器完成配网、标定和遥控。
 
 首次上手流程已在实机跑通： 烧录镜像 → 热点配网 → 舵机与 IMU 标定 → 配手柄、测试急停 → 站立行走。查看实机验证记录
+
+接线图（3D，可旋转，逐步高亮）： 在线查看。电池 → 香蕉板 → HUB → 腿 / 头 / IMU，摄像头、ToF、扬声器、HAT 各接口，按步骤看清每根线接哪里。
 
  鸭子现在的样子
 
@@ -226,6 +228,14 @@ B 站合集《MicroDuck 从零安装教程》 —— CAD 图纸和装配 BOM 的
 
 两种舵机的配合件不能混用。打印文件的具体版本和更新日期在 CAD 仓库对应专区维护；这份采购清单按飞特方案整理，XL330 的舵机及配套电控需另行核对。
 
+接线怎么接： 3D 接线图在线预览（点下图也可以打开）。可旋转、缩放，按步骤高亮每一根线（电池 → 香蕉板 → HUB → 腿 / 头 / IMU，摄像头、ToF、扬声器、HAT 各接口）。
+
+预览地址：
+
+
+  
+
+
 ---
 
  现在做到哪了
@@ -246,9 +256,7 @@ B 站合集《MicroDuck 从零安装教程》 —— CAD 图纸和装配 BOM 的
 
 2026-10-28 · 软件包更新（不重烧 SD 卡）：已有设置页升级入口的用户先安装 2026.10.28 网页 / 语音包，重连后可承托卸力并明确确认主程序更新，再在 IMU 页选择 Qinmo · Feetech、验证方向。主程序自动更新仅支持已知 20261027 基线；现有板卡继续默认自动识别。Qinmo 实物与本版整机升级仍待验收，音乐跟拍和自由 AI 人声对话仍未解决。软件包与引导附件 · 现有用户更新步骤 · Qinmo 网页使用
 
-复刻镜像 20261027：网页软件升级与本地坐站语音。 设置页可检查、下载或上传签名软件包，安装失败可回退；R3 单击开关监听，识别“坐下／站起来”，附带中文模型，无需云端账号。保留网页录制回放、灵动及模型管理。已有卡先通过 SSH 安装一次升级入口，之后日常软件更新不用重烧。
-
-本版保留 20261023c 的主程序、步态模型与总线 ID 200 IMU 自动识别。软件、签名事务、浏览器及镜像只读验证通过；本版新卡首次使用、旧卡升级/回退和真人声学仍待实物验收。</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/fanhao375/microduck-replica/issues/9"><span class="rp-item-num">#9</span><span class="rp-item-title">舵机的最新情报</span><span class="rp-item-extra">6 comments · 2026-09-02</span></a><a class="rp-item" href="https://github.com/fanhao375/microduck-replica/issues/3"><span class="rp-item-num">#3</span><span class="rp-item-title">建议建立个社区吧</span><span class="rp-item-extra">4 comments · 2026-08-31</span></a><a class="rp-item" href="https://github.com/fanhao375/microduck-replica/issues/49"><span class="rp-item-num">#49</span><span class="rp-item-title">拼团咨询：HAT 板 + imu_to_dxl 板（越南） / Group buy inquiry: HAT + IMU board (Vietnam)</span><span class="rp-item-extra">3 comments · 2026-10-29</span></a><a class="rp-item" href="https://github.com/fanhao375/microduck-replica/issues/56"><span class="rp-item-num">#56</span><span class="rp-item-title">PCBway IMU</span><span class="rp-item-extra">2 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/fanhao375/microduck-replica/issues/25"><span class="rp-item-num">#25</span><span class="rp-item-title">Current walking progress and recommended hardware for a new build</span><span class="rp-item-extra">2 comments · 2026-09-14</span></a><a class="rp-item" href="https://github.com/fanhao375/microduck-replica/issues/17"><span class="rp-item-num">#17</span><span class="rp-item-title">原理图问题</span><span class="rp-item-extra">2 comments · 2026-09-05</span></a><a class="rp-item" href="https://github.com/fanhao375/microduck-replica/issues/15"><span class="rp-item-num">#15</span><span class="rp-item-title">电路板高清图需求</span><span class="rp-item-extra">2 comments · 2026-09-05</span></a><a class="rp-item" href="https://github.com/fanhao375/microduck-replica/issues/5"><span class="rp-item-num">#5</span><span class="rp-item-title">pcb不是问题</span><span class="rp-item-extra">2 comments · 2026-09-01</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/fanhao375/microduck-replica/releases"><b>复刻镜像 20261027 · 网页升级与本地坐站语音（实物待验收）</b> <span class="rp-rel-tag">microduck-replica-image-20261027</span> <span class="rp-item-extra">2026-10-27</span></a><pre class="rp-pre">免费、只供个人非商业复刻，不随收费产品分发。镜像内动作模型沿用作者的个人非商业许可；请同时保留附件中的许可、模型及第三方说明。
+复刻镜像 20261027：网页软件升级与本地坐站语音。 设置页可检查、下载或</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/fanhao375/microduck-replica/issues/9"><span class="rp-item-num">#9</span><span class="rp-item-title">舵机的最新情报</span><span class="rp-item-extra">6 comments · 2026-09-02</span></a><a class="rp-item" href="https://github.com/fanhao375/microduck-replica/issues/3"><span class="rp-item-num">#3</span><span class="rp-item-title">建议建立个社区吧</span><span class="rp-item-extra">4 comments · 2026-08-31</span></a><a class="rp-item" href="https://github.com/fanhao375/microduck-replica/issues/49"><span class="rp-item-num">#49</span><span class="rp-item-title">拼团咨询：HAT 板 + imu_to_dxl 板（越南） / Group buy inquiry: HAT + IMU board (Vietnam)</span><span class="rp-item-extra">3 comments · 2026-10-29</span></a><a class="rp-item" href="https://github.com/fanhao375/microduck-replica/issues/56"><span class="rp-item-num">#56</span><span class="rp-item-title">PCBway IMU</span><span class="rp-item-extra">2 comments · 2026-11-12</span></a><a class="rp-item" href="https://github.com/fanhao375/microduck-replica/issues/25"><span class="rp-item-num">#25</span><span class="rp-item-title">Current walking progress and recommended hardware for a new build</span><span class="rp-item-extra">2 comments · 2026-09-14</span></a><a class="rp-item" href="https://github.com/fanhao375/microduck-replica/issues/17"><span class="rp-item-num">#17</span><span class="rp-item-title">原理图问题</span><span class="rp-item-extra">2 comments · 2026-09-05</span></a><a class="rp-item" href="https://github.com/fanhao375/microduck-replica/issues/15"><span class="rp-item-num">#15</span><span class="rp-item-title">电路板高清图需求</span><span class="rp-item-extra">2 comments · 2026-09-05</span></a><a class="rp-item" href="https://github.com/fanhao375/microduck-replica/issues/5"><span class="rp-item-num">#5</span><span class="rp-item-title">pcb不是问题</span><span class="rp-item-extra">2 comments · 2026-09-01</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/fanhao375/microduck-replica/releases"><b>复刻镜像 20261027 · 网页升级与本地坐站语音（实物待验收）</b> <span class="rp-rel-tag">microduck-replica-image-20261027</span> <span class="rp-item-extra">2026-10-27</span></a><pre class="rp-pre">免费、只供个人非商业复刻，不随收费产品分发。镜像内动作模型沿用作者的个人非商业许可；请同时保留附件中的许可、模型及第三方说明。
 
 适用飞特 HD-1910 + Radxa Zero 3W。20261027 镜像预装软件套件 2026.10.27。
 
@@ -266,7 +274,7 @@ B 站合集《MicroDuck 从零安装教程》 —— CAD 图纸和装配 BOM 的
 新卡使用本镜像，仍需完成配网、舵机/IMU标定、手柄和站稳检查。烧录与首次使</pre></section>
 
 
-<p class="rp-meta">Snapshot: 2026-11-18T21:40:48Z · Data license Apache-2.0 ·
+<p class="rp-meta">Snapshot: 2026-11-19T21:56:17Z · Data license Apache-2.0 ·
 <a href="https://api-site.zhuikan.com/data/repos/fanhao375__microduck-replica.json">JSON</a></p></div>
 </main>
 

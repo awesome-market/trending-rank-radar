@@ -112,14 +112,14 @@ var _hmt = _hmt || [];
       <div class="rp-head-chips"></div>
     </div>
     <p class="rp-desc">WPScan WordPress security scanner. Written for security professionals and blog maintainers to test the security of their WordPress websites. Contact us via contact@wpscan.com</p>
-    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,862</b></span><span class="rp-stat" title="forks">⑂ <b>1,350</b></span><span class="rp-stat" title="watchers">👁 <b>255</b></span><span class="rp-stat" title="prs">⑃ <b>602</b></span><span class="rp-stat" title="issues">● <b>1,479</b></span><span class="rp-stat" title="releases">▤ <b>70</b></span></div>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>9,862</b></span><span class="rp-stat" title="forks">⑂ <b>1,350</b></span><span class="rp-stat" title="watchers">👁 <b>255</b></span><span class="rp-stat" title="prs">⑃ <b>603</b></span><span class="rp-stat" title="issues">● <b>1,479</b></span><span class="rp-stat" title="releases">▤ <b>71</b></span></div>
     <div class="rp-topics"><a class="rp-topic" href="https://tag1.zhuikan.com/tags/wordpress">wordpress</a><a class="rp-topic" href="https://github.com/topics/wpscan">wpscan</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/security">security</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/security-scanner">security-scanner</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/hacking-tool">hacking-tool</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/scanner">scanner</a><a class="rp-topic" href="https://github.com/topics/scan">scan</a><a class="rp-topic" href="https://github.com/topics/wpvulndb">wpvulndb</a></div>
     <div class="rp-meta"><span class="rp-meta-bit">Ruby</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2012-07-11</span><a class="rp-meta-bit rp-home" href="https://wpscan.com/wordpress-cli-scanner" rel="noopener">wpscan.com/wordpress-cli-scanner</a></div>
     <div class="rp-foot-row"><div class="rp-same"></div>
       <div class="rp-actions"><a class="rp-btn" href="https://github.com/wpscanteam/wpscan">GitHub ↗</a></div></div>
   </div>
 </div>
-<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">Download: </span><span class="rp-dl-t">v4.2.0</span><a class="rp-dl-a" href="https://github.com/wpscanteam/wpscan/releases/tag/v4.2.0">v4.2.0 ↓</a><span class="rp-dl-ver">4.2.0</span><span class="rp-dl-date">2026-10-27</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+2</div><div class="rp-metric-label">Daily</div></div><div class="rp-metric"><div class="rp-metric-num up">+12</div><div class="rp-metric-label">Weekly</div></div><div class="rp-metric"><div class="rp-metric-num">9,862</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,350</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">255</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">602</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,479</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">70</div><div class="rp-metric-label">releases</div></div></div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">Download: </span><span class="rp-dl-t">v4.2.1</span><a class="rp-dl-a" href="https://github.com/wpscanteam/wpscan/releases/tag/v4.2.1">v4.2.1 ↓</a><span class="rp-dl-ver">4.2.1</span><span class="rp-dl-date">2026-11-19</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">Daily</div></div><div class="rp-metric"><div class="rp-metric-num up">+11</div><div class="rp-metric-label">Weekly</div></div><div class="rp-metric"><div class="rp-metric-num">9,862</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,350</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">255</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">603</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">1,479</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">71</div><div class="rp-metric-label">releases</div></div></div>
 <h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">WPScan
 
 
@@ -217,17 +217,19 @@ docker run -it --rm -v wpscan-db:/wpscan/.cache/wpscan/db wpscanteam/wpscan --ur
 
 The image ships with a copy of the local database baked in at build time. Because the example commands above use --rm, any database update performed during a run is discarded when the container exits, so the next run starts again from the (potentially stale) baked-in copy.
 
-Mounting a named volume at /wpscan/.cache/wpscan/db (the wpscan user&#x27;s cache directory inside the container) keeps the database across runs, so wpscan --update only re-downloads files wh</pre><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/wpscanteam/wpscan/releases"><b>v4.2.0</b> <span class="rp-rel-tag">v4.2.0</span> <span class="rp-item-extra">2026-10-27</span></a><pre class="rp-pre">What&#x27;s Changed
+Mounting a named volume at /wpscan/.cache/wpscan/db (the wpscan user&#x27;s cache directory inside the container) keeps the database across runs, so wpscan --update only re-downloads files wh</pre><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/wpscanteam/wpscan/releases"><b>v4.2.1</b> <span class="rp-rel-tag">v4.2.1</span> <span class="rp-item-extra">2026-11-19</span></a><pre class="rp-pre">What&#x27;s Changed
 
  Added
- --max-response-size MiB caps how much of any response is read (default 16 MiB, 0 disables), guarding against memory exhaustion on targets serving huge or endless responses by @gnuletik in https://github.com/wpscanteam/wpscan/pull/2091
+ Responses truncated by --max-response-size are now reported: a warning in the CLI summary (listed with --verbose) and a truncated_responses array in JSON output by @gnuletik in https://github.com/wpscanteam/wpscan/pull/2103
 
- Changed
- Responses larger than 16 MiB are now truncated by default. Use --max-response-size 0 to restore the previous unbounded behavior. by @gnuletik in https://github.com/wpscanteam/wpscan/pull/2091
- SARIF now reports aborted runs as unsuccessful, with the abort reason in toolExecutionNotifications. Consumers will show an aborte</pre></section>
+ Maintenance
+ Docker image now built on ruby:4.0.10-alpine by @Initsogar in https://github.com/wpscanteam/wpscan/pull/2106
+ Dependency bumps: ethon
+
+Full Changelog: https://github.com/wpscanteam/wpscan/compare/v4.2.0...v4.2.1</pre></section>
 
 
-<p class="rp-meta">Snapshot: 2026-11-18T21:40:48Z · Data license Apache-2.0 ·
+<p class="rp-meta">Snapshot: 2026-11-19T21:56:17Z · Data license Apache-2.0 ·
 <a href="https://api-site.zhuikan.com/data/repos/wpscanteam__wpscan.json">JSON</a></p></div>
 </main>
 
