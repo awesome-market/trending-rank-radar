@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>guohuiyuan/go-music-dl · GitHub Trending Rank Radar</title>
+<meta name="description" content="一个基于 Go 语言的全网音乐搜索与下载工具。支持 CLI 命令行与 Web 服务双模式，内置网易云、QQ、酷狗、Bilibili、汽水音乐等 10+ 个主流平台，支持多源并发搜索与无损音质解析。music-dl交流群：1125708443">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="go-music-dl, guohuiyuan, guohuiyuan/go-music-dl, github stars, github trending, star growth, star history, 开源项目, 星标增长, go, music, ai-agent, apple-music, bilibili, cli">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zh1.zhuikan.com/repos/guohuiyuan__go-music-dl">
+<link rel="alternate" hreflang="en" href="https://en1.zhuikan.com/repos/guohuiyuan__go-music-dl">
+<link rel="alternate" hreflang="zh-CN" href="https://zh1.zhuikan.com/repos/guohuiyuan__go-music-dl">
+<link rel="alternate" hreflang="x-default" href="https://zh1.zhuikan.com/repos/guohuiyuan__go-music-dl">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="guohuiyuan/go-music-dl · GitHub Trending Rank Radar">
+<meta property="og:description" content="一个基于 Go 语言的全网音乐搜索与下载工具。支持 CLI 命令行与 Web 服务双模式，内置网易云、QQ、酷狗、Bilibili、汽水音乐等 10+ 个主流平台，支持多源并发搜索与无损音质解析。music-dl交流群：1125708443">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zh1.zhuikan.com/repos/guohuiyuan__go-music-dl">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=db567445">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "guohuiyuan/go-music-dl", "codeRepository": "https://github.com/guohuiyuan/go-music-dl", "url": "https://zh1.zhuikan.com/repos/guohuiyuan__go-music-dl", "description": "一个基于 Go 语言的全网音乐搜索与下载工具。支持 CLI 命令行与 Web 服务双模式，内置网易云、QQ、酷狗、Bilibili、汽水音乐等 10+ 个主流平台，支持多源并发搜索与无损音质解析。music-dl交流群：1125708443", "author": {"@type": "Organization", "name": "guohuiyuan", "url": "https://github.com/guohuiyuan"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/AGPL-3.0.html", "programmingLanguage": "Go", "dateCreated": "2026-01-18", "keywords": "go,music,ai-agent,apple-music,bilibili,cli,cross-platform,desktop-app,golang,kugou"}</script>
+</head>
+<body data-repo="guohuiyuan/go-music-dl" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="https://zhuikan.com/" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="https://zhuikan.com/" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="https://zhuikan.com/" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="https://zhuikan.com/">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">guohuiyuan/go-music-dl</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="guohuiyuan__go-music-dl"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/54976075?u=dbe1b4f35948b2a12d36c7ddf0dce698df1acfb3&amp;v=4&s=300" width="300" height="300" alt="guohuiyuan avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">go-music-dl</div>
+      <a class="rp-side-owner" href="https://github.com/guohuiyuan">guohuiyuan</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/guohuiyuan">guohuiyuan</a>
+        <span class="rp-sep">/</span><span class="rp-name">go-music-dl</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">一个基于 Go 语言的全网音乐搜索与下载工具。支持 CLI 命令行与 Web 服务双模式，内置网易云、QQ、酷狗、Bilibili、汽水音乐等 10+ 个主流平台，支持多源并发搜索与无损音质解析。music-dl交流群：1125708443</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>6,639</b></span><span class="rp-stat" title="forks">⑂ <b>633</b></span><span class="rp-stat" title="watchers">👁 <b>23</b></span><span class="rp-stat" title="prs">⑃ <b>21</b></span><span class="rp-stat" title="issues">● <b>94</b></span><span class="rp-stat" title="releases">▤ <b>43</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://tag1.zhuikan.com/tags/go">go</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/music">music</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/ai-agent">ai-agent</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/apple-music">apple-music</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/bilibili">bilibili</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/cli">cli</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/cross-platform">cross-platform</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/desktop-app">desktop-app</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Go</span><span class="rp-meta-bit">AGPL-3.0</span><span class="rp-meta-bit">Created 2026-01-18</span><a class="rp-meta-bit rp-home" href="https://music.zkkp.nyc.mn" rel="noopener">music.zkkp.nyc.mn</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="https://zh1.zhuikan.com/repos/guohuiyuan__go-novel-dl"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/54976075?u=dbe1b4f35948b2a12d36c7ddf0dce698df1acfb3&amp;v=4" alt="" loading="lazy">go-novel-dl</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/guohuiyuan/go-music-dl">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.1.7</span><a class="rp-dl-a" href="https://github.com/guohuiyuan/go-music-dl/releases/tag/v1.1.7">v1.1.7 ↓</a><span class="rp-dl-ver">1.1.7</span><span class="rp-dl-date">2026-11-16</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+35</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">6,639</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">633</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">23</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">21</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">94</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">43</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Go Music DL
+
+ ⭐ 如果这个项目对你有帮助，欢迎点一个 Star。
+
+
+  
+
+
+Go Music DL 是一个多平台音乐搜索与下载工具，支持 Web、TUI 和桌面端，覆盖单曲、歌单、专辑、排行榜与本地音乐。它同时暴露了一套 AI 可调用的接口——AI 可以直接操控你正开着的网页播放器，点歌、切歌、暂停、调音量都不用你动手，详见 AI / Agent 调用。
+
+ 下载安装
+
+推荐优先下载与操作系统和 CPU 架构匹配的桌面版。Rust 桌面版与 Go 桌面版均可使用，不确定时优先选择 Rust 桌面版。所有下载项也可在
+GitHub Releases 查看和选择。
+
+| 平台 | 推荐下载 | 其它版本 |
+| --- | --- | --- |
+| Windows x64 | Rust 桌面版 | Go 桌面版 · Rust ARM64 · Rust 32 位 · CLI x64 |
+| macOS Apple Silicon | DMG 安装包 | PKG 安装包 · Go 桌面版 · CLI |
+| macOS Intel | DMG 安装包 | PKG 安装包 · Go 桌面版 · CLI |
+| Linux x64 | AppImage | DEB · RPM · Go 桌面版 · CLI |
+| Android ARM64 | 推荐 APK | 全 ABI 兼容 APK · x86_64 模拟器 APK |
+| iOS | 未签名 IPA | SHA-256 校验文件 |
+
+Android 用户优先选择 arm64-v8a APK，只有分片 APK 无法安装时再使用全 ABI 兼容包。
+iOS 的 unsigned IPA 不能直接安装，需要使用 SideStore、AltStore 或自己的开发者证书重签。
+
+ 🚀 快速开始
+
+ 桌面端 / 移动端
+
+- Windows / Linux / macOS：从 Releases 下载 music-dl-desktop-rust 或 music-dl-desktop-go 对应平台包，解压后直接运行。
+- Android：优先下载 music-dl_arm64-v8a.apk，已内置 FFmpeg，无需额外安装。
+- iOS：使用 music-dl-ios-unsigned.ipa 自行签名。
+
+ Web / TUI
+
+bash
+ Web，默认访问 http://localhost:8080/music
+./music-dl web
+
+ 挂载到反向代理二级目录
+./music-dl web --base-path /dl
+
+ 终端搜索
+./music-dl -k &quot;周杰伦&quot;
+
+
+Web 的搜索、试听、下载和歌单浏览无需登录；修改设置或 Cookie 时才需要管理员账号。首次配置时，启动日志会打印 Web setup token，用它创建管理员账号即可。TUI 常用键：↑/↓ 移动、空格 选择、a 全选、r 换源、Enter 下载、w 每日推荐、q 退出。
+
+ Docker
+
+bash
+docker compose up -d --pull always --remove-orphans
+
+
+访问 http://localhost:8080。首次启动会自动创建 ./data 并配置好容器写权限；Compose 不依赖仓库里的 Dockerfile 或其他文件，只需 docker-compose.yml 和镜像即可启动。修改源码后可使用 docker compose -f docker-compose.dev.yml up -d --build 本地构建。
+
+ AI / Agent 调用
+
+Web 服务提供 AI 能力索引和播放器控制接口。搜索、歌单、专辑、排行榜、歌单分类、换源、歌词、下载和本地音乐等能力全部复用现有的 /music/ 接口，不再维护第二套 AI 包装路由。
+
+bash
+ 搜索歌曲，只请求 QQ 和网易云
+curl &quot;http://localhost:8080/music/search?q=周杰伦&amp;type=song&amp;sources=qq&amp;sources=netease&quot;
+
+
+API 索引：http://localhost:8080/music/api/ai/index，精简说明：http://localhost:8080/music/llms.txt。索引会列出可直接复用的现有搜索、详情、排行榜、歌单分类、换源、下载和本地音乐接口，以及新增的播放器控制接口。
+
+ AI 可以直接操控网页播放器
+
+只要浏览器里开着本站页面，AI 就能远程操作这个页面：点歌、切歌、暂停、调音量、拖动进度，全部靠一条 HTTP 请求完成。不需要浏览器自动化、不需要模拟点击、也不需要接管你的鼠标键盘。
+
+原理是页面自己维持着一条 SSE 长连接（GET /music/api/ai/player/events）：AI 把命令 POST 到服务端，服务端推给在线的页面，页面执行后把播放状态回传。所以 AI 看到的 playing、position、current 都是页面的真实状态，而不是猜测。
+
+典型对话：“帮我放一首 ClariS 的歌” → AI 调 /music/search 找歌 → 调 /api/ai/player/play 点播 → 轮询 /api/ai/player/state 确认已经在放。
+
+bash
+ 1. 看看当前有哪些播放器在线、在放什么
+curl &quot;http://localhost:8080/music/api/ai/player/state&quot;
+
+ 2. 直接点播（用 id + source，或只给 query 让服务端自己搜第一首）
+curl -X POST &quot;http://localhost:8080/music/api/ai/player/play&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;X-Requested-With: XMLHttpRequest&quot; \
+  -d &#x27;{&quot;id&quot;:&quot;1958384591&quot;,&quot;source&quot;:&quot;netease&quot;,&quot;name&quot;:&quot;ALIVE&quot;,&quot;artist&quot;:&quot;ClariS&quot;}&#x27;
+
+ 3. 传输控制
+curl -X POST &quot;http://localhost:8080/music/api/ai/player/command&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;X-Requested-With: XMLHttpRequest&quot; \
+  -d &#x27;{&quot;action&quot;:&quot;pause&quot;}&#x27;
+
+
+/api/ai/player/command 支持 play、pause、toggle、stop、next、previous、seek、volume 和 rate。没有已打开的播放器时会返回 409 player_not_connected。
+
+ 多客户端：各控各的
+
+每个打开的页面（标签页、桌面端、另一台设备）都是独立客户端，状态互不覆盖，命令互不串台：
+
+ 连</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/guohuiyuan/go-music-dl/issues/4"><span class="rp-item-num">#4</span><span class="rp-item-title">新功能征集</span><span class="rp-item-extra">45 comments · 2026-02-05</span></a><a class="rp-item" href="https://github.com/guohuiyuan/go-music-dl/issues/240"><span class="rp-item-num">#240</span><span class="rp-item-title">小细节还需调整</span><span class="rp-item-extra">14 comments · 2026-09-15</span></a><a class="rp-item" href="https://github.com/guohuiyuan/go-music-dl/issues/205"><span class="rp-item-num">#205</span><span class="rp-item-title">可以增加码率过滤吗</span><span class="rp-item-extra">7 comments · 2026-06-09</span></a><a class="rp-item" href="https://github.com/guohuiyuan/go-music-dl/issues/247"><span class="rp-item-num">#247</span><span class="rp-item-title">Mac桌面端求尽快安排一下</span><span class="rp-item-extra">5 comments · 2026-10-03</span></a><a class="rp-item" href="https://github.com/guohuiyuan/go-music-dl/issues/241"><span class="rp-item-num">#241</span><span class="rp-item-title">bug, 下载路径和文件名对不上</span><span class="rp-item-extra">3 comments · 2026-09-16</span></a><a class="rp-item" href="https://github.com/guohuiyuan/go-music-dl/issues/263"><span class="rp-item-num">#263</span><span class="rp-item-title">建议增加本地歌曲导入歌词</span><span class="rp-item-extra">2 comments · 2026-11-05</span></a><a class="rp-item" href="https://github.com/guohuiyuan/go-music-dl/issues/249"><span class="rp-item-num">#249</span><span class="rp-item-title">macOS双击打开app闪退</span><span class="rp-item-extra">2 comments · 2026-10-08</span></a><a class="rp-item" href="https://github.com/guohuiyuan/go-music-dl/issues/267"><span class="rp-item-num">#267</span><span class="rp-item-title">功能建议：外观自定义（主题三态、主色/歌词颜色自选、字体优化）</span><span class="rp-item-extra">1 comments · 2026-11-14</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/guohuiyuan/go-music-dl/releases"><b>v1.1.7</b> <span class="rp-rel-tag">v1.1.7</span> <span class="rp-item-extra">2026-11-16</span></a><pre class="rp-pre">Changelog
+ 056b10a6fc5f0be8aca207ec2d319bba51efbd51 为第240号问题新增测试并实现相关功能 - 为视频生成弹窗、外观预览、播放列表空状态以及下载记录新增了UI测试。 - 修改弹窗关闭逻辑，改用独立的关闭处理函数。 - 优化歌曲列表模板，可根据播放列表状态进行条件渲染。 - 改进视频生成弹窗内的音量控件，保证宽度稳定，并增加收藏与下载操作按钮。 - 重构外观设置相关的JavaScript代码，支持无需保存即可预览效果。 - 更新CSS样式，统一各组件样式，包含播放速度控件和下载记录模块。
+ 3c1f265b88e5d439f58dc43434d493f2a32b8f4d 优化收藏和下载功能，增加错误提示，调整模态框样式
+ 2153b85f09b5f305469c0b82d58cc99909e63d58 优化设置模态框的行为，确保用户选择的设置标签在配置请求完成前保持不变
+ a796e6115040df153748ba6b952c974429083f88 优化音源顺序，新增音质设置功能，更新相关测试和前端逻辑
+ a4741b44952bbd8ea6d5cc1466a6e3ce5697840e 修复依赖版本，更新音乐库至 v1.1.2
+ 6dc08cd8ae62de78caf21d242883887d24ca6923 功能：新增下载记录</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-20T21:39:24Z · Data license Apache-2.0 ·
+<a href="https://api-site.zhuikan.com/data/repos/guohuiyuan__go-music-dl.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=db567445"></script>
+<script src="../assets/vendor/purify.min.js?v=db567445"></script>
+<script src="../assets/vendor/qrcode.min.js?v=db567445"></script>
+<script src="../assets/common.js?v=db567445"></script>
+<script src="../assets/repo.js?v=db567445"></script>
+</body>
+</html>

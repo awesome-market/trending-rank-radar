@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZCShou/GoGoGo · GitHub Trending Rank Radar</title>
+<meta name="description" content="一个基于 Android 调试 API + 百度地图实现的虚拟定位工具，并且同时实现了一个可以自由移动的摇杆">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="GoGoGo, ZCShou, ZCShou/GoGoGo, github stars, github trending, star growth, star history, 开源项目, 星标增长, android, joystick, map, fake-gps, fake-locations, java">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://en1.zhuikan.com/repos/ZCShou__GoGoGo">
+<link rel="alternate" hreflang="zh-CN" href="https://zh1.zhuikan.com/repos/ZCShou__GoGoGo">
+<link rel="alternate" hreflang="en" href="https://en1.zhuikan.com/repos/ZCShou__GoGoGo">
+<link rel="alternate" hreflang="x-default" href="https://zh1.zhuikan.com/repos/ZCShou__GoGoGo">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="ZCShou/GoGoGo · GitHub Trending Rank Radar">
+<meta property="og:description" content="一个基于 Android 调试 API + 百度地图实现的虚拟定位工具，并且同时实现了一个可以自由移动的摇杆">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://en1.zhuikan.com/repos/ZCShou__GoGoGo">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=db567445">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ZCShou/GoGoGo", "codeRepository": "https://github.com/ZCShou/GoGoGo", "url": "https://en1.zhuikan.com/repos/ZCShou__GoGoGo", "description": "一个基于 Android 调试 API + 百度地图实现的虚拟定位工具，并且同时实现了一个可以自由移动的摇杆", "author": {"@type": "Organization", "name": "ZCShou", "url": "https://github.com/ZCShou"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-3.0.html", "programmingLanguage": "Java", "dateCreated": "2021-12-03", "keywords": "android,joystick,map,fake-gps,fake-locations,java,mock-location,mock-locations,mockgps,virtual-location"}</script>
+</head>
+<body data-repo="ZCShou/GoGoGo" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">Skip to rankings</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="https://zhuikan.com/" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="https://zhuikan.com/" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="https://zhuikan.com/" class="rp-back" data-i18n="rp.back">← Back to boards</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="切换到中文" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">中</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="Toggle dark/light theme" title="Toggle dark/light theme">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="https://zhuikan.com/">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">ZCShou/GoGoGo</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="ZCShou__GoGoGo"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/8591065?u=a9d3120cc6a151b5cf3cd2bb769e335483c60651&amp;v=4&s=300" width="300" height="300" alt="ZCShou avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">GoGoGo</div>
+      <a class="rp-side-owner" href="https://github.com/ZCShou">ZCShou</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/ZCShou">ZCShou</a>
+        <span class="rp-sep">/</span><span class="rp-name">GoGoGo</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">一个基于 Android 调试 API + 百度地图实现的虚拟定位工具，并且同时实现了一个可以自由移动的摇杆</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>11,884</b></span><span class="rp-stat" title="forks">⑂ <b>1,353</b></span><span class="rp-stat" title="watchers">👁 <b>38</b></span><span class="rp-stat" title="prs">⑃ <b>221</b></span><span class="rp-stat" title="issues">● <b>164</b></span><span class="rp-stat" title="releases">▤ <b>10</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://tag1.zhuikan.com/tags/android">android</a><a class="rp-topic" href="https://github.com/topics/joystick">joystick</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/map">map</a><a class="rp-topic" href="https://github.com/topics/fake-gps">fake-gps</a><a class="rp-topic" href="https://github.com/topics/fake-locations">fake-locations</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/java">java</a><a class="rp-topic" href="https://github.com/topics/mock-location">mock-location</a><a class="rp-topic" href="https://github.com/topics/mock-locations">mock-locations</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Java</span><span class="rp-meta-bit">GPL-3.0</span><span class="rp-meta-bit">Created 2021-12-03</span><a class="rp-meta-bit rp-home" href="https://itexp.blog.csdn.net/" rel="noopener">itexp.blog.csdn.net/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/ZCShou/GoGoGo">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">Download: </span><span class="rp-dl-t">v2.1.0</span><a class="rp-dl-a" href="https://github.com/ZCShou/GoGoGo/releases/tag/ReleaseV1.12.3">ReleaseV1.12.3 ↓</a><span class="rp-dl-ver">1.12.3</span><span class="rp-dl-date">2025-08-09</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+8</div><div class="rp-metric-label">Daily</div></div><div class="rp-metric"><div class="rp-metric-num">11,884</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,353</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">38</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">221</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">164</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">10</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">影梭
+
+影梭（VirtGO）是一款 Android 位置模拟应用，支持地图选点、位置搜索、坐标输入、线路移动和悬浮摇杆，并提供位置与线路的收藏、历史记录和 GPX 导入导出。“影”寓意位置的影子，“梭”寓意在位置与线路之间穿梭。
+
+查看发布版本 · 问题反馈
+
+ 1. 功能
+
+影梭将位置选择、线路编辑与运行控制集中在一个应用中，既能固定到一个位置，也能沿线路或通过摇杆连续移动。本页介绍当前维护版本的功能；下载历史版本时，请同时查看对应 Release 的功能与系统要求。
+
+!影梭的位置、线路与运行控制功能
+
+ 1.1 位置选择与模拟
+
+在位置页点击地图、搜索地点，或直接输入经纬度，选择目标后启动位置模拟。地图支持普通、卫星和夜间显示，便于在不同环境下查看位置。
+
+- 在地图上选择位置，查看坐标与地点信息。
+- 通过地点搜索或坐标输入定位到目标位置。
+- 保存常用地点，查看和重新选择位置历史。
+- 启动、停止位置模拟，并在运行通知中查看服务状态。
+
+ 1.2 线路编辑与移动
+
+在线路页依次选择多个位置形成线路，保存后可从历史记录中重新选择和编辑。运行时按线路节点模拟连续移动，而不只改变一个固定坐标。
+
+- 添加、调整和删除线路节点，查看线路距离与时长。
+- 命名和保存线路，管理线路历史及收藏。
+- 导入、导出 GPX 文件，复用已有地点和线路数据。
+- 根据运动参数控制线路移动速度及位置更新行为。
+
+线路从节点选择开始，经过保存和选择后再启动移动。下图说明功能流程，并非实际地图或运行轨迹截图。
+
+!影梭线路编辑与移动流程
+
+ 1.3 悬浮摇杆
+
+取得悬浮窗权限后，可以通过悬浮摇杆控制移动方向，在查看其他页面时继续调整模拟位置。摇杆支持圆形和按钮两种样式，以及不同显示尺寸。
+
+- 切换步行、跑步、骑行速度模式，并调整各模式速度。
+- 显示或隐藏摇杆，控制其样式和尺寸。
+- 在系统允许的后台条件下维持位置模拟服务。
+
+ 1.4 收藏与参数设置
+
+常用位置和线路可通过收藏、分组及置顶进行整理。运动设置用于调整速度、海拔、方向、卫星数量、定位精度及更新间隔；参数是否被其他应用采用，仍取决于系统与目标应用的处理方式。
+
+ 1.5 独立安装实例
+
+影梭可在满足应用内账号与会员条件时创建自身的独立安装实例，设置独立的应用名称、包名和地图配置，用于分别管理不同的配置与数据。该功能创建的是影梭自身的分身，不是任意第三方应用的多开容器。
+
+创建和安装过程会检查包信息、签名与授权状态。地图配置应与实例的实际包名和签名对应，具体要求以应用内提示为准。
+
+ 2. 安装与启动
+
+当前维护版本面向 Android 10 及以上系统，正式发布包使用 ARM64（arm64-v8a）架构。历史发布版本的系统要求可能不同，下载时以对应版本说明为准。
+
+ 2.1 取得应用
+
+从 GitHub Releases 选择需要的版本，在 Assets 中下载 APK 并安装。应用内“关于影梭”可查看当前版本和检查更新。
+
+ 2.2 配置权限
+
+位置模拟通过 Android 的模拟位置接口工作，通常不需要 Root。首次使用时，需要按应用提示授予定位权限，并在系统开发者选项中将影梭选为“模拟位置信息应用”；使用摇杆还需要允许悬浮窗。
+
+!影梭首次使用的权限与启动步骤
+
+完成配置后，回到影梭选择一个位置或线路并启动。模拟位置应用的设置入口、后台运行与电池管理规则会随手机系统不同而变化。
+
+ 2.3 运行条件
+
+后台持续运行、通知和定位权限会影响模拟服务的可用性。部分模拟及独立实例能力需要满足应用内显示的账号与会员条件；具体套餐和权限范围以当前版本界面为准。
+
+ 3. 使用与反馈
+
+位置模拟适合应用开发、地图与定位流程验证等场景。设置模拟位置不代表所有应用都会采纳相同结果，系统定位策略、坐标系、缓存和目标应用自身逻辑都可能影响显示。
+
+ 3.1 定位结果检查
+
+遇到位置偏差或未生效时，先检查模拟位置应用设置、定位权限和后台运行状态，再停止并重新启动模拟，在目标应用中刷新位置。地图显示坐标与系统位置坐标可能使用不同坐标系，不宜只比较界面上的数字判断是否出错。
+
+ 3.2 问题反馈
+
+通过 GitHub Issues 或应用内“帮助与反馈”提交问题时，请提供影梭版本、手机型号、Android 版本、使用的位置或线路模式、权限状态与复现步骤。分享地图、线路文件或截图前，请检查是否包含家庭地址等个人信息。</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ZCShou/GoGoGo/issues/412"><span class="rp-item-num">#412</span><span class="rp-item-title">[BUG] 下载VirtGO-2.1.0-android-arm64-v8a.apk后，安装时仍是1.12版本</span><span class="rp-item-extra">6 comments · 2026-11-01</span></a><a class="rp-item" href="https://github.com/ZCShou/GoGoGo/issues/416"><span class="rp-item-num">#416</span><span class="rp-item-title">[BUG] 注册验证码收不到</span><span class="rp-item-extra">3 comments · 2026-11-05</span></a><a class="rp-item" href="https://github.com/ZCShou/GoGoGo/issues/407"><span class="rp-item-num">#407</span><span class="rp-item-title">[BUG] 维微信朋友圈/共享定位无效</span><span class="rp-item-extra">3 comments · 2026-09-25</span></a><a class="rp-item" href="https://github.com/ZCShou/GoGoGo/issues/410"><span class="rp-item-num">#410</span><span class="rp-item-title">[Question] Help</span><span class="rp-item-extra">1 comments · 2026-10-23</span></a><a class="rp-item" href="https://github.com/ZCShou/GoGoGo/issues/418"><span class="rp-item-num">#418</span><span class="rp-item-title">[Question] 1年88块，是认真的吗？</span><span class="rp-item-extra">1 comments · 2026-11-17</span></a><a class="rp-item" href="https://github.com/ZCShou/GoGoGo/issues/411"><span class="rp-item-num">#411</span><span class="rp-item-title">[Question] 这个项目目前还是开源的吗？</span><span class="rp-item-extra">1 comments · 2026-10-25</span></a><a class="rp-item" href="https://github.com/ZCShou/GoGoGo/issues/414"><span class="rp-item-num">#414</span><span class="rp-item-title">影梭2.0</span><span class="rp-item-extra">0 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/ZCShou/GoGoGo/issues/413"><span class="rp-item-num">#413</span><span class="rp-item-title">[Feature] New function</span><span class="rp-item-extra">0 comments · 2026-11-03</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ZCShou/GoGoGo/discussions/415"><span class="rp-item-num">#415</span><span class="rp-item-title">影梭2.0</span><span class="rp-item-extra">0 comments · 2026-11-04</span></a><a class="rp-item" href="https://github.com/ZCShou/GoGoGo/discussions/387"><span class="rp-item-num">#387</span><span class="rp-item-title">进不去应用</span><span class="rp-item-extra">1 comments · 2026-05-26</span></a><a class="rp-item" href="https://github.com/ZCShou/GoGoGo/discussions/361"><span class="rp-item-num">#361</span><span class="rp-item-title">我们学校小组想研究代码不商用也不搞什么校园跑 申请验证码</span><span class="rp-item-extra">0 comments · 2025-12-07</span></a><a class="rp-item" href="https://github.com/ZCShou/GoGoGo/discussions/359"><span class="rp-item-num">#359</span><span class="rp-item-title">感谢大神，请大家不要在破坏大佬的作品商用了，让大佬寒心，打打游戏就好了</span><span class="rp-item-extra">0 comments · 2025-12-05</span></a><a class="rp-item" href="https://github.com/ZCShou/GoGoGo/discussions/352"><span class="rp-item-num">#352</span><span class="rp-item-title">想问摇杆到底怎么用</span><span class="rp-item-extra">0 comments · 2025-11-18</span></a><a class="rp-item" href="https://github.com/ZCShou/GoGoGo/discussions/347"><span class="rp-item-num">#347</span><span class="rp-item-title">神仙repo！！！！大佬威武！！！</span><span class="rp-item-extra">0 comments · 2025-11-09</span></a><a class="rp-item" href="https://github.com/ZCShou/GoGoGo/discussions/321"><span class="rp-item-num">#321</span><span class="rp-item-title">这个我搜索怎么一直说匹配不到地址是什么</span><span class="rp-item-extra">1 comments · 2025-09-30</span></a><a class="rp-item" href="https://github.com/ZCShou/GoGoGo/discussions/303"><span class="rp-item-num">#303</span><span class="rp-item-title">被华为手机检测为风险应用</span><span class="rp-item-extra">1 comments · 2025-09-08</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/ZCShou/GoGoGo/releases"><b>v2.1.0</b> <span class="rp-rel-tag">ReleaseV1.12.3</span> <span class="rp-item-extra">2025-08-09</span></a><pre class="rp-pre">本次更新重点提升模拟定位的兼容性、稳定性和操作体验。
+
+ 新增功能
+- 新增“圆形摇杆”和“按钮摇杆”两种控制样式，可在移动设置中切换。
+- 支持向 GPS、网络和融合定位 Provider 同步提交模拟位置，提升应用兼容性。
+- 消息已读状态支持版本跟踪，公告或客服消息更新后会重新显示为未读。
+体验优化
+- 统一使用 WGS-84 坐标存储和处理，改善地图搜索、坐标输入、历史记录及路线坐标的一致性。
+- 优化模拟定位服务生命周期，减少真实位置与模拟位置之间的回跳。
+- 模拟位置提交失败时自动尝试恢复定位 Provider。
+- 优化位置更新节奏和运行时权限检查，提升连续模拟的稳定性。
+- 统一操作结果提示样式，使成功和错误提示更加清晰。
+- 优化摇杆锁定、拖动和路线控制交互。
+ 问题修复
+- 修复轻触圆形摇杆时控制点发生意外移动的问题。
+- 修复部分使用融合定位的应用无法及时获取模拟位置的问题。
+- 修复消息回复或内容更新后仍显示为已读的问题。
+- 修复部分页面生命周期切换后位置显示不同步的问题。
+- 增强运行环境与敏感路径检查。
+ 升级提示
+由于坐标存储结构升级，从 2.0.2 升级至 2.1.0 时会重建本地数据库，本机保存的以下内容将被清除：
+- 位置历史
+- 路线历史
+- 地图搜索历史
+账号、会员及其他服务端数据不受影响。</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-20T21:39:24Z · Data license Apache-2.0 ·
+<a href="https://api-site.zhuikan.com/data/repos/ZCShou__GoGoGo.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">Source: independently collected via the GitHub API · boards computed from snapshot diffs · for reference only</p>
+    <p class="footer-sub" data-i18n="foot.line2">New / All-Time boards rank within our tracked set · rate = growth ÷ star base at window start</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=db567445"></script>
+<script src="../assets/vendor/purify.min.js?v=db567445"></script>
+<script src="../assets/vendor/qrcode.min.js?v=db567445"></script>
+<script src="../assets/common.js?v=db567445"></script>
+<script src="../assets/repo.js?v=db567445"></script>
+</body>
+</html>

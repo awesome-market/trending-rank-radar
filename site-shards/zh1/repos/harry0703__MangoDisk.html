@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>harry0703/MangoDisk · GitHub Trending Rank Radar</title>
+<meta name="description" content="Safety-first disk cleaner and space analyzer for macOS, Windows and Linux, with duplicate cleanup, app uninstall, startup management, system optimization, and maintenance.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="MangoDisk, harry0703, harry0703/MangoDisk, github stars, github trending, star growth, star history, 开源项目, 星标增长, app-uninstaller, cache-cleaner, desktop-app, disk-cleaner, disk-space-analyzer, duplicate-files">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zh1.zhuikan.com/repos/harry0703__MangoDisk">
+<link rel="alternate" hreflang="en" href="https://en1.zhuikan.com/repos/harry0703__MangoDisk">
+<link rel="alternate" hreflang="zh-CN" href="https://zh1.zhuikan.com/repos/harry0703__MangoDisk">
+<link rel="alternate" hreflang="x-default" href="https://zh1.zhuikan.com/repos/harry0703__MangoDisk">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="harry0703/MangoDisk · GitHub Trending Rank Radar">
+<meta property="og:description" content="Safety-first disk cleaner and space analyzer for macOS, Windows and Linux, with duplicate cleanup, app uninstall, startup management, system optimization, and maintenance.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zh1.zhuikan.com/repos/harry0703__MangoDisk">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=db567445">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "harry0703/MangoDisk", "codeRepository": "https://github.com/harry0703/MangoDisk", "url": "https://zh1.zhuikan.com/repos/harry0703__MangoDisk", "description": "Safety-first disk cleaner and space analyzer for macOS, Windows and Linux, with duplicate cleanup, app uninstall, startup management, system optimization, and maintenance.", "author": {"@type": "Organization", "name": "harry0703", "url": "https://github.com/harry0703"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/GPL-3.0.html", "programmingLanguage": "Rust", "dateCreated": "2026-08-01", "keywords": "app-uninstaller,cache-cleaner,desktop-app,disk-cleaner,disk-space-analyzer,duplicate-files,large-files,macos,rust,tauri"}</script>
+</head>
+<body data-repo="harry0703/MangoDisk" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="https://zhuikan.com/" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="https://zhuikan.com/" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="https://zhuikan.com/" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="https://zhuikan.com/">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">harry0703/MangoDisk</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="harry0703__MangoDisk"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/4928832?u=0bba62680df4765941af459a0087b3cb79315782&amp;v=4&s=300" width="300" height="300" alt="harry0703 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">MangoDisk</div>
+      <a class="rp-side-owner" href="https://github.com/harry0703">harry0703</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/harry0703">harry0703</a>
+        <span class="rp-sep">/</span><span class="rp-name">MangoDisk</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">Safety-first disk cleaner and space analyzer for macOS, Windows and Linux, with duplicate cleanup, app uninstall, startup management, system optimization, and maintenance.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>5,973</b></span><span class="rp-stat" title="forks">⑂ <b>416</b></span><span class="rp-stat" title="watchers">👁 <b>19</b></span><span class="rp-stat" title="prs">⑃ <b>26</b></span><span class="rp-stat" title="issues">● <b>74</b></span><span class="rp-stat" title="releases">▤ <b>26</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/app-uninstaller">app-uninstaller</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/cache-cleaner">cache-cleaner</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/desktop-app">desktop-app</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/disk-cleaner">disk-cleaner</a><a class="rp-topic" href="https://github.com/topics/disk-space-analyzer">disk-space-analyzer</a><a class="rp-topic" href="https://github.com/topics/duplicate-files">duplicate-files</a><a class="rp-topic" href="https://github.com/topics/large-files">large-files</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/macos">macos</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">GPL-3.0</span><span class="rp-meta-bit">Created 2026-08-01</span><a class="rp-meta-bit rp-home" href="https://mangodisk.app/" rel="noopener">mangodisk.app/</a></div>
+    <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="https://zh1.zhuikan.com/repos/harry0703__MoneyPrinterTurbo"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/4928832?u=0bba62680df4765941af459a0087b3cb79315782&amp;v=4" alt="" loading="lazy">MoneyPrinterTurbo</a></div></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/harry0703/MangoDisk">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">MangoDisk 2.1.0</span><a class="rp-dl-a" href="https://github.com/harry0703/MangoDisk/releases/tag/v2.1.0">MangoDisk-2.1.0 ↓</a><span class="rp-dl-ver">2.1.0</span><span class="rp-dl-date">2026-11-17</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+43</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">5,973</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">416</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">19</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">26</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">74</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">26</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">MangoDisk-芒果磁盘清理
+
+
+面向 macOS、Windows 和 Linux 的磁盘清理、空间分析与隐私保护工具
+
+
+  English · 简体中文 · 繁體中文 · 日本語 · 한국어 · Русский
+
+
+
+  
+  
+  
+  
+  
+  
+
+
+
+  
+    
+      
+      
+      
+    
+  
+
+
+ MangoDisk 能做什么
+
+ 存储空间
+
+ 1. 深度清理
+
+日常使用、开发构建和 AI 工具留下的文件，往往在不知不觉中占满磁盘。集中找出散落各处的缓存、构建产物和本地模型，不必再逐个翻找隐藏目录，轻松为需要的内容腾出空间：
+
+- 系统与用户缓存：释放系统临时文件、诊断数据和可重建缓存长期占用的空间。
+- 应用缓存：减少常用应用的缓存、日志、更新包和临时内容不断累积造成的空间占用。
+- 浏览器数据：回收 Chrome、Edge、Firefox、Brave、Arc、Opera 等浏览器缓存和临时网页数据占用的空间。
+- 开发工具与 Xcode：快速回收包管理器、IDE、编译工具和 Xcode 开发数据占用的大量空间。
+- 容器缓存：释放 Docker 等容器工具的闲置构建缓存和可重新生成数据占用的空间。
+- 项目构建产物：找回 Node.js、Rust、Gradle、Swift、Python、.NET、Godot、CMake 等项目中依赖、缓存和构建目录占用的空间。
+- AI 工具：清理 ChatGPT、Codex、Claude 等工具积累的缓存、旧日志和下载临时文件，不必再逐一查找各个工具的数据目录。
+- AI 模型：看清 Ollama、LM Studio、Hugging Face、ComfyUI 等本地模型的空间占用，移除不再需要的模型，为新模型和日常文件腾出空间。模型需手动选择，清理后再次使用需要重新下载。
+- 应用优化：在不影响正常使用的前提下缩小应用体积，为磁盘腾出更多空间。
+
+智能推荐帮助你快速做出安全选择，也可以逐项确认并提前了解预计可释放空间，让每次清理都更安心、更可控。
+
+ 2. 大文件清理
+
+快速找出最占空间的大文件，轻松释放被旧安装包、视频、归档等内容占用的空间，不必再逐层翻找目录。
+
+ 3. 重复文件清理
+
+找回被重复副本占用的空间，同时避免把同名但内容不同的文件误判为重复项；智能选择会为每组保留至少一份，让清理更省心。
+
+ 4. 磁盘空间分析
+
+直观看清磁盘空间都用在了哪里。支持切换矩形图与旭日图，自定义显示的层级深度，查看空间占比与目录结构；结合文件列表逐层浏览，快速定位占用最大的目录和文件，让清理更有依据。
+
+ 隐私与安全
+
+ 5. 隐私清理
+
+减少浏览记录、搜索记录、Cookie、最近使用项目和剪贴板内容长期留存在电脑中，降低个人习惯、访问记录和账户状态暴露的风险，让日常隐私保护更简单、更可控。
+
+ 系统工具
+
+ 6. 应用卸载与残留清理
+
+卸载应用的同时清理关联缓存、设置和残留文件，避免应用删了、磁盘空间却没有真正释放；谨慎处理可能包含个人文件的内容，在释放空间的同时降低误删风险。
+
+ 7. 启动项管理
+
+减少不必要的开机等待和后台占用，让电脑启动更快、运行更轻盈；需要时仍可随时恢复。
+
+ 8. 系统优化
+
+减少拖慢系统或干扰日常使用的不必要设置，兼顾性能、隐私和使用习惯，让电脑运行更流畅、更顺手。
+
+ 9. 系统维护
+
+快速解决搜索异常、图标错乱、没有声音或网络连接异常等常见系统问题，省去手动排查和复杂命令，让电脑尽快恢复正常。
+
+ 10. 右键菜单（Windows）
+
+ 自 1.2.3 版本起提供
+
+整理不常用的菜单项，让右键菜单更清爽、更好用。可按菜单位置或所属应用查看，支持禁用、恢复和删除可管理的菜单项，也可按文件类型分别调整。
+
+可添加复制路径、打开终端等常用操作和系统工具入口，让日常操作更顺手。
+
+ 操作记录
+
+ 11. 操作历史
+
+让每次清理和系统调整都有据可查，方便确认释放了多少空间、哪些操作已经完成，以及是否存在需要处理的问题。
+
+ 运行状态与内存管理
+
+ 自 1.1.1 版本起提供
+
+实时查看 CPU、GPU、内存、网速和磁盘状态，了解资源占用与变化趋势。在支持的设备上，还可查看温度、功耗、电池和磁盘健康信息。
+
+快速找出占用资源较多的应用，支持退出应用、手动或自动释放内存。
+
+支持菜单栏、任务栏、系统托盘和桌面悬浮窗，可自定义显示内容与外观，无需打开主窗口，电脑状态一目了然。
+
+ AI 解读
+
+ 自 1.1.0 版本起提供
+
+不清楚某个条目有什么用，或操作后会有什么影响？AI 解读结合条目说明和当前扫描结果，用易懂的语言解释用途和注意事项，省去四处查资料的麻烦，帮助你判断是否需要处理。
+
+支持深度清理的内置规则、隐私清理、启动项管理、系统优化和系统维护，可直接在条目旁查看解读。
+
+官方版本提供每日免费解读额度，也支持连接自己的 AI 服务。解读仅供参考，具体操作仍由你决定。
+
+ 安全与规则
+
+ [!IMPORTANT]
+ MangoDisk 始终将数据安全置于清理效果之上。
+ 所有清理规则和系统优化项只有在明确安全边界并通过真实系统验证后，才会纳入正式版本。
+
+MangoDisk 默认只读扫描。执行清理、删除、卸载或系统设置变更前，会先展示内容并由用户确认；操作结果会保留在历史记录中。
+
+系统优化仅执行内置且经过验证的设置项，不接受任意注册表路径、终端命令或脚本。更改后会重新读取系统状态；高风险、需要管理员权限或需要重启的项目会提前提示。
+
+清理规则由 MangoDisk 独立维护。第三方项目只用于提供线索，候选规则必须核对可靠来源、明确安全边界，并通过真实系统验证后才会收录。无法确认安全的内容不会加入规则库。
+
+完整规则库及修改记录均可审计、追溯：查看 MangoDisk 清理规则库。
+
+ 界面预览
+
+
+  深度清理
+  清理积累的缓存、构建产物和不再需要的 AI 模型，为需要的内容腾出空间
+
+
+
+  
+    
+    
+    
+  
+
+
+
+  
+    
+      大文件清理
+      快速锁定最占空间的文件，避免逐层翻找
+      
+        
+          
+          
+          
+        
+      
+    
+    
+      重复文件清理
+      安全清理重复副本，并确保每组至少保留一份
+      
+        
+          
+          
+          
+        
+      
+    
+  
+  
+    
+      磁盘空间分析
+      直观看清空间去向，快速定位占用最多的内容
+      
+        
+          
+          
+          
+        
+      
+    
+    
+      启动项管理
+      减少不必要的自启动程序，加快登录并降低后台占用
+      
+        
+          
+          
+          
+        
+      
+    
+  
+  
+    
+</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/harry0703/MangoDisk/issues/100"><span class="rp-item-num">#100</span><span class="rp-item-title">[Bug]: 系统状态监视开启后，任务栏错乱</span><span class="rp-item-extra">4 comments · 2026-11-20</span></a><a class="rp-item" href="https://github.com/harry0703/MangoDisk/issues/79"><span class="rp-item-num">#79</span><span class="rp-item-title">[Feature]: Compare disk space scans to identify growing folders</span><span class="rp-item-extra">4 comments · 2026-10-25</span></a><a class="rp-item" href="https://github.com/harry0703/MangoDisk/issues/95"><span class="rp-item-num">#95</span><span class="rp-item-title">[Bug]: App does not launch on Windows startup</span><span class="rp-item-extra">2 comments · 2026-11-15</span></a><a class="rp-item" href="https://github.com/harry0703/MangoDisk/issues/82"><span class="rp-item-num">#82</span><span class="rp-item-title">[Feature]: Portable</span><span class="rp-item-extra">2 comments · 2026-10-27</span></a><a class="rp-item" href="https://github.com/harry0703/MangoDisk/issues/99"><span class="rp-item-num">#99</span><span class="rp-item-title">[Feature]: 删除重复文件的时候，选功能项自动生成指向保留唯一文件的软硬链接？</span><span class="rp-item-extra">1 comments · 2026-11-18</span></a><a class="rp-item" href="https://github.com/harry0703/MangoDisk/issues/98"><span class="rp-item-num">#98</span><span class="rp-item-title">feature: add remaining time</span><span class="rp-item-extra">1 comments · 2026-11-17</span></a><a class="rp-item" href="https://github.com/harry0703/MangoDisk/issues/94"><span class="rp-item-num">#94</span><span class="rp-item-title">[Feature]: 磁盘空间分析-&gt;文件夹占用百分比底色与主题色统一 或 提亮</span><span class="rp-item-extra">1 comments · 2026-11-13</span></a><a class="rp-item" href="https://github.com/harry0703/MangoDisk/issues/92"><span class="rp-item-num">#92</span><span class="rp-item-title">[Feature]: 希望增加磁盘空间分析快照比对功能</span><span class="rp-item-extra">1 comments · 2026-11-12</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/harry0703/MangoDisk/releases"><b>MangoDisk 2.1.0</b> <span class="rp-rel-tag">v2.1.0</span> <span class="rp-item-extra">2026-11-17</span></a><pre class="rp-pre">中文
+
+- 新增 磁盘分析扫描记录与空间变化对比，支持选择历史记录，查看文件和文件夹的空间增减。
+- 大文件与重复文件清理默认移入系统回收站，支持按需选择永久删除。
+- 扩展 应用卸载关联数据清理，完善 Windows 数据目录识别，增加 macOS 和 Windows 可选关联目录，用户数据默认保留。
+- 新增 macOS Unsloth 数据与卸载残留清理，保护运行中的后端数据。
+- 扩展 macOS 系统日志与 AI 工具缓存清理，新增统一日志清理，补充 Trae 国际版与千问缓存识别，修正 WorkBuddy 识别。
+- 修复 Windows 资源管理器右键菜单集成，改善菜单注册恢复与文件夹空白处菜单响应。
+- 优化 扫描记录存储与界面交互，改善扫描进度、页面布局和日期显示。
+- 修复其他已知问题，提升稳定性和使用体验。
+
+ English
+
+- Added disk analysis records and space change comparisons, with historical record selection and file and folder size changes.
+- Large-file and duplicate-file cleanup now defaults to the system Trash or Recycle Bin, wit</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-20T21:39:24Z · Data license Apache-2.0 ·
+<a href="https://api-site.zhuikan.com/data/repos/harry0703__MangoDisk.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=db567445"></script>
+<script src="../assets/vendor/purify.min.js?v=db567445"></script>
+<script src="../assets/vendor/qrcode.min.js?v=db567445"></script>
+<script src="../assets/common.js?v=db567445"></script>
+<script src="../assets/repo.js?v=db567445"></script>
+</body>
+</html>

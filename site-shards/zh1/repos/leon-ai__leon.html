@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>leon-ai/leon · GitHub Trending Rank Radar</title>
+<meta name="description" content="🧠 Leon is your open-source personal assistant.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="leon, leon-ai, leon-ai/leon, github stars, github trending, star growth, star history, 开源项目, 星标增长, leon, personal-assistant, nodejs, python, ai, artificial-intelligence">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zh1.zhuikan.com/repos/leon-ai__leon">
+<link rel="alternate" hreflang="en" href="https://en1.zhuikan.com/repos/leon-ai__leon">
+<link rel="alternate" hreflang="zh-CN" href="https://zh1.zhuikan.com/repos/leon-ai__leon">
+<link rel="alternate" hreflang="x-default" href="https://zh1.zhuikan.com/repos/leon-ai__leon">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="leon-ai/leon · GitHub Trending Rank Radar">
+<meta property="og:description" content="🧠 Leon is your open-source personal assistant.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zh1.zhuikan.com/repos/leon-ai__leon">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=db567445">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "leon-ai/leon", "codeRepository": "https://github.com/leon-ai/leon", "url": "https://zh1.zhuikan.com/repos/leon-ai__leon", "description": "🧠 Leon is your open-source personal assistant.", "author": {"@type": "Organization", "name": "leon-ai", "url": "https://github.com/leon-ai"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "TypeScript", "dateCreated": "2019-02-10", "keywords": "leon,personal-assistant,nodejs,python,ai,artificial-intelligence,speech-to-text,text-to-speech,speech-recognition,speech-synthesis"}</script>
+</head>
+<body data-repo="leon-ai/leon" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="https://zhuikan.com/" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="https://zhuikan.com/" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="https://zhuikan.com/" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="https://zhuikan.com/">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">leon-ai/leon</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="leon-ai__leon"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/35167224?v=4&s=300" width="300" height="300" alt="leon-ai avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">leon</div>
+      <a class="rp-side-owner" href="https://github.com/leon-ai">leon-ai</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/leon-ai">leon-ai</a>
+        <span class="rp-sep">/</span><span class="rp-name">leon</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">🧠 Leon is your open-source personal assistant.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>17,702</b></span><span class="rp-stat" title="forks">⑂ <b>1,484</b></span><span class="rp-stat" title="watchers">👁 <b>266</b></span><span class="rp-stat" title="prs">⑃ <b>249</b></span><span class="rp-stat" title="issues">● <b>335</b></span><span class="rp-stat" title="releases">▤ <b>23</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/leon">leon</a><a class="rp-topic" href="https://github.com/topics/personal-assistant">personal-assistant</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/nodejs">nodejs</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/python">python</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/ai">ai</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/artificial-intelligence">artificial-intelligence</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/speech-to-text">speech-to-text</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/text-to-speech">text-to-speech</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2019-02-10</span><a class="rp-meta-bit rp-home" href="https://getleon.ai" rel="noopener">getleon.ai</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/leon-ai/leon">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">TCP Server 2.0.0</span><a class="rp-dl-a" href="https://github.com/leon-ai/leon/releases/tag/tcp-server_v2.0.0">tcp-server_v2.0.0 ↓</a><span class="rp-dl-ver">2.0.0</span><span class="rp-dl-date">2026-02-19</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+10</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+31</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num">17,702</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,484</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">266</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">249</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">335</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">23</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Leon
+
+
+你的开源个人 AI 助手。
+
+
+  🇬🇧 English ·
+  🇨🇳 简体中文 ·
+  🇫🇷 Français
+
+
+
+  
+  
+
+
+
+  在 X 上关注进展 / @grenlouis ·
+  官网 ·
+  邮件订阅 ·
+  路线图 ·
+  背后的故事
+
+
+
+---
+
+ [!IMPORTANT]
+ 我们正在准备首个 Leon 2.0 alpha 版本，届时会带来桌面应用。
+ 这个版本还没有发布。目前的开发工作都在 develop 分支上，很多地方仍在变化。
+ 新文档也还没有准备好；公开的文档站和旧指南大多介绍的是上一代版本。
+
+ 安装并启动 Leon 后，你已经可以在本地访问
+ http://localhost:5366/web-app/，
+ 提前体验尚未完成的新网页应用。具体步骤在下方。
+
+ 2.0 发布前，想说几句话
+
+你好，我是 Louis 👋
+
+我从 2017 年开始开发 Leon，在 2019 年发布了第一个开源版本。之后就一直做到了现在。
+
+最初的想法一直没变。做一个会慢慢了解你、记住你在意的事，并在日常生活中帮上忙的个人 AI 助手。
+
+把人放在中心。 我希望 Leon 是一个温暖、舒服、用心打磨的地方。你可以在这里创造，也可以按照自己的节奏慢慢来。后面会多聊一点我们的理念，不过先来看看怎么体验吧。
+
+ 体验预览版
+
+如果你感兴趣，也熟悉从源码运行项目，现在就可以试试我们正在做的东西。
+
+桌面应用计划随首个 2.0 alpha 版本一起发布。在那之前，你可以通过新网页应用先看一看。它还没有准备好，但已经能让你感受到 Leon 正在往哪个方向走。
+
+ 安装 Leon
+
+- macOS、Linux 或 Windows
+- Node.js = 24
+
+sh
+ 克隆仓库
+git clone https://github.com/leon-ai/leon.git
+
+ 进入项目根目录
+cd leon
+
+ 安装 pnpm
+npm install --global pnpm@latest
+
+ 安装依赖
+pnpm install
+
+ 启动 Leon
+pnpm start
+
+
+- 在 pnpm install 期间按照提示完成配置。
+- 打开 http://localhost:5366/web-app/ 体验新网页应用。旧界面仍然可以在 / 访问。
+- 运行 pnpm run check 检查安装情况。
+- 如果你想使用还没有引入智能体机制的上一代版本，请切换到 master 分支。
+
+ 先看一看
+
+Leon 已经有不少能帮上忙的地方了。找一件你确实需要帮助的事交给它，亲自试试，感受一下。
+
+Aurora 是专为 Leon 用心打造的组件库，让交互图表、表单和可视化回答融入你的对话。
+
+Vibes 把窗外的世界带进应用，让背景氛围随着季节、一天中的时段和天气变化。
+
+我只是让 Leon「录制一个新教程，演示如何搜索会话」。下面就是它录好的视频。
+
+https://github.com/user-attachments/assets/90d0880a-7e87-4063-a5bb-09d400da6bc0
+
+下面是一些开发中的界面预览，使用了示例对话和配置页面。点击截图可以查看大图。
+
+| 新网页应用和 Vibes | 任务规划与执行 |
+| --- | --- |
+|  |  |
+
+| 生成式界面与趋势图 | 生成式界面与柱状图 |
+| --- | --- |
+|  |  |
+
+| 连接你的工具 | 帮你写点代码 |
+| --- | --- |
+|  |  |
+
+ 为个人 AI 而构建
+
+一个好的模型很重要。围绕它构建的一切也同样重要。Leon 拥有自己的持续智能体循环、在隔离 worker 中执行的工具、渐进式上下文管理和多层记忆。下面是这套设计背后的一些选择。
+
+- 按需加载当前任务需要的内容。 上下文和工具指引会逐步加载，细化到 Leon 此刻需要调用的函数。较大的工具输出保存在结果文件中，较早的对话会在必要时压缩，让工作上下文保持相关和聚焦。
+- 让工具有明确的职责和归属。 每个工具都声明自己的函数、设置、依赖和二进制程序。准备和执行过程由明确的代码流程负责，这样下一次需要时，Leon 就可以复用已经准备好的能力。
+- 保留可预测的工作流。 原生技能按照明确的动作执行。智能体技能则引导智能体循环处理更灵活的任务。两者使用同一套工具系统。
+- 有选择地记住有用的信息。 Leon 保存临时上下文、长期事实与偏好、每日摘要和近期对话记忆，不同配置档案（profile）之间彼此隔离。它会在需要时检索相关记录，也可以查阅原始对话来核实具体细节。
+- 行动、观察，并从失败中恢复。 智能体循环根据工具返回的结果决定下一步，检查实际结果，也能在遇到问题时调整并继续。彼此独立的工具调用可以在隔离的 worker 中并行执行。
+
+ 了解当前的项目
+
+新文档还在编写中。这些自动生成的上下文文件可以帮助你了解项目，具体实现仍请以源码为准。
+
+- core/context/LEON.md 介绍 Leon 的身份、行为和能力。
+- core/context/ARCHITECTURE.md 介绍运行时、记忆、工具、技能和客户端如何协作。
+
+ 用实际表现衡量个人 AI
+
+我们希望通过 Leon 推动个人 AI 的前沿发展。在已公开的对比中，Leon 在 WildClawBench 和 PinchBench 所选任务上的综合得分领先。
+
+你可以在 benchmarks.getleon.ai 查看不同维度的结果，以及测试方法和局限。
+
+ 理念
+
+我很喜欢做个人 AI。已经花了很多年，也还有好多想尝试的事。同时，我希望我们能享受这个过程。理解自己在做什么。也在屏幕之外，留一点时间给生活。
+
+围绕 AI 的声音已经够嘈杂了。我希望你打开 Leon 时，能感到自在，像回到自己的空间一样，按照自己的节奏慢慢来。这也是我想带给 2.0 的感觉。温暖、舒服，而且能感受到背后的用心。
+
+- 人的手艺依然重要。 我们用 AI 帮助自己构建、学习，提高作品的质量。同时，也花时间理解、做决定、检查结果。我希望我们能为自己给 Leon 带来的东西感到自豪。即使用着 AI 和编程智能体，也依然能保留那些小小的“耶，我做到了！”的时刻。
+
+- 你的个人 AI 应该属于你。 一个很了解你的助手，会保存对你很重要的东西。这是一份责任。Leon 是开源的，可以运行在你自己的机器上，也支持本地和远程模型。使用哪些模型、连接哪些服务，都由你来选择。
+
+- 开源也是人与人之间的事。 分享代码是一部分。帮助别人上手、倾听反馈、解释一个决定、互相学习，也都是。我希望 Leon 成为这样的项目。
+
+- 我们可以花时间，把事情做好。 我希望 Leon 能为你的想法、创造力和身边的人腾出一点空间。我们构建 Leon 的方式也应该如此。一次认真思考后的改进，一场好的交流，一个实用的修复。这些都很重要。
+
+我在《在 Leon AI 2.0 之前，我想说几句话》里聊了更多。
+
+ 一起写下接下来的故事
+
+如果你已经关注 Leon 很多年，谢谢你一直都在。如果你</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/leon-ai/leon/issues/37"><span class="rp-item-num">#37</span><span class="rp-item-title">Add a tutorial to install on a Raspberry Pi</span><span class="rp-item-extra">23 comments · 2019-02-22</span></a><a class="rp-item" href="https://github.com/leon-ai/leon/issues/480"><span class="rp-item-num">#480</span><span class="rp-item-title">TCP CLIENT :. 🚨 Failed to connect to the TCP server.: </span><span class="rp-item-extra">21 comments · 2023-04-27</span></a><a class="rp-item" href="https://github.com/leon-ai/leon/issues/25"><span class="rp-item-num">#25</span><span class="rp-item-title">improve the Isitdown module</span><span class="rp-item-extra">20 comments · 2019-02-18</span></a><a class="rp-item" href="https://github.com/leon-ai/leon/issues/28"><span class="rp-item-num">#28</span><span class="rp-item-title">Hardware / Scaling requirements</span><span class="rp-item-extra">15 comments · 2019-02-19</span></a><a class="rp-item" href="https://github.com/leon-ai/leon/issues/30"><span class="rp-item-num">#30</span><span class="rp-item-title">Time module</span><span class="rp-item-extra">14 comments · 2019-02-19</span></a><a class="rp-item" href="https://github.com/leon-ai/leon/issues/64"><span class="rp-item-num">#64</span><span class="rp-item-title">Spotify Package</span><span class="rp-item-extra">11 comments · 2019-03-24</span></a><a class="rp-item" href="https://github.com/leon-ai/leon/issues/43"><span class="rp-item-num">#43</span><span class="rp-item-title">Forecast/weather package</span><span class="rp-item-extra">11 comments · 2019-02-26</span></a><a class="rp-item" href="https://github.com/leon-ai/leon/issues/234"><span class="rp-item-num">#234</span><span class="rp-item-title">Support for modern TTS models for various languages</span><span class="rp-item-extra">10 comments · 2021-04-02</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/leon-ai/leon/releases"><b>TCP Server 2.0.0</b> <span class="rp-rel-tag">tcp-server_v2.0.0</span> <span class="rp-rel-pre">Pre-release</span> <span class="rp-item-extra">2026-02-19</span></a><pre class="rp-pre">Leon&#x27;s TCP server to communicate between the core and third-party nodes.</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-20T21:39:24Z · Data license Apache-2.0 ·
+<a href="https://api-site.zhuikan.com/data/repos/leon-ai__leon.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=db567445"></script>
+<script src="../assets/vendor/purify.min.js?v=db567445"></script>
+<script src="../assets/vendor/qrcode.min.js?v=db567445"></script>
+<script src="../assets/common.js?v=db567445"></script>
+<script src="../assets/repo.js?v=db567445"></script>
+</body>
+</html>
