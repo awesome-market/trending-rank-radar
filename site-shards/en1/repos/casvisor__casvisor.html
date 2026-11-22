@@ -112,19 +112,19 @@ var _hmt = _hmt || [];
       <div class="rp-head-chips"></div>
     </div>
     <p class="rp-desc">An open-source bastion host (jump server) for SSH, RDP, VNC and Telnet with web access, session recording, audit logs and Casdoor SSO</p>
-    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>305</b></span><span class="rp-stat" title="forks">⑂ <b>11</b></span><span class="rp-stat" title="watchers">👁 <b>6</b></span><span class="rp-stat" title="prs">⑃ <b>16</b></span><span class="rp-stat" title="issues">● <b>7</b></span><span class="rp-stat" title="releases">▤ <b>7</b></span></div>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>306</b></span><span class="rp-stat" title="forks">⑂ <b>11</b></span><span class="rp-stat" title="watchers">👁 <b>6</b></span><span class="rp-stat" title="prs">⑃ <b>16</b></span><span class="rp-stat" title="issues">● <b>7</b></span><span class="rp-stat" title="releases">▤ <b>7</b></span></div>
     <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/bastion">bastion</a><a class="rp-topic" href="https://github.com/topics/bastion-host">bastion-host</a><a class="rp-topic" href="https://github.com/topics/casbin">casbin</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/golang">golang</a><a class="rp-topic" href="https://github.com/topics/jump-server">jump-server</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/pam">pam</a><a class="rp-topic" href="https://github.com/topics/privileged-access-management">privileged-access-management</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/react">react</a></div>
     <div class="rp-meta"><span class="rp-meta-bit">Go</span><span class="rp-meta-bit">Apache-2.0</span><span class="rp-meta-bit">Created 2015-12-02</span><a class="rp-meta-bit rp-home" href="https://casvisor.org" rel="noopener">casvisor.org</a></div>
     <div class="rp-foot-row"><div class="rp-same"></div>
       <div class="rp-actions"><a class="rp-btn" href="https://github.com/casvisor/casvisor">GitHub ↗</a></div></div>
   </div>
 </div>
-<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">Download: </span><span class="rp-dl-t">v2.0.1</span><a class="rp-dl-a" href="https://github.com/casvisor/casvisor/releases/tag/v2.0.1">v2.0.1 ↓</a><span class="rp-dl-ver">2.0.1</span><span class="rp-dl-date">2026-11-21</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+1</div><div class="rp-metric-label">Daily</div></div><div class="rp-metric"><div class="rp-metric-num">305</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">11</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">6</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">16</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">7</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">7</div><div class="rp-metric-label">releases</div></div></div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">Download: </span><span class="rp-dl-t">v2.0.1</span><a class="rp-dl-a" href="https://github.com/casvisor/casvisor/releases/tag/v2.0.1">v2.0.1 ↓</a><span class="rp-dl-ver">2.0.1</span><span class="rp-dl-date">2026-11-21</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+1</div><div class="rp-metric-label">Daily</div></div><div class="rp-metric"><div class="rp-metric-num">306</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">11</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">6</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">16</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">7</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">7</div><div class="rp-metric-label">releases</div></div></div>
 <h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">An open-source bastion host (jump server) for SSH, RDP, VNC, Telnet and databases
 
   
     Casvisor gives your team one place to reach servers, desktops and databases from the browser.
-    It connects over SSH, RDP, VNC, Telnet, MySQL and PostgreSQL, with an SSH gateway for ssh, scp and VS Code,
+    It connects over SSH, RDP, VNC, Telnet, MySQL, PostgreSQL, SQL Server, Oracle, Redis, MongoDB and HTTP for internal websites, with an SSH gateway for ssh, scp and VS Code,
     and records every session, checks every command and keeps the passwords to itself.
   
 
@@ -206,16 +206,12 @@ Prefer not to install anything? The hosted demo at demo.casvisor.com comes with 
 
 Casvisor sits between the people who run your servers and the servers themselves. People open sessions from a browser tab, or with their own ssh, scp and VS Code through the SSH gateway. They only reach the servers and databases a permission gives them, and never see the stored passwords.
 
-- One Go binary. Casvisor speaks SSH, RDP, VNC, Telnet, MySQL and PostgreSQL itself, with nothing to install on the servers. It runs on SQLite with its own accounts out of the box.
+- One Go binary. Casvisor speaks SSH, RDP, VNC, Telnet, MySQL, PostgreSQL, SQL Server, Oracle, Redis, MongoDB and HTTP itself, with nothing to install on the servers. It runs on SQLite with its own accounts out of the box.
 - Apache-2.0, no enterprise edition. Recording, the SSH gateway, network gateways, system accounts, jobs and everything else in this README are in the open-source project.
 - Policy you can read. Permissions are enforced with Casbin, and sign-in can be handed to Casdoor for SSO, MFA, LDAP and social logins.
 - Audit by default. Sessions are recorded, commands and SQL statements are checked against your rules and logged, and the logs export to CSV or a syslog server.
 
-Coming from another bastion host? See how Casvisor compares with JumpServer, Teleport and others.
-
- 📦 Installation
-
-Three supported paths, fastest first. All of them end up</pre><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/casvisor/casvisor/releases"><b>v2.0.1</b> <span class="rp-rel-tag">v2.0.1</span> <span class="rp-item-extra">2026-11-21</span></a><pre class="rp-pre">Changelog
+Coming from another bastion host? See how Casvisor compares with J</pre><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/casvisor/casvisor/releases"><b>v2.0.1</b> <span class="rp-rel-tag">v2.0.1</span> <span class="rp-item-extra">2026-11-21</span></a><pre class="rp-pre">Changelog
  Features
  d1dc50134ec1b55ccd63f070c2ce9482c6dc2438 feat: add Desktop assets to control computers running Casvisor Desktop from the browser
  e5cd4c707bf3c7e2a7f27ce0da3c91967c1fff77 feat: add Kubernetes assets to open a shell in a container from the browser, with command rules, recording and live monitoring
@@ -224,7 +220,7 @@ Three supported paths, fastest first. All of them end up</pre><h3 class="rp-ph">
  e8ba4b5f59647aeb821b1e540</pre></section>
 
 
-<p class="rp-meta">Snapshot: 2026-11-21T20:19:37Z · Data license Apache-2.0 ·
+<p class="rp-meta">Snapshot: 2026-11-22T20:32:30Z · Data license Apache-2.0 ·
 <a href="https://api-site.zhuikan.com/data/repos/casvisor__casvisor.json">JSON</a></p></div>
 </main>
 
