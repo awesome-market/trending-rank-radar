@@ -123,12 +123,10 @@ var _hmt = _hmt || [];
 <h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Surfbird
 
 
+|  |  |  |  |
+|---|---|---|---|
 
-
-
-
-
-English | 中文
+English | 中文 | github.com/terry2010/surfbird
 
 Kitesurf，自托管。 Cloudflare Kitesurf 的非官方 Docker 发行版——一个为 AI agent 而生的实验性浏览器引擎。
 
@@ -144,7 +142,7 @@ Kitesurf 解析 HTML、应用 CSS、执行页面 JavaScript 并渲染截图—�
 | terry2010/surfbird:auth | 引擎 + token 认证代理 + 可选 TLS，:8080 | 一条命令即可对外 |
 | terry2010/surfbird:latest | = :auth | 方便的默认值 |
 
-上游每发一个新 tag，镜像每天自动构建；也发布按 tag 固定的版本，如 terry2010/surfbird:auth-2026.11.8。
+上游每发一个新 tag，镜像每天自动构建；也发布按 tag 固定的版本，如 terry2010/surfbird:auth-2026.11.8。架构：仅 linux/amd64（引擎用 Bazel 针对 amd64 构建）——ARM 主机需 qemu 模拟（慢）或用预构建方式自行出原生镜像。
 
  快速开始
 
@@ -181,7 +179,7 @@ curl -H &quot;Authorization: Bearer $TOKEN&quot; \
      http://:8080/markdown | jq -r .markdown
 
 
-端点：POST /screenshot | /pdf | /content | /source | /markdown | /evaluate | /batch（一个 action 作用于最多 MAX_BATCH_URLS 个 url，逐项返回结果）、GET /health、GET /openapi.json。/content 返回 JS 执行后的渲染 DOM；/source 返回原始响应体（即&quot;查看源码&quot;）。
+端点：POST /screenshot | /pdf | /content | /source | /markdown | /evaluate | /batch（一个 action 作用于最多 MAX_BATCH_URLS 个 url，逐项返回结果）、GET /health、GET /openapi.json。/content 返回 JS 执行后的渲染 DOM；/source 返回原始响应体（即&quot;查看源码&quot;）。所有 POST body 还接受 waitUntil（页面加载策略，默认 load）。
 其余路径全部透明代理到引擎（落地页、/json/、/rbi/）。
 
 JS/TS 客户端： npm 上的 surfbird——new Surfbird(url,{token}).markdown(u) 等，外加 sb.batch(action, urls)。
@@ -217,8 +215,7 @@ B. chrome-devtools-mcp —— 完整 CDP 面。 直连代理后的 WebSocket（/
 
 专门构建的插件，&quot;像人一样&quot;通过 CDP 驱动 Surfbird（或上游 Kitesurf）端点——每个插件 28 个 surfbird_ 工具：标签页管理、导航、带元素引用的语义快照、click/fill/type、等待、JS 求值、截图/PDF、console 与 network 检查、WebMCP。每个 agent 会话独占一台隔离浏览器。
 
-- dsh-control-surfbird-for-kitesurf —— 面向 DSH agent；带设置界面、加密 token 文件，dsh plugin install dsh-control-surfbird-for-kitesurf 安装
-- opencode-control-surfbird-for-kitesurf —— 面向 OpenCode（桌面应用 + TUI，内置设置页/弹窗）；opencode plugin add opencode-control-surfbird-for-</pre><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/terry2010/surfbird/releases"><b>kitesurf 2026.11.12</b> <span class="rp-rel-tag">kitesurf-2026.11.12</span> <span class="rp-item-extra">2026-11-24</span></a><pre class="rp-pre">Docker images built from upstream kitesurf 2026.11.12.
+- dsh-control-surfbird-for-kitesurf —— 面向 DSH agent；带设置界面、加密 token 文件，dsh pl</pre><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/terry2010/surfbird/releases"><b>kitesurf 2026.11.12</b> <span class="rp-rel-tag">kitesurf-2026.11.12</span> <span class="rp-item-extra">2026-11-24</span></a><pre class="rp-pre">Docker images built from upstream kitesurf 2026.11.12.
 
 | image | pull |
 |---|---|
@@ -229,7 +226,7 @@ Floating tags raw / auth / latest point at this build.
 Unofficial distribution — not affiliated with Cloudflare.</pre></section>
 
 
-<p class="rp-meta">Snapshot: 2026-11-24T23:20:40Z · Data license Apache-2.0 ·
+<p class="rp-meta">Snapshot: 2026-11-25T22:53:13Z · Data license Apache-2.0 ·
 <a href="https://api-site.zhuikan.com/data/repos/terry2010__surfbird.json">JSON</a></p></div>
 </main>
 

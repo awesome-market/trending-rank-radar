@@ -112,14 +112,14 @@ var _hmt = _hmt || [];
       <div class="rp-head-chips"></div>
     </div>
     <p class="rp-desc">Dolby Encoding Engine Wrapper</p>
-    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>299</b></span><span class="rp-stat" title="forks">⑂ <b>26</b></span><span class="rp-stat" title="watchers">👁 <b>12</b></span><span class="rp-stat" title="prs">⑃ <b>16</b></span><span class="rp-stat" title="issues">● <b>57</b></span><span class="rp-stat" title="releases">▤ <b>2</b></span></div>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>299</b></span><span class="rp-stat" title="forks">⑂ <b>26</b></span><span class="rp-stat" title="watchers">👁 <b>12</b></span><span class="rp-stat" title="prs">⑃ <b>16</b></span><span class="rp-stat" title="issues">● <b>57</b></span><span class="rp-stat" title="releases">▤ <b>3</b></span></div>
     <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/dolby">dolby</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/ffmpeg">ffmpeg</a><a class="rp-topic" href="https://github.com/topics/dolby-encoding-engine">dolby-encoding-engine</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/audio">audio</a><a class="rp-topic" href="https://github.com/topics/audio-encoder">audio-encoder</a><a class="rp-topic" href="https://github.com/topics/audio-encoding">audio-encoding</a><a class="rp-topic" href="https://github.com/topics/dolby-audio">dolby-audio</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/encoding">encoding</a></div>
     <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2021-12-20</span><a class="rp-meta-bit rp-home" href="https://deew.app" rel="noopener">deew.app</a></div>
     <div class="rp-foot-row"><div class="rp-same"></div>
       <div class="rp-actions"><a class="rp-btn" href="https://github.com/pcrlnd/deew">GitHub ↗</a></div></div>
   </div>
 </div>
-<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">5.5.3</span><a class="rp-dl-a" href="https://github.com/pcrlnd/deew/releases/tag/5.5.3">5.5.3 ↓</a><span class="rp-dl-ver">5.5.3</span><span class="rp-dl-date">2026-11-21</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">299</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">26</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">12</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">16</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">57</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">2</div><div class="rp-metric-label">releases</div></div></div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">5.6.0</span><a class="rp-dl-a" href="https://github.com/pcrlnd/deew/releases/tag/5.6.0">5.6.0 ↓</a><span class="rp-dl-ver">5.6.0</span><span class="rp-dl-date">2026-11-25</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">299</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">26</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">12</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">16</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">57</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">3</div><div class="rp-metric-label">releases</div></div></div>
 <h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">\
 
 \
@@ -161,32 +161,26 @@ The deew tool chain page shows how deew connects ffprobe, ffmpeg, truehdd, dee_s
 - ffmpeg
 - ffprobe
 - Dolby Encoding Engine 6.7
-- truehdd (only for TrueHD Atmos sources of the Atmos formats: ddp-atmos, thd-atmos, ac4-atmos, ac4-ims; Atmos masters don&#x27;t need it)
-- dee_shim (only for ddp-atmos, thd-atmos, TrueHD with DRC none or at 96 kHz, the standard profile of 7.1 DDP and 7.0 DDP)
-  - ddp-atmos and thd-atmos use it so DEE doesn&#x27;t smooth the object positions of the TrueHD decode a second time, TrueHD with DRC none (the default) uses it because the TrueHD encoder has no none DRC preset; 96 kHz TrueHD (any DRC) is encoded through it with --apodise off so it stays lossless (DEE&#x27;s own encoder applies its apodising filter to 96 kHz input, which changes every sample, so dee_shim is required for it)
-
- Where deew looks for the programs
-deew looks for the programs in this order, there is nothing to set in the config:
-1. next to the deew executable </pre><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/pcrlnd/deew/releases"><b>5.5.3</b> <span class="rp-rel-tag">5.5.3</span> <span class="rp-item-extra">2026-11-21</span></a><pre class="rp-pre">| | CLI | GUI | Web |
+- truehdd 0.6.3 or newer (only for TrueHD Atmos sources of the Atmos formats: ddp-atmos, thd-atmos, ac4-atmos, ac4-ims; Atmos masters don&#x27;t need it)
+- dee_shim 0.4.0 or newer (only for ddp-atmos, thd-atmos, TrueHD with DRC none or at 96 kHz, the standard profile of 7.1 DDP, 7.0 DDP, 5.0 DD and DDP and -mo of 7.1/7.0); deew refuses a job that needs truehdd or dee_shim when it is older, deew -gt replaces them with the latest
+  - ddp-atmos and thd-atmos use it so DEE doesn&#x27;t smooth the object positions of the TrueHD decode a second time, TrueHD with DRC none (the default) uses it because the TrueHD encoder has no none DRC preset; 96 kHz TrueHD (any DRC) is encoded through it with --apodise off so it stays lossless (DEE&#x27;s own encoder applies its apodising filter to 96 kHz input, which changes every sample, so dee_shim</pre><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/pcrlnd/deew/releases"><b>5.6.0</b> <span class="rp-rel-tag">5.6.0</span> <span class="rp-item-extra">2026-11-25</span></a><pre class="rp-pre">| | CLI | GUI | Web |
 |:--|:--|:--|:--|
 | 🪟 Windows | deew.exe | deew-gui.exe | deew-web.exe |
 | 🐧 Linux | deew | deew-gui | deew-web |
-| 🍎 macOS | deew-macos | deew-gui-macos | deew-web-macos |
+| 🍎 macOS | deew-macos | deew-gui-macos.zip | deew-web-macos |
 
 
 Changelog
 
-- new advanced -p, --pipe auto|always|never (only in -fh): overrides
-  the config&#x27;s pipe for one run
-- new configs have theme = &#x27;system&#x27; in the [gui] section
-- deew-gui/deew-web 1.0.0:
-  - 1.0.0 because the GUI is considered complete and stable now
-  - the theme button opens a menu with Light, Dark and System (follows
-    the operating system); deew-gui saves the choice as theme in the
-   </pre></section>
+- raw TrueHD inputs (.thd, .mlp) keep their decode progress with the
+  next truehdd release: deew passes --progress to truehdd when it reads
+  the file itself, because truehdd will only count the frames (which deew
+  uses for the percentage) when a progress bar is asked for
+- new -u, --update [all]: updates deew, and deew-gui/deew-web when
+  they are next to it, from the latest release</pre></section>
 
 
-<p class="rp-meta">Snapshot: 2026-11-25T11:05:55Z · Data license Apache-2.0 ·
+<p class="rp-meta">Snapshot: 2026-11-25T22:53:13Z · Data license Apache-2.0 ·
 <a href="https://api-site.zhuikan.com/data/repos/pcrlnd__deew.json">JSON</a></p></div>
 </main>
 

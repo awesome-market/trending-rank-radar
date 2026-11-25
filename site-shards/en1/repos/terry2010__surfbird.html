@@ -123,12 +123,10 @@ var _hmt = _hmt || [];
 <h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Surfbird
 
 
+|  |  |  |  |
+|---|---|---|---|
 
-
-
-
-
-English | 中文
+English | 中文 | github.com/terry2010/surfbird
 
 Kitesurf, self-hosted. An unofficial Docker distribution of Cloudflare Kitesurf — the experimental browser engine built for AI agents.
 
@@ -144,7 +142,7 @@ Kitesurf parses HTML, applies CSS, runs page JavaScript and renders screenshots 
 | terry2010/surfbird:auth | engine + token auth proxy + optional TLS, :8080 | one-command, exposed |
 | terry2010/surfbird:latest | = :auth | convenience default |
 
-Images auto-build daily when upstream cuts a new tag; per-tag pins like terry2010/surfbird:auth-2026.11.8 are also published.
+Images auto-build daily when upstream cuts a new tag; per-tag pins like terry2010/surfbird:auth-2026.11.8 are also published. Arch: linux/amd64 only (the engine is built with Bazel for amd64) — ARM hosts need qemu emulation (slow) or a native build via Dockerfile.prebuilt.
 
  Quick start
 
@@ -181,7 +179,7 @@ curl -H &quot;Authorization: Bearer $TOKEN&quot; \
      http://:8080/markdown | jq -r .markdown
 
 
-Endpoints: POST /screenshot | /pdf | /content | /source | /markdown | /evaluate | /batch (one action over up to MAX_BATCH_URLS urls, per-item results), GET /health, GET /openapi.json. /content returns the post-JS rendered DOM; /source returns the original response body (&quot;view source&quot;).
+Endpoints: POST /screenshot | /pdf | /content | /source | /markdown | /evaluate | /batch (one action over up to MAX_BATCH_URLS urls, per-item results), GET /health, GET /openapi.json. /content returns the post-JS rendered DOM; /source returns the original response body (&quot;view source&quot;). Every POST body also accepts waitUntil (page-load strategy, default load).
 All other paths transparently proxy to the engine (landing page, /json/, /rbi/).
 
 JS/TS client: surfbird on npm — new Surfbird(url,{token}).markdown(u) etc., plus sb.batch(action, urls).
@@ -197,19 +195,7 @@ json
   &quot;mcpServers&quot;: {
     &quot;surfbird&quot;: {
       &quot;command&quot;: &quot;npx&quot;,
-      &quot;args&quot;: [&quot;-y&quot;, &quot;surfbird-mcp&quot;],
-      &quot;env&quot;: {
-        &quot;SURFBIRD_URL&quot;: &quot;http://:8080&quot;,
-        &quot;SURFBIRD_TOKEN&quot;: &quot;&quot;
-      }
-    }
-  }
-}
-
-
-Tools: surf_markdown surf_content surf_source surf_screenshot surf_pdf surf_evaluate surf_batch surf_health.
-
-B. chrome-devtools-mcp — full CDP surface. Points</pre><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/terry2010/surfbird/releases"><b>kitesurf 2026.11.12</b> <span class="rp-rel-tag">kitesurf-2026.11.12</span> <span class="rp-item-extra">2026-11-24</span></a><pre class="rp-pre">Docker images built from upstream kitesurf 2026.11.12.
+      &quot;args&quot;: [&quot;-y&quot;,</pre><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/terry2010/surfbird/releases"><b>kitesurf 2026.11.12</b> <span class="rp-rel-tag">kitesurf-2026.11.12</span> <span class="rp-item-extra">2026-11-24</span></a><pre class="rp-pre">Docker images built from upstream kitesurf 2026.11.12.
 
 | image | pull |
 |---|---|
@@ -220,7 +206,7 @@ Floating tags raw / auth / latest point at this build.
 Unofficial distribution — not affiliated with Cloudflare.</pre></section>
 
 
-<p class="rp-meta">Snapshot: 2026-11-24T23:20:40Z · Data license Apache-2.0 ·
+<p class="rp-meta">Snapshot: 2026-11-25T22:53:13Z · Data license Apache-2.0 ·
 <a href="https://api-site.zhuikan.com/data/repos/terry2010__surfbird.json">JSON</a></p></div>
 </main>
 

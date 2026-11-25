@@ -109,61 +109,75 @@ var _hmt = _hmt || [];
         <a class="rp-owner" href="https://github.com/xcl-dev">xcl-dev</a>
         <span class="rp-sep">/</span><span class="rp-name">xcl</span>
       </h1>
-      <div class="rp-head-chips"><a class="rp-board-chip" href="https://zhuikan.com/?board=new">new <b>#88</b></a></div>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="https://zhuikan.com/?board=new">new <b>#84</b></a><a class="rp-board-chip" href="https://zhuikan.com/?board=daily">daily <b>#80</b></a><a class="rp-board-chip" href="https://zhuikan.com/?board=daily_rate">daily_rate <b>#36</b></a></div>
     </div>
     <p class="rp-desc">Xbox Series compatibility layer for Windows - runs console game code natively, reimplements the console system libraries and recompiles RDNA2 shaders to DXIL</p>
-    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>8,083</b></span><span class="rp-stat" title="forks">⑂ <b>1,092</b></span><span class="rp-stat" title="watchers">👁 <b>124</b></span><span class="rp-stat" title="prs">⑃ <b>1,549</b></span><span class="rp-stat" title="issues">● <b>279</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>8,296</b></span><span class="rp-stat" title="forks">⑂ <b>1,134</b></span><span class="rp-stat" title="watchers">👁 <b>120</b></span><span class="rp-stat" title="prs">⑃ <b>2,097</b></span><span class="rp-stat" title="issues">● <b>365</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
     <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/gdk">gdk</a><a class="rp-topic" href="https://github.com/topics/rdna2">rdna2</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/xbox">xbox</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/d3d12">d3d12</a></div>
     <div class="rp-meta"><span class="rp-meta-bit">Rust</span><span class="rp-meta-bit">GPL-2.0</span><span class="rp-meta-bit">Created 2026-11-20</span><a class="rp-meta-bit rp-home" href="https://discord.gg/xcl" rel="noopener">discord.gg/xcl</a></div>
     <div class="rp-foot-row"><div class="rp-same"></div>
       <div class="rp-actions"><a class="rp-btn" href="https://github.com/xcl-dev/xcl">GitHub ↗</a></div></div>
   </div>
 </div>
-<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num">8,083</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,092</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">124</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1,549</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">279</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
-<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">XCL – Xbox Series X|S → Windows compatibility layer
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+213</div><div class="rp-metric-label">Daily</div></div><div class="rp-metric"><div class="rp-metric-num">8,296</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,134</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">120</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">2,097</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">365</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Games ·
+  Highlights ·
+  How it works ·
+  Quick start ·
+  What works ·
+  Controls ·
+  Building and usage ·
+  Tests ·
+  Contributing
 
 
-Discord: 
+ XCL – Xbox Series X|S → Windows compatibility layer
 
 XCL is a compatibility layer that runs Xbox Series X|S (GDK) games you own on a Windows PC - in the spirit of Wine/Proton. There is no CPU emulation: the game&#x27;s x64 code runs natively, and XCL provides its own, independently written implementations of the console system libraries the PC does not have (kernelx.dll, XGameRuntime, d3d12_xs.dll, …). The console&#x27;s GPU code (RDNA2 machine code) is recompiled into PC shaders (HLSL → DXIL).
 
-XCL works only on unpacked game files you already own. It does not download, decrypt or unpack game packages (XVC / MSIXVC) and contains nothing for circumventing DRM. The repository holds no code, headers or binaries from the console SDK, no keys and no game data; the Windows components XCL relies on (XGameRuntime, XAudio2, D3D12, DXC) come from your own system or the public Windows SDK and are not distributed with XCL.
+ [!IMPORTANT]
+ XCL works only on unpacked game files you already own. It does not download, decrypt or unpack game packages (XVC / MSIXVC) and contains nothing for circumventing DRM. The repository holds no code, headers or binaries from the console SDK, no keys and no game data; the Windows components XCL relies on (XGameRuntime, XAudio2, D3D12, DXC) come from your own system or the public Windows SDK and are not distributed with XCL.
+
+
 
  Games
 
-| Game | Package (version) | State | What works | Limits |
-|---|---|---|---|---|
-| Minecraft Preview | Microsoft.MinecraftBeta 1.18.3064.0 | ✅ | fully playable | – |
-| Unicorn Overlord | SEGAofAmericaInc.Pa253b0c1Y 1.0.0.6 | ✅ | fully playable | – |
-| Fortnite | 436609B6.FortniteClient 2.0.1461.7919 | ✅ | works fully, as far as the game allows without its online services | the game itself is online-only (multiplayer servers) |
-| XDefiant | Ubisoft.XDefiant-Game 1.0.0.186 | ✅ | works fully, as far as the game allows without its servers | the game&#x27;s own servers have been shut down |
-| A newer retail game | – | 🚧 | starts in ~4 s, runs at a steady 30 fps without a crash, shows its menus and goes on past the first one to its settings; fits a 32 GB machine (~15 GB committed in the menus) | gameplay not reached yet; its minimap mesh pipelines are refused |
+
+  
+
+
+| Game | State | What works | Limits |
+|---|---|---|---|
+| Minecraft PreviewMicrosoft.MinecraftBeta 1.18.3064.0 | ✅&amp;nbsp;playable | fully playable | – |
+| Unicorn OverlordSEGAofAmericaInc.Pa253b0c1Y 1.0.0.6 | ✅&amp;nbsp;playable | fully playable | – |
+| Fortnite436609B6.FortniteClient 2.0.1461.7919 | ✅&amp;nbsp;works | works fully, as far as the game allows without its online services | the game itself is online-only (multiplayer servers) |
+| XDefiantUbisoft.XDefiant-Game 1.0.0.186 | ✅&amp;nbsp;works | works fully, as far as the game allows without its servers | the game&#x27;s own servers have been shut down |
+| A newer retail game | 🚧&amp;nbsp;≈&amp;nbsp;60&amp;nbsp;%estimate | starts in ~4 s, runs at a steady 30 fps without a crash, shows its menus and goes on past the first one to its settings; fits a 32 GB machine (~15 GB committed in the menus). With the NVIDIA integration branch (2057) it goes on into its 3D world: ~5 fps there on an RTX 5090 (14 fps on average over a whole 5-minute run, its menus and loading included) | not playable yet: the picture of the world is incomplete (its minimap and other mesh pipelines are refused), and it does not keep running there for long |
 
  Highlights
 
-- 100 % of a retail game&#x27;s shaders translate – all 26 698 RDNA2 programs (26 503 records) of its shader pack
-  become HLSL; random samples compile to DXIL with 0 errors.
-- The game&#x27;s own console DLLs run on the PC – its Bink 2 video codec decodes the game&#x27;s
-  movies, its ray-tracing BVH builder builds acceleration structures on a PC GPU, the AMD FSR 4
-  console upscaler runs a whole frame on a PC GPU, the GDK HTTP library initialises.
-- Console textures decode exactly – the GFX10 tiling and mip layout reproduce 909 of 912
-  textures of the game&#x27;s texture archive byte for byte, its volume textures included.
-- 370+ automated tests, including GPU tests that compare translated shaders against expected
-  results instruction by instruction.
 
- What works
+  
+    
+      
+      No CPU emulation – the game&#x27;s x64 code runs natively, in the spirit of Wine / Proton.
+    
+    
+      
+      100 % of a retail game&#x27;s shaders translate – all 26 698 RDNA2 programs (26 503 records) of its shader pack become HLSL; random samples compile to DXIL with 0 errors.
+    
+    
+      
+      The game&#x27;s own console DLLs run on the PC – its Bink 2 video codec decodes the game&#x27;s movies, its ray-tracing BVH builder builds acceleration structures on a PC GPU, the AMD FSR 4 console upscaler runs a whole frame on a PC GPU, the GDK HTTP library initialises.
+    
+  
+  
+    
+      
+      Console textures decode exactly – the GFX10 tiling and mip layout reproduce 909 of 912 textures of the game&#x27;s texture arc</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/xcl-dev/xcl/issues/505"><span class="rp-item-num">#505</span><span class="rp-item-title">Newer retail title (TitleID 7952987A): reaches world loading, then the title&#x27;s GPU watchdog (&quot;GPU Loc Sig&quot;) after ListX #101 stub</span><span class="rp-item-extra">262 comments · 2026-11-24</span></a><a class="rp-item" href="https://github.com/xcl-dev/xcl/issues/42"><span class="rp-item-num">#42</span><span class="rp-item-title">GPU test results: NVIDIA RTX 3080 (wave32) and AMD RDNA2 iGPU (no mesh shaders)</span><span class="rp-item-extra">196 comments · 2026-11-22</span></a><a class="rp-item" href="https://github.com/xcl-dev/xcl/issues/1607"><span class="rp-item-num">#1607</span><span class="rp-item-title">PR triage: duplicate PRs and batch-tested PRs, each checked by two contributors</span><span class="rp-item-extra">171 comments · 2026-11-24</span></a><a class="rp-item" href="https://github.com/xcl-dev/xcl/issues/2088"><span class="rp-item-num">#2088</span><span class="rp-item-title">[OFFICIAL] Swarm: cold PSO compilation to first playable frame</span><span class="rp-item-extra">112 comments · 2026-11-25</span></a><a class="rp-item" href="https://github.com/xcl-dev/xcl/issues/675"><span class="rp-item-num">#675</span><span class="rp-item-title">Retail title 1.0.2.1: GPU hang / crash at +0x23cf683 when the story loads (RTX 3070 Ti)</span><span class="rp-item-extra">78 comments · 2026-11-24</span></a><a class="rp-item" href="https://github.com/xcl-dev/xcl/issues/175"><span class="rp-item-num">#175</span><span class="rp-item-title">Linux (Wine + vkd3d-proton): a retail game reaches what `main` reaches on Windows; the obstacle is replaced vtables — proposal: proxies</span><span class="rp-item-extra">76 comments · 2026-11-23</span></a><a class="rp-item" href="https://github.com/xcl-dev/xcl/issues/258"><span class="rp-item-num">#258</span><span class="rp-item-title">macOS (Apple Silicon, CrossOver + D3DMetal): the newer retail game reaches its first-run menus at 30 fps</span><span class="rp-item-extra">71 comments · 2026-11-23</span></a><a class="rp-item" href="https://github.com/xcl-dev/xcl/issues/1452"><span class="rp-item-num">#1452</span><span class="rp-item-title">Retail game (retail title, Series X build): GPU device removal after Wait64BitValueX waits with no producer; also watchdog stalls on slow compute pipeline builds</span><span class="rp-item-extra">62 comments · 2026-11-24</span></a></div></section>
 
-✅ done and verified
 
- Running the game&#x27;s code
-
-| Feature | State | What it does | Verified by |
-|---|---|---|---|
-| PE loader | ✅ | relocations, imports by name / ordinal / delay-load, TLS callbacks, exception tables, game DLLs, data-driven import routing (HLE / Windows / stub) | the game&#x27;s 16 console DLLs load with 0 unresolved imports |
-| kernelx | ✅ | title memory (budget from MicrosoftGame.Config, physical pages), threa</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/xcl-dev/xcl/issues/1269"><span class="rp-item-num">#1269</span><span class="rp-item-title">[OFFICIAL] Looking for PRs with shaders optimization</span><span class="rp-item-extra">559 comments · 2026-11-24</span></a><a class="rp-item" href="https://github.com/xcl-dev/xcl/issues/42"><span class="rp-item-num">#42</span><span class="rp-item-title">GPU test results: NVIDIA RTX 3080 (wave32) and AMD RDNA2 iGPU (no mesh shaders)</span><span class="rp-item-extra">165 comments · 2026-11-22</span></a><a class="rp-item" href="https://github.com/xcl-dev/xcl/issues/505"><span class="rp-item-num">#505</span><span class="rp-item-title">Newer retail title (TitleID 7952987A): reaches world loading, then the title&#x27;s GPU watchdog (&quot;GPU Loc Sig&quot;) after ListX #101 stub</span><span class="rp-item-extra">149 comments · 2026-11-24</span></a><a class="rp-item" href="https://github.com/xcl-dev/xcl/issues/175"><span class="rp-item-num">#175</span><span class="rp-item-title">Linux (Wine + vkd3d-proton): a retail game reaches what `main` reaches on Windows; the obstacle is replaced vtables — proposal: proxies</span><span class="rp-item-extra">72 comments · 2026-11-23</span></a><a class="rp-item" href="https://github.com/xcl-dev/xcl/issues/1607"><span class="rp-item-num">#1607</span><span class="rp-item-title">PR triage: duplicate PRs and batch-tested PRs, each checked by two contributors</span><span class="rp-item-extra">70 comments · 2026-11-24</span></a><a class="rp-item" href="https://github.com/xcl-dev/xcl/issues/258"><span class="rp-item-num">#258</span><span class="rp-item-title">macOS (Apple Silicon, CrossOver + D3DMetal): the newer retail game reaches its first-run menus at 30 fps</span><span class="rp-item-extra">61 comments · 2026-11-23</span></a><a class="rp-item" href="https://github.com/xcl-dev/xcl/issues/675"><span class="rp-item-num">#675</span><span class="rp-item-title">Retail title 1.0.2.1: GPU hang / crash at +0x23cf683 when the story loads (RTX 3070 Ti)</span><span class="rp-item-extra">57 comments · 2026-11-24</span></a><a class="rp-item" href="https://github.com/xcl-dev/xcl/issues/232"><span class="rp-item-num">#232</span><span class="rp-item-title">Retail title: null write at +0x2215c35 (#159) still hits on NVIDIA RTX 4070 Ti, with and without XCL_NETWORK=0</span><span class="rp-item-extra">50 comments · 2026-11-23</span></a></div></section>
-
-
-<p class="rp-meta">Snapshot: 2026-11-25T11:05:55Z · Data license Apache-2.0 ·
+<p class="rp-meta">Snapshot: 2026-11-25T22:53:13Z · Data license Apache-2.0 ·
 <a href="https://api-site.zhuikan.com/data/repos/xcl-dev__xcl.json">JSON</a></p></div>
 </main>
 

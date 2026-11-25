@@ -112,18 +112,18 @@ var _hmt = _hmt || [];
       <div class="rp-head-chips"></div>
     </div>
     <p class="rp-desc"></p>
-    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>994</b></span><span class="rp-stat" title="forks">⑂ <b>62</b></span><span class="rp-stat" title="watchers">👁 <b>18</b></span><span class="rp-stat" title="prs">⑃ <b>12</b></span><span class="rp-stat" title="issues">● <b>3</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>1,001</b></span><span class="rp-stat" title="forks">⑂ <b>62</b></span><span class="rp-stat" title="watchers">👁 <b>18</b></span><span class="rp-stat" title="prs">⑃ <b>12</b></span><span class="rp-stat" title="issues">● <b>3</b></span><span class="rp-stat" title="releases">▤ <b>0</b></span></div>
     <div class="rp-topics"></div>
     <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">Created 2024-01-08</span></div>
     <div class="rp-foot-row"><div class="rp-same"><div class="rp-same-label">TA的项目</div><div class="rp-same-row"><a class="rp-same-link" href="https://zh1.zhuikan.com/repos/dmmulroy__anti-slop"><img class="rp-same-av" src="https://avatars.githubusercontent.com/u/2755722?u=25950dae7ea516f2588726edb259e87e232de3a6&amp;v=4" alt="" loading="lazy">anti-slop</a></div></div>
       <div class="rp-actions"><a class="rp-btn" href="https://github.com/dmmulroy/.dotfiles">GitHub ↗</a></div></div>
   </div>
 </div>
-<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">994</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">62</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">18</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">12</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">3</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+7</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">1,001</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">62</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">18</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">12</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">3</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
 <h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Dotfiles
 
 My development environment for macOS and Linux (Debian/Ubuntu via apt, Arch
-via pacman): Fish, Neovim, Herdr, Rex, Git, and pi, managed by a small CLI
+via pacman): Fish, Neovim, Rex, Git, and pi, managed by a small CLI
 called dot.
 
  Quick start
@@ -149,7 +149,7 @@ After the first run, Fish puts dot on PATH (conf.d/paths.fish adds
 │   ├── commands/       one file per command
 │   └── tests/          test runner and container smoke test
 ├── home/               configuration, stowed to ~
-│   ├── .config/        fish, nvim, herdr, rex, git, ghostty, ...
+│   ├── .config/        fish, nvim, rex, git, ...
 │   ├── .agents/        shared agent skills
 │   └── .pi/            pi agent extensions and settings
 ├── packages/
@@ -170,7 +170,7 @@ doctor run them all in the same order. Details: dot/README.md.
 | Command | What it does |
 |---------|--------------|
 | dot init | Install everything; safe to rerun. --headless, --skip-ssh, --skip-font |
-| dot update | git pull, then update every component (packages, stow, Bun, Vite+ and Node.js, Herdr plugins, Rex, pi, Claude Code, Fish plugins, ...) |
+| dot update | git pull, then update every component (packages, stow, Bun, Vite+ and Node.js, Rex, pi, Claude Code, Fish plugins, ...) |
 | dot doctor | Check every component; exits 1 when a required one fails |
 | dot components | List components: platform, required, update step |
 | dot package add\|remove\|update\|list | Edit the package lists and install/uninstall (brew, cask, apt, pacman) |
@@ -196,10 +196,11 @@ dot update --dry-run           show what would run
 
 bash
 dot package list               every list, with install status
-dot package add ripgrep        install + add to packages/bundle (or apt/pac</pre></section>
+dot package add ripgrep        install + add to packages/bundle (or apt/pacman on Linux)
+dot package add docker c</pre></section>
 
 
-<p class="rp-meta">Snapshot: 2026-11-24T23:20:40Z · Data license Apache-2.0 ·
+<p class="rp-meta">Snapshot: 2026-11-25T22:53:13Z · Data license Apache-2.0 ·
 <a href="https://api-site.zhuikan.com/data/repos/dmmulroy__.dotfiles.json">JSON</a></p></div>
 </main>
 
