@@ -112,66 +112,104 @@ var _hmt = _hmt || [];
       <div class="rp-head-chips"></div>
     </div>
     <p class="rp-desc">Complete Control and Automation for Seestar S50</p>
-    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>301</b></span><span class="rp-stat" title="forks">⑂ <b>77</b></span><span class="rp-stat" title="watchers">👁 <b>39</b></span><span class="rp-stat" title="prs">⑃ <b>587</b></span><span class="rp-stat" title="issues">● <b>234</b></span><span class="rp-stat" title="releases">▤ <b>38</b></span></div>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>301</b></span><span class="rp-stat" title="forks">⑂ <b>77</b></span><span class="rp-stat" title="watchers">👁 <b>39</b></span><span class="rp-stat" title="prs">⑃ <b>590</b></span><span class="rp-stat" title="issues">● <b>234</b></span><span class="rp-stat" title="releases">▤ <b>38</b></span></div>
     <div class="rp-topics"></div>
     <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2024-04-22</span></div>
     <div class="rp-foot-row"><div class="rp-same"></div>
       <div class="rp-actions"><a class="rp-btn" href="https://github.com/smart-underworld/seestar_alp">GitHub ↗</a></div></div>
   </div>
 </div>
-<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v3.3.3</span><a class="rp-dl-a" href="https://github.com/smart-underworld/seestar_alp/releases/tag/v3.3.3">v3.3.3 ↓</a><span class="rp-dl-ver">3.3.3</span><span class="rp-dl-date">2026-11-16</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num">301</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">77</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">39</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">587</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">234</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">38</div><div class="rp-metric-label">releases</div></div></div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v3.3.3</span><a class="rp-dl-a" href="https://github.com/smart-underworld/seestar_alp/releases/tag/v3.3.3">v3.3.3 ↓</a><span class="rp-dl-ver">3.3.3</span><span class="rp-dl-date">2026-11-16</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+1</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num">301</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">77</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">39</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">590</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">234</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">38</div><div class="rp-metric-label">releases</div></div></div>
 <h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">Seestar_Alp
 
-Seestar ALP is a standalone controller, for command, control, and scheduling of SeeStar telescopes.
+Seestar_Alp is a standalone controller for command, control, and scheduling of
+ZWO SeeStar smart telescopes (S30 / S50 and Pro variants).
 
-It uses a webpage based interface running on your computer, to interact with a backend server that controls the telescope.
+It runs on your own computer (or a Raspberry Pi) as a backend server that talks
+to the telescope, with a web-based interface for driving it. On top of that same
+backend it also offers a command-line tool and a Python library, and an MCP
+server so an AI assistant can plan and run imaging sessions.
 
 
- Where do I start?
+          Web UI (browser)        CLI / Python library        AI assistant
+                │                         │                         │
+                └─────────────┬───────────┴────────────┬────────────┘
+                              │   Alpaca HTTP API       │
+                       seestar_alp device server ────────────── SeeStar
 
-That depends on your goals. (of course)
 
-If you want to get in and learn the code and see how it all works then you can clone this git repository or download the code from the release, or from the main branch.  You will be interested in the ./device and ./front directories at first.
+ What&#x27;s in this repo
 
-If you just want to use the GUI and commnicate with your Seestar then the standalone install may be right for you. The standalone install is described below.
+| Surface | Where | Use it for |
+|---|---|---|
+| Main app — web UI + device server | root_app.py, front/, device/ | The normal way to use Seestar_Alp: a browser GUI backed by a local server that controls the scope. |
+| CLI &amp; Python library (ssalp) | cli/ | Scripting and automation against a running device server over its HTTP API. |
+| MCP server &amp; Claude Code plugin | mcp/ | Letting an AI assistant point, image, and schedule through the same server. |
 
- Installation
+---
 
- Standalone package
-For details on running pre-built standalone packages, please see the following wiki pages for the most up-to-date details:
+ The main app
+
+The main application starts two services together:
+
+- a device server exposing the ASCOM Alpaca HTTP API (default port
+  5555) that controls the telescope, and
+- the web UI (default port 5432) that you point your browser at.
+
+(Additional ports for the imaging and Stellarium interfaces are set in the
+config file — see device/config.toml.example.)
+
+ Install and run
+
+For most people the easiest path is a pre-built standalone package. The wiki has
+the current, maintained step-by-step instructions for each platform:
+
+Standalone packages
 - Windows
-- MacOS
+- macOS
 - Linux
 
- Source code
-For details on running from source, please see the following wiki pages for the most up-to-date details:
+From source
 - Raspberry Pi
-- Mac
+- macOS
 - Windows
 
+Platform helpers also live in the repo: raspberry_pi/ (setup + systemd),
+mac/, linux/deb/, and docker/.
 
- How to get Support
+In brief, running from a source clone looks like:
 
-I will set priority on responding from my Github and my Discord Channel:
+bash
+ Python 3.13+
+python -m venv .venv &amp;&amp; source .venv/bin/activate
+pip install -r requirements.txt
 
-Public Discord Channel for up to date info
+ first run: create your config from the template
+cp device/config.toml.example device/config.toml
 
-
-Github wiki pages
-
-
-Facebook Group: Smart Telescope Underworld
-
-
-YouTube Channel
-
-
-Github source
+python root_app.py
 
 
- Releases
+Then open  in a browser.
 
-Releases, and notes can be found on github at:</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/smart-underworld/seestar_alp/issues/819"><span class="rp-item-num">#819</span><span class="rp-item-title">Snapshot reader gets 503 for ~62 s after a driver restart mid-stack</span><span class="rp-item-extra">0 comments · 2026-11-25</span></a><a class="rp-item" href="https://github.com/smart-underworld/seestar_alp/issues/816"><span class="rp-item-num">#816</span><span class="rp-item-title">Automate Schedule Start</span><span class="rp-item-extra">0 comments · 2026-11-18</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/smart-underworld/seestar_alp/releases"><b>v3.3.3</b> <span class="rp-rel-tag">v3.3.3</span> <span class="rp-item-extra">2026-11-16</span></a><pre class="rp-pre">Mirror, mirror, on the wall...
+---
+
+ The CLI (ssalp)
+
+ssalp is a command-line tool and async/sync Python library that wraps the
+seestar_alp Alpaca HTTP API (it talks to a running device server, not to the
+telescope directly). It&#x27;s handy for scripting, automation, and headless setups.
+
+bash
+pipx install &quot;git+https://github.com/smart-underworld/seestar_alp.gitsubdirectory=cli&quot;
+
+ssalp --host 192.168.1.51 info device-state
+ssalp --host 192.168.1.51 mount goto-target --name M42 --ra &quot;5h35m17s&quot; --dec &quot;-5d23m&quot;
+ssalp --host 192.168.1.51 schedule add-mosaic --target M42 --ra 5.588 --dec -5.391 --time 3600
+
+
+Command groups: info, mount, camera, focuser, filter, schedule,
+mosaic, files, system. Configuration resolves fr</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/smart-underworld/seestar_alp/issues/819"><span class="rp-item-num">#819</span><span class="rp-item-title">Snapshot reader gets 503 for ~62 s after a driver restart mid-stack</span><span class="rp-item-extra">0 comments · 2026-11-25</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/smart-underworld/seestar_alp/releases"><b>v3.3.3</b> <span class="rp-rel-tag">v3.3.3</span> <span class="rp-item-extra">2026-11-16</span></a><pre class="rp-pre">Mirror, mirror, on the wall...
 
  What&#x27;s Changed
  Fixed Survey Mirror List for Planning Page by @wileecyte in https://github.com/smart-underworld/seestar_alp/pull/806
@@ -180,7 +218,7 @@ Releases, and notes can be found on github at:</pre><h3 class="rp-ph">Top issues
 Full Changelog: https://github.com/smart-underworld/seestar_alp/compare/v3.3.2...v3.3.3</pre></section>
 
 
-<p class="rp-meta">Snapshot: 2026-11-25T22:53:13Z · Data license Apache-2.0 ·
+<p class="rp-meta">Snapshot: 2026-11-26T22:42:58Z · Data license Apache-2.0 ·
 <a href="https://api-site.zhuikan.com/data/repos/smart-underworld__seestar_alp.json">JSON</a></p></div>
 </main>
 

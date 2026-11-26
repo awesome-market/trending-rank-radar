@@ -119,10 +119,11 @@ var _hmt = _hmt || [];
       <div class="rp-actions"><a class="rp-btn" href="https://github.com/qiantongtech/qKnow">GitHub ↗</a></div></div>
   </div>
 </div>
-<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-2</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num">299</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">68</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">29</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">5</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
+<section class="rp-panel card"><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num down">-1</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num">299</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">68</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">29</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">1</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">5</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">0</div><div class="rp-metric-label">releases</div></div></div>
 <h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">!banner.png
 
 
+ 
  
  
  
@@ -162,9 +163,9 @@ qKnow 是一款以知识增强为特色的开源智能体构建平台。 融合�
 
 如果回答漏掉了一条规定，可以先用同一个问题做召回测试，查看命中了哪些原文段落，再切换全文、向量或混合检索，调整返回段落数（Top-K）和相似度阈值。在问答结果中，点击引用即可回到对应的原文段落。
 
- 可视化编排，把知识和工具接入同一个 Bot
+ 可视化编排，把知识、工具和 MCP 服务接入同一个 Bot
 
-在 AI 工作台创建工作流（Workflow）、对话流（Chatflow）或 Agent，通过画布连接模型、知识、工具和逻辑节点。例如，产品支持 Bot 可以用知识节点检索手册。如果团队已有工单查询接口，还可以通过工具节点查询处理进度，交给模型整理答复。工具连接器和提示词模板可以复用。发布前，先用实际问题在线调试，查看运行结果。
+在 AI 工作台创建工作流（Workflow）、对话流（Chatflow）或 Agent，通过拖拽和连线，将模型、知识、工具与逻辑节点编排成业务流程。接入 MCP 服务、调用内置工具或已有业务接口，让 Bot 既能基于知识回答问题，也能调用工具完成任务。例如，产品支持 Bot 可以检索产品手册，再调用工单查询工具获取处理进度，由模型整理成完整答复，让知识解答与业务查询一步衔接。发布前，用实际问题在线调试、实时预览并查看运行结果，让每一步效果可验证，让业务想法更快落地。
 
  应用复用，一套 Bot 可以生成多个业务应用
 
@@ -220,7 +221,7 @@ Bot 定义“这个任务怎么做”，应用实例决定“这次用哪个 Bot
 | 模型接入    | 支持统一配置和管理大模型服务，基于 Spring AI 接入不同模型厂商，为智能体和应用提供模型能力。 |
 | Bot 管理  | 支持智能体的创建、编辑、复制、发布、调试和运行状态管理。                        |
 | 可视化编排中心 | 支持通过拖拽式画布编排 Workflow、Chatflow 与 Agent，快速构建业务智能体。    |
-| 资产中心    | 支持统一管理工具、插件、提示词、知识组件和可复用智能体资产。                      |
+| 资产中心    | 支持统一管理工具、MCP、插件、提示词、知识组件和可复用智能体资产。                  |
 | 应用中心    | 支持集中展示、访问和管理平台内置应用及用户自建应用。                          |
 | 应用配置    | 支持为应用绑定知识库、知识图谱、Bot 和参数配置，生成专属应用。                   |
 | 知识问答    | 基于统一的应用插件开发架构，支持知识问答及后续各类智能应用以插件化方式标准接入、独立扩展和统一管理。  |
@@ -243,13 +244,10 @@ qKnow 采用前后端分离与模块化设计，便于开发者理解代码、�
 | 层次 | 主要技术 |
 | --- | --- |
 | 后端 | JDK 17、Spring Boot 3、Spring Security、MyBatis-Plus、Spring AI |
-| 前端 | Vue 3、Element Plus、Vite |
-| 平台运行存储与缓存 | MySQL、Redis、Neo4j、Weaviate |
-
-源码开发环境的配置步骤见后端运行指南和前端运行</pre></section>
+| 前端 | Vue 3、Elemen</pre></section>
 
 
-<p class="rp-meta">Snapshot: 2026-11-25T22:53:13Z · Data license Apache-2.0 ·
+<p class="rp-meta">Snapshot: 2026-11-26T22:42:58Z · Data license Apache-2.0 ·
 <a href="https://api-site.zhuikan.com/data/repos/qiantongtech__qKnow.json">JSON</a></p></div>
 </main>
 
