@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ceilf6/Auto_courseGrabber · GitHub Trending Rank Radar</title>
+<meta name="description" content="正方教务系统自动抢课脚本（多省市高校实测）：并发选课、课程名/课号检索、时间/教师筛选、换课、定时开抢与可视化控制台。JavaScript helper for Zhengfang course enrollment.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="Auto_courseGrabber, ceilf6, ceilf6/Auto_courseGrabber, github stars, github trending, star growth, star history, 开源项目, 星标增长, course-snatching, teacher-filtering, time-filtering, scheduled, automation, course-enrollment">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zh1.zhuikan.com/repos/ceilf6__Auto_courseGrabber">
+<link rel="alternate" hreflang="en" href="https://en1.zhuikan.com/repos/ceilf6__Auto_courseGrabber">
+<link rel="alternate" hreflang="zh-CN" href="https://zh1.zhuikan.com/repos/ceilf6__Auto_courseGrabber">
+<link rel="alternate" hreflang="x-default" href="https://zh1.zhuikan.com/repos/ceilf6__Auto_courseGrabber">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="ceilf6/Auto_courseGrabber · GitHub Trending Rank Radar">
+<meta property="og:description" content="正方教务系统自动抢课脚本（多省市高校实测）：并发选课、课程名/课号检索、时间/教师筛选、换课、定时开抢与可视化控制台。JavaScript helper for Zhengfang course enrollment.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zh1.zhuikan.com/repos/ceilf6__Auto_courseGrabber">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=f8bd3e3f">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "ceilf6/Auto_courseGrabber", "codeRepository": "https://github.com/ceilf6/Auto_courseGrabber", "url": "https://zh1.zhuikan.com/repos/ceilf6__Auto_courseGrabber", "description": "正方教务系统自动抢课脚本（多省市高校实测）：并发选课、课程名/课号检索、时间/教师筛选、换课、定时开抢与可视化控制台。JavaScript helper for Zhengfang course enrollment.", "author": {"@type": "Organization", "name": "ceilf6", "url": "https://github.com/ceilf6"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/MIT.html", "programmingLanguage": "JavaScript", "dateCreated": "2025-07-02", "keywords": "course-snatching,teacher-filtering,time-filtering,scheduled,automation,course-enrollment,course-selection,education,javascript,university-tools"}</script>
+</head>
+<body data-repo="ceilf6/Auto_courseGrabber" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="https://zhuikan.com/" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="https://zhuikan.com/" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="https://zhuikan.com/" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="https://zhuikan.com/">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">ceilf6/Auto_courseGrabber</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="ceilf6__Auto_courseGrabber"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/140817245?u=0ec85445d6bb7c58f96950002032ee0b73f86ebb&amp;v=4&s=300" width="300" height="300" alt="ceilf6 avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">Auto_courseGrabber</div>
+      <a class="rp-side-owner" href="https://github.com/ceilf6">ceilf6</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/ceilf6">ceilf6</a>
+        <span class="rp-sep">/</span><span class="rp-name">Auto_courseGrabber</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">正方教务系统自动抢课脚本（多省市高校实测）：并发选课、课程名/课号检索、时间/教师筛选、换课、定时开抢与可视化控制台。JavaScript helper for Zhengfang course enrollment.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>997</b></span><span class="rp-stat" title="forks">⑂ <b>61</b></span><span class="rp-stat" title="watchers">👁 <b>10</b></span><span class="rp-stat" title="prs">⑃ <b>7</b></span><span class="rp-stat" title="issues">● <b>16</b></span><span class="rp-stat" title="releases">▤ <b>3</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/course-snatching">course-snatching</a><a class="rp-topic" href="https://github.com/topics/teacher-filtering">teacher-filtering</a><a class="rp-topic" href="https://github.com/topics/time-filtering">time-filtering</a><a class="rp-topic" href="https://github.com/topics/scheduled">scheduled</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/automation">automation</a><a class="rp-topic" href="https://github.com/topics/course-enrollment">course-enrollment</a><a class="rp-topic" href="https://github.com/topics/course-selection">course-selection</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/education">education</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">JavaScript</span><span class="rp-meta-bit">MIT</span><span class="rp-meta-bit">Created 2025-07-02</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/ceilf6/Auto_courseGrabber">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v2.3.2</span><a class="rp-dl-a" href="https://github.com/ceilf6/Auto_courseGrabber/releases/tag/v2.3.2">v2.3.2 ↓</a><span class="rp-dl-ver">2.3.2</span><span class="rp-dl-date">2026-01-18</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+5</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">997</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">61</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">10</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">7</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">16</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">3</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">正方教务系统自动抢课脚本｜并发选课、筛选、换课与定时执行
+
+
+
+
+
+面向正方教务系统选课页面的 JavaScript 自动选课辅助脚本。支持多课程并发选课、课程名或课号检索、时间/教师筛选、换课、定时开抢与图形化控制台。
+
+ 正在搜索“正方教务系统自动选课”“正方教务系统抢课脚本”“新正方教务管理系统定时选课”？请先阅读下方的适用范围，再按三步快速启动。
+
+有关学校覆盖与证据等级，请参阅正方高校覆盖与兼容性记录；页面加载、课程展开与换课限制请参阅使用注意
+
+ ⚡ 快速开始
+
+1. 登录学校的正方教务系统并进入自主选课页面。
+2. 使用页面自带搜索先把目标课程加载到当前列表中；推荐输入课程号精确搜索。
+3. 在浏览器开发者工具的 Console 中粘贴并运行 courseGrabber.js。
+4. 在右上角控制台添加课程，设置优先级、时间/教师筛选、替换课程或定时开抢，然后开始选课。
+
+ 示范教程
+
+https://bilibili.com/video/BV15q3xz5EzY/
+
+https://www.douyin.com/video/7651581603861720441
+
+ 🔎 适用范围与兼容性
+
+本项目服务于使用正方教务系统的高校选课场景；不同学校的系统版本、页面定制和选课规则可能不同，因此请区分以下三种证据：
+
+- 正方教务平台已确认：高校近期官方资料直接说明使用正方教学或选课平台。
+- 正方官网公开高校客户：正方官网展示该校为客户，但这不等于该校的选课页面与本脚本兼容。
+- 本项目社区实测：提交了学校、系统版本或页面特征、脚本版本、日期及结果的报告；只有这一层可以称为“本脚本已实测”。
+
+运行前请在选课页检查是否能看到课程卡片和教学班信息。当前脚本依赖正方页面中的课程卡片结构（例如 .panel-heading.kc_head 与 input[name=&quot;kch_id&quot;]）；若页面结构不同，请先提交脱敏兼容性报告，而不要直接提高请求频率。
+
+脚本只能识别和操作已经加载到当前页面 DOM 中的课程。若目标课程还藏在页面底部的“点此查看更多”之后，或需要继续查询/翻页后才会出现，脚本无法凭课程号自动把它从未加载的数据中找出来。建议先用课程号精确搜索，并确认目标课程已经呈现在页面列表里，再启动脚本。
+
+ ✨ 主要特性
+
+ 🚀 核心功能
+- 多课程并发抢课 - 同时监控和抢多门课程
+- 优先级控制 - 为不同课程设置优先级（数字越小优先级越高）
+- 智能教学班识别 - 自动识别同一课程的多个教学班
+- 时间冲突处理 - 时间冲突时自动尝试其他教学班
+- 独立状态跟踪 - 每门课程独立跟踪选课状态
+
+ 🔍 过滤器功能
+
+- 时间过滤器 —— 仅选择符合时间条件的教学班  
+  - 支持星期过滤：星期一、星期三  
+  - 支持节次过滤：第1-2节、第11-12节  
+  - 支持周数过滤：1-8周、单周
+
+- 教师过滤器 —— 仅选择符合教师条件的课程  
+  - 支持教师姓名过滤：张三  
+  - 支持职称过滤：讲师、教授
+
+- 全局 / 课程级过滤器 ——  
+  支持设置全局过滤规则，或为单门课程单独配置过滤条件，满足不同选课策略需求。
+
+ 🔽 页面加载与自动展开课程信息
+
+在选课过程中，页面需要完整展示课程的时间、教师等详细信息，因此过滤逻辑仅在课程信息卡片处于展开状态时才会生效。
+但由于正方选课系统在使用 jQuery 刷新列表时会重建 DOM 树，已展开的课程卡片会被自动折叠。为此，本脚本在页面刷新后主动触发点击事件，自动展开目标课程卡片。
+
+这里的“展开课程信息”不等同于页面底部的“点此查看更多”。“点此查看更多”负责把更多课程加载进当前页面；脚本不能操作尚未加载进页面的课程。“展开课程信息”只是在目标课程已经出现在页面后，展开其教学班详情。
+
+需要注意的是，展开课程信息会带来一定的性能开销，可能对抢课请求的响应时延产生影响。因此，在以下场景下，脚本会自动将 CLICK2EXPEND_ENABLED 设置为 false，以避免不必要的展开操作：
+
+1. 页面中仅存在一门课程，且该课程为目标课程  
+   （正方选课系统在刷新后会自动展开列表中的第一门课程，无需额外处理）
+
+2. 未启用时间过滤或教师过滤  
+   （在无过滤目标的情况下，即使调用展开逻辑也会立即结束，但该过程仍可能引入微小延迟，从而影响抢课请求的发送频率）
+
+ 🤝 换课功能
+- 情境：如果你 pre 课A 但是又想有 课B 保底就想着能不能骑驴找马，在 课A 有空的时候把 课B 退了之后再去抢
+- 实现：这就是换课功能存在的意义，当你输入目标课程的时候下方有一个可选字段 “替换课程” ，那么就会帮你自动监听并实现上面的功能
+- ⚠️注意：由于抢 课A 前需要先把 课B 退了，所以有 课B 退了之后 课A 没空位的风险，一般是对方和你一样用了本脚本
+
+ ⏰ 定时功能
+- 定时开抢 - 设置精确的开抢时间
+- 倒计时显示 - 实时显示距离开抢时间的倒计时
+- 自动启动 - 到达设定时间自动开始抢课
+
+ 🎨 图形化界面
+- 现代化UI设计 - 渐变色主题，美观大方
+- 可拖拽面板 - 可移动到屏幕任意位置
+- 实时日志 - 彩色日志实时显示运行状态
+- 一键操作 - 所有功能都可通过界面操作
+- 最小化功能 - 不占用屏幕空间
+
+ 📦 安装使用
+
+ 方法一：直接使用（推荐）
+
+1. 登录教务系统
+   - 打开浏览器，登录到学校教务系统
+   - 进入选课页面
+
+2. 打开浏览器控制台
+   - Windows/Linux: 按 F12 或 Ctrl + Shift + I
+   - macOS: 按 Command + Option + I
+
+3. 加载脚本
+   - 复制 courseGrabber.js 的全部内容
+   - 粘贴到控制台，按回车运行
+
+4. 使用界面
+   - 脚本运行后会在页面右上角显示操作面板
+   - 如果界面被关闭，在控制台输入 showGrabberUI() 重新显示
+
+ 方法二：浏览器书签
+
+1. 创建新书签，将以下代码作为书签地址：
+javascript
+javascript:(function(){var script=document.createElement(&#x27;script&#x27;);script.src=&#x27;你的脚本URL&#x27;;document.body.appendChild(script);})();
+
+
+2. 在选课页面点击书签即可加载脚本
+
+ 🎯 使用教程
+
+ 1️⃣ 添加课程
+
+方式一：使用UI界面（推荐）
+
+1. 在&quot;📚 添加课程&quot;区域输入课程号
+2. 设置优先级（数字越小优先级越高）
+3. 可选：设置时间过滤器（如：星期一,第1-2节）
+4. 可选：设置教师过滤器（如：叶利群,讲师）
+5. 点击&quot;➕ 添加课程&quot;按钮
+
+方式二：修改代码配置
+
+在脚本顶部修改 TARGET_COURSES 数组：
+
+javascript
+const TARGET_COURSES = [
+    { 
+        code: &#x27;23286514&#x27;, 
+        prio</pre><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/ceilf6/Auto_courseGrabber/discussions/13"><span class="rp-item-num">#13</span><span class="rp-item-title">Q: 为何不直接请求后端？</span><span class="rp-item-extra">0 comments · 2026-01-20</span></a><a class="rp-item" href="https://github.com/ceilf6/Auto_courseGrabber/discussions/12"><span class="rp-item-num">#12</span><span class="rp-item-title">放宽了课程匹配逻辑，如果需要精准匹配记得输入完全课程信息，防止漏过滤</span><span class="rp-item-extra">0 comments · 2026-01-18</span></a><a class="rp-item" href="https://github.com/ceilf6/Auto_courseGrabber/discussions/11"><span class="rp-item-num">#11</span><span class="rp-item-title">[doc] 抢课的空位逻辑判断</span><span class="rp-item-extra">0 comments · 2026-01-09</span></a><a class="rp-item" href="https://github.com/ceilf6/Auto_courseGrabber/discussions/10"><span class="rp-item-num">#10</span><span class="rp-item-title">[doc] 卡片展开配置</span><span class="rp-item-extra">0 comments · 2026-01-09</span></a><a class="rp-item" href="https://github.com/ceilf6/Auto_courseGrabber/discussions/9"><span class="rp-item-num">#9</span><span class="rp-item-title">[doc] 正方选课系统 filter 参数顺序不按照 ESM 规范</span><span class="rp-item-extra">1 comments · 2026-01-09</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/ceilf6/Auto_courseGrabber/releases"><b>v2.3.2</b> <span class="rp-rel-tag">v2.3.2</span> <span class="rp-item-extra">2026-01-18</span></a><pre class="rp-pre">Full Changelog: https://github.com/ceilf6/Auto_courseGrabber/compare/v2.3.1...v2.3.2</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-27T22:26:53Z · Data license Apache-2.0 ·
+<a href="https://api-site.zhuikan.com/data/repos/ceilf6__Auto_courseGrabber.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=f8bd3e3f"></script>
+<script src="../assets/vendor/purify.min.js?v=f8bd3e3f"></script>
+<script src="../assets/vendor/qrcode.min.js?v=f8bd3e3f"></script>
+<script src="../assets/common.js?v=f8bd3e3f"></script>
+<script src="../assets/repo.js?v=f8bd3e3f"></script>
+</body>
+</html>

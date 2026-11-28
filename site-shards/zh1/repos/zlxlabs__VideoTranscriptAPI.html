@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>zlxlabs/VideoTranscriptAPI · GitHub Trending Rank Radar</title>
+<meta name="description" content="基于 Python 3.11+ FastAPI 的异步音视频转录服务，支持 YouTube、小宇宙、Bilibili、视频号等多平台解析，本地部署可实现说话人区分转录，调用 LLM 完成文本智能校对与内容总结，配套网页端查看 / 导出功能，支持企业微信消息推送">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="VideoTranscriptAPI, zlxlabs, zlxlabs/VideoTranscriptAPI, github stars, github trending, star growth, star history, 开源项目, 星标增长, personal">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zh1.zhuikan.com/repos/zlxlabs__VideoTranscriptAPI">
+<link rel="alternate" hreflang="en" href="https://en1.zhuikan.com/repos/zlxlabs__VideoTranscriptAPI">
+<link rel="alternate" hreflang="zh-CN" href="https://zh1.zhuikan.com/repos/zlxlabs__VideoTranscriptAPI">
+<link rel="alternate" hreflang="x-default" href="https://zh1.zhuikan.com/repos/zlxlabs__VideoTranscriptAPI">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="zlxlabs/VideoTranscriptAPI · GitHub Trending Rank Radar">
+<meta property="og:description" content="基于 Python 3.11+ FastAPI 的异步音视频转录服务，支持 YouTube、小宇宙、Bilibili、视频号等多平台解析，本地部署可实现说话人区分转录，调用 LLM 完成文本智能校对与内容总结，配套网页端查看 / 导出功能，支持企业微信消息推送">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zh1.zhuikan.com/repos/zlxlabs__VideoTranscriptAPI">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=f8bd3e3f">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "zlxlabs/VideoTranscriptAPI", "codeRepository": "https://github.com/zlxlabs/VideoTranscriptAPI", "url": "https://zh1.zhuikan.com/repos/zlxlabs__VideoTranscriptAPI", "description": "基于 Python 3.11+ FastAPI 的异步音视频转录服务，支持 YouTube、小宇宙、Bilibili、视频号等多平台解析，本地部署可实现说话人区分转录，调用 LLM 完成文本智能校对与内容总结，配套网页端查看 / 导出功能，支持企业微信消息推送", "author": {"@type": "Organization", "name": "zlxlabs", "url": "https://github.com/zlxlabs"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/NOASSERTION.html", "programmingLanguage": "Python", "dateCreated": "2025-04-27", "keywords": "personal"}</script>
+</head>
+<body data-repo="zlxlabs/VideoTranscriptAPI" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="https://zhuikan.com/" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="https://zhuikan.com/" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="https://zhuikan.com/" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="https://zhuikan.com/">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">zlxlabs/VideoTranscriptAPI</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="zlxlabs__VideoTranscriptAPI"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/301189483?v=4&s=300" width="300" height="300" alt="zlxlabs avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">VideoTranscriptAPI</div>
+      <a class="rp-side-owner" href="https://github.com/zlxlabs">zlxlabs</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/zlxlabs">zlxlabs</a>
+        <span class="rp-sep">/</span><span class="rp-name">VideoTranscriptAPI</span>
+      </h1>
+      <div class="rp-head-chips"></div>
+    </div>
+    <p class="rp-desc">基于 Python 3.11+ FastAPI 的异步音视频转录服务，支持 YouTube、小宇宙、Bilibili、视频号等多平台解析，本地部署可实现说话人区分转录，调用 LLM 完成文本智能校对与内容总结，配套网页端查看 / 导出功能，支持企业微信消息推送</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>301</b></span><span class="rp-stat" title="forks">⑂ <b>41</b></span><span class="rp-stat" title="watchers">👁 <b>1</b></span><span class="rp-stat" title="prs">⑃ <b>250</b></span><span class="rp-stat" title="issues">● <b>92</b></span><span class="rp-stat" title="releases">▤ <b>4</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://github.com/topics/personal">personal</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">Python</span><span class="rp-meta-bit">NOASSERTION</span><span class="rp-meta-bit">Created 2025-04-27</span></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/zlxlabs/VideoTranscriptAPI">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v1.2.0</span><a class="rp-dl-a" href="https://github.com/zlxlabs/VideoTranscriptAPI/releases/tag/v1.2.0">v1.2.0 ↓</a><span class="rp-dl-ver">1.2.0</span><span class="rp-dl-date">2026-10-15</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+0</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num">301</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">41</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">1</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">250</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">92</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">4</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">视频转录 API (Video Transcript API)
+
+中文 | English
+
+ 基于 Python 3.11+ 的异步视频转录服务，支持多平台下载、双引擎转录、智能文本处理和企业级功能集成。
+
+
+
+
+
+开发契机和玩法分享：LLM 吞噬一切，我用 AI 长出来的那些工具
+
+!转录结果页面
+
+---
+
+ 核心特性
+
+- 多平台支持：YouTube、Bilibili、抖音、小红书、微信视频号与 X(Twitter)（经 MediaResolverAPI）、小宇宙播客、Apple Podcast，工厂模式自动匹配下载器
+- 双引擎转录：CapsWriter ASR Server 协议 v2（通用转录）+ FunASR（说话人识别）
+- 智能文本处理：LLM 自动校对 ASR 错误、专有名词纠错、按说话人采样+置信度降级的说话人推断、内容总结
+- 处理深度可控：processing_options 开关按任务控制是否校对/总结，分层缓存产物只增不减，重复请求自动复用已有层
+- 诚实状态模型：校对（full/partial/none/disabled）与总结（generated/skipped_short/failed/pending/disabled）状态全链路透传，不再用占位字符串掩盖失败
+- 企业级功能：SQLite + 文件系统双层缓存、多用户管理、审计日志（含 LLM token 用量统计）、多渠道通知（企业微信 + 飞书）、任务历史浏览器
+- 风控系统：敏感词检测、多策略文本脱敏、风险模型自动切换
+
+ 外部依赖
+
+- Tikhub API key，用于音视频解析下载。有 aff
+- funasr_spk_server：funasr server 对应暴露 api，支持音视频转写，分角色，自动合并相同人物的话。
+- CapsWriter ASR Server：局域网语音识别服务。本项目通过官方 SDK 使用协议 v2，不再使用手写 v1 帧。字段与错误码以协议文档为准。
+- youtube_download_api：YouTube 视频下载服务，作为 yt-dlp 的可选替代后端。（可选）
+- MediaResolverAPI：短视频/视频号 URL → 无水印直链 + 元数据的集中解析服务，接管抖音/小红书/微信视频号/X(Twitter) 解析（见使用指南，X 自动选最低码率 variants 档提速）。
+- OpenAI 兼容的 API，比如 Deepseek，量大管饱。
+
+---
+
+ 快速开始
+
+ 环境要求
+
+- Python 3.11+
+- FFmpeg
+- 转录服务器（CapsWriter ASR Server 协议 v2 / FunASR 二选一或同时部署）
+
+ 本地安装
+
+bash
+ 克隆仓库
+git clone 
+cd video-transcript-api
+
+ 安装依赖（使用 uv）
+curl -LsSf https://astral.sh/uv/install.sh | sh
+uv sync
+
+ 配置服务
+cp config/config.example.jsonc config/config.jsonc
+ 编辑 config.jsonc，填写 api.auth_token、tikhub.api_key 等
+ 语言：顶层 language 取 &quot;zh-CN&quot;（默认）或 &quot;en&quot;，控制 Web 界面文案与总结/详细笔记/章节的输出语言；企业微信/飞书通知暂不随之切换
+ 可选：抖音/小红书改走 MediaResolverAPI 集中解析（微信视频号与 X 依赖该开关开启），设
+   downloaders.use_media_resolver=true 并配置 media_resolver 段
+   （使用指南：docs/guides/media_resolver.md）
+
+ 启动
+uv run python main.py --start
+
+
+可在启动前执行无副作用配置预检；该命令不会连接外部服务、迁移数据库或启动线程：
+
+bash
+uv run python main.py --check-config --config config/config.jsonc
+
+
+ Docker 部署
+
+bash
+ 准备配置
+cp config/config.example.jsonc config/config.jsonc
+
+ 本地构建并启动（使用固定的 dev 标签，不用于生产部署）
+cd docker/
+docker compose up -d --build
+
+
+Docker 镜像：ghcr.io/zj1123581321/video-transcript-api
+
+镜像内置 ffmpeg、BBDown、yt-dlp，无需额外安装。
+
+生产部署禁止向任何 registry 推送或使用可变 tag（含 latest）。构建脚本会拒绝脏工作区，只从干净提交以 12 位 Git SHA 生成唯一 tag 并推送 GHCR（公开镜像构建口，不部署）。部署机本地的 video-transcript-api:latest 不是 registry 可变 tag：它是 D3 部署脚本把 ACR 不可变 SHA 镜像 retag 后的本机别名，只存在于部署机，compose 与镜像对账认这个本地名，不入任何 registry。
+
+bash
+./docker/push_to_ghcr.sh
+
+
+生产部署由 D3 自动链路完成：push main 自动触发 .github/workflows/deploy.yml（构建 → ACR → n305 /opt/media/VideoTranscriptAPI → 健康探针 → 部署）；workflow 自身修复后用 workflow_dispatch 手动补发。部署细节与灾备兜底见 docker/DEPLOY.md；配置文件位于 /config/config.jsonc。
+
+ 注意：CapsWriter ASR Server（协议 v2）与 FunASR 需单独部署，配置中的服务地址不能用 localhost，需改为宿主机 IP 或 host.docker.internal。协议说明见 CapsWriter ASR 协议 v2。
+
+---
+
+ 最小配置
+
+复制 config/config.example.jsonc 为 config/config.jsonc，并至少调整以下配置。示例文件对每个字段都有中英双语注释，可作为其他配置项的完整参考。
+
+jsonc
+{
+    // &quot;zh-CN&quot;（默认）或 &quot;en&quot;，控制 Web 界面与生成内容（总结、详细笔记、章节）的语言。
+    // 企业微信和飞书通知不随此设置切换。
+    &quot;language&quot;: &quot;zh-CN&quot;,
+
+    &quot;api&quot;: {
+        &quot;port&quot;: 8000,
+        &quot;host&quot;: &quot;0.0.0.0&quot;,
+        &quot;auth_token&quot;: &quot;your-auth-token-here&quot;
+    },
+    &quot;tikhub&quot;: {
+    </pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/zlxlabs/VideoTranscriptAPI/issues/344"><span class="rp-item-num">#344</span><span class="rp-item-title">[P2] 转录/通知/渲染子域深审（vta-sub3）：FunASR 超时失效、缺通道仍标已通知、B站分P丢 p 参数、Markdown 破坏代码缩进 + 2 项死代码</span><span class="rp-item-extra">0 comments · 2026-11-27</span></a><a class="rp-item" href="https://github.com/zlxlabs/VideoTranscriptAPI/issues/343"><span class="rp-item-num">#343</span><span class="rp-item-title">[P2] LLM/风控/多语言子域深审（vta-sub2）：总结接受 length 截断、校对丢 90% 正文仍判 FULL 等 5 项缺陷 + 2 项死代码</span><span class="rp-item-extra">0 comments · 2026-11-27</span></a><a class="rp-item" href="https://github.com/zlxlabs/VideoTranscriptAPI/issues/342"><span class="rp-item-num">#342</span><span class="rp-item-title">[P2] 缓存与任务状态子域深审（vta-sub1）：旧笔记污染新代次、失败总结判全命中、通知与查看页变体不一致 + 3 项死代码</span><span class="rp-item-extra">0 comments · 2026-11-27</span></a><a class="rp-item" href="https://github.com/zlxlabs/VideoTranscriptAPI/issues/341"><span class="rp-item-num">#341</span><span class="rp-item-title">[P1] CapsWriter 同名音频 stem 输出串写：并发/同 stem 转录将任务 B 正文与时间轴侧车写入任务 A</span><span class="rp-item-extra">0 comments · 2026-11-27</span></a><a class="rp-item" href="https://github.com/zlxlabs/VideoTranscriptAPI/issues/340"><span class="rp-item-num">#340</span><span class="rp-item-title">[P1] 重总结/重校对入队缺代次绑定：旧任务将按旧正文生成的摘要写进新正文目录并报成功</span><span class="rp-item-extra">0 comments · 2026-11-27</span></a><a class="rp-item" href="https://github.com/zlxlabs/VideoTranscriptAPI/issues/339"><span class="rp-item-num">#339</span><span class="rp-item-title">[清理] 减法审计：移除 10 项已证实死代码、废弃配置与 945 行无断言打印式伪测试（约 1,045 行）</span><span class="rp-item-extra">0 comments · 2026-11-27</span></a><a class="rp-item" href="https://github.com/zlxlabs/VideoTranscriptAPI/issues/338"><span class="rp-item-num">#338</span><span class="rp-item-title">[P2] 轴4/轴5审计：配置校验器接受死 funasr 段却锁死 send_terms、上传开关与 CapsWriter 默认端口分裂</span><span class="rp-item-extra">0 comments · 2026-11-27</span></a><a class="rp-item" href="https://github.com/zlxlabs/VideoTranscriptAPI/issues/337"><span class="rp-item-num">#337</span><span class="rp-item-title">[P2] 形式化验证（VTA1）：LLM 永不返回时运行期对账跳过登记任务致永久卡死 calibrating + task_dedup 吞异常降级</span><span class="rp-item-extra">0 comments · 2026-11-26</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/zlxlabs/VideoTranscriptAPI/releases"><b>v1.2.0</b> <span class="rp-rel-tag">v1.2.0</span> <span class="rp-item-extra">2026-10-15</span></a><pre class="rp-pre">[1.2.0] - 2026-10-16
+
+ Added
+
+- 说话人显示名现在带证据来源与推测标注：专场主持/嘉宾类角色即使只被他人称呼（呼叫后紧邻应答的模式）也能被识别，显示形如「说话人2｜标题关联推测:X｜对话称:Y」；每个名字可查到出处（谁在哪一段怎么称呼，含来源说话人与时间）。此前仅凭低置信猜测或完全无证据的名字要么被静默隐藏、要么不可考。
+- X Space 平台先验：Space 创建者通常担任主持人、专场标题指向主讲，作为识别线索注入（仅 twitter_space 平台生效，其他平台行为不变）。
+
+ Fixed
+
+- 低置信度的说话人推断不再被一刀切隐藏：改为证据核对决定显示（四层程序判据：引用实质内容、分区绑定、说话人归属、名字共现），未通过核对的候选保持匿名占位；原推断名与作废原因保留在详情元数据中可审计。
+- 元数据（标题/作者/描述）变更后，旧的说话人映射会正确失效重算。此前缓存指纹不含元数据，改名不生效、旧名字继续展示。
+- 隐私治理：公开仓库历史中的真实生产对话已全部替换为合成对话（新增测试以合成语料锁定行为）。</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-27T22:26:53Z · Data license Apache-2.0 ·
+<a href="https://api-site.zhuikan.com/data/repos/zlxlabs__VideoTranscriptAPI.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=f8bd3e3f"></script>
+<script src="../assets/vendor/purify.min.js?v=f8bd3e3f"></script>
+<script src="../assets/vendor/qrcode.min.js?v=f8bd3e3f"></script>
+<script src="../assets/common.js?v=f8bd3e3f"></script>
+<script src="../assets/repo.js?v=f8bd3e3f"></script>
+</body>
+</html>

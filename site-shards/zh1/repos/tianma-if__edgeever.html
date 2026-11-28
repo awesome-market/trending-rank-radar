@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>tianma-if/edgeever · GitHub Trending Rank Radar</title>
+<meta name="description" content="AI-native note-taking app &amp; Evernote/Obsidian alternative. Instant all-platform sync, rich notes (tables, mind maps, diagrams, posters), web clipper &amp; MCP. 100% free on Cloudflare or Docker.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="edgeever, tianma-if, tianma-if/edgeever, github stars, github trending, star growth, star history, 开源项目, 星标增长, cloudflare-workers, evernote, knowledge-base, mcp, self-hosted, cloudflare">
+<meta name="author" content="awesome-market">
+<link rel="canonical" href="https://zh1.zhuikan.com/repos/tianma-if__edgeever">
+<link rel="alternate" hreflang="en" href="https://en1.zhuikan.com/repos/tianma-if__edgeever">
+<link rel="alternate" hreflang="zh-CN" href="https://zh1.zhuikan.com/repos/tianma-if__edgeever">
+<link rel="alternate" hreflang="x-default" href="https://zh1.zhuikan.com/repos/tianma-if__edgeever">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta property="og:title" content="tianma-if/edgeever · GitHub Trending Rank Radar">
+<meta property="og:description" content="AI-native note-taking app &amp; Evernote/Obsidian alternative. Instant all-platform sync, rich notes (tables, mind maps, diagrams, posters), web clipper &amp; MCP. 100% free on Cloudflare or Docker.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://zh1.zhuikan.com/repos/tianma-if__edgeever">
+<meta property="og:image" content="https://zhuikan.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0e14" id="themeMeta">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script>
+(() => {
+  const t = localStorage.getItem('theme') ||
+    (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  document.documentElement.dataset.theme = t;
+  document.getElementById('themeMeta').content = t === 'light' ? '#f6f8fa' : '#0a0e14';
+})();
+</script>
+<link rel="stylesheet" href="../assets/style.css?v=f8bd3e3f">
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?7a861a4bae9569791917b4fc58c490be";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "name": "tianma-if/edgeever", "codeRepository": "https://github.com/tianma-if/edgeever", "url": "https://zh1.zhuikan.com/repos/tianma-if__edgeever", "description": "AI-native note-taking app & Evernote/Obsidian alternative. Instant all-platform sync, rich notes (tables, mind maps, diagrams, posters), web clipper & MCP. 100% free on Cloudflare or Docker.", "author": {"@type": "Organization", "name": "tianma-if", "url": "https://github.com/tianma-if"}, "isAccessibleForFree": true, "license": "https://spdx.org/licenses/AGPL-3.0.html", "programmingLanguage": "TypeScript", "dateCreated": "2026-06-26", "keywords": "cloudflare-workers,evernote,knowledge-base,mcp,self-hosted,cloudflare,evernote-alternative,note-taking,ai-agent,docker"}</script>
+</head>
+<body data-repo="tianma-if/edgeever" data-base="../">
+
+<a class="skip-link" href="#content" data-i18n="skip">跳到内容</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sparkStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#79c0ff"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="hero" data-enter>
+  <div class="hero-inner">
+    <div class="hero-brand">
+      <a href="https://zhuikan.com/" class="brand-home" aria-label="GitHub Trending Rank Radar">
+        <svg class="radar-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="url(#sparkStroke)" stroke-width="2" opacity="0.5"/>
+          <circle cx="24" cy="24" r="12" stroke="url(#sparkStroke)" stroke-width="1.5" opacity="0.35"/>
+          <circle cx="24" cy="24" r="4" fill="url(#sparkStroke)"/>
+          <g class="radar-sweep">
+            <line x1="24" y1="24" x2="38" y2="10" stroke="#58a6ff" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="38" cy="10" r="2.5" fill="#79c0ff"/>
+          </g>
+        </svg>
+      </a>
+      <div>
+        <a href="https://zhuikan.com/" class="brand-home"><h1>GitHub Trending Rank <span class="grad-text">Radar</span></h1></a>
+        <p class="hero-sub" id="repoCrumb"><a href="https://zhuikan.com/" class="rp-back" data-i18n="rp.back">← 返回榜单</a></p>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <button id="langToggle" class="lang-btn" type="button" aria-label="Switch to English" data-i18n-aria="lang.aria" data-i18n-title="lang.aria">EN</button>
+      <button id="themeToggle" class="theme-btn" type="button" data-i18n-aria="theme.aria" data-i18n-title="theme.aria" aria-label="切换深浅色主题" title="切换主题">
+        <svg class="icon-sun" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 12a4 4 0 1 1 0-8 4 4 0 0 1 0 8ZM8 0a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V.75A.75.75 0 0 1 8 0Zm0 12.25a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0V13a.75.75 0 0 1 .75-.75ZM2.25 8a.75.75 0 0 1-.75.75H.75a.75.75 0 0 1 0-1.5h.75A.75.75 0 0 1 2.25 8Zm11.5 0a.75.75 0 0 1-.75.75h.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1-.75-.75ZM3.757 3.757a.75.75 0 0 1 1.06 0l1.06 1.061a.75.75 0 1 1-1.06 1.06l-1.06-1.06a.75.75 0 0 1 0-1.061Zm7.426 7.426a.75.75 0 0 1 1.06 0l1.061 1.06a.75.75 0 0 1-1.061 1.061l-1.061-1.06a.75.75 0 0 1 0-1.061ZM3.757 12.243a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Zm7.426-7.426a.75.75 0 0 1 0-1.061l1.06 1.061a.75.75 0 0 1-1.06 0Z"/></svg>
+        <svg class="icon-moon" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M9.598 1.591a.75.75 0 0 1 .786-.093 7 7 0 1 1-9.033 9.881a.75.75 0 0 1 .854-.915A5.501 5.501 0 1 0 9.506 1.5c.028 0 .056.03.092.091ZM8.03 3.03a7.001 7.001 0 0 0-4.4 10.32 7 7 0 0 0 8.73-8.73A7.01 7.01 0 0 0 8.03 3.03Z"/></svg>
+      </button>
+      <a class="gh-link" href="https://github.com/awesome-market/trending-rank-radar" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container" id="content">
+  <div id="repoContent" class="repo-page">
+<nav class="rp-crumb"><a href="https://zhuikan.com/">Boards</a><span class="rp-crumb-sep">/</span>
+<span class="rp-crumb-cur">tianma-if/edgeever</span></nav>
+<div class="rp-top">
+  <aside class="rp-side">
+    <a href="tianma-if__edgeever"><img class="rp-side-av" src="https://avatars.githubusercontent.com/u/5895871?u=d26269c57f2077cb1345c9e8f92acef6d4a0d7c1&amp;v=4&s=300" width="300" height="300" alt="tianma-if avatar"></a>
+    <div class="rp-side-body card">
+      <div class="rp-side-name">edgeever</div>
+      <a class="rp-side-owner" href="https://github.com/tianma-if">tianma-if</a>
+    </div>
+  </aside>
+  <div class="rp-main">
+    <div class="rp-main-head">
+      <h1 class="rp-htitle">
+        <a class="rp-owner" href="https://github.com/tianma-if">tianma-if</a>
+        <span class="rp-sep">/</span><span class="rp-name">edgeever</span>
+      </h1>
+      <div class="rp-head-chips"><a class="rp-board-chip" href="https://zhuikan.com/?board=daily_rate">daily_rate <b>#67</b></a></div>
+    </div>
+    <p class="rp-desc">AI-native note-taking app &amp; Evernote/Obsidian alternative. Instant all-platform sync, rich notes (tables, mind maps, diagrams, posters), web clipper &amp; MCP. 100% free on Cloudflare or Docker.</p>
+    <div class="rp-statrow"><span class="rp-stat" title="stars">★ <b>3,710</b></span><span class="rp-stat" title="forks">⑂ <b>1,900</b></span><span class="rp-stat" title="watchers">👁 <b>6</b></span><span class="rp-stat" title="prs">⑃ <b>198</b></span><span class="rp-stat" title="issues">● <b>696</b></span><span class="rp-stat" title="releases">▤ <b>349</b></span></div>
+    <div class="rp-topics"><a class="rp-topic" href="https://tag1.zhuikan.com/tags/cloudflare-workers">cloudflare-workers</a><a class="rp-topic" href="https://github.com/topics/evernote">evernote</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/knowledge-base">knowledge-base</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/mcp">mcp</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/self-hosted">self-hosted</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/cloudflare">cloudflare</a><a class="rp-topic" href="https://github.com/topics/evernote-alternative">evernote-alternative</a><a class="rp-topic" href="https://tag1.zhuikan.com/tags/note-taking">note-taking</a></div>
+    <div class="rp-meta"><span class="rp-meta-bit">TypeScript</span><span class="rp-meta-bit">AGPL-3.0</span><span class="rp-meta-bit">Created 2026-06-26</span><a class="rp-meta-bit rp-home" href="https://edgeever.org" rel="noopener">edgeever.org</a></div>
+    <div class="rp-foot-row"><div class="rp-same"></div>
+      <div class="rp-actions"><a class="rp-btn" href="https://github.com/tianma-if/edgeever">GitHub ↗</a></div></div>
+  </div>
+</div>
+<section class="rp-panel card"><div class="rp-dl"><span class="rp-dl-label">下载：</span><span class="rp-dl-t">v2.34.0</span><a class="rp-dl-a" href="https://github.com/tianma-if/edgeever/releases/tag/v2.34.0">v2.34.0 ↓</a><span class="rp-dl-ver">2.34.0</span><span class="rp-dl-date">2026-11-27</span></div><div class="rp-metric-grid"><div class="rp-metric"><div class="rp-metric-num up">+79</div><div class="rp-metric-label">日增长</div></div><div class="rp-metric"><div class="rp-metric-num up">+245</div><div class="rp-metric-label">周增长</div></div><div class="rp-metric"><div class="rp-metric-num">3,710</div><div class="rp-metric-label">stars</div></div><div class="rp-metric"><div class="rp-metric-num">1,900</div><div class="rp-metric-label">forks</div></div><div class="rp-metric"><div class="rp-metric-num">6</div><div class="rp-metric-label">watchers</div></div><div class="rp-metric"><div class="rp-metric-num">198</div><div class="rp-metric-label">prs</div></div><div class="rp-metric"><div class="rp-metric-num">696</div><div class="rp-metric-label">issues</div></div><div class="rp-metric"><div class="rp-metric-num">349</div><div class="rp-metric-label">releases</div></div></div>
+<h3 class="rp-ph">README</h3><pre class="rp-pre rp-readme">EdgeEver
+  
+  
+    AI 原生笔记应用与印象笔记 / Obsidian 替代方案。支持全平台瞬时同步、多形态富笔记（多维表格、思维导图、图表、海报）、网页剪藏与原生 MCP。Cloudflare 100% 免费托管或 Docker 自托管。
+  
+  
+    
+    
+    
+    
+    
+    
+    
+  
+  
+    
+  
+  
+    简体中文 | 繁體中文 | English | Español | Deutsch | Français | 日本語 | Polski | Русский
+  
+  
+     微信交流群 &amp;nbsp;|&amp;nbsp;
+    🌐 在线演示 &amp;nbsp;|&amp;nbsp;
+    🗺️ 路线图 &amp;nbsp;|&amp;nbsp;
+    📱 客户端与插件下载 &amp;nbsp;|&amp;nbsp;
+    核心功能与场景矩阵 &amp;nbsp;|&amp;nbsp;
+    📥 第三方笔记迁入
+  
+  
+    
+  
+
+
+EdgeEver 是一款现代化的开源笔记与个人知识库工作区。它保留经典高效的三栏工作区体验（目录树 · 笔记列表 · 编辑写作），同时具备完全开放的数据架构与原生 AI Agent 联动能力，让个人知识沉淀更轻量、更自由。
+
+ 💡 终身免服务器，100% 免费
+ EdgeEver 可以免费运行在 Cloudflare 配额内，无需购买或维护服务器；希望使用 VPS、NAS 或家庭服务器的用户，也可以通过 Docker 部署同一套应用。
+
+ ⭐ 如果 EdgeEver 对你有帮助，欢迎点个 Star。你的支持会帮助更多人发现这个项目。
+
+ 为什么做 EdgeEver
+
+很多笔记与个人知识库的用户，核心需求只是一个可靠、开放、响应迅速的个人知识库。然而，当下的主流方案都各有痛点：
+
+ 印象笔记：拥有最无感、最丝滑的多端云同步体验。然而随着它演进为全功能商业套件，广告与附加功能渐多，系统开销也随之走高；加之免费版配额收紧、高级 AI 订阅昂贵，且难以灵活接入现代自托管与私有 AI 工作流。
+ Obsidian：Markdown 开放，核心闭源；官方同步按容量与库数量持续订阅收费，第三方同步（iCloud / WebDAV / Git 等）繁琐且易冲突，受限于纯本地文件目录的同步机制与移动端后台限制，难以像云原生笔记那样丝滑无感同步（且缺少完整 Web 端）；依赖本地遍历扫描，笔记上千或插件增多后冷启动与检索明显卡顿；附件混存易膨胀、拖慢移动同步且删后难清理；加之类似 IDE 的交互与插件折腾生态上手门槛较高，对于习惯传统云笔记“开箱即用、随时随地随手记”的用户来说明显偏重。
+ Joplin：老牌开源三栏笔记，但界面观感与编辑交互仿佛还停留在十几年前，缺乏现代软件的精致与流畅感；官方高速同步（Joplin Cloud）需付费订阅，免费同步若走 WebDAV 或网盘，受限于逐文件轮询，笔记与附件增多后（尤其在移动端）同步缓慢，而自建 Joplin Server 又必须自备服务器维护，缺少零成本 Serverless 方案；此外它没有可在浏览器即开即用的完整 Web 工作区，也缺乏原生 AI Agent（MCP/ACP）与多模态知识形态。
+ Memos / Flomo 等轻量笔记：虽然简单好用，但流式卡片布局与习惯了经典“三栏工作流”的用户有着天然的交互习惯差异。
+ 思源笔记等块级知识库：功能深厚且支持开源自托管，但 UI 交互更贴近 Obsidian 式的重度知识库而非传统商业云笔记的直觉三栏体验，全面的“块级（Block）”架构也使得日常随手记录与连续排版书写的心智负担偏重；且缺少零服务器成本的 Serverless 部署形态，多端同步主要依赖官方付费订阅，或需额外付费解锁 S3/WebDAV 同步特性并自备存储。
+
+EdgeEver 恰好填补了这一空白：整栈开源，提供真正零感知、低延迟的多端瞬时云同步，且全部服务均可免费自托管；同时保留经典三栏布局与流畅排版，万条笔记常驻依然轻盈丝滑，原生支持接入 AI Agent，部署维护零门槛、零费用。
+
+ 在线演示
+
+- Demo 地址：https://demo.edgeever.org
+
+公开演示环境会在每天凌晨 3:00（北京时间）自动重置并恢复示例笔记，请不要保存私密内容。
+
+ 全平台客户端与浏览器插件
+
+ 客户端下载
+
+
+  &amp;nbsp;&amp;nbsp;
+  &amp;nbsp;&amp;nbsp;
+  &amp;nbsp;&amp;nbsp;
+  &amp;nbsp;&amp;nbsp;
+  
+
+
+ iOS 客户端需要使用非中国大陆区 Apple ID 下载。
+
+ 浏览器网页裁剪插件
+
+
+  &amp;nbsp;&amp;nbsp;
+  &amp;nbsp;&amp;nbsp;
+  
+
+
+- 支持提取网页正文为纯净 Markdown，或划选文字与图片、框选网页区域精准保存，直传自托管实例。
+- 深度适配 20+ 主流平台的结构化剪藏：覆盖社交（X、小红书、Instagram、微信公众号、即刻、豆瓣、Threads、Bluesky）、社区与资讯（知乎、Reddit、GitHub、V2EX、Hacker News、Medium、Substack）、音视频与播客（Bilibili、YouTube、小宇宙）等。
+
+
+ 核心功能与场景矩阵
+
+一站式连接「灵感捕获 · 深度创作 · 知识沉淀」的全能工作区（👉 查看 20 个实机案例演示与最佳实践）：
+
+| 模块 | 核心功能与特性 |
+| :--- | :--- |
+| 写作、整理与检索 | • 沉浸式双模编辑器：可调三栏工作区，富文本与 Markdown 瞬时切换，内置笔记模板库、数学与化学公式、代码高亮、大纲折叠记忆及版本历史回溯• 自定义排版：支持按笔记本或单篇定制封面、章节导航、正文主题配色、拍立得画框与字号行距• 多层级目录与毫秒级检索：无限层级目录树、标签体系、拖拽排序与批量合并/移动，配合毫秒级全文搜索与历史过滤• 桌面端多窗口与大附件：支持多窗口独立编辑、外部编辑器修改附件自动回存；图片上传前自动压缩 50%–90%，分片流式上传支持最大 1 GiB 附件 |
+| 多形态富笔记与可视化 | • AI 多维表格与公开表单：一句话生成结构化业务表（支持多命名视图、多条件筛选、多字段排序与单元格链接直达），一键发布免登录外链收集表单• AI 思维导图与架构图表：支持交互式思维导图与 Mermaid 流程图、时序图、架构图实时渲染及 AI 对话生成• AI 智能信息图：对话式一键生成时间线、对比矩阵、四象限图等结构化视觉图表• 原生画布海报笔记：内置画布级图文排版与视觉卡片笔记形态，双击即改，轻松制作封面与社交视觉卡片 |
+| 全渠道采集与迁移 | • 浏览器剪藏与 20+ 平台适配：支持网页正文提取、划选图文与区域框选剪藏，深度适配小红书、X、Instagram、知乎、Reddit、GitHub、Bilibili、YouTube 等• 移动端分享与桌面快捷截图：手机系统分享一键转存图片与公众号文章；桌面端支持全局快捷键框选屏幕截图直存笔记• 微信聊天记录一键归档：手机与桌面端合并转发整段对话，一键转为保留时间轴、引用、</pre><h3 class="rp-ph">Top issues</h3><div class="rp-list"><a class="rp-item" href="https://github.com/tianma-if/edgeever/issues/255"><span class="rp-item-num">#255</span><span class="rp-item-title">【社区征集】为 EdgeEver 征集中文产品名称 🌿</span><span class="rp-item-extra">14 comments · 2026-08-15</span></a><a class="rp-item" href="https://github.com/tianma-if/edgeever/issues/652"><span class="rp-item-num">#652</span><span class="rp-item-title">[Feature] 模型级生成参数不可配置：输出长度硬编码 4096、思考模式无透传、无上下文窗口设置</span><span class="rp-item-extra">9 comments · 2026-10-22</span></a><a class="rp-item" href="https://github.com/tianma-if/edgeever/issues/869"><span class="rp-item-num">#869</span><span class="rp-item-title">[Feature] ?w= image resizing for slow links, and &quot;open externally&quot; for large attachments on mobile</span><span class="rp-item-extra">8 comments · 2026-11-20</span></a><a class="rp-item" href="https://github.com/tianma-if/edgeever/issues/659"><span class="rp-item-num">#659</span><span class="rp-item-title">[Feature] 优化对piclist和picgo的支持</span><span class="rp-item-extra">8 comments · 2026-10-23</span></a><a class="rp-item" href="https://github.com/tianma-if/edgeever/issues/872"><span class="rp-item-num">#872</span><span class="rp-item-title">[功能请求] -导入数据</span><span class="rp-item-extra">7 comments · 2026-11-20</span></a><a class="rp-item" href="https://github.com/tianma-if/edgeever/issues/690"><span class="rp-item-num">#690</span><span class="rp-item-title">[Security] 发现多处可组合利用的安全缺陷，细节暂不公开，请提供一个联系邮箱</span><span class="rp-item-extra">7 comments · 2026-10-27</span></a><a class="rp-item" href="https://github.com/tianma-if/edgeever/issues/817"><span class="rp-item-num">#817</span><span class="rp-item-title">[Bug] iOS客户端首页无法上下滚动</span><span class="rp-item-extra">6 comments · 2026-11-07</span></a><a class="rp-item" href="https://github.com/tianma-if/edgeever/issues/898"><span class="rp-item-num">#898</span><span class="rp-item-title">[Bug] 大附件回存传到一半失败，重试还会报错</span><span class="rp-item-extra">5 comments · 2026-11-26</span></a></div><h3 class="rp-ph">Discussions</h3><div class="rp-list"><a class="rp-item" href="https://github.com/tianma-if/edgeever/discussions/752"><span class="rp-item-num">#752</span><span class="rp-item-title">Would you take a PR that replaces aws4fetch with sigflint in the Worker S3 store?</span><span class="rp-item-extra">0 comments · 2026-11-01</span></a><a class="rp-item" href="https://github.com/tianma-if/edgeever/discussions/670"><span class="rp-item-num">#670</span><span class="rp-item-title">It&#x27;s trash.</span><span class="rp-item-extra">0 comments · 2026-10-25</span></a><a class="rp-item" href="https://github.com/tianma-if/edgeever/discussions/658"><span class="rp-item-num">#658</span><span class="rp-item-title">提议：优化 EdgeEver 图标，统一多平台品牌视觉</span><span class="rp-item-extra">1 comments · 2026-10-23</span></a><a class="rp-item" href="https://github.com/tianma-if/edgeever/discussions/549"><span class="rp-item-num">#549</span><span class="rp-item-title">Switchable personal work areas for notebooks, with cross-area note links</span><span class="rp-item-extra">1 comments · 2026-10-12</span></a><a class="rp-item" href="https://github.com/tianma-if/edgeever/discussions/490"><span class="rp-item-num">#490</span><span class="rp-item-title">Feat: Deploy to Dockhold</span><span class="rp-item-extra">0 comments · 2026-10-07</span></a><a class="rp-item" href="https://github.com/tianma-if/edgeever/discussions/462"><span class="rp-item-num">#462</span><span class="rp-item-title">网址如何在正文中以纯文本的方式存在</span><span class="rp-item-extra">0 comments · 2026-10-03</span></a><a class="rp-item" href="https://github.com/tianma-if/edgeever/discussions/339"><span class="rp-item-num">#339</span><span class="rp-item-title">編輯器主題配色方案分享集中串</span><span class="rp-item-extra">1 comments · 2026-09-02</span></a><a class="rp-item" href="https://github.com/tianma-if/edgeever/discussions/298"><span class="rp-item-num">#298</span><span class="rp-item-title">Windows版什么时候出呀？</span><span class="rp-item-extra">0 comments · 2026-08-25</span></a></div><h3 class="rp-ph">Latest release</h3><a class="rp-rel" href="https://github.com/tianma-if/edgeever/releases"><b>v2.34.0</b> <span class="rp-rel-tag">v2.34.0</span> <span class="rp-item-extra">2026-11-27</span></a><pre class="rp-pre">主要更新
+
+- 合并多篇只含图片的笔记时，会按原来的顺序合成一个图库。其中任一篇还有文字时，仍用分隔线分开保留。自托管请先升级服务端，再升级桌面端。
+- 桌面端离线合并的笔记在打开时会显示图片，不再把图片链接显示成纯文本。
+- 桌面端可以拖动尚未完成同步的视频进度；同步替换本地文件后仍可定位播放。
+- 桌面端附件回存在传输仍有进展时不再因固定时限中断。已经保存成功后再点重试会保持已回存，较早开始的下载也不会覆盖已确认的离线缓存。感谢 @sivdead（907）。
+- 来自 Leeef Reader 的书摘里，「摘录于 日期」会显示得更小、更淡。Web、桌面、Android 和 iOS 编辑器以及分享页都会生效。
+
+关联 Issue：914
+
+ Key Changes
+
+- Merging notes that contain only images combines them into one gallery in their original order. If any note also contains text, the notes stay separated by a divider. On a self-hosted instance, upgrade the server before the desktop app.
+- Opening a note that w</pre></section>
+
+
+<p class="rp-meta">Snapshot: 2026-11-28T10:06:57Z · Data license Apache-2.0 ·
+<a href="https://api-site.zhuikan.com/data/repos/tianma-if__edgeever.json">JSON</a></p></div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footStats" class="foot-stats"></p>
+    <p data-i18n="foot.line1">数据来源：GitHub API 独立采集 · 榜单由快照差值计算 · 仅供参考，不构成投资建议</p>
+    <p class="footer-sub" data-i18n="foot.line2">新榜 / 总榜为本站跟踪仓库范围内排名 · 增速 = 增长量 ÷ 窗口起点 Star 基数</p>
+  </div>
+</footer>
+
+<script src="../assets/vendor/marked.min.js?v=f8bd3e3f"></script>
+<script src="../assets/vendor/purify.min.js?v=f8bd3e3f"></script>
+<script src="../assets/vendor/qrcode.min.js?v=f8bd3e3f"></script>
+<script src="../assets/common.js?v=f8bd3e3f"></script>
+<script src="../assets/repo.js?v=f8bd3e3f"></script>
+</body>
+</html>
